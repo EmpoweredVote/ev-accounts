@@ -28,6 +28,7 @@ import { createLegiscanRecordFetcher, legiscanLinesFor } from '../src/lib/legisc
 import { loadGovernorTerms } from '../src/lib/governorTerms.js';
 import { isStateRollCallUrl, parseStateRollCallRender, stateRollCallLinesFor } from '../src/lib/stateRollCallEvidence.js';
 import { createVerificationFetchSession } from '../src/lib/verificationFetch.js';
+import { aliasesFrom, lastNameOf } from '../src/lib/researchVerifier.js';
 
 const { values } = parseArgs({ options: { in: { type: 'string' }, out: { type: 'string' }, 'page-cache': { type: 'string' } } });
 if (!values.in || !values.out) {
@@ -90,11 +91,15 @@ const page = (url: string): Promise<string> => {
 // A governor's signing line needs the person's dated terms as governor: names resolve to one
 // politician by exact full name (case folded); a name that matches none or several gets no terms.
 const allNames = [...new Set(lines.map((l) => (parseLine(l)[iName] ?? '').trim()))];
-const { rows: byName } = await pool.query<{ id: string; full_name: string }>(
-  `SELECT id::text AS id, full_name FROM essentials.politicians WHERE lower(full_name) = ANY(SELECT lower(n) FROM unnest($1::text[]) AS n)`,
+const { rows: byName } = await pool.query<{ id: string; full_name: string; alternate_names: unknown }>(
+  `SELECT id::text AS id, full_name, alternate_names FROM essentials.politicians WHERE lower(full_name) = ANY(SELECT lower(n) FROM unnest($1::text[]) AS n)`,
   [allNames]);
 const idOf = new Map<string, string | null>();
 for (const r of byName) { const k = r.full_name.toLowerCase(); idOf.set(k, idOf.has(k) ? null : r.id); }
+// The other names a person is published under: a roll call prints the name a member held on the day. Only for a name
+// that resolves to one politician.
+const otherNames = new Map(byName.filter((r) => idOf.get(r.full_name.toLowerCase())).map((r) =>
+  [r.full_name.toLowerCase(), aliasesFrom(r.alternate_names).map((n) => ({ fullName: n, lastName: lastNameOf(n) }))]));
 const terms = await loadGovernorTerms((q, p) => pool.query(q, p as unknown[]), [...idOf.values()].filter((v): v is string => !!v));
 const out = ['full_name,topic_key,source_url,snippet,snippet_index'];
 const index = new Map<string, number>();
@@ -105,7 +110,7 @@ for (const raw of lines) {
   let found: string[] = [];
   try {
     if (isStateRollCallUrl(url)) {
-      found = stateRollCallLinesFor(url, await page(url), lastName, fullName);
+      found = stateRollCallLinesFor(url, await page(url), lastName, fullName, otherNames.get(fullName.toLowerCase()) ?? []);
     } else {
       const id = idOf.get(fullName.toLowerCase());
       found = legiscanLinesFor(url, await records(url), { fullName, lastName, governorTerms: id ? terms.get(id) : undefined });

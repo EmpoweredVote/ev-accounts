@@ -33,8 +33,17 @@ export interface RuleBillRow {
    * the rungs any one vote on it may carry. An act on such a bill goes to Opus whenever one of these rungs
    * would change the person's result.
    */
-  per_vote?: { rungs: (number | null)[]; note?: string };
+  per_vote?: { rungs: (number | null)[]; note?: string; votes?: PerVoteRung[] };
 }
+
+/**
+ * One floor vote on a bill, with the rung a Yes on THAT vote supports (runner, 2026-11-19: "one rung per vote").
+ * A vote finding that fits exactly one entry (its date and chamber, and its tally when the entry gives one) is read
+ * at that rung, by the script. Any other act on the bill (a vote that fits no entry or two, a sponsorship) is read as
+ * before: tried at each rung of `rungs`, and sent to Opus when one of them would change the result.
+ * Kansas, 2026-11-18: three bills whose chambers voted on different texts sent 20 people to Opus.
+ */
+export interface PerVoteRung { date: string; chamber: 'House' | 'Senate'; tally?: string; rung: number | null }
 
 /** What the rule needs to know about a bill beyond its table row. */
 export interface RuleBill {
@@ -125,8 +134,21 @@ export function sponsorGate(b: RuleBill): 'multi-subject' | 'near-unanimous' | '
 }
 
 const tallyOf = (f: CoderFinding) => /\(tally ([^)]*)\)/.exec(f.note)?.[1];
+/** "KS House, Final Action, 2018-02-02: yea (tally 76–44)" -> House: the chamber the pre-fill's sentence opens with. */
+const chamberOf = (f: CoderFinding) => /^\S+ (House|Senate),/.exec(f.note)?.[1];
+const tallyKey = (t?: string) => (t ?? '').replace(/[^0-9]+/g, '-').replace(/^-|-$/g, '');
 
-function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): RuleResult {
+/** The entry of `per_vote.votes` a vote finding fits, when it fits exactly one. */
+export function perVoteEntry(f: CoderFinding, row: RuleBillRow): PerVoteRung | undefined {
+  if (f.act !== 'yea' && f.act !== 'nay') return undefined;
+  const chamber = chamberOf(f);
+  const fits = (row.per_vote?.votes ?? []).filter((v) => v.date === f.date && v.chamber === chamber && (!v.tally || tallyKey(v.tally) === tallyKey(tallyOf(f))));
+  return fits.length === 1 ? fits[0] : undefined;
+}
+
+/** `tryRung`: a bill -> the rung to try for its acts that no `per_vote.votes` entry settles. */
+function core(input: RuleInput, tryRung: ReadonlyMap<string, number | null> = new Map()): RuleResult {
+  const table = input.table;
   const lanes = new Set<Lane>();
   const sideOf = (r: number) => (input.sides[0].includes(r) ? 0 : input.sides[1].includes(r) ? 1 : undefined);
   const yes: Act[] = []; const nays: Act[] = [];
@@ -140,19 +162,24 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
     const id = f.instrument_id;
     const row = table[id]; const bill = input.bill(id);
     if (!row || !bill?.inStore) { lanes.add('missing-bill'); continue; }
+    const exact = perVoteEntry(f, row);
+    const rung = exact ? exact.rung : tryRung.has(id) ? tryRung.get(id)! : row.rung;
+    // The script words a seat with the row's own deciding words, which decide the ROW's rung. A vote read at another
+    // rung needs its own words: Opus.
+    if (exact && exact.rung !== null && exact.rung !== row.rung) lanes.add('per-vote-note');
     if (!id.startsWith(input.billPrefix)) lanes.add('other-jurisdiction');
     if ((row.flag ?? '').trim()) lanes.add('flagged-bill');
     const isSponsor = SPONSOR.has(f.act);
     if (isSponsor) sponsorships++;
     const gate = isSponsor ? sponsorGate(bill) : f.gate ?? 'none';
-    if (isSponsor) sponsored.push({ id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, gate });
+    if (isSponsor) sponsored.push({ id: f.id, bill: id, act: f.act, date: f.date, rung, gate });
     const isVote = f.act === 'yea' || f.act === 'nay';
-    if (isVote && (gate !== 'none' || row.rung === null)) uncounted.push({ id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, gate });
+    if (isVote && (gate !== 'none' || rung === null)) uncounted.push({ id: f.id, bill: id, act: f.act, date: f.date, rung, gate });
     if (gate !== 'none') { if (YES.has(f.act)) gatedYes++; continue; }
-    const act: Act = { id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, tally: tallyOf(f) };
+    const act: Act = { id: f.id, bill: id, act: f.act, date: f.date, rung, tally: tallyOf(f) };
     if (f.act === 'nay') nays.push(act);
-    else if (YES.has(f.act) && row.rung !== null) {
-      if (sideOf(row.rung) === undefined) lanes.add('missing-bill');
+    else if (YES.has(f.act) && rung !== null) {
+      if (sideOf(rung) === undefined) lanes.add('missing-bill');
       else yes.push(act);
     }
   }
@@ -193,18 +220,18 @@ const same = (a: RuleResult, b: RuleResult) =>
 
 /**
  * The record-only result for one person: lanes (an Opus coder decides) or a decision (the script writes it).
- * A bill with a `per_vote` note is tried at each rung its votes may carry; when any of them changes the result
- * or opens a lane, the person goes to Opus.
+ * A vote that fits one entry of a bill's `per_vote.votes` is read at that entry's rung. Any other act on a bill with
+ * a `per_vote` note is tried at each rung its votes may carry; when any of them changes the result or opens a lane,
+ * the person goes to Opus.
  */
 export function decideRecord(input: RuleInput): RuleResult {
-  const base = core(input, input.table);
-  const noted = [...new Set(input.findings.map((f) => f.instrument_id).filter((id): id is string => !!id && !!input.table[id]?.per_vote))];
+  const base = core(input);
+  const open = (f: CoderFinding) => !!f.instrument_id && !!input.table[f.instrument_id]?.per_vote && !perVoteEntry(f, input.table[f.instrument_id]);
+  const noted = [...new Set(input.findings.filter((f) => f.kind === 'record' && open(f)).map((f) => f.instrument_id!))];
   if (noted.length && noted.length <= 6) {
     const combos = noted.reduce<(number | null)[][]>((acc, id) => acc.flatMap((c) => input.table[id].per_vote!.rungs.map((r) => [...c, r])), [[]]);
     for (const combo of combos) {
-      const t = { ...input.table };
-      noted.forEach((id, i) => { t[id] = { ...t[id], rung: combo[i] }; });
-      if (!same(core(input, t), base)) { base.lanes.push('per-vote-note'); break; }
+      if (!same(core(input, new Map(noted.map((id, i) => [id, combo[i]]))), base)) { base.lanes.push('per-vote-note'); break; }
     }
   } else if (noted.length) base.lanes.push('per-vote-note');
   if (base.lanes.length) return { lanes: [...new Set(base.lanes)] };

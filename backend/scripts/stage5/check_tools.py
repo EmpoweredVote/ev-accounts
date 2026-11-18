@@ -2,7 +2,7 @@
 a tool is run as a subprocess, the way a batch runs it.
 python3 -I scripts/stage5/check_tools.py [--tools <dir>]   (default: this folder; point it at a tampered copy to watch
 a check fail). Exit 1 when any check fails. Needs no database, network or node_modules."""
-import csv, glob, json, os, re, shutil, subprocess, sys, tempfile, traceback
+import csv, glob, hashlib, json, os, re, shutil, subprocess, sys, tempfile, traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLS = sys.argv[sys.argv.index('--tools') + 1] if '--tools' in sys.argv else HERE
@@ -2146,6 +2146,10 @@ def standing_yes_holds_only_when_every_condition_does(t):
         good(); W('held.txt', 'h\n'); J('legiscan/no-line.json', [['Hal Held', 'https://x/v.pdf', 'yea', 'XX-HB-1-2025']]); extra()
     held_case(); p = sy('write'); assert p.returncode == 0 and 'belongs to a held person' in p.stdout, p.stdout + p.stderr
     held_case(lambda: J('legiscan/no-line.json', [['Hal Held', 'u', 'yea', 'b'], ['Ann A', 'u', 'yea', 'b']])); p = sy('write', ok=False); assert p.returncode == 1 and 'step 7' in p.stdout, p.stdout
+    # Maryland 2026-11-18: the held people's votes are in unmapped.json, another person's is in no-line.json. The
+    # message must name that person and that file, not the held people's list.
+    held_case(lambda: (J('legiscan/unmapped.json', [['Hal Held', 'u', 'XX-SB-9-2013', 'yea: 0 roll calls']]), J('legiscan/no-line.json', [['Ann A', 'u', 'yea', 'XX-SB-1-2023']])))
+    p = sy('write', ok=False); assert p.returncode == 1 and 'Ann A (XX-SB-1-2023, legiscan/no-line.json)' in p.stdout and 'NOT held' in p.stdout and 'Hal Held' not in p.stdout, p.stdout
     held_case(lambda: J('legiscan/unmapped.json', [{'no': 'name'}])); p = sy('write', ok=False); assert p.returncode == 1 and 'step 7' in p.stdout, 'an entry that names no one is never excused'
     held_case(lambda: J('legiscan/crosscheck.json', [{'agree': False}])); p = sy('write', ok=False); assert p.returncode == 1, 'a disagreement is never excused'
     def wrote_less(dry, wrote, back, verify='REVIEW: 2\nSUMMARY: pushed=0 reviewed=2 errors=0\n', pending=2):
@@ -2159,6 +2163,128 @@ def standing_yes_holds_only_when_every_condition_does(t):
     more = 'REVIEW: 2  RE-RESEARCH: 1\nSUMMARY: pushed=0 reviewed=3 errors=0\n'
     held_case(lambda: wrote_less(4, 3, 3, more, 3)); p = sy('approve'); assert p.returncode == 0 and '1 row(s) need more research' in p.stdout, p.stdout + p.stderr
     held_case(lambda: wrote_less(4, 3, 3, more, 2)); p = sy('approve', ok=False); assert p.returncode == 1 and 'back for more research' in p.stdout, p.stdout
+
+
+@check
+def bill_table_votes_names_a_rung_bill_with_no_roll_call_on_disk(t):
+    """Maryland 2026-11-18: 20 people held at the write, and a second batch, for votes on a 2013 bill older than the
+    roll calls on disk. `votes` (and `questions`, which runs it) lists such a bill at set-up. A no-rung bill, a gated
+    vote, a sponsorship and another state's bill are not listed; no dataset, or no vote examined, is no verdict."""
+    S = f'{t}/store'; os.makedirs(f'{S}/findings'); D = f'{t}/legiscan/ds'
+    def bill(folder, name, y0, y1, votes):
+        d = f'{D}/{folder}/XX/s/bill'; os.makedirs(d, exist_ok=True)
+        json.dump({'bill': {'session': {'year_start': y0, 'year_end': y1, 'special': 0}, 'votes': [{'roll_call_id': 1}] * votes}}, open(f'{d}/{name}.json', 'w'))
+    bill('XX-1', 'HB0001', 2025, 2026, 1); bill('XX-1', 'HB2', 2025, 2026, 0); bill('XX-1', 'HB4', 2025, 2026, 1)
+    def person(pid, *acts):
+        json.dump({'politician_id': pid, 'findings': [{'id': f'{pid}{i}', 'kind': 'record', 'topic_keys': ['tp'], 'instrument_id': b, 'act': a,
+                                                       **({'gate_by_topic': {'tp': 'near-unanimous'}} if g else {})} for i, (b, a, g) in enumerate(acts)], 'searches': []},
+                  open(f'{S}/findings/{pid}.json', 'w'))
+    T = f'{t}/bill-table-xx.json'
+    json.dump({'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 3}, 'XX-HB-2-2025': {'rung': 4}, 'XX-SB-9-2013': {'rung': 2}, 'XX-HB-4-2025': {'rung': None, 'why': 'x'},
+                                            'XX-SB-8-2013': {'rung': None, 'why': 'x'}, 'YY-HB-7-2013': {'rung': 2}}}, open(T, 'w'))
+    person('fine', ('XX-HB-1-2025', 'yea', 0)); person('old', ('XX-SB-9-2013', 'yea', 0)); person('both', ('XX-SB-9-2013', 'yea', 0), ('XX-HB-1-2025', 'nay', 0))
+    person('novote', ('XX-HB-2-2025', 'nay', 0)); person('quiet', ('XX-SB-8-2013', 'yea', 0), ('XX-SB-9-2013', 'sponsor', 0), ('XX-SB-9-2013', 'yea', 1), ('YY-HB-7-2013', 'yea', 0))
+    ids = lambda *who: open(f'{t}/ids.txt', 'w').write(''.join(w + '\n' for w in who))
+    votes = lambda ok=True, ds=D: run('bill_table.py', 'votes', T, '--ids', f'{t}/ids.txt', '--store', S, '--ds', ds, '--state', 'XX', '--out', f'{t}/who.txt', ok=ok)
+    ids('fine', 'quiet'); p = votes(); assert p.returncode == 0 and 'Every one is on a bill with a roll call' in p.stdout and '1 vote(s)' in p.stdout, p.stdout
+    ids('fine', 'old', 'both', 'novote', 'quiet'); p = votes(ok=False)
+    assert p.returncode == 1 and 'XX-SB-9-2013: 2 people (2 with no other such vote' in p.stdout and 'not in the datasets' in p.stdout, p.stdout
+    assert 'XX-HB-2-2025: 1 people' in p.stdout and 'on disk with no roll call' in p.stdout and 'XX-SB-8' not in p.stdout and 'YY-' not in p.stdout, p.stdout
+    assert open(f'{t}/who.txt').read().split() == ['both', 'novote', 'old'] and 'cover 2025 to 2026' in p.stdout
+    # the data arrives (a reader change): the same people, nothing listed
+    bill('XX-2', 'SB9', 2013, 2013, 2); bill('XX-1', 'HB2', 2025, 2026, 1); p = votes(); assert p.returncode == 0, p.stdout
+    # blind: no dataset for the state; no vote examined
+    p = votes(ok=False, ds=f'{t}/nowhere'); assert p.returncode == 2 and 'NO VERDICT' in p.stdout
+    ids('quiet'); p = votes(ok=False); assert p.returncode == 2 and 'Not one vote' in p.stdout, p.stdout
+    # `questions` runs it from the files beside the table, and its lines join the questions file
+    import shutil; shutil.rmtree(f'{D}/XX-2'); ids('fine', 'old')
+    p = run('bill_table.py', 'questions', T, '--ids', f'{t}/ids.txt', '--store', S, '--out', f'{t}/q.md')
+    assert 'XX-SB-9-2013: 1 people' in p.stdout and 'XX-SB-9-2013: 1 people' in open(f'{t}/q.md').read() and '## Votes with no roll call on disk' in open(f'{t}/q.md').read(), p.stdout
+
+
+@check
+def shared_set_up_scripts_build_skeletons_a_fill_wave_and_the_staged_store(t):
+    """Each state copied three set-up scripts from the state before; Maryland's copy wrote "the official Mississippi text"
+    into 235 records. One copy now: the state's name comes from its legislature profile, and nothing is written outside
+    the folders named. Proven on four finished states by hand (478 skeletons identical); this pins the rules."""
+    L = f'{t}/legiscan'; sess = f'{L}/ds/KS-1/KS/2025-2026_Regular_Session'
+    for d in ('bill', 'vote', 'people'): os.makedirs(f'{sess}/{d}')
+    os.makedirs(f'{t}/ks'); os.makedirs(f'{L}/texts'); os.makedirs(f'{L}/fill'); os.makedirs(f'{t}/.planning-not', exist_ok=True)
+    J = lambda f, x: json.dump(x, open(f, 'w'))
+    open(f'{t}/ks/scope.tsv', 'w').write('politician_id\tname\np-ann\tAnn "Annie" Able\np-bo\tBo Baker Jr.\n')
+    open(f'{L}/idmap.tsv', 'w').write('7\tp-cy\tCy Cole\n')
+    for pid, fn, ln in ((5, 'Ann', 'Able'), (6, 'Bo', 'Baker'), (7, 'Cyrus', 'Cole')):
+        J(f'{sess}/people/{pid}.json', {'person': {'people_id': pid, 'name': f'{fn} {ln}', 'first_name': fn, 'last_name': ln, 'nickname': ''}})
+    def rc(n, chamber, desc, yea, nay, record=True):
+        J(f'{sess}/vote/{n}.json', {'roll_call': {'roll_call_id': n, 'date': '2025-03-01', 'desc': desc, 'chamber': chamber, 'yea': yea, 'nay': nay, 'absent': 1, 'nv': 0,
+            'state_link': f'https://x/{n}', **({'_openstates': {'from_legislature': True}} if record else {}),
+            'votes': [{'people_id': 5, 'vote_id': 1}, {'people_id': 6, 'vote_id': 2}, {'people_id': 7, 'vote_id': 4}]}})
+    rc(1, 'H', 'Final  Action', 80, 40); rc(2, 'H', 'Final Action', 80, 40); rc(3, 'S', 'Conference Committee Report', 38, 2); rc(4, 'S', 'Committee vote', 5, 4, record=False)
+    def bill(num, votes, title='An act'):
+        J(f'{sess}/bill/{num}.json', {'bill': {'title': title, 'description': 'd', 'state_link': f'https://x/{num}', 'session': {'year_start': 2025},
+            'texts': [{'type': 'Introduced', 'state_link': f'https://x/{num}.pdf', 'doc_id': 1, 'mime': 'application/pdf'}],
+            'sponsors': [{'people_id': 5, 'name': 'Ann Able', 'first_name': 'Ann', 'last_name': 'Able', 'sponsor_type_id': 1}, {'people_id': 0, 'name': 'Committee', 'first_name': '', 'last_name': '', 'sponsor_type_id': 1, 'committee_sponsor': 1}],
+            'votes': [{'roll_call_id': n} for n in votes]}})
+    bill('HB2001', [1, 2, 3, 4]); bill('SB0007', [])
+    J(f'{L}/bills-ks.json', [{'bill_id': 11, 'sid': 1, 'num': 'HB2001', 'y': 2025, 'special': 0, 'sess': '2025-2026 Regular Session', 'status': 4},
+                             {'bill_id': 12, 'sid': 1, 'num': 'SB0007', 'y': 2025, 'special': 0, 'sess': '2025-2026 Regular Session', 'status': 1}])
+    J(f'{L}/core-bills-ks.json', [11, 12])
+    sk = lambda *a, ok=True: run('bill_skeletons.py', '--stage5', t, '--state', 'ks', '--topic', 'made-up-topic', '--store', f'{t}/store', *a, ok=ok)
+    p = sk(); assert 'made 2' in p.stdout and 'floor-vote bills 1' in p.stdout, p.stdout + p.stderr
+    h = json.load(open(f'{L}/inst-ks/KS-HB-2001-2025.json')); s7 = json.load(open(f'{L}/inst-ks/KS-SB-7-2025.json'))
+    assert [(v['body'], v['yes'], v['motion']) for v in h['votes']] == [('KS House', 80, 'Final Action'), ('KS Senate', 38, 'Conference Committee Report')], 'two roll calls of one tally are one vote; a vote not from the record is left out'
+    assert [m.get('politician_id') for m in h['votes'][0]['members']] == ['p-ann', 'p-bo', 'p-cy'] and h['votes'][0]['members'][2]['vote'] == 'absent', 'idmap first, then one exact name'
+    assert h['sponsors'] == [{'name': 'Ann Able', 'role': 'prime', 'version': 'Open States sponsor list', 'politician_id': 'p-ann'}], 'a committee sponsor is left out'
+    assert 'Kansas' in h['provenance']['fetched_by'] and 'made-up-topic' in h['provenance']['fetched_by'] and h['scope'] == 'state:ks' and s7['votes'] == []
+    assert 'kslegislature' in h['votes'][0]['note'] and h['votes'][0]['note'].endswith('https://x/2'), h['votes'][0]['note']
+    p = sk(ok=False); assert p.returncode == 2 and 'did not make it' in p.stdout, 'a second run never overwrites a skeleton quietly'
+    p = sk('--replace', '--sponsor-version', 'introduced text (By:)', '--no-note-link'); assert json.load(open(f'{L}/inst-ks/KS-HB-2001-2025.json'))['sponsors'][0]['version'] == 'introduced text (By:)'
+    # the fill wave: ids with a saved text and no fill
+    open(f'{L}/FILL-BRIEF-ks.md', 'w').write('Read each bill. Large: @LARGE@.\n')
+    wave = lambda *a, ok=True: run('bill_fill_wave.py', '--stage5', t, '--state', 'ks', *a, ok=ok)
+    for i in ('KS-HB-2001-2025', 'KS-SB-7-2025'):
+        open(f'{L}/texts/{i}.introduced.pdf', 'wb').write(b'%PDF ' + i.encode())
+        open(f'{L}/texts/{i}.introduced.txt', 'w').write(f'# {i} | Introduced | 2025-01-15 | legislature PDF | sha256 {hashlib.sha256(b"%PDF " + i.encode()).hexdigest()}\n' + 'word ' * (7000 if 'HB' in i else 5))
+    p = wave(); assert 'ids 2 large 1 jobs 1' in p.stdout and 'Large: KS-HB-2001-2025.' in open(f'{t}/waves/ks-fill/w-00.md').read(), p.stdout
+    p = wave(ok=False); assert p.returncode == 2 and 'Name a new wave' in p.stdout
+    fill = lambda i, on, verdict='single': J(f'{L}/fill/{i}.json', {'id': i, 'made_up': on, 'made_up_reason': 'no part on the topic', 'version_read': 'as-filed', 'operative_text': 'Section 1. A rule.',
+                                                                    'single_subject': {'verdict': verdict}, 'subjects': ['a subject']})
+    fill('KS-HB-2001-2025', True, 'multi')
+    p = wave('--wave', 'ks-fill-2'); assert 'ids 1 large 0 jobs 1' in p.stdout, 'only the unfilled id is left'
+    fill('KS-SB-7-2025', False)
+    H = 'a' * 64
+    mg = lambda ok=True, flag='made_up': run('bill_merge.py', '--stage5', t, '--state', 'ks', '--seats', '125,40', '--date', '2026-11-19', '--flag', flag, '--topic-list-hash', H, '--store', f'{t}/store', ok=ok)
+    p = mg(); assert 'kept 1 dropped 1 missing fill 0' in p.stdout and 'gate rows 2' in p.stdout, p.stdout + p.stderr
+    d = json.load(open(f'{L}/store-staging-ks/instruments/state-ks/KS-HB-2001-2025.json'))
+    assert '_legiscan' not in d and d['operative_text'] == 'Section 1. A rule.' and d['single_subject'][0] == {'season': 3, 'codebook': '0.6', 'topic_list_hash': H, 'verdict': 'multi', 'other_topics': []}
+    assert 'official Kansas text (Introduced, 2025-01-15; legislature PDF' in d['provenance']['fetched_by'] and d['provenance']['saved_copy']['path'].endswith('texts/KS-HB-2001-2025.introduced.pdf')
+    g = [l.split('\t') for l in open(f'{L}/gates-add-ks.tsv').read().splitlines()]
+    assert [(r[2], r[8], r[12]) for r in g] == [('KS House', '125', 'multi-subject'), ('KS Senate', '40', 'multi-subject')], g
+    assert json.load(open(f'{L}/merge-report-ks.json'))['dropped'] == [['KS-SB-7-2025', 'no part on the topic']] and not os.path.exists(f'{t}/store'), 'the store itself is never written'
+    fill('KS-HB-2001-2025', True); mg(); g = [l.split('\t') for l in open(f'{L}/gates-add-ks.tsv').read().splitlines()]
+    assert [r[12] for r in g] == ['', 'near-unanimous'], 'single subject: 40 of 120 No is no gate; 2 of 40 is near-unanimous'
+    # refusals: a wrong on-topic key (it would drop every bill), a saved file that is not the one the text names, a bill already in the store
+    p = mg(ok=False, flag='other_key'); assert p.returncode == 2 and 'no `other_key` key' in p.stdout, p.stdout
+    open(f'{L}/texts/KS-HB-2001-2025.introduced.pdf', 'wb').write(b'%PDF changed'); p = mg(ok=False); assert p.returncode == 2 and 'sha256' in p.stdout, p.stdout
+    open(f'{L}/texts/KS-HB-2001-2025.introduced.pdf', 'wb').write(b'%PDF KS-HB-2001-2025')
+    os.makedirs(f'{t}/store/state-ks'); J(f'{t}/store/state-ks/KS-HB-2001-2025.json', {}); p = mg(ok=False); assert p.returncode == 2 and 'already in the store' in p.stdout
+
+
+@check
+def bill_table_check_reads_a_rung_per_vote(t):
+    """per_vote.votes gives the rung of each floor vote (2026-11-19). `check` refuses an entry the record script could
+    not match to one vote: a bad date or chamber, a rung outside `rungs`, two votes of one chamber on one day with no
+    tally to tell them apart."""
+    S = f'{t}/store'; os.makedirs(f'{S}/instruments/state-xx'); json.dump({'instrument_id': 'XX-HB-1-2025', 'operative_text': 'a rule'}, open(f'{S}/instruments/state-xx/XX-HB-1-2025.json', 'w'))
+    T = f'{t}/table.json'
+    def table(votes, rungs=(4, None)): json.dump({'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 4, 'deciding_words': 'a rule', 'flag': '', 'per_vote': {'rungs': list(rungs), 'votes': votes}}}}, open(T, 'w'))
+    chk = lambda ok=True: run('bill_table.py', 'check', T, '--store', S, ok=ok)
+    V = lambda **k: {'date': '2018-02-02', 'chamber': 'House', 'rung': None, **k}
+    table([V(tally='76-44'), V(date='2018-03-15', chamber='Senate', rung=4)]); p = chk(); assert p.returncode == 0 and '0 problem(s)' in p.stdout, p.stdout
+    table([V(tally='76-44'), V(tally='80–40', rung=4)]); assert chk().returncode == 0, 'two House votes on one day, told apart by tally'
+    for bad, word in (([V(date='Feb 2018')], 'needs entries'), ([V(chamber='Assembly')], 'needs entries'), ([V(rung=3)], 'needs entries'), ([], 'needs entries'),
+                      ([V(tally='about 76')], 'needs entries'), ([V(), V(rung=4)], 'give each its tally'), ([V(tally='76-44'), V(tally='76–44', rung=4)], 'give each its tally'), ([V(tally='76-44'), V(rung=4)], 'give each its tally')):
+        table(bad); p = chk(ok=False); assert p.returncode == 2 and word in p.stdout, (bad, p.stdout)
 
 
 fails = 0

@@ -16,14 +16,14 @@ reads is carried on every later step of the session.
 
 ## Hard rules
 
-- No database write in session A. Read-only queries only.
-- Opus decides every judgment (core bills, name matches, the bill table). Sonnet reads bill text and nothing else.
-- Never name a political party, anywhere. Never infer a stance from silence.
-- Own worktree; commit with an explicit pathspec; scan staged changes for secrets first.
+- No database write in session A: read-only queries.
+- Opus decides every judgment (core bills, name matches, the bill table). Sonnet only reads bill text.
+- Never name a political party. Never infer a stance from silence.
+- Own worktree; scan staged changes for secrets; commit by `--pathspec-from-file`; confirm with `git log -1 --stat`.
 - One folder per state for anything a tool writes in bulk: `{{S}}/{{xx}}/…`. Never import from a folder that holds
   other states' files.
 - A stop that is not listed below is a finding: write down what caused it.
-- Report to the runner in plain English: result first, short sentences, terms defined.
+- Report in plain English: result first, short sentences.
 
 ## This legislature
 
@@ -97,13 +97,14 @@ file**, and nothing else says so (Kentucky: six members, two written as blanks t
 python3 -I scripts/stage5/link_check.py --state {{XX}} --roster {{S}}/batches/{{xx}}-roster.tsv --ds {{S}}/legiscan/ds --idmap {{S}}/legiscan/idmap.tsv --add
 ```
 
-Exit 1 names each unlinked member beside the LegiScan people who may be the same person (a former surname, a
-nickname). Add the line by hand, run it again, and go on only at exit 0. A member seated after the newest dataset
+Exit 1 names each unlinked member beside the people who may be the same person. Add the line by hand, run it
+again, and go on only at exit 0. A member seated after the newest dataset
 goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
 stop 1 sheet. After A4, every person the pre-fill reports with no vote must be a non-legislator or in that file.
 
-**A3. Bill texts.** Fetch texts, then fill them with Sonnet agents as a `wave.py` wave (the newest
-`FILL-BRIEF*.md` under `{{S}}/legiscan/` is the model). Check the fills' quotes, and watch a planted wrong quote fail once:
+**A3. Bill texts.** Shared scripts, never a copy of another state's (usage in each header): `bill_skeletons.py`,
+the state's own text fetch, `bill_fill_wave.py` (a `wave.py` wave; the newest `FILL-BRIEF*.md` is the model), then
+`bill_merge.py`. Check the fills' quotes, and watch a planted wrong quote fail once:
 
 ```bash
 python3 -I scripts/stage5/check_fill_quotes.py --fills {{S}}/legiscan/fill --texts {{S}}/legiscan/texts --state {{xx}} --flag <the fill brief's on-topic key>
@@ -132,7 +133,8 @@ python3 -I scripts/stage5/bill_table.py check {{S}}/bill-table-{{xx}}.json --ids
 python3 -I scripts/stage5/bill_table.py questions {{S}}/bill-table-{{xx}}.json --ids {{S}}/batches/{{xx}}-ids.txt --out {{S}}/bill-questions-{{xx}}.md
 ```
 
-`check` must end at 0 problems; watch it catch a planted fault once. Settle each flag from the rulings already in
+`check` must end at 0 problems; watch it catch a planted fault once. `questions` also lists bills older than the
+data on disk: do its check. Settle each flag from the rulings already in
 `{{S}}/coder-rulings.md` where you can. Write the rest as grouped questions, each with the people it affects, in
 `{{S}}/{{xx}}/STOP1-QUESTIONS.md`. Detail: STAGE5 §3b.
 
@@ -153,8 +155,8 @@ python3 -I scripts/stage5/bill_table.py settle {{S}}/bill-table-{{xx}}.json <bil
 
 **A6. Hand-over, then stop 1.** Write `{{S}}/{{xx}}/HANDOVER-A.md` (ten parts, below). 🛑 **Stop 1:** show the
 questions and the stub list. On the answers: write each one word for word under `## {{STATE}} notes {state:{{xx}}}`
-in `{{S}}/coder-rulings.md`, naming every person a ruling is about; add a `per_vote` entry to a bill-table row when
-a ruling reads one vote differently from the row; run `check` again; add the answers to the hand-over. Then write down what this session learned about the legislature, for
+in `{{S}}/coder-rulings.md`, naming every person a ruling is about; add a `per_vote` entry with `votes` (date, chamber, rung of each) to a bill-table
+row when a ruling reads a vote differently; run `check` again; add the answers to the hand-over. Then write down what this session learned about the legislature, for
 every later topic: edit `{{LEG_PATH}}` (or start it with `python3 -I scripts/stage5/legislature.py new {{xx}} --name "{{STATE}}"`),
 set `verified` to today, and run `python3 -I scripts/stage5/legislature.py check {{xx}}`. Facts about the legislature
 only: no topic, no rung, no person. Commit it with the store files, by pathspec. Then close out:

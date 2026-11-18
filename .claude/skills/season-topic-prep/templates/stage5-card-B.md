@@ -184,5 +184,5 @@ python3 -I scripts/stage5/close_state.py --profile {{PROFILE}} --state {{xx}} \
 ```
 
 It writes the usage file, the search effect, `{{S}}/{{xx}}/MEASURES.md` and a hand-over skeleton. Fill the rows it
-marks `__` (gate runs, runner stops and their causes), commit the findings by pathspec, and end the session. Open
+marks `__` (gate runs, runner stops and their causes), commit the findings by pathspec, and end the session. List the paths in a file, one per line (in zsh a variable that holds several paths is ONE word, and the commit fails): `git add --pathspec-from-file=<list> && git commit -F <message file> --pathspec-from-file=<list>`. Then read `git log -1 --stat`: the commit is made only when it shows your files (Maryland, 2026-11-18: a failed commit was logged as done). Open
 the PR from a fresh, small session.
