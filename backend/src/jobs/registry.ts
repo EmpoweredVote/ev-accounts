@@ -28,6 +28,7 @@ import { runCalibrationLapseJob } from '../lib/cronService.js';
 import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 import { runFecAutoMatchJob } from '../lib/fecResearch.js';
 import { runFecFinanceSummaryJob } from '../lib/fecFinanceSummary.js';
+import { runPacCareerNightly, runPacCareerWeekly } from '../lib/pacCareerJob.js';
 import { refreshContributionTotals } from '../lib/contributionTotals.js';
 import { runNetfileIngestWithSummaries, runLocalFinanceSummaries } from '../lib/localFinanceSummary.js';
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
@@ -70,6 +71,13 @@ export const JOBS: Record<string, JobFn> = {
   // per run, ~30 min. Meant as the SECOND step of ev-jobs-fec-burst: after fec-auto-match, so a link
   // confirmed that morning is summarised the same day.
   'fec-finance-summary': () => runFecFinanceSummaryJob(),
+  // PAC money over a whole career (CA_0390–CA_0394). Nightly, as the LAST step of ev-jobs-fec-burst: reads FEC's
+  // daily e-filing zips (no API key, no rate limit) for our campaigns' reports, keeps their PAC gifts (11C) and
+  // refunds (20C) per giver, and rebuilds fec_pac_career when anything changed. Reads no big table.
+  'pac-career-nightly': () => runPacCareerNightly(),
+  // Weekly: FEC per-cycle candidate totals for every id in fec_candidate_ids, stalest first (~1,900 API calls),
+  // then the verdicts. Also keeps fec_candidate_totals current, which nothing refreshed before.
+  'pac-career-weekly': () => runPacCareerWeekly(),
   // The ingest, then the local finance_summary writers (city first). Since 2026-09-24; a summary failure is
   // logged and does not fail the ingest. See src/lib/localFinanceSummary.ts.
   'la-county-netfile': () => runNetfileIngestWithSummaries(),

@@ -53,6 +53,17 @@ const RENDER_PROOFS: Array<{ job: string; maxAgeMinutes: number; sql: string }> 
             AND started_at > now() - interval '60 days'`,
   },
   {
+    // Written for every daily zip read, even one with nothing kept (CA_0392). FEC posts a zip every day.
+    job: 'ev-jobs-fec-burst (pac-career-nightly)',
+    maxAgeMinutes: 48 * HOURS,
+    sql: `SELECT max(loaded_at) AS newest FROM transparent_motivations.fec_pac_efiling_days`,
+  },
+  {
+    job: 'ev-jobs-pac-career-weekly',
+    maxAgeMinutes: 9 * DAYS,
+    sql: `SELECT max(totals_fetched_at) AS newest FROM transparent_motivations.fec_candidate_ids`,
+  },
+  {
     job: 'ev-jobs-trivia-pipeline',
     maxAgeMinutes: 48 * HOURS,
     sql: `SELECT max(created_at) AS newest FROM trivia.generation_jobs`,
