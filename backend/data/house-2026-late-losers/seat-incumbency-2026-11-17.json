@@ -1,0 +1,166 @@
+{
+  "generated_from": "ap-ballots-2026-11-17.json",
+  "rule": "AP's `incumbent` describes the SEAT, not a ballot line. The winner defeated the incumbent only where the incumbent's AP candidate id sits on a LOSING line. Absent from every line, the incumbent was NOT ON THE BALLOT — which is not yet 'open seat', because a primary defeat looks identical here and somebody did beat them.",
+  "races_examined": 5,
+  "counts": {
+    "incumbent_defeated": 2,
+    "incumbent_re_elected": 2,
+    "incumbent_not_on_ballot": 1
+  },
+  "cross_check_against_our_is_incumbent": {
+    "checked": 5,
+    "disagreements": 0,
+    "rows": [
+      {
+        "seat": "CA-04",
+        "ap_says": "incumbent_defeated",
+        "we_flag": [
+          "Mike Thompson"
+        ],
+        "disagreement": null
+      },
+      {
+        "seat": "CA-23",
+        "ap_says": "incumbent_re_elected",
+        "we_flag": [
+          "Jay Obernolte"
+        ],
+        "disagreement": null
+      },
+      {
+        "seat": "CO-04",
+        "ap_says": "incumbent_defeated",
+        "we_flag": [
+          "Lauren Boebert"
+        ],
+        "disagreement": null
+      },
+      {
+        "seat": "ME-02",
+        "ap_says": "incumbent_not_on_ballot",
+        "we_flag": [],
+        "disagreement": null
+      },
+      {
+        "seat": "NC-07",
+        "ap_says": "incumbent_re_elected",
+        "we_flag": [
+          "David Rouzer"
+        ],
+        "disagreement": null
+      }
+    ]
+  },
+  "seats": [
+    {
+      "seat": "CA-04",
+      "ap_race_id": "20261103CA5694",
+      "our_race_id": "eabbb909-51bc-4498-ab4f-10b0f1d83ad3",
+      "ap_incumbents": [
+        "Mike Thompson (id 1115)"
+      ],
+      "winner": "Eric Jones",
+      "winner_candidate_id": "172501",
+      "incumbents": [
+        {
+          "candidate_id": "1115",
+          "name": "Mike Thompson",
+          "on_ballot": true,
+          "outcome": "defeated",
+          "votes": 120361,
+          "pct": 47.47
+        }
+      ],
+      "seat_status": "incumbent_defeated",
+      "sanctioned_claim": "Eric Jones defeated incumbent Mike Thompson."
+    },
+    {
+      "seat": "CA-23",
+      "ap_race_id": "20261103CA5713",
+      "our_race_id": "7740b4c3-587b-4823-a530-8c229e20debd",
+      "ap_incumbents": [
+        "Jay Obernolte (id 67998)"
+      ],
+      "winner": "Jay Obernolte",
+      "winner_candidate_id": "67998",
+      "incumbents": [
+        {
+          "candidate_id": "67998",
+          "name": "Jay Obernolte",
+          "on_ballot": true,
+          "outcome": "re_elected",
+          "votes": 109335,
+          "pct": 50.83
+        }
+      ],
+      "seat_status": "incumbent_re_elected",
+      "sanctioned_claim": "Incumbent Jay Obernolte re-elected."
+    },
+    {
+      "seat": "CO-04",
+      "ap_race_id": "20261103CO6616",
+      "our_race_id": "f2a99107-c9b6-4201-8b2c-6548d5969fe1",
+      "ap_incumbents": [
+        "Lauren Boebert (id 68897)"
+      ],
+      "winner": "Eileen Laubacher",
+      "winner_candidate_id": "174618",
+      "incumbents": [
+        {
+          "candidate_id": "68897",
+          "name": "Lauren Boebert",
+          "on_ballot": true,
+          "outcome": "defeated",
+          "votes": 184220,
+          "pct": 47.89
+        }
+      ],
+      "seat_status": "incumbent_defeated",
+      "sanctioned_claim": "Eileen Laubacher defeated incumbent Lauren Boebert."
+    },
+    {
+      "seat": "ME-02",
+      "ap_race_id": "20261103ME20645",
+      "our_race_id": "aa63d55d-80b8-42b9-9aa5-0713387f65fb",
+      "ap_incumbents": [
+        "Jared Golden (id 66383)"
+      ],
+      "winner": "Paul LePage",
+      "winner_candidate_id": "60414",
+      "incumbents": [
+        {
+          "candidate_id": "66383",
+          "name": "Jared Golden",
+          "on_ballot": false,
+          "outcome": "not_on_ballot",
+          "name_also_on": []
+        }
+      ],
+      "seat_status": "incumbent_not_on_ballot",
+      "sanctioned_claim": "Paul LePage defeated no incumbent in this election: ME-02's incumbent, Jared Golden, was not on the ballot.",
+      "claim_still_needs": "WHY the incumbent was off the ballot — retired, ran for another office, died, or lost a primary. AP does not publish it, these are four different facts about the same absence, and an incumbent beaten in a PRIMARY was still beaten by somebody. Source the reason before any citation states one, and never write \"open seat\" until you know which of the four it was."
+    },
+    {
+      "seat": "NC-07",
+      "ap_race_id": "20261103NC34973",
+      "our_race_id": "5be80001-9052-47dd-913d-704685975bb9",
+      "ap_incumbents": [
+        "David Rouzer (id 35605)"
+      ],
+      "winner": "David Rouzer",
+      "winner_candidate_id": "35605",
+      "incumbents": [
+        {
+          "candidate_id": "35605",
+          "name": "David Rouzer",
+          "on_ballot": true,
+          "outcome": "re_elected",
+          "votes": 160702,
+          "pct": 49.87
+        }
+      ],
+      "seat_status": "incumbent_re_elected",
+      "sanctioned_claim": "Incumbent David Rouzer re-elected."
+    }
+  ]
+}
