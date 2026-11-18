@@ -70,9 +70,13 @@ export const SCREEN_CORPORATE_FLOOR = 50_000;
 const RECONCILE_ABS = 1;
 const RECONCILE_REL = 0.005;
 
-export type Bucket = 'corporate' | 'other_pac' | 'candidate' | 'party' | 'unknown';
-export const BUCKETS: Bucket[] = ['corporate', 'other_pac', 'candidate', 'party', 'unknown'];
-const CORPORATE_ORG = new Set(['C', 'W', 'T', 'V']);
+// corporate = PACs of companies (FEC org C, and W: a corporation without capital stock, e.g. State Farm
+// Mutual). Trade groups (T) and co-ops (V) are their own buckets: candidates who say they take "no
+// corporate PAC money" mean companies, and a verdict that counted a dairy co-op would be disputable.
+export type Bucket = 'corporate' | 'trade' | 'coop' | 'other_pac' | 'candidate' | 'party' | 'unknown';
+export const BUCKETS: Bucket[] = ['corporate', 'trade', 'coop', 'other_pac', 'candidate', 'party', 'unknown'];
+const zeroBuckets = (): Record<Bucket, number> => Object.fromEntries(BUCKETS.map((b) => [b, 0])) as Record<Bucket, number>;
+const ORG_BUCKET: Record<string, Bucket> = { C: 'corporate', W: 'corporate', T: 'trade', V: 'coop' };
 
 /** Classify a giving committee from its FEC committee type, designation and organization type. */
 export function classify(c: { tp?: string | null; dsgn?: string | null; org?: string | null } | undefined): Bucket {
@@ -83,7 +87,7 @@ export function classify(c: { tp?: string | null; dsgn?: string | null; org?: st
   if (!tp && !dsgn && !org) return 'unknown';
   if (tp === 'X' || tp === 'Y') return 'party';
   if (tp === 'H' || tp === 'S' || tp === 'P' || dsgn === 'P' || dsgn === 'A') return 'candidate';
-  if (CORPORATE_ORG.has(org)) return 'corporate';
+  if (ORG_BUCKET[org]) return ORG_BUCKET[org]!;
   return 'other_pac';
 }
 
@@ -192,7 +196,7 @@ const slashDate = (s: string) => {
 
 async function bulkCycle(cycle: number): Promise<void> {
   const out = join(BULK, `cycle-${cycle}.json`);
-  if (existsSync(out) && cycle < 2026) { console.log(`[bulk] ${cycle} cached`); return; }
+  if (existsSync(out) && cycle < 2026 && !args.includes('--force')) { console.log(`[bulk] ${cycle} cached`); return; }
   const base = `https://www.fec.gov/files/bulk-downloads/${cycle}`;
   const files: CycleSummary['files'] = {};
   const get = async (stem: string) => {
@@ -310,7 +314,7 @@ function screen(): void {
       }
     }
     const ids = [...linked, ...inferred.keys()];
-    const giver: Record<Bucket, number> = { corporate: 0, other_pac: 0, candidate: 0, party: 0, unknown: 0 };
+    const giver = zeroBuckets();
     let lastCorp: number | null = null;
     const wb = { receipts: 0, pac: 0, cycles: [] as number[], through: '' };
     for (const c of cycles) {
@@ -527,7 +531,7 @@ const close = (a: number, b: number) => Math.abs(a - b) <= Math.max(RECONCILE_AB
 
 async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, CmRow>>, cmByName: Map<string, Bucket>): Promise<PersonVerify> {
   const ids = [...p.linked_ids, ...p.inferred_ids.map((x) => x.id)];
-  const zero = (): Record<Bucket, number> => ({ corporate: 0, other_pac: 0, candidate: 0, party: 0, unknown: 0 });
+  const zero = zeroBuckets;
   const v: PersonVerify = {
     pid: p.pid, checked_at: new Date().toISOString(), ids,
     career: { receipts: 0, first_cycle: null, last_cycle: null, through: '' },
@@ -669,9 +673,11 @@ async function verify(): Promise<void> {
     if (sampled.size >= sample) break;
     sampled.add(p.pid);
   }
-  const queue = people.filter((p) => (only ? p.pid === only : p.route === 'verify' || sampled.has(p.pid)));
   const outPath = join(WORK, 'verify.json');
   const done: Record<string, PersonVerify> = existsSync(outPath) ? readJson(outPath) : {};
+  // --redo-all also rebuilds people checked earlier with --only, so no record is left on old rules.
+  const queue = people.filter((p) => (only ? p.pid === only : p.route === 'verify' || sampled.has(p.pid) ||
+    (args.includes('--redo-all') && p.pid in done)));
 
   const cmByCycle = new Map<number, Map<string, CmRow>>();
   // committee master per cycle, for gifts whose API row carries no committee details
@@ -716,7 +722,7 @@ export function verdictOf(v: Pick<PersonVerify, 'kept' | 'unreconciled' | 'caree
   // A gift we could not classify, or a cycle whose itemized rows do not add up to FEC's total,
   // could hide corporate money: never claim "none" over it.
   if (v.unreconciled.length > 0 || v.kept.unknown > 0) return 'UNVERIFIED';
-  return v.kept.other_pac > 0 ? 'NO_CORPORATE_PAC_MONEY' : 'NO_PAC_MONEY';
+  return v.kept.other_pac > 0 || (v.kept.trade ?? 0) > 0 || (v.kept.coop ?? 0) > 0 ? 'NO_CORPORATE_PAC_MONEY' : 'NO_PAC_MONEY';
 }
 
 function report(): void {
@@ -726,7 +732,7 @@ function report(): void {
   mkdirSync(outDir, { recursive: true });
   const csvCell = (x: unknown) => { const s = String(x ?? ''); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
   const header = ['politician_id', 'name', 'verdict', 'source', 'fec_ids', 'inferred_fec_ids', 'first_cycle', 'last_cycle', 'data_through',
-    'career_receipts', 'corporate_pac_kept', 'other_pac_kept', 'candidate_committees_kept', 'unknown_kept',
+    'career_receipts', 'corporate_pac_kept', 'trade_group_pac_kept', 'coop_pac_kept', 'other_pac_kept', 'candidate_committees_kept', 'unknown_kept',
     'corporate_pac_received', 'corporate_pac_refunded', 'last_corporate_cycle', 'unreconciled_cycles'];
   const lines = [header.join(',')];
   const neverRaised = [header.join(',')]; // NO_RECEIPTS: filed as a candidate, never raised money
@@ -739,7 +745,7 @@ function report(): void {
     if (p.route === 'ruled_out_corporate' && !v) {
       row = [p.pid, p.name, 'TOOK_CORPORATE_PAC_MONEY', 'giver-side (PAC reports)', p.linked_ids.join(' '), p.inferred_ids.map((x) => x.id).join(' '),
         p.weball_career.cycles[0] ?? '', p.weball_career.cycles.at(-1) ?? '', p.weball_career.through, Math.round(p.weball_career.receipts),
-        Math.round(p.giver_side.corporate), Math.round(p.giver_side.other_pac), Math.round(p.giver_side.candidate), Math.round(p.giver_side.unknown),
+        Math.round(p.giver_side.corporate), Math.round(p.giver_side.trade ?? 0), Math.round(p.giver_side.coop ?? 0), Math.round(p.giver_side.other_pac), Math.round(p.giver_side.candidate), Math.round(p.giver_side.unknown),
         '', '', p.giver_last_corporate_cycle ?? '', ''];
       tally.set('TOOK_CORPORATE_PAC_MONEY', (tally.get('TOOK_CORPORATE_PAC_MONEY') ?? 0) + 1);
     } else if (!v) {
@@ -749,7 +755,7 @@ function report(): void {
       const verdict = verdictOf(v);
       row = [p.pid, p.name, verdict, v.error ? `error: ${v.error}` : (v.cycles ?? []).some((c) => c.source === 'filings') ? 'campaign filings (FEC API + filed reports)' : 'campaign filings (FEC API)', p.linked_ids.join(' '), p.inferred_ids.map((x) => x.id).join(' '),
         v.career?.first_cycle ?? '', v.career?.last_cycle ?? '', v.career?.through ?? '', Math.round(v.career?.receipts ?? 0),
-        Math.round(v.kept?.corporate ?? 0), Math.round(v.kept?.other_pac ?? 0), Math.round(v.kept?.candidate ?? 0), Math.round(v.kept?.unknown ?? 0),
+        Math.round(v.kept?.corporate ?? 0), Math.round(v.kept?.trade ?? 0), Math.round(v.kept?.coop ?? 0), Math.round(v.kept?.other_pac ?? 0), Math.round(v.kept?.candidate ?? 0), Math.round(v.kept?.unknown ?? 0),
         Math.round(v.received?.corporate ?? 0), Math.round(v.refunded?.corporate ?? 0), v.last_corporate_cycle ?? '', (v.unreconciled ?? []).join(' ')];
       tally.set(verdict, (tally.get(verdict) ?? 0) + 1);
       if (p.route === 'ruled_out_corporate') {

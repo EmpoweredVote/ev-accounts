@@ -4,8 +4,9 @@ import { classify, nameKey, verdictOf, parseFiling, namesToBuckets, normName, co
 describe('classify', () => {
   it('reads FEC committee codes into the ruled buckets', () => {
     expect(classify({ tp: 'Q', dsgn: 'B', org: 'C' })).toBe('corporate'); // Cummins Inc. PAC
-    expect(classify({ tp: 'Q', dsgn: 'B', org: 'T' })).toBe('corporate'); // trade association
-    expect(classify({ tp: 'Q', dsgn: 'B', org: 'W' })).toBe('corporate');
+    expect(classify({ tp: 'Q', dsgn: 'B', org: 'T' })).toBe('trade'); // trade association
+    expect(classify({ tp: 'Q', dsgn: 'B', org: 'V' })).toBe('coop'); // Dairy Farmers of America
+    expect(classify({ tp: 'Q', dsgn: 'B', org: 'W' })).toBe('corporate'); // State Farm Mutual
     expect(classify({ tp: 'Q', dsgn: 'B', org: 'L' })).toBe('other_pac'); // labor
     expect(classify({ tp: 'Q', dsgn: 'B', org: 'M' })).toBe('other_pac'); // membership
     expect(classify({ tp: 'Q', dsgn: 'D', org: '' })).toBe('other_pac'); // leadership PAC
@@ -30,10 +31,12 @@ describe('nameKey', () => {
 
 describe('verdictOf', () => {
   const base = { career: { receipts: 100, first_cycle: 2020, last_cycle: 2024, through: '2024-12-31' }, unreconciled: [] as number[] };
-  const kept = (k: Partial<Record<'corporate' | 'other_pac' | 'candidate' | 'party' | 'unknown', number>>) =>
-    ({ corporate: 0, other_pac: 0, candidate: 0, party: 0, unknown: 0, ...k });
+  const kept = (k: Partial<Record<'corporate' | 'trade' | 'coop' | 'other_pac' | 'candidate' | 'party' | 'unknown', number>>) =>
+    ({ corporate: 0, trade: 0, coop: 0, other_pac: 0, candidate: 0, party: 0, unknown: 0, ...k });
   it('a refunded corporate gift nets to none', () => {
     expect(verdictOf({ ...base, kept: kept({ corporate: 0, other_pac: 5000 }) })).toBe('NO_CORPORATE_PAC_MONEY');
+    // trade-group and co-op money is shown, but is not company PAC money
+    expect(verdictOf({ ...base, kept: kept({ trade: 24090, coop: 3250 }) })).toBe('NO_CORPORATE_PAC_MONEY');
   });
   it('money from other candidates alone is not PAC money', () => {
     expect(verdictOf({ ...base, kept: kept({ candidate: 2000 }) })).toBe('NO_PAC_MONEY');
