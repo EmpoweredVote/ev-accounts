@@ -974,7 +974,100 @@
           "sha256": "7f6026e0dd9b3cfbf881c2063ec4061166772d96159b836f1166b021a77892e2"
         }
       }
+    },
+    {
+      "id": "148b49cd175da2ba64468b15cd21d243a4eab487e884db7e921f76200d2c69f1",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2025/jud/1zkEUW9YLdVZQQ9GtkImMvs2NlWrBEa0Q.pdf",
+      "date": "2025-02-17",
+      "date_precision": "day",
+      "passage": "HB0713 is a common-sense, non-restrictive approach to firearm safety that prioritizes education over regulation. By equipping gun owners with crucial information on safe handling and secure storage, we can help reduce accidental shootings, unauthorized access to firearms, and firearm-related suicides.",
+      "note": "Written testimony signed by Delegate Gary Simmons to the House Judiciary Committee, supporting HB 713 (2025), which has the state health department make firearm safety, storage and suicide-prevention materials and have them given out by businesses that sell guns or ammunition. Read from the scanned letter.",
+      "subjects": [
+        "firearm safety information for gun buyers",
+        "responsible storage and suicide prevention",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:07.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1389e1868c76f7f679774c4a6fc7bbc903d8209bb3d87e4ec70ce98b1a9ba6e",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2025/jud/1zkEUW9YLdVZQQ9GtkImMvs2NlWrBEa0Q.pdf",
+      "date": "2025-02-17",
+      "date_precision": "day",
+      "passage": "I am submitting this testimony in strong support of HB0713, legislation that promotes responsible firearm ownership by ensuring that safety and mental health resources are readily available to those purchasing firearms and ammunition.",
+      "note": "Opening of the same written testimony; he states his support for HB 713 and describes its aim.",
+      "subjects": [
+        "firearm safety information for gun buyers",
+        "responsible firearm ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:07.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6f56588f3337c79823fbd13d58ca261fffe43ec8d82d1bcdd6401a17a033ace",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/WitnessSignup/HB0713?ys=2025RS",
+      "date": "2025-02-18",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-713-2025",
+      "act": "other",
+      "motion": "Testimony in support (favorable) before the House Judiciary Committee",
+      "note": "The witness sheet lists him as a favorable witness on HB 713 (2025), safety literature for buyers of firearms and ammunition, with a written testimony file attached. Hearing date taken from the testimony file name.",
+      "subjects": [
+        "firearm safety information for gun buyers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:07.616Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm safety information for gun buyers",
+        "responsible storage and suicide prevention",
+        "retired officer handgun permits",
+        "machine gun convertible pistols",
+        "gun theft",
+        "minor's access to firearms",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "status: in scope; the state elections board lists him as the 2026 primary winner for District 12B and the member page names him as a sitting delegate on the Judiciary Committee",
+        "On the Record (0 appearances, 0 name matches)",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/simmons01?ys=2026RS (member page read; lists gun bills, no statements)",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/WitnessSignup/HB0713?ys=2025RS (witness sheet read; his written testimony saved)",
+        "blocked: https://ballotpedia.org/Gary_Simmons (empty page)",
+        "campaign site: https://www.garysimmonsmd.com did not load (no connection)",
+        "two news searches on his name plus gun words: nothing in his own words on the subject; results were about unrelated matters or a different person with the same surname",
+        "not reviewed: HB 875 (2026) testimony page; the sign-up entry was ambiguous and the testimony file was not opened",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-18T16:47:07.616Z",
+      "by": "source-collector"
+    }
+  ]
 }

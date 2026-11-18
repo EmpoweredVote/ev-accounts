@@ -1436,7 +1436,81 @@
           "sha256": "2f6e5199609237db405a4cfa8a29497677f9dbe807f8c73c04515b135046fae2"
         }
       }
+    },
+    {
+      "id": "e01d7d8373151a641a6c0dcb226a0599b2a75b8020a5859f380507af58653400",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/governor-wes-moore-comptroller-brooke-lierman-maryland-state-lawmakers-more-than-400-maryland-moms-demand-action-and-students-demand-action-volunteers-rally-in-annapolis-for-gun-safety-and-celebra/",
+      "date": "2023-01-31",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Attended gun-safety advocacy day rally in Annapolis and hosted a breakfast for the Everytown Survivor network",
+      "note": "An advocacy group's press release lists the comptroller among the officials who called for action on gun safety at the Annapolis advocacy day, and says she hosted a breakfast for gun-violence survivors. The release quotes others, not her. The rally's stated aims were stronger concealed-carry permitting, holding the gun industry accountable, and repealing qualified immunity.",
+      "subjects": [
+        "gun safety advocacy",
+        "carry permits",
+        "gun industry accountability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:13.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b51f6965cfe8cc784cec88f7a2a90696109ce74ca7efd6004b776b614f0b2b4",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/joined-by-governor-wes-moore-lieutenant-governor-aruna-miller-and-gun-sense-lawmakers-maryland-moms-demand-action-and-students-demand-action-volunteers-advocate-for-another-legislative-session-of-gu/",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Listed among officials at 2024 gun-safety advocacy day in Annapolis",
+      "note": "An advocacy group's press release names the comptroller among the officials at the 2024 Annapolis advocacy day, focused on gun industry accountability and creating a Center for Firearm Violence Prevention and Intervention. The release quotes the governor, not her.",
+      "subjects": [
+        "gun safety advocacy",
+        "firearm violence prevention",
+        "gun industry accountability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:13.123Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety advocacy",
+        "firearm violence prevention",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ghost guns",
+        "carry permits",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "status: in scope; sitting state comptroller, unopposed in the 2026 primary and on the 2026 general-election ballot per search results (the state election listing and news results); not separately fetched",
+        "On the Record (0 appearances, script run)",
+        "the comptroller's official site: fetched one 2025 statement PDF (a statement on the shootings of Minnesota lawmakers, nothing on gun policy); site search page returned no gun or firearm results",
+        "campaign site: blocked: https://www.brookeforcomptroller.com (address did not resolve); no other campaign page found",
+        "Ballotpedia: blocked: https://ballotpedia.org/Brooke_Lierman (fetch returned an empty page)",
+        "news search on name plus gun words: only advocacy-group press releases found, no own-words gun quotes by her",
+        "https://www.everytown.org advocacy-day press releases (2023 and 2024): attendance only, no quote from her",
+        "legislature's bill pages and vote files: sponsor list: covered by bulk bill data; not reviewed",
+        "floor-debate remarks: nothing found; no transcripts or video located; not reviewed: legislature's floor audio archive"
+      ],
+      "found": 2,
+      "at": "2026-11-18T16:46:13.123Z",
+      "by": "source-collector"
+    }
+  ]
 }

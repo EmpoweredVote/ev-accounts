@@ -2947,7 +2947,55 @@
           "sha256": "75a159438f142de0bd0e31ab2c011cdcd67cba95897847ef29058797ea64eca6"
         }
       }
+    },
+    {
+      "id": "d4bb2b57db8545aaf8545c3b497f9780a6949b7f2ca107a84039ad1b98feb103",
+      "kind": "own-words",
+      "url": "https://foxbaltimore.com/news/local/gov-moore-says-he-will-sign-sb-1-some-call-plan-limiting-legal-gun-owners-backwards",
+      "date": "2023-04-11",
+      "date_precision": "day",
+      "passage": "“They are not being voted on out here. People should be very upset because it’s not going on,” Salling said.",
+      "note": "Quoted by a Baltimore TV station story on the end of the 2023 session. The story says he accused the other side of the aisle of playing politics with plans that could have saved lives, after a repeat-firearms-offender bill and a bill making gun theft a felony did not advance.",
+      "subjects": [
+        "make gun theft a felony",
+        "crack down on repeat firearms offenders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:49:19.126Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun theft made a felony",
+        "repeat violent firearms offenders",
+        "right to purchase, own, possess and carry firearms",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "status: in scope; the legislature's member page names Senator Johnny Ray Salling (District 6, Baltimore County), and the state's June 2026 primary results page lists him with the higher vote total in his Senate District 6 primary against one challenger",
+        "On the Record (0 meetings, 0 name matches)",
+        "the legislature's member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/salling01 (read; no statements on the subject)",
+        "official site and campaign site: none found; the state elections listing shows no campaign website, only a social media page (not reviewed)",
+        "blocked: https://ballotpedia.org/Johnny_Ray_Salling (bot-check response, empty page)",
+        "sponsorships and floor votes: covered by bulk bill data",
+        "news search on name plus gun words: two Baltimore TV station stories read; one has a direct quote (saved)",
+        "https://foxbaltimore.com/newsletter-daily/maryland-gun-theft-felony-bill-stalls-legal-gun-owners (read; story does not quote him)",
+        "https://www.republicanwomenbc.com/post/billions-burdens-and-band-aids-senator-johnny-ray-salling-breaks-down-the-2026-session (read; page text is mostly site code, nothing on the subject found)",
+        "https://marylandmatters.org/voter-guides/contests/6th-district-maryland-state-senate/ (read; nothing on the subject)",
+        "not reviewed: ontheissues.org, vote411, and other URL-pattern pages beyond those listed"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:49:19.126Z",
+      "by": "source-collector"
+    }
+  ]
 }

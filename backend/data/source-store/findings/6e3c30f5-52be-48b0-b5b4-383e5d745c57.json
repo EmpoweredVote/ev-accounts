@@ -1197,7 +1197,77 @@
           "sha256": "79f7a39674900432cb1cfe3ad3715ccc16e9da32e7d29c54c43521c9b1020bae"
         }
       }
+    },
+    {
+      "id": "33f33919e4cb62a9882875d9971102b52ea58c558c30cdab7e853ec4671cfb2d",
+      "kind": "own-words",
+      "url": "https://www.mdsenate.com/news/2022/07/05/statement-of-senate-president-ferguson-on-governors-decision-to-suspend-the-good-and-substantial-clause-in-maryland-gun-law",
+      "date": "2022-07-05",
+      "date_precision": "day",
+      "passage": "As we all witnessed yesterday in Highland Park, more guns are not the answer to community safety.",
+      "note": "Statement issued in his name as Senate President after the Governor suspended the 'good and substantial reason' requirement for carry permits.",
+      "subjects": [
+        "carrying guns in public",
+        "carry permit rules",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:10.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5826be57fed45070be0efc73abbd47ba1b7214c256288f4a9261028810c33dcd",
+      "kind": "own-words",
+      "url": "https://wypr.org/wypr-news/2023-02-13/maryland-senate-president-tougher-penalties-cant-be-all-thats-done-to-stop-gun-violence",
+      "date": "2023-02-10",
+      "date_precision": "day",
+      "passage": "If we’re only solving this problem with penalties, I think we will have failed. Because it means somebody will have been hurt. It means there are more illegal guns in the commerce stream, and it means there are more arrests for illegal guns in the community.",
+      "note": "Quoted by WYPR (story dated 2023-02-13, remarks made the Friday before) saying tougher penalties alone are not enough to address gun violence.",
+      "subjects": [
+        "illegal guns",
+        "penalties for gun crimes",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:10.893Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence and penalties",
+        "illegal guns",
+        "carry of guns in public (Maryland 'good and substantial' rule)",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "the Senate caucus news page, one statement read (2022-07-05, on the carry-permit rule)",
+        "the Senate caucus news page, one statement read (2021-11-23, on crime; nothing on guns)",
+        "campaign site newsletter list https://www.billformd.com/?p=2190 (list read; no gun items by title; individual newsletters not opened)",
+        "blocked: https://ballotpedia.org/Bill_Ferguson",
+        "not reviewed: official senator page (the address tried returned 404)",
+        "sponsor list: covered by bulk bill data",
+        "two web searches (news, statements); one news story read in full (WYPR 2023-02-13)",
+        "not reviewed: ontheissues, vote411, Maryland Matters 2026 stories",
+        "2026 ballot status not confirmed by a page; identity confirmed by pages naming him as Senate President"
+      ],
+      "found": 2,
+      "at": "2026-11-18T16:48:10.893Z",
+      "by": "source-collector"
+    }
+  ]
 }

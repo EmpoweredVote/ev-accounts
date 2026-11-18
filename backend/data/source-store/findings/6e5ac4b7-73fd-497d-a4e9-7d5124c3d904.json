@@ -930,7 +930,55 @@
           "sha256": "3ef59b7530062525a9b3133d6e7751bb65fdd65cd56761d5158665bf1e181e21"
         }
       }
+    },
+    {
+      "id": "3de9d3d5d4e4cb41905077cb3aae9cb118c92ffd8d813bdd93512070ef651076",
+      "kind": "own-words",
+      "url": "https://tomlinsonfordelegate.com/why-i-am-running",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "For the last four years, I’ve been on the front line fighting for our conservative principles and if re-elected, I will continue to: Oppose all tax & fee increases Defend our 2nd Amendment Rights Always be 100% Pro-Life",
+      "note": "Campaign site 'Why I am Running' page; one item in his list of commitments is to defend 2nd Amendment rights. Page is undated; it refers to the end of his first term, so it is from the 2026 re-election run.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:46.098Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/tomlinson01 (member page read: confirms Delegate Chris Tomlinson; nothing on the subject)",
+        "campaign site https://tomlinsonfordelegate.com (home, why-i-am-running, about, news/media pages read; one issue-list line on the subject; about page says District 5, 2022 winner, 4-year term from 2023; news/media page links 2026 primary candidate profiles, outcome of the primary not confirmed by me)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Chris_Tomlinson_(Maryland) (403)",
+        "blocked: https://www.wboc.com/news/maryland-lawmaker-proposes-new-gun-tax-to-fund-violence-prevention-trauma-care/video_1862628a-fd36-5da9-980a-803b44a399f7.html (429; not clearly about this person)",
+        "web news searches (2): no own-words statements on guns found beyond the campaign site",
+        "not reviewed: candidate profile pages linked from the campaign news/media page (Baltimore Sun, Frederick News-Post, WMAR-2, Capital News Service, Community Media Center video)",
+        "not reviewed: Facebook page https://www.facebook.com/ChrisTomlinsonForDelegate"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:48:46.098Z",
+      "by": "source-collector"
+    }
+  ]
 }

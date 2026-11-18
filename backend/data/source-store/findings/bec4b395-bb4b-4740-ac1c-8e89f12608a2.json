@@ -844,7 +844,52 @@
           "sha256": "d185d90de0a42af4c3ff8c668ddf003cdc494320695417615dc66dd9464612df"
         }
       }
+    },
+    {
+      "id": "ee04661b70e60ae821ad1ae3e061766b03fa8084f6b8c7b6c1b4c17375a271ab",
+      "kind": "own-words",
+      "url": "https://www.electedelson.com/old-home",
+      "date": "2026-11-18",
+      "date_precision": "year",
+      "passage": "Guns must not end up in the hands of criminals or inside our schools. Maryland must confront the gun violence epidemic forcefully.",
+      "note": "Gun Safety item on the campaign site's priorities list; page is undated, so date is the fetch year only.",
+      "subjects": [
+        "gun safety",
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:08.159Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.electedelson.com/ (priorities page read; gun safety item found on the old-home version at https://www.electedelson.com/old-home)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Mark_Edelson",
+        "Maryland General Assembly member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/edelson01 (loads; bill data covered by bulk data)",
+        "one web search on name plus gun words (only roll-call PDFs and a campaign page; no direct statement found)",
+        "not reviewed: news and interview sources beyond the one search; scope status (2026 ballot) not confirmed by a page"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:47:08.159Z",
+      "by": "source-collector"
+    }
+  ]
 }

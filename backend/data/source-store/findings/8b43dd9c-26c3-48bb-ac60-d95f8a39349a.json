@@ -2338,5 +2338,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "carry a gun with or without a permit",
+        "limits on who may have a gun",
+        "gun rights and Second Amendment statements"
+      ],
+      "places": [
+        "status: sitting member of the House of Delegates, District 36, term ends January 2027 (confirmed on https://mgaleg.maryland.gov/mgawebsite/Members/Details/jacobs%20j and https://en.wikipedia.org/wiki/Jay_Jacobs_(politician))",
+        "On the Record (0 appearances, 0 candidate sources)",
+        "legislature member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/jacobs%20j: read; profile and committee list only, nothing on the subject",
+        "campaign site: none found; https://www.jayjacobs.org is a parked domain, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jay_Jacobs_(Maryland_politician)",
+        "blocked: https://ballotpedia.org/Jay_A._Jacobs",
+        "https://en.wikipedia.org/wiki/Jay_Jacobs_(politician): read; a gun-policy section summarises a 2012 reaction to a court ruling and a 2013 vote, citing a Chestertown Spy story and a Washington Post vote list; secondary only, not saved",
+        "not found: https://www.chestertownspy.org/2012/07/25/smigiel-applauds-court-ruling-striking-down-md-handgun-law/ (404, original of the 2012 item could not be read)",
+        "three web searches on his name plus gun, firearm, Second Amendment and assault weapon terms: no statement in his own words found; a possible 2022 HB 546 sponsorship and 2020/2025 gun theft bill co-sponsorships turned up on tracker sites, left to the bulk bill data",
+        "not reviewed: House floor debate audio/video for 2013 to 2026 gun bills"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:48:57.173Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1757,5 +1757,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "assault-style weapons and magazines",
+        "background checks and permits",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "confirmed in office: https://mgaleg.maryland.gov/mgawebsite/Members/Details/wilson?ys=2025RS names Delegate C. T. Wilson, Charles County; read the member page, no gun statements on it",
+        "On the Record (0 appearances for this person, 0 name candidates)",
+        "blocked: https://ballotpedia.org/C.T._Wilson (403)",
+        "blocked: https://marylandmatters.org/2023/02/23/gun-rights-supporters-opponents-return-to-annapolis-as-judiciary-committee-considers-bill-to-adjust-concealed-carry-laws-after-scotus-decision/ (bot check)",
+        "blocked: https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/C._T._Wilson (HTTP 525)",
+        "no personal campaign or issue site found in search results; not reviewed",
+        "web searches on name plus firearm words: nothing on the subject in his own words; one March 2026 news quote from him (https://patch.com/maryland/across-md/hurry-wait-senate-debating-charlie-kirk-bouchats-last-bill-political-notes) is about a different bill, not guns",
+        "sponsor list and floor votes: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:48:13.542Z",
+      "by": "source-collector"
+    }
+  ]
 }

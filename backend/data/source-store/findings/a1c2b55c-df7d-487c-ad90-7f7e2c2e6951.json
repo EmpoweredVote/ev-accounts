@@ -1891,7 +1891,75 @@
           "sha256": "ad655c3886e23e79f3b5797667b864682a777e88767ff8819ff6b2770030846e"
         }
       }
+    },
+    {
+      "id": "a44a2dda02032c32f55243c386411d6be0af61c39b03109bdafc773989397d60",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2023/10/13/maryland-democrat-who-voted-against-carry-restrictions-says-injunction-proved-her-right-n76030",
+      "date": "2023-04-10",
+      "date_precision": "day",
+      "passage": "Are we setting ourselves up for unnecessary challenges in this space as it relates to people that are legally carrying guns?",
+      "note": "Quoted by a gun-rights news site from a Daily Times State House interview just after she voted against SB 1 (2023) on April 10; she questions whether the carry bill invites legal challenges for lawful carriers.",
+      "subjects": [
+        "carry permits and places where carry is barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:07.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b11f937f930880bf5c0e097b2f7f72f9d706d401ba1bcbf9f3894a8724a789ca",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2023/10/13/maryland-democrat-who-voted-against-carry-restrictions-says-injunction-proved-her-right-n76030",
+      "date": "2023-10-13",
+      "date_precision": "day",
+      "passage": "I am in the same posture now, I did not support the legislation, as I saw the trend of New York’s bill being struck down and legislation -we pass legislation that gets at the legal person who is carrying in, who’s going through the classes and making certain that they are carrying their weapons legally and but not putting as much emphasis on the ones who are illegally getting the firearm,",
+      "note": "Quoted in a gun-rights news story (page date; original outlet not named in the text I read) after a federal court order blocked parts of SB 1; she says she did not support it and wants more focus on people who get guns illegally.",
+      "subjects": [
+        "carry permits and places where carry is barred",
+        "gun crime penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:07.552Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits and places where carry is barred",
+        "red flag orders",
+        "gun crime penalties",
+        "Second Amendment general statements",
+        "assault-style weapons",
+        "background checks",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the legislature's member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/sample01 (page loads for the 2027 session list, confirming a sitting delegate; no subject content in the text read)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Sheree_Sample-Hughes",
+        "one web search on name plus gun words (a news story from a gun-rights outlet quoting her, saved)",
+        "one web search for her red-flag quote wording: nothing found, quote not saved",
+        "campaign site: not reviewed, none located in search",
+        "not reviewed: other URL-pattern pages (votesmart, ontheissues)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T16:48:07.552Z",
+      "by": "source-collector"
+    }
+  ]
 }

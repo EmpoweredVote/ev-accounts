@@ -726,7 +726,82 @@
           "sha256": "2f6e5199609237db405a4cfa8a29497677f9dbe807f8c73c04515b135046fae2"
         }
       }
+    },
+    {
+      "id": "4b772c06cb7ff0270c3b55e28d3636cf41b3cdec7d091e94e413f13332dca9c0",
+      "kind": "own-words",
+      "url": "https://governor.maryland.gov/news/press-releases/governor-moore-proclaims-national-gun-violence-awareness-day-maryland",
+      "date": "2023-06-02",
+      "date_precision": "day",
+      "passage": "There is no excuse for inaction when gun violence is the leading cause of death for children in this country,” said Lt. Gov. Aruna Miller. “These deaths are preventable. Common-sense gun control, like the legislation this administration signed into law this year, will save the lives of Maryland’s youngest citizens, as well as protect all of our communities.",
+      "note": "Quote in the governor's office release for the National Gun Violence Awareness Day proclamation. She speaks of gun control laws signed in 2023 and of preventing child deaths.",
+      "subjects": [
+        "gun safety laws",
+        "general statement on gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:08.466Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "629172d00a34a85582b00d49be5d8c4ed8b87ccca8f6f1532c8e2528b3a5e691",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/joined-by-governor-wes-moore-lieutenant-governor-aruna-miller-and-gun-sense-lawmakers-maryland-moms-demand-action-and-students-demand-action-volunteers-advocate-for-another-legislative-session-of-gu/",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Attended gun violence prevention advocacy day kickoff press conference in Annapolis",
+      "note": "An advocacy group release lists her among the lawmakers at the kickoff. That day's focus was holding the gun industry accountable and creating a Center for Firearm Violence Prevention and Intervention. The release quotes others, not her.",
+      "subjects": [
+        "gun violence prevention",
+        "gun industry accountability",
+        "firearm violence prevention center"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:08.466Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun control",
+        "gun safety laws",
+        "gun violence prevention",
+        "ban on ghost guns",
+        "firearm violence prevention center",
+        "gun industry accountability"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "official page: https://governor.maryland.gov/leadership/ltgovernor/Pages/default.aspx (read; nothing on the subject)",
+        "official press list: https://governor.maryland.gov/leadership/ltgovernor/press/Pages/default.aspx (read first page; nothing on the subject)",
+        "governor's office press release of 2023-06-02 (read; one own-words quote saved)",
+        "advocacy group press release of 2024-01-30 (read; names her as attending, no words of hers)",
+        "news search on name plus gun words (two searches)",
+        "blocked: https://ballotpedia.org/Aruna_Miller",
+        "blocked: https://marylandmatters.org/2023/10/24/democratic-lieutenant-governors-advocates-discuss-solutions-to-prevent-gun-violence/",
+        "blocked: https://marylandmatters.org/2024/01/30/moms-demand-action-members-rally-in-support-of-center-for-firearm-prevention-accountability-for-gun-industry/",
+        "not reviewed: the 2023 White House lieutenant governors gun-violence meeting readout (attendance only, not fetched)",
+        "not reviewed: campaign site (not looked for), ontheissues, vote411",
+        "scope not confirmed from a 2026 ballot page: she is named as Lieutenant Governor in the 2023 and 2024 pages read"
+      ],
+      "found": 2,
+      "at": "2026-11-18T16:46:08.466Z",
+      "by": "source-collector"
+    }
+  ]
 }

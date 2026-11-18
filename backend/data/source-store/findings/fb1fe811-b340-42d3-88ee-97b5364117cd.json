@@ -878,7 +878,54 @@
           "sha256": "3ef59b7530062525a9b3133d6e7751bb65fdd65cd56761d5158665bf1e181e21"
         }
       }
+    },
+    {
+      "id": "8e5ca08063e410ddd5dba96973c415b8a40725a633612f1329eba518b259a3cb",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0863?ys=2026RS",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MD-HB-863-2026",
+      "act": "sponsor",
+      "note": "Listed among the co-sponsors of HB 863, Gun Theft Felony Act of 2026, which makes stealing a gun a felony.",
+      "subjects": [
+        "penalties for gun theft"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:21.506Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun with a permit",
+        "gun theft penalties",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hutchinson01 (member page read: confirms sitting delegate; biography only, nothing on the subject)",
+        "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0863?ys=2026RS (co-sponsor list read)",
+        "blocked: https://ballotpedia.org/Tom_Hutchinson (403)",
+        "campaign site: not found in search, not reviewed",
+        "web search (one search): no own-words statement on guns found",
+        "not reviewed: a news story on a 2023 joint letter asking the governor to veto SB 1; the page text did not show his name, so the claim is unverified and not saved",
+        "ontheissues.org and vote411: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:46:21.506Z",
+      "by": "source-collector"
+    }
+  ]
 }

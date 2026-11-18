@@ -2593,5 +2593,37 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire trigger devices and bump stocks",
+        "voluntary do-not-sell gun list",
+        "background checks",
+        "assault-style guns",
+        "red flag orders",
+        "carry permits",
+        "ghost guns",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/David_Moon_(politician) (read; confirms office; gun section describes the 2018 bump-stock bill and his criticism of arming teachers, no direct quote)",
+        "https://www.baltimoresun.com/2018/04/04/bump-stocks-will-be-banned-under-gun-control-bill-passed-by-maryland-general-assembly/ (news story; describes his bill, no direct quote from him on guns)",
+        "https://mgaleg.maryland.gov/cmte_testimony/2024/jud/22249_02212024_14336-434.pdf (county government testimony on HB 794, not his words)",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/moon01 (member page fetched, nothing on the subject in the text)",
+        "blocked: https://ballotpedia.org/David_Moon (403)",
+        "blocked: https://www.davidmoon.org (no connection)",
+        "blocked: https://davidmoon.org (no connection)",
+        "blocked: https://www.votedavidmoon.com (no connection)",
+        "blocked: https://archive.baltimoretimes-online.com/?p=31254 (no connection)",
+        "web search x2 (no own-words statement on guns found)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:48:00.954Z",
+      "by": "source-collector"
+    }
+  ]
 }

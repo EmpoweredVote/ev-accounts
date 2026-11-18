@@ -1071,7 +1071,51 @@
           "sha256": "7f6026e0dd9b3cfbf881c2063ec4061166772d96159b836f1166b021a77892e2"
         }
       }
+    },
+    {
+      "id": "6e9471c45aff40b3a870001f350392b6305a65b1f15dc0265372e4bb68e7283d",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2026/jud/34081_02252026_142744-982.pdf",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "HB741 simply aligns Maryland with common-sense practices already in use across the country.",
+      "note": "Written testimony to the Judiciary Committee for HB741 (Firearms Dealers and Employees - Required Training and Exam). The file's text is headed February 5, 2025, but it sits in the 2026 folder with an upload stamp of 2026-02-25, so the date is given by month. She says gun dealers and their employees are the 'frontline gatekeepers' for firearm access, that Maryland trains only the licensed dealer, and that the bill would require training and a written exam for dealers and employees to help prevent straw purchasing, trafficking and illegal transfers. She asks for a favorable report.",
+      "subjects": [
+        "training and exam for gun dealers and their employees",
+        "stopping illegal gun transfers and straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:48.470Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "training and exam for gun dealers and their employees",
+        "stopping illegal gun transfers and straw purchases",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the legislature's member page for Delegate Kym Taylor (https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03): fetched, confirms the office, nothing on the subject in her own words",
+        "the legislature's committee testimony file for HB741 (https://mgaleg.maryland.gov/cmte_testimony/2026/jud/34081_02252026_142744-982.pdf): read in full, saved",
+        "sponsor list: covered by bulk bill data",
+        "two web searches on her name plus gun words: a lead to an advocacy group's endorsement page, which is not her own words and was not saved",
+        "not reviewed: https://ballotpedia.org/Kym_Taylor",
+        "not reviewed: a campaign site (none found in search results)",
+        "not reviewed: https://www.ballotready.org/people/kym-taylor (a search lead says she is a 2026 primary candidate; 2026 general-election ballot status not confirmed)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:46:48.470Z",
+      "by": "source-collector"
+    }
+  ]
 }

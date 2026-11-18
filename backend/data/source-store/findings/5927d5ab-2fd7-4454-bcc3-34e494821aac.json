@@ -2818,7 +2818,55 @@
           "sha256": "0f9ffdc30be837e3b71e446f4c381366d4ad8a8c2175b7d55d4617e66544aa86"
         }
       }
+    },
+    {
+      "id": "236f1b2ccf5c83dfc4245ce24c7be12a8909fe990fc163afd386409e9040cfb9",
+      "kind": "own-words",
+      "url": "https://foxbaltimore.com/news/project-baltimore/sonja-santelises-governor-wes-moore-baltimore-city-school-police-guns",
+      "date": "2025-09-10",
+      "date_precision": "day",
+      "passage": "It's time to change this law. Enough is enough. Stop making excuses,",
+      "note": "Quoted in a Fox45 news story on his plan to file a 2026 bill letting Baltimore City Schools police officers carry firearms at all times inside schools. The story also quotes his 2019 committee remark: \"What this bill does, is it says if they are a police officer patrolling a school, they can have their weapon. And they should have their weapon.\"",
+      "subjects": [
+        "armed police officers inside schools",
+        "where guns may be carried"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:32.414Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "armed police inside schools",
+        "gun carry in schools",
+        "assault-style gun ban",
+        "check every gun buyer",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "status: sitting state senator, District 7 (Baltimore and Harford counties), named as such in a Fox45 news story of 2025-09-10; not a 2026 ballot candidate check needed for a sitting senator",
+        "On the Record (0 meetings)",
+        "the legislature's member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/jennings01 (loaded, no readable text on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org",
+        "official/campaign site: not reviewed: no site found in search",
+        "news search on name plus gun words (one search; one news story on armed school police, one 2013 news story on a gun-gesture school bill, an encyclopedia page used only as a lead)",
+        "nothing on the subject: background checks, magazine limits, red-flag orders, permitless carry, ghost guns, Second Amendment statements, no own words found"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:48:32.414Z",
+      "by": "source-collector"
+    }
+  ]
 }

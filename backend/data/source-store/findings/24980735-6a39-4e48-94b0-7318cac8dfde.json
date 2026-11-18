@@ -1419,5 +1419,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "ghost guns",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "status: in scope; sitting House member for District 32, Anne Arundel County, since 2019; won the 2026 primary per state elections board results (via search result, not fetched)",
+        "On the Record (0 meetings)",
+        "legislature member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/rogers01?ys=2025RS and 2026RS: read; lists committees, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "Maryland Matters 2024 profile of the delegate: read, nothing on the subject",
+        "blocked: https://marylandmatters.org/voter-guides/contests/district-32-democratic-primary/ (403)",
+        "blocked: https://ballotpedia.org/Mike_Rogers_(Maryland) (403)",
+        "not reviewed: campaign site (https://www.mikerogersmd.com did not connect; no other campaign address found)",
+        "news/web search on name plus gun words: nothing in his own words; a Vote Smart gun-statements page is for a different Mike Rogers, not used"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:46:46.346Z",
+      "by": "source-collector"
+    }
+  ]
 }

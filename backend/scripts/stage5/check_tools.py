@@ -2,7 +2,7 @@
 a tool is run as a subprocess, the way a batch runs it.
 python3 -I scripts/stage5/check_tools.py [--tools <dir>]   (default: this folder; point it at a tampered copy to watch
 a check fail). Exit 1 when any check fails. Needs no database, network or node_modules."""
-import csv, glob, json, os, shutil, subprocess, sys, tempfile, traceback
+import csv, glob, json, os, re, shutil, subprocess, sys, tempfile, traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLS = sys.argv[sys.argv.index('--tools') + 1] if '--tools' in sys.argv else HERE
@@ -348,6 +348,20 @@ def archive_fallback_when_live_page_is_refused(t):
     assert m.live_failed(b'200', 'too short'), 'a body under 500 characters must fall back'
     assert not m.live_failed(b'200', real), 'a real 200 page must be kept'
     assert not m.live_failed(b'200', real + ' access denied ' + real), 'a marker in a long page is not a challenge'
+
+
+@check
+def evidence_bill_anchor_reads_a_zero_padded_number(t):
+    """Maryland md-01 (2026-11-18): a sponsorship cited on the bill's own page (mgaleg .../Details/hb0083) got only the
+    sponsor-list window; the page heads itself "Legislation - HB0083", which the anchor missed, and the gate held 89
+    rows as instrument-not-cited. The anchor allows zero padding, and still does not take HB 10083 for HB 83."""
+    src = open(os.path.join(TOOLS, 'build_evidence.py')).read()
+    m = re.search(r"re\.finditer\(r'(\\b\(\[HS\][^']*)' \+ num \+ r'\\b'", src)
+    assert m, 'anchor pattern not found in build_evidence.py'
+    pat = lambda num: re.compile(m.group(1) + num + r'\b', re.I)
+    assert pat('83').search('Legislation - HB0083 Legislative Services'), 'zero-padded HB0083 must anchor HB 83'
+    assert pat('83').search('House Bill 83 of 2026') and pat('1502').search('HOUSE BILL NO. 1502'), 'plain forms must still anchor'
+    assert not pat('83').search('Legislation - HB10083') and not pat('83').search('HB 830'), 'another bill must not anchor'
 
 
 @check

@@ -2704,7 +2704,52 @@
           "sha256": "9911194635e0a6053ed13ce65d3e4461609c8342af3d06959bf84cca93abe76e"
         }
       }
+    },
+    {
+      "id": "a1855ba57d526b7c9fdb951a2fffa4882147e92333a1046445fd6594b0a859f9",
+      "kind": "own-words",
+      "url": "https://www.theblaze.com/news/2018/03/07/maryland-lawmakers-submit-bill-that-would-allow-parishioners-to-be-armed-in-church-without-a-permit",
+      "date": "2018-03-07",
+      "date_precision": "day",
+      "passage": "I don’t want to wait until we have that happen in Maryland,",
+      "note": "A news story (Blaze) quotes her, as told to WJZ-TV, on why she co-sponsored a bill letting churchgoers carry concealed in a church that agrees, without a permit; she points to church shootings elsewhere. The quote is a fragment: the sentence continues past the comma.",
+      "subjects": [
+        "guns in church without a carry permit",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:28.165Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in church without a carry permit",
+        "carry permits",
+        "general statements on gun rights",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "in scope: the legislature's member page (https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga) names her as a sitting delegate",
+        "blocked: https://www.kathyszeliga.com (HTTP 522 error)",
+        "sponsor list: covered by bulk bill data",
+        "web search on her name plus gun words: found one news story quoting her",
+        "not reviewed: Ballotpedia",
+        "not reviewed: votesmart.org",
+        "not reviewed: official House member page issue statements beyond the member profile"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:46:28.165Z",
+      "by": "source-collector"
+    }
+  ]
 }

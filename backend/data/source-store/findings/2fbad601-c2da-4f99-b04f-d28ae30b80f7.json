@@ -1153,5 +1153,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "private sale background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and places where carry is allowed",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings; script returned no appearances)",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/jackson03 (member page read; no statements on the subject, only session links)",
+        "campaign site: blocked: https://www.jacksonfor8.com (no response; address was a guess, no campaign site found by search)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Carl_Jackson_(Maryland) (fetch returned nothing)",
+        "https://en.wikipedia.org/wiki/Carl_W._Jackson (read; confirms Senate District 8, Baltimore County; its Guns section is about the 2020 private-sale background-check vote, a vote already on file; a lead only, not saved)",
+        "https://elections.maryland.gov/elections/2026/Primary_results/gen_detail_results_2026_5_8_Democratic_District%208.html (seen only in a search result; not fetched, so general-election ballot status is not confirmed by me)",
+        "news search on name plus gun words: nothing quoting him on the subject",
+        "Maryland legislature bill pages and vote files: skipped as instructed; sponsor list: covered by bulk bill data",
+        "debate, interview and questionnaire pages: nothing found"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:47:49.410Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -2487,7 +2487,117 @@
           "sha256": "ad655c3886e23e79f3b5797667b864682a777e88767ff8819ff6b2770030846e"
         }
       }
+    },
+    {
+      "id": "9b9c94d05fdec70a85e11c193c3052e6eac06ac3d684f516dcb67d33c34e1865",
+      "kind": "own-words",
+      "url": "https://marylandreporter.com/2020/01/29/del-kipke-slams-bill-that-would-require-background-checks-for-secondary-gun-transfers",
+      "date": "2020-01-29",
+      "date_precision": "day",
+      "passage": "The problem with it is that it doesn't work. The bill that they brought over doesn't work. It's been tried in different places around the country,",
+      "note": "Quoted by MarylandReporter.com at a State House news conference, speaking about a bill requiring background checks on secondary transfers of rifles and shotguns.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales of long guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:23.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95621bf0fdd99f98a1ccd6267f79b900612e4e0dad60a76554202fc7b1876b27",
+      "kind": "record",
+      "url": "https://marylandreporter.com/2020/01/29/del-kipke-slams-bill-that-would-require-background-checks-for-secondary-gun-transfers",
+      "date": "2020-01-29",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Floor amendment by Kipke to the long-gun background check bill: make straw purchases a felony instead of a misdemeanor (rejected by the House)",
+      "note": "The news story reports the House rejected his amendment, which would have raised the penalty for buying a gun on behalf of another person from misdemeanor to felony.",
+      "subjects": [
+        "straw purchases",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:23.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "434fdc9279a9d01fc03ba8009f488daba78e229a39e1f3859ec0d4d36533c2c4",
+      "kind": "own-words",
+      "url": "https://southernmarylandchronicle.com/2020/01/30/democrats-gun-bills-do-nothing-to-fight-violent-crime-crisis/",
+      "date": "2020-01-30",
+      "date_precision": "day",
+      "passage": "“Advocates for this legislation have stated this bill is necessary due to the 30 shotgun or rifle-related murders from 2013 to 2017,” said Delegate Kipke. “Those deaths are absolutely tragic, but this thinking ignores the fact that, over that same time there were 264 murders using knives and sharp objects and 87 murders using hands, fists, feet, etc. It also ignores the more than 300 murders committed with handguns in Baltimore City just last year and the crisis of violent crime across the state.”",
+      "note": "House minority caucus release quoting Kipke on the long-gun background check bill, arguing it targets the wrong weapons given murder figures by weapon type.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales of long guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:23.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56bc0b64bca65ce56c7a6d0e0e4e295c1dc7af29f4b8052ccb3c855205bbf38b",
+      "kind": "own-words",
+      "url": "https://southernmarylandchronicle.com/2020/01/30/democrats-gun-bills-do-nothing-to-fight-violent-crime-crisis/",
+      "date": "2020-01-30",
+      "date_precision": "day",
+      "passage": "“The Democrats in the House of Delegates had an opportunity today to directly address the crisis of violent crime in our state, and they simply didn’t take it,” said House Minority Leader Nic Kipke. “Instead they chose instead to focus their attention on the wrong guns and the wrong people; law-abiding citizens and the firearms they use for hunting and sport.”",
+      "note": "Statement issued in his name after the House vote on the long-gun background check bill, saying the bill focuses on law-abiding owners rather than violent crime.",
+      "subjects": [
+        "check every gun buyer",
+        "gun laws and law-abiding owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:23.794Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "background checks on rifle and shotgun transfers",
+        "straw purchases",
+        "3D-printed guns",
+        "gun rights and gun laws in general"
+      ],
+      "places": [
+        "status: sitting Maryland delegate for District 31, elected to the state Senate on 2026-11-03 (per the Wikipedia article, https://en.wikipedia.org/wiki/Nic_Kipke); not lost or withdrawn",
+        "On the Record (0 meetings)",
+        "the legislature's member page https://mgaleg.maryland.gov/mgawebsite/Members/Details/kipke (loaded, member page only, nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Nicholaus_R._Kipke (403)",
+        "not reviewed: https://www.nickipke.com/ (no connection)",
+        "one news search on name plus gun words (two 2020 stories read in full)",
+        "not reviewed: floor-debate audio and video, campaign questionnaires, other URL-pattern sites"
+      ],
+      "found": 4,
+      "at": "2026-11-18T16:47:23.794Z",
+      "by": "source-collector"
+    }
+  ]
 }

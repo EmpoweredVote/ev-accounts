@@ -2833,7 +2833,123 @@
           "sha256": "5d1f048ec53186bf2d4d998de40455b9c06b5569b99b8b9da415cc30546c15e1"
         }
       }
+    },
+    {
+      "id": "02442367eb033d2c42a604e37f94d58a98359ecb6ba5fb4ee232d83d282aafa2",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2023/jpr/1iSxOoqYioaI_r9VE9cJbHceTZD8JrwwD.pdf",
+      "date": "2023-02",
+      "date_precision": "month",
+      "passage": "It is imperative that Marylanders have the opportunity to restrict their access to firearms ahead of time if they know it will protect them in a time of crisis. We enable certain people to raise red flags about others via our Extreme Risk Protection Order program (ERPO), why shouldn’t we enable individuals to raise those red flags for themselves?",
+      "note": "Written testimony of Senator Hettleman to a Senate committee for SB159 (voluntary do-not-sell firearm registry); date is the month the file was posted. She argues people should be able to put themselves on a list barring their own gun purchases, and compares it to the state's extreme-risk order program.",
+      "subjects": [
+        "voluntary do-not-sell list for gun buyers",
+        "red-flag / extreme-risk orders",
+        "gun suicide prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:49.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f39e4348f29010f462f256567a6d1f8489516e06c3547283677cc8ffb77339a",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2024/jpr/14cfThI_XaTjunpMu54JVahCzQUi7WkxR.pdf",
+      "date": "2024-02",
+      "date_precision": "month",
+      "passage": "This bill requires the Maryland Department of Health to create and maintain a voluntary do not sell firearm list by the end of this year and prohibits dealers or other persons from selling, renting, loaning or transferring a firearm to those registered.",
+      "note": "Written testimony of Senator Hettleman for SB752 (voluntary do-not-sell firearm process); date is the month the file was posted. She describes what the bill does.",
+      "subjects": [
+        "voluntary do-not-sell list for gun buyers",
+        "limits on who may buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:49.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f478a3c2d16c3579799a26e1dfb08976800dbe364fbd0b746c9f37202e1354d",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2025/jpr/12bQYaoz8VYZPkwIna0BzevZRQA92RpME.pdf",
+      "date": "2025-02",
+      "date_precision": "month",
+      "passage": "These deaths are not inevitable; we know what works—disarming abusers. Federal law, as well as many state, tribal, and local laws, provide a legal framework to reduce the risk of domestic violence-related firearm injury and fatality by disarming certain domestic abusers.",
+      "note": "Written testimony of Senator Hettleman for SB943 (Family and Law Enforcement Protection Act); date is the month the file was posted. She backs removing guns from people under protective orders and cites the 2024 Rahimi ruling as allowing such laws under the Second Amendment.",
+      "subjects": [
+        "taking guns from people under protective orders",
+        "Second Amendment and gun-safety laws",
+        "domestic violence and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:49.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dabc7957f2d7f33266aca131e1c093e12117d4fdf0844dbf31e2ff0252d668a",
+      "kind": "own-words",
+      "url": "https://mgaleg.maryland.gov/cmte_testimony/2026/jpr/1RxuWAWAOJVn1Ho_f6IzQQh4i6dfTBSbG.pdf",
+      "date": "2026-01",
+      "date_precision": "month",
+      "passage": "Notably, the 2024 Supreme Court decision in US v Rahimi affirmed that such laws restricting abusers’ access to firearms are permissible under the Second Amendment.8 SB 20 brings Maryland in line with these best practices.",
+      "note": "Written testimony of Senator Hettleman for SB20 (Family and Law Enforcement Protection Act); date is the month the file was posted. She says the bill, requiring gun surrender at the temporary protective-order stage, fits the Second Amendment and other states' practice.",
+      "subjects": [
+        "taking guns from people under protective orders",
+        "Second Amendment and gun-safety laws",
+        "domestic violence and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:49.377Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "voluntary do-not-sell list for gun buyers",
+        "red-flag / extreme-risk orders",
+        "taking guns from people under protective orders",
+        "gun background checks",
+        "assault-style weapon and magazine bans",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "Second Amendment and general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances; no meetings)",
+        "Maryland General Assembly member page (https://mgaleg.maryland.gov/mgawebsite/Members/Details/hettleman02): confirms Senator Shelly Hettleman, Baltimore County; read; nothing on the subject on the page itself",
+        "Senate committee testimony PDFs on mgaleg.maryland.gov for SB159 (2023), SB752 (2024), SB943 (2025), SB20 (2026): read, saved",
+        "no separate campaign or personal site found by search",
+        "blocked: https://ballotpedia.org/Shelly_Hettleman (403)",
+        "two web searches on name plus gun words: only legislature pages, bill-tracker pages and testimony; no news story with her own quoted words found",
+        "sponsorships and floor votes: covered by bulk bill data",
+        "status: in office as sitting state senator; not checked against a 2026 ballot (state senators are not up in 2026 per the term cycle; not confirmed by a page)",
+        "not reviewed: SB753 (2024) testimony, no PDF located"
+      ],
+      "found": 4,
+      "at": "2026-11-18T16:46:49.377Z",
+      "by": "source-collector"
+    }
+  ]
 }

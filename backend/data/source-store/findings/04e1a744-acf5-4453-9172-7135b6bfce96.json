@@ -2219,7 +2219,74 @@
           "sha256": "93e8a10b52db394776fb016cd237dace9a243f5f8cd4eb927c926621496c66b9"
         }
       }
+    },
+    {
+      "id": "808a70bd7eb23d2769ac52d55a3a7b9e3cfbf81281ca3534fb33be500c2acc5c",
+      "kind": "own-words",
+      "url": "https://antoniohayes.squarespace.com/blog/2022/4/6/advocates-call-for-ghost-gun-ban-as-senators-debate-right-approach-to-rising-crime-rates-maryland-matters",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "passage": "Mr. President, with all due respect, I hear you, but I'm tired … and if we want to have this debate every day for the rest of this session, I welcome that opportunity,",
+      "note": "Quoted in a Maryland Matters story (republished on his own site) during a Senate floor debate on crime and a ghost-gun ban; he asked to keep the debate going. Date is that of the original story.",
+      "subjects": [
+        "home-made (ghost) guns",
+        "crime debate on the Senate floor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:19.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8b9425778baa6d9029fa457e2dbe9686e2d2208c4f927b5d69536518630529a",
+      "kind": "record",
+      "url": "https://centermaryland.org/2023/senate-approves-gun-bill-but-not-without-heated-late-debate",
+      "date": "2023-04-07",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-824-2023",
+      "act": "other",
+      "motion": "Motion to reconsider a special order that would have postponed further debate on HB 824",
+      "note": "A news story reports he made the motion that kept the debate going so the Senate could vote that night; the bill raises the gun-possession age to 21 and widens who is barred from having a gun.",
+      "subjects": [
+        "minimum age to have a gun",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:19.377Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "age to possess a gun",
+        "who may not have a gun",
+        "general gun-violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Maryland General Assembly member page (https://mgaleg.maryland.gov/mgawebsite/Members/Details/hayes01): loaded, nothing on the subject",
+        "his own site (https://antoniohayes.squarespace.com/): read; a 2022 republished news story on the Senate floor debate is the only subject item found",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus gun words (results mostly other people; two relevant stories)",
+        "https://marylandmatters.org/2022/01/25/advocates-call-for-ghost-gun-ban-as-senators-debate-right-approach-to-rising-crime-rates/: fetched but no text naming him came back; used his site's copy instead",
+        "not reviewed: Ballotpedia, campaign site, Facebook/Instagram, other URL-pattern pages (not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T16:47:19.377Z",
+      "by": "source-collector"
+    }
+  ]
 }

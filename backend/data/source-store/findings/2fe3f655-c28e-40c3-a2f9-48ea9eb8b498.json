@@ -2204,7 +2204,80 @@
           "sha256": "ad655c3886e23e79f3b5797667b864682a777e88767ff8819ff6b2770030846e"
         }
       }
+    },
+    {
+      "id": "4ebcb0c59944a5e8ead278c15ef13391ae9aeeccd881847d116383c2a3361be6",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB0039?ys=2015RS",
+      "date": "2015-04-09",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-39-2015",
+      "act": "sponsor",
+      "note": "Listed first among the sponsors of HB 39 (2015), which repealed the law requiring gun makers and dealers and State Police to handle identification of handguns (shell casings); it passed the House on third reading 135-2 on 2015-04-09.",
+      "subjects": [
+        "repeal of handgun ballistic-identification law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:47:52.601Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50eed699f80d9537ab037a6e5942a0d455ff74718dd3b8c9ee0d558fdeadf43c",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0039?ys=2015RS",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MD-HB-39-2015",
+      "act": "sponsor",
+      "motion": "prime sponsor, bill page (Sponsored by Delegates ...)",
+      "note": "prime sponsor of MD-HB-39-2015 (bill page (Sponsored by Delegates ...)): HB0039 (2015 Regular): Public Safety - Handgun Identification Requirements - Repeal.",
+      "subjects": [
+        "repeal of shell-casing handgun identification (ballistic fingerprint) requirement",
+        "State Police may dispose of stored shell casings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "mgaleg.maryland.gov bill page and third reader (gun-policy Stage 5, Maryland, leg B B7); operative text read by a Sonnet fill agent from the official Maryland text (Third Reader; official copy, https://mgaleg.maryland.gov/2015RS/bills/hb/hb0039t.pdf)",
+        "fetched_at": "2026-11-18T16:57:25.613619Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-39-2015.third_reader.pdf",
+          "sha256": "f51f6767a26b69a403932143fc0a335e8c2196ab0592a9ff532cc9fbdf3f32a4"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "handgun permits",
+        "carry a gun",
+        "repeal of handgun ballistic-identification law",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/howard01 (member page: confirms sitting delegate, Anne Arundel County, page updated 2026-11-13; lists NRA membership and the Sportsmen's Caucus among affiliations, no statement on the subject)",
+        "https://www.sethhoward.com (own site: only a landing page and a video channel link, nothing on the subject)",
+        "https://ballotpedia.org/Seth_Howard (not reviewed: page returned empty, HTTP 202)",
+        "news/web search on name plus gun words: no news quote or testimony from him found",
+        "sponsor list 2017-2026: covered by bulk bill data",
+        "https://www.nraila.org/articles/20150227/maryland-house-and-senate-committees-to-hold-gun-bill-days (advocacy-group page about his 2015 bill; words are the group's, not his; used only as a lead)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T16:47:52.601Z",
+      "by": "source-collector"
+    }
+  ]
 }

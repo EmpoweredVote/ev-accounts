@@ -3201,7 +3201,94 @@
           "sha256": "627ca8ecf657d875be0d835542c6eaba58aa33d9d0f0f1cf0f159efe82b7c8eb"
         }
       }
+    },
+    {
+      "id": "bb462ff57e8a57b2a45c5dbe7841265bdf77f1429b4b530cd33c5beeb667be89",
+      "kind": "own-words",
+      "url": "https://www.justinready.com/carroll-county-times-op-ed/",
+      "date": "2023-11-06",
+      "date_precision": "day",
+      "passage": "During the 2023 Legislative Session, while criminal activity involving firearms was exploding and crime was rising, Democratic leadership chose not to target repeat, violent offenders, but instead championed a bill (SB 1) to strip Marylanders of their right to self-defense. SB 1 dramatically limits the ability of law-abiding citizens to utilize their wear and carry permits in most public places.",
+      "note": "Op-ed on his own site (date taken from the page's title line) criticising 2023 SB 1, which limits where permit holders may carry; says the focus should be on repeat violent offenders.",
+      "subjects": [
+        "carry a gun with a permit",
+        "limits on places where guns may be carried"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:27.156Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b51ffbf0bbcba1b28f95ce6ff294827c1d02316d46c7a2cbb057b980280302b2",
+      "kind": "own-words",
+      "url": "https://www.justinready.com/carroll-county-times-op-ed/",
+      "date": "2023-11-06",
+      "date_precision": "day",
+      "passage": "Instead of continuing to besiege law-abiding citizens who just want to protect their families, let's go after the bad guys for a change.",
+      "note": "Same op-ed: calls for enforcement against repeat violent offenders rather than more limits on law-abiding gun carriers.",
+      "subjects": [
+        "carry a gun with a permit",
+        "tougher sentences for gun crimes and gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:27.156Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b142d5bc8e46b12aa118e31237ba09df88dc00a14bc6b8f7e7e5da0b29484bc",
+      "kind": "own-words",
+      "url": "https://www.justinready.com/?p=419",
+      "date": "2023-09-29",
+      "date_precision": "day",
+      "passage": "However, I’m happy to report that today the court granted a “partial preliminary injunction”. This injunction stops SB 1’s restrictions on permitted carrying on private property, in restaurants, and while attending public events.",
+      "note": "His own post welcoming a court order that paused parts of SB 1's limits on permitted carry.",
+      "subjects": [
+        "carry a gun with a permit",
+        "limits on places where guns may be carried"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:27.156Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun with a permit",
+        "limits on places where guns may be carried",
+        "Second Amendment and gun rights",
+        "tougher sentences for gun crimes and gun trafficking"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: Carroll County Times op-ed page (https://www.justinready.com/carroll-county-times-op-ed/)",
+        "official site: Justin's Priorities page (https://www.justinready.com/?p=211), read; undated, so not saved as a finding",
+        "official site: post of 2023-09-29 on the SB 1 court ruling (https://www.justinready.com/?p=419)",
+        "one web search on name plus gun words (leads only)",
+        "blocked: https://marylandmatters.org/2023/02/06/in-response-to-scotus-opinion-senate-committee-will-consider-bills-this-week-to-limit-concealed-firearms-possession/",
+        "not reviewed: Ballotpedia, other news stories, the wider official-site search for the other gun words, other URL patterns",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-18T16:48:27.156Z",
+      "by": "source-collector"
+    }
+  ]
 }

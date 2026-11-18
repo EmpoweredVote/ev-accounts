@@ -2267,5 +2267,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment statements",
+        "red-flag orders",
+        "carrying guns near polling places",
+        "ban on a type of firearm",
+        "check every gun buyer",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/gallion01 (member page read: sitting District 35 senator since 2019; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jason_Gallion (403)",
+        "one web search on name plus gun words: only a Wikipedia summary and news stories whose text did not name him when fetched; no passage copied because the quotes there could not be verified on the original page",
+        "https://marylandmatters.org/2021/03/04/bills-on-digital-tax-guns-at-polling-places-move-to-final-senate-votes/ (fetched; his name not in the page text I received, nothing saved)",
+        "https://marylandmatters.org/2023/04/11/general-assembly-passes-bill-to-prohibit-carrying-guns-in-sensitive-areas-like-preschools-and-polling-places/ (fetched; his name not in the page text)",
+        "not reviewed: official campaign site (none found in search)",
+        "not reviewed: the Baltimore Sun 2014 story and the 2021 floor remarks cited by an encyclopedia page, as the original text was not reachable"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:48:59.664Z",
+      "by": "source-collector"
+    }
+  ]
 }

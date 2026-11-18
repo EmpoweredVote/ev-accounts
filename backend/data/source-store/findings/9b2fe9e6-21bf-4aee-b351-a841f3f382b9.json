@@ -3202,5 +3202,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "assault-style weapons",
+        "background checks",
+        "red flag orders",
+        "concealed carry",
+        "gun safety laws"
+      ],
+      "places": [
+        "in scope: State Board of Elections 2026 primary results page for District 38 Senate names her as the winning nominee (https://elections.maryland.gov/elections/2026/Primary_Results/gen_detail_results_2026_5_38_Republican_District%2038.html)",
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "campaign site https://www.marybethcarozza.com: read, nothing on the subject",
+        "blocked: https://ballotpedia.org/Mary_Beth_Carozza (empty page)",
+        "web search on her name plus Second Amendment/firearms: nothing in her own words",
+        "web search on her name plus gun bill quotes: only legislative tracker pages, no own-words quote on guns",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill pages and vote files: skipped per brief",
+        "not reviewed: the official Senate member page, other URL patterns in the researcher agent file (search allowance not exhausted, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T16:48:50.814Z",
+      "by": "source-collector"
+    }
+  ]
 }

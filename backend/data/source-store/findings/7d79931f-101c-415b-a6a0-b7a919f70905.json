@@ -906,7 +906,95 @@
           "sha256": "9911194635e0a6053ed13ce65d3e4461609c8342af3d06959bf84cca93abe76e"
         }
       }
+    },
+    {
+      "id": "1dc2e8777fba4e993421e7fa4e8e9bb434f3fcb80b4013d39b5e8724d33c7f89",
+      "kind": "own-words",
+      "url": "https://thebaynet.com/?p=754273",
+      "date": "2020-02-17",
+      "date_precision": "day",
+      "passage": "I am a strong supporter of our 2nd Amendment rights,",
+      "note": "Quoted by a local news site while he was a St. Mary's County commissioner, on the idea of a Second Amendment sanctuary county. He added that the commissioners, sheriff and state's attorney should hold a public discussion so each understands the others' responsibilities and the scope of such a designation.",
+      "subjects": [
+        "gun rights general statement",
+        "Second Amendment sanctuary county"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:52.911Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a63ed3243e35483876bc432a76ea868dfd0e5ceadc11e85d78a31f51a1cb75c5",
+      "kind": "own-words",
+      "url": "https://thebaynet.com/?p=819263",
+      "date": "2020-03-13",
+      "date_precision": "day",
+      "passage": "Whenever the next meeting happens is when we will likely take the vote…",
+      "note": "Quoted by a local news site as a county commissioner, saying the board intended to vote soon on the Second Amendment sanctuary resolution after a meeting was cancelled.",
+      "subjects": [
+        "Second Amendment sanctuary county"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:52.911Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "380c2c3d56ed826b2cd497d15ab931dd5a286eef0fd733a3b16de285c42b95f5",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/cam-e/2020/05/04/md-county-approves-2a-sanctuary",
+      "date": "2020-05-04",
+      "date_precision": "day",
+      "passage": "I think you did a very good job with the wording,",
+      "note": "Quoted by a gun-rights news site, speaking to the county attorney about the wording of the county's Second Amendment sanctuary resolution, which the commissioners then approved. The story calls the resolution symbolic.",
+      "subjects": [
+        "Second Amendment sanctuary county"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:48:52.911Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment sanctuary resolution",
+        "gun rights general statement",
+        "assault-style weapons",
+        "background checks",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings)",
+        "the campaign site https://toddmorganfordelegate.com/ (home page and ?p=87 read; nothing on the subject)",
+        "Wikipedia page for Todd Morgan (politician): confirms office and St. Mary's County gun vote in 2020; used as a lead only",
+        "blocked: https://ballotpedia.org/Todd_Morgan",
+        "blocked: https://www.somd.com/news/headlines/2020/23495.php",
+        "not reviewed: the legislature's member page (bill pages and vote files skipped per brief)",
+        "one web news search on name plus gun words and one on the 2020 county sanctuary vote; local news stories read: thebaynet.com (2) and bearingarms.com",
+        "official House member page and other URL-pattern pages: nothing on the subject beyond the above; not fetched individually"
+      ],
+      "found": 3,
+      "at": "2026-11-18T16:48:52.911Z",
+      "by": "source-collector"
+    }
+  ]
 }

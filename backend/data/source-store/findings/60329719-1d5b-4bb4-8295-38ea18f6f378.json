@@ -172,7 +172,247 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b400951658414903d991f1ef534f689e509dc52db32d2230dadebeae0828e27a",
+      "kind": "own-words",
+      "url": "https://oag.maryland.gov/News/pages/attorney-general-brown-takes-action-to-protect-federal-firearm-safety-measures.aspx",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "passage": "“Strong federal background checks and bans on rapid-fire devices are important tools for keeping communities safe and preventing mass shootings.”",
+      "note": "Attorney General's release on joining about a dozen states to defend two federal ATF actions: the nationwide ban on forced reset triggers and the 'engaged in the business' rule, which requires more sellers to be licensed and run background checks.",
+      "subjects": [
+        "check every gun buyer",
+        "ban on rapid-fire devices (forced reset triggers)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff12370108a4e49fad8019e3261f24d04a8a9135d6b4b91ae5adf42269f43118",
+      "kind": "record",
+      "url": "https://oag.maryland.gov/News/pages/attorney-general-brown-takes-action-to-protect-federal-firearm-safety-measures.aspx",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 15-state motion to defend ATF ban on forced reset triggers, and 14-state intervention to defend ATF 'engaged in the business' rule (background checks for more gun sellers)",
+      "note": "Maryland filed with other states in federal court to defend two ATF actions: the ban on forced reset triggers and the rule widening who must hold a dealer licence and run background checks.",
+      "subjects": [
+        "check every gun buyer",
+        "ban on rapid-fire devices (forced reset triggers)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "faf139bc6ed473b53ec0e23f72c651de689f8e05dc3a5c932e9e639d7674e342",
+      "kind": "own-words",
+      "url": "https://oag.maryland.gov/News/Pages/Statement-from-Attorney-General-Brown-on-Supreme-Court-of-the-United-States-Ruling-in-Wolford-v.-Lopez-.aspx",
+      "date": "2026-06-25",
+      "date_precision": "day",
+      "passage": "“While the Second Amendment affords Marylanders the right to bear arms, that right has never meant guns must be allowed everywhere, regardless of the wishes of business owners or their communities. But today’s ruling allows firearms into the restaurants, stores, and public spaces Marylanders visit every day unless owners take steps to keep the guns out. Marylanders are less safe when commonsense policies like this one are struck down. While we disagree with today's decision, keeping Marylanders safe remains my Office’s top priority.”",
+      "note": "Statement on the Supreme Court's 6-3 Wolford v. Lopez ruling against laws that bar carrying guns onto private property open to the public without the owner's consent; he disagrees with the ruling and says it makes Marylanders less safe.",
+      "subjects": [
+        "places where carry is allowed",
+        "Second Amendment and gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82949b20d28388519a056e93cfc709ded11f6e5ca20832c7f70bd2840ac5e77c",
+      "kind": "own-words",
+      "url": "https://oag.maryland.gov/News/Documents/2024/062524s.pdf",
+      "date": "2024-06-25",
+      "date_precision": "day",
+      "passage": "I have long supported common-sense gun measures, and will continue to do so, that will prevent much of the violence that is plaguing our communities.",
+      "note": "Statement on the U.S. Surgeon General's advisory calling firearm violence a public health crisis; he calls gun violence an epidemic in Maryland and says he supports common-sense gun measures.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "gun violence as a public health crisis"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64221af053a1656d61b40e353a572e7ec99c138210c57edf5fda145132f2c33a",
+      "kind": "own-words",
+      "url": "https://oag.maryland.gov/News/Documents/2024/070524.pdf",
+      "date": "2024-07-05",
+      "date_precision": "day",
+      "passage": "The attorneys general argue that the rule is necessary to close a dangerous loophole and stop people who are banned from owning guns from sidestepping existing law—which they were able to do before gun kits were subject to the same regulations as other firearms.",
+      "note": "Release on his joining 24 attorneys general in a Supreme Court friend-of-the-court brief in Garland v. VanDerStok urging the Court to uphold the federal ghost gun rule (serial numbers and background checks for kits and part-built guns). This sentence describes the coalition's argument in a release issued by his office; he is not separately quoted.",
+      "subjects": [
+        "ghost guns",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad9ad89cf6724ac4992f4dd33d13bd5fcaba911278503da9525cb7ef8e3448fa",
+      "kind": "record",
+      "url": "https://oag.maryland.gov/News/Documents/2024/070524.pdf",
+      "date": "2024-07-05",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined multistate amicus brief in Garland v. VanDerStok supporting federal ghost gun rule",
+      "note": "Maryland signed a 24-attorney-general brief asking the Supreme Court to reverse the Fifth Circuit and uphold the ATF rule treating gun kits and near-complete frames as firearms.",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d6132441d17f67455edff168983a0e5801358226e2bedea7aaf9c5ed21f7bca",
+      "kind": "own-words",
+      "url": "https://oag.maryland.gov/News/Documents/2024/081424.pdf",
+      "date": "2024-08-14",
+      "date_precision": "day",
+      "passage": "“Regulation by the federal government of the transfer of firearms across state lines supports and enhances states’ ability to protect their residents from gun violence,” explained Attorney General Brown. “Firearms that cross state lines, many of which are illegally trafficked, are more likely to be used in criminal activity. This is a commonsense measure that protects Marylanders.”",
+      "note": "Release on his joining 22 attorneys general in an amicus brief in U.S. v. Perez, defending the federal rule that out-of-state gun transfers go through a licensed dealer, and state dealer record-keeping rules.",
+      "subjects": [
+        "check every gun buyer",
+        "gun sales through licensed dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8311acd8125a8c2cd533ed875b6969d03da14555d2ce0f6f5cf183871c61867",
+      "kind": "record",
+      "url": "https://oag.maryland.gov/News/Documents/2024/081424.pdf",
+      "date": "2024-08-14",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 22-AG amicus brief in U.S. v. Perez (Second Circuit) supporting federal limits on interstate firearm transfers and dealer regulation",
+      "note": "Maryland joined a coalition brief defending the federal ban on receiving out-of-state guns except through a licensed dealer.",
+      "subjects": [
+        "gun sales through licensed dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e91b9f9b8678fb9967fff55c2ffe04606a1a3ec465043361f700be4e36ffa366",
+      "kind": "own-words",
+      "url": "https://smnewsnet.com/archives/542732/attorney-general-browns-statement-on-supreme-court-of-the-united-states-decision-today-to-decline-challenge-in-maryland-shall-issue-v-wes-moore/",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "passage": "“This is great news for Maryland and common-sense gun laws. This law helps prevent tragedies and keeps families safe, by keeping guns away from those who want to harm our communities,” said Attorney General Brown. “Thoughts and prayers are not enough – Maryland’s Handgun Qualification Licensing law is a key tool in our fight to end gun violence.”",
+      "note": "His statement, as reprinted by a regional news site, after the Supreme Court declined to hear a challenge to Maryland's handgun qualification licence (fingerprints, background check, training course).",
+      "subjects": [
+        "licence to buy a handgun",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1047680e65cf4b52cbefe38b543469be252be254b5f92cc4d674aacc0438ec20",
+      "kind": "record",
+      "url": "https://smnewsnet.com/archives/542732/attorney-general-browns-statement-on-supreme-court-of-the-united-states-decision-today-to-decline-challenge-in-maryland-shall-issue-v-wes-moore/",
+      "date": "2024-08-23",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Maryland Shall Issue v. Moore, Fourth Circuit (14-2), upholding handgun qualification licence; defended by the Attorney General's office, with his statement welcoming the ruling",
+      "note": "The same page reprints his 2024-08-23 statement after the full Fourth Circuit rejected a Second Amendment challenge to the handgun licence law; the Supreme Court declined review on 2025-01-13.",
+      "subjects": [
+        "licence to buy a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:38.677Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "licence to buy a handgun",
+        "ban on rapid-fire devices (forced reset triggers)",
+        "ghost guns",
+        "carrying guns / places where carry is allowed",
+        "general statements on gun safety laws and the Second Amendment",
+        "who may have a gun (felony convictions)"
+      ],
+      "places": [
+        "scope: sitting Maryland Attorney General; on the 2026 general-election ballot per https://www.msa.maryland.gov/msa/mdmanual/42electg/html/2026/2026ag.html (state returns page names him in the race; a news search reports he won re-election on 2026-11-03)",
+        "On the Record (0 meetings; extract script found none)",
+        "official site, Attorney General's news pages (oag.maryland.gov): read 2 news pages by URL plus 3 press-release PDFs; the site's news list page returned 404, so no site-wide search of the list was possible",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: blocked: https://ballotpedia.org/Anthony_Brown_(Maryland) (empty page returned)",
+        "campaign site: blocked: https://www.brownforag.com (no response); not reviewed: https://www.anthonybrown.com (loaded but not read, may be a past-campaign site)",
+        "one news search on name plus gun words: used for leads, with one regional news site read (smnewsnet.com) for his handgun-licence statements",
+        "not reviewed: https://www.marylandattorneygeneral.gov/press/2024/032024.pdf (returned an error page, not a PDF)",
+        "not reviewed: Maryland General Assembly testimony PDFs listed in search results (mgaleg.maryland.gov/cmte_testimony/2023/jpr/12600_02072023_11395-973.pdf and others), the June 2025 felon-possession ruling statement, and the 2024 16-state gun-industry accountability release",
+        "ontheissues.org and vote411: not reviewed; leads only"
+      ],
+      "found": 10,
+      "at": "2026-11-18T16:46:38.677Z",
+      "by": "source-collector"
+    }
+  ]
 }
