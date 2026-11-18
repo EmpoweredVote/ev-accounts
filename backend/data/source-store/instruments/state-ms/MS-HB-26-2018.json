@@ -1,0 +1,49 @@
+{
+  "id": "MS-HB-26-2018",
+  "scope": "state:ms",
+  "title": "HB26 (2018 Regular): Emergency Medical Technicians; authorize to carry firearms while in performance of duties.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/0001-0099/HB0026IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/0001-0099/HB0026IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tom Miles",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Jeramey Anderson",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "3822a315-a3af-44c6-b6fe-db575b4eb1d3"
+    },
+    {
+      "name": "Kathy Sykes",
+      "role": "co",
+      "version": "introduced text (By:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/0001-0099/HB0026IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-26-2018.introduced.htm",
+      "sha256": "287d2562e15fd90cbf2336ad3743ed9b098a4967a7293223420cfbc5755d8ddd"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. In § 97-37-7 'or' before 'a company' is struck and the EMT words added; the permit conditions of the existing section (fee, felony bar, fingerprint check) apply but are not quoted. Section 41-59-5 sentence's lower subsections are unrelated EMS/trauma text."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-7): It shall not be a violation of Section 97-37-1 or any other statute for pistols, firearms or other suitable and appropriate weapons to be carried by duly constituted bank guards, company guards, watchmen, railroad special agents or duly authorized representatives who are not sworn law enforcement officers, agents or employees of a patrol service, guard service, a company engaged in the business of transporting money, securities or other valuables, or an emergency medical technician as defined in 41-59-1 et seq., while actually engaged in the performance of their duties as such, provided that such persons have made a written application and paid a nonrefundable permit fee of One Hundred Dollars ($100.00) to the Department of Public Safety.\nSection 2 (Miss. Code § 41-59-5): The board is authorized to promulgate and enforce such rules, regulations and minimum standards as needed to carry out the provisions of this chapter, including rules, regulations and minimum standards to authorize emergency medical technicians to carry firearms while actually engaged in the performance of their duties as such."
+}

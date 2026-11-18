@@ -174,6 +174,90 @@
         "fetched_at": "2026-11-05T22:39:27.766Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "08047ee738d9aa31a451fee292980546212761e04ed879abeda11d9c0ed66342",
+      "kind": "own-words",
+      "url": "https://us11.campaign-archive.com/?e=ae3824fee2&u=08cb3e52aa1308600f84d49ea&id=95a46ed4a0",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "The Second Amendment rights of Mississippians shall not be infringed,” said Governor Tate Reeves. “My administration will continue to push back on national Democrats’ unconstitutional gun grabs that threaten the safety and privacy of law-abiding gun owners.",
+      "note": "Governor's office release on signing HB 1110; statement in his name on gun rights and opposition to outside gun-control proposals.",
+      "subjects": [
+        "Second Amendment general statement",
+        "gun registry ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:10.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2b2d752870766290df284254c7bfa34229a05d17cedae7f07f31ebebe3f0fe6",
+      "kind": "own-words",
+      "url": "https://us11.campaign-archive.com/?e=ae3824fee2&u=08cb3e52aa1308600f84d49ea&id=95a46ed4a0",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "Let me be clear: as long as I’m governor, the Second Amendment is here to stay in Mississippi.",
+      "note": "Same release; pledge to protect Second Amendment rights as governor.",
+      "subjects": [
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:10.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed5f65508fa3f0b1e46053195d7920e3e740d047c0a6d80a807f0d8d195cdca7",
+      "kind": "own-words",
+      "url": "https://us11.campaign-archive.com/?e=ae3824fee2&u=08cb3e52aa1308600f84d49ea&id=95a46ed4a0",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "These types of policies represent a dangerous slippery slope,” said Governor Tate Reeves. “Certain gun-grabbing politicians aim to achieve their ultimate goal of depriving Americans’ of their Second Amendment rights one unconstitutional step at a time. We have to stand our ground.",
+      "note": "Same release; he calls tracking of gun-purchase transactions a step toward wider restrictions.",
+      "subjects": [
+        "tracking gun purchases",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:10.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "017578fbfa5903e895ab4291085499447cfd7a276f3058ed555e7150293c1766",
+      "kind": "record",
+      "url": "https://us11.campaign-archive.com/?e=ae3824fee2&u=08cb3e52aa1308600f84d49ea&id=95a46ed4a0",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1110-2023",
+      "act": "signed",
+      "note": "Signed HB 1110, which bars any state body or private person from keeping a registry of privately owned guns or their owners, and bars banks from using a firearms merchant code to track gun purchases.",
+      "subjects": [
+        "gun registry ban",
+        "tracking gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:10.552Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -203,6 +287,34 @@
       "found": 8,
       "at": "2026-11-05T22:39:27.766Z",
       "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun registry ban",
+        "tracking gun purchases",
+        "Second Amendment general statement",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "federal gun rules"
+      ],
+      "places": [
+        "confirmed in scope: sitting Mississippi governor, issuing office press releases (not a 2026 ballot candidate)",
+        "On the Record (0 appearances)",
+        "official governor's office site: site search for 'second amendment' and 'gun' returned one gun item (the April 2023 bill-signing release), read via its archived copy",
+        "campaign site https://tatereeves.com/ (home page read, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Tate_Reeves",
+        "blocked: https://archive.vicksburgnews.com/governor-reeves-signs-bill-strengthening-second-amendment-protections-for-mississippians/",
+        "news search on name plus Second Amendment / permitless carry (one search; results were advocacy-group pages and reprints of the release)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: URL-pattern pages beyond the above (ontheissues, vote411 are leads only)"
+      ],
+      "found": 4,
+      "at": "2026-11-18T03:07:10.552Z",
+      "by": "source-collector"
     }
   ]
 }

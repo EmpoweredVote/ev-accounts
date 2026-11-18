@@ -44,6 +44,135 @@
         "fetched_at": "2026-11-05T23:52:51.760Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "16cda05b09d2cc0248e841b11072d05ebe237058eb20ff7e8870ce40ede771a1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1700-1799/HB1793SG.pdf",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1793-2026",
+      "act": "yea",
+      "motion": "Senate Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Senate Conference Report Adopted, 2026-03-29: yea (tally 33–16); census gate: none.",
+      "subjects": [
+        "sales-tax holiday covers firearm safes",
+        "firearm and ammunition sales-tax exemption weekend"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1700-1799/HB1793CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1793-2026.comm_sub.htm",
+          "sha256": "513c728f74a25f905ee07e19935570768c7a35fc9a9f10efe8e7b23a8d4f38f6"
+        }
+      }
+    },
+    {
+      "id": "c2df2e137754aae1f3b8f18a7cced8600f40a55ca4e17c969bebdd477dc6f8c1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2300-2399/SB2316PS.pdf",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2316-2026",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2026-02-10: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "silencer offence tied to federal law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2316IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2316-2026.introduced.htm",
+          "sha256": "9d8f7aa669472b3a538e2b20b63f79caebf550db432a0fe9480be716d3257f6a"
+        }
+      }
+    },
+    {
+      "id": "a0922df775d1e4f0f8c25b7f04f868bfb7dc6636919cbc00cc2edaf9b3f72208",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2800-2899/SB2809SG.pdf",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2809-2026",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2026-02-04: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "retiring state agriculture theft officers keep service sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2800-2899/SB2809PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2809-2026.introduced.htm",
+          "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
+        }
+      }
+    },
+    {
+      "id": "0358e6ee03886b69a68e914e9cd855e2db40ab3c3b68e682ca2e18088ac18c38",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75349/race/7007/election/1024",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "None.  2nd Amendment is quite clear.",
+      "note": "His answer on a 2023 voter-guide questionnaire (Senate District 42 race) to the question 'What restrictions on gun ownership are needed to protect public safety?'",
+      "subjects": [
+        "limits on who may own a gun",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:03:46.080Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f701e59fb9261a4955f561cb2d62ceab9682c2acf5617af6c81783d2716bc003",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75349/race/7007/election/1024",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "Victims of gun violence should be able to sue firearms dealers and manufacturers. Strongly Disagree",
+      "note": "His answer on the same 2023 voter-guide questionnaire: he strongly disagreed that victims of gun violence should be able to sue firearms dealers and manufacturers. The statement and the answer are shown together on the page.",
+      "subjects": [
+        "suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:03:46.080Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -87,6 +216,34 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may own a gun",
+        "Second Amendment",
+        "suing gun makers and dealers",
+        "teachers carrying guns",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia page confirming he holds Mississippi Senate District 42 since the 2025 special election",
+        "iVoterGuide 2023 questionnaire (own answers, https://ivoterguide.com/candidate/75349/race/7007/election/1024)",
+        "iVoterGuide later-race page (https://ivoterguide.com/candidate/75349/race/23061/election/1295): gun questions left unanswered",
+        "blocked: https://ballotpedia.org/Don_Hartness (403)",
+        "not reviewed: his Facebook page and the 2023 campaign podcast linked from iVoterGuide",
+        "web search on name plus gun words: nothing further on the subject",
+        "official Senate site and campaign site: not found in search results, not read",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 2,
+      "at": "2026-11-18T03:03:46.080Z",
+      "by": "source-collector"
     }
   ]
 }

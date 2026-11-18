@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2485-2025",
+  "scope": "state:ms",
+  "title": "SB2485 (2025 Regular): Gun shows; require background checks before transfer of firearm.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/SB/2400-2499/SB2485IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2025/html/SB/2400-2499/SB2485IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bradford Blackmon",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e14b8d73-d3b9-4d94-ae94-63857e9c4ecb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2025/html/SB/2400-2499/SB2485IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2485-2025.introduced.htm",
+      "sha256": "4116ac04e85d5b16fffcf94f2d14b9f70b641a4351181aac589d49e4727972e2"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Exceptions in subsection (5) (antique firearms, family gifts, temporary transfers, repairs) are not quoted."
+  },
+  "operative_text": "Section 1 (new section): (1) (a) On and after the effective date of this act, except as described in subsection (5) of this section, before any person who is not a licensed gun dealer, pursuant to Section 18 U.S.C. § 923, transfers or attempts to transfer possession of a firearm to a transferee at a gun show, he or she shall: (i) Require that a background check, in accordance with Section 45-9-103 be conducted of the prospective transferee; and (ii) Obtain approval of a transfer from the Department of Public Safety after a background check has been requested by a licensed gun dealer, in accordance with Section 45-9-103. (2) (a) A prospective firearm transferor who is not a licensed gun dealer shall arrange for a licensed gun dealer to obtain the background check required by this section. (3) (a) A prospective firearm transferee under this section shall not accept possession of the firearm unless the prospective firearm transferor has obtained approval of the transfer from the bureau after a background check has been requested by a licensed gun dealer, as described in paragraph (b) of subsection (1) of this section. (b) A prospective firearm transferee shall not knowingly provide false information to a prospective firearm transferor or to a licensed gun dealer for the purpose of acquiring a firearm. (4) A person who transfers a firearm in violation of the provisions of this section may be jointly and severally liable for any civil damages proximately caused by the transferee's subsequent use of the firearm. (8) (a) A person who violates a provision of this section commits a misdemeanor. Upon conviction, the person shall be sentenced for a minimum of three (3) months or a maximum of one (1) year to the county jail or fined a minimum of Two Hundred and Fifty Dollars ($250.00) or a maximum of One Thousand Dollars ($1000.00) or by both imprisonment and fine. The person shall also be prohibited from possessing a firearm for two (2) years, beginning on the date of his or her conviction.\nSection 2 (Miss. Code § 45-9-103): (2) (b) The Department of Public Safety by rule shall establish a procedure to provide the background checks required under Section 1 of this act."
+}

@@ -207,6 +207,48 @@
         "fetched_at": "2026-11-05T22:42:56.092Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d7cdd13bd29b44812271b027d40f6eadf2af0b5bdc8d12fd686f98b3ba031b88",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2019/07/19/national-rifle-association-pac-endorses-hosemann-for-lieutenant-governor/",
+      "date": "2019-07-19",
+      "date_precision": "day",
+      "passage": "The U.S. and Mississippi Constitutions afford us certain rights as it relates to keeping and bearing arms, and I look forward to helping defend those rights as Mississippi’s next Lieutenant Governor,",
+      "note": "Quoted by a state news site in a story on a gun-rights group's endorsement of his 2019 run; the same quote is on his campaign site release. He also says he is an avid hunter and lifetime member of that group.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "defend the right to keep and bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:22.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7eb68b820c790b778a7fda1f8ee5a442459ead5537ba915f481a52f55a00643e",
+      "kind": "own-words",
+      "url": "https://delberthosemann.com/nra-endorses-hosemann-cites-clear-commitment-to-2nd-amendment/",
+      "date": "2019-07",
+      "date_precision": "month",
+      "passage": "The U.S. and Mississippi Constitutions afford us certain rights as it relates to keeping and bearing arms, and I look forward to helping defend those rights as Mississippi’s next Lieutenant Governor,",
+      "note": "Same statement as posted on his own campaign site in a release about the gun-rights group's endorsement. Page date not shown in the text read; month taken from the matching news story.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "defend the right to keep and bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:22.211Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -241,6 +283,32 @@
       "found": 10,
       "at": "2026-11-05T22:42:56.092Z",
       "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun",
+        "limits on state and local gun rules (preemption)",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "their campaign site (read two release pages that name him as Lieutenant Governor candidate; one page of his own words on the subject)",
+        "a state news site (read one story, same release)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on his name plus gun and Second Amendment words",
+        "not reviewed: https://ballotpedia.org/Delbert_Hosemann",
+        "not reviewed: https://ivoterguide.com/candidate/44651/race/6967/election/716",
+        "not reviewed: https://www.nraila.org/articles/20210210/mississippi-senate-passes-strong-preemption-reform-bill-on-35-to-16-vote",
+        "not reviewed: official Lieutenant Governor site search for gun words",
+        "nothing on background checks, assault-style guns, red-flag orders, ghost guns or permitless carry found in the pages read"
+      ],
+      "found": 2,
+      "at": "2026-11-18T03:07:22.211Z",
+      "by": "source-collector"
     }
   ]
 }

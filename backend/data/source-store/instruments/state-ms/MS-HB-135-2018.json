@@ -1,0 +1,44 @@
+{
+  "id": "MS-HB-135-2018",
+  "scope": "state:ms",
+  "title": "HB135 (2018 Regular): Concealed firearms on school premises; authorize local school board to adopt policy permitting certain school employees to carry.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/0100-0199/HB0135IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/0100-0199/HB0135IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bubba Carpenter",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "389597ac-14c3-4c0e-99a4-ad64f395eb97"
+    },
+    {
+      "name": "Dana Criswell",
+      "role": "co",
+      "version": "introduced text (By:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/0100-0199/HB0135IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-135-2018.introduced.htm",
+      "sha256": "ca04a41441d1c214aaff5c6ade48f3651e4a7d4263a581017461ec47a045b8ed"
+    },
+    "note": "Introduced text (as filed), no date. Section 1 is unnumbered in the print (new section). Section 2's quote is the new clause inside the weapon-possession item of the 'unlawful activity' definition. Sections 3-5 only bring forward §§ 45-9-101, 97-37-7, 97-37-17 and 37-3-82.1 unchanged; Section 6 only relabels subsection letters in § 37-3-82. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (new section): The policy may authorize the local superintendent of schools or governing board of a charter school to allow school employees, whether administrative or instructional, to possess and carry a concealed firearm on school premises, or to contract for the employment of security personnel, school resource officers or private security providers who shall be authorized to carry a concealed firearm on school premises while in the performance of official duties and responsibilities. In order for a school employee to carry a concealed weapon on school property, the employee must be licensed under Section 45-9-101 to carry a concealed weapon and must successfully complete an instructional course in the safe handling and use of firearms offered by an instructor certified by a nationally recognized organization that customarily offers firearms training, or by any other organization approved by the Department of Public Safety, including a local law enforcement agency or county sheriff's department. The superintendent shall identify and verify to the Department of Public Safety all persons employed by the school district permitted to carry a concealed firearm who have complied with all the requirements of this subsection.\nSection 2 (Miss. Code § 37-11-29): \"unlawful activity\" means Possession or use of a deadly weapon, as defined in Section 97-37-1, except that the person be an employee of the school district authorized to carry a concealed weapon under the provisions of Section 1 of this act."
+}

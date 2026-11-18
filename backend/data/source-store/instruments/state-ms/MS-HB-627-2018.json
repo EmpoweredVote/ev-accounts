@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-627-2018",
+  "scope": "state:ms",
+  "title": "HB627 (2018 Regular): Firearms; revise limits placed on counties and municipalities to regulate.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/0600-0699/HB0627IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/0600-0699/HB0627IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Earle Banks",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e84ffc43-28e5-4be4-b433-c632dde200cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/0600-0699/HB0627IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-627-2018.introduced.htm",
+      "sha256": "2507a2d904c019827f9618d6b6bb4188ba47f9c487767ec598b471b9fc3814f3"
+    },
+    "note": "No passage vote on record; text read is the bill as filed. Mostly deletions: Section 1 strikes 45-9-53(4)-(5) (the limit on local written notices banning concealed carry, and the suit process); Section 2 (Miss. Code § 97-37-7) strikes the sentence letting licensed carriers with training enter courthouses and other places. The quotes are only the remaining buy-back text, renumbered (4). Section 3 brings forward 45-9-101."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-53): No county or municipality or their officers or employees may participate in any program in which individuals are given a thing of value provided by another individual or other entity in exchange for surrendering a firearm to the county, municipality or other governmental body unless:\nSection 1 (Miss. Code § 45-9-53): The county or municipality has adopted an ordinance authorizing the participation of the county or municipality, or participation by an officer or employee of the county or municipality in such a program; and\nSection 1 (Miss. Code § 45-9-53): Any ordinance enacted pursuant to this section must require that any firearm received shall be offered for sale at auction as provided by Sections 19-3-85 and 21-39-21 to federally licensed firearms dealers, with the proceeds from such sale at auction reverting to the general operating fund of the county, municipality or other governmental body."
+}

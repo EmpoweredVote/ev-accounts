@@ -1,0 +1,45 @@
+{
+  "id": "MS-HB-1340-2025",
+  "scope": "state:ms",
+  "title": "HB1340 (2025 Regular): Machine gun conversion; provide an affirmative defense.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/1300-1399/HB1340IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2025/html/HB/1300-1399/HB1340IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jansen Owen",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e9da8d29-679d-4f33-9fd5-a0f023280e08"
+    },
+    {
+      "name": "Jeff Hale",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "f5bb724b-6601-4c2f-a7ba-e633be404ad1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2025/html/HB/1300-1399/HB1340IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1340-2025.introduced.htm",
+      "sha256": "66722c18eea2d68f5d86f366d1bb2511e4d987e4a837e3ac8647d9aae616b33f"
+    },
+    "note": "Introduced text (as filed), no date. The clause 'and who is not otherwise authorized by federal law to manufacture, possess or use a machine gun conversion device' is struck from subsection (1)(a) and moved into a new affirmative defense in (2)(b). No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-39): Any person who manufactures, possesses, or uses a machine gun conversion device shall be guilty of a felony. Any person convicted of a first offense in violation of this act shall be guilty of a felony, and shall be sentenced to imprisonment for a term of not more than ten (10) years, fined not more than Ten Thousand Dollars ($10,000.00), or both. It shall be an affirmative defense for a violation of this section that the person is otherwise authorized by federal law to manufacture, possess or use a machine gun conversion device. A person convicted of a second or subsequent offense shall be charged with a felony under this act and shall be sentenced to imprisonment for a term of not more than fifteen (15) years, fined not more than Twenty Thousand Dollars ($20,000.00), or both."
+}

@@ -1,6 +1,95 @@
 {
   "politician_id": "98324cab-4c16-406e-b462-d2c34aa38fcf",
-  "findings": [],
+  "findings": [
+    {
+      "id": "35430ea2657cdd085dabc1ab9e0da520489303d70ca3eedc26e8e91c869ff607",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1700-1799/HB1793SG.pdf",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1793-2026",
+      "act": "nay",
+      "motion": "Senate Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Senate Conference Report Adopted, 2026-03-29: nay (tally 33–16); census gate: none.",
+      "subjects": [
+        "sales-tax holiday covers firearm safes",
+        "firearm and ammunition sales-tax exemption weekend"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1700-1799/HB1793CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1793-2026.comm_sub.htm",
+          "sha256": "513c728f74a25f905ee07e19935570768c7a35fc9a9f10efe8e7b23a8d4f38f6"
+        }
+      }
+    },
+    {
+      "id": "c2df2e137754aae1f3b8f18a7cced8600f40a55ca4e17c969bebdd477dc6f8c1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2300-2399/SB2316PS.pdf",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2316-2026",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2026-02-10: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "silencer offence tied to federal law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2316IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2316-2026.introduced.htm",
+          "sha256": "9d8f7aa669472b3a538e2b20b63f79caebf550db432a0fe9480be716d3257f6a"
+        }
+      }
+    },
+    {
+      "id": "a0922df775d1e4f0f8c25b7f04f868bfb7dc6636919cbc00cc2edaf9b3f72208",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2800-2899/SB2809SG.pdf",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2809-2026",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2026-02-04: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "retiring state agriculture theft officers keep service sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2800-2899/SB2809PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2809-2026.introduced.htm",
+          "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +116,33 @@
       "found": 0,
       "at": "2026-11-05T22:57:04.939Z",
       "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "in scope: sitting Mississippi state senator, District 2, since the 2025 special election (per a web search result; term runs to 2028)",
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Theresa_Gillespie_Isom (empty page returned)",
+        "blocked: https://www.legislature.ms.gov/legislators/senate/ (404; own member page not reached)",
+        "nothing on the subject: https://ivoterguide.com/candidate/47296/race/23393/election/1321 (voter guide; questionnaire shows 'Did not answer' on the 2nd Amendment question; third-party page, not own words)",
+        "nothing on the subject: https://thecandidate.com/states/ms/legislature/senate/2/theresa-gillespie-isom",
+        "web search: name plus gun, firearm, Second Amendment words, two searches; nothing by her on the subject",
+        "no campaign or official site of her own found or read",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: ballotready.org/people/theresa-gillespie-isom"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:06:20.859Z",
+      "by": "source-collector"
     }
   ]
 }

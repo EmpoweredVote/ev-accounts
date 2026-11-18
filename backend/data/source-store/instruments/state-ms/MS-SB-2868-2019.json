@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2868-2019",
+  "scope": "state:ms",
+  "title": "SB2868 (2019 Regular): Weapons; revise employer-imposed parking prohibition.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/SB/2800-2899/SB2868IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/SB/2800-2899/SB2868IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chuck Younger",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "a6991eac-bf81-4824-b807-27c127d30494"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/SB/2800-2899/SB2868IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2868-2019.introduced.htm",
+      "sha256": "ef3c4fbd3c27c8ccc7614a78edc92440127611cd070f0e27541734fa722499d7"
+    },
+    "note": "Introduced text as filed (no date); no enrolled text read. Struck: the opening words 'Except as otherwise provided in subsection (2)' and all of former subsection (2), which let a private employer bar firearms in gated or restricted employee parking; remaining subsections renumbered. Quote shows the law as it would read."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-55): A public or private employer may not establish, maintain, or enforce any policy or rule that has the effect of prohibiting a person from transporting or storing a firearm in a locked vehicle in any parking lot, parking garage, or other designated parking area. This section shall not apply to vehicles owned or leased by an employer and used by the employee in the course of his business. This section does not authorize a person to transport or store a firearm on any premises where the possession of a firearm is prohibited by state or federal law. A public or private employer shall not be liable in a civil action for damages resulting from or arising out of an occurrence involving the transportation, storage, possession or use of a firearm covered by this section."
+}

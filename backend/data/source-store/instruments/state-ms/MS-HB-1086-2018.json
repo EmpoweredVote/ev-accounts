@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1086-2018",
+  "scope": "state:ms",
+  "title": "HB1086 (2018 Regular): Firearms; prohibit public employers from banning employees having permit and training endorsement from carrying on employer's property.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/1000-1099/HB1086IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/1000-1099/HB1086IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Randy Rushing",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "4cb478af-72d2-4eb8-9f43-477a15b4c785"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/1000-1099/HB1086IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1086-2018.introduced.htm",
+      "sha256": "801d12e39039cfc86526753a707b79148d2d5037a72bb896d17dc113bceba685"
+    },
+    "note": "As-filed text (introduced); no date in text. No vote recorded. Section 1's first sentence is a long single provision; Section 2 reprints the rest of 45-9-101 and sections 97-37-1, 97-37-7 and 45-9-53 are brought forward unchanged."
+  },
+  "operative_text": "Section 1 (new section): A public employer of this state or a political subdivision of this state may not adopt or establish a policy prohibiting an employee who has a valid license issued under Section 45-9-101 and a training endorsement as provided by Section 97-37-7 from lawfully carrying a concealed pistol or revolver on any property or in any building under the public employer's control. A sign that is posted by a public employer in accordance with Section 45-9-101 which prohibits the carrying of a concealed pistol or revolver is not effective against any employee of the public employer, provided the employee has a valid license issued under Section 45-9-101 and a training endorsement as provided by Section 97-37-7.\nSection 2 (Miss. Code § 45-9-101): However, such sign is not effective against an employee of a public employer who meets the requirements provided in Section 1 of this act."
+}

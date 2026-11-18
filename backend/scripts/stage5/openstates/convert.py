@@ -31,7 +31,7 @@ What is different from a real LegiScan dataset (also written to .openstates.json
   - Voters Open States left as a bare surname are matched to the session roster by chamber +
     surname + initial; any still unmatched get a "name only" person (listed in .openstates.json).
 """
-import argparse, collections, csv, datetime, glob, json, os, re, shutil, sys, unicodedata
+import argparse, collections, csv, datetime, glob, hashlib, json, os, re, shutil, sys, unicodedata
 
 csv.field_size_limit(10**9)
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -272,6 +272,34 @@ hkey = lambda bid, u: (bid, u) if PER_BILL else u
 have_url = {hkey(events[e]["bill_id"], u) for e, us in vsrc.items() for u in us}
 sess_by_ident = {s["identifier"]: sid for sid, s in sessions.items()}
 bill_by_key = {(b["legislative_session_id"], re.sub(r"[\s.]+", "", b["identifier"]).upper()): bid for bid, b in bills.items()}
+RECORD_ONLY_BILLS = collections.Counter()  # session id -> bills built from the legislature's history alone
+
+
+def ms_bill_from_history(sp, sid, ident):
+    """Mississippi: a bill the dump does not hold (2016 and before: the 2026-11 dump has no bills before 20171E; the
+    ms-01 batch cites 2016 HB 786). Built only from the history the fetch kept (supplements/MS/raw/, named by the
+    sha256 of its address): the history must name this bill of this session. It carries no sponsor, text or action;
+    its roll calls are the supplement's. None when the history is not on disk or is another bill."""
+    u = (sp.get("checked", {}).get(ident) or {}).get("vote_list") or ""
+    p = os.path.join(WORK, "supplements", ST, "raw", hashlib.sha256(u.encode()).hexdigest()[:24]) if u else ""
+    if not p or not os.path.exists(p):
+        return None
+    h = open(p, encoding="latin-1").read()
+    tag = lambda t: (re.search(rf"<{t}>(.*?)</{t}>", h, re.S) or [None, ""])[1].strip()
+    if re.sub(r"\s+", "", tag("SHORT_MSRID")).upper() != re.sub(r"[\s.]+", "", ident).upper() or tag("YEAR") != sp["session"][:4] \
+            or not tag("SESSION").startswith("Regular") or sp["session"] != tag("YEAR"):
+        return None
+    bid = f"history:{ST}:{sp['session']}:{ident}"
+    bills[bid] = {"id": bid, "identifier": ident, "title": tag("SHORTTITLE") or ident, "classification": "{bill}",
+                  "subject": "{}", "from_organization_id": None, "legislative_session_id": sid}
+    by_bill[bid]["billsource"].append({"url": u})
+    if tag("LONGTITLE"):
+        by_bill[bid]["billabstract"].append({"abstract": tag("LONGTITLE")})
+    bill_by_key[(sid, re.sub(r"[\s.]+", "", ident).upper())] = bid
+    RECORD_ONLY_BILLS[sid] += 1
+    return bid
+
+
 for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
     sp = json.load(open(f))
     if sp.get("state", "").upper() != ST or sp.get("session") not in sess_by_ident:
@@ -279,6 +307,10 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
     sid = sess_by_ident[sp["session"]]
     if want and sp["session"] not in want:
         continue
+    if RULES.get("ms_vote_page"):
+        for ident in sp.get("bills", {}):
+            if not bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper())):
+                ms_bill_from_history(sp, sid, ident)
     if RULES.get("sd_sponsors_from_text"):
         for ident, spn in sp.get("sponsors", {}).items():
             cb = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
@@ -906,7 +938,8 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
     stats["people_with_legiscan_id"] = sum(1 for p in people_out if p < START["people"])
     marker = {"source": "Open States monthly dump (public domain)", "dump": meta["dump"], "extracted_at": meta["extracted_at"],
               "converted_at": now, "state": ST, "openstates_session": ident, "session_id": lsid, "synthetic_ids": True,
-              "counts": dict(stats, **DUPES[sid]), "name_only_voters_unmatched": dict(name_only),
+              "counts": dict(stats, **DUPES[sid], **({"bills_from_the_legislature_history_only": RECORD_ONLY_BILLS[sid]} if RECORD_ONLY_BILLS[sid] else {})),
+              "name_only_voters_unmatched": dict(name_only),
               "rollcalls_from_legislature": ({"count": SUPP_SESSIONS[sid]["added"], "bills": sorted(SUPP_SESSIONS[sid]["bills"]),
                                               "source": SUPP_SESSIONS[sid]["source"],
                                               "note": "The dump holds no roll call for these; each was read from the legislature's own page. "

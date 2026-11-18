@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2464-2025",
+  "scope": "state:ms",
+  "title": "SB2464 (2025 Regular): Firearms, firearm entities and knives; prohibit governmental entities from entering into certain contracts regarding.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/SB/2400-2499/SB2464IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2025/html/SB/2400-2499/SB2464IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Seymour",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "931ad6fa-6eb3-4214-bdad-702a9e7c3677"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2025/html/SB/2400-2499/SB2464IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2464-2025.introduced.htm",
+      "sha256": "72268f9d710a1a559d4316e8d1bb18a983edfecb96f31b014761517d51e553ed"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Section 4 struck the earlier rule allowing buyback programs under a local ordinance with auction of surrendered guns. Quote omits definitions (Section 1), contract exemptions, state-agency suit provisions (3)(4) in § 45-9-51 and county/municipal suit edits in § 45-9-53(5). Knife provisions ride along with the gun parts."
+  },
+  "operative_text": "Section 2 (new section): (2) Except as provided by subsection (3) of this section, a governmental entity may not enter into a contract with a company for the purchase of goods or services unless the contract contains a written verification from the company that it: (a) Does not have a practice, policy, guidance, or directive that discriminates against a firearm entity, knife entity, firearm trade association or knife trade association; and (b) Will not discriminate during the term of the contract against a firearm entity, knife entity, firearm trade association or knife trade association.\nSection 3 (Miss. Code § 45-9-51): (1) Subject to the provisions of Section 45-9-53, no county or municipality may adopt any ordinance or enter into any contract or rental agreement that restricts the possession, carrying, transportation, sale, transfer or ownership of firearms or ammunition or their components or knives. (3) (a) No state agency may adopt a posted written notice, rule, regulation, order or policy or enter into any contract or rental agreement that restricts the possession, carrying, transportation, sale, transfer or ownership of firearms or ammunition or their components or knives. (b) No state agency or their officers or employees may participate in any program in which individuals are given a thing of value provided by another individual or other entity in exchange for surrendering a firearm or knife to the state agency or other governmental body. (5) Notwithstanding this section, a state law enforcement agency may regulate the possession, carrying, transportation, sale, transfer or ownership of firearms or ammunition or their components or knives issued or used by law enforcement officers in the course of their official duties.\nSection 4 (Miss. Code § 45-9-53): (6) No county or municipality or their officers or employees may participate in any program in which individuals are given a thing of value provided by another individual or other entity in exchange for surrendering a firearm or knife to the county, municipality or other governmental body."
+}

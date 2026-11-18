@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2843-2019",
+  "scope": "state:ms",
+  "title": "SB2843 (2019 Regular): Firearms restraining order; create the extreme risk protection order.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/SB/2800-2899/SB2843IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/SB/2800-2899/SB2843IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brice Wiggins",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "35347631-7879-4fb4-a26a-b208678b8637"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/SB/2800-2899/SB2843IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2843-2019.introduced.htm",
+      "sha256": "f758deeb92c5f09a6f706dd11410e4cc4e37fed75ee14b1962fa9c9b3114ff7a"
+    },
+    "note": "Introduced text as filed (no date); no enrolled text read. Section 3 (Miss. Code § 25-7-9) conforms chancery clerk fees (not quoted). The title also says a licence is revoked on entry of an order; that revocation text was not quoted."
+  },
+  "operative_text": "Section 1 (new section, Extreme Risk Protection Order Act): \"Extreme risk protection order\" means an order issued by the court, prohibiting and enjoining a named person from purchasing, possessing or receiving, or having in the person's custody or control, any firearms. The affiant must be either a family member of the respondent or a law enforcement officer. An emergency extreme risk protection order may be issued on an ex parte basis without notice to the respondent. If the court issues an emergency extreme risk protection order, upon a finding of probable cause that the respondent possesses firearms, it shall issue a search warrant directing a law enforcement agency to seize the respondent's firearms. At the hearing, the affiant has the burden of proving, by clear and convincing evidence, that the respondent poses a significant danger of personal injury to himself, herself, or another by purchasing, possessing or receiving, or having in his or her custody or control, a firearm. If the court finds that there is clear and convincing evidence to issue an extreme risk protection order, the court shall issue an extreme risk protection order that shall be in effect for six (6) months subject to renewal under or termination under subsection (9) of this section. A respondent who knowingly violates an extreme risk protection order is guilty of a misdemeanor punishable by a fine not to exceed One Thousand Dollars ($1,000.00) and confinement in the county jail not to exceed one (1) year.\nSection 2 (Miss. Code § 45-9-101(2)(m)): Has not been subject to an extreme risk protection order under Section 1 of this act for at least three (3) years."
+}

@@ -1,0 +1,54 @@
+{
+  "id": "MS-HB-542-2018",
+  "scope": "state:ms",
+  "title": "HB542 (2018 Regular): Enhanced carry firearms license; authorize to be carried onto public property.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/0500-0599/HB0542IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/0500-0599/HB0542IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andy Gipson",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Shane Barnett",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "7f2d5238-caa7-462d-bff2-dd9ec044f7ef"
+    },
+    {
+      "name": "John Glen Corley",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Dana Criswell",
+      "role": "co",
+      "version": "introduced text (By:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/0500-0599/HB0542IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-542-2018.introduced.htm",
+      "sha256": "ca3519504c7247ec35bfa1dcd38846c759950cd3de2c428c5eef0d44676ae67a"
+    },
+    "note": "No passage vote on record; text read is the bill as filed. The first quote is one sentence; added words were the public-property clause. Sections 2-5 bring forward other sections only."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-7): A person licensed under Section 45-9-101 to carry a concealed pistol, who (a) has voluntarily completed an instructional course in the safe handling and use of firearms offered by an instructor certified by a nationally recognized organization that customarily offers firearms training, or by any other organization approved by the Department of Public Safety, (b) is a member or veteran of any active or reserve component branch of the United States of America Armed Forces having completed law enforcement or combat training with pistols or other handguns as recognized by such branch after submitting an affidavit attesting to have read, understand and agree to comply with all provisions of the enhanced carry law, or (c) is an honorably retired law enforcement officer or honorably retired member or veteran of any active or reserve component branch of the United States of America Armed Forces having completed law enforcement or combat training with pistols or other handguns, after submitting an affidavit attesting to have read, understand and agree to comply with all provisions of Mississippi enhanced carry law shall also be authorized to carry weapons in courthouses except in courtrooms during a judicial proceeding, and any location listed in subsection (13) of Section 45-9-101, and any other public property, or portion of public property, that is generally open to the public and has the required security measures described in subsection (4), except any place of nuisance as defined in Section 95-3-1, any police, sheriff or highway patrol station or any detention facility, prison or jail.\nSection 1 (Miss. Code § 97-37-7): Any rule, regulation, or other policy that has the effect of limiting the locations where a person may carry a concealed pistol pursuant to the Mississippi enhanced carry law beyond the locations described in this subsection shall have no force or effect.\nSection 1 (Miss. Code § 97-37-7): The security measures described in subsection (2) shall at a minimum include screening at each publicly accessible entrance of the property or portion of property of every entrance with security devices that are designed to detect concealed weapons."
+}

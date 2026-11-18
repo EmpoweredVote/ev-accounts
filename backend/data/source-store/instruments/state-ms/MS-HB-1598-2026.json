@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1598-2026",
+  "scope": "state:ms",
+  "title": "HB1598 (2026 Regular): Firearm possession by minors; authorize Oakley Training School.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1500-1599/HB1598IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/1500-1599/HB1598IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Felsher",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e4937159-e584-4980-9811-c36b9e12aa2c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1500-1599/HB1598IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1598-2026.introduced.htm",
+      "sha256": "7ce5ab83cacb94081f10b80090f23638cac03b715b4a6955be778ae74d96c33c"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. In Section 1 the added words are 'or adjudicated two (2) or more times delinquent for misdemeanor firearm possession,'. Section 2 (97-37-14) is brought forward without change, for possible amendment."
+  },
+  "operative_text": "Section 1 (Miss. Code § 43-21-605): Only a child who has been adjudicated delinquent for a felony or adjudicated two (2) or more times delinquent for misdemeanor firearm possession, may be committed to the training school.\nSection 2 (Miss. Code § 97-37-14): (1) Except as otherwise provided in this section, it is an act of delinquency for any person who has not attained the age of eighteen (18) years knowingly to have any handgun in such person's possession.\nSection 2 (Miss. Code § 97-37-14): (3) This section shall not apply to any person who uses a handgun or other firearm to lawfully defend himself from imminent danger at his home or place of domicile and any such person shall not be held criminally liable for such use of a handgun or other firearm."
+}

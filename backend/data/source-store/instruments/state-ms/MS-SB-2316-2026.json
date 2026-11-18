@@ -1,0 +1,318 @@
+{
+  "id": "MS-SB-2316-2026",
+  "scope": "state:ms",
+  "title": "SB2316 (2026 Regular): Silencers; clarify legality of making, manufacturing, selling or possessing.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2300-2399/SB2316PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2316IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Johnson",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "ca3d63d6-17c9-48ce-bc9c-786c00638cab"
+    },
+    {
+      "name": "Tyler McCaughn",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "4907fd47-4912-43c6-a1ed-d95b9ad8d1e6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-10",
+      "body": "MS Senate",
+      "motion": "Senate Passed",
+      "kind": "roll-call",
+      "yes": 52,
+      "no": 0,
+      "absent": 0,
+      "note": "billstatus.ls.state.ms.us vote PDF (read from the legislature) 90180438",
+      "members": [
+        {
+          "name": "Juan Barnett",
+          "vote": "yea",
+          "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457"
+        },
+        {
+          "name": "Jason Barrett",
+          "vote": "yea",
+          "politician_id": "dc02b429-81fb-4618-a2ad-8df15eec1a37"
+        },
+        {
+          "name": "Andy Berry",
+          "vote": "yea",
+          "politician_id": "22168b26-5b99-4d29-9e60-7b1bdfc79512"
+        },
+        {
+          "name": "Bradford Blackmon",
+          "vote": "yea",
+          "politician_id": "e14b8d73-d3b9-4d94-ae94-63857e9c4ecb"
+        },
+        {
+          "name": "Kevin Blackwell",
+          "vote": "yea",
+          "politician_id": "bae7c0e9-be71-42a8-853f-c140c65db37d"
+        },
+        {
+          "name": "David Blount",
+          "vote": "yea",
+          "politician_id": "a29978d9-d876-4fb3-8f9a-4c3e3421a9e3"
+        },
+        {
+          "name": "Nicole Boyd",
+          "vote": "yea",
+          "politician_id": "f1c138fa-a424-47d5-a938-691c72efc943"
+        },
+        {
+          "name": "Gary Brumfield",
+          "vote": "yea",
+          "politician_id": "c65c40a7-bee9-4297-b385-f15478eb2060"
+        },
+        {
+          "name": "Hob Bryan",
+          "vote": "yea",
+          "politician_id": "8bd09319-824c-41d2-b6e6-849ffdd62d8d"
+        },
+        {
+          "name": "Albert Butler",
+          "vote": "yea",
+          "politician_id": "ca01712f-4e00-46c2-9ff8-258d37dce586"
+        },
+        {
+          "name": "Joel Carter",
+          "vote": "yea",
+          "politician_id": "180e0b3c-89e3-4d06-80b0-35ac0674f764"
+        },
+        {
+          "name": "Lydia Chassaniol",
+          "vote": "yea",
+          "politician_id": "97423aba-2a57-474a-a6b5-6a027b3ddfa5"
+        },
+        {
+          "name": "Kathy Chism",
+          "vote": "yea",
+          "politician_id": "ed6a1a25-7331-4f21-a3aa-f96d8c878846"
+        },
+        {
+          "name": "Dennis DeBar",
+          "vote": "yea",
+          "politician_id": "e33fad93-d18b-47d3-9c4c-1fded8c01d01"
+        },
+        {
+          "name": "Scott DeLano",
+          "vote": "yea",
+          "politician_id": "a9dad9dd-9977-48e8-9153-27de80d57979"
+        },
+        {
+          "name": "Johnny DuPree",
+          "vote": "yea",
+          "politician_id": "d7d2c4b0-024d-4315-91a2-5814e4a96642"
+        },
+        {
+          "name": "Jeremy England",
+          "vote": "yea",
+          "politician_id": "3f899c1e-2da3-40cf-aca6-89a462a88eef"
+        },
+        {
+          "name": "Joey Fillingane",
+          "vote": "yea",
+          "politician_id": "7286e397-46d9-4fbc-b518-b25f898f5038"
+        },
+        {
+          "name": "Hillman Frazier",
+          "vote": "yea",
+          "politician_id": "096a9329-ae1b-4f6f-81bd-b3e675eb782b"
+        },
+        {
+          "name": "Theresa Gillespie Isom",
+          "vote": "yea",
+          "politician_id": "98324cab-4c16-406e-b462-d2c34aa38fcf"
+        },
+        {
+          "name": "Josh Harkins",
+          "vote": "yea",
+          "politician_id": "7885ac00-e4f5-41be-8102-5e4589bcede8"
+        },
+        {
+          "name": "Don Hartness",
+          "vote": "yea",
+          "politician_id": "0aa972df-540a-4575-bd1f-57711ede5841"
+        },
+        {
+          "name": "Rod Hickman",
+          "vote": "yea",
+          "politician_id": "9b326d1e-f19a-4fad-812a-26c411c36a89"
+        },
+        {
+          "name": "Angela Hill",
+          "vote": "yea",
+          "politician_id": "91620900-c038-451e-a704-5bd42e895248"
+        },
+        {
+          "name": "Briggs Hopson",
+          "vote": "yea",
+          "politician_id": "c126c0b3-02b3-49ed-85b6-1d5bc797c256"
+        },
+        {
+          "name": "Reginald Jackson",
+          "vote": "yea",
+          "politician_id": "0f3e06b4-a5a3-402d-b712-af1e7dd070d8"
+        },
+        {
+          "name": "Chris Johnson",
+          "vote": "yea",
+          "politician_id": "ca3d63d6-17c9-48ce-bc9c-786c00638cab"
+        },
+        {
+          "name": "Dean Kirby",
+          "vote": "yea",
+          "politician_id": "58152bef-1db9-4970-9e84-bb27d448cff5"
+        },
+        {
+          "name": "Philman Ladner",
+          "vote": "yea",
+          "politician_id": "e5c00545-cb86-4b46-b14b-7988b065cc75"
+        },
+        {
+          "name": "Tyler McCaughn",
+          "vote": "yea",
+          "politician_id": "4907fd47-4912-43c6-a1ed-d95b9ad8d1e6"
+        },
+        {
+          "name": "Michael McLendon",
+          "vote": "yea",
+          "politician_id": "0aac1af3-7318-4a87-acc5-1043d870b7c6"
+        },
+        {
+          "name": "Chad McMahan",
+          "vote": "yea",
+          "politician_id": "63258275-01f9-4daf-b30f-0d1866f23540"
+        },
+        {
+          "name": "Walter Michel",
+          "vote": "yea",
+          "politician_id": "11e71eea-acef-4f0a-b98b-c11ce17781ca"
+        },
+        {
+          "name": "Kamesha Mumford",
+          "vote": "yea",
+          "politician_id": "32938210-da41-4024-8204-7e0e3c0fc130"
+        },
+        {
+          "name": "Sollie Norwood",
+          "vote": "yea",
+          "politician_id": "bb101347-67b5-4758-8efc-e531237f9b9d"
+        },
+        {
+          "name": "Rita Parks",
+          "vote": "yea",
+          "politician_id": "caf8fe09-14b6-464c-8820-ae28029842ce"
+        },
+        {
+          "name": "Justin Pope",
+          "vote": "yea",
+          "politician_id": "72f2cd46-0f2b-446a-83cd-6c92e74c3723"
+        },
+        {
+          "name": "Brian Rhodes",
+          "vote": "yea",
+          "politician_id": "e8f0c423-bcfa-4094-bbb3-3fe1c0a6dcd2"
+        },
+        {
+          "name": "Mike Seymour",
+          "vote": "yea",
+          "politician_id": "931ad6fa-6eb3-4214-bdad-702a9e7c3677"
+        },
+        {
+          "name": "Derrick Simmons",
+          "vote": "yea",
+          "politician_id": "0c489313-568f-46ac-ad9e-b39bed86a2ef"
+        },
+        {
+          "name": "Sarita Simmons",
+          "vote": "yea",
+          "politician_id": "9343ebd1-1d85-486b-a71f-a9a9736c0650"
+        },
+        {
+          "name": "Daniel Sparks",
+          "vote": "yea",
+          "politician_id": "2b283500-4614-47e5-8fa3-f5239c42ec46"
+        },
+        {
+          "name": "Ben Suber",
+          "vote": "yea",
+          "politician_id": "50f3fe33-f53a-46e0-9533-eca6533b11a5"
+        },
+        {
+          "name": "Jeff Tate",
+          "vote": "yea",
+          "politician_id": "6dc6d0e9-e26e-4376-b15e-ea831745f065"
+        },
+        {
+          "name": "Lane Taylor",
+          "vote": "yea",
+          "politician_id": "8726184d-ec3b-4009-9572-e5785e6fbacb"
+        },
+        {
+          "name": "Joseph Thomas",
+          "vote": "yea",
+          "politician_id": "ed421efd-7aa5-464a-829a-235271b4121c"
+        },
+        {
+          "name": "Mike Thompson",
+          "vote": "yea",
+          "politician_id": "bfb6c67e-9412-4505-9e1d-4d70862a4608"
+        },
+        {
+          "name": "Angela Turner-Ford",
+          "vote": "yea",
+          "politician_id": "a295d7b7-b579-4fe0-bbdc-c65feb0db92b"
+        },
+        {
+          "name": "Neil Whaley",
+          "vote": "yea",
+          "politician_id": "f2439435-639f-4a4b-bc13-e15813d91985"
+        },
+        {
+          "name": "Brice Wiggins",
+          "vote": "yea",
+          "politician_id": "35347631-7879-4fb4-a26a-b208678b8637"
+        },
+        {
+          "name": "Bart Williams",
+          "vote": "yea",
+          "politician_id": "8bfff5cd-6347-485d-9be2-2de7b01265ed"
+        },
+        {
+          "name": "Chuck Younger",
+          "vote": "yea",
+          "politician_id": "a6991eac-bf81-4824-b807-27c127d30494"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2316IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2316-2026.introduced.htm",
+      "sha256": "9d8f7aa669472b3a538e2b20b63f79caebf550db432a0fe9480be716d3257f6a"
+    },
+    "note": "Introduced text. Struck: ', not duly authorized under federal law,'; added: 'if making, manufacturing, selling or possessing that instrument or device violates federal law'. Senate passed 52-0 (2026-02-10); later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-31): It shall be unlawful for any person, persons, corporation or manufacturing establishment to make, manufacture, sell or possess any instrument or device which, if used on firearms of any kind, will arrest or muffle the report of the firearm when shot or fired if making, manufacturing, selling or possessing that instrument or device violates federal law. Any person violating this section shall be guilty of a misdemeanor and, upon conviction, shall be fined not more than Five Hundred Dollars ($500.00), or imprisoned in the county jail not more than thirty (30) days, or both."
+}

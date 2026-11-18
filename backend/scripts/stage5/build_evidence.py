@@ -294,7 +294,8 @@ for r in rows:
         for m in INST.finditer(r['reasoning']):
             num = m.group(2)
             # Utah prints "H.B. 89" / "S.B. 50" (ut-01, 2026-11-15): [HS]\.\s?B\. first, or "S." would take the S and stop.
-            for mm in re.finditer(r'\b([HS]\.\s?B\.|H\.?\s?R\.?|S\.|SB|HB|SJR|HJR|Senate Bill|House Bill)\s?' + num + r'\b', t, re.I):
+            # Mississippi prints "HOUSE BILL NO. 1502" (ms-01, 2026-11-18): an optional "No." between the kind and the number.
+            for mm in re.finditer(r'\b([HS]\.\s?B\.|H\.?\s?R\.?|S\.|SB|HB|SJR|HJR|Senate Bill|House Bill)\s?(?:No\.?\s?)?' + num + r'\b', t, re.I):
                 got.append(window(t, mm.start(), mm.end())); break
         got = [x for x in got if x]
         if not got: miss.append((r['full_name'], u, 'no anchor')); continue

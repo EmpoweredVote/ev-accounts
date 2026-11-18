@@ -44,6 +44,185 @@
         "fetched_at": "2026-11-05T23:52:51.758Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b69a8954d7b62b5f8f85c447baeb5cc3bc3beebcfc9176a253fe24058cdd4693",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1100-1199/HB1165PS.pdf",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1165-2026",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Passed As Amended, 2026-02-12: yea (tally 92–22); census gate: none.",
+      "subjects": [
+        "children with concealed-weapon or gun offences plus a felony tried in circuit court",
+        "longer sentences for stolen-firearm sales, especially to children",
+        "new felony for firing a gun into a group of people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1100-1199/HB1165CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1165-2026.comm_sub.htm",
+          "sha256": "ee896a964212aab4cd52c64c513a79446331de783a7dcfdfcb80aec3d47d5c8e"
+        }
+      }
+    },
+    {
+      "id": "d7344a18483ff53ea68d3879040b46ab9fb553365141c2c0190e966076c7847f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/1400-1499/HB1441PS.pdf",
+      "date": "2024-03-14",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1441-2024",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed As Amended, 2024-03-14: yea (tally 114–5); census gate: near-unanimous.",
+      "subjects": [
+        "extra 20-year term for using a large-magazine firearm in a violent felony",
+        "extra 5-year term for nonviolent felony",
+        "large-capacity magazine defined as over 15 rounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/1400-1499/HB1441CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1441-2024.comm_sub.htm",
+          "sha256": "58af9faae9eec59cd94bc8d4f22a469c43004a1937fce50a3bd16a2c085c7f04"
+        }
+      }
+    },
+    {
+      "id": "f89b311361e8e9878f741494a9a85724808faa5b38cf80cab002e04ee6c7a53c",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1700-1799/HB1793SG.pdf",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1793-2026",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Conference Report Adopted, 2026-03-29: yea (tally 106–6); census gate: near-unanimous.",
+      "subjects": [
+        "sales-tax holiday covers firearm safes",
+        "firearm and ammunition sales-tax exemption weekend"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1700-1799/HB1793CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1793-2026.comm_sub.htm",
+          "sha256": "513c728f74a25f905ee07e19935570768c7a35fc9a9f10efe8e7b23a8d4f38f6"
+        }
+      }
+    },
+    {
+      "id": "0ff1c0833830cbb5c2f77722fac589b7e91af8f8fa752eb2973854547d7797ed",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/0900-0999/HB0903SG.pdf",
+      "date": "2024-04-25",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-903-2024",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Conference Report Adopted, 2024-04-25: yea (tally 97–13); census gate: none.",
+      "subjects": [
+        "felony for machine gun conversion devices (Glock switches, auto-sears)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/0900-0999/HB0903CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-903-2024.comm_sub.htm",
+          "sha256": "8b424ae01670543ecd5bf76b99d7e5cde44e806c9cfadab01694d35f4f87107f"
+        }
+      }
+    },
+    {
+      "id": "2c6349d1a8e8e0021e8fe2452688ac24e830a05994115c72b4ed3663218c5d71",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0900-0999/HB0933PS.pdf",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-933-2026",
+      "act": "nay",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2026-02-04: nay (tally 117–1); census gate: near-unanimous.",
+      "subjects": [
+        "retired theft-bureau officers keep issued sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0900-0999/HB0933IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-933-2026.introduced.htm",
+          "sha256": "a3be81faf9d2b915ba759457c60814e28e7099a19ae5904068bcc14cd39586ac"
+        }
+      }
+    },
+    {
+      "id": "622c734f448851f40452db09884694f5fedb9df806ca6a77d9be37339c790042",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2800-2899/SB2809SG.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2809-2026",
+      "act": "nay",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2026-03-04: nay (tally 116–2); census gate: near-unanimous.",
+      "subjects": [
+        "retiring state agriculture theft officers keep service sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2800-2899/SB2809PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2809-2026.introduced.htm",
+          "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
+        }
+      }
     }
   ],
   "searches": [
@@ -85,6 +264,55 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.758Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "status: sitting member of the Mississippi House, District 57, since 2024-01-02, term to January 2028 (confirmed on https://en.wikipedia.org/wiki/Lawrence_Blackmon and https://www.ballotready.org/people/lawrence-blackmon)",
+        "On the Record (0 meetings, also searched by name)",
+        "official legislature member page: not reviewed: https://www.legislature.ms.gov/legislation/members/ (returned 404)",
+        "blocked: https://ballotpedia.org/Lawrence_Blackmon (403)",
+        "https://www.ballotready.org/people/lawrence-blackmon (nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Lawrence_Blackmon (nothing on the subject)",
+        "news searches on name plus gun words: nothing on the subject by this person; a Mississippi Free Press gun-in-schools story quotes Sen. Barbara Blackmon, and another item covers Edward Blackmon Jr., both different people, not saved",
+        "campaign site: not found",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: ontheissues.org, vote411 (leads only; no own-words source found)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:16.165Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Lawrence_Blackmon (confirms sitting member of the Mississippi House, district 57, since January 2024; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Lawrence_Blackmon (403)",
+        "not reviewed: https://www.legislature.ms.gov/legislation/members/?member=Blackmon (404, no member page reached); no official or campaign site found",
+        "sponsor list: covered by bulk bill data",
+        "web search on name plus gun words (2 searches): results only about a different Blackmon (Edward Blackmon Jr.) or unattributed bills; nothing by this person",
+        "nothing on the subject: own-words statements, newsletters, questionnaires"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:19.711Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,77 @@
+{
+  "id": "MS-HB-413-2018",
+  "scope": "state:ms",
+  "title": "HB413 (2018 Regular): Stun gun; remove the term from the firearms category.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/0400-0499/HB0413IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/0400-0499/HB0413IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dana Criswell",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Shane Barnett",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "7f2d5238-caa7-462d-bff2-dd9ec044f7ef"
+    },
+    {
+      "name": "Bubba Carpenter",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "389597ac-14c3-4c0e-99a4-ad64f395eb97"
+    },
+    {
+      "name": "Dan Eubanks",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "89b0d270-c3ef-4ca7-8ad6-d8613aa0e2f0"
+    },
+    {
+      "name": "Robert Foster",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Ashley Henley",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Steve Hopkins",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Jody Steverson",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "071cfd9f-705c-4970-9242-7ea1536482ef"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/0400-0499/HB0413IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-413-2018.introduced.htm",
+      "sha256": "9da10b3806962422710a1278c9198272fa9c52689e2365dcd8658b7382d6d739"
+    },
+    "note": "As-filed text; no passage vote recorded. Quote shows the law after the bill: 'stun gun(s)' struck throughout the section (many places), the definition of 'stun gun' in subsection (21) struck, and later subsections renumbered. Only the opening paragraphs are quoted."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101): (1) (a) Except as otherwise provided, the Department of Public Safety is authorized to issue licenses to carry concealed pistols or revolvers to persons qualified as provided in this section. Such licenses shall be valid throughout the state for a period of five (5) years from the date of issuance. Any person possessing a valid license issued pursuant to this section may carry a concealed pistol or concealed revolver. (b) The licensee must carry the license, together with valid identification, at all times in which the licensee is carrying a concealed pistol or revolver and must display both the license and proper identification upon demand by a law enforcement officer. A violation of the provisions of this paragraph (b) shall constitute a noncriminal violation with a penalty of Twenty-five Dollars ($25.00) and shall be enforceable by summons."
+}

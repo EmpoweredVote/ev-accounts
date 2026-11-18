@@ -1,0 +1,56 @@
+{
+  "id": "MS-HB-1114-2022",
+  "scope": "state:ms",
+  "title": "HB1114 (2022 Regular): The Second Amendment Preservation Act; create to provide that the Legislature preempts local firearms ordinances.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/1100-1199/HB1114IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/html/HB/1100-1199/HB1114IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Troy Smith",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "c59a53b3-b18a-46ba-a206-4bd287d9dca1"
+    },
+    {
+      "name": "Billy Adam Calvert",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "c9b3b382-559c-4563-ae9e-6c4f37493bd9"
+    },
+    {
+      "name": "Karl Gibbs",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "527e4b81-1dcb-471f-808f-64dc35ebb577"
+    },
+    {
+      "name": "Jon Lancaster",
+      "role": "co",
+      "version": "introduced text (By:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2022/html/HB/1100-1199/HB1114IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1114-2022.introduced.htm",
+      "sha256": "684ca6428a8c96ba2daeaad8d61bf2bbf364771f12da91ad9b3ef7c761df989b"
+    },
+    "note": "As-filed text (introduced); no date in text. No vote recorded. Section 2(3) lets local ordinances stand if they match 45-9-51, 45-9-53, 45-9-101, 97-37-7 and 97-37-9 exactly or regulate open carry or discharge (not quoted in full). Sections 3-7 bring forward those code sections unchanged. Section 8 subsection (2) defines the covered federal acts as those ordering confiscation of firearms, accessories or ammunition."
+  },
+  "operative_text": "Section 2 (new section): (1) The Mississippi Legislature hereby occupies and preempts the entire field of legislation touching in any way firearms, components, ammunition and supplies to the complete exclusion of any order, ordinance or regulation by any political subdivision of this state. Any existing or future orders, ordinances or regulations in this field are hereby and shall be null and void except as provided in subsection (3) of this section.\nSection 2 (new section): (2) No county, city, town, village, municipality, or other political subdivision of this state shall adopt any order, ordinance or regulation concerning in any way the sale, purchase, purchase delay, transfer, ownership, use, keeping, possession, bearing, transportation, licensing, permit, registration, taxation other than sales and compensating use taxes or other controls on firearms, components, ammunition, and supplies except as provided in subsection (3) of this section.\nSection 2 (new section): (4) The lawful design, marketing, manufacture, distribution, or sale of firearms or ammunition to the public is not an abnormally dangerous activity and does not constitute a public or private nuisance.\nSection 2 (new section): (5) No county, city, town, village or any other political subdivision nor the state shall bring suit or have any right to recover against any firearms or ammunition manufacturer, trade association or dealer for damages, abatement or injunctive relief resulting from or relating to the lawful design, manufacture, marketing, distribution, or sale of firearms or ammunition to the public. Provided, however, that nothing in this section shall restrict the rights of individual citizens to recover for injury or death caused by the negligent or defective design or manufacture of firearms or ammunition.\nSection 8 (new section): (1) All federal acts, laws, orders, rules and regulations, whether past, present or future, which infringe on the people's right to keep and bear arms as guaranteed by the Second Amendment to the United States Constitution and Article I, Section 12 of the Mississippi Constitution of 1890 shall be invalid in this state, shall not be recognized by this state, shall be specifically rejected by this state and have no effect in this state.\nSection 8 (new section): (5) Any official, agent, or employee of the United States government who enforces or attempts to enforce any of the infringements on the right to keep and bear arms included in subsection (2) of this section is guilty of a misdemeanor."
+}

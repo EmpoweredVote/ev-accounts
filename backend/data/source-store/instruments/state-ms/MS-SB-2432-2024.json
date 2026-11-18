@@ -1,0 +1,45 @@
+{
+  "id": "MS-SB-2432-2024",
+  "scope": "state:ms",
+  "title": "SB2432 (2024 Regular): Firearms; criminalize discharge of within limits of or into municipality.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2400-2499/SB2432IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2024/html/SB/2400-2499/SB2432IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chuck Younger",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "a6991eac-bf81-4824-b807-27c127d30494"
+    },
+    {
+      "name": "Sollie Norwood",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "bb101347-67b5-4758-8efc-e531237f9b9d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2400-2499/SB2432IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2432-2024.introduced.htm",
+      "sha256": "17793ec4732a51c496547eb9695f36552a4e2a5b53801a714540efc09b740248"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Quote skips paragraph (1)(b) (judge may reduce felony to misdemeanor) and exceptions (2)(c)-(g), and definitions (3). Section is printed unmarked apart from (1)(c); treated as new law."
+  },
+  "operative_text": "Section 1 (new section): (1) (a) A person who with criminal negligence discharges a firearm within or into the limits of any municipality is guilty of a felony. Upon conviction, the defendant shall be fined up to One Thousand Dollars ($1,000.00) or imprisoned for a term of years not exceeding two (2) years, or both. (c) The governing authority of a municipality may impose a civil penalty of Ten Thousand Dollars ($10,000.00) if a bullet discharged in violation of this section causes damage to any building or structure affixed to real property. (2) This section does not apply if the firearm is discharged: (a) As allowed pursuant to Section 97-3-15; (b) On a properly supervised range; (h) More than one (1) mile from any occupied structure; or (i) In self-defense or defense of another person against an animal attack if a reasonable person would believe that deadly physical force against the animal is immediately necessary and reasonable under the circumstances to protect oneself or the other person."
+}

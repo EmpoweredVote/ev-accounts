@@ -1,0 +1,45 @@
+{
+  "id": "MS-HB-1582-2019",
+  "scope": "state:ms",
+  "title": "HB1582 (2019 Regular): Firearms in medical facilities; restrict concealed carry unless instructor-certified.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/1500-1599/HB1582IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/HB/1500-1599/HB1582IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Angela Cockerham",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "635a96da-cfe1-4236-bd22-7774f4f3f9fe"
+    },
+    {
+      "name": "Donnie Scoggin",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "7c04e895-d91b-46f8-918c-cdad2c2d835c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/1500-1599/HB1582IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1582-2019.introduced.htm",
+      "sha256": "5490f93dd9ad280aa05c811e882c5460e7d07a3f8792b39cd99f556653ce0c0d"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Only the words 'any medical facility of any kind that is accessible by the public;' are new; the rest of subsection (13) is existing law. Title says restriction applies 'unless an instructor-certified permittee', but that exception is not in the text read."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101): (13) No license issued pursuant to this section shall authorize any person to carry a stun gun, concealed pistol or revolver into any place of nuisance as defined in Section 95-3-1, Mississippi Code of 1972; any police, sheriff or highway patrol station; any detention facility, prison or jail; any courthouse; any courtroom, except that nothing in this section shall preclude a judge from carrying a concealed weapon or determining who will carry a concealed weapon in his courtroom; any polling place; any meeting place of the governing body of any governmental entity; any meeting of the Legislature or a committee thereof; any school, college or professional athletic event not related to firearms; any portion of an establishment, licensed to dispense alcoholic beverages for consumption on the premises, that is primarily devoted to dispensing alcoholic beverages; any portion of an establishment in which beer or light wine is consumed on the premises, that is primarily devoted to such purpose; any elementary or secondary school facility; any junior college, community college, college or university facility unless for the purpose of participating in any authorized firearms-related activity; inside the passenger terminal of any airport, except that no person shall be prohibited from carrying any legal firearm into the terminal if the firearm is encased for shipment, for purposes of checking such firearm as baggage to be lawfully transported on any aircraft; any church or other place of worship, except as provided in Section 45-9-171; any medical facility of any kind that is accessible by the public; or any place where the carrying of firearms is prohibited by federal law."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1477-2020",
+  "scope": "state:ms",
+  "title": "HB1477 (2020 Regular): Retired law enforcement officers; expand authority to carry concealed firearm.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1400-1499/HB1477IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/HB/1400-1499/HB1477IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Horan",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "f6bd6cb8-b8ba-49b8-8dcf-1d02140c7589"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/HB/1400-1499/HB1477IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1477-2020.introduced.htm",
+      "sha256": "297f633793b947a462d228ab8da6b47f9fd73045bc837bccb3c5a700ab6c2145"
+    },
+    "note": "As-filed text. Struck: 'Before' (replaced by 'Except as otherwise authorized in paragraph (b) of this subsection,'). Rest of § 97-37-7 unchanged and not quoted. No passage vote."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-7): (2) (a) It shall not be a violation of this or any other statute for pistols, firearms or other suitable and appropriate weapons to be carried by Department of Wildlife, Fisheries and Parks law enforcement officers, railroad special agents who are sworn law enforcement officers, investigators employed by the Attorney General, criminal investigators employed by the district attorneys, all prosecutors, public defenders, investigators or probation officers employed by the Department of Corrections, employees of the State Auditor who are authorized by the State Auditor to perform investigative functions, or any deputy fire marshal or investigator employed by the State Fire Marshal, while engaged in the performance of their duties as such, or by fraud investigators with the Department of Human Services, or by judges of the Mississippi Supreme Court, Court of Appeals, circuit, chancery, county, justice and municipal courts, or by coroners. Except as otherwise authorized in paragraph (b) of this subsection, any person shall be authorized under this subsection to carry a weapon, he shall complete a weapons training course approved by the Board of Law Enforcement Officer Standards and Training. (b) In addition to the provisions of paragraph (a) of this subsection, an honorably retired law enforcement officer or an officer with at least ten (10) cumulative years of service who separated from employment in good standing and meets the standards set forth in 18 USC 926(c) shall, upon request of such officer to his or her most immediate past law enforcement employer, be entitled to credentials issued by the employer and approved by the Department of Public Safety that allows the officer to carry a concealed weapon throughout the United States as long as the officer is not otherwise prohibited to carry a concealed weapon under any other provision of law. Any person qualified as described under this paragraph shall, upon application, be issued a Mississippi Enhanced Firearms Permit that grants the person access to all areas described in 45-9-101(13) without the requirement for any additional training."
+}

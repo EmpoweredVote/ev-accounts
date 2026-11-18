@@ -684,7 +684,7 @@ const MS_SIZE: Record<Chamber, number> = { House: 122, Senate: 52 };
  * not covered gives no vote that prints "Mr. Speaker". The key must be exactly one member of that session's list.
  */
 export const MS_SPEAKER: readonly { from: number; to: number; key: string }[] = [
-  { from: 2017, to: 2023, key: 'gunn' },
+  { from: 2012, to: 2023, key: 'gunn' },
   { from: 2024, to: 2027, key: 'white' },
 ];
 

@@ -1,0 +1,57 @@
+{
+  "id": "MS-HB-665-2026",
+  "scope": "state:ms",
+  "title": "HB665 (2026 Regular): Firearms and weapons; authorize nonviolent felons to possess and use in defense of residence.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0600-0699/HB0665IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0600-0699/HB0665IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeffrey Hulum",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "3e9b6f7f-1cb8-49e9-b645-086390226f75"
+    },
+    {
+      "name": "Robert Sanders",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "a40b85b4-3566-4796-9b00-e6cb7f6c723f"
+    },
+    {
+      "name": "John Hines",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "8e19d0c3-66eb-4d88-97c7-581c54e1696e"
+    },
+    {
+      "name": "Timaka James-Jones",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "392633ef-6e0f-4ae4-88d1-fba699d60787"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0600-0699/HB0665IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-665-2026.introduced.htm",
+      "sha256": "a4a14bd0b8466d5088f39205034c8ebf901baee89e3e3fc2a1b6e3f6d0e77e5b"
+    },
+    "note": "Adds paragraph (b) exception to the felon-in-possession ban. Bill as filed (introduced; no date in text); no passage vote on record, so no later-amendment caveat."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-5): (1) (a) Except as otherwise provided in paragraph (b) of this section, it shall be unlawful for any person who has been convicted of a felony under the laws of this state, any other state, or of the United States to possess any firearm or any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, or any muffler or silencer for any firearm unless such person has received a pardon for such felony, has received a relief from disability pursuant to Section 925(c) of Title 18 of the United States Code, or has received a certificate of rehabilitation pursuant to subsection (3) of this section.\nSection 1 (Miss. Code § 97-37-5): (b) It shall be lawful for any person who has been convicted of a nonviolent felony under the laws of this state, any other state, or of the United States to possess and use any firearm or any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, or any muffler or silencer in defense of the person's residence. The provisions of this paragraph shall only apply if the person is able to prove that he or she resides in the home in which the firearm, bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, muffler or silencer is located."
+}

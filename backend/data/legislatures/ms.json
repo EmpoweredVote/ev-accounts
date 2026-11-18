@@ -2,7 +2,7 @@
   "state": "ms",
   "name": "Mississippi",
   "verified": "2026-11-17",
-  "source": "Mississippi reader session (Stage 5 tools), 2026-11-17: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 289-bill dry batch (67 roll calls, 5,975 member votes) read from billstatus.ls.state.ms.us with the verifier's own fetch, and each member's vote compared with the dump. No bill text was read in this session.",
+  "source": "Mississippi reader session (Stage 5 tools), 2026-11-17: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 289-bill dry batch (67 roll calls, 5,975 member votes) read from billstatus.ls.state.ms.us with the verifier's own fetch, and each member's vote compared with the dump. No bill text was read in this session. Bill texts: a later session (2026-11-17) read 155 bill texts (the HTML copy over https) and measured their marks.",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
@@ -35,8 +35,8 @@
     "hosts": [
       "billstatus.ls.state.ms.us"
     ],
-    "marks": "Not measured: no bill text was read in this session. Read the marks on a sample before any fill quote.",
-    "note": "The dump links each text as a PDF, billstatus.ls.state.ms.us/documents/<session>/pdf/<HB|SB>/<range>/<BILL><CODE>.pdf (a suffix names the version: \"SB2524IN.pdf\"), with an HTML copy at .../documents/<session>/html/.../<BILL><CODE>.htm. The links are http; the site answers https. Not read in this session."
+    "marks": "Measured on 155 texts (2026-11-17), the HTML copy. New words are marked <u>...</u> and struck words <s>...</s>. '* * *' (&nbsp;*&nbsp;*&nbsp;*) is printed before struck words and where unchanged words are left out; it is not law. A wholly new section is printed without marks. Some texts carry no marks at all (4 of 155). The HTML is latin-1.",
+    "note": "The dump links each text as a PDF, billstatus.ls.state.ms.us/documents/<session>/pdf/<HB|SB>/<range>/<BILL><CODE>.pdf (a suffix names the version: \"SB2524IN.pdf\"), with an HTML copy at .../documents/<session>/html/<HB|SB>/<range>/<BILL><CODE>.htm. The links are http; the site answers https. The dump also lists amendment documents among a bill's texts (paths under /ham/ or /sam/, files named *_Amend_*.htm); they are not bill versions, and some answer 404. A text prints no date. Versions seen: introduced (IN), committee substitute, enrolled."
   },
   "reader_access": {
     "billstatus.ls.state.ms.us": "open"
@@ -53,6 +53,7 @@
     "The vote PDF prints no date: the day comes from the history action that links the PDF.",
     "The \"member lists\" under /<session>/pdf/ are the session's AUTHOR lists: a member who wrote no bill that session is not on them.",
     "A member list can hold an empty entry (<M5_NAME></M5_NAME>); the reader reads each name only inside its own tags.",
-    "Open States stores nicknames (\"Doc Harris\", \"Chuck Blackwell\", \"Bubba Tubb\"); the legislature prints legal names, sometimes with a quoted nickname (W.I. \"Doc\" Harris). Link each Open States record through the legislature's member list by district, never by surname alone: two Huddlestons sat in the 2018 House (Districts 15 and 30), only one known to Open States."
+    "Open States stores nicknames (\"Doc Harris\", \"Chuck Blackwell\", \"Bubba Tubb\"); the legislature prints legal names, sometimes with a quoted nickname (W.I. \"Doc\" Harris). Link each Open States record through the legislature's member list by district, never by surname alone: two Huddlestons sat in the 2018 House (Districts 15 and 30), only one known to Open States.",
+    "The bill history names each floor action with its chamber: \"House Passed\", \"Senate Passed As Amended\", \"House Conference Report Adopted\", \"Senate Concurred in Amend From House\", \"Senate Failed\"."
   ]
 }

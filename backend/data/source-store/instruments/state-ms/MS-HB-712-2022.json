@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-712-2022",
+  "scope": "state:ms",
+  "title": "HB712 (2022 Regular): Firearms; revise limits placed on counties and municipalities to regulate.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/0700-0799/HB0712IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/html/HB/0700-0799/HB0712IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Earle Banks",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e84ffc43-28e5-4be4-b433-c632dde200cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2022/html/HB/0700-0799/HB0712IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-712-2022.introduced.htm",
+      "sha256": "f52549f0653742fe3a77928a2f6d761ec7ac8bffce1595801cdce503e8ac22c9"
+    },
+    "note": "Struck in Section 1: old 45-9-53(4) (limits on county/municipal written-notice carry bans to listed locations) and (5) (suit, Attorney General review, injunction, official liability); old (6) renumbered (4). Struck in Section 2: the sentence letting enhanced-carry licensees carry in courthouses and the places in 45-9-101(13). The quoted Section 1 text is the remaining subsection; the effect of the bill is mostly in what is struck. Section 3 only brings forward 45-9-101. Bill as filed (introduced; no date in text); no passage vote on record, so no later-amendment caveat."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-53(4)): No county or municipality or their officers or employees may participate in any program in which individuals are given a thing of value provided by another individual or other entity in exchange for surrendering a firearm to the county, municipality or other governmental body unless: (a) The county or municipality has adopted an ordinance authorizing the participation of the county or municipality, or participation by an officer or employee of the county or municipality in such a program; and\nSection 2 (Miss. Code § 97-37-7(2)): A law enforcement officer, as defined in Section 45-6-3, shall be authorized to carry weapons in courthouses in performance of his official duties. For the purposes of this subsection (2), component branch of the United States Armed Forces includes the Army, Navy, Air Force, Coast Guard or Marine Corps, or the Army National Guard, the Army National Guard of the United States, the Air National Guard or the Air National Guard of the United States, as those terms are defined in Section 101, Title 10, United States Code, and any other reserve component of the United States Armed Forces enumerated in Section 10101, Title 10, United States Code."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "MS-HB-1432-2018",
+  "scope": "state:ms",
+  "title": "HB1432 (2018 Regular): Firearms Protection Act; create.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/1400-1499/HB1432IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/1400-1499/HB1432IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dana Criswell",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Shane Barnett",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "7f2d5238-caa7-462d-bff2-dd9ec044f7ef"
+    },
+    {
+      "name": "Jeff Hale",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "f5bb724b-6601-4c2f-a7ba-e633be404ad1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/1400-1499/HB1432IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1432-2018.introduced.htm",
+      "sha256": "0fafd7ea8e0c67e9df57575ccdf8843f7d76c5cfebd7f1a4ab73bc20227b2adf"
+    },
+    "note": "Introduced text (as filed), no date. Section 1 is unnumbered in the print (new section). The Section 2 quote is the new clause that opens a license-eligibility item, which in the print reads 'Is not disqualified to possess a weapon based on federal law' (word 'Is' struck). Sections 3, 4, 6 and 7 (§§ 97-37-5, 97-37-7, 97-37-103, 97-37-105) add 'subject to / except as provided in Section 1' cross-references and are not quoted. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (new section): No public servant or dealer selling any firearm in this state shall enforce or attempt to enforce any act, order, law, statute, rule or regulation of the United States government that has not been duly adopted by the United States Congress and signed by the President of the United States of America relating to a personal firearm, firearm accessory or ammunition that is owned or manufactured commercially or privately in Mississippi and that remains exclusively within the borders of Mississippi. Any official, agent or employee of the United States government who enforces or attempts to enforce any act, order, law, statute, rule or regulation of the United States government that has not been duly adopted by the United States Congress and signed by the President of the United States of America upon a personal firearm, a firearm accessory or ammunition that is owned or manufactured commercially or privately in Mississippi and that remains exclusively within the borders of Mississippi shall be guilty of a felony and, upon conviction, shall be subject to imprisonment for not less than one (1) year nor more than five (5) years, or a fine of not more than Five Thousand Dollars ($5,000.00), or both. The Attorney General may defend a citizen of Mississippi who is prosecuted by the United States government for violation of a federal law that has not been duly adopted by the United States Congress and signed by the President of the United States of America relating to the manufacture, sale, transfer or possession of a firearm, a firearm accessory or ammunition owned or manufactured and retained exclusively within the borders of Mississippi. Any federal law, rule, regulation or order that has not been duly adopted by the United States Congress and signed by the President of the United States of America and created or effective on or after January 1, 2018, shall be unenforceable within the borders of Mississippi if the law, rule, regulation or order attempts to: Ban or restrict ownership of a semi-automatic firearm or any magazine of a firearm; or Require any firearm, magazine or other firearm accessory to be registered in any manner.\nSection 2 (Miss. Code § 45-9-101): Except as otherwise provided in Section 1 of this act, not disqualified to possess a weapon based on federal law.\nSection 5 (Miss. Code § 97-37-31): Except as otherwise provided in Sections 1 and 2 of this act, it shall be unlawful for any person, persons, corporation or manufacturing establishment, not duly authorized under federal law, to make, manufacture, sell or possess any instrument or device which, if used on firearms of any kind, will arrest or muffle the report of the firearm when shot or fired."
+}

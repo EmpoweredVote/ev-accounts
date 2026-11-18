@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1455-2018",
+  "scope": "state:ms",
+  "title": "HB1455 (2018 Regular): Enhanced carry permit; authorize DPS to create a distinctive permit for.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/1400-1499/HB1455IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/1400-1499/HB1455IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bubba Carpenter",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "389597ac-14c3-4c0e-99a4-ad64f395eb97"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/1400-1499/HB1455IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1455-2018.introduced.htm",
+      "sha256": "b1f54d409ca04db1c4cbb040b6a06d32d9743ff1b33d45c836361ba3b6397386"
+    },
+    "note": "As-filed text. Struck: 'an endorsement on their permit', replaced by 'a distinctive permit'. Section 2 only brings § 45-9-101 forward without change and is not quoted. No passage vote."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-7): A person licensed under Section 45-9-101 to carry a concealed pistol, who (a) has voluntarily completed an instructional course in the safe handling and use of firearms offered by an instructor certified by a nationally recognized organization that customarily offers firearms training, or by any other organization approved by the Department of Public Safety, (b) is a member or veteran of any active or reserve component branch of the United States of America Armed Forces having completed law enforcement or combat training with pistols or other handguns as recognized by such branch after submitting an affidavit attesting to have read, understand and agree to comply with all provisions of the enhanced carry law, or (c) is an honorably retired law enforcement officer or honorably retired member or veteran of any active or reserve component branch of the United States of America Armed Forces having completed law enforcement or combat training with pistols or other handguns, after submitting an affidavit attesting to have read, understand and agree to comply with all provisions of Mississippi enhanced carry law shall also be authorized to carry weapons in courthouses except in courtrooms during a judicial proceeding, and any location listed in subsection (13) of Section 45-9-101, except any place of nuisance as defined in Section 95-3-1, any police, sheriff or highway patrol station or any detention facility, prison or jail. For the purposes of this subsection (2), component branch of the United States Armed Forces includes the Army, Navy, Air Force, Coast Guard or Marine Corps, or the Army National Guard, the Army National Guard of the United States, the Air National Guard or the Air National Guard of the United States, as those terms are defined in Section 101, Title 10, United States Code, and any other reserve component of the United States Armed Forces enumerated in Section 10101, Title 10, United States Code. The department shall promulgate rules and regulations allowing concealed pistol permit holders to obtain a distinctive permit indicating that they have completed the aforementioned course and have the authority to carry in these locations. This section shall in no way interfere with the right of a trial judge to restrict the carrying of firearms in the courtroom."
+}

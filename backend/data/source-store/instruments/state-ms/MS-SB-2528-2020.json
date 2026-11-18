@@ -1,0 +1,51 @@
+{
+  "id": "MS-SB-2528-2020",
+  "scope": "state:ms",
+  "title": "SB2528 (2020 Regular): Retired law enforcement officers; concealed carry license/permit.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/SB/2500-2599/SB2528IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/SB/2500-2599/SB2528IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Randy Boyd",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "c44fcac8-2083-4e81-bbd5-a5564dab985e"
+    },
+    {
+      "name": "Michael McLendon",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "0aac1af3-7318-4a87-acc5-1043d870b7c6"
+    },
+    {
+      "name": "Daniel Sparks",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "2b283500-4614-47e5-8fa3-f5239c42ec46"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/SB/2500-2599/SB2528IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2528-2020.introduced.htm",
+      "sha256": "7462cb6ea2ecea077f3fb7c6b9c949d5ea3f7b39d0e1772d6677c9453183b20c"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Section 1 brings forward § 45-1-101 unchanged (not quoted). In § 97-37-7(2) the word \"or\" before (c) was struck and clause (d) added; the quote is the sentence as it would read. Bill title says it also lets such officers obtain an instructor-certified permit; the quoted § 97-37-7(2) change is the only marked amendment in the text."
+  },
+  "operative_text": "Section 2 (new, Miss. Code § 45-1-103): Any retired or honorably separated law enforcement officer who resides in this state, who had statutory powers of arrest or apprehension while employed as a law enforcement officer, and who is honorably retired or separated from a public law enforcement agency under good standing, with at least ten (10) cumulative years of service, is entitled upon request to credentials issued by the officer's previous agency entitling the officer to carry a concealed weapon as authorized under federal law if the person meets the standards set forth at Section 18 USC 926 and is not prohibited from carrying a weapon under any other law.\nSection 3 (Miss. Code § 97-37-7): (2) A person licensed under Section 45-9-101 to carry a concealed pistol, who (a) has voluntarily completed an instructional course in the safe handling and use of firearms offered by an instructor certified by a nationally recognized organization that customarily offers firearms training, or by any other organization approved by the Department of Public Safety, (b) is a member or veteran of any active or reserve component branch of the United States of America Armed Forces having completed law enforcement or combat training with pistols or other handguns as recognized by such branch after submitting an affidavit attesting to have read, understand and agree to comply with all provisions of the enhanced carry law, (c) is an honorably retired law enforcement officer or honorably retired member or veteran of any active or reserve component branch of the United States of America Armed Forces having completed law enforcement or combat training with pistols or other handguns, or (d) who qualifies under Section 45-1-103, after submitting an affidavit attesting to have read, understand and agree to comply with all provisions of Mississippi enhanced carry law shall also be authorized to carry weapons in courthouses except in courtrooms during a judicial proceeding, and any location listed in subsection (13) of Section 45-9-101, except any place of nuisance as defined in Section 95-3-1, any police, sheriff or highway patrol station or any detention facility, prison or jail."
+}

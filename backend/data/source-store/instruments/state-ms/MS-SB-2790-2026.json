@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2790-2026",
+  "scope": "state:ms",
+  "title": "SB2790 (2026 Regular): Responsible Firearm Purchasing Act; enact.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2700-2799/SB2790IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/SB/2700-2799/SB2790IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sollie Norwood",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "bb101347-67b5-4758-8efc-e531237f9b9d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2700-2799/SB2790IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2790-2026.introduced.htm",
+      "sha256": "c621a68a61a372707ad3e841bfbc3e0455dcd59645a20545edbb4f4214277aa4"
+    },
+    "note": "Introduced text. Sections 5 and 6 as printed refer to 'Section 2' (the definitions) and 'Section 2 or 3', apparently meaning Section 3; quoted as printed. 'Minor' is defined nowhere in the text read. No passage vote on record."
+  },
+  "operative_text": "Section 3 (new section): It shall be unlawful for a minor in this state to purchase a firearm, handgun, ammunition or armor piercing ammunition. It shall be unlawful to sell a minor in this state a firearm, handgun, ammunition or armor piercing ammunition.\nSection 4 (new section): The purchase of a firearm, handgun, ammunition or armor piercing ammunition shall comply with all standards as provided by federal and state law.\nSection 5 (new section): A minor who violates Section 2 of this act shall be guilty of a misdemeanor. Upon adjudication, the minor shall be fined no more than Two Hundred Dollars ($200.00) or subject to a term of imprisonment no longer than thirty (30) days, or both.\nSection 6 (new section): A person who is twenty-one (21) years old or older and violates Section 2 or 3 of this act shall be guilty of a felony. Upon conviction, the defendant shall be fined no more than Two Thousand Dollars ($2,000.00) or subject to a term of imprisonment of no longer than two (2) years in the custody of the Department of Corrections, or both."
+}

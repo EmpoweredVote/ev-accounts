@@ -1,0 +1,50 @@
+{
+  "id": "MS-HB-1217-2020",
+  "scope": "state:ms",
+  "title": "HB1217 (2020 Regular): Firearms; prohibit cities and counties from adding restrictions.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1200-1299/HB1217IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/HB/1200-1299/HB1217IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Barnett",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "7f2d5238-caa7-462d-bff2-dd9ec044f7ef"
+    },
+    {
+      "name": "Chris Brown",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Fred Shanks",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "90163551-e8d4-420b-9b0a-bd4952556bed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/HB/1200-1299/HB1217IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1217-2020.introduced.htm",
+      "sha256": "9bec25a35b370a3c65c72624f6c5952e9c940a46dcb2bf1ce31074c55f2566d0"
+    },
+    "note": "Introduced text, as filed. No passage vote is recorded for this bill. Large file: only the marked changes were read. Struck: 'the written' and the reference to Section 45-9-101(13) in (4); 'sign' replaced by 'notice or policy'. Section 2 quotes the sentence with the struck period inside the quotation marks removed."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-53(4)): (4) No county or a municipality may use any notice provisions, or any other policy or practice to ban, delay, deny or impose additional entry requirements for concealed firearms or otherwise impede or \"shadow\" a license holder with a concealed firearm on property under their control except: (a) At a location listed in Section 45-9-101(13) indicating that a license issued under Section 45-9-101 does not authorize the holder to carry a firearm into that location, as long as the notice or policy also indicates that carrying a firearm is unauthorized only for license holders without a training endorsement or that it is a location included in Section 97-37-7(2) where carrying a firearm is unauthorized for all license holders; and (b) At any location under the control of the county or municipality aside from a location listed in subsection (1)(f) of this section or Section 45-9-101(13) indicating that the possession of a firearm is prohibited on the premises, as long as the notice or policy also indicates that it does not apply to a person properly licensed under Section 45-9-101 or Section 97-37-7(2) to carry a concealed firearm or to a person lawfully carrying a firearm that is not concealed.\nSection 1 (Miss. Code § 45-9-53(5)(b)(ii)): (ii) The Attorney General is also authorized to pursue criminal charges against any public official or his or her employee who violates the rights of any enhanced license holder under the provisions of 45-9-51, 45-9-53, 45-9-101 or 97-32-7(2) as a case of official corruption under Section 7-5-59 if the officials responsible for the violation fail to correct such violation within thirty (30) days of being notified of the violation.\nSection 2 (Miss. Code § 45-9-101): In addition to the places enumerated in this subsection, the carrying of a stun gun, concealed pistol or revolver may be disallowed in any place in the discretion of the person or entity exercising control over the physical location of such place by the placing of a written notice clearly readable at a distance of not less than ten (10) feet that the \"carrying of a pistol or revolver is prohibited \" or authorizing a policy with the same effect.\nSection 3 (Miss. Code § 7-5-59): (xv) Section 45-9-53 which relates to corruption for violating concealed firearm provisions."
+}

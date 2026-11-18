@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2618-2024",
+  "scope": "state:ms",
+  "title": "SB2618 (2024 Regular): Firearms; authorize municipality or county to allow purchase of for an agreed upon price.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2600-2699/SB2618IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2024/html/SB/2600-2699/SB2618IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ben Suber",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "50f3fe33-f53a-46e0-9533-eca6533b11a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2600-2699/SB2618IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2618-2024.introduced.htm",
+      "sha256": "2c8d27a656586b12fbce42577b96557fe2dd7d6a1ad019a6a4135fedf7d9c9d5"
+    },
+    "note": "Introduced text. Struck from subsection (4): ', except for any firearm purchased under subsection (3) of this section,'. Added 'of subsection(2)' to (4). No passage vote on record."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-131): The amount to be paid for any firearm purchased under the authority of this subsection shall be an agreed upon price as determined by the appropriate governmental authority who employed the officer.\nSection 1 (Miss. Code § 45-9-131): The amount to be paid for any firearm purchased under the authority of subsection(2) of this section shall be the fair market value of the firearm as determined by the appropriate governmental authority who employed the officer."
+}

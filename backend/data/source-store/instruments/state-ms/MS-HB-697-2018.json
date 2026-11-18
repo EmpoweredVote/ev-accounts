@@ -1,0 +1,44 @@
+{
+  "id": "MS-HB-697-2018",
+  "scope": "state:ms",
+  "title": "HB697 (2018 Regular): Concealed weapons; authorize license holders to carry on campuses of higher education institutions.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/0600-0699/HB0697IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/0600-0699/HB0697IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Hopkins",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Randy Boyd",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "c44fcac8-2083-4e81-bbd5-a5564dab985e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/0600-0699/HB0697IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-697-2018.introduced.htm",
+      "sha256": "139ea7a168217eadf69e6706e1ec1c836e0f03d82460a37f0aa39042ecedc9b9"
+    },
+    "note": "Struck in 45-9-101(13): \"college\" and the whole junior college/community college/college/university facility exception from the list of places licences do not cover. Section 3 (45-9-53) conforms; Sections 5-6 only bring forward 97-37-1 and 97-37-7. Quotes are partial for the Section 2 and 4 sentences (long sentences). Bill as filed (introduced; no date in text); no passage vote on record, so no later-amendment caveat."
+  },
+  "operative_text": "Section 1 (new, Miss. Code § 45-9-102): (2) A licensee may carry a stun gun, concealed pistol or revolver on or about the licensee's person while the licensee is on the campus of a state institution of higher learning or a private or independent institution of higher education in this state.\nSection 1 (new, Miss. Code § 45-9-102): (3) Except as otherwise provided under subsection (4) or (5), a state institution of higher learning or private or independent institution of higher education in this state may not adopt any rule, regulation or other provision prohibiting licensees from carrying stun guns, concealed pistols or revolvers on the campus of the institution.\nSection 1 (new, Miss. Code § 45-9-102): The president may not establish provisions that generally prohibit or have the effect of generally prohibiting licensees from carrying stun guns, concealed pistols or revolvers on the campus of the institution.\nSection 1 (new, Miss. Code § 45-9-102): (5) A private or independent institution of higher education in this state, after consulting with students, staff and faculty of the institution, may establish rules, regulations or other provisions prohibiting licensees from carrying stun guns, concealed pistols or revolvers on the campus of the institution, any grounds or building on which an activity sponsored by the institution is being conducted or a passenger transportation vehicle owned by the institution.\nSection 2 (Miss. Code § 45-9-101(13)): the carrying of a stun gun, concealed pistol or revolver may be disallowed in any place, in the discretion of the person or entity exercising control over the physical location of such place, by the placing of a written notice clearly readable at a distance of not less than ten (10) feet that the \"carrying of a pistol or revolver is prohibited.\"\nSection 4 (Miss. Code § 97-37-17(2)): However, this subsection does not apply to: a BB gun, air rifle or air pistol; or a stun gun, concealed pistol or revolver carried or possessed by a person licensed to carry a concealed weapon under Section 45-9-101 when the educational property is a campus of a state institution of higher learning or private or independent institution of higher education, as those terms are defined under Section 45-9-102."
+}

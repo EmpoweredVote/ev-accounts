@@ -1,0 +1,51 @@
+{
+  "id": "MS-HB-1380-2019",
+  "scope": "state:ms",
+  "title": "HB1380 (2019 Regular): Concealed firearm license; clarify prohibition for mentally incompetent.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/1300-1399/HB1380IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/HB/1300-1399/HB1380IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Oscar Denton",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "5895afe2-6f78-4fcc-b3c7-a5dbb509c7e7"
+    },
+    {
+      "name": "Cheikh Taylor",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "ce615285-f70a-4c2e-8f71-d14b02669d52"
+    },
+    {
+      "name": "Jeramey Anderson",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "3822a315-a3af-44c6-b6fe-db575b4eb1d3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/1300-1399/HB1380IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1380-2019.introduced.htm",
+      "sha256": "42a5c521c9496b629f317543c00948720c984554303f60e3f5fce66d603bf625"
+    },
+    "note": "Introduced text (as filed), no date. Section 1 is unnumbered in the print (new section). Section 1(3) (records exempt from the Public Records Act) is not quoted. Section 3 only brings forward § 97-37-7 unchanged. The bill number in the Section 2 quote is blank in the print. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (new section): If a court adjudicates a person as mentally incompetent, then the clerk of court shall notify the Department of Public Safety of such adjudication. If a court orders that a person be committed to a public or private hospital, mental health treatment facility or other institution qualified to provide care and treatment for persons with mental illness, then the clerk of court shall notify the Department of Public Safety of such order. If a person voluntarily commits himself or herself to a public or private hospital, mental health treatment facility or other institution qualified to provide care and treatment for persons with mental illness, then the hospital, facility or institution shall notify the Department of Public Safety of such order. The notification described in subsection (1) of this section, and any information contained in the notification, shall be used by the department solely for the purpose of determining whether the person's license, or application for a license, to carry a stun gun, concealed pistol or concealed revolver should be issued, denied, suspended or revoked under the provisions of Section 45-9-101(2)(h) or (i).\nSection 2 (Miss. Code § 45-9-101): The department shall also maintain an automated listing of persons who are the subject of the notifications described in Section 1 of House Bill No. , 2019 Regular Session, and the department shall review the listing regularly and as necessary to comply with the provisions of subsection (2)(h) and (i) of this section."
+}

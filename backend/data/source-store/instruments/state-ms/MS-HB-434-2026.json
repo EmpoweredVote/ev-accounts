@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-434-2026",
+  "scope": "state:ms",
+  "title": "HB434 (2026 Regular): Unserialized firearms (\"ghost guns\"); create crime of possession of.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0400-0499/HB0434IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0400-0499/HB0434IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daryl Porter",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "9b4b79f8-41e3-45d5-9008-b53c897feaf1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0400-0499/HB0434IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-434-2026.introduced.htm",
+      "sha256": "a92fd9ffef1ac8ce1adb993001c26417981dd1b9e634aa8fcfce2d17ae0a703c"
+    },
+    "note": "As-filed text; no passage vote recorded. New section, code number not given. Definitions (subsection 1), serialization procedure details (subsection 6), public notice (7) and exemptions (8) omitted from the quote for length."
+  },
+  "operative_text": "Section 1 (new section): (2) It is unlawful for a person to knowingly sell, offer to sell or transfer an unserialized unfinished frame or receiver or unserialized firearm, including those produced using a three-dimensional printer, unless the party purchasing or receiving the unfinished frame or receiver or unserialized firearm is a federal firearms importer, federal firearms manufacturer or federal firearms dealer. (3) Beginning January 1, 2027, it is unlawful for a person to knowingly possess, transport or receive an unfinished frame or receiver, unless: (a) The party possessing or receiving the unfinished frame or receiver is a federal firearms importer or federal firearms manufacturer; (b) The unfinished frame or receiver is possessed or transported by a person for transfer to a federal firearms importer or federal firearms manufacturer; or (c) The unfinished frame or receiver has been imprinted with a serial number issued by a federal firearms importer or federal firearms manufacturer in compliance with subsection (5) of this section. (4) Beginning January 1, 2027, unless the party receiving the firearm is a federal firearms importer or federal firearms manufacturer, it is unlawful for a person to knowingly possess, purchase, transport or receive a firearm that is not imprinted with a serial number by: (a) A federal firearms importer or federal firearms manufacturer in compliance with all federal laws and regulations regulating the manufacture and import of firearms; or (b) A federal firearms manufacturer, federal firearms dealer or other federal licensee authorized to provide marking services in compliance with the unserialized firearm serialization process under subsection (6) of this section. (5) A firearm or unfinished frame or receiver manufactured using a three-dimensional printer must be serialized in accordance with the requirements of subsection (6) before August 1, 2026, or before reaching a stage of manufacture where it readily may be completed, assembled or converted to be a functional firearm. (9) (a) A person who violates subsection (2) of this section is guilty of a felony and upon conviction, must be punished by a fine not to exceed Twenty-five Thousand Dollars ($25,000.00) or commitment to the custody of the Department of Corrections for not less than one (1) year nor more than three (3) years, or both. (b) A person who commits a second or subsequent violation of subsection (2) of this section is guilty of a felony and upon conviction, must be punished by a fine not to exceed Twenty-five Thousand Dollars ($25,000.00) or commitment to the custody of the Mississippi Department of Corrections for not less than three (3) years nor more than seven (7) years, or both. (c) A person who violates subsection (3) or (4) of this section is guilty of a misdemeanor and upon conviction, must be punished by a fine not to exceed Two Thousand Five Hundred Dollars ($2,500.00) or confinement in the county jail not to exceed one (1) year, or both. (d) A person who commits a second or subsequent violation of subsection (3) or (4) of this section is guilty of a felony and upon conviction, must be punished by a fine not to exceed Twenty-five Thousand Dollars ($25,000.00) or commitment to the custody of the Mississippi Department of Corrections for not less than five (5) years nor more than ten (10) years, or both."
+}

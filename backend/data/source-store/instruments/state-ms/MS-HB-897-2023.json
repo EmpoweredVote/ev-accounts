@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-897-2023",
+  "scope": "state:ms",
+  "title": "HB897 (2023 Regular): Firearms; revise limits placed on counties and municipalities to regulate.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2023/pdf/HB/0800-0899/HB0897IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2023/html/HB/0800-0899/HB0897IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Earle Banks",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e84ffc43-28e5-4be4-b433-c632dde200cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/HB/0800-0899/HB0897IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-897-2023.introduced.htm",
+      "sha256": "efa2ae65943b1d24fb74ac56eb2222a2b6a73f6370cb2a6e59a7b908f7631932"
+    },
+    "note": "As-filed text, no date; no passage vote recorded. The main effect is by striking: Section 1 strikes 45-9-53(4) (limits on local written-notice bans on concealed firearms) and (5) (suit for declaratory and injunctive relief, Attorney General notice, official liability up to $1,000) and renumbers (6) as (4); Section 2 strikes the sentence letting licensed holders with a training endorsement, veterans or retired officers carry in courthouses and other subsection (13) locations. The quote shows only what remains of those parts. Section 3 brings forward 45-9-101 for amendment, with no marks seen in grep."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-53): (4) No county or municipality or their officers or employees may participate in any program in which individuals are given a thing of value provided by another individual or other entity in exchange for surrendering a firearm to the county, municipality or other governmental body unless: (a) The county or municipality has adopted an ordinance authorizing the participation of the county or municipality, or participation by an officer or employee of the county or municipality in such a program; and (b) Any ordinance enacted pursuant to this section must require that any firearm received shall be offered for sale at auction as provided by Sections 19-3-85 and 21-39-21 to federally licensed firearms dealers, with the proceeds from such sale at auction reverting to the general operating fund of the county, municipality or other governmental body.\nSection 2 (Miss. Code § 97-37-7): A law enforcement officer, as defined in Section 45-6-3, shall be authorized to carry weapons in courthouses in performance of his official duties. The department shall promulgate rules and regulations allowing concealed pistol permit holders to obtain an endorsement on their permit indicating that they have completed the aforementioned course and have the authority to carry in these locations. This section shall in no way interfere with the right of a trial judge to restrict the carrying of firearms in the courtroom."
+}

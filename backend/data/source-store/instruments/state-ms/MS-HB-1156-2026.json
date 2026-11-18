@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1156-2026",
+  "scope": "state:ms",
+  "title": "HB1156 (2026 Regular): Firearms permit; authorize online renewal.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1100-1199/HB1156IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/1100-1199/HB1156IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kimberly Remak",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "753d3064-0fa2-4bad-945e-23767e309f7d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1100-1199/HB1156IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1156-2026.introduced.htm",
+      "sha256": "50aa398503f55bcdf053f25be7cfae6201a0cb99d53ea0c31da277f64f67af05"
+    },
+    "note": "Introduced text, as filed. No passage vote is recorded for this bill. Struck: the rule that the first renewal may be by mail or other means and the next must be in person, and the word 'other' before 'renewal'. The rest of Section 45-9-101 is unchanged and was not read for other changes (no other marks)."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101(12)(a)): Except as provided in subsection (25) of this section, no less than ninety (90) days prior to the expiration date of the license, the Department of Public Safety shall send to each licensee a written notice of the expiration and a renewal form prescribed by the department that explains that a person may renew in person or online with the department. The department shall create rules and regulations that only allow a person to renew online if all the information is the same. The licensee must renew his license on or before the expiration date by filing with the department the renewal form in person or online with the department, a notarized affidavit stating that the licensee remains qualified pursuant to the criteria specified in subsections (2) and (3) of this section if necessary, and a full set of fingerprints administered by the Department of Public Safety or the sheriff of the county of residence of the licensee. Every renewal may be processed by mail or online with the department to assure that the applicant must appear in person every ten (10) years for the purpose of obtaining a new photograph."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-22-2019",
+  "scope": "state:ms",
+  "title": "HB22 (2019 Regular): Firearms; revise limits placed on counties and municipalities to regulate.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/0001-0099/HB0022IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/HB/0001-0099/HB0022IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Earle Banks",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "e84ffc43-28e5-4be4-b433-c632dde200cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/0001-0099/HB0022IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-22-2019.introduced.htm",
+      "sha256": "31506e681d04ea435a570cfe6cf2fbc3c9d0e204740f2d10d8116af9f2cb9055"
+    },
+    "note": "Introduced text as filed (2019); no passage vote recorded. The bill STRIKES (not adds): 45-9-53 subsections (4) and (5) (limits on county/municipal written notices under 45-9-101(13), and the right to sue and Attorney General review); and the 97-37-7(2) sentence letting licensed enhanced-carry holders carry in courthouses and 45-9-101(13) locations. Quotes show surviving text in those sections that the changes leave in place. Section 3 brings forward 45-9-101 (permit law) unchanged, not quoted."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-53): (f) To regulate the carrying of a firearm at: (i) a public park or at a public meeting of a county, municipality or other governmental body; (ii) a political rally, parade or official political meeting; or (iii) a nonfirearm-related school, college or professional athletic event; or (g) To regulate the receipt of firearms by pawnshops.\nSection 1 (Miss. Code § 45-9-53): No county or municipality or their officers or employees may participate in any program in which individuals are given a thing of value provided by another individual or other entity in exchange for surrendering a firearm to the county, municipality or other governmental body unless:\nSection 2 (Miss. Code § 97-37-7): The department shall promulgate rules and regulations allowing concealed pistol permit holders to obtain an endorsement on their permit indicating that they have completed the aforementioned course and have the authority to carry in these locations.\nSection 2 (Miss. Code § 97-37-7): This section shall in no way interfere with the right of a trial judge to restrict the carrying of firearms in the courtroom."
+}
