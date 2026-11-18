@@ -529,6 +529,72 @@
           "sha256": "cfb11f2aab33749d0ce5c4c8bee3bb7a47bb7f10c724bade11bf82e86f1d8bc8"
         }
       }
+    },
+    {
+      "id": "cd63cc7ec13b1876666f8289c3fe4817ab90a1e86a96aae60518e5dc57c82feb",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/government/2017-01-17/kansas-house-bill-would-roll-back-campus-firearms-law",
+      "date": "2017-01-17",
+      "date_precision": "day",
+      "passage": "They worry about the combination of alcohol and guns. They worry about the higher incidence of suicide. They worry about college students possibly making mistakes with guns,” Clayton says. “It does tend to be a more exploratory and reckless time period in early adulthood.",
+      "note": "Quoted by a public radio story, explaining why voters in her district do not want guns on college campuses, as she introduced a bill to exempt state colleges from the campus-carry requirement.",
+      "subjects": [
+        "guns on college campuses",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:49:35.537Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "353cb9c0563744e2e0d911c7cdd22317149b58745b2205d5d1ff6be80b4df4a4",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/government/2017-01-17/kansas-house-bill-would-roll-back-campus-firearms-law",
+      "date": "2017-01-17",
+      "date_precision": "day",
+      "passage": "When this was first put into effect, the legislators voted for it with that original concealed carry law in mind, thinking, ‘Well, what kind of harm could this do? Only licensed individuals can carry a concealed weapon anyway,’",
+      "note": "Quoted by a public radio story, saying the later expansion of concealed carry means the campus gun question needs another look.",
+      "subjects": [
+        "guns on college campuses",
+        "concealed carry",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:49:35.537Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9bd6eeea0ed68af640e0bd971a37fba5cef2139099c65345a589790dc71e6fa",
+      "kind": "record",
+      "url": "https://lawrencekstimes.com/2023/03/30/ks-rep-god-given-gun-rights/",
+      "date": "2023-03-30",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Amendments offered in House debate on concealed carry licence fees: gun training, safe gun storage, tighter controls on gun access (pulled after ruled not germane)",
+      "note": "A news story reports she and three other House members tried to add amendments on increased training, safe gun storage and tighter controls on gun access to a concealed-carry licensing bill; all were pulled after being ruled not germane.",
+      "subjects": [
+        "training and safe storage for gun owners",
+        "tighter controls on gun access",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:49:35.537Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -571,6 +637,31 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.945Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns on college campuses",
+        "concealed carry",
+        "training and safe storage for gun owners",
+        "tighter controls on gun access",
+        "domestic abusers and guns",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Stephanie_Clayton (403)",
+        "blocked: https://www.washingtontimes.com/news/2018/mar/1/kansas-lawmakers-consider-some-gun-issues-but-not-/ (403)",
+        "not reviewed: her own official or campaign site (the guessed campaign address was never confirmed and the legislature member page I tried returned 404)",
+        "sponsor list: covered by bulk bill data",
+        "one news search on her name plus gun words; read a public radio story (2017) and a Lawrence news story (2023) and an advocacy group statement (2020)",
+        "nothing found in the other listed places (no questionnaire, newsletter or interview fetched)",
+        "scope not confirmed from a fetched ballot page; the stories name her as a Kansas House member from Overland Park"
+      ],
+      "found": 3,
+      "at": "2026-11-18T21:49:35.537Z",
+      "by": "source-collector"
     }
   ]
 }

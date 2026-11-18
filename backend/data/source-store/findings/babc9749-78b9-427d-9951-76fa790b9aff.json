@@ -500,6 +500,30 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.943Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "firearms",
+        "assault-style weapons",
+        "background checks",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (https://www.kmuw.org/2026-08-04/challengers-unseat-democratic-kansas-house-incumbents-in-two-wichita-area-primaries: a news story saying a challenger unseated Rep. Henry Helgerson in House District 83, challenger won 60%)",
+        "On the Record (0 appearances)",
+        "the legislature's member page (https://www.kslegislature.gov/li/b2025_26/members/rep_helgerson_henry_1/): read, nothing on the subject",
+        "blocked: https://ballotpedia.org/Henry_Helgerson (403)",
+        "https://ivoterguide.com/candidate/48598/race/12283/election/797 (candidate did not answer the gun questions)",
+        "bill pages and sponsor list: covered by bulk bill data",
+        "https://www.newsfromthestates.com/node/226156 and https://www.newsfromthestates.com/node/423816: no mention of him"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:47:19.713Z",
+      "by": "source-collector"
     }
   ]
 }

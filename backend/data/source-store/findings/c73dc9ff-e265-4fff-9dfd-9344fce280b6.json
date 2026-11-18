@@ -474,6 +474,31 @@
           "sha256": "3e9ce385c77c6cef168437eb0cbf6bf9eca92f4e5ca0ebddb5cabc0c9b7d0ffc"
         }
       }
+    },
+    {
+      "id": "3f335a3bf1271a3673057d3acbe0e34a2ab530f96c5dc6d630b4a6dfc80389a4",
+      "kind": "own-words",
+      "url": "https://www.kssenatedems.org/blog-3-1/ag51u1vmod7y97q7hj0oywxgrraz4u",
+      "date": "2024-03",
+      "date_precision": "month",
+      "passage": "“Kansas children deserve to learn and go about their lives free from the threat of gun violence,” Senate Democratic Leader Dinah Sykes, D-Lenexa, said. “Unfortunately, we have a do-nothing Republican Senate that has delivered no meaningful progress on gun safety legislation after the Chiefs parade shooting. With this legislative package, we’re answering Kansans’ call for common sense gun safety reform by putting safeguards in place to help keep dangerous weapons from falling into the wrong hands.”",
+      "note": "Quoted in a caucus news release introducing four 2024 bills: SB 548 (license to carry a concealed handgun, ending permitless carry), SB 549 (background checks on all firearm purchases), SB 550 (no purchase or possession of high-capacity semi-automatic rifles under 21), SB 551 (secure storage of firearms). The page is dated Mar 18; the release says the bills were introduced on a Thursday.",
+      "subjects": [
+        "check every gun buyer",
+        "licence to carry a concealed handgun",
+        "carry a gun without a permit",
+        "minimum age for semi-automatic rifles",
+        "safe storage of guns",
+        "general gun safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:44.620Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -516,6 +541,34 @@
       "found": 3,
       "at": "2026-11-04T19:13:24.949Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "minimum age for semi-automatic rifles",
+        "licence to carry a concealed handgun",
+        "carry a gun without a permit",
+        "school firearm safety teaching",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate caucus member page (https://www.kssenatedems.org/dinah-sykes1): read, confirms Kansas state senator, second term, Senate leader for her caucus; nothing on the subject on that page",
+        "the Senate caucus news release on the 2024 gun-safety bill package (https://www.kssenatedems.org/blog-3-1/ag51u1vmod7y97q7hj0oywxgrraz4u): read, saved",
+        "one web search on her name plus gun and Second Amendment words",
+        "blocked: https://www.newsfromthestates.com/node/168724",
+        "blocked: https://kansasreflector.com/2023/03/28/senate-democrat-rebuffed-for-trying-to-blend-nra-everytown-visions-of-firearm-safety/",
+        "blocked: https://ballotpedia.org/Dinah_Sykes (page came back empty)",
+        "legislature bill pages and vote pages: skipped, covered by bulk bill data; sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site, ivoterguide page, ljworld opinion page, johnsoncountypost pages",
+        "2026 ballot status not confirmed from a page; she is a sitting senator per the caucus page"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:47:44.620Z",
+      "by": "source-collector"
     }
   ]
 }

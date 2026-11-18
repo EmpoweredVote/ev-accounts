@@ -280,6 +280,29 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "e874e02bca62c3f4157b6bc5c95a49a9a87242c293ef7b5cf85b46e058e3492d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/55062/race/28415/election/1429",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The state of Kansas is a constitutional carry state with solid state statutes that protect your right to bear arms. I have consistently supported measures to protect your 2A constitutional rights and promote gun safety among our youth.",
+      "note": "His questionnaire answer to 'What restrictions on gun ownership are needed to protect public safety?' in a voter guide for the 2026 race for House District 71. Names no specific restriction.",
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment rights",
+        "gun safety for youth",
+        "limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:49:52.601Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -323,6 +346,29 @@
       "found": 3,
       "at": "2026-11-04T19:13:24.936Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment statement",
+        "carry a gun without a permit",
+        "gun safety for youth",
+        "limits on gun ownership"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the Kansas legislature member page for Rep. Howe (read; names him as District 71, nothing on the subject; sponsored-bills list did not load)",
+        "https://ivoterguide.com/candidate/55062/race/28415/election/1429 (voter guide questionnaire, 2026 primary; lists him on the 2026 general-election ballot; one on-subject answer saved)",
+        "blocked: https://ballotpedia.org/Steven_Howe (empty page)",
+        "one web search on name plus firearms words: no on-subject own words beyond the questionnaire",
+        "not reviewed: official or campaign site (no separate page found; not fetched)",
+        "other URL-pattern pages not fetched"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:49:52.601Z",
+      "by": "source-collector"
     }
   ]
 }

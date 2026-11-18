@@ -315,6 +315,27 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "d72829231e5446c3fa3e675895df37739b5cc78a2faccefb52f151acc1e9cb10",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/70454/race/31870/election/1468",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Narrowly tailored laws to keep the guns out of the hands of the mentally disturbed, substance abuse addicts, or criminally minded individuals.",
+      "note": "His answer to a voter-guide question, 'What restrictions on gun ownership are needed to protect public safety?' The page is the one for the August 4, 2026 primary; the exact answer date is not shown. The same page lists his earlier races, so the answer may be reused from before.",
+      "subjects": [
+        "who may own a gun",
+        "limits on gun ownership for people with mental illness, addiction or criminal intent"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:41.336Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -357,6 +378,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.937Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "who may own a gun",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://boblewisforkansas.com (read; mentions crime work only, nothing on guns)",
+        "a voter-guide profile page https://ivoterguide.com/candidate/70454/race/31870/election/1468 (one gun answer, saved)",
+        "blocked: https://ballotpedia.org/Bob_Lewis_(Kansas)",
+        "blocked: https://ballotpedia.org/Kansas_House_of_Representatives_District_123_candidate_surveys,_2022",
+        "Wikipedia page https://en.wikipedia.org/wiki/Bob_Lewis_(Kansas_politician) (confirms House District 123 member from Garden City; nothing on the subject)",
+        "official legislature member page: not found (guessed URL returned 404)",
+        "news search on name plus gun words: nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "ontheissues.org and vote411: not used (leads only, nothing found for this person)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:48:41.336Z",
+      "by": "source-collector"
     }
   ]
 }

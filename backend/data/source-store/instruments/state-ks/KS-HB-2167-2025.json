@@ -1,0 +1,32 @@
+{
+  "id": "KS-HB-2167-2025",
+  "scope": "state:ks",
+  "title": "HB2167 (2025-2026 Regular): Requiring firearms and stun guns to be stored in locked containers, establishing crimes for failure to store such weapons where a person under 18 years of age has access to such weapons and creating more severe penalties for firearms with large-capacity magazines.",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/HB2167/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2167/hb2167_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2167/hb2167_00_0000.pdf)",
+    "fetched_at": "2026-11-18T22:02:34.885897Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2167-2025.introduced.pdf",
+      "sha256": "92d74caed2c3ed21422a5ca592197e234449613080871af2a7976e8996c22311"
+    },
+    "note": "As-filed version (introduced; text carries no date). The bill has no passage vote on record, so later amendments, if any, are not in the text read. Title, enacting clause and effective-date section are not quoted."
+  },
+  "operative_text": "New Sec. 1 (new law): (a) (1) It shall be unlawful for any person to store or keep any firearm, rifle or shotgun, large capacity magazine firearm or machine gun unless such firearm is secured in a locked container or equipped with a tamper-resistant mechanical lock or other safety device, properly engaged so as to render the weapon inoperable by any person other than the owner or other lawfully authorized user. (2) It shall be unlawful for any person to store or to keep any stun gun unless the weapon is secured in a locked container accessible only to the owner or other lawfully authorized user. (3) It shall be unlawful to store a rifle or shotgun that is not a large-capacity firearm in an area where a person younger than 18 years of age has access to such place. (4) For purposes of this section, such firearm or weapon shall not be deemed stored or kept if carried by or under the control of the owner or other lawfully authorized user. (b) A violation of subsection (a) is a class A nonperson misdemeanor. (c) It shall be unlawful to store a rifle or shotgun that is a large-capacity firearm or machine gun in a place where a person younger than 18 years of age may have access to such firearm. (d) A violation of subsection (c) is a level 9, nonperson felony. (e) A violation of the provisions of this section shall be evidence of wanton or reckless conduct in any criminal or civil proceeding if a person under the age of 18 who was not a trespasser or was a foreseeable trespasser acquired access to a weapon and such access results in the personal injury to or the death of any person. (f) This section shall not apply to the storage or keeping of any firearm, rifle or shotgun that uses a matchlock, flintlock, percussion cap or similar type of ignition system and that was manufactured in or prior to the year 1899, or to any replica of any such firearm, rifle or shotgun if such replica is not designed or redesigned for using rimfire or conventional centerfire fixed ammunition. (g) As used in this section, \"large-capacity magazine\" means any magazine that holds more than 10 rounds of ammunition."
+}

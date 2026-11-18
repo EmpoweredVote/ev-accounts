@@ -494,6 +494,49 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "545fe85ad5a66b768c4d173dadf4a3333f739c00e73786adfaf2644bff861bac",
+      "kind": "own-words",
+      "url": "https://sunflowerstatejournal.com/wp-content/uploads/2019/10/trumplet.pdf",
+      "date": "2019-10-01",
+      "date_precision": "day",
+      "passage": "Unfortunately, rather than address gun free zones, some would rather implement “Red Flag” laws. We oppose Red Flag laws for the following reasons. First, we believe they violate or could be used to violate the Second, Fourth, Fifth, Sixth, Ninth, Tenth, and Fourteenth amendments to the United States Constitution.",
+      "note": "Joint letter to the President from Kansas House members; Hawkins (District 100) is in the signer list. Letter opposes red-flag laws and says Congress should address gun-free zones.",
+      "subjects": [
+        "red-flag orders",
+        "gun-free zones",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:08.096Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "378322aeab8431b08eacad4bd9e6cb3307bc4585bb27d9e9032cee98b34c2008",
+      "kind": "own-words",
+      "url": "https://sunflowerstatejournal.com/wp-content/uploads/2019/10/trumplet.pdf",
+      "date": "2019-10-01",
+      "date_precision": "day",
+      "passage": "We Kansans empower our citizens and those who visit our great state to exercise their Second Amendment rights with little restriction.",
+      "note": "Same joint letter, signed by Hawkins among others; states support for the individual right to keep and bear arms and for Kansas's light restrictions on gun rights.",
+      "subjects": [
+        "Second Amendment rights",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:08.096Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -541,6 +584,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.936Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-free zones",
+        "Second Amendment rights",
+        "suppressors and short-barrelled rifles"
+      ],
+      "places": [
+        "status confirmed: Daniel Hawkins, House District 100 (Sedgwick County), Speaker of the House, per the legislature's search listing; member page fetched but returned only site navigation text",
+        "On the Record (0 appearances, 0 meetings)",
+        "one web search on name plus subject words (found only the 2019 letter below)",
+        "sponsor list: covered by bulk bill data",
+        "https://ksconstitutional.substack.com/p/amendment-to-kansas-constitution (a newsletter that thanks him for backing a self-defense constitutional amendment; not his words, nothing saved)",
+        "blocked: https://ballotpedia.org/Daniel_Hawkins (403)",
+        "https://ivoterguide.com/candidate/48584/race/11650/election/987 (nothing on the subject in fetched text)",
+        "no personal campaign site or newsletter found",
+        "not reviewed: official site issue pages and news-site searches beyond one search (no separate own-words source located)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:47:08.096Z",
+      "by": "source-collector"
     }
   ]
 }

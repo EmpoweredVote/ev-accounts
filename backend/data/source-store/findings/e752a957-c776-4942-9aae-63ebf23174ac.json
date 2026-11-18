@@ -212,6 +212,29 @@
       "found": 5,
       "at": "2026-11-04T19:13:24.950Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "carry permits",
+        "background checks",
+        "firearm bans"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (Kansas governor race); page: https://lawrencekstimes.com/2026/08/04/kr-masterson-holscher-gov/ shows him well behind the winner in unofficial returns",
+        "On the Record (1 meeting, 2026-07-10 governor debate): nothing on the subject",
+        "campaign site https://scottschwab.com: read; only a general line that he would protect Second Amendment rights as governor (not saved: he is out of scope)",
+        "blocked: https://ballotpedia.org/Scott_Schwab (403)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words: no own-words gun statements found",
+        "stopped after the primary loss, other places not searched"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:47:59.681Z",
+      "by": "source-collector"
     }
   ]
 }

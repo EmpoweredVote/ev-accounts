@@ -201,6 +201,49 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "fd430268eda8c5c7bbaccc43e895454692656a05ae4e7bea5f4ccce1bceb0978",
+      "kind": "own-words",
+      "url": "https://brooklynnemosley.com/platform",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Kansas must prioritize comprehensive gun safety measures, including universal background checks, safe storage requirements, and responsible gun ownership education.",
+      "note": "Campaign platform page, gun safety section; lists background checks for all buyers, safe storage rules and gun ownership education as priorities. Page is undated; 2024 campaign site.",
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "gun ownership education",
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:46.539Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "adbdfd797ed651001d47b6057b69fb5f17fb56eae7c7da63531a339aa2674dfc",
+      "kind": "own-words",
+      "url": "https://brooklynnemosley.com/platform",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Protecting our youth from gun violence is paramount for the safety of our communities.",
+      "note": "Campaign platform page, gun safety section; general statement on protecting young people from gun violence. Page is undated.",
+      "subjects": [
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:46.539Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -242,6 +285,34 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "gun ownership education",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "status: sitting Kansas House member for District 46, unopposed in the 2026 primary (state election office vote totals), listed as a 2026 general-election candidate",
+        "On the Record (0 meetings)",
+        "campaign site https://brooklynnemosley.com/platform (read; gun safety section)",
+        "campaign site home and about pages (nothing on the subject)",
+        "news story https://lawrencekstimes.com/2024/04/30/mosley-campaign-house-46/ (nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Brooklynne_Mosley (empty page, HTTP 202)",
+        "news search on name plus gun words (nothing about her on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: legislature bill and vote pages (covered by bulk bill data)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:47:46.539Z",
+      "by": "source-collector"
     }
   ]
 }

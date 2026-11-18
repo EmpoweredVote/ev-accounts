@@ -222,6 +222,35 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.940Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "teachers carrying guns"
+      ],
+      "places": [
+        "in scope: Kansas House District 105 member page at https://www.kslegislature.org/li/b2025_26/members/rep_ward_jill_1/ and the Sedgwick County 2026 primary candidate notice at https://www.sedgwick.gov/elections/election-notices-news-releases/2026-primary-election-notice-of-offices-and-candidates/ list her as a candidate; no result found saying she lost or withdrew",
+        "On the Record (0 meetings)",
+        "member page on the legislature site (read; no statements on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jill_Ward (403)",
+        "https://ivoterguide.com/candidate/82529/race/11665/election/1246 (guide page; her answers on gun ownership limits and teachers carrying are marked did not answer)",
+        "https://thebeaconnews.org/stories/2024/10/09/john-burke-and-jill-ward-face-off-in-wichita-house-race/ (news story; the gun-rights line is the reporter's wording, not hers, so not saved)",
+        "one news search on name plus gun words (leads only)",
+        "campaign site: not found in search",
+        "not reviewed: https://goodparty.org/people/jill-ward-98ee1aa8",
+        "not reviewed: https://thecandidate.com/states/ks/legislature/house/105/jill-ward"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:48:33.585Z",
+      "by": "source-collector"
     }
   ]
 }

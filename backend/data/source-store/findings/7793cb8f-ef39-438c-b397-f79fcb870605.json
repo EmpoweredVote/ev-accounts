@@ -204,6 +204,49 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "a4d8c27ad9092f025131d06350b67d6c8b3368b11f2ad16da8bd6c4b07829f3b",
+      "kind": "own-words",
+      "url": "https://suzannewikle.com/issue",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Common sense gun laws, such as a secure storage law, requiring background checks on all gun sales, and red flag laws are actions we can take to keep kids and our communities safe.",
+      "note": "Campaign issues page lists a secure storage law, background checks on all gun sales, and red flag laws as policies she names. Page date not shown; year is approximate.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "secure storage of guns",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:37.554Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a48f66730ad9bab83e773a6eddcb3d91ad3ba5fcd5c153e26710c938c4cf4ce",
+      "kind": "own-words",
+      "url": "https://suzannewikle.com/issue",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Gun violence is the number one killer of children and teens in Kansas. We can fix that with the right policies.",
+      "note": "Campaign issues page opening for its gun-laws section; says policy can address gun deaths of children and teens.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:37.554Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -244,6 +287,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.945Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "secure storage of guns",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; name search also 0)",
+        "campaign site home page: names her as Kansas State Representative, House District 10, running for re-election (https://suzannewikle.com/)",
+        "campaign site issues page (https://suzannewikle.com/issue): has a gun-laws section",
+        "campaign site news list and the Lawrence Journal-World voter-guide questionnaire answers (https://www.suzannewikle.com/news/ljw-primary-voter-guide): nothing on the subject",
+        "campaign site forum and candidate-profile posts: nothing on the subject (short pages)",
+        "blocked: https://ballotpedia.org/Suzanne_Wikle (403)",
+        "one web search on her name plus gun words: leads only (a gun-safety voter-guide listing, opinion pieces that do not quote her); not cited",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill and vote pages: skipped per brief",
+        "not reviewed: https://ent.sos.ks.gov/Uncontested.html (page returned no usable text for her race); November ballot status rests on her campaign site saying she is running for re-election"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:46:37.554Z",
+      "by": "source-collector"
     }
   ]
 }

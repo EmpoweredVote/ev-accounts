@@ -500,6 +500,34 @@
       "found": 3,
       "at": "2026-11-04T19:13:24.942Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and places to carry",
+        "repeal of gun laws",
+        "Second Amendment and gun safety in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Kansas Legislature member page https://www.kslegislature.gov/li/b2025_26/members/rep_alcala_john_1/ (fetched; page shell only, no statements on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/John_Alcala (empty response)",
+        "campaign site: not found in search results",
+        "web search on name plus gun and Second Amendment words: nothing on the subject from this person",
+        "web search on name plus concealed carry and gun statement: nothing on the subject from this person (only a 2017 news item about a police shooting, not firearm law)",
+        "web search on 2026 race: state primary totals show him unopposed in his primary for House District 57; ballot-listing site shows him a candidate in the 2026 general election (https://sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf, https://www.ballotready.org/people/john-alcala-203ccea3-05af-4ef1-ad4d-e4d8051975f7); not fetched, so in scope by search lead only",
+        "not reviewed: https://www.billtrack50.com/public/scorecard/legislator/y8OVo_zBJk-d7BZ8FK2B1g/18721",
+        "not reviewed: https://thecandidate.com/states/ks/legislature/house/57/john-alcala"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:46:34.883Z",
+      "by": "source-collector"
     }
   ]
 }

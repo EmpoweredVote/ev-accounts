@@ -300,6 +300,50 @@
           "sha256": "0782922c420341fbaaac5ccdf50c9dc5c7e5149fd7a0f2144eeb9b01c4b8f4cf"
         }
       }
+    },
+    {
+      "id": "f20b8b5b7677b82fdb28668ed5d59324f7e81143ed6d520241012db4eeec4f43",
+      "kind": "own-words",
+      "url": "https://oklahomavoice.com/2025/02/21/everyone-needs-to-breathe-intense-confrontation-on-kansas-house-floor-forces-two-hour-recess/",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "passage": "This kind of talk makes me nervous, makes me not want to go back on the floor today, makes me want to go the f*** home. I am done with gun violence, and I just need you guys to remember that. Because I'm sitting here listening to this conversation thinking if I even want to be here, because it's f***ing scary, and I am tired of being put in the line of fire.",
+      "note": "Quoted in a Kansas Reflector news story (read via a Yahoo copy of the Oklahoma Voice reprint) from a closed-door House meeting after a floor confrontation during debate on a school gun-safety program bill. She speaks of her own long-term trauma from gun violence and says she is done with it. The meeting was Thursday, 2025-02-20; the story is dated 2025-02-21.",
+      "subjects": [
+        "general statement on gun violence",
+        "guns on the House floor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:48.307Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d7f70802bfda4a93595d873461a64f2bec3c7984ba4166bb401210256d302c5",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li/b2025_26/measures/hb2167/",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "KS-HB-2167-2025",
+      "act": "other",
+      "motion": "Bill introduced at the request of Representative Meyer",
+      "note": "The bill page says it was requested by Representative Meyer. It would require firearms and stun guns to be kept in locked containers, create crimes for failing to store them where someone under 18 can reach them, and set harsher penalties for firearms with large-capacity magazines.",
+      "subjects": [
+        "locked storage of guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:48.307Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -341,6 +385,32 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns and large-capacity magazines",
+        "red flag / gun violence restraining orders",
+        "safe storage of guns",
+        "carry a gun without a permit",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill page for HB 2167 (2025-26), read",
+        "legislature bill page for HB 2076 (2023-24): returned 404, not verified",
+        "blocked: https://ballotpedia.org/Heather_Meyer (empty response)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/152373/heather-meyer (bot check)",
+        "campaign site: https://www.heatherforkansas.com/ did not load; no own page reachable",
+        "official member page on the legislature site: not reviewed, https://kslegislature.gov/li/b2021_22/members/rep_meyer_heather_1",
+        "news search on name plus gun words: one news story with her quoted floor remarks; one opinion column found was written by a different person, not used"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:46:48.307Z",
+      "by": "source-collector"
     }
   ]
 }

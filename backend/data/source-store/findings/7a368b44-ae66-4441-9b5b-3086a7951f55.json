@@ -641,6 +641,28 @@
           "sha256": "cfb11f2aab33749d0ce5c4c8bee3bb7a47bb7f10c724bade11bf82e86f1d8bc8"
         }
       }
+    },
+    {
+      "id": "e70d77a10b8966162f6a7b67a65c8f4c2bd94ece01f92d817549e143dfe18787",
+      "kind": "own-words",
+      "url": "https://1350kman.com/2021/03/local-lawmakers-weigh-in-on-house-measure-to-lower-conceal-carry-age-from-21-to-18/",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "I don’t feel that my carrying a gun if I’m a student is going to make me safe in a classroom where there might be a shooter. I know that we’ve lost faculty members (at K-State) because of concealed carry. They just didn’t want to find out. They went somewhere else,",
+      "note": "Quoted by a local radio news story (KMAN) from her testimony at a House hearing on a bill to let people under 21 carry a concealed handgun after a background check and safety training; she speaks about students carrying guns in classrooms and about faculty leaving K-State because of campus concealed carry.",
+      "subjects": [
+        "carry permits for 18 to 20 year olds",
+        "guns on college campuses",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:37.072Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -680,6 +702,31 @@
       "found": 10,
       "at": "2026-11-04T19:13:24.943Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permits for 18 to 20 year olds",
+        "guns on college campuses",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia page confirms she is the sitting member for House District 66 since 2003; it does not say anything about 2026 ballot status; sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Sydney_Carlin (fetch returned an empty page)",
+        "one news search on her name plus gun words; found local radio stories at https://1350kman.com (2018 and 2021), fetched with curl",
+        "legislature bill and vote pages: skipped per brief, covered by bulk bill data",
+        "official member page and campaign site: not reviewed, no fetch made (no site found in search results)",
+        "nothing on the subject beyond the one quote saved"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:46:37.072Z",
+      "by": "source-collector"
     }
   ]
 }

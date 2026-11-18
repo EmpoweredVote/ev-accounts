@@ -334,6 +334,151 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "60d5324874898333abe3f481a578c60d4db42790e6baa5ebadc62420362044fb",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2024/03/18/capitol-update-jo-ella-hoye-gun-reform-229592",
+      "date": "2024-03-18",
+      "date_precision": "day",
+      "passage": "You have the power to disrupt the routine. No more moments of silence without change. Use your voice to convince legislators to pass common sense reforms like background checks on all gun sales and secure storage. Guns everywhere or guns nowhere is a false choice.",
+      "note": "Her own weekly column in a local news site. She urges readers to push for background checks on all gun sales and secure storage laws.",
+      "subjects": [
+        "check every gun buyer",
+        "secure storage",
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40abec67efd072cb70a4e9f4292a0c89f7cc4f99b28a9ee88ea79310b2ab5564",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2024/03/18/capitol-update-jo-ella-hoye-gun-reform-229592",
+      "date": "2024-03-18",
+      "date_precision": "day",
+      "passage": "Violent crime started rising in Kansas after permitless carry passed in 2015. In 2021, the legislature allowed 18-, 19, -and 20-year olds to carry hidden, loaded handguns and gave violent criminals their guns back sooner.",
+      "note": "In her own column she describes Kansas's permitless carry law, the 2021 lower carry age and quicker gun restoration, and links them to rising violent crime.",
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76ffb8fa0d6a7570b63c93392a322d593504e9301fce189779bae641cb042ff",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2023/04/03/capitol-update-rep-jo-ella-hoye-gun-lobby-198064",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "The other bill would remove the $100 state fee for concealed carry licenses from state statute. This would require taxpayers to reimburse the Attorney General $1.2 million from the State General Fund for the Concealed Carry Licensing Unit. I have no problem making fees more affordable, but this is more appropriately done through an annual proviso so that we can adjust the fee based on the availability of funds.",
+      "note": "Her own weekly column. She objects to taking the $100 concealed carry licence fee out of statute, saying fee changes belong in an annual budget proviso.",
+      "subjects": [
+        "concealed carry licence fee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9131211508683032f17a8be033d85c705bbb40a7966d92693b3c1b6f74759369",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2023/04/03/capitol-update-rep-jo-ella-hoye-gun-lobby-198064",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "My hope is that people see through it. More guns in the hands of untrained and potentially dangerous people are not making our communities safer. It's not too soon to talk about our gun laws. It's too late. Again.",
+      "note": "Closing passage of her column after a school shooting. She says more guns in untrained hands do not make communities safer and calls for talking about gun laws now.",
+      "subjects": [
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfcc77a50ba6a4cf422d6a560d3e4e8492f3466a7dd4427292749658e09196fe",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2023/04/03/capitol-update-rep-jo-ella-hoye-gun-lobby-198064",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "The onus is on adults to protect children from unsecured firearms. We must do more to keep kids safe from gun violence, but this bill forces any public school wanting to offer firearm safety to sole-source with the NRA – the very organization responsible for weak gun laws.",
+      "note": "Her own column. She objects to a bill requiring a standardized school gun-safety curriculum based on an NRA program, and says adults must keep guns secured from children.",
+      "subjects": [
+        "school gun-safety curriculum",
+        "secure storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51192b31dee2ebb8e5f3efb48740d899673d2dffc972c57281d9892a3788731e",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/?p=22396",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "passage": "“Once these individuals have been convicted, they should have to relinquish the firearms that they may already have for the time period that they are prohibited from having them.”",
+      "note": "Quoted by the Kansas Reflector (republished by The Lawrence Times) from her podcast interview. She backs Senate Bill 192, which would require people convicted of domestic violence, stalking or battery to give up guns they already own for the prohibited period.",
+      "subjects": [
+        "guns taken from people convicted of domestic violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9fdd050b4b5ac33a8321465347539c01aac6ccd73b3a630623fa940121120f5",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/?p=22396",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "passage": "“If you don’t want to lose your firearms, don’t be a violent person,” Hoye said. “This is specifically relating to people who are not law abiding gun owners.",
+      "note": "Quoted by the Kansas Reflector (republished by The Lawrence Times). She defends SB 192's gun-relinquishment requirement as aimed at people who are not law-abiding gun owners.",
+      "subjects": [
+        "guns taken from people convicted of domestic violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -378,6 +523,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.943Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "secure storage",
+        "guns taken from people convicted of domestic violence",
+        "carry a gun without a permit",
+        "concealed carry licence fee",
+        "minimum age to carry",
+        "school gun-safety curriculum",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.joellahoye.com/ (no response)",
+        "blocked: https://ballotpedia.org/Jo_Ella_Hoye (empty page, status 202)",
+        "blocked: https://www.newsfromthestates.com/node/226156 (bot check, 403)",
+        "web search: news search on name plus gun words; found a 2022 news story, two 2023-2024 local-paper columns written by her, and a 2017 candidacy announcement (paywalled)",
+        "scope: a web search shows her running in the 2026 general election for House District 17 (no result seen); not confirmed from a page I fetched",
+        "not reviewed: official legislature member page, campaign social posts, floor-debate video"
+      ],
+      "found": 7,
+      "at": "2026-11-18T21:46:14.423Z",
+      "by": "source-collector"
     }
   ]
 }

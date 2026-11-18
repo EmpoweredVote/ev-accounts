@@ -433,6 +433,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.942Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings, no appearances found)",
+        "the legislature's member page https://www.kslegislature.gov/li/b2025_26/members/rep_amyx_mike_1/ (fetched; nothing on the subject; sponsorships and votes: covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/Mike_Amyx (403)",
+        "blocked: https://goodparty.org/people/mike-amyx-9980b00d (429)",
+        "not reviewed: https://votesmart.org/candidate/biography/73996/mike-amyx (404 page)",
+        "news story https://www2.ljworld.com/news/general-news/2026/apr/14/rep-mike-amyx-files-for-reelection-to-kansas-house-updates-on-other-candidates-in-douglas-county/ (confirms he filed for a fourth term in District 45 in April 2026; nothing on the subject)",
+        "opinion piece https://www2.ljworld.com/opinion/2024/feb/02/opinion-lawmakers-citizens-divided-on-guns/ (fetched; no words of his on the subject)",
+        "two web searches on his name plus gun words (nothing of his own on the subject)",
+        "official site and campaign site: no separate site found; no gun issue page located",
+        "not reviewed: legislative committee testimony PDFs from search results (testimony by others, not his)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:49:24.774Z",
+      "by": "source-collector"
     }
   ]
 }

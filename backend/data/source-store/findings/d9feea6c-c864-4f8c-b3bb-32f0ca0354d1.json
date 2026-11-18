@@ -493,6 +493,71 @@
           "sha256": "cdbac91c7a99c37e5a23df9cfd6d959c465c98dc9d8b4aff7229c800413661c8"
         }
       }
+    },
+    {
+      "id": "3f69b99dacd0ce9631c57175dc6eab4a6f37282f260ee0a4062503e5670f8331",
+      "kind": "own-words",
+      "url": "https://www.kslegislature.org/li/b2023_24/committees/ctte_h_fed_st_1/documents/testimony/20240307_72.pdf",
+      "date": "2024-03-07",
+      "date_precision": "day",
+      "passage": "I would encourage this commitee to have hearings on HB 2413 and HB 2245. These bills deal with the safe storage of firearms and gun violence restraining orders. These bills help our gun owners to keep their firearms safely stored and protects loved ones when a gun owner is incapable of making safe decisions.",
+      "note": "Written testimony to the House Federal and State Affairs Committee opposing HB 2803 (Kansas Gun Rights Preservation Act); she asks for hearings on safe-storage and gun-violence-restraining-order bills and says she is a member of Grandparents for Gun Safety.",
+      "subjects": [
+        "safe storage of firearms",
+        "gun violence restraining orders (red-flag orders)",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:50:35.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f7fc3531b596e12db24b45eeec79b1a67c4f2e23de119cca82f4646cd3646f0",
+      "kind": "own-words",
+      "url": "https://www.kslegislature.org/li/b2023_24/committees/ctte_h_fed_st_1/documents/testimony/20240307_72.pdf",
+      "date": "2024-03-07",
+      "date_precision": "day",
+      "passage": "As a State Senator and member of Grandparents for Gun Safety this bill appears to do just the opposite of preserving the gun rights of law-abiding citizens.",
+      "note": "Opening of her written testimony opposing HB 2803; says it would hamper law enforcement's ability to investigate and seize weapons, and asks the committee to vote no.",
+      "subjects": [
+        "oppose state limits on enforcement of gun laws",
+        "gun rights preservation act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:50:35.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1067ce2b26f6811ac9bf0c2f64f84a29d1f383e79e49fc5d11092dc028205b5c",
+      "kind": "own-words",
+      "url": "https://kansaspublicradio.org/statehouse-news/2014-04-03/ks-senate-advances-firearms-bill",
+      "date": "2014-04-03",
+      "date_precision": "day",
+      "passage": "“Guns have a place, but they do not need to be in the workplace, in our libraries or community centers. I vote no on Senate bill 447,” said Pettey.",
+      "note": "Kansas Public Radio story quoting her on the Senate floor against SB 447, a bill allowing open carry statewide and limiting local rules; the story says she opposed it because it reduces local control over firearms.",
+      "subjects": [
+        "open carry",
+        "local control of gun rules",
+        "guns in workplaces and public buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:50:35.342Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -533,6 +598,32 @@
       "found": 5,
       "at": "2026-11-04T19:13:24.949Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "open carry and local control of guns",
+        "guns in workplaces, libraries and community centers",
+        "state preemption of local gun rules",
+        "safe storage of firearms",
+        "gun violence restraining orders (red-flag orders)",
+        "waiting periods",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "Kansas Senate member page and a Senate caucus page https://www.kssenatedems.org/patpettey-1- (read; a bio page with nothing on the subject)",
+        "kslegislature.gov member page: sponsor list: covered by bulk bill data; vote pages skipped as instructed",
+        "committee testimony page on kslegislature.org (read; own written testimony on HB 2803, saved)",
+        "Kansas Public Radio news story 2014-04-03 (read; direct quote saved)",
+        "blocked: https://www.washingtontimes.com/news/2018/mar/15/kansas-lawmakers-debate-bill-for-disarming-domesti/ (bot check)",
+        "blocked: https://www.newsfromthestates.com/node/226156 (403)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (not fetched; one web search plus six page fetches used)"
+      ],
+      "found": 3,
+      "at": "2026-11-18T21:50:35.342Z",
+      "by": "source-collector"
     }
   ]
 }

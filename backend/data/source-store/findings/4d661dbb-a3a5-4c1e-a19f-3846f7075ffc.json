@@ -501,6 +501,31 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag / gun violence restraining orders",
+        "carry permits and permitless carry",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: the Johnson County election office page lists her under the November 3, 2026 general election: https://www.jocoelection.org/candidates-elected-officials/susan-ruiz-2",
+        "campaign site https://susanruizks.com (read; nothing on the subject)",
+        "2026 League of Kansas Municipalities candidate survey https://cdn.ymaws.com/www.lkm.org/resource/resmgr/files/2026_candidates/hd_23_ruiz_susan.pdf (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Susan_Ruiz_(Kansas) (empty page)",
+        "blocked: https://justfacts.votesmart.org/candidate/183533 (nothing on the subject returned)",
+        "one news search on her name plus gun words (nothing in her own words; an opinion column on guns found did not mention her)",
+        "sponsor list and floor votes: covered by bulk bill data",
+        "not reviewed: the Kansas legislature's own member page"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:49:19.257Z",
+      "by": "source-collector"
     }
   ]
 }

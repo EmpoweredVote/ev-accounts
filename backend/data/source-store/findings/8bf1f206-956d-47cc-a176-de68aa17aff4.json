@@ -406,6 +406,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.935Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "guns in schools and firearm detection in schools"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "campaign site https://croftforkansas.com/ (home page read; site search for 'gun' and 'firearm' returned nothing; ?p=93 returned page not found)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: fetch returned an empty page, not reviewed: https://ballotpedia.org/Chris_Croft",
+        "https://ivoterguide.com/candidate/48549/race/11297/election/685 (2020 questionnaire: he gave no answer to the gun questions; nothing quotable)",
+        "news search on name plus gun words: only opinion pieces by an opponent about him, not his own words; his guest commentary on school firearm detection was not found",
+        "blocked: https://www.yahoo.com/news/kansas-state-rep-plan-stop-100200812.html (too many requests)",
+        "not reviewed: https://www.kslegislature.gov/li/b2025_26/committees/ctte_h_fed_st_1/documents/testimony/20250205_58.pdf",
+        "not reviewed: https://bearingarms.com/camedwards/2024/01/16/kansas-lawmaker-looks-to-strengthen-second-amendment-protections-n79427",
+        "scope: search results show him as the sitting District 8 House member who won the 2026 primary unopposed on the primary ballot and faces a general-election opponent; the official primary totals PDF was not fetched"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:48:49.684Z",
+      "by": "source-collector"
     }
   ]
 }

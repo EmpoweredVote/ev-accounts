@@ -340,6 +340,31 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.943Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag or gun violence restraining orders",
+        "carry a gun without a permit",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "member page, confirms House District 103, Sedgwick County: https://www.kslegislature.org/li/b2025_26/members/rep_martinez_angela_1/ (page lists no issue statements)",
+        "sponsor list: covered by bulk bill data; legislature bill and vote pages skipped as instructed",
+        "campaign site: no site found; https://www.angelamartinezks.com did not load (HTTP 000)",
+        "blocked: https://ballotpedia.org/Kansas_House_of_Representatives_elections,_2026 (403)",
+        "blocked: https://ballotpedia.org/Angela_Martinez (403)",
+        "blocked: https://wikiwand.com/en/Angela_Martinez (403)",
+        "candidate profile pages https://www.ballotready.org/people/angela-martinez and https://thecandidate.com/states/ks/legislature/house/103/angela-martinez: nothing on the subject",
+        "two web searches (name plus gun, firearm, Second Amendment words; name plus district 103 and 2026): no statements by her on the subject; search snippets only, not cited"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:47:23.721Z",
+      "by": "source-collector"
     }
   ]
 }

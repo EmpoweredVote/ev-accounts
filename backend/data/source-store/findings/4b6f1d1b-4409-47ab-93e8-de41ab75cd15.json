@@ -429,6 +429,48 @@
           "sha256": "b3dad46b2afa3b9826488ba457900a0d84c8bb7cb0c06cf23b7756930105138f"
         }
       }
+    },
+    {
+      "id": "626ff82f2cedf06ee52a5b4cee9a54ddbb5478b73c242c190a60e55746e0610c",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/government/2015-02-26/kansas-senate-advances-bill-loosening-concealed-carry-rules",
+      "date": "2015-02-26",
+      "date_precision": "day",
+      "passage": "I think that carrying without that training may, down the road, have some dangerous side effects to it,",
+      "note": "Quoted by KCUR during Senate debate on a bill to let people carry concealed guns without the training requirement; she said she had concerns about dropping training.",
+      "subjects": [
+        "carry a gun without a permit",
+        "training for carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:45:56.574Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a64a14c4bfdcee13fbfa59da2291c85b5b9b3b1a8478df26566eef2a74fccb69",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/2021/04/08/ksleg-teens-guns/",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "passage": "I’m totally supportive of training our children. I just want to put more emphasis on safety, education and saving lives,",
+      "note": "Quoted by the Lawrence Times (Kansas Reflector story) while she offered an amendment to add locked storage of guns to a school gun-safety lesson bill; the amendment failed 13-21.",
+      "subjects": [
+        "gun storage",
+        "school gun-safety lessons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:45:56.574Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -469,6 +511,32 @@
       "found": 5,
       "at": "2026-11-04T19:13:24.949Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "training for carry permits",
+        "gun storage and school gun-safety lessons",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia page confirming she is the sitting state senator for district 29 (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Oletha_Faust-Goudeau (fetch returned an empty page)",
+        "web search on name plus Second Amendment (nothing on the subject)",
+        "web search on name plus concealed carry (two news stories found)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: her official legislature member page and campaign site (not fetched within this run)",
+        "https://kslegislature.gov bill and vote pages skipped as instructed"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:45:56.574Z",
+      "by": "source-collector"
     }
   ]
 }

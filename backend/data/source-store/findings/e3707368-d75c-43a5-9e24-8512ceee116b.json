@@ -522,6 +522,31 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.939Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "federal gun rules",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://teamtarwater.com (read; home page only carries a 'Second Amendment advocate' label with no full statement on guns; page says candidate for Kansas State Representative, 27th District, 2026; 2026 ballot placement not confirmed on a ballot page)",
+        "blocked: https://ballotpedia.org/Sean_Tarwater_Sr. (empty response)",
+        "https://ballotpedia.org/Sean_Tarwater (fetch returned empty page; not reviewed)",
+        "one web search on name plus gun words (leads only; ballotready and ivoterguide pages not fetched, not reviewed)",
+        "https://www.kslegislature.org/li/b2023_24/committees/ctte_h_fed_st_1/documents/testimony/20240307_93.pdf (fetched; the testimony on HB 2803 is signed by a different legislator, District 6, so not used)",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill and vote pages: skipped per brief"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:47:46.905Z",
+      "by": "source-collector"
     }
   ]
 }

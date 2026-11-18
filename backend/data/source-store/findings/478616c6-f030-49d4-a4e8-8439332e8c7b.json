@@ -346,6 +346,27 @@
           "sha256": "1958ab190a42268bf3a7d10b420e74974a9f56afb37d983b6cfee58b492ee8b9"
         }
       }
+    },
+    {
+      "id": "6916c3ca4384572ce88dd7b954bf62684f201faaaa81af1d9c0924d4bf2bde1b",
+      "kind": "own-words",
+      "url": "https://kiowacountypress.net/content/kansas-resident-shocked-lawmakers-response-her-plea-gun-safety",
+      "date": "2026-08-22",
+      "date_precision": "day",
+      "passage": "It really surprised me because I think of Representative Wilborn as a kind and conscientious person, and I've never known him to be disrespectful. But I felt that it was very disrespectful, particularly given the tenor of the sender's email.",
+      "note": "Quoted in a news story (Kansas News Service story as republished by Kiowa County Press). She was reacting to another House member's reply to a constituent's email about gun-law loopholes after the Winfield shooting; the story calls her a gun owner and says she found the constituent's email thoughtful. It does not state her own policy view.",
+      "subjects": [
+        "gun safety laws in general",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:51:08.596Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -387,6 +408,29 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "who may have a gun",
+        "carry without a permit",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://poskin4ks.com/legislative-work (campaign site page read; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words (one news story found, see findings)",
+        "not reviewed: https://www.newsfromthestates.com/article/winfield-resident-shocked-kansas-lawmakers-response-her-plea-gun-safety (fetch returned a near-empty page; the same story was read at the Kiowa County Press address)",
+        "not reviewed: Ballotpedia, votesmart, ivoterguide, ontheissues (not fetched; leads only)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:51:08.596Z",
+      "by": "source-collector"
     }
   ]
 }

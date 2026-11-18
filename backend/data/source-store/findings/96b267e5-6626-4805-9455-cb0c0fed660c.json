@@ -550,6 +550,31 @@
       "found": 7,
       "at": "2026-11-04T19:13:24.949Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general gun safety / Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Senate caucus member page https://kssenatedems.org/david-haley-1 (read; confirms Kansas Senate seat, Wyandotte County; bio says he has prioritized gun safety, but it is an undated third-person bio with no specific position, so not saved)",
+        "blocked: https://ballotpedia.org/David_Haley (403)",
+        "blocked: https://www.newsfromthestates.com/node/226156 (bot check; unclear it is about this person)",
+        "one news search on name plus gun words: only advocacy-group pages and bill pages, no quote from him on the subject",
+        "sponsor list and floor votes: covered by bulk bill data",
+        "not reviewed: https://ontheissues.org/States/KS_Gun_Control.htm (lead only)",
+        "no campaign site found; not up for election in 2026 as far as the page shows (sitting senator, status not independently confirmed because Ballotpedia was blocked)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:46:48.301Z",
+      "by": "source-collector"
     }
   ]
 }

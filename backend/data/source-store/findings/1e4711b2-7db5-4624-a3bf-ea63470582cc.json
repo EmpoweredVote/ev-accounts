@@ -527,6 +527,31 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag / gun violence restraining order",
+        "carry a gun without a permit",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "scope: on the 2026 general-election ballot for Kansas House District 18 per https://www.jocoelection.org/candidates-elected-officials/cindy-neighbor-2",
+        "On the Record (0 meetings, name search also 0)",
+        "official legislature member page https://kslegislature.gov/li/b2025_26/members/rep_neighbor_cindy_1/ (read: member page, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Cindy_Neighbor (403)",
+        "blocked: https://www.newsfromthestates.com/node/424556 (403)",
+        "news search on name plus gun words: no words of hers found; an opinion piece at https://www.yahoo.com/news/kansas-state-rep-plan-stop-100200812.html does not mention her",
+        "county election office candidate page: nothing on the subject",
+        "sponsor list and floor votes: covered by bulk bill data",
+        "no campaign site or newsletter on the subject found in the searches run"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:45:59.434Z",
+      "by": "source-collector"
     }
   ]
 }

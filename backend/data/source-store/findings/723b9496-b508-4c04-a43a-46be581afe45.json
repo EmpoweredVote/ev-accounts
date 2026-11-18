@@ -381,6 +381,49 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.936Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "guns in schools"
+      ],
+      "places": [
+        "status: died 2026-10-29 while in office (https://en.wikipedia.org/wiki/Dan_Goddard); no longer in scope, search stopped",
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Dan_Goddard (read; confirms office and death)",
+        "Ballotpedia: https://ballotpedia.org/Dan_Goddard (fetched, nothing on the subject)",
+        "https://ivoterguide.com/candidate/48728/race/11707/election/685 (voter-guide page with one-word answers only; no full passage to save)",
+        "one web search on name plus gun words: nothing on the subject beyond the above",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: official legislature member page, campaign site, news archive (stopped once out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:46:21.118Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "constitutional carry"
+      ],
+      "places": [
+        "status: died 2026-10-29 (page shows House service ended that day): https://en.wikipedia.org/wiki/Dan_Goddard",
+        "On the Record (0 appearances)",
+        "web search on name plus gun words (one search; lead pages only, not fetched)",
+        "blocked: https://www.newsfromthestates.com/node/435642",
+        "not reviewed: official member page, campaign site, Ballotpedia, news search (stopped after confirming death)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:51:52.396Z",
+      "by": "source-collector"
     }
   ]
 }

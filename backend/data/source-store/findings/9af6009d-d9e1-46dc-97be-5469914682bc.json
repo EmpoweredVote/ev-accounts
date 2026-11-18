@@ -561,6 +561,32 @@
       "found": 5,
       "at": "2026-11-04T19:13:24.945Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment general statements",
+        "suppressors and short-barrelled rifles"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.kslegislature.gov/li/b2025_26/members/rep_sawyer_tom_1/ (member page: House District 95, nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Tom_Sawyer_(Kansas_politician) (confirms House District 95 incumbent; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Tom_Sawyer_(Kansas) (empty page); a web search result says he is the incumbent running in the 2026 general election, nothing on the subject",
+        "https://ontheissues.org/States/KS_Gun_Control.htm (no entry for him)",
+        "web search: name plus gun/Second Amendment words (nothing on the subject)",
+        "web search: 2026 District 95 race (incumbent on the general-election ballot per search results)",
+        "no campaign site or newsletter found; not reviewed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:46:54.829Z",
+      "by": "source-collector"
     }
   ]
 }

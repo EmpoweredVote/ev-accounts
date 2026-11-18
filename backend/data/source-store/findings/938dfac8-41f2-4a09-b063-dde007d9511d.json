@@ -629,6 +629,32 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "voluntary do-not-sell firearms list",
+        "gun suicide prevention",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings found)",
+        "official member page https://www.kslegislature.gov/li/b2025_26/members/rep_ousley_jarrod_1/ (confirms House District 24, Johnson County; no issue text or gun statements on the page)",
+        "campaign site (none found in search results)",
+        "Ballotpedia https://ballotpedia.org/Jarrod_Ousley (fetch returned no usable text; not confirmed)",
+        "news search on name plus gun words: one story found (https://www.kcur.org/news/2024-12-08/a-law-lets-people-at-risk-of-suicide-avoid-buying-guns-will-kansas-or-missouri-pass-it); it only paraphrases him, with no direct quote, so not saved as own words",
+        "not reviewed: https://www.yahoo.com/news/kansas-state-rep-plan-stop-100200812.html (page text did not name him)",
+        "sponsor list: covered by bulk bill data",
+        "2026 general-election ballot status not confirmed from a page"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:49:19.624Z",
+      "by": "source-collector"
     }
   ]
 }

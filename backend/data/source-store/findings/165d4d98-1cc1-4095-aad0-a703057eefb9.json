@@ -365,6 +365,48 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "38113d60c367480e8d61cc1ded6460eecdafcc8ac5b620a9f9e24302df3e0f57",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/48696/race/11694/election/1246",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? none",
+      "note": "Her answer on a 2024 general-election voter guide questionnaire (House District 111): she wrote that no restrictions on gun ownership are needed for public safety.",
+      "subjects": [
+        "limits on who may own a gun",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:26.011Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ae41a2cad4a8ac177de0885abc31d33717b5707888db685e02934ae343d9980",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/48696/race/11694/election/1246",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Should teachers be allowed to carry guns at school? Yes",
+      "note": "Her answer on the same 2024 voter guide questionnaire: she answered yes to teachers carrying guns at school.",
+      "subjects": [
+        "teachers carrying guns at school",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:26.011Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -409,6 +451,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.941Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun ownership",
+        "teachers carrying guns at school",
+        "assault-style weapon bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "the Kansas Legislature member page https://www.kslegislature.gov/li/b2025_26/members/rep_wasinger_barbara_1/ (office and district only; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Barbara_Wasinger (empty page)",
+        "Ballotpedia 2026 Kansas House page https://ballotpedia.org/Kansas_House_of_Representatives_elections,_2026 (fetched, no usable listing for her)",
+        "voter guide listing https://ivoterguide.com/candidate/48696/race/31858/election/1468 (lists her as a 2026 general-election candidate for House District 111; 2026 questionnaire left unanswered)",
+        "voter guide 2024 questionnaire https://ivoterguide.com/candidate/48696/race/11694/election/1246 (two gun answers saved)",
+        "one web search on her name plus gun words (nothing own-words beyond the voter guide); one web search on 2026 primary status (no result found, but the voter guide shows her on the 2026 general ballot)",
+        "not reviewed: her X account (only seen as an index in a search result); no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:48:26.011Z",
+      "by": "source-collector"
     }
   ]
 }

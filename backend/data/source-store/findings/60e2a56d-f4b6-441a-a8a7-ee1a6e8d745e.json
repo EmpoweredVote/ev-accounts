@@ -209,6 +209,48 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "09b886c7cb7e73cfc5c20d36e53012f06f00832ee4e6e24ace21a67d4faba1aa",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/82302/race/11709/election/1246",
+      "date": "2024-11-05",
+      "date_precision": "year",
+      "passage": "none",
+      "note": "His answer on a 2024 voter-guide questionnaire to the question 'What restrictions on gun ownership are needed to protect public safety?'. Date is the election the profile is for, not the answer date.",
+      "subjects": [
+        "limits on who may own a gun",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:50:01.683Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47f08f1a547385c37a3a5f1f5e77982aff6250548bcc1ae86a6ea88a690979d4",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/82302/race/11709/election/1246",
+      "date": "2024-11-05",
+      "date_precision": "year",
+      "passage": "Yes",
+      "note": "His answer on the same 2024 voter-guide questionnaire to the question 'Should teachers be allowed to carry guns at school?'. Date is the election the profile is for, not the answer date.",
+      "subjects": [
+        "carrying guns at school",
+        "teachers carrying guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:50:01.683Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -249,6 +291,34 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.948Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may own a gun",
+        "teachers carrying guns at school",
+        "gun rights and the Second Amendment",
+        "constitutional amendment on the right to bear arms",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "in scope: sitting Kansas Senate member for District 13, elected 2024, term to 2029 (confirmed by search results and the legislature's member page)",
+        "On the Record (0 meetings)",
+        "legislature member page for the 2023-24 session (read; no statements, sponsored-bills list did not load)",
+        "sponsor list: covered by bulk bill data",
+        "iVoterGuide 2024 candidate questionnaire (read)",
+        "blocked: https://ballotpedia.org/Tim_Shallenburger",
+        "two web searches on name plus gun words (leads only; no own-words found beyond the questionnaire)",
+        "no official or campaign issues page with gun content found",
+        "not reviewed: news stories and testimony PDFs surfaced by search (no quote of him confirmed)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:50:01.683Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -258,6 +258,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.935Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statements",
+        "gun safety education"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.theeisenhowerseries.org/members/cesau/profile/ (confirms State Representative, House District 14, northwest Olathe; nothing on the subject)",
+        "https://www.kslegislature.gov/li/b2025_26/members/rep_esau_charlotte_1/ (member page read; confirms House District 14, Johnson County; nothing on the subject)",
+        "in scope: a search of the 2026 ballot lists her as the incumbent in the 3 Nov 2026 general election for House District 14 (not independently fetched)",
+        "blocked: https://ballotpedia.org/Charlotte_Esau (empty page)",
+        "campaign site: none found in searches",
+        "news search on name plus gun words: nothing in her own words; only bills already on file",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:49:58.175Z",
+      "by": "source-collector"
     }
   ]
 }

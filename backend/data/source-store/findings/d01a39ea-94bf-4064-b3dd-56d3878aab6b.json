@@ -209,6 +209,114 @@
           "sha256": "359530c01b5c7908d31ea22eeb5f578a24f771cfce7428c52da715076a271927"
         }
       }
+    },
+    {
+      "id": "539242f1a71ac8760e020ced545970a1de1526ec8b890e00bc9fe9620b4cddcf",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/news/2021-04-23/kansas-governor-vetoes-bill-to-lower-legal-age-for-carrying-a-concealed-weapon",
+      "date": "2021-04-23",
+      "date_precision": "day",
+      "passage": "“The idea that we just willy-nilly give guns to 18-year-olds is not true,” the governor said.",
+      "note": "Quoted by a public radio story on the day she vetoed HB 2058; she answers the argument that 18-year-olds can serve in the military, saying military installations restrict guns in living quarters.",
+      "subjects": [
+        "minimum age to carry a gun",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:00.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "becc6db27d534956a33d91951d11d6ab9d9df5ac1ca784ebca9732c0d21646d3",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/news/2021-04-23/kansas-governor-vetoes-bill-to-lower-legal-age-for-carrying-a-concealed-weapon",
+      "date": "2021-04-23",
+      "date_precision": "day",
+      "passage": "“Putting guns on our campuses, in our dorm rooms,” she said Friday, “it just seems like a really bad idea.”",
+      "note": "Quoted by a public radio story on her reasons for the HB 2058 veto: guns on college campuses.",
+      "subjects": [
+        "guns on college campuses",
+        "minimum age to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:00.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1eda09c255243855c6ca80ba2b85d332245ac0756f87e9e3c973a95ac165d936",
+      "kind": "own-words",
+      "url": "https://www.kcur.org/news/2021-04-23/kansas-governor-vetoes-bill-to-lower-legal-age-for-carrying-a-concealed-weapon",
+      "date": "2021-04-23",
+      "date_precision": "day",
+      "passage": "“But there are times when it goes too far,” she said shortly before her office announced the veto.",
+      "note": "Quoted by a public radio story; the story reports she first described herself as a “long-time supporter of Second Amendment rights.”",
+      "subjects": [
+        "general statement on Second Amendment rights",
+        "minimum age to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:00.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e272dbb2c3e4e6a6f97248eb2c3293d514d23f2a8ce8deb78206773802b61b7",
+      "kind": "record",
+      "url": "https://www.kcur.org/news/2021-04-23/kansas-governor-vetoes-bill-to-lower-legal-age-for-carrying-a-concealed-weapon",
+      "date": "2021-04-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2058-2021",
+      "act": "vetoed",
+      "note": "Governor vetoed HB 2058, which would have let people get concealed-carry permits at 18 instead of 21 and recognized permits issued by other states.",
+      "subjects": [
+        "minimum age to carry a gun",
+        "honor other states' carry permits",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:00.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "962d6012229d93ee5158a17b084f1e520b290e8bb5a6493c69010d2b85b585e9",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20260413/kansas-legislature-adjourns-sine-die-from-2026-session-governor-signs-suppressor-bill",
+      "date": "2026-04",
+      "date_precision": "month",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "signed",
+      "note": "A gun-rights group's session wrap-up (dated 2026-04-13) reports the governor signed HB 2501, which removes Kansas state criminal bans on suppressors.",
+      "subjects": [
+        "suppressors",
+        "repeal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:00.715Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -225,6 +333,32 @@
       "found": 3,
       "at": "2026-11-04T19:13:24.950Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "guns on college campuses",
+        "removing state limits on suppressors",
+        "general statements on Second Amendment rights"
+      ],
+      "places": [
+        "status: sitting governor of Kansas (term ends January 2027); confirmed by news story naming her as governor",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://governor.kansas.gov/?s=firearm (403)",
+        "blocked: https://ballotpedia.org/Laura_Kelly (403)",
+        "blocked: https://news.yahoo.com/gov-laura-kelly-rejects-bill-213504681.html (429)",
+        "news search on name plus gun words (one search; leads used: public radio story, trade-group and advocacy-group pages)",
+        "not reviewed: campaign site",
+        "not reviewed: the governor's own veto message and press releases (official site blocked)",
+        "not reviewed: floor remarks and interview video"
+      ],
+      "found": 5,
+      "at": "2026-11-18T21:48:00.715Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -396,6 +396,27 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "d35f2d708f83d4fa65a4b733c72d8ebc548e1b9ec8efd40e7465b19fde6d1453",
+      "kind": "own-words",
+      "url": "https://sunflowerstateradio.com/2022/02/22/kansas-senate-considers-shielding-firearm-industry-from-discrimination-by-businesses/",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "passage": "“It’s something that I believe Kansas needs to get ahead of because it’s a right that Kansans do cherish and hold dearly,” Warren said. “Kansas has to make clear again, through their Legislature, that they support the Second Amendment and that they do not want to undermine the Second Amendment in any way.”",
+      "note": "Quoted in a Kansas Reflector story (republished by Sunflower State Radio) about 2022 SB 482, which bars state and local contracts with companies that refuse to deal with firearm businesses. She is named as a co-sponsor and speaks in favor of it as a statement of support for the Second Amendment.",
+      "subjects": [
+        "general statement on Second Amendment",
+        "protect firearm industry from business discrimination"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:49:20.540Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -437,6 +458,34 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.949Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "repeal gun laws",
+        "Second Amendment general statements",
+        "firearm industry protections",
+        "gun rights constitutional amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings; no appearances found)",
+        "official legislature member page https://www.kslegislature.gov/li/b2025_26/members/sen_warren_kellie_1/ (confirms Kellie Warren as Kansas senator; no statements on the subject)",
+        "personal campaign/official site: not reachable (redirected to a parking page), nothing on the subject",
+        "blocked: https://ballotpedia.org/Kellie_Warren (403)",
+        "sponsor list: covered by bulk bill data",
+        "web news searches (4): found one direct quote in a 2022 news story; a 2025 local commentary by her is referenced in https://johnsoncountypost.com/?p=253176 but its text was not found (not reviewed)",
+        "https://sunflowerstatejournal.com/proposed-constitutional-amendment-seeks-to-bolster-gun-rights/ fetched; no quote from her found",
+        "not reviewed: her own 2025 commentary on the gun-rights constitutional amendment (original not located)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:49:20.540Z",
+      "by": "source-collector"
     }
   ]
 }

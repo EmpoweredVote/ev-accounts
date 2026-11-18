@@ -493,6 +493,28 @@
           "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
         }
       }
+    },
+    {
+      "id": "561eaa8232d62cc34ba974d4acb59789442085dc9cca86e20f26bb30ccebdb70",
+      "kind": "own-words",
+      "url": "https://patch.com/kansas/overland-park/argument-over-move-allow-under-21-carry-concealed-firearms",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "You’ll have to put a lot of rounds up there to hit that target and when you do you’re going to hurt other people,",
+      "note": "Direct quote in a Kansas Reflector story (reposted on Patch) from the House floor debate on guns. The story says he holds a concealed-carry license and owns a gun collection, and he said armed legislators on the floor could not safely stop a shooter in the gallery above.",
+      "subjects": [
+        "carry a gun in the Capitol",
+        "concealed carry",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:11.987Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -536,6 +558,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.943Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun in the Capitol",
+        "concealed carry",
+        "permitless carry",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment",
+        "suppressors and short-barrelled rifles"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page (https://www.kslegislature.gov/li/b2025_26/members/rep_carmichael_john_1/): confirms House District 92, Sedgwick County, sitting member",
+        "a voter guide and ballot-info site via web search: lists him as incumbent on the 2026 general-election ballot; no primary loss or withdrawal found",
+        "blocked: https://ballotpedia.org/John_Carmichael (403)",
+        "no personal campaign or official issue site found in search; not reviewed",
+        "news search on name plus gun words: one Kansas Reflector story (via Patch) quoting him; other results were off-subject or about a different person (a federal judge)",
+        "not reviewed: https://www2.ljworld.com/opinion/2024/feb/02/opinion-lawmakers-citizens-divided-on-guns/ (page returned no text mentioning him)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-18T21:48:11.987Z",
+      "by": "source-collector"
     }
   ]
 }
