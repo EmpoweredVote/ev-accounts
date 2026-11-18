@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classify, nameKey, verdictOf, parseFiling, namesToBuckets, normName } from './pac-career.js';
+import { classify, nameKey, verdictOf, parseFiling, namesToBuckets, normName, committeeKindAt } from './pac-career.js';
 
 describe('classify', () => {
   it('reads FEC committee codes into the ruled buckets', () => {
@@ -107,5 +107,27 @@ describe('namesToBuckets', () => {
       { name: 'Eureka PAC', tp: 'Q', dsgn: 'U', org: 'L' },
     ]);
     expect(m.has('EUREKA PAC')).toBe(false);
+  });
+});
+
+describe('committeeKindAt', () => {
+  const at = (org: string) => new Map([['C1', { name: 'X PAC', tp: 'Q', dsgn: 'B', org }]]);
+  it('outvotes a one-year coding slip in the gift year', () => {
+    // NEA Fund shape: labor either side, corporation in the gift year.
+    const m = new Map([[2020, at('L')], [2022, at('L')], [2024, at('C')], [2026, at('L')]]);
+    expect(committeeKindAt(m, 'C1', 2024)).toBe('other_pac');
+  });
+  it('keeps a lasting change of code, even against a long earlier history', () => {
+    // Trial lawyers shape: trade group through 2022, membership group from 2024.
+    const m = new Map([[2016, at('T')], [2018, at('T')], [2020, at('T')], [2022, at('T')], [2024, at('M')], [2026, at('M')]]);
+    expect(committeeKindAt(m, 'C1', 2024)).toBe('other_pac');
+  });
+  it('keeps the newest code when there is no later year to contradict it', () => {
+    // Freethought shape: corporation through 2024, membership group in 2026.
+    const m = new Map([[2022, at('C')], [2024, at('C')], [2026, at('M')]]);
+    expect(committeeKindAt(m, 'C1', 2026)).toBe('other_pac');
+  });
+  it('falls back to the nearest listed cycle outside the window', () => {
+    expect(committeeKindAt(new Map([[2010, at('C')]]), 'C1', 2026)).toBe('corporate');
   });
 });

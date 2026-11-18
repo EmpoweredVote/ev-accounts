@@ -411,8 +411,11 @@ interface PersonVerify {
   unknown_examples: { cycle: number; name: string; contributor_id: string | null; amount: number }[];
   cycles: CycleCheck[];
   unreconciled: number[];
+  /** Every giving committee, keyed by FEC id (or normalised name when the row has none). */
+  givers?: Giver[];
   error?: string;
 }
+interface Giver { name: string; id: string | null; bucket: Bucket; cycles: number[]; received: number; refunded: number }
 
 // ---------------------------------------------------------------------------------------------
 // Filed reports. FEC's processed itemized rows lag its totals by weeks: a Q3 report filed in
@@ -488,6 +491,25 @@ async function filedRows(cmte: string, cycle: number): Promise<FiledRow[] | null
 /** Upper-case, punctuation to spaces, single spaces: "Ibew PAC, Inc." -> "IBEW PAC INC". */
 export const normName = (n: string | null | undefined) => (n ?? '').toUpperCase().replace(/[^A-Z0-9]+/g, ' ').trim();
 
+/**
+ * The kind of committee `id` was in `cycle`: FEC's code for that cycle, unless the cycles either
+ * side agree with each other and not with it — a one-year slip (the NEA Fund: labor in 2022 and
+ * 2026, corporation in 2024). A lasting change is kept (the trial lawyers' PAC: trade group in the
+ * 1990s, membership group now). With no code for the cycle, the nearest one, the later on a tie.
+ */
+export function committeeKindAt(byCycle: Map<number, Map<string, CmRow>>, id: string, cycle: number): Bucket | undefined {
+  const at = (c: number) => { const r = byCycle.get(c)?.get(id); return r ? classify(r) : undefined; };
+  const own = at(cycle);
+  if (own) {
+    const before = at(cycle - 2);
+    const after = at(cycle + 2);
+    return before && before === after && before !== own ? before : own;
+  }
+  const near = [...byCycle.keys()].filter((c) => byCycle.get(c)!.has(id))
+    .sort((x, y) => Math.abs(x - cycle) - Math.abs(y - cycle) || y - x)[0];
+  return near === undefined ? undefined : at(near);
+}
+
 /** Registered name -> bucket, keeping only names whose committees all classify the same way. */
 export function namesToBuckets(rows: CmRow[]): Map<string, Bucket> {
   const seen = new Map<string, Bucket | null>();
@@ -515,6 +537,7 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
   // committee's MOST RECENT gifts first, so a 2024 gift refunded in 2026 never makes 2024 the last
   // corporate cycle, even when the same PAC's 2018 gift was kept.
   const corpEvents = new Map<string, { cycle: number; amt: number }[]>();
+  const givers = new Map<string, Giver>();
   const ledger = (key: string, cycle: number, amt: number) => {
     corpEvents.set(key, [...(corpEvents.get(key) ?? []), { cycle, amt }]);
   };
@@ -552,17 +575,15 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
     }
   }
 
+  // A committee's kind comes from FEC's committee list around the gift's cycle (committeeKindAt), so a
+  // one-year coding slip cannot make a union PAC corporate. The row's own codes are used only for an
+  // id FEC never listed.
   const bucketOf = (cycle: number, ref: CmteRef | null | undefined, refId: string | null | undefined, name?: string | null): Bucket => {
+    const id = (refId ?? '').trim().toUpperCase();
+    const known = id ? committeeKindAt(cmByCycle, id, cycle) : undefined;
+    if (known) return known;
     if (ref && (ref.committee_type || ref.designation || ref.organization_type)) {
       return classify({ tp: ref.committee_type, dsgn: ref.designation, org: ref.organization_type });
-    }
-    const id = (refId ?? '').trim().toUpperCase();
-    if (id) {
-      const near = [...cmByCycle.keys()].sort((a, b) => Math.abs(a - cycle) - Math.abs(b - cycle) || b - a);
-      for (const c of near) {
-        const hit = cmByCycle.get(c)?.get(id);
-        if (hit) return classify(hit);
-      }
     }
     // No usable id: an exact registered name, only when every committee with that name classifies alike.
     return cmByName.get(normName(name)) ?? 'unknown';
@@ -617,6 +638,11 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
       reconciled: ok(s), rows: items.length, source,
     };
     for (const i of items) {
+      const gk = `${i.id || normName(i.name) || '?'}|${i.b}`; // a committee's kind can change between cycles
+      const g = givers.get(gk) ?? { name: i.name, id: i.id, bucket: i.b, cycles: [], received: 0, refunded: 0 };
+      if (!g.cycles.includes(cycle)) g.cycles.push(cycle);
+      if (i.refund) g.refunded += i.amt; else g.received += i.amt;
+      givers.set(gk, g);
       if (i.refund) { v.refunded[i.b] += i.amt; v.kept[i.b] -= i.amt; } else { v.received[i.b] += i.amt; v.kept[i.b] += i.amt; }
       if (i.b === 'corporate') ledger(i.key, cycle, i.refund ? -i.amt : i.amt);
       if (i.b === 'unknown' && !i.refund && v.unknown_examples.length < 15) {
@@ -627,6 +653,7 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
     v.cycles.push(check);
   }
   v.last_corporate_cycle = lastKeptCycle(corpEvents);
+  v.givers = [...givers.values()];
   return v;
 }
 
@@ -702,6 +729,9 @@ function report(): void {
     'career_receipts', 'corporate_pac_kept', 'other_pac_kept', 'candidate_committees_kept', 'unknown_kept',
     'corporate_pac_received', 'corporate_pac_refunded', 'last_corporate_cycle', 'unreconciled_cycles'];
   const lines = [header.join(',')];
+  const neverRaised = [header.join(',')]; // NO_RECEIPTS: filed as a candidate, never raised money
+  const giverLines = [['politician_id', 'politician', 'verdict', 'giver', 'giver_fec_id', 'kind', 'cycles',
+    'received', 'refunded', 'kept'].join(',')];
   const tally = new Map<string, number>();
   for (const p of people) {
     const v = ver[p.pid];
@@ -727,10 +757,17 @@ function report(): void {
         tally.set(k, (tally.get(k) ?? 0) + 1);
       }
     }
-    lines.push(row.map(csvCell).join(','));
+    (row[2] === 'NO_RECEIPTS' ? neverRaised : lines).push(row.map(csvCell).join(','));
+    for (const g of v?.givers ?? []) {
+      giverLines.push([p.pid, p.name, row[2], g.name, g.id ?? '', g.bucket, [...g.cycles].sort().join(' '),
+        Math.round(g.received), Math.round(g.refunded), Math.round(g.received - g.refunded)].map(csvCell).join(','));
+    }
   }
   writeFileSync(join(outDir, 'pac-career.csv'), lines.join('\n') + '\n');
-  console.log(`[report] ${people.length} people -> ${join(outDir, 'pac-career.csv')}`);
+  writeFileSync(join(outDir, 'never-raised.csv'), neverRaised.join('\n') + '\n');
+  writeFileSync(join(outDir, 'pac-givers.csv'), giverLines.join('\n') + '\n');
+  console.log(`[report] ${lines.length - 1} people -> ${join(outDir, 'pac-career.csv')}; ` +
+    `${neverRaised.length - 1} never raised money -> never-raised.csv; ${giverLines.length - 1} giver rows -> pac-givers.csv`);
   for (const [k, n] of [...tally].sort()) console.log(`  ${k}: ${n}`);
 }
 
