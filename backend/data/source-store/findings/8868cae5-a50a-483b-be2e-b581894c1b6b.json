@@ -1,0 +1,67 @@
+{
+  "politician_id": "8868cae5-a50a-483b-be2e-b581894c1b6b",
+  "findings": [
+    {
+      "id": "d964ef9aab51d0cd08309b4e3bd94aa7f79f1ced8cda1c63ccb1c5ab698f72bc",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb18-1077",
+      "date": "2018-04-25",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1077-2018",
+      "act": "yea",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO House, House Third Reading - BILL, 2018-04-25: yea (tally 61–3); census gate: near-unanimous.",
+      "subjects": [
+        "burglary to steal firearms or ammunition is a class 3 felony",
+        "added fine for gun-theft burglary"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Final Act (05/14/2018), 2018-05-14; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2018A/bills/2018a_1077_enr.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1077-2018.enrolled.pdf",
+          "sha256": "afb87ffa66ce8f703c93fe8604fd0e8bdafc0d68f636cfa8761708625d6a85fa"
+        }
+      }
+    },
+    {
+      "id": "7272a04f7d127043632eb27a29db4128409c95156de008809b6b047dd441c1fd",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb18-1436",
+      "date": "2018-05-04",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1436-2018",
+      "act": "yea",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2018-05-04: yea (tally 37–23); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders to remove guns",
+        "family members and police may petition",
+        "surrender of firearms and concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (05/04/2018), 2018-05-04; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2018A/bills/2018a_1436_ren.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1436-2018.reengrossed.pdf",
+          "sha256": "181442b7833953ec4b01a5ef9cedba712b13b0484ab3e2d3a9c0efc7d8e8bc17"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

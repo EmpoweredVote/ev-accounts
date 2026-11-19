@@ -1,0 +1,313 @@
+{
+  "politician_id": "09938d3a-c60f-4096-a217-4efdc3a604b1",
+  "findings": [
+    {
+      "id": "748356763300805dd5fdd17973595f8a72b20605fa8cf4772defe3c5fc38c911",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2026/09/11/new-anti-gun-legislation-is-about-preventing-firearm-ownership-not-safety-guest-column/",
+      "date": "2026-09-11",
+      "date_precision": "day",
+      "passage": "It’s intended to make the process so difficult it prevents Coloradans from buying guns, and this is just the beginning.",
+      "note": "Guest column under her byline about SB 25-003, which requires a training and background-check process to buy certain semiautomatic guns. She describes the process as costly and unworkable, says it is meant to prevent purchases, and expects a further assault-weapons ban bill next session.",
+      "subjects": [
+        "ban on assault-style guns",
+        "background checks and waiting periods to buy",
+        "general Second Amendment statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:29.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a04850393a62fc4d442755f19cc8b67c05384bca3bf146486e8982afaef3665",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2026/09/11/new-anti-gun-legislation-is-about-preventing-firearm-ownership-not-safety-guest-column/",
+      "date": "2026-09-11",
+      "date_precision": "day",
+      "passage": "Though legislators labeled this bill as a “safety measure” to educate the public, it’s been such a hurdle only 14% of applicants have completed all requirements.",
+      "note": "In the same column she criticizes the permit and training requirement and the three-day wait under SB 25-003 as a hurdle to buying.",
+      "subjects": [
+        "background checks and waiting periods to buy",
+        "permit or training to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:29.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a796dc8994bc35859ed5ec6bb1556f226e29b43b2cb0964e42338a1a971256fc",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/colorado-dems-push-sweeping-gun-control-laws-flying-under-national-radar-public-fed-up",
+      "date": "2024-04-01",
+      "date_precision": "day",
+      "passage": "The so-called 'assault weapons' ban bill is the most concerning, but they all have tragic consequences for law-abiding citizens. The ‘assault weapons’ bill is incredibly deceptive. They want to ban not only every kind of ‘scary’ gun like ARs and AKs, but also 80-90% of semi-automatic firearms popular today, including handguns and shotguns,",
+      "note": "Quoted by a national news outlet in 2024, before she held office, when she was a Colorado Springs gun-store owner. She opposes the 2024 assault-weapons ban bill and argues its feature list is cosmetic.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:29.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7ccbca989dc591b4f68de08df892279d81c914deba6ae54c22fe0dc5fb6e920",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/colorado-dems-push-sweeping-gun-control-laws-flying-under-national-radar-public-fed-up",
+      "date": "2024-04-01",
+      "date_precision": "day",
+      "passage": "Twenty-nine states currently have constitutional carry. While over 50% of the country recognizes the Constitution, states like Colorado are going backwards,",
+      "note": "Quoted by a national news outlet in 2024 (before she held office). She cites permitless carry in other states and criticizes Colorado's existing gun laws, including universal background checks, magazine limits, safe storage and red-flag laws.",
+      "subjects": [
+        "carry a gun without a permit",
+        "general Second Amendment statements",
+        "red-flag orders",
+        "background checks and waiting periods to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:29.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4580aa1953236875c698b4fc5124a6741899b8d6ce89f75b3f13e2fd0ce0ee0f",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/colorado-dems-push-sweeping-gun-control-laws-flying-under-national-radar-public-fed-up",
+      "date": "2024-04-01",
+      "date_precision": "day",
+      "passage": "Colorado law currently allows for individual school districts to determine their own armed security protocols, something that is often utilized by charter schools and rural districts across the state,",
+      "note": "Quoted by a national news outlet in 2024 (before she held office) on HB 24-1310, which would end the exemption letting school staff carry on school grounds. She says she has certified school employees to carry and that response from the sheriff can be far away.",
+      "subjects": [
+        "guns in schools and sensitive places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:29.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76c2938459e18658bb2c3fc5555711d0313bba4c4c628d707dadf8df2580ae4d",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/colorado-dems-push-sweeping-gun-control-laws-flying-under-national-radar-public-fed-up",
+      "date": "2024-04-01",
+      "date_precision": "day",
+      "passage": "Most of these proposed bills in Colorado will hurt the underprivileged the most, ensuring only the wealthy can protect themselves or express their constitutionally protected right,",
+      "note": "Quoted by a national news outlet in 2024 (before she held office) on a proposed 11% tax on gun and ammunition sales and on liability insurance for gun owners (HB 24-1270). She says they add cost, calls the tax a \"sin tax\" and says self-defense is a human right.",
+      "subjects": [
+        "tax on gun and ammunition sales",
+        "liability insurance for gun owners",
+        "general Second Amendment statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:29.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b77b96c9034ee5e96db1227f510a66eeff506db8d71bc24786974f731e4186bf",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1126",
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1126-2026",
+      "act": "nay",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-03-20: nay (tally 34–28); census gate: none.",
+      "subjects": [
+        "firearms dealer permit and responsible-person rules",
+        "dealer fines up to $75,000",
+        "dealer records and security of large-capacity magazines",
+        "report lost or stolen firearms in 48 hours"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1126)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1126-2026.summary.html",
+          "sha256": "1fb7728b4d9261e8f826d4310e82cd571d11eb9ae9bf123683fc6d1f479d4909"
+        }
+      }
+    },
+    {
+      "id": "6232d67955cb2b86cd23e5569c5b25c28a8e6834ae6a3f4363f2f013d62d2c02",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1144",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1144-2026",
+      "act": "nay",
+      "motion": "House Senate Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Senate Amendments - CONCUR, 2026-04-02: nay (tally 44–19); census gate: none.",
+      "subjects": [
+        "ban on 3-D printing firearms and parts",
+        "misdemeanor, felony on repeat offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1144)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1144-2026.summary.html",
+          "sha256": "7848370e2df21c0c50e65f9dd4814c64d77b49d376dac67752c3fc799dae621a"
+        }
+      }
+    },
+    {
+      "id": "247b1712f11939fde7d7d83c3b7ad0f4ba6ad35d0118a049302a109dd4e6a7db",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1265",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1265-2026",
+      "act": "nay",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-03-09: nay (tally 39–23); census gate: none.",
+      "subjects": [
+        "local police must trace recovered firearms through ATF system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1265)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1265-2026.summary.html",
+          "sha256": "f1eadbddfd387b96ccc75e3f871dc39cdb449f4fed4835b44374e0abca76b62f"
+        }
+      }
+    },
+    {
+      "id": "02c578c2f07834da20054840a771365e0d06943e273afd0a222578ddb10fa564",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1302",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1302-2026",
+      "act": "nay",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-04-02: nay (tally 42–21); census gate: none.",
+      "subjects": [
+        "firearm background check unit hours",
+        "annual report on background check times"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1302)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1302-2026.summary.html",
+          "sha256": "eeb973e0de5127029cda7aad27c6aacb5f94b8468ba2ca5746805cc47c6d231f"
+        }
+      }
+    },
+    {
+      "id": "255b17292f985859092000bd1a4310157146b5f6e77cb2079b922ec8ef9d9ff5",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/SB26-004",
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-4-2026",
+      "act": "nay",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-03-20: nay (tally 39–24); census gate: none.",
+      "subjects": [
+        "more people and institutions may petition for extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/sb26-004)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-4-2026.summary.html",
+          "sha256": "6a77618e4fd962ae7a0c0ea902fc68f198008225d2f998b63fef88b8be299f8a"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "background checks and waiting periods to buy",
+        "carry a gun without a permit",
+        "guns in schools and sensitive places",
+        "tax on gun and ammunition sales",
+        "liability insurance for gun owners",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "In scope: sitting House District 14 member and the general-election nominee, per the Colorado Politics Oct 2026 race preview and the caucus member page",
+        "On the Record (0 meetings found)",
+        "the House caucus member page https://www.coloradohouserepublicans.com/ava-flanell (read; bio only, nothing on the subject beyond her being a firearms instructor)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Ava_Flanell (403)",
+        "blocked: https://www.axios.com/local/denver/2026/02/11/colorado-gun-laws-2026 (bot check)",
+        "one news search on her name plus gun words: found the Sept 2026 guest column, an April 2024 national news interview and a regional news story",
+        "https://www.coloradopolitics.com/2026/10/05/ava-flanell-sarah-emery-house-district-14/ (read; nothing on the subject)",
+        "campaign site, vote411, ontheissues: not reviewed, no address found"
+      ],
+      "found": 6,
+      "at": "2026-11-19T03:12:29.863Z",
+      "by": "source-collector"
+    }
+  ]
+}

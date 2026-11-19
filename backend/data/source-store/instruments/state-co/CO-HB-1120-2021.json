@@ -1,0 +1,44 @@
+{
+  "id": "CO-HB-1120-2021",
+  "scope": "state:co",
+  "title": "HB1120 (2021 Regular): License Private Security Guards",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb21-1120",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2021A/bills/2021a_1120_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Yadira Caraveo",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Weissman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (02/18/2021), 2021-02-18; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2021A/bills/2021a_1120_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1120-2021.introduced.pdf",
+      "sha256": "bb25a7e18a02c28c34984a13ca42f558d76748b79439a24a4a1a9836ed6d9997"
+    },
+    "note": "Introduced version 02/18/2021 (as filed); no passage vote in the record, so amendments made after it are not in the text read. The last two quoted lines are fragments of a list (subsections (2)(b) and (3)(b)); the printed sentence continues past the quoted point. Subsection numbers (2) and (3) are inferred from the surrounding text. Rest of the bill is occupational licensing (fees, body cameras, discipline), not gun policy."
+  },
+  "operative_text": "Section 2 (C.R.S. 12-165-103(1)): \"ARMED GUARD\" MEANS AN INDIVIDUAL WHO, FOR FINANCIAL COMPENSATION, CARRIES A FIREARM AND USES PHYSICAL FORCE OR IS PREPARED TO USE PHYSICAL FORCE TO PROTECT A PERSON OR PROPERTY FOR A PERIOD OF TIME.\nSection 2 (C.R.S. 12-165-108): AN INDIVIDUAL LICENSED AS A SECURITY GUARD SHALL NOT: (a) CARRY A FIREARM WITHIN THE SCOPE OF THE SECURITY GUARD'S DUTIES; OR (b) USE PHYSICAL FORCE TO SECURE OR PROTECT PEOPLE OR PROPERTY.\nSection 2 (C.R.S. 12-165-109): AN INDIVIDUAL LICENSED AS A PROTECTION GUARD: (a) SHALL NOT CARRY A FIREARM WITHIN THE SCOPE OF THE PROTECTION GUARD'S DUTIES; AND (b) MAY USE LAWFUL PHYSICAL FORCE TO SECURE OR PROTECT PEOPLE OR PROPERTY.\nSection 2 (C.R.S. 12-165-110(1)): AN INDIVIDUAL LICENSED AS AN ARMED GUARD MAY USE LAWFUL PHYSICAL FORCE TO SECURE OR PROTECT PEOPLE OR PROPERTY WHILE POSSESSING A FIREARM IN THE SCOPE OF THE ARMED GUARD'S DUTIES.\nSection 2 (C.R.S. 12-165-110(2)): (b) POSSESS AND PROVIDE A COPY TO THE DIRECTOR OF A CURRENTLY VALID CONCEALED CARRY PERMIT;\nSection 2 (C.R.S. 12-165-110(3)): (b) FIREARMS TRAINING APPROVED BY THE DIRECTOR BY RULE THAT IS SUBSTANTIALLY EQUIVALENT TO THE TRAINING REQUIRED TO BE CERTIFIED AS A PEACE OFFICER BY THE PEACE OFFICERS STANDARDS AND"
+}

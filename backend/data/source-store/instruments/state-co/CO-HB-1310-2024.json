@@ -1,0 +1,46 @@
+{
+  "id": "CO-HB-1310-2024",
+  "scope": "state:co",
+  "title": "HB1310 (2024 Regular): School Safety Measures",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb24-1310",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2024A/bills/2024a_1310_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jennifer Parenti",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eliza Hamrick",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eb5f359e-57d4-414a-ad61-65e74f10bbec"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Section 2 (C.R.S. 22-1-144(2)) — school security officer hiring rules (student-engagement policy, training, background check, psychological evaluation)"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (02/16/2024), 2024-02-16; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2024A/bills/2024a_1310_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1310-2024.introduced.pdf",
+      "sha256": "4591a6c4aee7051ae8579efaf5449ebf8cb8c7d811c2bd1ec5d84b77a2ba1594"
+    },
+    "note": "As-filed (introduced 02/16/2024). Amendments made after the version read are not in the text read; no passage vote is recorded. The (3)(a) wording is quoted with its lead-in; the lower-case words in Section 6 (18-12-214(3)(b)) sit in a section the bill amends and may be struck; check the page image. Section 5 (18-12-105.5(1)(a)) amends the school-employee exception, but the strike-through is not visible in text (the bill summary says it is repealed); check the page image."
+  },
+  "operative_text": "Section 2 (C.R.S. 22-1-144(3)): A SCHOOL SECURITY OFFICER MAY ONLY POSSESS A HANDGUN, AS DEFINED IN SECTION 18-12-101, WHILE ON DUTY IN OR ON THE REAL ESTATE AND ALL IMPROVEMENTS ERECTED THEREON OF ANY PUBLIC ELEMENTARY, MIDDLE, JUNIOR HIGH, OR HIGH SCHOOL OPERATED BY THE LOCAL EDUCATION PROVIDER IF THE SCHOOL SECURITY OFFICER: (a) HOLDS A VALID PERMIT TO CARRY A CONCEALED HANDGUN ISSUED PURSUANT TO PART 2 OF ARTICLE 12 OF TITLE 18;\nSection 2 (C.R.S. 22-1-144(3)(b)): HAS COMPLETED A MINIMUM OF TWENTY-FOUR HOURS OF INITIAL FIREARMS TRAINING WITHIN TWELVE MONTHS BEFORE STARTING WORK AS A SCHOOL SECURITY OFFICER THAT INCLUDES:\nSection 2 (C.R.S. 22-1-144(3)(d)): PASSED THE P.O.S.T. BOARD'S FIREARMS SKILLS TEST OR AN EQUIVALENT FIREARMS SKILLS TEST ADMINISTERED BY A BOARD-CERTIFIED FIREARMS INSTRUCTOR AT THE COMPLETION OF INITIAL TRAINING DESCRIBED IN SUBSECTION (3)(b) OF THIS SECTION AND AT THE COMPLETION OF IN-SERVICE TRAINING DESCRIBED IN SUBSECTION (3)(c) OF THIS SECTION.\nSection 5 (C.R.S. 18-12-105.5(3)(e.5)): THE PERSON IS A SCHOOL SECURITY OFFICER AND CARRYING OUT THE DUTIES OF A SCHOOL SECURITY OFFICER; IF THE DEADLY WEAPON IS A HANDGUN; AND THE PERSON SATISFIES THE REQUIREMENTS SET FORTH IN SECTION 22-1-144 (3); OR\nSection 5 (C.R.S. 18-12-105.5(4)(a)): NOTWITHSTANDING ANY AUTHORITY GRANTED IN THIS SECTION TO THE CONTRARY, A SCHOOL, LAW ENFORCEMENT AGENCY, OR ANY OTHER ENTITY SHALL NOT STORE FIREARMS IN OR ON THE REAL ESTATE AND ALL IMPROVEMENTS ERECTED THEREON OF A PUBLIC OR PRIVATE ELEMENTARY, MIDDLE, JUNIOR HIGH, OR HIGH SCHOOL.\nSection 6 (C.R.S. 18-12-214(3)(b)): IF THE PERMITTEE SATISFIES THE REQUIREMENTS SET FORTH IN SECTION 22-1-144 (3), a permittee who is employed or retained by contract by a school district or charter school as a school security officer may carry a concealed handgun onto the real property, or into any improvement erected thereon, of a public elementary, middle, junior high, or high school while the permittee is on duty;"
+}

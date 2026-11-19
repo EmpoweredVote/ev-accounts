@@ -1,0 +1,151 @@
+{
+  "id": "CO-HB-1164-2025",
+  "scope": "state:co",
+  "title": "HB1164 (2025 Regular): Constitutional Carry of Handgun",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb25-1164",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1164_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Weinberg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "97378744-ae64-41ca-9fe2-c857d602e2c5"
+    },
+    {
+      "name": "Ryan Armagost",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carlos Barron",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3ff3874d-aeb8-4b12-afa3-216f39631b83"
+    },
+    {
+      "name": "Scott Bottoms",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1e4cf254-2b56-4680-8f0b-9556912e9a35"
+    },
+    {
+      "name": "Mary Bradfield",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a6528ae0-54fa-4d1c-af06-bc8b68300d2d"
+    },
+    {
+      "name": "Brandi Bradley",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58cd31de-211c-41aa-906b-17f1e28f7451"
+    },
+    {
+      "name": "Max Brooks",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0ce5ceef-fe31-4a31-94ae-223edab2fdc7"
+    },
+    {
+      "name": "Jarvis Caldwell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2f0cf2a3-d80a-40cb-b89a-3c4a61f4f777"
+    },
+    {
+      "name": "Lori Garcia Sander",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7fdee80c-ac04-457f-902e-94c34c32287d"
+    },
+    {
+      "name": "Ryan Gonzalez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5bdea18-a2ad-45de-a396-7b05b1a55fef"
+    },
+    {
+      "name": "Tony Hartsook",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fce3e44f-6874-43fe-a6e8-cb51302fb639"
+    },
+    {
+      "name": "Dusty Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "13d8b2a8-1009-494f-bdd2-6fe761c2cdf2"
+    },
+    {
+      "name": "Rebecca Keltie",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a1308e7a-c741-458a-a248-ff713b4db951"
+    },
+    {
+      "name": "Rose Pugliese",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Richardson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d221a252-f3f9-44d5-93ba-2d26771efd66"
+    },
+    {
+      "name": "Matt Soper",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846"
+    },
+    {
+      "name": "Larry Suckla",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ce0e82d0-0c90-4069-a98c-408f31a3d967"
+    },
+    {
+      "name": "Rick Taggart",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6b42e678-389a-480e-8973-4f8a3a1eaf0c"
+    },
+    {
+      "name": "Ty Winter",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e827b6b-01db-4d98-8142-92f73e03f120"
+    },
+    {
+      "name": "Dan Woog",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96c797fd-2601-43d2-9b1a-18510da6e219"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (02/03/2025), 2025-02-03; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1164_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1164-2025.introduced.pdf",
+      "sha256": "62065f32fb68a21c667de4121ea6206a0331dfddb3c47e5c7d1f0aaa218db7c1"
+    },
+    "note": "Introduced version 02/03/2025; no passage vote on file. Later amendments are not in the text read. Lower-case words in Sections 9 and 10 (amended sections) may be struck; check the page image. Section 14 repeals 18-12-209 (temporary emergency permit) and Section 16 repeals 18-12-211 (renewal); the local-authority repeal is described in the bill summary and in later sections not quoted here."
+  },
+  "operative_text": "Section 1 (C.R.S. 18-12-105(3)(a)): A PERSON WHO IS AT LEAST EIGHTEEN YEARS OF AGE AND IS PERMITTED TO POSSESS A HANDGUN PURSUANT TO FEDERAL AND STATE LAW HAS THE SAME AUTHORITY TO CARRY A CONCEALED HANDGUN, AND IS SUBJECT TO THE SAME LIMITATIONS, AS A PERSON WHO HOLDS A PERMIT TO CARRY A CONCEALED HANDGUN, AS SET FORTH IN SECTION 18-12-214.\nSection 1 (C.R.S. 18-12-105(3)(b)): NOTHING IN THIS SUBSECTION (3) PROHIBITS A PERSON FROM APPLYING FOR AND OBTAINING A PERMIT TO CARRY A CONCEALED HANDGUN PURSUANT TO PART 2 OF THIS ARTICLE 12 FOR THE PURPOSE OF USING THE PERMIT TO CARRY A CONCEALED HANDGUN IN A STATE THAT RECOGNIZES THE VALIDITY OF A PERMIT ISSUED IN COLORADO.\nSection 9 (C.R.S. 18-12-203(1)(b)): Is twenty-one EIGHTEEN years of age or older;\nSection 10 (C.R.S. 18-12-204(1)(b)): A permit is valid for a period of five years after the date of issuance and may be renewed as provided in section 18-12-211 THE LIFE OF THE PERMIT HOLDER UNLESS SUSPENDED OR REVOKED.\nSection 10 (C.R.S. 18-12-204(1)(c)): A PERMIT, OTHER THAN A TEMPORARY EMERGENCY PERMIT, ISSUED PURSUANT TO THIS PART 2 PRIOR TO THE EFFECTIVE DATE OF THIS SUBSECTION (1)(c) THAT IS VALID ON THE EFFECTIVE DATE OF THIS SUBSECTION (1)(c) DOES NOT EXPIRE AND IS VALID FOR THE LIFE OF THE PERMIT HOLDER UNLESS SUSPENDED OR REVOKED."
+}

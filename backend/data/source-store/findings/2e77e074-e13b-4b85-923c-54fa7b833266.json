@@ -1,0 +1,33 @@
+{
+  "politician_id": "2e77e074-e13b-4b85-923c-54fa7b833266",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 appearances linked, 0 candidates by name)",
+        "campaign site https://mcclellanforcolorado.com (home, issues, about, endorsements pages read; issues page covers schools only; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rebecca_McClellan (403)",
+        "blocked: https://www.cde.state.co.us/stateboard/boardmembers (no response)",
+        "web search: name plus firearms terms; name plus State Senate District 27 (no page naming her on the subject)",
+        "web search: name plus state board and school safety (a 2025 board resolution on student safety concerned immigration enforcement, not firearms; a 2018 news story on health standards and guns does not quote her: https://www.chalkbeat.org/colorado/2018/6/13/21105131/some-colorado-officials-wanted-fourth-graders-to-learn-about-the-benefits-of-guns-here-s-why-it-won/)",
+        "sponsor list: covered by bulk bill data",
+        "scope note: her own pages and search results show her as a State Board of Education member (statewide education board), not a legislator; no ballot status for 2026 was confirmed"
+      ],
+      "found": 0,
+      "at": "2026-11-19T03:12:48.963Z",
+      "by": "source-collector"
+    }
+  ]
+}

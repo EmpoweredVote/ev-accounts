@@ -1,8 +1,8 @@
 {
   "state": "co",
   "name": "Colorado",
-  "verified": "2026-11-18",
-  "source": "Colorado reader session (Stage 5 tools), 2026-11-18: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 123-bill dry batch (210 roll calls, 10,011 member votes) read from leg.colorado.gov with the verifier's own fetch, and each member's vote compared with the dump. Two bill texts were read for their marks (2019 HB19-1177 as revised in the second house, and as signed); no text was measured in bulk.",
+  "verified": "2026-11-19",
+  "source": "Colorado reader session (Stage 5 tools), 2026-11-18: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 123-bill dry batch (210 roll calls, 10,011 member votes) read from leg.colorado.gov with the verifier's own fetch, and each member's vote compared with the dump. Two bill texts were read for their marks (2019 HB19-1177 as revised in the second house, and as signed); no text was measured in bulk. Gun-policy set-up session, 2026-11-19: 56 bill texts (2017-2025) fetched from content.leg.colorado.gov and read; drawings counted on two signed acts.",
   "chambers": {
     "lower": "House of Representatives",
     "upper": "Senate"
@@ -33,7 +33,7 @@
       "content.leg.colorado.gov",
       "leg.colorado.gov"
     ],
-    "marks": "Read on 2 texts (2019 HB19-1177 as revised after second reading in the second house, and as signed; 2026-11-18). The legend on each says capital letters (or bold italic numbers) are new material added to existing law and dashes through words are deletions. Plain pdftotext keeps the capitals, so added words still read as capitals; the struck words were not measured, so read the page as an image before quoting a passage near a deletion. A revised version names itself at the top (\"REVISED ... Amendments Adopted on Second Reading in the Second House\") and carries the house and date of each amendment in the margin.",
+    "marks": "Read on 2 texts (2019 HB19-1177 as revised after second reading in the second house, and as signed; 2026-11-18). The legend on each says capital letters (or bold italic numbers) are new material added to existing law and dashes through words are deletions. Plain pdftotext keeps the capitals, so added words still read as capitals; the struck words were not measured, so read the page as an image before quoting a passage near a deletion. A revised version names itself at the top (\"REVISED ... Amendments Adopted on Second Reading in the Second House\") and carries the house and date of each amendment in the margin. Checked 2026-11-19 on 56 texts: the PDFs carry no drawn strike lines (0 drawings on 2019a_1177_signed and 2023a_169_signed), so a struck word reads as ordinary lower-case text in pdftotext; capitals are the only reliable mark. Read a lower-case passage inside an amending section as possibly struck, and check the page image before quoting it.",
     "note": "The dump links 2017-2025 texts at leg.colorado.gov/sites/default/files/..., which redirects (301) to content.leg.colorado.gov; convert.py rewrites them (co_texts). 2026A texts are linked at leg.colorado.gov/bill_files/<n>/download, which robots.txt disallows: 3,737 such links are kept and counted (co_text_robots_disallowed), not fetched. A bill's page is /bills/<hb19-1177> (lower case; upper case answers 406 to a request without a browser's Accept headers)."
   },
   "reader_access": {
@@ -41,7 +41,7 @@
     "content.leg.colorado.gov": "open"
   },
   "search_note": "Colorado sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's bill pages and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
-  "bill_table_note": "- Colorado sessions run one year; bill numbers start again each session and carry the year (HB19-1177).\n- Floor votes kept: third reading, repassing or concurring after the other chamber's amendments, conference committee reports, adopting a resolution. Committee, Committee of the Whole and amendment votes and other motions are not floor votes on the bill.\n- Texts: CAPITAL LETTERS = added to existing law; words with dashes through them = deleted. Plain text keeps the capitals and loses the dashes.",
+  "bill_table_note": "- Colorado sessions run one year; bill numbers start again each session and carry the year (HB19-1177).\n- Floor votes kept: third reading, repassing or concurring after the other chamber's amendments, conference committee reports, adopting a resolution. Committee, Committee of the Whole and amendment votes and other motions are not floor votes on the bill.\n- Texts: CAPITAL LETTERS = added to existing law; words with dashes through them = deleted. Plain text keeps the capitals and loses the dashes.\n- The text PDFs draw no strike lines: lower-case words inside an amending section may be struck; capitals are added.",
   "fill_quotes": {
     "label_strips": [],
     "brackets_delete": false
@@ -51,6 +51,8 @@
     "A vote page alone does not name members in full: it needs the session's member list (/legislators?sess=YYYYa), which the reader fetches once per session.",
     "The member list prints each member's current title and district, not the session's; match on the page address and the name, never the district.",
     "The presiding officer is printed \"President\" or \"Speaker\". The reader resolves the title through the session's member list; when two members carry the same title on it (Senate 2022), the vote gives that seat no line.",
-    "One vote needs its page and the session's member list. The line tool took 2 minutes 4 seconds for 200 random votes from an empty page cache (114 roll calls), and 3 minutes 27 seconds for all 6,256 vote pairs of the dry batch from an empty cache."
+    "One vote needs its page and the session's member list. The line tool took 2 minutes 4 seconds for 200 random votes from an empty page cache (114 roll calls), and 3 minutes 27 seconds for all 6,256 vote pairs of the dry batch from an empty cache.",
+    "2026A texts are not on content.leg.colorado.gov (no 2026a folder; 2026a_1021_01.pdf answers 404) and the bill page (/bills/hb26-1126) carries no inline text, so with /bill_files/*/download disallowed no 2026A text can be read by our reader (checked 2026-11-19).",
+    "Some signed acts are image scans with no text layer (2025: HB25-1171, HB25-1314, SB25-295); the Final Act version has a text layer. HB18-1077's signed act answers 404. A text fetch should fall back version by version: signed act, final act, rerevised, revised, reengrossed, engrossed, introduced."
   ]
 }

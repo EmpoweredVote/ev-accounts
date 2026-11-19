@@ -153,7 +153,7 @@ VOTE = ('yea', 'nay', 'abstain'); AUTH =('author', 'coauthor', 'sponsor', 'cospo
 
 def key(f):
     """bill, year, chamber, tally and date of a vote finding; None when any is missing."""
-    m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', f.get('instrument_id') or '')  # MO-HB-16-SP1-2020: a special session (mo-01)
+    m = re.match(ST + r'-([A-Z]+)(?:\d{2})?-(\d+)-(?:SP(\d)-)?(\d{4})$', f.get('instrument_id') or '')  # MO-HB-16-SP1-2020: a special session (mo-01); CO-SB25-003-2025: year in the number (co-01)
     if not m: return None
     txt = (f.get('note') or '') + ' ' + (f.get('motion') or '')
     # A note that opens with the voting body ("CA Assembly, SB 2 ... Senate Third Reading") names the chamber; the
@@ -202,6 +202,10 @@ else:
             # session (LegiScan's special-session bill URL ends /X<n>; a regular one ends with the year).
             # An Open States hit has no LegiScan URL; it says itself whether its session is a special one.
             hs = [h for h in hs if (bool(h.get('special')) == bool(k['sp']) if h.get('openstates') else (re.search(r'/X(\d+)/?$', h['bill_url']) or [None, None])[1] == k['sp'])]
+            # convert.py keeps a dump row the legislature's record did not place as "<Chamber> Committee or not placed
+            # (...)", so that no step maps it; the record's own copy is the vote (co-01: SB25-003's House third reading
+            # and Senate concurrence each had both, and the finding's motion wording matched neither, so 49 were held).
+            hs = [h for h in hs if not (h.get('openstates') and re.match(r'\w+ Committee or not placed\b', h.get('desc') or ''))]
             if len(hs) > 1:  # same day, same tally: break the tie on the motion text, then on identical duplicates
                 mo = re.sub(r'[^a-z0-9 ]', '', (f.get('motion') or '').lower()).strip()
                 by = [h for h in hs if mo and re.sub(r'[^a-z0-9 ]', '', (h.get('desc') or '').lower()).startswith(mo)]
@@ -225,7 +229,7 @@ else:
                 ls = f"https://legiscan.com/{ST}/rollcall/{bill}/id/{hs[0]['roll_call_id']}"
             rmap[kid(k)] = {**hs[0], 'legiscan': ls}
         elif act in AUTH:
-            m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)
+            m = re.match(ST + r'-([A-Z]+)(?:\d{2})?-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)
             if m and (bf := openstates_bill(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3))):
                 # A sponsorship on a bill converted from Open States data has no LegiScan page to line. It keeps the
                 # official page it is cited on, and the verifier reads that page's own words as for any source,

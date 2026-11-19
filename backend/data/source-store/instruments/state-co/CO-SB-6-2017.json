@@ -1,0 +1,203 @@
+{
+  "id": "CO-SB-6-2017",
+  "scope": "state:co",
+  "title": "SB006 (2017 Regular): Concealed Carry For Military Under Twenty-one Years Of Age",
+  "urls": [
+    "https://leg.colorado.gov/bills/sb17-006",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2017A/bills/2017a_006_ren.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "John Cooke",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lang Sias",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dan Nordberg",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-02-17",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 15,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229069 https://leg.colorado.gov/bill_votes/18227#SB17-006",
+      "members": [
+        {
+          "name": "Randy Baumgardner",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Crowder",
+          "vote": "yea"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheri Jahn",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lambert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Vicki Marble",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Martinez Humenik",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "yea",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Grantham",
+          "vote": "yea",
+          "politician_id": "bc6296a0-66f5-47af-b466-ae00998c3c02"
+        },
+        {
+          "name": "Irene Aguilar",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Court",
+          "vote": "nay"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucia Guzman",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Kagan",
+          "vote": "nay"
+        },
+        {
+          "name": "John Kefalas",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Kerr",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Merrifield",
+          "vote": "nay"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (02/17/2017), 2017-02-17; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2017A/bills/2017a_006_ren.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-6-2017.reengrossed.pdf",
+      "sha256": "849aa99005a047dcb175d1b2a6a8a44b32179972dc0992a875523854a88b2c47"
+    },
+    "note": "Reengrossed (02/17/2017). Not the final act; amendments made after the version read are not in the text read. Lower-case words in 18-12-203 (1)(b) ('is', 'Twenty-one years of age or older') may be struck; check the page image. Introductory line 'a sheriff shall issue a permit to carry a concealed handgun to an applicant who:' is existing law."
+  },
+  "operative_text": "Section 1 (C.R.S. 18-12-203(1)(b)): ON AND AFTER THE EFFECTIVE DATE OF THIS SUBSECTION (1)(b), is EITHER: (I) Twenty-one years of age or older; OR (II) (A) EIGHTEEN YEARS OF AGE OR OLDER; AND (B) ON ACTIVE DUTY IN, OR HONORABLY DISCHARGED FROM, ANY BRANCH OR RESERVE BRANCH OF THE UNITED STATES MILITARY FORCES, INCLUDING THE NATIONAL GUARD."
+}

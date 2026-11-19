@@ -59,9 +59,10 @@ export const STORE_ID_RE = /\b[A-Z]{2}-[A-Z]+(?:-[A-Z0-9]+)*-(?:19|20)\d{2}\b/g;
  */
 export const LABEL_RE = /(?<![\w.#-])(?:[SQCDLW]\d{1,2}|H\d{1,2}|R\d{1,2}(?:-(?:[A-Z]{1,3}|\d{1,2}))?)(?![\w.-]*\d)(?!-[A-Za-z])/g;
 
-/** `GA-HB-1324-2025` → `hb1324`, the gate's canonical form; null for ids with no number after the type. */
+/** `GA-HB-1324-2025` → `hb1324`, the gate's canonical form; null for ids with no number after the type.
+ *  An older Colorado id keeps the session year in the number: `CO-SB25-003-2025` → `sb3`. */
 export function storeIdToken(id: string): string | null {
-  const m = /^[A-Z]{2}-([A-Z]+)-0*(\d+)\b/.exec(id);
+  const m = /^[A-Z]{2}-([A-Z]+)(?:\d{2})?-0*(\d+)\b/.exec(id);
   return m ? `${m[1].toLowerCase()}${m[2]}` : null;
 }
 

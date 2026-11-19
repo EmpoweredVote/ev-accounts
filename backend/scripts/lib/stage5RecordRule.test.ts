@@ -220,6 +220,7 @@ describe('wordsFor', () => {
     expect(wordsFor(decideRecord(input([vote('XX-HB-16-SP1-2020', 'yea', '2020-09-01')], { table: odd, bill: b })).decision!, odd, rungText)).toBeUndefined();
     expect(wordsFor(decideRecord(input([vote('XX-HB-33-2023', 'yea', '2023-09-01')], { table: odd, bill: b })).decision!, odd, rungText)).toBeUndefined();
     expect(billName('XX-HB-16-SP1-2020')).toBeUndefined();
+    expect(billName('CO-SB25-003-2025')).toBe('SB 3 (2025)');
   });
 });
 

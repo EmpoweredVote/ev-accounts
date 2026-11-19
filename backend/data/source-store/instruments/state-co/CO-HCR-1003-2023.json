@@ -1,0 +1,39 @@
+{
+  "id": "CO-HCR-1003-2023",
+  "scope": "state:co",
+  "title": "HCR1003 (2023 Regular): Constitutional Concealed Carry Of A Handgun",
+  "urls": [
+    "https://leg.colorado.gov/bills/hcr23-1003",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_hcr1003_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Soper",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (04/10/2023), 2023-04-10; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_hcr1003_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HCR-1003-2023.introduced.pdf",
+      "sha256": "8006314eaf13612b36cd1d4298b642f4f26166401d94a6a101775622fb277eb2"
+    },
+    "note": "Introduced version (04/10/2023), a concurrent resolution for the Nov 2024 ballot. Lower-case words in art. II sec. 13(1) may be struck (the old 'nothing herein contained ... concealed weapons' clause); check the page image. Quoted only the capital-letter new subsection (2). Needs 55% voter approval."
+  },
+  "operative_text": "Section 1 (Colo. Const. art. II, sec. 13(2)): (2) A PERSON WHO IS AT LEAST TWENTY-ONE YEARS OF AGE AND IS PERMITTED TO POSSESS A HANDGUN PURSUANT TO FEDERAL AND STATE LAW HAS THE AUTHORITY TO CARRY A CONCEALED HANDGUN IN ANY AREA OF THE STATE; EXCEPT THAT THE GENERAL ASSEMBLY MAY, BY LAW, PROHIBIT THE CARRYING OF A CONCEALED HANDGUN AS FOLLOWS: (a) INTO A PLACE WHERE THE CARRYING OF FIREARMS IS PROHIBITED BY FEDERAL LAW; (b) ONTO THE REAL PROPERTY, OR INTO ANY IMPROVEMENTS ERECTED THEREON, OF A PUBLIC ELEMENTARY, MIDDLE, JUNIOR HIGH, OR HIGH SCHOOL; OR (c) INTO A PUBLIC BUILDING AT WHICH SECURITY PERSONNEL AND WEAPONS SCREENING DEVICES ARE PERMANENTLY IN PLACE AT EACH ENTRANCE TO THE BUILDING, SECURITY PERSONNEL ELECTRONICALLY SCREEN EACH PERSON WHO ENTERS THE BUILDING, AND SECURITY PERSONNEL REQUIRE EACH PERSON WHO IS CARRYING A WEAPON OF ANY KIND TO LEAVE THE WEAPON IN POSSESSION OF SECURITY PERSONNEL WHILE THE PERSON IS IN THE BUILDING."
+}

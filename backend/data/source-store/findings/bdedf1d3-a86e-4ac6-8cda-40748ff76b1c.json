@@ -1,0 +1,38 @@
+{
+  "politician_id": "bdedf1d3-a86e-4ac6-8cda-40748ff76b1c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "guns on campus",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "status: holds the University of Colorado Board of Regents District 6 seat (not a legislator), listed as a candidate for that seat in the 2026 general election per https://www.ballotready.org/people/ilana-spiegel; the 2026 result was not checked",
+        "On the Record (0 appearances)",
+        "https://regents.cu.edu/meet-the-regents/ilana-dubin-spiegel (official regent page, read; nothing on the subject)",
+        "blocked: https://ilana4regent.com/ (403)",
+        "blocked: https://ilana4regent.com/priorities/ (403)",
+        "blocked: https://www.ilanaspiegel.com (no such host)",
+        "Ballotpedia (page returned no readable text; nothing on the subject)",
+        "https://www.ballotready.org/people/ilana-spiegel (profile read; issue stances cover education and wages only, nothing on the subject)",
+        "news search on name plus gun words (no article quotes or names her on the subject)",
+        "https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/ (2024 regents campus carry story, does not name her)",
+        "https://www.coloradopolitics.com/2024/03/22/university-of-colorado-considers-concealed-carry-firearms-ban-3 (does not name her)",
+        "https://news.cuanschutz.edu/medicine/university-of-colorado-regents-consider-gun-ban-as-concerns-over-campus-safety-mount (does not name her)",
+        "blocked: https://scribe.uccs.edu/?p=22749 (403)",
+        "not reviewed: regents meeting minutes and video for the 2024 campus carry motion",
+        "legislature bill pages: no legislative record found for her; sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T03:14:43.384Z",
+      "by": "source-collector"
+    }
+  ]
+}

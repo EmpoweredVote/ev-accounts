@@ -1,0 +1,39 @@
+{
+  "id": "CO-HB-1098-2021",
+  "scope": "state:co",
+  "title": "HB1098 (2021 Regular): Civil Liability For Extreme Risk Protection Orders",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb21-1098",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2021A/bills/2021a_1098_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Woog",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96c797fd-2601-43d2-9b1a-18510da6e219"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (02/16/2021), 2021-02-16; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2021A/bills/2021a_1098_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1098-2021.introduced.pdf",
+      "sha256": "38731895af2476e675bfa618f6f25d676365da15533de01941dda251f8f25546"
+    },
+    "note": "Introduced version 02/16/2021 (as filed); the record shows no passage vote, so later amendments, if any, are not in the text read. Section 1 legislative declaration (claims the ERPO law violates the U.S. Constitution) is not quoted."
+  },
+  "operative_text": "Section 2 (C.R.S. 13-21-133(1)): A PERSON OR A PERSONAL REPRESENTATIVE OF A PERSON WHO SUFFERS INJURY OR DAMAGES AS A RESULT OF NOT BEING ABLE TO USE A FIREARM TO DEFEND HIMSELF, HERSELF, OR HIS OR HER FAMILY AS A RESULT OF A TEMPORARY EXTREME RISK PROTECTION ORDER ISSUED PURSUANT TO SECTION 13-14.5-103 OR AN ONGOING EXTREME RISK PROTECTION ORDER ISSUED PURSUANT TO SECTION 13-14.5-104 MAY BRING A CIVIL ACTION TO RECOVER DAMAGES AGAINST ANY PERSON WHO DRAFTED, PROPOSED, PROMOTED, OR PROVIDED SUPPORT, FINANCIAL OR OTHERWISE, TO PASS, IMPLEMENT, OR ENFORCE HOUSE BILL 19-1177.\nSection 2 (C.R.S. 13-21-133(2)): A PLAINTIFF WHO PREVAILS IN AN ACTION PURSUANT TO THIS SECTION IS ENTITLED TO REASONABLE ATTORNEY FEES AND EITHER: (a) ALL DAMAGES REASONABLY NECESSARY TO COMPENSATE THE PLAINTIFF FOR ANY PHYSICAL, PSYCHOLOGICAL, OR EMOTIONAL INJURIES, INCLUDING POST-TRAUMATIC STRESS DISORDER, SUFFERED AS A RESULT OF NOT BEING ABLE TO USE A FIREARM TO DEFEND HIMSELF OR HERSELF; OR (b) LIQUIDATED DAMAGES OF AT LEAST ONE HUNDRED THOUSAND DOLLARS OR UP TO ONE HUNDRED MILLION DOLLARS IF DEATH OR DISABILITY OCCURS."
+}
