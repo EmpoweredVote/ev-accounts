@@ -199,3 +199,10 @@ the pre-fill before `affected`. And `openstates/pilot_batch.py` replaces the `ma
 pilot folders: its dry batch names each voted bill, and `--verdict` reads the merge and the gate on it, so a reader
 session meets a state's formats before a real run does. On Colorado's dry batch the merge and the gate as they were
 before the run fail it (6,256 votes disagree; 3,834 named bills not found); as fixed, they pass.
+
+**The desk in two commands (2026-11-19).** The desk is the one session left in the desktop app: it starts at about
+135,000 tokens and re-reads them on every step (Kansas: 63 steps, 0.97M units; 8 to 13% of a state). `desk.py start`
+does the start-up in one step (fetch, `.env` link, install, tracker, the state from the queue, reader or desk, the
+lease, the desk card) and `desk.py close` the close-out (`close_state.py`, then `DESK-REPORT.md` with the facts the
+final report needs). It never takes a held lease, never picks a 🛑 row, and writes nothing to the database.
+
