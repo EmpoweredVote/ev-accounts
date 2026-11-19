@@ -187,6 +187,16 @@ for r in rows("personvote"):
 #    2019a_1177_signed.pdf) answer 301 to the same path on content.leg.colorado.gov, which is written instead. 2026's
 #    texts (/bill_files/<n>/download) are a path robots.txt disallows: they are kept and counted
 #    (co_text_robots_disallowed), and a desk cites the bill's page for them. The bill pages need only https.
+#  - North Dakota (2026-11-19): the dump holds no roll call for the 66th and 67th Assemblies (2019, 2021) and names
+#    members by family name only, and its vote addresses are a day's journal with no page. "record_is_the_floor", as
+#    Colorado's: the fetch reads each scanned bill's action page and every floor vote on it from the daily journal,
+#    cited as the journal page with the bill after a # (stateRollCallEvidence.ts); the dump's copy of a record vote only
+#    teaches which person a label is. The reader names each member in full from the Assembly's member list, so
+#    ms_full_names links them. "nd_links": 2017 and 2019 bill pages are on the old host without /regular/
+#    (http://www.legis.nd.gov/assembly/65-2017/bill-actions/ba3025.html), which is now a 404; the bill's overview,
+#    https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo3025.html, is written instead, and every regular
+#    session's texts move to https://ndlegis.gov/assembly/<NN-YYYY>/regular/documents/ (the old form redirects there
+#    today, read 2026-11-19). A special session's pages (/special-session/) are 404 on the current host: kept and counted.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -197,7 +207,8 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
                     "md_bill_page": True, "https_texts": True, "ms_full_names": True},
              "KS": {"https": True, "ks_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True,
                     "ks_bill_page": True, "ks_texts": True},
-             "CO": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "co_texts": True}}
+             "CO": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "co_texts": True},
+             "ND": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nd_links": True}}
 RULES = SRC_RULES.get(ST, {})
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
@@ -311,6 +322,21 @@ if RULES.get("ks_vote_page"):
             vsrc[eid] = [f"https://www.kslegislature.gov/{KS_LI[m.group(1)]}/{m.group(1)}/measures/vote_view/{m.group(2)}/"]
         elif not re.match(r"^https://www\.kslegislature\.gov/b20\d{2}_\d{2}/vote/\?apn=", u):
             DUPES[events[eid]["legislative_session_id"]]["ks_vote_address_not_rewritten"] += 1
+
+
+ND_LINK = re.compile(r"^https?://(?:www\.)?(?:legis\.nd\.gov|ndlegis\.gov)/assembly/(\d{2}-20\d{2})/(regular/|special-session/)?"
+                     r"(?:(?:bill-actions/ba|bill-overview/bo)(\d{4})\.html|(documents/[\w-]+\.pdf))$")
+
+
+def nd_link(u, sess_id):
+    """North Dakota: a bill page or text of a regular session -> the current host's address (see SRC_RULES)."""
+    m = ND_LINK.match(u)
+    if not m or m.group(2) == "special-session/":
+        if u:
+            DUPES[sess_id]["nd_link_not_rewritten"] += 1
+        return u
+    tail = f"bill-overview/bo{m.group(3)}.html" if m.group(3) else m.group(4)
+    return f"https://ndlegis.gov/assembly/{m.group(1)}/regular/{tail}"
 
 
 def ks_bill_page(u, sess_ident):
@@ -952,6 +978,9 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 r["url"] = re.sub(r"^https://mgaleg\.maryland\.gov/webmga/frmMain\.aspx\?id=([HS][BJ])(\d+)&stab=\d+&pid=billpage&tab=subject\d+&ys=(20\d{2})rs$",
                                   lambda g: f"https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/{g.group(1).lower()}{int(g.group(2)):04d}?ys={g.group(3)}RS",
                                   r["url"], flags=re.I)
+        if RULES.get("nd_links"):
+            for r in ex["billsource"]:
+                r["url"] = nd_link(r["url"], b["legislative_session_id"])
         if RULES.get("ks_bill_page"):
             for r in ex["billsource"]:
                 r["url"] = ks_bill_page(r["url"], sessions[b["legislative_session_id"]]["identifier"])
@@ -1013,6 +1042,8 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 main = re.sub(r"^http://", "https://", main)
             if RULES.get("ks_texts"):
                 main = ks_text(main)
+            if RULES.get("nd_links"):
+                main = nd_link(main, b["legislative_session_id"])
             if RULES.get("co_texts"):
                 main = re.sub(r"^https?://leg\.colorado\.gov/sites/default/files/", "https://content.leg.colorado.gov/sites/default/files/", main)
                 if re.match(r"^https?://leg\.colorado\.gov/bill_files/\d+/download$", main):

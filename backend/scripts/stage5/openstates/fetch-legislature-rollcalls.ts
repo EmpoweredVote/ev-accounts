@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { coBillTag, explainColoradoVote, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -262,7 +262,80 @@ export function coReadBillVotes(body: string, session: string, bill: string): Bi
 }
 const coTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
+/**
+ * North Dakota's Assembly for an Open States session ("65" to "69", the regular sessions; a special session such as "67S1"
+ * is not read): its number and the year it met. Null for anything else.
+ */
+export function ndAssembly(session: string): { assembly: number; year: number } | null {
+  if (!/^(6[5-9]|7\d)$/.test(session)) return null;
+  const assembly = Number(session);
+  return { assembly, year: 2017 + 2 * (assembly - 65) };
+}
+const ND_BILL = /^([HS](?:B|CR|R|JR|MR|CMR))\s*0*([1-9]\d{3})$/i;
+
+/**
+ * A North Dakota bill page's actions (/assembly/65-2017/regular/bill-actions/ba1279.html): one table row per action, its
+ * date, chamber and words, and a link into that day's journal ("../journals/hr-dailyjnl-61.pdf#Page1394"). A recorded
+ * vote on the bill is "Second reading, passed, yeas 92 nays 0" (also "passed as amended", "failed to pass", "adopted",
+ * "failed to adopt", ", Emergency clause carried"); it is cited as the journal page with the bill after a #. The same
+ * words with no tally are a voice vote. A committee's report prints its tally bare ("Reported back, do pass, place on
+ * calendar 12 0 1") and is counted. A vote on a division of the bill ("Division A passed") is counted as a motion. Any
+ * other row with a tally or a vote panel stops the tool.
+ */
+export function ndReadBillActions(body: string, session: string, bill: string): BillIndex {
+  const a = ndAssembly(session);
+  const b = ND_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+  if (!a || !b) throw new Error(`not a North Dakota bill of a regular session: ${session} ${bill}`);
+  const tag = `${b[1].toUpperCase()} ${b[2]}`;
+  const head = /<title>([^<]*?) - Actions \| North Dakota Legislative Branch<\/title>/.exec(body);
+  if (!head || head[1].trim() !== tag) throw new Error(`the bill page is not ${tag}: ${head?.[1]}`);
+  // the page's own address, which the site prints with no slash after the host ("https://ndlegis.govassembly/65-2017/...")
+  const self = /<link rel="canonical" href="https:\/\/ndlegis\.gov\/?assembly\/(\d{2})-(20\d{2})\/regular\/bill-actions\/ba(\d{4})\.html"/.exec(body);
+  if (!self || Number(self[1]) !== a.assembly || Number(self[2]) !== a.year) throw new Error(`the page of ${tag} is not of the ${a.assembly}th Assembly`);
+  if (Number(self[3]) !== Number(b[2])) throw new Error(`the bill page is not ${tag}: ba${self[3]}`);
+  const tables = [...body.matchAll(/<table\b/g)].map((m) => m.index!);
+  const t = tables.map((i) => body.slice(i, body.indexOf('</table>', i))).find((x) => /<th scope="col">Journal<\/th>/.test(x));
+  if (!t) throw new Error(`the page of ${tag} has no action table`);
+  const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+  const rows = [...t.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((m) => m[1]).filter((r) => /<td\b/.test(r));
+  if (!rows.length) throw new Error(`the page of ${tag} lists no action`);
+  for (const row of rows) {
+    const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((m) => ndTag(m[1]));
+    const desc = cells[2] ?? '';
+    const journals = [...row.matchAll(/href="\.\.\/journals\/((?:hr|sr)-dailyjnl-\d{2})\.pdf#Page(\d+)"/g)];
+    const panel = /data-bs-target="#vote-modal-/.test(row);
+    const tally = /\byeas (\d+) nays (\d+)\b/.exec(desc);
+    if (/^Second reading, (?:passed|passed as amended|failed to pass|adopted|adopted as amended|failed to adopt)\b/.test(desc)) {
+      if (!tally) { if (panel) throw new Error(`${tag}: a vote with a panel and no tally: ${desc}`); out.voice++; continue; }
+      if (journals.length !== 1) throw new Error(`${tag}: a vote with ${journals.length} journal links: ${desc}`);
+      const chamber = cells[1];
+      if ((journals[0][1].startsWith('hr') ? 'House' : 'Senate') !== chamber) throw new Error(`${tag}: a ${chamber} vote linked to another chamber's journal: ${desc}`);
+      out.floor.push({ url: `https://ndlegis.gov/assembly/${a.assembly}-${a.year}/regular/journals/${journals[0][1]}.pdf#Page${journals[0][2]}-${tag.replace(' ', '')}`,
+        motion: desc, tally: [Number(tally[1]), Number(tally[2]), -1] });
+      continue;
+    }
+    if (/^Reported back\b.* \d+ \d+ \d+$/.test(desc)) { out.committee++; continue; }
+    if (/^Division [A-Z] (?:passed|failed|adopted)\b/.test(desc)) { out.motion!++; out.motions!.push(`${journals[0]?.[1] ?? ''}#Page${journals[0]?.[2] ?? ''} ${cells[1]} ${desc}`); continue; }
+    if (tally || panel) throw new Error(`${tag}: a vote whose action the tool does not know: ${cells[1]} ${desc}`);
+  }
+  return out;
+}
+const ndTag = (s: string): string => s.replace(/<div class="modal[\s\S]*$/, '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+
 export const INDEX: Record<string, StateIndex> = {
+  // ndlegis.gov (read 2026-11-19; robots.txt is Drupal's default and disallows nothing under /assembly/, no Crawl-delay).
+  // The Open States dump holds no roll call for the 66th and 67th Assemblies (2019, 2021), and names members only by
+  // family name. A bill's action page lists each action with a link into that day's journal (ndReadBillActions); each
+  // vote is read from the journal page with the Assembly's member list (stateRollCallEvidence.ts).
+  ND: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay: one a second is ours
+    billUrl(session, bill) {
+      const a = ndAssembly(session);
+      const b = ND_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+      return a && b ? `https://ndlegis.gov/assembly/${a.assembly}-${a.year}/regular/bill-actions/ba${b[2]}.html` : null;
+    },
+    read: ndReadBillActions,
+  },
   // leg.colorado.gov (read 2026-11-18; robots.txt allows /bills/ and /bill_votes/, no Crawl-delay). The Open States rows'
   // vote addresses are the old site's (leg.colorado.gov/content/...), now 404 during the move; every session from 2017 is
   // on the new site. A bill's page, /bills/hb19-1177, lists each recorded vote of each chamber with its calendar, motion
@@ -653,7 +726,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
     const ms = parseMississippiVoteUrl(v.url) ? explainMississippiVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseMarylandVoteUrl(v.url) ? explainMarylandVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseKansasVoteUrl(v.url) ? explainKansasVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseColoradoVoteUrl(v.url) ? explainColoradoVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseColoradoVoteUrl(v.url) ? explainColoradoVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseNorthDakotaVoteUrl(v.url) ? explainNorthDakotaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
@@ -669,7 +743,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   // which its own counts check (stateRollCallEvidence.ts), is kept. The fetch counts each such vote.
   // Maryland's bill page prints yeas and nays only.
   // Kansas's history prints yeas and nays (the archive) or leaves out a group of 0 (the current site).
-  const compared = r.state === 'SD' || r.state === 'MD' || r.state === 'KS' ? 2 : 3;
+  // North Dakota's bill page prints yeas and nays only.
+  const compared = r.state === 'SD' || r.state === 'MD' || r.state === 'KS' || r.state === 'ND' ? 2 : 3;
   if (v.tally && got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;

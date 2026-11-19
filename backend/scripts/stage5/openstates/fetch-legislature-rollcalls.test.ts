@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -604,5 +604,52 @@ describe('the legislature\'s own vote list — Colorado', () => {
     expect(() => INDEX.CO.read(CO_HB1177, '2019A', 'HB 19-1178')).toThrow(/the bill page is not HB19-1178/);
     expect(() => INDEX.CO.read(tamper(CO_HB1177, 'aria-label="Senate Votes (5)"', 'aria-label="Senate Votes (6)"'), '2019A', 'HB 19-1177'))
       .toThrow(/Senate prints 6 votes and lists 5/);
+  });
+});
+
+// Saved 2026-11-19 from ndlegis.gov: a bill's action page lists every action, a floor vote with its tally and a link into
+// that day's journal. 2017's page shows no vote panel; 2025's does.
+const ND_HB1279 = ksFixture('nd-65-ba1279');
+const ND_HB1326 = ksFixture('nd-69-ba1326');
+
+describe('the legislature\'s own vote list — North Dakota', () => {
+  it('finds the action page of a regular session\'s bill, and none for a special session', () => {
+    expect(INDEX.ND.billUrl('65', 'HB 1279')).toBe('https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1279.html');
+    expect(INDEX.ND.billUrl('69', 'SCR4010')).toBe('https://ndlegis.gov/assembly/69-2025/regular/bill-actions/ba4010.html');
+    expect(INDEX.ND.billUrl('67S1', 'HB 1516')).toBeNull();
+    expect(ndAssembly('68')).toEqual({ assembly: 68, year: 2023 });
+    expect(ndAssembly('2023')).toBeNull();
+  });
+
+  it('reads the floor votes of both chambers, counts the committee reports, and cites each vote as its journal page and bill', () => {
+    expect(INDEX.ND.read(ND_HB1279, '65', 'HB 1279')).toEqual({
+      floor: [
+        { url: 'https://ndlegis.gov/assembly/65-2017/regular/journals/hr-dailyjnl-35.pdf#Page787-HB1279', motion: 'Second reading, passed, yeas 89 nays 0, Emergency clause carried', tally: [89, 0, -1] },
+        { url: 'https://ndlegis.gov/assembly/65-2017/regular/journals/sr-dailyjnl-54.pdf#Page884-HB1279', motion: 'Second reading, passed as amended, yeas 47 nays 0', tally: [47, 0, -1] },
+        { url: 'https://ndlegis.gov/assembly/65-2017/regular/journals/hr-dailyjnl-61.pdf#Page1394-HB1279', motion: 'Second reading, passed, yeas 92 nays 0, Emergency clause carried', tally: [92, 0, -1] },
+      ],
+      committee: 2, voice: 0, motion: 0, motions: [] });
+    // 2025: the bill failed, was reconsidered and passed on one day: two votes, two journal pages
+    expect(INDEX.ND.read(ND_HB1326, '69', 'HB 1326').floor.map((v) => v.url.split('/').pop())).toEqual(
+      ['hr-dailyjnl-34.pdf#Page811-HB1326', 'hr-dailyjnl-34.pdf#Page820-HB1326', 'sr-dailyjnl-53.pdf#Page953-HB1326']);
+  });
+
+  it('counts a vote with no tally as a voice vote, and a division of the bill as a motion', () => {
+    expect(INDEX.ND.read(tamper(ND_HB1279, '<td>Second reading, passed as amended, yeas 47 nays 0</td>', '<td>Second reading, passed as amended</td>'), '65', 'HB 1279'))
+      .toMatchObject({ voice: 1, motion: 0 });
+    const d = INDEX.ND.read(tamper(ND_HB1279, '<td>Second reading, passed as amended, yeas 47 nays 0</td>', '<td>Division A passed, yeas 47 nays 0</td>'), '65', 'HB 1279');
+    expect([d.floor.length, d.motion]).toEqual([2, 1]);
+  });
+
+  it('stops on another bill\'s page, an action it does not know, or a vote linked to the other chamber\'s journal', () => {
+    expect(() => INDEX.ND.read(ND_HB1279, '65', 'HB 1278')).toThrow(/the bill page is not HB 1278/);
+    // the title and the page's own address are checked apart: either one naming another bill stops the tool
+    expect(() => INDEX.ND.read(tamper(ND_HB1279, '<title>HB 1279 - Actions', '<title>HB 1278 - Actions'), '65', 'HB 1279')).toThrow(/the bill page is not HB 1279: HB 1278$/);
+    expect(() => INDEX.ND.read(tamper(ND_HB1279, 'regular/bill-actions/ba1279.html"', 'regular/bill-actions/ba1278.html"'), '65', 'HB 1279')).toThrow(/the bill page is not HB 1279: ba1278$/);
+    expect(() => INDEX.ND.read(ND_HB1279, '66', 'HB 1279')).toThrow(/is not of the 66th Assembly/);
+    expect(() => INDEX.ND.read(tamper(ND_HB1279, '<td>Second reading, passed as amended, yeas 47 nays 0</td>', '<td>Motion to reconsider carried, yeas 47 nays 0</td>'), '65', 'HB 1279'))
+      .toThrow(/a vote whose action the tool does not know/);
+    expect(() => INDEX.ND.read(tamper(ND_HB1279, 'href="../journals/hr-dailyjnl-35.pdf#Page787"', 'href="../journals/sr-dailyjnl-35.pdf#Page787"'), '65', 'HB 1279'))
+      .toThrow(/linked to another chamber's journal/);
   });
 });

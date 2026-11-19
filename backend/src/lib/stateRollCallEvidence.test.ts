@@ -8,6 +8,7 @@ import {
   explainMarylandVote, mdQuestionIsOnTheBill, pdfCellsBody, readStateRollCallRecord,
   explainKansasVote, ksQuestionIsOnTheBill, ksMemberName, parseKansasVoteUrl,
   explainColoradoVote, coQuestionIsOnTheBill, coMemberName, coMembers, coBillTag, parseColoradoVoteUrl,
+  explainNorthDakotaVote, ndQuestionIsOnTheBill, ndMembers, ndMemberNames, parseNorthDakotaVoteUrl,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
 import { verifyEvidence, type StanceRow } from './researchVerifier.js';
@@ -1366,5 +1367,158 @@ describe('a name the person is also published under (md-01, 2026-11-18)', () => 
 
   it('does not reach for another name when the person\'s own name is on the page', () => {
     expect(stateRollCallLinesFor(SD_URL(84688), text, 'Mortenson', 'Will Mortenson', [{ fullName: 'Julie Auch', lastName: 'Auch' }])).toEqual([MORTENSON]);
+  });
+});
+
+// Saved 2026-11-19 from ndlegis.gov: a day's journal (the PDF, as the reader receives it: its lines, pdfLinesBody) and the
+// Assembly's member list (/members/members-by-district), the second document the reader reads. The journal prints family
+// names ("Becker, Rick C.", "Lee, J.", "Speaker Bellew"); the member list names them in full. The member list prints a
+// party on each tile; the reader does not read it.
+const ND = 'https://ndlegis.gov/assembly/';
+const ND_H17 = `${ND}65-2017/regular/journals/hr-dailyjnl-35.pdf#Page787-HB1279`;
+const ND_S19 = `${ND}66-2019/regular/journals/sr-dailyjnl-56.pdf#Page1153-HB1042`;
+const ND_S19B = `${ND}66-2019/regular/journals/sr-dailyjnl-56.pdf#Page1153-HB1163`;
+const ND_H23 = `${ND}68-2023/regular/journals/hr-dailyjnl-33.pdf#Page910-HB1341`;
+const ND_H25_FAIL = `${ND}69-2025/regular/journals/hr-dailyjnl-34.pdf#Page811-HB1326`;
+const ND_H25_PASS = `${ND}69-2025/regular/journals/hr-dailyjnl-34.pdf#Page820-HB1326`;
+const ndJ: Record<string, string> = { '65': 'nd-65-hr-dailyjnl-35', '66': 'nd-66-sr-dailyjnl-56', '68': 'nd-68-hr-dailyjnl-33', '69': 'nd-69-hr-dailyjnl-34' };
+const ndM: Record<string, string> = { '65': 'nd-65-2017-members', '66': 'nd-66-2019-members', '68': 'nd-68-2023-members', '69': 'nd-69-2025-members' };
+const ndDocs = (url: string): string[] => { const a = /assembly\/(\d{2})-/.exec(url)![1]; return [mdFile(`${ndJ[a]}.txt`), ksPage(ndM[a])]; };
+const ndRender = (url: string, docs = ndDocs(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error('the journal did not read');
+  return t;
+};
+const ndWhy = (url: string, docs: string[]): string => {
+  const v = explainNorthDakotaVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const ND_BECKER = 'North Dakota House vote of 2017-02-22, journal page 787 (65th Legislative Assembly), HB 1279 - Final passage of the amended bill: Rick Becker voted Yea.';
+
+describe('state roll-call pages — North Dakota address', () => {
+  it('knows a journal page named with its bill, and reads it with the Assembly\'s member list, a second apart', () => {
+    expect(parseNorthDakotaVoteUrl(ND_H17)).toEqual({ state: 'ND', stateName: 'North Dakota', chamber: 'House', assembly: 65, year: 2017, day: 35, page: 787, billType: 'HB', billNum: 1279 });
+    expect(parseNorthDakotaVoteUrl(`${ND}68-2023/regular/journals/sr-dailyjnl-44.pdf#Page1220-SCR4010`)).toMatchObject({ chamber: 'Senate', billType: 'SCR', billNum: 4010 });
+    expect(stateRollCallDocs(ND_S19)).toEqual([`${ND}66-2019/regular/journals/sr-dailyjnl-56.pdf`, `${ND}66-2019/regular/members/members-by-district`]);
+    expect(stateRollCallMinGapMs(ND_H17)).toBe(1_000);
+    expect(isStateRollCallUrl(ND_H17)).toBe(true);
+    // the dump's address (old host, no page), no bill after the #, the page alone, a year that is not the Assembly's,
+    // plain http, a look-alike host, a special session's journal
+    for (const u of ['http://www.legis.nd.gov/assembly/65-2017/journals/hr-dailyjnl-35.pdf', ND_H17.replace('-HB1279', ''),
+      ND_H17.replace('#Page787-HB1279', ''), ND_H17.replace('65-2017', '65-2019'), ND_H17.replace('https', 'http'),
+      ND_H17.replace('ndlegis.gov', 'ndlegis.gov.example.com'), ND_H17.replace('/regular/', '/special-session/'), ND_H17.replace('Page787', 'Page0787')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('names a printed label in full from the member list, and keeps a label that fits none or several as printed', () => {
+    const h17 = ndMembers(ksPage('nd-65-2017-members'))!.filter((m) => m.chamber === 'House');
+    expect(ndMemberNames(['Becker, Rick C.', 'Becker, Rich S.', 'Roers Jones', 'Jones', 'Schreiber-Beck', 'Bellew'], h17))
+      .toEqual(['Rick Becker', 'Rich S. Becker', 'Shannon Roers Jones', 'Terry B. Jones', 'Cynthia Schreiber-Beck', 'Larry Bellew']);
+    expect(ndMemberNames(['Zzyzx'], h17)).toEqual(['Zzyzx']);
+    const s19 = ndMembers(ksPage('nd-66-2019-members'))!.filter((m) => m.chamber === 'Senate');
+    expect(ndMemberNames(['Lee, G.', 'Lee, J.', 'Lee'], s19)).toEqual(['Gary A. Lee', 'Judy Lee', 'Lee']);
+    // 2023: Cole Christensen and Rose Christensen, who took his District 24 seat, are both on the list: two fit, no name
+    const h23 = ndMembers(ksPage('nd-68-2023-members'))!.filter((m) => m.chamber === 'House');
+    expect(ndMemberNames(['Christensen'], h23)).toEqual(['Christensen']);
+    expect(ndMembers('<html></html>')).toBeNull();
+  });
+
+  it('knows which questions are votes on the bill', () => {
+    for (const q of ['on the final passage of the bill', 'on the final passage of the amended bill', 'on the final passage of the reengrossed bill',
+      "on the final passage of the bill, over the Governor's veto", 'on the final adoption of the resolution', 'on the final adoption of the amended resolution']) {
+      expect(ndQuestionIsOnTheBill(q)).toBe(true);
+    }
+    for (const q of ['on the final adoption of Division A of Engrossed HB 1588', 'on the motion to reconsider the action whereby HB 1326 failed to pass',
+      'on the motion to adopt the amendments', 'on the confirmation of the appointment']) {
+      expect(ndQuestionIsOnTheBill(q)).toBe(false);
+    }
+  });
+});
+
+describe('state roll-call pages — reading North Dakota', () => {
+  it('reads a 2017 House vote: bill, question, day, tally, the Speaker, and every member by full name', () => {
+    const t = ndRender(ND_H17);
+    expect(t.split('\n').slice(0, 3)).toEqual(['North Dakota House vote of 2017-02-22, journal page 787 (65th Legislative Assembly), HB 1279.',
+      'Question: Final passage of the amended bill', 'Yea 89; Nay 0; Absent or excused 5.']);
+    // the YEAS run over the page break (787 to 788); "Speaker Bellew" is the Speaker
+    expect(t).toMatch(/^Yea \(89\): Bert Anderson; .*; Rich S\. Becker; Rick Becker; .*; Shannon Roers Jones; .*; Larry Bellew$/m);
+    expect(t).toMatch(/^Absent or excused \(5\): Josh Boschee; Mike Brandenburg; Daniel Johnston; Gary Kreidt; Robin Weisz$/m);
+  });
+
+  it('reads two bills voted on one journal page apart, by the bill after the #', () => {
+    expect(ndRender(ND_S19).split('\n').slice(0, 3)).toEqual(['North Dakota Senate vote of 2019-03-29, journal page 1153 (66th Legislative Assembly), HB 1042.',
+      'Question: Final passage of the bill', 'Yea 42; Nay 3; Absent or excused 2.']);
+    expect(ndRender(ND_S19B).split('\n')[2]).toBe('Yea 35; Nay 10; Absent or excused 2.');
+    expect(ndRender(ND_S19)).toMatch(/^Absent or excused \(2\): Michael Dwyer; Judy Lee$/m);
+  });
+
+  it('reads two votes on one bill on one day apart, by the page (2025: HB 1326 failed, was reconsidered, and passed)', () => {
+    expect(ndRender(ND_H25_FAIL).split('\n')[2]).toBe('Yea 44; Nay 48; Absent or excused 1.');
+    expect(ndRender(ND_H25_PASS).split('\n')[2]).toBe('Yea 56; Nay 35; Absent or excused 2.');
+    // the motion to reconsider, between them, is not a vote on the bill
+    expect(ndWhy(`${ND}69-2025/regular/journals/hr-dailyjnl-34.pdf#Page819-HB1326`, ndDocs(ND_H25_PASS))).toMatch(/^the journal holds 0 roll calls on HB 1326/);
+  });
+
+  it('refuses a journal whose bill, question, counts, pages, result or members do not hold together', () => {
+    const [j, m] = ndDocs(ND_H17);
+    expect(ndWhy(ND_H17, [j, m])).toBe('read');
+    // a printed count no longer equals the members under it
+    expect(ndWhy(ND_H17, [tamper(j, 'there were 89 YEAS,', 'there were 88 YEAS,'), m])).toMatch(/^the YEAS group lists 89 members and the question prints 88$/);
+    // the roll call follows another bill's heading
+    expect(ndWhy(ND_H17, [tamper(j, 'HB 1279: A BILL for an Act to create and enact a new subdivision', 'HB 1278: A BILL for an Act to create and enact a new subdivision'), m]))
+      .toMatch(/^the journal holds 0 roll calls on HB 1279/);
+    // a vote on a division of the bill
+    expect(ndWhy(ND_H17, [tamper(j, 'The question being on the final passage of the amended bill, which has been read, and has\ncommittee recommendation of DO PASS, the roll was called and there were 89 YEAS',
+      'The question being on the final adoption of Division A of Engrossed HB 1279, the roll was\ncalled and there were 89 YEAS'), m])).toMatch(/^the journal holds 0 roll calls on HB 1279/);
+    // the result line names another bill
+    expect(ndWhy(ND_H17, [tamper(j, 'Engrossed HB 1279 passed and the emergency', 'Engrossed HB 1280 passed and the emergency'), m])).toMatch(/^the roll call does not end on the bill's result/);
+    // a page the vote does not take in
+    expect(ndWhy(ND_H17.replace('Page787', 'Page789'), [j, m])).toMatch(/^the journal holds 0 roll calls on HB 1279 that read as a vote on the bill and take in page 789$/);
+    // a member printed twice
+    expect(ndWhy(ND_H17, [tamper(j, 'ABSENT AND NOT VOTING: Boschee; Brandenburg', 'ABSENT AND NOT VOTING: Beadle; Brandenburg'), m])).toMatch(/^a member is listed twice$/);
+    // a running head of another day, and of the other chamber
+    expect(ndWhy(ND_H17, [tamper(j, '788 JOURNAL OF THE HOUSE 35th DAY', '788 JOURNAL OF THE HOUSE 36th DAY'), m])).toMatch(/^a running head that is not the House's day 35/);
+    expect(ndWhy(ND_H17, [tamper(j, '788 JOURNAL OF THE HOUSE 35th DAY', '788 JOURNAL OF THE SENATE 35th DAY'), m])).toMatch(/^a running head that is not the House's day 35/);
+    // no member list
+    expect(ndWhy(ND_H17, [j, '<html></html>'])).toMatch(/^the member list did not read$/);
+  });
+});
+
+describe('state roll-call pages — North Dakota lines', () => {
+  const t = ndRender(ND_H17);
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(ND_H17, t, 'Becker', 'Rick Becker')).toEqual([ND_BECKER]);
+    expect(verifyStateRollCallLine(ND_BECKER, ND_H17, t, 'Becker', 'Rick Becker')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(ND_BECKER)).toMatchObject({ state: 'ND', chamber: 'House', vote: 'Yea', name: 'Rick Becker', bill: 'HB 1279' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or page', () => {
+    const v = (line: string, last = 'Becker', full = 'Rick Becker', url = ND_H17) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(ND_BECKER.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(ND_BECKER.replace('Rick Becker voted', 'Rich S. Becker voted'))).not.toBe('verified');
+    expect(v(ND_BECKER, 'Beadle', 'Thomas Beadle')).toBe('name_not_present');
+    expect(v(ND_BECKER.replace('HB 1279 -', 'HB 1278 -'))).toBe('snippet_not_found');
+    expect(v(ND_BECKER.replace('2017-02-22', '2017-02-21'))).toBe('snippet_not_found');
+    expect(v(ND_BECKER.replace('journal page 787', 'journal page 788'))).toBe('snippet_not_found');
+  });
+
+  it('gives an absent member "was absent or excused and did not vote", never a Yea or a Nay', () => {
+    const [l] = stateRollCallLinesFor(ND_H17, t, 'Boschee', 'Josh Boschee');
+    expect(l).toBe('North Dakota House vote of 2017-02-22, journal page 787 (65th Legislative Assembly), HB 1279 - Final passage of the amended bill: Josh Boschee was absent or excused and did not vote.');
+    expect(verifyStateRollCallLine(l.replace('was absent or excused and did not vote', 'voted Yea'), ND_H17, t, 'Boschee', 'Josh Boschee').verdict).toBe('snippet_not_found');
+  });
+
+  it('gives no line to a label two members fit (2023 "Christensen", 2025 "Brown")', () => {
+    expect(ndRender(ND_H23)).toMatch(/; Christensen;/);
+    expect(stateRollCallLinesFor(ND_H23, ndRender(ND_H23), 'Christensen', 'Cole Christensen')).toEqual([]);
+    expect(stateRollCallLinesFor(ND_H25_PASS, ndRender(ND_H25_PASS), 'Brown', 'Collette Brown')).toEqual([]);
+  });
+
+  it('reads the tally as Yea, Nay and the rest absent or not voting', () => {
+    const r = readStateRollCallRecord(ndDocs(ND_S19), ND_S19)!;
+    expect(r).toMatchObject({ bill: 'HB 1042', date: '2019-03-29', chamber: 'Senate' });
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting']]).toEqual([42, 3, ['Michael Dwyer', 'Judy Lee']]);
   });
 });

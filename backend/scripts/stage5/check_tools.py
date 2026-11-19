@@ -1941,6 +1941,74 @@ def openstates_convert_places_a_colorado_vote_only_from_the_record_and_rewrites_
 
 
 @check
+def openstates_convert_places_a_north_dakota_vote_only_from_the_record_and_rewrites_its_links(t):
+    """North Dakota 2026-11-19: the dump holds no roll call for 2019 or 2021 and names members by family name, so no dump
+    vote is placed; only a vote read from the daily journal is (record_is_the_floor), cited as the journal page with the
+    bill after a #, its members (named in full from the Assembly's member list) linked to the dump's people. "nd_links":
+    a 2017 bill page on the old host (legis.nd.gov/assembly/65-2017/bill-actions/ba1279.html, now 404) becomes the bill's
+    overview on ndlegis.gov under /regular/, a text moves under /regular/documents/, and a special session's address
+    (404 on the current host) is kept and counted."""
+    X = f'{t}/work/extracts/2026-11/nd'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'nd', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's65', 'identifier': '65', 'name': '65th Legislative Assembly (2017-2018)', 'classification': 'primary', 'start_date': '2017-01-03', 'end_date': '2017-04-27'},
+         {'id': 's67', 'identifier': '67S1', 'name': '67th (2021) Legislative Assembly Special 2021 Session', 'classification': 'special', 'start_date': '2021-11-08', 'end_date': '2021-11-12'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'Legislative Assembly', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p-and', 'name': 'Bert Anderson', 'given_name': 'Bert', 'family_name': 'Anderson'},
+         {'id': 'p-bec', 'name': 'Rick Becker', 'given_name': 'Rick', 'family_name': 'Becker'},
+         {'id': 'p-jbe', 'name': 'Jeff Delzer', 'given_name': 'Jeff', 'family_name': 'Delzer'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'],
+        [{'person_id': p, 'organization_id': 'lo', 'start_date': '2017-01-03', 'end_date': '2022-11-30'} for p in ('p-and', 'p-bec', 'p-jbe')])
+    bill = lambda i, s, ident: {'id': i, 'legislative_session_id': s, 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [bill('b1', 's65', 'HB 1279'), bill('b2', 's67', 'HB 1516')])
+    tsv('billsource', ['bill_id', 'url'], [{'bill_id': 'b1', 'url': 'http://www.legis.nd.gov/assembly/65-2017/bill-actions/ba1279.html'},
+                                           {'bill_id': 'b2', 'url': 'http://www.legis.nd.gov/assembly/67-2021/special-session/bill-actions/ba1516.html'}])
+    tsv('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id'], [])
+    tsv('billversion', ['id', 'bill_id', 'note', 'date'], [{'id': 'v1', 'bill_id': 'b1', 'note': 'Enrolled', 'date': '2017-04-04'},
+                                                          {'id': 'v2', 'bill_id': 'b2', 'note': 'Introduced', 'date': '2021-11-08'}])
+    tsv('billversionlink', ['version_id', 'url', 'media_type'],
+        [{'version_id': 'v1', 'url': 'http://www.legis.nd.gov/assembly/65-2017/documents/17-0432-05000.pdf', 'media_type': 'application/pdf'},
+         {'version_id': 'v2', 'url': 'http://www.legis.nd.gov/assembly/67-2021/special-session/documents/21-1138-01000.pdf', 'media_type': 'application/pdf'}])
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'],
+        # d1: the dump's copy of the record vote (a day's journal, no page)
+        [{'id': 'd1', 'bill_id': 'b1', 'legislative_session_id': 's65', 'organization_id': 'lo', 'motion_text': 'The question being on the final passage of the amended bill',
+          'motion_classification': '{passage}', 'start_date': '2017-02-22', 'result': 'pass', 'order': '0', 'updated_at': '2017-02-22'}])
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'd1', 'url': 'http://www.legis.nd.gov/assembly/65-2017/journals/hr-dailyjnl-35.pdf'}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': 'd1', 'option': 'yes', 'value': '3'}])
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'],
+        [{'vote_event_id': 'd1', 'voter_name': n, 'option': 'yes'} for n in ('Anderson', 'Becker', 'Delzer')])
+    os.makedirs(f'{t}/work/supplements/ND')
+    page = 'https://ndlegis.gov/assembly/65-2017/regular/journals/hr-dailyjnl-35.pdf#Page797-HB1279'
+    rec = {'url': page, 'date': '2017-02-22', 'motion': 'Second reading, passed as amended, yeas 3 nays 0', 'question': 'Final passage of the amended bill',
+           'chamber': 'H', 'yea': 3, 'nay': 0, 'absent': 0, 'passed': 1,
+           'groups': {'Yea': ['Bert Anderson', 'Rick Becker', 'Jeff Delzer'], 'Nay': [], 'Absent or not voting': []}}
+    json.dump({'state': 'ND', 'session': '65', 'source': 'ndlegis.gov', 'bills': {'HB 1279': [rec]},
+               'checked': {'HB 1279': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/ND/65.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/ND-*/ND/*/vote/*.json')]
+    placed = [r for r in rcs if not r['_openstates']['committee']]
+    assert [(r['state_link'], r['chamber']) for r in placed] == [(page, 'H')], [(r['state_link'], r['chamber'], r['_openstates']['committee']) for r in rcs]
+    assert [r['_openstates']['vote_event_id'] for r in rcs if r['_openstates']['committee']] == ['d1'], [(r['_openstates']['vote_event_id'], r['state_link']) for r in rcs]
+    people = {j['people_id']: j for j in (json.load(open(f))['person'] for f in glob.glob(f'{t}/out/ND-*/ND/*/people/*.json'))}
+    got = sorted(str(people[v['people_id']]['_openstates']['person_id']) for v in placed[0]['votes'])
+    assert got == ['p-and', 'p-bec', 'p-jbe'], got
+    bills = {b['state_link']: b for b in (json.load(open(f))['bill'] for f in glob.glob(f'{t}/out/ND-*/ND/*/bill/*.json'))}
+    assert sorted(bills) == ['https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1279.html',
+                             'https://www.legis.nd.gov/assembly/67-2021/special-session/bill-actions/ba1516.html'], sorted(bills)
+    texts = sorted(x['url'] for b in bills.values() for x in b['texts'])
+    assert texts == ['http://www.legis.nd.gov/assembly/67-2021/special-session/documents/21-1138-01000.pdf',
+                     'https://ndlegis.gov/assembly/65-2017/regular/documents/17-0432-05000.pdf'], texts
+    mks = [json.load(open(f))['counts'] for f in glob.glob(f'{t}/out/ND-*/.openstates.json')]
+    assert len(mks) == 2 and sum(c.get('nd_link_not_rewritten', 0) for c in mks) == 2, mks
+
+
+@check
 def openstates_convert_links_a_maryland_record_name_to_the_one_person_whose_name_fits(t):
     """Maryland 2026-11-18. The record prints full names; the first pass linked them only among the session's roster
     (memberships and dump-linked voters). Three faults, each measured on the 2017-2026 record:
