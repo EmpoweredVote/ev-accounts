@@ -365,5 +365,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and places to carry",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "official legislature member page https://ndlegis.gov/biography/jonathan-sickler (read: confirms Senate District 17, Grand Forks, listed for the 70th Assembly 2027; no gun statements on the page)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jonathan_Sickler (403)",
+        "web search on name plus office (only bio and tracker pages; nothing on the subject in his own words)",
+        "web search on name plus gun words (news and advocacy pages on ND gun bills; none quote him)",
+        "no campaign site found in search results; not reviewed",
+        "not reviewed: ndlegis.gov member video"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:06:17.257Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -941,5 +941,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "scope: search results from Ballotpedia and a legislature page show Mitch Ostlie as the sitting House member for District 12, re-elected November 2024, term to 2028 (page itself not fetched)",
+        "On the Record (0 meetings; extract script found no appearances)",
+        "blocked: https://ballotpedia.org/Mitch_Ostlie (403)",
+        "not reviewed: https://ndlegis.gov/assembly/69-2025/regular/members/mitch-ostlie (404 on the member page; no own-page text read)",
+        "official legislator site: member page missing; no own pages read",
+        "campaign site: none found in search",
+        "web search: name plus gun/Second Amendment/firearm terms returned nothing on this person; name plus carry/firearm terms returned only bill pages and advocacy-group articles, no statements by him",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: no statements, newsletters, questionnaires or interviews found"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:08:34.832Z",
+      "by": "source-collector"
+    }
+  ]
 }

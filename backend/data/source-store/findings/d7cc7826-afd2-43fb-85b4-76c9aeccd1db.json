@@ -2,35 +2,6 @@
   "politician_id": "d7cc7826-afd2-43fb-85b4-76c9aeccd1db",
   "findings": [
     {
-      "id": "61fb8f2bad8d97060a24e30bc39999c1a0a131e5931f6d44b0248952c2e11185",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-02-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "yea",
-      "motion": "final passage of the amended bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "near-unanimous"
-      },
-      "note": "ND House, final passage of the amended bill (second reading), 2017-02-20: yea (tally 83–9); census gate: near-unanimous.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "a6b26dd7b6147ac60b60779bbe4873c80ed072632dda32ea6754bf4049f742ee",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1148.html",
@@ -1285,7 +1256,63 @@
           "sha256": "7e76ace7f8a64e7ca8b822312692ea2f9a94d8e755dc380b06bac3fdc533f385"
         }
       }
+    },
+    {
+      "id": "3cb5dc52e4aab689ffa5336480879cd8e01977eaa477a5361e7a5c21d0065233",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "yea",
+      "motion": "final passage of the amended bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, final passage of the amended bill (second reading), 2017-02-21: yea (tally 83–9); census gate: near-unanimous.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings by name)",
+        "official office site https://www.sos.nd.gov/about-office (read; bio page, nothing on the subject)",
+        "official office site search for 'firearm' (no hits on the subject)",
+        "blocked: https://ballotpedia.org/Michael_Howe (403)",
+        "news search on name plus gun words (nothing in his own words; one voter-guide listing noted he did not answer its questionnaire)",
+        "web search on 2026 race: news story and race page show he is Secretary of State and won re-election in the November 2026 general election",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: none found",
+        "not reviewed: https://ivoterguide.com/candidate/66225/race/15692/election/972"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:06:53.707Z",
+      "by": "source-collector"
+    }
+  ]
 }

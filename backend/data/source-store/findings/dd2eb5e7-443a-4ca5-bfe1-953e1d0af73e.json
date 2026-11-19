@@ -339,5 +339,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "honoring other states' carry permits",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ndlegis.gov/biography/jeff-barta (read: confirms Senate District 43, Grand Forks, member through 2025 session and 2026 special sessions; no gun statements on it)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jeff_Barta (fetch returned an empty page)",
+        "web search on name plus Second Amendment/gun words: nothing on the subject in his own words; results were bill-level advocacy pages that do not quote him",
+        "web search on name plus election: a news-wire search result says he lost the November 2026 general election; I could not fetch that page's text (https://www.newsfromthestates.com/node/436700), so not verified. He remains the sitting senator until December 2026",
+        "campaign site: not found in search results, not reviewed",
+        "not reviewed: https://ndlegis.gov/assembly/68-2023/regular/member-video/senator/jbarta.html (member video)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:07:08.973Z",
+      "by": "source-collector"
+    }
+  ]
 }

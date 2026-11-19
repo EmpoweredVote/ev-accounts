@@ -308,5 +308,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment general statements",
+        "gun law repeal"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page, District 39 Senate, read: https://ndlegis.gov/assembly/69-2025/regular/member-video/senator/gkessel.html (nothing on the subject)",
+        "https://www.ballotready.org/people/greg-kessel (confirms a 2026 general-election candidacy for Senate District 39; nothing on the subject)",
+        "not reviewed: https://ballotpedia.org/Greg_Kessel (fetch returned no usable text)",
+        "not reviewed: https://en.wikipedia.org/wiki/Greg_Kessel",
+        "no campaign site found",
+        "web search on name plus firearms words: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:05:23.451Z",
+      "by": "source-collector"
+    }
+  ]
 }

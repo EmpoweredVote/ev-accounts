@@ -90,7 +90,99 @@
           "sha256": "125d33e06974a71d69e8f4fa39601010edbc2cc1fbf5688cbde5d97b42a0d21c"
         }
       }
+    },
+    {
+      "id": "e01295d0d868a39c2e0a87f610c02e3c522dc12f50a8cbdaf5955bda02c0d4c5",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80959/race/20381/election/1222",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Felons and mentally ill people should suffer restrictions. Law abiding citizens have no restrictions.",
+      "note": "His answer on a 2024 voter-guide questionnaire to the question 'What restrictions on gun ownership are needed to protect public safety?'",
+      "subjects": [
+        "limits on who may have a gun",
+        "no restrictions on law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:09:31.147Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6000680b0eed494a0026e718fa5ffbc75aed29f42d0238245582d1b4e6604f2",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80959/race/20381/election/1222",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Yes If the teacher elects to do so and is fully and rigorously trained and vetted.",
+      "note": "His answer on the same 2024 questionnaire to 'Should teachers be allowed to carry guns at school?'",
+      "subjects": [
+        "teachers carrying guns at school",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:09:31.147Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "limits on who may have a gun",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "identity: confirmed as District 2 state senator, term through 2028 (not on the 2026 ballot), via a web search and the Minot Daily News 2024 candidate story https://www.minotdailynews.com/news/local-news/2024/01/powers-lake-native-seeks-district-2-senate-seat/ (fetched; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mark_Enget (403)",
+        "not reviewed: https://ndlegis.gov/print/pdf/node/49494 (PDF unreadable through the fetch tool)",
+        "the legislature's member page https://ndlegis.gov/assembly/69-2025/members/senate/mark-enget returned 404; no own official or campaign site found",
+        "one news search on name plus gun words: nothing naming this person on the subject",
+        "not reviewed: other URL-pattern pages (vote411, ontheissues, campaign site) for lack of a found site"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:05:13.196Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may own a gun",
+        "teachers carrying guns at school",
+        "Second Amendment general statements",
+        "carry permits",
+        "assault-style weapon bans",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page https://ndlegis.gov/biography/mark-enget (loads; bill pages skipped per brief)",
+        "Ballotpedia https://ballotpedia.org/Mark_Enget (fetch returned empty page; confirmed in-scope via search result: sitting District 2 senator, term to 2028)",
+        "Minot Daily News candidate profile Jan 2024: nothing on the subject",
+        "news search on name plus gun words: nothing beyond the questionnaire",
+        "https://ivoterguide.com/candidate/80959/race/20381/election/1222 (2024 candidate questionnaire, read)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-11-19T16:09:31.147Z",
+      "by": "source-collector"
+    }
+  ]
 }

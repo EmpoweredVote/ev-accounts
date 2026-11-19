@@ -339,5 +339,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 appearances for this person; name search returned 0 candidates)",
+        "official member page https://ndlegis.gov/biography/todd-beard (read; confirms Senator, District 23, Williston, listed for the 70th Assembly 2027 session; nothing on the subject)",
+        "campaign site: none found in search results",
+        "blocked: https://ballotpedia.org/Todd_Beard (403)",
+        "news/web search on name plus gun words (two searches): nothing in his own words on the subject; only advocacy-group pieces on bills that do not quote him",
+        "fastdemocracy.com profile tagged him with a guns topic but shows no statement (lead only, not cited)",
+        "not reviewed: https://www.everytown.org/press/north-dakota-senators-just-rejected-a-dangerous-gun-bill-but-a-similar-measure-is-headed-to-gov-burgums-desk/ (advocacy release, not his words)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:05:45.460Z",
+      "by": "source-collector"
+    }
+  ]
 }

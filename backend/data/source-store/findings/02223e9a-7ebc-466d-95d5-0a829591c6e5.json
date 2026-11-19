@@ -272,5 +272,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "scope: sitting member of the North Dakota House, District 8, term to Dec 2028 (ndlegis.gov member page https://ndlegis.gov/node/49510 fetched; page body was mostly script, name and office confirmed by search results)",
+        "On the Record (0 appearances)",
+        "official legislature member page https://ndlegis.gov/node/49510 (read, nothing on the subject)",
+        "campaign site https://mikebergfornd.com/ and launch post https://mikebergfornd.com/?p=15 (read, nothing on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/67288/race/20434/election/1222 (questionnaire: 2nd Amendment and teacher-carry questions marked did not answer; no own words)",
+        "blocked: https://ballotpedia.org/Mike_Berg (HTTP 403)",
+        "two web searches on name plus gun words: no statements or gun bill sponsorships found",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill pages and journals: skipped per brief"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:04:49.845Z",
+      "by": "source-collector"
+    }
+  ]
 }

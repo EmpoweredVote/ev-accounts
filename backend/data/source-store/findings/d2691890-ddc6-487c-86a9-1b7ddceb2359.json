@@ -634,5 +634,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidate matches)",
+        "https://ndlegis.gov/node/42126 (member page, fetched; identifies Eric J. Murphy as a state representative, District 43; no gun statements on it)",
+        "https://www.ballotready.org/people/eric-j-murphy (fetched via summary; lists him as a 2026 House District 43 primary candidate; nothing on guns; general-election ballot status not confirmed by me)",
+        "blocked: https://ballotpedia.org/Eric_Murphy_(North_Dakota) (403)",
+        "web search x2 on name plus gun words: nothing on the subject in his own words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://ndlegis.gov/assembly/69-2025/regular/member-video/representative/emurphy.html",
+        "not reviewed: https://www.yahoo.com/news/articles/rep-eric-murphy-announces-reelection-153600300.html",
+        "campaign site: none found",
+        "not reviewed: https://www.reportcard.ndunited.org/2025/by-legislator/rep-eric-james-murphy-nd-district-43"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:06:47.666Z",
+      "by": "source-collector"
+    }
+  ]
 }

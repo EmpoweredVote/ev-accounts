@@ -2,35 +2,6 @@
   "politician_id": "3f212c6d-5576-4038-b017-31921c659043",
   "findings": [
     {
-      "id": "61fb8f2bad8d97060a24e30bc39999c1a0a131e5931f6d44b0248952c2e11185",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-02-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "yea",
-      "motion": "final passage of the amended bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "near-unanimous"
-      },
-      "note": "ND House, final passage of the amended bill (second reading), 2017-02-20: yea (tally 83–9); census gate: near-unanimous.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "a6b26dd7b6147ac60b60779bbe4873c80ed072632dda32ea6754bf4049f742ee",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1148.html",
@@ -2163,7 +2134,105 @@
           "sha256": "ee19f2453c83bbfa4c8bc289cf8c0fcf9a4d4c392c9381c879c30c7a3968c808"
         }
       }
+    },
+    {
+      "id": "4db523fc32ae731fae5e15f5938298e60149138d0d46fb19e32bdf18797d1e56",
+      "kind": "own-words",
+      "url": "https://news.prairiepublic.org/politics-government/2018-12-21/bismarck-lawmaker-reviving-a-guns-in-schools-bill",
+      "date": "2018-12-21",
+      "date_precision": "day",
+      "passage": "This would leave the opportunity available in state law for a school district to do this,\" Heinert said. \"There are no mandates.",
+      "note": "Quoted by Prairie Public NewsRoom on his plan to revive a bill letting a school board pick designated people to carry weapons in school; he describes it as optional, aimed at small schools without a resource officer.",
+      "subjects": [
+        "carry guns in schools",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:08:27.001Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfe6ad0a1f0c7327e51b54b1e71aa798be5949fddb21314c7b039feca6552e06",
+      "kind": "own-words",
+      "url": "https://news.prairiepublic.org/politics-government/2018-12-21/bismarck-lawmaker-reviving-a-guns-in-schools-bill",
+      "date": "2018-12-21",
+      "date_precision": "day",
+      "passage": "They already have their responsibilities in a school shooting,\" Heinert said. \"They have the kids to worry about, and we don't need to add more responsibilities to the teaching staff.",
+      "note": "Quoted by Prairie Public NewsRoom: he says he would prefer the person chosen by the school board not be a teacher.",
+      "subjects": [
+        "carry guns in schools",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:08:27.001Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cb5dc52e4aab689ffa5336480879cd8e01977eaa477a5361e7a5c21d0065233",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "yea",
+      "motion": "final passage of the amended bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, final passage of the amended bill (second reading), 2017-02-21: yea (tally 83–9); census gate: near-unanimous.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in schools (designated personnel)",
+        "carry hidden guns in government buildings",
+        "carry permits",
+        "second amendment",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature member page https://ndlegis.gov/node/30922 (read; names Rep. Pat D. Heinert, Bismarck; 2017 assembly page)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Patrick_Heinert (403)",
+        "campaign site: not found in search",
+        "web search: one news search on name plus gun words; two news stories read",
+        "nothing on the subject from a newsletter, questionnaire or interview found",
+        "status not confirmed for the 2026 ballot; no page found saying he lost a primary or withdrew",
+        "AP story on lawmaker carry in public buildings (https://infonews.ca/news/1913941/north-dakota-may-let-lawmakers-take-guns-in-public-buildings/): only a short quoted phrase, not saved"
+      ],
+      "found": 2,
+      "at": "2026-11-19T16:08:27.001Z",
+      "by": "source-collector"
+    }
+  ]
 }

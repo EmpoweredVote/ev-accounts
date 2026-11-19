@@ -325,5 +325,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-free zones",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "in scope: sitting state House member for District 40, elected in 2024 (page: https://ndlegis.gov/node/49505); not on the 2026 ballot as far as found",
+        "On the Record (0 appearances, 0 name matches)",
+        "official legislature member page https://ndlegis.gov/node/49505: read, biography only, nothing on the subject",
+        "campaign announcement story https://minotdailynews.com/news/local-news/2024/02/district-40-candidate-seeks-state-house-seat: read, nothing on the subject (focus on substance abuse, family issues, taxes, small government)",
+        "campaign announcement release https://mydakotan.com/2024/02/bolinske-announces-dis-40-run/: read, nothing on the subject",
+        "local radio story https://am1100theflag.com/?p=76226: not reviewed (fetch returned no text)",
+        "blocked: https://ballotpedia.org/Macy_Bolinske (empty page)",
+        "news search on name plus gun words: only vote-tracker pages, no own words",
+        "sponsor list: covered by bulk bill data",
+        "House and Senate floor votes 2017-2025: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:06:48.952Z",
+      "by": "source-collector"
+    }
+  ]
 }

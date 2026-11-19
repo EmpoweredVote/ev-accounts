@@ -2,35 +2,6 @@
   "politician_id": "6dd24c19-e89b-43a3-b487-b642693ef701",
   "findings": [
     {
-      "id": "eee7d4a7fc81855ca9d16b77d47242b10bc3bf9be1c8501b4eee677971f1e913",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-03-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "yea",
-      "motion": "final passage of the bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "ND Senate, final passage of the bill (second reading), 2017-03-20: yea (tally 34–13); census gate: none.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "51011a70376092195d1a28b3f439f547bc4310635a372465527550321c3984ce",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1042.html",
@@ -1424,6 +1395,35 @@
         "saved_copy": {
           "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2172-2019.engrossed1.pdf",
           "sha256": "4f97a69e9b8adb9d4f7540e39a24aa04db82a125998211fb9d048002d463678b"
+        }
+      }
+    },
+    {
+      "id": "7a88d399c53293e114a6cafa3f9c2ecbd803a525a42381024af45ab8ee83f4fb",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "yea",
+      "motion": "final passage of the bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, final passage of the bill (second reading), 2017-03-21: yea (tally 34–13); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
         }
       }
     }

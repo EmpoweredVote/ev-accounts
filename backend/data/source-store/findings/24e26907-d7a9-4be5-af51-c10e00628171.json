@@ -2,35 +2,6 @@
   "politician_id": "24e26907-d7a9-4be5-af51-c10e00628171",
   "findings": [
     {
-      "id": "eee7d4a7fc81855ca9d16b77d47242b10bc3bf9be1c8501b4eee677971f1e913",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-03-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "yea",
-      "motion": "final passage of the bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "ND Senate, final passage of the bill (second reading), 2017-03-20: yea (tally 34–13); census gate: none.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "51011a70376092195d1a28b3f439f547bc4310635a372465527550321c3984ce",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1042.html",
@@ -1030,7 +1001,64 @@
           "sha256": "c1454d6bfe4c371a02577efeffa74edc0abfa889402150bb948f903203091144"
         }
       }
+    },
+    {
+      "id": "7a88d399c53293e114a6cafa3f9c2ecbd803a525a42381024af45ab8ee83f4fb",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "yea",
+      "motion": "final passage of the bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, final passage of the bill (second reading), 2017-03-21: yea (tally 34–13); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 appearances; nothing on the subject)",
+        "official member page https://ndlegis.gov/biography/brad-bekkedahl (read; confirms District 1 senator, nothing on the subject)",
+        "confirmed on the 2026 general-election ballot for Senate District 1 per a web search summary (won primary; no other known candidate); not read directly",
+        "blocked: https://ballotpedia.org/Brad_Bekkedahl (403)",
+        "blocked: https://goodparty.org/candidate/brad-bekkedahl/north-dakota-state-senate-district-1 (429)",
+        "https://keyzradio.com/brad-bekkedahl-re-election/ (read; re-election news story, nothing on the subject)",
+        "news and web searches on name plus gun, firearm and Second Amendment words (nothing on the subject by him)",
+        "no campaign site found; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:07:27.510Z",
+      "by": "source-collector"
+    }
+  ]
 }

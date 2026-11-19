@@ -272,5 +272,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-free zones",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ndlegis.gov/biography/austin-foss (member page, read; confirms sitting District 44 House member, nothing on the subject)",
+        "https://votefmwf.org/foss (voter guide page, read; nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Austin_Foss (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Austin_Foss (403)",
+        "one news search on name plus gun words: nothing in his own words",
+        "sponsor list: covered by bulk bill data",
+        "no campaign site found separate from the member page and voter guide; not reviewed: https://www.pbs.org/video/north-dakota-legislative-review-representative-austin-foss-0gmso9 (video)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:06:14.889Z",
+      "by": "source-collector"
+    }
+  ]
 }

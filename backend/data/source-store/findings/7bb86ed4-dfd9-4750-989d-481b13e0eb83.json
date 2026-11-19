@@ -745,5 +745,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons and magazine limits",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "status: sitting state senator, District 24, term runs to December 2028; not on the 2026 ballot (confirmed by the legislature member page https://ndlegis.gov/node/37975 and a web search)",
+        "On the Record (0 appearances; name search found none)",
+        "the legislature's member page https://ndlegis.gov/node/37975 (read; no statements on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Mike_Wobbema (403)",
+        "web search on name plus gun, firearm, Second Amendment and concealed carry words (nothing from this person on the subject)",
+        "no campaign site or personal issue page found",
+        "not reviewed: news archives beyond one search"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:08:17.702Z",
+      "by": "source-collector"
+    }
+  ]
 }

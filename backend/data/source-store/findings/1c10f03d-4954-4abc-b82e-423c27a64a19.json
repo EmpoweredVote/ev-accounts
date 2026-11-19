@@ -636,5 +636,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "permits to carry",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "repeal of gun laws",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "status: still sitting House member for District 41 through the end of the 2026 term; Wikipedia says he did not seek reelection in 2026, so no 2026 ballot",
+        "On the Record (0 appearances, 0 candidates)",
+        "the legislature's member page https://ndlegis.gov/print/pdf/node/42130 (a biography PDF; fetched, nothing on the subject)",
+        "https://ndlegis.gov/assembly/69-2025/regular/members/house/jjohnson.html (404)",
+        "official site: no separate official or campaign site found; nothing on the subject",
+        "blocked: https://ballotpedia.org/Jorin_Johnson (403)",
+        "https://en.wikipedia.org/wiki/Jorin_Johnson (fetched; nothing on the subject)",
+        "https://www.ballotready.org/people/jorin-james-johnson (fetched, a profile page; no stated gun positions found)",
+        "two web searches on his name plus gun, firearm, concealed carry and Second Amendment words: nothing from him on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:08:16.263Z",
+      "by": "source-collector"
+    }
+  ]
 }

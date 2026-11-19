@@ -2,35 +2,6 @@
   "politician_id": "ba55ea6f-f70b-4970-a9e5-65ee463a3c46",
   "findings": [
     {
-      "id": "bc0ef7d7db22846167762688129472439ac943877c63a99f29c25ede8a47bc06",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-02-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "nay",
-      "motion": "final passage of the amended bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "near-unanimous"
-      },
-      "note": "ND House, final passage of the amended bill (second reading), 2017-02-20: nay (tally 83–9); census gate: near-unanimous.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "efc029e51568e4a913b68d377edae91406038e0c68abf30688b8fdaba5db6b79",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1148.html",
@@ -1854,7 +1825,61 @@
           "sha256": "86b2888785e829991b7e0a964f54d1607f8c93274be3d8b2f4ca0e435d829874"
         }
       }
+    },
+    {
+      "id": "3c228758962de2480790cefec94d21871520a534cff1fe9356456b800d9ec7c2",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "nay",
+      "motion": "final passage of the amended bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, final passage of the amended bill (second reading), 2017-02-21: nay (tally 83–9); census gate: near-unanimous.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "Second Amendment and gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name-matched meetings)",
+        "https://ndlegis.gov/biography/gretchen-dobervich (member page: confirms District 11 Fargo House member, Assistant Minority Leader in the 69th Assembly, still sitting; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Gretchen_Dobervich (fetch returned an empty page)",
+        "not reviewed: campaign site (https://www.gretchendobervich.com did not resolve)",
+        "web search on name plus gun/Second Amendment words (no statement by her found)",
+        "web search on name plus Fargo gun bill (no statement by her found)",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill pages and journals: skipped per brief, covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:07:55.215Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -272,5 +272,38 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings; extract script found no appearances)",
+        "https://ndlegis.gov/node/49653 (member page, read; confirms District 41 Fargo, nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Karen_Grindberg (read; confirms office, nothing on the subject; lead only)",
+        "https://thecandidate.com/states/nd/legislature/house/41/karen-grindberg (read; no positions or quotes listed)",
+        "https://www.ballotready.org/people/karen-grindberg (read; no statements on the subject)",
+        "https://votefmwf.org/?p=504 (read; a different candidate's questionnaire, nothing on this person)",
+        "blocked: https://ballotpedia.org/Karen_Grindberg (empty page, plain fetch returned no body)",
+        "blocked: https://ballotpedia.org/North_Dakota_House_of_Representatives_District_41 (empty page)",
+        "blocked: https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2026_North_Dakota_House_of_Representatives_election (HTTP 525)",
+        "web news search on name plus gun words: nothing tied to this person",
+        "web search on 2026 District 41 race: 2026 ballot status not confirmed by any page I could read; term listed as ending December 1, 2026",
+        "no campaign site found; no questionnaire or interview with her found"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:07:40.114Z",
+      "by": "source-collector"
+    }
+  ]
 }

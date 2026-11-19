@@ -2,35 +2,6 @@
   "politician_id": "d6c31d37-8da8-45f7-adcd-89be2d60f346",
   "findings": [
     {
-      "id": "46a9a214eb3ce6980ff5fb9a098a7de71791276953f6525b087f98d3cb2c6fd5",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-03-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "nay",
-      "motion": "final passage of the bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "ND Senate, final passage of the bill (second reading), 2017-03-20: nay (tally 34–13); census gate: none.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "63a48e72b523367641e71994b0e3ca8fc05b5e940719cbf70ea0339935651d2d",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1190.html",
@@ -1089,7 +1060,63 @@
           "sha256": "8ceaa6e4493c61cf8db71d4010f7c757878f39d624a13d41a8316c6e766e9737"
         }
       }
+    },
+    {
+      "id": "fd1815e3fab15ec69f98ce7c750ed9be0a81fa1dd1336d9d5a7eae9bdd6b2f5a",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "nay",
+      "motion": "final passage of the bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, final passage of the bill (second reading), 2017-03-21: nay (tally 34–13); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member video page for this senator (2023): fetched, a page shell with no statements on the subject",
+        "https://ndlegis.gov/members/judy-lee: not found (404)",
+        "https://ndlegis.gov/assembly/69-2025/regular/members/senators/judy-lee: not found (404)",
+        "blocked: https://ballotpedia.org/Judy_Lee (403 error page, not retried)",
+        "campaign site: no own campaign site found; a local voter-guide profile (https://votefmwf.org/judy-lee) holds only an embedded video I could not read, not reviewed: https://www.youtube.com/watch?v=gcsS_T733WQ",
+        "news and web searches on her name plus gun, firearm, Second Amendment, concealed carry and red flag: only advocacy-group pages listing her as a contact and bill-vote pages already on file; no quote of her on the subject",
+        "scope: search results show her as the District 13 senator seeking re-election in 2026 and winning her June 2026 primary; I could not read the primary article itself"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:08:12.940Z",
+      "by": "source-collector"
+    }
+  ]
 }

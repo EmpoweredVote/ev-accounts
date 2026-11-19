@@ -2,35 +2,6 @@
   "politician_id": "28ec6c73-d550-4b59-b5f8-61166be65f4e",
   "findings": [
     {
-      "id": "eee7d4a7fc81855ca9d16b77d47242b10bc3bf9be1c8501b4eee677971f1e913",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-03-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "yea",
-      "motion": "final passage of the bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "ND Senate, final passage of the bill (second reading), 2017-03-20: yea (tally 34–13); census gate: none.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "51011a70376092195d1a28b3f439f547bc4310635a372465527550321c3984ce",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1042.html",
@@ -1266,7 +1237,60 @@
           "sha256": "e89e05b8fc6e11879fc760e3600189c3b7d688a279d6c3f11b44699a1cec71b9"
         }
       }
+    },
+    {
+      "id": "7a88d399c53293e114a6cafa3f9c2ecbd803a525a42381024af45ab8ee83f4fb",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "yea",
+      "motion": "final passage of the bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, final passage of the bill (second reading), 2017-03-21: yea (tally 34–13); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "carry without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ivoterguide.com/candidate/59973/race/20393/election/1222 (read: State Senator, District 14, 2024 general election; both Second Amendment questionnaire items marked did not answer)",
+        "blocked: https://ballotpedia.org/Jerry_Klein (page came back empty)",
+        "not reviewed: https://ndlegis.gov/assembly/69-2025/members/senate/jerry-klein (404; member page not found)",
+        "one web search on name plus Second Amendment and gun: nothing by him on the subject",
+        "official site / campaign site: no page found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:07:32.703Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -2,35 +2,6 @@
   "politician_id": "76e1837f-348e-4799-8b35-045f98d55ec0",
   "findings": [
     {
-      "id": "46a9a214eb3ce6980ff5fb9a098a7de71791276953f6525b087f98d3cb2c6fd5",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-03-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "nay",
-      "motion": "final passage of the bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "ND Senate, final passage of the bill (second reading), 2017-03-20: nay (tally 34–13); census gate: none.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "51011a70376092195d1a28b3f439f547bc4310635a372465527550321c3984ce",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1042.html",
@@ -1211,7 +1182,66 @@
           "sha256": "c1454d6bfe4c371a02577efeffa74edc0abfa889402150bb948f903203091144"
         }
       }
+    },
+    {
+      "id": "fd1815e3fab15ec69f98ce7c750ed9be0a81fa1dd1336d9d5a7eae9bdd6b2f5a",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "nay",
+      "motion": "final passage of the bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, final passage of the bill (second reading), 2017-03-21: nay (tally 34–13); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and places where guns are allowed",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "status: in scope; a news round-up of the June 2026 primaries and a voter-info profile show the senator won the District 11 primary and is a 2026 general-election candidate",
+        "On the Record (0 appearances, 0 name-matched candidates)",
+        "sponsor list: covered by bulk bill data",
+        "North Dakota legislature bill pages and journals: skipped per brief (covered by bulk bill data)",
+        "not found: the legislature's member page (404 at two guessed addresses: https://ndlegis.gov/assembly/69-2025/regular/members/senate/tim-mathern and https://ndlegis.gov/members/tim-mathern); no official or member page was read",
+        "campaign site: no address found; https://www.timmathern.com did not connect",
+        "blocked: https://ballotpedia.org/Tim_Mathern (403)",
+        "Wikipedia page read: biography only, nothing on the subject",
+        "two news searches on name plus gun words: one 2019 news story (https://hpr1.com/index.php/feature/news/dont-sell-your-gun-and-youre-a-criminal) mentions the senator only in a reporter's paraphrase of a private-sales bill, not a direct quote, so not saved as own words",
+        "advocacy-group and NRA bill-tracking pages from search results: none quote the senator, not saved",
+        "not reviewed: ontheissues.org, vote411, debate or interview videos (not reached within the search)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:06:18.759Z",
+      "by": "source-collector"
+    }
+  ]
 }

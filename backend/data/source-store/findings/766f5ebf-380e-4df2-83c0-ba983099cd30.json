@@ -577,5 +577,57 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "candidate questionnaire at https://www.votefmwf.org/scott-wagner (District 45, appears to be the 2026 race; read via page summary, no gun content found)",
+        "searches confirmed House District 45 member; listed as a 2026 general-election candidate (search result, not confirmed on the ballot page)",
+        "blocked: https://ballotpedia.org/Scott_Wagner_(North_Dakota) (empty page)",
+        "not reviewed: https://www.ndlegis.gov/assembly/69-2025/members/house (404)",
+        "official legislature member page and campaign site: not found",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun/firearm/Second Amendment words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:05:50.693Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/scott-wagner-d5752ac3-f1bb-47c2-918f-f62041bb735f (confirms sitting House District 45 member and 2026 general-election candidate)",
+        "https://www.votefmwf.org/scott-wagner (candidate questionnaire; nothing on the subject)",
+        "https://thecandidate.com/states/nd/legislature/house/45/scott-wagner (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Scott_Wagner_(North_Dakota) (403)",
+        "https://www.ndlegis.gov/members/scott-wagner (404, no member page at that address)",
+        "personal or campaign site: none found",
+        "news search on name plus firearm words: nothing quoting him",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:09:50.571Z",
+      "by": "source-collector"
+    }
+  ]
 }

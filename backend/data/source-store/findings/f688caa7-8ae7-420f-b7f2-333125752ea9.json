@@ -2,35 +2,6 @@
   "politician_id": "f688caa7-8ae7-420f-b7f2-333125752ea9",
   "findings": [
     {
-      "id": "bc0ef7d7db22846167762688129472439ac943877c63a99f29c25ede8a47bc06",
-      "kind": "record",
-      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-02-20",
-      "date_precision": "day",
-      "instrument_id": "ND-HB-1169-2017",
-      "act": "nay",
-      "motion": "final passage of the amended bill (second reading)",
-      "gate_by_topic": {
-        "gun-policy": "near-unanimous"
-      },
-      "note": "ND House, final passage of the amended bill (second reading), 2017-02-20: nay (tally 83–9); census gate: near-unanimous.",
-      "subjects": [
-        "carry a concealed gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
-        "fetched_at": "2026-10-29T23:30:09.001Z",
-        "method": "webfetch",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
-          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
-        }
-      }
-    },
-    {
       "id": "a6b26dd7b6147ac60b60779bbe4873c80ed072632dda32ea6754bf4049f742ee",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1148.html",
@@ -1943,7 +1914,107 @@
           "sha256": "222eb4d48be4b5a936fd1a978c0d3beabbc24d27dd79e72f8aa6d380336e2277"
         }
       }
+    },
+    {
+      "id": "bf7162fe13d1dff461209f07cf3821339705d48e3c3fa3e7b94ba81e59d0e265",
+      "kind": "own-words",
+      "url": "https://ndlegis.gov/assembly/69-2025/testimony/SJUD-1326-20250331-44426-F-SCHNEIDER_MARY.pdf",
+      "date": "2025-03-31",
+      "date_precision": "day",
+      "passage": "You might describe this as a tough on crime bill or a law-and-order bill. It is. But it's not what people call an anti-gun bill. I have absolutely nothing against lawful gun ownership.",
+      "note": "Her written testimony to the Senate Judiciary Committee introducing her HB 1326, which bars a convicted felon who is prohibited from having a firearm from claiming self-defense when using it. She describes the bill as aimed at illegal possession and use by convicted offenders, not at lawful gun owners.",
+      "subjects": [
+        "limits on who may have a gun",
+        "convicted felons and firearms",
+        "lawful gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:08:05.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d0f136b642f0bef30c2f1926da5c13a8215dcfa07b20f1cd34aa35e23343afe",
+      "kind": "own-words",
+      "url": "https://ndlegis.gov/assembly/69-2025/testimony/SJUD-1326-20250331-44426-F-SCHNEIDER_MARY.pdf",
+      "date": "2025-03-31",
+      "date_precision": "day",
+      "passage": "It does not involve responsible firearm owners or hunters. It just penalizes convicted offenders using firearms impermissibly and/or violently in violation of their probation or parole.",
+      "note": "Same testimony: she says HB 1326 reaches only convicted offenders who use a firearm in violation of probation or parole.",
+      "subjects": [
+        "limits on who may have a gun",
+        "convicted felons and firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:08:05.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c228758962de2480790cefec94d21871520a534cff1fe9356456b800d9ec7c2",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1169-2017",
+      "act": "nay",
+      "motion": "final passage of the amended bill (second reading)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, final passage of the amended bill (second reading), 2017-02-21: nay (tally 83–9); census gate: near-unanimous.",
+      "subjects": [
+        "carry a concealed gun without a licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+          "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "armed felons and self-defense",
+        "lawful gun ownership",
+        "gun limits for convicted offenders",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "legislature member page for 2025 (https://ndlegis.gov/assembly/69-2025/regular/member-video/representative/mschneider.html), read; no gun material",
+        "committee testimony page on HB 1326 (https://ndlegis.gov/assembly/69-2025/testimony/SJUD-1326-20250331-44426-F-SCHNEIDER_MARY.pdf), read in full",
+        "ballot-information profile (https://www.ballotready.org/people/mary-schneider-c9df253d-4fee-4dd0-9ecd-e76b6ccee23c): confirms current House seat and a 2026 Senate District 21 candidacy",
+        "blocked: https://ballotpedia.org/Mary_Schneider (403)",
+        "one web search on name plus Second Amendment/firearms: no further own-words sources",
+        "not reviewed: campaign site, newsletters, questionnaires (no pages found in the search)"
+      ],
+      "found": 2,
+      "at": "2026-11-19T16:08:05.061Z",
+      "by": "source-collector"
+    }
+  ]
 }

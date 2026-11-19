@@ -578,5 +578,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "scope confirmed: her member page on https://ndlegis.gov/biography/lisa-finley-deville lists her as a House member for District 4A, including the 70th Assembly (2027)",
+        "On the Record (0 meetings)",
+        "official legislature member page and 2025 member-video page (https://ndlegis.gov/assembly/69-2025/regular/member-video/representative/lfinleydeville.html): titles only, nothing on the subject",
+        "no separate campaign site found; none reviewed",
+        "blocked: https://ballotpedia.org/Lisa_Finley-DeVille (403)",
+        "web search (2 queries, gun and firearm words with her name): nothing on the subject in her own words",
+        "sponsor list: covered by bulk bill data",
+        "legislature bill pages and journals: skipped per brief, covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:04:40.687Z",
+      "by": "source-collector"
+    }
+  ]
 }

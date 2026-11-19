@@ -1268,5 +1268,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: now serves as lieutenant governor (sworn in 2024), so not a 2026 candidate; no longer a House member (served 2019-2024); still a sitting state official",
+        "On the Record (0 appearances)",
+        "official lieutenant governor page https://www.governor.nd.gov/lt-governor-tammy-miller (read; biography only, nothing on the subject)",
+        "member page https://ndlegis.gov/node/33677 (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Michelle_Strinden (bot check, HTTP 202)",
+        "web searches on name plus gun, firearm, Second Amendment, concealed carry terms: nothing on the subject by this person; a Vote Smart gun statement found was for a different Michelle (Florida), not used; a news story on a different candidate's gun ad was not about her",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Vote Smart candidate page https://votesmart.org/candidate/biography/181415 (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:07:19.141Z",
+      "by": "source-collector"
+    }
+  ]
 }

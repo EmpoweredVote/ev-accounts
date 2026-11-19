@@ -1,0 +1,30 @@
+{
+  "politician_id": "1e8c4303-944b-4279-92d0-4da2c877f614",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "concealed carry",
+        "assault-style weapons",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "official commission page: https://psc.nd.gov/commission/meet/Kringstad.php (read, nothing on the subject)",
+        "news story on her 2026 campaign announcement: https://www.minotdailynews.com/news/local-news/2026/01/appointee-announces-campaign-for-psc (nothing on the subject; shows she is a sitting Public Service Commissioner, not a legislator, running in the 2026 general election)",
+        "blocked: https://ballotpedia.org/Jill_Kringstad (403)",
+        "web news search on name plus gun words: nothing on the subject",
+        "campaign site: not found by search; not reviewed",
+        "not reviewed: https://www.ballotready.org/people/jill-kringstad"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:04:51.007Z",
+      "by": "source-collector"
+    }
+  ]
+}
