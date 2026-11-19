@@ -72,14 +72,16 @@ With it, at `STOP write`:
 
 ## After the run
 
+One command, not ten. It runs `close_state.py` with every leg's transcripts and yours, and prints the facts your
+final report needs (`D/DESK-REPORT.md`):
+
 ```bash
-python3 -I scripts/stage5/close_state.py --profile {{PROFILE}} --state {{xx}} --batch {{xx}}-01 \
-  $(python3 -I scripts/stage5/leg.py sessions --profile {{PROFILE}} --state {{xx}}) --session <this desk session's .jsonl>
+python3 -I scripts/stage5/desk.py close --profile {{PROFILE}} --state {{xx}} --release
 ```
 
-Fill the rows `MEASURES.md` marks `__`. Tell the runner the result in plain English: what was written, what is
-held, and every stop that was not a listed one. Open the pull request for the store files only when the runner
-says so.
+Fill any row it lists as still marked `__` in `MEASURES.md`. Then tell the runner the result in plain English, from
+that report: what was written, what is held, and every stop that was not a listed one. Do not go back into the
+logs for what the report already holds. Open the pull request for the store files only when the runner says so.
 
 ## Hard rules
 

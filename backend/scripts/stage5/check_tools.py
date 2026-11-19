@@ -394,6 +394,46 @@ def reader_dry_batch_verdict_fails_on_each_merge_and_gate_fault(t):
 
 
 @check
+def desk_start_picks_the_state_and_the_step_and_close_gathers_the_report(t):
+    """2026-11-19: the desk is a desktop session that re-reads about 135,000 tokens on every step, and about twenty of
+    its steps were the start-up and the close-out (Kansas: 63 steps, 0.97M units). `desk.py` does each in one command.
+    Its choices are the hand-off's: the queue's order, never a 🛑 row, a state waiting for approval before anything,
+    never a held lease, a reader session when no reader is proved. `close` refuses before leg B has ended."""
+    os.makedirs(t); sys.path.insert(0, TOOLS)
+    import importlib; dk = importlib.import_module('desk'); importlib.reload(dk)
+    sys.path.remove(TOOLS)
+    track = '**x**\n| state | status | run |\n|---|---|---|\n| KS | done | 1 of 1 |\n| CO | not started |  |\n| ND | part |  |\n| ME | not started |  |\n| TX | no roster |  |\n'
+    st = dk.tracker_status(track); assert st == {'KS': 'done', 'CO': 'not started', 'ND': 'part', 'ME': 'not started', 'TX': 'no roster'}, st
+    assert dk.tracker_status('progress: NO VERDICT') == {}, 'no table is no status, never "all not started"'
+    q = '| Order | State | xx | Site | Gaps |\n|---|---|---|---|---|\n| 1 | Kansas | ks | a | b |\n| 🛑 | Maine | me | blocked | |\n| 2 | North Dakota | nd | a | b |\n| 3 | Colorado | co | a | b |\n'
+    rows = dk.queue_rows(q); assert [r[2] for r in rows] == ['ks', 'me', 'nd', 'co'] and rows[1][3] and not rows[2][3], rows
+    assert dk.pick_state(rows, st)[0][2] == 'nd', 'the first open row in the queue\'s order: not the done one, not the 🛑 one'
+    row, why = dk.pick_state(rows, {**st, 'KS': 'to approve'}); assert row is None and 'waits for approval' in why
+    row, why = dk.pick_state(rows, {'KS': 'done', 'ME': 'not started'}); assert row is None and 'Maine' in why, why
+    f = {'lease': '', 'legiscan': False, 'openstates': True, 'profile': True, 'proved': True, 'reader': True}
+    assert dk.decide_step(f)[0] == 'desk'
+    for k in ('profile', 'proved', 'reader'): assert dk.decide_step({**f, k: False})[0] == 'reader', k
+    assert dk.decide_step({**f, 'lease': 'state:nd someone'})[0] == 'stop' and dk.decide_step({**f, 'proved': False, 'lease': 'x'})[0] == 'stop', 'a held lease stops before anything'
+    assert dk.decide_step({**f, 'legiscan': True, 'openstates': False, 'profile': False, 'proved': False, 'reader': False})[0] == 'desk', 'LegiScan data needs no reader'
+    S = f'{t}/s5'; D = f'{S}/xx/desk'; B = f'{S}/write/xx-01'; os.makedirs(D); os.makedirs(B); os.makedirs(f'{S}/xx/run')
+    open(f'{B}/PREVIEW.md', 'w').write('# preview\nseated 9\n\nWRITTEN (desk)\n- read-back: seated 9. Matches the preview.\n')
+    open(f'{D}/QUESTION-A-1.md', 'w').write('# stop 1\nfive bills\n'); open(f'{D}/ANSWER-A-1.md', 'w').write('Yes to all five\n'); open(f'{D}/QUESTION-B-1.md', 'w').write('# rungs\n')
+    open(f'{D}/LOG-B.md', 'w').write('- B1 done\n- B3 NOT ON CARD: the pre-fill had to run again\n- B7 affected: 1 holds a finding, 0 to code again\n- step 7 cross-check 343, 0 unmapped\n')
+    open(f'{S}/xx/run/step-1.log', 'w').write('  $ npx tsx scripts/stage5/record-script.ts adopt\nstanding check passed: 10 of 10 agree.\n')
+    open(f'{B}/desk-check.json', 'w').write('{"roll_calls_compared": 3, "differences": 0}')
+    open(f'{S}/xx/MEASURES.md', 'w').write('| People | 9 |\n| Runner stops | __ |\n| Main session 1 | 0.5M |\n')
+    out = '\n'.join(dk.digest(S, 'xx', 'xx-01'))
+    for want in ('Matches the preview', "'Yes to all five'", 'NO ANSWER FILE', 'NOT ON CARD: the pre-fill', '0 to code again', '10 of 10', '"differences": 0', '| People | 9 |', '| Runner stops | __ |', '0 unmapped'):
+        assert want in out, (want, out)
+    assert 'record-script.ts adopt' not in out and 'Main session 1' not in out and 'seated 9\n\n' not in out, 'commands, per-session rows and the part before WRITTEN are left out'
+    assert 'Step 9 repair\n\n- nothing on file' in out, 'a part with no file says so'
+    os.remove(f'{B}/PREVIEW.md'); assert 'was the batch written?' in '\n'.join(dk.digest(S, 'xx', 'xx-01'))
+    json.dump({'topic_key': 'tp', 'stage5': S, 'label': 'l', 'research': t}, open(f'{t}/p.json', 'w'))
+    p = run('desk.py', 'close', '--profile', f'{t}/p.json', '--state', 'xx', ok=False); assert p.returncode == 2 and 'leg B has not ended' in p.stdout, p.stdout
+    assert not os.path.exists(f'{D}/DESK-REPORT.md')
+
+
+@check
 def recipe_keeps_an_earlier_pass_of_step_0_aside(t):
     """Colorado co-01 (2026-11-19): three codes changed in a round after the recipe had started; step 0 from the start
     stopped because the writer refuses to overwrite research-stage5-0.csv, and a session renamed files by hand. The
