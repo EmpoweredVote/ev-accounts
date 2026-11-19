@@ -38,8 +38,11 @@ settle     closes a flag: moves `flag` to `question`, writes --answer to `answer
            unknown bill or an empty answer is refused (exit 2) and nothing is written. The rung is not changed: when
            the answer changes it, edit `rung`, `deciding_words` and `why` and run `check` again.
 affected   after bills joined the table late (a searcher named them): `affected <table.json> <bill id>... --ids <ids
-           file> [--out <ids file>]` lists who must be coded again: only a person with a counted Yes act on one of
-           those bills that HAS a rung. A no-rung bill moves no one. A flagged bill is refused: settle it first.
+           file> [--out <ids file>]` lists who must be coded again: a person with a counted Yes act on one of
+           those bills that HAS a rung, and a person whose ONLY findings on the topic are on them (their "no stance"
+           can no longer stand, whatever the act). A no-rung bill moves no one else. A flagged bill is
+           refused: settle it first. No one holds a finding on a named bill: exit 2, the pre-fill has not run since
+           the bills joined the store.
 
 Why: in Georgia the coders read the same 47 bills 204 times, and the rung each bill supports was argued afresh in
 each batch; the both-sides people were found only at the early check (review 2026-11-12, change 2).
@@ -98,6 +101,10 @@ def check(table, store, ids, rungs):
                 if len(set(keys)) < len(keys) or any(not k[2] and sum(1 for x in keys if x[:2] == k[:2]) > 1 for k in keys):
                     problems.append(f'{bid}: per_vote "votes" has two entries for one chamber on one day; give each its tally')
         flag = row.get('flag') or ''
+        # Colorado 2026-11-19: the newest session's texts could not be fetched and seven bills were stored from the
+        # legislature's own summary. A rung read from a summary is the runner's to check, bill by bill.
+        if not flag.strip() and not (row.get('answered') or '').strip() and 'NO BILL TEXT READ' in str((json.load(open(paths[bid])).get('provenance') or {}).get('fetched_by') or ''):
+            problems.append(f'{bid}: stored from a summary, no bill text read: its row needs a flag (the runner checks the rung at stop 1), then `settle`')
         if flag.strip() and ANSWERED.search(flag): problems.append(f'{bid}: the flag reads as answered ("{flag.strip()[-60:]}"); a flag is an open question. Close it with `settle`')
         elif flag and not flag.strip(): problems.append(f'{bid}: the flag is blank space, not ""')
         elif flag.strip() and (row.get('answered') or '').strip(): problems.append(f'{bid}: flagged and answered at once; a new question on a settled bill replaces `answered`')
@@ -137,22 +144,29 @@ def questions(table, store, ids, rungs):
 
 
 def affected(table, store, ids, bills):
-    """Who must be coded again after `bills` joined the table: only a person with a counted Yes act on one of them
-    that has a rung. A bill with no rung seats no one and moves no one: a No, an absence, or any act on a no-rung bill
-    cannot change an outcome or a rung. Ohio 2026-11-16: three late bills, all no rung, 25 people coded again, 0 changed."""
+    """Who must be coded again after `bills` joined the table. (1) A person with a counted Yes act on one of them that
+    has a rung: a No, an absence, or any act on a no-rung bill cannot change a rung. Ohio 2026-11-16: three late bills,
+    all no rung, 25 people coded again, 0 changed. (2) A person whose only findings on the topic are on these bills:
+    before them the person had nothing on file and was coded "no stance", which an on-topic finding ends whatever the act.
+    Colorado 2026-11-19: two members who sat only in the newest session voted No on the late bills, were not listed,
+    and the early check stopped on their "no stance" codes."""
     unknown = [b for b in bills if b not in table['bills']]
     if unknown: raise SystemExit(f'not in the table: {", ".join(unknown)}')
     open_q = [b for b in bills if (table['bills'][b].get('flag') or '').strip()]
     if open_q: raise SystemExit(f'still flagged, settle first (the rung is not known yet): {", ".join(open_q)}')
-    hit, touched = {}, set()
+    hit, touched, first = {}, set(), set()
     for pid in ids:
+        other = False
         for f in person_findings(store, pid, table['topic_key']):
             bid = f.get('instrument_id')
-            if bid not in bills: continue
+            if bid not in bills:
+                other = True  # any other finding on the topic, a vote or the person's own words: they were coded on it
+                continue
             touched.add(pid)
             if table['bills'][bid].get('rung') is not None and f.get('act') in YES and not gated(f, table['topic_key']):
                 hit.setdefault(pid, set()).add(bid)
-    return hit, touched
+        if pid in touched and not other: first.add(pid)
+    return hit, touched, first
 
 
 def settle(table, bills, every, answer):
@@ -233,13 +247,22 @@ def main():
     if cmd == 'affected':
         if not ids: raise SystemExit('affected needs --ids')
         bills = positional(3, USAGE)[2:]
-        hit, touched = affected(table, store, ids, bills)
+        hit, touched, first = affected(table, store, ids, bills)
+        if not touched and opt('--none-ok') != 'yes':
+            # Colorado 2026-11-19: `affected` said 0 for seven voted bills, because no finding existed on them yet
+            print(f'NO VERDICT: none of {len(ids)} people holds a finding on any of the {len(bills)} bill(s). Findings are written by the '
+                  'pre-fill: run topic:stage5-prefill for this unit again, now that the bills are in the store, then ask again. '
+                  '(Bills nobody in the batch voted on or sponsored: pass `--none-ok yes`.)')
+            sys.exit(2)
+        again = sorted(set(hit) | first)
         dest = opt('--out')
-        if dest: open(dest, 'w').write(''.join(p + '\n' for p in sorted(hit)))
-        print(f'{len(bills)} bill(s): {len(touched)} of {len(ids)} people hold a finding on one; {len(hit)} hold a counted Yes act on one WITH a rung'
-              + (f' -> {dest}' if dest else ''))
-        for b in bills: print(f"  {b}: rung {table['bills'][b].get('rung')}; {sum(1 for v in hit.values() if b in v)} to code again")
-        print('Code again only the people listed. ' + ('None: no code can change, so no round is needed.' if not hit else 'Run them as one round (run_state.py --round …).'))
+        if dest: open(dest, 'w').write(''.join(p + '\n' for p in again))
+        only_first = sorted(first - set(hit))
+        print(f'{len(bills)} bill(s): {len(touched)} of {len(ids)} people hold a finding on one; {len(hit)} hold a counted Yes act on one WITH a rung; '
+              f'{len(only_first)} more hold their first finding on the topic here; {len(again)} to code again' + (f' -> {dest}' if dest else ''))
+        for b in bills: print(f"  {b}: rung {table['bills'][b].get('rung')}; {sum(1 for v in hit.values() if b in v)} with a counted Yes")
+        if only_first: print('  first finding (a "no stance" code cannot stand): ' + ', '.join(only_first))
+        print('Code again only the people listed. ' + ('None: no code can change, so no round is needed.' if not again else 'Run them as one round (run_state.py --round …).'))
         return
     if cmd == 'votes':
         ds, state = opt('--ds', required=True, usage=USAGE), opt('--state', required=True, usage=USAGE)

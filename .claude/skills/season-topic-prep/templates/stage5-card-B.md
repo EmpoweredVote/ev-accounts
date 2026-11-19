@@ -108,9 +108,12 @@ its own measurement and the runner's ruling for this topic (STAGE5 "Pilot rule")
 {{/SKIP}}
 
 **B7. Bills the searchers named.** List bill ids in the new findings that have no stored bill. Fill those on the
-question and add their bill-table rows (settle any flag with the runner first). Then ask who can move:
+question and add their bill-table rows (settle any flag with the runner first). Run the pre-fill again (card A's
+A4 command): it writes the findings on the new bills, and until then nobody holds one. Then ask who can move:
 `bill_table.py affected {{S}}/bill-table-{{xx}}.json <new bill ids> --ids {{S}}/batches/{{xx}}-ids.txt --out <file>`.
-Re-code only the people it lists (`run_state.py … --round <name> --ids <file>`); when it lists none, no round.
+"NO VERDICT" means the pre-fill has not run. Re-code only the people it lists
+(`run_state.py … --round <name> --ids <file>`); when it lists none, no round. After a round that changes codes once
+the recipe has started, run the recipe from step 0 again: it keeps the earlier pass aside itself.
 
 **B8. Early check.**
 
