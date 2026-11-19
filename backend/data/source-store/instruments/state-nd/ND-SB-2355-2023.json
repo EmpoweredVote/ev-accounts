@@ -1,0 +1,283 @@
+{
+  "id": "ND-SB-2355-2023",
+  "scope": "state:nd",
+  "title": "SB2355 (68th Legislative Assembly (2023-24)): A BILL for an Act to amend and reenact section 62.1-02-05 of the North Dakota Century Code, relating to possession of a firearm or dangerous weapon; and to provide a penalty.",
+  "urls": [
+    "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo2355.html",
+    "https://ndlegis.gov/assembly/68-2023/regular/documents/23-1023-02000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Diane Larson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ad6ab7cf-a53c-4fb8-8fa9-f52e449bc318"
+    },
+    {
+      "name": "Dale Patten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05ab1864-e26b-4e55-b086-418fa7ba6a80"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-02-08",
+      "body": "ND Senate",
+      "motion": "Senate Second reading, failed to pass, yeas 21 nays 25",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 25,
+      "absent": 1,
+      "note": "ndlegis.gov roll call (read from the legislature) 90235383 https://ndlegis.gov/assembly/68-2023/regular/journals/sr-dailyjnl-25.pdf#Page460-SB2355",
+      "members": [
+        {
+          "name": "Ryan Braunberger",
+          "vote": "yea",
+          "politician_id": "86c6b5b8-27a1-4ad5-9969-d914748af34d"
+        },
+        {
+          "name": "Randy Burckhard",
+          "vote": "yea",
+          "politician_id": "bdda4ce8-9bf9-41ad-a2fc-6440f05fe31c"
+        },
+        {
+          "name": "Sean Cleary",
+          "vote": "yea",
+          "politician_id": "6968b4f1-a43e-4e13-aeb8-546614e58595"
+        },
+        {
+          "name": "Cole Conley",
+          "vote": "yea",
+          "politician_id": "43fc2a01-f32c-4971-bab9-803fcfebe90f"
+        },
+        {
+          "name": "Dick Dever",
+          "vote": "yea",
+          "politician_id": "f4069b41-a104-44a7-a055-587f094b04cf"
+        },
+        {
+          "name": "Mike Dwyer",
+          "vote": "yea",
+          "politician_id": "f36f8fa9-11d5-4647-9d85-69c8a113ddcf"
+        },
+        {
+          "name": "Robert Erbele",
+          "vote": "yea",
+          "politician_id": "32bd0472-00a6-407c-a44f-75a89beed85d"
+        },
+        {
+          "name": "Kathy Hogan",
+          "vote": "yea",
+          "politician_id": "c3d3194d-204c-43fa-a3d3-c167db41039d"
+        },
+        {
+          "name": "David Hogue",
+          "vote": "yea",
+          "politician_id": "428c61e6-9b2f-4cfb-af39-a4060c1f13f1"
+        },
+        {
+          "name": "Curt Kreun",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Larson",
+          "vote": "yea",
+          "politician_id": "ad6ab7cf-a53c-4fb8-8fa9-f52e449bc318"
+        },
+        {
+          "name": "Judy Lee",
+          "vote": "yea",
+          "politician_id": "d6c31d37-8da8-45f7-adcd-89be2d60f346"
+        },
+        {
+          "name": "Larry Luick",
+          "vote": "yea",
+          "politician_id": "6dd24c19-e89b-43a3-b487-b642693ef701"
+        },
+        {
+          "name": "Tim Mathern",
+          "vote": "yea",
+          "politician_id": "76e1837f-348e-4799-8b35-045f98d55ec0"
+        },
+        {
+          "name": "Dale Patten",
+          "vote": "yea",
+          "politician_id": "05ab1864-e26b-4e55-b086-418fa7ba6a80"
+        },
+        {
+          "name": "Bob Paulson",
+          "vote": "yea",
+          "politician_id": "6b091d13-926e-41a1-b16a-079a61782b05"
+        },
+        {
+          "name": "Merrill Piepkorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Roers",
+          "vote": "yea"
+        },
+        {
+          "name": "Dean Rummel",
+          "vote": "yea",
+          "politician_id": "3a549914-7d6c-4752-90af-cebbf05fe459"
+        },
+        {
+          "name": "Jonathan Sickler",
+          "vote": "yea",
+          "politician_id": "ac891f2c-ebc9-4e6c-a32a-211e4ad1ce99"
+        },
+        {
+          "name": "Mark Weber",
+          "vote": "yea",
+          "politician_id": "9edca973-ef71-4f2c-a919-9c2a28dcd6ee"
+        },
+        {
+          "name": "Michelle Axtman",
+          "vote": "nay",
+          "politician_id": "e8174007-e25e-46ac-8b91-3e183008d0da"
+        },
+        {
+          "name": "Jeff Barta",
+          "vote": "nay",
+          "politician_id": "dd2eb5e7-443a-4ca5-bfe1-953e1d0af73e"
+        },
+        {
+          "name": "Todd Beard",
+          "vote": "nay",
+          "politician_id": "6d66cf34-080b-42dc-9e46-91b97614f20c"
+        },
+        {
+          "name": "Brad Bekkedahl",
+          "vote": "nay",
+          "politician_id": "24e26907-d7a9-4be5-af51-c10e00628171"
+        },
+        {
+          "name": "Keith Boehm",
+          "vote": "nay",
+          "politician_id": "3b1f437f-f5f7-48af-8df2-3aa87306ec55"
+        },
+        {
+          "name": "David Clemens",
+          "vote": "nay",
+          "politician_id": "5220cad5-2991-4a73-89cb-68c854d700eb"
+        },
+        {
+          "name": "Kyle Davison",
+          "vote": "nay",
+          "politician_id": "f4c4f0ef-4d52-473a-9b66-d532de4db8c9"
+        },
+        {
+          "name": "Jay Elkin",
+          "vote": "nay"
+        },
+        {
+          "name": "Judy Estenson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan Kannianen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jerry Klein",
+          "vote": "nay",
+          "politician_id": "28ec6c73-d550-4b59-b5f8-61166be65f4e"
+        },
+        {
+          "name": "Karen Krebsbach",
+          "vote": "nay"
+        },
+        {
+          "name": "Doug Larsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Randy Lemm",
+          "vote": "nay",
+          "politician_id": "78d0c120-523e-4da7-ae27-044914283464"
+        },
+        {
+          "name": "Jeff Magrum",
+          "vote": "nay",
+          "politician_id": "507424fa-e790-4f7e-8149-44e04a2f0496"
+        },
+        {
+          "name": "Scott Meyer",
+          "vote": "nay",
+          "politician_id": "bff0c814-b710-4eb1-9d99-53ed31402272"
+        },
+        {
+          "name": "Janne Myrdal",
+          "vote": "nay",
+          "politician_id": "070953d8-cc4a-449f-b6e7-7c5861c9f260"
+        },
+        {
+          "name": "Kristin Roers",
+          "vote": "nay",
+          "politician_id": "ebdce33f-2914-49df-ad70-aa53e296c16f"
+        },
+        {
+          "name": "David Rust",
+          "vote": "nay"
+        },
+        {
+          "name": "Don Schaible",
+          "vote": "nay",
+          "politician_id": "d464ccad-ef49-4c08-8ae6-e15fc49a80d7"
+        },
+        {
+          "name": "Ron Sorvaag",
+          "vote": "nay",
+          "politician_id": "bb95ddd0-16c5-4d92-b821-9cced7b4a835"
+        },
+        {
+          "name": "Shawn Vedaa",
+          "vote": "nay"
+        },
+        {
+          "name": "Terry Wanzek",
+          "vote": "nay",
+          "politician_id": "cf367c3d-f926-4354-8534-94f15f74f0fb"
+        },
+        {
+          "name": "Kent Weston",
+          "vote": "nay",
+          "politician_id": "3ec3ae96-475b-478f-ae1c-0c59610b85ff"
+        },
+        {
+          "name": "Mike Wobbema",
+          "vote": "nay",
+          "politician_id": "7bb86ed4-dfd9-4750-989d-481b13e0eb83"
+        },
+        {
+          "name": "Greg Kessel",
+          "vote": "absent",
+          "politician_id": "4291d43a-2d47-48af-bee5-bf17b89830f5"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-1023-02000.pdf)",
+    "fetched_at": "2026-11-19T15:30:47.757172Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2355-2023.introduced.pdf",
+      "sha256": "c1454d6bfe4c371a02577efeffa74edc0abfa889402150bb948f903203091144"
+    },
+    "note": "Version read: introduced, as filed (document 23-1023-02000). Failed on Senate second reading, yeas 21 nays 25, 2023-02-08. Section 1 amends 62.1-02-05, so struck and added words run together. Which of subsection 1(b) and 1(c) are kept is unclear, and the opening of subsection 6 (\"violates this section ... infraction\" versus \"subdivision a of subsection 1\") shows strike and add run together; the penalty is quoted only in its plainly new class A and class B parts. Words in subsections 1 and 6 may be struck; check the page image. Not quoted: the many exemptions in subsection 2 (except (l) and (p)), kept for context."
+  },
+  "operative_text": "Section 1 (N.D.C.C. 62.1-02-05(1)): An individual may not possess a firearm or dangerous weapon at:\nSection 1 (N.D.C.C. 62.1-02-05(1)(a)): A school or school-sponsored event on school property;\nSection 1 (N.D.C.C. 62.1-02-05(2)(l)): An individual in a publicly owned or operated rest area or restroom;\nSection 1 (N.D.C.C. 62.1-02-05(2)(p)): An individual authorized to carry a concealed weapon on school property under section 62.1-02-14.\nSection 1 (N.D.C.C. 62.1-02-05(6)(a)): A class A misdemeanor if the individual is in possession of a firearm.\nSection 1 (N.D.C.C. 62.1-02-05(6)(b)): A class B misdemeanor if the individual is in possession of a dangerous weapon."
+}

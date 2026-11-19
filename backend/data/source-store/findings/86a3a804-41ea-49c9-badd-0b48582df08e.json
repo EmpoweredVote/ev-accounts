@@ -1,0 +1,97 @@
+{
+  "politician_id": "86a3a804-41ea-49c9-badd-0b48582df08e",
+  "findings": [
+    {
+      "id": "d9d547b9f9157e41f024ae4a11389bd42674cfb0cda160072286a0e57d4a2aaa",
+      "kind": "own-words",
+      "url": "https://attorneygeneral.nd.gov/attorney-general-wrigley-announces-launch-of-concealed-weapon-license-validation-tool-for-firearms-dealers/",
+      "date": "2025-08-14",
+      "date_precision": "day",
+      "passage": "“This validation tool enhances the speed and reliability of firearms transactions while protecting the privacy of concealed weapon license holders.” said Attorney General Drew Wrigley “It is a straightforward way for dealers to comply with state and federal requirements using the most current and accurate licensing data, always ensuring the rights and privacy of the holder.”",
+      "note": "Quote in his office's release announcing an online tool that lets gun dealers check whether a buyer's concealed weapon licence is active during a purchase.",
+      "subjects": [
+        "concealed weapon licence used in gun purchase checks",
+        "gun dealer sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:06:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b220c0d3e2b363f1c066e225f9dbf64ae5b881d5ba6bdb56e980899caf4972c0",
+      "kind": "own-words",
+      "url": "https://attorneygeneral.nd.gov/attorney-general-wrigley-issues-statement-on-supreme-courts-nra-v-vullo-decision/",
+      "date": "2024-05-31",
+      "date_precision": "day",
+      "passage": "“With this ruling, the Supreme Court has helped to rectify the wrongs perpetrated against the NRA by New York officials who appear to have abused their regulatory powers to threaten financial institutions that did business with a policy group they disfavored.”",
+      "note": "Statement in his office's release on the Supreme Court's NRA v. Vullo ruling, a free-speech case about a gun-rights group; the release also says he joined a 23-state friend-of-the-court brief in April 2024 backing the NRA.",
+      "subjects": [
+        "gun-rights group NRA",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:06:34.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b83c815f8df4f171cae6207a47e2bdd67cfbbf5f866340b62929d346969dc9a",
+      "kind": "record",
+      "url": "https://www.justice.gov/ag/media/1398006/dl",
+      "date": "2025-04-21",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Multistate attorneys general letter supporting the federal Second Amendment Enforcement Task Force",
+      "note": "He is one of the attorneys general listed as signing a letter to the U.S. Attorney General that backs the task force and promises state resources and support in Second Amendment litigation and in reforming federal gun rules. The letter text is a joint text led by West Virginia's attorney general, not his own wording.",
+      "subjects": [
+        "federal gun enforcement and rules",
+        "general statement on gun rights",
+        "Second Amendment litigation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T16:06:34.682Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment and gun rights",
+        "concealed weapon licence and firearm purchase checks",
+        "carry a gun without a permit",
+        "federal gun enforcement support",
+        "firearm rights restoration",
+        "red-flag orders, assault-style gun bans, ghost guns, suppressors: nothing found"
+      ],
+      "places": [
+        "On the Record (0 appearances; no unlinked-name matches)",
+        "sponsor list: covered by bulk bill data",
+        "the attorney general's official site (https://attorneygeneral.nd.gov): news list items on the subject, the restoration-of-firearm-rights page (only menu text, no statement by Wrigley), the concealed weapon licence validation release and the NRA v. Vullo release read",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Drew_Wrigley (fetch returned an empty page)",
+        "campaign site: not reviewed (none found in search)",
+        "news search on name plus subject words (two searches): office releases and a multistate letter found; no interviews or questionnaires on guns found",
+        "status check: search results show he was unopposed in the 2026 primary and was reported to win the November 2026 general election for attorney general; own-office pages confirm the office",
+        "not reviewed: Wikipedia, Vote Smart (leads only, not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-19T16:06:34.682Z",
+      "by": "source-collector"
+    }
+  ]
+}

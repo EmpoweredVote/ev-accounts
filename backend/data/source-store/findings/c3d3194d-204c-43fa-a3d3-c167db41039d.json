@@ -2,10 +2,1330 @@
   "politician_id": "c3d3194d-204c-43fa-a3d3-c167db41039d",
   "findings": [
     {
-      "id": "bc0ef7d7db22846167762688129472439ac943877c63a99f29c25ede8a47bc06",
+      "id": "0dc8880e6e85d8f1e71e3b78c8e4ce47bd850de43a812dbe3cfaab01d3212b23",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1042.html",
+      "date": "2019-03-29",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1042-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, passed, yeas 42 nays 3, Emergency clause carried",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 42 nays 3, Emergency clause carried, 2019-03-29: nay (tally 42–3); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry in churches with leader approval",
+        "church not liable for injuries by licensed carriers",
+        "vehicle-carry exception for class 2 licence holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0017-03000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1042-2019.enrolled.pdf",
+          "sha256": "9d37960e20d478c4a0a6b73f6f22ad625eacdb36c3c138a1a9fae3040ca46378"
+        }
+      }
+    },
+    {
+      "id": "3fb89eb880ab3041a63c0cae1dec39e931235e84c807a559e69b69bc195fa638",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1163.html",
+      "date": "2019-03-29",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1163-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, passed, yeas 35 nays 10",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 35 nays 10, 2019-03-29: nay (tally 35–10); census gate: none.",
+      "subjects": [
+        "penalty for guns in bars, public gatherings and vehicles lowered to an infraction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0743-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1163-2019.enrolled.pdf",
+          "sha256": "dc2e98e84e37f2f17942172eef89bcbe9e6b4a4ac13ccc1f03630f9aa27fb53c"
+        }
+      }
+    },
+    {
+      "id": "ca26fb3e840db1805ed8a497136a0ad61c3297f5753fe32e1e5a80a0475e0110",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1190.html",
+      "date": "2017-02-17",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1190-2017",
+      "act": "nay",
+      "motion": "House Second reading, passed, yeas 81 nays 5",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, House Second reading, passed, yeas 81 nays 5, 2017-02-17: nay (tally 81–5); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry exemption on state property for people authorized by top state officials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0638-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1190-2017.engrossed1.pdf",
+          "sha256": "d2e9add7a3467fac7609ac6db4a3abcb495d94dee0877e4b1ebe8683aeff9d5e"
+        }
+      }
+    },
+    {
+      "id": "4fd4ceba33e8a6c06e8c7acd1c43287a21eede1d3f4801e6fca14d953826298c",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1206.html",
+      "date": "2019-04-01",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1206-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, failed to pass, yeas 11 nays 36",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 11 nays 36, 2019-04-01: nay (tally 11–36); census gate: none.",
+      "subjects": [
+        "new class 1 exempt licence to carry concealed after training",
+        "public-gathering gun ban exemption for members of Congress and exempt-licence holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0103-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1206-2019.engrossed1.pdf",
+          "sha256": "f2560b09f540e155d7322dcdc658200c9ba43e136c5ed8df28f249ef0403e620"
+        }
+      }
+    },
+    {
+      "id": "52c84a553ffd7f92102b1f85ed0e9b1da7f52e78546c84f085fd1efbaa516218",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1224.html",
+      "date": "2023-03-06",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1224-2023",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 46 nays 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 46 nays 1, 2023-03-06: yea (tally 46–1); census gate: near-unanimous.",
+      "subjects": [
+        "handgun carry by dog handlers recovering big game",
+        "no handgun use to assist recovery",
+        "landowner permission to carry handgun on private land"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-0180-03000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1224-2023.enrolled.pdf",
+          "sha256": "3beff8a6677c1c7dad46f1d0b5681f06cca45fbffd25edb2dbec6e43be07efb4"
+        }
+      }
+    },
+    {
+      "id": "c052ea74ec2446c4148a7c9f2b76202ec275e94b2953b9272db2a5224c9a9f8f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1233.html",
+      "date": "2017-04-12",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1233-2017",
+      "act": "yea",
+      "motion": "House Second reading, passed, yeas 88 nays 0, Emergency clause carried",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, House Second reading, passed, yeas 88 nays 0, Emergency clause carried, 2017-04-12: yea (tally 88–0); census gate: near-unanimous.",
+      "subjects": [
+        "upgrade or convert concealed-carry license class",
+        "exempt court officers and retired officers at public gatherings",
+        "study of firearms laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0610-05000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1233-2017.enrolled.pdf",
+          "sha256": "f06e32f0f3bc1043fc25384887338773a406271f7db81d356a59a60a74ad49eb"
+        }
+      }
+    },
+    {
+      "id": "25b4dcbe24ca0f985b88eac2bf80a20fdca460d97386852cc585183417e0f282",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1248.html",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1248-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 26 nays 20",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 26 nays 20, 2021-04-08: nay (tally 26–20); census gate: none.",
+      "subjects": [
+        "local preemption of firearm and ammunition rules",
+        "damages suit against local government"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0139-06000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1248-2021.enrolled.pdf",
+          "sha256": "0c4105c56cb6e85ccb62898efe14a7d244de842b4715dbd8c3bc844e33e43a3a"
+        }
+      }
+    },
+    {
+      "id": "b0931572eee93605bd01f29474f8ccd3746c855b3c335cd7d774a8b96d70e5a1",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1272.html",
+      "date": "2021-04-01",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1272-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, failed to pass, yeas 10 nays 37",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 10 nays 37, 2021-04-01: nay (tally 10–37); census gate: none.",
+      "subjects": [
+        "state-made firearms and ammunition exempt from federal law",
+        "imported parts do not trigger federal regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0477-01000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1272-2021.introduced.pdf",
+          "sha256": "cd539935b0ee15ebd793f3d9a91195823970bc3c0a073c332df6a001b1f55b40"
+        }
+      }
+    },
+    {
+      "id": "ccff29e25ba8ae4323867a46f36904eb778e9bcd8303dfc3e4cfd8bbe7a8d337",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1273.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1273-2017",
+      "act": "nay",
+      "motion": "House Second reading, passed, yeas 73 nays 19",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND House, House Second reading, passed, yeas 73 nays 19, 2017-02-21: nay (tally 73–19); census gate: none.",
+      "subjects": [
+        "firearms at public gatherings: exemptions",
+        "local ordinances may be less restrictive",
+        "church not liable for authorized concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0754-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1273-2017.enrolled.pdf",
+          "sha256": "a6ca33b579c7b90331d49ad0e6da758b293b14247ba53874afed2780456007d8"
+        }
+      }
+    },
+    {
+      "id": "d71103e6cf70f87255395e4b20123959c674fe9f3e2f046177af64d78792b06b",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1278.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1278-2017",
+      "act": "nay",
+      "motion": "House Second reading, failed to pass, yeas 16 nays 76",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND House, House Second reading, failed to pass, yeas 16 nays 76, 2017-02-21: nay (tally 16–76); census gate: none.",
+      "subjects": [
+        "narrow 'public gathering' to government buildings with weapon screening"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0753-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1278-2017.introduced.pdf",
+          "sha256": "5d8e99de6958473efdc1610767696c57a3263fb16eb94527fed96f6742d9b93e"
+        }
+      }
+    },
+    {
+      "id": "ddf6ecb0deaf12724b21257008ef7376ceab71181b629f657ee2613d417b6554",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1279.html",
+      "date": "2017-04-04",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1279-2017",
+      "act": "yea",
+      "motion": "House Second reading, passed, yeas 92 nays 0, Emergency clause carried",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, House Second reading, passed, yeas 92 nays 0, Emergency clause carried, 2017-04-04: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm storage allowed in government-managed housing units"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0755-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1279-2017.enrolled.pdf",
+          "sha256": "6cd784ca5efabae53064a93a54e11a04dea05ae1192d2541ef0f7501cd2f9238"
+        }
+      }
+    },
+    {
+      "id": "7220c4878174f426fb6d6f34b51ea6349a4cfcf61a057f44da03e1ae0c3faf03",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1293.html",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1293-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 40 nays 6",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 40 nays 6, 2021-04-08: nay (tally 40–6); census gate: none.",
+      "subjects": [
+        "30-day (not one-year) ID residency to carry concealed without license",
+        "loaded firearm in vehicles exceptions",
+        "handgun carry limits exceptions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0774-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1293-2021.enrolled.pdf",
+          "sha256": "49d652b94f849c72fc1498009cc5a0ad36975dbbe0522cb391f8169653e7c5a8"
+        }
+      }
+    },
+    {
+      "id": "7ad5779a7c07096be2f9e47f29ea1058e8c1f46ab9b7c51f9997bfec6f0d4ccd",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1297.html",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1297-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 41 nays 5",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 41 nays 5, 2021-04-08: nay (tally 41–5); census gate: none.",
+      "subjects": [
+        "firearms at schools, churches and public buildings: infraction penalty",
+        "church or leader may approve carry by policy",
+        "less-lethal weapons in school security plans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0637-06000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1297-2021.enrolled.pdf",
+          "sha256": "80d08971741b82374e482f027c8bdc271e55a391ebd6a0e1e979a9cd339ba467"
+        }
+      }
+    },
+    {
+      "id": "46f63c10b1951b7383874dd94de33087d36e73281584b3cf92f59ba1769465dd",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1308.html",
+      "date": "2019-03-29",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1308-2019",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 42 nays 3",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 42 nays 3, 2019-03-29: yea (tally 42–3); census gate: near-unanimous.",
+      "subjects": [
+        "binary triggers not counted as machine guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0888-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1308-2019.enrolled.pdf",
+          "sha256": "382686e230215e44f3e7fbb3a8f4df56aa371d067748e8bf0d6d490ecc70b9da"
+        }
+      }
+    },
+    {
+      "id": "f0cf304d51ce977ce44383d04943586b2265ed0b41fab3f52de33ab0d178c720",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1310.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1310-2017",
+      "act": "nay",
+      "motion": "House Second reading, passed, yeas 73 nays 19",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND House, House Second reading, passed, yeas 73 nays 19, 2017-02-21: nay (tally 73–19); census gate: none.",
+      "subjects": [
+        "pilot letting trained armed responders carry concealed in schools",
+        "exception to public-gathering firearm ban for school responders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0485-06000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1310-2017.engrossed1.pdf",
+          "sha256": "24e05b7899c53285934be302b8bd01c50a0cd384475c172495ffcfd609266ec0"
+        }
+      }
+    },
+    {
+      "id": "23f02412142c82e430db8ef9a60fddef03301aa9a5c8b52066c8779f7cc3ce0c",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1326.html",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1326-2025",
+      "act": "yea",
+      "motion": "Senate Second reading, failed to pass, yeas 6 nays 40",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 6 nays 40, 2025-04-02: yea (tally 6–40); census gate: none.",
+      "subjects": [
+        "no self-defense claim when the firearm was unlawfully possessed and used"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0446-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1326-2025.introduced.pdf",
+          "sha256": "93f42c55abd489fed68ce329c6e40de1821cb4eb146353c2578454fceaec8dd5"
+        }
+      }
+    },
+    {
+      "id": "38f9c3495117cd1ccc347200ccb3e43c46b2225aa44b5a354eaf3ada430f5d67",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1332.html",
+      "date": "2019-03-29",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1332-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 31 nays 14",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 31 nays 14, 2019-03-29: nay (tally 31–14); census gate: none.",
+      "subjects": [
+        "armed first responders may carry concealed firearms in schools",
+        "training, age 21 and background check for school armed responders",
+        "exemption from public-gathering gun ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0423-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1332-2019.enrolled.pdf",
+          "sha256": "e835bda729e3d237a453e9d49978217144a5ecb2f5c70dbaa39e1a71e928dedf"
+        }
+      }
+    },
+    {
+      "id": "d050b779229e52f81d756f19e6d0d64d6a2abd1dc6285112890ee1c604ad7b23",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1339.html",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1339-2023",
+      "act": "nay",
+      "motion": "Senate Second reading, passed, yeas 44 nays 3",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 44 nays 3, 2023-04-05: nay (tally 44–3); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry allowed with a valid driver's license or state ID",
+        "loaded firearms in vehicles",
+        "duty to tell officers about a concealed firearm",
+        "repeal of contingent expiration of concealed-carry provisions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-0641-03000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1339-2023.enrolled.pdf",
+          "sha256": "2b045e4073f333a1513bc9fe18ef83bcc556304efbcc2f2989712bc77f556faa"
+        }
+      }
+    },
+    {
+      "id": "52ca40bfcd2f2764c6322e2b6f54165ec64868473188de1555db756dafbde790",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1340.html",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1340-2023",
+      "act": "nay",
+      "motion": "Senate Second reading, passed, yeas 41 nays 6",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 41 nays 6, 2023-04-05: nay (tally 41–6); census gate: none.",
+      "subjects": [
+        "bar cities and counties from gun or ammunition rules, including zoning",
+        "home rule powers subject to gun preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-0444-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1340-2023.enrolled.pdf",
+          "sha256": "2c6484608be72d4f95504b9400a377d1074f81db5ef13ccd0a6c3a962cae951c"
+        }
+      }
+    },
+    {
+      "id": "b73e984fd585b09f10ad1203cc6660312088d4afe325fa44df3af2fb59121da1",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1350.html",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1350-2023",
+      "act": "nay",
+      "motion": "Senate Second reading, passed, yeas 45 nays 2",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 45 nays 2, 2023-04-05: nay (tally 45–2); census gate: near-unanimous.",
+      "subjects": [
+        "mandatory 2 to 4 year minimum for armed offenders",
+        "firearm possession bans for people convicted of violent or other felonies",
+        "machine gun definition excludes binary triggers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-0570-03000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1350-2023.enrolled.pdf",
+          "sha256": "ef2c6fa113060a519df8e2160eca9be24600a514d691dcd24f2d86bfca26897f"
+        }
+      }
+    },
+    {
+      "id": "373cb4321f898a2461fbb058a71f27dabfb2d3ba5564c3209db4528e0add29dc",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1381.html",
+      "date": "2019-03-29",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1381-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, passed, yeas 33 nays 12",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 33 nays 12, 2019-03-29: nay (tally 33–12); census gate: none.",
+      "subjects": [
+        "ban on government firearm buyback programs",
+        "no public money for buybacks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0757-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1381-2019.enrolled.pdf",
+          "sha256": "46aef3a79636f14fdb2053ddf945265eb183fdfafcc3cfd2dcb59f6ecdd1a891"
+        }
+      }
+    },
+    {
+      "id": "a42314e3bc8726b35384008ef5f94ba95cf1736ae3eddaabe8d597899c7d3aca",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1383.html",
+      "date": "2021-04-19",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1383-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 40 nays 7",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 40 nays 7, 2021-04-19: nay (tally 40–7); census gate: none.",
+      "subjects": [
+        "no state help enforcing new federal gun rules",
+        "firearm accessory and magazine definition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0822-06000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1383-2021.enrolled.pdf",
+          "sha256": "f25243a58f97197f885ba41588d3221ed5b0fce5b52e911b038386879325a5d9"
+        }
+      }
+    },
+    {
+      "id": "f3df475fde35ca8e4f05d74a621f86996eee02728b5d32610e85a4dd4032a2ff",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1391.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1391-2017",
+      "act": "nay",
+      "motion": "House Second reading, failed to pass, yeas 22 nays 70",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND House, House Second reading, failed to pass, yeas 22 nays 70, 2017-02-21: nay (tally 22–70); census gate: none.",
+      "subjects": [
+        "in-state made guns and ammunition declared exempt from federal law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0862-01000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1391-2017.introduced.pdf",
+          "sha256": "ac7ce2a734728b09aebd8ade3c0f2b0e412afb7c4c930663027a666a8d7c19ef"
+        }
+      }
+    },
+    {
+      "id": "03a735b1de7fd26cf0a04988f9ef7d3f225b8667e1d6abc039cc477cf7f9ee56",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1395.html",
+      "date": "2017-04-04",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1395-2017",
+      "act": "yea",
+      "motion": "House Second reading, passed, yeas 92 nays 0, Emergency clause carried",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, House Second reading, passed, yeas 92 nays 0, Emergency clause carried, 2017-04-04: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "stun-device and weapon definition",
+        "firearm ban in alcohol and bingo sites",
+        "retired officers exempt from public-gathering carry ban",
+        "concealed licence shown on demand"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0886-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1395-2017.enrolled.pdf",
+          "sha256": "6a15e9947a78d1fc42c59f7118364594a103c984926794bd90c2d70383e5fd5f"
+        }
+      }
+    },
+    {
+      "id": "a84fd83d61bcb455470e0638ec83ebae42213e2bf305ea6d91ad489b4094efde",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1396.html",
+      "date": "2021-03-31",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1396-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 43 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 43 nays 4, 2021-03-31: nay (tally 43–4); census gate: near-unanimous.",
+      "subjects": [
+        "civil-suit immunity for gun and ammunition makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0871-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1396-2021.enrolled.pdf",
+          "sha256": "fb73f6c7b473a48989f9b4585a7e87bf2aadfad7efd8da8c329914aa034dbd1d"
+        }
+      }
+    },
+    {
+      "id": "cf2d48093cbf0bec8c522133f5d237d5808556a48e03f659f089d06dd6416640",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1402.html",
+      "date": "2017-02-20",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1402-2017",
+      "act": "yea",
+      "motion": "House Second reading, passed, yeas 57 nays 35",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND House, House Second reading, passed, yeas 57 nays 35, 2017-02-20: yea (tally 57–35); census gate: none.",
+      "subjects": [
+        "firearm surrender under domestic violence protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0836-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1402-2017.enrolled.pdf",
+          "sha256": "86b2888785e829991b7e0a964f54d1607f8c93274be3d8b2f4ca0e435d829874"
+        }
+      }
+    },
+    {
+      "id": "c3811afefb00a43e206bceaa29a9ef4d6c61153d50e0c9dbeebdf0902c8a6930",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1459.html",
+      "date": "2021-03-31",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1459-2021",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 46 nays 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 46 nays 1, 2021-03-31: yea (tally 46–1); census gate: near-unanimous.",
+      "subjects": [
+        "study of firearm licensing for county correctional employees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0903-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1459-2021.enrolled.pdf",
+          "sha256": "572f9b8771bed612bdf4c8500b788b2df810f9241d057feb19b4dc3942d088ee"
+        }
+      }
+    },
+    {
+      "id": "091bd3b5c3b8aa6dada12a9a37fefbd82861aa0724cdd933befb784fba9490b3",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1463.html",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1463-2021",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 42 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 42 nays 4, 2021-04-08: yea (tally 42–4); census gate: near-unanimous.",
+      "subjects": [
+        "on-duty ambulance and firefighter crew may carry with licence and training",
+        "fee caps for armed first responder instructors",
+        "school armed-responder training standards"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0917-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1463-2021.enrolled.pdf",
+          "sha256": "7e76ace7f8a64e7ca8b822312692ea2f9a94d8e755dc380b06bac3fdc533f385"
+        }
+      }
+    },
+    {
+      "id": "3eee336c13ee12ed503746f7936cefad9f2b07b9cfed02a2cc70d0ca1be44a4e",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1487.html",
+      "date": "2023-04-25",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1487-2023",
+      "act": "yea",
+      "motion": "Senate Second reading, passed as amended, yeas 45 nays 2",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 45 nays 2, 2023-04-25: yea (tally 45–2); census gate: multi-subject.",
+      "subjects": [
+        "ban on firearm owner registries",
+        "no firearm-specific payment merchant codes",
+        "fine of $10,000 per transaction on financial entities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-0968-08000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1487-2023.enrolled.pdf",
+          "sha256": "629081156def913048359a4ed8e0a413bd89229ed74ee45c79fe3998ff2bb28c"
+        }
+      }
+    },
+    {
+      "id": "e1f34575158801773ddaf8cc9dbfd311fdcde0baddaf88cf57d6c6452d763317",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1498.html",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1498-2021",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 35 nays 10",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 35 nays 10, 2021-04-08: nay (tally 35–10); census gate: none.",
+      "subjects": [
+        "brandishing a weapon allowed on own property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0667-05000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1498-2021.enrolled.pdf",
+          "sha256": "f635cf22bd017c90094b56fbd9a1e0beff85fd5a4bbbcec1be9d4d23d4e62347"
+        }
+      }
+    },
+    {
+      "id": "4de114d76acc6bb1af60ba3a4c15dd92338e3c4a2d0c2b5e52215966303fa26a",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1588.html",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1588-2025",
+      "act": "nay",
+      "motion": "Senate Second reading, passed as amended, yeas 43 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 43 nays 4, 2025-04-03: nay (tally 43–4); census gate: near-unanimous.",
+      "subjects": [
+        "where firearms may be carried (schools, churches, public buildings)",
+        "armed on-duty ambulance and fire crews with a class 1 license",
+        "concealed-carry license must be shown to officers; fee penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1290-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1588-2025.enrolled.pdf",
+          "sha256": "3bf73b01e2c1746ec297bd04fac858971529ea10f74aed629a350c84bf4e8518"
+        }
+      }
+    },
+    {
+      "id": "60a449ed751aeed400626f2c6026d033ae90ba863f8099898aa9e82c87c0631f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1589.html",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1589-2025",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 46 nays 0",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 46 nays 0, 2025-03-18: yea (tally 46–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearms qualification for retired officers who carry",
+        "records of qualification courses sent to the training board"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1202-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1589-2025.enrolled.pdf",
+          "sha256": "125d33e06974a71d69e8f4fa39601010edbc2cc1fbf5688cbde5d97b42a0d21c"
+        }
+      }
+    },
+    {
+      "id": "4078a6e1b52b6deb2527be1343c64a781594c9ab4b58653fbba7f8ee33a66971",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo2034.html",
+      "date": "2019-04-16",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2034-2019",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 45 nays 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 45 nays 1, 2019-04-16: yea (tally 45–1); census gate: near-unanimous.",
+      "subjects": [
+        "felons may keep antique and black-powder long guns",
+        "concealed carry without a license after one year of driver's license",
+        "less-lethal weapons in school security plans",
+        "rules for qualified people carrying on school property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0040-07000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2034-2019.enrolled.pdf",
+          "sha256": "fe38b94f45afb66bfa7c06d0c2d562ff6611a5ff27bd6841ce0468936c07ff82"
+        }
+      }
+    },
+    {
+      "id": "cc24ad3d57a81640fc867ab50ef3e80afa015e787168ecf3370b1c96dc378e6f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo2107.html",
+      "date": "2023-04-27",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2107-2023",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 44 nays 2",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 44 nays 2, 2023-04-27: yea (tally 44–2); census gate: multi-subject.",
+      "subjects": [
+        "gun-specific felony for using a firearm in a violent or drug crime",
+        "felony for shooting at an occupied home or vehicle",
+        "mandatory minimum prison terms for gun crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (SECOND ENGROSSMENT; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-8013-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2107-2023.engrossed2.pdf",
+          "sha256": "e6267537fc404ab3e87dc7bd0061803928f2e22321fb70ba32030e344488c11d"
+        }
+      }
+    },
+    {
+      "id": "57581eb545d56af3dcc4ee83010cc6aa63f503233f979d97f050e9fb7ec1f9f8",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo2131.html",
+      "date": "2019-01-16",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2131-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, failed to pass, yeas 9 nays 38",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 9 nays 38, 2019-01-16: nay (tally 9–38); census gate: none.",
+      "subjects": [
+        "state-made guns and ammunition exempt from federal rules",
+        "'Made in North Dakota' stamp on firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0482-01000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2131-2019.introduced.pdf",
+          "sha256": "8d7a754f2a5655a0fa0c0d4ac4df4a171a44d90fb260cbb8e3bccb6cfa69b88d"
+        }
+      }
+    },
+    {
+      "id": "3219d8b1e9572613761462be42536841a1d59e9b0c1cfa0fda1f93600c4660f7",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo2139.html",
+      "date": "2017-04-04",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2139-2017",
+      "act": "nay",
+      "motion": "House Second reading, passed as amended, yeas 86 nays 5",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, House Second reading, passed as amended, yeas 86 nays 5, 2017-04-04: nay (tally 86–5); census gate: near-unanimous.",
+      "subjects": [
+        "concealed-carry license must be carried and shown to officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0442-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2139-2017.engrossed1.pdf",
+          "sha256": "214761934d7dffd2f08b4d6a39ad1d2d6317a3eaa04cee33aaf3f9de560bc717"
+        }
+      }
+    },
+    {
+      "id": "9a10cd57c21880b61ec06714c067f9e61d355a0601d154f391e167ed3b16bfba",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo2140.html",
+      "date": "2019-04-22",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2140-2019",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 42 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 42 nays 4, 2019-04-22: yea (tally 42–4); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carriers must tell officers at a stop",
+        "$20 fee for not showing license",
+        "digital image of license accepted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0479-06000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2140-2019.enrolled.pdf",
+          "sha256": "a0b36175fd978f9e115c7f65a9d515f9d4f10fa0b39681799bae6a54e947de6b"
+        }
+      }
+    },
+    {
+      "id": "57e55aa298532d6bebef80f83a9898258c9f9510ca0450c612e93061ffe91d3a",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo2172.html",
+      "date": "2019-04-23",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2172-2019",
+      "act": "nay",
+      "motion": "Senate Second reading, failed to pass, yeas 4 nays 43",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 4 nays 43, 2019-04-23: nay (tally 4–43); census gate: none.",
+      "subjects": [
+        "judges and attorney general staff may carry in liquor establishments",
+        "proof of firearms proficiency by sidearm form"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0846-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2172-2019.engrossed1.pdf",
+          "sha256": "4f97a69e9b8adb9d4f7540e39a24aa04db82a125998211fb9d048002d463678b"
+        }
+      }
+    },
+    {
+      "id": "06d25e5e941acdd3113135f2ca52475185d4fdb8ae479de2c3fd5764ee24f72e",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo2284.html",
+      "date": "2023-04-28",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2284-2023",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 42 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 42 nays 4, 2023-04-28: yea (tally 42–4); census gate: near-unanimous.",
+      "subjects": [
+        "school firearm policy: referral to criminal justice",
+        "definitions of firearm and dangerous weapon for schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-0697-07000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2284-2023.enrolled.pdf",
+          "sha256": "ee19f2453c83bbfa4c8bc289cf8c0fcf9a4d4c392c9381c879c30c7a3968c808"
+        }
+      }
+    },
+    {
+      "id": "4b678bdb54c6cda11bc173cbe214e757d75a60c205765a5fab74a11b995865d6",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo2344.html",
+      "date": "2021-02-19",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2344-2021",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 46 nays 0",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 46 nays 0, 2021-02-19: yea (tally 46–0); census gate: near-unanimous.",
+      "subjects": [
+        "no gun-shop or range closures in emergencies",
+        "no gun seizure or registration in emergencies",
+        "concealed-carry permits kept valid in emergencies",
+        "civil suit and fees for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-1005-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2344-2021.enrolled.pdf",
+          "sha256": "79bdb2ee2f95fb6c3ac856865a3b62fb7e376714207ac22bc81fde0c8269c780"
+        }
+      }
+    },
+    {
+      "id": "447065cf00ff9c49f2f4b062378f467370417ede501301646adc3f625e4ee960",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo2355.html",
+      "date": "2023-02-08",
+      "date_precision": "day",
+      "instrument_id": "ND-SB-2355-2023",
+      "act": "yea",
+      "motion": "Senate Second reading, failed to pass, yeas 21 nays 25",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 21 nays 25, 2023-02-08: yea (tally 21–25); census gate: none.",
+      "subjects": [
+        "ban on firearms at schools",
+        "firearm possession penalties as a misdemeanor",
+        "dangerous weapon possession penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/68-2023/regular/documents/23-1023-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2355-2023.introduced.pdf",
+          "sha256": "c1454d6bfe4c371a02577efeffa74edc0abfa889402150bb948f903203091144"
+        }
+      }
+    },
+    {
+      "id": "69d92a898d1a9774692028702ba7724ce306073eb58ffa99d525f321a59306fe",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1326.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "ND-HB-1326-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of ND-HB-1326-2025 (Open States sponsor list): HB1326 (69th Legislative Assembly (2025-26)): A BILL for an Act to amend and reenact section 12.1-05-03 of the North Dakota Century Code, relating to self-defense and the unlawful possession of a firearm; and to provide a penalty..",
+      "subjects": [
+        "no self-defense claim when the firearm was unlawfully possessed and used"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0446-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1326-2025.introduced.pdf",
+          "sha256": "93f42c55abd489fed68ce329c6e40de1821cb4eb146353c2578454fceaec8dd5"
+        }
+      }
+    },
+    {
+      "id": "5b80beb90a9556d9d74bea52f441523dc927ec2402a01bb53b6d0ef01ca2170e",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1402.html",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "ND-HB-1402-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of ND-HB-1402-2017 (Open States sponsor list): HB1402 (65th Legislative Assembly (2017-2018)): AN ACT to amend and reenact subsection 4 of section 14‑07.1‑02 of the North Dakota Century Code, relating to the surrender of firearms or other dangerous weapons pursuant to domestic violence protection orders..",
+      "subjects": [
+        "firearm surrender under domestic violence protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0836-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1402-2017.enrolled.pdf",
+          "sha256": "86b2888785e829991b7e0a964f54d1607f8c93274be3d8b2f4ca0e435d829874"
+        }
+      }
+    },
+    {
+      "id": "703ac5987d3b79b1607831ce9b7f4b369d9dc7548a24bf806634e3734e1369ed",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1451.html",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "ND-HB-1451-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of ND-HB-1451-2019 (Open States sponsor list): HB1451 (66th Legislative Assembly (2019-2020)): A BILL for an Act to create and enact section 62.1‑02‑14 and a new section to chapter 62.1‑05 of the North Dakota Century Code, relating to a waiting period for the purchase of a firearm, a ban on bump stocks, and licensure requirements; to provide for a legislative management study; and to provide a penalty..",
+      "subjects": [
+        "three-day waiting period for dealer firearm purchases",
+        "ban on bump stocks",
+        "study of minimum age 21 for firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0665-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1451-2019.introduced.pdf",
+          "sha256": "222eb4d48be4b5a936fd1a978c0d3beabbc24d27dd79e72f8aa6d380336e2277"
+        }
+      }
+    },
+    {
+      "id": "3c228758962de2480790cefec94d21871520a534cff1fe9356456b800d9ec7c2",
       "kind": "record",
       "url": "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
-      "date": "2017-02-20",
+      "date": "2017-02-21",
       "date_precision": "day",
       "instrument_id": "ND-HB-1169-2017",
       "act": "nay",
@@ -13,7 +1333,7 @@
       "gate_by_topic": {
         "gun-policy": "near-unanimous"
       },
-      "note": "ND House, final passage of the amended bill (second reading), 2017-02-20: nay (tally 83–9); census gate: near-unanimous.",
+      "note": "ND House, final passage of the amended bill (second reading), 2017-02-21: nay (tally 83–9); census gate: near-unanimous.",
       "subjects": [
         "carry a concealed gun without a licence"
       ],
@@ -31,5 +1351,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "status: sitting state senator; reported in January 2026 as not seeking re-election, so not on the 2026 ballot (news search results only; no page fetched confirmed it)",
+        "On the Record (0 meetings found for this person)",
+        "official legislature member page https://ndlegis.gov/biography/kathy-hogan (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Kathy_Hogan (empty response)",
+        "blocked: https://www.votefmwf.org/kathy-hogan (403)",
+        "https://www.valleynewslive.com/2026/07/27/north-dakota-legislators-are-advocating-higher-levels-security-threats-increase/ (read; about building security, nothing on firearms)",
+        "https://www.kvrr.com/?p=6362416 (retirement story; page returned only a site index, nothing on the subject)",
+        "two news searches on name plus gun words: nothing in her own words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site (none found, not seeking re-election)",
+        "not reviewed: https://www.nraila.org/articles/20230405/north-dakota-senate-passes-self-defense-bills (lead only, does not name her)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:08:11.194Z",
+      "by": "source-collector"
+    }
+  ]
 }

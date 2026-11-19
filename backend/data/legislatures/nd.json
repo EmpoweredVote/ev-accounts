@@ -49,6 +49,7 @@
     "A bill's action page dates a vote by when it was entered, which can be a day off the journal's own date; the journal's running head is the vote's date, and the dump agrees with the journal except for three 2023-2025 votes it files a day later.",
     "The journal's first line on most pages is a bare \"Page N\" followed by the running head; some pages (a day's last) lack it. The running heads alternate: odd pages \"35th DAY WEDNESDAY, FEBRUARY 22, 2017 787\", even pages \"788 JOURNAL OF THE HOUSE 35th DAY\". A name can break over a line with no semicolon (\"Roers\" / \"Jones\", \"Speaker\" / \"Bellew\").",
     "The member list shows everyone who sat during the Assembly, replacements included, as tiles with no dates. A replacement who shares a family name with another member makes that family name unreadable for the whole Assembly.",
-    "The dump holds every 2023 and 2025 member a second time as a name-only person named with the title (\"Representative Adam Goldwyn\"), carrying only unplaced votes. link_check.py does not offer these; they need no idmap line."
+    "The dump holds every 2023 and 2025 member a second time as a name-only person named with the title (\"Representative Adam Goldwyn\"), carrying only unplaced votes. link_check.py does not offer these; they need no idmap line.",
+    "The saved text of a bill prints each margin line number (1 to 31) on its own line inside the law text, and a section label (\"Section 1.\") opens each section; a quote copied across two sections or two separate passages reads as one passage that is not in the bill (2026-11-19, 72 texts of 2017-2025)."
   ]
 }

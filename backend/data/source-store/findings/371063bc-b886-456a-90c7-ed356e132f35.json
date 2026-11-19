@@ -1,0 +1,62 @@
+{
+  "politician_id": "371063bc-b886-456a-90c7-ed356e132f35",
+  "findings": [
+    {
+      "id": "52caf0aa1e2659ae19c478d422c206dd19ae764e4e817cb993615f0f6b544cf9",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1588.html",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1588-2025",
+      "act": "yea",
+      "motion": "House Second reading, passed, yeas 87 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND House, House Second reading, passed, yeas 87 nays 4, 2025-04-15: yea (tally 87–4); census gate: near-unanimous.",
+      "subjects": [
+        "where firearms may be carried (schools, churches, public buildings)",
+        "armed on-duty ambulance and fire crews with a class 1 license",
+        "concealed-carry license must be shown to officers; fee penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1290-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1588-2025.enrolled.pdf",
+          "sha256": "3bf73b01e2c1746ec297bd04fac858971529ea10f74aed629a350c84bf4e8518"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "official member page https://ndlegis.gov/node/49499 (read; names her as District 9 House member; nothing on the subject)",
+        "BallotReady https://www.ballotready.org/people/collette-brown (read; lists her as candidate for District 9 in the 2026 general election; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Collette_Brown (empty page)",
+        "web search on her name plus gun, firearm and Second Amendment words (two searches; nothing on the subject)",
+        "no campaign site or newsletter found; nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T16:05:17.282Z",
+      "by": "source-collector"
+    }
+  ]
+}
