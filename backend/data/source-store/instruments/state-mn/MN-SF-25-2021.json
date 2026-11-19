@@ -1,0 +1,55 @@
+{
+  "id": "MN-SF-25-2021",
+  "scope": "state:mn",
+  "title": "SF25 (2021-2022 Regular): Non-in-person permit to carry renewals authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0025&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/25/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karla Bigham",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Aric Putnam",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "842fbe6e-2018-4250-b024-5ce57aa278b7"
+    },
+    {
+      "name": "Kent Eken",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-06; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/25/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-25-2021.introduced.html",
+      "sha256": "347eb4cb3843817f49f356d82dad9c9d2a8ab06e5bcceda0469d2eeadd78e68c"
+    },
+    "note": "Read the introduced bill (2021-01-06); no vote data in file. The rest of subd. 3 is existing text carried through."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3(e)): Applications for new permits must be submitted in person. Applications for permit renewals may be accepted in person, electronically, or by United States mail, at the sheriff's discretion."
+}

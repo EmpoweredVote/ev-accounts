@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-3140-2017",
+  "scope": "state:mn",
+  "title": "SF3140 (2017-2018 Regular): Firearms and ammunition lawful possession, purchase and transfer regulation; crime of violence definition modification; mandatory minimum sentences; firearms rights restoration; firearm background checks provisions modification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3140&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/3140/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Pratt",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa8d5cfb-5feb-4112-b68b-f1c2de963dc3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/3140/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3140-2017.introduced.html",
+      "sha256": "0d8996d66f089b512bf9102c0d6e7829e437399eda91fb578155535c499a39eb"
+    },
+    "note": "Introduced version as filed (SF 3140, 2017-2018 session). Struck passages not quoted: in Section 6 the bill strikes the list of federal disqualifiers under clause (10) and replaces it with a cross-reference to federal law; Section 1 strikes 'local'; Section 13 repeals 624.713 subd. 4 (old restoration route). Ruled single: Section 2 (299C.089, BCA data entry into searchable databases) feeds the background-check systems; reviewer may weigh it as a separate data topic."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 609.165, subd. 1b): Unless a longer mandatory minimum sentence is otherwise required by law or the sentencing guidelines provide for a longer presumptive executed sentence, a person convicted of violating paragraph (a) shall be committed to the commissioner of corrections for: (1) 60 months; or (2) 120 months if the person has a prior conviction under this section, section 624.713, subdivision 2, paragraph (b), or a comparable law of another state or the United States.\nSection 4 (Minn. Stat. 609.505, new subd. 3): Whoever files a written report with a law enforcement officer that a firearm has been lost or stolen, knowing that the report is false, is guilty of a gross misdemeanor.\nSection 6 (Minn. Stat. 624.713, subd. 1): (10) a person who is disqualified from possessing a firearm under United States Code, title 18, section 922(g);\nSection 8 (Minn. Stat. 624.713, new subd. 3a): When a court orders a commitment under chapter 253B or makes a finding or adjudication by which a person becomes subject to the provisions of section 624.713, subdivision 1, clause (3), or United States Code, title 18, sections 922(d)(4) and 922(g)(4), the court administrator shall electronically enter the nature of the court's action and only the information necessary to identify the person into the National Instant Criminal Background Check System database.\nSection 9 (Minn. Stat. 624.713, new subd. 6): The court shall grant the petition for relief if it finds by a preponderance of the evidence that the petitioner will not be likely to act in a manner dangerous to public safety and that the granting of the relief would not be contrary to the public interest.\nSection 12 (Minn. Stat. 624.7163, subd. 2): (1) knowingly solicits, persuades, encourages, or entices a licensed dealer or private seller of firearms or ammunition to transfer a firearm or ammunition under circumstances that the person knows would violate the laws of this state or the United States; or (2) provides to a licensed dealer or private seller of firearms or ammunition what the person knows to be false information with intent to deceive the dealer or seller about the legality of a transfer of a firearm or ammunition."
+}

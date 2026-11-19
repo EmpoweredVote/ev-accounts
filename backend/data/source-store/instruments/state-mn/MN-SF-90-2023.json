@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-90-2023",
+  "scope": "state:mn",
+  "title": "SF90 (2023-2024 Regular): Permitted and trained school staff firearm carry authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0090&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/90/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Koran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Nathan Wesenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Bill Lieske",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-06; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/90/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-90-2023.introduced.html",
+      "sha256": "34381c0e216a4cb7c078f6966e74c4e58492761c377841e3c8fd9dc2d3c0d51c"
+    },
+    "note": "Introduced 2023-01-06. Strikes only an 'or' and a period in 609.66 subd. 1d to add clause (10). Text is word-for-word identical to the companion bill (SF 90 and SF 942). The training program (paragraph (a)) is quoted from the middle of a sentence after its subject, joined as printed."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 299C.26, new), paragraph (a): The superintendent of the Bureau of Criminal Apprehension, in consultation with security and law enforcement experts with appropriate qualifications and experience in responding to active shooter situations, must establish a school and postsecondary institution teacher and employee firearm training program that includes at a minimum training in active shooter situations.\nSection 1 (Minn. Stat. 299C.26, new), paragraph (b): The training program must admit only school and postsecondary institution teachers and employees who have completed training for a permit to carry under section 624.714 within one year of the date of attending the training under this section or have a permit to carry under section 624.714.\nSection 2 (Minn. Stat. 609.66, subd. 1d), paragraph (f): (10) teachers and employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137 who have a school permit to carry under section 624.714, subdivision 8b.\nSection 3 (Minn. Stat. 624.714, subd. 8b, new), paragraph (a): A teacher or other employee of a public elementary, middle, or secondary school; charter school under chapter 124E; or postsecondary institution under chapter 136F or 137 may apply to the sheriff of the county where the teacher or employee resides for a school permit to carry.\nSection 3 (Minn. Stat. 624.714, subd. 8b, new), paragraph (b), clause (3): (3) has successfully completed the training program under section 299C.26 within one year of the date of the application for the school permit to carry;\nSection 3 (Minn. Stat. 624.714, subd. 8b, new), paragraph (h): A school permit to carry issued under this subdivision expires one year after the date of issue.\nSection 4 (Minn. Stat. 624.714, subd. 18), paragraph (d): (d) This subdivision does not apply to teachers and employees authorized to carry firearms under section 609.66, subdivision 1d, paragraph (f)."
+}

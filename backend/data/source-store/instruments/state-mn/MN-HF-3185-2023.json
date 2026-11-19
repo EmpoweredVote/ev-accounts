@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-3185-2023",
+  "scope": "state:mn",
+  "title": "HF3185 (2023-2024 Regular): Immunity granted to private parties who require proof of firearms eligibility prior to transferring a firearm.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3185&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/3185/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Myers",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4a810646-c2f7-4702-a2ed-263fc3d0f4ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-03-31; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/3185/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3185-2023.introduced.html",
+      "sha256": "73d479a77ebd3525db538afe07a779c4d69d374746d0c13148569c3789312ddf"
+    },
+    "note": "Introduced version (2023-03-31); no vote listed. Added words are not marked in the saved text; paragraph (b) is quoted as the new passage per the title. Paragraph (a), the gross misdemeanor for transfers without the section 624.7132 check, is existing law."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1f, para. (b)): A person is immune from prosecution under paragraph (a) if the person produces either a copy of the transferee's permit to carry or permit to purchase that the transferee presented at the time of transfer. A transferor may only be required to produce documents maintained pursuant to this paragraph if a court orders production of the documents as part of a criminal investigation involving the transferred firearm. A court may not compel a transferor to produce documents maintained pursuant to this paragraph beyond one year after the date of transfer."
+}

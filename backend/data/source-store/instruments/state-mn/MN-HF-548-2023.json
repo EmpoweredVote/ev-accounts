@@ -1,0 +1,157 @@
+{
+  "id": "MN-HF-548-2023",
+  "scope": "state:mn",
+  "title": "HF548 (2023-2024 Regular): Penalties increased for transferring firearms to persons who are ineligible to possess firearms.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0548&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/548/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Peggy Scott",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+    },
+    {
+      "name": "Harry Niska",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a653e944-5dbf-4a40-bf03-02868ee902e7"
+    },
+    {
+      "name": "Bernie Perryman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
+    },
+    {
+      "name": "Kristin Robbins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    },
+    {
+      "name": "Paul Novotny",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
+    },
+    {
+      "name": "Krista Knudsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "John Burkel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Steve Jacob",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c1baaa36-8965-4775-a453-d3e39089aa16"
+    },
+    {
+      "name": "Patti Anderson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3da2f389-a20f-4b21-a20c-dbe6880f074b"
+    },
+    {
+      "name": "Jeff Witte",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "78a28a3b-98d0-46a6-bdf2-1d8b961fa6ed"
+    },
+    {
+      "name": "Pat Garofalo",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ron Kresha",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "edc6c327-bd08-4993-af0b-98397d232e6d"
+    },
+    {
+      "name": "Marj Fogelman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "338af9c7-7d7f-4450-830f-1a098a8cb080"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Bjorn Olson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "65c57cac-84ad-4ac1-9b4b-db5db92f1dfc"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Tom Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-18; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/548/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-548-2023.introduced.html",
+      "sha256": "0565e28bed71be94f8272a1af2032d955015cb984d249a753b92e62e2f410fef"
+    },
+    "note": "Introduced version. Bill strikes the old gross misdemeanor grade and the old flat felony for the aggravated offense."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7141, subd. 1): A person is guilty of a felony and may be sentenced to imprisonment for up to two years and to payment of a fine of not more than $10,000 if the person intentionally transfers a pistol or semiautomatic military-style assault weapon to another and the person knows that the transferee:\nSection 1 (Minn. Stat. 624.7141, subd. 2): A person who violates this section may be sentenced to imprisonment for up to five years and to payment of a fine of not more than $20,000 if the transferee possesses or uses the weapon within one year after the transfer in furtherance of a felony crime of violence."
+}

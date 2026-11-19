@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-4703-2025",
+  "scope": "state:mn",
+  "title": "SF4703 (2025-2026 Regular): Extreme risk protection orders application, securement, and enforcement processes modifications",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4703?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4703/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Zaynab Mohamed",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    },
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    },
+    {
+      "name": "Heather Gustafson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+    },
+    {
+      "name": "Bobby Joe Champion",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "24e523eb-c8b0-4b30-915b-6982c1d1a3cb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4703/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4703-2025.engrossed1.html",
+      "sha256": "49a85498c23685146622242e492b5daab9fe3870b29cff82faf8efd95fee7733"
+    },
+    "note": "Version read: 1st Engrossment (2026-04-07). Amends existing extreme risk protection order law. Strikes, in its own terms, the rule that an agency must pay fair market value for permanently transferred guns, and the sealing of transfer records (they become confidential)."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7171, subd. 4): (a) There shall exist an action known as a petition for an extreme risk protection order, which order shall enjoin and prohibit the respondent from possessing or purchasing firearms for as long as the order remains in effect.\nSection 2 (Minn. Stat. 624.7171, subd. 4): The respondent may also petition on their own behalf.\nSection 4 (Minn. Stat. 624.7172, subd. 2): (d) If the court finds there is clear and convincing evidence to issue an extreme risk protection order, the court shall issue the order prohibiting the person from possessing or purchasing a firearm for the duration of the order. The court shall inform the respondent that the respondent is prohibited from possessing or purchasing firearms and shall order the respondent to transfer their firearms pursuant to section 624.7175.\nSection 5 (Minn. Stat. 624.7173): (b) An extreme risk protection order may be extended for a period of up to five years, if the court finds by clear and convincing evidence the respondent still poses a significant danger of bodily harm to other persons or is at significant risk of suicide by possessing a firearm and: (1) the respondent has violated a prior or existing extreme risk protection order on two or more occasions; or (2) the respondent is or has been subject to two or more extreme risk protection orders.\nSection 7 (Minn. Stat. 624.7175): (a) Except as otherwise provided in this paragraph or as provided in paragraph (b), upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 7 (Minn. Stat. 624.7175): If the temporary transfer is made to a law enforcement agency, the agency may not charge the respondent any storage or other associated fee.\nSection 7 (Minn. Stat. 624.7175): (e) If the respondent voluntarily agrees to comply with the order by surrendering the respondent's firearms to law enforcement prior to execution of the search warrant, the respondent will be immune from criminal prosecution for unlawful possession of the firearms under section 624.713.\nSection 7 (Minn. Stat. 624.7175): (g) The respondent may sell their firearms while subject to an extreme risk protection order. The sale of firearms by the respondent must comply with paragraph (f)."
+}

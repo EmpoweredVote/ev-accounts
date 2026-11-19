@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-141-2023",
+  "scope": "state:mn",
+  "title": "SF141 (2023-2024 Regular): State Fair lawful carry and possession of fire arms authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0141&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/141/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Koran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-10; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/141/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-141-2023.introduced.html",
+      "sha256": "5d00798d8d6dd518738c50f9fd07bddc1cdc06fd78807ebf4d16efd3ed575f92"
+    },
+    "note": "Introduced text. Section 2 is a definition added to the private-establishment posting rules. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 37.16): The society may make all bylaws, ordinances, and rules consistent with law which it considers necessary or proper for the government of the fairgrounds and all fairs to be held on them, and for the protection, health, safety, and comfort of the public on the fairgrounds provided no bylaw, ordinance, or rule prohibits the lawful carry or possession of firearms consistent with section 624.714.\nSection 2 (Minn. Stat. 624.714, subd. 17): \"Governmental entity\" includes but is not limited to the State Agricultural Society when it conducts activities on the State Fairgrounds consistent with the public purposes identified in section 37.01."
+}

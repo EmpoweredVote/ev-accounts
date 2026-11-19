@@ -1,0 +1,42 @@
+{
+  "id": "MN-SF-5291-2025",
+  "scope": "state:mn",
+  "title": "SF5291 (2025-2026 Regular): Various firearms provisions modifications",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/5291?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/5291/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Zaynab Mohamed",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "healthcare: Article 4, Section 1 — Medicaid payment rates for psychological and neuropsychological testing",
+        "education-school-police: Article 3, Section 1 and Article 1, Section 4 — school anonymous threat reporting and school safety aid (closest fit; not about guns)"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-05-13; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/5291/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-5291-2025.introduced.html",
+      "sha256": "cdf34811026be09c68c5ecb58d275c604a5adf002da23f25c1a47c8aba14fd50"
+    },
+    "note": "Version read: the introduced bill as filed (2025-01 session, introduced version); no passage vote recorded, no later amendments. Large bill (about 108,000 characters); operative_text is a selection. Most gun sections take effect July 1, 2027 (some August 1, 2026). Also covers extreme risk protection order changes (624.7171-624.7178), serialization of firearms (624.7146-624.7147), school-property weapons (609.66), and appropriations including a gun-violence research center and ERPO awareness campaign."
+  },
+  "operative_text": "Article 2, Section 2 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than 17 rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nArticle 2, Section 6 (Minn. Stat. 624.7135, subd. 1): (a) Except as otherwise provided in this section, a firearms dealer, as defined in section 624.7134, subdivision 1, paragraph (b), may not sell a semiautomatic military-style assault weapon or a large-capacity magazine.\nArticle 2, Section 6 (Minn. Stat. 624.7135, subd. 2): (a) Except as provided in paragraph (b), a person who violates this section is guilty of a gross misdemeanor.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 1): It is unlawful for a person to own or possess a semiautomatic military-style assault weapon or large-capacity magazine that is not certified as required under this section.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 2): (b) A person described in paragraph (a) must renew the certification of ownership every three years.\nArticle 3, Section 4 (Minn. Stat. 609.666, subd. 2): A person is guilty of a gross misdemeanor who negligently stores or leaves a loaded firearm in a location where the person knows, or reasonably should know, that a child or a person prohibited from possessing firearms under section 624.713, subdivision 1, is likely to gain access, unless reasonable action is taken to secure the firearm against access by the child or the person prohibited from possessing firearms.\nArticle 3, Section 5 (Minn. Stat. 624.7145, subd. 3): Any person who owns, possesses, or receives a ghost gun may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nArticle 3, Section 5 (Minn. Stat. 624.7145, subd. 4): Any person who sells, transfers, or distributes a ghost gun may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nArticle 3, Section 21 (reenactment): Laws 2024, chapter 127, article 36, section 2, is reenacted retroactively and without interruption from January 1, 2025."
+}

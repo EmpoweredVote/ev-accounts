@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-2328-2021",
+  "scope": "state:mn",
+  "title": "SF2328 (2021-2022 Regular): Constitutional amendment protecting the right of people to keep and bear arms",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2328&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/2328/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Koran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Gene Dornink",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e62ff25c-2d0a-4fc3-b235-ff33eacf43d4"
+    },
+    {
+      "name": "Rich Draheim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a41019c1-8548-4465-bbd6-f23688ed38dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-03-25; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/2328/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2328-2021.introduced.html",
+      "sha256": "4d7189c365c4199e4d32b0b8527773bfffe4b194b0dd602774283ff4f5d0f9db"
+    },
+    "note": "Read the introduced bill (2021-03-25); no vote data in file. Ballot question quote stops before the Yes/No lines."
+  },
+  "operative_text": "Section 1 (Minn. Constitution, art. I, new section 18): A well regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall not be infringed.\nSection 2 (submission to voters): \"Shall the Minnesota Constitution be amended to protect the right of the people to keep and bear arms?"
+}

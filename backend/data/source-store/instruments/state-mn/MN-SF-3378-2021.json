@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3378-2021",
+  "scope": "state:mn",
+  "title": "SF3378 (2021-2022 Regular): Concealed carry of firearms modification; large capacity ammunition magazines, ghost guns and other weapons possession prohibition; open carry of firearms prohibition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3378&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/SF/3378/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Marty",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-02-18; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/3378/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3378-2021.introduced.html",
+      "sha256": "dba0bbd06e8509d177ae8c91da923cc96a56d6c83c2405ad572b3ef00e38dc15"
+    },
+    "note": "Version read: as-filed (introduced) text; no passage vote recorded. Large file (55,399 characters); read in full. Struck text not quoted: for example the old posting-sign rules, the parking-area and landlord protections in 624.714 subd. 17, the 'loaded' storage definition, and court-hearing rules in subd. 12. Article 2 (conforming amendments) changes permit procedures to chiefs of police or sheriffs, and Section 15's 'public notice' rule. Registration of existing large-capacity magazines and .50 caliber firearms is in 624.7145 subd. 5. Section 2 and Section 1 quotes are cut at a list or paragraph boundary. Many sections start January 1, 2023 or August 1, 2022."
+  },
+  "operative_text": "Section 7 (Minn. Stat. 624.7139): (a) Except as otherwise provided by law and paragraph (b) or (c), it is a misdemeanor for a person to openly carry a pistol on or about the person's self in a public place, as defined in section 624.7181, subdivision 1.\nSection 17 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines, .50 caliber or larger firearms, or ghost guns.\nSection 17 (Minn. Stat. 624.7145, subd. 4): A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 18 (Minn. Stat. 624.7159, subd. 2): A person who manufactures, sells, offers to sell, transfers, purchases, receives, or possesses, or has under that person's control a ghost gun or an undetectable firearm is guilty of a felony.\nSection 6 (Minn. Stat. 624.7134): (a) A person who is applying for a permit to carry a pistol shall obtain, and during ownership continuously maintain, a policy of liability insurance specifically covering any damages resulting from any negligent or willful acts involving the carrying of the firearm. No permit to carry shall be issued unless the applicant provides proof of insurance.\nSection 8 (Minn. Stat. 624.714, subd. 2): (2) has passed the firearm safety test under subdivision 2b, paragraph (b);\nSection 14 (Minn. Stat. 624.714, subd. 16): A license or permit from another state to carry a firearm is not valid in this state.\nSection 15 (Minn. Stat. 624.714, subd. 17): (b) A person carrying a firearm on or about the person's self or clothes under a permit or otherwise who remains at a private establishment after the owner of the establishment or its agent has made a request that they leave the premises and who fails to leave when so requested is guilty of a gross misdemeanor.\nSection 1 (Minn. Stat. 609.66, subd. 1g): (b) A person who possesses a dangerous weapon, ammunition, or explosives in or on public property owned by a local government without permission from the county, city, or town acting through its governing body is guilty of a gross misdemeanor.\nSection 2 (Minn. Stat. 609.666, subd. 2): Unless reasonable action is taken to safely store a firearm, a person who negligently stores, keeps, or leaves a firearm in a location where the person knows, or reasonably should know, that an ineligible person is able to gain access or a child without the permission of the person is able to gain access is guilty of a: (1) misdemeanor;"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-1202-2021",
+  "scope": "state:mn",
+  "title": "SF1202 (2021-2022 Regular): State of emergency shooting ranges closure prohibition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1202&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/1202/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Howe",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Gene Dornink",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e62ff25c-2d0a-4fc3-b235-ff33eacf43d4"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Zach Duckworth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "099c5cb6-2221-4228-a3a8-0f5955d89112"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-17; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/1202/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1202-2021.introduced.html",
+      "sha256": "774e257e4b55fd6d04f5716e36bf6fdc863b2d1a82ef6622e156362b53013af3"
+    },
+    "note": "Version read: introduced (as filed) 2021-02-17. No passage vote recorded. The only change to the existing section is in paragraph (c)(4): the bill strikes the word 'or' and adds 'service, or provide training in the lawful use' so that gun ranges and training businesses are covered; the rest of the section is current law kept in the text. Clause (c)(4) itself is not quoted because it runs across the struck word."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7192, subd. (c)): Notwithstanding any other law to the contrary, no governmental unit, government official, government employee, peace officer, or other person or body acting under governmental authority or color of law may undertake any of the following actions with regard to any firearms and ammunition, and components thereof; any firearms accessories and ammunition reloading equipment and supplies; and any other personal weapons: (1) prohibit, regulate, or curtail the otherwise lawful possession, carrying, transportation, transfer, defensive use, or other lawful use of any of these items; (2) seize, commandeer, or confiscate any of these items in any manner, except as expressly authorized in paragraph (b); (3) suspend or revoke a valid permit issued pursuant to section 624.7131 or 624.714, except as expressly authorized in those sections; or\nSection 1 (Minn. Stat. 624.7192, subd. (e)): (3) In an action or proceeding to enforce this section, the court must award the prevailing plaintiff reasonable court costs and expenses, including attorney fees."
+}

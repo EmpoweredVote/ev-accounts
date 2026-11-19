@@ -1,0 +1,69 @@
+{
+  "id": "MN-HF-1290-2023",
+  "scope": "state:mn",
+  "title": "HF1290 (2023-2024 Regular): Firearm permits to carry without expiration authorized.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1290&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/1290/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ben Davis",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
+    },
+    {
+      "name": "Jim Joy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae296dbc-36aa-444f-89e3-1b1c6b734447"
+    },
+    {
+      "name": "Tom Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "Bernie Perryman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
+    },
+    {
+      "name": "Nolan West",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-03; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1290/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1290-2023.introduced.html",
+      "sha256": "037f60c9b1cb74178e6fd8a55abc79171e65fae03474bcec6d104973bd13a178"
+    },
+    "note": "As filed (introduced version). Sections 1, 2 and 4 strike renewal wording; Section 1 drops the 'original or renewal' training wording. Section 3(c) is quoted with struck words left out."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.714, subd. 7): (c) A permit to carry a pistol issued under this section does not expire.\nSection 3 (Minn. Stat. 624.714, subd. 7): Permit cards issued after August 1, 2023, must prominently state that the permit does not expire.\nSection 5 (replacement permits): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2023, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card.\nSection 5 (replacement permits): The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

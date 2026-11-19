@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-2513-2021",
+  "scope": "state:mn",
+  "title": "HF2513 (2021-2022 Regular): Firearm and ammunition lawful possession, purchase, and transfer regulated; mandatory minimum sentences established; new criminal offenses created; and restoring firearms rights procedures provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2513&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/2513/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kristin Robbins",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-04-12; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/2513/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2513-2021.introduced.html",
+      "sha256": "8a4240406459bb8f5420a0c099bf0179b609b33d95e8835251b68ccc1f4143ae"
+    },
+    "note": "Version read: introduced (as filed). Struck text (old subdivision cross-references, repealed 624.713 subd. 4) is not quoted. Mandatory minimums (60 or 120 months) are in section 1(d) and section 6; section 4 adds the new firearm crimes to the \"crime of violence\" list. Large file; read by section."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.165, subd. 1b): (a) Any person who has been convicted of a crime of violence, as defined in section 624.712, subdivision 5, and who ships, transports, possesses, or receives a firearm or ammunition, commits a felony and may be sentenced to imprisonment for not more than 15 years or to payment of a fine of not more than $30,000, or both.\nSection 2 (Minn. Stat. 609.505, subd. 3): (a) Whoever files a written report with a peace officer that a firearm has been lost or stolen, knowing that the report is false, is guilty of a gross misdemeanor.\nSection 3 (Minn. Stat. 609.84, subd. 2): (1) knowingly solicits, persuades, encourages, or entices a licensed dealer or private seller of firearms or ammunition to transfer a firearm or ammunition under circumstances that the person knows would violate the laws of this state or the United States; or (2) provides to a licensed dealer or private seller of firearms or ammunition what the person knows to be false information with intent to deceive the dealer or seller about the legality of a transfer of a firearm or ammunition.\nSection 7 (Minn. Stat. 624.713, subd. 6): The court shall grant the petition for relief if it finds by a preponderance of the evidence that the petitioner will not be likely to act in a manner dangerous to public safety and that the granting of the relief would not be contrary to the public interest."
+}

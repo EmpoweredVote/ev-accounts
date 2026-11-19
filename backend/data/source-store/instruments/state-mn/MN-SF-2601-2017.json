@@ -1,0 +1,54 @@
+{
+  "id": "MN-SF-2601-2017",
+  "scope": "state:mn",
+  "title": "SF2601 (2017-2018 Regular): Semiautomatic firearm slide-fire stock defined as trigger activator",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2601&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2601/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Isaacson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Cwodzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7845f8df-cc58-49fa-a87c-6483d6cdcf47"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carolyn Laine",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2601/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2601-2017.introduced.html",
+      "sha256": "2d947131dfddb2c49ca384670e6849492a6058d43a2cbdda5a1543e872c847d5"
+    },
+    "note": "Version read: introduced text (no date given). Words added to existing law are not marked in the text file; the sentence quoted is the one the bill title says it adds. No votes recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.67, subd. 1): For purposes of this section, a device that is designed to use the recoil of a semiautomatic firearm to enable a shooter to fire multiple shots in rapid succession, commonly known as a slide-fire or bump-fire stock, is a trigger activator."
+}

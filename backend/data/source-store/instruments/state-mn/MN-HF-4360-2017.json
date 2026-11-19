@@ -1,0 +1,44 @@
+{
+  "id": "MN-HF-4360-2017",
+  "scope": "state:mn",
+  "title": "HF4360 (2017-2018 Regular): Criminal background checks for pistol transfers required, transfers excepted, petitions to prohibit people from possessing firearms allowed, transfer of semiautomatic military-style assault weapons and large-capacity magazines prohibited, buyback program established, slide-fire stock clarified as a trigger activator, criminal penalties provided, and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF4360&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/HF/4360/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Erin Murphy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f9f2c3e6-ae73-4844-91c2-c472d74c3aa9"
+    },
+    {
+      "name": "JoAnn Ward",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/HF/4360/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4360-2017.introduced.html",
+      "sha256": "83738b8892b301f30e76794207e11540bef710f3eca96789adc72d818af6b02b"
+    },
+    "note": "Introduced version (no date on file; 2018 session). Two articles. Article 1 strikes old transfer-permit exception numbering and repeals Minn. Stat. 609.66 subd. 1f and 624.7132 subd. 14. Article 2 amends 624.713 subd. 1 to add a bar for people under an extreme risk protection order, and creates 624.7171 to 624.7178 (petition, hearing, emergency orders, firearm transfer and return, offenses, liability protection). Dollar amounts are blank. Section 3 defines 'large-capacity magazine' (section 624.712, subd. 13); the definition is not quoted here."
+  },
+  "operative_text": "Article 1, Section 5 (Minn. Stat. 624.7134, subd. 2): (1) each transfer occurring in whole or in part in the state shall be preceded by a background check on the transferee; and\nArticle 1, Section 5 (Minn. Stat. 624.7134, subd. 3): Where both parties to a prospective transfer are unlicensed persons, the transferor and transferee shall appear jointly before a federally licensed firearms dealer with the pistol and request that the federally licensed firearms dealer conduct a background check on the transferee and facilitate the transfer.\nArticle 1, Section 1 (Minn. Stat. 609.66, subd. 1i): (2) for a second or subsequent conviction, is guilty of a felony and may be sentenced to imprisonment for not more than two years or to payment of a fine of not more than $5,000, or both.\nArticle 1, Section 6 (Minn. Stat. 624.7135, subd. 2): It is unlawful to transfer a semiautomatic military-style assault weapon.\nArticle 1, Section 7 (Minn. Stat. 624.7136, subd. 2): It is unlawful to transfer a large-capacity magazine.\nArticle 1, Section 8 (voluntary buyback): The commissioner of public safety shall create a voluntary semiautomatic military-style assault weapon and large-capacity magazine buyback program.\nArticle 1, Section 2 (Minn. Stat. 609.67, subd. 1): \"Trigger activator\" means a removable manual or power driven trigger activating device constructed and designed so that, when attached to a firearm, the rate at which the trigger may be pulled increases and the rate of fire of the firearm increases to approximate that of a machine gun.\nArticle 2, Section 3 (Minn. Stat. 624.7172): (d) If the court finds there is a preponderance of the evidence to issue an extreme risk protection order, the court shall issue the order prohibiting the person from possessing a firearm for the duration of the order.\nArticle 2, Section 3 (Minn. Stat. 624.7172): (e) The order shall have a fixed period, to be determined by the court, of not less than six months and not more than two years, subject to renewal or extension under section 624.7173.\nArticle 2, Section 6 (Minn. Stat. 624.7175): (a) Upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer immediately any firearms the person possesses, within 24 hours, to a federally licensed firearms dealer, a law enforcement agency, or third party."
+}

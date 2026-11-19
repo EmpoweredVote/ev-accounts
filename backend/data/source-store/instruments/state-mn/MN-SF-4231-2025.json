@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-4231-2025",
+  "scope": "state:mn",
+  "title": "SF4231 (2025-2026 Regular): Owners of firearms requirement to have liability insurance",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4231?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4231/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-05; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4231/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4231-2025.introduced.html",
+      "sha256": "3d2bf7d54b50a3ccbb58d792ad0af44f3172d3fac90d09658304c683ff6db0ac"
+    },
+    "note": "Introduced 2026-03-05 text (as filed). Section 1 only edits the scope subdivision of 65A.27. Petition-based exemption in subd. 6 not quoted."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 65A.304, subd. 3): A Minnesota resident who owns a firearm must maintain liability insurance, as a part of a homeowner's insurance policy or otherwise, that covers loss or damage of at least $100,000 arising from any one incident to a person, other than the insured, who is injured as a result of an accidental or unintentional discharge of the firearm.\nSection 2 (Minn. Stat. 65A.304, subd. 3(b)): For purposes of this section, a person remains the owner of a lost or stolen firearm until the loss or theft is reported to law enforcement.\nSection 2 (Minn. Stat. 65A.304, subd. 2): An insurer writing homeowner's insurance in Minnesota must make available at least one form or rider that provides the coverage required under this section.\nSection 2 (Minn. Stat. 65A.304, subd. 5): A person who violates this section for the first time may be charged with a petty misdemeanor and fined up to $300. A second or subsequent conviction of this section within five years of a prior conviction is a misdemeanor and the court may impose a fine of up to $1,000."
+}

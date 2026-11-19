@@ -1,0 +1,413 @@
+{
+  "id": "MN-SF-4067-2025",
+  "scope": "state:mn",
+  "title": "SF4067 (2025-2026 Regular): Omnibus Firearms Bill",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4067?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4067/versions/2/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Zaynab Mohamed",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    },
+    {
+      "name": "Ron Latz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "Bonnie Westlin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Bobby Joe Champion",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "24e523eb-c8b0-4b30-915b-6982c1d1a3cb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "medicare/aid: Article 4, Section 1 (Minn. Stat. 256B.761, subd. 5) — pays psychological and neuropsychological testing at 100 percent of the Medicare rate in medical assistance, and Article 1, Section 3 appropriates mental health rate increases and grants"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-05-04",
+      "body": "MN Senate",
+      "motion": "Senate Third reading Passed",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 33,
+      "absent": 0,
+      "note": "house.mn.gov roll call (read from the legislature) 90237774 https://www.mnsenate.gov/journals/2025-2026/20260504068.pdf#Page9706-SF4067",
+      "members": [
+        {
+          "name": "Liz Boldon",
+          "vote": "yea",
+          "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+        },
+        {
+          "name": "Nick Frentz",
+          "vote": "yea",
+          "politician_id": "c2d7c018-141c-4c34-a605-e8b1f53acdee"
+        },
+        {
+          "name": "Matt Klein",
+          "vote": "yea",
+          "politician_id": "5e86fb53-a6eb-4b35-82de-79706a66dc1a"
+        },
+        {
+          "name": "Jen McEwen",
+          "vote": "yea",
+          "politician_id": "a3656b66-f796-4b26-a29e-2b9d7c1c064e"
+        },
+        {
+          "name": "Aric Putnam",
+          "vote": "yea",
+          "politician_id": "842fbe6e-2018-4250-b024-5ce57aa278b7"
+        },
+        {
+          "name": "Jim Carlson",
+          "vote": "yea",
+          "politician_id": "bfde1ba1-0aab-416e-884d-708bb14ee500"
+        },
+        {
+          "name": "Heather Gustafson",
+          "vote": "yea",
+          "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+        },
+        {
+          "name": "Mary Kunesh",
+          "vote": "yea",
+          "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+        },
+        {
+          "name": "Zaynab Mohamed",
+          "vote": "yea",
+          "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+        },
+        {
+          "name": "Ann Rest",
+          "vote": "yea",
+          "politician_id": "3295d8e3-953f-4312-b660-a08b5ba8d862"
+        },
+        {
+          "name": "Bobby Joe Champion",
+          "vote": "yea",
+          "politician_id": "24e523eb-c8b0-4b30-915b-6982c1d1a3cb"
+        },
+        {
+          "name": "Grant Hauschild",
+          "vote": "yea",
+          "politician_id": "acbe5b83-4bc5-49c0-8f9a-40716b912d3a"
+        },
+        {
+          "name": "Rob Kupec",
+          "vote": "yea",
+          "politician_id": "a855b6e4-1ce3-44f1-ade3-de2bf2b95c9c"
+        },
+        {
+          "name": "Erin Murphy",
+          "vote": "yea",
+          "politician_id": "f9f2c3e6-ae73-4844-91c2-c472d74c3aa9"
+        },
+        {
+          "name": "Judy Seeberger",
+          "vote": "yea",
+          "politician_id": "c35bd7ef-eafe-47be-b21b-928f579fbf73"
+        },
+        {
+          "name": "Doron Clark",
+          "vote": "yea",
+          "politician_id": "3a7411c9-55d4-4eb6-bae0-5f5f6206c517"
+        },
+        {
+          "name": "Foung Hawj",
+          "vote": "yea",
+          "politician_id": "3e6dbcc6-a36c-46a5-a045-c55e294aa3f1"
+        },
+        {
+          "name": "Ron Latz",
+          "vote": "yea",
+          "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+        },
+        {
+          "name": "Clare Oumou Verbeten",
+          "vote": "yea",
+          "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+        },
+        {
+          "name": "Bonnie Westlin",
+          "vote": "yea",
+          "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+        },
+        {
+          "name": "Steve Cwodzinski",
+          "vote": "yea",
+          "politician_id": "7845f8df-cc58-49fa-a87c-6483d6cdcf47"
+        },
+        {
+          "name": "Amanda Hemmingsen-Jaeger",
+          "vote": "yea",
+          "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+        },
+        {
+          "name": "Alice Mann",
+          "vote": "yea",
+          "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+        },
+        {
+          "name": "Sandy Pappas",
+          "vote": "yea",
+          "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+        },
+        {
+          "name": "Melissa Wiklund",
+          "vote": "yea",
+          "politician_id": "9e2e19df-eca0-4b74-8d0b-6ef205f5431c"
+        },
+        {
+          "name": "Scott Dibble",
+          "vote": "yea",
+          "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+        },
+        {
+          "name": "John Hoffman",
+          "vote": "yea",
+          "politician_id": "66a77b36-2947-47c1-8801-13a4f2f6e078"
+        },
+        {
+          "name": "John Marty",
+          "vote": "yea",
+          "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+        },
+        {
+          "name": "Susan Pha",
+          "vote": "yea",
+          "politician_id": "feb4315d-60f4-49c5-a57b-0a65432a2868"
+        },
+        {
+          "name": "Tou Xiong",
+          "vote": "yea",
+          "politician_id": "c5aac466-971e-4b44-ac6e-91c4cbfa39d7"
+        },
+        {
+          "name": "Omar Fateh",
+          "vote": "yea",
+          "politician_id": "777c5284-663b-40b3-a86c-a557c8653339"
+        },
+        {
+          "name": "Ann Johnson Stewart",
+          "vote": "yea",
+          "politician_id": "56c6c6c9-2bf8-4841-aa25-9244586e88eb"
+        },
+        {
+          "name": "Erin Maye Quade",
+          "vote": "yea",
+          "politician_id": "a9f089f1-c5a5-4cf6-908b-b9898a078fe7"
+        },
+        {
+          "name": "Lindsey Port",
+          "vote": "yea",
+          "politician_id": "08a8570b-9a9a-4cf7-bfd2-2d55a24136cb"
+        },
+        {
+          "name": "Jim Abeler",
+          "vote": "nay",
+          "politician_id": "6162018b-568b-4739-8130-cde253fbb31b"
+        },
+        {
+          "name": "Zach Duckworth",
+          "vote": "nay",
+          "politician_id": "099c5cb6-2221-4228-a3a8-0f5955d89112"
+        },
+        {
+          "name": "Jeff Howe",
+          "vote": "nay",
+          "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+        },
+        {
+          "name": "Warren Limmer",
+          "vote": "nay",
+          "politician_id": "7f870a88-85e4-4021-969b-c417709f01f0"
+        },
+        {
+          "name": "Jordan Rasmusson",
+          "vote": "nay",
+          "politician_id": "906a4784-59a9-4882-8a2e-a390f3032b72"
+        },
+        {
+          "name": "Cal Bahr",
+          "vote": "nay",
+          "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+        },
+        {
+          "name": "Rob Farnsworth",
+          "vote": "nay",
+          "politician_id": "a571aa51-078a-4fd7-b54a-360249d443ac"
+        },
+        {
+          "name": "John Jasinski",
+          "vote": "nay",
+          "politician_id": "959d8534-6a9a-41e7-af1c-b3d9e2e0499c"
+        },
+        {
+          "name": "Eric Lucero",
+          "vote": "nay",
+          "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+        },
+        {
+          "name": "Paul Utke",
+          "vote": "nay",
+          "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+        },
+        {
+          "name": "Julia Coleman",
+          "vote": "nay",
+          "politician_id": "b1f2628a-6264-4849-a14f-0f708fef5394"
+        },
+        {
+          "name": "Steve Green",
+          "vote": "nay",
+          "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "nay",
+          "politician_id": "521f60ba-6749-4022-b9dc-1474fa63c890"
+        },
+        {
+          "name": "Andrew Mathews",
+          "vote": "nay",
+          "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+        },
+        {
+          "name": "Bill Weber",
+          "vote": "nay",
+          "politician_id": "476f550b-5c67-4d65-b7d6-d834360503d7"
+        },
+        {
+          "name": "Gary Dahms",
+          "vote": "nay",
+          "politician_id": "47534fbb-c532-4d3d-8e03-46695ca83f01"
+        },
+        {
+          "name": "Glenn Gruenhagen",
+          "vote": "nay",
+          "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+        },
+        {
+          "name": "Mark Koran",
+          "vote": "nay",
+          "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+        },
+        {
+          "name": "Jeremy Miller",
+          "vote": "nay",
+          "politician_id": "d78d2570-7fca-4a5d-86c1-5f0996e3fdd4"
+        },
+        {
+          "name": "Nathan Wesenberg",
+          "vote": "nay",
+          "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+        },
+        {
+          "name": "Gene Dornink",
+          "vote": "nay",
+          "politician_id": "e62ff25c-2d0a-4fc3-b235-ff33eacf43d4"
+        },
+        {
+          "name": "Keri Heintzeman",
+          "vote": "nay",
+          "politician_id": "fe0742ae-e32f-4900-ad95-0c7d3cc796ea"
+        },
+        {
+          "name": "Michael Kreun",
+          "vote": "nay",
+          "politician_id": "f05556a2-a3e8-4f98-9b62-9d169dec312d"
+        },
+        {
+          "name": "Carla Nelson",
+          "vote": "nay",
+          "politician_id": "15788263-ad8f-4233-ac48-c9de61d2b55e"
+        },
+        {
+          "name": "Torrey Westrom",
+          "vote": "nay",
+          "politician_id": "545069b3-7f84-4480-a36b-761f5c6cc415"
+        },
+        {
+          "name": "Rich Draheim",
+          "vote": "nay",
+          "politician_id": "a41019c1-8548-4465-bbd6-f23688ed38dd"
+        },
+        {
+          "name": "Mike Holmstrom",
+          "vote": "nay",
+          "politician_id": "927f1587-2180-4d0f-9238-2360dac34959"
+        },
+        {
+          "name": "Andrew Lang",
+          "vote": "nay",
+          "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+        },
+        {
+          "name": "Eric Pratt",
+          "vote": "nay",
+          "politician_id": "fa8d5cfb-5feb-4112-b68b-f1c2de963dc3"
+        },
+        {
+          "name": "Steve Drazkowski",
+          "vote": "nay",
+          "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+        },
+        {
+          "name": "Karin Housley",
+          "vote": "nay",
+          "politician_id": "302feb80-0c30-4b42-b107-dae60b15fb4f"
+        },
+        {
+          "name": "Bill Lieske",
+          "vote": "nay",
+          "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+        },
+        {
+          "name": "Jason Rarick",
+          "vote": "nay",
+          "politician_id": "e9e8dab5-3add-4eb0-874f-7c7652fad785"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-30; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4067/versions/2/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4067-2025.engrossed2.html",
+      "sha256": "8bed7150fe7bd3749a11193d241eba1091f6fade0e9fd5f2dc38e016c80a9d4b"
+    },
+    "note": "2nd engrossment, 2026-04-30. Senate third-reading vote 2026-05-04 (34 yes, 33 no): amendments made after the version read are not in the text read. Article 2 strikes the old sporting-purposes exception in the assault-weapon definition. Large-capacity magazine is more than 17 rounds in this version. Article 3 also has a school anonymous threat reporting system (121A.036, voluntary), a law-enforcement firearm-discharge report change (626.553) and repeals the old serial-number offence (609.667); Article 1 appropriates money, including $1,000,000 for nonpublic-school safety grants and $500,000 for a violence-prevention research center focused on gun violence. School safety parts have no clear matching topic key. Article 5 is conforming changes. Only the main gun parts are quoted."
+  },
+  "operative_text": "Article 2, Section 2 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than 17 rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nArticle 2, Section 6 (Minn. Stat. 624.7135, subd. 1(a)): Except as otherwise provided in this section, a firearms dealer, as defined in section 624.7134, subdivision 1, paragraph (b), may not sell a semiautomatic military-style assault weapon or a large-capacity magazine.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 1): It is unlawful for a person to own or possess a semiautomatic military-style assault weapon or large-capacity magazine that is not certified as required under this section.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 3(a)): A person who owns or possesses an uncertified semiautomatic military-style assault weapon or large-capacity magazine or who otherwise knowingly violates this section is guilty of a gross misdemeanor. A person who is convicted of a second or subsequent violation is guilty of a felony.\nArticle 3, Section 4 (Minn. Stat. 609.666, subd. 2): A person is guilty of a gross misdemeanor who negligently stores or leaves a loaded firearm in a location where the person knows, or reasonably should know, that a child or a person prohibited from possessing firearms under section 624.713, subdivision 1, is likely to gain access, unless reasonable action is taken to secure the firearm against access by the child or the person prohibited from possessing firearms.\nArticle 3, Section 5 (Minn. Stat. 624.7145, subd. 3): Any person who owns, possesses, or receives a ghost gun may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nArticle 3, Section 5 (Minn. Stat. 624.7145, subd. 4): Any person who sells, transfers, or distributes a ghost gun may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nArticle 3, Section 2 (Minn. Stat. 609.66, subd. 1d(f)(7)(iv)): are authorized in writing by the principal or other person having general control and supervision of the school or the director of a child care center to carry a firearm while performing official duties on school property; or\nArticle 3, Section 9 (Minn. Stat. 624.7171, subd. 4(b)): A petition for relief under sections 624.7171 to 624.7178 may be made by a law enforcement agency, a city or county attorney's office, any family or household members of the respondent, or a guardian, as defined in section 524.1-201, clause (28), of the respondent. The respondent may also petition on their own behalf.\nArticle 3, Section 11 (Minn. Stat. 624.7172, subd. (d)): If the court finds there is clear and convincing evidence to issue an extreme risk protection order, the court shall issue the order prohibiting the person from possessing or purchasing a firearm for the duration of the order.\nArticle 3, Section 21: Laws 2024, chapter 127, article 36, section 2, is reenacted retroactively and without interruption from January 1, 2025."
+}

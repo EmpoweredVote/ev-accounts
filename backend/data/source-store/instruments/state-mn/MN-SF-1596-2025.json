@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-1596-2025",
+  "scope": "state:mn",
+  "title": "SF1596 (2025-2026 Regular): Sale or transfer of a semiautomatic military-style assault weapon prohibition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1596?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1596/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jen McEwen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a3656b66-f796-4b26-a29e-2b9d7c1c064e"
+    },
+    {
+      "name": "Omar Fateh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "777c5284-663b-40b3-a86c-a557c8653339"
+    },
+    {
+      "name": "Alice Mann",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    },
+    {
+      "name": "Ann Johnson Stewart",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56c6c6c9-2bf8-4841-aa25-9244586e88eb"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-17; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/1596/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1596-2025.introduced.html",
+      "sha256": "36408f752691175bf57c2715ef62a0d634eb407fe6fe63463a4db32a3ab765e9"
+    },
+    "note": "Introduced text. Section 1 widens the assault-weapon definition by striking the sporting-purposes exception. Appropriation amounts are blank. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer a semiautomatic military-style assault weapon.\nSection 2 (Minn. Stat. 624.7145, subd. 4): A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 3 (buyback program, subd. 1): The commissioner of public safety shall establish a statewide buyback program to purchase semiautomatic military-style assault weapons."
+}

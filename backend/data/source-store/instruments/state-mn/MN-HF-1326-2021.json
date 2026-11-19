@@ -1,0 +1,123 @@
+{
+  "id": "MN-HF-1326-2021",
+  "scope": "state:mn",
+  "title": "HF1326 (2021-2022 Regular): Shooting range closure prohibited during a state of emergency.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1326&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/1326/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Demuth",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
+    },
+    {
+      "name": "Tama Theis",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sondra Erickson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Novotny",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Donald Raleigh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Nash",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Spencer Igo",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "144b7c0e-354b-4d1f-be2f-73b04e8a0072"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-18; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/1326/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1326-2021.introduced.html",
+      "sha256": "66dc4e126fa9293bd6aee7e0b0cc54449d82fa9deba39299a45c9d5d630b07b9"
+    },
+    "note": "Introduced version, 2021-02-18. The bill itself only strikes \"or\" and adds \"gun ranges\" language to clause (4); the rest of the section is existing law. Quoted clause (4) reads with the struck word left out."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7192, subd. (c)): (c) Notwithstanding any other law to the contrary, no governmental unit, government official, government employee, peace officer, or other person or body acting under governmental authority or color of law may undertake any of the following actions with regard to any firearms and ammunition, and components thereof; any firearms accessories and ammunition reloading equipment and supplies; and any other personal weapons: (1) prohibit, regulate, or curtail the otherwise lawful possession, carrying, transportation, transfer, defensive use, or other lawful use of any of these items; (2) seize, commandeer, or confiscate any of these items in any manner, except as expressly authorized in paragraph (b); (3) suspend or revoke a valid permit issued pursuant to section 624.7131 or 624.714, except as expressly authorized in those sections; or (4) close or limit the operating hours of businesses, including but not limited to gun ranges, that lawfully sell, service, or provide training in the lawful use of any of these items, unless such closing or limitation of hours applies equally to all forms of commerce.\nSection 1 (Minn. Stat. 624.7192, par. (e)): (1) An individual aggrieved by a violation of this section may seek relief in an action at law or in equity or in any other proper proceeding for damages, injunctive relief, or other appropriate redress against a person who commits or causes the commission of this violation. Venue must be in the district court having jurisdiction over the county in which the aggrieved individual resides or in which the violation occurred."
+}

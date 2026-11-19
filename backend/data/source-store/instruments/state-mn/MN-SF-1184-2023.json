@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-1184-2023",
+  "scope": "state:mn",
+  "title": "SF1184 (2023-2024 Regular): Criminal background checks for firearms transfers requirement; disqualification of transferee permit modification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1184&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/1184/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bobby Joe Champion",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "24e523eb-c8b0-4b30-915b-6982c1d1a3cb"
+    },
+    {
+      "name": "Lindsey Port",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "08a8570b-9a9a-4cf7-bfd2-2d55a24136cb"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "John Hoffman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "66a77b36-2947-47c1-8801-13a4f2f6e078"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-01; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1184/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1184-2023.introduced.html",
+      "sha256": "28c8f75048808d828d77c0bf3807a891a7f3d9b2e3a5b244220a10822cc9e40b"
+    },
+    "note": "As filed (Introduction, 2023-02-01); official copy from revisor.mn.gov. The bill text is identical to MN-SF-1184-2023 and MN-SF-1186-2023 (same body, different author). Strikes the old rule that only a legal bar could be the basis to refuse a permit, the transfer-report exemption for permit holders, the transferee-permit step after a report, and the old identity-check subdivision. Family and immediate-family transfers and several others are excluded in subd. 6 (not all quoted). No passage vote on file."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7131, subd. 4): (a) The chief of police or sheriff shall refuse to grant a transferee permit if the applicant is prohibited by state or federal law from possessing a pistol or semiautomatic military-style assault weapon or is determined to be a danger to self or others under paragraph (b).\nSection 1 (Minn. Stat. 624.7131, subd. 4): (b) A chief of police or sheriff shall refuse to grant a permit to a person who is a danger to self or others. The decision of the chief of police or sheriff must be based on documented past contact with law enforcement.\nSection 1 (Minn. Stat. 624.7131, subd. 11): A person who makes a false statement in order to obtain a transferee permit knowing or having reason to know the statement is false is guilty of a felony.\nSection 2 (Minn. Stat. 624.7132, subd. 5): (a) The chief of police or sheriff shall deny an application if the proposed transferee is prohibited by state or federal law from possessing a pistol or semiautomatic military-style assault weapon or is determined to be a danger to self or others under paragraph (b).\nSection 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a pistol or semiautomatic military-style assault weapon to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nSection 3 (Minn. Stat. 624.7134, subd. 3): (d) Both the transferor and the transferee must retain a copy of the record of transfer and any attachments to the record of transfer for 20 years from the date of the transfer.\nSection 3 (Minn. Stat. 624.7134, subd. 4): (b) A person who refuses or is unable to produce a record of transfer for a firearm transferred under this section in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a gross misdemeanor."
+}

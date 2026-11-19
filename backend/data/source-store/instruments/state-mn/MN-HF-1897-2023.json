@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-1897-2023",
+  "scope": "state:mn",
+  "title": "HF1897 (2023-2024 Regular): Permitted and trained school staff allowed to carry firearms.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1897&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/1897/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Walter Hudson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-16; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1897/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1897-2023.introduced.html",
+      "sha256": "52b5598a4fbd4125e4fc552ad111274b34c09740e2a3caed17bd0c92aa8bd91e"
+    },
+    "note": "Version read: introduced bill (as filed), 2023-02-16. No votes recorded. Effective the day after enactment."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 299C.26): The superintendent of the Bureau of Criminal Apprehension, in consultation with security and law enforcement experts with appropriate qualifications and experience in responding to active shooter situations, must establish a school and postsecondary institution teacher and employee firearm training program that includes at a minimum training in active shooter situations.\nSection 1 (Minn. Stat. 299C.26): The training must be provided at no cost to teachers and other employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137.\nSection 2 (Minn. Stat. 609.66, subd. 1d): (10) teachers and employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137 who have a school permit to carry under section 624.714, subdivision 8b.\nSection 3 (Minn. Stat. 624.714, subd. 8b): A school permit to carry issued under this subdivision expires one year after the date of issue.\nSection 4 (Minn. Stat. 624.714, subd. 18): This subdivision does not apply to teachers and employees authorized to carry firearms under section 609.66, subdivision 1d, paragraph (f)."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "MN-HF-3367-2025",
+  "scope": "state:mn",
+  "title": "HF3367 (2025-2026 Regular): 2024 changes to the crime of transferring a firearm to an ineligible person reenacted with certain amendments, and affirmative defense repealed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3367?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3367/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kaela Berg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Carlie Kotyza-Witthuhn",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-10; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3367/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3367-2025.introduced.html",
+      "sha256": "56fe48ae726d118337814ea6ff53bd0185205dae7578efaa1725b58bdce5287f"
+    },
+    "note": "Introduced version, 2026-02-10. The text of Laws 2024, ch. 127, art. 36, sec. 3 is not in the file; only the reenactment reference. The repealed affirmative defense is printed in the appendix as old law."
+  },
+  "operative_text": "Section 1 (uncoded reenactment): Laws 2024, chapter 127, article 36, section 3, is reenacted retroactively and without interruption from August 1, 2024.\nSection 2 (repealer of Minn. Stat. 624.7141, subd. 4): Minnesota Statutes 2024, section 624.7141, subdivision 4, is repealed."
+}

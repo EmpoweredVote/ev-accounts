@@ -1,0 +1,821 @@
+{
+  "id": "MN-HF-8-2019",
+  "scope": "state:mn",
+  "title": "HF8 (2019-2020 Regular): Firearm transfer criminal background checks required, and transferee permit disqualification grounds modified.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0008&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/8/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Dave Pinto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Ruth Richardson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Lesch",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carlos Mariani",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Diane Loeffler",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Frank Hornstein",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Heather Edelson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alice Mann",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    },
+    {
+      "name": "Hunter Cantrell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kristin Bahner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
+    },
+    {
+      "name": "Jennifer Schultz",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michelle (Shelly) Christensen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Davnie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Aisha Gomez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81033847-4e48-4080-a0c5-8daf154a4761"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Mary Kunesh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+    },
+    {
+      "name": "Tina Liebling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Todd Lippert",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Steve Sandell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ami Wazlawik",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mohamud Noor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
+    },
+    {
+      "name": "Melissa Hortman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ryan Winkler",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Laurie Pryor",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "Dan Wolgamott",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef03b5f-8da7-46b6-b609-433ffb993f10"
+    },
+    {
+      "name": "John Huot",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
+    },
+    {
+      "name": "Liz Olson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rena Moran",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alice Hausman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peter Fischer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
+    },
+    {
+      "name": "Ron Latz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-02-27",
+      "body": "MN House",
+      "motion": "House Bill was passed",
+      "kind": "roll-call",
+      "yes": 69,
+      "no": 62,
+      "absent": 0,
+      "note": "house.mn.gov roll call (read from the legislature) 90237764 https://www.house.mn.gov/cco/journals/2019-20/J0227068.htm#Page6542-HF8",
+      "members": [
+        {
+          "name": "Patty Acomb",
+          "vote": "yea",
+          "politician_id": "f1f2ffaf-c9fb-4555-adf8-6c9c8114d9f3"
+        },
+        {
+          "name": "Kristin Bahner",
+          "vote": "yea",
+          "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
+        },
+        {
+          "name": "Jamie Becker-Finn",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Bernardy",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Bierman",
+          "vote": "yea",
+          "politician_id": "32422c01-9158-4264-b2b9-b021e3438cce"
+        },
+        {
+          "name": "Jeff Brand",
+          "vote": "yea"
+        },
+        {
+          "name": "Hunter Cantrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Carlson",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyndon Carlson Sr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle (Shelly) Christensen",
+          "vote": "yea"
+        },
+        {
+          "name": "Anne Claflin",
+          "vote": "yea"
+        },
+        {
+          "name": "John (Jack) Considine Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Davnie",
+          "vote": "yea"
+        },
+        {
+          "name": "Raymond Dehn",
+          "vote": "yea"
+        },
+        {
+          "name": "Heather Edelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Elkins",
+          "vote": "yea",
+          "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
+        },
+        {
+          "name": "Peter Fischer",
+          "vote": "yea",
+          "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
+        },
+        {
+          "name": "Mike Freiberg",
+          "vote": "yea",
+          "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+        },
+        {
+          "name": "Aisha Gomez",
+          "vote": "yea",
+          "politician_id": "81033847-4e48-4080-a0c5-8daf154a4761"
+        },
+        {
+          "name": "Laurie Halverson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Hansen",
+          "vote": "yea",
+          "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
+        },
+        {
+          "name": "Hodan Hassan",
+          "vote": "yea"
+        },
+        {
+          "name": "Alice Hausman",
+          "vote": "yea"
+        },
+        {
+          "name": "Kaohly Her",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Hornstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Howard",
+          "vote": "yea",
+          "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+        },
+        {
+          "name": "John Huot",
+          "vote": "yea",
+          "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
+        },
+        {
+          "name": "Sydney Jordan",
+          "vote": "yea",
+          "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
+        },
+        {
+          "name": "Ginny Klevorn",
+          "vote": "yea",
+          "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
+        },
+        {
+          "name": "Erin Koegel",
+          "vote": "yea",
+          "politician_id": "3b0dc78e-e73a-47e7-b45a-73b880a1ab7c"
+        },
+        {
+          "name": "Carlie Kotyza-Witthuhn",
+          "vote": "yea",
+          "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
+        },
+        {
+          "name": "Mary Kunesh",
+          "vote": "yea",
+          "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+        },
+        {
+          "name": "Fue Lee",
+          "vote": "yea",
+          "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+        },
+        {
+          "name": "John Lesch",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Liebling",
+          "vote": "yea",
+          "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+        },
+        {
+          "name": "Ben Lien",
+          "vote": "yea"
+        },
+        {
+          "name": "Leon Lillie",
+          "vote": "yea",
+          "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
+        },
+        {
+          "name": "Todd Lippert",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Long",
+          "vote": "yea",
+          "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+        },
+        {
+          "name": "Tim Mahoney",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlos Mariani",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra Masin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Moller",
+          "vote": "yea",
+          "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+        },
+        {
+          "name": "Rena Moran",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Morrison",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael V. Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Mohamud Noor",
+          "vote": "yea",
+          "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
+        },
+        {
+          "name": "Liz Olson",
+          "vote": "yea"
+        },
+        {
+          "name": "Gene Pelowski",
+          "vote": "yea"
+        },
+        {
+          "name": "John Persell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Pinto",
+          "vote": "yea",
+          "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+        },
+        {
+          "name": "Jeanne Poppe",
+          "vote": "yea"
+        },
+        {
+          "name": "Laurie Pryor",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruth Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Sandell",
+          "vote": "yea"
+        },
+        {
+          "name": "Duane Sauke",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Schultz",
+          "vote": "yea"
+        },
+        {
+          "name": "Zack Stephenson",
+          "vote": "yea",
+          "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
+        },
+        {
+          "name": "Brad Tabke",
+          "vote": "yea",
+          "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
+        },
+        {
+          "name": "Samantha Vang",
+          "vote": "yea",
+          "politician_id": "ba34c6bc-b9cf-4097-aa83-fdc191a3622c"
+        },
+        {
+          "name": "Jean Wagenius",
+          "vote": "yea"
+        },
+        {
+          "name": "Ami Wazlawik",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Winkler",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Wolgamott",
+          "vote": "yea",
+          "politician_id": "bef03b5f-8da7-46b6-b609-433ffb993f10"
+        },
+        {
+          "name": "Jay Xiong",
+          "vote": "yea",
+          "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
+        },
+        {
+          "name": "Tou Xiong",
+          "vote": "yea",
+          "politician_id": "c5aac466-971e-4b44-ac6e-91c4cbfa39d7"
+        },
+        {
+          "name": "Cheryl Youakim",
+          "vote": "yea",
+          "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+        },
+        {
+          "name": "Melissa Hortman",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Albright",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Anderson",
+          "vote": "nay",
+          "politician_id": "8d46d88e-ad1e-4a88-81c2-782da83d77f1"
+        },
+        {
+          "name": "Jeff Backer",
+          "vote": "nay",
+          "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
+        },
+        {
+          "name": "Cal Bahr",
+          "vote": "nay",
+          "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+        },
+        {
+          "name": "Dave Baker",
+          "vote": "nay",
+          "politician_id": "70ad1a5d-f216-415e-a307-f31c83785abb"
+        },
+        {
+          "name": "Peggy Bennett",
+          "vote": "nay",
+          "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+        },
+        {
+          "name": "Greg Boe",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Daniels",
+          "vote": "nay"
+        },
+        {
+          "name": "Kurt Daudt",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Demuth",
+          "vote": "nay",
+          "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
+        },
+        {
+          "name": "Bob Dettmer",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Drazkowski",
+          "vote": "nay",
+          "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+        },
+        {
+          "name": "Rob Ecklund",
+          "vote": "nay"
+        },
+        {
+          "name": "Sondra Erickson",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Fabian",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Franson",
+          "vote": "nay",
+          "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+        },
+        {
+          "name": "Pat Garofalo",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Green",
+          "vote": "nay",
+          "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+        },
+        {
+          "name": "Matt Grossell",
+          "vote": "nay"
+        },
+        {
+          "name": "Glenn Gruenhagen",
+          "vote": "nay",
+          "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+        },
+        {
+          "name": "Bob Gunther",
+          "vote": "nay"
+        },
+        {
+          "name": "Barb Haley",
+          "vote": "nay"
+        },
+        {
+          "name": "Rod Hamilton",
+          "vote": "nay"
+        },
+        {
+          "name": "John Heinrich",
+          "vote": "nay"
+        },
+        {
+          "name": "Josh Heintzeman",
+          "vote": "nay",
+          "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+        },
+        {
+          "name": "Jerry Hertaus",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tony Jurgens",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Kiel",
+          "vote": "nay"
+        },
+        {
+          "name": "Jon Koznick",
+          "vote": "nay",
+          "politician_id": "ad0a254b-0082-41da-8eef-3567066d2bbf"
+        },
+        {
+          "name": "Ron Kresha",
+          "vote": "nay",
+          "politician_id": "edc6c327-bd08-4993-af0b-98397d232e6d"
+        },
+        {
+          "name": "Sandy Layman",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Lislegard",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Lucero",
+          "vote": "nay",
+          "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+        },
+        {
+          "name": "Dale Lueck",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Marquart",
+          "vote": "nay"
+        },
+        {
+          "name": "Shane Mekeland",
+          "vote": "nay",
+          "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+        },
+        {
+          "name": "Tim Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeremy Munson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Nash",
+          "vote": "nay",
+          "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+        },
+        {
+          "name": "Nathan Nelson",
+          "vote": "nay",
+          "politician_id": "bd04bd63-5a7b-44ba-a34f-a293b51de5b9"
+        },
+        {
+          "name": "Anne Neu Brindley",
+          "vote": "nay"
+        },
+        {
+          "name": "Bud Nornes",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Novotny",
+          "vote": "nay",
+          "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
+        },
+        {
+          "name": "Tim O'Driscoll",
+          "vote": "nay",
+          "politician_id": "a146f476-d15d-40e5-948a-40724c920ca4"
+        },
+        {
+          "name": "Marion Rarick",
+          "vote": "nay",
+          "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+        },
+        {
+          "name": "John Petersburg",
+          "vote": "nay"
+        },
+        {
+          "name": "Nels Pierson",
+          "vote": "nay"
+        },
+        {
+          "name": "John Poston",
+          "vote": "nay"
+        },
+        {
+          "name": "Duane Quam",
+          "vote": "nay",
+          "politician_id": "8f781313-476b-48a0-b80c-c57a683b7db8"
+        },
+        {
+          "name": "Kristin Robbins",
+          "vote": "nay",
+          "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
+        },
+        {
+          "name": "Linda Runbeck",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie Sandstede",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Schomacker",
+          "vote": "nay"
+        },
+        {
+          "name": "Peggy Scott",
+          "vote": "nay",
+          "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+        },
+        {
+          "name": "Mike Sundin",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Swedzinski",
+          "vote": "nay",
+          "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+        },
+        {
+          "name": "Tama Theis",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Torkelson",
+          "vote": "nay",
+          "politician_id": "df16a6e7-95e5-4c40-b81e-690dfc7d3aeb"
+        },
+        {
+          "name": "Dean Urdahl",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Vogel",
+          "vote": "nay"
+        },
+        {
+          "name": "Nolan West",
+          "vote": "nay",
+          "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st  Engrossment; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/8/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-8-2019.engrossed1.html",
+      "sha256": "6ee15a292e0bd7467c8100f89007c2ae51f6104a3565040446f39d2c44327fbd"
+    },
+    "note": "Version read: 1st engrossment (other), House passage vote 2020-02-27; amendments made after this version are not in the text read. The bill strikes the old rule that denial may rest only on the person being prohibited by law, the old transfer-to-unknown-party and transfer-report-exemption sections, the separate transferee-permit step in the transfer report law, and the words \"gross misdemeanor\" (raised to a felony for a false statement on a permit application)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7131, subd. 4): (a) The chief of police or sheriff shall refuse to grant a transferee permit if the applicant is prohibited by state or federal law from possessing a pistol or semiautomatic military-style assault weapon or is determined to be a danger to self or others under paragraph (b).\nSection 1 (Minn. Stat. 624.7131, subd. 4): (b) A chief of police or sheriff shall refuse to grant a permit to a person who is a danger to self or others. The decision of the chief of police or sheriff must be based on documented past contact with law enforcement.\nSection 1 (Minn. Stat. 624.7131, subd. 11): A person who makes a false statement in order to obtain a transferee permit knowing or having reason to know the statement is false is guilty of a felony.\nSection 2 (Minn. Stat. 624.7132, subd. 4): No person shall deliver a firearm to a proposed transferee after receiving a written notification that the chief of police or sheriff has determined that the proposed transferee is prohibited by section 624.713 from possessing a firearm.\nSection 2 (Minn. Stat. 624.7132, subd. 5): (a) The chief of police or sheriff shall deny an application if the proposed transferee is prohibited by state or federal law from possessing a pistol or semiautomatic military-style assault weapon or is determined to be a danger to self or others under paragraph (b).\nSection 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a pistol or semiautomatic military-style assault weapon to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 or a valid permit to carry issued under section 624.714 and a current state or federally issued identification.\nSection 3 (Minn. Stat. 624.7134, subd. 3): (a) When two parties complete the transfer of a pistol or semiautomatic military-style assault weapon under subdivision 2, the transferor and transferee must complete a record of transfer on a form designed and made publicly available without fee for this purpose by the superintendent of the Bureau of Criminal Apprehension.\nSection 3 (Minn. Stat. 624.7134, subd. 3): (d) Both the transferor and the transferee must retain a copy of the record of transfer and any attachments to the record of transfer for 20 years from the date of the transfer.\nSection 3 (Minn. Stat. 624.7134, subd. 4): (b) A person who refuses or is unable to produce a record of transfer for a firearm transferred under this section in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a gross misdemeanor."
+}

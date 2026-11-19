@@ -1,0 +1,56 @@
+{
+  "id": "MN-SF-1429-2023",
+  "scope": "state:mn",
+  "title": "SF1429 (2023-2024 Regular): Criminal background checks requirement for firearms transfers",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1429&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/1429/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Nicole Mitchell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Erin Maye Quade",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9f089f1-c5a5-4cf6-908b-b9898a078fe7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-07; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1429/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1429-2023.introduced.html",
+      "sha256": "c59d99f0c1b721143573fd8dff4c0e7fbcb719ce2e1e55ee4d7c01a443944621"
+    },
+    "note": "Introduced text. The 624.7134 transfer rules cover pistols and assault weapons only, unlike the 2019 bill. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a pistol or semiautomatic military-style assault weapon to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nSection 1 (Minn. Stat. 624.7131, subd. 4): A chief of police or sheriff shall refuse to grant a permit to a person who is a danger to self or others.\nSection 1 (Minn. Stat. 624.7131, subd. 4): The decision of the chief of police or sheriff must be based on documented past contact with law enforcement."
+}

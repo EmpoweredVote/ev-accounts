@@ -1,0 +1,49 @@
+{
+  "id": "MN-HF-2503-2021",
+  "scope": "state:mn",
+  "title": "HF2503 (2021-2022 Regular): Permit to carry a handgun permissible application submitting methods expanded.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2503&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/2503/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Nash",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+    },
+    {
+      "name": "Donald Raleigh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-04-09; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/2503/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2503-2021.introduced.html",
+      "sha256": "fb5d73fd6ccc5bd5f7dad286dd5e175b70498edcb634491c9b092b51b6e117ec"
+    },
+    "note": "Version read: introduced (as filed). The bill strikes the word \"must\" and adds \"may\" in paragraph (e). Rest of the subdivision is existing law."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): Applications may be submitted in person, electronically, or by facsimile, certified mail, or certified delivery."
+}

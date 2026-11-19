@@ -1,0 +1,74 @@
+{
+  "id": "MN-HF-577-2023",
+  "scope": "state:mn",
+  "title": "HF577 (2023-2024 Regular): Criminal background checks required for firearms transfers, and grounds for disqualification of transferee permit modified.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0577&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/577/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Clardy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
+    },
+    {
+      "name": "Kristi Pursell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Kaohly Her",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kristin Bahner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    },
+    {
+      "name": "Samakab Hussein",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-19; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/577/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-577-2023.introduced.html",
+      "sha256": "a0139076778a525a5e5477185e384b03eb7941f19801c295ba864a829bdd5407"
+    },
+    "note": "Introduced version (2023-01-19). Strikes the old transferee-permit shortcut around transfer reports, the identity-check rule for unknown parties (subd. 14) and the separate transferee-permit step (subd. 6); the new section 624.7134 replaces them. Exclusions for dealers, family, estates, antiques and temporary range or hunting loans are in 624.7134, subd. 6."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a pistol or semiautomatic military-style assault weapon to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nSection 3 (Minn. Stat. 624.7134, subd. 3): (d) Both the transferor and the transferee must retain a copy of the record of transfer and any attachments to the record of transfer for 20 years from the date of the transfer.\nSection 3 (Minn. Stat. 624.7134, subd. 4): (b) A person who refuses or is unable to produce a record of transfer for a firearm transferred under this section in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a gross misdemeanor.\nSection 1 (Minn. Stat. 624.7131, subd. 4): (a) The chief of police or sheriff shall refuse to grant a transferee permit if the applicant is prohibited by state or federal law from possessing a pistol or semiautomatic military-style assault weapon or is determined to be a danger to self or others under paragraph (b). (b) A chief of police or sheriff shall refuse to grant a permit to a person who is a danger to self or others. The decision of the chief of police or sheriff must be based on documented past contact with law enforcement.\nSection 1 (Minn. Stat. 624.7131, subd. 11): A person who makes a false statement in order to obtain a transferee permit knowing or having reason to know the statement is false is guilty of a felony.\nSection 2 (Minn. Stat. 624.7132, subd. 4): No person shall deliver a firearm to a proposed transferee after receiving a written notification that the chief of police or sheriff has determined that the proposed transferee is prohibited by section 624.713 from possessing a firearm.\nSection 2 (Minn. Stat. 624.7132, subd. 8): If the proposed transferee presents a valid permit to carry issued under section 624.714, the transferor need not file a transfer report."
+}

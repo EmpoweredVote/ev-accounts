@@ -1,0 +1,56 @@
+{
+  "id": "MN-SF-2129-2019",
+  "scope": "state:mn",
+  "title": "SF2129 (2019-2020 Regular): Right to carry firearm without permit; optional permit to carry pistol provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2129&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/2129/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e9e8dab5-3add-4eb0-874f-7c7652fad785"
+    },
+    {
+      "name": "Paul Utke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/2129/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2129-2019.introduced.html",
+      "sha256": "98d291773119e95e27e3d59374807f757a6d7f5fc3c40770ef049f0955b69c0e"
+    },
+    "note": "Introduced version as filed (no date given on the copy); no vote recorded. Struck text: the bill strikes words in subd. 15 (database 'authorized to carry pistols'), subd. 20 and subd. 23 and repeals the permit-required offence (subd. 1a), permit display (subd. 1b), out-of-state permit recognition (subd. 16) and 624.7181 (rifles/shotguns in public places). Sections 3-8 mostly keep existing permit text, now optional."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 3 (Minn. Stat. 624.714, subd. 2): (b) Unless a sheriff denies a permit under the exception set forth in subdivision 6, paragraph (a), clause (3), a sheriff must issue a permit to an applicant if the person: (1) has training in the safe use of a pistol;\nSection 8 (Minn. Stat. 624.714, subd. 23): This section sets forth the complete and exclusive criteria and procedures for the issuance of optional permits to carry and establishes their nature and scope.\nSection 9: Minnesota Statutes 2018, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

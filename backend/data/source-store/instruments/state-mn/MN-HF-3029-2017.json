@@ -1,0 +1,124 @@
+{
+  "id": "MN-HF-3029-2017",
+  "scope": "state:mn",
+  "title": "HF3029 (2017-2018 Regular): Slide-fire stock for a semiautomatic firearm clarified as a trigger activator.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3029&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/HF/3029/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rena Moran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karen Clark",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "JoAnn Ward",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Liz Olson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Tim Mahoney",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jennifer Schultz",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tina Liebling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+    },
+    {
+      "name": "Jim Davnie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Bly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Kunesh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+    },
+    {
+      "name": "Laurie Halverson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cheryl Youakim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+    },
+    {
+      "name": "Ilhan Omar",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peter Fischer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "Ben Lien",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/HF/3029/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3029-2017.introduced.html",
+      "sha256": "224466c9ed81a9268af9815e71554fe31123fd5c6700c34e37e7a9a9433db98a"
+    },
+    "note": "Introduced version; no vote listed. The saved text does not mark added words; the quoted sentence is the one the title says the bill adds. Rest of subd. 1 (definitions of machine gun, shotgun, etc.) is existing law."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.67, subd. 1, para. (d)): For purposes of this section, a device that is designed to use the recoil of a semiautomatic firearm to enable a shooter to fire multiple shots in rapid succession, commonly known as a slide-fire or bump-fire stock, is a trigger activator."
+}

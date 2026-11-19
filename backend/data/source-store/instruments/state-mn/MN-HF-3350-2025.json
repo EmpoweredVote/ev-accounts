@@ -1,0 +1,81 @@
+{
+  "id": "MN-HF-3350-2025",
+  "scope": "state:mn",
+  "title": "HF3350 (2025-2026 Regular): Lifetime firearms ban on persons who are convicted of certain misdemeanor and gross misdemeanor domestic assault offenses established.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3350?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3350/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Dave Pinto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Jay Xiong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
+    },
+    {
+      "name": "Katie Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14b8fcd1-1981-4bbf-b766-287c664133f5"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-16; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3350/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3350-2025.engrossed1.html",
+      "sha256": "0f7247a36fdc7f1e3cb9349b184dd420c2d52de7b9d24f442f3a0a1a966e567a"
+    },
+    "note": "1st Engrossment, 2026-03-16 (not the as-filed text); no passage vote recorded, so no later amendments are known. The bill strikes the old rule that the court 'may' set a ban of any length, changes the pistol-only three-year bans to cover all firearms, and in Section 2 strikes and renumbers old paragraphs on the three-year ban and firearm transfer. Quotes leave out struck words."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 518B.01, subd. 14(j)): When a person is convicted under paragraph (b) or (c) of violating an order for protection and the court determines that the person used a firearm in any way during commission of the violation or the offense otherwise qualifies as a misdemeanor crime of domestic violence, as defined in United States Code, title 18, section 921(a)(33), the court shall order that the person is prohibited from possessing any type of firearm for the remainder of the person's life. A person who violates this paragraph is guilty of a gross misdemeanor.\nSection 1 (Minn. Stat. 518B.01, subd. 14(l)): Except as otherwise provided in paragraph (j), a person is not entitled to possess firearms if the person has been convicted under paragraph (b) or (c) after August 1, 1996, of violating an order for protection, unless three years have elapsed from the date of conviction and, during that time, the person has not been convicted of any other violation of this section.\nSection 2 (Minn. Stat. 609.2242, subd. 3(c)): When a person is convicted of assaulting a family or household member and is determined by the court to have used a firearm in any way during commission of the assault or the offense otherwise qualifies as a misdemeanor crime of domestic violence, as defined in United States Code, title 18, section 921(a)(33), the court shall order that the person is prohibited from possessing any type of firearm for the remainder of the person's life. A person who violates this paragraph is guilty of a gross misdemeanor.\nSection 3 (Minn. Stat. 624.713, subd. 1, clause 9): a person who has been convicted in this state or elsewhere of either (i) assaulting a family or household member and who was found by the court to have used a firearm in any way during commission of the assault, or (ii) an offense that qualifies as a misdemeanor crime of domestic violence, as defined in United States Code, title 18, section 921(a)(33), is prohibited from possessing any type of firearm or ammunition for the remainder of the person's life;"
+}

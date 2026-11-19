@@ -1,0 +1,58 @@
+{
+  "id": "MN-HF-657-2023",
+  "scope": "state:mn",
+  "title": "HF657 (2023-2024 Regular): Firearms; providing that a person may not be denied right to purchase, own, posses, or carry a firearm solely on the basis that the person is enrolled as a patient in the medical cannabis registry.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0657&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/657/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Mekeland",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Paul Novotny",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "cannabis-policy: Section 4 (Minn. Stat. 624.713, subd. 1) — medical cannabis use by a registry patient is not 'unlawful use of a controlled substance'; Section 8 — cannabis registry data shielded from gun checks"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/657/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-657-2023.introduced.html",
+      "sha256": "8203149c547ec5596baabbc7ae239e95469d399c0f15ad0d24cdab88dd7bc507"
+    },
+    "note": "Introduced version, 2023-01-20 (as filed). Section 6 adds a new ground to the offence of carrying a pistol while impaired: a registry patient who uses medical cannabis and knows or has reason to know it can impair (struck: only the word 'or' and a period of the old clauses). Sections 1-3 add definitions. The multi verdict is a judgment call: the cannabis parts only set how cannabis-registry status counts for gun rights."
+  },
+  "operative_text": "Section 4 (Minn. Stat. 624.713, subd. 1): (iii) is an unlawful user of any controlled substance as defined in chapter 152. The use of medical cannabis by a patient enrolled in the medical cannabis registry under sections 152.22 to 152.37 does not constitute the unlawful use of a controlled substance under this item;\nSection 4 (Minn. Stat. 624.713, subd. 1): Participation as a patient in the medical cannabis registry under sections 152.22 to 152.37 does not disqualify the person from possessing firearms and ammunition under this section.\nSection 5 (Minn. Stat. 624.714, subd. 6): (f) A sheriff shall not deny an application for a permit to carry solely because the applicant is a patient enrolled in the medical cannabis registry under sections 152.22 to 152.37 and uses medical cannabis for a qualifying medical condition.\nSection 7 (Minn. Stat. 624.7151): Any form used for the purpose of approving or disapproving a person from purchasing, owning, possessing, or carrying a firearm that inquires about the applicant's use of controlled substances shall specifically authorize a qualifying patient to refrain from reporting the use of medical cannabis.\nSection 8 (Minn. Stat. 624.7152): (a) A person may not be denied the right to purchase, own, possess, or carry a firearm solely on the basis that the person is a qualifying patient.\nSection 8 (Minn. Stat. 624.7152): (b) A state or local agency may not access a database containing the identities of qualifying patients to obtain information for the purpose of approving or disapproving a person from purchasing, owning, possessing, or carrying a firearm.\nSection 8 (Minn. Stat. 624.7152): (d) A state or local agency may not inquire about a person's status as a qualifying patient for the purpose of approving or disapproving the person from purchasing, owning, possessing, or carrying a firearm."
+}

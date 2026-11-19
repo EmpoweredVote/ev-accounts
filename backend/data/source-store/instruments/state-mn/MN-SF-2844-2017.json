@@ -1,0 +1,61 @@
+{
+  "id": "MN-SF-2844-2017",
+  "scope": "state:mn",
+  "title": "SF2844 (2017-2018 Regular): Retired law enforcement officers authorization to carry firearms in schools",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2844&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2844/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Utke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Michael P. Goggin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2844/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2844-2017.introduced.html",
+      "sha256": "924463d4f6231929bcb45d72d6cb9f9ee9e150b6a2a8c458804d754d3426c683"
+    },
+    "note": "Introduced bill (as filed; no date in the file). The rest of subd. 1d (felony for dangerous weapons on school property, misdemeanor for permit holders carrying) is existing law, kept unchanged. Effective August 1, 2018. Version read is the introduced bill as filed; no later version was read."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1d): (10) persons authorized to carry a firearm under United States Code, title 18, part I, chapter 44, section 926C, and who are carrying in compliance with that law.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (f) This subdivision does not apply to:"
+}

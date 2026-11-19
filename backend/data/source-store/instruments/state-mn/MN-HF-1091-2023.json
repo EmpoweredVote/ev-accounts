@@ -1,0 +1,44 @@
+{
+  "id": "MN-HF-1091-2023",
+  "scope": "state:mn",
+  "title": "HF1091 (2023-2024 Regular): Right to carry without a permit provided, and optional permit to carry provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1091&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/1091/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Grossell",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Burkel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-30; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1091/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1091-2023.introduced.html",
+      "sha256": "7fab5cdf79a64f408a2c62dd52cc935d47181f88d8feff3a6ca9408f2a0b0ed2"
+    },
+    "note": "As filed Jan 30, 2023. Repealer removes the permit-required offence, display-of-permit duty, out-of-state permit recognition and the rifle/shotgun public-place law (text in appendix, not quoted). Subd. 2 and 20(d) clauses are old words kept in an amended section."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, new subd. 1c): A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, new subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 3 (Minn. Stat. 624.714, subd. 2): (b) Unless a sheriff denies a permit under the exception set forth in subdivision 6, paragraph (a), clause (3), a sheriff must issue a permit to an applicant if the person:\nSection 7 (Minn. Stat. 624.714, subd. 20): (d) Nothing contained in any provision of this section or any other law requires or authorizes the registration, documentation, collection, or providing of serial numbers or other data on firearms or on firearms' owners.\nSection 9 (repealer): Minnesota Statutes 2022, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

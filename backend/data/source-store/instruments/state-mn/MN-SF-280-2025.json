@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-280-2025",
+  "scope": "state:mn",
+  "title": "SF280 (2025-2026 Regular): Right to carry without a permit provision and optional permit to carry provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/280?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/280/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Jeff Howe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    },
+    {
+      "name": "Steve Green",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    },
+    {
+      "name": "Keri Heintzeman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fe0742ae-e32f-4900-ad95-0c7d3cc796ea"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-16; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/280/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-280-2025.introduced.html",
+      "sha256": "ae675998f8c1f8452c32a45786d0d8aabdeb98943195c761f1973958a4c52574"
+    },
+    "note": "Introduced bill (2025-01-16). Sec. 9 repeals the permit-required gross misdemeanor (subd. 1a), the permit display duty (1b), recognition of other states' permits (16), and 624.7181 (rifles and shotguns in public places). Sec. 1(a) is a legislative declaration about the Second Amendment, not a requirement. Version read is the introduced bill as filed; no later version was read."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.\nSection 9 (Repealer): Minnesota Statutes 2024, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

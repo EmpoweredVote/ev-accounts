@@ -1,0 +1,51 @@
+{
+  "id": "MN-HF-699-2023",
+  "scope": "state:mn",
+  "title": "HF699 (2023-2024 Regular): Enforcement of judicially ordered firearms restrictions for abusing parties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0699&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/699/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Peggy Scott",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Matt Norris",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e19f88ea-5ebe-4333-810e-d8d5d9ccaf9a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/699/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-699-2023.introduced.html",
+      "sha256": "8be5638fd605fea4b3006dc69c500b5fd0c45ccd709cc451f63079a1a4364d3e"
+    },
+    "note": "Introduced version, 2023-01-20 (as filed). Quotes are the first parts of each paragraph; the same transfer, storage-fee, return and affidavit rules repeat in each of the four sections and are cut for length. Section 3 (609.2242) and Section 4 (609.749) apply the same handover to convictions."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260C.201, subd. 3): (d) An order granting relief that was issued after a hearing of which the abusing party received actual notice and at which the abusing party had the opportunity to participate, shall prohibit the abusing party from possessing firearms for the length the order is in effect if the order (1) restrains the abusing party from harassing, stalking, or threatening the child or restrains the abusing party from engaging in other conduct that would place the child in reasonable fear of bodily injury, and (2) includes a finding that the abusing party represents a credible threat to the physical safety of the child or prohibits the abusing party from using, attempting to use, or threatening to use physical force against the child. The order shall inform the abusing party of that party's prohibited status. Except as provided in paragraph (f), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them. The transfer may be permanent or temporary. A temporary firearm transfer only entitles the receiving party to possess the firearm.\nSection 1 (Minn. Stat. 260C.201, subd. 3): (f) When a court issues an order containing a firearms restriction provided for in paragraph (d), the court shall determine by a preponderance of evidence if an abusing party poses an imminent risk of causing another person substantial bodily harm. Upon a finding of imminent risk, the court shall order that the local law enforcement agency take immediate possession of all firearms in the abusing party's possession.\nSection 2 (Minn. Stat. 518B.01, subd. 6): (g) An order granting relief shall prohibit the abusing party from possessing firearms for the length the order is in effect if the order (1) restrains the abusing party from harassing, stalking, or threatening the petitioner or restrains the abusing party from engaging in other conduct that would place the petitioner in reasonable fear of bodily injury, and (2) includes a finding that the abusing party represents a credible threat to the physical safety of the petitioner or prohibits the abusing party from using, attempting to use, or threatening to use physical force against the petitioner. The order shall inform the abusing party of that party's prohibited status. Except as provided in paragraph (i), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them. The transfer may be permanent or temporary. A temporary firearm transfer only entitles the receiving party to possess the firearm.\nSection 2 (Minn. Stat. 518B.01, subd. 6): (i) When a court issues an order containing a firearms restriction provided for in paragraph (g), the court shall determine by a preponderance of evidence if an abusing party poses an imminent risk of causing another person substantial bodily harm. Upon a finding of imminent risk, the court shall order that the local law enforcement agency take immediate possession of all firearms in the abusing party's possession.\nSection 2 (Minn. Stat. 518B.01, subd. 6): (j) The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (g), (h), and (i), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 3 (Minn. Stat. 609.2242, subd. 3): (f) Except as otherwise provided in paragraphs (b) and (h), when a person is convicted of a violation of this section or section 609.221, 609.222, 609.223, 609.224, or 609.2247 and the court determines that the assault was against a family or household member, the court shall order the defendant to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them. The transfer may be permanent or temporary, unless the court prohibits the person from possessing a firearm for the remainder of the person's life under paragraph (c). A temporary firearm transfer only entitles the receiving party to possess the firearm.\nSection 4 (Minn. Stat. 609.749, subd. 8): (e) Except as otherwise provided in paragraphs (d) and (g), when a person is convicted of harassment or stalking under this section, the court shall order the defendant to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them. The transfer may be permanent or temporary. A temporary firearm transfer only entitles the receiving party to possess the firearm."
+}

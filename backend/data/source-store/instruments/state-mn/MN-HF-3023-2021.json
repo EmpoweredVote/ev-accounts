@@ -1,0 +1,75 @@
+{
+  "id": "MN-HF-3023-2021",
+  "scope": "state:mn",
+  "title": "HF3023 (2021-2022 Regular): Minnesota Personal Protection Act amended, lifetime permits to carry handguns created, and permit to carry application fee reduced.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3023&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/HF/3023/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Heinrich",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Greg Boe",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nels Pierson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tama Theis",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Anderson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d46d88e-ad1e-4a88-81c2-782da83d77f1"
+    },
+    {
+      "name": "Dale Lueck",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-02-03; official copy, https://www.revisor.mn.gov/bills/92/2022/0/HF/3023/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3023-2021.introduced.html",
+      "sha256": "6344963daa09503330056110efc7f87e8cb75f89dec7e1b7c39aed2de7dd7ca9"
+    },
+    "note": "Introduced version (filed 2022-02-03); no vote listed. The bill strikes the five-year expiration and the whole renewal procedure (renewal fee, late fee, renewal start date), the expiration date on the card, and the words 'new' and 'renewal' in the application rules. Section 2 keeps the $100 cap on the application fee (old law: $100 for a new application; $75 for renewal, now struck); the title says the fee is reduced, but the $100 cap is unchanged in the text. Application remains in person only."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.714, subd. 7, para. (c)): A permit to carry a pistol issued under this section does not expire and permit cards issued after August 1, 2022, must prominently state that the permit does not expire.\nSection 3 (Minn. Stat. 624.714, subd. 7, para. (b)): The permit card must also identify the issuing sheriff.\nSection 2 (Minn. Stat. 624.714, subd. 3, para. (f)): The sheriff may charge an application processing fee in an amount not to exceed the actual and reasonable direct cost of processing the application or $100, whichever is less.\nSection 1 (Minn. Stat. 624.714, subd. 2a, para. (a)): An applicant must present evidence that the applicant received training in the safe use of a pistol within one year of the date of an application.\nSection 4 (Minn. Stat. 624.714, subd. 14, para. (a)): Notwithstanding section 138.163, sheriffs must completely purge all files and databases by March 1 of each year to delete all information collected under this section concerning all persons who are no longer current permit holders.\nSection 5 (replacement permits): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2022, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

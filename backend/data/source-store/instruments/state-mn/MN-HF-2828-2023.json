@@ -1,0 +1,235 @@
+{
+  "id": "MN-HF-2828-2023",
+  "scope": "state:mn",
+  "title": "HF2828 (2023-2024 Regular): Local governmental units authorized to prohibit or restrict possession of dangerous weapons, ammunition, or explosives in local government-owned or leased buildings and land.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2828&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/2828/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Samakab Hussein",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    },
+    {
+      "name": "María Isa Pérez-Vega",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2b1b89f8-5692-4acf-b437-e8f1ae677b13"
+    },
+    {
+      "name": "Dave Pinto",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Melissa Hortman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Athena Hollins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
+    },
+    {
+      "name": "Leon Lillie",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
+    },
+    {
+      "name": "Jerry Newton",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Samantha Vang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ba34c6bc-b9cf-4097-aa83-fdc191a3622c"
+    },
+    {
+      "name": "Frank Hornstein",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Ruth Richardson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kaela Berg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Samantha Sencer-Mura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
+    },
+    {
+      "name": "Mohamud Noor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
+    },
+    {
+      "name": "Hodan Hassan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Aisha Gomez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81033847-4e48-4080-a0c5-8daf154a4761"
+    },
+    {
+      "name": "Leigh Finke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
+    },
+    {
+      "name": "Liz Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5e54444-041b-4eeb-8043-b691d3a3edfb"
+    },
+    {
+      "name": "Esther Agbaje",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
+    },
+    {
+      "name": "Sydney Jordan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
+    },
+    {
+      "name": "Kaohly Her",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Clardy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
+    },
+    {
+      "name": "Heather Edelson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cedrick Frazier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
+    },
+    {
+      "name": "Sandra Feist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    },
+    {
+      "name": "Jess Hanson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "79ee7fa2-44fb-4681-a7ed-450e74388425"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    },
+    {
+      "name": "Kristi Pursell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Erin Koegel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3b0dc78e-e73a-47e7-b45a-73b880a1ab7c"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "Jay Xiong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-03-10; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/2828/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2828-2023.introduced.html",
+      "sha256": "820058dd2eba46540870b730b586a90156118b6f0b76f167f81b122d1779d355"
+    },
+    "note": "Introduced 2023-03-10. Effective August 1, 2023. Also covers explosives, which are not a separate topic here."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, new subd. 1i): (a) Notwithstanding sections 624.714, subdivision 23, and 624.717, the elected governing body of a local governmental unit may prohibit or restrict a person from possessing a dangerous weapon, ammunition, or explosives within a building or on land owned or leased by the local governmental unit, except as provided under subdivision 1g. (b) A person who possesses a dangerous weapon, ammunition, or explosives within a building or on land owned or leased by a local governmental unit that has prohibited or restricted possession under paragraph (a) is guilty of a misdemeanor. (c) Signs prohibiting or restricting dangerous weapons, ammunition, and explosives must be posted on a building or land owned or leased by a local governmental unit."
+}

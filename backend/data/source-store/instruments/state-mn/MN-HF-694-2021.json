@@ -1,0 +1,224 @@
+{
+  "id": "MN-HF-694-2021",
+  "scope": "state:mn",
+  "title": "HF694 (2021-2022 Regular): Firearm transfer criminal background checks required, and transferee permit disqualification grounds modified.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0694&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/694/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dave Pinto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Melissa Hortman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Jennifer Schultz",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Zack Stephenson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
+    },
+    {
+      "name": "Carlie Kotyza-Witthuhn",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
+    },
+    {
+      "name": "Cheryl Youakim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "John Huot",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
+    },
+    {
+      "name": "Heather Edelson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Liz Olson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Laurie Pryor",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandra Feist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
+    },
+    {
+      "name": "Cedrick Frazier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
+    },
+    {
+      "name": "Peter Fischer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
+    },
+    {
+      "name": "Liz Reyer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6af8f82e-dbee-4ad2-b3ff-7b9e694b849c"
+    },
+    {
+      "name": "Frank Hornstein",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Davnie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Jess Hanson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "79ee7fa2-44fb-4681-a7ed-450e74388425"
+    },
+    {
+      "name": "Athena Hollins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
+    },
+    {
+      "name": "Kaohly Her",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Esther Agbaje",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
+    },
+    {
+      "name": "Steve Elkins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
+    },
+    {
+      "name": "Michelle (Shelly) Christensen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alice Hausman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Heather Keeler",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4d08487a-cfb1-47d9-b61a-8fb20968b662"
+    },
+    {
+      "name": "Andrew Carlson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robert Bierman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "32422c01-9158-4264-b2b9-b021e3438cce"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kelly Morrison",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-04; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/694/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-694-2021.introduced.html",
+      "sha256": "40d130991a361334fe4bb1f27b4b113fb92b63a13bc195b177bd7ac852253235"
+    },
+    "note": "Introduced version, 2021-02-04 (as filed). Section 1 also removes the transfer-report exemption for permit holders' transferees and raises false statement for a permit from gross misdemeanor to felony; Section 2 strikes the 'transfer to unknown party' ID rule and extends the delivery ban to all firearms (struck words not quoted). Subd. 6 exclusions in Section 3 are partly quoted (family transfers) as they shape reach. The quoted Section 1 paragraph (a) joins old kept words with the new ones after struck text is dropped."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7131, subd. 4): (a) The chief of police or sheriff shall refuse to grant a transferee permit if the applicant is prohibited by state or federal law from possessing a pistol or semiautomatic military-style assault weapon or is determined to be a danger to self or others under paragraph (b).\nSection 1 (Minn. Stat. 624.7131, subd. 4): (b) A chief of police or sheriff shall refuse to grant a permit to a person who is a danger to self or others. The decision of the chief of police or sheriff must be based on documented past contact with law enforcement. A notice of disqualification issued pursuant to this paragraph must describe and document the specific law enforcement contact or contacts relied upon to deny the permit.\nSection 2 (Minn. Stat. 624.7132, subd. 5): (b) A chief of police or sheriff shall deny an application if the person is a danger to self or others. The decision of the chief of police or sheriff must be based on documented past contact with law enforcement. A notice of disqualification issued pursuant to this paragraph must describe and document the specific law enforcement contact or contacts relied upon to deny the application.\nSection 2 (Minn. Stat. 624.7132, subd. 4): No person shall deliver a firearm to a proposed transferee after receiving a written notification that the chief of police or sheriff has determined that the proposed transferee is prohibited by section 624.713 from possessing a firearm.\nSection 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a pistol or semiautomatic military-style assault weapon to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nSection 3 (Minn. Stat. 624.7134, subd. 3): (a) When two parties complete the transfer of a pistol or semiautomatic military-style assault weapon under subdivision 2, the transferor and transferee must complete a record of transfer on a form designed and made publicly available without fee for this purpose by the superintendent of the Bureau of Criminal Apprehension. Each page of the record of transfer must be signed and dated by the transferor and the transferee and contain the serial number of the pistol or semiautomatic military-style assault weapon.\nSection 3 (Minn. Stat. 624.7134, subd. 3): (d) Both the transferor and the transferee must retain a copy of the record of transfer and any attachments to the record of transfer for 20 years from the date of the transfer. A copy in digital form shall be acceptable for the purposes of this paragraph.\nSection 3 (Minn. Stat. 624.7134, subd. 4): (b) A person who refuses or is unable to produce a record of transfer for a firearm transferred under this section in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a gross misdemeanor.\nSection 3 (Minn. Stat. 624.7134, subd. 6): (4) a transfer between immediate family members, which for the purposes of this section means spouses, domestic partners, parents, children, siblings, grandparents, and grandchildren;"
+}

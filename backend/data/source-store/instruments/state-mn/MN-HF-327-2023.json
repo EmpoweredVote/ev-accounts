@@ -1,0 +1,87 @@
+{
+  "id": "MN-HF-327-2023",
+  "scope": "state:mn",
+  "title": "HF327 (2023-2024 Regular): Closure of shooting ranges prohibited during a state emergency.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0327&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/327/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dawn Gillman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
+    },
+    {
+      "name": "Lisa Demuth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
+    },
+    {
+      "name": "Bobbie Harder",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
+    },
+    {
+      "name": "Krista Knudsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Jeff Dotseth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "28b95309-d367-4c50-988b-38c851950cbc"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    },
+    {
+      "name": "Bernie Perryman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
+    },
+    {
+      "name": "Tom Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
+    },
+    {
+      "name": "Isaac Schultz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-11; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/327/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-327-2023.introduced.html",
+      "sha256": "88b00106f607f7eab538e3eba42c0080df06f382c8b4a6b1cfb9950c1bfb87df"
+    },
+    "note": "Introduced version, 2023-01-11. The bill itself only changes clause (4) (drops the word 'or' and adds 'service'); the rest of the section is existing law kept as printed."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7192, subd. (c)): Notwithstanding any other law to the contrary, no governmental unit, government official, government employee, peace officer, or other person or body acting under governmental authority or color of law may undertake any of the following actions with regard to any firearms and ammunition, and components thereof; any firearms accessories and ammunition reloading equipment and supplies; and any other personal weapons:\nSection 1 (Minn. Stat. 624.7192, subd. (c)(4)): close or limit the operating hours of businesses, including but not limited to gun ranges, that lawfully sell, service, or provide training in the lawful use of any of these items, unless such closing or limitation of hours applies equally to all forms of commerce."
+}

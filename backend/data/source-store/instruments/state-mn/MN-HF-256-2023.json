@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-256-2023",
+  "scope": "state:mn",
+  "title": "HF256 (2023-2024 Regular): Public safety; funding provided for teacher and school staff training in dangerous situations in schools and to provide teachers and school staff with firearms, and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0256&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/256/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Duane Quam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8f781313-476b-48a0-b80c-c57a683b7db8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-10; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/256/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-256-2023.introduced.html",
+      "sha256": "9b991047dbc68e8c387cdfb299074a36c9319538cb37ab21037620be566e2e30"
+    },
+    "note": "Version read: introduced (as filed). Dollar amounts are blank in the bill. The grants are school-safety money, but every part is about guns."
+  },
+  "operative_text": "Section 1: $....... in fiscal year 2024 is appropriated to the commissioner of education for grants to school districts to provide firearm simulator training to prepare teachers, staff persons, and other designated persons employed in the school district to respond to dangerous situations in schools.\nSection 2: $....... in fiscal year 2024 is appropriated to the commissioner of education for grants to school districts to provide firearms with biometric gun locks to teachers, staff persons, and other designated persons employed in a district school that is a distance of at least three minutes from a law enforcement response to a dangerous situation at the school. A teacher, staff person, or other designated person who receives a firearm must have received firearm training."
+}

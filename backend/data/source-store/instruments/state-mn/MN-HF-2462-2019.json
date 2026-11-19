@@ -1,0 +1,99 @@
+{
+  "id": "MN-HF-2462-2019",
+  "scope": "state:mn",
+  "title": "HF2462 (2019-2020 Regular): Judicially ordered firearm restriction for abusing parties enforcement provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2462&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/2462/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Peggy Scott",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+    },
+    {
+      "name": "Anne Neu Brindley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tony Jurgens",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kristin Robbins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0a48874e-3d5a-4160-9481-a67cb23cfafc"
+    },
+    {
+      "name": "Lisa Demuth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e49ed577-d00e-402f-bf80-5546baae414f"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Linda Runbeck",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jon Koznick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ad0a254b-0082-41da-8eef-3567066d2bbf"
+    },
+    {
+      "name": "Paul Marquart",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Brian Johnson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barb Haley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/2462/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2462-2019.introduced.html",
+      "sha256": "2318403fedc713502ab16955c5221515de372abd74bc572ea80ef0ccf1db99c2"
+    },
+    "note": "Version read: introduced (as filed). No struck text. Sections 2 (518B.01, subd. 6) and 4 (609.749, subd. 8) make the same kind of change for domestic abuse orders and stalking convictions. Text file is identical in structure to the 2023 bill HF 2663."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260C.201, subd. 3): The order shall inform the abusing party of that party's prohibited status. Except as provided in paragraph (f), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them. Upon a finding of imminent risk, the court shall order that the local law enforcement agency take immediate possession of all firearms in the abusing party's possession. The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (d), (e), and (f), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 3 (Minn. Stat. 609.2242, subd. 3): If the court determines that the assault was of a family or household member, and that the offender owns or possesses a firearm and used it in any way during the commission of the assault, it shall order that the firearm be summarily forfeited under section 609.5316, subdivision 3."
+}

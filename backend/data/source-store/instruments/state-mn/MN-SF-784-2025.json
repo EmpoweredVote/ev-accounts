@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-784-2025",
+  "scope": "state:mn",
+  "title": "SF784 (2025-2026 Regular): Judicially ordered firearms restrictions for abusing parties enforcement provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/784?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/784/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Julia Coleman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b1f2628a-6264-4849-a14f-0f708fef5394"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-28; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/784/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-784-2025.introduced.html",
+      "sha256": "108fc8722ca4bcb9e69c053bf143fb41f8f32553fdc70db5800fafd33907a486"
+    },
+    "note": "Introduced text, 2025-01-28. The text file shows no struck passages, and added words are not marked in it, so it cannot be told here which sentences are new and which are existing law in these amended sections. Sections 1 to 4 amend Minn. Stat. 260C.201 subd. 3, 518B.01 subd. 6, 609.2242 subd. 3 and 609.749 subd. 8 with parallel firearm-transfer and compliance-hearing text."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 518B.01, subd. 6): (g) An order granting relief shall prohibit the abusing party from possessing firearms for the length the order is in effect if the order (1) restrains the abusing party from harassing, stalking, or threatening the petitioner or restrains the abusing party from engaging in other conduct that would place the petitioner in reasonable fear of bodily injury, and (2) includes a finding that the abusing party represents a credible threat to the physical safety of the petitioner or prohibits the abusing party from using, attempting to use, or threatening to use physical force against the petitioner.\nSection 2 (Minn. Stat. 518B.01, subd. 6): Except as provided in paragraph (i), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 2 (Minn. Stat. 518B.01, subd. 6): (j) The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (g), (h), and (i), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 3 (Minn. Stat. 609.2242, subd. 3): (f) Except as otherwise provided in paragraphs (b) and (h), when a person is convicted of a violation of this section or section 609.221, 609.222, 609.223, 609.224, or 609.2247 and the court determines that the assault was against a family or household member, the court shall order the defendant to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 3 (Minn. Stat. 609.2242, subd. 3): (i) The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (f), (g), and (h), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 1 (Minn. Stat. 260C.201, subd. 3): (g) The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (d), (e), and (f), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction."
+}

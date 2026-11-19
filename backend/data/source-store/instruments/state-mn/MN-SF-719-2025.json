@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-719-2025",
+  "scope": "state:mn",
+  "title": "SF719 (2025-2026 Regular): Constitutional amendment proposal to add a section to Article I protecting the right of people to keep and bear arms",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/719?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/719/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Lucero",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Rich Draheim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a41019c1-8548-4465-bbd6-f23688ed38dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-24; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/719/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-719-2025.introduced.html",
+      "sha256": "b56537dfa234723c97729d7b2675956fd5e6575777c5724af95f540fabe54035"
+    },
+    "note": "Introduced text, 2025-01-24. Constitutional amendment proposal, submitted to voters at the 2026 general election; identical to SF 842 (2023) except the election year."
+  },
+  "operative_text": "Section 1 (Minn. Const. art. I, new sec. 18): A well regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall not be infringed.\nSection 2 (ballot question): \"Shall the Minnesota Constitution be amended to protect the right of the people to keep and bear arms?"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "MN-HF-392-2021",
+  "scope": "state:mn",
+  "title": "HF392 (2021-2022 Regular): Minnesota Personal Protection Act amended, lifetime permits to carry handguns created, and permit to carry application fee reduced.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0392&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/392/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Bliss",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Burkel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Greg Boe",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tama Theis",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Dale Lueck",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nolan West",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-28; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/392/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-392-2021.introduced.html",
+      "sha256": "3d228e0fe469b1a29594f20e9095e7c9e699c2e1f2780a6088e4f2b3ef34e70f"
+    },
+    "note": "Introduced 2021-01-28; no votes. Struck old law: the five-year expiration and the renewal procedure and renewal fee, and the words 'original or renewal', 'new', and 'new or renewal' in the application rules."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.714, subd. 7, para. (c)): A permit to carry a pistol issued under this section does not expire and permit cards issued after August 1, 2021, must prominently state that the permit does not expire.\nSection 1 (Minn. Stat. 624.714, subd. 2a, para. (a)): An applicant must present evidence that the applicant received training in the safe use of a pistol within one year of the date of an application.\nSection 2 (Minn. Stat. 624.714, subd. 3, para. (f)): The sheriff may charge an application processing fee in an amount not to exceed the actual and reasonable direct cost of processing the application or $100, whichever is less.\nSection 5 (replacement permits to carry): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2021, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

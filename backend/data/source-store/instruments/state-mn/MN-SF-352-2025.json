@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-352-2025",
+  "scope": "state:mn",
+  "title": "SF352 (2025-2026 Regular): Constitutional right to carry a firearm acknowledgment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/352?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/352/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Lieske",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    },
+    {
+      "name": "Nathan Wesenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Steve Green",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-16; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/352/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-352-2025.introduced.html",
+      "sha256": "5e72d28aa2223d7cf957469616c3b0b44f249c5cb75c13c45556b49047874819"
+    },
+    "note": "Introduced version, as filed (2025-01-16); official copy from revisor.mn.gov. No passage vote recorded. Section 9 repeals 624.714 subds. 1a (permit required; penalty), 1b (display of permit) and 16 (out-of-state permits), and 624.7181 (rifles and shotguns in public places); the repealed text is in the bill's appendix and is not quoted. Section 8 changes the permit exclusivity clause to protect the right to carry."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (a) The legislature of the state of Minnesota recognizes and declares that the second amendment of the United States Constitution guarantees the fundamental, individual right to keep and bear arms. (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place. (c) For the purposes of this section, \"public place\" means property owned, leased, or controlled by a governmental unit and private property that is regularly and frequently open to or made available for use by the public in sufficient numbers to give clear notice of the property's current dedication to public use but does not include: a person's dwelling house or premises, the place of business owned or managed by the person, or land possessed by the person; a gun show, gun shop, or hunting or target shooting facility; or the woods, fields, or waters of this state where the person is present lawfully for the purpose of hunting or target shooting or other lawful activity involving firearms.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 3 (Minn. Stat. 624.714, subd. 2): (b) Unless a sheriff denies a permit under the exception set forth in subdivision 6, paragraph (a), clause (3), a sheriff must issue a permit to an applicant if the person: (1) has training in the safe use of a pistol; (2) is at least 21 years old and a citizen or a permanent resident of the United States; (3) completes an application for a permit; (4) is not prohibited from possessing a firearm under the following sections: (i) 518B.01, subdivision 14; (ii) 609.224, subdivision 3; (iii) 609.2242, subdivision 3; (iv) 609.749, subdivision 8; (v) 624.713; (vi) 624.719; (vii) 629.715, subdivision 2; (viii) 629.72, subdivision 2; or (ix) any federal law; and (5) is not listed in the criminal gang investigative data system under section 299C.091.\nSection 9 (repealer): REPEALER. Minnesota Statutes 2024, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

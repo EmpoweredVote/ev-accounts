@@ -1,0 +1,51 @@
+{
+  "id": "MN-HF-435-2021",
+  "scope": "state:mn",
+  "title": "HF435 (2021-2022 Regular): Medical cannabis registry enrollee provided to not be denied the right to purchase, own, possess, or carry a firearm.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0435&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/435/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nolan West",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
+    },
+    {
+      "name": "Keith Franke",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "cannabis-policy: Section 4 (Minn. Stat. 624.713, subd. 1) — declares that medical cannabis use by a registry patient is not unlawful use of a controlled substance"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-28; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/435/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-435-2021.introduced.html",
+      "sha256": "81f3cafb9c69525da556b390a24222db68b853ca9620f00571ead302b34134cf"
+    },
+    "note": "Introduced version (as filed, 2021-01-28). Judgment call: the bill is mainly a gun-rights measure, but it also rules on the legal status of registry patients' cannabis use, so it is marked multi. Sections 1 to 3 add definitions; Section 7 changes the standard permit forms so a patient may decline to report medical cannabis use."
+  },
+  "operative_text": "Section 4 (Minn. Stat. 624.713, subd. 1): The use of medical cannabis by a patient enrolled in the medical cannabis registry under sections 152.22 to 152.37 does not constitute the unlawful use of a controlled substance under this item;\nSection 4 (Minn. Stat. 624.713, subd. 1): Participation as a patient in the medical cannabis registry under sections 152.22 to 152.37 does not disqualify the person from possessing firearms and ammunition under this section.\nSection 5 (Minn. Stat. 624.714, subd. 6): (f) A sheriff shall not deny an application for a permit to carry solely because the applicant is a patient enrolled in the medical cannabis registry under sections 152.22 to 152.37 and uses medical cannabis for a qualifying medical condition.\nSection 6 (Minn. Stat. 624.7142, subd. 1): (7) when the person is enrolled as a patient in the medical cannabis registry under sections 152.22 to 152.37, uses medical cannabis, and knows or has reason to know that the medical cannabis used by the person has the capacity to cause impairment.\nSection 8 (Minn. Stat. 624.7152): (a) A person may not be denied the right to purchase, own, possess, or carry a firearm solely on the basis that the person is a qualifying patient.\nSection 8 (Minn. Stat. 624.7152): (b) A state or local agency may not access a database containing the identities of qualifying patients to obtain information for the purpose of approving or disapproving a person from purchasing, owning, possessing, or carrying a firearm.\nSection 8 (Minn. Stat. 624.7152): (d) A state or local agency may not inquire about a person's status as a qualifying patient for the purpose of approving or disapproving the person from purchasing, owning, possessing, or carrying a firearm."
+}

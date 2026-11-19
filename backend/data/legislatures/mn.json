@@ -34,8 +34,8 @@
     "hosts": [
       "revisor.mn.gov"
     ],
-    "marks": "Read on 1 text (2018 HF 3762 as introduced; 2026-11-19). In a bill that amends existing law, words added are UNDERLINED (<ins>) and words deleted are STRUCK THROUGH (class del, line-through). The page also carries screen-reader words around each mark, so plain text keeps them as \"new text begin ... new text end\" and \"deleted text begin ... deleted text end\": a quote copied from the plain text must leave those words out and must not quote a deleted passage as the law. Each line carries its page and line number (\"1.1\", \"1.2\") in the margin.",
-    "note": "The dump links each version as www.revisor.mn.gov/bills/text.php?number=HF3762&version=0&session=ls90&session_year=2018&session_number=0, which redirects to /bills/<ls>/<year>/<ssn>/<HF|SF>/<num>/versions/<v>/; the same address serves a PDF of the version. A bill's page /bills/<ls>/<year>/<ssn>/<HF|SF>/<num>/ redirects to the year the bill was introduced (the 94th's HF 3433 is /94/2026/0/), and lists each chamber's actions with the journal page and tally of each recorded vote."
+    "marks": "Read on 1 text (2018 HF 3762 as introduced; 2026-11-19), then on 331 texts in bulk (2017-2026, introduced, engrossed and conference versions; 2026-11-19), which bore the marks out. In a bill that amends existing law, words added are UNDERLINED (<ins>) and words deleted are STRUCK THROUGH (class del, line-through). The page also carries screen-reader words around each mark, so plain text keeps them as \"new text begin ... new text end\" and \"deleted text begin ... deleted text end\": a quote copied from the plain text must leave those words out and must not quote a deleted passage as the law. Each line carries its page and line number (\"1.1\", \"1.2\") in the margin.",
+    "note": "The dump links each version as www.revisor.mn.gov/bills/text.php?number=HF3762&version=0&session=ls90&session_year=2018&session_number=0, which redirects to /bills/<ls>/<year>/<ssn>/<HF|SF>/<num>/versions/<v>/; the same address serves a PDF of the version. A bill's page /bills/<ls>/<year>/<ssn>/<HF|SF>/<num>/ redirects to the year the bill was introduced (the 94th's HF 3433 is /94/2026/0/), and lists each chamber's actions with the journal page and tally of each recorded vote. The dump's links for 2021-2024 versions carry &format=pdf and so fetch the PDF; dropped, the same address serves the HTML version. A version page's text is the introduced bill, the Nth engrossment or a conference committee report; division and unofficial engrossments are working copies."
   },
   "reader_access": {
     "revisor.mn.gov": "open",
@@ -46,7 +46,9 @@
   "search_note": "Minnesota sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the Legislature's own journals: skip the Revisor's bill pages and the journals, and add the place \"sponsor list: covered by bulk bill data\". Many provisions pass inside omnibus bills whose titles do not name them (2023 SF 2909): check the instrument store for such a bill before deciding a person has no vote on the topic. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
   "bill_table_note": "- Minnesota's Legislature is numbered by biennium (the 93rd is 2023-2024); bill numbers run through both years (HF 1, SF 1 up) and each bill has a companion in the other chamber.\n- Floor votes kept: the passage and the repassage of a bill. Committee votes, amendments, a conference committee report's adoption and other motions are not floor votes on the bill.\n- Texts: UNDERLINED words are added to existing law; STRUCK-THROUGH words are deleted. Plain text keeps them as \"new text begin ... new text end\" and \"deleted text begin ... deleted text end\": never quote a deleted passage as the law.",
   "fill_quotes": {
-    "label_strips": [],
+    "label_strips": [
+      "^\\s*Article\\s+\\d+\\s*,\\s*"
+    ],
     "brackets_delete": false
   },
   "quirks": [
@@ -56,6 +58,9 @@
     "The House journal is Word HTML: windows-1252 to 2024, utf-8 in 2026. Its page banner changed in 2026 from \"Journal of the House - 56th Day - Tuesday, April 25, 2023 - Top of Page 7013\" to \"Journal Of the House -  63rd -Thursday, April 23, 2026 - Top of Page 6145\", with \"<a name = 6145>\". A House special session's days share the biennium's folder and number from one; the day's heading (\"FOURTH SPECIAL SESSION - 2020\") tells them apart.",
     "The Senate journal's running heads alternate: odd pages \"49TH DAY] FRIDAY, APRIL 14, 2023 5105\", even pages \"5106 JOURNAL OF THE SENATE [49TH DAY\". A call of the Senate can sit between the third reading and the question (2026 SF 4067); 2026 writes \"read the third time and placed\" with no comma. Page numbers on the Revisor's page may carry a leading \"+\" (2025).",
     "The Open States dump stores some names as UTF-8 read as Latin-1 (\"PÃ©rez-Vega\"; 893 vote labels). The record's names come from the LRL list and are not affected.",
-    "A House session can run past midnight: the journal dates the day it opened, and the dump may file a vote a day later (2023 SF 2909's repassage)."
+    "A House session can run past midnight: the journal dates the day it opened, and the dump may file a vote a day later (2023 SF 2909's repassage).",
+    "The Revisor's author list for a bill merges both chambers' authors: a Senate companion's authors show on the House file's page and in the dump's sponsor list. Read a sponsor's chamber before crediting a bill to them.",
+    "The Open States dump can attach a surname to the wrong chamber's member of that name: in 2023 eight House files carried a Senator as co-author where the Revisor's House author list names the Representative of the same family name. Check a cross-chamber sponsor against the Revisor's author list.",
+    "Members of one name can sit in different chambers and terms (a former Senator and a sitting Representative share a full name): match by chamber and years, not by name alone."
   ]
 }

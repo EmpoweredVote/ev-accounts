@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-3426-2019",
+  "scope": "state:mn",
+  "title": "SF3426 (2019-2020 Regular): Firearms transfers criminal background checks requirement",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3426&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/SF/3426/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/SF/3426/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3426-2019.introduced.html",
+      "sha256": "a39472f9803a30817ae8a8f1c9ea91996fd5dd391f9d554a9e25786626d99315"
+    },
+    "note": "Introduced version, as filed (undated); official copy from revisor.mn.gov. No passage vote recorded. Struck in the bill: the carve-out for permit-to-carry holders as transferees, the one-year permit and renewal, the identity-evidence rule for unknown parties, and 'pistol or semiautomatic military-style assault weapon' wording (replaced by 'firearm'). The file is long; the rest of section 3 (exclusions, local-regulation and penalty clauses) was read and is not quoted."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7131, subd. 6): (a) A transferee permit issued pursuant to this section is valid statewide for the transfer of a single firearm and shall expire immediately after either: (1) the holder receives a firearm from a transferor, unless the transfer is excluded under section 624.7134, subdivision 6; or (2) 30 days have elapsed from the date the transferee permit was issued to the holder.\nSection 1 (Minn. Stat. 624.7131, subd. 11): A person who makes a false statement in order to obtain a transferee permit knowing or having reason to know the statement is false is guilty of a felony.\nSection 2 (Minn. Stat. 624.7132, subd. 1): Except as provided in this section and section 624.7131, every person who agrees to transfer a firearm shall report the following information in writing to the chief of police of the organized full-time police department of the municipality where the proposed transferee resides or to the appropriate county sheriff if there is no such local chief of police:\nSection 2 (Minn. Stat. 624.7132, subd. 4): Except as otherwise provided in subdivision 7 or 8, no person shall deliver a firearm to a proposed transferee until five business days after the date the agreement to transfer is delivered to a chief of police or sheriff in accordance with subdivision 1 unless the chief of police or sheriff waives all or a portion of the seven-day waiting period. The chief of police or sheriff may waive all or a portion of the five business day waiting period in writing if the chief of police or sheriff finds that the transferee requires access to a firearm because of a threat to the life of the transferee or of any member of the household of the transferee.\nSection 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a firearm to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nSection 3 (Minn. Stat. 624.7134, subd. 4): (b) A person who refuses or is unable to produce a record of transfer for a firearm transferred under this section in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a gross misdemeanor. A prosecution or conviction for violation of this subdivision is not a bar to conviction of, or punishment for, any other crime committed involving the transferred firearm."
+}

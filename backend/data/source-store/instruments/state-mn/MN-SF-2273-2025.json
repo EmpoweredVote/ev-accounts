@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-2273-2025",
+  "scope": "state:mn",
+  "title": "SF2273 (2025-2026 Regular): Teacher and school staff training in dangerous situations in schools and school staff firearms provision appropriation",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/2273?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/2273/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Lucero",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-03-05; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/2273/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2273-2025.introduced.html",
+      "sha256": "a82ce97c48616826f6de42f12d1d8a300ee230309bc9e8657629b50716942be8"
+    },
+    "note": "Read the introduced bill (2025-03-05). Appropriation amounts are blank in the text. No vote data."
+  },
+  "operative_text": "Section 1 (TEACHER AND STAFF TRAINING; DANGEROUS SCHOOL SITUATIONS): for grants to school districts to provide firearm simulator training to prepare teachers, staff persons, and other designated persons employed in the school district to respond to dangerous situations in schools.\nSection 2 (SCHOOLS; FIREARMS): for grants to school districts to provide firearms with biometric gun locks to teachers, staff persons, and other designated persons employed in a district school that is a distance of at least three minutes from a law enforcement response to a dangerous situation at the school.\nSection 2 (SCHOOLS; FIREARMS): A teacher, staff person, or other designated person who receives a firearm must have received firearm training."
+}

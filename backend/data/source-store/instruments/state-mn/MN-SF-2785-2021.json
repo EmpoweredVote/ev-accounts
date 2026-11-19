@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-2785-2021",
+  "scope": "state:mn",
+  "title": "SF2785 (2021-2022 Regular): Firearm permits to carry without expiration authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2785&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/SF/2785/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul E. Gazelka",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Utke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Jeff Howe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Ingebrigtsen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-02-02; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/2785/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2785-2021.introduced.html",
+      "sha256": "f0fd90707e9362a7108fac0272fbc06fe3486d3701d80befb8b374848a88e961"
+    },
+    "note": "Introduced bill (2022-02-02). Strikes the five-year expiration, renewal procedure, renewal fee and late fee, and the words 'original or renewal' in the training rule and 'new and renewal' in the application rules. Version read is the introduced bill as filed; no later version was read."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.714, subd. 7): A permit to carry a pistol issued under this section does not expire. Permit cards issued after August 1, 2022, must prominently state that the permit does not expire.\nSection 5 (Replacement permits to carry): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2022, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

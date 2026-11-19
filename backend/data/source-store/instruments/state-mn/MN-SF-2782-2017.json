@@ -1,0 +1,61 @@
+{
+  "id": "MN-SF-2782-2017",
+  "scope": "state:mn",
+  "title": "SF2782 (2017-2018 Regular): Criminal background checks for firearm transfers requirement",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2782&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2782/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Dibble",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+    },
+    {
+      "name": "Jim Carlson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bfde1ba1-0aab-416e-884d-708bb14ee500"
+    },
+    {
+      "name": "John Marty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Gregory D. Clausen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Melisa López Franzen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2782/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2782-2017.introduced.html",
+      "sha256": "db0488c8cdd556311e01a8ad5372fcb143f37e783468f76e4bb59df136c8c784"
+    },
+    "note": "Introduced bill (as filed; no date in the file). Section 4 repeals the old gross misdemeanor for transfers without a pistol/assault-weapon transfer report (609.66 subd. 1f) and the 'transfer to unknown party' identity rule (624.7132 subd. 14); Sec. 2 renumbers exclusions in 624.7132 subd. 12. Effective August 1, 2018. Exclusions for family, law enforcement, antique and temporary transfers are in subd. 9. Version read is the introduced bill as filed; no later version was read."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1i): A transferor who voluntarily transfers a firearm, or a transferee who voluntarily receives a firearm, in violation of section 624.7134: (1) for a first conviction, is guilty of a gross misdemeanor; and (2) for a second or subsequent conviction, is guilty of a felony and may be sentenced to imprisonment for not more than two years or to payment of a fine of not more than $5,000, or both.\nSection 3 (Minn. Stat. 624.7134, subd. 2): Except as provided in this section: (1) each transfer of a firearm occurring in whole or in part in the state shall be preceded by a background check on the transferee; and (2) no transferor shall transfer a firearm, and no transferee shall receive a firearm, unless the transferee first complies with this section.\nSection 3 (Minn. Stat. 624.7134, subd. 3): Where both parties to a prospective firearm transfer are unlicensed persons, the transferor and transferee shall appear jointly before a federally licensed firearms dealer with the firearm and request that the federally licensed firearms dealer conduct a background check on the transferee and facilitate the transfer.\nSection 3 (Minn. Stat. 624.7134, subd. 5): If the transferee is prohibited by federal law from purchasing or possessing the firearm, or not entitled under state law to possess the firearm, neither the federally licensed firearms dealer nor the transferor shall transfer the firearm to the transferee.\nSection 3 (Minn. Stat. 624.7134, subd. 8): A federally licensed firearms dealer may charge a reasonable fee for conducting a background check and facilitating a transfer between the transferor and transferee pursuant to this section."
+}

@@ -1,0 +1,55 @@
+{
+  "id": "MN-HF-60-S1-2021",
+  "scope": "state:mn",
+  "title": "HF60 (2021, First Special): Firearm suppressor regulation by local, state, and federal laws provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0060&ssn=1&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/1/HF/60/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/92/2021/1/HF/60/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-60-S1-2021.introduced.html",
+      "sha256": "3ed9541d09531357f58e5b21f1af541b5bfce381a29bb3d93be525c9fc44c946"
+    },
+    "note": "Introduced version (special session 1, 2021; no date on saved copy). Section 1 also keeps existing reckless-discharge crimes; only the suppressor clause is quoted. AG-enforcement and declaratory-judgment provisions (subd. 4 of 609.6662 and 609.6663) not quoted."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1a): (a) Whoever does any of the following is guilty of a felony and may be sentenced as provided in paragraph (b): (1) sells or has in possession a suppressor that is not lawfully possessed under state or federal law;\nSection 3 (Minn. Stat. 609.6662, subd. 2): (a) A firearm suppressor that is manufactured in the state and remains in the state is not subject to federal law or federal regulation, including but not limited to registration, under the authority of the United States Congress to regulate interstate commerce.\nSection 3 (Minn. Stat. 609.6662, subd. 3): A firearm suppressor manufactured and sold in the state must have the words \"Made in Minnesota\" clearly stamped on it.\nSection 4 (Minn. Stat. 609.6663, subd. 2): (a) An entity under subdivision 1 may not adopt a rule, order, ordinance, or policy under which the entity enforces, or by consistent action allows the enforcement of, a federal statute, order, rule, or regulation that purports to regulate a firearm suppressor if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation that does not exist under state law. (b) No entity under subdivision 1 and no person employed by or otherwise under the direction or control of the entity may enforce or attempt to enforce any federal statute, order, rule, or regulation described under paragraph (a).\nSection 4 (Minn. Stat. 609.6663, subd. 3): (a) An entity under subdivision 1 may not receive state grant funds if the entity adopts a rule, order, ordinance, or policy under which the entity enforces a federal law described under subdivision 2, paragraph (a), or, by consistent action, allows the enforcement of that federal law."
+}

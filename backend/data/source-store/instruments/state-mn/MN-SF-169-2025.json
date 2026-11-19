@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-169-2025",
+  "scope": "state:mn",
+  "title": "SF169 (2025-2026 Regular): Veteran discharge papers legal equivalent of a permit to carry a firearm establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/169?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/169/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rob Farnsworth",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a571aa51-078a-4fd7-b54a-360249d443ac"
+    },
+    {
+      "name": "Nathan Wesenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Steve Green",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Bill Lieske",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-15; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/169/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-169-2025.introduced.html",
+      "sha256": "a0037a03a25dfc357d8ef893d1aa6376a5b6631693845f266c9e3e8a65b1e78a"
+    },
+    "note": "Introduced version as filed, 2025-01-15; no vote recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 25): Notwithstanding any provision in this section or other law to the contrary, a veteran, as defined in section 197.447, may carry a pistol as provided in this subdivision under any circumstances and in any location in which a permit to carry is otherwise required. The veteran must possess the original or a certified copy of the veteran's government form DD214 while carrying the pistol. This form constitutes the legal equivalency of a permit to carry. The veteran is not required to apply for a permit to carry, pay any fees, or demonstrate training in the safe use of a pistol. All other provisions of this section and other laws relating to permits to carry pistols apply to a veteran carrying under this subdivision."
+}

@@ -1,0 +1,79 @@
+{
+  "id": "MN-HF-3628-2023",
+  "scope": "state:mn",
+  "title": "HF3628 (2023-2024 Regular): Possession of large-capacity ammunition magazines, semiautomatic military-style assault weapons, .50 caliber or larger firearms, undetectable firearms, and other weapons banned.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3628&ssn=0&y=2024",
+    "https://www.revisor.mn.gov/bills/93/2024/0/HF/3628/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "María Isa Pérez-Vega",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2b1b89f8-5692-4acf-b437-e8f1ae677b13"
+    },
+    {
+      "name": "Samakab Hussein",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    },
+    {
+      "name": "Mary Clardy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
+    },
+    {
+      "name": "Frank Hornstein",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Samantha Sencer-Mura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Heather Edelson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2024-02-12; official copy, https://www.revisor.mn.gov/bills/93/2024/0/HF/3628/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3628-2023.introduced.html",
+      "sha256": "9be42e2b0e3439c2a45748f4372e81e8152073c111a34a09eb4591488c7c499e"
+    },
+    "note": "Introduced 2024-02-12; no votes. Section 1 (624.712, subd. 7) strikes the paragraph saying a firearm generally recognized as suited to sporting purposes is not an assault weapon, and moves on to the existing list of models and features (not quoted)."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.712, subd. 23): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than ten rounds, or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nSection 4 (Minn. Stat. 624.712, subd. 24): \".50 caliber or larger firearm\" means a firearm that is capable of expelling a metal projectile that measures one-half inch or larger in diameter but does not include an antique or replica firearm that uses black powder.\nSection 5 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines, .50 caliber or larger firearms, semiautomatic military-style assault weapons, or undetectable firearms.\nSection 5 (Minn. Stat. 624.7145, subd. 4): A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 5 (Minn. Stat. 624.7145, subd. 5, para. (a)): A person who legally owned or possessed a large-capacity magazine, .50 caliber or larger firearm, or semiautomatic military-style assault weapon before January 1, 2024, and who desires to keep ownership or possession of the device shall register it before January 1, 2025, with the Bureau of Criminal Apprehension and provide notice of the registration to the person's local law enforcement agency.\nSection 5 (Minn. Stat. 624.7145, subd. 5, para. (c)): Registered large-capacity magazines, .50 caliber or larger firearms, or semiautomatic military-style assault weapons may not be transferred, except for transfer to the bureau for the purpose of surrendering the item for destruction.\nSection 5 (Minn. Stat. 624.7145, subd. 5, para. (g)): A person who owned or possessed a large-capacity magazine, .50 caliber or larger firearm, or semiautomatic military-style assault weapon before January 1, 2024, who does not wish to register the device as required in this subdivision shall do one of the following before January 1, 2025: (1) surrender the device to the bureau for destruction; (2) modify the device to render it permanently inoperable; (3) for a large-capacity magazine, permanently alter the device so it cannot accommodate more than ten rounds; or (4) remove the device from the state."
+}

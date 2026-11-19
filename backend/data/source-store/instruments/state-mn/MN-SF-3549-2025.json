@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-3549-2025",
+  "scope": "state:mn",
+  "title": "SF3549 (2025-2026 Regular): State preemption of local units of government regulating firearms repeal",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3549?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3549/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Ann Johnson Stewart",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56c6c6c9-2bf8-4841-aa25-9244586e88eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-12; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3549/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3549-2025.introduced.html",
+      "sha256": "a752d9a288cf93ead3a42b22fa78e73845da03caf6a57a810d2091bb2631c6a1"
+    },
+    "note": "Introduced version, as filed (2026-02-12); official copy from revisor.mn.gov. No passage vote recorded. Section 2 repeals the preemption statutes (471.633, 471.634, 624.714 subd. 23, 624.717, 624.7191 subd. 4); their text is in the bill's appendix and is not quoted. Section 1 strikes the 'Notwithstanding section 471.633' opening and the cross-reference to sections 471.633 and 471.634."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 471.635): A governmental subdivision may regulate by reasonable, nondiscriminatory, and nonarbitrary zoning ordinances, the location of businesses where firearms are sold by a firearms dealer. For the purposes of this section, a firearms dealer is a person who is federally licensed to sell firearms.\nSection 2 (repealer): REPEALER. Minnesota Statutes 2024, sections 471.633; 471.634; 624.714, subdivision 23; 624.717; and 624.7191, subdivision 4, are repealed."
+}

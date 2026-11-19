@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-3866-2019",
+  "scope": "state:mn",
+  "title": "SF3866 (2019-2020 Regular): Civilly committed sex offenders firearms possession prohibition; felony drive-by shooting clarification; criminal gang member firearm possession in public without a permit to carry penalties increase; noncitizen permit to carry firearm applicant background check information collection expansion",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3866&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/SF/3866/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Warren Limmer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7f870a88-85e4-4021-969b-c417709f01f0"
+    },
+    {
+      "name": "David J. Tomassoni",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st  Engrossment; official copy, https://www.revisor.mn.gov/bills/91/2020/0/SF/3866/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3866-2019.engrossed1.html",
+      "sha256": "216ce40feb1e5c7e4a54276f64047e8475d0852dc8e867a2899d58b66e06ba91"
+    },
+    "note": "1st Engrossment (date blank in record), other. No vote in the record. Sections 1 to 3 and 5 amend protective-order and sentencing laws to point to the new section 624.7134 (gun removal). Section 10/11 expand the non-citizen permit application and add an immigration status check (not a deportation topic). Struck text is not quoted."
+  },
+  "operative_text": "Section 6 (Minn. Stat. 624.713, subd. 1): (14) a person who has been committed to a treatment facility in Minnesota or elsewhere by a judicial determination that the person is a sexually dangerous person or a person with a sexual psychopathic personality, unless the person's ability to possess a firearm and ammunition has been restored under subdivision 4.\nSection 8 (Minn. Stat. 624.7134, subd. 2): When a person becomes ineligible to possess a firearm under a provision described in subdivision 1, the court shall order the person to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 9 (Minn. Stat. 624.714, subd. 1a): A member of a criminal gang, as defined in section 609.229, subdivision 1, who is convicted of violating this subdivision is guilty of a felony.\nSection 4 (Minn. Stat. 609.66, subd. 1e): A person convicted under paragraph (a), clause (2) or (3), may be sentenced to imprisonment for not more than ten years or to payment of a fine of not more than $20,000, or both.\nSection 12 (Minn. Stat. 624.7141, subd. 1): A person is guilty of a felony and may be sentenced to imprisonment for not more than two years or to payment of a fine of not more than $4,000, or both, if the person intentionally transfers a pistol or semiautomatic military-style assault weapon to another and the person knows that the transferee:\nSection 14 (Minn. Stat. 626.8452, subd. 6): Unless expressly authorized under another section of law, a mayor, city council, or county board may not disarm or direct a chief law enforcement officer to disarm a peace officer who is in good standing and not currently under investigation or subject to disciplinary action.",
+  "higher_law_duty": "Section 15: the revised permit to carry application must be published \"in order to bring the application into compliance with federal law.\""
+}

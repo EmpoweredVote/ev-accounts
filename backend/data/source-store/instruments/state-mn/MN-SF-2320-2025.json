@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-2320-2025",
+  "scope": "state:mn",
+  "title": "SF2320 (2025-2026 Regular): Local governmental units authorization to prohibit or restrict the possession of dangerous weapons, ammunition, or explosives in local government-owned or leased buildings and land",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/2320?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/2320/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Sandy Pappas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "Erin Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f9f2c3e6-ae73-4844-91c2-c472d74c3aa9"
+    },
+    {
+      "name": "Bonnie Westlin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    },
+    {
+      "name": "Doron Clark",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3a7411c9-55d4-4eb6-bae0-5f5f6206c517"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-18; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/2320/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2320-2025.engrossed1.html",
+      "sha256": "9c283fd411b4eb135148f73f9cfda5f828ac2c97c93bde0b31b9b337b6e54cc6"
+    },
+    "note": "Version read: 1st Engrossment, 2026-03-18 (other than enrolled). No vote data in file. The bill has no passage vote in the file."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, new subd. 1i): Notwithstanding sections 624.714, subdivision 23, and 624.717, the elected governing body of a local governmental unit may prohibit or restrict a person from possessing a dangerous weapon, ammunition, or explosives within a building or on land owned or leased by the local governmental unit, except as provided under subdivision 1g.\nSection 1 (Minn. Stat. 609.66, new subd. 1i): A person who possesses a dangerous weapon, ammunition, or explosives within a building or on land owned or leased by a local governmental unit that has prohibited or restricted possession under paragraph (a) is guilty of a misdemeanor.\nSection 1 (Minn. Stat. 609.66, new subd. 1i): Signs prohibiting or restricting dangerous weapons, ammunition, and explosives must be posted on a building or land owned or leased by a local governmental unit."
+}

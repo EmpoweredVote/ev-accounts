@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-649-2017",
+  "scope": "state:mn",
+  "title": "SF649 (2017-2018 Regular): Firearm carry without permit authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0649&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/SF/649/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Utke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/SF/649/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-649-2017.introduced.html",
+      "sha256": "ca88c7a4189161401c438a3c7bf2bf645a428df08e2a98cf8d2fe4e75eb7797e"
+    },
+    "note": "Version read: the introduced bill as filed (2017 session); no passage vote recorded, no later amendments. Sections 3 to 5 only drop the word 'otherwise' in existing carry-authority wording; the bill also repeals Minn. Stat. 624.714, subdivisions 1a, 1b, 9, 11a, 13."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7121, subd. 1): Notwithstanding any other law to the contrary, every citizen in this state shall have an affirmative, fundamental, and constitutional right to keep and bear firearms, including the right to carry openly or concealed, carry loaded or unloaded, transport, possess, use, acquire, purchase, transfer, inherit, buy, sell, give, or otherwise dispose of or receive any firearm or self-defense device without a permit, permission, or restriction of any kind from or by this state or any of its political subdivisions.\nSection 1 (Minn. Stat. 624.7121, subd. 2): Obtaining a permit to carry a pistol under section 624.714 is optional.\nSection 6 (Minn. Stat. 624.7182): (a) A public official who interferes with the right to carry a pistol under sections 624.7121 and 624.714 is guilty of a misdemeanor for the following offenses:\nSection 6 (Minn. Stat. 624.7182): (b) The attorney general shall investigate, enforce, and prosecute violations under this section."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3352-2023",
+  "scope": "state:mn",
+  "title": "SF3352 (2023-2024 Regular): Prohibiting the sale or transfer of a semiautomatic military-style assault weapons, authorizing a buyback program for these weapons and appropriating money",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3352&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/3352/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jen McEwen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a3656b66-f796-4b26-a29e-2b9d7c1c064e"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-05-19; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/3352/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3352-2023.introduced.html",
+      "sha256": "8a3dbbf02215b6cb990f8685ca470430ff3909678e4d17d7430f07488d4f8f12"
+    },
+    "note": "Version read: as-filed (introduced) text; no passage vote recorded. Section 1 strikes the sporting-purposes exclusion from the assault-weapon definition. Section 3 subd. 2 appropriates blank amounts for fiscal years 2024 and 2025 (amounts left as dots); not quoted. Section 2 is effective August 1, 2023, for crimes on or after that date."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer a semiautomatic military-style assault weapon.\nSection 2 (Minn. Stat. 624.7145, subd. 4): A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 1 (Minn. Stat. 624.712, subd. 7): (b) Semiautomatic military-style assault weapon also includes any: (1) semiautomatic rifle that has the capacity to accept a detachable magazine and has one or more of the following: (i) a pistol grip or thumbhole stock; (ii) any feature capable of functioning as a protruding grip that can be held by the nontrigger hand; (iii) a folding or telescoping stock; or (iv) a shroud attached to the barrel, or that partially or completely encircles the barrel, allowing the bearer to hold the firearm with the nontrigger hand without being burned, but excluding a slide that encloses the barrel;\nSection 3 (uncodified, subd. 1): The commissioner of public safety shall establish a statewide buyback program to purchase semiautomatic military-style assault weapons. The program must accept any semiautomatic military-style assault weapon offered, regardless of the weapon's physical condition, and pay reimbursement at a rate set by the commissioner."
+}

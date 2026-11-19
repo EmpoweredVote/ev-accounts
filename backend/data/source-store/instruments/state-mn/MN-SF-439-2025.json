@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-439-2025",
+  "scope": "state:mn",
+  "title": "SF439 (2025-2026 Regular): Permissible methods of submitting an application for a permit to carry a handgun expansion",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/439?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/439/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Green",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-16; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/439/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-439-2025.introduced.html",
+      "sha256": "79766ee2523fd5a467c5a3a6b69d9794d80963e74648f8d0dd7edd4f5a428ca4"
+    },
+    "note": "Introduced version (Introduction, 2025-01-16). Strikes the word 'must', so in-person submission is no longer the only method."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3(e)): Applications may be submitted in person, electronically, or by facsimile, certified mail, or certified delivery."
+}

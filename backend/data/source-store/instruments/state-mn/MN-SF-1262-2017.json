@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-1262-2017",
+  "scope": "state:mn",
+  "title": "SF1262 (2017-2018 Regular): Gun violence protective orders authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1262&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/SF/1262/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Gregory D. Clausen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Hayden",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Cwodzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7845f8df-cc58-49fa-a87c-6483d6cdcf47"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/SF/1262/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1262-2017.introduced.html",
+      "sha256": "ddd27f7c8d67c7b60c371dd28c77f2b275fdf8ab18b086fcc99780988cfa85ce"
+    },
+    "note": "Version read: introduced (as filed). No passage vote recorded. Includes an emergency order (245.9904), return of firearms (245.9906), liability protection (245.9908), and a filing offence. Section 9 adds clause 14 to the ineligible-persons list in 624.713 and strikes a period in clause 13."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 245.9901, subd. 4): (a) There shall exist an action known as a petition for a gun violence protective order for protection from gun violence, which order shall enjoin and prohibit the respondent from possessing firearms for a fixed period. (b) A petition for relief under sections 245.9901 to 245.9908 may be made by any family or household members, by the chief law enforcement officer or a designee, a city or county attorney, or by a guardian as defined in section 524.1-201, clause (26).\nSection 2 (Minn. Stat. 245.9902, subd. 2): (d) If the court finds there is a preponderance of the evidence to issue a gun violence protective order, the court shall issue the order prohibiting the person from possessing a firearm for the duration of the order. (e) The order shall have a fixed period, to be determined by the court, of not less than six months and not more than two years, subject to renewal or extension under section 245.9903.\nSection 5 (Minn. Stat. 245.9905): (a) Upon issuance of a gun violence protective order, the court shall direct the respondent to transfer any firearms the person possesses, within 24 hours, to a federally licensed firearms dealer, a law enforcement agency, or third party.\nSection 7 (Minn. Stat. 245.9907, subd. 2): A person who possesses a firearm and knows or should have known that the person is prohibited from doing so by a gun violence protective order under section 245.9902 or 245.9904, or by an order of protection granted by a judge or referee pursuant to a substantially similar law of another state, is guilty of a misdemeanor and shall be prohibited from possessing firearms for a period of five years.\nSection 9 (Minn. Stat. 624.713, subd. 1): (14) a person who is subject to a gun violence protective order as described in section 245.9902 or 245.9904."
+}

@@ -1,0 +1,92 @@
+{
+  "id": "MN-HF-5160-2025",
+  "scope": "state:mn",
+  "title": "HF5160 (2025-2026 Regular): Ownership, possession, and sale of semiautomatic military-style assault weapons and large-capacity magazines regulated; provisions for possessing dangerous weapons in schools, negligently storing firearms, and reporting on firearms discharge by law enforcement modified; other firearm provisions modified; and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/5160?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/5160/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Leigh Finke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Nathan Coulter",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
+    },
+    {
+      "name": "Liz Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5e54444-041b-4eeb-8043-b691d3a3edfb"
+    },
+    {
+      "name": "Alex Falconer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "71bbd8ad-1ea0-4755-8d14-81739e898a70"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Liish Kozlowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b6759469-327d-46fe-9064-0c1ec40bec63"
+    },
+    {
+      "name": "Leon Lillie",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
+    },
+    {
+      "name": "Huldah Hiltsley",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5c71d118-2442-4b4b-9504-7fb042541efb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "healthcare: Article 4 (Minn. Stat. 256B.761, subd. 5; repeal of 256B.0625, subd. 38) — medical assistance payment rates for psychological testing and assessment; school-linked behavioral health grants",
+        "public-safety-approach: Article 3 Section 1 (Minn. Stat. 121A.036) — anonymous threat reporting system for schools",
+        "public-safety-approach: Article 1 Section 2 — nonpublic school safety grants and a violence-prevention research center",
+        "judicial-police-accountability: Article 3 Section 20 (Minn. Stat. 626.553, subd. 2) — reporting when peace officers discharge firearms"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-05-16; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/5160/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-5160-2025.introduced.html",
+      "sha256": "95185f4a5c7c37da887508b555479b8b28775fc3efccb7d836ea8274dfa43927"
+    },
+    "note": "Introduced version, 2026-05-16. No votes recorded. Omnibus with appropriation, gun, school, human services and conforming articles; only gun parts quoted. HF 5140 and HF 5160 are almost identical (small differences in a record-of-transfer clause numbering and the 'school-related use' punctuation). The bill strikes the school-property exceptions for keeping a vehicle gun, written permission from the principal, and unimproved land, and adds exceptions for authorized security staff and retired peace officers. It also changes the extreme risk protection order law (Minn. Stat. 624.7171-624.7178), not fully quoted, and revives the binary trigger ban (Article 3 Section 21)."
+  },
+  "operative_text": "Article 2, Section 6 (Minn. Stat. 624.7135, subd. 1): (a) Except as otherwise provided in this section, a firearms dealer, as defined in section 624.7134, subdivision 1, paragraph (b), may not sell a semiautomatic military-style assault weapon or a large-capacity magazine.\nArticle 2, Section 6 (Minn. Stat. 624.7135, subd. 2): (a) Except as provided in paragraph (b), a person who violates this section is guilty of a gross misdemeanor.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 1): It is unlawful for a person to own or possess a semiautomatic military-style assault weapon or large-capacity magazine that is not certified as required under this section.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 2): (a) A person who owns or possesses a semiautomatic military-style assault weapon or large-capacity magazine must request certification of ownership from the Bureau of Criminal Apprehension.\nArticle 2, Section 7 (Minn. Stat. 624.7148, subd. 3): (a) A person who owns or possesses an uncertified semiautomatic military-style assault weapon or large-capacity magazine or who otherwise knowingly violates this section is guilty of a gross misdemeanor.\nArticle 2, Section 2 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than 17 rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nArticle 2, Section 4 (Minn. Stat. 624.7134, subd. 2): (a) An unlicensed person is prohibited from transferring a pistol, semiautomatic military-style assault weapon, or large-capacity magazine to any other unlicensed person, unless:\nArticle 3, Section 2 (Minn. Stat. 609.66, subd. 1d): (d) Notwithstanding paragraph (a), (b), or (c), it is a misdemeanor for a person authorized to carry a firearm under the provisions of a permit or otherwise to carry a firearm on or about the person's clothes or person in a location the person knows is school property.\nArticle 3, Section 2 (Minn. Stat. 609.66, subd. 1d): (7) persons who: (i) are employed by or under contract with a school or child care center to provide security services or who volunteer to provide security services; (ii) hold a valid permit to carry a pistol under section 624.714;\nArticle 3, Section 4 (Minn. Stat. 609.666, subd. 2): A person is guilty of a gross misdemeanor who negligently stores or leaves a loaded firearm in a location where the person knows, or reasonably should know, that a child or a person prohibited from possessing firearms under section 624.713, subdivision 1, is likely to gain access, unless reasonable action is taken to secure the firearm against access by the child or the person prohibited from possessing firearms.\nArticle 3, Section 5 (Minn. Stat. 624.7145, subd. 3): Any person who owns, possesses, or receives a ghost gun may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nArticle 3, Section 13 (Minn. Stat. 624.7173, paragraph (a)): The minimum length of an extension is six months and the maximum length of time of an extension is one year."
+}

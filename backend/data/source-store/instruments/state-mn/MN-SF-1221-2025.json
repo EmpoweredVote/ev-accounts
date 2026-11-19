@@ -1,0 +1,56 @@
+{
+  "id": "MN-SF-1221-2025",
+  "scope": "state:mn",
+  "title": "SF1221 (2025-2026 Regular): State Fairgrounds lawful carry and possession of firearms authorization provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1221?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1221/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Eichorn",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nathan Wesenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-07; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/1221/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1221-2025.introduced.html",
+      "sha256": "b921c1f33b36cbb746631044c9ccbbdf28620a016143f7b5684e9ddf87de46f7"
+    },
+    "note": "Version read: introduced (as filed) 2025-02-07. No passage vote recorded. Section 1 adds the proviso that society rules may not prohibit lawful carry or possession of firearms; Section 2 adds the State Agricultural Society to the 'governmental entity' definition in the private-establishment posting rule (624.714, subd. 17), so a posted ban would not bind there."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 37.16): The society may make all bylaws, ordinances, and rules consistent with law which it considers necessary or proper for the government of the fairgrounds and all fairs to be held on them, and for the protection, health, safety, and comfort of the public on the fairgrounds provided no bylaw, ordinance, or rule prohibits the lawful carry or possession of firearms consistent with section 624.714.\nSection 2 (Minn. Stat. 624.714, subd. 17): (5) \"Governmental entity\" includes but is not limited to the State Agricultural Society when it conducts activities on the State Fairgrounds consistent with the public purposes identified in section 37.01."
+}

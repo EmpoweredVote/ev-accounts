@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-547-2023",
+  "scope": "state:mn",
+  "title": "SF547 (2023-2024 Regular): Constitutional right to carry a firearm recognition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0547&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/547/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Lieske",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    },
+    {
+      "name": "Nathan Wesenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Rob Farnsworth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a571aa51-078a-4fd7-b54a-360249d443ac"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Rich Draheim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a41019c1-8548-4465-bbd6-f23688ed38dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/547/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-547-2023.introduced.html",
+      "sha256": "13d66332d5414ed303a5e3ce7418cbb1b7eb0fcce5f070ffce52e9a6d527482a"
+    },
+    "note": "Version read: the introduced bill as filed (2023-01-20); no passage vote recorded, no later amendments. The repealed sections (permit required, display of permit, other-state permits, rifles and shotguns in public places) are named in the bill's appendix; the bill removes them rather than adding words."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (a) The legislature of the state of Minnesota recognizes and declares that the second amendment of the United States Constitution guarantees the fundamental, individual right to keep and bear arms.\nSection 1 (Minn. Stat. 624.714, subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.\nSection 9 (repealer): Minnesota Statutes 2022, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

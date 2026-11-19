@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-98-2019",
+  "scope": "state:mn",
+  "title": "SF98 (2019-2020 Regular): Weapons at polling place prohibition establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0098&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/98/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ann Rest",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3295d8e3-953f-4312-b660-a08b5ba8d862"
+    },
+    {
+      "name": "Carolyn Laine",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris A. Eaton",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/98/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-98-2019.introduced.html",
+      "sha256": "d87d410698775f3668677a266be33f70fddb991ce2c97f045f253d77f5c813fc"
+    },
+    "note": "As-filed introduced text (no date given). The bill has no recorded votes."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 203B.03, subd. 1a): Section 204C.06, subdivision 9, applies to the possession of certain weapons in polling places where absentee ballots are cast.\nSection 2 (Minn. Stat. 204C.06, subd. 9): (a) Whoever possesses, stores, or keeps a firearm in a location the person knows is a polling place is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nSection 2 (Minn. Stat. 204C.06, subd. 9): (b) Whoever uses or brandishes a replica firearm or a BB gun in a location the person knows is a polling place is guilty of a gross misdemeanor.\nSection 2 (Minn. Stat. 204C.06, subd. 9): (c) Whoever possesses, stores, or keeps a replica firearm or a BB gun in a location the person knows is a polling place is guilty of a misdemeanor.\nSection 2 (Minn. Stat. 204C.06, subd. 9): (d) Notwithstanding paragraph (a), (b), or (c), it is a misdemeanor for a person authorized to carry a firearm under the provisions of a permit or otherwise to carry a firearm on or about the person's clothes or person in a location the person knows is a polling place. Notwithstanding section 609.531, a firearm carried in violation of this paragraph is not subject to forfeiture.\nSection 2 (Minn. Stat. 204C.06, subd. 9): (f) This subdivision does not apply to: (1) active licensed peace officers; and (2) military personnel or students participating in military training who are on-duty and performing official duties."
+}

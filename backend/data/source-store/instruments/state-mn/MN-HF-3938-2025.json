@@ -1,0 +1,81 @@
+{
+  "id": "MN-HF-3938-2025",
+  "scope": "state:mn",
+  "title": "HF3938 (2025-2026 Regular): Owners of firearms required to have liability insurance, and homeowners' and tenants' policies required to include liability coverage for accidental discharge of firearms.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3938?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3938/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ginny Klevorn",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
+    },
+    {
+      "name": "Julie Greene",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df29702a-88ca-45a4-b3b9-1a5eb4509ac7"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Luke Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58f8cad2-0a73-43ac-83d6-fcc21a047b51"
+    },
+    {
+      "name": "Pete Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51834ca0-6073-4d6c-863e-adf4264bdede"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Kristin Bahner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
+    },
+    {
+      "name": "Brad Tabke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-03; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3938/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3938-2025.introduced.html",
+      "sha256": "2fb232b3010db2819b066f001a6bb2437d5bc6534d6a3b78d6270e1e91a70d6e"
+    },
+    "note": "Introduced 2026-03-03; no votes. Section 1 (65A.27, subd. 1) is a scope line."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 65A.304, subd. 2): An insurer writing homeowner's insurance in Minnesota must make available at least one form or rider that provides the coverage required under this section.\nSection 2 (Minn. Stat. 65A.304, subd. 3, para. (a)): A Minnesota resident who owns a firearm must maintain liability insurance, as a part of a homeowner's insurance policy or otherwise, that covers loss or damage of at least $100,000 arising from any one incident to a person, other than the insured, who is injured as a result of an accidental or unintentional discharge of the firearm.\nSection 2 (Minn. Stat. 65A.304, subd. 3, para. (b)): For purposes of this section, a person remains the owner of a lost or stolen firearm until the loss or theft is reported to law enforcement.\nSection 2 (Minn. Stat. 65A.304, subd. 5, para. (a)): A person who violates this section for the first time may be charged with a petty misdemeanor and fined up to $300.\nSection 2 (Minn. Stat. 65A.304, subd. 5, para. (b)): A second or subsequent conviction of this section within five years of a prior conviction is a misdemeanor and the court may impose a fine of up to $1,000.\nSection 2 (Minn. Stat. 65A.304, subd. 6, para. (a)): This section does not apply to a federal firearm licensee or a person the court excuses from complying with this section as provided in this subdivision."
+}

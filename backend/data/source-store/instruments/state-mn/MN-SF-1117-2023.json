@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-1117-2023",
+  "scope": "state:mn",
+  "title": "SF1117 (2023-2024 Regular): Law enforcement and family members permission to petition a court to prohibit people from possessing firearms if they pose a significant danger to themselves or others by possessing a firearm",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1117&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/1117/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Bonnie Westlin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Alice Mann",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    },
+    {
+      "name": "Ann Rest",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3295d8e3-953f-4312-b660-a08b5ba8d862"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2023-03-27; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1117/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1117-2023.engrossed1.html",
+      "sha256": "715ba29eb6792f56fa6034b051223a89db9b6d2e44f062300610ad69e57dff41"
+    },
+    "note": "Other: 1st Engrossment, 2023-03-27; official copy from revisor.mn.gov. Differs from as-filed SF 1185: adds suicide-risk grounds, clear-and-convincing proof, a one-year maximum, a mental-health-professional duty to tell the sheriff, reporting of orders to the federal background check system, and a $500,000 two-year appropriation. Effective Jan 1, 2024. No passage vote on file; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.713, subd. 1): (14) a person who is subject to an extreme risk protection order as described in section 624.7172 or 624.7174.\nSection 2 (Minn. Stat. 624.7171, subd. 4): (a) There shall exist an action known as a petition for an extreme risk protection order, which order shall enjoin and prohibit the respondent from possessing or purchasing firearms for as long as the order remains in effect.\nSection 2 (Minn. Stat. 624.7171, subd. 4): (c) A petition for relief shall allege that the respondent poses a significant danger of bodily harm to other persons or is at significant risk of suicide by possessing a firearm.\nSection 2 (Minn. Stat. 624.7171, subd. 5): When a mental health professional has a statutory duty to warn another of a client's serious threat of physically violent behavior or determines that a client presents a significant risk of suicide by possessing a firearm, the mental health professional must communicate the threat or risk to the sheriff of the county where the client resides and make a recommendation to the sheriff regarding the client's fitness to possess firearms.\nSection 3 (Minn. Stat. 624.7172, subd. 2): (a) At the hearing, the petitioner must prove by clear and convincing evidence that the respondent poses a significant danger to other persons or is at significant risk of suicide by possessing a firearm.\nSection 3 (Minn. Stat. 624.7172, subd. 2): (e) The court shall determine the length of time the order is in effect, but may not set the length of time for less than six months or more than one year, subject to renewal or extension under section 624.7173.\nSection 6 (Minn. Stat. 624.7175): (a) Except as provided in paragraph (b), upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours, to a federally licensed firearms dealer or a law enforcement agency.\nSection 6 (Minn. Stat. 624.7175): If the temporary transfer is made to a law enforcement agency, the agency may not charge the respondent any storage or other associated fee.\nSection 8 (Minn. Stat. 624.7177, subd. 1): A person who petitions for an extreme risk protection order under section 624.7172 or 624.7174, knowing any information in the petition to be materially false or with the intent to harass, abuse, or threaten, is guilty of a gross misdemeanor.\nSection 8 (Minn. Stat. 624.7177, subd. 2): A person who possesses a firearm and knows or should have known that the person is prohibited from doing so by an extreme risk protection order under section 624.7172 or 624.7174, or by an order of protection granted by a judge or referee pursuant to a substantially similar law of another state, is guilty of a misdemeanor and shall be prohibited from possessing firearms for a period of five years.\nSection 11 (appropriation): $250,000 in fiscal year 2024 and $250,000 in fiscal year 2025 are appropriated to the commissioner of public safety from the general fund to reimburse law enforcement agencies that have paid compensation to extreme risk protection order respondents who have permanently transferred a firearm to the agency in compliance with Minnesota Statutes, section 624.7175, or that have incurred storage-related costs for the storage of a firearm temporarily transferred to the agency under that law."
+}

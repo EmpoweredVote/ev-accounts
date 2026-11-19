@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-631-2023",
+  "scope": "state:mn",
+  "title": "SF631 (2023-2024 Regular): Information collected and scope of background check conducted for noncitizen permit to carry applicants expansion",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0631&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/631/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/631/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-631-2023.introduced.html",
+      "sha256": "8ee387c38b61bfb33058e070a1e98af51d555051af75bacd01d79a22c281035f"
+    },
+    "note": "Version read: the introduced bill as filed (2023-01-20); no passage vote recorded, no later amendments. The IAQ sentence in Section 2 prints without a strike mark; the text read does not show underlining, so it is not confirmed as new wording. Check is part of the permit background check, not a deportation step."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): (7) if the applicant is not a United States citizen, the applicant's country of birth and alien number or alien admission number.\nSection 2 (Minn. Stat. 624.714, subd. 4): In addition, if the applicant is not a United States citizen, the sheriff must ensure that an Immigration Alien Query (IAQ) check is performed on the applicant."
+}

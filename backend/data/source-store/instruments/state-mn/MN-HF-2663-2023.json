@@ -1,0 +1,57 @@
+{
+  "id": "MN-HF-2663-2023",
+  "scope": "state:mn",
+  "title": "HF2663 (2023-2024 Regular): Enforcement of judicially ordered firearms restrictions for abusing parties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2663&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/2663/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elliott Engen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "171be6a9-0b10-4156-a2ce-e92da70f3b7f"
+    },
+    {
+      "name": "Peggy Scott",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+    },
+    {
+      "name": "Marj Fogelman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "338af9c7-7d7f-4450-830f-1a098a8cb080"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-03-06; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/2663/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2663-2023.introduced.html",
+      "sha256": "304de3b17669233ae074e0b979b07fa34ab7ba8935e3b2fd5cfbf081ef4a03e9"
+    },
+    "note": "Version read: introduced (as filed). No struck text. Section 2 (518B.01, subd. 6) makes the same kind of change for domestic abuse orders. Large file read with grep and by section; a near copy of the 2019 bill HF 2462."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260C.201, subd. 3): The order shall inform the abusing party of that party's prohibited status. Except as provided in paragraph (f), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them. Upon a finding of imminent risk, the court shall order that the local law enforcement agency take immediate possession of all firearms in the abusing party's possession. The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (d), (e), and (f), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 3 (Minn. Stat. 609.2242, subd. 3): If the court determines that the assault was of a family or household member, and that the offender owns or possesses a firearm and used it in any way during the commission of the assault, it shall order that the firearm be summarily forfeited under section 609.5316, subdivision 3.\nSection 4 (Minn. Stat. 609.749, subd. 8): When a person is convicted of harassment or stalking under this section and the court determines that the person used a firearm in any way during commission of the crime, the court may order that the person is prohibited from possessing any type of firearm for any period longer than three years or for the remainder of the person's life."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "MN-SF-3865-2019",
+  "scope": "state:mn",
+  "title": "SF3865 (2019-2020 Regular): Noncitizen permit to carry firearm applicant background check information collection expansion",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3865&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/SF/3865/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "David J. Tomassoni",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/SF/3865/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3865-2019.introduced.html",
+      "sha256": "b906856cfd53e1d0f3c20998fb13455d87c76fb9d7902ffdc3286afaf8a56e6b"
+    },
+    "note": "Introduced version (as filed); no date or vote. Struck words only tidy the list punctuation. The text file does not show which words are new; the IAQ sentence is judged new from the bill title. Per ruling, the immigration query on a background check is not a deportation topic."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): (7) if the applicant is not a United States citizen, the applicant's country of birth and alien number or alien admission number.\nSection 2 (Minn. Stat. 624.714, subd. 4): In addition, if the applicant is not a United States citizen, the sheriff must ensure that an Immigration Alien Query (IAQ) check is performed on the applicant."
+}

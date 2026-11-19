@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-1402-2023",
+  "scope": "state:mn",
+  "title": "SF1402 (2023-2024 Regular): Visitor carrying of firearms regulation on campuses of public postsecondary institutions",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1402&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/1402/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-07; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1402/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1402-2023.introduced.html",
+      "sha256": "e6c33e9fabec225be7e1ece347161d3429387c425cc9b7d845235cd2bd47c546"
+    },
+    "note": "Introduced text. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 18): A public postsecondary institution regulated under chapter 136F or 137 may establish policies that restrict the carry or possession of firearms by visitors while on the institution's property. A person carrying a firearm in violation of the public postsecondary institution policies may be ordered to leave the premises. A person who fails to leave when so requested is guilty of a petty misdemeanor."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "MN-HF-285-2025",
+  "scope": "state:mn",
+  "title": "HF285 (2025-2026 Regular): Right to carry without a permit provided, and optional permit to carry provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/285?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/285/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Josh Heintzeman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+    },
+    {
+      "name": "Isaac Schultz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-10; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/285/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-285-2025.introduced.html",
+      "sha256": "4e0a3bd9fb3796a7e5fa9f2c4e3133b26a6b354bcfe3035b1b850d477b251fa0"
+    },
+    "note": "Introduced text. Sections 3 to 7 only change the word \"optional\" and the permit-holder wording in existing permit rules. The repealer removes the permit-required offense, the permit display rule, out-of-state permit recognition and the rifle and shotgun public-place offense (described, not quoted). Text matches its companion bill except for the repealer appendix number."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, new subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, new subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.\nSection 9 (repealer): Minnesota Statutes 2024, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

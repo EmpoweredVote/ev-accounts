@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-1263-2017",
+  "scope": "state:mn",
+  "title": "SF1263 (2017-2018 Regular): Taylor Hayden Gun Violence Protection Act",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1263&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/SF/1263/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Hayden",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bobby Joe Champion",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "24e523eb-c8b0-4b30-915b-6982c1d1a3cb"
+    },
+    {
+      "name": "Ron Latz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Thomas M. Bakk",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/SF/1263/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1263-2017.introduced.html",
+      "sha256": "76938a5af2f8606303834b7c3cf432cd37d7ccf0e6e493834ed1900fa0ad5eb6"
+    },
+    "note": "Version read: introduced (as filed). No passage vote recorded. Does not regulate firearms; it is a gun-violence program with an appropriation."
+  },
+  "operative_text": "Section 1 (Taylor Hayden Gun Violence Prevention Act): To reduce the number of injuries and deaths of innocent individuals in the community and to increase community safety, the commissioner of human services shall develop a competitive bidding process to award grants to nonprofit organizations with expertise in gun violence prevention. A nonprofit organization awarded a grant must use the money for gun violence prevention or public awareness and education campaigns on gun violence prevention.\nSection 2 (appropriation): $200,000 in fiscal year 2018 and $200,000 in fiscal year 2019 are appropriated from the general fund to the commissioner of human services to provide grants described in section 1."
+}

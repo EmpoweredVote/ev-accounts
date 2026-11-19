@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-3654-2025",
+  "scope": "state:mn",
+  "title": "SF3654 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons banishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3654?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3654/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Zaynab Mohamed",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    },
+    {
+      "name": "Alice Mann",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    },
+    {
+      "name": "John Marty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Erin Maye Quade",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9f089f1-c5a5-4cf6-908b-b9898a078fe7"
+    },
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-17; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3654/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3654-2025.introduced.html",
+      "sha256": "85b04a3d0b75c8f049d3d3e8267bfcbd51b1637a87ddb71f4180fee8094be5e6"
+    },
+    "note": "Introduced version (as filed), 2026-02-17; no vote. Large bill: read the definition, new section 624.7145 and the conforming article. Article 2 changes cross-references in existing gun laws (609.66, 624.713, 624.7131 to 624.7181) to carry the new term, so they are not a second subject."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.712, subd. 7): \nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer, own, or possess semiautomatic military-style assault weapons.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 4): A person who legally owned or possessed a semiautomatic military-style assault weapon before January 1, 2027, and who desires to keep ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension and appropriate law enforcement agency by May 1, 2027. The certified owner or possessor of a semiautomatic military-style assault weapon must not purchase or receive additional semiautomatic military-style assault weapons.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 5): A person who violates subdivision 2 or 4, paragraph (a) or (g), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both."
+}

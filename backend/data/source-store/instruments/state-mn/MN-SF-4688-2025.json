@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-4688-2025",
+  "scope": "state:mn",
+  "title": "SF4688 (2025-2026 Regular): Regulation changes of transfers of pistols and semiautomatic military-style assault weapons to include ammunition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4688?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4688/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Erin Maye Quade",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a9f089f1-c5a5-4cf6-908b-b9898a078fe7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4688/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4688-2025.introduced.html",
+      "sha256": "28e5af47db6c991c260321913d499cc691df9a1c20f934fad502d8b47a4940b2"
+    },
+    "note": "Introduced version (Introduction, 2026-03-18). Large bill (23 sections); the main change is replacing 'pistol or semiautomatic military-style assault weapon' with a defined 'firearm-related item' that adds ammunition for those guns, across Minn. Stat. 624.7131, 624.7132 and 624.7134. Sections effective August 1, 2026. Quotes are a selection; not all sections are quoted."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7131, subd. 1): (4) a statement by the proposed transferee that the proposed transferee is not prohibited by section 624.713 from possessing a firearm-related item.\nSection 9 (Minn. Stat. 624.7132, subd. 4): No person shall deliver a firearm-related item to a proposed transferee after receiving a written notification that the chief of police or sheriff has determined that the proposed transferee is prohibited by section 624.713 from possessing the firearm-related item.\nSection 15 (Minn. Stat. 624.7132, subd. 15): (a) Except as otherwise provided in paragraph (b), a person who does any of the following is guilty of a gross misdemeanor: (1) transfers a firearm-related item in violation of subdivisions 1 to 13;\nSection 15 (Minn. Stat. 624.7132, subd. 15): (b) A person who does either of the following is guilty of a felony: (1) transfers a firearm-related item to a person under the age of 18 in violation of subdivisions 1 to 13; or\nSection 16 (Minn. Stat. 624.7132, subd. 16): This section shall be construed to supersede municipal or county regulation of the transfer of firearm-related items.\nSection 18 (Minn. Stat. 624.7134, subd. 1): (c) \"Firearm-related item\" includes a semiautomatic military-style assault weapon, a pistol, and ammunition for a semiautomatic military-style assault weapon or pistol.\nSection 19 (Minn. Stat. 624.7134, subd. 2): An unlicensed person is prohibited from transferring a firearm-related item to any other unlicensed person, unless: (1) the transfer is made through a firearms dealer as provided for in subdivision 3; or (2) the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nSection 21 (Minn. Stat. 624.7134, subd. 4): (d) If the transfer involves ammunition, the record of transfer must also contain the following information about the ammunition: (1) its caliber or gauge; (2) its specific product line and manufacturer; (3) its weight or grain; and (4) its type."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-511-2025",
+  "scope": "state:mn",
+  "title": "SF511 (2025-2026 Regular): Firearm safety training requirement for persons purchasing firearms provision, firearm sales records retention requirement provision, and criminal penalties provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/511?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/511/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Alice Mann",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    },
+    {
+      "name": "Heather Gustafson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+    },
+    {
+      "name": "Jim Carlson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bfde1ba1-0aab-416e-884d-708bb14ee500"
+    },
+    {
+      "name": "Scott Dibble",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-21; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/511/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-511-2025.introduced.html",
+      "sha256": "c1c054554770046f79a6d1f2d677b29e3d963fc9b7674a39b90149dba0e43e2a"
+    },
+    "note": "Introduced text as filed 2025-01-21; no votes recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7135, subd. 2): A person may not sell a firearm unless the person purchasing or otherwise taking ownership of the firearm presents evidence of training in the safe use of a firearm as provided in subdivision 3.\nSection 1 (Minn. Stat. 624.7135, subd. 3): (a) A person purchasing or otherwise taking ownership of a firearm must present evidence to the seller that the person has received training in the safe use of a firearm within one year of the date of the sale.\nSection 1 (Minn. Stat. 624.7135, subd. 4): Except as otherwise provided in subdivision 8, this section applies to all sales of firearms regardless of whether the parties involved are firearms dealers or unlicensed persons.\nSection 1 (Minn. Stat. 624.7135, subd. 5): (d) All parties to the sale must retain a copy of the record and any attachments to the record for ten years from the date of the sale.\nSection 1 (Minn. Stat. 624.7135, subd. 6): (b) A person who refuses or is unable to produce the record in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a misdemeanor."
+}

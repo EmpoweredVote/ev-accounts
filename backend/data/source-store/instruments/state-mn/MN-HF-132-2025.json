@@ -1,0 +1,93 @@
+{
+  "id": "MN-HF-132-2025",
+  "scope": "state:mn",
+  "title": "HF132 (2025-2026 Regular): Open or concealed carry of firearms prohibited within 100 feet of designated polling places.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/132?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/132/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Freiberg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Cedrick Frazier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
+    },
+    {
+      "name": "Liz Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5e54444-041b-4eeb-8043-b691d3a3edfb"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Athena Hollins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    },
+    {
+      "name": "Kristi Pursell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Jay Xiong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-07; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/132/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-132-2025.introduced.html",
+      "sha256": "9a0ef14e29594faec5f5dfd954e6103fb5bbbb3413d852894d5b2847c4b8849a"
+    },
+    "note": "Introduced version, 2025-02-07. Subd. 5 (sentences for the same conduct may be stacked) and subd. 6 (federal law not displaced) not quoted; they attach to the gun rule. Subd. 3(a) reads \"Subdivision 1\" though the rule is in subd. 2 (as printed)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 204C.065, subd. 2): Except as provided in subdivision 3, a person shall not: (1) possess a firearm or a replica firearm in a polling place or within 100 feet of any entrance to a building in which a polling place is located as publicly posted by the designated election official, on the day of any election or during the time when voting is permitted for any election. This prohibition begins two hours before the polls are open and continues for two hours after the polls close; (2) possess a firearm at a ballot drop box location or within 100 feet of a ballot drop box location at any time during the period for voting; or (3) possess a firearm within 100 feet of any counting center at all times that the location is being used as a counting center for the processing, tabulation, or canvassing related to an active election.\nSection 1 (Minn. Stat. 204C.065, subd. 3): (1) a law enforcement officer who is employed by a federal, state, or local law enforcement agency and carrying out official duties; (2) the otherwise lawful possession of a firearm in a residence, in a business, or on private property that is located within 100 feet of an entrance to a polling place, ballot drop box, or counting center; or (3) the otherwise lawful possession of a firearm in an occupied vehicle that is located within 100 feet of a polling place, ballot drop box, office of the county auditor, or counting center so long as the person does not brandish the firearm or remove the firearm from the vehicle.\nSection 1 (Minn. Stat. 204C.065, subd. 4): A person who knowingly violates this section is guilty of a misdemeanor. (b) A person who violates this section a second time is guilty of a gross misdemeanor."
+}

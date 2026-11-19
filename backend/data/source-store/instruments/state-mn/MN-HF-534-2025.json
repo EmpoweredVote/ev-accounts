@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-534-2025",
+  "scope": "state:mn",
+  "title": "HF534 (2025-2026 Regular): Permissible methods of submitting an application for a permit to carry a handgun expanded.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/534?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/534/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Bliss",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-11; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/534/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-534-2025.introduced.html",
+      "sha256": "b0bd65c20655a764f7d994a02ba28a4c186d681334fc3aedb6f7fcb768e41002"
+    },
+    "note": "Introduced version. The bill strikes the word \"must\" before \"be submitted in person\" and replaces it with \"may\", adding the other methods."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): (e) Applications may be submitted in person, electronically, or by facsimile, certified mail, or certified delivery."
+}

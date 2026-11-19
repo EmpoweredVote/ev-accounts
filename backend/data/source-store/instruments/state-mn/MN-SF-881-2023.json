@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-881-2023",
+  "scope": "state:mn",
+  "title": "SF881 (2023-2024 Regular): Right to carry without a permit provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0881&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/881/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Drazkowski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Jason Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e9e8dab5-3add-4eb0-874f-7c7652fad785"
+    },
+    {
+      "name": "Nathan Wesenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Gene Dornink",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e62ff25c-2d0a-4fc3-b235-ff33eacf43d4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-26; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/881/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-881-2023.introduced.html",
+      "sha256": "f15b3cf3ee2d60f0c64b48503e215866088f0e3d6f66ecd6d92baace599e776e"
+    },
+    "note": "Introduced 2023-01-26. Section 9 repeals the permit-required offense (624.714, subd. 1a), the permit-display duty (subd. 1b), recognition of other states' permits (subd. 16) and 624.7181 (rifles and shotguns in public places). The text is word-for-word identical to the other two companion bills in this batch (SF 88, SF 881, SF 941)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c), paragraph (b): A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 3 (Minn. Stat. 624.714, subd. 2), paragraph (a): Applications by Minnesota residents for optional permits to carry shall be made to the county sheriff where the applicant resides.\nSection 8 (Minn. Stat. 624.714, subd. 23): This section sets forth the complete and exclusive criteria and procedures for the issuance of optional permits to carry and establishes their nature and scope."
+}

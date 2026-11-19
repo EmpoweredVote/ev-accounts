@@ -1,0 +1,51 @@
+{
+  "id": "MN-HF-391-2025",
+  "scope": "state:mn",
+  "title": "HF391 (2025-2026 Regular): Enforcement of judicially ordered firearms restrictions provided for abusing parties.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/391?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/391/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Peggy Scott",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-16; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/391/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-391-2025.engrossed1.html",
+      "sha256": "1f34fd104e05778f49ea5941135843f297df47b8dfb0f289ad66c032e8d0bc8b"
+    },
+    "note": "Version read is the 1st engrossment (2026-03-16); no passage vote on file. Sections 2 and 4-6 (518B.01 subd. 6, 609.2242 subd. 3, 609.749 subd. 8, 629.715 subd. 2) carry the same gun-transfer and compliance-hearing language for other protective orders; not separately quoted. The text file does not show which words are new."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260C.201, subd. 3, para. (d)): Except as provided in paragraph (f), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 1 (Minn. Stat. 260C.201, subd. 3, para. (g)): The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (d), (e), and (f), by scheduling and holding a compliance hearing. The compliance hearing is governed by section 518B.03.\nSection 3 (Minn. Stat. 518B.03, subd. 2, para. (b)): Compliance hearings must be held within ten business days of a court issuing a transfer order.\nSection 3 (Minn. Stat. 518B.03, subd. 4): If the court finds that there is probable cause to believe that the subject is not in compliance with a transfer order or fails to appear at a compliance hearing, the court must take appropriate action under the circumstances, including but not limited to issuing a warrant for the subject's arrest.\nSection 3 (Minn. Stat. 518B.03, subd. 5): The act of voluntarily surrendering firearms, providing testimony relating to the surrender of firearms, or complying with a transfer order, and any information directly or indirectly derived from such act or testimony, may not be used against the subject in any criminal prosecution, except a prosecution for perjury, giving a false statement, or otherwise failing to comply with the transfer order.\nSection 3 (Minn. Stat. 518B.03, subd. 7): Nothing in this section shall be interpreted as diminishing the requirement that the subject fully comply with the order issued by the court. The burden remains on the subject to prove compliance."
+}

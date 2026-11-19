@@ -1,0 +1,72 @@
+{
+  "id": "MN-HF-1265-2021",
+  "scope": "state:mn",
+  "title": "HF1265 (2021-2022 Regular): Second Amendment Preservation Act established.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1265&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/1265/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Erik Mortensen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Joe McDonald",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-18; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/1265/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1265-2021.introduced.html",
+      "sha256": "f68653a7e42ada79ce52e6e26afa14b0893c605b4b5b4346d96d097cfbc28e24"
+    },
+    "note": "As filed Feb 2021 (introduced version). Section 2 lists the federal acts treated as infringements (taxes, registration, bans, confiscation). Section 6(a) also bars federal agents who enforce them from serving as state or local law enforcement."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.7113): All federal acts, laws, executive orders, administrative orders, court orders, rules, and regulations, regardless if enacted before or after the provisions of sections 624.7111 to 624.7118, that infringe on the people's right to keep and bear arms as guaranteed by Amendment II of the Constitution of the United States shall be invalid in this state, shall not be recognized by this state, shall be specifically rejected by this state, and shall be considered null, void, and of no effect in this state.\nSection 4 (Minn. Stat. 624.7114): It shall be the duty of the courts and law enforcement agencies of this state to protect the rights of law-abiding citizens to keep and bear arms within the borders of this state and to protect these rights from the infringements defined under section 624.7112.\nSection 5 (Minn. Stat. 624.7115): (a) No person, including any public officer or employee of this state or any political subdivision of this state, shall have the authority to enforce or attempt to enforce any federal acts, laws, executive orders, administrative orders, court orders, rules, regulations, statutes, or ordinances infringing on the right to keep and bear arms as described under section 624.7111.\nSection 6 (Minn. Stat. 624.7116): (b) Neither the state nor any political subdivision of the state shall employ as a law enforcement officer or supervisor of law enforcement officers any person who is ineligible to serve in such capacity under this section."
+}

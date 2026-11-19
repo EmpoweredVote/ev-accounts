@@ -1,0 +1,44 @@
+{
+  "id": "MN-SF-576-2025",
+  "scope": "state:mn",
+  "title": "SF576 (2025-2026 Regular): Firearm permits to carry authorization without expiration",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/576?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/576/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Eichorn",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-22; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/576/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-576-2025.introduced.html",
+      "sha256": "1eb01474217633b444e1cf62d282f10cf0d2e12f49b6493c5aed5cd0002f60b6"
+    },
+    "note": "Version read: the introduced bill as filed (2025-01-22); no passage vote recorded, no later amendments. The bill strikes the five-year expiry and the renewal steps and fees."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 2a): (a) An applicant must present evidence that the applicant received training in the safe use of a pistol within one year of the date of an application.\nSection 3 (Minn. Stat. 624.714, subd. 7): (c) A permit to carry a pistol issued under this section does not expire. Permit cards issued after August 1, 2025, must prominently state that the permit does not expire.\nSection 5 (replacement permits): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2025, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

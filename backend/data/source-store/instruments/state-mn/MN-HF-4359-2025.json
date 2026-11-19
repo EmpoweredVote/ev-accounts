@@ -1,0 +1,105 @@
+{
+  "id": "MN-HF-4359-2025",
+  "scope": "state:mn",
+  "title": "HF4359 (2025-2026 Regular): 2024 amendment to definition of trigger activator reenacted, 2024 changes to crime of transferring a firearm to an ineligible person reenacted with amendments, and affirmative defense repealed for transfers of a firearm to an ineligible person by family or household members.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4359?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4359/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kaela Berg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    },
+    {
+      "name": "Pete Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51834ca0-6073-4d6c-863e-adf4264bdede"
+    },
+    {
+      "name": "Emma Greenman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    },
+    {
+      "name": "Lucy Rehm",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f409650c-fed4-467a-9ecd-000de3c99487"
+    },
+    {
+      "name": "Sandra Feist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
+    },
+    {
+      "name": "Athena Hollins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Katie Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14b8fcd1-1981-4bbf-b766-287c664133f5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-13; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4359/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4359-2025.introduced.html",
+      "sha256": "de595f4f18382ef4d3615fa9a8a64444c9a2b8ac36545327cd9f2a66a8ae72ab"
+    },
+    "note": "Introduced version, 2026-03-13. The bill text only cites the 2024 session-law sections it reenacts; their wording is not in the file read. The repealed subdivision (affirmative defense for a family or household member who transferred a firearm under compulsion) appears in the appendix and is described, not quoted."
+  },
+  "operative_text": "Section 1 (reenactment of Laws 2024, chapter 127, article 36, section 2): Laws 2024, chapter 127, article 36, section 2, is reenacted retroactively and without interruption from January 1, 2025.\nSection 2 (reenactment of Laws 2024, chapter 127, article 36, section 3): Laws 2024, chapter 127, article 36, section 3, is reenacted retroactively and without interruption from August 1, 2024.\nSection 3 (repealer, Minn. Stat. 624.7141, subd. 4): Minnesota Statutes 2024, section 624.7141, subdivision 4, is repealed."
+}

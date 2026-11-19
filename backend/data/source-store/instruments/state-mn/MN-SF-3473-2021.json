@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-3473-2021",
+  "scope": "state:mn",
+  "title": "SF3473 (2021-2022 Regular): Short-barreled shotguns ownership, possession, and operation exclusion from criminal violation authorization; ownership and possession of machine guns or short-barreled shotguns by dealers and manufacturers modification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3473&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/SF/3473/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Jeff Howe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "521f60ba-6749-4022-b9dc-1474fa63c890"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-02-23; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/3473/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3473-2021.introduced.html",
+      "sha256": "ca5021f2beddcc9884f90e8791102a0abeac4df9ed6ff1d156c54852cf5d97f4"
+    },
+    "note": "Introduced version, as filed (2022-02-23); official copy from revisor.mn.gov. No passage vote recorded. The bill strikes short-barreled shotguns from the prohibited-possession sentence in subd. 2, and strikes from clause (5) the limit to peace officer training or sales to government agencies."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.67, subd. 2): Except as otherwise provided herein, whoever owns, possesses, or operates a machine gun or any trigger activator or machine gun conversion kit may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nSection 2 (Minn. Stat. 609.67, subd. 3): The following persons may own or possess a machine gun or short-barreled shotgun provided the provisions of subdivision 4 are complied with:\nSection 2 (Minn. Stat. 609.67, subd. 3, clause 5): (5) dealers and manufacturers who are federally licensed to buy and sell, or manufacture machine guns or short-barreled shotguns; and"
+}

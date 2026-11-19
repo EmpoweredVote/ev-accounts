@@ -1,0 +1,56 @@
+{
+  "id": "MN-SF-3156-2019",
+  "scope": "state:mn",
+  "title": "SF3156 (2019-2020 Regular): Right to carry a gun without a permit establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3156&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/SF/3156/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "521f60ba-6749-4022-b9dc-1474fa63c890"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/SF/3156/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3156-2019.introduced.html",
+      "sha256": "7c95fa468e83cd4ec6a05c56f846767dd222b23694783a3ea8f58f864e8b00f4"
+    },
+    "note": "Introduced version as filed (SF 3156, 2019-2020 session). Section 1(a) also declares a Second Amendment right but does not say a higher law requires the step, so higher_law_duty is left out. The repealer drops the offence of carrying a pistol in public without a permit (subd. 1a), the permit-display rule (subd. 1b), subd. 16 and section 624.7181 (rifles and shotguns in public places)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, new subd. 1c): A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, new subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.\nSection 9 (repealer): Minnesota Statutes 2018, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

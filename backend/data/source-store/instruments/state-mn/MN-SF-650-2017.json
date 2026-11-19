@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-650-2017",
+  "scope": "state:mn",
+  "title": "SF650 (2017-2018 Regular): Firearm carry without permit authorization; optional permit to carry firearm establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0650&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/SF/650/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Utke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    },
+    {
+      "name": "Justin Eichorn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/SF/650/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-650-2017.introduced.html",
+      "sha256": "801f1915479e0027cc2db1c6ddf4616f96ff82edfaf7ee4882bb1c68c2597209"
+    },
+    "note": "Version read: the introduced bill as filed (undated in the file (2017 session)); no passage vote recorded, no later amendments. The repealed sections (permit required, display of permit, other-state permits, rifles and shotguns in public places) are named in the bill's appendix; the bill removes them rather than adding words."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (a) The legislature of the state of Minnesota recognizes and declares that the second amendment of the United States Constitution guarantees the fundamental, individual right to keep and bear arms.\nSection 1 (Minn. Stat. 624.714, subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.\nSection 9 (repealer): Minnesota Statutes 2016, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

@@ -1,0 +1,104 @@
+{
+  "id": "MN-HF-291-2023",
+  "scope": "state:mn",
+  "title": "HF291 (2023-2024 Regular): Permissible methods of submitting an application for a permit to carry a handgun expanded.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0291&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/291/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Bliss",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    },
+    {
+      "name": "Patti Anderson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3da2f389-a20f-4b21-a20c-dbe6880f074b"
+    },
+    {
+      "name": "Bernie Perryman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
+    },
+    {
+      "name": "Tom Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
+    },
+    {
+      "name": "Bobbie Harder",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
+    },
+    {
+      "name": "Krista Knudsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Mark Wiens",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dawn Gillman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
+    },
+    {
+      "name": "Walter Hudson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
+    },
+    {
+      "name": "John Burkel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
+    },
+    {
+      "name": "Jeff Backer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-11; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/291/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-291-2023.introduced.html",
+      "sha256": "ee72b6c31b120761ffcb9a102e1b2de1971bd0e0d620642a55ca0b59924a2033"
+    },
+    "note": "Introduced version; no vote listed. The bill strikes the word 'must' (old law: applications must be submitted in person) and replaces it with 'may'."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): Applications may be submitted in person, electronically, or by facsimile, certified mail, or certified delivery."
+}

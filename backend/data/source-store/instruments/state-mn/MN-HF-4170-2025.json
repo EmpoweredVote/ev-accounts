@@ -1,0 +1,45 @@
+{
+  "id": "MN-HF-4170-2025",
+  "scope": "state:mn",
+  "title": "HF4170 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons and large-capacity ammunition magazines banned, and criminal penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4170?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4170/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Emma Greenman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-10; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4170/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4170-2025.introduced.html",
+      "sha256": "1b2335bdefdf41e8563af0b8cb3cc7fbfc6e84251c95ec82db23ce3c4563b5a6"
+    },
+    "note": "Introduced version (as filed, 2026-03-10); no passage vote on file. Article 1, Section 1 rewrites the assault-weapon definition. Article 2 makes conforming changes and is not quoted."
+  },
+  "operative_text": "Article 1, Section 2 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than ten rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer, own, or possess semiautomatic military-style assault weapons.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 4): (a) A person who legally owned or possessed a semiautomatic military-style assault weapon before August 1, 2026, and who desires to maintain lawful ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension and appropriate law enforcement agency, by February 1, 2027.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 4): (d) The certified owner or possessor of a semiautomatic military-style assault weapon must not purchase or receive additional semiautomatic military-style assault weapons.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 5): (a) A person who violates subdivision 2 or 4, paragraph (a) or (g), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 2): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 4): (a) A person who legally owned or possessed a large-capacity magazine before August 1, 2026, and who desires to maintain lawful ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension and appropriate law enforcement agency, by February 1, 2027.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 5): (a) A person who violates subdivision 2 or 4, paragraph (a) or (g), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both."
+}

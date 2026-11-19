@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-2237-2023",
+  "scope": "state:mn",
+  "title": "HF2237 (2023-2024 Regular): Permit to carry application and renewal process modified.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2237&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/2237/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Swedzinski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-27; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/2237/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2237-2023.introduced.html",
+      "sha256": "bdd71d263f06f69eaafc89bd8d96c8e71372702239b638e73229f55765e109da"
+    },
+    "note": "Version read: introduced text as filed (2023-02-27). No votes recorded. Bill shows no struck words; the application text is mostly existing law. Quotes are not in page order; the first quote is the opening sentence of paragraph (g)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): (g) This subdivision prescribes the complete and exclusive set of items an applicant is required to submit in order to apply for a new or renewal permit to carry.\nSection 1 (Minn. Stat. 624.714, subd. 3): (e) Applications for new permits must be submitted in person. Applications for permit renewals may be submitted in person, electronically, or by United States mail.\nSection 1 (Minn. Stat. 624.714, subd. 3): (j) Upon receipt of an application packet and any required fee, the sheriff must provide a signed receipt indicating the date of submission.\nSection 2 (temporary modification): (b) Notwithstanding Minnesota Statutes, section 624.714, during a peacetime public health emergency a sheriff may require a person applying for or renewing a permit to carry in person to make an appointment to submit the application packet if the sheriff determines that this is warranted to prevent or reduce the spread of COVID-19 and the sheriff is requiring appointments for other similar matters."
+}

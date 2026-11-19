@@ -1,0 +1,102 @@
+{
+  "id": "MN-HF-2781-2017",
+  "scope": "state:mn",
+  "title": "HF2781 (2017-2018 Regular): Slide-fire stock for a semiautomatic firearm clarified as a trigger activator.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2781&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/HF/2781/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John (Jack) Considine Jr.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Raymond Dehn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lyndon Carlson Sr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandra Masin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Jennifer Schultz",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Duane Sauke",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Bly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Kunesh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+    },
+    {
+      "name": "Alice Hausman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cheryl Youakim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "Rob Ecklund",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/HF/2781/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2781-2017.introduced.html",
+      "sha256": "081cc3d51b3f8209571476eea7e61083fe5dada5c946fedb28f2a672e424d576"
+    },
+    "note": "Introduced text. Only the second sentence of paragraph (d) is new; the rest of the section is existing law kept. Effective August 1, 2018."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.67, subd. 1): (d) \"Trigger activator\" means a removable manual or power driven trigger activating device constructed and designed so that, when attached to a firearm, the rate at which the trigger may be pulled increases and the rate of fire of the firearm increases to approximate that of a machine gun. For purposes of this section, a device that is designed to use the recoil of a semiautomatic firearm to enable a shooter to fire multiple shots in rapid succession, commonly known as a slide-fire or bump-fire stock, is a trigger activator."
+}

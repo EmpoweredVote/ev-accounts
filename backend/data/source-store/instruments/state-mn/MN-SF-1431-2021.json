@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-1431-2021",
+  "scope": "state:mn",
+  "title": "SF1431 (2021-2022 Regular): People posing a significant danger by firearm possession; law enforcement and family members court petition to prohibit possession authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1431&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/1431/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Jen McEwen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3656b66-f796-4b26-a29e-2b9d7c1c064e"
+    },
+    {
+      "name": "Matt Klein",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e86fb53-a6eb-4b35-82de-79706a66dc1a"
+    },
+    {
+      "name": "Mary Kunesh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-24; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/1431/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1431-2021.introduced.html",
+      "sha256": "e800e4ae37eba7b6876cbbf468107e444c2c73b862ee241ed3888e96f04f1230"
+    },
+    "note": "Introduced text. The bill also has an appropriation and a training-board model-procedures section tied to the orders. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.7172, subd. 2): At the hearing, the petitioner must prove by a preponderance of the evidence that the respondent poses a significant danger of bodily harm to self or other persons by possessing a firearm.\nSection 3 (Minn. Stat. 624.7172, subd. 2): The order shall have a fixed period, to be determined by the court, of not less than six months and not more than two years, subject to renewal or extension under section 624.7173.\nSection 6 (Minn. Stat. 624.7175): Except as provided in paragraph (b), upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours, to a federally licensed firearms dealer or a law enforcement agency.\nSection 8 (Minn. Stat. 624.7177, subd. 2): A person who possesses a firearm and knows or should have known that the person is prohibited from doing so by an extreme risk protection order under section 624.7172 or 624.7174, or by an order of protection granted by a judge or referee pursuant to a substantially similar law of another state, is guilty of a misdemeanor and shall be prohibited from possessing firearms for a period of five years."
+}

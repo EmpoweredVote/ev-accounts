@@ -1,0 +1,49 @@
+{
+  "id": "MN-SF-2969-2017",
+  "scope": "state:mn",
+  "title": "SF2969 (2017-2018 Regular): Firearm transfers criminal background checks requirement",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2969&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2969/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Isaacson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carolyn Laine",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Melissa Wiklund",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e2e19df-eca0-4b74-8d0b-6ef205f5431c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2969/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2969-2017.introduced.html",
+      "sha256": "5eee0165584cb65f984de8dbd3e9650c145735438c2e2c48ac0b5390ce68abfd"
+    },
+    "note": "Introduced version as filed (SF 2969, 2017-2018 session). Section 4 repeals Minn. Stat. 609.66 subd. 1f and 624.7132 subd. 14 (old transfer-without-check offence and identity-evidence rule); Section 2 renumbers the exclusions list in 624.7132 subd. 12."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.7134, subd. 2): (1) each transfer of a firearm occurring in whole or in part in the state shall be preceded by a background check on the transferee; and (2) no transferor shall transfer a firearm, and no transferee shall receive a firearm, unless the transferee first complies with this section.\nSection 3 (Minn. Stat. 624.7134, subd. 3): Where both parties to a prospective firearm transfer are unlicensed persons, the transferor and transferee shall appear jointly before a federally licensed firearms dealer with the firearm and request that the federally licensed firearms dealer conduct a background check on the transferee and facilitate the transfer.\nSection 3 (Minn. Stat. 624.7134, subd. 5): If the transferee is prohibited by federal law from purchasing or possessing the firearm, or not entitled under state law to possess the firearm, neither the federally licensed firearms dealer nor the transferor shall transfer the firearm to the transferee.\nSection 3 (Minn. Stat. 624.7134, subd. 9): (3) a transfer between immediate family members, which for the purposes of this section means spouses, domestic partners, parents, step-parents, children, step-children, siblings, step-siblings, grandparents, step-grandparents, grandchildren, and step-grandchildren;\nSection 1 (Minn. Stat. 609.66, new subd. 1i): A transferor who voluntarily transfers a firearm, or a transferee who voluntarily receives a firearm, in violation of section 624.7134: (1) for a first conviction, is guilty of a gross misdemeanor; and (2) for a second or subsequent conviction, is guilty of a felony and may be sentenced to imprisonment for not more than two years or to payment of a fine of not more than $5,000, or both."
+}

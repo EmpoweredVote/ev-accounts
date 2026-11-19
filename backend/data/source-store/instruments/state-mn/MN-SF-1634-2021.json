@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-1634-2021",
+  "scope": "state:mn",
+  "title": "SF1634 (2021-2022 Regular): Information collected and scope of background check conducted for noncitizen permit to carry applicants expansion",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1634&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/1634/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Lang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-26; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/1634/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1634-2021.introduced.html",
+      "sha256": "a864a4625633ac145ef21fbbbe69000b609bba52047b177c0225b8ba6c3b6dcc"
+    },
+    "note": "Introduced text. The IAQ sentence carries no strike mark, so it may be new or existing law; the text file cannot tell. A check for permit eligibility is not treated as a deportation topic. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): if the applicant is not a United States citizen, the applicant's country of birth and alien number or alien admission number.\nSection 2 (Minn. Stat. 624.714, subd. 4): In addition, if the applicant is not a United States citizen, the sheriff must ensure that an Immigration Alien Query (IAQ) check is performed on the applicant."
+}

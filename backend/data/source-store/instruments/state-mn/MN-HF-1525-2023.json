@@ -1,0 +1,57 @@
+{
+  "id": "MN-HF-1525-2023",
+  "scope": "state:mn",
+  "title": "HF1525 (2023-2024 Regular): Visitor carrying of firearms on campuses of public postsecondary institutions regulated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1525&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/1525/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brion Curran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Andy Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3757d377-1cc0-45f0-8b6f-e1f988c6fea2"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-08; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1525/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1525-2023.introduced.html",
+      "sha256": "b907aac9bcb7c1ffed9db303e1638a83c064c0b22168c63295a1f9074783ffe1"
+    },
+    "note": "Introduced version, 2023-02-08. New: paragraph (c) on visitors; old paragraph (c) is relabelled (d) and its cross-reference changed (struck \"(c)\" and \"and\" not quoted)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 18): (c) A public postsecondary institution regulated under chapter 136F or 137 may establish policies that restrict the carry or possession of firearms by visitors while on the institution's property. A person carrying a firearm in violation of the public postsecondary institution policies may be ordered to leave the premises. A person who fails to leave when so requested is guilty of a petty misdemeanor. The fine for a first offense must not exceed $25. Notwithstanding section 609.531, a firearm carried in violation of this subdivision is not subject to forfeiture.\nSection 1 (Minn. Stat. 624.714, subd. 18): (d) Notwithstanding paragraphs (a), (b), and (c), an employer or a postsecondary institution may not prohibit the lawful carry or possession of firearms in a parking facility or parking area."
+}

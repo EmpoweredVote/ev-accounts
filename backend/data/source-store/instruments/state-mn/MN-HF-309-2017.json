@@ -1,0 +1,110 @@
+{
+  "id": "MN-HF-309-2017",
+  "scope": "state:mn",
+  "title": "HF309 (2017-2018 Regular): Right to carry a firearm without a permit provided, and penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0309&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/HF/309/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cal Bahr",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Jeff Howe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Sondra Erickson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jerry Hertaus",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Garofalo",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Backer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
+    },
+    {
+      "name": "Jim Newberger",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joe McDonald",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Kathy Lohmer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/HF/309/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-309-2017.introduced.html",
+      "sha256": "e7d485a9bd9708d604ea0cf4397404ac066597c213b210601abd1b8f7ffafc6b"
+    },
+    "note": "Introduced version; no vote listed. Sections 3-5 only strike the word 'otherwise' and add 'without a permit' in suspension, penalty and testing rules for carrying while impaired. The repealed subdivisions (shown in the appendix) required a permit to carry a pistol (gross misdemeanor), required showing the permit card, and covered emergency permits and exemptions. Section 7 is a revisor's instruction."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7121, subd. 1): Notwithstanding any other law to the contrary, every citizen in this state shall have an affirmative, fundamental, and constitutional right to keep and bear firearms, including the right to carry openly or concealed, carry loaded or unloaded, transport, possess, use, acquire, purchase, transfer, inherit, buy, sell, give, or otherwise dispose of or receive any firearm or self-defense device without a permit, permission, or restriction of any kind from or by this state or any of its political subdivisions.\nSection 1 (Minn. Stat. 624.7121, subd. 2): Obtaining a permit to carry a pistol under section 624.714 is optional.\nSection 2 (Minn. Stat. 624.714, subd. 1c, para. (a)): Nothing in this section shall be construed to require that a person must obtain a permit under this section in order to carry a pistol.\nSection 6 (Minn. Stat. 624.7182, para. (a)): A public official who interferes with the right to carry a pistol under sections 624.7121 and 624.714 is guilty of a misdemeanor for the following offenses:\nSection 6 (Minn. Stat. 624.7182, para. (a)(1)): arresting or attempting to arrest a person for the lawful possession of a pistol, whether or not the person possesses a license issued under section 624.714.\nSection 6 (Minn. Stat. 624.7182, para. (b)): The attorney general shall investigate, enforce, and prosecute violations under this section.\nSection 8 (repealer): Minnesota Statutes 2016, section 624.714, subdivisions 1a, 1b, 9, 11a, and 13, are repealed."
+}

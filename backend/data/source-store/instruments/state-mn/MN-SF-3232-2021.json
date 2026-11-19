@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-3232-2021",
+  "scope": "state:mn",
+  "title": "SF3232 (2021-2022 Regular): Visitor carrying firearms on state university campuses modification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3232&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/SF/3232/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Isaacson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregory D. Clausen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ann Johnson Stewart",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56c6c6c9-2bf8-4841-aa25-9244586e88eb"
+    },
+    {
+      "name": "Chris A. Eaton",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ron Latz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-02-16; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/3232/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3232-2021.introduced.html",
+      "sha256": "0c39e269141d1b92142ad45b3db49f66b5b6b8f5005a1f8db2d645241d49f461"
+    },
+    "note": "Version read: as-filed (introduced) text; no passage vote recorded. The bill strikes only the old paragraph letter '(c)' and the word 'and' in the renumbered paragraph (d); everything else quoted is kept or added text."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 18): (c) A public postsecondary institution regulated under chapter 136F or 137 may establish policies that restrict the carry or possession of firearms by visitors while on the institution's property.\nSection 1 (Minn. Stat. 624.714, subd. 18): A person carrying a firearm in violation of the public postsecondary institution policies may be ordered to leave the premises. A person who fails to leave when so requested is guilty of a petty misdemeanor. The fine for a first offense must not exceed $25. Notwithstanding section 609.531, a firearm carried in violation of this subdivision is not subject to forfeiture.\nSection 1 (Minn. Stat. 624.714, subd. 18): (d) Notwithstanding paragraphs (a), (b), and (c), an employer or a postsecondary institution may not prohibit the lawful carry or possession of firearms in a parking facility or parking area."
+}

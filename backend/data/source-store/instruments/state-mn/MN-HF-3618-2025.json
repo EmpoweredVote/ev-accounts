@@ -1,0 +1,111 @@
+{
+  "id": "MN-HF-3618-2025",
+  "scope": "state:mn",
+  "title": "HF3618 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons and large-capacity ammunition magazines banned, and criminal penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3618?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3618/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Leigh Finke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
+    },
+    {
+      "name": "Steve Elkins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Liz Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5e54444-041b-4eeb-8043-b691d3a3edfb"
+    },
+    {
+      "name": "Shelley Buck",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8a0c78b2-fdf2-4906-8245-a3d8d303879e"
+    },
+    {
+      "name": "Meg Luger-Nikolai",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4e973b77-a492-4033-8067-7c38ceefa22c"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Samakab Hussein",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    },
+    {
+      "name": "Ned Carroll",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4f779833-0eb9-4b14-b2a9-1e541f548849"
+    },
+    {
+      "name": "Leon Lillie",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
+    },
+    {
+      "name": "Huldah Hiltsley",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5c71d118-2442-4b4b-9504-7fb042541efb"
+    },
+    {
+      "name": "Kristi Pursell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-20; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3618/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3618-2025.introduced.html",
+      "sha256": "a8fd311e2683c3f17e4214c788e977f28a2255dbc7d3e5f86dca4ff50ad5e244"
+    },
+    "note": "Introduced 2026-02-20; no votes. Article 2 (conforming amendments to 609.66, 624.713, 624.7131, 624.7132, 624.7134, 624.7141, 624.7181) mostly strikes 'semiautomatic military-style assault weapon' from the pistol transfer and permit rules; not quoted. Section 1 (624.712, subd. 7) strikes the sporting-purposes exception for assault weapons."
+  },
+  "operative_text": "Article 1, Section 2 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than ten rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer, own, or possess semiautomatic military-style assault weapons.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 4, para. (a)): A person who legally owned or possessed a semiautomatic military-style assault weapon before January 1, 2027, and who desires to keep ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension and appropriate law enforcement agency, by May 1, 2027.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 4, para. (c)): Semiautomatic military-style assault weapons regulated under this subdivision must not be transferred, except for transfer to the appropriate law enforcement agency for the purpose of surrendering the item for destruction.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 5, para. (a)): A person who violates subdivision 2 or 4, paragraph (a) or (g), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 2): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 4, para. (a)): A person who owns or possesses a large-capacity magazine before July 1, 2026, must do one of the following before July 1, 2027: (1) surrender the device to the appropriate law enforcement agency for destruction; (2) modify the device to render it permanently inoperable; (3) permanently alter the device so it cannot accommodate more than ten rounds; or (4) remove the device from the state.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 5, para. (a)): A person who violates subdivision 2 or 4, paragraph (a), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both."
+}
