@@ -53,6 +53,10 @@
 -- Idempotent: vacate_office and seat_officeholder are idempotent; the insert and flag write are
 -- guarded. The pre-gate accepts the end state.
 
+-- Applied to production 2026-11-18 with apply-migration-file.mjs, after CA_0396: 1 person inserted,
+-- 2 terms closed, 1 opened. The live coordinate lookup at the Statehouse returned the Marion County
+-- Sheriff seat as vacant and IPS District 4 held by Chris Bultman. check:incumbency read 0 drift rows.
+
 BEGIN;
 
 -- ---------------------------------------------------------------------------------------------

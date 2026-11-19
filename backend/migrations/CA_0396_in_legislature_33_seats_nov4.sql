@@ -60,6 +60,13 @@
 -- Idempotent: seat_officeholder is idempotent on (office, person, start); the insert, source
 -- appends and flag writes are guarded on the values they change. The pre-gate accepts the end state.
 
+-- Applied to production 2026-11-18 with apply-migration-file.mjs: 17 people inserted, 33 terms closed
+-- at 2026-11-03, 33 opened from 2026-11-04, 13 discovery rows set active. Afterwards all 150 Indiana
+-- legislative seats matched the 2027 roster, the unflagged drift baseline read 238 (total/flagged/
+-- unflagged 286/48/238), check:incumbency read 0 drift rows, check:seating held, and
+-- check:duplicate-people found no new pair. The live coordinate lookup returned Impink (Senate 46) at
+-- the Statehouse and Forestal (Senate 31) in Fishers.
+
 BEGIN;
 
 -- ---------------------------------------------------------------------------------------------
