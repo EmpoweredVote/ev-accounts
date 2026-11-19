@@ -28,13 +28,14 @@
  * A state is one entry in INDEX: where a bill's vote list is, and how to read it.
  */
 import { createHash } from 'node:crypto';
+import https from 'node:https';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -62,6 +63,8 @@ interface StateIndex {
   billUrlFromList?: (_list: string, _session: string, _bill: string) => string;
   /** The vote file's address for a viaIndex vote, read from its index page. Throws unless exactly one vote fits. */
   voteFromIndex?: (_body: string, _session: string, _bill: string, _v: IndexedVoteVia) => string;
+  /** An address whose redirect is the answer (Minnesota's House page resolver): kept as "LOCATION <address>", not followed. */
+  manualRedirect?: (_url: string) => boolean;
 }
 
 const UT_BILL = /^([HS])\.?([A-Z])?\.?([A-Z])?\.?\s*0*(\d{1,4})$/i;
@@ -322,7 +325,169 @@ export function ndReadBillActions(body: string, session: string, bill: string): 
 }
 const ndTag = (s: string): string => s.replace(/<div class="modal[\s\S]*$/, '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
+/**
+ * Minnesota's Legislature for an Open States session: "2017-2018" (a regular session) or "2021s1" (a special session).
+ * ls is the Legislature's number (90th = 2017-2018), year the year the Revisor files the bill under, ssn 0 for the
+ * regular session. Null for anything before the 90th.
+ */
+export function mnLegislature(session: string): { ls: number; year: number; ssn: number } | null {
+  const r = /^(20\d{2})-(20\d{2})$/.exec(session);
+  if (r && Number(r[2]) === Number(r[1]) + 1 && Number(r[1]) >= 2017 && Number(r[1]) % 2 === 1) return { ls: 90 + (Number(r[1]) - 2017) / 2, year: Number(r[1]), ssn: 0 };
+  const s = /^(20\d{2})s([1-9])$/.exec(session);
+  if (s && Number(s[1]) >= 2017) { const y = Number(s[1]); return { ls: 90 + Math.floor((y - 2017) / 2), year: y, ssn: Number(s[2]) }; }
+  return null;
+}
+const MN_BILL = /^([HS]F)\s*0*([1-9]\d{0,4})$/i;
+const MN_ORDINAL_SESSION = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'];
+
+/**
+ * A recorded vote on the bill in a Minnesota bill page's actions, by chamber: the passage or repassage of the bill
+ * (MN_FLOOR_ACTION). A recorded vote on anything else (MN_MOTION_ACTION) is counted as a motion; the other chamber's vote
+ * as the clerk reports it ("Senate adopted conference committee report, bill repassed" in the House's list) is counted as
+ * the other chamber's. Any other row with a tally stops the tool.
+ */
+export const MN_FLOOR_ACTION: Record<'Senate' | 'House', RegExp> = {
+  Senate: /^(?:Third reading(?: Passed| Failed| as amended)?|Senate adopted (?:CC|conference committee) report and repassed bill|Repassed(?: the bill)?|Bill was repassed(?: as amended(?: by Conference)?)?|Veto overridden?|Repassed, the objections of the Governor notwithstanding)$/i,
+  House: /^(?:Bill was (?:passed|repassed|not passed)(?: as amended(?: by Conference| by Senate)?)?|Bill was (?:passed|repassed), the objections of the Governor notwithstanding)$/i,
+};
+export const MN_MOTION_ACTION = /^(?:Motion\b|Point of order\b|Amendment\b|Amended\b|Call of the (?:House|Senate)\b|Appeal\b|Ruling\b|Rule \d|Question divided\b|Senate concurred?\b|House concurred?\b|Concurred?\b|Laid on table\b|Lay on table\b|Taken from table\b|Reconsider\b|Speaker\b|Chair\b|Special Order: Amended\b|Final passage\b.*\bmotion\b)/i;
+const MN_CC_ADOPTED = /^Senate adopted (?:CC|conference committee) report and repassed bill$/i;
+export const MN_OTHER_CHAMBER: Record<'Senate' | 'House', RegExp> = { Senate: /^House\b/i, House: /^Senate\b/i };
+
+/**
+ * A Minnesota bill page on the Revisor's site (www.revisor.mn.gov/bills/93/2023/0/SF/2909/): each chamber's actions in a
+ * table, each with its date, its words, a link to the journal page it is on ("gotopage?session=ls93&number=5105") and,
+ * for a recorded vote, its tally ("vote: 34-33"). The journal page is named by the Legislature's page number, and only
+ * the chamber's page resolver knows which day's file holds it, so each floor vote is a viaIndex vote: the resolver's
+ * address, read by mnVoteFromResolver.
+ */
+export function mnReadBillActions(body: string, session: string, bill: string): BillIndex {
+  const l = mnLegislature(session);
+  const b = MN_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+  if (!l || !b) throw new Error(`not a Minnesota bill of the 90th Legislature or later: ${session} ${bill}`);
+  const tag = `${b[1].toUpperCase()} ${b[2]}`;
+  const head = /<title>\s*([HS]F \d+) Status in the (?:Senate|House) (?:for|-) ([\s\S]*?)\s*<\/title>/.exec(body);
+  if (!head || head[1] !== tag) throw new Error(`the bill page is not ${tag}: ${head?.[1]}`);
+  const years = `${2017 + 2 * (l.ls - 90)} - ${2018 + 2 * (l.ls - 90)}`;
+  const nth = (n: number): string => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] ?? 'th'}`;
+  const want = l.ssn ? `${nth(l.ls)} Legislature, ${l.year} ${MN_ORDINAL_SESSION[l.ssn - 1]} Special Session` : `${nth(l.ls)} Legislature (${years})`;
+  if (head[2].replace(/\s+/g, ' ') !== want) throw new Error(`the page of ${tag} is not of the ${want}: ${head[2].replace(/\s+/g, ' ')}`);
+  const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [], viaIndex: [] };
+  let other = 0;
+  for (const chamber of ['Senate', 'House'] as const) {
+    const m = new RegExp(`<h3>${chamber}</h3>\\s*<table class="actions table">([\\s\\S]*?)</table>`).exec(body);
+    if (!m) continue;
+    const rows = [...m[1].matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((x) => x[1]).map((row) => {
+      const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((x) => x[1]);
+      return { row, date: mnTag(cells[0] ?? ''), words: cells.length < 2 ? '' : mnTag(cells[1].replace(/<div class="action_item[\s\S]*$/, '')),
+        tally: /\bvote:\s*(?:<a\b[^>]*>)?\s*(\d+)-(\d+)\s*(?:<\/a>)?\s*<\/span>/.exec(row) };
+    });
+    for (const [i, { row, date, words, tally }] of rows.entries()) {
+      if (!tally) continue;
+      // The Senate adopts a conference committee's report by one roll call and repasses the bill by the next: the
+      // Revisor writes the first as "Senate adopted CC report and repassed bill" and the second as "Third reading"
+      // (2023 SF 2909, journal pages 7871 and 7872). When a "Third reading" with a tally follows on the same day, the
+      // first is the report's adoption, a motion; alone, it is the repassage.
+      if (MN_CC_ADOPTED.test(words) && rows.slice(i + 1).some((r) => r.tally && r.date === date && /^Third reading\b/i.test(r.words))) {
+        out.motion!++; out.motions!.push(`${chamber} ${words} (the report's adoption; the repassage follows) ${tally[1]}-${tally[2]}`); continue;
+      }
+      if (MN_OTHER_CHAMBER[chamber].test(words) && !MN_FLOOR_ACTION[chamber].test(words)) { other++; out.motions!.push(`${chamber} list: the other chamber's vote ${words} ${tally[1]}-${tally[2]}`); continue; }
+      // the page number may carry a leading space, written "+" ("number=+9706", 2025)
+      const pages = [...row.matchAll(/href="https:\/\/www\.(mnsenate\.gov\/journals\/gotopage|house\.mn\.gov\/scripts\/gotopage\.pl)\?session=ls(\d+)&(?:amp;)?number=(?:\+|%20)*([0-9a-z]+)((?:&(?:amp;)?session_(?:year|number)=\d+)*)"/g)];
+      if (MN_FLOOR_ACTION[chamber].test(words)) {
+        if (pages.length !== 1) throw new Error(`${tag}: a vote with ${pages.length} journal links: ${chamber} ${words}`);
+        const [, host, ls, number, extra] = pages[0];
+        if ((host.startsWith('mnsenate') ? 'Senate' : 'House') !== chamber) throw new Error(`${tag}: a ${chamber} vote linked to another chamber's journal: ${words}`);
+        if (Number(ls) !== l.ls) throw new Error(`${tag}: a vote linked to the journal of the ${ls}th Legislature: ${words}`);
+        if (!/^\d+$/.test(number)) throw new Error(`${tag}: a vote linked to a journal page that is not a page number (${number}): ${words}`);
+        const sy = /session_year=(\d+)/.exec(extra)?.[1];
+        const sn = /session_number=(\d+)/.exec(extra)?.[1];
+        if ((l.ssn ? `${l.year}/${l.ssn}` : '') !== (sy || sn ? `${sy}/${sn}` : '')) throw new Error(`${tag}: a vote linked to the journal of another session (${extra || 'the regular session'}): ${words}`);
+        out.viaIndex!.push({ index: mnResolverUrl(chamber, l, Number(number)), chamber: chamber === 'House' ? 'house' : 'senate', motion: words, tally: [Number(tally[1]), Number(tally[2]), -1] });
+        continue;
+      }
+      if (MN_MOTION_ACTION.test(words)) { out.motion!++; out.motions!.push(`${chamber} ${words} ${tally[1]}-${tally[2]}`); continue; }
+      throw new Error(`${tag}: a vote whose action the tool does not know: ${chamber} ${words}`);
+    }
+  }
+  if (other) out.motion! += other;
+  return out;
+}
+const mnTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+
+/**
+ * Each chamber's page resolver. The Senate's answers JSON naming the day's file
+ * ({"filename":"20230414049","internal_page":139,"fileBiennium":"2023-2024"}); the House's answers a redirect to the
+ * day's page with the page after a # (http://www.house.leg.state.mn.us/cco/journals/2023-24/J0425056.htm#7041), kept by
+ * the fetch as "LOCATION <address>" (MN_MANUAL_REDIRECT).
+ */
+export function mnResolverUrl(chamber: 'Senate' | 'House', l: { ls: number; year: number; ssn: number }, page: number): string {
+  if (chamber === 'Senate') return `https://www.mnsenate.gov/api/journal/gotopage?page=${page}&ls=${l.ls}${l.ssn ? `&session_year=${l.year}&session_num=${l.ssn}` : ''}`;
+  return `https://www.house.mn.gov/scripts/gotopage.pl?session=ls${l.ls}&number=${page}${l.ssn ? `&session_year=${l.year}&session_number=${l.ssn}` : ''}`;
+}
+export const MN_MANUAL_REDIRECT = /^https:\/\/www\.house\.mn\.gov\/scripts\/gotopage\.pl\?/;
+
+/** The vote's address from its page resolver's answer: the day's journal, with the page and the bill after a #. */
+export function mnVoteFromResolver(body: string, session: string, bill: string, v: IndexedVoteVia): string {
+  const l = mnLegislature(session);
+  const b = MN_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+  const page = Number(/[?&](?:page|number)=(\d+)/.exec(v.index)?.[1]);
+  if (!l || !b || !page) throw new Error(`not a Minnesota vote: ${session} ${bill} ${v.index}`);
+  const tag = `${b[1].toUpperCase()}${b[2]}`;
+  const y = 2017 + 2 * (l.ls - 90);
+  if (v.chamber === 'senate') {
+    let j: { filename?: unknown; fileBiennium?: unknown };
+    try { j = JSON.parse(body); } catch { throw new Error(`the Senate's page resolver did not answer JSON for page ${page}`); }
+    const f = String(j.filename ?? '');
+    const m = /^(20\d{2})\d{4}\d{1,3}(?:_ss([1-9]))?$/.exec(f);
+    if (!m || j.fileBiennium !== `${y}-${y + 1}` || (Number(m[1]) !== y && Number(m[1]) !== y + 1)) throw new Error(`the Senate's page resolver named ${f} of ${String(j.fileBiennium)} for page ${page}`);
+    if (Number(m[2] ?? 0) !== l.ssn) throw new Error(`the Senate's page resolver named ${f}, not a journal of session ${session}, for page ${page}`);
+    return `https://www.mnsenate.gov/journals/${y}-${y + 1}/${f}.pdf#Page${page}-${tag}`;
+  }
+  const m = /^LOCATION https?:\/\/www\.house\.(?:leg\.state\.mn\.us|mn\.gov)\/cco\/journals\/(20\d{2})-(\d{2})\/(J\d{4}\d{3})\.htm#(\d+)$/.exec(body.trim());
+  if (!m || Number(m[1]) !== y || Number(m[2]) !== (y + 1) % 100 || Number(m[4]) !== page) throw new Error(`the House's page resolver did not name a journal of ${y}-${y + 1} for page ${page}: ${body.slice(0, 120)}`);
+  return `https://www.house.mn.gov/cco/journals/${m[1]}-${m[2]}/${m[3]}.htm#Page${page}-${tag}`;
+}
+
+/**
+ * A GET whose redirect is the answer, over HTTP/1.1, unfollowed. Node's fetch offers HTTP/2, and the Minnesota House's
+ * page resolver (www.house.mn.gov/scripts/gotopage.pl, IIS) resets an HTTP/2 stream with HTTP_1_1_REQUIRED on some
+ * pages (2023-2024, page 15202, 2026-11-19), which fetch reports only as "fetch failed".
+ * Over HTTP/1.1 the same page ends its Location header with a bare newline, not CR LF, which Node's strict parser
+ * refuses: the lenient parser reads it. Only the Location header is used.
+ */
+function headOverHttp1(url: string): Promise<Response> {
+  return new Promise((resolve, reject) => {
+    const req = https.get(url, { headers: { 'user-agent': EMPOWERED_VOTE_UA }, timeout: 60_000, insecureHTTPParser: true }, (res) => {
+      res.resume();
+      res.on('end', () => {
+        const h = new Headers();
+        for (const [k, v] of Object.entries(res.headers)) if (v !== undefined) h.set(k, Array.isArray(v) ? v.join(', ') : String(v));
+        resolve(new Response(null, { status: res.statusCode ?? 0, headers: h }));
+      });
+    });
+    req.on('timeout', () => req.destroy(new Error(`no answer in 60 s from ${url}`)));
+    req.on('error', reject);
+  });
+}
+
 export const INDEX: Record<string, StateIndex> = {
+  // www.revisor.mn.gov (read 2026-11-19; robots.txt disallows nothing under /bills/, no Crawl-delay). The Open States dump
+  // holds no roll call for 2020's special sessions, 2021-2022 or 2021's special session, and its vote addresses for
+  // 2017-2020 are House pages that now answer 500. A bill's page lists each chamber's actions with the tally of each
+  // recorded vote and a link to the journal page (mnReadBillActions); each chamber's page resolver names the day's file
+  // (mnVoteFromResolver); each vote is read from the journal with the LRL member list (stateRollCallEvidence.ts).
+  MN: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay on any of the four hosts: one a second is ours
+    billUrl(session, bill) {
+      const l = mnLegislature(session);
+      const b = MN_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+      return l && b ? `https://www.revisor.mn.gov/bills/${l.ls}/${l.year}/${l.ssn}/${b[1].toUpperCase()}/${b[2]}/` : null;
+    },
+    read: mnReadBillActions,
+    voteFromIndex: mnVoteFromResolver,
+    manualRedirect: (url) => MN_MANUAL_REDIRECT.test(url),
+  },
   // ndlegis.gov (read 2026-11-19; robots.txt is Drupal's default and disallows nothing under /assembly/, no Crawl-delay).
   // The Open States dump holds no roll call for the 66th and 67th Assemblies (2019, 2021), and names members only by
   // family name. A bill's action page lists each action with a link into that day's journal (ndReadBillActions); each
@@ -727,7 +892,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
       : parseMarylandVoteUrl(v.url) ? explainMarylandVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseKansasVoteUrl(v.url) ? explainKansasVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseColoradoVoteUrl(v.url) ? explainColoradoVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseNorthDakotaVoteUrl(v.url) ? explainNorthDakotaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseNorthDakotaVoteUrl(v.url) ? explainNorthDakotaVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseMinnesotaVoteUrl(v.url) ? explainMinnesotaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
@@ -744,7 +910,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   // Maryland's bill page prints yeas and nays only.
   // Kansas's history prints yeas and nays (the archive) or leaves out a group of 0 (the current site).
   // North Dakota's bill page prints yeas and nays only.
-  const compared = r.state === 'SD' || r.state === 'MD' || r.state === 'KS' || r.state === 'ND' ? 2 : 3;
+  // Minnesota's bill page prints yeas and nays only, and its journals name no absent member.
+  const compared = r.state === 'SD' || r.state === 'MD' || r.state === 'KS' || r.state === 'ND' || r.state === 'MN' ? 2 : 3;
   if (v.tally && got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;
@@ -794,8 +961,23 @@ async function main(): Promise<void> {
       if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       last = Date.now();
       asked++;
-      const res = await fetchWithHostTrust(url, { headers: { 'user-agent': EMPOWERED_VOTE_UA }, signal: AbortSignal.timeout(30_000) });
+      const manual = idx.manualRedirect?.(url) ?? false;
+      let res: Response;
+      try {
+        res = manual ? await headOverHttp1(url) : await fetchWithHostTrust(url, { headers: { 'user-agent': EMPOWERED_VOTE_UA }, signal: AbortSignal.timeout(60_000) });
+      } catch (e) {
+        // Node's "fetch failed" names neither the address nor the cause: say both, and try twice more after a pause
+        const why = `${e instanceof Error ? e.message : String(e)}${e instanceof Error && e.cause ? ` (${String((e.cause as Error).message ?? e.cause)})` : ''}`;
+        if (attempt < 2) { console.error(`  ${why} for ${url}; again in 30 s`); await new Promise((r) => setTimeout(r, 30_000)); continue; }
+        throw new Error(`${why} for ${url}`);
+      }
       if ((res.status === 429 || res.status === 503) && attempt < 2) { await new Promise((r) => setTimeout(r, 30_000)); continue; }
+      if (manual) {
+        const loc = res.headers.get('location');
+        if (res.status < 300 || res.status > 399 || !loc) throw new Error(`HTTP ${res.status} and no redirect for ${url}`);
+        writeFileSync(file, `LOCATION ${loc}`);
+        return `LOCATION ${loc}`;
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       const bytes = new Uint8Array(await res.arrayBuffer());
       // a PDF (Mississippi's and Maryland's votes) is kept as the verifier's reader reads it (pdfBodyFor); anything else by

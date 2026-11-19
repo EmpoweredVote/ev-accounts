@@ -86,7 +86,7 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
   links from the sessions either side.
 - Committee and voice votes are counted in the supplement's `checked` block and not read.
-- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas, Colorado and North Dakota state none, and the tool waits 1 second),
+- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas, Colorado, North Dakota and Minnesota state none, and the tool waits 1 second),
   and bodies are kept in `supplements/<ST>/raw/`.
 - Ohio: once a bill's record is read, the record IS the bill's floor votes. `convert.py` adds the votes the dump
   misses and drops a dump floor vote of that bill that is not on the record (counted in `.openstates.json` as
@@ -160,6 +160,18 @@ the bills under `rollcalls_from_legislature`.
   prints family names only; the reader names each member from the Assembly's member list, and a label two members fit
   gives no line. `convert.py` rewrites old `legis.nd.gov` bill and text links to the current `ndlegis.gov` address
   (`nd_links`); special-session links are only counted.
+- 🔴 Minnesota: **no dump vote is placed** either (`record_is_the_floor`). The dump holds no roll call for 2020's
+  special sessions, 2021-2022 or 2021's special session, and its 2017-2020 vote addresses are House pages that now
+  answer 500. The fetch reads the Revisor's bill page (`www.revisor.mn.gov/bills/93/2023/0/SF/2909/`, its title
+  checked for bill and Legislature), keeps each chamber's row with a tally whose words are a passage or repassage of
+  the bill, counts the other chamber's echo of a vote and every motion, and follows the row's journal link through the
+  chamber's page resolver: the Senate's answers JSON naming the day's PDF, the House's a redirect naming the day's
+  page. The House resolver needs HTTP/1.1 and ends its Location header with a bare newline: the fetch reads it with
+  Node's https module and its lenient parser (`headOverHttp1`). The Senate adopts a conference committee's report by
+  one roll call and repasses the bill by the next (2023 SF 2909, pages 7871 and 7872); the Revisor writes the first
+  "Senate adopted CC report and repassed bill", and the fetch counts it as a motion when a same-day "Third reading"
+  with a tally follows. The journals print family names; the reader names each member from the Legislative Reference
+  Library's member list, and `MN_LABEL_ALIASES` holds the few labels printed under a former or legal name.
 - A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
 - A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
   page reader below.
@@ -170,10 +182,10 @@ the bills under `rollcalls_from_legislature`.
    pattern, the site's crawl delay, and a function from the page's markup to members under Yea, Nay and absent),
    with a saved page as a fixture and the refusals tested. The reader must fail closed: refuse the page unless every
    group holds the count its heading prints and the counts are the printed tally. Utah, Ohio, South Dakota,
-   Mississippi, Maryland, Kansas, Colorado and North Dakota are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
+   Mississippi, Maryland, Kansas, Colorado, North Dakota and Minnesota are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
    script-shell page and reads the vote's data, Mississippi's reads a PDF with the bill's history and two member
    lists, Maryland's reads a PDF (some printed sideways) with the chamber's committee pages, Kansas's reads one page in
-   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list, North Dakota's reads the day's journal PDF with the Assembly's member list (see the file's header).
+   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list, North Dakota's reads the day's journal PDF with the Assembly's member list, Minnesota's reads the day's House journal page or Senate journal PDF with the LRL member list (see the file's header).
 2. **Its rules in `SRC_RULES` in `convert.py`**, when its Open States rows are wrong about something the roll-call
    address states. Utah: the rows carry the bill's chamber, not the chamber that voted, and nothing marks a committee
    vote; both are read from the address. Ohio: the stored addresses and text links are dead (v1) and are rewritten
@@ -230,6 +242,7 @@ roll-call pages.
 | Maryland | 2017 to 2026 (2023 and 2021s1 hold no dump vote; regular sessions only); 2013 SB 281 only (3 floor votes, read from the record 2026-11-18) | 282 floor roll calls of a 534-bill dry batch, 24 only on the record (all 17 of 2023; four 2020 vetoes overridden in 2021; three others); 0 tally and 0 of 23,517 member-vote differences; 61 dump labels fit no record name, all the presiding officer; see `backend/data/legislatures/md.json` (2026-11-18) |
 | Kansas | 2017-2018 to 2025-2026 (the 2020 and 2021 special sessions held no scanned bill) | 55 floor roll calls of a 146-bill dry batch (38 Committee of the Whole votes and motions not mapped), all with a dump copy (2023-24's matched by bill, chamber and day); 0 tally and 0 of 4,920 member-vote differences; all 4,920 record votes linked to a person (three by hand); see `backend/data/legislatures/ks.json` (2026-11-18) |
 | North Dakota | 65th to 69th Assembly (2017-2025, regular sessions) | 171 floor roll calls of an 89-bill dry batch, 0 refused; 78 (2019, 2021) have no dump copy; of 93 with one, 3 filed a day later in the dump; 0 tally and 0 of 6,871 member-vote differences; 30 votes unreadable (two labels two members fit: "Christensen" 2023, "Brown" 2025); see `backend/data/legislatures/nd.json` (2026-11-19) |
+| Minnesota | 90th to 94th Legislature (2017-2026, regular sessions; no scanned bill of a special session had a floor vote) | 19 floor roll calls of a 736-bill dry batch (735 scanned, plus 2023 SF 2909 from the store), 0 refused; 2017-2018 has none (the 80 scanned bills had no floor vote with a tally); 7 have no dump copy; of 12 with one, 1 filed a day later in the dump; 0 tally and 0 of 1,374 member-vote differences; see `backend/data/legislatures/mn.json` (2026-11-19) |
 | Mississippi | 2018 to 2026 (2017 holds no bills; 20171E only resolutions) | 67 floor roll calls of a 289-bill dry batch, all with a dump copy: 2 dump tallies short by one vote (the name before a total that runs over a line), 8 member votes missing from the dump, 0 of 5,975 member-vote differences; 5,919 of 5,983 record votes linked to a person (four members Open States does not hold); see `backend/data/legislatures/ms.json` (2026-11-17) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its
