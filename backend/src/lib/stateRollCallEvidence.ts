@@ -1915,6 +1915,361 @@ export function explainColoradoVote(bodies: string[], url: string): CoVoteRecord
   try { return readColorado(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── North Dakota: the chamber's daily journal (a PDF), read with the Assembly's member list ──────────────────────────
+// ndlegis.gov (robots.txt read 2026-11-19: a Drupal default that disallows /core/, /admin/, /search/ and the like, not
+// /assembly/; no Crawl-delay). A bill's page, /assembly/65-2017/regular/bill-actions/ba1001.html, lists every action with
+// a link into that day's journal ("Second reading, passed, yeas 91 nays 0" -> ../journals/hr-dailyjnl-35.pdf#Page797).
+// From 2023 the page also prints each member's vote in a hidden panel; for 2017 to 2021 the journal is the only place
+// the names are printed, and Open States holds no roll call at all for 2019 and 2021. So every year is read from the
+// journal, which prints every recorded vote the same way from 2017 to 2025:
+//
+//   SECOND READING OF HOUSE BILL
+//   HB 1017: A BILL for an Act to provide an appropriation for defraying the expenses of the
+//   game and fish department.
+//   ROLL CALL
+//   The question being on the final passage of the amended bill, which has been read, and has
+//   committee recommendation of DO PASS, the roll was called and there were 82 YEAS,
+//   9 NAYS, 0 EXCUSED, 3 ABSENT AND NOT VOTING.
+//   YEAS: Anderson, B.; Anderson, D.; ...; Speaker Bellew
+//   NAYS: Becker, Rick C.; Brabandt; ...
+//   ABSENT AND NOT VOTING: Blum; Boschee; Kreidt
+//   Engrossed HB 1017 passed.
+//
+// From 2025 the last count reads "N ABSENT OR EXCUSED AND NOT VOTING" with a heading of that name. A group of 0 has no
+// heading. Every page starts "Page 798" and a running head ("798 JOURNAL OF THE HOUSE 35th DAY", or "35th DAY
+// WEDNESDAY, FEBRUARY 22, 2017 787"), which can fall inside a question; both are dropped. A member is printed by family
+// name, with a given name or initial when two share it ("Johnson, D.", "Becker, Rich S."), and the Speaker with the
+// office ("Speaker Bellew").
+//
+// One daily journal holds many votes, so the address names the vote after a #: the journal page the bill's page links,
+// and the bill. https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-34.pdf#Page820-HB1326 (2025 HB 1326
+// failed on page 811 and passed on page 820 of one day's journal: the page tells them apart). The journal names no
+// member in full, so the reader also reads the Assembly's member list, /assembly/69-2025/regular/members/members-by-district,
+// which names every member who sat in that Assembly, with the chamber ("Representative", "Senator"). A label is the one
+// member of that chamber whose name ends in the label's family name (one, two or three words: "Roers Jones") and whose
+// given names hold each name or initial the label prints. When several fit, a member another label of the same vote
+// fits alone is taken out ("Jones" and "Roers Jones"). A label no member fits, or more than one, is kept as printed and
+// gives no line.
+//
+// A vote is read only when the journal is this chamber's journal of that day, of this Assembly; the roll call follows
+// the bill's own heading; the question is a vote on the bill (ndQuestionIsOnTheBill); the address's page lies between
+// the heading and the last name; each group lists the count the question prints for it; and the line after the last
+// group names the bill and its result. Excused and absent members are one group ("Absent or excused"):
+//
+//   North Dakota House vote of 2017-02-22, journal page 797 (65th Legislative Assembly), HB 1017.
+//   Question: Final passage of the amended bill
+//   Yea 82; Nay 9; Absent or excused 3.
+//   Yea (82): Bert Anderson; …
+//   North Dakota House vote of 2017-02-22, journal page 797 (65th Legislative Assembly), HB 1017 - Final passage of the amended bill: Bert Anderson voted Yea.
+
+export const ND_VOTES = ['Yea', 'Nay', 'Absent or excused'] as const;
+export type NdVote = (typeof ND_VOTES)[number];
+const ND_SITE = 'https://ndlegis.gov/';
+/** robots.txt states no Crawl-delay (2026-11-19): one request a second is ours. */
+const ND_GAP_MS = 1_000;
+const ND_SIZE: Record<Chamber, number> = { House: 94, Senate: 47 };
+const ND_URL = /^https:\/\/ndlegis\.gov\/assembly\/(\d{2})-(20\d{2})\/regular\/journals\/(hr|sr)-dailyjnl-(\d{2})\.pdf#Page([1-9]\d{0,4})-([HS][A-Z]{1,3})([1-9]\d{3})$/;
+const ND_ORDINAL: Readonly<Record<number, string>> = { 65: 'Sixty-fifth', 66: 'Sixty-sixth', 67: 'Sixty-seventh', 68: 'Sixty-eighth', 69: 'Sixty-ninth', 70: 'Seventieth', 71: 'Seventy-first' };
+const ND_HEADING: Readonly<Record<string, NdVote>> = { YEAS: 'Yea', NAYS: 'Nay', EXCUSED: 'Absent or excused', 'ABSENT AND NOT VOTING': 'Absent or excused', 'ABSENT OR EXCUSED AND NOT VOTING': 'Absent or excused' };
+
+/**
+ * Is a North Dakota journal question a vote on the bill? Final passage of a bill (amended, reengrossed, or enrolled over
+ * the Governor's veto, and a bill whose divisions were voted first) and final adoption of a resolution. The adoption of
+ * a division or of amendments, a motion to reconsider, and a confirmation are not (runner, 2026-11-16). The question is
+ * the journal's words after "The question being", up to ", which" or ", the roll" or ". The roll".
+ */
+export function ndQuestionIsOnTheBill(q: string): boolean {
+  return /^on the final (?:passage of the (?:amended |reengrossed |enrolled )?bill(?:, over the Governor's veto)?|adoption of the (?:amended )?resolution)$/i.test(squash(q));
+}
+
+export interface NdVoteRef { state: 'ND'; stateName: 'North Dakota'; chamber: Chamber; assembly: number; year: number; day: number; page: number; billType: string; billNum: number }
+export interface NdVoteRecord { state: 'ND'; stateName: 'North Dakota'; chamber: Chamber; session: string; page: number; bill: string; question: string; date: string; groups: Record<NdVote, string[]> }
+export interface NdVoteLine extends Omit<NdVoteRecord, 'groups'> { name: string; vote: NdVote }
+
+export function parseNorthDakotaVoteUrl(url: string): NdVoteRef | null {
+  const m = ND_URL.exec(url.trim());
+  if (!m) return null;
+  const assembly = Number(m[1]);
+  const year = Number(m[2]);
+  // the Assembly meets in odd years: the 65th in 2017, the 69th in 2025
+  if (year !== 2017 + 2 * (assembly - 65) || !ND_ORDINAL[assembly]) return null;
+  return { state: 'ND', stateName: 'North Dakota', chamber: m[3] === 'hr' ? 'House' : 'Senate', assembly, year, day: Number(m[4]), page: Number(m[5]), billType: m[6], billNum: Number(m[7]) };
+}
+
+/** The Assembly's member list: /assembly/69-2025/regular/members/members-by-district. */
+export function ndMemberListUrl(assembly: number, year: number): string {
+  return `${ND_SITE}assembly/${assembly}-${year}/regular/members/members-by-district`;
+}
+
+function northDakotaDocs(r: NdVoteRef): string[] {
+  return [`${ND_SITE}assembly/${r.assembly}-${r.year}/regular/journals/${r.chamber === 'House' ? 'hr' : 'sr'}-dailyjnl-${String(r.day).padStart(2, '0')}.pdf`, ndMemberListUrl(r.assembly, r.year)];
+}
+
+export interface NdMember { slug: string; chamber: Chamber; name: string }
+
+/** The member list's members (linked /biography/<slug>, "Representative" or "Senator", the name). Null when it reads as no list. */
+export function ndMembers(html: string): NdMember[] | null {
+  const out: NdMember[] = [];
+  for (const m of html.matchAll(/<a href="\/biography\/([a-z0-9-]+)">([\s\S]*?)<\/a>/g)) {
+    const ch = /member-chamber">\s*([^<]*?)\s*</.exec(m[2])?.[1];
+    const name = /member-name">\s*([^<]*?)\s*</.exec(m[2])?.[1];
+    if (!ch && !name) continue; // a link that is not a member tile
+    if ((ch !== 'Representative' && ch !== 'Senator') || !name) return null;
+    out.push({ slug: m[1], chamber: ch === 'Senator' ? 'Senate' : 'House', name: htmlText(name) });
+  }
+  const tiles = (html.match(/class="strong member-name"/g) ?? []).length;
+  return out.length && tiles === out.length ? out : null;
+}
+
+const ndKey = (s: string): string => fold(s).replace(/[\s']/g, '');
+
+/** The members of the chamber a label fits: family name, then each printed given name or initial. */
+function ndFits(label: string, members: NdMember[]): NdMember[] {
+  const m = /^([^,]+?)(?:,\s*(.+))?$/.exec(squash(label));
+  if (!m) return [];
+  const family = ndKey(m[1]);
+  const printed = (m[2] ?? '').replace(/\./g, '. ').split(/\s+/).filter(Boolean);
+  return members.filter((x) => {
+    const words = dropSuffix(fold(x.name)).split(' ');
+    for (let k = 1; k <= 3 && k < words.length; k++) {
+      if (ndKey(words.slice(-k).join(' ')) !== family) continue;
+      const given = words.slice(0, -k);
+      // a whole given name must be one of theirs; then an initial beside it may be a middle name the list leaves out
+      // ("Becker, Rick C." is the list's "Rick Becker", beside "Rich S. Becker"); initials alone must each start one
+      const whole = printed.filter((p) => !/^[A-Z]\.$/.test(p));
+      if (whole.length) return whole.every((p) => given.includes(fold(p)));
+      return printed.every((p) => given.some((g) => g[0] === p[0].toLowerCase()));
+    }
+    return false;
+  });
+}
+
+/**
+ * The members whose hyphenated family name starts with the label's family name: the journal printed "Unruh" in 2019 for
+ * the member the list names "Jessica Unruh-Bell". Tried only when no member fits outright.
+ */
+function ndFitsHyphenated(label: string, members: NdMember[]): NdMember[] {
+  const m = /^([^,]+?)(?:,\s*(.+))?$/.exec(squash(label));
+  if (!m || m[2]) return [];
+  const family = ndKey(m[1]);
+  return members.filter((x) => {
+    const last = /\s(\S+)-\S+$/.exec(x.name.replace(/,\s*(?:Jr|Sr|II|III|IV)\.?$/, ''));
+    return last !== null && ndKey(last[1]) === family;
+  });
+}
+
+/** Each printed label as the one member it names (full name), or as printed when none or several fit. */
+export function ndMemberNames(labels: string[], members: NdMember[]): string[] {
+  const fits = labels.map((l) => { const f = ndFits(l, members); return f.length ? f : ndFitsHyphenated(l, members); });
+  return labels.map((l, i) => {
+    let f = fits[i];
+    if (f.length > 1) {
+      // a member another label of the vote fits alone is not this one ("Jones" beside "Roers Jones")
+      const taken = new Set(fits.flatMap((g, j) => (j !== i && g.length === 1 ? [g[0].slug] : [])));
+      f = f.filter((x) => !taken.has(x.slug));
+    }
+    return f.length === 1 ? f[0].name : l;
+  });
+}
+
+const ND_MONTHS = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+
+/** The vote, or why it was refused (the first check that failed). */
+function readNorthDakota(bodies: string[], r: NdVoteRef): NdVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 2 || !bodies[0].startsWith(PDF_LINES_MARK + '\n')) return fail('not a journal PDF and a member list');
+  const CH = r.chamber === 'House' ? 'HOUSE' : 'SENATE';
+  const raw = bodies[0].split('\n').slice(1);
+  if (!raw.includes(`JOURNAL OF THE ${CH}`)) return fail(`the PDF is not the journal of the ${r.chamber}`);
+  if (!raw.includes(`${ND_ORDINAL[r.assembly]} Legislative Assembly`)) return fail(`the journal is not of the ${ordinal(r.assembly)} Legislative Assembly`);
+  // the running heads: the day and its date on every odd page, the chamber and day on every even page
+  const dates = new Set<string>();
+  const lines: { page: number; text: string }[] = [];
+  // The running head sets the page. Most pages also begin with a bare "Page 798" line, and some (a journal's last page)
+  // do not, so that line is dropped only where the head that follows it prints the same number.
+  let page = 0;
+  for (const [n, l] of raw.entries()) {
+    const p = /^Page (\d+)$/.exec(l);
+    if (p && new RegExp(`^(?:${p[1]} JOURNAL OF THE |\\d+(?:st|nd|rd|th) DAY .* ${p[1]}$)`).test(raw[n + 1] ?? '')) continue;
+    const odd = /^(\d+)(?:st|nd|rd|th) DAY [A-Z]+, ([A-Z]+) (\d{1,2}), (\d{4}) (\d+)$/.exec(l);
+    if (odd) {
+      if (Number(odd[1]) !== r.day || Number(odd[5]) <= page) return fail(`a running head that is not day ${r.day}, after page ${page}: ${l}`);
+      page = Number(odd[5]);
+      const mo = ND_MONTHS.indexOf(odd[2]);
+      if (mo < 0) return fail(`a running head with no month: ${l}`);
+      dates.add(`${odd[4]}-${String(mo + 1).padStart(2, '0')}-${odd[3].padStart(2, '0')}`);
+      continue;
+    }
+    const even = /^(\d+) JOURNAL OF THE (HOUSE|SENATE) (\d+)(?:st|nd|rd|th) DAY$/.exec(l);
+    if (even) {
+      if (even[2] !== CH || Number(even[3]) !== r.day || Number(even[1]) <= page) return fail(`a running head that is not the ${r.chamber}'s day ${r.day}, after page ${page}: ${l}`);
+      page = Number(even[1]);
+      continue;
+    }
+    if (!page) continue; // nothing comes before the first page's number
+    lines.push({ page, text: l });
+  }
+  if (dates.size !== 1) return fail(`the journal prints ${dates.size} dates`);
+  const date = [...dates][0];
+  if (Number(date.slice(0, 4)) !== r.year) return fail(`the journal is of ${date.slice(0, 4)}, not ${r.year}`);
+  const bill = `${r.billType} ${r.billNum}`;
+  const heading = new RegExp(`^${r.billType} ${r.billNum}: `);
+  const found: NdVoteRecord[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].text !== 'ROLL CALL') continue;
+    // the bill whose heading this roll call follows: the nearest heading since the last separator
+    let head = -1;
+    for (let k = i - 1; k >= 0 && !/^\*+$/.test(lines[k].text); k--) {
+      if (/^[HS][A-Z]{1,3} \d{4}: /.test(lines[k].text)) { head = k; break; }
+    }
+    if (head < 0 || !heading.test(lines[head].text)) continue;
+    // the question runs to the first group heading
+    let j = i + 1;
+    let qtext = '';
+    while (j < lines.length && !/^[A-Z ]+: /.test(lines[j].text)) { qtext = qtext ? `${qtext} ${lines[j].text}` : lines[j].text; j++; }
+    const qm = /^The question being (.+?)(?:, which (?:has|have) been read\b.*?)?(?:, the roll|\. The roll) +was called and there were (\d+) YEAS, (\d+) NAYS, (?:(\d+) EXCUSED, (\d+) ABSENT AND NOT VOTING|(\d+) ABSENT OR EXCUSED AND NOT VOTING)\.$/.exec(squash(qtext));
+    if (!qm) continue; // not a question the reader knows; a vote on the bill must read, or it is refused below
+    const q = squash(qm[1]);
+    if (!ndQuestionIsOnTheBill(q)) continue;
+    const want: Record<NdVote, number> = { Yea: Number(qm[2]), Nay: Number(qm[3]), 'Absent or excused': qm[6] !== undefined ? Number(qm[6]) : Number(qm[4]) + Number(qm[5]) };
+    const printedCount: Record<string, number> = { YEAS: Number(qm[2]), NAYS: Number(qm[3]), ...(qm[6] !== undefined ? { 'ABSENT OR EXCUSED AND NOT VOTING': Number(qm[6]) } : { EXCUSED: Number(qm[4]), 'ABSENT AND NOT VOTING': Number(qm[5]) }) };
+    const labels = Object.fromEntries(ND_VOTES.map((v) => [v, [] as string[]])) as Record<NdVote, string[]>;
+    const seen = new Set<string>();
+    let bad = '';
+    // each group: a heading, then labels separated by "; " over lines, to the next heading or the line that is not a name:
+    // the result ("Engrossed HB 1017 passed."), a separator, or a title in capitals. A name can break over a line with no
+    // semicolon ("Roers" / "Jones", "Speaker" / "Bellew"); a line ending in a hyphen runs on with no space
+    // ("Schreiber-" / "Beck"). The group must then hold the count the question prints for its heading.
+    while (j < lines.length) {
+      const h = /^([A-Z][A-Z ]*[A-Z]): (.*)$/.exec(lines[j].text);
+      if (!h) break;
+      const g = ND_HEADING[h[1]];
+      if (!g || seen.has(h[1]) || !(h[1] in printedCount)) { bad = `a group heading the reader does not know, or one printed twice: ${h[1]}`; break; }
+      seen.add(h[1]);
+      let text = h[2];
+      j++;
+      const isName = (l: string): boolean => !/^[A-Z][A-Z ]*[A-Z]: /.test(l) && !/\b[HS][A-Z]{1,3} \d{4}\b/.test(l) && !/^\*+$/.test(l) && !/^[A-Z]{2,}[A-Z .,']*$/.test(l);
+      // a line ending in a comma, a semicolon or a hyphen always runs on ("Speaker Johnson," / "D.")
+      while (j < lines.length && (/[,;-]$/.test(text) || isName(lines[j].text))) {
+        text = text.endsWith('-') ? text + lines[j].text : `${text} ${lines[j].text}`;
+        j++;
+      }
+      const got = text.split(';').map(squash);
+      if (got.length !== printedCount[h[1]]) { bad = `the ${h[1]} group lists ${got.length} members and the question prints ${printedCount[h[1]]}`; break; }
+      labels[g].push(...got);
+    }
+    if (bad) return fail(bad);
+    const end = lines[j]?.text ?? '';
+    if (lines[j - 1].page < r.page || lines[head].page > r.page) continue; // another vote of this bill on this day
+    for (const v of ND_VOTES) {
+      if (labels[v].some((l) => !l)) return fail(`an empty label in the ${v} group`);
+      if (labels[v].length !== want[v]) return fail(`the ${v} group lists ${labels[v].length} members and the question prints ${want[v]}`);
+    }
+    // the line after the last group: "Engrossed HB 1017 passed.", "HB 1326 failed.", "HCR 3021 was declared adopted ..."
+    const named = [...end.matchAll(/\b([HS][A-Z]{1,3}) (\d{4})\b/g)].map((x) => `${x[1]} ${Number(x[2])}`);
+    if (named.length !== 1 || named[0] !== bill || !/\b(passed|failed|adopted|lost)\b/.test(end)) return fail(`the roll call does not end on the bill's result: ${end}`);
+    const all = ND_VOTES.flatMap((v) => labels[v]);
+    if (all.length > ND_SIZE[r.chamber]) return fail('more members than the chamber has');
+    if (new Set(all.map(ndKey)).size !== all.length) return fail('a member is listed twice');
+    found.push({ state: 'ND', stateName: 'North Dakota', chamber: r.chamber, session: `${ordinal(r.assembly)} Legislative Assembly`, page: r.page, bill,
+      question: q.replace(/^on the final/, 'Final'), date, groups: labels });
+  }
+  if (found.length !== 1) return fail(`the journal holds ${found.length} roll calls on ${bill} that read as a vote on the bill and take in page ${r.page}`);
+  const list = ndMembers(bodies[1]);
+  if (!list) return fail('the member list did not read');
+  const members = list.filter((m) => m.chamber === r.chamber);
+  // "Speaker Bellew" is the Speaker, printed with the office; the office is dropped to name the member
+  const strip = (l: string): string => (r.chamber === 'House' ? l.replace(/^Speaker\s+/, '') : l);
+  const labels = ND_VOTES.flatMap((v) => found[0].groups[v].map(strip));
+  const names = ndMemberNames(labels, members);
+  let k = 0;
+  const groups = Object.fromEntries(ND_VOTES.map((v) => [v, found[0].groups[v].map(() => names[k++])])) as Record<NdVote, string[]>;
+  const keys = ND_VOTES.flatMap((v) => groups[v]).map(ndKey);
+  if (new Set(keys).size !== keys.length) return fail('two members render as one name');
+  return { ...found[0], groups };
+}
+
+const ND_SAID: Record<NdVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', 'Absent or excused': 'was absent or excused and did not vote' };
+
+export function renderNorthDakotaVote(v: NdVoteRecord): string {
+  return [
+    `North Dakota ${v.chamber} vote of ${v.date}, journal page ${v.page} (${v.session}), ${v.bill}.`,
+    `Question: ${v.question}`,
+    ND_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...ND_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const ND_RENDER_HEAD = /^North Dakota (House|Senate) vote of (\d{4}-\d{2}-\d{2}), journal page (\d+) \((\d+(?:st|nd|rd|th) Legislative Assembly)\), ([HS][A-Z]{1,3} \d{4})\.$/;
+
+function parseNorthDakotaRender(text: string, url: string): NdVoteRecord | null {
+  const r = parseNorthDakotaVoteUrl(url);
+  const rows = text.split('\n');
+  const h = ND_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + ND_VOTES.length) return null;
+  if (h[1] !== r.chamber || Number(h[3]) !== r.page || h[4] !== `${ordinal(r.assembly)} Legislative Assembly` || h[5] !== `${r.billType} ${r.billNum}`) return null;
+  const groups = {} as Record<NdVote, string[]>;
+  for (const [i, v] of ND_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== ND_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'ND', stateName: 'North Dakota', chamber: r.chamber, session: h[4], page: r.page, bill: h[5], question: q[1], date: h[2], groups };
+}
+
+const ND_LINE = /^North Dakota (House|Senate) vote of (\d{4}-\d{2}-\d{2}), journal page (\d+) \((\d+(?:st|nd|rd|th) Legislative Assembly)\), ([HS][A-Z]{1,3} \d{4}) - (.+?): (.+?) (voted Yea|voted Nay|was absent or excused and did not vote)\.$/;
+
+export function formatNorthDakotaVoteLine(l: NdVoteLine): string {
+  return `North Dakota ${l.chamber} vote of ${l.date}, journal page ${l.page} (${l.session}), ${l.bill} - ${l.question}: ${l.name} ${ND_SAID[l.vote]}.`;
+}
+
+function parseNorthDakotaLine(text: string): NdVoteLine | null {
+  const m = ND_LINE.exec(text.trim());
+  const vote = m ? ND_VOTES.find((v) => ND_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'ND', stateName: 'North Dakota', chamber: m[1] as Chamber, date: m[2], page: Number(m[3]), session: m[4], bill: m[5], question: m[6], name: m[7].trim(), vote };
+}
+
+function verifyNorthDakotaLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseNorthDakotaLine(line);
+  const r = parseNorthDakotaRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.page !== r.page || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = ND_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function northDakotaLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseNorthDakotaRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of ND_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatNorthDakotaVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from the day's journal and the Assembly's member list. Null when any check fails. */
+export function readNorthDakotaVote(bodies: string[], url: string): NdVoteRecord | null {
+  const v = explainNorthDakotaVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readNorthDakotaVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainNorthDakotaVote(bodies: string[], url: string): NdVoteRecord | { refused: string } {
+  const r = parseNorthDakotaVoteUrl(url);
+  if (!r) return { refused: 'not a North Dakota vote address' };
+  try { return readNorthDakota(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
@@ -1940,11 +2295,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseMarylandVoteUrl(url)) return MD_GAP_MS;
   if (parseKansasVoteUrl(url)) return KS_GAP_MS;
   if (parseColoradoVoteUrl(url)) return CO_GAP_MS;
+  if (parseNorthDakotaVoteUrl(url)) return ND_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null;
 }
 
 /**
@@ -1964,6 +2320,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (parseKansasVoteUrl(url)) return [url.trim()];
   const co = parseColoradoVoteUrl(url);
   if (co) return coloradoDocs(co);
+  const nd = parseNorthDakotaVoteUrl(url);
+  if (nd) return northDakotaDocs(nd);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -1992,6 +2350,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseColoradoVoteUrl(url)) {
     const v = readColoradoVote(bodies, url);
     return v ? renderColoradoVote(v) : null;
+  }
+  if (parseNorthDakotaVoteUrl(url)) {
+    const v = readNorthDakotaVote(bodies, url);
+    return v ? renderNorthDakotaVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -2044,6 +2406,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteId, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yes, Nay: v.groups.No, 'Absent or not voting': [...v.groups.Absent, ...v.groups.Excused] } } : null;
   }
+  if (parseNorthDakotaVoteUrl(url)) {
+    // North Dakota: members by their full names from the Assembly's member list (a label no member fits, as printed); the
+    // roll-call number is the journal page
+    const v = readNorthDakotaVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.page, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': v.groups['Absent or excused'] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -2068,8 +2437,9 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | null {
   if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
+  if (parseNorthDakotaVoteUrl(url)) return parseNorthDakotaRender(text, url);
   if (parseColoradoVoteUrl(url)) return parseColoradoRender(text, url);
   if (parseKansasVoteUrl(url)) return parseKansasRender(text, url);
   if (parseOhioVoteUrl(url)) return parseOhioRender(text, url);
@@ -2103,8 +2473,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -2185,6 +2555,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseMarylandVoteUrl(url)) return verifyMarylandLine(line, url, text, lastName, fullName);
   if (parseKansasVoteUrl(url)) return verifyKansasLine(line, url, text, lastName, fullName);
   if (parseColoradoVoteUrl(url)) return verifyColoradoLine(line, url, text, lastName, fullName);
+  if (parseNorthDakotaVoteUrl(url)) return verifyNorthDakotaLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -2212,6 +2583,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseMarylandVoteUrl(url)) return marylandLinesFor(url, text, lastName, fullName);
   if (parseKansasVoteUrl(url)) return kansasLinesFor(url, text, lastName, fullName);
   if (parseColoradoVoteUrl(url)) return coloradoLinesFor(url, text, lastName, fullName);
+  if (parseNorthDakotaVoteUrl(url)) return northDakotaLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];
