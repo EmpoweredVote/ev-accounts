@@ -1,0 +1,493 @@
+{
+  "id": "CO-HB-1077-2018",
+  "scope": "state:co",
+  "title": "HB1077 (2018 Regular): Penalty For Burglary Of Firearms",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb18-1077",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2018A/bills/2018a_1077_enr.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Larry Liston",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ca912826-ca11-4023-9450-e50e5e9b293f"
+    },
+    {
+      "name": "Donald Valdez",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Leroy M. Garcia, Jr.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ray Scott",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-04-25",
+      "body": "CO House",
+      "motion": "House Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 61,
+      "no": 3,
+      "absent": 1,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229084 https://leg.colorado.gov/bill_votes/26889#HB18-1077",
+      "members": [
+        {
+          "name": "Jeni James Arndt",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "KC Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Beckman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Bridges",
+          "vote": "yea",
+          "politician_id": "cb0906d5-b6d5-495c-9af0-335a8ad72920"
+        },
+        {
+          "name": "Perry Buck",
+          "vote": "yea"
+        },
+        {
+          "name": "Janet Buckner",
+          "vote": "yea"
+        },
+        {
+          "name": "Terri Carver",
+          "vote": "yea",
+          "politician_id": "84dee0d9-6ca0-4af2-a4e0-a670b38c3f36"
+        },
+        {
+          "name": "Marc Catlin",
+          "vote": "yea",
+          "politician_id": "4e0f0ef0-e603-48f9-a803-be51827550fa"
+        },
+        {
+          "name": "James Coleman",
+          "vote": "yea",
+          "politician_id": "2f777001-a339-40d3-9f6d-caab27f73d84"
+        },
+        {
+          "name": "Phil Covarrubias",
+          "vote": "yea"
+        },
+        {
+          "name": "Jessie Danielson",
+          "vote": "yea",
+          "politician_id": "b71acb35-2426-41c2-9d22-f224d752cf6e"
+        },
+        {
+          "name": "Daneya Esgar",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Everett",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Exum, Sr.",
+          "vote": "yea",
+          "politician_id": "92fbd4c0-34a6-4561-8916-fb56f5096ad0"
+        },
+        {
+          "name": "Mike Foote",
+          "vote": "yea"
+        },
+        {
+          "name": "Alec Garnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Joann Ginal",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Gray",
+          "vote": "yea"
+        },
+        {
+          "name": "Millie Hamner",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Edie Hooton",
+          "vote": "yea",
+          "politician_id": "b9270955-ffbe-4b4f-a1a8-85377129cf93"
+        },
+        {
+          "name": "Stephen Humphrey",
+          "vote": "yea"
+        },
+        {
+          "name": "Dominique Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy Kraft-Tharp",
+          "vote": "yea"
+        },
+        {
+          "name": "Polly Lawrence",
+          "vote": "yea"
+        },
+        {
+          "name": "Pete Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Leonard",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimmi Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Liston",
+          "vote": "yea",
+          "politician_id": "ca912826-ca11-4023-9450-e50e5e9b293f"
+        },
+        {
+          "name": "Susan Lontine",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Lundeen",
+          "vote": "yea"
+        },
+        {
+          "name": "Hugh McKean",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara McLachlan",
+          "vote": "yea"
+        },
+        {
+          "name": "Dafna Michaelson Jenet",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Pabon",
+          "vote": "yea"
+        },
+        {
+          "name": "Brittany Pettersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Rankin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim Ransom",
+          "vote": "yea"
+        },
+        {
+          "name": "Judy Reyher",
+          "vote": "yea"
+        },
+        {
+          "name": "Dylan Roberts",
+          "vote": "yea",
+          "politician_id": "e703958a-9cdb-4eba-92b4-ee63267cf17a"
+        },
+        {
+          "name": "Paul Rosenthal",
+          "vote": "yea"
+        },
+        {
+          "name": "Lori Saine",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Salazar",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Sandridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Lang Sias",
+          "vote": "yea"
+        },
+        {
+          "name": "Jonathan Singer",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Thurlow",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald Valdez",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Van Winkle",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Weissman",
+          "vote": "yea",
+          "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+        },
+        {
+          "name": "Yeulin Willett",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "James Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander \"Skinny\" Winkler",
+          "vote": "yea"
+        },
+        {
+          "name": "Faith Winter",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole Wist",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Young",
+          "vote": "yea",
+          "politician_id": "8868cae5-a50a-483b-be2e-b581894c1b6b"
+        },
+        {
+          "name": "Crisanta Duran",
+          "vote": "yea"
+        },
+        {
+          "name": "Adrienne Benavidez",
+          "vote": "nay",
+          "politician_id": "6f1746bc-f4f2-413b-b82b-c7cd8efacb8d"
+        },
+        {
+          "name": "Leslie Herod",
+          "vote": "nay"
+        },
+        {
+          "name": "Jovan Melton",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Landgraf",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2018-05-03",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 0,
+      "absent": 2,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229085 https://leg.colorado.gov/bill_votes/26880#HB18-1077",
+      "members": [
+        {
+          "name": "Irene Aguilar",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "yea"
+        },
+        {
+          "name": "Lois Court",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Crowder",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "yea"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucia Guzman",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheri Jahn",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Kagan",
+          "vote": "yea"
+        },
+        {
+          "name": "John Kefalas",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lambert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Vicki Marble",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Martinez Humenik",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Merrifield",
+          "vote": "yea"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "yea",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Todd",
+          "vote": "yea"
+        },
+        {
+          "name": "Angela Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "yea"
+        },
+        {
+          "name": "President",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy Baumgardner",
+          "vote": "absent"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Final Act (05/14/2018), 2018-05-14; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2018A/bills/2018a_1077_enr.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1077-2018.enrolled.pdf",
+      "sha256": "afb87ffa66ce8f703c93fe8604fd0e8bdafc0d68f636cfa8761708625d6a85fa"
+    },
+    "note": "Final Act 05/14/2018 (enrolled; unsigned copy). Section 3 is a statutory appropriation to implement the act. Section 1 sets the class 3 felony via the opening 'class 3 felony if' lead-in, which is kept law (not capitalised)."
+  },
+  "operative_text": "Section 1 (C.R.S. 18-4-203(2)(c)): THE OBJECTIVE OF THE BURGLARY IS THE THEFT OF ONE OR MORE FIREARMS OR AMMUNITION.\nSection 2 (C.R.S. 18-1.3-401(1)(a)(III)(F)): ON AND AFTER THE EFFECTIVE DATE OF THIS SUBSECTION (1)(a)(III)(F), IF A PERSON IS CONVICTED OF SECOND DEGREE BURGLARY AS DESCRIBED IN SECTION 18-4-203 (2)(c), IN ADDITION TO ANY OTHER SENTENCE, THE COURT MAY REQUIRE THE PERSON TO PAY A FINE OF AT LEAST FIVE THOUSAND DOLLARS BUT NOT EXCEEDING SEVEN HUNDRED FIFTY THOUSAND DOLLARS."
+}

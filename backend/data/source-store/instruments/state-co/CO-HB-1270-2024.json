@@ -1,0 +1,370 @@
+{
+  "id": "CO-HB-1270-2024",
+  "scope": "state:co",
+  "title": "HB1270 (2024 Regular): Firearm Liability Insurance Requirement",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb24-1270",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2024A/bills/2024a_1270_ren.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Steven Woodrow",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ceaeed12-53d1-4341-9ffc-22e426014de8"
+    },
+    {
+      "name": "Iman Jodeh",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "11efc6cc-462d-4c40-b511-863fbfbf55e7"
+    },
+    {
+      "name": "Chris Hansen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-04-20",
+      "body": "CO House",
+      "motion": "House Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 29,
+      "absent": 3,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229186 https://leg.colorado.gov/bill_votes/10636#HB24-1270",
+      "members": [
+        {
+          "name": "Judy Amabile",
+          "vote": "yea",
+          "politician_id": "68ace22a-559e-4397-b66a-1785f3a35d7e"
+        },
+        {
+          "name": "Jennifer Bacon",
+          "vote": "yea",
+          "politician_id": "6ff7dd8f-8a90-4dd6-ba45-a6b1acb667ab"
+        },
+        {
+          "name": "Andy Boesenecker",
+          "vote": "yea",
+          "politician_id": "fe0959d1-42cb-49cf-b1aa-ac9bc690a242"
+        },
+        {
+          "name": "Kyle Brown",
+          "vote": "yea",
+          "politician_id": "d4f2c1b9-311a-4c40-aaa1-a8a05a251442"
+        },
+        {
+          "name": "Chad Clifford",
+          "vote": "yea",
+          "politician_id": "1c6b87fa-ab17-4d33-beef-d95a07b60c7a"
+        },
+        {
+          "name": "Lindsey Daugherty",
+          "vote": "yea",
+          "politician_id": "224ba744-e39d-47f1-879f-064cd024e709"
+        },
+        {
+          "name": "Chris Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Monica Duran",
+          "vote": "yea",
+          "politician_id": "5716b3f8-e459-485d-9096-f916ee469ece"
+        },
+        {
+          "name": "Meg Froelich",
+          "vote": "yea",
+          "politician_id": "5dc20430-557a-44a1-8bf2-661e3378bdcf"
+        },
+        {
+          "name": "Lorena García",
+          "vote": "yea",
+          "politician_id": "41d27190-5ca3-4e7a-8ca8-3b20ac1fd77a"
+        },
+        {
+          "name": "Eliza Hamrick",
+          "vote": "yea",
+          "politician_id": "eb5f359e-57d4-414a-ad61-65e74f10bbec"
+        },
+        {
+          "name": "Tim Hernández",
+          "vote": "yea"
+        },
+        {
+          "name": "Leslie Herod",
+          "vote": "yea"
+        },
+        {
+          "name": "Iman Jodeh",
+          "vote": "yea",
+          "politician_id": "11efc6cc-462d-4c40-b511-863fbfbf55e7"
+        },
+        {
+          "name": "Junie Joseph",
+          "vote": "yea",
+          "politician_id": "be725434-8449-4938-a04b-1d6e41c06631"
+        },
+        {
+          "name": "Cathy Kipp",
+          "vote": "yea",
+          "politician_id": "b87be611-7566-4118-a72d-bc637a628ac8"
+        },
+        {
+          "name": "Mandy Lindsay",
+          "vote": "yea",
+          "politician_id": "dc70d9b7-b5ac-46fc-be23-c88c6aaaf040"
+        },
+        {
+          "name": "William Lindstedt",
+          "vote": "yea",
+          "politician_id": "5cb788f7-1a84-41e6-92e6-e87efa753496"
+        },
+        {
+          "name": "Javier Mabrey",
+          "vote": "yea",
+          "politician_id": "535a0955-6ec1-4bb5-ab6c-767a2e963dd0"
+        },
+        {
+          "name": "Julia Marvin",
+          "vote": "yea"
+        },
+        {
+          "name": "Tisha Mauro",
+          "vote": "yea",
+          "politician_id": "f73d1c83-cc4a-4078-a20c-9b5df20f694f"
+        },
+        {
+          "name": "Karen McCormick",
+          "vote": "yea",
+          "politician_id": "fdc82b87-9965-423a-9f4a-4c6d211336ad"
+        },
+        {
+          "name": "David Ortiz",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Parenti",
+          "vote": "yea"
+        },
+        {
+          "name": "Manny Rutinel",
+          "vote": "yea"
+        },
+        {
+          "name": "Emily Sirota",
+          "vote": "yea",
+          "politician_id": "8d69d69e-204f-4319-93c6-6b5b3377fbbb"
+        },
+        {
+          "name": "Tammy Story",
+          "vote": "yea",
+          "politician_id": "2ea31dcf-55f2-4a7c-a257-8a2674e0dcf5"
+        },
+        {
+          "name": "Brianna Titone",
+          "vote": "yea",
+          "politician_id": "5907beec-b298-40ac-8223-866780689feb"
+        },
+        {
+          "name": "Alex Valdez",
+          "vote": "yea",
+          "politician_id": "9fe467f7-7ec7-4498-954b-5666eb94af78"
+        },
+        {
+          "name": "Elizabeth Velasco",
+          "vote": "yea",
+          "politician_id": "0785b476-0c22-44cc-a2c1-5fbfabc5ca9f"
+        },
+        {
+          "name": "Mike Weissman",
+          "vote": "yea",
+          "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+        },
+        {
+          "name": "Jenny Willford",
+          "vote": "yea",
+          "politician_id": "99f4b766-84c0-4ccc-b150-57a954bc9c0b"
+        },
+        {
+          "name": "Steven Woodrow",
+          "vote": "yea",
+          "politician_id": "ceaeed12-53d1-4341-9ffc-22e426014de8"
+        },
+        {
+          "name": "Ryan Armagost",
+          "vote": "nay"
+        },
+        {
+          "name": "Shannon Bird",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Bradfield",
+          "vote": "nay",
+          "politician_id": "a6528ae0-54fa-4d1c-af06-bc8b68300d2d"
+        },
+        {
+          "name": "Brandi Bradley",
+          "vote": "nay",
+          "politician_id": "58cd31de-211c-41aa-906b-17f1e28f7451"
+        },
+        {
+          "name": "Marc Catlin",
+          "vote": "nay",
+          "politician_id": "4e0f0ef0-e603-48f9-a803-be51827550fa"
+        },
+        {
+          "name": "Ken DeGraaf",
+          "vote": "nay",
+          "politician_id": "e6ff0305-e3a8-4cd3-bd4c-2941fc094c78"
+        },
+        {
+          "name": "Elisabeth Epps",
+          "vote": "nay"
+        },
+        {
+          "name": "Gabe Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Frizell",
+          "vote": "nay",
+          "politician_id": "94d0f144-3df8-4948-896c-960efebeeb66"
+        },
+        {
+          "name": "Tony Hartsook",
+          "vote": "nay",
+          "politician_id": "fce3e44f-6874-43fe-a6e8-cb51302fb639"
+        },
+        {
+          "name": "Richard Holtorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Sheila Lieder",
+          "vote": "nay",
+          "politician_id": "045c7af5-55b4-424a-8479-52630aea1e3a"
+        },
+        {
+          "name": "Stephanie Luck",
+          "vote": "nay",
+          "politician_id": "133422c4-9aae-4369-a639-db6d7664d088"
+        },
+        {
+          "name": "Meghan Lukens",
+          "vote": "nay",
+          "politician_id": "d9471641-6386-41f1-8376-da48d4ec8bfc"
+        },
+        {
+          "name": "Mike Lynch",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Marshall",
+          "vote": "nay",
+          "politician_id": "b1f40865-4532-4eac-a2cb-4197d4d31320"
+        },
+        {
+          "name": "Matt Martinez",
+          "vote": "nay",
+          "politician_id": "ac21fdd1-1242-4dda-9372-8a565fa711ef"
+        },
+        {
+          "name": "Barbara McLachlan",
+          "vote": "nay"
+        },
+        {
+          "name": "Rose Pugliese",
+          "vote": "nay"
+        },
+        {
+          "name": "Naquetta Ricks",
+          "vote": "nay",
+          "politician_id": "0c8bcc3e-c867-4324-b9c2-c9f5909ffe48"
+        },
+        {
+          "name": "Marc Snyder",
+          "vote": "nay",
+          "politician_id": "6379d38c-3553-4ca3-87da-918efdcf73f2"
+        },
+        {
+          "name": "Matt Soper",
+          "vote": "nay",
+          "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846"
+        },
+        {
+          "name": "Rick Taggart",
+          "vote": "nay",
+          "politician_id": "6b42e678-389a-480e-8973-4f8a3a1eaf0c"
+        },
+        {
+          "name": "Stephanie Vigil",
+          "vote": "nay",
+          "politician_id": "7a4a4418-f528-47d6-8714-b292d2d02496"
+        },
+        {
+          "name": "Ron Weinberg",
+          "vote": "nay",
+          "politician_id": "97378744-ae64-41ca-9fe2-c857d602e2c5"
+        },
+        {
+          "name": "Don Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ty Winter",
+          "vote": "nay",
+          "politician_id": "9e827b6b-01db-4d98-8142-92f73e03f120"
+        },
+        {
+          "name": "Mary Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie McCluskie",
+          "vote": "nay",
+          "politician_id": "acd89047-1178-4313-a5b8-66f2e6d27892"
+        },
+        {
+          "name": "Rod Bockenfeld",
+          "vote": "absent"
+        },
+        {
+          "name": "Scott Bottoms",
+          "vote": "absent",
+          "politician_id": "1e4cf254-2b56-4680-8f0b-9556912e9a35"
+        },
+        {
+          "name": "Regina English",
+          "vote": "absent",
+          "politician_id": "50a9c77a-3089-4ea6-b3f8-021b5a204e37"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (04/20/2024), 2024-04-20; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2024A/bills/2024a_1270_ren.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1270-2024.reengrossed.pdf",
+      "sha256": "4c381ea09ffe27b5a52e5e9c44a1ca0072ec4ff27775cff67913280c6f7688ce"
+    },
+    "note": "Reengrossed version (04/20/2024), not the final act. Amendments made after the version read (Senate) are not in the text read. Section 3 (C.R.S. 10-4-122) requires insurers to offer the coverage, which supports the same rule. In 18-12-116(1)(a) the text file puts the words AS A RESULT OF ANY ACCIDENTAL OR UNINTENTIONAL out of line order (a layout quirk); the quote gives the sentence in reading order."
+  },
+  "operative_text": "Section 2 (C.R.S. 18-12-116(1)(a)): A RESIDENT OF COLORADO WHO OWNS A FIREARM SHALL CONTINUOUSLY MAINTAIN IN FULL FORCE AND EFFECT A HOMEOWNERS, RENTERS, OR OTHER LIABILITY INSURANCE POLICY FROM A NONADMITTED INSURER, AS DEFINED IN SECTION 10-5-101.2, OR AN INSURER AUTHORIZED TO DO BUSINESS IN COLORADO THAT COVERS LOSSES OR DAMAGES OF AT LEAST ONE HUNDRED THOUSAND DOLLARS TO ALL PERSONS ARISING FROM ANY ONE INCIDENT TO A PERSON, OTHER THAN THE INSURED, WHO IS INJURED AS A RESULT OF ANY ACCIDENTAL OR UNINTENTIONAL DISCHARGE OF THE FIREARM, INCLUDING, BUT NOT LIMITED TO, DEATH, INJURY, OR PROPERTY DAMAGE.\nSection 2 (C.R.S. 18-12-116(5)): A VIOLATION OF SUBSECTION (1) OF THIS SECTION IS A CIVIL INFRACTION, PUNISHABLE BY A FINE AS DESCRIBED IN THIS SUBSECTION (5). UPON A FIRST CONVICTION FOR A VIOLATION OF SUBSECTION (1) OF THIS SECTION, THE COURT SHALL IMPOSE A MINIMUM FIVE-HUNDRED-DOLLAR FINE.\nSection 2 (C.R.S. 18-12-116(6)): THIS SECTION DOES NOT APPLY TO: (a) A FEDERAL FIREARMS LICENSEE;\nSection 2 (C.R.S. 18-12-116(9)): AN INSURER WHO ISSUES A LIABILITY INSURANCE POLICY THAT COMPLIES WITH SUBSECTION (1) OF THIS SECTION SHALL NOT ASK FOR, OR REQUIRE AN INSURED TO PROVIDE, THE SERIAL NUMBER OR ANY OTHER INFORMATION ABOUT THE SPECIFIC FIREARMS THAT THE INSURED OWNS AS A CONDITION OF ISSUING THE LIABILITY INSURANCE POLICY."
+}

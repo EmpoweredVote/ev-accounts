@@ -1,0 +1,197 @@
+{
+  "id": "CO-SB-97-2018",
+  "scope": "state:co",
+  "title": "SB097 (2018 Regular): Concealed Handgun Carry With No Permit",
+  "urls": [
+    "https://leg.colorado.gov/bills/sb18-097",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2018A/bills/2018a_097_ren.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Tim Neville",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Van Winkle",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-03-08",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 17,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229074 https://leg.colorado.gov/bill_votes/17953#SB18-097",
+      "members": [
+        {
+          "name": "Randy Baumgardner",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Crowder",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lambert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Vicki Marble",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Martinez Humenik",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "yea",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "President",
+          "vote": "yea"
+        },
+        {
+          "name": "Irene Aguilar",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Court",
+          "vote": "nay"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "nay"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucia Guzman",
+          "vote": "nay"
+        },
+        {
+          "name": "Cheri Jahn",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Kagan",
+          "vote": "nay"
+        },
+        {
+          "name": "John Kefalas",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Kerr",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Merrifield",
+          "vote": "nay"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (03/08/2018), 2018-03-08; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2018A/bills/2018a_097_ren.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-97-2018.reengrossed.pdf",
+      "sha256": "d2817d5bb166ba6d1d9697c6470ef2da4b17fb08f160b4591f3dc2a7df04cdd4"
+    },
+    "note": "Reengrossed (03/08/2018). Not the final act; amendments made after the version read are not in the text read. Both quotes are the new exceptions, which are exceptions to the offences of carrying a concealed weapon. Section 3 trims background-check and ID-unit appropriations to implement the act (not quoted); not a separate subject."
+  },
+  "operative_text": "Section 1 (C.R.S. 18-12-105(2)(g)): A PERSON WHO WAS AT LEAST TWENTY-ONE YEARS OF AGE AND LEGALLY POSSESSED A HANDGUN UNDER THE LAWS OF THIS STATE AND OF THE UNITED STATES AND THE WEAPON INVOLVED IN THE INCIDENT WAS A HANDGUN. THE AUTHORITY TO CARRY A CONCEALED HANDGUN PURSUANT TO THIS SUBSECTION (2)(g) IS EQUAL IN ALL RESPECTS TO THE AUTHORITY GRANTED BY A PERMIT TO CARRY A CONCEALED HANDGUN AS SPECIFIED IN SECTION 18-12-214.\nSection 2 (C.R.S. 18-12-105.5(3)(i)): THE PERSON IS AT LEAST TWENTY-ONE YEARS OF AGE AND MAY LEGALLY POSSESS A HANDGUN UNDER THE LAWS OF THIS STATE AND OF THE UNITED STATES AND THE WEAPON INVOLVED IN THE INCIDENT WAS A HANDGUN. THE AUTHORITY TO CARRY A CONCEALED HANDGUN PURSUANT TO THIS SUBSECTION (3)(i) IS EQUAL IN ALL RESPECTS TO THE AUTHORITY GRANTED BY A PERMIT TO CARRY A CONCEALED HANDGUN AS SPECIFIED IN SECTION 18-12-214."
+}

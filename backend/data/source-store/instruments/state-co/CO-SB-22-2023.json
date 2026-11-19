@@ -1,0 +1,217 @@
+{
+  "id": "CO-SB-22-2023",
+  "scope": "state:co",
+  "title": "SB022 (2023 Regular): Possession Of Weapon By Previous Offender Crimes",
+  "urls": [
+    "https://leg.colorado.gov/bills/sb23-022",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_022_rn2.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Nick Hinrichsen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d360fe6c-9512-4d2f-9d44-4dd9f15c5ac0"
+    },
+    {
+      "name": "Shannon Bird",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-03-15",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 5,
+      "absent": 1,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229169 https://leg.colorado.gov/bill_votes/24723#SB23-022",
+      "members": [
+        {
+          "name": "Jeff Bridges",
+          "vote": "yea",
+          "politician_id": "cb0906d5-b6d5-495c-9af0-335a8ad72920"
+        },
+        {
+          "name": "Janet Buckner",
+          "vote": "yea"
+        },
+        {
+          "name": "James Coleman",
+          "vote": "yea",
+          "politician_id": "2f777001-a339-40d3-9f6d-caab27f73d84"
+        },
+        {
+          "name": "Lisa Cutter",
+          "vote": "yea",
+          "politician_id": "1b919f48-974f-4cd4-a264-a4498b8abfbc"
+        },
+        {
+          "name": "Jessie Danielson",
+          "vote": "yea",
+          "politician_id": "b71acb35-2426-41c2-9d22-f224d752cf6e"
+        },
+        {
+          "name": "Tony Exum",
+          "vote": "yea",
+          "politician_id": "92fbd4c0-34a6-4561-8916-fb56f5096ad0"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Joann Ginal",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Hinrichsen",
+          "vote": "yea",
+          "politician_id": "d360fe6c-9512-4d2f-9d44-4dd9f15c5ac0"
+        },
+        {
+          "name": "Sonya Jaquez Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara Kirkmeyer",
+          "vote": "yea",
+          "politician_id": "db690948-f370-448f-862b-e45768d92723"
+        },
+        {
+          "name": "Chris Kolker",
+          "vote": "yea",
+          "politician_id": "234f8392-fd93-4bcc-a749-fc61c58b4821"
+        },
+        {
+          "name": "Larry Liston",
+          "vote": "yea",
+          "politician_id": "ca912826-ca11-4023-9450-e50e5e9b293f"
+        },
+        {
+          "name": "Paul Lundeen",
+          "vote": "yea"
+        },
+        {
+          "name": "Janice Marchman",
+          "vote": "yea",
+          "politician_id": "29d28463-fe93-4d79-8fb4-f9757ef61b78"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Mullica",
+          "vote": "yea",
+          "politician_id": "53a5e3ec-bf14-443e-ab86-2fa78398f24d"
+        },
+        {
+          "name": "Byron Pelton",
+          "vote": "yea",
+          "politician_id": "3361640c-3a6e-462b-a34f-245bfde116e6"
+        },
+        {
+          "name": "Rod Pelton",
+          "vote": "yea",
+          "politician_id": "543138e3-02f3-4926-bdf6-0cd126f63c2b"
+        },
+        {
+          "name": "Dylan Roberts",
+          "vote": "yea",
+          "politician_id": "e703958a-9cdb-4eba-92b4-ee63267cf17a"
+        },
+        {
+          "name": "Robert Rodriguez",
+          "vote": "yea",
+          "politician_id": "c2311cb5-2ff0-4dcb-83a3-4b3be15a39fa"
+        },
+        {
+          "name": "Cleave Simpson",
+          "vote": "yea",
+          "politician_id": "796e99ba-29f5-4f30-9e0e-a36b6f05e78a"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Sullivan",
+          "vote": "yea",
+          "politician_id": "0b23c3d0-9e80-4643-b7ce-8726f8a07e7e"
+        },
+        {
+          "name": "Perry Will",
+          "vote": "yea"
+        },
+        {
+          "name": "Faith Winter",
+          "vote": "yea"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Baisley",
+          "vote": "nay",
+          "politician_id": "3b8ff5f8-582a-4044-9a19-dc63b6d6a7ab"
+        },
+        {
+          "name": "Julie Gonzales",
+          "vote": "nay",
+          "politician_id": "e76a8f3b-27c3-4ee4-8f92-b3e5436ff3f6"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "nay"
+        },
+        {
+          "name": "Janice Rich",
+          "vote": "nay",
+          "politician_id": "8baa123c-c7c7-4cc7-b888-e26dfc47e587"
+        },
+        {
+          "name": "Kevin Van Winkle",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Hansen",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (03/15/2023), 2023-03-15; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_022_rn2.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-22-2023.reengrossed.pdf",
+      "sha256": "b241f04870e6be44ed5243a6a6164422f3d30279609145db0c5d0c9b618fa041"
+    },
+    "note": "Version read: reengrossed 03/15/2023 (house-amended, as passed in the house of introduction; Senate 3rd reading). The lead-in that a listed felony conviction or adjudication \"prohibits a person from possessing, using, or carrying upon his or her person a firearm\" is lower-case existing law the bill adds to, not quoted. Amendments made after this version (second house) are not in the text read. Section 2 appropriation ($48,217 to probation) is not a gun part."
+  },
+  "operative_text": "Section 1 (C.R.S. 18-12-108(7)(n.5)): AGGRAVATED MOTOR VEHICLE THEFT IN VIOLATION OF SECTION 18-4-409;"
+}

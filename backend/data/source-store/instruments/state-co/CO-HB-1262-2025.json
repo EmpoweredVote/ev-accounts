@@ -1,0 +1,51 @@
+{
+  "id": "CO-HB-1262-2025",
+  "scope": "state:co",
+  "title": "HB1262 (2025 Regular): Regulate Private Security Officers & Agencies",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb25-1262",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1262_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Javier Mabrey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "535a0955-6ec1-4bb5-ab6c-767a2e963dd0"
+    },
+    {
+      "name": "Mike Weissman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+    },
+    {
+      "name": "Nick Hinrichsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d360fe6c-9512-4d2f-9d44-4dd9f15c5ac0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (02/18/2025), 2025-02-18; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1262_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1262-2025.introduced.pdf",
+      "sha256": "d3537aba0d097b7f71a1c95f243cb0676e8a8edfd44be7610b6bd91cf1e1e0d9"
+    },
+    "note": "Introduced version (02/18/2025). Amendments after introduction are not in the text read. Large file read by grep. The licensing scheme and registration of security employers are outside the gun parts. The 12-162-107(1)(b) quote spans a page break; the text file inserts a page header mid-sentence, which was dropped."
+  },
+  "operative_text": "Section 1 (C.R.S. 12-162-107(1)(b)): AN INDIVIDUAL SHALL NOT CARRY A FIREARM OR NONLETHAL WEAPON WHILE PROVIDING OR OFFERING TO PROVIDE PRIVATE SECURITY SERVICES UNLESS THE INDIVIDUAL: (I) IS LICENSED AS A COMMERCIAL SECURITY OFFICER;\nSection 1 (C.R.S. 12-162-102(7)): \"FIREARM\" MEANS A HANDGUN, AS DEFINED IN SECTION 18-12-101 (1)(e.5), OR AS FURTHER DEFINED BY THE BOARD BY RULE.\nSection 1 (C.R.S. 12-162-108(2)(d)(II)): TO QUALIFY FOR A FIREARM ENDORSEMENT THAT ALLOWS A LICENSED COMMERCIAL SECURITY OFFICER TO CARRY A FIREARM WHILE PROVIDING COMMERCIAL SECURITY SERVICES, AN APPLICANT MUST PROVIDE PROOF TO THE BOARD THAT THE APPLICANT: (A) HAS COMPLETED AT LEAST SIXTEEN HOURS OF FIREARM SAFETY AND FAMILIARITY TRAINING THAT SATISFIES THE REQUIREMENTS SPECIFIED IN SECTION 12-162-110 (3)(c) AND THAT IS APPROVED BY THE BOARD; AND"
+}

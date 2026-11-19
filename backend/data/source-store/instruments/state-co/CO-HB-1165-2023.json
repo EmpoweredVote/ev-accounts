@@ -1,0 +1,369 @@
+{
+  "id": "CO-HB-1165-2023",
+  "scope": "state:co",
+  "title": "HB1165 (2023 Regular): County Authority To Prohibit Firearms Discharge",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb23-1165",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_1165_ren.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Judy Amabile",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "68ace22a-559e-4397-b66a-1785f3a35d7e"
+    },
+    {
+      "name": "Karen McCormick",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fdc82b87-9965-423a-9f4a-4c6d211336ad"
+    },
+    {
+      "name": "Sonya Jaquez Lewis",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-02-16",
+      "body": "CO House",
+      "motion": "House Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 36,
+      "no": 27,
+      "absent": 2,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229152 https://leg.colorado.gov/bill_votes/12435#HB23-1165",
+      "members": [
+        {
+          "name": "Judy Amabile",
+          "vote": "yea",
+          "politician_id": "68ace22a-559e-4397-b66a-1785f3a35d7e"
+        },
+        {
+          "name": "Jennifer Bacon",
+          "vote": "yea",
+          "politician_id": "6ff7dd8f-8a90-4dd6-ba45-a6b1acb667ab"
+        },
+        {
+          "name": "Andy Boesenecker",
+          "vote": "yea",
+          "politician_id": "fe0959d1-42cb-49cf-b1aa-ac9bc690a242"
+        },
+        {
+          "name": "Kyle Brown",
+          "vote": "yea",
+          "politician_id": "d4f2c1b9-311a-4c40-aaa1-a8a05a251442"
+        },
+        {
+          "name": "Lindsey Daugherty",
+          "vote": "yea",
+          "politician_id": "224ba744-e39d-47f1-879f-064cd024e709"
+        },
+        {
+          "name": "Chris Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruby Dickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Monica Duran",
+          "vote": "yea",
+          "politician_id": "5716b3f8-e459-485d-9096-f916ee469ece"
+        },
+        {
+          "name": "Elisabeth Epps",
+          "vote": "yea"
+        },
+        {
+          "name": "Meg Froelich",
+          "vote": "yea",
+          "politician_id": "5dc20430-557a-44a1-8bf2-661e3378bdcf"
+        },
+        {
+          "name": "Lorena García",
+          "vote": "yea",
+          "politician_id": "41d27190-5ca3-4e7a-8ca8-3b20ac1fd77a"
+        },
+        {
+          "name": "Serena Gonzales-Gutierrez",
+          "vote": "yea"
+        },
+        {
+          "name": "Eliza Hamrick",
+          "vote": "yea",
+          "politician_id": "eb5f359e-57d4-414a-ad61-65e74f10bbec"
+        },
+        {
+          "name": "Leslie Herod",
+          "vote": "yea"
+        },
+        {
+          "name": "Iman Jodeh",
+          "vote": "yea",
+          "politician_id": "11efc6cc-462d-4c40-b511-863fbfbf55e7"
+        },
+        {
+          "name": "Junie Joseph",
+          "vote": "yea",
+          "politician_id": "be725434-8449-4938-a04b-1d6e41c06631"
+        },
+        {
+          "name": "Cathy Kipp",
+          "vote": "yea",
+          "politician_id": "b87be611-7566-4118-a72d-bc637a628ac8"
+        },
+        {
+          "name": "Mandy Lindsay",
+          "vote": "yea",
+          "politician_id": "dc70d9b7-b5ac-46fc-be23-c88c6aaaf040"
+        },
+        {
+          "name": "William Lindstedt",
+          "vote": "yea",
+          "politician_id": "5cb788f7-1a84-41e6-92e6-e87efa753496"
+        },
+        {
+          "name": "Meghan Lukens",
+          "vote": "yea",
+          "politician_id": "d9471641-6386-41f1-8376-da48d4ec8bfc"
+        },
+        {
+          "name": "Javier Mabrey",
+          "vote": "yea",
+          "politician_id": "535a0955-6ec1-4bb5-ab6c-767a2e963dd0"
+        },
+        {
+          "name": "Karen McCormick",
+          "vote": "yea",
+          "politician_id": "fdc82b87-9965-423a-9f4a-4c6d211336ad"
+        },
+        {
+          "name": "Barbara McLachlan",
+          "vote": "yea"
+        },
+        {
+          "name": "Dafna Michaelson Jenet",
+          "vote": "yea"
+        },
+        {
+          "name": "David Ortiz",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Parenti",
+          "vote": "yea"
+        },
+        {
+          "name": "Naquetta Ricks",
+          "vote": "yea",
+          "politician_id": "0c8bcc3e-c867-4324-b9c2-c9f5909ffe48"
+        },
+        {
+          "name": "Said Sharbini",
+          "vote": "yea"
+        },
+        {
+          "name": "Emily Sirota",
+          "vote": "yea",
+          "politician_id": "8d69d69e-204f-4319-93c6-6b5b3377fbbb"
+        },
+        {
+          "name": "Tammy Story",
+          "vote": "yea",
+          "politician_id": "2ea31dcf-55f2-4a7c-a257-8a2674e0dcf5"
+        },
+        {
+          "name": "Brianna Titone",
+          "vote": "yea",
+          "politician_id": "5907beec-b298-40ac-8223-866780689feb"
+        },
+        {
+          "name": "Elizabeth Velasco",
+          "vote": "yea",
+          "politician_id": "0785b476-0c22-44cc-a2c1-5fbfabc5ca9f"
+        },
+        {
+          "name": "Stephanie Vigil",
+          "vote": "yea",
+          "politician_id": "7a4a4418-f528-47d6-8714-b292d2d02496"
+        },
+        {
+          "name": "Mike Weissman",
+          "vote": "yea",
+          "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+        },
+        {
+          "name": "Jenny Willford",
+          "vote": "yea",
+          "politician_id": "99f4b766-84c0-4ccc-b150-57a954bc9c0b"
+        },
+        {
+          "name": "Steven Woodrow",
+          "vote": "yea",
+          "politician_id": "ceaeed12-53d1-4341-9ffc-22e426014de8"
+        },
+        {
+          "name": "Ryan Armagost",
+          "vote": "nay"
+        },
+        {
+          "name": "Shannon Bird",
+          "vote": "nay"
+        },
+        {
+          "name": "Rod Bockenfeld",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Bottoms",
+          "vote": "nay",
+          "politician_id": "1e4cf254-2b56-4680-8f0b-9556912e9a35"
+        },
+        {
+          "name": "Mary Bradfield",
+          "vote": "nay",
+          "politician_id": "a6528ae0-54fa-4d1c-af06-bc8b68300d2d"
+        },
+        {
+          "name": "Brandi Bradley",
+          "vote": "nay",
+          "politician_id": "58cd31de-211c-41aa-906b-17f1e28f7451"
+        },
+        {
+          "name": "Marc Catlin",
+          "vote": "nay",
+          "politician_id": "4e0f0ef0-e603-48f9-a803-be51827550fa"
+        },
+        {
+          "name": "Ken DeGraaf",
+          "vote": "nay",
+          "politician_id": "e6ff0305-e3a8-4cd3-bd4c-2941fc094c78"
+        },
+        {
+          "name": "Regina English",
+          "vote": "nay",
+          "politician_id": "50a9c77a-3089-4ea6-b3f8-021b5a204e37"
+        },
+        {
+          "name": "Gabe Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Frizell",
+          "vote": "nay",
+          "politician_id": "94d0f144-3df8-4948-896c-960efebeeb66"
+        },
+        {
+          "name": "Tony Hartsook",
+          "vote": "nay",
+          "politician_id": "fce3e44f-6874-43fe-a6e8-cb51302fb639"
+        },
+        {
+          "name": "Richard Holtorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Sheila Lieder",
+          "vote": "nay",
+          "politician_id": "045c7af5-55b4-424a-8479-52630aea1e3a"
+        },
+        {
+          "name": "Stephanie Luck",
+          "vote": "nay",
+          "politician_id": "133422c4-9aae-4369-a639-db6d7664d088"
+        },
+        {
+          "name": "Mike Lynch",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Marshall",
+          "vote": "nay",
+          "politician_id": "b1f40865-4532-4eac-a2cb-4197d4d31320"
+        },
+        {
+          "name": "Matt Martinez",
+          "vote": "nay",
+          "politician_id": "ac21fdd1-1242-4dda-9372-8a565fa711ef"
+        },
+        {
+          "name": "Rose Pugliese",
+          "vote": "nay"
+        },
+        {
+          "name": "Marc Snyder",
+          "vote": "nay",
+          "politician_id": "6379d38c-3553-4ca3-87da-918efdcf73f2"
+        },
+        {
+          "name": "Matt Soper",
+          "vote": "nay",
+          "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846"
+        },
+        {
+          "name": "Rick Taggart",
+          "vote": "nay",
+          "politician_id": "6b42e678-389a-480e-8973-4f8a3a1eaf0c"
+        },
+        {
+          "name": "Ron Weinberg",
+          "vote": "nay",
+          "politician_id": "97378744-ae64-41ca-9fe2-c857d602e2c5"
+        },
+        {
+          "name": "Don Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ty Winter",
+          "vote": "nay",
+          "politician_id": "9e827b6b-01db-4d98-8142-92f73e03f120"
+        },
+        {
+          "name": "Mary Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie McCluskie",
+          "vote": "nay",
+          "politician_id": "acd89047-1178-4313-a5b8-66f2e6d27892"
+        },
+        {
+          "name": "Tisha Mauro",
+          "vote": "absent",
+          "politician_id": "f73d1c83-cc4a-4078-a20c-9b5df20f694f"
+        },
+        {
+          "name": "Alex Valdez",
+          "vote": "absent",
+          "politician_id": "9fe467f7-7ec7-4498-954b-5666eb94af78"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (02/16/2023), 2023-02-16; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_1165_ren.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1165-2023.reengrossed.pdf",
+      "sha256": "779764cebecb997e45f25e099c9b7f7f5055ff8b263dc9385df97f3c130b467d"
+    },
+    "note": "Reengrossed version 02/16/2023 (amended in the house of introduction). Amendments made after this version (second house) are not in the text read; the bill has only a House passage vote on file. Lower-case words in C.R.S. 30-15-302 (an amended section) may be struck; check the page image; capital passages quoted."
+  },
+  "operative_text": "Section 1 (C.R.S. 30-15-302(1)): AN AREA DESIGNATED PURSUANT TO THIS SECTION MUST HAVE THIRTY-FIVE DWELLINGS OR MORE PER SQUARE MILE. BEFORE ADOPTING A RESOLUTION TO DESIGNATE AN AREA PURSUANT TO THIS SUBSECTION (1), THE BOARD OF COUNTY COMMISSIONERS MAY CONSULT WITH THE SHERIFF AND CONSIDER THE SHERIFF'S RECOMMENDATION OF WHETHER TO ADOPT THE RESOLUTION.\nSection 1 (C.R.S. 30-15-302(1.5)): A RESOLUTION ENACTED PURSUANT TO THIS SECTION MAY NOT PROHIBIT DISCHARGE OF A FIREARM IN A DESIGNATED AREA: (a) BY A PEACE OFFICER ACTING WITHIN THE SCOPE OF THE OFFICER'S AUTHORITY AND IN THE PERFORMANCE OF THE OFFICER'S DUTIES; (b) IN AN INDOOR SHOOTING GALLERY LOCATED ENTIRELY WITHIN A PRIVATE RESIDENCE; (c) IN THE NORMAL LAWFUL OPERATION OR USE OF A QUALIFYING SPORT SHOOTING RANGE, AS DEFINED IN SECTION 25-12-109; (d) BY A PERSON ENGAGED IN A LAWFUL HUNTING ACTIVITY; (e) BY A PERSON ENGAGED IN LIVESTOCK MANAGEMENT; OR (f) PURSUANT TO A WILDLIFE MANAGEMENT ACTIVITY CONDUCTED BY A GOVERNMENT AGENCY, OR AS DESCRIBED IN SECTION 33-3-106 OR SECTION 33-6-107 (9)."
+}

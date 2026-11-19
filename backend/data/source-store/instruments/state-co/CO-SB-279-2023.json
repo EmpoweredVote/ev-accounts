@@ -1,0 +1,546 @@
+{
+  "id": "CO-SB-279-2023",
+  "scope": "state:co",
+  "title": "SB279 (2023 Regular): Unserialized Firearms And Firearm Components",
+  "urls": [
+    "https://leg.colorado.gov/bills/sb23-279",
+    "https://content.leg.colorado.gov/sites/default/files/2023a_279_signed.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Rhonda Fields",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Hansen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andy Boesenecker",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fe0959d1-42cb-49cf-b1aa-ac9bc690a242"
+    },
+    {
+      "name": "Junie Joseph",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "be725434-8449-4938-a04b-1d6e41c06631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-04-28",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 12,
+      "absent": 3,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229170 https://leg.colorado.gov/bill_votes/23766#SB23-279",
+      "members": [
+        {
+          "name": "Jeff Bridges",
+          "vote": "yea",
+          "politician_id": "cb0906d5-b6d5-495c-9af0-335a8ad72920"
+        },
+        {
+          "name": "Janet Buckner",
+          "vote": "yea"
+        },
+        {
+          "name": "James Coleman",
+          "vote": "yea",
+          "politician_id": "2f777001-a339-40d3-9f6d-caab27f73d84"
+        },
+        {
+          "name": "Lisa Cutter",
+          "vote": "yea",
+          "politician_id": "1b919f48-974f-4cd4-a264-a4498b8abfbc"
+        },
+        {
+          "name": "Tony Exum",
+          "vote": "yea",
+          "politician_id": "92fbd4c0-34a6-4561-8916-fb56f5096ad0"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "yea"
+        },
+        {
+          "name": "Joann Ginal",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Gonzales",
+          "vote": "yea",
+          "politician_id": "e76a8f3b-27c3-4ee4-8f92-b3e5436ff3f6"
+        },
+        {
+          "name": "Chris Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Hinrichsen",
+          "vote": "yea",
+          "politician_id": "d360fe6c-9512-4d2f-9d44-4dd9f15c5ac0"
+        },
+        {
+          "name": "Sonya Jaquez Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Janice Marchman",
+          "vote": "yea",
+          "politician_id": "29d28463-fe93-4d79-8fb4-f9757ef61b78"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Mullica",
+          "vote": "yea",
+          "politician_id": "53a5e3ec-bf14-443e-ab86-2fa78398f24d"
+        },
+        {
+          "name": "Dylan Roberts",
+          "vote": "yea",
+          "politician_id": "e703958a-9cdb-4eba-92b4-ee63267cf17a"
+        },
+        {
+          "name": "Robert Rodriguez",
+          "vote": "yea",
+          "politician_id": "c2311cb5-2ff0-4dcb-83a3-4b3be15a39fa"
+        },
+        {
+          "name": "Tom Sullivan",
+          "vote": "yea",
+          "politician_id": "0b23c3d0-9e80-4643-b7ce-8726f8a07e7e"
+        },
+        {
+          "name": "Faith Winter",
+          "vote": "yea"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Baisley",
+          "vote": "nay",
+          "politician_id": "3b8ff5f8-582a-4044-9a19-dc63b6d6a7ab"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "nay"
+        },
+        {
+          "name": "Barbara Kirkmeyer",
+          "vote": "nay",
+          "politician_id": "db690948-f370-448f-862b-e45768d92723"
+        },
+        {
+          "name": "Larry Liston",
+          "vote": "nay",
+          "politician_id": "ca912826-ca11-4023-9450-e50e5e9b293f"
+        },
+        {
+          "name": "Paul Lundeen",
+          "vote": "nay"
+        },
+        {
+          "name": "Byron Pelton",
+          "vote": "nay",
+          "politician_id": "3361640c-3a6e-462b-a34f-245bfde116e6"
+        },
+        {
+          "name": "Rod Pelton",
+          "vote": "nay",
+          "politician_id": "543138e3-02f3-4926-bdf6-0cd126f63c2b"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "nay"
+        },
+        {
+          "name": "Cleave Simpson",
+          "vote": "nay",
+          "politician_id": "796e99ba-29f5-4f30-9e0e-a36b6f05e78a"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Van Winkle",
+          "vote": "nay"
+        },
+        {
+          "name": "Perry Will",
+          "vote": "nay"
+        },
+        {
+          "name": "Jessie Danielson",
+          "vote": "absent",
+          "politician_id": "b71acb35-2426-41c2-9d22-f224d752cf6e"
+        },
+        {
+          "name": "Chris Kolker",
+          "vote": "absent",
+          "politician_id": "234f8392-fd93-4bcc-a749-fc61c58b4821"
+        },
+        {
+          "name": "Janice Rich",
+          "vote": "absent",
+          "politician_id": "8baa123c-c7c7-4cc7-b888-e26dfc47e587"
+        }
+      ]
+    },
+    {
+      "date": "2023-05-05",
+      "body": "CO House",
+      "motion": "House Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 46,
+      "no": 18,
+      "absent": 1,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229171 https://leg.colorado.gov/bill_votes/23749#SB23-279",
+      "members": [
+        {
+          "name": "Judy Amabile",
+          "vote": "yea",
+          "politician_id": "68ace22a-559e-4397-b66a-1785f3a35d7e"
+        },
+        {
+          "name": "Jennifer Bacon",
+          "vote": "yea",
+          "politician_id": "6ff7dd8f-8a90-4dd6-ba45-a6b1acb667ab"
+        },
+        {
+          "name": "Shannon Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Boesenecker",
+          "vote": "yea",
+          "politician_id": "fe0959d1-42cb-49cf-b1aa-ac9bc690a242"
+        },
+        {
+          "name": "Kyle Brown",
+          "vote": "yea",
+          "politician_id": "d4f2c1b9-311a-4c40-aaa1-a8a05a251442"
+        },
+        {
+          "name": "Lindsey Daugherty",
+          "vote": "yea",
+          "politician_id": "224ba744-e39d-47f1-879f-064cd024e709"
+        },
+        {
+          "name": "Chris Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruby Dickson",
+          "vote": "yea"
+        },
+        {
+          "name": "Monica Duran",
+          "vote": "yea",
+          "politician_id": "5716b3f8-e459-485d-9096-f916ee469ece"
+        },
+        {
+          "name": "Regina English",
+          "vote": "yea",
+          "politician_id": "50a9c77a-3089-4ea6-b3f8-021b5a204e37"
+        },
+        {
+          "name": "Elisabeth Epps",
+          "vote": "yea"
+        },
+        {
+          "name": "Meg Froelich",
+          "vote": "yea",
+          "politician_id": "5dc20430-557a-44a1-8bf2-661e3378bdcf"
+        },
+        {
+          "name": "Lorena García",
+          "vote": "yea",
+          "politician_id": "41d27190-5ca3-4e7a-8ca8-3b20ac1fd77a"
+        },
+        {
+          "name": "Serena Gonzales-Gutierrez",
+          "vote": "yea"
+        },
+        {
+          "name": "Eliza Hamrick",
+          "vote": "yea",
+          "politician_id": "eb5f359e-57d4-414a-ad61-65e74f10bbec"
+        },
+        {
+          "name": "Leslie Herod",
+          "vote": "yea"
+        },
+        {
+          "name": "Iman Jodeh",
+          "vote": "yea",
+          "politician_id": "11efc6cc-462d-4c40-b511-863fbfbf55e7"
+        },
+        {
+          "name": "Junie Joseph",
+          "vote": "yea",
+          "politician_id": "be725434-8449-4938-a04b-1d6e41c06631"
+        },
+        {
+          "name": "Cathy Kipp",
+          "vote": "yea",
+          "politician_id": "b87be611-7566-4118-a72d-bc637a628ac8"
+        },
+        {
+          "name": "Sheila Lieder",
+          "vote": "yea",
+          "politician_id": "045c7af5-55b4-424a-8479-52630aea1e3a"
+        },
+        {
+          "name": "Mandy Lindsay",
+          "vote": "yea",
+          "politician_id": "dc70d9b7-b5ac-46fc-be23-c88c6aaaf040"
+        },
+        {
+          "name": "William Lindstedt",
+          "vote": "yea",
+          "politician_id": "5cb788f7-1a84-41e6-92e6-e87efa753496"
+        },
+        {
+          "name": "Meghan Lukens",
+          "vote": "yea",
+          "politician_id": "d9471641-6386-41f1-8376-da48d4ec8bfc"
+        },
+        {
+          "name": "Javier Mabrey",
+          "vote": "yea",
+          "politician_id": "535a0955-6ec1-4bb5-ab6c-767a2e963dd0"
+        },
+        {
+          "name": "Bob Marshall",
+          "vote": "yea",
+          "politician_id": "b1f40865-4532-4eac-a2cb-4197d4d31320"
+        },
+        {
+          "name": "Matt Martinez",
+          "vote": "yea",
+          "politician_id": "ac21fdd1-1242-4dda-9372-8a565fa711ef"
+        },
+        {
+          "name": "Tisha Mauro",
+          "vote": "yea",
+          "politician_id": "f73d1c83-cc4a-4078-a20c-9b5df20f694f"
+        },
+        {
+          "name": "Karen McCormick",
+          "vote": "yea",
+          "politician_id": "fdc82b87-9965-423a-9f4a-4c6d211336ad"
+        },
+        {
+          "name": "Barbara McLachlan",
+          "vote": "yea"
+        },
+        {
+          "name": "Dafna Michaelson Jenet",
+          "vote": "yea"
+        },
+        {
+          "name": "David Ortiz",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Parenti",
+          "vote": "yea"
+        },
+        {
+          "name": "Naquetta Ricks",
+          "vote": "yea",
+          "politician_id": "0c8bcc3e-c867-4324-b9c2-c9f5909ffe48"
+        },
+        {
+          "name": "Said Sharbini",
+          "vote": "yea"
+        },
+        {
+          "name": "Emily Sirota",
+          "vote": "yea",
+          "politician_id": "8d69d69e-204f-4319-93c6-6b5b3377fbbb"
+        },
+        {
+          "name": "Marc Snyder",
+          "vote": "yea",
+          "politician_id": "6379d38c-3553-4ca3-87da-918efdcf73f2"
+        },
+        {
+          "name": "Tammy Story",
+          "vote": "yea",
+          "politician_id": "2ea31dcf-55f2-4a7c-a257-8a2674e0dcf5"
+        },
+        {
+          "name": "Brianna Titone",
+          "vote": "yea",
+          "politician_id": "5907beec-b298-40ac-8223-866780689feb"
+        },
+        {
+          "name": "Alex Valdez",
+          "vote": "yea",
+          "politician_id": "9fe467f7-7ec7-4498-954b-5666eb94af78"
+        },
+        {
+          "name": "Elizabeth Velasco",
+          "vote": "yea",
+          "politician_id": "0785b476-0c22-44cc-a2c1-5fbfabc5ca9f"
+        },
+        {
+          "name": "Stephanie Vigil",
+          "vote": "yea",
+          "politician_id": "7a4a4418-f528-47d6-8714-b292d2d02496"
+        },
+        {
+          "name": "Mike Weissman",
+          "vote": "yea",
+          "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+        },
+        {
+          "name": "Jenny Willford",
+          "vote": "yea",
+          "politician_id": "99f4b766-84c0-4ccc-b150-57a954bc9c0b"
+        },
+        {
+          "name": "Steven Woodrow",
+          "vote": "yea",
+          "politician_id": "ceaeed12-53d1-4341-9ffc-22e426014de8"
+        },
+        {
+          "name": "Mary Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie McCluskie",
+          "vote": "yea",
+          "politician_id": "acd89047-1178-4313-a5b8-66f2e6d27892"
+        },
+        {
+          "name": "Ryan Armagost",
+          "vote": "nay"
+        },
+        {
+          "name": "Rod Bockenfeld",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Bottoms",
+          "vote": "nay",
+          "politician_id": "1e4cf254-2b56-4680-8f0b-9556912e9a35"
+        },
+        {
+          "name": "Mary Bradfield",
+          "vote": "nay",
+          "politician_id": "a6528ae0-54fa-4d1c-af06-bc8b68300d2d"
+        },
+        {
+          "name": "Brandi Bradley",
+          "vote": "nay",
+          "politician_id": "58cd31de-211c-41aa-906b-17f1e28f7451"
+        },
+        {
+          "name": "Marc Catlin",
+          "vote": "nay",
+          "politician_id": "4e0f0ef0-e603-48f9-a803-be51827550fa"
+        },
+        {
+          "name": "Ken DeGraaf",
+          "vote": "nay",
+          "politician_id": "e6ff0305-e3a8-4cd3-bd4c-2941fc094c78"
+        },
+        {
+          "name": "Lisa Frizell",
+          "vote": "nay",
+          "politician_id": "94d0f144-3df8-4948-896c-960efebeeb66"
+        },
+        {
+          "name": "Tony Hartsook",
+          "vote": "nay",
+          "politician_id": "fce3e44f-6874-43fe-a6e8-cb51302fb639"
+        },
+        {
+          "name": "Richard Holtorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephanie Luck",
+          "vote": "nay",
+          "politician_id": "133422c4-9aae-4369-a639-db6d7664d088"
+        },
+        {
+          "name": "Mike Lynch",
+          "vote": "nay"
+        },
+        {
+          "name": "Rose Pugliese",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Soper",
+          "vote": "nay",
+          "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846"
+        },
+        {
+          "name": "Rick Taggart",
+          "vote": "nay",
+          "politician_id": "6b42e678-389a-480e-8973-4f8a3a1eaf0c"
+        },
+        {
+          "name": "Ron Weinberg",
+          "vote": "nay",
+          "politician_id": "97378744-ae64-41ca-9fe2-c857d602e2c5"
+        },
+        {
+          "name": "Don Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ty Winter",
+          "vote": "nay",
+          "politician_id": "9e827b6b-01db-4d98-8142-92f73e03f120"
+        },
+        {
+          "name": "Gabe Evans",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/02/2023), 2023-06-02; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_279_signed.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-279-2023.signed.pdf",
+      "sha256": "8fbbc3e8dd7536a8a366dc948935097bb251dabcf347938ae2987937e26af574"
+    },
+    "note": "Signed act 06/02/2023. Subsection (5)(b) requires owners of self-made unserialized guns to have them serialized by January 1, 2024; section 2 also has exceptions and a serialization procedure (7) not quoted. Section 6 amends 18-12-102(1); only the capital words MACHINE GUN CONVERSION DEVICE are quoted. Section 4 adds this offense to the CBI transfer-denial list."
+  },
+  "operative_text": "Section 2 (C.R.S. 18-12-111.5(1)(a)): A PERSON SHALL NOT KNOWINGLY POSSESS OR TRANSPORT AN UNFINISHED FRAME OR RECEIVER; EXCEPT THAT IT IS NOT AN OFFENSE IF THE UNFINISHED FRAME OR RECEIVER IS REQUIRED BY FEDERAL LAW TO BE IMPRINTED WITH A SERIAL NUMBER AND HAS BEEN IMPRINTED WITH A SERIAL NUMBER BY A FEDERAL FIREARMS LICENSEE PURSUANT TO FEDERAL LAW OR SUBSECTION (7) OF THIS SECTION.\nSection 2 (C.R.S. 18-12-111.5(3)(a)): A PERSON SHALL NOT KNOWINGLY POSSESS, PURCHASE, TRANSPORT, OR RECEIVE A FIREARM OR FRAME OR RECEIVER OF A FIREARM THAT IS NOT IMPRINTED WITH A SERIAL NUMBER BY A FEDERAL FIREARMS LICENSEE AUTHORIZED TO IMPRINT A SERIAL NUMBER ON A FIREARM, FRAME, OR RECEIVER PURSUANT TO FEDERAL LAW OR SUBSECTION (7) OF THIS SECTION.\nSection 2 (C.R.S. 18-12-111.5(4)(a)): A PERSON SHALL NOT KNOWINGLY SELL, OFFER TO SELL, OR TRANSFER A FIREARM OR FRAME OR RECEIVER OF A FIREARM THAT IS NOT IMPRINTED WITH A SERIAL NUMBER BY A FEDERAL FIREARMS LICENSEE AUTHORIZED TO IMPRINT A SERIAL NUMBER ON A FIREARM PURSUANT TO FEDERAL LAW OR SUBSECTION (7) OF THIS SECTION.\nSection 2 (C.R.S. 18-12-111.5(5)(a)(I)): A PERSON SHALL NOT MANUFACTURE OR CAUSE TO BE MANUFACTURED, INCLUDING THROUGH THE USE OF A THREE-DIMENSIONAL PRINTER, A FRAME OR RECEIVER OF A FIREARM.\nSection 2 (C.R.S. 18-12-111.5(6)(b)): UNLAWFUL CONDUCT INVOLVING AN UNSERIALIZED FIREARM, FRAME, OR RECEIVER IS A CLASS 1 MISDEMEANOR; EXCEPT THAT A SECOND OR SUBSEQUENT OFFENSE IS A CLASS 5 FELONY.\nSection 5 (C.R.S. 18-12-108(7)(iii)): UNLAWFUL CONDUCT INVOLVING AN UNSERIALIZED FIREARM, FRAME, OR RECEIVER, AS DESCRIBED IN SECTION 18-12-111.5.\nSection 6 (C.R.S. 18-12-102(1)): MACHINE GUN CONVERSION DEVICE"
+}

@@ -1,0 +1,352 @@
+{
+  "id": "CO-SB-116-2017",
+  "scope": "state:co",
+  "title": "SB116 (2017 Regular): Concealed Handgun Carry Without A Permit",
+  "urls": [
+    "https://leg.colorado.gov/bills/sb17-116",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2017A/bills/2017a_116_ren.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Kevin Van Winkle",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Neville",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-03-23",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 17,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229071 https://leg.colorado.gov/bill_votes/18633#SB17-116",
+      "members": [
+        {
+          "name": "Randy Baumgardner",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Crowder",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lambert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Vicki Marble",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Martinez Humenik",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "yea",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Grantham",
+          "vote": "yea",
+          "politician_id": "bc6296a0-66f5-47af-b466-ae00998c3c02"
+        },
+        {
+          "name": "Irene Aguilar",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Court",
+          "vote": "nay"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "nay"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucia Guzman",
+          "vote": "nay"
+        },
+        {
+          "name": "Cheri Jahn",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Kagan",
+          "vote": "nay"
+        },
+        {
+          "name": "John Kefalas",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Kerr",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Merrifield",
+          "vote": "nay"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2017-03-23",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 16,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229072 https://leg.colorado.gov/bill_votes/18634#SB17-116",
+      "members": [
+        {
+          "name": "Randy Baumgardner",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Crowder",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Kagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lambert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Vicki Marble",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Martinez Humenik",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "yea",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Grantham",
+          "vote": "yea",
+          "politician_id": "bc6296a0-66f5-47af-b466-ae00998c3c02"
+        },
+        {
+          "name": "Irene Aguilar",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Court",
+          "vote": "nay"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "nay"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucia Guzman",
+          "vote": "nay"
+        },
+        {
+          "name": "Cheri Jahn",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "John Kefalas",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Kerr",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Merrifield",
+          "vote": "nay"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (03/23/2017), 2017-03-23; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2017A/bills/2017a_116_ren.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-116-2017.reengrossed.pdf",
+      "sha256": "59dc043fbb86cdab38686e92ed1243568159b744bdeb687302d6322965c46e8e"
+    },
+    "note": "Version read: Reengrossed (03/23/2017), i.e. as passed by the Senate. Amendments made after this version are not in the text read (the bill has a passage vote). Section 3 reduces CBI background-check appropriations as a consequence of the gun change; not quoted and treated as part of the same subject."
+  },
+  "operative_text": "Section 1 (C.R.S. 18-12-105(2)(g)): (g) A PERSON WHO WAS AT LEAST TWENTY-ONE YEARS OF AGE AND LEGALLY POSSESSED A HANDGUN UNDER THE LAWS OF THIS STATE AND OF THE UNITED STATES AND THE WEAPON INVOLVED IN THE INCIDENT WAS A HANDGUN. THE AUTHORITY TO CARRY A CONCEALED HANDGUN PURSUANT TO THE PROVISIONS OF THIS SUBSECTION (2)(g) IS EQUAL IN ALL RESPECTS TO THE AUTHORITY GRANTED BY A PERMIT TO CARRY A CONCEALED HANDGUN AS SPECIFIED IN SECTION 18-12-214. A PERSON WHO CARRIES A CONCEALED HANDGUN PURSUANT TO THE PROVISIONS OF THIS SUBSECTION (2)(g) HAS THE SAME RIGHTS AND IS SUBJECT TO THE SAME LIMITATIONS SPECIFIED IN SECTION 18-12-214 AS APPLY TO A PERSON WHO HOLDS A PERMIT TO CARRY A CONCEALED HANDGUN.\nSection 2 (C.R.S. 18-12-105.5(3)(i)): (i) THE PERSON IS AT LEAST TWENTY-ONE YEARS OF AGE AND MAY LEGALLY POSSESS A HANDGUN UNDER THE LAWS OF THIS STATE AND OF THE UNITED STATES AND THE WEAPON INVOLVED IN THE INCIDENT WAS A HANDGUN. THE AUTHORITY TO CARRY A CONCEALED HANDGUN PURSUANT TO THE PROVISIONS OF THIS SUBSECTION (3)(i) IS EQUAL IN ALL RESPECTS TO THE AUTHORITY GRANTED BY A PERMIT TO CARRY A CONCEALED HANDGUN AS SPECIFIED IN SECTION 18-12-214. A PERSON WHO CARRIES A CONCEALED HANDGUN PURSUANT TO THE PROVISIONS OF THIS SUBSECTION (3)(i) HAS THE SAME RIGHTS AND IS SUBJECT TO THE SAME LIMITATIONS SPECIFIED IN SECTION 18-12-214 AS APPLY TO A PERSON WHO HOLDS A PERMIT TO CARRY A CONCEALED HANDGUN."
+}

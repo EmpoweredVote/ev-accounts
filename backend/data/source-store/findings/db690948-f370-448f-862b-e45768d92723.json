@@ -29,6 +29,1037 @@
           "sha256": "ea5b00b5f6564207f7a8a70ebced49cadcfadbbf0d335f79e03360ea3d7a6b51"
         }
       }
+    },
+    {
+      "id": "7912d235945249a462fe8254cd6668182baf7fde5f93741b08addbbf923d8107",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb25-1062",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1062-2025",
+      "act": "yea",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-04-30: yea (tally 28–7); census gate: none.",
+      "subjects": [
+        "theft of a firearm is a class 6 felony regardless of value"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/02/2025), 2025-06-02; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_1062_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1062-2025.signed.pdf",
+          "sha256": "b4a6ef98c8b8a6e7bbf16c67610efb9a1feac05f912ca27441b5366d5644da70"
+        }
+      }
+    },
+    {
+      "id": "bf5455bd950d837860d0863f161f16308dfec14e947a66fb774416b26b68dce9",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb22-1086",
+      "date": "2022-03-21",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1086-2022",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2022-03-21: nay (tally 20–13); census gate: multi-subject.",
+      "subjects": [
+        "no open carry at polling places, central count sites and within 100 feet of drop boxes",
+        "misdemeanor penalty with exceptions for peace officers, private property and uniformed contract guards"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (03/30/2022), 2022-03-30; official copy, https://content.leg.colorado.gov/sites/default/files/2022a_1086_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1086-2022.signed.pdf",
+          "sha256": "5dcbccd32298657d3ef215563ace3ab4b7e617b2602e95eaaff9736da233b4c7"
+        }
+      }
+    },
+    {
+      "id": "7fcc7e5288e6b9fc9c2cf76350fede922db261eac2dc9978936115d183319bef",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb21-1106",
+      "date": "2021-04-12",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1106-2021",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2021-04-12: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "secure storage of firearms away from juveniles and prohibited persons",
+        "dealers must provide a locking device with each firearm",
+        "safe-storage public education campaign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/19/2021), 2021-04-19; official copy, https://content.leg.colorado.gov/sites/default/files/2021a_1106_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1106-2021.signed.pdf",
+          "sha256": "af66b6f81540057f6c77b057dc18b6cc436f1ce0142c90c8d39ccf0c6a29051c"
+        }
+      }
+    },
+    {
+      "id": "dec96668eafb5dc071cbf2f0bd3e275b8a639636d720eeeba6180ea4029094b1",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb25-1133",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1133-2025",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-03-25: nay (tally 19–16); census gate: none.",
+      "subjects": [
+        "minimum age 21 to buy ammunition at retail",
+        "ammunition kept behind counter or in locked case",
+        "age-verified delivery of ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/18/2025), 2025-04-18; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_1133_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1133-2025.signed.pdf",
+          "sha256": "7e07af73fdf249e7acb6efb2b3f145b78baf97701bd27d3d18c26ba726b3ca2c"
+        }
+      }
+    },
+    {
+      "id": "085a88d1e432ab5faf9795e03155f9a972947e57bd13842841e721f1b2576932",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb23-1143",
+      "date": "2023-04-10",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1143-2023",
+      "act": "yea",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2023-04-10: yea (tally 31–4); census gate: none.",
+      "subjects": [
+        "immigrant peace-officer trainees may possess firearms if agency policy and federal law allow"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/27/2023), 2023-04-27; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_1143_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1143-2023.signed.pdf",
+          "sha256": "78d5710a8589690a06b2dd8edd5c033a73a533cf587a9593d08e2573b4bf5035"
+        }
+      }
+    },
+    {
+      "id": "e94a47cce1df78185a99d3c9276c724a03f56a4111f1e028f58a9a510a388448",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb22-1168",
+      "date": "2022-03-29",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1168-2022",
+      "act": "yea",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2022-03-29: yea (tally 30–3); census gate: multi-subject.",
+      "subjects": [
+        "only inert firearms and dummy rounds in school hunter-education courses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/21/2022), 2022-04-21; official copy, https://content.leg.colorado.gov/sites/default/files/2022a_1168_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1168-2022.signed.pdf",
+          "sha256": "1decf41318f05826550bc581578418fbda363f4e88763a7873b82ddb9d5726b2"
+        }
+      }
+    },
+    {
+      "id": "8d165a031dd753740b2ae9f37f4b8b73573d769d901b954ca37a3908bb7c0e74",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb25-1171",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1171-2025",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2025-05-07: yea (tally 28–7); census gate: none.",
+      "subjects": [
+        "first-degree motor vehicle theft felony bars gun possession",
+        "court petition to restore gun rights after ten years"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Final Act (05/13/2025), 2025-05-13; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1171_enr.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1171-2025.enrolled.pdf",
+          "sha256": "8ed5e0db6942b72e0933cfdc4ab2ef0d6a061d80b7a0839ad94a538a9c8208bd"
+        }
+      }
+    },
+    {
+      "id": "ba9385c631ca4d372dfabcd86216eda35d2b71d2eba69f0f0fcc78ec225c8c89",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb24-1174",
+      "date": "2024-04-22",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1174-2024",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2024-04-22: nay (tally 20–14); census gate: none.",
+      "subjects": [
+        "in-person training class and live-fire test for concealed handgun permits",
+        "sheriff-verified firearms instructors",
+        "permit bar for recent misdemeanor convictions",
+        "permit renewal requires showing competence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/04/2024), 2024-06-04; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_1174_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1174-2024.signed.pdf",
+          "sha256": "7c107de47f3ea8d2e27c182ac3f38d20d93d8a60b614eb20ed8412ff59df6322"
+        }
+      }
+    },
+    {
+      "id": "a57b9943d5bf3c719680505dd2b7b52223e6c078518d9b9be02f412f388b2513",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb23-1219",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1219-2023",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2023-03-28: nay (tally 21–14); census gate: none.",
+      "subjects": [
+        "three-day waiting period before gun delivery",
+        "civil fine for early delivery",
+        "local governments may set waiting periods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/28/2023), 2023-04-28; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_1219_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1219-2023.signed.pdf",
+          "sha256": "028a4f1a2229cc58b39aefc9d4ed21925a089e599977f9010c0e466f3ee6a029"
+        }
+      }
+    },
+    {
+      "id": "7ae708e1e9b78d5b3bb34713aeb6ffe7fcdf29e81671e49bb1ae3306d261983c",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb25-1225",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1225-2025",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-04-28: nay (tally 22–12); census gate: multi-subject.",
+      "subjects": [
+        "visible firearm near voting or election work presumed intimidation",
+        "court may bar a defendant from carrying firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (05/12/2025), 2025-05-12; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_1225_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1225-2025.signed.pdf",
+          "sha256": "7fe8cc969c2f5d17b74ece3695ab07cb0a36c15b86ad47c9de4dc785e1e4d04a"
+        }
+      }
+    },
+    {
+      "id": "7790471db78ffac72a74218c8c981f5948a80663963228d6fde918ac97855e12",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb25-1238",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1238-2025",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-03-25: nay (tally 22–13); census gate: none.",
+      "subjects": [
+        "gun show promoter security and insurance rules",
+        "gun show vendors must be licensed dealers",
+        "no minors at gun shows unless with family",
+        "gun show misdemeanor penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/18/2025), 2025-04-18; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_1238_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1238-2025.signed.pdf",
+          "sha256": "c66ae40206e5112b16176d03ceb1e013a03be511ba12d8d2d81437c23fb34e64"
+        }
+      }
+    },
+    {
+      "id": "fe6a1d45420c859443002796cf2060c74c5223c18ce6e6f73f421b94531cc2b0",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb25-1250",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1250-2025",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-04-29: nay (tally 21–11); census gate: none.",
+      "subjects": [
+        "schools must give parents gun violence prevention materials",
+        "state office posts gun violence prevention materials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/02/2025), 2025-06-02; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_1250_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1250-2025.signed.pdf",
+          "sha256": "751b08cd1c63fe1f352bcf479aadd58afa1f9bbc78ad9c5da409d07c34e16a1e"
+        }
+      }
+    },
+    {
+      "id": "0e14cebb5662c21837b5353f0b24437c29e0667fca99e3a57fb6f3f6dcf3affe",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb21-1255",
+      "date": "2021-06-01",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1255-2021",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2021-06-01: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "firearm relinquishment after domestic violence protection orders",
+        "affidavit and compliance hearing on firearms",
+        "firearm storage by dealers and police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/22/2021), 2021-06-22; official copy, https://content.leg.colorado.gov/sites/default/files/2021a_1255_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1255-2021.signed.pdf",
+          "sha256": "9b4ff26bbf41226d1649a6a1bdbb70546b289366e4a69acaa24414ece51cecb5"
+        }
+      }
+    },
+    {
+      "id": "e0e50e8e054bad1d9bc5176a5344ad20c127288691bb58144f15046546823956",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb22-1257",
+      "date": "2022-03-21",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1257-2022",
+      "act": "yea",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2022-03-21: yea (tally 29–4); census gate: multi-subject.",
+      "subjects": [
+        "more felonies bar firearm possession",
+        "juvenile petition to restore firearm possession",
+        "victim notice of firearm petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/07/2022), 2022-04-07; official copy, https://content.leg.colorado.gov/sites/default/files/2022a_1257_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1257-2022.signed.pdf",
+          "sha256": "05ea8d025435aa1d6bfd51c5d2d0f458b002be82b012aaa9a4aee048601d7ff3"
+        }
+      }
+    },
+    {
+      "id": "378bd60293fa9173cad5f7ba974d4317358d740d752ee0f498151950d50f192d",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb21-1298",
+      "date": "2021-05-28",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1298-2021",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2021-05-28: nay (tally 20–14); census gate: none.",
+      "subjects": [
+        "dealer must get state approval before any firearm transfer",
+        "misdemeanor convictions in past five years bar a firearm transfer",
+        "60-day deadline to decide a denial appeal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/19/2021), 2021-06-19; official copy, https://content.leg.colorado.gov/sites/default/files/2021a_1298_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1298-2021.signed.pdf",
+          "sha256": "101edf965125ea17c4251ebc8e0a0e9fee743197df69d84e1fdbbfba783dfca3"
+        }
+      }
+    },
+    {
+      "id": "2909da65d75a258c99b8c10fffefa39d35000d7600d36babe1b4279dd7522aa5",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb21-1299",
+      "date": "2021-06-01",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1299-2021",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2021-06-01: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "state office of gun violence prevention",
+        "community gun-violence intervention grants",
+        "gun violence data and research bank"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/19/2021), 2021-06-19; official copy, https://content.leg.colorado.gov/sites/default/files/2021a_1299_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1299-2021.signed.pdf",
+          "sha256": "6a35007a4206d0612678e7bc568c03eca555b31a71bca4dbae1973857bfd77ee"
+        }
+      }
+    },
+    {
+      "id": "3484d3dcce19c8273ec05b2955db212c5a411a93409717b3056915392b93b789",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb24-1348",
+      "date": "2024-05-08",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1348-2024",
+      "act": "nay",
+      "motion": "Senate Conference Committee Report - ADOPT CCR",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Conference Committee Report - ADOPT CCR, 2024-05-08: nay (tally 20–14); census gate: none.",
+      "subjects": [
+        "lock firearms in a container when leaving a vehicle unattended",
+        "civil infraction for unsafe vehicle storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (05/15/2024), 2024-05-15; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_1348_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1348-2024.signed.pdf",
+          "sha256": "efbcaa752251b372620ba895e32bd63e1a26a52363b539dbdd5db20fd715e600"
+        }
+      }
+    },
+    {
+      "id": "89461fee0011eb4a8d140de0a8f5d722221cb27ba0f1188af39e1cbfed8f27b1",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb24-1349",
+      "date": "2024-05-08",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1349-2024",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2024-05-08: nay (tally 18–15); census gate: multi-subject.",
+      "subjects": [
+        "6.5% excise tax on gun and ammunition sales",
+        "vendor registration for gun and ammunition sellers",
+        "tax exemption for police and active-duty military purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/05/2024), 2024-06-05; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_1349_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1349-2024.signed.pdf",
+          "sha256": "99fb26c93d0ca2d60db3ab40c29273fc11c02de47517f0037288b08f57c02f58"
+        }
+      }
+    },
+    {
+      "id": "e2473bd3050a3be948dd0f8359e2dec5537746b38a6b4018346b13831e59730d",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb24-1353",
+      "date": "2024-05-07",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1353-2024",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2024-05-07: nay (tally 21–14); census gate: none.",
+      "subjects": [
+        "state permit required to deal firearms",
+        "dealer training, secure storage and sales limits",
+        "background checks for dealer employees",
+        "dealer must report straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/07/2024), 2024-06-07; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_1353_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1353-2024.signed.pdf",
+          "sha256": "8744935e80517629802540d2f2a8f88ac334684e012e4763c9aae136b6b3f9d9"
+        }
+      }
+    },
+    {
+      "id": "c87c86c597110113d5ff5f3731138456e0629d7129729dd0488a98bbd2fc99d6",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb24-131",
+      "date": "2024-04-30",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-131-2024",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2024-04-30: yea (tally 35–0); census gate: near-unanimous.",
+      "subjects": [
+        "no firearms in legislative, local-government and court buildings",
+        "no firearms at child care centers, schools and colleges",
+        "local governments may allow carry at their own buildings",
+        "permit holders may carry only in adjacent parking areas"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (05/31/2024), 2024-05-31; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_131_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-131-2024.signed.pdf",
+          "sha256": "c29ed6163cd1c3124996b11a06b0c575f26cccf3bbdd484f3c2d0bb554815d49"
+        }
+      }
+    },
+    {
+      "id": "2cd9c65222a6abf903f03f81e4157fb53a2766b476dd78bc6d683a62a99333e8",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb25-158",
+      "date": "2025-05-02",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-158-2025",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2025-05-02: yea (tally 35–0); census gate: near-unanimous.",
+      "subjects": [
+        "state firearm purchases only from vetted dealers",
+        "dealers must show licenses, trace and theft records, straw-sale safeguards",
+        "no unserialized guns or build kits sold to the state"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (05/30/2025), 2025-05-30; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_158_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-158-2025.signed.pdf",
+          "sha256": "027ad77a6c4d7810982cf1750c0e20fb32ee91b85d08134505418c1df02d0069"
+        }
+      }
+    },
+    {
+      "id": "f080517801e337e1d795686571c89aff35c6fe177638a1e11953a296224b962f",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb23-168",
+      "date": "2023-04-12",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-168-2023",
+      "act": "yea",
+      "motion": "Senate Conference Committee Report - ADOPT CCR",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Conference Committee Report - ADOPT CCR, 2023-04-12: yea (tally 35–0); census gate: multi-subject.",
+      "subjects": [
+        "firearm industry must follow consumer-protection and state gun law",
+        "victims and attorney general may sue gun industry",
+        "repeal of limit on firearm product-liability suits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/28/2023), 2023-04-28; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_168_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-168-2023.signed.pdf",
+          "sha256": "bdc0818ea0174c635cea4c0ddcd2fcedc86a6ef41fa6060ddf2eb9e15cda29f5"
+        }
+      }
+    },
+    {
+      "id": "efe1f39e77c21fa9b27668ab4044a415b27288d0058313d980a8d2751dadfdf5",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb23-169",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-169-2023",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2023-04-03: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "minimum age 21 to buy any firearm",
+        "dealers and private sellers may not sell to under-21s",
+        "military, peace officer and P.O.S.T.-certified exceptions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/28/2023), 2023-04-28; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_169_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-169-2023.signed.pdf",
+          "sha256": "fb89a4b9cd49e59fab1945662e41066cd40b390593148a7a2fa1c5973d98741e"
+        }
+      }
+    },
+    {
+      "id": "fc7f3979bc1cae6a56c7d2b52ae2e6a9a5e7f1ba2d6da02e12f929981e6fa7d9",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb23-170",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-170-2023",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2023-04-03: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "extreme risk protection orders to remove guns",
+        "medical providers, mental health providers and educators may petition",
+        "surrender of firearms and concealed carry permits",
+        "public education campaign and hotline on risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/28/2023), 2023-04-28; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_170_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-170-2023.signed.pdf",
+          "sha256": "c4a2aec2b5becb25a554b5293604838d48f3a3a602588df4a7b76c7a1a549247"
+        }
+      }
+    },
+    {
+      "id": "bc7db636d3042580eaf5f6744321ded29327e339930816583f97ee058d28fa5c",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb25-205",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-205-2025",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2025-04-28: yea (tally 33–0); census gate: near-unanimous.",
+      "subjects": [
+        "dealer-requested firearm serial number check (stolen/lost/open investigation)",
+        "dealer must report stolen or lost guns offered for sale"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/02/2025), 2025-06-02; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_205_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-205-2025.signed.pdf",
+          "sha256": "f6ee4a31809a10d2dd479cbdcde8ef37b486d6913fd8b602ef7e68692d0e2371"
+        }
+      }
+    },
+    {
+      "id": "0ca806383650c5dbcf2bf3446ed41534db68f6fc5fb4027913463b53bf783e8a",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb23-022",
+      "date": "2023-03-15",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-22-2023",
+      "act": "yea",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2023-03-15: yea (tally 29–5); census gate: none.",
+      "subjects": [
+        "firearm possession ban after aggravated motor vehicle theft conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (03/15/2023), 2023-03-15; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_022_rn2.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-22-2023.reengrossed.pdf",
+          "sha256": "b241f04870e6be44ed5243a6a6164422f3d30279609145db0c5d0c9b618fa041"
+        }
+      }
+    },
+    {
+      "id": "1ac003678e27a7a43ba7fcfdfc7ea96a5ac51f7a19abf56e9235e796fbe5244b",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb23-279",
+      "date": "2023-04-28",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-279-2023",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2023-04-28: nay (tally 20–12); census gate: none.",
+      "subjects": [
+        "ban on unserialized guns and frames/receivers (home-built, 3-D printed)",
+        "serialization process through licensed dealers",
+        "machine gun conversion devices made dangerous weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/02/2023), 2023-06-02; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_279_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-279-2023.signed.pdf",
+          "sha256": "8fbbc3e8dd7536a8a366dc948935097bb251dabcf347938ae2987937e26af574"
+        }
+      }
+    },
+    {
+      "id": "b2cc7f8ddaeef4838b3cee5859f32c6abbf99de2cbf457aa403ae5a30c016a5e",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb25-295",
+      "date": "2025-04-25",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-295-2025",
+      "act": "yea",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-04-25: yea (tally 28–7); census gate: multi-subject.",
+      "subjects": [
+        "where firearm and ammunition excise tax revenue goes (behavioral health fund)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Final Act (05/13/2025), 2025-05-13; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_295_enr.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-295-2025.enrolled.pdf",
+          "sha256": "63c0403acc3b579e8a65dbb85ea04efada042ee1d7f42ed6a9372d68e3c948b9"
+        }
+      }
+    },
+    {
+      "id": "c1ef42fe6fae3dcaafbf436bd01695e0e92133a20ae7bad5574cbc8d0294fa5f",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb24-003",
+      "date": "2024-04-30",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-3-2024",
+      "act": "yea",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2024-04-30: yea (tally 35–0); census gate: near-unanimous.",
+      "subjects": [
+        "state bureau investigates firearms crimes statewide",
+        "body cameras during these investigations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (05/15/2024), 2024-05-15; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_003_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-3-2024.signed.pdf",
+          "sha256": "41ca0a0464019c600330c139b3f1a0685f4ce6098489d566f21889f789581bed"
+        }
+      }
+    },
+    {
+      "id": "35f5157baea89c86a9ae8ac14977e266ef9ab8d7f4d4ad9cc146724e7df4e678",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb25-034",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-34-2025",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2025-04-17: nay (tally 23–12); census gate: none.",
+      "subjects": [
+        "voluntary do-not-sell firearm purchase waiver",
+        "bureau blocks transfers while waiver is in effect",
+        "civil infraction (up to $25) for attempting to buy under a waiver"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/02/2025), 2025-06-02; official copy, https://content.leg.colorado.gov/sites/default/files/2025a_034_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-34-2025.signed.pdf",
+          "sha256": "02d63eb1b78e5835f619bdf789396b62ec3c66f98667fe8fef275f01470cf173"
+        }
+      }
+    },
+    {
+      "id": "77f620801ca3af2b34bd71196901d0eb2edf5a4661b600d2b28a15bc7af7d009",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb24-066",
+      "date": "2024-02-21",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-66-2024",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2024-02-21: nay (tally 22–11); census gate: none.",
+      "subjects": [
+        "firearms merchant category code for card payments",
+        "attorney general enforcement, up to $10,000 per violation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (05/01/2024), 2024-05-01; official copy, https://content.leg.colorado.gov/sites/default/files/2024a_066_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-66-2024.signed.pdf",
+          "sha256": "2586bc46d9de3c20a5b056e8f72fbc56b764e685b36a14fdd251012ee443652a"
+        }
+      }
+    },
+    {
+      "id": "196dcf211a693509932c62c1c65438b70e7bfa81a50cefbc1c391c26ea450510",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb21-078",
+      "date": "2021-04-06",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-78-2021",
+      "act": "nay",
+      "motion": "Senate House Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate House Amendments - CONCUR, 2021-04-06: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "report lost or stolen firearm within 5 days",
+        "civil infraction, then misdemeanor, for failing to report",
+        "reports entered in state crime database"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/19/2021), 2021-04-19; official copy, https://content.leg.colorado.gov/sites/default/files/2021a_078_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-78-2021.signed.pdf",
+          "sha256": "87792710f65217928a044e36cf7d0dbff03c0f8e86f1ddfc226c29379419f13a"
+        }
+      }
+    },
+    {
+      "id": "8c4b01138662ec5e0abfb628a4c712a5babc6b7df79fbfe9d8222325c30c0822",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/hb23-1143",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "CO-HB-1143-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of CO-HB-1143-2023 (Open States sponsor list): HB1143 (2023 Regular): Federal Authorize Firearms For DACA Peace Officers.",
+      "subjects": [
+        "immigrant peace-officer trainees may possess firearms if agency policy and federal law allow"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (04/27/2023), 2023-04-27; official copy, https://content.leg.colorado.gov/sites/default/files/2023a_1143_signed.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1143-2023.signed.pdf",
+          "sha256": "78d5710a8589690a06b2dd8edd5c033a73a533cf587a9593d08e2573b4bf5035"
+        }
+      }
+    },
+    {
+      "id": "4debf4e5720b80d02e6d72b9239f23c1be42f6e5c7e2679e344d6b4c4f267b21",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/sb25-295",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "CO-SB-295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of CO-SB-295-2025 (Open States sponsor list): SB295 (2025 Regular): Transfer Proposition KK Money ARPA Cash Fund.",
+      "subjects": [
+        "where firearm and ammunition excise tax revenue goes (behavioral health fund)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Final Act (05/13/2025), 2025-05-13; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_295_enr.pdf)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-295-2025.enrolled.pdf",
+          "sha256": "63c0403acc3b579e8a65dbb85ea04efada042ee1d7f42ed6a9372d68e3c948b9"
+        }
+      }
     }
   ],
   "searches": []

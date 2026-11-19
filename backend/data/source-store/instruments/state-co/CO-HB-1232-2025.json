@@ -1,0 +1,39 @@
+{
+  "id": "CO-HB-1232-2025",
+  "scope": "state:co",
+  "title": "HB1232 (2025 Regular): Liability When Means of Self-Defense Prohibited",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb25-1232",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1232_01.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephanie Luck",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "133422c4-9aae-4369-a639-db6d7664d088"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Introduced (02/11/2025), 2025-02-11; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2025A/bills/2025a_1232_01.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1232-2025.introduced.pdf",
+      "sha256": "d6ada28b69878740cfdbb844d1211a1cd967e9b3a7dc7398b4d1ea0dbb1c8408"
+    },
+    "note": "Introduced version (02/11/2025). Section 2 (C.R.S. 24-10-106(1)(l)) is a cross-reference that supports the same liability. Amendments after introduction are not in the text read (check bill status; this bill may not have passed)."
+  },
+  "operative_text": "Section 1 (C.R.S. 13-21-134(1)): AS USED IN THIS SECTION, UNLESS THE CONTEXT OTHERWISE REQUIRES, \"ARM OF SELF-DEFENSE\" MEANS ANY WEAPON FOR OFFENSE; EQUIPMENT AND ARMOR FOR DEFENSE OF A PERSON; AND AMMUNITION, ACCOUTREMENTS, PARTS, AND ACCESSORIES TYPICAL TO MAINTAINING THE FUNCTION AND MOST EFFECTIVE INTENDED USE OF THE WEAPON, EQUIPMENT, OR ARMOR.\nSection 1 (C.R.S. 13-21-134(2)(a)): THE OWNER OR PERSON IN CONTROL OF A PROPERTY WHO PROHIBITS A PERSON FROM BRINGING AN ARM OF SELF-DEFENSE ONTO THE PROPERTY IS LIABLE FOR DAMAGES, INCLUDING NONECONOMIC LOSS OR INJURY, FOR ANY HARM SUFFERED BY A PERSON WHILE ON THE PROPERTY THAT COULD HAVE BEEN PREVENTED BY THE PERSON IF THE PERSON HAD THE PERSON'S ARM OF SELF-DEFENSE.\nSection 1 (C.R.S. 13-21-134(2)(b)): A HARMED PERSON IS NOT REQUIRED TO SHOW THAT THE PERSON ACTUALLY WOULD HAVE PREVENTED THE HARM BUT FOR THE PROHIBITION ON ARMS OF SELF-DEFENSE ON THE PROPERTY IN ORDER TO ESTABLISH A CLAIM FOR DAMAGES PURSUANT TO THIS SECTION.\nSection 1 (C.R.S. 13-21-134(3)(a)): PURSUANT TO SECTION 24-10-106 (1)(l), SOVEREIGN IMMUNITY IN AN ACTION FOR DAMAGES DESCRIBED IN THIS SECTION IS WAIVED BY A PUBLIC ENTITY THAT OWNS OR OPERATES PROPERTY."
+}

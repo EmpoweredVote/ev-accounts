@@ -1,0 +1,198 @@
+{
+  "id": "CO-SB-5-2017",
+  "scope": "state:co",
+  "title": "SB005 (2017 Regular): Handgun Safety Training For School Employees",
+  "urls": [
+    "https://leg.colorado.gov/bills/sb17-005",
+    "https://content.leg.colorado.gov/sites/default/files/documents/2017A/bills/2017a_005_ren.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Patrick Neville",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Holbert",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-02-06",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 17,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229061 https://leg.colorado.gov/bill_votes/17984#SB17-005",
+      "members": [
+        {
+          "name": "Randy Baumgardner",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Crowder",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Owen Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lambert",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Vicki Marble",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Martinez Humenik",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Neville",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "yea",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Grantham",
+          "vote": "yea",
+          "politician_id": "bc6296a0-66f5-47af-b466-ae00998c3c02"
+        },
+        {
+          "name": "Irene Aguilar",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Court",
+          "vote": "nay"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "nay"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucia Guzman",
+          "vote": "nay"
+        },
+        {
+          "name": "Cheri Jahn",
+          "vote": "nay"
+        },
+        {
+          "name": "Matt Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Kagan",
+          "vote": "nay"
+        },
+        {
+          "name": "John Kefalas",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Kerr",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Merrifield",
+          "vote": "nay"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Reengrossed (02/06/2017), 2017-02-06; official copy, https://content.leg.colorado.gov/sites/default/files/documents/2017A/bills/2017a_005_ren.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-5-2017.reengrossed.pdf",
+      "sha256": "b633c030a4de951d798ff15d8e4795505fe570d98ba53a3ed2aa953bf2eae468"
+    },
+    "note": "Reengrossed (02/06/2017). Not the final act; amendments made after the version read are not in the text read. Section 2 quote stops at condition (II); conditions (III) written board permission and (IV) written notice to school administration follow in the text. Open-records exemption for armed employees' identities treated as part of the gun-carry scheme, so single."
+  },
+  "operative_text": "Section 1 (C.R.S. 30-10-527(1)): ON AND AFTER THE EFFECTIVE DATE OF THIS SECTION, A SHERIFF MAY PROVIDE A HANDGUN SAFETY TRAINING COURSE TO ANY EMPLOYEE OF ANY PUBLIC ELEMENTARY, MIDDLE, JUNIOR HIGH, OR HIGH SCHOOL WHO ALSO POSSESSES A PERMIT TO CARRY A CONCEALED HANDGUN ISSUED PURSUANT TO SECTION 18-12-206.\nSection 2 (C.R.S. 18-12-214(3)(d)): A PERMITTEE WHO IS EMPLOYED BY A SCHOOL DISTRICT, CHARTER SCHOOL, OR INSTITUTE CHARTER SCHOOL MAY CARRY A CONCEALED HANDGUN ONTO THE REAL PROPERTY, OR INTO ANY IMPROVEMENT ERECTED THEREON, OF ANY SCHOOL OR CHARTER SCHOOL OF THE DISTRICT OR OF THE INSTITUTE CHARTER SCHOOL IF: (I) THE PERMITTEE HAS SUCCESSFULLY COMPLETED A SCHOOL EMPLOYEE HANDGUN SAFETY COURSE PROVIDED BY A COUNTY SHERIFF PURSUANT TO SECTION 30-10-527; (II) THE LOCAL BOARD OF EDUCATION OF THE SCHOOL DISTRICT, OR, IN THE CASE OF AN INSTITUTE CHARTER SCHOOL, THE STATE CHARTER SCHOOL INSTITUTE, HAS APPROVED THE CURRICULUM OF THE SHERIFF'S DEPARTMENT THAT PROVIDED THE HANDGUN SAFETY COURSE TO THE PERMITTEE, AS DESCRIBED IN SECTION 22-32-109.1 (2)(d) OR 22-30.5-507 (13);\nSection 3 (C.R.S. 22-32-109.1(2)(d)(III)): IF A LOCAL BOARD APPROVES A SHERIFF'S CURRICULUM, AS DESCRIBED IN SUBSECTION (2)(d)(I) OF THIS SECTION, AND AUTHORIZES ONE OR MORE EMPLOYEES TO CARRY A CONCEALED HANDGUN IN EACH SCHOOL AND CHARTER SCHOOL OF THE SCHOOL DISTRICT, ANY RECORDS PERSONALLY IDENTIFYING SUCH EMPLOYEES ARE NOT PUBLIC RECORDS FOR THE PURPOSES OF THE \"COLORADO OPEN RECORDS ACT\", PART 2 OF ARTICLE 72 OF TITLE 24."
+}

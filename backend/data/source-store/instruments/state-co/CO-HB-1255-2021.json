@@ -1,0 +1,523 @@
+{
+  "id": "CO-HB-1255-2021",
+  "scope": "state:co",
+  "title": "HB1255 (2021 Regular): Protection Order Issued Against Domestic Abuser",
+  "urls": [
+    "https://leg.colorado.gov/bills/hb21-1255",
+    "https://content.leg.colorado.gov/sites/default/files/2021a_1255_signed.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Monica Duran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5716b3f8-e459-485d-9096-f916ee469ece"
+    },
+    {
+      "name": "Matt Gray",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sonya Jaquez Lewis",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brittany Pettersen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-05-14",
+      "body": "CO House",
+      "motion": "House Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 23,
+      "absent": 3,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229120 https://leg.colorado.gov/bill_votes/13974#HB21-1255",
+      "members": [
+        {
+          "name": "Judy Amabile",
+          "vote": "yea",
+          "politician_id": "68ace22a-559e-4397-b66a-1785f3a35d7e"
+        },
+        {
+          "name": "Adrienne Benavidez",
+          "vote": "yea",
+          "politician_id": "6f1746bc-f4f2-413b-b82b-c7cd8efacb8d"
+        },
+        {
+          "name": "Tracey Bernett",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Boesenecker",
+          "vote": "yea",
+          "politician_id": "fe0959d1-42cb-49cf-b1aa-ac9bc690a242"
+        },
+        {
+          "name": "Yadira Caraveo",
+          "vote": "yea"
+        },
+        {
+          "name": "Lisa Cutter",
+          "vote": "yea",
+          "politician_id": "1b919f48-974f-4cd4-a264-a4498b8abfbc"
+        },
+        {
+          "name": "Lindsey Daugherty",
+          "vote": "yea",
+          "politician_id": "224ba744-e39d-47f1-879f-064cd024e709"
+        },
+        {
+          "name": "Monica Duran",
+          "vote": "yea",
+          "politician_id": "5716b3f8-e459-485d-9096-f916ee469ece"
+        },
+        {
+          "name": "Daneya Esgar",
+          "vote": "yea"
+        },
+        {
+          "name": "Meg Froelich",
+          "vote": "yea",
+          "politician_id": "5dc20430-557a-44a1-8bf2-661e3378bdcf"
+        },
+        {
+          "name": "Serena Gonzales-Gutierrez",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Gray",
+          "vote": "yea"
+        },
+        {
+          "name": "Leslie Herod",
+          "vote": "yea"
+        },
+        {
+          "name": "Edie Hooton",
+          "vote": "yea",
+          "politician_id": "b9270955-ffbe-4b4f-a1a8-85377129cf93"
+        },
+        {
+          "name": "Dominique Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Iman Jodeh",
+          "vote": "yea",
+          "politician_id": "11efc6cc-462d-4c40-b511-863fbfbf55e7"
+        },
+        {
+          "name": "Chris Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Cathy Kipp",
+          "vote": "yea",
+          "politician_id": "b87be611-7566-4118-a72d-bc637a628ac8"
+        },
+        {
+          "name": "Susan Lontine",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie McCluskie",
+          "vote": "yea",
+          "politician_id": "acd89047-1178-4313-a5b8-66f2e6d27892"
+        },
+        {
+          "name": "Karen McCormick",
+          "vote": "yea",
+          "politician_id": "fdc82b87-9965-423a-9f4a-4c6d211336ad"
+        },
+        {
+          "name": "Barbara McLachlan",
+          "vote": "yea"
+        },
+        {
+          "name": "Dafna Michaelson Jenet",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Mullica",
+          "vote": "yea",
+          "politician_id": "53a5e3ec-bf14-443e-ab86-2fa78398f24d"
+        },
+        {
+          "name": "David Ortiz",
+          "vote": "yea"
+        },
+        {
+          "name": "Naquetta Ricks",
+          "vote": "yea",
+          "politician_id": "0c8bcc3e-c867-4324-b9c2-c9f5909ffe48"
+        },
+        {
+          "name": "Dylan Roberts",
+          "vote": "yea",
+          "politician_id": "e703958a-9cdb-4eba-92b4-ee63267cf17a"
+        },
+        {
+          "name": "Emily Sirota",
+          "vote": "yea",
+          "politician_id": "8d69d69e-204f-4319-93c6-6b5b3377fbbb"
+        },
+        {
+          "name": "Marc Snyder",
+          "vote": "yea",
+          "politician_id": "6379d38c-3553-4ca3-87da-918efdcf73f2"
+        },
+        {
+          "name": "Tom Sullivan",
+          "vote": "yea",
+          "politician_id": "0b23c3d0-9e80-4643-b7ce-8726f8a07e7e"
+        },
+        {
+          "name": "Kerry Tipper",
+          "vote": "yea"
+        },
+        {
+          "name": "Brianna Titone",
+          "vote": "yea",
+          "politician_id": "5907beec-b298-40ac-8223-866780689feb"
+        },
+        {
+          "name": "Alex Valdez",
+          "vote": "yea",
+          "politician_id": "9fe467f7-7ec7-4498-954b-5666eb94af78"
+        },
+        {
+          "name": "Donald Valdez",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Weissman",
+          "vote": "yea",
+          "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+        },
+        {
+          "name": "Steven Woodrow",
+          "vote": "yea",
+          "politician_id": "ceaeed12-53d1-4341-9ffc-22e426014de8"
+        },
+        {
+          "name": "Mary Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Alec Garnett",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Baisley",
+          "vote": "nay",
+          "politician_id": "3b8ff5f8-582a-4044-9a19-dc63b6d6a7ab"
+        },
+        {
+          "name": "Rod Bockenfeld",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Bradfield",
+          "vote": "nay",
+          "politician_id": "a6528ae0-54fa-4d1c-af06-bc8b68300d2d"
+        },
+        {
+          "name": "Terri Carver",
+          "vote": "nay",
+          "politician_id": "84dee0d9-6ca0-4af2-a4e0-a670b38c3f36"
+        },
+        {
+          "name": "Marc Catlin",
+          "vote": "nay",
+          "politician_id": "4e0f0ef0-e603-48f9-a803-be51827550fa"
+        },
+        {
+          "name": "Tim Geitner",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Hanks",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Holtorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Colin Larson",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephanie Luck",
+          "vote": "nay",
+          "politician_id": "133422c4-9aae-4369-a639-db6d7664d088"
+        },
+        {
+          "name": "Mike Lynch",
+          "vote": "nay"
+        },
+        {
+          "name": "Hugh McKean",
+          "vote": "nay"
+        },
+        {
+          "name": "Patrick Neville",
+          "vote": "nay"
+        },
+        {
+          "name": "Rod Pelton",
+          "vote": "nay",
+          "politician_id": "543138e3-02f3-4926-bdf6-0cd126f63c2b"
+        },
+        {
+          "name": "Andres Pico",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim Ransom",
+          "vote": "nay"
+        },
+        {
+          "name": "Janice Rich",
+          "vote": "nay",
+          "politician_id": "8baa123c-c7c7-4cc7-b888-e26dfc47e587"
+        },
+        {
+          "name": "Shane Sandridge",
+          "vote": "nay"
+        },
+        {
+          "name": "Tonya Van Beber",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Van Winkle",
+          "vote": "nay"
+        },
+        {
+          "name": "Perry Will",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Woog",
+          "vote": "nay",
+          "politician_id": "96c797fd-2601-43d2-9b1a-18510da6e219"
+        },
+        {
+          "name": "Jennifer Bacon",
+          "vote": "absent",
+          "politician_id": "6ff7dd8f-8a90-4dd6-ba45-a6b1acb667ab"
+        },
+        {
+          "name": "Tony Exum, Sr.",
+          "vote": "absent",
+          "politician_id": "92fbd4c0-34a6-4561-8916-fb56f5096ad0"
+        },
+        {
+          "name": "Matt Soper",
+          "vote": "absent",
+          "politician_id": "02fe9806-9a5c-41d0-8462-2923ada58846"
+        }
+      ]
+    },
+    {
+      "date": "2021-06-01",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 15,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229121 https://leg.colorado.gov/bill_votes/13973#HB21-1255",
+      "members": [
+        {
+          "name": "Jeff Bridges",
+          "vote": "yea",
+          "politician_id": "cb0906d5-b6d5-495c-9af0-335a8ad72920"
+        },
+        {
+          "name": "Janet Buckner",
+          "vote": "yea"
+        },
+        {
+          "name": "James Coleman",
+          "vote": "yea",
+          "politician_id": "2f777001-a339-40d3-9f6d-caab27f73d84"
+        },
+        {
+          "name": "Jessie Danielson",
+          "vote": "yea",
+          "politician_id": "b71acb35-2426-41c2-9d22-f224d752cf6e"
+        },
+        {
+          "name": "Kerry Donovan",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Fenberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhonda Fields",
+          "vote": "yea"
+        },
+        {
+          "name": "Joann Ginal",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Gonzales",
+          "vote": "yea",
+          "politician_id": "e76a8f3b-27c3-4ee4-8f92-b3e5436ff3f6"
+        },
+        {
+          "name": "Chris Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Sonya Jaquez Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Kolker",
+          "vote": "yea",
+          "politician_id": "234f8392-fd93-4bcc-a749-fc61c58b4821"
+        },
+        {
+          "name": "Pete Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Dominick Moreno",
+          "vote": "yea"
+        },
+        {
+          "name": "Brittany Pettersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Rodriguez",
+          "vote": "yea",
+          "politician_id": "c2311cb5-2ff0-4dcb-83a3-4b3be15a39fa"
+        },
+        {
+          "name": "Tammy Story",
+          "vote": "yea",
+          "politician_id": "2ea31dcf-55f2-4a7c-a257-8a2674e0dcf5"
+        },
+        {
+          "name": "Faith Winter",
+          "vote": "yea"
+        },
+        {
+          "name": "Rachel Zenzinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Leroy M. Garcia, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "John Cooke",
+          "vote": "nay"
+        },
+        {
+          "name": "Don Coram",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Gardner",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis Hisey",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Holbert",
+          "vote": "nay"
+        },
+        {
+          "name": "Barbara Kirkmeyer",
+          "vote": "nay",
+          "politician_id": "db690948-f370-448f-862b-e45768d92723"
+        },
+        {
+          "name": "Larry Liston",
+          "vote": "nay",
+          "politician_id": "ca912826-ca11-4023-9450-e50e5e9b293f"
+        },
+        {
+          "name": "Paul Lundeen",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Priola",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Rankin",
+          "vote": "nay"
+        },
+        {
+          "name": "Ray Scott",
+          "vote": "nay",
+          "politician_id": "b539ec45-dbec-45fe-98b3-5599d48df8e4"
+        },
+        {
+          "name": "Cleave Simpson",
+          "vote": "nay",
+          "politician_id": "796e99ba-29f5-4f30-9e0e-a36b6f05e78a"
+        },
+        {
+          "name": "Jim Smallwood",
+          "vote": "nay"
+        },
+        {
+          "name": "Jerry Sonnenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Rob Woodward",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); operative text read by a Sonnet fill agent from the official Colorado text (Signed Act (06/22/2021), 2021-06-22; official copy, https://content.leg.colorado.gov/sites/default/files/2021a_1255_signed.pdf)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1255-2021.signed.pdf",
+      "sha256": "9b4ff26bbf41226d1649a6a1bdbb70546b289366e4a69acaa24414ece51cecb5"
+    },
+    "note": "Signed act 06/22/2021. Large file read by grep and sections. Section 1 amends 13-14-105.5 and the text mixes struck and kept words; lower-case words in Section 1 may be struck, check the page image. Quoted lower-case lines in 13-14-105.5(2) sit next to capitals and may carry struck words in their sentence; prefer the capital words. Sections 2-4 make matching changes to 18-1-1001 and 18-6-801 (not quoted)."
+  },
+  "operative_text": "Section 1 (C.R.S. 13-14-105.5(5)(a)): THE COURT SHALL CONDUCT A COMPLIANCE HEARING NOT LESS THAN EIGHT BUT NOT MORE THAN TWELVE BUSINESS DAYS AFTER THE ORDER IS ISSUED TO ENSURE THE RESPONDENT HAS COMPLIED WITH SUBSECTION (5)(b) OF THIS SECTION.\nSection 1 (C.R.S. 13-14-105.5(5)(b)): THE RESPONDENT SHALL COMPLETE AN AFFIDAVIT, WHICH MUST BE FILED IN THE COURT RECORD WITHIN SEVEN BUSINESS DAYS AFTER THE ORDER IS ISSUED, STATING THE NUMBER OF FIREARMS IN THE RESPONDENT'S IMMEDIATE POSSESSION OR CONTROL OR SUBJECT TO THE RESPONDENT'S IMMEDIATE POSSESSION OR CONTROL, THE MAKE AND MODEL OF EACH FIREARM, ANY REASON THE RESPONDENT IS STILL IN IMMEDIATE POSSESSION OR CONTROL OF SUCH FIREARM, AND THE LOCATION OF EACH FIREARM. IF THE RESPONDENT DOES NOT POSSESS A FIREARM AT THE TIME THE ORDER IS ISSUED PURSUANT TO SUBSECTION (1) OF THIS SECTION, THE RESPONDENT SHALL INDICATE SUCH NONPOSSESSION IN THE AFFIDAVIT.\nSection 1 (C.R.S. 13-14-105.5(2)): (I) Not more than twenty-four hours, EXCLUDING LEGAL HOLIDAYS AND WEEKENDS, after being served with the order in open court; or (II) Not more than forty-eight hours, EXCLUDING LEGAL HOLIDAYS AND WEEKENDS, after being served with the order outside of the court.\nSection 1 (C.R.S. 13-14-105.5(6)): THE DECLARATION MUST MEMORIALIZE THE SALE OR TRANSFER OF THE FIREARM.\nSection 5 (C.R.S. 16-4-105(4.1)): NOTWITHSTANDING ANY OTHER TYPE OF BOND AND CONDITIONS OF RELEASE SET BY THE COURT, IN CASES INVOLVING DOMESTIC VIOLENCE, AS DEFINED IN SECTION 18-6-800.3 (1), OR IN CASES WHERE THE COURT SUBJECTS A DEFENDANT TO A MANDATORY PROTECTION ORDER THAT QUALIFIES AS AN ORDER DESCRIBED IN 18 U.S.0. SEC. 922 (g)(8), THE COURT SHALL ORDER THE DEFENDANT TO COMPLY WITH THE PROVISIONS OF SECTION 18-1-1001 AS IT RELATES TO FIREARM RELINQUISHMENT.\nSection 6 (C.R.S. 13-14.5-113(3)): A FEDERALLY LICENSED FIREARMS DEALER OR LAW ENFORCEMENT AGENCY THAT STORES A FIREARM AS PERMITTED BY THIS ARTICLE 14.5 IS NOT CIVILLY LIABLE FOR ANY RESULTING DAMAGES TO THE FIREARM, AS LONG AS SUCH DAMAGE DID NOT RESULT FROM THE WILLFUL AND WRONGFUL ACT OR GROSS NEGLIGENCE OF THE PERSON OR LAW ENFORCEMENT AGENCY STORING THE FIREARM."
+}
