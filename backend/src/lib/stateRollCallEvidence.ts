@@ -2501,7 +2501,7 @@ function mnHouseLines(html: string): { lines: { page: number; text: string }[]; 
       page = Number(p[1]);
       continue;
     }
-    const t = squash(htmlText(raw).replace(/ /g, ' '));
+    const t = squash(htmlText(raw).replace(/\u00a0/g, ' '));
     if (!t || !page) continue;
     lines.push({ page, text: t });
   }
@@ -2577,7 +2577,7 @@ const mnSession = (r: Pick<MnVoteRef, 'legislature' | 'special'>): string => `${
 function readMinnesotaSenate(bodies: string[], r: MnVoteRef): MnVoteRecord | { refused: string } {
   const fail = (refused: string): { refused: string } => ({ refused });
   if (!bodies[0].startsWith(PDF_CELLS_MARK + '\n')) return fail('not a journal PDF read as cells');
-  const raw = bodies[0].split('\n').slice(1).map((l) => l.replace(/​/g, '').split('\t').map(squash).filter(Boolean)).filter((c) => c.length);
+  const raw = bodies[0].split('\n').slice(1).map((l) => l.replace(/\u200b/g, '').split('\t').map(squash).filter(Boolean)).filter((c) => c.length);
   if (!raw.some((c) => /^\d+ JOURNAL OF THE SENATE \[\d+(?:ST|ND|RD|TH) DAY$/.test(c.join(' ')) || c.join(' ') === 'JOURNAL OF THE SENATE')) return fail('the PDF is not the journal of the Senate');
   const dates = new Set<string>();
   const days = new Set<string>();

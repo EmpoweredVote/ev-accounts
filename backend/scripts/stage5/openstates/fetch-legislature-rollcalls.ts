@@ -969,7 +969,7 @@ async function main(): Promise<void> {
         // Node's "fetch failed" names neither the address nor the cause: say both, and try twice more after a pause
         const why = `${e instanceof Error ? e.message : String(e)}${e instanceof Error && e.cause ? ` (${String((e.cause as Error).message ?? e.cause)})` : ''}`;
         if (attempt < 2) { console.error(`  ${why} for ${url}; again in 30 s`); await new Promise((r) => setTimeout(r, 30_000)); continue; }
-        throw new Error(`${why} for ${url}`);
+        throw new Error(`${why} for ${url}`, { cause: e });
       }
       if ((res.status === 429 || res.status === 503) && attempt < 2) { await new Promise((r) => setTimeout(r, 30_000)); continue; }
       if (manual) {
