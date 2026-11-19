@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { alsoVotes, buildRollCall, INDEX, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -562,5 +562,47 @@ describe('the legislature\'s own vote list — Kansas', () => {
     const none = ksFixture('ks-2026-hb2104-history');
     expect(INDEX.KS.read(none, '2025-2026', 'HB 2104')).toMatchObject({ floor: [], motion: 0 });
     expect(() => INDEX.KS.read(tamper(none, 'No votes recorded yet.', 'Loading.'), '2025-2026', 'HB 2104')).toThrow(/does not show all its votes/);
+  });
+});
+
+// Saved 2026-11-18 from leg.colorado.gov: a bill's page lists every floor vote in two accordions, one per chamber.
+const CO_HB1177 = ksFixture('co-2019-hb19-1177-bill');
+
+describe('the legislature\'s own vote list — Colorado', () => {
+  it('finds the bill page of a session\'s bill, in the dump\'s two numberings', () => {
+    expect(INDEX.CO.billUrl('2019A', 'HB 19-1177')).toBe('https://leg.colorado.gov/bills/hb19-1177');
+    expect(INDEX.CO.billUrl('2026A', 'SB4')).toBe('https://leg.colorado.gov/bills/sb26-004');
+    expect(INDEX.CO.billUrl('2019A', 'HB 18-1177')).toBeNull();
+  });
+
+  it('reads the floor votes of both chambers, counts the motions and committee votes, and cites each vote with its bill', () => {
+    const bi = INDEX.CO.read(CO_HB1177, '2019A', 'HB 19-1177');
+    expect(bi.floor).toEqual([
+      { url: 'https://leg.colorado.gov/bill_votes/16460#HB19-1177', motion: 'Senate Amendments - REPASS', tally: [38, 25, 2] },
+      { url: 'https://leg.colorado.gov/bill_votes/16459#HB19-1177', motion: 'Senate Amendments - CONCUR', tally: [43, 20, 2] },
+      { url: 'https://leg.colorado.gov/bill_votes/16466#HB19-1177', motion: 'Third Reading - BILL', tally: [38, 25, 1] },
+      { url: 'https://leg.colorado.gov/bill_votes/16461#HB19-1177', motion: 'Third Reading - BILL', tally: [18, 17, 0] },
+    ]);
+    expect([bi.committee, bi.motion]).toEqual([11, 23]);
+    // a bill no chamber voted on has no votes section
+    expect(INDEX.CO.read(ksFixture('co-2019-hb19-1049-bill'), '2019A', 'HB 19-1049')).toMatchObject({ floor: [], motion: 0, committee: 2 });
+  });
+
+  it('knows a vote on the bill from a vote on a motion, and stops on an action it does not know', () => {
+    for (const a of ['Third Reading|BILL', 'Senate Amendments|REPASS', 'House Amendments|CONCUR', 'Conference Committee Report|ADOPT CCR']) {
+      expect(CO_FLOOR_ACTION.test(a)).toBe(true);
+    }
+    for (const a of ['Third Reading|AMD (L.023)', 'Committee of the Whole|ADOPT', 'Senate Amendments|NOT CONCUR APPT CC', 'Third Reading|PERM']) {
+      expect(CO_FLOOR_ACTION.test(a)).toBe(false);
+      expect(CO_MOTION_ACTION.test(a)).toBe(true);
+    }
+    expect(() => INDEX.CO.read(tamper(CO_HB1177, '<span>REPASS</span>', '<span>RECONSIDER</span>'), '2019A', 'HB 19-1177'))
+      .toThrow(/a vote whose action the tool does not know/);
+  });
+
+  it('refuses another bill\'s page, and a chamber whose printed count is not the rows it lists', () => {
+    expect(() => INDEX.CO.read(CO_HB1177, '2019A', 'HB 19-1178')).toThrow(/the bill page is not HB19-1178/);
+    expect(() => INDEX.CO.read(tamper(CO_HB1177, 'aria-label="Senate Votes (5)"', 'aria-label="Senate Votes (6)"'), '2019A', 'HB 19-1177'))
+      .toThrow(/Senate prints 6 votes and lists 5/);
   });
 });

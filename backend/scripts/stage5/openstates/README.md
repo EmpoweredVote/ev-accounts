@@ -86,7 +86,7 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
   links from the sessions either side.
 - Committee and voice votes are counted in the supplement's `checked` block and not read.
-- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland and Kansas state none, and the tool waits 1 second),
+- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas and Colorado state none, and the tool waits 1 second),
   and bodies are kept in `supplements/<ST>/raw/`.
 - Ohio: once a bill's record is read, the record IS the bill's floor votes. `convert.py` adds the votes the dump
   misses and drops a dump floor vote of that bill that is not on the record (counted in `.openstates.json` as
@@ -142,6 +142,16 @@ the bills under `rollcalls_from_legislature`.
   votes and other motions, accepts a substitute's title ("Sub for HB 2278"), and reads "No votes recorded yet." as no
   votes only when the page shows no vote row or link. The record prints surnames only; the reader builds each full
   name from the member id in the link (`rep_paige_wanda_1` printed "Brownlee Paige" is Wanda Brownlee Paige).
+- 🔴 Colorado: **no dump vote is placed** either (`record_is_the_floor`). The dump's 2017A votes are committee
+  summaries only, and 2018-2019 votes are filed under the chamber and day of the bill's last vote. The fetch reads the
+  bill's page (`/bills/hb19-1177`, lower case), keeps the House and Senate floor votes on the bill (Third Reading,
+  amendments repassed or concurred in, conference reports, adopting a resolution), counts committee votes and
+  motions, and reads each vote page (`/bill_votes/16466`, cited `#HB19-1177`). The page prints family names only
+  ("Valdez A.", "President"); the reader names each member from the session's member list
+  (`/legislators?sess=2019a`), and a label two members fit gives no line. `convert.py` stores bill numbers in
+  LegiScan's form, the year dropped ("HB 19-1177" -> HB1177, "SB 4" -> SB004), and rewrites old text links to
+  `content.leg.colorado.gov` (`co_texts`); 2026 texts (`/bill_files/N/download`) are disallowed by robots.txt and only
+  counted.
 - A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
 - A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
   page reader below.
@@ -152,10 +162,10 @@ the bills under `rollcalls_from_legislature`.
    pattern, the site's crawl delay, and a function from the page's markup to members under Yea, Nay and absent),
    with a saved page as a fixture and the refusals tested. The reader must fail closed: refuse the page unless every
    group holds the count its heading prints and the counts are the printed tally. Utah, Ohio, South Dakota,
-   Mississippi, Maryland and Kansas are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
+   Mississippi, Maryland, Kansas and Colorado are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
    script-shell page and reads the vote's data, Mississippi's reads a PDF with the bill's history and two member
    lists, Maryland's reads a PDF (some printed sideways) with the chamber's committee pages, Kansas's reads one page in
-   two layouts and names each member from the member id in the link (see the file's header).
+   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list (see the file's header).
 2. **Its rules in `SRC_RULES` in `convert.py`**, when its Open States rows are wrong about something the roll-call
    address states. Utah: the rows carry the bill's chamber, not the chamber that voted, and nothing marks a committee
    vote; both are read from the address. Ohio: the stored addresses and text links are dead (v1) and are rewritten

@@ -175,6 +175,18 @@ for r in rows("personvote"):
 #    "ks_texts": the old text addresses become the archive's (/li_2022/b2021_22/measures/documents/sb13_enrolled.pdf), and
 #    2023-24's /b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2233/hb2233_00_0000.pdf (the apn's
 #    year is not checked by the site: year1 and year2 serve the same file, read 2026-11-18).
+#  - Colorado (2026-11-18): the rows' vote addresses (/content/hb19-1166vote..., and 2017's committee
+#    "activity-vote-summary" pages) are 404, and every vote from 2017 on is on the current site, listed on the bill's
+#    page (/bills/hb19-1177, #bill-activity-votes) and printed on its own page, /bill_votes/<id>, which is cited with the
+#    bill after a # (stateRollCallEvidence.ts). "record_is_the_floor", as Kansas's: the fetch reads each scanned bill's
+#    page and every floor vote on it, and no dump vote is placed (the dump links only 58% of 2019's and 59% of 2020's
+#    member votes to a person, and 2017's dump votes are all committee summaries); the dump's copy of a record vote only
+#    teaches which person a label is. The record prints surnames ("Valdez A."); the reader names each member in full
+#    from the session's member list (/legislators?sess=2019a), so ms_full_names links them. "co_texts": the old text
+#    addresses (/sites/default/files/documents/2019A/bills/2019a_1177_enr.pdf, and /sites/default/files/
+#    2019a_1177_signed.pdf) answer 301 to the same path on content.leg.colorado.gov, which is written instead. 2026's
+#    texts (/bill_files/<n>/download) are a path robots.txt disallows: they are kept and counted
+#    (co_text_robots_disallowed), and a desk cites the bill's page for them. The bill pages need only https.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -184,7 +196,8 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
              "MD": {"https": True, "md_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "chamber": re.compile(r"/votes/(house|senate)/\d{4}\.(?:pdf|htm)#", re.I),
                     "md_bill_page": True, "https_texts": True, "ms_full_names": True},
              "KS": {"https": True, "ks_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True,
-                    "ks_bill_page": True, "ks_texts": True}}
+                    "ks_bill_page": True, "ks_texts": True},
+             "CO": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "co_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
@@ -861,6 +874,11 @@ def bnum(ident):
         n = n.replace(".", "")  # Utah to 2024: "H.B. 346", "S.J.R. 2"
     if ST in PAD:
         n = re.sub(r"^([A-Z]+)(\d+)$", lambda m: m.group(1) + m.group(2).zfill(PAD[ST]), n)
+    if ST == "CO":
+        # Colorado's dump writes the year to 2025A ("HB 19-1177", "SB 18-032") and not from 2025B ("HB 1097", "SB 4"). The
+        # number is LegiScan's form, the session gives the year: HB1177, SB032, SB004 (a Senate number has three digits, a
+        # House number four, as the legislature prints them: SB26-004, HB26-1097)
+        n = re.sub(r"^([HS][A-Z]*?)(?:\d{2}B?-)?(\d+)$", lambda m: m.group(1) + m.group(2).zfill(4 if m.group(1)[0] == "H" else 3), n)
     return n
 
 
@@ -995,6 +1013,10 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 main = re.sub(r"^http://", "https://", main)
             if RULES.get("ks_texts"):
                 main = ks_text(main)
+            if RULES.get("co_texts"):
+                main = re.sub(r"^https?://leg\.colorado\.gov/sites/default/files/", "https://content.leg.colorado.gov/sites/default/files/", main)
+                if re.match(r"^https?://leg\.colorado\.gov/bill_files/\d+/download$", main):
+                    DUPES[b["legislative_session_id"]]["co_text_robots_disallowed"] += 1
             if not main:
                 continue
             t = text_type(v["note"])

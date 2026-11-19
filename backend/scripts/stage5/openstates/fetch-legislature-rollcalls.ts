@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { explainKansasVote, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { coBillTag, explainColoradoVote, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -201,7 +201,81 @@ export function ksReadHistory(body: string, session: string, bill: string): Bill
 }
 const ksTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
+/**
+ * A Colorado bill-page vote (calendar, motion) that is a vote on the bill: third reading of the bill, concurring in the
+ * other chamber's amendments and the repassage that follows, and a conference committee report adopted and the
+ * repassage that follows. The reader checks the vote page's own question again (coQuestionIsOnTheBill).
+ */
+export const CO_FLOOR_ACTION = /^(?:Third Reading\|BILL|(?:House|Senate) Amendments\|(?:CONCUR|REPASS)|Conference Committee Report\|(?:ADOPT|ADOPT CCR|REPASS)|(?:Veto|Governor's Veto)\|OVERRIDE)$/i;
+/**
+ * A Colorado bill-page vote on something other than the bill: a Committee of the Whole amendment or report, a third-reading
+ * amendment, a motion to refer, lay over, reconsider, limit debate, not concur, adhere, or a conference report going
+ * beyond the scope (BYD SCP) or to a second committee; and a miscellaneous roll call.
+ */
+export const CO_MOTION_ACTION = /^(?:Committee of the Whole\|.*|Third Reading\|(?:AMD|AMEND) \([A-Z]?\.\d{3}\)|Third Reading\|(?:RE)?REFER\b.*|Third Reading\|(?:PERM|LO)|(?:House|Senate) Amendments\|(?:NOT CONCUR APPT CC|NOT CNCR|ADHERE)|Conference Committee Report\|(?:ADHERE|NOT CONCUR APPT CC|BYD SCP|2nd COMM)|MISC\|.*|Miscellaneous\|.*)$/i;
+
+/**
+ * A Colorado bill page's votes (/bills/hb19-1177): two accordions, "House Votes (22)" and "Senate Votes (5)", each a table
+ * of rows (date, calendar, motion, "38 AYE 25 NO 2 OTHER", a link to /bill_votes/<id>). Each vote is cited as the vote's
+ * page with the bill after a #. Committee votes are in another section of the page and are counted, not read.
+ */
+export function coReadBillVotes(body: string, session: string, bill: string): BillIndex {
+  const tag = coBillTag(session, bill);
+  if (!tag) throw new Error(`not a Colorado bill of session ${session}: ${bill}`);
+  // the page's title names the bill: <title id="page-title">HB19-1177 Extreme Risk Protection Orders | Colorado General Assembly</title>
+  const head = /<title id="page-title">\s*([A-Z]+\d{2}B?-\d{3,4})\s/.exec(body);
+  if (!head || head[1].toUpperCase() !== tag) throw new Error(`the bill page is not ${tag}: ${head?.[1]}`);
+  const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+  const i = body.indexOf('id="bill-activity-votes"');
+  out.committee = (body.match(/href="\/committee_meeting_hearing_items\/\d+\/votes\/\d+"/g) ?? []).length;
+  // a bill no chamber voted on (lost in committee: 2019 HB 1049) has no votes section and links no floor vote
+  if (i < 0 && !/\/bill_votes\//.test(body)) return out;
+  if (i < 0) throw new Error(`the page of ${tag} links a floor vote and has no votes section`);
+  const j = body.indexOf('id="bill-activity-', i + 30);
+  const seg = body.slice(i, j > 0 ? j : undefined);
+  const parts = seg.split(/aria-label="(House|Senate) Votes \((\d+)\)"/);
+  let listed = 0;
+  for (let k = 1; k < parts.length; k += 3) {
+    const chamber = parts[k];
+    const n = Number(parts[k + 1]);
+    const rows = [...parts[k + 2].matchAll(/<tr class='mb-0' role="row">([\s\S]*?)<\/tr>/g)];
+    if (rows.length !== n) throw new Error(`${tag}: ${chamber} prints ${n} votes and lists ${rows.length}`);
+    for (const row of rows) {
+      const cal = coTag(/data-label="Calendar">\s*<span>([^<]*)<\/span>/.exec(row[1])?.[1] ?? '');
+      const mot = coTag(/data-label="Motion">\s*<span>([^<]*)<\/span>/.exec(row[1])?.[1] ?? '');
+      const yes = /bill-votes-count-yes[^>]*>(\d+)</.exec(row[1]);
+      const no = /bill-votes-count-no[^>]*>(\d+)</.exec(row[1]);
+      const other = /bill-votes-count-others[^>]*>(\d+)</.exec(row[1]);
+      const links = [...row[1].matchAll(/href="https:\/\/leg\.colorado\.gov\/bill_votes\/(\d+)"/g)];
+      if (!cal || !mot || !yes || !no || !other || links.length !== 1) throw new Error(`${tag}: a vote row the tool cannot read: ${coTag(row[1]).slice(0, 200)}`);
+      const url = `https://leg.colorado.gov/bill_votes/${links[0][1]}#${tag}`;
+      const action = `${cal}|${mot}`;
+      listed++;
+      if (CO_FLOOR_ACTION.test(action)) { out.floor.push({ url, motion: `${cal} - ${mot}`, tally: [Number(yes[1]), Number(no[1]), Number(other[1])] }); continue; }
+      if (!CO_MOTION_ACTION.test(action)) throw new Error(`${tag}: a vote whose action the tool does not know: ${chamber} ${action} ${url}`);
+      out.motion!++; out.motions!.push(`${url} ${chamber} ${cal} - ${mot}`);
+    }
+  }
+  if (!/\(\d+\)"/.test(seg) && /bill_votes\//.test(seg)) throw new Error(`${tag}: votes the tool cannot place in a chamber`);
+  if ((body.match(/\/bill_votes\/\d+/g) ?? []).length !== listed) throw new Error(`${tag}: a vote link outside the vote tables`);
+  return out;
+}
+const coTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+
 export const INDEX: Record<string, StateIndex> = {
+  // leg.colorado.gov (read 2026-11-18; robots.txt allows /bills/ and /bill_votes/, no Crawl-delay). The Open States rows'
+  // vote addresses are the old site's (leg.colorado.gov/content/...), now 404 during the move; every session from 2017 is
+  // on the new site. A bill's page, /bills/hb19-1177, lists each recorded vote of each chamber with its calendar, motion
+  // and tally (CO_FLOOR_ACTION read; CO_MOTION_ACTION counted; anything else stops the tool). Each vote is cited on its
+  // own page with the bill after a # and read with the session's member list (stateRollCallEvidence.ts).
+  CO: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay: one a second is ours
+    billUrl(session, bill) {
+      const tag = coBillTag(session, bill);
+      return tag ? `https://leg.colorado.gov/bills/${tag.toLowerCase()}` : null;
+    },
+    read: coReadBillVotes,
+  },
   // www.kslegislature.gov (read 2026-11-18; no robots.txt). 2017-2022 and the special sessions: the archive's bill page,
   // /li_2018/b2017_18/measures/HB2476/, lists every action, and a recorded vote as a link on its tally ("Conference
   // Committee Report was adopted; <a href="/li_2018/b2017_18/measures/vote_view/je_.../"> Yea: 91 Nay: 29</a>"). 2023
@@ -578,14 +652,17 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   if (!r) {
     const ms = parseMississippiVoteUrl(v.url) ? explainMississippiVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseMarylandVoteUrl(v.url) ? explainMarylandVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseKansasVoteUrl(v.url) ? explainKansasVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseKansasVoteUrl(v.url) ? explainKansasVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseColoradoVoteUrl(v.url) ? explainColoradoVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
   if (session !== undefined && r.state === 'SD' && r.session !== session) return { refused: `the vote is of session ${r.session}, not ${session}` };
   // South Dakota votes a consent calendar as one roll call on several bills ("HB 1209, SB 55"): the bill must be one of them
   // Maryland names the previous session's vetoed bill "HB 4 of 2020"; its year is in the address (#2020-HB4), checked by the reader
-  if (!r.bill.split(',').some((x) => norm(x.replace(/ of 20\d{2}$/, '')) === norm(bill))) return { refused: `the page is for ${r.bill}, not ${bill}` };
+  // Colorado prints the bill with its year ("HB26-1097"); the dump writes 2026's as "HB 1097"
+  const want = r.state === 'CO' && session !== undefined ? (coBillTag(session, bill) ?? bill) : bill;
+  if (!r.bill.split(',').some((x) => norm(x.replace(/ of 20\d{2}$/, '')) === norm(want))) return { refused: `the page is for ${r.bill}, not ${bill}` };
   const got: [number, number, number] = [r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length];
   // South Dakota's action log counts Excused 0 on some votes whose own record lists excused members (2018 HB 1209,
   // House concurrence: 62-4, 4 excused on the record): the yeas and nays are compared there, and the record's list,
