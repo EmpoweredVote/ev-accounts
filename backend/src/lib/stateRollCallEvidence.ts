@@ -1642,6 +1642,279 @@ export function explainKansasVote(bodies: string[], url: string): KsVoteRecord |
   try { return readKansas(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Colorado: one page per vote, read with the session's member list ─────────────────────────────────────────────────
+// leg.colorado.gov (robots.txt read 2026-11-18: allows /bill_votes/ and /legislators, no Crawl-delay). The Open States rows
+// carry addresses on the old site (leg.colorado.gov/content/hb19-1166vote5b8aea, and 2017's committee summaries), which
+// now answer 404 ("We are currently migrating legacy session data"). Every session from 2017 is on the new site: a bill's
+// page, /bills/hb19-1177, lists each recorded vote with its calendar, motion and tally, linking the vote's own page,
+// /bill_votes/16466. That page prints "Floor Vote", the bill ("HB19-1177"), its title, the chamber ("Senate"), one summary
+// row (calendar "Third reading", motion "Bill", "03/28/2019 02:41:38 PM"), the count of each kind (Yes, No, Absent,
+// Excused, and Vacant for an empty seat, printed as a row "District 57") and one row per member, printed by surname only:
+// "Bacon", "Garcia Sander", "Valdez A." where two share one, "President" for the Senate's presiding officer (2019).
+//
+// The page names no session, so the address names the bill after a #: https://leg.colorado.gov/bill_votes/16466#HB19-1177
+// (the bill's year and letter are the session: HB20B-1001 is the 2020 extraordinary session, 2020B). A bare surname fits
+// no one, so the reader also reads the session's member list, /legislators?sess=2019a, which prints every member of that
+// session as "Valdez, Alex" with a link to the member's page (/legislators/alex-valdez), and its leadership tiles
+// ("President of the Senate", linked the same way). A printed label is rendered as the one member of the list whose family
+// name it is (or, when none, the last word of whose two-word family name it is: "Kennedy" for "deGruy Kennedy, Chris") and
+// whose given name starts with the initial it prints, if any; "President" and "Speaker" as the one member
+// the leadership tiles title "President of the Senate" or "Speaker of the House". A label no member fits, or two fit, is
+// kept as printed and gives no line (the list holds both chambers and prints no chamber of the session).
+//
+//   Colorado Senate vote 16461 (2019A), HB19-1177, 2019-03-28.
+//   Question: Third reading - Bill
+//   Yes 18; No 17; Absent 0; Excused 0.
+//   Yes (18): Jeff Bridges; …
+//   Colorado Senate vote 16461 (2019A), HB19-1177 - Third reading - Bill (2019-03-28): Jeff Bridges voted Yes.
+//
+// A vote is read only when the question is a vote on the bill (coQuestionIsOnTheBill), the page names the address's bill,
+// each kind lists the count printed for it, the total is not more than the chamber's seats, and no member is listed twice.
+
+export const CO_VOTES = ['Yes', 'No', 'Absent', 'Excused'] as const;
+export type CoVote = (typeof CO_VOTES)[number];
+const CO_SITE = 'https://leg.colorado.gov/';
+/** robots.txt states no Crawl-delay (2026-11-18): one request a second is ours. */
+const CO_GAP_MS = 1_000;
+const CO_SIZE: Record<Chamber, number> = { House: 65, Senate: 35 };
+const CO_URL = /^https:\/\/leg\.colorado\.gov\/bill_votes\/([1-9]\d{0,6})#((?:H|S)(?:B|R|JR|CR|JM|M|CM))(\d{2})(B?)-(\d{3,4})$/;
+
+/**
+ * Is a Colorado vote a vote on the bill? Third reading, concurring in the other chamber's amendments, the repassage that
+ * follows, a conference committee report and its repassage, and a veto override. A Committee of the Whole vote (an
+ * amendment, a report) and every other motion is not (runner, 2026-11-16). The question is "<calendar> - <motion>".
+ */
+export function coQuestionIsOnTheBill(q: string): boolean {
+  const s = squash(q).toLowerCase();
+  return /^third reading - (?:bill|resolution|memorial)$/.test(s)
+    || /^(?:house|senate) amendments - (?:concur|repass)$/.test(s)
+    || /^conference committee(?: report)? - (?:adopt(?: ccr)?|repass|adopt report)$/.test(s)
+    || /^(?:veto|governor's veto|consideration of governor's veto) - (?:override|over-ride)$/.test(s);
+}
+
+/**
+ * A bill as the legislature prints it on a vote page, for a session: "HB19-1177", "SB26-124", "HB20B-1013". The dump writes
+ * a bill "HB 19-1177" to 2025A and "HB 1097" or "SB 2" from 2025B on. House numbers are four digits, Senate three. Null for a
+ * bill whose year or letter is not the session's.
+ */
+export function coBillTag(session: string, bill: string): string | null {
+  const s = /^20(\d{2})([AB])$/.exec(session);
+  const m = /^((?:H|S)(?:B|R|JR|CR|JM|M|CM))\s*(?:(\d{2})(B?)-)?0*([1-9]\d{0,3})$/i.exec(bill.replace(/[\s.]+/g, ''));
+  if (!s || !m) return null;
+  if (m[2] !== undefined && (m[2] !== s[1] || (m[3] ? 'B' : 'A') !== s[2])) return null;
+  const kind = m[1].toUpperCase();
+  return `${kind}${s[1]}${s[2] === 'B' ? 'B' : ''}-${m[4].padStart(kind.startsWith('H') ? 4 : 3, '0')}`;
+}
+
+export interface CoVoteRef { state: 'CO'; stateName: 'Colorado'; session: string; voteId: number; bill: string }
+export interface CoVoteRecord { state: 'CO'; stateName: 'Colorado'; chamber: Chamber; session: string; voteId: number; bill: string; question: string; date: string; groups: Record<CoVote, string[]> }
+export interface CoVoteLine extends Omit<CoVoteRecord, 'groups'> { name: string; vote: CoVote }
+
+export function parseColoradoVoteUrl(url: string): CoVoteRef | null {
+  const m = CO_URL.exec(url.trim());
+  if (!m) return null;
+  return { state: 'CO', stateName: 'Colorado', session: `20${m[3]}${m[4] ? 'B' : 'A'}`, voteId: Number(m[1]), bill: `${m[2]}${m[3]}${m[4]}-${m[5]}` };
+}
+
+/** The session's member list: /legislators?sess=2019a. */
+export function coMemberListUrl(session: string): string {
+  return `${CO_SITE}legislators?sess=${session.toLowerCase()}`;
+}
+
+function coloradoDocs(r: CoVoteRef): string[] {
+  return [`${CO_SITE}bill_votes/${r.voteId}`, coMemberListUrl(r.session)];
+}
+
+export interface CoMember { slug: string; family: string; given: string; full: string }
+
+/** The member list's rows ("Valdez, Alex" linked /legislators/alex-valdez) and leadership tiles. Null when it reads as no list. */
+export function coMembers(html: string): { members: CoMember[]; leaders: Map<string, string[]> } | null {
+  const members: CoMember[] = [];
+  for (const m of html.matchAll(/<th scope="row" data-label="Name"[^>]*>\s*<span>\s*<a [^>]*href="\/legislators\/([a-z0-9-]+)">([^<]*)<\/a>/g)) {
+    const printed = htmlText(m[2]);
+    const c = /^([^,]+),\s*(.+)$/.exec(printed);
+    if (!c) return null;
+    members.push({ slug: m[1], family: c[1].trim(), given: c[2].trim(), full: `${c[2].trim()} ${c[1].trim()}` });
+  }
+  const rows = (html.match(/data-label="Name"/g) ?? []).length;
+  if (!members.length || rows !== members.length) return null;
+  const leaders = new Map<string, string[]>();
+  for (const t of html.matchAll(/<a href="\/legislators\/([a-z0-9-]+)">\s*<div class='leg-member-tile[\s\S]*?<p>\s*([^<]*?)\s*<\/p>\s*<p class='leg-member-name'>/g)) {
+    const title = squash(t[2]);
+    leaders.set(title, [...(leaders.get(title) ?? []), t[1]]);
+  }
+  return { members, leaders };
+}
+
+const coKey = (s: string): string => fold(s).replace(/[\s'’-]/g, '');
+
+/** A printed label as the one member it names (full name), or the label as printed when none or several fit. */
+export function coMemberName(label: string, list: { members: CoMember[]; leaders: Map<string, string[]> }): string {
+  const printed = squash(label);
+  const office = { President: 'President of the Senate', Speaker: 'Speaker of the House' }[printed];
+  if (office) {
+    const slugs = list.leaders.get(office) ?? [];
+    const hit = slugs.length === 1 ? list.members.filter((m) => m.slug === slugs[0]) : [];
+    return hit.length === 1 ? hit[0].full : printed;
+  }
+  const init = /^(.+?)\s+([A-Z])\.$/.exec(printed);
+  const family = init ? init[1] : printed;
+  const given = (m: CoMember): boolean => !init || fold(m.given).startsWith(init[2].toLowerCase());
+  const fits = list.members.filter((m) => coKey(m.family) === coKey(family) && given(m));
+  if (fits.length) return fits.length === 1 ? fits[0].full : printed;
+  // the page prints the last word of a two-word family name: "Kennedy" for "deGruy Kennedy, Chris" (2019)
+  const tail = list.members.filter((m) => fold(m.family).split(' ').length > 1 && fold(m.family).endsWith(` ${fold(family)}`) && given(m));
+  return tail.length === 1 ? tail[0].full : printed;
+}
+
+/** The vote, or why it was refused (the first check that failed). */
+function readColorado(bodies: string[], r: CoVoteRef): CoVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 2) return fail('not a vote page and a member list');
+  const [html, listHtml] = bodies;
+  const tag = [...html.matchAll(/<h1>\s*Floor Vote\s*<\/h1>\s*<div class='tag-heading-white'>\s*([^<]*?)\s*<\/div>/g)];
+  if (tag.length !== 1) return fail('the page is not one floor vote');
+  if (squash(tag[0][1]).toUpperCase() !== r.bill) return fail(`the page is for ${squash(tag[0][1])}, not ${r.bill}`);
+  const ch = [...html.matchAll(/<h3><span class="icon"><i class="fa-solid fa-landmark-dome"[^>]*><\/i><\/span>\s*(House|Senate)\s*<\/h3>/g)];
+  if (ch.length !== 1) return fail('the page names no one chamber');
+  const chamber = ch[0][1] as Chamber;
+  const cal = [...html.matchAll(/<td data-label="Calendar">\s*<span>([^<]*)<\/span>/g)];
+  const mot = [...html.matchAll(/<td data-label="Motion">\s*<span>([^<]*)<\/span>/g)];
+  const on = [...html.matchAll(/<td class="text-right" data-label="Voted on">\s*<span>(\d{2})\/(\d{2})\/(\d{4}) \d{2}:\d{2}:\d{2} [AP]M<\/span>/g)];
+  if (cal.length !== 1 || mot.length !== 1 || on.length !== 1) return fail('the page prints no one summary row');
+  const question = `${htmlText(cal[0][1])} - ${htmlText(mot[0][1])}`;
+  const date = `${on[0][3]}-${on[0][1]}-${on[0][2]}`;
+  if (!coQuestionIsOnTheBill(question)) return fail(`the question is not a vote on the bill: ${question}`);
+  const counts = new Map<string, number>();
+  for (const c of html.matchAll(/<div class="count-tag ([A-Za-z]+)">\s*(\d+)\s*<\/div>/g)) {
+    if (counts.has(c[1])) return fail(`the count of ${c[1]} is printed twice`);
+    counts.set(c[1], Number(c[2]));
+  }
+  for (const k of counts.keys()) if (!(CO_VOTES as readonly string[]).includes(k) && k !== 'Vacant') return fail(`a kind of vote the reader does not know: ${k}`);
+  if (!counts.has('Yes') || !counts.has('No')) return fail('the page prints no tally');
+  const heading = [...html.matchAll(/<h3 class="text-center">Votes by (House|Senate) member<\/h3>/g)];
+  if (heading.length !== 1 || heading[0][1] !== chamber) return fail('the member list is not the chamber\'s');
+  const table = html.slice(heading[0].index!, html.indexOf('</table>', heading[0].index!));
+  const rows = [...table.matchAll(/<tr role="row">\s*<td>([^<]*)<\/td>\s*<td class="text-right">\s*<span class="icon vote-icon ([A-Za-z]+)">[\s\S]*?<span class="vote-tag ([A-Za-z]+)">\s*([A-Za-z]+)\s*<\/span>\s*<\/td>\s*<\/tr>/g)];
+  if ((table.match(/<tr\b/g) ?? []).length !== rows.length) return fail('a member row the reader cannot read');
+  const labels = Object.fromEntries(CO_VOTES.map((v) => [v, [] as string[]])) as Record<CoVote, string[]>;
+  let vacant = 0;
+  for (const row of rows) {
+    const kind = row[3];
+    if (row[2] !== kind || row[4] !== kind) return fail(`a member row that disagrees with itself: ${row[1]}`);
+    if (kind === 'Vacant') {
+      if (!/^District \d{1,2}$/.test(squash(row[1]))) return fail(`a vacant row that names no district: ${row[1]}`);
+      vacant++; continue;
+    }
+    if (!(CO_VOTES as readonly string[]).includes(kind)) return fail(`a kind of vote the reader does not know: ${kind}`);
+    labels[kind as CoVote].push(htmlText(row[1]));
+  }
+  if (vacant !== (counts.get('Vacant') ?? 0)) return fail(`${vacant} vacant rows and ${counts.get('Vacant') ?? 0} printed`);
+  const list = coMembers(listHtml);
+  if (!list) return fail('the member list did not read');
+  // From 2021 the Senate page lists its presiding officer twice, by surname and again as "President", and counts one vote
+  // (2026 SB 124, vote 29317: 36 rows, Yes printed 25 and listed 26, "Coleman" and "President" both Yes). The office row
+  // is dropped when it is the same member, under the same vote, as a surname row; under another vote the page is refused.
+  for (const office of ['President', 'Speaker']) {
+    const at = CO_VOTES.filter((v) => labels[v].includes(office));
+    if (!at.length) continue;
+    const who = coMemberName(office, list);
+    const twin = CO_VOTES.filter((v) => labels[v].some((l) => l !== office && who !== office && coMemberName(l, list) === who));
+    if (!twin.length) continue;
+    if (at.length !== 1 || twin.length !== 1 || at[0] !== twin[0]) return fail(`the ${office.toLowerCase()} is listed twice under different votes`);
+    labels[at[0]].splice(labels[at[0]].indexOf(office), 1);
+  }
+  for (const v of CO_VOTES) if (labels[v].length !== (counts.get(v) ?? 0)) return fail(`the ${v} group lists ${labels[v].length} members and prints ${counts.get(v) ?? 0}`);
+  const all = CO_VOTES.flatMap((v) => labels[v]);
+  if (all.length + vacant > CO_SIZE[chamber]) return fail('more members than the chamber has');
+  if (new Set(all.map(coKey)).size !== all.length) return fail('a member is listed twice');
+  const groups = Object.fromEntries(CO_VOTES.map((v) => [v, labels[v].map((l) => coMemberName(l, list))])) as Record<CoVote, string[]>;
+  const names = CO_VOTES.flatMap((v) => groups[v]).map(coKey);
+  if (new Set(names).size !== names.length) return fail('two members render as one name');
+  return { state: 'CO', stateName: 'Colorado', chamber, session: r.session, voteId: r.voteId, bill: r.bill, question, date, groups };
+}
+
+const CO_SAID: Record<CoVote, string> = { Yes: 'voted Yes', No: 'voted No', Absent: 'was absent', Excused: 'was excused' };
+
+export function renderColoradoVote(v: CoVoteRecord): string {
+  return [
+    `Colorado ${v.chamber} vote ${v.voteId} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    CO_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...CO_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const CO_RENDER_HEAD = /^Colorado (House|Senate) vote (\d+) \((20\d{2}[AB])\), ([A-Z]+\d{2}B?-\d{3,4}), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseColoradoRender(text: string, url: string): CoVoteRecord | null {
+  const r = parseColoradoVoteUrl(url);
+  const rows = text.split('\n');
+  const h = CO_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + CO_VOTES.length) return null;
+  if (Number(h[2]) !== r.voteId || h[3] !== r.session || h[4] !== r.bill) return null;
+  const groups = {} as Record<CoVote, string[]>;
+  for (const [i, v] of CO_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== CO_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'CO', stateName: 'Colorado', chamber: h[1] as Chamber, session: r.session, voteId: r.voteId, bill: r.bill, date: h[5], question: q[1], groups };
+}
+
+const CO_LINE = /^Colorado (House|Senate) vote (\d+) \((20\d{2}[AB])\), ([A-Z]+\d{2}B?-\d{3,4}) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Yes|voted No|was absent|was excused)\.$/;
+
+export function formatColoradoVoteLine(l: CoVoteLine): string {
+  return `Colorado ${l.chamber} vote ${l.voteId} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${CO_SAID[l.vote]}.`;
+}
+
+function parseColoradoLine(text: string): CoVoteLine | null {
+  const m = CO_LINE.exec(text.trim());
+  const vote = m ? CO_VOTES.find((v) => CO_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'CO', stateName: 'Colorado', chamber: m[1] as Chamber, voteId: Number(m[2]), session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifyColoradoLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseColoradoLine(line);
+  const r = parseColoradoRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.voteId !== r.voteId || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = CO_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function coloradoLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseColoradoRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of CO_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatColoradoVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from its page and the session's member list. Null when any check fails. */
+export function readColoradoVote(bodies: string[], url: string): CoVoteRecord | null {
+  const v = explainColoradoVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readColoradoVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainColoradoVote(bodies: string[], url: string): CoVoteRecord | { refused: string } {
+  const r = parseColoradoVoteUrl(url);
+  if (!r) return { refused: 'not a Colorado vote address' };
+  try { return readColorado(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
@@ -1666,11 +1939,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseMississippiVoteUrl(url)) return MS_GAP_MS;
   if (parseMarylandVoteUrl(url)) return MD_GAP_MS;
   if (parseKansasVoteUrl(url)) return KS_GAP_MS;
+  if (parseColoradoVoteUrl(url)) return CO_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null;
 }
 
 /**
@@ -1688,6 +1962,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   const md = parseMarylandVoteUrl(url);
   if (md) return marylandDocs(md);
   if (parseKansasVoteUrl(url)) return [url.trim()];
+  const co = parseColoradoVoteUrl(url);
+  if (co) return coloradoDocs(co);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -1712,6 +1988,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseKansasVoteUrl(url)) {
     const v = readKansasVote(bodies, url);
     return v ? renderKansasVote(v) : null;
+  }
+  if (parseColoradoVoteUrl(url)) {
+    const v = readColoradoVote(bodies, url);
+    return v ? renderColoradoVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -1757,6 +2037,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: 0, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups.Present, ...v.groups.Absent, ...v.groups['Not voting']] } } : null;
   }
+  if (parseColoradoVoteUrl(url)) {
+    // Colorado: members by their full names from the session's member list (a label no member fits, as printed). Absent
+    // and excused are one group here.
+    const v = readColoradoVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteId, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yes, Nay: v.groups.No, 'Absent or not voting': [...v.groups.Absent, ...v.groups.Excused] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -1781,8 +2068,9 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | null {
   if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
+  if (parseColoradoVoteUrl(url)) return parseColoradoRender(text, url);
   if (parseKansasVoteUrl(url)) return parseKansasRender(text, url);
   if (parseOhioVoteUrl(url)) return parseOhioRender(text, url);
   if (parseSouthDakotaVoteUrl(url)) return parseSouthDakotaRender(text, url);
@@ -1815,8 +2103,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -1896,6 +2184,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseMississippiVoteUrl(url)) return verifyMississippiLine(line, url, text, lastName, fullName);
   if (parseMarylandVoteUrl(url)) return verifyMarylandLine(line, url, text, lastName, fullName);
   if (parseKansasVoteUrl(url)) return verifyKansasLine(line, url, text, lastName, fullName);
+  if (parseColoradoVoteUrl(url)) return verifyColoradoLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -1922,6 +2211,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseMississippiVoteUrl(url)) return mississippiLinesFor(url, text, lastName, fullName);
   if (parseMarylandVoteUrl(url)) return marylandLinesFor(url, text, lastName, fullName);
   if (parseKansasVoteUrl(url)) return kansasLinesFor(url, text, lastName, fullName);
+  if (parseColoradoVoteUrl(url)) return coloradoLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];

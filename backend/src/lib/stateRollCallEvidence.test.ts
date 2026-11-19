@@ -7,6 +7,7 @@ import {
   readStateRollCallDocs, stateRollCallDocs, stateRollCallMinGapMs, fullNameLabelFits,
   explainMarylandVote, mdQuestionIsOnTheBill, pdfCellsBody, readStateRollCallRecord,
   explainKansasVote, ksQuestionIsOnTheBill, ksMemberName, parseKansasVoteUrl,
+  explainColoradoVote, coQuestionIsOnTheBill, coMemberName, coMembers, coBillTag, parseColoradoVoteUrl,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
 import { verifyEvidence, type StanceRow } from './researchVerifier.js';
@@ -1179,6 +1180,163 @@ describe('state roll-call pages — Kansas lines', () => {
 
   it('reads the tally as Yea, Nay and the rest absent or not voting', () => {
     expect(readStateRollCallRecord([ksPage('ks-2017-senate-je_20170222110146_941423')], KS_S17)).toMatchObject({ bill: 'SB 144', date: '2017-02-22', chamber: 'Senate' });
+  });
+});
+
+// Saved 2026-11-18 from leg.colorado.gov: a vote's own page (/bill_votes/<id>) and the session's member list
+// (/legislators?sess=2019a), which is the second document the reader reads. The vote page prints surnames; the member list
+// names them in full. The member list has a party column; the reader does not read it.
+const CO = 'https://leg.colorado.gov/bill_votes/';
+const CO_H19 = `${CO}16466#HB19-1177`;
+const CO_S19 = `${CO}16461#HB19-1177`;
+const CO_S22 = `${CO}26305#SB22-086`;
+const CO_S26 = `${CO}28333#SB26-004`;
+const coDocs = (vote: string, members: string): string[] => [ksPage(vote), ksPage(members)];
+const coRender = (url: string, docs: string[]): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error('the page did not read');
+  return t;
+};
+const coWhy = (url: string, docs: string[]): string => {
+  const v = explainColoradoVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const CO_ARNDT = 'Colorado House vote 16466 (2019A), HB19-1177 - Third reading - Bill (2019-03-04): Jeni James Arndt voted Yes.';
+
+describe('state roll-call pages — Colorado address', () => {
+  it('knows a vote page named with its bill, and reads it with the session\'s member list, a second apart', () => {
+    expect(parseColoradoVoteUrl(CO_H19)).toEqual({ state: 'CO', stateName: 'Colorado', session: '2019A', voteId: 16466, bill: 'HB19-1177' });
+    expect(parseColoradoVoteUrl(`${CO}12#HB20B-1013`)).toMatchObject({ session: '2020B', bill: 'HB20B-1013' });
+    expect(stateRollCallDocs(CO_S26)).toEqual([`${CO}28333`, 'https://leg.colorado.gov/legislators?sess=2026a']);
+    expect(stateRollCallMinGapMs(CO_H19)).toBe(1_000);
+    expect(isStateRollCallUrl(CO_H19)).toBe(true);
+    // the dump's dead address, no bill after the #, plain http, a look-alike host, the bill's page
+    for (const u of ['http://leg.colorado.gov/content/hb19-1166vote5b8aea', `${CO}16466`, CO_H19.replace('https', 'http'),
+      CO_H19.replace('leg.colorado.gov', 'leg.colorado.gov.example.com'), 'https://leg.colorado.gov/bills/hb19-1177', `${CO}016466#HB19-1177`]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('writes the dump\'s bill numbers as the vote page prints them, and refuses another session\'s bill', () => {
+    expect(coBillTag('2019A', 'HB 19-1177')).toBe('HB19-1177');
+    expect(coBillTag('2026A', 'SB 4')).toBe('SB26-004');
+    expect(coBillTag('2026A', 'HB1097')).toBe('HB26-1097');
+    expect(coBillTag('2020B', 'HB 20B-1013')).toBe('HB20B-1013');
+    expect(coBillTag('2019A', 'HB 18-1177')).toBeNull();
+    expect(coBillTag('2020B', 'HB 20-1013')).toBeNull();
+  });
+
+  it('names a printed label in full from the session\'s member list, and keeps a label that fits none or several as printed', () => {
+    const l19 = coMembers(ksPage('co-2019a-members'))!;
+    expect(coMemberName('Valdez A.', l19)).toBe('Alex Valdez');
+    expect(coMemberName('Valdez D.', l19)).toBe('Donald Valdez');
+    expect(coMemberName('Valdez', l19)).toBe('Valdez');
+    expect(coMemberName('Valdez Z.', l19)).toBe('Valdez Z.');
+    expect(coMemberName('Kennedy', l19)).toBe('Chris deGruy Kennedy');
+    // the presiding officer, through the list's leadership tile
+    expect(coMemberName('President', l19)).toBe('Leroy Garcia');
+    expect(coMemberName('Speaker', l19)).toBe('KC Becker');
+    // 2022's list shows two Presidents of the Senate (one resigned during the session): two people fit, no name
+    expect(coMemberName('President', coMembers(ksPage('co-2022a-members'))!)).toBe('President');
+  });
+});
+
+describe('state roll-call pages — reading Colorado', () => {
+  it('reads a 2019 House vote: bill, question, day, tally, a vacant seat, and every member by full name', () => {
+    const t = coRender(CO_H19, coDocs('co-2019-house-16466', 'co-2019a-members'));
+    expect(t.split('\n').slice(0, 3)).toEqual(['Colorado House vote 16466 (2019A), HB19-1177, 2019-03-04.', 'Question: Third reading - Bill',
+      'Yes 38; No 25; Absent 0; Excused 1.']);
+    expect(t).toMatch(/^Yes \(38\): Jeni James Arndt; Adrienne Benavidez;/m);
+    expect(t).toMatch(/^Excused \(1\): Brianna Titone$/m);
+    expect(t).not.toMatch(/District 57/);
+  });
+
+  it('reads a Senate vote whose presiding officer is printed only as "President"', () => {
+    const t = coRender(CO_S19, coDocs('co-2019-senate-16461', 'co-2019a-members'));
+    expect(t.split('\n')[2]).toBe('Yes 18; No 17; Absent 0; Excused 0.');
+    expect(t).toMatch(/^No \(17\): .*; Leroy Garcia$/m);
+  });
+
+  it('counts the presiding officer once when the page lists him twice, by surname and as "President"', () => {
+    const t = coRender(CO_S26, coDocs('co-2026-senate-28333', 'co-2026a-members'));
+    expect(t.split('\n')[2]).toBe('Yes 20; No 13; Absent 0; Excused 2.');
+    expect(t.match(/James Coleman/g)).toHaveLength(1);
+    expect(stateRollCallLinesFor(CO_S26, t, 'Coleman', 'James Coleman')).toEqual([
+      'Colorado Senate vote 28333 (2026A), SB26-004 - Third reading - Bill (2026-02-03): James Coleman voted Yes.']);
+  });
+
+  it('knows which questions are votes on the bill', () => {
+    for (const q of ['Third reading - Bill', 'Third Reading - RESOLUTION', 'Senate Amendments - Concur', 'House amendments - Repass',
+      'Conference Committee Report - Adopt CCR', 'Conference committee - Repass']) {
+      expect(coQuestionIsOnTheBill(q)).toBe(true);
+    }
+    for (const q of ['Committee of the Whole - Amendment', 'Third reading - Amend (L.012)', 'Senate Amendments - Not Concur Appt CC',
+      'Third reading - Refer', 'Senate Amendments - Adhere']) {
+      expect(coQuestionIsOnTheBill(q)).toBe(false);
+    }
+  });
+
+  it('refuses a page whose bill, question, chamber, counts or member rows do not hold together', () => {
+    const [h, m] = coDocs('co-2019-house-16466', 'co-2019a-members');
+    expect(coWhy(CO_H19, [h, m])).toBe('read');
+    // the page prints another bill than its address names
+    expect(coWhy(CO_H19, [tamper(h, "tag-heading-white'>\n    HB19-1177", "tag-heading-white'>\n    HB19-1178"), m])).toMatch(/^the page is for HB19-1178, not HB19-1177$/);
+    // a vote on a motion
+    expect(coWhy(CO_H19, [tamper(h, '<span>Bill</span>', '<span>Amend (L.012)</span>'), m])).toMatch(/^the question is not a vote on the bill/);
+    // a printed count no longer equals the members under it
+    expect(coWhy(CO_H19, [tamper(h, 'count-tag Yes">\n              38', 'count-tag Yes">\n              39'), m])).toMatch(/^the Yes group lists 38 members and prints 39$/);
+    // a member's icon and tag disagree
+    expect(coWhy(CO_H19, [tamper(h, '<td>Titone</td>\n          <td class="text-right">\n          <span class="icon vote-icon Excused">',
+      '<td>Titone</td>\n          <td class="text-right">\n          <span class="icon vote-icon Yes">'), m])).toMatch(/^a member row that disagrees with itself: Titone$/);
+    // a vacant seat printed as a member
+    expect(coWhy(CO_H19, [tamper(h, '<td>District 57</td>', '<td>Valdez A.</td>'), m])).toMatch(/^a vacant row that names no district/);
+    // the member table names the other chamber
+    expect(coWhy(CO_H19, [tamper(h, 'Votes by House member', 'Votes by Senate member'), m])).toMatch(/^the member list is not the chamber's$/);
+    // no member list
+    expect(coWhy(CO_H19, [h, '<html></html>'])).toMatch(/^the member list did not read$/);
+    // the presiding officer listed twice with two different votes
+    const s = ksPage('co-2026-senate-28333');
+    expect(coWhy(CO_S26, [s, ksPage('co-2026a-members')])).toBe('read');
+    expect(coWhy(CO_S26, [tamper(s, '<td>President</td>\n          <td class="text-right">\n          <span class="icon vote-icon Yes">\n            <i class="fa-solid fa-thumbs-up" aria-hidden="true"></i>\n          </span>\n          <span class="vote-tag Yes">\n            Yes',
+      '<td>President</td>\n          <td class="text-right">\n          <span class="icon vote-icon No">\n            <i class="fa-solid fa-thumbs-down" aria-hidden="true"></i>\n          </span>\n          <span class="vote-tag No">\n            No'), ksPage('co-2026a-members')])).toMatch(/^the president is listed twice under different votes$/);
+  });
+});
+
+describe('state roll-call pages — Colorado lines', () => {
+  const t = coRender(CO_H19, coDocs('co-2019-house-16466', 'co-2019a-members'));
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(CO_H19, t, 'Arndt', 'Jeni James Arndt')).toEqual([CO_ARNDT]);
+    expect(verifyStateRollCallLine(CO_ARNDT, CO_H19, t, 'Arndt', 'Jeni James Arndt')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(CO_ARNDT)).toMatchObject({ state: 'CO', chamber: 'House', vote: 'Yes', name: 'Jeni James Arndt', bill: 'HB19-1177' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const v = (line: string, last = 'Arndt', full = 'Jeni James Arndt', url = CO_H19) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(CO_ARNDT.replace('voted Yes', 'voted No'))).toBe('snippet_not_found');
+    expect(v(CO_ARNDT.replace('Jeni James Arndt', 'Mark Baisley'))).not.toBe('verified');
+    expect(v(CO_ARNDT, 'Baisley', 'Mark Baisley')).toBe('name_not_present');
+    expect(v(CO_ARNDT.replace('HB19-1177 -', 'HB19-1178 -'))).toBe('snippet_not_found');
+    expect(v(CO_ARNDT.replace('2019-03-04', '2019-03-05'))).toBe('snippet_not_found');
+    expect(v(CO_ARNDT, 'Arndt', 'Jeni James Arndt', CO_H19.replace('16466', '16467'))).toBe('snippet_not_found');
+  });
+
+  it('gives an excused member "was excused", never a Yes or a No', () => {
+    const [l] = stateRollCallLinesFor(CO_H19, t, 'Titone', 'Brianna Titone');
+    expect(l).toBe('Colorado House vote 16466 (2019A), HB19-1177 - Third reading - Bill (2019-03-04): Brianna Titone was excused.');
+    expect(verifyStateRollCallLine(l.replace('was excused', 'voted Yes'), CO_H19, t, 'Titone', 'Brianna Titone').verdict).toBe('snippet_not_found');
+  });
+
+  it('gives no line to a label two people fit (2022\'s "President")', () => {
+    const s = coRender(CO_S22, coDocs('co-2022-senate-26305', 'co-2022a-members'));
+    expect(s).toMatch(/; President(;|$)/m);
+    expect(stateRollCallLinesFor(CO_S22, s, 'Fenberg', 'Steve Fenberg')).toEqual([]);
+  });
+
+  it('reads the tally as Yea, Nay and the rest absent or not voting', () => {
+    const r = readStateRollCallRecord(coDocs('co-2019-house-16466', 'co-2019a-members'), CO_H19)!;
+    expect(r).toMatchObject({ bill: 'HB19-1177', date: '2019-03-04', chamber: 'House' });
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting']]).toEqual([38, 25, ['Brianna Titone']]);
   });
 });
 

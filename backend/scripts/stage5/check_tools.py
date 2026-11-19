@@ -1873,6 +1873,74 @@ def openstates_convert_places_a_kansas_vote_only_from_the_record_and_rewrites_th
 
 
 @check
+def openstates_convert_places_a_colorado_vote_only_from_the_record_and_rewrites_its_texts(t):
+    """Colorado 2026-11-18: the dump's vote addresses (/content/hb19-1177vote5b6bfa) are 404, so no dump vote is placed;
+    only a vote read from the record is (record_is_the_floor), cited on its own page with the bill after a # and its
+    members (named in full from the session's member list) linked to the dump's people. A bill page needs only https.
+    An old text address (/sites/default/files/...) becomes the same path on content.leg.colorado.gov, which serves it;
+    a 2026 text (/bill_files/<n>/download) is a path robots.txt disallows, and is kept and counted."""
+    X = f'{t}/work/extracts/2026-11/co'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'co', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's19', 'identifier': '2019A', 'name': '2019 Regular Session', 'classification': 'primary', 'start_date': '2019-01-04', 'end_date': '2019-05-03'},
+         {'id': 's26', 'identifier': '2026A', 'name': '2026 Regular Session', 'classification': 'primary', 'start_date': '2026-01-14', 'end_date': '2026-05-13'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'General Assembly', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p-arn', 'name': 'Jeni Arndt', 'given_name': 'Jeni', 'family_name': 'Arndt'},
+         {'id': 'p-val', 'name': 'Alex Valdez', 'given_name': 'Alex', 'family_name': 'Valdez'},
+         {'id': 'p-dva', 'name': 'Donald Valdez', 'given_name': 'Donald', 'family_name': 'Valdez'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'],
+        [{'person_id': p, 'organization_id': 'lo', 'start_date': '2019-01-04', 'end_date': '2021-01-13'} for p in ('p-arn', 'p-val', 'p-dva')])
+    bill = lambda i, s, ident: {'id': i, 'legislative_session_id': s, 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [bill('b1', 's19', 'HB 19-1177'), bill('b2', 's26', 'HB 1097')])
+    tsv('billsource', ['bill_id', 'url'], [{'bill_id': 'b1', 'url': 'http://leg.colorado.gov/bills/hb19-1177'}, {'bill_id': 'b2', 'url': 'https://leg.colorado.gov/bills/HB26-1097'}])
+    tsv('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id'], [])
+    tsv('billversion', ['id', 'bill_id', 'note', 'date'], [{'id': 'v1', 'bill_id': 'b1', 'note': 'Signed Act', 'date': '2019-04-12'},
+                                                          {'id': 'v2', 'bill_id': 'b2', 'note': 'Introduced', 'date': '2026-01-14'}])
+    tsv('billversionlink', ['version_id', 'url', 'media_type'],
+        [{'version_id': 'v1', 'url': 'http://leg.colorado.gov/sites/default/files/documents/2019A/bills/2019a_1177_signed.pdf', 'media_type': 'application/pdf'},
+         {'version_id': 'v2', 'url': 'https://leg.colorado.gov/bill_files/111195/download', 'media_type': 'application/pdf'}])
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'],
+        # d1: the dump's copy of the record vote; d2: a vote on a bill whose record the fetch did not read
+        [{'id': 'd1', 'bill_id': 'b1', 'legislative_session_id': 's19', 'organization_id': 'lo', 'motion_text': 'BILL', 'motion_classification': '{passage}',
+          'start_date': '2019-04-01', 'result': 'pass', 'order': '0', 'updated_at': '2019-04-01'},
+         {'id': 'd2', 'bill_id': 'b2', 'legislative_session_id': 's26', 'organization_id': 'lo', 'motion_text': 'BILL', 'motion_classification': '{passage}',
+          'start_date': '2026-02-10', 'result': 'pass', 'order': '0', 'updated_at': '2026-02-10'}])
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'd1', 'url': 'http://leg.colorado.gov/content/hb19-1177vote69252a'},
+                                                 {'vote_event_id': 'd2', 'url': 'https://leg.colorado.gov/content/hb26-1097vote5b0cb0'}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '3'} for e in ('d1', 'd2')])
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'],
+        [{'vote_event_id': e, 'voter_name': n, 'option': 'yes'} for e in ('d1', 'd2') for n in ('Arndt', 'Valdez A.', 'Valdez D.')])
+    os.makedirs(f'{t}/work/supplements/CO')
+    page = 'https://leg.colorado.gov/bill_votes/16466#HB19-1177'
+    rec = {'url': page, 'date': '2019-03-04', 'motion': 'Third Reading - BILL', 'question': 'Third reading - Bill', 'chamber': 'H', 'yea': 3, 'nay': 0, 'absent': 0, 'passed': 1,
+           'groups': {'Yea': ['Jeni James Arndt', 'Alex Valdez', 'Donald Valdez'], 'Nay': [], 'Absent or not voting': []}}
+    json.dump({'state': 'CO', 'session': '2019A', 'source': 'leg.colorado.gov', 'bills': {'HB19-1177': [rec]},
+               'checked': {'HB19-1177': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/CO/2019A.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/CO-*/CO/*/vote/*.json')]
+    placed = [r for r in rcs if not r['_openstates']['committee']]
+    assert [(r['state_link'], r['chamber']) for r in placed] == [(page, 'H')], [(r['state_link'], r['chamber'], r['_openstates']['committee']) for r in rcs]
+    assert [r['_openstates']['vote_event_id'] for r in rcs if r['_openstates']['committee']] == ['d1', 'd2'], [(r['_openstates']['vote_event_id'], r['state_link']) for r in rcs]
+    people = {j['people_id']: j for j in (json.load(open(f))['person'] for f in glob.glob(f'{t}/out/CO-*/CO/*/people/*.json'))}
+    got = sorted(str(people[v['people_id']]['_openstates']['person_id']) for v in placed[0]['votes'])
+    assert got == ['p-arn', 'p-dva', 'p-val'], got
+    bills = {b['state_link']: b for b in (json.load(open(f))['bill'] for f in glob.glob(f'{t}/out/CO-*/CO/*/bill/*.json'))}
+    assert sorted(bills) == ['https://leg.colorado.gov/bills/HB26-1097', 'https://leg.colorado.gov/bills/hb19-1177'], sorted(bills)
+    assert sorted(b['bill_number'] for b in bills.values()) == ['HB1097', 'HB1177'], 'LegiScan\'s form, the year dropped'
+    texts = sorted(x['url'] for b in bills.values() for x in b['texts'])
+    assert texts == ['https://content.leg.colorado.gov/sites/default/files/documents/2019A/bills/2019a_1177_signed.pdf',
+                     'https://leg.colorado.gov/bill_files/111195/download'], texts
+    mks = [json.load(open(f))['counts'] for f in glob.glob(f'{t}/out/CO-*/.openstates.json')]
+    assert len(mks) == 2 and sum(c.get('co_text_robots_disallowed', 0) for c in mks) == 1, mks
+
+
+@check
 def openstates_convert_links_a_maryland_record_name_to_the_one_person_whose_name_fits(t):
     """Maryland 2026-11-18. The record prints full names; the first pass linked them only among the session's roster
     (memberships and dump-linked voters). Three faults, each measured on the 2017-2026 record:

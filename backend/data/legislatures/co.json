@@ -1,0 +1,56 @@
+{
+  "state": "co",
+  "name": "Colorado",
+  "verified": "2026-11-18",
+  "source": "Colorado reader session (Stage 5 tools), 2026-11-18: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 123-bill dry batch (210 roll calls, 10,011 member votes) read from leg.colorado.gov with the verifier's own fetch, and each member's vote compared with the dump. Two bill texts were read for their marks (2019 HB19-1177 as revised in the second house, and as signed); no text was measured in bulk.",
+  "chambers": {
+    "lower": "House of Representatives",
+    "upper": "Senate"
+  },
+  "sessions": "One regular session a year, from January to May (at most 120 days), named by the year and A (2019A); a special session in the same year is B (2017B, 2020B, 2023B, 2024B, 2025B) and is its own session with its own numbers. Bill numbers start again each session and carry the year: House bills HB19-1001 up, Senate bills SB19-001 up (three digits), and in a special session HB20B-1001 and SB20B-001. The dump writes the year in the number to 2025A (\"HB 19-1177\") and not from 2025B (\"HB 1097\", \"SB 4\"); convert.py stores LegiScan's form, the year dropped and the legislature's padding kept (HB1177, SB004), and the session gives the year. House 65 seats, Senate 35.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Colorado. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (CO-900104 to CO-900118: the ten regular sessions 2017A to 2026A and the special sessions 2017B, 2020B, 2023B, 2024B and 2025B; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The dump's 2017A votes are committee summaries only, and 2018-2019 votes are filed under the chamber and day of the bill's last vote rather than their own. So no Colorado dump vote is placed: scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's vote list from the legislature's bill page (/bills/<hb19-1177>, House and Senate vote sections), keeps the floor votes on the bill (Third Reading, Senate or House amendments repass and concur, conference committee reports, adopting a resolution) and reads each from its own page; convert.py places only those (record_is_the_floor) and keeps every other dump vote marked committee, with the reason in _openstates.not_placed. Run the fetch for every bill the scan finds, then convert the whole state again.",
+    "Compared 2026-11-18, 2017-2026: 210 floor roll calls read from the record, 0 refused. 198 have a dump copy; 12, all 2017A, are on the record only. 9 dump copies were settled by the whole tally among several on one day, 10 sat under another day or chamber, 1 was found by bill and motion alone. Tally differences: 1 (HB19-1026, House vote 16104: dump 50-13, record 51-13). Member votes compared: 10,011, differences: 1 (the same vote: the record prints Matt Soper Yes, the dump has him absent; the record wins). 6 votes are unreadable for one member: the 2022 Senate pages print \"President\" and the 2022 member list shows two \"President of the Senate\" tiles, so Steve Fenberg gets no line on those 6. 355 dump votes on the scanned bills were not read: amendments, Committee of the Whole and other motions.",
+    "The vote page prints the member's family name only (\"Valdez A.\", \"Jaquez Lewis\", or \"President\"/\"Speaker\"), so the reader takes the legislature's member list for that session (/legislators?sess=2019a) as a second document and maps each printed label to the one full name it fits; a label two members fit gives no line. convert.py links the record's full names to Open States people (ms_full_names). Roster legislators: 99, all linked, and each link checked against the 2026 member list (page address, name and e-mail). Four people needed 12 idmap lines by hand, because the dump files them under several ids: Tony Hartsook, Mike Weissman (\"Michael Weissman\" 2017-2020), Tom Sullivan and Tony Exum. Three seat-rule links were checked by hand (Andrew -> Andy Boesenecker, Anthony -> Tony Hartsook, Van Winkle -> Kevin Van Winkle in 2022).",
+    "The member list shows each member's CURRENT title and district even for a past session; the page address (/legislators/tony-exum) is the same in every session. Kevin Grantham (Senate President 2018) is missing from the 2018a list and Rod Geitner from the 2022a list; neither sits now."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "leg.colorado.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A vote is cited on its own page, with the bill named after a #: leg.colorado.gov/bill_votes/<id>#<HB19-1177> (/bill_votes/16466#HB19-1177). Votes from 2017 on are on the current site. The page prints the bill, the chamber, the day, the question (\"Third Reading - Bill\", \"Senate Amendments - Concur\"), the tally (Yes, No, Excused, Absent) and each member as a tile with the family name and a vote. The reader (src/lib/stateRollCallEvidence.ts) reads the session's member list as a second page to turn each printed label into a full name, and reads a vote only when its question is a vote on the bill (third reading, concurring in or repassing after the other chamber's amendments, a conference committee report, adopting a resolution), each group lists the count its heading prints, the page's bill, chamber and day are the address's, and every label fits one member. A member who did not vote is written as the page lists them (excused, absent), never as a Yes or a No. Committee votes, Committee of the Whole votes, amendments and every other motion are not mapped.",
+    "gaps": [
+      "Committee votes, Committee of the Whole votes, amendment votes and every other motion are not votes on the bill and are not mapped (runner, 2026-11-16).",
+      "A printed label that fits no member of that session's list, or more than one, gives no line. In the dry batch this hit one member: Steve Fenberg on 6 Senate votes of 2022, printed \"President\" while the 2022 list shows two members titled President of the Senate.",
+      "2017A dump votes are committee summaries: 2017 floor votes come only from the fetch. The special sessions held one bill in the scan (HB20B-1013) with no floor vote, so no special-session vote page has been read."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "content.leg.colorado.gov",
+      "leg.colorado.gov"
+    ],
+    "marks": "Read on 2 texts (2019 HB19-1177 as revised after second reading in the second house, and as signed; 2026-11-18). The legend on each says capital letters (or bold italic numbers) are new material added to existing law and dashes through words are deletions. Plain pdftotext keeps the capitals, so added words still read as capitals; the struck words were not measured, so read the page as an image before quoting a passage near a deletion. A revised version names itself at the top (\"REVISED ... Amendments Adopted on Second Reading in the Second House\") and carries the house and date of each amendment in the margin.",
+    "note": "The dump links 2017-2025 texts at leg.colorado.gov/sites/default/files/..., which redirects (301) to content.leg.colorado.gov; convert.py rewrites them (co_texts). 2026A texts are linked at leg.colorado.gov/bill_files/<n>/download, which robots.txt disallows: 3,737 such links are kept and counted (co_text_robots_disallowed), not fetched. A bill's page is /bills/<hb19-1177> (lower case; upper case answers 406 to a request without a browser's Accept headers)."
+  },
+  "reader_access": {
+    "leg.colorado.gov": "open",
+    "content.leg.colorado.gov": "open"
+  },
+  "search_note": "Colorado sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's bill pages and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Colorado sessions run one year; bill numbers start again each session and carry the year (HB19-1177).\n- Floor votes kept: third reading, repassing or concurring after the other chamber's amendments, conference committee reports, adopting a resolution. Committee, Committee of the Whole and amendment votes and other motions are not floor votes on the bill.\n- Texts: CAPITAL LETTERS = added to existing law; words with dashes through them = deleted. Plain text keeps the capitals and loses the dashes.",
+  "fill_quotes": {
+    "label_strips": [],
+    "brackets_delete": false
+  },
+  "quirks": [
+    "robots.txt disallows /bill_files/ (the 2026 text downloads) and states no crawl delay. The reader waits one second between requests. No 403, 429 or bot check was met on 2026-11-18.",
+    "A vote page alone does not name members in full: it needs the session's member list (/legislators?sess=YYYYa), which the reader fetches once per session.",
+    "The member list prints each member's current title and district, not the session's; match on the page address and the name, never the district.",
+    "The presiding officer is printed \"President\" or \"Speaker\". The reader resolves the title through the session's member list; when two members carry the same title on it (Senate 2022), the vote gives that seat no line.",
+    "One vote needs its page and the session's member list. The line tool took 2 minutes 4 seconds for 200 random votes from an empty page cache (114 roll calls), and 3 minutes 27 seconds for all 6,256 vote pairs of the dry batch from an empty cache."
+  ]
+}
