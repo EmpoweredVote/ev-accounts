@@ -882,7 +882,267 @@
           "sha256": "b4a6ef98c8b8a6e7bbf16c67610efb9a1feac05f912ca27441b5366d5644da70"
         }
       }
+    },
+    {
+      "id": "9f740f53da80f74fa2a044e1acf8bbc14a9ceaa43c586531b14c39a7177a97d1",
+      "kind": "own-words",
+      "url": "https://www.bob4colorado.com/platform",
+      "date": "2026-11-18",
+      "date_precision": "year",
+      "passage": "Bob is a gun owner, a Federal Firearms Licensee (FFL), has a concealed carry permit, and was the Team Captain for two Marine Corps shooting teams.",
+      "note": "Campaign platform page (undated; fetched 2026-11-18) under a gun safety heading: he describes his own gun ownership, licence and carry permit.",
+      "subjects": [
+        "gun ownership",
+        "carry permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:15:50.203Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "90fa79d49f520e72463ae8e038cc62cad4dcd037e5590ab416f8d3e6f94da677",
+      "kind": "own-words",
+      "url": "https://www.bob4colorado.com/platform",
+      "date": "2026-11-18",
+      "date_precision": "year",
+      "passage": "Bob supports the Rule of Law, and the Constitution is the basic law of the land and the Second Amendment is part of the Constitution. But every right comes with corresponding responsibility.",
+      "note": "Campaign platform page (undated), general statement on the Second Amendment and responsibility.",
+      "subjects": [
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:15:50.203Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "888f4b684b4331ed88b71d9fe92dbf01eda9c9ab12986d3030a8ea0075332e85",
+      "kind": "own-words",
+      "url": "https://www.bob4colorado.com/platform",
+      "date": "2026-11-18",
+      "date_precision": "year",
+      "passage": "Bob, therefore, supports constitutional gun safety measures like Red Flag Laws, whose procedures are not materially different than if the state came into your home to take your child because you were a threat to the child or yourself.",
+      "note": "Campaign platform page (undated): states support for red-flag laws and compares their procedure to removing a child who is under threat.",
+      "subjects": [
+        "red-flag orders",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:15:50.203Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91557a07a6b2d6da71b3c56e53c8ba8215b937eee64ce7f383617cc01789decd",
+      "kind": "own-words",
+      "url": "https://www.bob4colorado.com/platform",
+      "date": "2026-11-18",
+      "date_precision": "year",
+      "passage": "Bob will fight to prevent 2nd Amendment absolutists, who do not recognize any limits, from overturning Colorado's gun safety laws.",
+      "note": "Campaign platform page (undated): says he will oppose efforts to overturn Colorado's gun safety laws.",
+      "subjects": [
+        "keep Colorado gun safety laws",
+        "gun rights limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:15:50.203Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b77b96c9034ee5e96db1227f510a66eeff506db8d71bc24786974f731e4186bf",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1126",
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1126-2026",
+      "act": "nay",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-03-20: nay (tally 34–28); census gate: none.",
+      "subjects": [
+        "firearms dealer permit and responsible-person rules",
+        "dealer fines up to $75,000",
+        "dealer records and security of large-capacity magazines",
+        "report lost or stolen firearms in 48 hours"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1126)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1126-2026.summary.html",
+          "sha256": "1fb7728b4d9261e8f826d4310e82cd571d11eb9ae9bf123683fc6d1f479d4909"
+        }
+      }
+    },
+    {
+      "id": "b95f06e4146da8b26b400ab81d21e58fe980aef82cc363f703885489541fd007",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1144",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1144-2026",
+      "act": "yea",
+      "motion": "House Senate Amendments - CONCUR",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Senate Amendments - CONCUR, 2026-04-02: yea (tally 44–19); census gate: none.",
+      "subjects": [
+        "ban on 3-D printing firearms and parts",
+        "misdemeanor, felony on repeat offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1144)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1144-2026.summary.html",
+          "sha256": "7848370e2df21c0c50e65f9dd4814c64d77b49d376dac67752c3fc799dae621a"
+        }
+      }
+    },
+    {
+      "id": "0aa364b61d4c8245cc71bdf1f05f103f48b09479f37f08eb8fe7d56971ddefa4",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1265",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1265-2026",
+      "act": "yea",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-03-09: yea (tally 39–23); census gate: none.",
+      "subjects": [
+        "local police must trace recovered firearms through ATF system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1265)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1265-2026.summary.html",
+          "sha256": "f1eadbddfd387b96ccc75e3f871dc39cdb449f4fed4835b44374e0abca76b62f"
+        }
+      }
+    },
+    {
+      "id": "d8d2bed27094b8bb8b31259b15fa91de474bc38390fb4e5d0a8df9496175770d",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1302",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1302-2026",
+      "act": "yea",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-04-02: yea (tally 42–21); census gate: none.",
+      "subjects": [
+        "firearm background check unit hours",
+        "annual report on background check times"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1302)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1302-2026.summary.html",
+          "sha256": "eeb973e0de5127029cda7aad27c6aacb5f94b8468ba2ca5746805cc47c6d231f"
+        }
+      }
+    },
+    {
+      "id": "d3ca167a3a2a82635bad19811cdc7cbbd1ad087d546ccde0d75471878e99349d",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/SB26-004",
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-4-2026",
+      "act": "yea",
+      "motion": "House Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO House, House Third Reading - BILL, 2026-03-20: yea (tally 39–24); census gate: none.",
+      "subjects": [
+        "more people and institutions may petition for extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/sb26-004)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-4-2026.summary.html",
+          "sha256": "6a77618e4fd962ae7a0c0ea902fc68f198008225d2f998b63fef88b8be299f8a"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "gun ownership and carry permit",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site platform page https://www.bob4colorado.com/platform (read)",
+        "campaign site issues page https://bob4colorado.com/issues (no gun text returned)",
+        "campaign site press list https://bob4colorado.com/press/?tag=guns (nothing returned on the subject)",
+        "legislature bill pages: not reviewed, covered by bulk bill data",
+        "not reviewed: https://issuu.com/coloradocommunitymedia/docs/ccmhrh_2023-04-06/s/22174812 (page text did not load; a 2023 local news story that a search snippet says quotes him on resisting rollbacks)",
+        "not reviewed: https://issuu.com/coloradocommunitymedia/docs/ccmltv_2023-04-06/s/22174819 (same, page text did not load)",
+        "Wikipedia page confirms House District 43 seat since January 2023; Ballotpedia not fetched",
+        "one web search on name plus gun words; later 2026 ballot status not confirmed from a page"
+      ],
+      "found": 4,
+      "at": "2026-11-19T03:15:50.203Z",
+      "by": "source-collector"
+    }
+  ]
 }

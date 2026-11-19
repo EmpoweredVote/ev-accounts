@@ -1069,7 +1069,235 @@
           "sha256": "87792710f65217928a044e36cf7d0dbff03c0f8e86f1ddfc226c29379419f13a"
         }
       }
+    },
+    {
+      "id": "91bd87fa3c96239a13aa132b66a116e8a619743065d4921860231f57ef48a7cc",
+      "kind": "own-words",
+      "url": "https://rockymountainvoice.com/2025/02/18/let-there-be-a-run-on-guns-senate-democrats-advance-semiauto-gun-ban/",
+      "date": "2025-02-18",
+      "date_precision": "day",
+      "passage": "Before September 2025, I urge you to support your gunsmith, gun store and stock up on what you can afford. I encourage you to map out the closest Second Amendment-friendly state and purchase the guns of your choosing. Let there be a run on guns and magazines.",
+      "note": "Quoted by Rocky Mountain Voice, a news story, from her floor remarks during Senate debate on the 2025 semi-automatic firearm sales bill (SB25-003). She urges gun owners to buy guns and magazines before the law's effective date.",
+      "subjects": [
+        "ban on semi-automatic guns",
+        "limits on magazines",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:46.930Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "702abf9a8c1b91d6529d8cf3cf87aacf81d10d173cf074fba3a984d396d28b65",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1126",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1126-2026",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2026-04-14: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "firearms dealer permit and responsible-person rules",
+        "dealer fines up to $75,000",
+        "dealer records and security of large-capacity magazines",
+        "report lost or stolen firearms in 48 hours"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1126)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1126-2026.summary.html",
+          "sha256": "1fb7728b4d9261e8f826d4310e82cd571d11eb9ae9bf123683fc6d1f479d4909"
+        }
+      }
+    },
+    {
+      "id": "27b7042f0a1f5dcf7e523fcf48aba6f9dc16790c28f241d6e80307f23d8baf7f",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1144",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1144-2026",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2026-03-30: nay (tally 23–12); census gate: none.",
+      "subjects": [
+        "ban on 3-D printing firearms and parts",
+        "misdemeanor, felony on repeat offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1144)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1144-2026.summary.html",
+          "sha256": "7848370e2df21c0c50e65f9dd4814c64d77b49d376dac67752c3fc799dae621a"
+        }
+      }
+    },
+    {
+      "id": "d45be42c260cac16376f6aaafb353202e006100591926143026e828ae96874b3",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1265",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1265-2026",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2026-04-14: nay (tally 23–12); census gate: none.",
+      "subjects": [
+        "local police must trace recovered firearms through ATF system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1265)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1265-2026.summary.html",
+          "sha256": "f1eadbddfd387b96ccc75e3f871dc39cdb449f4fed4835b44374e0abca76b62f"
+        }
+      }
+    },
+    {
+      "id": "8aba832161674cc4bc3b4eb777c2c532a8d77439560bebea548930c4280de091",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/HB26-1302",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "CO-HB-1302-2026",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2026-04-14: nay (tally 22–13); census gate: none.",
+      "subjects": [
+        "firearm background check unit hours",
+        "annual report on background check times"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1302)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1302-2026.summary.html",
+          "sha256": "eeb973e0de5127029cda7aad27c6aacb5f94b8468ba2ca5746805cc47c6d231f"
+        }
+      }
+    },
+    {
+      "id": "42b0410be9f38f0f69fa1874ba130d31375c18f3a392ffbad4fe6794f8f1f19a",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/SB26-004",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-4-2026",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2026-02-03: nay (tally 20–13); census gate: none.",
+      "subjects": [
+        "more people and institutions may petition for extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as enacted; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/sb26-004)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-4-2026.summary.html",
+          "sha256": "6a77618e4fd962ae7a0c0ea902fc68f198008225d2f998b63fef88b8be299f8a"
+        }
+      }
+    },
+    {
+      "id": "ff10f444969f927053a923369c092693e0971ef090abf3212f2ed40e9b8bb829",
+      "kind": "record",
+      "url": "https://leg.colorado.gov/bills/SB26-043",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-43-2026",
+      "act": "nay",
+      "motion": "Senate Third Reading - BILL",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CO Senate, Senate Third Reading - BILL, 2026-03-02: nay (tally 19–16); census gate: none.",
+      "subjects": [
+        "firearm barrels sold only in person by licensed dealers",
+        "minimum age 18 to buy a barrel",
+        "dealer records of barrel sales for 5 years"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as introduced; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/sb26-043)",
+        "fetched_at": "2026-11-19T02:18:56.370611Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-SB-43-2026.summary.html",
+          "sha256": "c1bc98525afb5fb86fc45c81bddb971554affba97bfbacaab5b7a5ed754bbaeb"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on semi-automatic guns",
+        "limits on magazines",
+        "buy guns before a ban takes effect",
+        "Second Amendment rights"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://leg.colorado.gov/legislators/Janice-Rich (member page read: Senator, Minority Whip; lists no personal website)",
+        "campaign site: none found in search results",
+        "blocked: https://ballotpedia.org/Janice_Rich (403)",
+        "blocked: https://justfacts.votesmart.org/candidate/181791 (403)",
+        "web search (2 searches run): news story from Rocky Mountain Voice read and quoted; other results were opinion pieces not about her own words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://rallyforourrights.com/2026-co-firearm-legislation",
+        "status check: a search summary said she was seeking re-election in 2026; outcome of the June 30 primary not confirmed by a page I fetched"
+      ],
+      "found": 1,
+      "at": "2026-11-19T03:13:46.930Z",
+      "by": "source-collector"
+    }
+  ]
 }

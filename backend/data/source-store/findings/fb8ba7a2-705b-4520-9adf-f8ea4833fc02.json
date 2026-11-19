@@ -1,0 +1,96 @@
+{
+  "politician_id": "fb8ba7a2-705b-4520-9adf-f8ea4833fc02",
+  "findings": [
+    {
+      "id": "f7ac2ba49d02bb0d69b6f0ecc7d42272ecf06bf9661525767c1ea43ce7ea99dd",
+      "kind": "own-words",
+      "url": "https://boulderweekly.com/content-archives/voters-guide/elliott-hood-cu-regent/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Second, we need to ban concealed carry and get guns out of our classrooms. However you feel about guns — whether you are the most ardent Second Amendment defender or you think all guns should be banned — we can all reasonably agree that guns have no place in our classrooms and on our campuses. As Regent, I'll advocate to exercise our authority under state and federal law to ban concealed carry on campus (open carry is already banned).",
+      "note": "Candidate voters-guide answer: says he will push to ban concealed carry on university campuses.",
+      "subjects": [
+        "ban carrying guns on campus",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:14:44.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "248f13a75bc3c0cc915b9a98e5ccae5dcdc3c4173f6a7e622f684a8ae958659e",
+      "kind": "own-words",
+      "url": "https://boulderweekly.com/content-archives/voters-guide/elliott-hood-cu-regent/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "There is a legal precedent supporting banning guns in certain sensitive places, I will strongly push for a concealed carry ban.",
+      "note": "Same voters guide: cites legal precedent for banning guns in sensitive places and commits to pushing a concealed carry ban.",
+      "subjects": [
+        "places where carry is allowed",
+        "ban carrying guns on campus"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:14:44.279Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee14494c3e1f8ab08b9eef3aa2239579688cf1e626fa5eb06a136661a12737ce",
+      "kind": "own-words",
+      "url": "https://www.westword.com/news/university-of-colorado-regent-candidates-have-different-visions-22364369/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Nobody needs a gun to attend or teach a class. It’s incredibly dangerous and disruptive, and we need to make sure that we are passing common-sense gun-control measures across the board.",
+      "note": "Quoted by Westword at a candidate debate, backing the state's sensitive-spaces gun bill passed that spring and calling for gun-control measures broadly.",
+      "subjects": [
+        "places where carry is allowed",
+        "ban carrying guns on campus",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:14:44.279Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban carrying guns on campus",
+        "concealed carry permits",
+        "places where carry is allowed",
+        "gun violence",
+        "gun-control measures generally"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data (office is a statewide university board seat, no bills)",
+        "the university system's page for this regent (read; no gun content)",
+        "blocked: https://ballotpedia.org/Elliott_Hood (403)",
+        "nothing on the subject: Wikipedia (no page)",
+        "web search: office is at-large member of the University of Colorado Board of Regents, took office January 2025",
+        "Boulder Weekly 2024 voters guide (own written answers)",
+        "Westword 2024 regent-candidate debate story (direct quotes)",
+        "not reviewed: campaign site, newsletters, regent meeting videos, regent policy vote on campus carry"
+      ],
+      "found": 3,
+      "at": "2026-11-19T03:14:44.279Z",
+      "by": "source-collector"
+    }
+  ]
+}

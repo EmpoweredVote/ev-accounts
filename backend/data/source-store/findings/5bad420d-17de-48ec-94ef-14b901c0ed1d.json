@@ -1,0 +1,121 @@
+{
+  "politician_id": "5bad420d-17de-48ec-94ef-14b901c0ed1d",
+  "findings": [
+    {
+      "id": "1a2cfacca48e68dff765d0b0d0feab107668cc3fe388fa8eef538e9d18b13fa3",
+      "kind": "own-words",
+      "url": "https://kiowacountypress.net/content/colorado-ag-weiser-joins-legal-brief-defends-large-capacity-magazine-restrictions",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "Each mass shooting is different, but a common denominator in each incident is that the shooter used a large-capacity magazine. As experience has shown, large-capacity magazine limitation laws decrease the deadly impacts of mass shootings by reducing the number of people who will be shot during a mass shooting incident — and save lives. It is critical that courts uphold these common-sense gun safety laws,",
+      "note": "Statement quoted by Colorado Newsline (republished by Kiowa County Press) when he joined 18 other attorneys general in a court brief backing Washington, D.C.'s limit on magazines over 10 rounds.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:48.311Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e44398a343020832be01243a23a54bbcabbbb807567c6fb9fbbd8d9dd48bef6e",
+      "kind": "record",
+      "url": "https://kiowacountypress.net/content/colorado-ag-weiser-joins-legal-brief-defends-large-capacity-magazine-restrictions",
+      "date": "2023",
+      "date_precision": "year",
+      "act": "other",
+      "motion": "Joined 18 other attorneys general in court brief supporting D.C. large-capacity magazine law",
+      "note": "As attorney general he signed on to a multi-state court brief defending D.C.'s ban on magazines holding more than 10 rounds against a Second Amendment challenge.",
+      "subjects": [
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:48.311Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0b9e2a0f602e6f75829403ef509f1957a81f5bb5e8adfb064d9eaaeb7d8eec7",
+      "kind": "own-words",
+      "url": "https://gazette.com/?p=1240614",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "We know from our work leading the Domestic Violence Fatality Review Board that most domestic violence-related murders involve firearms,” Weiser said in a statement. “Consequently, when it comes to protecting domestic violence victims from being harmed or killed by their abusers, it’s clear that gun safety protections make a difference and saves lives.",
+      "note": "Statement quoted by The Gazette on the federal law barring gun possession by people under domestic violence restraining orders, after he joined 25 attorneys general asking the U.S. Supreme Court to uphold it.",
+      "subjects": [
+        "limits on who may have a gun",
+        "domestic violence restraining orders and guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:48.311Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98b29f821374b0971524dbd9a71869319ce9aaf3c3c1376e75dfda0f348af82b",
+      "kind": "record",
+      "url": "https://gazette.com/?p=1240614",
+      "date": "2023",
+      "date_precision": "year",
+      "act": "other",
+      "motion": "Joined 25 state attorneys general in petition asking U.S. Supreme Court to uphold federal ban on gun possession under domestic violence restraining orders (Rahimi)",
+      "note": "As attorney general he joined a petition asking the Supreme Court to reverse a Fifth Circuit ruling that struck down the federal law.",
+      "subjects": [
+        "limits on who may have a gun",
+        "domestic violence restraining orders and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:48.311Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "keep guns from people under domestic violence restraining orders",
+        "red-flag orders",
+        "state gun laws defended in court",
+        "Second Amendment and gun safety laws"
+      ],
+      "places": [
+        "status: sitting Colorado attorney general, in scope (confirmed by news results)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://coag.gov/press-releases/weiser-vows-to-defend-colorados-common-sense-gun-safety-law-from-trump-doj-attack/ (empty bot-check response)",
+        "blocked: https://coag.gov/press-releases/02-21-19 (empty bot-check response)",
+        "blocked: https://coag.gov/press-releases/weiser-statement-striking-down-law-governing-firearms-on-private-property/ (empty bot-check response)",
+        "blocked: https://coag.gov/?s=gun (empty page)",
+        "blocked: https://ballotpedia.org/Phil_Weiser (403)",
+        "not reviewed: https://coag.gov/firearmsafety/ (official firearm-safety page, same blocked site)",
+        "not reviewed: https://coag.gov/press-releases/6-14-24 (same blocked site)",
+        "campaign site: no working address found (https://www.philweiser.com/ did not connect)",
+        "news search on name plus gun words: two news stories with direct quotes saved; other results were leads only"
+      ],
+      "found": 4,
+      "at": "2026-11-19T03:13:48.311Z",
+      "by": "source-collector"
+    }
+  ]
+}

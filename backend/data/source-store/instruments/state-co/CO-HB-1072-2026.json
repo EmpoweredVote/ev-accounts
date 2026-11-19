@@ -1,0 +1,39 @@
+{
+  "id": "CO-HB-1072-2026",
+  "scope": "state:co",
+  "title": "HB1072 (2026 Regular): Right to Firearm Possession & Elimination of Extreme Risk Protection Orders",
+  "urls": [
+    "https://leg.colorado.gov/bills/HB26-1072",
+    "https://leg.colorado.gov/bill_files/111136/download"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Scott Slaugh",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65cb2e7e-8f1e-44a2-8b22-0708fb53f31d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Colorado) (gun-policy Stage 5, Colorado); NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary (Colorado) (Bill Summary (as introduced; no bill text read); read 2026-11-19; legislature bill page, https://leg.colorado.gov/bills/hb26-1072)",
+    "fetched_at": "2026-11-19T02:18:56.370611Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CO-HB-1072-2026.summary.html",
+      "sha256": "005c2fbbfc4a43afee825eaced92bf820cde078769f14e0f0b2c302dc0a85c36"
+    },
+    "note": "Summary only, no bill text read (legislature's staff summary, as introduced). Quotes are from the summary, not bill text. Introduced version only; no passage vote recorded."
+  },
+  "operative_text": "Staff summary: The bill codifies an individual's right to own, possess, and use a firearm to the maximum extent permissible by the state and federal constitutions. Extreme risk protection orders and temporary extreme risk protection orders are repealed."
+}

@@ -240,9 +240,10 @@ export function decideRecord(input: RuleInput): RuleResult {
 
 // ---------- the code's words ----------
 
-/** `CA-AB-1127-2025` → `AB 1127 (2025)`, as the coder brief asks; undefined for ids the gate may not read. */
+/** `CA-AB-1127-2025` → `AB 1127 (2025)`, as the coder brief asks; undefined for ids the gate may not read.
+ *  An older Colorado id keeps the year in the number (`CO-SB25-003-2025` → `SB 3 (2025)`); the gate reads it the same way (storeIdToken). */
 export function billName(id: string): string | undefined {
-  const m = /^[A-Z]{2}-([A-Z]+)-(\d+)-((?:19|20)\d{2})$/.exec(id);
+  const m = /^[A-Z]{2}-([A-Z]+)(?:\d{2})?-(\d+)-((?:19|20)\d{2})$/.exec(id);
   return m ? `${m[1]} ${Number(m[2])} (${m[3]})` : undefined;
 }
 

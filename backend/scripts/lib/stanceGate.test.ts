@@ -653,4 +653,28 @@ describe('instrument-not-cited: South Carolina bare bill numbers (2026-11-10)', 
     expect(ids(row, { evidence: snip('LegiScan SC 124th General Assembly S0108: Jane Doe is listed as a sponsor.') })).not.toContain('record-no-instrument');
     expect(ids(row, { evidence: snip('LegiScan SC 124th General Assembly S0108: Jane Doe is listed as a sponsor.') })).not.toContain('instrument-not-cited');
   });
+  it('Colorado: a vote line printing HB23-1219 cites the HB 1219 the reasoning names (co-01)', () => {
+    const row = { ...good, reasoning: 'Voted no on HB 1219 (2023), the waiting-period bill.' };
+    const line = 'Colorado House vote 24468 (2023A), HB23-1219 - Third reading - Bill (2023-03-01): Jane Doe voted No.';
+    expect(ids(row, { evidence: snip(line) })).not.toContain('instrument-not-cited');
+    expect(ids({ ...row, reasoning: 'Voted no on HB 1220 (2023).' }, { evidence: snip(line) })).toContain('instrument-not-cited');
+  });
+  it('Colorado: "SB 25-003" with a space reads as SB 3 (co-01)', () => {
+    const row = { ...good, reasoning: 'Voted no on the type ban in SB 25-003 (2025).' };
+    const line = 'Colorado Senate vote 22250 (2025A), SB25-003 - Third reading - Bill (2025-02-18): Jane Doe voted No.';
+    expect(ids(row, { evidence: snip(line) })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip(line.replace('SB25-003', 'SB25-004')) })).toContain('instrument-not-cited');
+  });
+  it('Colorado: a sponsorship cited on the bill page leg.colorado.gov/bills/hb25-1164 cites HB 1164 (co-01)', () => {
+    const page = 'https://leg.colorado.gov/bills/hb25-1164';
+    const row = { ...good, reasoning: 'Co-sponsored HB 1164 (2025), the carry bill.', source_urls: [page] };
+    const sponsors = 'Rep. C. Richardson | Rep. J. Doe | Rep. T. Winter Co-Sponsor (None) Quick Links';
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: page, snippet: sponsors }] })).not.toContain('instrument-not-cited');
+    expect(ids({ ...row, reasoning: 'Co-sponsored HB 1165 (2025).' }, { evidence: [{ ...ev[0], source_url: page, snippet: sponsors }] })).toContain('instrument-not-cited');
+    // Another host's address, or a vote page's #fragment, stands for nothing.
+    const other = 'https://example.com/bills/hb25-1164';
+    expect(ids({ ...row, source_urls: [other] }, { evidence: [{ ...ev[0], source_url: other, snippet: sponsors }] })).toContain('instrument-not-cited');
+    const vote = 'https://leg.colorado.gov/bill_votes/22181#HB25-1164';
+    expect(ids({ ...row, source_urls: [vote] }, { evidence: [{ ...ev[0], source_url: vote, snippet: sponsors }] })).toContain('instrument-not-cited');
+  });
 });

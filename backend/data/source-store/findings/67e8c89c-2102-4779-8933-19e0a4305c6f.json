@@ -1,0 +1,117 @@
+{
+  "politician_id": "67e8c89c-2102-4779-8933-19e0a4305c6f",
+  "findings": [
+    {
+      "id": "0699d73b4df6054cd996316b222976869c0ad63462b836d5d8d792582709009a",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2024/03/22/university-of-colorado-considers-concealed-carry-firearms-ban-2/",
+      "date": "2024-03-19",
+      "date_precision": "day",
+      "passage": "If there is any place where we should be able to agree that we don't need the presence of guns, it's in higher education.",
+      "note": "Quoted in a Colorado Politics news story on her remarks at the University of Colorado regents' committee meeting while proposing a ban on concealed carry on CU campuses. The story also reports she called herself a \"staunch Second Amendment supporter\".",
+      "subjects": [
+        "guns on university campuses",
+        "carry a concealed gun with a permit",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:49.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f82b0c46b3ee173053558c485a6dda0ffea42e6589aba881beaf5ba9a434ea7",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2024/03/22/university-of-colorado-considers-concealed-carry-firearms-ban-2/",
+      "date": "2024-03-19",
+      "date_precision": "day",
+      "passage": "It is difficult for me as a regent to sit down and see so many people asking us to make changes in their house and then not at least having the conversation to make changes.",
+      "note": "Quoted in a Colorado Politics news story: she explains why she is bringing forward a proposal to ban concealed carry on CU campuses, citing repeated requests from students, faculty and staff.",
+      "subjects": [
+        "guns on university campuses",
+        "carry a concealed gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:49.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6de667b4080b01bb0848b299efffbcffb92221c068b977c739d4a1e5b7aa18cf",
+      "kind": "own-words",
+      "url": "https://cuindependent.org/2024/03/21/state-senators-and-regents-consider-concealed-carry-ban/",
+      "date": "2024-03-19",
+      "date_precision": "day",
+      "passage": "If there is any place where we should be able to agree that we don’t need the presence of guns, it’s in higher [education] and definitely not in our hospitals,",
+      "note": "Quoted in a student newspaper story on her remarks at the regents' University Affairs Committee meeting, where she said she would formally move to ban concealed carry on all CU campuses.",
+      "subjects": [
+        "guns on university campuses",
+        "carry a concealed gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:49.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "166a794d31c9bd981ee108594ea510277c88961574cc39f4cbf808aca0662d75",
+      "kind": "record",
+      "url": "https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/",
+      "date": "2024-06-18",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Proposed amendment to CU Regent Policy 14.I (weapons control) to ban permit holders from carrying concealed handguns on all campuses",
+      "note": "A news story reports that she brought a proposed change to the regents' weapons policy. It would replace wording that protects the right to carry under the state concealed-carry law with a ban on concealed handguns by permit holders on all campuses, with exceptions for educational programs, jobs requiring firearms and authorized teams. A later news story reports the regents did not adopt it; the regents' own minutes were not located.",
+      "subjects": [
+        "guns on university campuses",
+        "carry a concealed gun with a permit",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:13:49.623Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns on university campuses",
+        "carry a concealed gun with a permit",
+        "places where carry is allowed",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data (she is a university regent, not a legislator, so no bills)",
+        "https://www.cu.edu/regents/wanda-james (read: regent page, nothing on the subject)",
+        "campaign site: blocked: https://www.wandajames.com/ (no response)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Wanda_James (fetch returned an empty page)",
+        "news search on name plus gun words (3 news stories read: Colorado Politics, CU Independent, Colorado Sun; plus Complete Colorado and Bearing Arms)",
+        "not reviewed: the regents' own meeting minutes or video for the April and June 2024 meetings (not located)",
+        "official page and URL-pattern sites: no own-words gun statements beyond the news quotes"
+      ],
+      "found": 4,
+      "at": "2026-11-19T03:13:49.623Z",
+      "by": "source-collector"
+    }
+  ]
+}

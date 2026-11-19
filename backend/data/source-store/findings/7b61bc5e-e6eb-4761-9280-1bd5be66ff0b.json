@@ -1,0 +1,31 @@
+{
+  "politician_id": "7b61bc5e-e6eb-4761-9280-1bd5be66ff0b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "status check: Jefferson County clerk running for Colorado secretary of state (statewide office, not a legislator); won the 2026-06-30 primary per https://ballotpedia.org/Amanda_Gonzalez_(Colorado) and https://coloradosun.com/2026/06/30/colorado-primary-election-secretary-of-state-results/; general-election opponent James Wiley",
+        "On the Record (0 meetings)",
+        "campaign site https://www.amandaforcolorado.com and /meet-amanda: searched page text for gun, firearm, safety, violence terms, nothing on the subject",
+        "https://amandaforcolorado.com/news and https://www.amandaforcolorado.com/issues: nothing on the subject",
+        "Ballotpedia profile: nothing on the subject",
+        "Colorado Sun primary issue guide https://coloradosun.com/2026/06/01/amanda-gonzalez-jessie-danielson-secretary-of-state-colorado-primary-issue-guide/: nothing on the subject",
+        "web search on name plus firearm and Second Amendment words: nothing on the subject; only unrelated results about other counties",
+        "sponsor list: covered by bulk bill data (she holds no legislative seat)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T03:13:54.598Z",
+      "by": "source-collector"
+    }
+  ]
+}

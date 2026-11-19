@@ -759,6 +759,186 @@
           "vote": "absent"
         }
       ]
+    },
+    {
+      "date": "2025-02-18",
+      "body": "CO Senate",
+      "motion": "Senate Third Reading - BILL",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 15,
+      "absent": 0,
+      "note": "leg.colorado.gov roll call (read from the legislature) 90229209 https://leg.colorado.gov/bill_votes/22250#SB25-003",
+      "members": [
+        {
+          "name": "Judy Amabile",
+          "vote": "yea",
+          "politician_id": "68ace22a-559e-4397-b66a-1785f3a35d7e"
+        },
+        {
+          "name": "Matt Ball",
+          "vote": "yea",
+          "politician_id": "095c8f61-74ff-4d0d-9dce-90605642c05c"
+        },
+        {
+          "name": "Jeff Bridges",
+          "vote": "yea",
+          "politician_id": "cb0906d5-b6d5-495c-9af0-335a8ad72920"
+        },
+        {
+          "name": "Lisa Cutter",
+          "vote": "yea",
+          "politician_id": "1b919f48-974f-4cd4-a264-a4498b8abfbc"
+        },
+        {
+          "name": "Jessie Danielson",
+          "vote": "yea",
+          "politician_id": "b71acb35-2426-41c2-9d22-f224d752cf6e"
+        },
+        {
+          "name": "Lindsey Daugherty",
+          "vote": "yea",
+          "politician_id": "224ba744-e39d-47f1-879f-064cd024e709"
+        },
+        {
+          "name": "Julie Gonzales",
+          "vote": "yea",
+          "politician_id": "e76a8f3b-27c3-4ee4-8f92-b3e5436ff3f6"
+        },
+        {
+          "name": "Iman Jodeh",
+          "vote": "yea",
+          "politician_id": "11efc6cc-462d-4c40-b511-863fbfbf55e7"
+        },
+        {
+          "name": "Cathy Kipp",
+          "vote": "yea",
+          "politician_id": "b87be611-7566-4118-a72d-bc637a628ac8"
+        },
+        {
+          "name": "Chris Kolker",
+          "vote": "yea",
+          "politician_id": "234f8392-fd93-4bcc-a749-fc61c58b4821"
+        },
+        {
+          "name": "Janice Marchman",
+          "vote": "yea",
+          "politician_id": "29d28463-fe93-4d79-8fb4-f9757ef61b78"
+        },
+        {
+          "name": "Dafna Michaelson Jenet",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Mullica",
+          "vote": "yea",
+          "politician_id": "53a5e3ec-bf14-443e-ab86-2fa78398f24d"
+        },
+        {
+          "name": "Dylan Roberts",
+          "vote": "yea",
+          "politician_id": "e703958a-9cdb-4eba-92b4-ee63267cf17a"
+        },
+        {
+          "name": "Robert Rodriguez",
+          "vote": "yea",
+          "politician_id": "c2311cb5-2ff0-4dcb-83a3-4b3be15a39fa"
+        },
+        {
+          "name": "Tom Sullivan",
+          "vote": "yea",
+          "politician_id": "0b23c3d0-9e80-4643-b7ce-8726f8a07e7e"
+        },
+        {
+          "name": "Mike Weissman",
+          "vote": "yea",
+          "politician_id": "1b91349f-6a61-406e-ba75-27eedc9eb851"
+        },
+        {
+          "name": "Faith Winter",
+          "vote": "yea"
+        },
+        {
+          "name": "James Coleman",
+          "vote": "yea",
+          "politician_id": "2f777001-a339-40d3-9f6d-caab27f73d84"
+        },
+        {
+          "name": "Mark Baisley",
+          "vote": "nay",
+          "politician_id": "3b8ff5f8-582a-4044-9a19-dc63b6d6a7ab"
+        },
+        {
+          "name": "Scott Bright",
+          "vote": "nay",
+          "politician_id": "1225a351-4a5d-4e31-82ac-20ab08b3f7eb"
+        },
+        {
+          "name": "John Carson",
+          "vote": "nay",
+          "politician_id": "4c6a37de-4ea9-4fbe-9999-2036c70fc6bd"
+        },
+        {
+          "name": "Marc Catlin",
+          "vote": "nay",
+          "politician_id": "4e0f0ef0-e603-48f9-a803-be51827550fa"
+        },
+        {
+          "name": "Tony Exum",
+          "vote": "nay",
+          "politician_id": "92fbd4c0-34a6-4561-8916-fb56f5096ad0"
+        },
+        {
+          "name": "Lisa Frizell",
+          "vote": "nay",
+          "politician_id": "94d0f144-3df8-4948-896c-960efebeeb66"
+        },
+        {
+          "name": "Nick Hinrichsen",
+          "vote": "nay",
+          "politician_id": "d360fe6c-9512-4d2f-9d44-4dd9f15c5ac0"
+        },
+        {
+          "name": "Barbara Kirkmeyer",
+          "vote": "nay",
+          "politician_id": "db690948-f370-448f-862b-e45768d92723"
+        },
+        {
+          "name": "Larry Liston",
+          "vote": "nay",
+          "politician_id": "ca912826-ca11-4023-9450-e50e5e9b293f"
+        },
+        {
+          "name": "Paul Lundeen",
+          "vote": "nay"
+        },
+        {
+          "name": "Byron Pelton",
+          "vote": "nay",
+          "politician_id": "3361640c-3a6e-462b-a34f-245bfde116e6"
+        },
+        {
+          "name": "Rod Pelton",
+          "vote": "nay",
+          "politician_id": "543138e3-02f3-4926-bdf6-0cd126f63c2b"
+        },
+        {
+          "name": "Janice Rich",
+          "vote": "nay",
+          "politician_id": "8baa123c-c7c7-4cc7-b888-e26dfc47e587"
+        },
+        {
+          "name": "Cleave Simpson",
+          "vote": "nay",
+          "politician_id": "796e99ba-29f5-4f30-9e0e-a36b6f05e78a"
+        },
+        {
+          "name": "Marc Snyder",
+          "vote": "nay",
+          "politician_id": "6379d38c-3553-4ca3-87da-918efdcf73f2"
+        }
+      ],
+      "body_size": 35
     }
   ],
   "provenance": {

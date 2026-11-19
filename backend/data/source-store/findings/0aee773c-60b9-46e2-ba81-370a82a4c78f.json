@@ -1,0 +1,76 @@
+{
+  "politician_id": "0aee773c-60b9-46e2-ba81-370a82a4c78f",
+  "findings": [
+    {
+      "id": "c1762dd53e11f5a2395e32559a4fff0ac7fc0541fe275a6e9ab2d05a76892cd1",
+      "kind": "own-words",
+      "url": "https://denvergazette.com/opinion/columns/guest-column-colorado-dems-draw-a-beat-on-2nd-amendment/article_aa486e99-65ed-52f9-a42d-111064ab57e3.html",
+      "date": "2023-01-10",
+      "date_precision": "day",
+      "passage": "Let’s be honest and call this what it is: unconstitutional.",
+      "note": "In a guest column she wrote for a newspaper (signed as state party chair at the time), she described a draft House bill, \"Prohibition of Assault Weapons in Colorado\", that would bar possessing, making, buying or selling a listed set of guns including semi-automatic pistols, and called it unconstitutional.",
+      "subjects": [
+        "ban on assault-style guns",
+        "Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:33.346Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0651ee4680ce298e611e10f209f6a904fbe30958f77b8282b4556150c3308c96",
+      "kind": "own-words",
+      "url": "https://denvergazette.com/opinion/columns/guest-column-colorado-dems-draw-a-beat-on-2nd-amendment/article_aa486e99-65ed-52f9-a42d-111064ab57e3.html",
+      "date": "2023-01-10",
+      "date_precision": "day",
+      "passage": "We must stand up and fight against this unconstitutional legislation.",
+      "note": "Same column: she urges opposing the draft assault-weapons ban and says the legislature should focus on crime rather than on gun owners.",
+      "subjects": [
+        "ban on assault-style guns",
+        "Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:33.346Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights",
+        "large-capacity magazines",
+        "permit to buy a gun"
+      ],
+      "places": [
+        "On the Record (0 appearances, no name matches)",
+        "https://www.cde.state.co.us/node/75547 (confirms swearing-in to the State Board of Education, seat CD 4, January 2025; she is a board member, not a legislator)",
+        "https://gazette.com/author/kristi-burton-brown/ (her column list; one column on the subject, saved)",
+        "blocked: https://ballotpedia.org/Kristi_Burton_Brown (403)",
+        "blocked: https://www.cde.state.co.us/stateboard/members (404 page not found)",
+        "sponsor list: covered by bulk bill data",
+        "web searches on her name plus gun, Second Amendment, permit, red flag, magazine and carry words: no other statements of hers found",
+        "campaign site and official member page: not found in search results, not reviewed",
+        "nothing on the subject from her as a board member"
+      ],
+      "found": 2,
+      "at": "2026-11-19T03:12:33.346Z",
+      "by": "source-collector"
+    }
+  ]
+}

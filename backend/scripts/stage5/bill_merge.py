@@ -25,7 +25,7 @@ import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  
 from _args import opt
 import glob, hashlib, json, re, shutil
 
-USAGE = 'bill_merge.py --stage5 <dir> --state xx --seats <lower>,<upper> --date YYYY-MM-DD --flag <key> --topic-list-hash <sha256> [--season 3] [--codebook 0.6] [--out <dir>] [--store <dir>]'
+USAGE = 'bill_merge.py --stage5 <dir> --state xx --seats <lower>,<upper> --date YYYY-MM-DD --flag <key> --topic-list-hash <sha256> [--season 3] [--codebook 0.6] [--out <dir>] [--store <dir>] [--ids <file>]'
 HERE = os.path.dirname(os.path.abspath(__file__))
 S, xx, SEATS, DATE, HASH, FLAG = (opt(f, required=True, usage=USAGE) for f in ('--stage5', '--state', '--seats', '--date', '--topic-list-hash', '--flag'))
 WHY = re.sub(r'_policy$', '', FLAG) + '_reason'
@@ -58,6 +58,12 @@ def original(tf):
 
 
 insts = sorted(glob.glob(f'{L}/inst-{xx}/*.json'))
+# --ids <file>: merge only these bills (a late run after the store already holds the rest; Colorado 2026A summaries)
+IDS = opt('--ids', None)
+if IDS:
+    want = {l.strip() for l in open(IDS) if l.strip()}
+    insts = [f for f in insts if os.path.basename(f)[:-5] in want]
+    if len(insts) != len(want): stop(f'--ids names {len(want)} bills, {len(insts)} have a skeleton')
 if not insts: stop(f'no skeleton in {L}/inst-{xx}')
 if os.path.isdir(ST): shutil.rmtree(ST)
 gates, subjects, dropped, kept, missing = [], {}, [], [], []
@@ -85,7 +91,11 @@ for f in insts:
     d['single_subject'] = [{'season': SEASON, 'codebook': CODEBOOK, 'topic_list_hash': HASH, 'verdict': 'multi' if multi else 'single', 'other_topics': ss.get('other_topics', [])}]
     if x.get('higher_law_duty'): d['higher_law_duty'] = x['higher_law_duty']
     d['provenance']['saved_copy'] = {'path': f'{REL}/{os.path.relpath(orig, L)}', 'sha256': sha}
-    d['provenance']['fetched_by'] += f"; operative text read by a Sonnet fill agent from the official {NAME} text ({vtype}{', ' + vdate if vdate else ''}; {route})"
+    if 'no bill text read' in vtype:  # a summary from the bill page stands in for a text the reader may not fetch
+        d['version'] = 'other'
+        d['provenance']['fetched_by'] += f"; NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary ({NAME}) ({vtype}; read {vdate}; {route})"
+    else:
+        d['provenance']['fetched_by'] += f"; operative text read by a Sonnet fill agent from the official {NAME} text ({vtype}{', ' + vdate if vdate else ''}; {route})"
     if x.get('note'): d['provenance']['note'] = x['note']
     json.dump(d, open(out, 'w'), indent=2, ensure_ascii=False)
     subjects[iid] = x['subjects']

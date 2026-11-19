@@ -1,0 +1,54 @@
+{
+  "politician_id": "d990d5cc-c5da-484b-a059-1bd61dc7b8bd",
+  "findings": [
+    {
+      "id": "317cb17c8732913d48b84187dbfdfb78b051734090d0122c4b7b4c41e6c064a2",
+      "kind": "own-words",
+      "url": "https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/",
+      "date": "2024-06-18",
+      "date_precision": "day",
+      "passage": "I support concealed carry and I am opposed to banning concealed carry in Colorado. If you support the Second Amendment, and support our right to carry concealed, I encourage you to join me and participate in this process, so your voice is heard.",
+      "note": "Complete Colorado news story quoting a letter he sent to supporters, as a CU regent, about a proposed change to the university's campus weapons policy. Date is the story's publication date; the letter's own date is not given.",
+      "subjects": [
+        "concealed carry",
+        "Second Amendment",
+        "campus carry ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:14:55.768Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a ban on concealed carry",
+        "concealed carry on campus",
+        "Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "scope note: per Wikipedia (https://en.wikipedia.org/wiki/Frank_McNulty_(Colorado_politician)) this person served in the state House 2007-2015 and since January 2023 is a University of Colorado regent for the 4th district; no sitting legislator or statewide office and no 2026 ballot entry found",
+        "On the Record (0 appearances)",
+        "campaign site: https://www.frankmcnulty.com redirects to a parked-domain lander, nothing on the subject",
+        "legislature member page: https://leg.colorado.gov/legislators/frank-mcnulty not found; sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Frank_McNulty (empty/challenge response)",
+        "web searches on name plus gun, Second Amendment, firearms and 2026 ballot: only the CU concealed-carry item found",
+        "news story read: https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/",
+        "not reviewed: https://www.colorado.edu/today/2024/06/21/cu-regents-consider-budget-concealed-carry-and-more"
+      ],
+      "found": 1,
+      "at": "2026-11-19T03:14:55.768Z",
+      "by": "source-collector"
+    }
+  ]
+}

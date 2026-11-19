@@ -210,7 +210,23 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   // heading that carries the number is invisible and instrument-not-cited fires on a row citing the
   // order itself. Measured on Parker/homelessness-response, 2026-10-28.
   /(?<=\bExecutive Order (?:No\.\s?)?)\d{1,4}-\d{2}\b/i,
+  // Colorado (co-01, 2026-11-19): the legislature prints a bill with its session year in the number, "HB23-1219",
+  // "SB25-003", "HB20B-1013". The pattern above reads only "HB23" from it, so a coder's "HB 1219" never matched the
+  // vote line (329 instrument-not-cited). canonicalizeInstrumentId drops the year: "HB23-1219" is "hb1219".
+  // A coder may write it with a space, "SB 25-003" (co-01): read the same.
+  /\b(?:HB|SB|HCR|SCR|HJR|SJR|HR|SR) ?\d{2}[AB]?-\d{3,4}\b/,
 ];
+
+/**
+ * The bill a legislature's own bill page is about, read from its address. Colorado (co-01, 2026-11-19): a
+ * sponsorship is cited on the bill's page, leg.colorado.gov/bills/hb25-1164, and its snippet is the sponsor
+ * list, which never prints the number (18 instrument-not-cited). The page address names one bill and the page is
+ * that bill's own, so the address stands for the number. Only this host and path; never a vote page's #fragment.
+ */
+export function officialBillPageIdentifiers(url: string): string[] {
+  const m = url.trim().match(/^https?:\/\/(?:www\.)?leg\.colorado\.gov\/bills\/([a-z]{2,3}\d{2}[ab]?-\d{3,4})\/?(?:[?#].*)?$/i);
+  return m ? extractInstrumentIdentifiers(m[1].toUpperCase()) : [];
+}
 
 /** Every identifier-bearing instrument mention in `text`, as raw matched substrings (may repeat). */
 export function extractInstrumentIdentifiers(text: string): string[] {
@@ -239,6 +255,8 @@ const SPELLED_OUT: [RegExp, string][] = [
  * zeros: the executive-order hazard in chair-evidence-patterns.mjs is not solved here.
  */
 export function canonicalizeInstrumentId(text: string): string {
+  const co = normalizeText(text).match(/^([a-z]{2,3}) ?\d{2}[ab]?-(\d{3,4})$/);  // Colorado "HB23-1219" (see the pattern)
+  if (co) return co[1] + co[2].replace(/^0+(?=\d)/, '');
   let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
   for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
   c = c.replace(/^([hs]b|[hs][jc]r)(?:no|number)(?=\d)/, '$1');
@@ -379,7 +397,8 @@ export function checkStanceRow(
     // Same bill, so the House/Senate "B" is dropped on both sides before comparing (as strangeBills does).
     const loose = (t: string) => t.replace(/^([hs])b(?=\d)/, '$1');
     const snippetIdentifierSet = new Set(
-      citedEvidence.flatMap((e) => extractInstrumentIdentifiers(e.snippet).map((x) => loose(canonicalizeInstrumentId(x)))),
+      citedEvidence.flatMap((e) => [...extractInstrumentIdentifiers(e.snippet), ...officialBillPageIdentifiers(e.source_url)]
+        .map((x) => loose(canonicalizeInstrumentId(x)))),
     );
     for (const id of identifiers) {
       if (!snippetIdentifierSet.has(loose(id))) {

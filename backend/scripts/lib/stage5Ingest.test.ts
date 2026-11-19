@@ -94,6 +94,8 @@ describe('helpers', () => {
   it('turns a store id into the gate token', () => {
     expect(storeIdToken('GA-HB-1324-2025')).toBe('hb1324');
     expect(storeIdToken('MA-H-4135-AMDT-4-2023')).toBe('h4135');
+    expect(storeIdToken('CO-SB25-003-2025')).toBe('sb3');
+    expect(strangeBills('Voted Yes on SB 3 (2025).', { ids: new Set(['CO-SB25-003-2025']), tokens: new Set([storeIdToken('CO-SB25-003-2025')!]) })).toEqual([]);
     expect(storeIdToken('MA-ACTS-C135-2024')).toBeNull();
   });
   it('knows a person\'s bills from ids, titles and notes', () => {

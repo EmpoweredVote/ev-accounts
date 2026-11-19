@@ -1,0 +1,78 @@
+{
+  "politician_id": "17ef08c5-264f-441b-baab-512f26e21d83",
+  "findings": [
+    {
+      "id": "55690b89d105589a08b150af4a80672f7b2c0afaab2bd86012c5f9ab40468064",
+      "kind": "own-words",
+      "url": "https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/",
+      "date": "2024-06-18",
+      "date_precision": "day",
+      "passage": "Under the Constitution, we can only restrict weapons in spaces similar to those that saw firearm restriction under longstanding legal precedent. I am convinced that restrictions so broad as to incorporate office buildings and wilderness preserves violate the Constitution. Regents do not have discretion to violate it.",
+      "note": "Quoted by Complete Colorado (reporter Sherrie Peif) while speaking against a proposed University of Colorado regents policy banning concealed carry across all university property. He says broad bans covering office buildings and wilderness research sites exceed what the Constitution allows.",
+      "subjects": [
+        "carry a gun on campus",
+        "places where carry is allowed",
+        "Second Amendment and the Constitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:13.829Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5918647fea32c266f430e15b9bed8d6742332a184f25a34070b87b19ff3e1791",
+      "kind": "own-words",
+      "url": "https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/",
+      "date": "2024-06-18",
+      "date_precision": "day",
+      "passage": "It is inappropriate for us to tempt lawsuits at the fringe of Constitution permissibility over symbolic actions,",
+      "note": "Quoted by Complete Colorado on the same proposed campus concealed-carry ban. He calls the ban a symbolic action that risks lawsuits; he also said it would be unenforceable and costly to enforce.",
+      "subjects": [
+        "carry a gun on campus",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T03:12:13.829Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun on campus",
+        "places where carry is allowed",
+        "Second Amendment and the Constitution",
+        "carry permits",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "role: sits as a University of Colorado Regent for Congressional District 8 (a statewide-elected board seat, not a legislator); confirmed by a news story naming him in that seat",
+        "https://www.cu.edu/regents/mark-vandriel (fetched; page was a script-heavy regents page, no gun statements read)",
+        "https://completecolorado.com/2024/06/18/university-of-colorado-regents-push-back-concealed-carry-ban/ (news story quoting him)",
+        "web search: his name plus gun words (one hit, the story above; nothing else on background checks, assault-style guns, red flags or ghost guns)",
+        "blocked: https://ballotpedia.org/Mark_VanDriel (403)",
+        "not reviewed: the June 20-21 2024 regents meeting recording and regents' own minutes",
+        "not reviewed: a personal campaign site or newsletter (none found in search)"
+      ],
+      "found": 2,
+      "at": "2026-11-19T03:12:13.829Z",
+      "by": "source-collector"
+    }
+  ]
+}
