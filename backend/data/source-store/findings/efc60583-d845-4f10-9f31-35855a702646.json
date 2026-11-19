@@ -1,0 +1,96 @@
+{
+  "politician_id": "efc60583-d845-4f10-9f31-35855a702646",
+  "findings": [
+    {
+      "id": "883c73ebee45cfe01faa18ff029a32513097ae575b7193a1d1ee2293b31e699f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1326.html",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1326-2025",
+      "act": "nay",
+      "motion": "Senate Second reading, failed to pass, yeas 6 nays 40",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 6 nays 40, 2025-04-02: nay (tally 6–40); census gate: none.",
+      "subjects": [
+        "no self-defense claim when the firearm was unlawfully possessed and used"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0446-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1326-2025.introduced.pdf",
+          "sha256": "93f42c55abd489fed68ce329c6e40de1821cb4eb146353c2578454fceaec8dd5"
+        }
+      }
+    },
+    {
+      "id": "4ca4c0adbf9b89b538a6ca487eaeda89e8a4f80c9da36656db542e49d55c8bf5",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1588.html",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1588-2025",
+      "act": "yea",
+      "motion": "Senate Second reading, passed as amended, yeas 43 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 43 nays 4, 2025-04-03: yea (tally 43–4); census gate: near-unanimous.",
+      "subjects": [
+        "where firearms may be carried (schools, churches, public buildings)",
+        "armed on-duty ambulance and fire crews with a class 1 license",
+        "concealed-carry license must be shown to officers; fee penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1290-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1588-2025.enrolled.pdf",
+          "sha256": "3bf73b01e2c1746ec297bd04fac858971529ea10f74aed629a350c84bf4e8518"
+        }
+      }
+    },
+    {
+      "id": "60a449ed751aeed400626f2c6026d033ae90ba863f8099898aa9e82c87c0631f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1589.html",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1589-2025",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 46 nays 0",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 46 nays 0, 2025-03-18: yea (tally 46–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearms qualification for retired officers who carry",
+        "records of qualification courses sent to the training board"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1202-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1589-2025.enrolled.pdf",
+          "sha256": "125d33e06974a71d69e8f4fa39601010edbc2cc1fbf5688cbde5d97b42a0d21c"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

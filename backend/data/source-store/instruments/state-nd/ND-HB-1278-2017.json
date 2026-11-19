@@ -1,0 +1,497 @@
+{
+  "id": "ND-HB-1278-2017",
+  "scope": "state:nd",
+  "title": "HB1278 (65th Legislative Assembly (2017-2018)): A BILL for an Act to amend and reenact subsection 5 of section 62.1‑01‑01 and subsection 1 of section 62.1‑02‑05 relating to the possession of firearms or weapons in government buildings.",
+  "urls": [
+    "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1278.html",
+    "https://ndlegis.gov/assembly/65-2017/regular/documents/17-0753-02000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ben Koppelman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d7484405-ab05-4276-b6d0-c65b44cf03e8"
+    },
+    {
+      "name": "Kim Koppelman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dan Ruby",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "01dbb780-df98-4439-a648-d12da73deb7f"
+    },
+    {
+      "name": "Oley Larsen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karen Karls",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "78dedad0-be8f-460a-b338-adbf53734c71"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-02-21",
+      "body": "ND House",
+      "motion": "House Second reading, failed to pass, yeas 16 nays 76",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 76,
+      "absent": 2,
+      "note": "ndlegis.gov roll call (read from the legislature) 90235279 https://ndlegis.gov/assembly/65-2017/regular/journals/hr-dailyjnl-34.pdf#Page770-HB1278",
+      "members": [
+        {
+          "name": "Rick Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake G. Blum",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Brabandt",
+          "vote": "yea"
+        },
+        {
+          "name": "Sebastian Ertelt",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Johnston",
+          "vote": "yea",
+          "politician_id": "80fb8f00-c674-4311-8bc0-e911643d959e"
+        },
+        {
+          "name": "Tom Kading",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Kasper",
+          "vote": "yea",
+          "politician_id": "3583ad4f-442a-4760-8ca6-dd987fedf327"
+        },
+        {
+          "name": "Ben Koppelman",
+          "vote": "yea",
+          "politician_id": "d7484405-ab05-4276-b6d0-c65b44cf03e8"
+        },
+        {
+          "name": "Kim Koppelman",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Louser",
+          "vote": "yea",
+          "politician_id": "58bdda83-1546-43b3-97cc-0198f8231690"
+        },
+        {
+          "name": "Jeff Magrum",
+          "vote": "yea",
+          "politician_id": "507424fa-e790-4f7e-8149-44e04a2f0496"
+        },
+        {
+          "name": "Christopher D. Olson",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Ruby",
+          "vote": "yea",
+          "politician_id": "01dbb780-df98-4439-a648-d12da73deb7f"
+        },
+        {
+          "name": "Mike Schatz",
+          "vote": "yea",
+          "politician_id": "b21e26e7-e3b9-4f9a-812d-019dec842713"
+        },
+        {
+          "name": "Luke Simons",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Bellew",
+          "vote": "yea"
+        },
+        {
+          "name": "Bert Anderson",
+          "vote": "nay",
+          "politician_id": "ea06c0ba-be67-439e-93df-b25284bea656"
+        },
+        {
+          "name": "Dick Anderson",
+          "vote": "nay",
+          "politician_id": "64e14d8c-d65c-45e2-9a6e-25d423707fc5"
+        },
+        {
+          "name": "Pamela Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas Beadle",
+          "vote": "nay",
+          "politician_id": "2ef82de4-b4fa-4014-8278-da2460618668"
+        },
+        {
+          "name": "Rich S. Becker",
+          "vote": "nay"
+        },
+        {
+          "name": "Tracy Boe",
+          "vote": "nay"
+        },
+        {
+          "name": "Randy Boehning",
+          "vote": "nay"
+        },
+        {
+          "name": "Glenn Bosch",
+          "vote": "nay",
+          "politician_id": "087c749b-67c5-48eb-98cc-811036128c34"
+        },
+        {
+          "name": "Josh Boschee",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Brandenburg",
+          "vote": "nay",
+          "politician_id": "a39f03d4-4da3-49c0-941c-687394fccd01"
+        },
+        {
+          "name": "Al Carlson",
+          "vote": "nay"
+        },
+        {
+          "name": "Chuck Damschen",
+          "vote": "nay"
+        },
+        {
+          "name": "Lois Delmore",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Delzer",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Devlin",
+          "vote": "nay"
+        },
+        {
+          "name": "Gretchen Dobervich",
+          "vote": "nay",
+          "politician_id": "ba55ea6f-f70b-4970-a9e5-65ee463a3c46"
+        },
+        {
+          "name": "Jason Dockter",
+          "vote": "nay",
+          "politician_id": "478592de-9cfd-4a7a-9d72-1c1421ff51c9"
+        },
+        {
+          "name": "Jim Grueneich",
+          "vote": "nay",
+          "politician_id": "225dd24d-0f40-4d0b-8066-9491654e57cc"
+        },
+        {
+          "name": "Ron Guggisberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Karla Rose Hanson",
+          "vote": "nay",
+          "politician_id": "b162fcbb-1867-489a-9fec-78dc4fe55284"
+        },
+        {
+          "name": "Patrick Hatlestad",
+          "vote": "nay",
+          "politician_id": "86cc5bea-73ac-4a86-9a0e-7206328d61a7"
+        },
+        {
+          "name": "Craig Headland",
+          "vote": "nay",
+          "politician_id": "37424611-ae81-40f1-928f-7882bd378911"
+        },
+        {
+          "name": "Pat Heinert",
+          "vote": "nay",
+          "politician_id": "3f212c6d-5576-4038-b017-31921c659043"
+        },
+        {
+          "name": "Kathy Hogan",
+          "vote": "nay",
+          "politician_id": "c3d3194d-204c-43fa-a3d3-c167db41039d"
+        },
+        {
+          "name": "Richard G. Holman",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Howe",
+          "vote": "nay",
+          "politician_id": "d7cc7826-afd2-43fb-85b4-76c9aeccd1db"
+        },
+        {
+          "name": "Craig Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Terry B. Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Karls",
+          "vote": "nay",
+          "politician_id": "78dedad0-be8f-460a-b338-adbf53734c71"
+        },
+        {
+          "name": "George Keiser",
+          "vote": "nay"
+        },
+        {
+          "name": "Keith Kempenich",
+          "vote": "nay",
+          "politician_id": "b00f2e88-3507-47fc-a3e0-b60383f952d6"
+        },
+        {
+          "name": "Dwight Kiefert",
+          "vote": "nay",
+          "politician_id": "a5bd4150-4e4b-4ba4-9d17-361cb39580c9"
+        },
+        {
+          "name": "Larry Klemin",
+          "vote": "nay",
+          "politician_id": "ecf68fbf-2bff-494b-a119-e05d22dc874e"
+        },
+        {
+          "name": "Vernon Laning",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Lefor",
+          "vote": "nay",
+          "politician_id": "09834609-b681-45f1-b1da-5021a7570cdf"
+        },
+        {
+          "name": "Donald Longmuir",
+          "vote": "nay",
+          "politician_id": "1974a2aa-134a-435f-9c4b-2be5b6dd7b12"
+        },
+        {
+          "name": "Andrew G. Maragos",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Marschall",
+          "vote": "nay",
+          "politician_id": "cb62dd21-a2f1-4e63-bfd4-aab0ecb8b18c"
+        },
+        {
+          "name": "Bob Martinson",
+          "vote": "nay",
+          "politician_id": "c17f6d27-3dca-463e-8e3a-f9d50238b099"
+        },
+        {
+          "name": "Aaron McWilliams",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Meier",
+          "vote": "nay",
+          "politician_id": "c41a48e5-9cc0-43a8-984f-29a59669f9f9"
+        },
+        {
+          "name": "Alisa Mitskog",
+          "vote": "nay",
+          "politician_id": "05760550-5a24-459d-b636-abe5bdb67045"
+        },
+        {
+          "name": "Corey Mock",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Monson",
+          "vote": "nay",
+          "politician_id": "488983e4-688a-4fd5-952a-be7ab38ea01d"
+        },
+        {
+          "name": "Mike Nathe",
+          "vote": "nay",
+          "politician_id": "46fcdb96-8f33-4477-a0f3-53a963a96d61"
+        },
+        {
+          "name": "Jon Nelson",
+          "vote": "nay",
+          "politician_id": "b47086f1-3612-43de-9a22-62392b3cdc6e"
+        },
+        {
+          "name": "Marvin E. Nelson",
+          "vote": "nay"
+        },
+        {
+          "name": "Emily O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Oliver",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark S. Owens",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Paur",
+          "vote": "nay"
+        },
+        {
+          "name": "Chet Pollert",
+          "vote": "nay"
+        },
+        {
+          "name": "Todd Porter",
+          "vote": "nay",
+          "politician_id": "e02408d5-94a9-483b-97bc-56841afa3b36"
+        },
+        {
+          "name": "Brandy Pyle",
+          "vote": "nay",
+          "politician_id": "a50b3764-2df5-43d8-a67c-15bbffc23d69"
+        },
+        {
+          "name": "Shannon Roers Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Rohr",
+          "vote": "nay",
+          "politician_id": "f980db05-e77d-475f-a16c-eea72fa46113"
+        },
+        {
+          "name": "Mark Sanford",
+          "vote": "nay",
+          "politician_id": "3402fd58-16d4-4108-958d-1b1c91bc435b"
+        },
+        {
+          "name": "Bernie Satrom",
+          "vote": "nay",
+          "politician_id": "defce6cc-36fe-4edc-bf24-b558ebaa0dd3"
+        },
+        {
+          "name": "Jim Schmidt",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Schneider",
+          "vote": "nay",
+          "politician_id": "f688caa7-8ae7-420f-b7f2-333125752ea9"
+        },
+        {
+          "name": "Randy Schobinger",
+          "vote": "nay"
+        },
+        {
+          "name": "Cindy Schreiber-Beck",
+          "vote": "nay"
+        },
+        {
+          "name": "Jay Seibel",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathy Skroch",
+          "vote": "nay",
+          "politician_id": "05c730ee-4acd-4597-98f7-fee2924580b0"
+        },
+        {
+          "name": "Vicky Steiner",
+          "vote": "nay",
+          "politician_id": "fc69d6d7-68fb-46ea-8ea4-726a8fe5580f"
+        },
+        {
+          "name": "Roscoe Streyle",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary R. Sukut",
+          "vote": "nay"
+        },
+        {
+          "name": "Nathan Toman",
+          "vote": "nay",
+          "politician_id": "d01c0aba-3636-4e8d-aa57-74a87a8cdf9b"
+        },
+        {
+          "name": "Wayne A. Trottier",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Vetter",
+          "vote": "nay",
+          "politician_id": "ba65d53e-6b63-4eed-a906-bb146feb947e"
+        },
+        {
+          "name": "Don Vigesaa",
+          "vote": "nay",
+          "politician_id": "c836649f-de3a-4c64-83d2-30e1a9b00a3b"
+        },
+        {
+          "name": "Robin Weisz",
+          "vote": "nay",
+          "politician_id": "bce9369d-59c4-4dd4-846f-edaba626b2a9"
+        },
+        {
+          "name": "Greg Westlind",
+          "vote": "nay"
+        },
+        {
+          "name": "Denton Zubke",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Kreidt",
+          "vote": "absent"
+        },
+        {
+          "name": "Matt Ruby",
+          "vote": "absent",
+          "politician_id": "d5729332-6e6b-4efc-9ff6-a4e11a18dfe1"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/65-2017/regular/documents/17-0753-02000.pdf)",
+    "fetched_at": "2026-11-19T15:30:47.757172Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1278-2017.introduced.pdf",
+      "sha256": "5d8e99de6958473efdc1610767696c57a3263fb16eb94527fed96f6742d9b93e"
+    },
+    "note": "As-filed text (17.0753.02000, introduced). Failed the House 16-76 on 2017-02-21; amendments made after the version read are not in the text read. Words in Sections 1 and 2 may be struck (e.g. 'publicly owned or operatedgovernment building' is run together); check the page image."
+  },
+  "operative_text": "Section 1 (N.D.C.C. 62.1-01-01(5)): \"Government building\" means a building or a portion of a building which is owned, possessed, or used by or leased to the state of North Dakota, or any of its political subdivisions and in which access is not permitted unless an individual passes through equipment that detects weapons and is staffed by armed security personnel.\nSection 2 (N.D.C.C. 62.1-02-05(1)): An individual who knowingly possesses a firearm or dangerous weapon at a public gathering is guilty of a class B misdemeanor."
+}

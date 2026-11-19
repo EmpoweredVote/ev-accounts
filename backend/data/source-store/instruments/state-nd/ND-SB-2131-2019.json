@@ -1,0 +1,277 @@
+{
+  "id": "ND-SB-2131-2019",
+  "scope": "state:nd",
+  "title": "SB2131 (66th Legislative Assembly (2019-2020)): A BILL for an Act to create and enact a new section to chapter 62.1‑01 of the North Dakota Century Code, relating to manufactured firearms, accessories, or ammunition.",
+  "urls": [
+    "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo2131.html",
+    "https://ndlegis.gov/assembly/66-2019/regular/documents/19-0482-01000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Oley Larsen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rick Becker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Aaron McWilliams",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dan Ruby",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "01dbb780-df98-4439-a648-d12da73deb7f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-01-16",
+      "body": "ND Senate",
+      "motion": "Senate Second reading, failed to pass, yeas 9 nays 38",
+      "kind": "roll-call",
+      "yes": 9,
+      "no": 38,
+      "absent": 0,
+      "note": "ndlegis.gov roll call (read from the legislature) 90235291 https://ndlegis.gov/assembly/66-2019/regular/journals/sr-dailyjnl-08.pdf#Page217-SB2131",
+      "members": [
+        {
+          "name": "Howard C. Anderson, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Dick Dever",
+          "vote": "yea",
+          "politician_id": "f4069b41-a104-44a7-a055-587f094b04cf"
+        },
+        {
+          "name": "Jay Elkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Erbele",
+          "vote": "yea",
+          "politician_id": "32bd0472-00a6-407c-a44f-75a89beed85d"
+        },
+        {
+          "name": "Jordan Kannianen",
+          "vote": "yea"
+        },
+        {
+          "name": "Oley Larsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary A. Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Dale Patten",
+          "vote": "yea",
+          "politician_id": "05ab1864-e26b-4e55-b086-418fa7ba6a80"
+        },
+        {
+          "name": "Don Schaible",
+          "vote": "yea",
+          "politician_id": "d464ccad-ef49-4c08-8ae6-e15fc49a80d7"
+        },
+        {
+          "name": "JoNell A. Bakke",
+          "vote": "nay"
+        },
+        {
+          "name": "Brad Bekkedahl",
+          "vote": "nay",
+          "politician_id": "24e26907-d7a9-4be5-af51-c10e00628171"
+        },
+        {
+          "name": "Randy Burckhard",
+          "vote": "nay",
+          "politician_id": "bdda4ce8-9bf9-41ad-a2fc-6440f05fe31c"
+        },
+        {
+          "name": "David Clemens",
+          "vote": "nay",
+          "politician_id": "5220cad5-2991-4a73-89cb-68c854d700eb"
+        },
+        {
+          "name": "Dwight Cook",
+          "vote": "nay"
+        },
+        {
+          "name": "Kyle Davison",
+          "vote": "nay",
+          "politician_id": "f4c4f0ef-4d52-473a-9b66-d532de4db8c9"
+        },
+        {
+          "name": "Jim Dotzenrod",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Dwyer",
+          "vote": "nay",
+          "politician_id": "f36f8fa9-11d5-4647-9d85-69c8a113ddcf"
+        },
+        {
+          "name": "Robert O. Fors",
+          "vote": "nay"
+        },
+        {
+          "name": "John Grabinger",
+          "vote": "nay"
+        },
+        {
+          "name": "Joan Heckaman",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathy Hogan",
+          "vote": "nay",
+          "politician_id": "c3d3194d-204c-43fa-a3d3-c167db41039d"
+        },
+        {
+          "name": "David Hogue",
+          "vote": "nay",
+          "politician_id": "428c61e6-9b2f-4cfb-af39-a4060c1f13f1"
+        },
+        {
+          "name": "Ray Holmberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Jerry Klein",
+          "vote": "nay",
+          "politician_id": "28ec6c73-d550-4b59-b5f8-61166be65f4e"
+        },
+        {
+          "name": "Karen Krebsbach",
+          "vote": "nay"
+        },
+        {
+          "name": "Curt Kreun",
+          "vote": "nay"
+        },
+        {
+          "name": "Diane Larson",
+          "vote": "nay",
+          "politician_id": "ad6ab7cf-a53c-4fb8-8fa9-f52e449bc318"
+        },
+        {
+          "name": "Judy Lee",
+          "vote": "nay",
+          "politician_id": "d6c31d37-8da8-45f7-adcd-89be2d60f346"
+        },
+        {
+          "name": "Larry Luick",
+          "vote": "nay",
+          "politician_id": "6dd24c19-e89b-43a3-b487-b642693ef701"
+        },
+        {
+          "name": "Richard Marcellais",
+          "vote": "nay",
+          "politician_id": "d9ae942b-9797-450e-b381-b43c31f2495e"
+        },
+        {
+          "name": "Tim Mathern",
+          "vote": "nay",
+          "politician_id": "76e1837f-348e-4799-8b35-045f98d55ec0"
+        },
+        {
+          "name": "Scott Meyer",
+          "vote": "nay",
+          "politician_id": "bff0c814-b710-4eb1-9d99-53ed31402272"
+        },
+        {
+          "name": "Janne Myrdal",
+          "vote": "nay",
+          "politician_id": "070953d8-cc4a-449f-b6e7-7c5861c9f260"
+        },
+        {
+          "name": "Erin Oban",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Oehlke",
+          "vote": "nay"
+        },
+        {
+          "name": "Arne Osland",
+          "vote": "nay"
+        },
+        {
+          "name": "Merrill Piepkorn",
+          "vote": "nay"
+        },
+        {
+          "name": "Nicole Poolman",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry J. Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Roers",
+          "vote": "nay"
+        },
+        {
+          "name": "Kristin Roers",
+          "vote": "nay",
+          "politician_id": "ebdce33f-2914-49df-ad70-aa53e296c16f"
+        },
+        {
+          "name": "David Rust",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Sorvaag",
+          "vote": "nay",
+          "politician_id": "bb95ddd0-16c5-4d92-b821-9cced7b4a835"
+        },
+        {
+          "name": "Jessica Unruh-Bell",
+          "vote": "nay"
+        },
+        {
+          "name": "Shawn Vedaa",
+          "vote": "nay"
+        },
+        {
+          "name": "Terry Wanzek",
+          "vote": "nay",
+          "politician_id": "cf367c3d-f926-4354-8534-94f15f74f0fb"
+        },
+        {
+          "name": "Rich Wardner",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0482-01000.pdf)",
+    "fetched_at": "2026-11-19T15:30:47.757172Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-SB-2131-2019.introduced.pdf",
+      "sha256": "8d7a754f2a5655a0fa0c0d4ac4df4a171a44d90fb260cbb8e3bccb6cfa69b88d"
+    },
+    "note": "Introduced version (as filed), document 19.0482.01000. The bill failed on Senate second reading (yeas 9, nays 38, 2019-01-16). All text is new, so quotes are safe. Subsection 5 exceptions are split across lines in the text file and were not quoted."
+  },
+  "operative_text": "Section 1 (N.D.C.C. new section to chapter 62.1-01, subsection 2): A personal firearm, firearm accessory, or ammunition manufactured commercially or privately in the state and which remains within the state is not subject to federal law or federal regulation, including registration.\nSection 1 (N.D.C.C. new section to chapter 62.1-01, subsection 4): Firearm accessories imported into the state from another state, which are subject to federal regulation as being in interstate commerce, do not subject a firearm to federal regulation.\nSection 1 (N.D.C.C. new section to chapter 62.1-01, subsection 6): A firearm manufactured or sold in the state under this section must have the words \"Made in North Dakota\" clearly stamped on the receiver or frame."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "ND-HB-1109-2021",
+  "scope": "state:nd",
+  "title": "HB1109 (67th Legislative Assembly (2021-2022)): Relating to the possession of a firearm or dangerous weapon at a public gathering.",
+  "urls": [
+    "https://ndlegis.gov/assembly/67-2021/regular/bill-overview/bo1109.html",
+    "https://ndlegis.gov/assembly/67-2021/regular/documents/21-0371-01000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Pat Heinert",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3f212c6d-5576-4038-b017-31921c659043"
+    },
+    {
+      "name": "Lisa Meier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c41a48e5-9cc0-43a8-984f-29a59669f9f9"
+    },
+    {
+      "name": "Brandy Pyle",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a50b3764-2df5-43d8-a67c-15bbffc23d69"
+    },
+    {
+      "name": "Ruby",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Janne Myrdal",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "070953d8-cc4a-449f-b6e7-7c5861c9f260"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/67-2021/regular/documents/21-0371-01000.pdf)",
+    "fetched_at": "2026-11-19T15:30:47.757172Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1109-2021.introduced.pdf",
+      "sha256": "ad4d92c7e30f7bca58991e6e6db931824de5501b683f1a459e603089bf9ce65e"
+    },
+    "note": "As introduced (21.0371.01000); no passage vote recorded. Whole of subsection 2 is reprinted in an amend-and-reenact; the text read has no strike/underline marks, so which exemptions are new could not be told. Subdivision (p) is quoted as the likely new part; other subdivisions (e.g. (n) storage in public housing, (o) school carry) may be new or old; check the page image."
+  },
+  "operative_text": "Section 1 (N.D.C.C. 62.1-02-05(2)(p)): An individual who is a paramedic or other emergency responder if the individual maintains the same level of firearms proficiency as is required by the peace officer standards and training board for law enforcement officers. A local law enforcement agency shall issue a certificate of compliance under this section to an individual who is proficient. Upon issuance of a certificate of compliance, the bureau of criminal investigation shall issue that individual an unrestricted concealed weapons license."
+}

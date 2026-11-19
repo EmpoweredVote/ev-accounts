@@ -1,0 +1,95 @@
+{
+  "id": "ND-HB-1341-2019",
+  "scope": "state:nd",
+  "title": "HB1341 (66th Legislative Assembly (2019-2020)): A BILL for an Act to amend and reenact subdivision l of subsection 2 of section 62.1‑02‑05 of the North Dakota Century Code, relating to the possession of a dangerous weapon in a church.",
+  "urls": [
+    "https://ndlegis.gov/assembly/66-2019/regular/bill-overview/bo1341.html",
+    "https://ndlegis.gov/assembly/66-2019/regular/documents/19-0292-01000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daniel Johnston",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "80fb8f00-c674-4311-8bc0-e911643d959e"
+    },
+    {
+      "name": "Sebastian Ertelt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Heinert",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3f212c6d-5576-4038-b017-31921c659043"
+    },
+    {
+      "name": "Jeff Hoverson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "88560feb-df0b-41d0-9844-49aa5093430f"
+    },
+    {
+      "name": "Terry B. Jones",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Magrum",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "507424fa-e790-4f7e-8149-44e04a2f0496"
+    },
+    {
+      "name": "Bob Paulson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6b091d13-926e-41a1-b16a-079a61782b05"
+    },
+    {
+      "name": "Luke Simons",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Skroch",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05c730ee-4acd-4597-98f7-fee2924580b0"
+    },
+    {
+      "name": "Steve Vetter",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ba65d53e-6b63-4eed-a906-bb146feb947e"
+    },
+    {
+      "name": "Jordan Kannianen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/66-2019/regular/documents/19-0292-01000.pdf)",
+    "fetched_at": "2026-11-19T15:30:47.757172Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1341-2019.introduced.pdf",
+      "sha256": "186d93786b7c8da1d887427342ced57103e1fe3fc9916dbfa6313e59ad2c6413"
+    },
+    "note": "Subdivision (l) is amended and reenacted; the first part runs struck and new words together ('dangerous weapon, concealed weapons license ... concealedunder chapter 62.1-04'), so only the unchanged tail is quoted; check the page image. Introduced version read; the bill has no recorded vote in the data, and any amendments after the version read are not in the text read."
+  },
+  "operative_text": "Section 1 (N.D.C.C. 62.1-02-05(2)(l)): if the individual is in a church building or other place of worship and has the approval to carry in the church building or other place of worship by a primary religious leader of the church or other place of worship or the governing body of the church or other place of worship;"
+}

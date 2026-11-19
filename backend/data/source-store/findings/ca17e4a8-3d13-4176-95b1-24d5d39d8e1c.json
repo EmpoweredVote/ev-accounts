@@ -1,0 +1,178 @@
+{
+  "politician_id": "ca17e4a8-3d13-4176-95b1-24d5d39d8e1c",
+  "findings": [
+    {
+      "id": "883c73ebee45cfe01faa18ff029a32513097ae575b7193a1d1ee2293b31e699f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1326.html",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1326-2025",
+      "act": "nay",
+      "motion": "Senate Second reading, failed to pass, yeas 6 nays 40",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "ND Senate, Senate Second reading, failed to pass, yeas 6 nays 40, 2025-04-02: nay (tally 6–40); census gate: none.",
+      "subjects": [
+        "no self-defense claim when the firearm was unlawfully possessed and used"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0446-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1326-2025.introduced.pdf",
+          "sha256": "93f42c55abd489fed68ce329c6e40de1821cb4eb146353c2578454fceaec8dd5"
+        }
+      }
+    },
+    {
+      "id": "4ca4c0adbf9b89b538a6ca487eaeda89e8a4f80c9da36656db542e49d55c8bf5",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1588.html",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1588-2025",
+      "act": "yea",
+      "motion": "Senate Second reading, passed as amended, yeas 43 nays 4",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed as amended, yeas 43 nays 4, 2025-04-03: yea (tally 43–4); census gate: near-unanimous.",
+      "subjects": [
+        "where firearms may be carried (schools, churches, public buildings)",
+        "armed on-duty ambulance and fire crews with a class 1 license",
+        "concealed-carry license must be shown to officers; fee penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1290-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1588-2025.enrolled.pdf",
+          "sha256": "3bf73b01e2c1746ec297bd04fac858971529ea10f74aed629a350c84bf4e8518"
+        }
+      }
+    },
+    {
+      "id": "60a449ed751aeed400626f2c6026d033ae90ba863f8099898aa9e82c87c0631f",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1589.html",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1589-2025",
+      "act": "yea",
+      "motion": "Senate Second reading, passed, yeas 46 nays 0",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "ND Senate, Senate Second reading, passed, yeas 46 nays 0, 2025-03-18: yea (tally 46–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearms qualification for retired officers who carry",
+        "records of qualification courses sent to the training board"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (Enrollment; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-1202-02000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1589-2025.enrolled.pdf",
+          "sha256": "125d33e06974a71d69e8f4fa39601010edbc2cc1fbf5688cbde5d97b42a0d21c"
+        }
+      }
+    },
+    {
+      "id": "d9354894685335d69e645d9f4a7ac147babb280e05cdabf370662ce05d129254",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1296.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "ND-HB-1296-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of ND-HB-1296-2025 (Open States sponsor list): HB1296 (69th Legislative Assembly (2025-26)): A BILL for an Act to amend and reenact section 62.1-04-04 of the North Dakota Century Code, relating to producing a license to carry a concealed firearm upon request from a law enforcement officer; and to provide a penalty..",
+      "subjects": [
+        "duty to produce concealed-carry license on request",
+        "duty to tell officer about concealed firearm only if asked"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (INTRODUCED; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0236-01000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1296-2025.introduced.pdf",
+          "sha256": "57dc3dc325d6b505cc22a39eae06869e987e023048093ccead7f3fa1940f9819"
+        }
+      }
+    },
+    {
+      "id": "17e52745413b477141427cc07ce1d23d9be262eb37605d2c849f43e94004b671",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1352.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "ND-HB-1352-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of ND-HB-1352-2025 (Open States sponsor list): HB1352 (69th Legislative Assembly (2025-26)): A BILL for an Act to amend and reenact section 62.1-02-05 of the North Dakota Century Code, relating to possession of firearms or dangerous weapons at a church or place of worship..",
+      "subjects": [
+        "firearm carry at churches and places of worship",
+        "where firearms may be carried at schools and public buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0506-03000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1352-2025.engrossed1.pdf",
+          "sha256": "2a0bf785d5b91dab5806274749a11e6006a27f119d7138ab5948a709eab6f78c"
+        }
+      }
+    },
+    {
+      "id": "6e20860fd52ea9a0fbb7d5dbe8385bb7d2c00c4361557b2d71e9b5b005a87807",
+      "kind": "record",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo1365.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "ND-HB-1365-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of ND-HB-1365-2025 (Open States sponsor list): HB1365 (69th Legislative Assembly (2025-26)): A BILL for an Act to create and enact a new section to chapter 62.1-02 of the North Dakota Century Code, relating to possession of firearms or dangerous weapons at a publicly owned or operated building; and to amend and reenact section 62.1-02-05 of the North Dakota Century Code, relating to possession of firearms or dangerous weapons at a public gathering..",
+      "subjects": [
+        "firearm ban in public areas of public buildings",
+        "weapon screening condition",
+        "carry ban at university-system buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (North Dakota) (gun-policy Stage 5, North Dakota); operative text read by a Sonnet fill agent from the official North Dakota text (FIRST ENGROSSMENT; official copy, https://ndlegis.gov/assembly/69-2025/regular/documents/25-0508-04000.pdf)",
+        "fetched_at": "2026-11-19T15:30:47.757172Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/ND-HB-1365-2025.engrossed1.pdf",
+          "sha256": "d6e4e7eb374e9139325e0aae830c418e3ccdd367cbec3d55d12715e00a31912e"
+        }
+      }
+    }
+  ],
+  "searches": []
+}
