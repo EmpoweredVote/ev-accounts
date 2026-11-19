@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { classify, nameKey, verdictOf, parseFiling, namesToBuckets, normName, committeeKindAt } from './pac-career.js';
+import { classify, nameKey, verdictOf, parseFiling, namesToBuckets, normName, committeeKindAt, loadReviewed } from './pac-career.js';
+import { mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 describe('classify', () => {
   it('reads FEC committee codes into the ruled buckets', () => {
@@ -132,5 +135,25 @@ describe('committeeKindAt', () => {
   });
   it('falls back to the nearest listed cycle outside the window', () => {
     expect(committeeKindAt(new Map([[2010, at('C')]]), 'C1', 2026)).toBe('corporate');
+  });
+});
+
+describe('reviewed committees', () => {
+  const at = (org: string) => new Map([['C9', { name: 'Y PAC', tp: 'Q', dsgn: 'N', org }]]);
+  it('a hand-reviewed committee overrides FEC\'s corporation code in every cycle', () => {
+    const m = new Map([[2022, at('C')], [2024, at('C')], [2026, at('C')]]);
+    const reviewed = new Map([['C9', 'other_pac' as const]]);
+    expect(committeeKindAt(m, 'C9', 2024)).toBe('corporate');
+    expect(committeeKindAt(m, 'C9', 2024, reviewed)).toBe('other_pac');
+  });
+  it('the shipped list loads and holds the conduit and the nonprofits', () => {
+    const r = loadReviewed(new URL('./reviewed-committees.json', import.meta.url).pathname);
+    expect(r.get('C00468314')).toBe('other_pac'); // Democracy Engine, earmark conduit
+    expect(r.get('C00545202')).toBe('other_pac'); // Center for Freethought Equality
+  });
+  it('refuses an entry with no source a reader can open', () => {
+    const f = join(mkdtempSync(join(tmpdir(), 'rev-')), 'r.json');
+    writeFileSync(f, JSON.stringify({ committees: [{ id: 'C1', kind: 'other_pac', reason: 'x', source: '' }] }));
+    expect(() => loadReviewed(f)).toThrow(/bad entry C1/);
   });
 });

@@ -1,0 +1,40 @@
+{
+  "_about": "Giving committees that FEC codes as a corporation (org type C or W) but that are not a company giving its own money. Each was reviewed by hand. An entry here moves the committee to other_pac for every cycle. Add an entry only with a source a reader can open. Reviewed 2026-11-18.",
+  "committees": [
+    {
+      "id": "C00468314",
+      "name": "DEMOCRACY ENGINE, INC., PAC",
+      "kind": "other_pac",
+      "reason": "Conduit. It forwards individual donors' earmarked gifts; its own Schedule B lists each one on line 23 as 'EARMARK OF <donor>'. The money is the donors', not the company's.",
+      "source": "https://www.fec.gov/data/disbursements/?committee_id=C00468314"
+    },
+    {
+      "id": "C00545202",
+      "name": "THE CENTER FOR FREETHOUGHT EQUALITY PAC",
+      "kind": "other_pac",
+      "reason": "Connected organization is a 501(c)(4) nonprofit (EIN 52-2448073). FEC itself recodes the PAC as a membership group (M) from 2026.",
+      "source": "https://projects.propublica.org/nonprofits/organizations/522448073"
+    },
+    {
+      "id": "C00676684",
+      "name": "OUR REVOLUTION PAC",
+      "kind": "other_pac",
+      "reason": "The PAC of Our Revolution, a political advocacy group. FEC lists no company as its connected organization, and recoded it from C (2020) to W (2022) and T (2024).",
+      "source": "https://www.fec.gov/data/committee/C00676684/"
+    },
+    {
+      "id": "C00338558",
+      "name": "PENNSYLVANIA FEDERATION OF DEMOCRATIC WOMEN INC FEDERAL PAC",
+      "kind": "other_pac",
+      "reason": "A federation of Democratic women's clubs: a political membership group, not a business. FEC coded it W (non-stock corporation) through 2022 and M (membership group) from 2024.",
+      "source": "https://www.fec.gov/data/committee/C00338558/"
+    },
+    {
+      "id": "C00331454",
+      "name": "PFAW VOTERS ALLIANCE",
+      "kind": "other_pac",
+      "reason": "Connected organization is People For the American Way, a 501(c)(4) nonprofit (EIN 52-1366721). FEC coded the PAC W in 2018 and M (membership group) from 2020.",
+      "source": "https://projects.propublica.org/nonprofits/organizations/521366721"
+    }
+  ]
+}
