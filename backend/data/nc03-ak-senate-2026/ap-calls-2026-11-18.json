@@ -1,0 +1,134 @@
+{
+  "AK-SEN": {
+    "apRaceID": "20261103AK3079",
+    "officeName": "U.S. Senate",
+    "statePostal": "AK",
+    "seatName": "Class II",
+    "censusDistrict": null,
+    "raceCallStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": true,
+    "raceType": "General",
+    "eevp": 99,
+    "lastUpdated": "2026-11-18T03:29:49.136000Z",
+    "incumbents": [
+      {
+        "first": "Dan",
+        "last": "Sullivan",
+        "party": "GOP",
+        "candidateID": "64262",
+        "polID": "64262",
+        "polNum": "64262"
+      }
+    ],
+    "totalAllLines": 287896,
+    "candidates": [
+      {
+        "candidateID": "70718",
+        "first": "Mary",
+        "last": "Peltola",
+        "party": "Dem",
+        "voteCount": 144302,
+        "votePct": 50.12,
+        "winner": "X",
+        "calledAt": "2026-11-18T03:19:36.972Z"
+      },
+      {
+        "candidateID": "64262",
+        "first": "Dan",
+        "last": "Sullivan",
+        "party": "GOP",
+        "voteCount": 131844,
+        "votePct": 45.8,
+        "winner": null,
+        "calledAt": null
+      },
+      {
+        "candidateID": "57566",
+        "first": "Gerald",
+        "last": "Heikes",
+        "party": "GOP",
+        "voteCount": 6105,
+        "votePct": 2.12,
+        "winner": null,
+        "calledAt": null
+      },
+      {
+        "candidateID": "177716",
+        "first": "Daniel",
+        "last": "Sullivan",
+        "party": "UDC",
+        "voteCount": 4760,
+        "votePct": 1.65,
+        "winner": null,
+        "calledAt": null
+      },
+      {
+        "candidateID": "100008",
+        "first": null,
+        "last": "Total Write-ins",
+        "party": "Oth",
+        "voteCount": 885,
+        "votePct": 0.31,
+        "winner": null,
+        "calledAt": null
+      }
+    ]
+  },
+  "NC-03": {
+    "apRaceID": "20261103NC34969",
+    "officeName": "U.S. House",
+    "statePostal": "NC",
+    "seatName": "District 3",
+    "censusDistrict": "03",
+    "raceCallStatus": "Called",
+    "isCertified": false,
+    "rankedChoice": false,
+    "raceType": "General",
+    "eevp": 99,
+    "lastUpdated": "2026-11-17T20:45:05.431000Z",
+    "incumbents": [
+      {
+        "first": "Greg",
+        "last": "Murphy",
+        "party": "GOP",
+        "candidateID": "67890",
+        "polID": "67890",
+        "polNum": "67890"
+      }
+    ],
+    "totalAllLines": 239614,
+    "candidates": [
+      {
+        "candidateID": "136139",
+        "first": "Raymond",
+        "last": "Smith",
+        "party": "Dem",
+        "voteCount": 118434,
+        "votePct": 49.43,
+        "winner": "X",
+        "calledAt": "2026-11-17T20:45:05.431Z"
+      },
+      {
+        "candidateID": "67890",
+        "first": "Greg",
+        "last": "Murphy",
+        "party": "GOP",
+        "voteCount": 118176,
+        "votePct": 49.32,
+        "winner": null,
+        "calledAt": null
+      },
+      {
+        "candidateID": "166381",
+        "first": "Daniel",
+        "last": "Cavender",
+        "party": "Lib",
+        "voteCount": 3004,
+        "votePct": 1.25,
+        "winner": null,
+        "calledAt": null
+      }
+    ]
+  }
+}
