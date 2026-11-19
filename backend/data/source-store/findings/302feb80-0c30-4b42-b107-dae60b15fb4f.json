@@ -182,7 +182,128 @@
           "sha256": "5095718fab131595f68660ddbc5f092dcaee5c74ba13329b8beebb8eb9192f2d"
         }
       }
+    },
+    {
+      "id": "6eb3bf548fa7e41cd6ccc21eaea71a536901c30d9817d8dd31afae11f038011e",
+      "kind": "own-words",
+      "url": "https://alphanews.org/republican-state-senator-no-longer-supports-gun-control-bill/",
+      "date": "2024-03-08",
+      "date_precision": "day",
+      "passage": "I’m committed to developing common sense solutions that preserve personal freedoms and liberty, while keeping kids and families safe and making sure guns are not accessible to violent criminals. My initial decision to be a co-author on this bill was based on the concerns of many of those in my district. Unfortunately, this specific piece of legislation is still in need of a lot of work and consideration, and I cannot support it in its current form.",
+      "note": "Statement to Alpha News, quoted in a news story, explaining why she removed her name as co-author of SF 4312 (a safe-storage gun bill) after signing on Feb. 29, 2024.",
+      "subjects": [
+        "gun safety law co-authorship withdrawn",
+        "keep guns from violent criminals",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:21.536Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e396e1056816c98b9c2b3595320080e2aa5fd17e4281a5e8a8a1bc3fc1268741",
+      "kind": "record",
+      "url": "https://alphanews.org/republican-state-senator-no-longer-supports-gun-control-bill/",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-4312-2023",
+      "act": "other",
+      "motion": "signed on as co-author, then later removed her name",
+      "note": "A news story reports she became co-author of SF 4312 on Feb. 29, 2024 and was no longer listed as co-author by March 8, 2024.",
+      "subjects": [
+        "gun safety law co-authorship withdrawn",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:21.536Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a45f09b49673a5a0566f034f5f50275bd3f05020c085ed1a9745743471c2d79b",
+      "kind": "own-words",
+      "url": "https://ontheissues.org/Domestic/Karin_Housley_Gun_Control.htm",
+      "date": "2018-10-01",
+      "date_precision": "year",
+      "passage": "We need to enforce the gun laws that we have. I don't think there is a need for more gun laws in any of the incidences we have across the country. Things have fallen through the cracks and the gun laws on the books were not enforced.",
+      "note": "Quote from a 2018 US Senate race news interview as reproduced on a compilation site (a lead, original story not fetched). She says enforce existing gun laws rather than add new ones; the page also says she backed a ban on bump stocks. Date is approximate (2018).",
+      "subjects": [
+        "enforce existing gun laws",
+        "no new gun laws",
+        "bump stock ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:21.536Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18d28c218043f32cb7fd27a43a38f570155c33a44328cc42fb800cdf1176f6d9",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0733&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-733-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-733-2023 (Open States sponsor list): SF733 (2023-2024 Regular): Penalties increase for transferring certain firearms to persons who are ineligible to possess firearms.",
+      "subjects": [
+        "felony penalty for transferring a pistol or assault weapon to an ineligible person",
+        "seven-year aggravated penalty if used in a violent felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2023-03-23; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/733/versions/1/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-733-2023.engrossed1.html",
+          "sha256": "ed4c073ae7633bada77ff0fee0b11a9206c18b1f8423a53d8f440505126717fe"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun across state lines",
+        "co-authoring a gun safety bill",
+        "gun rights general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate caucus member page https://www.mnsenaterepublicans.com/senators/housley/ (confirms State Senator Karin Housley, Stillwater area; nothing on the subject)",
+        "the Senate caucus site search for housley gun (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Karin_Housley (403)",
+        "not reviewed: https://www.mnsenate.gov/members/member_bio.html?mem_id=10301&leg_id=93 (page returned no member text)",
+        "https://alphanews.org/republican-state-senator-no-longer-supports-gun-control-bill/ (news story with her statement)",
+        "https://www.nraila.org/articles/20181011/nra-endorses-housley-for-us-senate-in-minnesota (2018 endorsement release in a group's words, not hers; not saved)",
+        "https://ontheissues.org/Domestic/Karin_Housley_Gun_Control.htm (lead only; quotes a 2018 news interview, original not located)",
+        "no personal campaign site or newsletter on the subject found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:26:21.536Z",
+      "by": "source-collector"
+    }
+  ]
 }

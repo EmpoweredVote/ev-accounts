@@ -343,6 +343,33 @@
           "sha256": "dc39a0600a5e9f473e11526393e515c5fb0af1870ef544c3d2b9ecf0ef5a8171"
         }
       }
+    },
+    {
+      "id": "e26d57a118449833a2dc04600b580b2a9fecb76397f17c05dfd3887b228c747f",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF4312&ssn=0&y=2024",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-4312-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-4312-2023 (Open States sponsor list): SF4312 (2023-2024 Regular): Standards for the safe storage of firearms and criminal penalties for failing to meet these standards establishment; appropriating money.",
+      "subjects": [
+        "safe storage: locking device or locked unit/gun room",
+        "tiered criminal penalties for unsafe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2024-04-24; official copy, https://www.revisor.mn.gov/bills/93/2024/0/SF/4312/versions/2/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4312-2023.engrossed2.html",
+          "sha256": "48025e9979ffdf83e7daa159e434a6d29442a94479e58ff240b10cf17df3f0fb"
+        }
+      }
     }
   ],
   "searches": []

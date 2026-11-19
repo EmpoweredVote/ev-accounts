@@ -236,7 +236,204 @@
           "sha256": "79a554e25fd13bf370bf96dfb5b4aa262ca292ac77a78448ed9987c904539975"
         }
       }
+    },
+    {
+      "id": "d0faa7d84e9314516d83f1216fc39d1a5a1b3b35d0bc68f57a531151b81392cb",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/goppdf/Rep.%20Nadeau%20-%20Respecting%20Rights%20While%20Reducing%20Gun%20Violence.pdf",
+      "date": "2025-10",
+      "date_precision": "month",
+      "passage": "Expecting broad firearm bans to reduce school shootings requires us to first assume that a ban will reduce their use by criminals, and second, that banning a style or type of firearm will reduce the likelihood of attacks.",
+      "note": "Position paper on his House page (date from the file's creation metadata); questions whether bans on assault-style guns would reduce school shootings.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0d783b728874bcd87944c329f64befbf9ae3f8004234855ca00f581e5cf174c",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/goppdf/Rep.%20Nadeau%20-%20Respecting%20Rights%20While%20Reducing%20Gun%20Violence.pdf",
+      "date": "2025-10",
+      "date_precision": "month",
+      "passage": "The Second Amendment is not a relic—it's a living protection of individual liberty.",
+      "note": "Same paper: general statement on the Second Amendment and the Bruen test for gun laws.",
+      "subjects": [
+        "Second Amendment general statement",
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19c7da23e9eb6ce6c64f4e9d49b70f5a523bfd3d9e7068ddd93f206430d206a9",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/goppdf/Rep.%20Nadeau%20-%20Respecting%20Rights%20While%20Reducing%20Gun%20Violence.pdf",
+      "date": "2025-10",
+      "date_precision": "month",
+      "passage": "Recognizing there is no single solution, our approach should concentrate on evidence-informed strategies that reduce gun violence without infringing on rights.",
+      "note": "Same paper; the list that follows names enforcing existing laws and Extreme Risk Protection Orders among his preferred strategies.",
+      "subjects": [
+        "red flag / extreme risk orders",
+        "gun safety laws general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39d216ae223d6cd38b1c56bcff03363a7a0a88730a539bf6221889cb94788eae",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/goppdf/Anunciation%20Shooting%20Statement.pdf",
+      "date": "2025-09-08",
+      "date_precision": "day",
+      "passage": "Gun access or control measures continue to be part of the conversation and might seem like a straightforward solution to school shootings, but the issue is far more complex. For example, Minnesota has already enacted several key gun safety measures—including red flag laws, universal background checks, and prohibitions on straw purchasers—yet the threat of school violence remains.",
+      "note": "His statement after the Annunciation school shooting; describes existing Minnesota gun laws and says they have not ended school violence.",
+      "subjects": [
+        "red flag / extreme risk orders",
+        "check every gun buyer",
+        "straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8505114459e890b69127a079f116b50d5e368baa5a8179ebc451ab3684e65750",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/goppdf/Anunciation%20Shooting%20Statement.pdf",
+      "date": "2025-09-08",
+      "date_precision": "day",
+      "passage": "Making guns more difficult for high-risk individuals to access is one part of the equation, but it’s not the only lever we have, nor is it the most important.",
+      "note": "Same statement on limiting who may have a gun; also says he supports mandatory minimum sentences for gun criminals.",
+      "subjects": [
+        "limits on who may have a gun",
+        "mandatory minimum sentences for gun crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6651109c86af7c00ea4869dc2c420406620dcf72e246185916e8dfc83e3fbf39",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15612/51862",
+      "date": "2026-04-08",
+      "date_precision": "day",
+      "passage": "“Republicans and Democrats may approach gun violence differently, but there is meaningful common ground on prevention,” Nadeau said.",
+      "note": "Quote in a House caucus release announcing a prevention plan; the release lists enhanced penalties for straw purchasers and required firearm storage away from prohibited persons among measures.",
+      "subjects": [
+        "gun safety laws general statement",
+        "straw purchases",
+        "firearm storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f69d7cc2ac29434155d32132342b831a651d23d9dfb28bc92897f1dfa616ac32",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15612/51840",
+      "date": "2026-04-06",
+      "date_precision": "day",
+      "passage": "One side wants to assure you the only answer is banning guns. The other believes the solution is hardening schools.",
+      "note": "Op-ed co-signed by Nadeau with two other representatives; frames gun bans as one side's single answer and urges a layered prevention approach.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun safety laws general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cea104e3ec409a55bcf3a95f606ba17081c98ba1c015a134bd9402d33db0a6fc",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15612/49455",
+      "date": "2024-03-22",
+      "date_precision": "day",
+      "passage": "House Republicans have taken steps to address a pressing issue by pushing for action on a bill ( H.F. 548 ) aimed at increasing the penalty for transferring a firearm to someone ineligible to possess it, commonly known as \"straw purchasers”.",
+      "note": "His newsletter on HF 548, higher penalty for straw purchases.",
+      "subjects": [
+        "straw purchases",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:06.533Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "red flag / extreme risk orders",
+        "carry permits",
+        "ghost guns",
+        "Second Amendment general statement",
+        "straw purchases"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page and news list (read; several releases and statements)",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus gun words (leads were his own House pages)",
+        "blocked: https://ballotpedia.org/Danny_Nadeau (403)",
+        "not reviewed: campaign site (not found)",
+        "2026 ballot status not confirmed; sitting House member for district 34A"
+      ],
+      "found": 8,
+      "at": "2026-11-19T22:27:06.533Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -171,6 +171,33 @@
           "sha256": "aa8dbede70e5748af49cb56e7d5871241da41295652074bbfc87a625e53f63b4"
         }
       }
+    },
+    {
+      "id": "76445282e9bfd37c966a8ef5f8e6e6d2740a7c4aecca25286314203e130a21d7",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4699?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-4699-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-4699-2025 (Open States sponsor list): HF4699 (2025-2026 Regular): Penalties for unlawful possession of firearms increased..",
+      "subjects": [
+        "longer prison terms for prohibited persons who possess guns",
+        "longer prison terms for transferring a gun to an ineligible person"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4699/versions/0/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4699-2025.introduced.html",
+          "sha256": "c604236999d42c0be2f45f464b6307b5e4ea3ed0f3160ef7067bb37aef9146e0"
+        }
+      }
     }
   ],
   "searches": []

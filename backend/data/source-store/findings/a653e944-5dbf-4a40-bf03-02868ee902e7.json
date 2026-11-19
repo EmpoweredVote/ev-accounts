@@ -344,7 +344,214 @@
           "sha256": "e106ab7bf1174dc8dfa79e9d2f57f89e560d69c9718c84b8d29ac0f105706d9a"
         }
       }
+    },
+    {
+      "id": "5e3726ab27c03b4bfddbe87c092a5d71389fe3dd9096f431b64091b1e5b721f3",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/48175",
+      "date": "2023-02-03",
+      "date_precision": "day",
+      "passage": "I support the Second Amendment and have general concerns about these bills – especially with constitutional aspects and the threat to due process. Overall, it seems these bills would do more to burden law-abiding citizens than they would deter violent criminals.",
+      "note": "Newsletter on four House hearings: HF 14 (background checks on transfers), HF 15 (red-flag orders), HF 396 (safe storage), HF 601 (report lost or stolen guns). Says he supports the Second Amendment and has due-process and constitutional concerns.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "safe storage",
+        "report lost or stolen guns",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e25e2c76e02d0a45f867c8ed4e3b57f2133af44093a9874ccb92ff9e93f1d2df",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/48242",
+      "date": "2023-02-17",
+      "date_precision": "day",
+      "passage": "my general impression is they would do more to set traps for law-abiding gun owners instead of preventing bad actors from committing violent crimes. I voted against these bills when they were presented to a committee I serve.",
+      "note": "Newsletter on gun bills moving toward the floor; says he voted against them in committee.",
+      "subjects": [
+        "gun bills in general",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dce7e2de280e2439572a8fa0d9f18bac227f9ae360a8ee44caae997cf2cd9842",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/48439",
+      "date": "2023-03-31",
+      "date_precision": "day",
+      "passage": "I support a package of four bills House Republicans propose to focus on core issues and the mental health. The bills are H.F. 3133 , 3134 , 3135 , and 3136 .",
+      "note": "Newsletter criticizing HF 14 (called universal gun registration) and HF 15 (called red flag confiscation orders) in the public safety omnibus; backs a four-bill 'SAFER Act' package: mental health and drug treatment centers, tougher penalties for violent crime, gun-safety curriculum for students.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "mental health instead of new gun limits",
+        "gun-safety education"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19e4b90094402bdb0db4c2652419c6adc41edf1e87e54b6d6fc03e8087208d70",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/48543",
+      "date": "2023-04-28",
+      "date_precision": "day",
+      "passage": "Instead of addressing the root causes of violent crime, this bill will create strict and impractical hurdles for law-abiding Minnesotans seeking to exercise their Second Amendment rights. Criminals looking to acquire firearms will not follow the complex new process laid out in the proposal and it will do nothing to stop the flow of firearms among criminals.",
+      "note": "Newsletter on the 2023 public safety and judiciary omnibus, objecting to its HF 14 and HF 15 language; says he could not support the bill.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe5f45c57cefa7d3c72b12a13036ae78b64a1361bb4619eeaa9285809d2cc792",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/48677",
+      "date": "2023-05-12",
+      "date_precision": "day",
+      "passage": "I continue advocating for House Democrat provisions that would compromise both our First Amendment and Second Amendment rights under the U.S. Constitution to be stricken by a conference committee on public safety.",
+      "note": "Newsletter urging that gun provisions in the public safety bill be removed in conference committee.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1abf21f5487576437a581eb98e4cc64083efc5d20054aef8da76ec357f397c8",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/49147",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "passage": "Both proposals seem to do more to criminalize good-faith, law-abiding gun owners than to crack down on the repeat criminals and other true bad actors our courts continue putting back on the street. I do not support these bills and will continue working on other proposals that center on the bad actors themselves.",
+      "note": "Newsletter on hearings for HF 601 (lost/stolen firearm reporting deadline) and HF 4300 (firearm storage); says he opposes both and is co-authoring a bill raising penalties for straw purchases.",
+      "subjects": [
+        "report lost or stolen guns",
+        "safe storage",
+        "straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6e1f743b2f6497814366bcb76db2fb3c695580ced5f77297f6579baa138340a",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/49236",
+      "date": "2024-03-15",
+      "date_precision": "day",
+      "passage": "House Republicans yesterday moved to act on a bill that I co-authored ( H.F. 548 ) to increase the penalty for transferring a firearm to an ineligible person, aka, “straw man” purchases.",
+      "note": "Newsletter on his co-authored HF 548 raising penalties for straw purchases; says the House majority voted down the effort.",
+      "subjects": [
+        "straw purchases",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48a12a804d63b577dca65640378627a84806042f8e6b9e0370bf744f2f3a930f",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15608/51635",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "House Democrats this week came forward with a series of extreme bills that ban guns, magazines and criminalize otherwise law-abiding citizens but do not hold criminals accountable or offer solutions to flag mentally ill individuals. They are pushing bills that are unconstitutional, unenforceable or have already been shown not to work in other states, at the federal level, and in countries like Australia and Canada.",
+      "note": "2026 newsletter opposing bills to ban certain guns and magazines; calls for focus on school safety and mental health and on jailing criminals.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "general statement on gun rights",
+        "mental health"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:54.670Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "ghost guns and federal agency gun rules",
+        "repeal of gun laws",
+        "straw purchases",
+        "safe storage",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "status: sitting member of the Minnesota House, district 31A (confirmed by his House member page and newsletters)",
+        "On the Record (0 meetings)",
+        "his official House member page: ten newsletters fetched, eight with gun content, two with nothing on the subject (https://www.house.mn.gov/members/profile/news/15608/49778 and the 2025 data-practices one, 50147, which only mentions anti-gun litigation funding)",
+        "one web search on his name plus gun words",
+        "sponsor list: covered by bulk bill data",
+        "votes: covered by bulk bill data",
+        "not reviewed: https://ballotpedia.org/Harry_Niska",
+        "not reviewed: campaign site, floor-speech videos and Fox News appearance (video, unread)"
+      ],
+      "found": 8,
+      "at": "2026-11-19T22:28:54.670Z",
+      "by": "source-collector"
+    }
+  ]
 }

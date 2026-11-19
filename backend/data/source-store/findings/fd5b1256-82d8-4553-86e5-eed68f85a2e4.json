@@ -62,5 +62,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.house.mn.gov/members/membersR.asp?id=Rep_Tom_Dippel (official member page, read: only legislative-update list, nothing on the subject)",
+        "https://www.house.mn.gov/members/profile/news/15628/51310 (his legislative update of Oct 2025 after the Annunciation shooting: talks of school security grants, mental health and repeat offenders; no firearm-law position, nothing on the subject)",
+        "https://www.house.mn.gov/members/profile/news/15628/50612 (update list, nothing on the subject)",
+        "https://ivoterguide.com/candidate/70184/race/12238/election/1249 (lead only: lists him in the 2026 State Senate District 41 general; the gun-restriction and teachers-carry questions are marked did not answer)",
+        "blocked: https://ballotpedia.org/Tom_Dippel (403)",
+        "one web search on name plus gun words (results were bill pages and advocacy-group pages; none carried his own words)",
+        "campaign site: not found in search, not reviewed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:30:15.233Z",
+      "by": "source-collector"
+    }
+  ]
 }

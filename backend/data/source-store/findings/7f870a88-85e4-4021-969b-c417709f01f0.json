@@ -210,7 +210,102 @@
           "sha256": "216ce40feb1e5c7e4a54276f64047e8475d0852dc8e867a2899d58b66e06ba91"
         }
       }
+    },
+    {
+      "id": "8c0fdf92550665f854aecb9009161f4313402243fa95ce881b95d0bb7c6ebe56",
+      "kind": "own-words",
+      "url": "https://fox9.com/news/mn-lawmaker-cites-cow-trampling-while-questioning-firearm-storage-bill",
+      "date": "2024-03-25",
+      "date_precision": "day",
+      "passage": "Those moments can come at a homeowner very quickly. Fumbling around for a lockbox key or anything else, I find this bill cumbersome in the face of defending one's self at home to a deadly threat.",
+      "note": "Quoted by a TV news story from a Senate hearing on a safe gun storage bill; he objects that locking up guns would slow a homeowner defending against a break-in.",
+      "subjects": [
+        "safe storage of guns",
+        "defending yourself at home"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:19.504Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "965d06d49609321f85ee0f0708ba99c38dc24fb2c94f4672bc769bce10e8ce7c",
+      "kind": "own-words",
+      "url": "https://fox9.com/news/mn-lawmaker-cites-cow-trampling-while-questioning-firearm-storage-bill",
+      "date": "2024-03-25",
+      "date_precision": "day",
+      "passage": "Many farmers have a readily available gun just for those emergencies. Fumbling around with a lock while a cow or a bull or any other animal is going after your daughter or your son, you can't fumble around with a key or try and find the lockbox or put your thumb on a biometric key of some sort in your home, while the danger is outside.",
+      "note": "Quoted by a TV news story from the same hearing; he argues the storage requirement would put farmers at risk when a farm animal attacks.",
+      "subjects": [
+        "safe storage of guns",
+        "guns on farms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:19.504Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aaf66956e2890924c720b85d12bbb7b6e264f848e915e0f4d7d957bb2140c8fa",
+      "kind": "own-words",
+      "url": "https://www.fox9.com/news/lawmakers-pass-gun-control-measure-misfire-in-senate",
+      "date": "2024-05-09",
+      "date_precision": "day",
+      "passage": "There are elements in this bill that are good. But confiscation of guns is not the solution, especially when criminals don't follow the law. And that provision will only be targeted on law abiding citizens.",
+      "note": "Quoted by a TV news story on Senate floor debate over HF 2609 (straw-purchase penalties plus a binary trigger ban); he says parts are good but objects to the trigger ban provision as confiscation.",
+      "subjects": [
+        "ban on binary triggers",
+        "straw purchase penalties",
+        "confiscation of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:19.504Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "ban on binary triggers",
+        "straw purchase penalties",
+        "confiscation of guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "status: not seeking re-election (announced retirement 2026-02-03, per https://www.fox9.com/news/gop-sen-warren-limmer-retiring-mn-legislature-feb-2026); still a sitting senator until early 2027, so searched",
+        "On the Record (0 meetings)",
+        "official Senate member page: https://www.mnsenate.gov/members/index.html?ls=94&mem_id=1076 fetched, page body is script-loaded and showed nothing on the subject",
+        "blocked: https://ballotpedia.org/Warren_Limmer (empty page)",
+        "blocked: https://www.startribune.com/minnesota-legislator-concerned-gun-storage-law-puts-farmers-at-greater-risk-if-a-cow-charges/600354012 (429)",
+        "blocked: https://minnlawyer.com/2018/04/18/senate-panel-rejects-two-gun-violence-measures/ (403)",
+        "blocked: https://heartlandsignal.com/2024/03/25/minnesota-republican-legislator-opposes-safe-gun-storage-law-citing-killer-cow-threat/ (403)",
+        "not reviewed: https://www.aol.com/senate-ends-suspense-guns-passes-210200011.html (404)",
+        "news search on name plus gun words (two searches); a gun-rights group's 2024 floor-session page fetched, no Limmer quote on it",
+        "campaign site: none found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:28:19.504Z",
+      "by": "source-collector"
+    }
+  ]
 }

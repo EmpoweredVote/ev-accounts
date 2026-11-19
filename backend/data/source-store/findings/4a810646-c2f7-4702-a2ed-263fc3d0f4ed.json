@@ -344,7 +344,118 @@
           "sha256": "60658974c3ad152d4b6b65505a7a0b7622aea36a77bb662bded5101c78760709"
         }
       }
+    },
+    {
+      "id": "660bb15df6b74771c3192af897fbfee2c58e3cffa59e491a8568db6c957e8de5",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15618/52051",
+      "date": "2026-05-07",
+      "date_precision": "day",
+      "passage": "House File 4075  strengthens firearm restrictions involving domestic abusers and certain court orders. We all agree that people who pose a serious threat to their families or communities should not have access to firearms.",
+      "note": "Weekly legislative update from the member's House page describing his support for HF 4075 and HF 3762, which passed the House.",
+      "subjects": [
+        "keep guns from people barred from having them",
+        "domestic abusers and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:54.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1f233b20ce318005dda63894b8f6d1b6f6198b55a0aa6b29b6563e3737a991e",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15618/52051",
+      "date": "2026-05-07",
+      "date_precision": "day",
+      "passage": "House File 3762  helps make sure firearm permit decisions are based on complete information. If someone’s firearm rights have not been restored, law enforcement should be able to see that before deciding whether that person is eligible to possess or carry a firearm.",
+      "note": "Same weekly update; he explains his support for HF 3762 on information available when deciding firearm permit eligibility.",
+      "subjects": [
+        "firearm permit eligibility checks",
+        "keep guns from people barred from having them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:54.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "846c6d3a930b17a58b97a8651227a8e0a7c9e30177d5d0c2894589ec860f7202",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15618/51860",
+      "date": "2026-04-08",
+      "date_precision": "day",
+      "passage": "Minnesotans expect a system that is accountable, coordinated, and focused on results. If we focus on what works and where we agree, we can strengthen public safety and reduce violence across our state.",
+      "note": "Quoted in a caucus news release on the Safer Communities Together Initiative, a plan on suicide and gun violence that lists tougher penalties for straw purchasers and required firearm storage away from prohibited persons among its measures. Date is the page's date; may be approximate.",
+      "subjects": [
+        "gun violence prevention",
+        "straw purchases",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:54.751Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08e17014b319d998cd972865433533226905adf78f99aa41e7091f122a26d232",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15618/51838",
+      "date": "2026-04-06",
+      "date_precision": "day",
+      "passage": "One side wants to assure you the only answer is banning guns. The other believes the solution is hardening schools. Both are convinced they’re right, but if we are serious about preventing tragedies and saving lives, we should focus less on political stalemates, more on getting to yes and scaling what’s already working.",
+      "note": "Op-ed co-written with two other House members on reducing suicide and gun violence; argues for layered prevention (reporting tip lines, threat assessment, violence prevention office) rather than either a gun ban or school hardening. Date is the page's date; may be approximate.",
+      "subjects": [
+        "gun violence prevention",
+        "general gun safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:54.751Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "keep guns from people barred from having them",
+        "domestic abusers and guns",
+        "firearm permit eligibility checks",
+        "safe storage",
+        "straw purchases",
+        "gun violence prevention",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page (https://www.house.mn.gov/members/profile/15618): nothing on the subject on the profile itself; three news posts read",
+        "one web search on name plus firearm words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: ontheissues.org, vote411 and other URL-pattern pages"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:26:54.751Z",
+      "by": "source-collector"
+    }
+  ]
 }

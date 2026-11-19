@@ -348,7 +348,57 @@
           "sha256": "79a554e25fd13bf370bf96dfb5b4aa262ca292ac77a78448ed9987c904539975"
         }
       }
+    },
+    {
+      "id": "cecab6d495bdf08deebc9b0aa1aa9c222bf610250f78b2ec5103af874e0b2b69",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15621/40377",
+      "date": "2025-03-01",
+      "date_precision": "month",
+      "passage": "Thanks to the many Minnesotans who came to the Capitol, we passed Red Flag Laws which took effect in 2024. These Red Flag Laws were pivotal, as they temporarily prevented individuals who could pose a danger to themselves or others from accessing firearms. After one year since its implementation, these laws are doing exactly what they are meant to do — protect and preserve lives in Minnesota against gun violence.",
+      "note": "In a legislative update to constituents on the House member site, he describes the 2024 red flag law as working as intended and mentions a CBS News interview he gave on it.",
+      "subjects": [
+        "red flag orders",
+        "extreme-risk orders",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:50.900Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red flag orders",
+        "extreme-risk orders",
+        "gun violence prevention",
+        "lost and stolen firearm reporting",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "safe storage"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page https://www.house.mn.gov/members/profile/15621 (confirms Rep. Ethan Cha, District 47B, elected 2022, 3rd term)",
+        "House member news page https://www.house.mn.gov/members/profile/news/15621/40377 (March 2025 constituent update, on the subject)",
+        "blocked: https://ballotpedia.org/Ethan_Cha (403)",
+        "web search: name plus gun and firearm words (one search); a second search for the CBS interview returned nothing about this person",
+        "not reviewed: the CBS News interview and Star Tribune story linked from the March 2025 update (links not resolved)",
+        "no separate campaign site found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:30:50.900Z",
+      "by": "source-collector"
+    }
+  ]
 }

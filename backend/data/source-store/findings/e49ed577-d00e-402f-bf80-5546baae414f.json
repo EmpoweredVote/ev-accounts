@@ -439,7 +439,120 @@
           "sha256": "88b00106f607f7eab538e3eba42c0080df06f382c8b4a6b1cfb9950c1bfb87df"
         }
       }
+    },
+    {
+      "id": "deef7e4a0c7341d3f818a8a031cdbb0858146e02282db5b4f7b1a615d1c99b55",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15498/49125",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "passage": "It is misguided to crack down on gun owners who honor our laws and act in good faith instead of going after the real criminals. I do not support that approach and will continue opposing these bills.",
+      "note": "Her legislative update on HF 601 (reporting lost and stolen firearms) and HF 4300 (firearm storage). She opposes both. The date is taken from the page's own date reference and may be a day or so off.",
+      "subjects": [
+        "gun storage rules",
+        "lost and stolen gun reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:15.891Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79a0addca6e2f95f14cea99b4709e5961062f869ea956cf45d8d2c902fc17dca",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15498/49125",
+      "date": "2024-03-01",
+      "date_precision": "day",
+      "passage": "On the other hand, I do support solutions to help us get to the root of gun violence. For example, House Republicans are sponsoring legislation to increase penalties for so-called “straw purchases” where someone who is eligible to purchase a firearm purchases one for someone who may be prohibited from doing so.",
+      "note": "In the same update she says she supports higher penalties for straw purchases.",
+      "subjects": [
+        "straw purchases",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:15.891Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c72673b5b636721ec8942d5c2b8c31597909f015c73c787a5047ad1ed1cc3864",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/sessiondaily/Story/19185",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "We have absolutely taken votes; they just haven’t turned in the way that we’re hearing some people want.",
+      "note": "Quoted in a House Session Daily story. As Speaker she says House committees voted on the gun bills now in the Senate-passed package (HF3874/SF4067, which includes an assault-weapon and large-magazine sale ban), and they failed. She did not release that bill to the floor.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:15.891Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88335a7353723ac83f95d0e2d26f70c4f339537d64e63bdaf087dbd1491b3965",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/sessiondaily/Story/19185",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "That bill is being reviewed",
+      "note": "Her reply on the House floor when asked about the status of the Senate gun package. She called releasing it the speaker's prerogative.",
+      "subjects": [
+        "ban on assault-style guns and large magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:15.891Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "gun storage rules",
+        "lost and stolen gun reporting",
+        "straw purchases",
+        "red flag orders",
+        "guns at the Capitol",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: won the 2026-08-11 primary for governor, on the general-election ballot (news reports of the primary result)",
+        "On the Record (0 meetings)",
+        "House member page and legislative update (https://www.house.mn.gov/members/profile/news/15498/49125)",
+        "House Session Daily story (https://www.house.mn.gov/sessiondaily/Story/19185)",
+        "campaign site https://demuthforminnesota.com/ (fetched, no readable text)",
+        "blocked: https://ballotpedia.org/Lisa_Demuth (empty page)",
+        "blocked: https://minnesotareformer.com/2026/05/16/house-speaker-lisa-demuth-protected-by-red-flag-law-she-voted-against/ (403)",
+        "blocked: https://www.lisademuth.com/ (no response)",
+        "a news story from CBS Minnesota (https://www.cbsnews.com/minnesota/news/minnesota-house-speaker-lisa-demuth-gun-control-bills-annunciation-shooting/): a spokesperson statement only, not saved",
+        "news search on her name plus gun words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.house.mn.gov/members/Profile/News/15529/41559 (a different member's release, not hers)"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:31:15.891Z",
+      "by": "source-collector"
+    }
+  ]
 }

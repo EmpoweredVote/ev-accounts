@@ -214,7 +214,81 @@
           "sha256": "dca3210bd2f7ee025a58c0522f74fadf5d44ceea48a0b5d237c96e7febfd134d"
         }
       }
+    },
+    {
+      "id": "77e36f0153f9e982563fb955d6372a387299015faefe26f0d1b4a977b99f40b3",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15364/49563",
+      "date": "2024-05-03",
+      "date_precision": "day",
+      "passage": "Three bills that target Minnesota’s law-abiding gun owners were approved by the House majority this week. The first proposal would force a person who had their gun stolen to report the firearm was missing within 48 hours, meaning the victim of this crime could theoretically be charged themselves. Another bill includes an expanded definition of trigger activators, which may impact some commonly used guns, and the final initiative places additional firearm storage burdens on law-abiding firearm owners. I voted ‘no’ on all three of these bills.",
+      "note": "In his own legislative update on the House site, he describes three House-passed gun bills (lost/stolen reporting within 48 hours, expanded trigger-activator definition, firearm storage rules) and says he voted no on all three.",
+      "subjects": [
+        "report lost or stolen guns",
+        "trigger activators",
+        "gun storage rules",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:41.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b0f9398f84122053a813e25c1b8fb8225acefa8705344e47cb0e4521673e944",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15364/51624",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "This week, Governor Walz unveiled gun control measures he would like passed into law, as did House Democrats who proposed a pair of controversial bills in our public safety committee. It is worth noting that if the governor’s plans were enacted into law, it would likely cost homeowners more to own a gun as it would make homeowners insurance policies more costly.",
+      "note": "In his own legislative update, he comments on the governor's and House members' 2026 gun proposals, saying they would likely raise homeowners insurance costs for gun owners.",
+      "subjects": [
+        "gun safety laws",
+        "governor's gun proposals",
+        "cost of owning a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:41.793Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lost and stolen gun reporting",
+        "trigger activator definition",
+        "gun storage rules",
+        "governor's gun proposals",
+        "Second Amendment general statements",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15364 (confirms Rep. Tim O'Driscoll, district 13B, elected 2010; 2026 ballot status not separately confirmed)",
+        "official House member legislative updates: read the 2024-05-03 and 2026-02-27 updates (gun content); skimmed the five newest updates (April-May 2026), nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Tim_O%27Driscoll (403)",
+        "one web search on name plus gun subject words: leads only, gun-rights group pages not cited",
+        "not reviewed: https://votesmart.org/public-statement/897540/issue-position-second-amendment (a 2014 statement whose speaker could not be tied to this person)",
+        "campaign site: not found"
+      ],
+      "found": 2,
+      "at": "2026-11-19T22:28:41.793Z",
+      "by": "source-collector"
+    }
+  ]
 }

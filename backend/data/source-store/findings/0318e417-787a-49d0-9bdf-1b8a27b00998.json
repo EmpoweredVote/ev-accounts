@@ -92,5 +92,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15641 (confirms Rep. Aaron Repinski, District 26A)",
+        "official House news list https://www.house.mn.gov/members/profile/news/15641: all 16 releases and newsletters (2025-2026) read for gun words; nothing on the subject",
+        "campaign site https://www.repinskiforhouse.com/ (home page and site search for 'gun'): nothing on the subject",
+        "blocked: https://ballotpedia.org/Aaron_Repinski (returned 202, no page body)",
+        "blocked: https://heartlandsignal.com/2026/02/26/minnesota-house-republicans-vote-down-assault-weapons-ban-in-committee/ (403); a search snippet only said he sits on the committee that heard gun bills, not used as a source",
+        "two news searches on name plus subject words: nothing in his own words on the subject",
+        "no 2026 ballot-status page fetched; a search result lists him as running in the 2026 general election in 26A"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:26:25.393Z",
+      "by": "source-collector"
+    }
+  ]
 }

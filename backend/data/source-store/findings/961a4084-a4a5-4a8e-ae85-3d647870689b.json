@@ -142,7 +142,153 @@
           "sha256": "aa8dbede70e5748af49cb56e7d5871241da41295652074bbfc87a625e53f63b4"
         }
       }
+    },
+    {
+      "id": "a4f275adbd4c71701650a46a42bd136536127ad06f5db035df378c9a6bf7a0b8",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15646/51306",
+      "date": "2025-09-04",
+      "date_precision": "day",
+      "passage": "Simply pushing more gun restrictions might sound good in a press conference, but it does not stop evil people from committing these crimes.",
+      "note": "Statement in a House member news release after the Annunciation Church attack. He calls for action on mental illness, school security and repeat offenders, and says new gun restrictions do not stop such crimes. Release also lists mandatory minimum sentences for repeat gun criminals and straw purchasers.",
+      "subjects": [
+        "new gun restrictions",
+        "penalties for straw purchases",
+        "penalties for repeat gun offenders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9593cad4a92f2a7d1c2c485a1a96f130b9744ccf4ccf1d12c29f2d2ae4445cf6",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15646/51304",
+      "date": "2025-08-19",
+      "date_precision": "day",
+      "passage": "While only the binary trigger ban was struck down, the court’s strong language highlights just how far the Legislature has strayed from its constitutional duty.",
+      "note": "Statement in a House member news release on a court ruling that struck down the binary trigger ban in the 2024 omnibus bill for breaking the single-subject rule. He criticises large omnibus bills and pledges to push single-subject bills.",
+      "subjects": [
+        "binary trigger ban",
+        "gun law passed in a large omnibus bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.606Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0224b3c4e9bc10a3ca70b666de52ea2dc3f7d2b23fcf83b315d488bcf5c99d1c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4699?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-4699-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of MN-HF-4699-2025 (Open States sponsor list): HF4699 (2025-2026 Regular): Penalties for unlawful possession of firearms increased..",
+      "subjects": [
+        "longer prison terms for prohibited persons who possess guns",
+        "longer prison terms for transferring a gun to an ineligible person"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4699/versions/0/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4699-2025.introduced.html",
+          "sha256": "c604236999d42c0be2f45f464b6307b5e4ea3ed0f3160ef7067bb37aef9146e0"
+        }
+      }
+    },
+    {
+      "id": "783e0a13ffe9c625da6feef50b04661a3731bdc042ae53d22080c363ec2a70a0",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF4699&ssn=0&y=2026",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-4699-2025",
+      "act": "author",
+      "note": "Chief author of HF 4699, which raises penalties for unlawful possession of firearms (for example a felony-conviction possession maximum from 15 to 20 years, and felony penalties for others barred from having guns) and raises the penalty for transferring a gun to a barred person.",
+      "subjects": [
+        "penalties for illegal gun possession",
+        "limits on who may have a gun",
+        "straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.606Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "binary trigger ban",
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "penalties for illegal gun possession",
+        "straw purchases",
+        "carry a gun without a permit",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the member's House page and its news releases (read two releases on the subject)",
+        "the Revisor's bill pages for HF 4699 (author listing and text)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words",
+        "not reviewed: https://heartlandsignal.com/2026/02/26/minnesota-house-republicans-vote-down-assault-weapons-ban-in-committee/ (page text had no mention of the member when fetched)",
+        "not searched further: Ballotpedia, campaign site, other news"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:28:12.947Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "binary trigger ban",
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "penalties for illegal gun possession",
+        "straw purchases",
+        "carry a gun without a permit",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the member's House page and its news releases (read two releases on the subject)",
+        "the Revisor's bill pages for HF 4699 (author listing and text)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words",
+        "not reviewed: https://heartlandsignal.com/2026/02/26/minnesota-house-republicans-vote-down-assault-weapons-ban-in-committee/ (page text had no mention of the member when fetched)",
+        "not searched further: Ballotpedia, campaign site, other news"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:45:33.606Z",
+      "by": "source-collector"
+    }
+  ]
 }

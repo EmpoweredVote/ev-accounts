@@ -324,5 +324,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "enforcing court-ordered gun surrenders"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "the Senate caucus site: his news category pages 1-3 and a site search for gun/firearm; the pages name him as the Prior Lake senator; none of his own statements on guns found (a 2022 public-safety release mentions firearm penalties but his quoted words there are about probation funding)",
+        "2026 ballot status not confirmed: the member page https://www.mnsenate.gov/members/member_bio.html?leg_id=11275 returned only page scaffolding",
+        "blocked: https://ballotpedia.org/Eric_Pratt (403)",
+        "blocked: https://minnlawyer.com/2020/03/18/senate-judiciary-shoots-down-dfl-gun-bills/ (bot check)",
+        "blocked: https://minnlawyer.com/2020/03/06/senate-judiciary-will-hear-2-gop-gun-bills/ (bot check)",
+        "web search x2 (leads only: a 2020 committee story on his amendment to SF 2101 and a red-flag amendment he opposed; could not be fetched, so not saved)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: floor-session video for the 2026 gun package (SF 4067 / HF 4075)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:30:07.199Z",
+      "by": "source-collector"
+    }
+  ]
 }

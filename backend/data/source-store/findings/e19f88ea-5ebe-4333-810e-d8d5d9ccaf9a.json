@@ -318,7 +318,98 @@
           "sha256": "8be5638fd605fea4b3006dc69c500b5fd0c45ccd709cc451f63079a1a4364d3e"
         }
       }
+    },
+    {
+      "id": "36ac5ba1612917ff9d9553b2255c8687c5d1f6d9f93a87d9f60c0c6d432de7b8",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15609/40868",
+      "date": "2025-09-03",
+      "date_precision": "day",
+      "passage": "While we’ve made progress in recent years to make our communities safer through criminal background checks, red flag laws, and other actions, there is clearly more to do.",
+      "note": "From his House newsletter after the Annunciation school shooting: says background checks and red flag laws have made progress and that more is needed.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "general gun safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:38.269Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49cd71abf9cffe58608192d43a7cbf3a992efda84c737ed8394a9ab10660c28a",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15609/40868",
+      "date": "2025-09-03",
+      "date_precision": "day",
+      "passage": "Extreme Risk Protection Orders (ERPOs), also known as “red flag laws,” are an effective way to prevent tragedy.",
+      "note": "Same newsletter: describes red flag orders as effective and explains how a petition temporarily restricts firearm access.",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:38.269Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4593d9fb6f373a4cf1bccc6c9ff59b731f7367f7072f1048e081f863203eb91",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15609/40868",
+      "date": "2025-09-03",
+      "date_precision": "day",
+      "passage": "Simply put, we cannot accept a status quo where gun violence is normal.",
+      "note": "Same newsletter: says he is committed to finding and passing new solutions on gun violence, without naming a specific bill.",
+      "subjects": [
+        "general gun safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:38.269Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "gun violence laws",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun storage",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page (confirms Rep. Matt Norris, District 32B)",
+        "official House member news list: two newsletters read, one with subject matter; a third item (id 39227) returned nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Matt_Norris (403)",
+        "one news search on name plus gun words: only his own House newsletters and bill-tracker pages found; no vote or quote in other outlets",
+        "one search on the 2026 District 32B result: nothing confirming the outcome; he is the sitting member",
+        "campaign site: none found",
+        "not reviewed: https://www.house.mn.gov/members/profile/news/15458/48178 (other member's page, not his)",
+        "late-October 2025 newsletter (gun-violence survey) read: only a party-worded line on the subject, not saved"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:29:38.269Z",
+      "by": "source-collector"
+    }
+  ]
 }

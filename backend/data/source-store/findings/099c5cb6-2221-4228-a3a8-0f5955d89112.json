@@ -234,7 +234,63 @@
           "sha256": "76a3ede05866897eb1b89a3f255210ef1df83f71a0b66e31ccb435fe224af303"
         }
       }
+    },
+    {
+      "id": "18d28c218043f32cb7fd27a43a38f570155c33a44328cc42fb800cdf1176f6d9",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0733&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-733-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-733-2023 (Open States sponsor list): SF733 (2023-2024 Regular): Penalties increase for transferring certain firearms to persons who are ineligible to possess firearms.",
+      "subjects": [
+        "felony penalty for transferring a pistol or assault weapon to an ineligible person",
+        "seven-year aggravated penalty if used in a violent felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2023-03-23; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/733/versions/1/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-733-2023.engrossed1.html",
+          "sha256": "ed4c073ae7633bada77ff0fee0b11a9206c18b1f8423a53d8f440505126717fe"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "binary triggers",
+        "carry permits and carry without a permit",
+        "repeal of gun laws",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Zach_Duckworth: confirms sitting state senator for District 57, in office since January 2021; nothing on guns",
+        "the Senate caucus site: his senator page and news category read, one release on law enforcement support (2022), nothing on the subject; site search for gun returned nothing naming him",
+        "blocked: https://ballotpedia.org/Zach_Duckworth (403)",
+        "not reviewed: https://www.mnsenate.gov/members/member_bio.html?mem_id=1344 (page returned only a layout shell, no member text)",
+        "campaign site: not found in search",
+        "news search on his name and gun words: results were about a different person (a U.S. senator from Illinois) or about the bill generally, none quoting him; a search snippet mentioning him questioning binary-trigger timing was not found on the page I fetched, so not saved",
+        "sponsor list: covered by bulk bill data",
+        "Legislature bill pages and journals: skipped per brief"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:26:20.602Z",
+      "by": "source-collector"
+    }
+  ]
 }

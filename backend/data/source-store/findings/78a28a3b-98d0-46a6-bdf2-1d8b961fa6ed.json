@@ -397,7 +397,165 @@
           "sha256": "aa8dbede70e5748af49cb56e7d5871241da41295652074bbfc87a625e53f63b4"
         }
       }
+    },
+    {
+      "id": "ff20b917f3559c47c1956a7f549eb3970eecdafddac23f58b0e4edea6d62fc76",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15570/51705",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "passage": "HF 3762 strengthens that trust while continuing to support law-abiding gun owners and the officers who work every day to keep Minnesota communities safe!",
+      "note": "Member newsletter on his HF 3762, which gives permit issuers fuller information when deciding on firearm permits; he says it adds no new disqualifiers and does not change who may own a firearm.",
+      "subjects": [
+        "check every gun buyer",
+        "firearm permit background information"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:02.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d234a1a827943de95ee6529d8647f11776528b02f2fe069a04cec7e969bfbee4",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15570/51705",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "passage": "Let me be clear: this bill does not create new disqualifiers and it does not change who is legally allowed to own a firearm.",
+      "note": "Describes the limits of HF 3762 in his newsletter.",
+      "subjects": [
+        "firearm permit background information",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:02.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7fe97400c0d288604af9a5f415ac7ce8840178d2bdc36f7cdcb5d123f4af12ac",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15570/51005",
+      "date": "2025-09-12",
+      "date_precision": "day",
+      "passage": "Punishing Criminals: Strengthening penalties for repeat violent offenders and illegal firearm straw purchasers, ensuring that dangerous individuals face real consequences and cannot return to our streets without accountability.",
+      "note": "Newsletter after the Annunciation school shooting listing his priorities, including tougher penalties for illegal straw purchases, alongside school security grants and mental health care.",
+      "subjects": [
+        "penalties for straw purchases",
+        "school safety and firearm regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:02.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2e17916b515ac5e9fd7c2ac01048e03dc461fa35a39c03f9e19955b7926aa8f",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15570/51005",
+      "date": "2025-09-12",
+      "date_precision": "day",
+      "passage": "As the only former school resource officer in the Legislature, I’m hopeful my experience can be helpful in finding solutions on the important issues of school security, public safety, mental health, and firearm regulation.",
+      "note": "Says he wants to work on firearm regulation among other topics after the shooting.",
+      "subjects": [
+        "school safety and firearm regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:02.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e6c679e15ad86f7c7b400e51f316bc5958cc05d31d4129124c3da95aca59ac2",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15570/49620",
+      "date": "2024-05",
+      "date_precision": "month",
+      "passage": "It’s been nice to serve on this committee and extend the conversation about why it’s so important to increase these criminal penalties to prevent straw purchasing in the future, and to propose ways to improve problematic language related to binary triggers that was unnecessarily included in the bill.",
+      "note": "Newsletter from the final weekend of the 2024 session about his work on the HF 2609 conference committee (straw purchase penalties); he also wanted to change the binary-trigger language.",
+      "subjects": [
+        "penalties for straw purchases",
+        "binary triggers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:02.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76445282e9bfd37c966a8ef5f8e6e6d2740a7c4aecca25286314203e130a21d7",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4699?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-4699-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-4699-2025 (Open States sponsor list): HF4699 (2025-2026 Regular): Penalties for unlawful possession of firearms increased..",
+      "subjects": [
+        "longer prison terms for prohibited persons who possess guns",
+        "longer prison terms for transferring a gun to an ineligible person"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4699/versions/0/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4699-2025.introduced.html",
+          "sha256": "c604236999d42c0be2f45f464b6307b5e4ea3ed0f3160ef7067bb37aef9146e0"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "firearm permit background information",
+        "penalties for straw purchases",
+        "ban on assault-style guns",
+        "magazine limits",
+        "school safety and firearm regulation",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page and news list (house.mn.gov, several newsletters read)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words",
+        "blocked: https://ballotpedia.org/Jeff_Witte (403)",
+        "blocked: https://heartlandsignal.com/2026/02/26/minnesota-house-republicans-vote-down-assault-weapons-ban-in-committee/ (403)",
+        "not reviewed: campaign site (https://www.jeffwitte.com did not load)",
+        "not reviewed: Sunday Take podcast audio (Sept 2025)"
+      ],
+      "found": 5,
+      "at": "2026-11-19T22:28:02.666Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -210,7 +210,56 @@
           "sha256": "99ac19b72f2d35299ad434f16ce26913700ef4b1fad05bf1165ddf9f5e8d2666"
         }
       }
+    },
+    {
+      "id": "9416d39278fdf94b888d8fa9ece8432c3010bb1dbb3b91501e31210ef37168fa",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/amp/minnesota/news/gun-policy-reforms-in-public-safety-deal-likely-to-pass-minnesota-legislature",
+      "date": "2023-05-11",
+      "date_precision": "day",
+      "passage": "\"I believe we have the votes,\" Sen. Nick Frentz, assistant majority leader, told WCCO Thursday.",
+      "note": "A CBS Minnesota news story quotes him, as assistant majority leader, on whether the Senate had the votes to pass the public safety package that carried universal background checks and extreme-risk protection orders. It is a count of votes, not a stated view on the policies.",
+      "subjects": [
+        "check every gun buyer",
+        "private gun sales checks",
+        "extreme-risk (red flag) orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:30.325Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private gun sales checks",
+        "extreme-risk (red flag) orders",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page: https://www.mnsenate.gov/members/member_page.html?mem_id=1224 (loaded but returned no readable text on the subject; not reviewed)",
+        "campaign site: https://www.nickfrentz.com (did not load; blocked/unreachable)",
+        "blocked: https://ballotpedia.org/Nick_Frentz",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus gun words (one 2023 CBS Minnesota story quoting him)",
+        "second search for official statements: nothing in his own words on the subject beyond the one quote",
+        "a Giffords endorsement list names him for 2026; an endorsement is not his own words and was not saved",
+        "not reviewed: https://www.mnsenate.gov press release list"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:31:30.325Z",
+      "by": "source-collector"
+    }
+  ]
 }

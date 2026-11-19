@@ -348,7 +348,143 @@
           "sha256": "0565e28bed71be94f8272a1af2032d955015cb984d249a753b92e62e2f410fef"
         }
       }
+    },
+    {
+      "id": "5f83f44d24dd13cbaead68b95b5a9fd58df3499ac00a308e275adb76ed8a695a",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15544/49537",
+      "date": "2024-05-03",
+      "date_precision": "day",
+      "passage": "“A statewide mandate to lock up your handguns is unenforceable,” Olson said. “Under this language even off-duty law enforcement officers, who are never really off duty, would have to lock up their weapons after their shift had ended.”",
+      "note": "From his official House release after the House passed three gun bills (lost/stolen reporting deadline, trigger activator definition, locked storage). He says the storage mandate cannot be enforced.",
+      "subjects": [
+        "safe storage of guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:31.796Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "762f25c0b42cb9a312c71669905c1615d60f616e54a8ca8bc57b35c02db3183c",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15544/49537",
+      "date": "2024-05-03",
+      "date_precision": "day",
+      "passage": "“It would be one thing if the majority was approving measures that would hold criminals accountable and put an end to violent crime,” Olson said. “But in this case, it is targeting law abiding citizens and in one case, actually turning a gun owner into a criminal.”",
+      "note": "From his official House release. He says the three bills target law-abiding gun owners, and says one would make a gun owner a criminal. The release also says he voted against all three and describes the 2023 universal background checks and red flag orders as laws the majority and the governor enacted.",
+      "subjects": [
+        "lost and stolen gun reporting",
+        "check every gun buyer",
+        "red-flag orders",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:31.796Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e810df557190aec9e94ecb3fadbf751866e07095d1c1761c7faa41fb5d9ae21a",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15544/49635",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "passage": "Also included is language relating to scope of practice and a binary trigger ban for firearms. Olson said no one had a chance to review this massive proposal prior to a vote being taken.",
+      "note": "Session-end release issued in his name. It notes that a binary trigger ban was in the 1,430-page omnibus bill passed at the end of session, and he objects that no one could review it before the vote. The release also lists new laws that 'punish law-abiding gun owners' among his criticisms.",
+      "subjects": [
+        "binary trigger ban",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:31.796Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5e103ab00a1d453d3d3ed44abfb554c6048117835d3cfe1cc2dcbffb320c7fb",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15544/50603",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "I also had the opportunity to visit Federal Ammunition in Anoka this week a long standing Minnesota manufacturer that employs over 1,400 people and plays a vital role in both our economy and our nation’s defense industry.",
+      "note": "From his legislative update newsletter. He visited an ammunition maker and links the visit to supporting local manufacturing and protecting Second Amendment rights (the sentence after this one).",
+      "subjects": [
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:31.796Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "347fb2f447a9d14fe5f9e36998981e90554edc85ab9beec1bcf9369dd1601488",
+      "kind": "record",
+      "url": "https://www.house.mn.gov/Caucus/View/DFL/41559",
+      "date": "2026-05-07",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Presiding as Speaker Pro Tempore, answered a floor question on the status of the Senate-passed bill on assault-style weapons and high-capacity magazines",
+      "note": "A House caucus release quotes him telling the floor he had received the Senate bill but was instructed not to report it. This is the caucus's account, not a transcript; the release dates the floor session to the Thursday before 2026-05-08.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:31.796Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "ban on assault-style guns and large magazines",
+        "lost and stolen gun reporting",
+        "trigger activators and binary triggers",
+        "safe storage of guns",
+        "Second Amendment general statements",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.house.mn.gov/members/profile/15544 (member page confirming Rep. Bjorn Olson, District 22A)",
+        "https://www.house.mn.gov/members/profile/news/15544 (official news list; read the gun-related releases)",
+        "web search: name plus gun and Second Amendment words (one search)",
+        "House caucus release of 2026-05-08 (read)",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, other news searches and the remaining URL patterns (no further fetches made); 2026 ballot status not separately confirmed, member page shows a sitting House member",
+        "nothing on the subject: https://www.house.mn.gov/members/profile/news/15544/47607 (2022 public-safety release, no gun content)"
+      ],
+      "found": 5,
+      "at": "2026-11-19T22:27:31.796Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -116,7 +116,56 @@
           "sha256": "aa8dbede70e5748af49cb56e7d5871241da41295652074bbfc87a625e53f63b4"
         }
       }
+    },
+    {
+      "id": "931239fe6a1caeda5b05b6ddd68e6fd751e7d501d76467f680e059b56dec14b2",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15637/51239",
+      "date": "2025-10-01",
+      "date_precision": "day",
+      "passage": "Finally, we must hold criminals accountable. That includes mandatory minimum prison sentences for repeat gun offenders and serious penalties for straw purchasers who put weapons in the wrong hands. These are straightforward, common-sense measures with bipartisan support and potential to pass that would make our communities safer and reduce the risk of future violence.",
+      "note": "From his interim newsletter after the Annunciation shooting, about the special session plan. He backs mandatory minimum sentences for repeat gun offenders and serious penalties for straw purchasers. In the same letter he criticizes the Governor's proposals as hyper-partisan and not vetted in committee, without naming specific gun bills.",
+      "subjects": [
+        "penalties for straw purchasers",
+        "mandatory minimum sentences for repeat gun offenders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:26.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit",
+        "penalties for straw purchasers",
+        "repeat gun offenders",
+        "general gun-rights and Second Amendment statements",
+        "self-defense law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15637 (confirms Rep. Wayne Johnson, district 41A, sitting member)",
+        "official House news list https://www.house.mn.gov/members/profile/News/15637 (read list; read the Oct 2025 interim update, Mar 2025 update, Jan 2026 commitments, Mar 2026 hearings update, Apr 2026 bill update and May 2026 session recap; only the Oct 2025 update touches the subject)",
+        "no separate campaign site found by search; nothing on the subject in search results",
+        "Ballotpedia: page not fetched at the guessed address (shell error); not reviewed: https://ballotpedia.org/Wayne_Johnson_(Minnesota)",
+        "two news searches on his name plus gun words: nothing on the subject beyond his own newsletter",
+        "sponsor list: covered by bulk bill data",
+        "note: a news report says he lost the Nov 2026 general election for 41A; he remains a sitting member until the term ends"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:27:26.971Z",
+      "by": "source-collector"
+    }
+  ]
 }

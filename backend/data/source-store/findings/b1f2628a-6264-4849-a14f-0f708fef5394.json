@@ -211,7 +211,123 @@
           "sha256": "108fc8722ca4bcb9e69c053bf143fb41f8f32553fdc70db5800fafd33907a486"
         }
       }
+    },
+    {
+      "id": "1edce680ff07b5579f7059829ad89d11f725dfe452564d4167d4ec07806302bc",
+      "kind": "own-words",
+      "url": "https://www.kaxe.org/minnesota-news/2026-05-05/minnesota-senate-approves-gun-control-package-but-its-unlikely-to-pass-house",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "We’re taking political votes instead of passing real solutions. Partisanship in an election year is blocking the progress our kids deserve. I am sorry that we are being asked to strip away (people’s) rights with a bill that will never clear the (House) and will not actually solve the problem.",
+      "note": "Floor remarks on the 2026 Senate omnibus firearms bill, quoted in a public radio news story (the two sentences are separated in the story by a few words of attribution). She says the bill takes away rights and will not solve the problem.",
+      "subjects": [
+        "ban on assault-style guns",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:56.875Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b4659750aeb05d2c6e00a422ac3c5324e3802ec7534727c07a7fe4b741a17031",
+      "kind": "own-words",
+      "url": "https://www.minnpost.com/state-government/2024/03/gop-senator-calls-out-dfl-for-cloning-her-bill-that-would-increase-penalties-for-straw-gun-purchases/",
+      "date": "2024-03-21",
+      "date_precision": "day",
+      "passage": "I can’t help but think what the woman who bought this man these firearms illegally would have thought if she knew the severity of the law in Minnesota was higher,",
+      "note": "Quoted by MinnPost at a Capitol news conference, supporting her bill SF 733 to make straw purchasing of guns a felony.",
+      "subjects": [
+        "straw purchase of guns",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:56.875Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "765c53718e0a41c87ec8b488b3f0c365021c11b761e4edc79ba5f89c2b05958a",
+      "kind": "record",
+      "url": "https://www.minnpost.com/state-government/2024/03/gop-senator-calls-out-dfl-for-cloning-her-bill-that-would-increase-penalties-for-straw-gun-purchases/",
+      "date": "2023-01-01",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-733-2023",
+      "act": "sponsor",
+      "note": "Introduced SF 733 in the 2023 session, raising straw purchasing of firearms to a felony. It passed the Senate Judiciary Committee but got no floor vote; a motion to bring it to the floor on 2024-03-21 failed, per MinnPost.",
+      "subjects": [
+        "straw purchase of guns",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:56.875Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4860f8f8658c8804226bd1bd16b82498626dd3aab92f7939b150dbc4358917c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0733&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-733-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of MN-SF-733-2023 (Open States sponsor list): SF733 (2023-2024 Regular): Penalties increase for transferring certain firearms to persons who are ineligible to possess firearms.",
+      "subjects": [
+        "felony penalty for transferring a pistol or assault weapon to an ineligible person",
+        "seven-year aggravated penalty if used in a violent felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2023-03-23; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/733/versions/1/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-733-2023.engrossed1.html",
+          "sha256": "ed4c073ae7633bada77ff0fee0b11a9206c18b1f8423a53d8f440505126717fe"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "straw purchase of guns",
+        "limits on who may have a gun",
+        "carry a gun without a permit",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.senate.mn/members/member_bio.html?mem_id=1292 (official member page, read; nothing on the subject)",
+        "https://www.mnsenaterepublicans.com/senator/coleman/ (caucus member page, read; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Julia_Coleman",
+        "one web search on name plus gun words (news results, two fetched and cited)",
+        "not reviewed: https://www.axios.com/local/twin-cities/2026/05/04/minnesota-senate-gun-safety-bill-assault-weapons-ban-school-shooting-response (fetched, no passage from her found in page text)"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:28:56.875Z",
+      "by": "source-collector"
+    }
+  ]
 }

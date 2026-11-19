@@ -356,7 +356,75 @@
           "sha256": "a68f2681a2d8ae53666ae22a637c1ac935d51e310abece0828810aa332598b58"
         }
       }
+    },
+    {
+      "id": "44c36accae4f181474b96d38b2ee0c5eb8d0c44490e6f6cc9501fc5c50997bce",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15429/49612",
+      "date": "2024-05-10",
+      "date_precision": "day",
+      "passage": "The bill was problematic because it mandated how law-abiding citizens must store their firearms inside their private homes, making it harder to protect themselves and their families in a home-defense situation. We should be going after the criminals who are making our neighborhoods less safe instead of criminalizing law-abiding gun owners.",
+      "note": "In his own newsletter, he describes House File 4300 (a gun storage bill) and says why he found it a problem; he also calls the Senate's lack of votes for it a win for the 2nd Amendment.",
+      "subjects": [
+        "gun storage rules",
+        "gun control bills",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:30.916Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dea80fdcf8404e008fac1e79604bfb25526db1b0404ebd54115ebe193123873f",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/MNHOUSEGP/bulletins/4183648",
+      "date": "2026-05-22",
+      "date_precision": "day",
+      "passage": "“In Greater Minnesota, people are taught responsibility at a very young age,” Baker said. “Between hunting and participating in firearm safety classes, the Second Amendment is just part of our way of life. The people I represent do not want politicians in St. Paul treating them like criminals simply because they legally exercise their constitutional right.”",
+      "note": "Quote in a House caucus news release issued about him; he speaks of gun rights in Greater Minnesota and objects to gun control proposals from the Senate. The release also says he stood against those proposals, arguing they would infringe on the rights of law-abiding Minnesotans.",
+      "subjects": [
+        "Second Amendment",
+        "gun control bills",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:30.916Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun storage rules",
+        "gun control bills",
+        "Second Amendment",
+        "gun rights and firearm safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page and news list (https://www.house.mn.gov/members/profile/15429): read; confirmed Rep. Dave Baker, District 16B, sitting member",
+        "official House newsletters 2024-05-10, 2026-03-08, 2026-06-25 interim update, town hall release: only the 2024-05-10 one is on the subject; others nothing on the subject",
+        "House caucus news release 2026-05-22 (https://content.govdelivery.com/accounts/MNHOUSEGP/bulletins/4183648): on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Dave_Baker_(Minnesota)",
+        "one web search on name plus gun words: only the official pages above were on him; other results were other members or advocacy-group pages that do not quote him",
+        "campaign site: not found separately from the official page"
+      ],
+      "found": 2,
+      "at": "2026-11-19T22:27:30.916Z",
+      "by": "source-collector"
+    }
+  ]
 }

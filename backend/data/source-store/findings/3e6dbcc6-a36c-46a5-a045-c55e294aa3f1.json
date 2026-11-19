@@ -156,5 +156,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates)",
+        "member page https://www.senate.mn/senatorhawj (read; confirms Senate District 67, nothing on the subject)",
+        "Legislators Past and Present record https://www.lrl.mn.gov/legdb/fulldetail?ID=15380 (confirms office; lists a term from 2027 to 2031; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Foung_Hawj (403)",
+        "web search on name plus gun and background-check words (nothing naming this person on the subject)",
+        "web search on name plus 2026 race and gun violence prevention (confirms 2026 candidacy; nothing own-words on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "Senate and House floor votes: covered by bulk bill data",
+        "not reviewed: https://www.senate.mn/members/member_page.html?mem_id=1128 (404, wrong address)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:26:10.483Z",
+      "by": "source-collector"
+    }
+  ]
 }

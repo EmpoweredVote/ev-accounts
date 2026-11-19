@@ -118,7 +118,124 @@
           "sha256": "14fad029981e32712a65438d5e3f36daa3d4c7ce495c6697dde686c1139505d8"
         }
       }
+    },
+    {
+      "id": "fe02f56fc905fc1532f526c164f8699df4976bf5f8dbfe06f5d2160665859885",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15647/51636",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "The governor and House Democrats both came out with proposals this week that would burden responsible gun owners while doing little to actually improve public safety. Their proposal to ban commonly owned firearms, add insurance requirements on guns, and create a heap of new regulations will not stop criminals who already ignore the law.",
+      "note": "In his own legislative update he objects to the governor's and House majority's gun proposals: a ban on commonly owned firearms and gun insurance requirements.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun insurance requirement",
+        "new gun regulations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:22.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ec9488c1e49d679e993aee4f43fa02187a40f28584a0dcf6178fba98d558674",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15647/51636",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "I am a staunch supporter of the Second Amendment and oppose these gun-control proposals, tooth and nail.",
+      "note": "He states support for the Second Amendment and opposition to the 2026 gun-control proposals; he says to focus instead on repeat offenders, law enforcement and mental health.",
+      "subjects": [
+        "general statement on Second Amendment",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:22.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c24172fc0919e9442473543010c8c948a03d98af9ccde81dc7779e044ce9dac5",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15647/52069",
+      "date": "2026-05-08",
+      "date_precision": "day",
+      "passage": "As a staunch Second Amendment supporter, I’d like to share some of my concerns over a radical anti-gun bill (S.F. 4067) Senate Democrats passed this week on a 34-33 party-line vote.",
+      "note": "In his legislative update he voices concerns over S.F. 4067, passed by the Senate 34-33.",
+      "subjects": [
+        "general statement on Second Amendment",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:22.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a9ba22a030a59ce94ea52d9f03f397bade09828b7b5fbdadc312c3537219066",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15647/52069",
+      "date": "2026-05-08",
+      "date_precision": "day",
+      "passage": "There is concern this bill would do more to impact Minnesotans who use their firearms and magazines for self-defense, hunting and sport shooting than shut down violent criminals. This bill clearly is unconstitutional, but the good news is it will go nowhere in the House because Republicans are united in opposition.",
+      "note": "He says S.F. 4067 (semi-automatic firearm ban, magazine limit over 17 rounds, registration with the BCA renewed every three years, retroactive binary trigger ban) affects lawful owners more than criminals, calls it unconstitutional, and expects it to stall in the House.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "register firearms",
+        "binary trigger ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:22.491Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "register firearms",
+        "gun insurance requirement",
+        "binary trigger ban",
+        "Second Amendment general statement",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/Profile/15647 (read; member is Rep. 16A)",
+        "official House member news pages (legislative updates 2026-02-27 and 2026-05-08, read; other updates in the list not on gun subject by title)",
+        "sponsor list: covered by bulk bill data",
+        "web search: name plus firearm words (one search; leads were the member's own news pages)",
+        "blocked: https://ballotpedia.org/Scott_Van_Binsbergen (403)",
+        "campaign site: not reviewed, none found in search results",
+        "nothing found on carry permits, background checks, red-flag orders or ghost guns in the pages read"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:31:22.491Z",
+      "by": "source-collector"
+    }
+  ]
 }

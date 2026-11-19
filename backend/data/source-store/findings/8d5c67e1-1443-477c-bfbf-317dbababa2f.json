@@ -454,7 +454,124 @@
           "sha256": "e106ab7bf1174dc8dfa79e9d2f57f89e560d69c9718c84b8d29ac0f105706d9a"
         }
       }
+    },
+    {
+      "id": "b87cd0c8b844149dae0e3d1e8b5bfef97257f23d227dc067e9a654e6d19f5e6e",
+      "kind": "own-words",
+      "url": "https://politicalemails.org/messages/1411383",
+      "date": "2024-05-06",
+      "date_precision": "day",
+      "passage": "Once again, the House majority is passing legislation that will do nothing to stop violent criminals and will cause more headaches for law-abiding citizens. Last year, the majority passed legislation regarding ?universal? background checks and red flag confiscation orders. A better approach would be for our state to step up efforts to enforce existing laws with prosecutors who are willing to fully charge violent criminals, and courts that stop turning dangerous people back out on the street with a slap on the wrist.",
+      "note": "Her legislative update (archived copy) objects to the 2024 firearm bills (HF 4300, HF 601, HF 2609) and the 2023 background-check and red-flag laws, and favors enforcing existing laws instead.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "firearm storage rules",
+        "report lost or stolen guns",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:34.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "808b53a32fd81e4494dee6b5945a88a432f0e5fa855aeef5ebd5e91f24639404",
+      "kind": "own-words",
+      "url": "https://politicalemails.org/messages/1411383",
+      "date": "2024-05-06",
+      "date_precision": "day",
+      "passage": "H.F. 2609 does include House Republican language that steps up penalties for straw purchasers, which is great and an example of the approach we should be taking.   However, other controversial language disappointingly undermined strong bipartisan support that could have been achieved with a clean straw-purchase bill.",
+      "note": "In the same update she praises the straw-purchase penalty language in HF 2609 and criticizes other language in it (the trigger activator definition).",
+      "subjects": [
+        "straw purchase penalties",
+        "trigger activator definition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:34.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3caa8ca70bdc5046801989baa05d6d411e875385fcee9d9d62c204112c47bd7f",
+      "kind": "own-words",
+      "url": "https://politicalemails.org/messages/1411383",
+      "date": "2024-05-06",
+      "date_precision": "day",
+      "passage": "Two of the three bills passed along party lines and are now in the hands of the Senate where the majority party holds a one-seat advantage. This means the senator who is facing first-degree felony burglary charges could cast the deciding vote on bills undermining our 2nd Amendment rights and the ability for us to defend ourselves during a home invasion.",
+      "note": "She describes the 2024 firearm bills as undermining Second Amendment rights and the ability to defend oneself at home.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:34.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d74a4e024d6163cdca4f67e144968f53f652d0f68932fa3cf0720c511f9394b4",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15601/51260",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "Unfortunately, Governor Walz has floated the idea of using a special session to push unconstitutional gun legislation. That is nothing more than a political game, and it is disrespectful to the people of Minnesota who want us to focus on real solutions.",
+      "note": "Her interim update calls the Governor's floated special-session gun legislation unconstitutional and a political game.",
+      "subjects": [
+        "special session on gun bills",
+        "gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:34.866Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "universal background checks",
+        "red-flag confiscation orders",
+        "firearm storage rules",
+        "reporting lost or stolen firearms",
+        "trigger activator definition",
+        "straw purchase penalties",
+        "special session on gun bills"
+      ],
+      "places": [
+        "In scope: candidate profile at https://ivoterguide.com/candidate/70127/race/12134/election/1249 lists her on the 2026 primary (Aug 11) and the Nov 3, 2026 general ballot for District 17B; her House member page https://www.house.mn.gov/members/profile/15601 names her in this office",
+        "On the Record: 0 appearances",
+        "official House member page and its full news list (75 items, 2023 to July 2026) https://www.house.mn.gov/members/profile/news/15601: read; gun material only in the Oct 3, 2025 update; update items of Jan to May 2026 checked for gun words, nothing on the subject",
+        "her May 6, 2024 legislative update, read via the email archive https://politicalemails.org/messages/1411383 (the House page copy https://www.house.mn.gov/members/profile/news/15601/49569 did not contain the passage when fetched)",
+        "campaign site: not found by search, not reviewed",
+        "blocked: https://ballotpedia.org/Bobbie_Harder (403)",
+        "web search: two searches on her name with gun words; ivoterguide shows endorsements from gun-rights groups and that she did not answer its Second Amendment questions (lead only, not saved)",
+        "sponsor list: covered by bulk bill data",
+        "debate or interview video: none found, not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:31:34.866Z",
+      "by": "source-collector"
+    }
+  ]
 }

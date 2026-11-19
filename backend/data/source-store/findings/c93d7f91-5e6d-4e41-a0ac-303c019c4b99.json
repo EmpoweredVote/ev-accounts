@@ -293,7 +293,60 @@
           "sha256": "a68f2681a2d8ae53666ae22a637c1ac935d51e310abece0828810aa332598b58"
         }
       }
+    },
+    {
+      "id": "bda7ceb7429acdcfb69c2632a9bbd2d966a5a15b728d7359a4cb10bfbd29c5e3",
+      "kind": "own-words",
+      "url": "https://muellerforminnesota.com/positions.html",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Our founders gave us the 2nd amendment. We need to protect ourselves, or families, and our rights. The extreme gun regulations proposed by the left only hurt responsible, law-abiding gun owners and would not actually prevent violent crimes.",
+      "note": "Campaign site positions page, under a 2nd Amendment heading. The page is undated; its footer reads copyright 2022 to 2024, so the year is approximate.",
+      "subjects": [
+        "Second Amendment and gun rights",
+        "gun regulation in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:41.156Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment and gun rights",
+        "gun regulation in general",
+        "straw purchase penalties",
+        "binary trigger ban",
+        "red flag orders",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign site https://muellerforminnesota.com/positions.html (read; has a 2nd Amendment paragraph)",
+        "House member page https://www.house.mn.gov/members/Profile/15561 (read; news list shows newsletters and one education release, nothing on guns)",
+        "House member newsletters May 2025 and June 2026 pages (read; index pages only, newsletter bodies are images, nothing on the subject in text)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Patricia_Mueller (403)",
+        "Session Daily story https://www.house.mn.gov/SessionDaily/Story/18217 (read; she is described by a reporter, not quoted directly, so not saved as own words)",
+        "news story https://www.kaxe.org/minnesota-news/2026-03-02/legislative-republicans-skeptical-of-dfl-gun-proposals (read; reporter paraphrase of her remarks on a school-safety bill, not saved)",
+        "news story https://www.kttc.com/2026/04/08/austin-band-teacher-launches-campaign-minnesota-house-district-23b/ (confirms she holds District 23B in her 3rd term; does not confirm her place on the 2026 ballot)",
+        "web searches: 2 run; one third-party candidate profile site judged unreliable and not used",
+        "not reviewed: Facebook, X and Instagram campaign accounts (https://www.facebook.com/MuellerforMinnesota/)",
+        "not reviewed: Minnesota Gun Owners Caucus scorecard https://gunowners.mn/elections/ (advocacy group; a lead only)"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:29:41.156Z",
+      "by": "source-collector"
+    }
+  ]
 }

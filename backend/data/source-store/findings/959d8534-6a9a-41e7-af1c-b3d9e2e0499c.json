@@ -182,7 +182,75 @@
           "sha256": "d1432f36230189e273f607b7d8553eecb8c920b41e84f58d197a49132892e3f6"
         }
       }
+    },
+    {
+      "id": "2725e28d3d80845151739685e26a21ee53d570d48d254f4581ce3b882e023c88",
+      "kind": "own-words",
+      "url": "https://www.mnsenaterepublicans.com/jasinski-red-flag-earned-sick-laws-took-effect-january-1/",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "Everyone wants to keep firearms out of the hands of dangerous individuals, but there is little evidence that red flag laws effectively prevent gun violence . I am also concerned about the lack of due process and the potential for the law to be abused with malicious, false, or frivolous petitions that could disarm lawful gun owners – especially when penalties for those false petitions are nearly nonexistent.",
+      "note": "Newsletter post under his name on Minnesota's extreme risk protection order law taking effect Jan 1, 2024; he cites weak evidence of effect, due process and abuse of petitions.",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:32:17.588Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "903b4d5f5d680956d5bd6c1e0dab2d148907bb496790d780e973b14e1673c6ec",
+      "kind": "own-words",
+      "url": "https://www.mnsenaterepublicans.com/jasinski-red-flag-earned-sick-laws-took-effect-january-1/",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "The criteria for who can initiate a petition is fairly broad, the burden of proof is low, and the petition can take place without the accused even being aware of it or having an opportunity to present their side of the story.",
+      "note": "Same post: his description of how the red-flag order process works and his criticism of its standards.",
+      "subjects": [
+        "red-flag orders",
+        "due process in gun-removal orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:32:17.588Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "ban on binary triggers",
+        "assault-style weapons ban",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "Second Amendment / gun rights general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate caucus member page (names him as District 19 senator, read)",
+        "the Senate caucus site search for gun, firearm and Second Amendment (read results; one own-words post on red-flag orders, one new-laws post listing a binary trigger ban with no personal comment)",
+        "web search (2 searches): nothing further on the subject in his own words",
+        "blocked: https://ballotpedia.org/John_Jasinski (403)",
+        "not reviewed: https://www.senate.mn/members/member_bio.html?mem_id=12239 (404)",
+        "sponsor list: covered by bulk bill data",
+        "Senate caucus 2025 new-laws post: nothing on the subject beyond the listing"
+      ],
+      "found": 2,
+      "at": "2026-11-19T22:32:17.588Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -470,5 +470,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "general gun-rights and gun-safety statements"
+      ],
+      "places": [
+        "status: not on the 2026 general-election ballot; announced a run for state auditor on 2025-09-04, was eliminated at the state auditor convention, and the Legislative Reference Library page says he did not file (https://www.lrl.mn.gov/legdb/fulldetail?ID=15499, https://en.wikipedia.org/wiki/2026_Minnesota_State_Auditor_election)",
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15499 (read; confirms Rep. Dan Wolgamott, 14B; no gun items in the news list)",
+        "campaign site: https://www.danwolgamott.com and https://www.wolgamott.com returned nothing usable",
+        "blocked: https://ballotpedia.org/Dan_Wolgamott (403)",
+        "two web searches on his name plus gun, firearm and background-check words: nothing in his own words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Vote Smart public statement 1329870 (page text did not name him, so not confirmed as his)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:31:29.551Z",
+      "by": "source-collector"
+    }
+  ]
 }

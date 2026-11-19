@@ -207,7 +207,85 @@
           "sha256": "e606ef32a09a0fc626b740314242386fafabddc5b68e90587184e929ae14acfc"
         }
       }
+    },
+    {
+      "id": "39fbd950efaed132deaea0f8708ec7368562110091506021e22e61edc0d3c467",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/minnesota/news/two-minnesota-bills-with-new-rules-for-gun-safety-will-not-likely-become-new-law",
+      "date": "2024-05-09",
+      "date_precision": "day",
+      "passage": "It's really unfortunate that we had to insert into this bill an unconstitutional, divisive, controversial item for political reasons. That's not what Minnesotans want,",
+      "note": "Quoted by CBS Minnesota from his floor remarks on the straw-purchase bill (the same bill added a ban on binary triggers). He calls the added item unconstitutional. The story is dated 2024-05-10 and says he spoke Thursday, which is 2024-05-09.",
+      "subjects": [
+        "ban on binary triggers",
+        "penalties for straw gun purchases",
+        "Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:55.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18d28c218043f32cb7fd27a43a38f570155c33a44328cc42fb800cdf1176f6d9",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0733&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-733-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-733-2023 (Open States sponsor list): SF733 (2023-2024 Regular): Penalties increase for transferring certain firearms to persons who are ineligible to possess firearms.",
+      "subjects": [
+        "felony penalty for transferring a pistol or assault weapon to an ineligible person",
+        "seven-year aggravated penalty if used in a violent felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2023-03-23; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/733/versions/1/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-733-2023.engrossed1.html",
+          "sha256": "ed4c073ae7633bada77ff0fee0b11a9206c18b1f8423a53d8f440505126717fe"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on binary triggers",
+        "penalties for straw gun purchases",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate caucus member page for Kreun (read; nothing on the subject)",
+        "the Senate caucus site, search for 'gun' and 'firearm' (read; no release in Kreun's name on the subject)",
+        "blocked: https://ballotpedia.org/Michael_Kreun (403)",
+        "blocked: https://minnesotareformer.com/2026/05/04/minnesota-senate-approves-gun-control-package-but-its-unlikely-to-pass-house/ (403)",
+        "not found: https://www.aol.com/senate-ends-suspense-guns-passes-210200011.html (404)",
+        "news search on the name plus gun words (one CBS Minnesota story with a floor quote)",
+        "https://bearingarms.com/camedwards/2024/05/10/minnesota-senate-approves-one-gun-control-bill-but-key-senator-balks-at-more-n1224858 (fetched; no Kreun passage found in page text)",
+        "sponsor list: covered by bulk bill data",
+        "no campaign site found"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:29:55.853Z",
+      "by": "source-collector"
+    }
+  ]
 }

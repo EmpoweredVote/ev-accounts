@@ -93,7 +93,75 @@
           "sha256": "8bed7150fe7bd3749a11193d241eba1091f6fade0e9fd5f2dc38e016c80a9d4b"
         }
       }
+    },
+    {
+      "id": "165551a96990f28e4471020b27f6697298238dfb7a8e28f7660de2b128fd60d9",
+      "kind": "own-words",
+      "url": "https://www.mnsenaterepublicans.com/senator-holmstrom-capitol-update-may-8-2026/",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "passage": "During the floor debate, I stood up and said that I would not comply with their unconstitutional law.",
+      "note": "In his weekly newsletter he describes the SF 4067 Senate floor debate and says he told the chamber he would not comply with the gun law the bill would create, calling it unconstitutional.",
+      "subjects": [
+        "ban on assault-style guns",
+        "refusing to comply with a gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:05.421Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "653c53d8aa2fd74548c7561b9bbc923d98c00299be2b71fb20ef1c8438d7ea64",
+      "kind": "own-words",
+      "url": "https://www.mnsenaterepublicans.com/senator-holmstrom-capitol-update-may-8-2026/",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "passage": "The rights enumerated in the constitution are inherent and not derived from the government. The People have not provided the legislature the power to strip away these these rights.",
+      "note": "General statement in the same newsletter that constitutional rights come from the people and that the legislature has no power to remove them, made about the Senate gun package.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:05.421Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "firearm restrictions and Second Amendment rights",
+        "refusing to comply with a gun law",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "status: in scope, sitting Minnesota senator for District 29, confirmed on his own caucus-site newsletter page (https://www.mnsenaterepublicans.com/senator-holmstrom-capitol-update-may-8-2026/)",
+        "On the Record (0 appearances found)",
+        "the Senate caucus member newsletter page (read, one finding)",
+        "one web search on name plus Second Amendment and one on name plus floor remarks (results were leads only, not saved)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.cbsnews.com/minnesota/news/semiautomatic-weapons-school-bill-minnesota-senate/ (news story that quotes the floor remark; not fetched)",
+        "not reviewed: Ballotpedia, campaign site, Facebook, X, YouTube (not fetched)",
+        "nothing found: the caucus-site search-by-keyword URL could not be fetched"
+      ],
+      "found": 2,
+      "at": "2026-11-19T22:28:05.421Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -560,7 +560,118 @@
           "sha256": "23ced56c4d8b641f87a6cd451882bea2b329e2142d748ca10b2ffe58110b9718"
         }
       }
+    },
+    {
+      "id": "02519a4a663298c4264c96cee25d0e596f4ee2a9fd776278a41aa9771ad4627c",
+      "kind": "own-words",
+      "url": "https://mnsenaterepublicans.com/?p=42522",
+      "date": "2024-05-10",
+      "date_precision": "day",
+      "passage": "Many guns are already manufactured with binary triggers and they are legal under federal law – to require law-abiding citizens to get rid of these guns is unconstitutional and wrong,",
+      "note": "Caucus release quoting Howe on the Senate-passed bill (HF 2609) that bans binary triggers; he says requiring owners to give up such guns is unconstitutional.",
+      "subjects": [
+        "ban on binary triggers",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:46.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e96021fce1317970da8f056bc215d714350b4be0f6d115493160355b563687e8",
+      "kind": "own-words",
+      "url": "https://mnsenaterepublicans.com/?p=42522",
+      "date": "2024-05-10",
+      "date_precision": "day",
+      "passage": "What we should be doing is holding prosecutor and judges accountable for not putting felons in jail. Instead, Democrats want to punish law-abiding citizens and make them criminals. This bill undermines Second Amendment rights and is clearly unconstitutional on all fronts.",
+      "note": "Same caucus release; Howe says the focus should be on prosecutors and judges jailing felons and that the bill undermines Second Amendment rights.",
+      "subjects": [
+        "ban on binary triggers",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:46.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a084dc61aff5851f9142dbbba7e97c72bd1bd89cd8665857e3b2a5ec98806a34",
+      "kind": "own-words",
+      "url": "https://www.mnsenaterepublicans.com/?p=23952",
+      "date": "2020-03-11",
+      "date_precision": "day",
+      "passage": "A top priority of Minnesota’s government is to guarantee that Minnesotans are safe when they go about their daily lives,",
+      "note": "Caucus release on a package of violence prevention bills, including heavier penalties for straw purchases (SF 2596), compliance checks that firearms are surrendered under protective orders (SF 2101), and federal-law alignment for carry permits (SF 3865). Howe is quoted on the package as a whole; the release does not say he authored these bills.",
+      "subjects": [
+        "penalties for straw purchases",
+        "removing guns after protective orders",
+        "carry permit rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:46.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42b037539419687d146e37ab659fce8ee5856880c68b3fd3cd622a9318139864",
+      "kind": "own-words",
+      "url": "https://alphanews.org/gop-senator-recounts-how-his-own-child-lived-through-a-deadly-school-shooting-two-decades-ago",
+      "date": "2025-09-15",
+      "date_precision": "day",
+      "passage": "Something we need to take very seriously is school safety and protecting our children,",
+      "note": "Alpha News quotes Howe at the Senate violence prevention working group hearing, after testimony urging an assault-style gun ban; he spoke about school safety, including private schools, and did not address the ban in the quoted words.",
+      "subjects": [
+        "school safety and gun control calls"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:46.874Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on binary triggers",
+        "gun rights and the Second Amendment",
+        "penalties for straw purchases",
+        "removing guns after protective orders",
+        "carry permit rules",
+        "school safety and gun control calls"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "the Senate caucus site (news story pages and a site search for Howe plus gun; read)",
+        "a news story from Alpha News on the 2025 working group hearing (read)",
+        "https://www.mnsenaterepublicans.com/senators/howe/ (member page, read; shows only an AED bill release, nothing on guns)",
+        "https://www.senate.mn/members/member_bio.html?mem_id=1263 (page returned only site menu, no member content)",
+        "blocked: https://ballotpedia.org/Jeff_Howe",
+        "sponsorships and floor votes: covered by bulk bill data",
+        "campaign site: not reviewed, none located in search",
+        "one web search on name plus gun words; ontheissues.org surfaced only as a lead, not cited"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:30:46.874Z",
+      "by": "source-collector"
+    }
+  ]
 }

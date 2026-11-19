@@ -436,5 +436,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits or waiting periods to buy",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person; extract run with name)",
+        "official House member page https://www.house.mn.gov/members/profile/15476 (read: confirms Rep. Nolan West, District 32A; news list and 2026 legislative update letter read, nothing on the subject)",
+        "official House news items 52189, 52190, 52000, 51929, 51641, 49891, 47987 under https://www.house.mn.gov/members/profile/news/15476 (nothing on the subject)",
+        "not reviewed: https://www.house.mn.gov/32a (not fetched separately; same member page covered)",
+        "blocked: https://ballotpedia.org/Nolan_West (fetch returned an empty page)",
+        "web search on name plus gun, firearm, Second Amendment, permit to carry (no result naming him on the subject)",
+        "web search on 2026 filing: no page found confirming his 2026 ballot status; he is the sitting District 32A member with a term ending January 2027",
+        "sponsor list: covered by bulk bill data",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:32:02.175Z",
+      "by": "source-collector"
+    }
+  ]
 }

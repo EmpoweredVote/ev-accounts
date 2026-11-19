@@ -206,7 +206,94 @@
           "sha256": "a349fbb1f77f5d8ecc794c03feedfee1ea74e02bd33b23488828cae479a70d3d"
         }
       }
+    },
+    {
+      "id": "4be848f0b9fd0d1ef2a480637462c5674999d2a49e26a8fcce8d2c01bc88c625",
+      "kind": "own-words",
+      "url": "https://www.fox9.com/news/minnesota-senator-weighs-gun-control-next-legislative-session",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "In my opinion, everything's on the table. And anything that comes to me that has the support and will save lives, I will be a yes on,",
+      "note": "Quoted by a TV news outlet at a Stillwater town hall. The story says that after talking with constituents she would support full bans on assault-style weapons and high-capacity magazines proposed by the governor.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:38.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92c61edf10ce8e5e33ed246ef4370b05942c056d097d9aeedcb292ac41eb744e",
+      "kind": "own-words",
+      "url": "https://www.fox9.com/news/minnesota-senator-weighs-gun-control-next-legislative-session",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "It should not be a partisan issue in the first place. But we do really need to work together and find that common ground,",
+      "note": "Quoted by a TV news outlet on gun violence legislation; she calls for working across sides.",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:38.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2eb314c62e68d177f7c176350b478222f6108a64bb1980b1e09e4d7c42c2862f",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2025/11/10/supposedly-moderate-minnesota-dem-comes-out-in-favor-of-gun-ban-n1230550",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "I’ll be yes on anything and everything that comes through that will really make a difference to reduce gun violence here in the state of Minnesota,",
+      "note": "A gun-rights outlet quotes her from what it calls a recent interview; it reports her saying she would support whatever it takes to make the state safer. Original interview not reached.",
+      "subjects": [
+        "general gun safety statement",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:38.223Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page: https://www.senate.mn/members/index.html?mem_id=12861 (fetched, page carried no subject content)",
+        "campaign site: none found (https://www.judyseeberger.com did not load)",
+        "blocked: https://ballotpedia.org/Judy_Seeberger",
+        "blocked: https://www.startribune.com/how-one-minnesota-swing-district-democrat-decided-to-support-an-assault-style-weapons-ban/601497738",
+        "blocked: https://www.axios.com/local/twin-cities/2026/05/04/minnesota-senate-gun-safety-bill-assault-weapons-ban-school-shooting-response",
+        "blocked: https://minnesotareformer.com/2026/05/04/minnesota-senate-approves-gun-control-package-but-its-unlikely-to-pass-house/",
+        "news search on name plus gun words (two searches); a TV news story read, a gun-rights outlet read",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:30:38.223Z",
+      "by": "source-collector"
+    }
+  ]
 }

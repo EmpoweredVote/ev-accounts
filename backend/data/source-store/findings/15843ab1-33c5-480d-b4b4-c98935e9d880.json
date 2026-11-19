@@ -578,7 +578,164 @@
           "sha256": "8be5638fd605fea4b3006dc69c500b5fd0c45ccd709cc451f63079a1a4364d3e"
         }
       }
+    },
+    {
+      "id": "f3847957ff194cc8d1fa2822f26a431eb03c549393e44dac767adab792c3d9d0",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15314/38454",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "passage": "This bill would create strict new hurdles and barriers for law-abiding Minnesotans seeking to exercise their Second Amendment rights, and would do little to stop the criminals who already don’t follow the law.",
+      "note": "Her legislative update on HF 8, the universal background check bill covering private transfers; she describes it as a burden on lawful owners.",
+      "subjects": [
+        "check every gun buyer",
+        "Second Amendment rights",
+        "private gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:23.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f0587d28c2e4abcd5fa45128d1d19fdc89fcdc35d0b99f6f6784a983d491dae",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15314/38454",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "passage": "This bill would violate due process by never allowing the gun owner the opportunity to defend his or herself in court.",
+      "note": "Her legislative update on HF 9, the extreme-risk protection order bill; she says it lacks due process and endangers officers who would seize guns.",
+      "subjects": [
+        "extreme-risk orders",
+        "due process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:23.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98f18d984118a737ca2e0a66a0f194121d89ab16c7aad18374b31a64e3de5570",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15314/38454",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "passage": "By strengthening and enforcing the laws we already have, I believe these laws would have a significant impact on keeping firearms out of the hands of dangerous people.",
+      "note": "She says she is drafting a bill making it a felony to illegally provide firearms to felons and another requiring courts to follow through on firearm transfers under domestic violence protection orders.",
+      "subjects": [
+        "keeping guns from felons and domestic abusers",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:23.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ed29ce69f73f1c7fe3961b27aadd2c48ee31cfc6c635cbd6bef5c6577225e58",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15314/51631",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "Rest assured, your 2nd Amendment freedoms are safe with me. I will not consider voting for any of this nonsense.",
+      "note": "Her legislative update on House public safety committee hearings of bills to ban certain semi-automatic weapons and magazines holding over 10 rounds; she says she will not consider voting for them and calls for flagging mentally ill individuals instead.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large magazines",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:23.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "94eb1cf314db136068a88d5b9cc123eda1c5c7aa52e15f87d1bb144e25bc808d",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15314/51721",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "passage": "My bill requires that whenever a court issues an order restricting an abusing party from possessing firearms, the court must schedule and hold a compliance hearing within ten business days of issuing that order to ensure all firearms have been transferred and all proofs of transfer submitted.",
+      "note": "She describes her bill, heard in the House public safety committee, requiring a compliance hearing after a court bars a domestic abuser from having firearms.",
+      "subjects": [
+        "keeping guns from felons and domestic abusers",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:23.982Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eebaafba2a8578fcb092c9ca3095e63914c9182690f4cb8458b7aa4a254d3a2a",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15314/51979",
+      "date": "2026-04-24",
+      "date_precision": "day",
+      "passage": "The goal of the bill is to get guns out of the hands of dangerous abusers convicted of domestic child abuse or domestic abuse.",
+      "note": "She says the House passed her domestic abuser firearm compliance bill that week with bipartisan support, citing cases where ordered transfers did not happen.",
+      "subjects": [
+        "keeping guns from felons and domestic abusers",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:26:23.982Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "extreme-risk orders",
+        "ban on assault-style guns",
+        "ban on large magazines",
+        "keeping guns from felons and domestic abusers",
+        "Second Amendment rights",
+        "repeal of local gun-rule preemption"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15314 (read; names her as Rep. Peggy Scott, district 31B)",
+        "official member news pages (legislative updates 2019-03-08, 2025-02-21, 2026-02-27, 2026-03-13, 2026-04-24 read); the 2025-02-21 update had nothing on the subject",
+        "official release https://www.house.mn.gov/members/profile/news/15314/48566 (joint release; the gun passage is a co-releaser's words, not saved)",
+        "web search: her name plus gun words (one search)",
+        "web search: HF 3672 / preemption (one search; no statement by her found)",
+        "campaign site: not reviewed, none located",
+        "blocked: https://ballotpedia.org/Peggy_Scott (403)",
+        "2026 ballot status: not confirmed from a ballot page; she is listed as sitting member with term ending January 2027",
+        "bill sponsorships and floor votes: sponsor list: covered by bulk bill data"
+      ],
+      "found": 6,
+      "at": "2026-11-19T22:26:23.982Z",
+      "by": "source-collector"
+    }
+  ]
 }

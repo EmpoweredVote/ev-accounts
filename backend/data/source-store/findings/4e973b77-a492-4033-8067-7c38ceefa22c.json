@@ -204,7 +204,120 @@
           "sha256": "bda79f8ca46dedd6830d4cec11d3dff4d39bffc54150d0d1b6bf46c34ffaad40"
         }
       }
+    },
+    {
+      "id": "85b9c671a006e067f54d9f8a1729b6f1b7f36a5caee3772bf24bed1fd92515d1",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41313",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "passage": "Minnesotans are asking us to do something to prevent future gun deaths",
+      "note": "House member newsletter written in her name, after the Annunciation shooting; she describes bills proposed to ban assault weapons, high-capacity magazines and binary triggers, require safe storage, and require reporting of lost or stolen guns.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ce9ab8473f67cd7efe5b10e74a72cd5bf25d5e75ca6c88c7a7416eb5b6320a7",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41451",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "passage": "I voted in favor of legislation to keep ICE out of schools, ban assault weapons, and ban high-capacity magazines.",
+      "note": "Newsletter in her name saying she voted for bills to ban assault weapons and high-capacity magazines, which she says were blocked in committee.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14e6fbf6a1777761c5fab5ca965ca8bebca47a633ec815e87bf36f401a17c577",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41629",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "passage": "I joined my colleagues for a sit-in on the House Floor for 39 hours as we pressured Speaker Lisa Demuth to schedule a vote on the Senate’s comprehensive gun violence proposal.",
+      "note": "End-of-session newsletter in her name; she describes joining a 39-hour floor sit-in for a vote on a package she says includes an assault weapons ban, safe storage proposals, mental health and school safety funding.",
+      "subjects": [
+        "ban on assault-style guns",
+        "safe storage of guns",
+        "general gun-violence prevention statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f8acdff3eb784a2dc71c6edbfa8656629e4f6dd55fa9a56e22846c704b065c8",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41678",
+      "date": "2026-07-08",
+      "date_precision": "day",
+      "passage": "We could have saved lives with an assault weapons ban and safe storage requirements.",
+      "note": "Summer newsletter in her name looking back on the session; she names an assault weapons ban and safe storage requirements as measures that were not passed.",
+      "subjects": [
+        "ban on assault-style guns",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "binary triggers",
+        "safe storage of guns",
+        "report lost or stolen guns",
+        "general gun-violence prevention statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, nothing on the subject)",
+        "official House member page https://www.house.mn.gov/members/Profile/15654 (read; confirms Rep. Meg Luger-Nikolai, District 64A)",
+        "official House member news list https://www.house.mn.gov/members/profile/news/15654 (all 7 newsletters read for gun words)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun/firearm words (results were her House newsletters)",
+        "not reviewed: https://ballotpedia.org/Meg_Luger-Nikolai",
+        "not reviewed: campaign site",
+        "not reviewed: news coverage beyond the one search; no debate or interview video found"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:30:20.843Z",
+      "by": "source-collector"
+    }
+  ]
 }

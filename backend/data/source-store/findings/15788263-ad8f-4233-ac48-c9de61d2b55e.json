@@ -183,7 +183,62 @@
           "sha256": "459702041e05316fd87ff6314130d2c8291451bd02f0f957674f6fb64080b6bf"
         }
       }
+    },
+    {
+      "id": "18d28c218043f32cb7fd27a43a38f570155c33a44328cc42fb800cdf1176f6d9",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0733&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-733-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-733-2023 (Open States sponsor list): SF733 (2023-2024 Regular): Penalties increase for transferring certain firearms to persons who are ineligible to possess firearms.",
+      "subjects": [
+        "felony penalty for transferring a pistol or assault weapon to an ineligible person",
+        "seven-year aggravated penalty if used in a violent felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2023-03-23; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/733/versions/1/)",
+        "fetched_at": "2026-11-19T22:41:56.829383Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-733-2023.engrossed1.html",
+          "sha256": "ed4c073ae7633bada77ff0fee0b11a9206c18b1f8423a53d8f440505126717fe"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "status: not seeking re-election; the Senate District 24 seat is open in 2026 (per news search); still a sitting senator through Jan 2027",
+        "On the Record (0 meetings)",
+        "the Senate caucus site, https://www.mnsenaterepublicans.com/?s=gun+nelson (site search: eight Nelson posts, none on guns or firearms)",
+        "https://www.mnsenaterepublicans.com/senator/nelson/ (page loads; nothing on the subject)",
+        "Legislators Past and Present record, https://www.lrl.mn.gov/legdb/fulldetail?id=10778 (confirms office; nothing on the subject)",
+        "Ballotpedia, https://ballotpedia.org/Carla_Nelson (empty result, not reviewed)",
+        "two web searches on name plus gun words (nothing from her own words; a school safety bill news story names no remarks from her)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Revisor bill pages and journals (covered by bulk bill data)"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:26:22.025Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -90,7 +90,97 @@
           "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
         }
       }
+    },
+    {
+      "id": "dcc07969d069bdf9da4b6f465825f8307029d143bf6246f26b53d854ac22287b",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15644/51320",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "Even worse, they’re holding up commonsense safety measures to push for an undefined gun ban, all while Minnesota families continue to face tragedy after tragedy. That’s irresponsible leadership, plain and simple.",
+      "note": "From her official interim newsletter. She criticises the other chamber caucus for tying safety measures to a gun ban she calls undefined.",
+      "subjects": [
+        "ban on assault-style guns",
+        "general gun-law statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:04.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ad568646c249b50ee1685f5e2b2ffe84fe3be7e6cf443a816ea6bc935e5eaef",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15644/51219",
+      "date": "2025-09-12",
+      "date_precision": "day",
+      "passage": "Punishing Criminals: Holding violent offenders accountable through enforcement of existing laws and strengthening penalties where necessary.",
+      "note": "After the Annunciation school shooting, her newsletter lists three actions (school protection, mental health care, enforcing existing laws and stiffer penalties). It names no firearm restriction.",
+      "subjects": [
+        "general gun-law statements",
+        "school safety after a shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:04.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c3731b73d3ef39184f8aa9059c6ac1956e05f72c190099d1aaaf415dc134c87",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15644/51985",
+      "date": "2026-04-17",
+      "date_precision": "day",
+      "passage": "Instead of moving forward on solutions we largely agree on, the conversation stalled over broader policy debates that, while important, don’t need to stop us from taking action on school safety right now.",
+      "note": "Her newsletter on a school safety proposal that failed in committee; she wants it moved apart from the wider policy debates. Gun measures are not named.",
+      "subjects": [
+        "school safety after a shooting",
+        "general gun-law statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:04.714Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun-law statements",
+        "school safety after a shooting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page for Rep. Erica Schwartz, District 18A (confirms office); news list shows no gun items: https://www.house.mn.gov/members/profile/15644",
+        "member newsletters and releases on the House site (Aug 28, Sep 12, Sep 26, Oct 3, Oct 10 2025; Mar 18, Apr 17 2026), read in full",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia (office and term only, nothing on the subject)",
+        "one news search on name plus gun words",
+        "blocked: https://heartlandsignal.com/2026/02/26/minnesota-house-republicans-vote-down-assault-weapons-ban-in-committee/ (bot check; committee vote reported by a search snippet only, not saved)",
+        "campaign site: not reviewed, none found in search results",
+        "not reviewed: end-of-session update 5/29/2026 and 5/8/2026 legislative update"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:29:04.714Z",
+      "by": "source-collector"
+    }
+  ]
 }

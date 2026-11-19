@@ -30,7 +30,229 @@
           "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
         }
       }
+    },
+    {
+      "id": "690c6328de8dab14dabb9bc55798aedb574257866239b41fa9e3eb8de2541a5c",
+      "kind": "own-words",
+      "url": "https://www.ag.state.mn.us/Office/Communications/2026/05/04_Ghost-Guns.asp",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "I’m pleased that the Senate has passed a strong package of bills to curb gun violence and to protect children in schools, which included our bill to close Minnesota’s ghost gun loophole. Given the increasing availability of 3D printing technology, the problems caused by these untraceable firearms are only going to get worse unless we act.",
+      "note": "Statement from the Attorney General welcoming Senate passage of a gun-violence package that includes his ghost gun bill.",
+      "subjects": [
+        "home-made and unserialised guns",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7384bfb230ccc9cea8103fe8d827b3ef52c46b0c3135b7841fbecc245569a595",
+      "kind": "own-words",
+      "url": "https://www.ag.state.mn.us/Office/Communications/2025/01/17_Worth-v-Jacobson.asp",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "passage": "I believe Minnesota’s ban on 18-to-20-year-olds carrying loaded handguns in public is constitutional and will lead to fewer senseless gun deaths across our state. I’m proud to keep defending this common-sense, gun safety law against special interests that put their ideology over your safety.",
+      "note": "Statement announcing he is asking the U.S. Supreme Court to review Worth v. Jacobson, defending the state's limit of public-carry permits to people 21 and over.",
+      "subjects": [
+        "carry permits",
+        "minimum age to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4552d40be349269e5e4c414403b760c8c0452078bd0a983962c225f943109fe",
+      "kind": "record",
+      "url": "https://www.ag.state.mn.us/Office/Communications/2025/01/17_Worth-v-Jacobson.asp",
+      "date": "2025-01-17",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Appeal to U.S. Supreme Court in Worth v. Jacobson, defending carry-permit age limit",
+      "note": "As Attorney General, appealed to the U.S. Supreme Court a ruling that struck down Minnesota's under-21 limit on public-carry permits as applied to ages 18 to 20.",
+      "subjects": [
+        "carry permits",
+        "minimum age to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24c58736638e7f151f12a15a03e64d089e606b78ac516e5aecdc1acbaa9d6ec1",
+      "kind": "own-words",
+      "url": "https://www.ag.state.mn.us/Office/Communications/2023/12/27_Cargill.asp",
+      "date": "2023-12-27",
+      "date_precision": "day",
+      "passage": "The facts are clear: bump stocks are a threat to the safety of all Minnesotans and Americans everywhere, and the rule that bans them is simply common sense,",
+      "note": "Statement on joining 23 attorneys general in a Supreme Court brief (Garland v. Cargill) to uphold the federal bump stock ban.",
+      "subjects": [
+        "ban on bump stocks",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed15e98ec265b4c3f33e1dab70848b8f3158ce1a1f4ec799da2a7fba265e5b4e",
+      "kind": "own-words",
+      "url": "https://ag.state.mn.us/Office/Communications/2024/12/12_Glock.asp",
+      "date": "2024-12-12",
+      "date_precision": "day",
+      "passage": "I am suing Glock for knowingly manufacturing and selling handguns that can easily be converted into machine guns,",
+      "note": "Statement on the state's lawsuit against Glock over handguns easily converted to machine guns with a switch.",
+      "subjects": [
+        "machine-gun conversion devices",
+        "gun-maker lawsuit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "edb6f6dea9c149bbfb27f00bda3288029fd6d851b6ca1e5d9a216aace56a5a03",
+      "kind": "own-words",
+      "url": "https://ag.state.mn.us/Office/Communications/2025/07/15_ATF.asp",
+      "date": "2025-07-15",
+      "date_precision": "day",
+      "passage": "Machine guns have no place on Minnesota streets, nor do devices that turn semi-automatic firearms into machine guns,",
+      "note": "Statement after the federal agency agreed not to send forced reset triggers into Minnesota, following the multi-state suit he joined on June 9, 2025.",
+      "subjects": [
+        "machine-gun conversion devices",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba657f02c745a79a5bd9f8b52c38aff1d5b0381a94ee404990885ba55f25016c",
+      "kind": "own-words",
+      "url": "https://www.hawaiipublicradio.org/2025-08-27/minnesota-attorney-general-on-wednesdays-mass-shooting-in-minneapolis",
+      "date": "2025-08-27",
+      "date_precision": "day",
+      "passage": "Well, we know that we passed the assault weapons ban in 1994. For 10 years, we dramatically reduced mass shootings. We allowed it to expire in 2004, and the mass shootings went right back up. It's not as if we don't know how to do this.",
+      "note": "Radio interview answer on how to end mass shootings, pointing to the 1994 federal assault weapons ban and its expiry; he also cites his Glock suit and a suit against a retailer over straw purchases.",
+      "subjects": [
+        "ban on assault-style weapons",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4839d3f451e2c4738c75b35916d987b885cd1dc52fbf79e5a78b2f88c0102bd8",
+      "kind": "record",
+      "url": "https://www.ag.state.mn.us/Office/Communications/2026/03/16_GhostGuns.asp",
+      "date": "2026-03-16",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3407-2025",
+      "act": "other",
+      "note": "Announced with a Senator and a Representative the ghost gun bill (HF 3407/SF 3661) that bars making, possessing and selling guns, frames and receivers without serial numbers. He is named as a proposer of the bill but is not a legislator; the act is a public announcement of the proposal.",
+      "subjects": [
+        "home-made and unserialised guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:45:33.611Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns and unserialised firearms",
+        "ban on assault-style weapons",
+        "machine-gun conversion devices and bump stocks",
+        "carry permits for 18-to-20-year-olds",
+        "gun-maker and gun-seller lawsuits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Attorney General site press releases (read 7 releases on the subject)",
+        "campaign site https://keithellison.org/news/guns-release-zr7cy (page not found)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Keith_Ellison (403)",
+        "one news search on name plus gun words (leads only)",
+        "radio interview transcript, 2025-08-27",
+        "not reviewed: https://www.aljazeera.com/video/newsfeed/2025/8/28/minnesota-official-has-thoughts-and-prayers-for-assault-rifle-ban (video)",
+        "not reviewed: https://www.breitbart.com/politics/2026/01/26/in-2024-minnesota-ag-keith-ellison-argued-no-right-to-carry-a-gun-at-political-rallies-and-protests (secondhand report of a legal brief)"
+      ],
+      "found": 8,
+      "at": "2026-11-19T22:28:39.501Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns and unserialised firearms",
+        "ban on assault-style weapons",
+        "machine-gun conversion devices and bump stocks",
+        "carry permits for 18-to-20-year-olds",
+        "gun-maker and gun-seller lawsuits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Attorney General site press releases (read 7 releases on the subject)",
+        "campaign site https://keithellison.org/news/guns-release-zr7cy (page not found)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Keith_Ellison (403)",
+        "one news search on name plus gun words (leads only)",
+        "radio interview transcript, 2025-08-27",
+        "not reviewed: https://www.aljazeera.com/video/newsfeed/2025/8/28/minnesota-official-has-thoughts-and-prayers-for-assault-rifle-ban (video)",
+        "not reviewed: https://www.breitbart.com/politics/2026/01/26/in-2024-minnesota-ag-keith-ellison-argued-no-right-to-carry-a-gun-at-political-rallies-and-protests (secondhand report of a legal brief)"
+      ],
+      "found": 8,
+      "at": "2026-11-19T22:45:33.611Z",
+      "by": "source-collector"
+    }
+  ]
 }

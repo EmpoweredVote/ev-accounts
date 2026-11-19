@@ -90,7 +90,74 @@
           "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
         }
       }
+    },
+    {
+      "id": "9bf7b740bd68cff466da0c4ae69175264a1c6fe41fbd04a0266061063d65363d",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15650/40890",
+      "date": "2025-09-11",
+      "date_precision": "day",
+      "passage": "Make no mistake, I believe gun violence is an issue that should be addressed as soon as possible, but a narrowly divided state legislature makes that easier said than done.",
+      "note": "Constituent newsletter after the Annunciation shooting; says gun violence should be addressed soon and that a special session would need bipartisan buy-in. Names no specific policy.",
+      "subjects": [
+        "general statement on gun violence",
+        "special session on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:22.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3e1600de5317a8626b64cb70aca32eea995377b91dba4e2784f9c55557115b4",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15650/40890",
+      "date": "2025-09-11",
+      "date_precision": "day",
+      "passage": "Negotiations to that end continue, but whether it’s this fall, or when we return for the 2026 Legislative Session in February, addressing gun violence will be top of mind for me - and I want to hear from you.",
+      "note": "Same newsletter; says addressing gun violence will be a priority for the 2026 session and asks constituents to share stories to use in floor or committee debate.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:28:22.240Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence",
+        "special session on gun violence",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page and news list (read; one gun-related update found)",
+        "sponsor list: covered by bulk bill data",
+        "web search: one news search on name plus gun words (only the official update found)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: https://politicalemails.org/messages/1945939 (copy of the same update)"
+      ],
+      "found": 2,
+      "at": "2026-11-19T22:28:22.240Z",
+      "by": "source-collector"
+    }
+  ]
 }

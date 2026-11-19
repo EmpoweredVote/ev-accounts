@@ -464,7 +464,57 @@
           "sha256": "d5ba4ea463bb8ca0dd3e6f181a70e4ee065f88b6f7bc7fc16eea9373944b9d6c"
         }
       }
+    },
+    {
+      "id": "8dcb627a57ced130068deadc7cda1afa548832bf9f7fa5558e32d4782294ffe4",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15366/52133",
+      "date": "2026-05-20",
+      "date_precision": "day",
+      "passage": "Unconstitutional Gun Grab: DFL legislators attempted to pass a bill that would require owners of weapons THAT HAVE A CERTAIN LOOK to register their firearms with the state and make owning magazines with a capacity of more than 10 rounds a felony. By conservative estimates, this would turn more than a million law-abiding Minnesotans into criminals overnight. Canada and Australia have extremely strict gun laws, but both countries recently had mass shootings. We need to address mental illness, as sane people do not commit such acts and criminals don’t follow the law.",
+      "note": "From his own 2026 session-recap newsletter on the House member site. He describes a bill to register assault-style guns and make magazines over 10 rounds a felony as unconstitutional and says it was blocked; he points to mental illness as the thing to address.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazine limit",
+        "gun registration",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:46.478Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazine limit",
+        "gun registration",
+        "gun rights and Second Amendment",
+        "carry permits",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page and its news/newsletter list (read; one 2026 session recap on the subject)",
+        "other 2026 newsletters on the member news list (titles only; nothing else on the subject)",
+        "blocked: https://ballotpedia.org/Duane_Quam",
+        "one web search on name plus gun and Second Amendment words (nothing further on the subject; a Votesmart Second Amendment page belongs to a different district, not used)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: not reviewed: none located",
+        "not reviewed: https://votesmart.org/public-statement/897540/issue-position-second-amendment"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:27:46.478Z",
+      "by": "source-collector"
+    }
+  ]
 }

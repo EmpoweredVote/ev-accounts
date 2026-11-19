@@ -184,5 +184,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "minimum age to buy a gun",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://lindseyportmn.com/ (home page and priorities page read; nothing on the subject)",
+        "https://www.lindseyportmn.com/meet-lindsey (nothing on the subject)",
+        "Senate member page https://www.mnsenate.gov/members/member_bio.html?mem_id=15557 (returned 404)",
+        "House caucus news pages https://www.house.mn.gov/members/profile/news/15550/37886 (nothing on the subject)",
+        "news story https://www.fox9.com/news/minnesota-legislators-pay-tribute-to-burnsville-first-responders (quotes another senator on guns, nothing from this person on the subject)",
+        "https://giffords.org/candidates/minnesota-senate/ and /minnesota-state-legislature/ (third-party endorser profile of her 2022 campaign; not her own words, not saved)",
+        "blocked: https://ballotpedia.org/Lindsey_Port (403)",
+        "one news search on name plus subject words (no own-words passage found)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:31:06.711Z",
+      "by": "source-collector"
+    }
+  ]
 }

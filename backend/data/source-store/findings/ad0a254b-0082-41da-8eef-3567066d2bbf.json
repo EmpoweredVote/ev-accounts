@@ -440,7 +440,115 @@
           "sha256": "7480b6453ee8b1e0b297622f873c52f3516bb7a8516880b4dd764855a7cad24a"
         }
       }
+    },
+    {
+      "id": "a482a0d77209435fb5aada62d18f050ebdd9057757612bc6d2ecdc2405976c66",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15436/41653",
+      "date": "2020-02-28",
+      "date_precision": "day",
+      "passage": "The first bill would create substantial new barriers and procedures for what used to be a relatively simple process of transferring firearms to a friend, relative, or neighbor. The new, complicated process could inadvertently turn law-abiding gun owners into criminals if they do not follow steps laid out in legislation.",
+      "note": "From his legislative update newsletter on the House floor passage of two gun bills (HF 8 and HF 9 in 2020). Describes the private-transfer background check bill as adding burdens for lawful owners.",
+      "subjects": [
+        "check every gun buyer",
+        "private gun transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:37.317Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8c709daa86a939faeff231a8bf17de534f599308da23e090c7548873cd9d0e6",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15436/41653",
+      "date": "2020-02-28",
+      "date_precision": "day",
+      "passage": "The second bill not only raises questions regarding the 2nd Amendment, but it also impacts due process rights.",
+      "note": "Same newsletter. On the extreme risk protection order bill: objects on Second Amendment and due-process grounds, including orders issued without the gun owner present, and concern for officers who would seize guns.",
+      "subjects": [
+        "red-flag / extreme risk orders",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:37.317Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c17ce4f3d4f0b7a3f2612e9690ad9910dd0a5c7396130334ab35043cff07a42",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15436/41653",
+      "date": "2020-02-28",
+      "date_precision": "day",
+      "passage": "Better legislation that I have signed as a co-author would strengthen laws we already have on the books including a bill that increases penalties for individuals that transfer a firearm to an individual that they know is legally barred from owning or possessing a firearm.",
+      "note": "Same newsletter. Says he co-authored a bill raising penalties for straw purchases and another to make sure people court-ordered to give up guns after abuse or stalking convictions actually do so.",
+      "subjects": [
+        "straw purchases",
+        "removing guns from people barred from owning them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:37.317Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43f28b439d3aa034d04973e9e24a6cda00e074ae919477589c14f66dfaad3543",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15436/41653",
+      "date": "2020-02-28",
+      "date_precision": "day",
+      "passage": "As a society, we need to continue to pursue measures that will keep our communities safe while ensuring that law-abiding Minnesotans’ 2nd Amendment rights are respected and upheld.",
+      "note": "Same newsletter, closing statement on gun rights and public safety.",
+      "subjects": [
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:31:37.317Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private gun transfers",
+        "red-flag / extreme risk orders",
+        "straw purchases",
+        "removing guns from people barred from owning them",
+        "Second Amendment general statement",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15436 (profile read; subject material only in the news list)",
+        "official House news item https://www.house.mn.gov/members/profile/news/15436/41653",
+        "web search on name plus gun words (one search; other results were about other people or general Minnesota gun policy)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, vote411, ontheissues (search budget not used on them; no direct pages found)"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:31:37.317Z",
+      "by": "source-collector"
+    }
+  ]
 }

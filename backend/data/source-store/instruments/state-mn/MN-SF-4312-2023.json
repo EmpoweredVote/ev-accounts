@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-4312-2023",
+  "scope": "state:mn",
+  "title": "SF4312 (2023-2024 Regular): Standards for the safe storage of firearms and criminal penalties for failing to meet these standards establishment; appropriating money",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF4312&ssn=0&y=2024",
+    "https://www.revisor.mn.gov/bills/93/2024/0/SF/4312/versions/2/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Heather Gustafson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+    },
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    },
+    {
+      "name": "Bonnie Westlin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Ron Latz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2024-04-24; official copy, https://www.revisor.mn.gov/bills/93/2024/0/SF/4312/versions/2/)",
+    "fetched_at": "2026-11-19T22:41:56.829383Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4312-2023.engrossed2.html",
+      "sha256": "48025e9979ffdf83e7daa159e434a6d29442a94479e58ff240b10cf17df3f0fb"
+    },
+    "note": "Version read: 2nd Engrossment, 2024-04-24. The bill strikes the old negligent-storage gross misdemeanor (child access) and replaces it. Section 2 appropriates $10,000 to the corrections commissioner for costs of this act (not quoted; tied to the bill's own penalties). Exceptions in subd. 3 (transport, shooting sports, peace officers, police stations) only partly quoted. Effective August 1, 2024. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.666, subd. 2): A person may not store, keep, or leave a firearm in any place unless the firearm is: (1) unloaded and equipped with a locking device; or (2) loaded or unloaded in a locked firearm storage unit or a locked gun room. A firearm is not considered stored, kept, or left under this subdivision during the period that it is under the direct physical control or reach of the person. A person who violates this subdivision is guilty of a crime and may be sentenced as provided for in subdivision 2a.\nSection 1 (Minn. Stat. 609.666, subd. 2a): (a) A person who violates subdivision 2 is guilty of a petty misdemeanor. (b) A person who violates subdivision 2 is guilty of a gross misdemeanor if a child is present in the area where the firearm is stored, kept, or left. (c) A person who violates subdivision 2 is guilty of a felony and may be sentenced to three years in prison or a fine of up to $5,000, or both, if a loaded unsecured firearm is accessed by a child or a person prohibited from possessing firearms under section 624.713, subdivision 1. (d) A person who violates subdivision 2 is guilty of a felony and may be sentenced to five years in prison or a fine of up to $10,000, or both, if an unsecured firearm is used in a felony crime of violence or to inflict substantial or great bodily harm on, or to cause the death of, someone other than the owner or authorized user of the firearm.\nSection 1 (Minn. Stat. 609.666, subd. 3): Subdivisions 2 and 2a do not apply to firearms: (1) in a motor vehicle while being transported in compliance with the requirements of section 97B.045, subdivision 1, clause (1), (2), or (3);"
+}
