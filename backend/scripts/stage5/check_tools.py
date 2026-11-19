@@ -365,6 +365,53 @@ def evidence_bill_anchor_reads_a_zero_padded_number(t):
 
 
 @check
+def reader_dry_batch_verdict_fails_on_each_merge_and_gate_fault(t):
+    """Colorado 2026-11-19: the reader session's dry batch stopped after the lines, so the merge and the gate first met
+    the state's formats in a 117-person run (six replays). `pilot_batch.py --verdict` reads the merge's and the gate's
+    output on the dry batch: every fault alone fails it, an unrun or empty batch gives no verdict, and a sponsorship
+    page with no line (never fetched in a dry batch) is counted, not failed."""
+    B = f'{t}/batch'; L = f'{B}/legiscan'; os.makedirs(L)
+    V = 'https://leg.example.gov/votes/1#HB1'
+    verdict = lambda: run('openstates/pilot_batch.py', '--pilot', t, '--verdict', ok=False)
+    p = verdict(); assert p.returncode == 2 and 'NO VERDICT' in p.stdout, 'nothing has run yet'
+    def put(**over):
+        d = {'unmapped': [], 'cross': [{'name': 'A', 'agree': True}], 'noline': [], 'gate': [{'check_id': 'source-without-snippet', 'what': 'no evidence.csv snippet for https://leg.example.gov/bills/hb1'},
+                                                                                             {'check_id': 'reasoning-empty', 'what': 'placeholder'}],
+             'reasoning': 'PILOT PLACEHOLDER: not a code. Voted on: HB 1.', **over}
+        write_csv(f'{L}/pairs.csv', [{'full_name': 'A', 'last_name': 'A', 'topic_key': 'tp', 'source_url': V}])
+        write_csv(f'{B}/research.csv', [{'full_name': 'A', 'topic_key': 'tp', 'value': '3', 'reasoning': d['reasoning']}])
+        for f, k in (('unmapped.json', 'unmapped'), ('crosscheck.json', 'cross'), ('no-line.json', 'noline')): json.dump(d[k], open(f'{L}/{f}', 'w'))
+        json.dump(d['gate'], open(f'{B}/gate-findings.json', 'w'))
+    put(); p = verdict(); assert p.returncode == 0 and '1 sponsorship page(s)' in p.stdout and 'FAULT' not in p.stdout, p.stdout
+    faults = {'unmapped': [['A', V]], 'cross': [{'name': 'A', 'agree': False, 'legiscan_vote': '?'}], 'noline': [['A', V, 'yea', 'XX-HB-1-2025']],
+              'gate': [{'check_id': 'instrument-not-cited', 'what': 'reasoning names an instrument (canonical "hb1")'}]}
+    for k, v in faults.items():
+        put(**{k: v}); p = verdict(); assert p.returncode == 1 and p.stdout.count('FAULT') == 1, (k, p.stdout)
+    put(gate=[{'check_id': 'source-without-snippet', 'what': f'no evidence.csv snippet for {V}'}]); p = verdict()
+    assert p.returncode == 1 and 'FAULT 1 vote page(s) cited with no line' in p.stdout, p.stdout
+    put(cross=[]); assert verdict().returncode == 2, 'nothing cross-checked is not a pass'
+    put(reasoning='PILOT PLACEHOLDER: not a code.'); p = verdict(); assert p.returncode == 2 and 'names no bill' in p.stdout, 'the old hand copies named no bill: the gate had nothing to look for'
+
+
+@check
+def recipe_keeps_an_earlier_pass_of_step_0_aside(t):
+    """Colorado co-01 (2026-11-19): three codes changed in a round after the recipe had started; step 0 from the start
+    stopped because the writer refuses to overwrite research-stage5-0.csv, and a session renamed files by hand. The
+    recipe now keeps the earlier pass under a numbered name. Nothing is deleted, and a first pass touches nothing."""
+    os.makedirs(t); sys.path.insert(0, TOOLS)
+    import importlib; rr = importlib.import_module('run_recipe'); importlib.reload(rr)
+    sys.path.remove(TOOLS)
+    rr.set_aside(t, 0); assert os.listdir(t) == [], 'a first pass has nothing to set aside'
+    put = lambda f, x: open(f'{t}/{f}', 'w').write(x)
+    put('research-stage5-0.csv', 'first'); put('dry-run-0.txt', 'first log'); put('research-stage5-1.csv', 'other step')
+    rr.set_aside(t, 0)
+    assert not os.path.exists(f'{t}/research-stage5-0.csv') and open(f'{t}/research-stage5-0.before-run-1.csv').read() == 'first'
+    assert open(f'{t}/dry-run-0.before-run-1.txt').read() == 'first log' and open(f'{t}/research-stage5-1.csv').read() == 'other step', 'only this step\'s files move'
+    put('research-stage5-0.csv', 'second'); rr.set_aside(t, 0)
+    assert open(f'{t}/research-stage5-0.before-run-1.csv').read() == 'first' and open(f'{t}/research-stage5-0.before-run-2.csv').read() == 'second', 'an earlier copy is never overwritten'
+
+
+@check
 def evidence_rebuild_choice_reaches_step_4_and_from_research_after_step_7_is_refused(t):
     """Utah ut-01 (2026-11-15): `run_recipe.py --from 4` could not pass --from-pre/--from-research, so step 4 was run by
     hand; and --from-research on rows already through step 7 lost two roll-call pairings at the next step 7."""
@@ -411,6 +458,23 @@ def bill_table_check_needs_deciding_words_in_the_bill(t):
     assert p.returncode == 2, p.stdout
     for want in ('not in the operative text', 'needs a why', 'XX-HB-7-2025: no instrument file', 'XX-HB-9-2025: 1 person'):
         assert want in p.stdout, (want, p.stdout)
+
+
+@check
+def bill_table_check_wants_a_summary_only_bill_flagged_for_the_runner(t):
+    """Colorado 2026-11-19: seven bills were stored from the legislature's summary because their texts could not be
+    fetched. Their rungs went to the runner only because a session thought to ask. The check now asks: a bill whose
+    record says NO BILL TEXT READ needs a flag, or the answer that settled it."""
+    S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none')]}, {'XX-HB-1-2025': 'A permit is no longer required.', 'XX-HB-2-2025': 'A permit is no longer required.'})
+    f = glob.glob(f'{S}/instruments/*/XX-HB-1-2025.json')[0]; d = json.load(open(f))
+    d['provenance'] = {'fetched_by': "x; NO BILL TEXT READ: operative words taken by a fill agent from the legislature's own bill summary"}; json.dump(d, open(f, 'w'))
+    T = f'{t}/t.json'
+    def table(**row): json.dump({'topic_key': 'tp', 'bills': {b: {'rung': 5, 'deciding_words': 'a permit is no longer required', 'why': '', 'flag': '', **(row if b.endswith('-1-2025') else {})}
+                                                              for b in ('XX-HB-1-2025', 'XX-HB-2-2025')}}, open(T, 'w'))
+    chk = lambda: run('bill_table.py', 'check', T, '--store', S, ok=False)
+    table(); p = chk(); assert p.returncode == 2 and 'XX-HB-1-2025: stored from a summary' in p.stdout and 'XX-HB-2-2025: stored' not in p.stdout, p.stdout
+    table(flag='rung 5 from the summary: right?'); assert chk().returncode == 0, 'flagged: the question is open, which is what is wanted'
+    table(answered='A: stands', question='rung 5 from the summary: right?'); assert chk().returncode == 0, 'settled by the runner'
 
 
 @check
@@ -2177,25 +2241,41 @@ def roster_sync_brings_the_shared_roster_into_step_and_touches_no_other_state(t)
 @check
 def bill_table_affected_lists_only_people_a_new_bill_can_move(t):
     """Ohio 2026-11-16: three late bills, all no rung, 25 people coded again, 0 changed. Only a counted Yes act on a new
-    bill WITH a rung can move a code. A flagged bill is refused, and so is a bill the table lacks."""
+    bill WITH a rung can move a rung. A flagged bill is refused, and so is a bill the table lacks.
+    Colorado 2026-11-19: a person whose FIRST finding on a table bill is on a late bill is listed whatever the act (two
+    "no stance" codes stopped the early check); and when nobody holds a finding on the bills there is no verdict,
+    because the pre-fill has not run since they joined the store (`affected` had said 0 for seven voted bills)."""
     S = f'{t}/store'; os.makedirs(f'{S}/instruments/state-xx'); os.makedirs(f'{S}/findings')
-    for b in ('XX-HB-1-2025', 'XX-HB-2-2025', 'XX-HB-3-2025'): json.dump({'instrument_id': b, 'operative_text': 'a rule'}, open(f'{S}/instruments/state-xx/{b}.json', 'w'))
+    for b in ('XX-HB-1-2025', 'XX-HB-2-2025', 'XX-HB-3-2025', 'XX-HB-4-2025', 'XX-HB-5-2025'): json.dump({'instrument_id': b, 'operative_text': 'a rule'}, open(f'{S}/instruments/state-xx/{b}.json', 'w'))
+    OLD = ('XX-HB-4-2025', 'nay', 0)  # an earlier bill of the table: the person already had a record
     def person(pid, *acts):
         json.dump({'politician_id': pid, 'findings': [{'id': f'{pid}{i}', 'kind': 'record', 'topic_keys': ['tp'], 'instrument_id': b, 'act': a,
                                                        **({'gate_by_topic': {'tp': 'near-unanimous'}} if g else {})} for i, (b, a, g) in enumerate(acts)], 'searches': []},
                   open(f'{S}/findings/{pid}.json', 'w'))
-    person('yes', ('XX-HB-1-2025', 'yea', 0)); person('spon', ('XX-HB-1-2025', 'sponsor', 0)); person('no', ('XX-HB-1-2025', 'nay', 0))
-    person('gated', ('XX-HB-1-2025', 'yea', 1)); person('norung', ('XX-HB-2-2025', 'yea', 0)); person('none', ('XX-HB-3-2025', 'yea', 0))
-    open(f'{t}/ids.txt', 'w').write('yes\nspon\nno\ngated\nnorung\nnone\n')
+    person('yes', ('XX-HB-1-2025', 'yea', 0), OLD); person('spon', ('XX-HB-1-2025', 'sponsor', 0), OLD); person('no', ('XX-HB-1-2025', 'nay', 0), OLD)
+    person('gated', ('XX-HB-1-2025', 'yea', 1), OLD); person('norung', ('XX-HB-2-2025', 'yea', 0), OLD); person('none', ('XX-HB-3-2025', 'yea', 0))
+    person('newno', ('XX-HB-1-2025', 'nay', 0)); person('newnorung', ('XX-HB-2-2025', 'nay', 0))
+    open(f'{t}/ids.txt', 'w').write('yes\nspon\nno\ngated\nnorung\nnone\nnewno\nnewnorung\n')
     T = f'{t}/table.json'
     def table(flag=''): json.dump({'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 3, 'deciding_words': 'a rule', 'flag': flag},
-                                                               'XX-HB-2-2025': {'rung': None, 'why': 'off the question', 'flag': ''}}}, open(T, 'w'))
+                                                               'XX-HB-2-2025': {'rung': None, 'why': 'off the question', 'flag': ''},
+                                                               'XX-HB-4-2025': {'rung': None, 'why': 'off the question', 'flag': ''},
+                                                               'XX-HB-5-2025': {'rung': 3, 'deciding_words': 'a rule', 'flag': ''}}}, open(T, 'w'))
     table()
     aff = lambda *bills, ok=True: run('bill_table.py', 'affected', T, *bills, '--ids', f'{t}/ids.txt', '--store', S, '--out', f'{t}/again.txt', ok=ok)
     p = aff('XX-HB-1-2025', 'XX-HB-2-2025')
-    assert open(f'{t}/again.txt').read().split() == ['spon', 'yes'], open(f'{t}/again.txt').read()
-    assert '5 of 6 people hold a finding' in p.stdout and '2 hold a counted Yes act' in p.stdout, p.stdout
+    assert open(f'{t}/again.txt').read().split() == ['newno', 'newnorung', 'spon', 'yes'], open(f'{t}/again.txt').read()
+    assert '7 of 8 people hold a finding' in p.stdout and '2 hold a counted Yes act' in p.stdout and '2 more hold their first finding' in p.stdout, p.stdout
+    p = aff('XX-HB-2-2025'); assert open(f'{t}/again.txt').read().split() == ['newnorung'], 'a No on a no-rung bill moves only the person it is the first finding of'
+    json.dump({'politician_id': 'newno', 'findings': [{'id': 'n0', 'kind': 'record', 'topic_keys': ['tp'], 'instrument_id': 'XX-HB-1-2025', 'act': 'nay'},
+                                                      {'id': 'n1', 'kind': 'own-words', 'topic_keys': ['tp']}], 'searches': []}, open(f'{S}/findings/newno.json', 'w'))
+    aff('XX-HB-1-2025'); assert 'newno' not in open(f'{t}/again.txt').read().split(), 'coded on their own words already: a No moves nothing (Colorado, one such member)'
+    person('newnorung', ('XX-HB-2-2025', 'nay', 0), OLD)
     p = aff('XX-HB-2-2025'); assert open(f'{t}/again.txt').read() == '' and 'no round is needed' in p.stdout, p.stdout
+    open(f'{t}/again.txt', 'w').write('stale\n')
+    p = aff('XX-HB-5-2025', ok=False); assert p.returncode == 2 and 'NO VERDICT' in p.stdout and 'pre-fill' in p.stdout, 'nobody holds a finding on the bill: the pre-fill has not run'
+    assert open(f'{t}/again.txt').read() == 'stale\n', 'no verdict writes no list'
+    p = aff('XX-HB-5-2025', '--none-ok', 'yes'); assert 'no round is needed' in p.stdout, p.stdout
     table(flag='rung 3 or 4?'); p = aff('XX-HB-1-2025', ok=False); assert p.returncode != 0 and 'still flagged' in (p.stderr + p.stdout)
     table(); p = aff('XX-HB-3-2025', ok=False); assert p.returncode != 0 and 'not in the table' in (p.stderr + p.stdout)
 

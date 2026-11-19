@@ -18,6 +18,10 @@ the store: copying the staged files in, and validating, is the session's next st
   day): `multi-subject` when the fill says so, else `near-unanimous` when the No votes are under 1 in 10. A bill with
   no floor vote gets a "sponsors only" row, so the pre-fill reads its sponsors.
 - --seats: the size of the lower and of the upper chamber, written on each gate row.
+- A bill whose text cannot be read (the site forbids the file, or no version has a text layer): save the legislature's
+  own summary as `texts/<id>.summary.txt` with "no bill text read" in the version part of its header line, and fill it
+  like a text. Its record says NO BILL TEXT READ, and `bill_table.py check` then wants its row flagged for the runner
+  (Colorado 2026-11-19). --ids <file> merges only the named bills, into --out, for bills that join late.
 Exit 2: a bill of this run is already in the store (merge that one by hand), a text is missing or saved twice, or the
 saved file's hash is not the one its text names.
 """

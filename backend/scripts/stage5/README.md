@@ -187,3 +187,15 @@ Notes:
 - The control of the skip rule is the topic profile's `control_groups`. Gun-policy's went from 10 to 5 per group on 2026-11-19 (1 of 266 controls changed a code across 13 states). A new topic starts at 10.
 
 **A third plain case (runner, 2026-11-18).** A person whose record holds Yes or No votes and none of them counts (each is on a bill the table gives no rung, or is gated), with no sponsorship and no counted No, gets a script blank: class `gate` when every vote is gated, `wording` otherwise. No votes on both sides, and a record with no Yes or No vote at all, still go to Opus. Replay against blind Opus record codes, 10 states: 67 people released, outcome the same for all 67; Opus's blank class is `off-question`, `gate`, `wording` or `nay-only` and matches the script's for 14. The standing check draws from these people first. Also: the import files a searcher's root `status` key as the `status: …` place the brief asks for (six hand fixes in two states), and `standing_yes.py` no longer fails on a held person's unreadable vote, reads the read-back against what the write wrote, and counts a row sent back for more research as one that stays pending.
+
+**After Colorado (2026-11-19).** Colorado cost 102,494 units per person, against Kansas's 44,441. Four gaps, each
+from its log. (1) `bill_table.py affected` also lists a person whose first finding on the topic is on a late bill
+(two "no stance" codes stopped the early check), and gives no verdict (exit 2) when nobody holds a finding on the
+bills: the pre-fill has not run since they joined the store. (2) `run_recipe.py` keeps an earlier pass of step 0 or 2
+aside (`research-stage5-<n>.before-run-<k>.csv`) where the writer refused to overwrite it. (3) `bill_table.py check`
+wants a bill stored from a summary (NO BILL TEXT READ) flagged for the runner, or settled; card A settles a bill with
+no readable text in session A (seven such bills joined after coding, and 66 people were coded again). (4) Card B runs
+the pre-fill before `affected`. And `openstates/pilot_batch.py` replaces the `make_pilot_batch.py` copied into seven
+pilot folders: its dry batch names each voted bill, and `--verdict` reads the merge and the gate on it, so a reader
+session meets a state's formats before a real run does. On Colorado's dry batch the merge and the gate as they were
+before the run fail it (6,256 votes disagree; 3,834 named bills not found); as fixed, they pass.

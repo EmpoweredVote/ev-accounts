@@ -1,8 +1,7 @@
 # Session A card — {{TOPIC}}, {{STATE}} (`{{xx}}`) — set-up
 
 Made {{DATE}} by `session_card.py` from `{{PROFILE}}`. **This card is the session's reading.** Do not read the skill
-file, STAGE5.md, the runbook or the tools README from end to end: open only the section a step names. Each of those
-reads is carried on every later step of the session.
+file, STAGE5.md, the runbook or the tools README from end to end: open only the section a step names.
 
 - `R` = `{{R}}`
 - `S` = `{{S}}`
@@ -23,7 +22,7 @@ reads is carried on every later step of the session.
 - One folder per state for anything a tool writes in bulk: `{{S}}/{{xx}}/…`. Never import from a folder that holds
   other states' files.
 - A stop that is not listed below is a finding: write down what caused it.
-- Report in plain English: result first, short sentences.
+- Report in plain English, result first.
 
 ## This legislature
 
@@ -34,7 +33,7 @@ From `{{LEG_PATH}}` (facts about the legislature, shared by every topic):
 {{/LEG}}
 {{^LEG}}
 No legislature profile is on file for `{{xx}}` yet, so this session learns its hosts, vote layout and text marks
-by hand. Session A writes them down at hand-over (`legislature.py new {{xx}} --name "{{STATE}}"`).
+by hand and writes them down at hand-over (step A6).
 {{/LEG}}
 
 ## Settled, do not ask again
@@ -49,7 +48,7 @@ by hand. Session A writes them down at hand-over (`legislature.py new {{xx}} --n
 | 1 | After the bill table | Every flagged bill and both-sides pattern, and the stub list. |
 
 **Never wait for stop 1 inside this session.** Write the question sheet and the hand-over first (step A6), ask, and
-apply the answers as the last act. A long wait in a large session is charged in full when it ends.
+apply the answers as the last act.
 
 ## Steps
 
@@ -91,15 +90,13 @@ command with `--triage {{S}}/sponsor-triage-{{xx}}.json --write {{S}}/legiscan/c
 Check every `idmap.tsv` line you add against the person's name **and chamber**. Refuse a match from another state.
 
 🔴 Then the link check, before any skeleton or vote is built. A legislator with no `idmap.tsv` line has **no votes on
-file**, and nothing else says so (Kentucky: six members, two written as blanks that their record would have seated):
+file**, and nothing else says so:
 
 ```bash
 python3 -I scripts/stage5/link_check.py --state {{XX}} --roster {{S}}/batches/{{xx}}-roster.tsv --ds {{S}}/legiscan/ds --idmap {{S}}/legiscan/idmap.tsv --add
 ```
 
-Exit 1 names each unlinked member beside the people who may be the same person. Add the line by hand, run it
-again, and go on only at exit 0. A member seated after the newest dataset
-goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
+Exit 1 names each unlinked member and who may be the same person. Add the line by hand; go on only at exit 0. A member seated after the newest dataset goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
 stop 1 sheet. After A4, every person the pre-fill reports with no vote must be a non-legislator or in that file.
 
 **A3. Bill texts.** Shared scripts, never a copy of another state's (usage in each header): `bill_skeletons.py`,
@@ -109,8 +106,12 @@ the state's own text fetch, `bill_fill_wave.py` (a `wave.py` wave; the newest `F
 ```bash
 python3 -I scripts/stage5/check_fill_quotes.py --fills {{S}}/legiscan/fill --texts {{S}}/legiscan/texts --state {{xx}} --flag <the fill brief's on-topic key>
 ```
- Write down
-for the hand-over how this legislature marks new and struck words, how its roll calls name motions, and its hosts.
+Write down for the hand-over how this legislature marks new and struck words, how its roll calls name motions, and
+its hosts.
+
+🔴 **A core bill with no readable text is settled here, not in session B** (Colorado: 66 people coded again). Where
+`robots.txt` allows the bill's page, save the legislature's own summary and merge it as `bill_merge.py`'s header says.
+`check` then wants its row flagged: stop 1 asks if summaries may stand, and each rung. On a no, take the bills out.
 
 **A4. Store and pre-fill.** Merge into the store; `npm run source-store --prefix backend -- validate`; then
 
@@ -149,9 +150,9 @@ python3 -I scripts/stage5/bill_table.py settle {{S}}/bill-table-{{xx}}.json <bil
 **A5b. Before asking: probe the write.** Two checks that otherwise surface in session B:
 
 1. Can our reader open this legislature's roll-call pages? Read each host's `robots.txt` and fetch one roll-call
-   page. If not, put "where do we read roll calls" on the stop 1 sheet. (A host the profile above already marks
-   "blocked" needs no probe; one marked "not checked", or a profile verified long ago, does.)
-2. Does every core-bill vote of an in-scope person carry a chamber, a date and a tally? List any that does not.
+   page. If not, put "where do we read roll calls" on the stop 1 sheet. (A host the profile marks
+   "blocked" needs no probe.)
+2. Does every core-bill vote of an in-scope person carry a chamber, a date and a tally? List any without.
 
 **A6. Hand-over, then stop 1.** Write `{{S}}/{{xx}}/HANDOVER-A.md` (ten parts, below). 🛑 **Stop 1:** show the
 questions and the stub list. On the answers: write each one word for word under `## {{STATE}} notes {state:{{xx}}}`

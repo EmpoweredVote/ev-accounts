@@ -151,6 +151,20 @@ def write_pids(c, b):
     return ids
 
 
+def set_aside(b, m):
+    """The writer refuses to overwrite research-stage5-<m>.csv, so a second pass of step 0 or 2 (codes changed in a
+    round after the recipe had started) stopped until a session renamed files by hand (Colorado co-01, 2026-11-19).
+    Keep the earlier pass under a numbered name instead: nothing is deleted."""
+    cur = os.path.join(b, f'research-stage5-{m}.csv')
+    if not os.path.exists(cur): return
+    k = 1
+    while os.path.exists(os.path.join(b, f'research-stage5-{m}.before-run-{k}.csv')): k += 1
+    for f, ext in ((f'research-stage5-{m}', 'csv'), (f'dry-run-{m}', 'txt')):
+        src = os.path.join(b, f'{f}.{ext}')
+        if os.path.exists(src): os.rename(src, os.path.join(b, f'{f}.before-run-{k}.{ext}'))
+    print(f'  (an earlier pass of this step is kept as research-stage5-{m}.before-run-{k}.csv)')
+
+
 def fallback_cmd(b, dry):
     """Step 5's fetch. No blank over a shown answer: an empty urls.txt, so the fetch has a list to read (it crashed on
     a missing one, mo-01). Blanks but no urls.txt yet: no fetch; the step 5 stop says to write it."""
@@ -347,6 +361,7 @@ def run_step(n, c, b, dry):
             if not cmd: continue
         print('  $', cmd if len(cmd) < 400 else cmd[:400] + ' …')
         if dry: continue
+        if n in (0, 2): set_aside(b, 0 if n == 0 else 1)
         p = subprocess.run(cmd, shell=True, cwd=BACKEND, text=True)
         if n == 2 and os.path.exists(os.path.join(b, 'research-stage5-1.csv')):
             shutil.copyfile(os.path.join(b, 'research-stage5-1.csv'), os.path.join(b, 'research.csv'))

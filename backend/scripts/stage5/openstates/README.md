@@ -234,3 +234,10 @@ roll-call pages.
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its
 LegiScan lines.
+
+## The dry batch (reader session)
+
+`pilot_batch.py` builds a dry batch from the converted datasets and, after the step 7 tools, `legiscan_merge.py` and
+`stance-gate.ts` have run on it, `pilot_batch.py --pilot <dir> --verdict` says whether the merge and the gate can read
+this state's lines. Usage and what it does not cover (sponsorship pages) are in its header. It writes nothing to the
+store or the database, and nothing in it is a code.
