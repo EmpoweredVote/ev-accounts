@@ -197,6 +197,14 @@ for r in rows("personvote"):
 #    https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo3025.html, is written instead, and every regular
 #    session's texts move to https://ndlegis.gov/assembly/<NN-YYYY>/regular/documents/ (the old form redirects there
 #    today, read 2026-11-19). A special session's pages (/special-session/) are 404 on the current host: kept and counted.
+#  - Minnesota (2026-11-19): the dump holds no roll call for 2020's special sessions, 2021-2022 or 2021's special
+#    session, and its 2017-2020 vote addresses are House pages (house.leg.state.mn.us/votes/votes.asp?...) that now answer
+#    500. "record_is_the_floor", as North Dakota's: the fetch reads each scanned bill's page on the Revisor's site and
+#    every floor vote on it from the chamber's daily journal, cited as the journal page with the bill after a #
+#    (stateRollCallEvidence.ts); the dump's copy of a record vote only teaches which person a label is. The reader names
+#    each member in full from the Legislative Reference Library's member list, so ms_full_names links them. The bill
+#    pages (bills/bill.php?...) redirect to the current form and the texts (bills/text.php?...) still answer, so neither
+#    is rewritten (read 2026-11-19).
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -208,7 +216,8 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
              "KS": {"https": True, "ks_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True,
                     "ks_bill_page": True, "ks_texts": True},
              "CO": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "co_texts": True},
-             "ND": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nd_links": True}}
+             "ND": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nd_links": True},
+             "MN": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True}}
 RULES = SRC_RULES.get(ST, {})
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))

@@ -59,6 +59,10 @@ const NICKNAME_GROUPS: Array<[string, string]> = [
   // voting-rights TN, 2026-11-12: Sen. Janice Bowling (SD-16) is printed "Janince" by LegiScan on some records (people_id
   // 15131; a LegiScan misspelling, as with Pricilla above), e.g. the 2013 SB 125 Senate concurrence roll call 259248.
   ['janice', 'janince'],
+  // gun-policy MN, 2026-11-19: the Legislature's member list (lrl.mn.gov) names Reps. Lucille Rehm, Kimberly C Hicks,
+  // Peter Johnson and Patricia Anderson, with "Lucy", "Kim", "Pete" and "Patti" as the names they are known by; the
+  // roster holds those.
+  ['lucy', 'lucille'], ['kim', 'kimberly'], ['pete', 'peter'], ['patti', 'patricia'],
 ];
 
 const NICKNAME_MAP: Map<string, Set<string>> = (() => {

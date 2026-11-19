@@ -9,6 +9,7 @@ import {
   explainKansasVote, ksQuestionIsOnTheBill, ksMemberName, parseKansasVoteUrl,
   explainColoradoVote, coQuestionIsOnTheBill, coMemberName, coMembers, coBillTag, parseColoradoVoteUrl,
   explainNorthDakotaVote, ndQuestionIsOnTheBill, ndMembers, ndMemberNames, parseNorthDakotaVoteUrl,
+  explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
 import { verifyEvidence, type StanceRow } from './researchVerifier.js';
@@ -1520,5 +1521,219 @@ describe('state roll-call pages — North Dakota lines', () => {
     const r = readStateRollCallRecord(ndDocs(ND_S19), ND_S19)!;
     expect(r).toMatchObject({ bill: 'HB 1042', date: '2019-03-29', chamber: 'Senate' });
     expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting']]).toEqual([42, 3, ['Michael Dwyer', 'Judy Lee']]);
+  });
+});
+
+// ── Minnesota ──────────────────────────────────────────────────────────────────────────────────────
+// Saved 2026-11-19, trimmed to the day's opening and the pages around the vote: the House journal of 2023-04-25
+// (www.house.mn.gov/cco/journals/2023-24/J0425056.htm, windows-1252, pages 6825 and 7011-7014), the Senate journal of
+// 2023-04-14 (www.mnsenate.gov/journals/2023-2024/20230414049.pdf, read as cells, pages 4967 and 5103-5106), and the
+// Legislative Reference Library's member lists for the 90th House and the 93rd House and Senate.
+const MN_H = 'https://www.house.mn.gov/cco/journals/2023-24/J0425056.htm#Page7013-SF2934';
+const MN_S = 'https://www.mnsenate.gov/journals/2023-2024/20230414049.pdf#Page5105-SF2909';
+// the site serves CRLF line ends and git may check the fixture out with LF: the tampers below anchor on CRLF
+const mnHouseJournal = (): string => new TextDecoder('windows-1252').decode(readFileSync(fileURLToPath(new URL('./__fixtures__/stateRollCall/mn-93-house-J0425056.htm', import.meta.url)))).replace(/\r?\n/g, '\r\n');
+const mnDocs = (url: string): string[] => url === MN_H ? [mnHouseJournal(), ksPage('mn-93-house-members')] : [mdFile('mn-93-senate-20230414049.cells.txt'), ksPage('mn-93-senate-members')];
+const mnRender = (url: string, docs = mnDocs(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error('the journal did not read');
+  return t;
+};
+const mnWhy = (url: string, docs: string[]): string => {
+  const v = explainMinnesotaVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const MN_ACOMB = 'Minnesota House vote of 2023-04-25, journal page 7013 (93rd Legislature), SF 2934 - Passage of the bill: Patty Acomb voted Yea.';
+
+describe('state roll-call pages — Minnesota address', () => {
+  it('knows a journal page named with its bill, and reads it with the LRL member list, a second apart', () => {
+    expect(parseMinnesotaVoteUrl(MN_H)).toEqual({ state: 'MN', stateName: 'Minnesota', chamber: 'House', legislature: 93, file: '2023-24/J0425056', page: 7013, billType: 'SF', billNum: 2934, special: 0 });
+    expect(parseMinnesotaVoteUrl(MN_S)).toMatchObject({ chamber: 'Senate', legislature: 93, file: '2023-2024/20230414049', page: 5105, billType: 'SF', billNum: 2909, special: 0 });
+    expect(parseMinnesotaVoteUrl('https://www.mnsenate.gov/journals/2021-2022/2021061704_ss1.pdf#Page28-SF50')).toMatchObject({ legislature: 92, special: 1 });
+    expect(stateRollCallDocs(MN_H)).toEqual(['https://www.house.mn.gov/cco/journals/2023-24/J0425056.htm',
+      'https://www.lrl.mn.gov/legdb/results?search=session&gender=all&sess=93&body=house']);
+    expect(stateRollCallDocs(MN_S)).toEqual(['https://www.mnsenate.gov/journals/2023-2024/20230414049.pdf',
+      'https://www.lrl.mn.gov/legdb/results?search=session&gender=all&sess=93&body=senate']);
+    expect(stateRollCallMinGapMs(MN_H)).toBe(1_000);
+    expect(isStateRollCallUrl(MN_S)).toBe(true);
+    // the dump's 2023 addresses (the Senate's day file with a page, the House's vote page), no bill after the #, the page
+    // alone, an even year opening the biennium, a biennium before the 90th, plain http, the old House host, a look-alike host
+    for (const u of ['https://www.senate.mn/journals/2023-2024/20230330043.pdf#78', 'https://www.house.mn.gov/Votes/Details?SessionKey=302&BillNumber=HF5084',
+      MN_H.replace('-SF2934', ''), MN_H.replace('#Page7013-SF2934', ''), MN_H.replace('2023-24', '2024-25'), MN_H.replace('2023-24', '2015-16'),
+      MN_H.replace('https', 'http'), MN_H.replace('www.house.mn.gov', 'www.house.leg.state.mn.us'), MN_S.replace('mnsenate.gov', 'mnsenate.gov.example.com'),
+      MN_S.replace('Page5105', 'Page05105')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('routes the Senate journal PDF to cells, as Maryland\'s, and every other PDF to lines', () => {
+    const items = [{ page: 1, x: 10, y: 700, str: 'Boldon' }, { page: 1, x: 200, y: 700, str: 'Frentz' }];
+    expect(pdfBodyFor('https://www.mnsenate.gov/journals/2023-2024/20230414049.pdf', items).split('\n')[0]).toBe('%PDF-CELLS');
+    expect(pdfBodyFor('https://ndlegis.gov/assembly/69-2025/regular/journals/hr-dailyjnl-34.pdf', items).split('\n')[0]).not.toBe('%PDF-CELLS');
+  });
+
+  it('names a printed label in full from the member list, and keeps a label that fits none or several as printed', () => {
+    const h93 = mnMembers(ksPage('mn-93-house-members'), 93, 'House')!;
+    expect(h93).toHaveLength(136);
+    const alias = (l: string): number | undefined => MN_LABEL_ALIASES[`93|House|${l}`];
+    // "Anderson, P. E." is Patricia (also known as Patti): Paul H. Anderson's list name gives H as his second initial
+    expect(mnMemberNames(['Anderson, P. E.', 'Anderson, P. H.', 'Hansen, R.', 'Hanson, J.', 'Neu Brindley', "O'Driscoll", 'Lee, F.', 'Lee, K.', "O'Neill", 'Zzyzx'], h93, alias))
+      .toEqual(['Patricia Anderson', 'Paul H. Anderson', 'Rick Hansen', 'Jessica Hanson', 'Anne E Neu Brindley', "Tim O'Driscoll", 'Fue Lee', 'Liz Lee', 'Marion Rarick', 'Zzyzx']);
+    // without the alias, "Lee, K." fits no one and "O'Neill" (Marion Rarick's former name) fits no one: kept as printed
+    expect(mnMemberNames(['Lee, K.', "O'Neill"], h93)).toEqual(['Lee, K.', "O'Neill"]);
+    // a bare family name two members share fits several: no name
+    expect(mnMemberNames(['Anderson'], h93)).toEqual(['Anderson']);
+    // 2017: Jason and Marion Rarick are both on the list; "O'Neill" is Marion, so "Rarick" is Jason
+    const h90 = mnMembers(ksPage('mn-90-house-members'), 90, 'House')!;
+    const alias90 = (l: string): number | undefined => MN_LABEL_ALIASES[`90|House|${l}`];
+    expect(mnMemberNames(['Rarick', "O'Neill", 'Carlson, L.', 'Carlson, A.', 'Murphy, E.', 'Murphy, M.'], h90, alias90))
+      .toEqual(['Jason Rarick', 'Marion Rarick', 'Lyndon R. Carlson Sr.', 'Andrew Carlson', 'Erin P. Murphy', 'Mary Catherine Murphy']);
+    expect(mnMemberNames(['Rarick'], h90)).toEqual(['Rarick']);
+    // 2020 (HF 8, HF 9): "Kunesh-Podein" and "Neu" are former names (LRL 15466 and 15494); the 91st list prints the present ones
+    const h91 = mnMembers(ksPage('mn-91-house-members'), 91, 'House')!;
+    const alias91 = (l: string): number | undefined => MN_LABEL_ALIASES[`91|House|${l}`];
+    expect(mnMemberNames(['Kunesh-Podein', 'Neu'], h91, alias91)).toEqual(['Mary K. Kunesh', 'Anne E Neu Brindley']);
+    expect(mnMemberNames(['Kunesh-Podein', 'Neu'], h91)).toEqual(['Kunesh-Podein', 'Neu']);
+    // a list of another Legislature or chamber, or one that does not hold the count it prints, does not read
+    expect(mnMembers(ksPage('mn-93-house-members'), 92, 'House')).toBeNull();
+    expect(mnMembers(ksPage('mn-93-house-members'), 93, 'Senate')).toBeNull();
+    expect(mnMembers(tamper(ksPage('mn-93-house-members'), '136 records matched', '137 records matched'), 93, 'House')).toBeNull();
+  });
+
+  it('knows which questions are votes on the bill', () => {
+    for (const q of ['passage of the bill', 'passage of the bill, as amended', 'repassage of the bill', 'repassage of the bill, as amended by the Conference Committee',
+      'Shall H. F. No. 1 be repassed, the objections of the Governor notwithstanding?']) {
+      expect(mnQuestionIsOnTheBill(q)).toBe(true);
+    }
+    for (const q of ['adoption of the amendment', 'adoption of the Backer amendment to the Backer amendment', 'motion to lay the bill on the table',
+      'appeal of the decision of the Speaker', 'adoption of the report of the Conference Committee']) {
+      expect(mnQuestionIsOnTheBill(q)).toBe(false);
+    }
+  });
+});
+
+describe('state roll-call pages — reading Minnesota', () => {
+  it('reads a 2023 House vote from the day\'s HTML journal: bill, question, day, tally, and every member by full name', () => {
+    const t = mnRender(MN_H);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Minnesota House vote of 2023-04-25, journal page 7013 (93rd Legislature), SF 2934.',
+      'Question: Passage of the bill', 'Yea 70; Nay 60.']);
+    // "Spk. Hortman" is the Speaker; "Lee, K." is Liz Lee; "O'Neill" is Marion Rarick
+    expect(t).toMatch(/^Yea \(70\): Patty Acomb; Esther Agbaje; .*; Fue Lee; Liz Lee; .*; Melissa Hortman$/m);
+    expect(t).toMatch(/^Nay \(60\): Pam Altendorf; Patricia Anderson; Paul H\. Anderson; .*; Marion Rarick; .*$/m);
+    // every label is named
+    expect(t.split('\n').slice(3).join(';')).not.toMatch(/, [A-Z]\.|Spk\./);
+  });
+
+  it('reads a 2023 Senate vote from the day\'s PDF journal, past the votes cast under Rule 40', () => {
+    const t = mnRender(MN_S);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Minnesota Senate vote of 2023-04-14, journal page 5105 (93rd Legislature), SF 2909.',
+      'Question: Passage of the bill, as amended', 'Yea 34; Nay 33.']);
+    // two-word family names in the grid
+    expect(t).toMatch(/; Clare Oumou Verbeten;/);
+    expect(t).toMatch(/; Erin K\. Maye Quade;/);
+  });
+
+  it('refuses a House journal whose bill, question, counts, pages, session or result do not hold together', () => {
+    const [j, m] = mnDocs(MN_H);
+    expect(mnWhy(MN_H, [j, m])).toBe('read');
+    // a printed count no longer equals the members under it
+    expect(mnWhy(MN_H, [tamper(j, 'were 70 yeas and 60 nays', 'were 71 yeas and 60 nays'), m])).toBe('the Yea group lists 70 members and the tally prints 71');
+    // the roll call follows another bill's heading
+    expect(mnWhy(MN_H, [tamper(j, 'No.&nbsp;2934,\r\nA bill', 'No.&nbsp;2935,\r\nA bill'), m])).toMatch(/^the journal holds 0 roll calls on SF 2934/);
+    // a vote on something other than the bill
+    expect(mnWhy(MN_H, [tamper(j, 'question was taken on the passage of\r\nthe bill and the roll was', 'question was taken on the adoption of\r\nthe amendment and the roll was'), m])).toMatch(/^the journal holds 0 roll calls on SF 2934/);
+    // a page the vote does not take in: the third reading is on page 7013
+    expect(mnWhy(MN_H.replace('Page7013', 'Page7012'), [j, m])).toMatch(/^the journal holds 0 roll calls on SF 2934 that read as a vote on the bill and take in page 7012$/);
+    // the result line is not the bill's
+    expect(mnWhy(MN_H, [tamper(j, 'The\r\nbill was passed, as amended, and its title agreed to.', 'The\r\nmotion prevailed.'), m])).toMatch(/^the roll call does not end on the bill's result/);
+    // a member printed twice
+    const k = j.indexOf('were 70 yeas');
+    expect(mnWhy(MN_H, [j.slice(0, k) + tamper(j.slice(k), '>Agbaje<', '>Acomb<'), m])).toBe('a member is listed twice');
+    // a page banner of another day, and pages out of order
+    expect(mnWhy(MN_H, [tamper(j, '56th Day -\r\nTuesday, April 25, 2023 - Top of Page\r\n7014', '57th Day -\r\nTuesday, April 25, 2023 - Top of Page\r\n7014'), m]))
+      .toBe("the journal's page banners print 1 dates and 2 days");
+    expect(mnWhy(MN_H, [tamper(j, 'Top of Page\r\n7014', 'Top of Page\r\n7012'), m])).toMatch(/^a page banner whose anchor 7014 is not its page 7012$/);
+    // the session heading names another Legislature
+    expect(mnWhy(MN_H, [tamper(j, 'NINETY-THIRD\r\nSESSION', 'NINETY-SECOND\r\nSESSION'), m])).toMatch(/^the journal is of the NINETY-SECOND session/);
+    // a member list of another Legislature
+    expect(mnWhy(MN_H, [j, ksPage('mn-90-house-members')])).toBe('the member list did not read');
+    // the file the address names is another day's
+    expect(mnWhy(MN_H.replace('J0425056', 'J0426057'), [j, m])).toMatch(/^the journal is day 56 of 2023-04-25, not the file/);
+  });
+
+  it('refuses a Senate journal whose bill, counts, heads or result do not hold together', () => {
+    const [j, m] = mnDocs(MN_S);
+    expect(mnWhy(MN_S, [j, m])).toBe('read');
+    expect(mnWhy(MN_S, [tamper(j, 'yeas 34 and nays 33', 'yeas 34 and nays 34'), m])).toBe('the Nay group lists 33 members and the tally prints 34');
+    expect(mnWhy(MN_S, [tamper(j, 'S.F. No. 2909 was read the third time', 'S.F. No. 2908 was read the third time'), m])).toMatch(/^the journal holds 0 roll calls on SF 2909/);
+    expect(mnWhy(MN_S, [tamper(j, 'So the bill, as amended, was passed and its title was agreed to.', 'The motion prevailed.'), m])).toMatch(/^the roll call does not end on the bill's result/);
+    expect(mnWhy(MN_S, [tamper(j, '5106\tJOURNAL OF THE SENATE\t[49TH DAY', '5106\tJOURNAL OF THE SENATE\t[50TH DAY'), m])).toMatch(/^the journal's running heads print 1 dates and 2 days$/);
+    expect(mnWhy(MN_S.replace('Page5105', 'Page5107'), [j, m])).toMatch(/take in page 5107$/);
+    expect(mnWhy(MN_S, [j.replace('%PDF-CELLS', '%PDF-LINES'), m])).toBe('not a journal PDF read as cells');
+  });
+});
+
+// Saved 2026-11-19, trimmed the same way: the House journal of 2026-04-20 (www.house.mn.gov/cco/journals/2025-26/
+// J0420060.htm, utf-8, pages 5843-5846), the Senate journal of 2026-05-04 (www.mnsenate.gov/journals/2025-2026/
+// 20260504068.pdf, read as cells, pages 9705-9707), and the LRL member lists for the 94th House and Senate.
+const MN_H26 = 'https://www.house.mn.gov/cco/journals/2025-26/J0420060.htm#Page5845-HF3762';
+const MN_S26 = 'https://www.mnsenate.gov/journals/2025-2026/20260504068.pdf#Page9706-SF4067';
+const mnHouse26 = (): string => new TextDecoder('utf-8').decode(readFileSync(fileURLToPath(new URL('./__fixtures__/stateRollCall/mn-94-house-J0420060.htm', import.meta.url))));
+const mnSenate26 = (): string => mdFile('mn-94-senate-20260504068.cells.txt');
+
+describe('state roll-call pages — reading Minnesota in 2026', () => {
+  it('reads the 2026 House banner ("<a name = 5845>", "Journal Of the House -  60th -Monday")', () => {
+    const body = mnHouse26();
+    expect(body).toContain('<a name = 5845></a><center><b>Journal Of the House -  60th -Monday, April 20, 2026 - Top of Page 5845');
+    const t = mnRender(MN_H26, [body, ksPage('mn-94-house-members')]);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Minnesota House vote of 2026-04-20, journal page 5845 (94th Legislature), HF 3762.', 'Question: Passage of the bill', 'Yea 128; Nay 3.']);
+    // a banner whose anchor is not its page still refuses
+    expect(mnWhy(MN_H26, [tamper(body, '<a name = 5845>', '<a name = 5847>'), ksPage('mn-94-house-members')])).toMatch(/anchor 5847 is not its page 5845/);
+  });
+
+  it('reads a Senate vote whose reading has no comma before "and placed", across a call of the Senate', () => {
+    const body = mnSenate26();
+    expect(body).toContain('S.F. No. 4067 was read the third time and placed on its final passage.\nCALL OF THE SENATE\n');
+    const t = mnRender(MN_S26, [body, ksPage('mn-94-senate-members')]);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Minnesota Senate vote of 2026-05-04, journal page 9706 (94th Legislature), SF 4067.', 'Question: Passage of the bill', 'Yea 34; Nay 33.']);
+    // the call is set aside only in its own words: a call of the House here is not the Senate's, and the vote refuses
+    expect(mnWhy(MN_S26, [tamper(body, 'imposed a call of the Senate', 'imposed a call of the House'), ksPage('mn-94-senate-members')])).toMatch(/0 roll calls on SF 4067/);
+    // a question that is not on the bill still refuses
+    expect(mnWhy(MN_S26, [tamper(body, 'The question was taken on the passage of the bill.', 'The question was taken on the adoption of the amendment.'), ksPage('mn-94-senate-members')])).toMatch(/0 roll calls on SF 4067/);
+  });
+});
+
+describe('state roll-call pages — Minnesota lines', () => {
+  const t = mnRender(MN_H);
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(MN_H, t, 'Acomb', 'Patty Acomb')).toEqual([MN_ACOMB]);
+    expect(verifyStateRollCallLine(MN_ACOMB, MN_H, t, 'Acomb', 'Patty Acomb')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(MN_ACOMB)).toMatchObject({ state: 'MN', chamber: 'House', vote: 'Yea', name: 'Patty Acomb', bill: 'SF 2934' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or page', () => {
+    const v = (line: string, last = 'Acomb', full = 'Patty Acomb') => verifyStateRollCallLine(line, MN_H, t, last, full).verdict;
+    expect(v(MN_ACOMB.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(MN_ACOMB.replace('Patty Acomb voted', 'Esther Agbaje voted'))).not.toBe('verified');
+    expect(v(MN_ACOMB, 'Agbaje', 'Esther Agbaje')).toBe('name_not_present');
+    expect(v(MN_ACOMB.replace('SF 2934 -', 'SF 2935 -'))).toBe('snippet_not_found');
+    expect(v(MN_ACOMB.replace('2023-04-25', '2023-04-24'))).toBe('snippet_not_found');
+    expect(v(MN_ACOMB.replace('journal page 7013', 'journal page 7014'))).toBe('snippet_not_found');
+  });
+
+  it('gives each of two members who share a family name their own line, and none to a label left as printed', () => {
+    expect(stateRollCallLinesFor(MN_H, t, 'Anderson', 'Patricia Anderson')).toEqual([
+      'Minnesota House vote of 2023-04-25, journal page 7013 (93rd Legislature), SF 2934 - Passage of the bill: Patricia Anderson voted Nay.']);
+    expect(stateRollCallLinesFor(MN_H, t, 'Anderson', 'Paul H. Anderson')).toHaveLength(1);
+    // Pam Altendorf printed as a bare "Anderson": both Andersons fit it, and each is the one another label fits alone
+    const bare = mnRender(MN_H, [mnHouseJournal().split('>Altendorf<').join('>Anderson<'), ksPage('mn-93-house-members')]);
+    expect(bare).toMatch(/: Anderson; /);
+  });
+
+  it('reads the tally as Yea and Nay, with no member absent: the journals name none', () => {
+    const r = readStateRollCallRecord(mnDocs(MN_S), MN_S)!;
+    expect(r).toMatchObject({ bill: 'SF 2909', date: '2023-04-14', chamber: 'Senate', rollNum: 5105 });
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting']]).toEqual([34, 33, []]);
   });
 });

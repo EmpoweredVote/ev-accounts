@@ -51,6 +51,12 @@ describe('names and jurisdictions', () => {
     expect(getNameVariants('Clint')).toEqual(expect.arrayContaining(['clint', 'clinton']));
     expect(getNameVariants('Priscilla')).toEqual(expect.arrayContaining(['priscilla', 'pricilla']));
     expect(getNameVariants('Janice')).toEqual(expect.arrayContaining(['janice', 'janince']));
+    // gun-policy MN, 2026-11-19: the Legislature's member list names Lucille Rehm, Kimberly C Hicks, Peter Johnson and
+    // Patricia Anderson, and prints "Lucy", "Kim", "Pete" and "Patti" as their known names; the roster holds the known names
+    expect(getNameVariants('Lucy')).toEqual(expect.arrayContaining(['lucy', 'lucille']));
+    expect(getNameVariants('Kimberly')).toEqual(expect.arrayContaining(['kimberly', 'kim']));
+    expect(getNameVariants('Pete')).toEqual(expect.arrayContaining(['pete', 'peter']));
+    expect(getNameVariants('Patti')).toEqual(expect.arrayContaining(['patti', 'patricia']));
   });
 });
 

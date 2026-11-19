@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -651,5 +651,81 @@ describe('the legislature\'s own vote list — North Dakota', () => {
       .toThrow(/a vote whose action the tool does not know/);
     expect(() => INDEX.ND.read(tamper(ND_HB1279, 'href="../journals/hr-dailyjnl-35.pdf#Page787"', 'href="../journals/sr-dailyjnl-35.pdf#Page787"'), '65', 'HB 1279'))
       .toThrow(/linked to another chamber's journal/);
+  });
+});
+
+// Saved 2026-11-19 from www.revisor.mn.gov: 2023 SF 2909's status page. Each chamber's actions, each recorded vote with
+// its tally and a link to the journal page; the Senate's conference-report adoption and the repassage that follows it.
+const MN_SF2909 = ksFixture('mn-93-SF2909-bill');
+const mnVia = (index: string, chamber: 'house' | 'senate') => ({ index, chamber, motion: 'Third reading Passed', tally: [34, 33, -1] as [number, number, number] });
+
+describe('the legislature\'s own vote list — Minnesota', () => {
+  it('names the Revisor\'s bill page of a regular or special session from the 90th Legislature on', () => {
+    expect(INDEX.MN.billUrl('2023-2024', 'SF 2909')).toBe('https://www.revisor.mn.gov/bills/93/2023/0/SF/2909/');
+    expect(INDEX.MN.billUrl('2021s1', 'HF 29')).toBe('https://www.revisor.mn.gov/bills/92/2021/1/HF/29/');
+    expect(INDEX.MN.billUrl('2020s4', 'HF19')).toBe('https://www.revisor.mn.gov/bills/91/2020/4/HF/19/');
+    expect(INDEX.MN.billUrl('2015-2016', 'HF 1')).toBeNull();
+    expect(INDEX.MN.billUrl('2023-2024', 'SR 5')).toBeNull();
+    expect(mnLegislature('2025-2026')).toEqual({ ls: 94, year: 2025, ssn: 0 });
+    expect(mnLegislature('2024-2025')).toBeNull();
+  });
+
+  it('reads each chamber\'s floor votes as page-resolver addresses, and counts motions and the other chamber\'s votes', () => {
+    const bi = INDEX.MN.read(MN_SF2909, '2023-2024', 'SF 2909');
+    expect(bi.floor).toEqual([]);
+    expect(bi.viaIndex).toEqual([
+      { index: 'https://www.mnsenate.gov/api/journal/gotopage?page=5105&ls=93', chamber: 'senate', motion: 'Third reading Passed', tally: [34, 33, -1] },
+      { index: 'https://www.mnsenate.gov/api/journal/gotopage?page=7872&ls=93', chamber: 'senate', motion: 'Third reading', tally: [34, 33, -1] },
+      { index: 'https://www.house.mn.gov/scripts/gotopage.pl?session=ls93&number=7097', chamber: 'house', motion: 'Bill was passed as amended', tally: [69, 60, -1] },
+      { index: 'https://www.house.mn.gov/scripts/gotopage.pl?session=ls93&number=8025', chamber: 'house', motion: 'Bill was repassed as amended by Conference', tally: [69, 63, -1] },
+    ]);
+    // the Senate's motion to reject the report, its adoption of the report (the repassage follows), the House list's copy
+    // of the Senate's repassage, and the House's two motions on the report
+    expect(bi.motion).toBe(5);
+    expect(bi.motions).toContain("Senate Senate adopted CC report and repassed bill (the report's adoption; the repassage follows) 34-33");
+  });
+
+  it('takes the Senate\'s "adopted CC report and repassed bill" as the repassage when no third reading follows it', () => {
+    // the third reading of May 12 without its tally: the report's adoption row is the repassage
+    const alone = MN_SF2909.replace(/(number=7872">7872<\/a><\/span>\s*)<span> vote: 34-33<\/span>/, '$1');
+    expect(alone).not.toBe(MN_SF2909);
+    const bi = INDEX.MN.read(alone, '2023-2024', 'SF 2909');
+    expect(bi.viaIndex!.filter((v) => v.chamber === 'senate').map((v) => [v.index.replace(/^.*page=(\d+).*$/, '$1'), v.motion]))
+      .toEqual([['5105', 'Third reading Passed'], ['7871', 'Senate adopted CC report and repassed bill']]);
+  });
+
+  it('stops on another bill\'s or session\'s page, an action it does not know, or a vote linked to the other chamber\'s journal', () => {
+    expect(() => INDEX.MN.read(MN_SF2909, '2023-2024', 'SF 2908')).toThrow(/the bill page is not SF 2908: SF 2909/);
+    expect(() => INDEX.MN.read(MN_SF2909, '2021-2022', 'SF 2909')).toThrow(/is not of the 92nd Legislature \(2021 - 2022\)/);
+    expect(() => INDEX.MN.read(tamper(MN_SF2909, 'Third reading Passed', 'Third reading Tabled'), '2023-2024', 'SF 2909'))
+      .toThrow(/a vote whose action the tool does not know: Senate Third reading Tabled/);
+    expect(() => INDEX.MN.read(tamper(MN_SF2909, 'https://www.mnsenate.gov/journals/gotopage?session=ls93&number=5105', 'https://www.house.mn.gov/scripts/gotopage.pl?session=ls93&number=5105'), '2023-2024', 'SF 2909'))
+      .toThrow(/a Senate vote linked to another chamber's journal/);
+    expect(() => INDEX.MN.read(tamper(MN_SF2909, 'gotopage?session=ls93&number=5105', 'gotopage?session=ls93&number=5105a'), '2023-2024', 'SF 2909'))
+      .toThrow(/not a page number \(5105a\)/);
+  });
+
+  it('reads the page resolvers\' answers as the day\'s journal, with the page and the bill after a #', () => {
+    const l = { ls: 93, year: 2023, ssn: 0 };
+    expect(mnResolverUrl('Senate', { ls: 92, year: 2021, ssn: 1 }, 28)).toBe('https://www.mnsenate.gov/api/journal/gotopage?page=28&ls=92&session_year=2021&session_num=1');
+    expect(mnVoteFromResolver('{"filename":"20230414049","internal_page":139,"fileBiennium":"2023-2024"}', '2023-2024', 'SF 2909', mnVia(mnResolverUrl('Senate', l, 5105), 'senate')))
+      .toBe('https://www.mnsenate.gov/journals/2023-2024/20230414049.pdf#Page5105-SF2909');
+    expect(mnVoteFromResolver('{"filename":"2021061704_ss1","internal_page":8,"fileBiennium":"2021-2022"}', '2021s1', 'SF 50',
+      mnVia(mnResolverUrl('Senate', { ls: 92, year: 2021, ssn: 1 }, 28), 'senate'))).toBe('https://www.mnsenate.gov/journals/2021-2022/2021061704_ss1.pdf#Page28-SF50');
+    expect(mnVoteFromResolver('LOCATION http://www.house.leg.state.mn.us/cco/journals/2023-24/J0425056.htm#7097', '2023-2024', 'SF 2909',
+      mnVia(mnResolverUrl('House', l, 7097), 'house'))).toBe('https://www.house.mn.gov/cco/journals/2023-24/J0425056.htm#Page7097-SF2909');
+    // another biennium's file, a regular day for a special session, another page, no answer
+    expect(() => mnVoteFromResolver('{"filename":"20210414049","fileBiennium":"2021-2022"}', '2023-2024', 'SF 2909', mnVia(mnResolverUrl('Senate', l, 5105), 'senate'))).toThrow(/named 20210414049 of 2021-2022/);
+    expect(() => mnVoteFromResolver('{"filename":"2021061704","fileBiennium":"2021-2022"}', '2021s1', 'SF 50', mnVia(mnResolverUrl('Senate', { ls: 92, year: 2021, ssn: 1 }, 28), 'senate'))).toThrow(/not a journal of session 2021s1/);
+    expect(() => mnVoteFromResolver('LOCATION http://www.house.leg.state.mn.us/cco/journals/2023-24/J0425056.htm#7096', '2023-2024', 'SF 2909', mnVia(mnResolverUrl('House', l, 7097), 'house'))).toThrow(/did not name a journal of 2023-2024 for page 7097/);
+    expect(() => mnVoteFromResolver('<html>', '2023-2024', 'SF 2909', mnVia(mnResolverUrl('Senate', l, 5105), 'senate'))).toThrow(/did not answer JSON/);
+  });
+
+  it('compares the yeas and nays with the bill page\'s tally, and refuses a journal that does not hold the vote', () => {
+    const v = { url: 'https://www.mnsenate.gov/journals/2023-2024/20230414049.pdf#Page5105-SF2909', motion: 'Third reading Passed', tally: [34, 33, -1] as [number, number, number] };
+    const docs = [readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/mn-93-senate-20230414049.cells.txt', import.meta.url)), 'utf8'), ksFixture('mn-93-senate-members')];
+    expect(buildRollCall('SF 2909', v, docs, '2023-2024')).toMatchObject({ yea: 34, nay: 33, absent: 0, passed: 1, chamber: 'S', date: '2023-04-14' });
+    expect(buildRollCall('SF 2909', { ...v, tally: [35, 33, -1] }, docs, '2023-2024')).toEqual({ refused: "the page's tally 34-33-0 is not the bill file's 35-33--1" });
+    expect(buildRollCall('SF 2909', { ...v, url: v.url.replace('Page5105', 'Page5107') }, docs, '2023-2024')).toMatchObject({ refused: expect.stringMatching(/take in page 5107$/) });
   });
 });
