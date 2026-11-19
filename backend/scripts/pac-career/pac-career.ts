@@ -39,7 +39,7 @@
  *   npx tsx scripts/pac-career/pac-career.ts roster
  *   npx tsx scripts/pac-career/pac-career.ts bulk [--from 1980] [--to 2026]
  *   npx tsx scripts/pac-career/pac-career.ts screen
- *   npx tsx scripts/pac-career/pac-career.ts verify [--limit N] [--only <politician_id>] [--sample-ruled-out N]
+ *   npx tsx scripts/pac-career/pac-career.ts verify [--limit N] [--only <politician_id>[,<politician_id>...]] [--sample-ruled-out N]
  *   npx tsx scripts/pac-career/pac-career.ts report [--out <dir>]
  */
 import 'dotenv/config';
@@ -419,7 +419,11 @@ interface PersonVerify {
   givers?: Giver[];
   error?: string;
 }
-interface Giver { name: string; id: string | null; bucket: Bucket; cycles: number[]; received: number; refunded: number }
+interface Giver {
+  name: string; id: string | null; bucket: Bucket; cycles: number[]; received: number; refunded: number;
+  /** Kept (gifts minus refunds) per cycle, so a window such as "since 2020" can be read exactly. */
+  by_cycle?: Record<string, number>;
+}
 
 // ---------------------------------------------------------------------------------------------
 // Filed reports. FEC's processed itemized rows lag its totals by weeks: a Q3 report filed in
@@ -501,7 +505,10 @@ export const normName = (n: string | null | undefined) => (n ?? '').toUpperCase(
  * 2026, corporation in 2024). A lasting change is kept (the trial lawyers' PAC: trade group in the
  * 1990s, membership group now). With no code for the cycle, the nearest one, the later on a tie.
  */
-export function committeeKindAt(byCycle: Map<number, Map<string, CmRow>>, id: string, cycle: number): Bucket | undefined {
+export function committeeKindAt(byCycle: Map<number, Map<string, CmRow>>, id: string, cycle: number,
+  reviewed: Map<string, Bucket> = REVIEWED): Bucket | undefined {
+  const fixed = reviewed.get(id);
+  if (fixed) return fixed;
   const at = (c: number) => { const r = byCycle.get(c)?.get(id); return r ? classify(r) : undefined; };
   const own = at(cycle);
   if (own) {
@@ -513,6 +520,22 @@ export function committeeKindAt(byCycle: Map<number, Map<string, CmRow>>, id: st
     .sort((x, y) => Math.abs(x - cycle) - Math.abs(y - cycle) || y - x)[0];
   return near === undefined ? undefined : at(near);
 }
+
+/**
+ * Committees FEC codes as a corporation that a hand review found are not a company giving its own
+ * money (a conduit for earmarked gifts, an advocacy nonprofit). Each entry carries its reason and a
+ * source. Loaded once; the entry's kind holds for every cycle.
+ */
+export function loadReviewed(path: string): Map<string, Bucket> {
+  const d = JSON.parse(readFileSync(path, 'utf8')) as { committees: { id: string; kind: Bucket; reason: string; source: string }[] };
+  const m = new Map<string, Bucket>();
+  for (const c of d.committees) {
+    if (!BUCKETS.includes(c.kind) || !c.reason || !/^https:\/\//.test(c.source)) throw new Error(`reviewed-committees.json: bad entry ${c.id}`);
+    m.set(c.id.trim().toUpperCase(), c.kind);
+  }
+  return m;
+}
+const REVIEWED = loadReviewed(new URL('./reviewed-committees.json', import.meta.url).pathname);
 
 /** Registered name -> bucket, keeping only names whose committees all classify the same way. */
 export function namesToBuckets(rows: CmRow[]): Map<string, Bucket> {
@@ -643,9 +666,10 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
     };
     for (const i of items) {
       const gk = `${i.id || normName(i.name) || '?'}|${i.b}`; // a committee's kind can change between cycles
-      const g = givers.get(gk) ?? { name: i.name, id: i.id, bucket: i.b, cycles: [], received: 0, refunded: 0 };
+      const g = givers.get(gk) ?? { name: i.name, id: i.id, bucket: i.b, cycles: [], received: 0, refunded: 0, by_cycle: {} };
       if (!g.cycles.includes(cycle)) g.cycles.push(cycle);
       if (i.refund) g.refunded += i.amt; else g.received += i.amt;
+      g.by_cycle![cycle] = (g.by_cycle![cycle] ?? 0) + (i.refund ? -i.amt : i.amt);
       givers.set(gk, g);
       if (i.refund) { v.refunded[i.b] += i.amt; v.kept[i.b] -= i.amt; } else { v.received[i.b] += i.amt; v.kept[i.b] += i.amt; }
       if (i.b === 'corporate') ledger(i.key, cycle, i.refund ? -i.amt : i.amt);
@@ -676,7 +700,8 @@ async function verify(): Promise<void> {
   const outPath = join(WORK, 'verify.json');
   const done: Record<string, PersonVerify> = existsSync(outPath) ? readJson(outPath) : {};
   // --redo-all also rebuilds people checked earlier with --only, so no record is left on old rules.
-  const queue = people.filter((p) => (only ? p.pid === only : p.route === 'verify' || sampled.has(p.pid) ||
+  const onlySet = new Set((only ?? '').split(',').map((x) => x.trim()).filter(Boolean));
+  const queue = people.filter((p) => (only ? onlySet.has(p.pid) : p.route === 'verify' || sampled.has(p.pid) ||
     (args.includes('--redo-all') && p.pid in done)));
 
   const cmByCycle = new Map<number, Map<string, CmRow>>();
