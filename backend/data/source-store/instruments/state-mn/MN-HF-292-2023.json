@@ -1,0 +1,116 @@
+{
+  "id": "MN-HF-292-2023",
+  "scope": "state:mn",
+  "title": "HF292 (2023-2024 Regular): Minnesota Personal Protection Act amended, lifetime permits to carry handguns created, and application fee reduced for permits to carry.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0292&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/292/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Bliss",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    },
+    {
+      "name": "Bernie Perryman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
+    },
+    {
+      "name": "Bobbie Harder",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
+    },
+    {
+      "name": "Jeff Dotseth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "28b95309-d367-4c50-988b-38c851950cbc"
+    },
+    {
+      "name": "Krista Knudsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Mark Wiens",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dawn Gillman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
+    },
+    {
+      "name": "Walter Hudson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
+    },
+    {
+      "name": "Jon Koznick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ad0a254b-0082-41da-8eef-3567066d2bbf"
+    },
+    {
+      "name": "John Burkel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
+    },
+    {
+      "name": "Tom Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
+    },
+    {
+      "name": "Jeff Backer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
+    },
+    {
+      "name": "Bryan Lawrence",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2c007652-490b-4f11-9c16-e8b31de632bb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-11; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/292/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-292-2023.introduced.html",
+      "sha256": "7480b6453ee8b1e0b297622f873c52f3516bb7a8516880b4dd764855a7cad24a"
+    },
+    "note": "Introduced version; no vote listed. The bill strikes the five-year expiration and the whole renewal procedure (renewal fee, late fee, renewal start date), the expiration date on the card, and the words 'new' and 'renewal' in the application rules. Section 2 keeps the $100 cap on the application fee (old law: $100 for a new application; $75 for renewal, now struck); the title says the fee is reduced, but the $100 cap is unchanged in the text. Application remains in person only."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.714, subd. 7, para. (c)): A permit to carry a pistol issued under this section does not expire and permit cards issued after August 1, 2021, must prominently state that the permit does not expire.\nSection 3 (Minn. Stat. 624.714, subd. 7, para. (b)): The permit card must also identify the issuing sheriff.\nSection 2 (Minn. Stat. 624.714, subd. 3, para. (f)): The sheriff may charge an application processing fee in an amount not to exceed the actual and reasonable direct cost of processing the application or $100, whichever is less.\nSection 1 (Minn. Stat. 624.714, subd. 2a, para. (a)): An applicant must present evidence that the applicant received training in the safe use of a pistol within one year of the date of an application.\nSection 4 (Minn. Stat. 624.714, subd. 14, para. (a)): Notwithstanding section 138.163, sheriffs must completely purge all files and databases by March 1 of each year to delete all information collected under this section concerning all persons who are no longer current permit holders.\nSection 5 (replacement permits): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2023, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

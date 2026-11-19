@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-1112-2021",
+  "scope": "state:mn",
+  "title": "HF1112 (2021-2022 Regular): Statutory definitions regarding firearms eliminated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1112&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/1112/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Franson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-15; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/1112/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1112-2021.introduced.html",
+      "sha256": "ced153d39de8f2ed3940fa6d174c8211a896b18e675fb2a0cf831cad5d4d89c6"
+    },
+    "note": "As filed Feb 15, 2021. Section 1 is a revisor instruction to conform cross-references. The repealed text is in the appendix, not quoted."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.712): Minnesota Statutes 2020, section 624.712, is repealed."
+}

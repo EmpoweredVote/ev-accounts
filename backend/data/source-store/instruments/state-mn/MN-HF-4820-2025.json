@@ -1,0 +1,63 @@
+{
+  "id": "MN-HF-4820-2025",
+  "scope": "state:mn",
+  "title": "HF4820 (2025-2026 Regular): Individuals who own firearms required to obtain and maintain liability insurance, criminal penalties imposed, and firearm liability insurance surcharge imposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4820?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4820/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ginny Klevorn",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
+    },
+    {
+      "name": "Patty Acomb",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f1f2ffaf-c9fb-4555-adf8-6c9c8114d9f3"
+    },
+    {
+      "name": "John Huot",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
+    },
+    {
+      "name": "Brad Tabke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-27; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4820/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4820-2025.introduced.html",
+      "sha256": "7a04ee109a7584d06f9f730a17201f4c946210bc3df55cf325439cc729c6dca8"
+    },
+    "note": "Introduced version, 2026-03-27. No votes recorded. Surcharge rate is left blank (.....) in the text; the bill creates the account but does not say how the money is spent."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 65A.60, subd. 2): (a) An individual who owns a firearm must obtain, and during ownership continuously maintain, a policy of liability insurance specifically covering any damages resulting from negligent or accidental discharge of a firearm resulting in death, injury, or property damage.\nSection 1 (Minn. Stat. 65A.60, subd. 3): An individual who owns a firearm on the effective date of this section must obtain the insurance required under this section by February 15, 2027.\nSection 1 (Minn. Stat. 65A.60, subd. 4): Each plan of firearm liability insurance must contain stated limits of liability, exclusive of interest and costs, with respect to each firearm for which coverage is granted, of not less than $250,000 per occurrence.\nSection 1 (Minn. Stat. 65A.60, subd. 6): (a) A person who violates this section by failing to obtain or maintain insurance required under this section is guilty of a misdemeanor.\nSection 1 (Minn. Stat. 65A.60, subd. 7): This section does not apply to law enforcement and active duty military personnel while acting in the course of official duties.\nSection 2 (Minn. Stat. 297I.12, subd. 2): The gun harm reduction account is established in the special revenue fund."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "MN-SF-3605-2017",
+  "scope": "state:mn",
+  "title": "SF3605 (2017-2018 Regular): Assault weapons manufacturing, transferring or possessing crime establishment; disposal or registration of existing assault weapons authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3605&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/3605/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandy Pappas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "Carolyn Laine",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/3605/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3605-2017.introduced.html",
+      "sha256": "2e757af81a3f8e7f49530fe6f95764168fd734eebfa88b61aff6b6008a7fe77a"
+    },
+    "note": "Introduced version, as filed (undated); official copy from revisor.mn.gov. No passage vote recorded. Sections 1, 3, 4 and 5 (private firearms data, magazine definitions, assault-weapon wording in the ineligible-persons law, notice and background-check reporting) were read; only the main operative parts are quoted. Section 8 instructs the revisor to drop 'semiautomatic military-style' wording elsewhere. Struck old law: the list of named rifle models in the older assault-weapon definition."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.712, subd. 7): (1) semiautomatic rifle that has the capacity to accept a detachable magazine and has one or more of the following: (i) a pistol grip or thumbhole stock; (ii) any feature capable of functioning as a protruding grip that can be held by the nontrigger hand; (iii) a folding or telescoping stock; or (iv) a shroud attached to the barrel, or that partially or completely encircles the barrel, allowing the bearer to hold the firearm with the nontrigger hand without being burned, but excluding a slide that encloses the barrel; (2) semiautomatic pistol, or any semiautomatic, centerfire, or rimfire rifle with a fixed magazine, that has the capacity to accept more than seven rounds of ammunition; (3) semiautomatic pistol that has the capacity to accept a detachable magazine and has one or more of the following: (i) any feature capable of functioning as a protruding grip that can be held by the nontrigger hand; (ii) a folding, telescoping, or thumbhole stock; (iii) a shroud attached to the barrel, or that partially or completely encircles the barrel, allowing the bearer to hold the firearm with the nontrigger hand without being burned, but excluding a slide that encloses the barrel; or (iv) the capacity to accept a detachable magazine at any location outside of the pistol grip; (4) semiautomatic shotgun that has one or more of the following: (i) a pistol grip or thumbhole stock; (ii) any feature capable of functioning as a protruding grip that can be held by the nontrigger hand; (iii) a folding or telescoping stock; (iv) a fixed magazine capacity in excess of seven rounds; or (v) an ability to accept a detachable magazine; (5) shotgun with a revolving cylinder; or (6) conversion kit, part, or combination of parts from which an assault weapon can be assembled if those parts are in the possession or under the control of the same person.\nSection 6 (Minn. Stat. 624.7134, subd. 2): It is unlawful for a person to manufacture, import, transfer, or possess an assault weapon.\nSection 6 (Minn. Stat. 624.7134, subd. 4): (a) A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 6 (Minn. Stat. 624.7134, subd. 5): (a) A person who legally owned or possessed an assault weapon before March 1, 2018, and who desires to keep ownership or possession of the weapon shall comply with the following requirements: (1) submit to a background check conducted by the chief of police of the municipality in which the person resides, or if there is no police department the sheriff of the county in which the person resides, to confirm the person is not prohibited from possessing a firearm under state or federal law; and (2) unless the person is currently prohibited by law from possessing a firearm, immediately register the weapon with the appropriate law enforcement agency.\nSection 6 (Minn. Stat. 624.7134, subd. 5): (c) Registered assault weapons may not be purchased or transferred, except for transfer to the appropriate law enforcement agency for the purpose of surrendering the weapon for destruction.\nSection 7: Any person who, on March 1, 2018, legally owns or is in possession of an assault weapon has until September 1, 2018, to do any of the following without being subject to prosecution under Minnesota Statutes, section 624.7133: (1) remove the weapon from the state; (2) surrender the weapon to a law enforcement agency for destruction; (3) render the weapon permanently inoperable; or (4) if eligible, register the weapon as provided in Minnesota Statutes, section 624.7134, subdivision 5."
+}

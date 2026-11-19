@@ -1,0 +1,105 @@
+{
+  "id": "MN-HF-664-2023",
+  "scope": "state:mn",
+  "title": "HF664 (2023-2024 Regular): Right of the people to keep and bear arms protected, and constitutional amendment proposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0664&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/664/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Bliss",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Harry Niska",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a653e944-5dbf-4a40-bf03-02868ee902e7"
+    },
+    {
+      "name": "Peggy Scott",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "15843ab1-33c5-480d-b4b4-c98935e9d880"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Bobbie Harder",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d5c67e1-1443-477c-bfbf-317dbababa2f"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "Josh Heintzeman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+    },
+    {
+      "name": "Ben Bakeberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "562d1707-a74e-4ede-b8c7-8deaf9a90c0c"
+    },
+    {
+      "name": "Jeff Dotseth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "28b95309-d367-4c50-988b-38c851950cbc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/664/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-664-2023.introduced.html",
+      "sha256": "e106ab7bf1174dc8dfa79e9d2f57f89e560d69c9718c84b8d29ac0f105706d9a"
+    },
+    "note": "Version read: introduced, 2023-01-20 (as filed). Open States lists no votes; no struck text in the bill."
+  },
+  "operative_text": "Section 1 (constitutional amendment, new article I, section 18): A well regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall not be infringed.\nSection 2 (submission to voters): The proposed amendment must be submitted to the people at the 2024 general election."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-438-2025",
+  "scope": "state:mn",
+  "title": "SF438 (2025-2026 Regular): Minnesota Personal Protection Act modification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/438?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/438/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Green",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-16; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/438/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-438-2025.introduced.html",
+      "sha256": "4dfaf1113acaa44c3802a4bdafc9e8ba00df8c895f99780d502e5e870553b459"
+    },
+    "note": "Introduced version (Introduction, 2025-01-16). Bill strikes the five-year expiry and the whole renewal process (renewal fee, late fee, renewal timing) and the words 'original or renewal' / 'new or renewal' in subds. 2a and 3, and strikes the expiry-date line on the card. The title says it reduces the application fee, but the text read keeps the $100 cap and only strikes the word 'new'."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 2a): An applicant must present evidence that the applicant received training in the safe use of a pistol within one year of the date of an application.\nSection 2 (Minn. Stat. 624.714, subd. 3): The sheriff may charge an application processing fee in an amount not to exceed the actual and reasonable direct cost of processing the application or $100, whichever is less.\nSection 3 (Minn. Stat. 624.714, subd. 7): A permit to carry a pistol issued under this section does not expire and permit cards issued after August 1, 2023, must prominently state that the permit does not expire.\nSection 5 (replacement permits to carry, uncodified): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2025, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

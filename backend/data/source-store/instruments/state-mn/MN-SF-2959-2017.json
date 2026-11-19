@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-2959-2017",
+  "scope": "state:mn",
+  "title": "SF2959 (2017-2018 Regular): Semiautomatic military-style assault weapon minimum age to possess raised; semiautomatic military-style assault weapon definition expansion; semiautomatic military-style assault weapon transfer to underage persons crime",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2959&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2959/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Richard Cohen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Marty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carolyn Laine",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2959/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2959-2017.introduced.html",
+      "sha256": "c79e3331cbb26536577ad79ed749538b08c9293e73baf4088efd43dd210b1d2b"
+    },
+    "note": "Introduced version as filed (SF 2959, 2017-2018 session). Struck words are not quoted: the old age 18 in 624.713 and 'or semiautomatic military-style assault weapon' in the transfer felony (Section 5). The (ii) quote leaves out a struck 'and'. The bill also raises the age to 21 for the assault-weapon rules in Section 4(1) and expands the definition of the weapon in Section 1."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.712, new subd. 13): \"Detachable magazine\" means an ammunition feeding device that can be loaded or unloaded while detached from a firearm and readily inserted into a firearm.\nSection 1 (Minn. Stat. 624.712, subd. 7): (2) semiautomatic pistol, or any semiautomatic, centerfire, or rimfire rifle with a fixed magazine, that has the capacity to accept more than seven rounds of ammunition;\nSection 4 (Minn. Stat. 624.713, subd. 1): (ii) a person under the age of 21 years may possess ammunition designed for use in a firearm that the person may lawfully possess; (iv) a person under the age of 21 years may carry or possess a semiautomatic military-style assault weapon:\nSection 5 (Minn. Stat. 624.7132, subd. 15): (1) transfers a pistol to a person under the age of 18 or a semiautomatic military-style assault weapon to a person under the age of 21, in violation of subdivisions 1 to 13; or"
+}

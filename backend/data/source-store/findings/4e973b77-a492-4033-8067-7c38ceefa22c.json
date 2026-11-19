@@ -1,0 +1,323 @@
+{
+  "politician_id": "4e973b77-a492-4033-8067-7c38ceefa22c",
+  "findings": [
+    {
+      "id": "73faf65a8ac9a8ec1747b9b0e5404307e35bbd2e25f074f4eefee3176cd1b37c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 134–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "1c9282cad8ccf521a877811ab8d8e15090aec67d0e21b1b0574384add85d48ee",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3762?body=House",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3762-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-20: yea (tally 128–3); census gate: near-unanimous.",
+      "subjects": [
+        "expunged records usable in gun-permit and transfer checks",
+        "notice to person denied on an expunged record"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3762/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3762-2025.introduced.html",
+          "sha256": "60658974c3ad152d4b6b65505a7a0b7622aea36a77bb662bded5101c78760709"
+        }
+      }
+    },
+    {
+      "id": "2517ed3665f50412fe0c57ee49df3b1d04c99063e96b727f54e9128fb850603e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 111–21); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    },
+    {
+      "id": "6da4542342e17422cf9884fac14d2f4f4571a27bd85376c435aa0c036c8ca92c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3402?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-3402-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-3402-2025 (Open States sponsor list): HF3402 (2025-2026 Regular): Possession of large-capacity ammunition magazines banned..",
+      "subjects": [
+        "ban on magazines over ten rounds",
+        "current owners must surrender, alter or remove them by July 2027"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-11; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3402/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3402-2025.introduced.html",
+          "sha256": "ca46d4adf0f469db9359b7378587eb4e673b554593084a9b4a89b153c99e4939"
+        }
+      }
+    },
+    {
+      "id": "90501da29b4b1fe927ccf348d15e4fb5634084ef495ac298e67262d2900c572c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3617?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-3617-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-3617-2025 (Open States sponsor list): HF3617 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons banned, and criminal penalties provided..",
+      "subjects": [
+        "ban on owning, selling or transferring assault weapons",
+        "current owners may certify, store securely, or surrender",
+        "felony penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-20; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3617/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3617-2025.introduced.html",
+          "sha256": "c1fdcd5bc73ded5014f60403a897f73f3113b774900e27513fc2f0ac0f98b590"
+        }
+      }
+    },
+    {
+      "id": "e264b1f6a52137e333b07681017104f183cd83022e594bc7c95ebc98c33bfb01",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3618?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-3618-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-3618-2025 (Open States sponsor list): HF3618 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons and large-capacity ammunition magazines banned, and criminal penalties provided..",
+      "subjects": [
+        "ban on assault weapons",
+        "ban on large-capacity magazines",
+        "certification of grandfathered assault weapons",
+        "felony penalty up to five years"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-20; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3618/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3618-2025.introduced.html",
+          "sha256": "a8fd311e2683c3f17e4214c788e977f28a2255dbc7d3e5f86dca4ff50ad5e244"
+        }
+      }
+    },
+    {
+      "id": "db12bdfae54811c3584b291f027bc8619bd2c7f65d34ddb25cad3b00310472ee",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/5140?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-5140-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-5140-2025 (Open States sponsor list): HF5140 (2025-2026 Regular): Ownership, possession, and sale of semiautomatic military-style assault weapons and large-capacity magazines regulated; provisions for possessing dangerous weapons in schools, negligently storing firearms, and reporting on law enforcement firearms discharge modified; ghost guns criminalized; other gun safety provisions modified; and money appropriated..",
+      "subjects": [
+        "certify and limit sales of assault weapons and magazines over 17 rounds",
+        "school carry exception for armed security",
+        "storage duty extended to prohibited persons",
+        "ghost gun ban",
+        "extreme risk protection order changes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-05-13; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/5140/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-5140-2025.introduced.html",
+          "sha256": "bda79f8ca46dedd6830d4cec11d3dff4d39bffc54150d0d1b6bf46c34ffaad40"
+        }
+      }
+    },
+    {
+      "id": "85b9c671a006e067f54d9f8a1729b6f1b7f36a5caee3772bf24bed1fd92515d1",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41313",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "passage": "Minnesotans are asking us to do something to prevent future gun deaths",
+      "note": "House member newsletter written in her name, after the Annunciation shooting; she describes bills proposed to ban assault weapons, high-capacity magazines and binary triggers, require safe storage, and require reporting of lost or stolen guns.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ce9ab8473f67cd7efe5b10e74a72cd5bf25d5e75ca6c88c7a7416eb5b6320a7",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41451",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "passage": "I voted in favor of legislation to keep ICE out of schools, ban assault weapons, and ban high-capacity magazines.",
+      "note": "Newsletter in her name saying she voted for bills to ban assault weapons and high-capacity magazines, which she says were blocked in committee.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14e6fbf6a1777761c5fab5ca965ca8bebca47a633ec815e87bf36f401a17c577",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41629",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "passage": "I joined my colleagues for a sit-in on the House Floor for 39 hours as we pressured Speaker Lisa Demuth to schedule a vote on the Senate’s comprehensive gun violence proposal.",
+      "note": "End-of-session newsletter in her name; she describes joining a 39-hour floor sit-in for a vote on a package she says includes an assault weapons ban, safe storage proposals, mental health and school safety funding.",
+      "subjects": [
+        "ban on assault-style guns",
+        "safe storage of guns",
+        "general gun-violence prevention statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f8acdff3eb784a2dc71c6edbfa8656629e4f6dd55fa9a56e22846c704b065c8",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15654/41678",
+      "date": "2026-07-08",
+      "date_precision": "day",
+      "passage": "We could have saved lives with an assault weapons ban and safe storage requirements.",
+      "note": "Summer newsletter in her name looking back on the session; she names an assault weapons ban and safe storage requirements as measures that were not passed.",
+      "subjects": [
+        "ban on assault-style guns",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:20.843Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "binary triggers",
+        "safe storage of guns",
+        "report lost or stolen guns",
+        "general gun-violence prevention statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, nothing on the subject)",
+        "official House member page https://www.house.mn.gov/members/Profile/15654 (read; confirms Rep. Meg Luger-Nikolai, District 64A)",
+        "official House member news list https://www.house.mn.gov/members/profile/news/15654 (all 7 newsletters read for gun words)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun/firearm words (results were her House newsletters)",
+        "not reviewed: https://ballotpedia.org/Meg_Luger-Nikolai",
+        "not reviewed: campaign site",
+        "not reviewed: news coverage beyond the one search; no debate or interview video found"
+      ],
+      "found": 4,
+      "at": "2026-11-19T22:30:20.843Z",
+      "by": "source-collector"
+    }
+  ]
+}

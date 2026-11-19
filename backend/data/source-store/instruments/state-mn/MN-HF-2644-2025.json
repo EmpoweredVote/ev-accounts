@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-2644-2025",
+  "scope": "state:mn",
+  "title": "HF2644 (2025-2026 Regular): Definition of crime of violence modified for firearms crimes.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/2644?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/2644/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nolan West",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c9c55e16-d9fa-4c5a-b95e-b0e53cada2a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-03-24; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/2644/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2644-2025.introduced.html",
+      "sha256": "776db20ed8209804a91c3f48a5a89d5f523031f21637ffbd7853d7ac4bb0dea7"
+    },
+    "note": "Version read: introduced (as filed). The bill strikes \"and chapter 152 (drugs, controlled substances);\" from the list. The long list of offence cites between the two quoted pieces is omitted; the quote is split in two at the section's start and end."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.712, subd. 5): \"Crime of violence\" means: felony convictions of the following offenses: sections 609.185 (murder in the first degree); 609.855, subdivision 5 (shooting at a public transit vehicle or facility); and an attempt to commit any of these offenses."
+}

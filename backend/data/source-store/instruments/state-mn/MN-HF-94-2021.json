@@ -1,0 +1,54 @@
+{
+  "id": "MN-HF-94-2021",
+  "scope": "state:mn",
+  "title": "HF94 (2021-2022 Regular): Non-in-person permit to carry renewal authorized.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0094&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/94/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dave Lislegard",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Zack Stephenson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
+    },
+    {
+      "name": "Pat Garofalo",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Julie Sandstede",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-14; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/94/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-94-2021.introduced.html",
+      "sha256": "1b7dd327c02ca0f8b5ea48306ab4f45c7252be9ec90d039a18b37aadf4d7ebca"
+    },
+    "note": "Version read: introduced text (as filed). Paragraph (e) is the part that deals with renewals; the rest of the subdivision is existing law kept in the section."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 3): (e) Applications for new permits must be submitted in person. Applications for permit renewals may be accepted in person, electronically, or by United States mail, at the sheriff's discretion."
+}

@@ -1,0 +1,80 @@
+{
+  "id": "MN-HF-886-2023",
+  "scope": "state:mn",
+  "title": "HF886 (2023-2024 Regular): Constitutional right to carry firearm recognized.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0886&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/886/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Walter Hudson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
+    },
+    {
+      "name": "Jim Joy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae296dbc-36aa-444f-89e3-1b1c6b734447"
+    },
+    {
+      "name": "Krista Knudsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    },
+    {
+      "name": "Shane Hudella",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ben Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
+    },
+    {
+      "name": "Patti Anderson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3da2f389-a20f-4b21-a20c-dbe6880f074b"
+    },
+    {
+      "name": "Isaac Schultz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-25; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/886/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-886-2023.introduced.html",
+      "sha256": "74bc050658da7965042ca2f78e1cc7d7d36e6e035f0c82863377227d2df6e425"
+    },
+    "note": "Version read: introduced text (as filed). Section 9 repeals Minn. Stat. 624.714, subds. 1a (permit required), 1b (display of permit) and 16 (recognition of other states' permits), and section 624.7181 (rifles and shotguns in public places); the repealed text is only in the appendix. Section 1(a) is a legislative declaration about the Second Amendment, not a duty."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.\nSection 4 (Minn. Stat. 624.714, subd. 3): (e) Applications must be submitted in person."
+}

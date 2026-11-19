@@ -1,0 +1,123 @@
+{
+  "id": "MN-HF-5269-2023",
+  "scope": "state:mn",
+  "title": "HF5269 (2023-2024 Regular): Open or concealed carry of firearms within 100 feet of designated polling places prohibited.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF5269&ssn=0&y=2024",
+    "https://www.revisor.mn.gov/bills/93/2024/0/HF/5269/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Freiberg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Nathan Coulter",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
+    },
+    {
+      "name": "Athena Hollins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
+    },
+    {
+      "name": "Sandra Feist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Andy Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3757d377-1cc0-45f0-8b6f-e1f988c6fea2"
+    },
+    {
+      "name": "Liz Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5e54444-041b-4eeb-8043-b691d3a3edfb"
+    },
+    {
+      "name": "Steve Elkins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Sydney Jordan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
+    },
+    {
+      "name": "Mohamud Noor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
+    },
+    {
+      "name": "Emma Greenman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2024-04-04; official copy, https://www.revisor.mn.gov/bills/93/2024/0/HF/5269/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-5269-2023.introduced.html",
+      "sha256": "0196bd28ff9fe894454b3dce0cece813991dd4e4a4738a0e34b7ee6c7e313f2b"
+    },
+    "note": "Introduced version (as filed 2024-04-04). Title says \"open or concealed carry\"; text bans possession. Exceptions for officers, homes/businesses and occupied vehicles are in subd. 3."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 204C.065, subd. 2): Except as provided in subdivision 3, a person shall not: (1) possess a firearm or a replica firearm in a polling place or within 100 feet of any entrance to a building in which a polling place is located as publicly posted by the designated election official, on the day of any election or during the time when voting is permitted for any election. This prohibition begins two hours before the polls are open and continues for two hours after the polls close; (2) possess a firearm at a ballot drop box location or within 100 feet of a ballot drop box location at any time during the period for voting; or (3) possess a firearm within 100 feet of any counting center at all times that the location is being used as a counting center for the processing, tabulation, or canvassing related to an active election.\nSection 1 (Minn. Stat. 204C.065, subd. 4): (a) A person who knowingly violates this section is guilty of a misdemeanor. (b) A person who violates this section a second time is guilty of a gross misdemeanor."
+}

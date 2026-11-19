@@ -1,0 +1,49 @@
+{
+  "id": "MN-HF-469-2017",
+  "scope": "state:mn",
+  "title": "HF469 (2017-2018 Regular): Minnesota Personal Protection Act amended, lifetime permits to carry handguns created, and application fee for permits to carry reduced.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0469&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/HF/469/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tony Cornish",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Howe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Brian Johnson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/HF/469/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-469-2017.introduced.html",
+      "sha256": "f032066339f45d55abd04f4a056e7fb64757536b5c7b2c022dd591e70cf25b8f"
+    },
+    "note": "Introduced version (no date on file; 2017 session). The bill strikes the five-year expiry and the renewal process, including the renewal fee and late fee. Section 4 adjusts the records-purge rule (struck words 'or currently eligible to renew their permit')."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 2a): (a) An applicant must present evidence that the applicant received training in the safe use of a pistol within one year of the date of an application.\nSection 2 (Minn. Stat. 624.714, subd. 3): (f) The sheriff may charge an application processing fee in an amount not to exceed the actual and reasonable direct cost of processing the application or $50, whichever is less.\nSection 3 (Minn. Stat. 624.714, subd. 7): (c) A permit to carry a pistol issued under this section does not expire and permit cards issued after August 1, 2017, must prominently state that the permit does not expire.\nSection 5 (replacement permits to carry): A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2017, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card."
+}

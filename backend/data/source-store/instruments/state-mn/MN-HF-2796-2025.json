@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-2796-2025",
+  "scope": "state:mn",
+  "title": "HF2796 (2025-2026 Regular): Right of the people to keep and bear arms protected, and constitutional amendment proposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/2796?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/2796/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Novotny",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-03-25; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/2796/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2796-2025.introduced.html",
+      "sha256": "48df15dd199585cbd67969f002a846a3029774742d80c70d3f79a2e5fd27074f"
+    },
+    "note": "Introduced 2025-03-25. Proposes a constitutional amendment for the 2026 general election ballot, not a statute change."
+  },
+  "operative_text": "Section 1 (Minn. Constitution, art. I, new section 18): A well regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall not be infringed.\nSection 2 (submission to voters): \"Shall the Minnesota Constitution be amended to protect the right of the people to keep and bear arms?"
+}

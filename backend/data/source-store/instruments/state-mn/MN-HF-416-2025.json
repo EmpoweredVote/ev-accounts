@@ -1,0 +1,57 @@
+{
+  "id": "MN-HF-416-2025",
+  "scope": "state:mn",
+  "title": "HF416 (2025-2026 Regular): Age of eligibility established to apply for permit to carry pistol at 18 years old.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/416?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/416/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Franson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Cal Warwas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a40d131f-8e2e-4185-a52f-0d8cdfd03fe9"
+    },
+    {
+      "name": "Krista Knudsen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Jimmy Gordon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e0a3294a-692e-434d-b54b-c44b957b669d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-11; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/416/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-416-2025.introduced.html",
+      "sha256": "927ee1066ffeb103c82fbea65b54e0de00252adce9dbac0ee1b3f3b308a7ef51"
+    },
+    "note": "Introduced version (as filed, 2025-02-11). The bill strikes the age \"21\" in the permit-eligibility clause and puts in \"18\"."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 2): (b) Unless a sheriff denies a permit under the exception set forth in subdivision 6, paragraph (a), clause (3), a sheriff must issue a permit to an applicant if the person: (1) has training in the safe use of a pistol; (2) is at least 18 years old and a citizen or a permanent resident of the United States;"
+}

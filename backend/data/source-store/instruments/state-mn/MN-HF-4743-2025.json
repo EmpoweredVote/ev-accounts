@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-4743-2025",
+  "scope": "state:mn",
+  "title": "HF4743 (2025-2026 Regular): Sale and possession of toxic ammunition prohibited.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4743?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4743/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Emma Greenman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-26; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4743/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4743-2025.introduced.html",
+      "sha256": "a68a0c765ca31a76c5bfea17d5a9bd3867bd8df910ea78d64f825973b21cd099"
+    },
+    "note": "Introduced version, 2026-03-26. Civil penalties: $500 first offense, $1,000 to $5,000 for later ones (subd. 2). Also adds hunting-education and range-grant conditions (sections 2-3) and a buyback and exchange program if funded. The environmental purpose (lead toxicity) is treated as part of the ammunition rule, not a separate subject."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 87A.02, subd. 2): (b) The shooting range performance standards under this chapter include a prohibition on possessing and using lead ammunition.\nSection 4 (Minn. Stat. 325F.016): (a) Beginning August 1, 2027, no manufacturer or wholesaler may sell or offer for sale lead ammunition in this state.\nSection 4 (Minn. Stat. 325F.016): (b) Beginning August 1, 2028, no retailer may sell or offer for sale lead ammunition in this state.\nSection 5 (Minn. Stat. 624.7193, subd. 1): Beginning August 1, 2028, a person must not use or possess lead ammunition.\nSection 5 (Minn. Stat. 624.7193, subd. 3): (a) By August 1, 2028, a person who possesses lead ammunition must do one of the following:\nSection 5 (Minn. Stat. 624.7193, subd. 5): Subdivision 1 does not apply to peace officers or other government officials or employees when carrying out a duty required by law."
+}

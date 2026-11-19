@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-632-2023",
+  "scope": "state:mn",
+  "title": "SF632 (2023-2024 Regular): Closure of shooting ranges prohibition during a state of emergency",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0632&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/632/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nathan Wesenberg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a3618859-16e1-4bd8-9fc8-cbad342443b4"
+    },
+    {
+      "name": "Eric Pratt",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fa8d5cfb-5feb-4112-b68b-f1c2de963dc3"
+    },
+    {
+      "name": "Bill Lieske",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    },
+    {
+      "name": "Paul Utke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/632/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-632-2023.introduced.html",
+      "sha256": "f0f93d667858baa0f96021df6af1984fc7f8bf6a9e807b125646d7e553937463"
+    },
+    "note": "Version read: the introduced bill as filed (2023-01-20); no passage vote recorded, no later amendments. The bill strikes the word 'or' in clause (4); the rest of the section is existing law kept as printed."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7192): (a) This section applies only during the effective period of a state of emergency proclaimed by the governor relating to a public disorder or disaster.\nSection 1 (Minn. Stat. 624.7192, para. (c)): (c) Notwithstanding any other law to the contrary, no governmental unit, government official, government employee, peace officer, or other person or body acting under governmental authority or color of law may undertake any of the following actions with regard to any firearms and ammunition, and components thereof; any firearms accessories and ammunition reloading equipment and supplies; and any other personal weapons:\nSection 1 (Minn. Stat. 624.7192, para. (c)): (1) prohibit, regulate, or curtail the otherwise lawful possession, carrying, transportation, transfer, defensive use, or other lawful use of any of these items;\nSection 1 (Minn. Stat. 624.7192, para. (c)): (2) seize, commandeer, or confiscate any of these items in any manner, except as expressly authorized in paragraph (b);\nSection 1 (Minn. Stat. 624.7192, para. (c)): (4) close or limit the operating hours of businesses, including but not limited to gun ranges, that lawfully sell, service, or provide training in the lawful use of any of these items, unless such closing or limitation of hours applies equally to all forms of commerce.\nSection 1 (Minn. Stat. 624.7192, para. (e)): (3) In an action or proceeding to enforce this section, the court must award the prevailing plaintiff reasonable court costs and expenses, including attorney fees."
+}

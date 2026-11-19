@@ -1,0 +1,55 @@
+{
+  "id": "MN-HF-3846-2019",
+  "scope": "state:mn",
+  "title": "HF3846 (2019-2020 Regular): Firearms; Saturday night special handgun ban repealed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3846&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/HF/3846/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cal Bahr",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/HF/3846/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3846-2019.introduced.html",
+      "sha256": "098e94309d5f3d448b2fcaa5fed49509e0c7a20cda5b7f2c47781446fd3d682f"
+    },
+    "note": "Introduced (undated in the text file); no votes. Section 1 strikes the words 'and the regulation of Saturday night special pistols' and changes the cross-reference from 624.716 to 624.7162. The repealed sections (appendix, not quoted as law) are the definition of 'Saturday night special pistol' and the gross-misdemeanor offence for a licensed dealer who sells one or a person who makes or assembles one."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.717): Sections 624.711 to 624.7162 shall be construed to supersede municipal or county regulation of the carrying or possessing of pistols.\nSec. 2 (repealer): Minnesota Statutes 2018, sections 624.712, subdivision 4; and 624.716, are repealed."
+}

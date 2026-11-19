@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-4483-2025",
+  "scope": "state:mn",
+  "title": "HF4483 (2025-2026 Regular): Possession and transfer of semiautomatic military-style assault weapons after a specified date regulated, report required, and criminal penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4483?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4483/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Huot",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4483/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4483-2025.introduced.html",
+      "sha256": "9f49776f245d322cc030b0b778c544787c9446d704f4bcf4c248927d3987c48c"
+    },
+    "note": "Introduced version, 2026-03-18. Section 1 strikes the paragraph that excluded firearms generally recognized as suitable for sporting purposes from the assault-weapon definition. Certification needs a local police or sheriff background check verification (subd. 2-3). Fee amounts are blank in the bill. Section 4 requires annual reports; section 5 updates form standards; section 6 gives owners until December 31, 2026 to certify."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7145, subd. 1): No person may own or possess a semiautomatic military-style assault weapon unless the person has certified the weapon with the commissioner of public safety under this section.\nSection 2 (Minn. Stat. 624.7145, subd. 10): (c) A person who owns, possesses, or receives a semiautomatic military-style assault weapon that: (1) is uncertified; (2) is ineligible for certification; or (3) has an expired certification is guilty of a felony and may be sentenced to imprisonment for not more than 15 years or to payment of a fine of not more than $30,000, or both.\nSection 2 (Minn. Stat. 624.7145, subd. 13): All persons who own or possess a semiautomatic military-style assault weapon before the effective date of this section shall comply with the certification requirements by December 31, 2026.\nSection 3 (Minn. Stat. 624.7146, subd. 1): A person may not transfer a semiautomatic military-style assault weapon to another person unless the transfer is approved in advance by the commissioner of public safety.\nSection 3 (Minn. Stat. 624.7146, subd. 5): A person who violates this section is guilty of a felony and may be sentenced to imprisonment for not more than 15 years or to payment of a fine of not more than $30,000, or both.\nSection 1 (Minn. Stat. 624.712, subd. 7): Semiautomatic military-style assault weapon does not include any firearm described in this paragraph that has been made permanently inoperable."
+}

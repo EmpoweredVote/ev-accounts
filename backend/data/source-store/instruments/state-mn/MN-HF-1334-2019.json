@@ -1,0 +1,72 @@
+{
+  "id": "MN-HF-1334-2019",
+  "scope": "state:mn",
+  "title": "HF1334 (2019-2020 Regular): Firearms; right of people to keep and bear arms constitutional amendment proposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1334&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/1334/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cal Bahr",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Green",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/1334/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1334-2019.introduced.html",
+      "sha256": "92d46f6c9698d6481680f86d63f03c5fd4af4edbd9e25f982cb2835a3d6c3cc2"
+    },
+    "note": "Introduced version (no date in file). Section 2 sends the amendment to voters at the 2020 general election."
+  },
+  "operative_text": "Section 1 (Minn. Const. art. I, new sec. 18): The right of the people to keep and bear arms shall not be infringed."
+}

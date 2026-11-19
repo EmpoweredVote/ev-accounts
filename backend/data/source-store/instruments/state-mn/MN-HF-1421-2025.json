@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-1421-2025",
+  "scope": "state:mn",
+  "title": "HF1421 (2025-2026 Regular): Closure of shooting ranges during a state of emergency prohibited.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1421?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1421/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dawn Gillman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96bbf0ae-f4b0-4a93-836a-c1ae576de868"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-21; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/1421/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1421-2025.introduced.html",
+      "sha256": "ed2a8f813ec97cc4ac09816255871f3f96b96abf25e75ca1c690fa95203d3179"
+    },
+    "note": "Introduced version, 2025-02-21. The bill itself only strikes \"or\" and adds \"gun ranges\" language to clause (4); the rest of the section is existing law. Quoted clause (4) reads with the struck word left out."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7192, subd. (c)): (c) Notwithstanding any other law to the contrary, no governmental unit, government official, government employee, peace officer, or other person or body acting under governmental authority or color of law may undertake any of the following actions with regard to any firearms and ammunition, and components thereof; any firearms accessories and ammunition reloading equipment and supplies; and any other personal weapons: (1) prohibit, regulate, or curtail the otherwise lawful possession, carrying, transportation, transfer, defensive use, or other lawful use of any of these items; (2) seize, commandeer, or confiscate any of these items in any manner, except as expressly authorized in paragraph (b); (3) suspend or revoke a valid permit issued pursuant to section 624.7131 or 624.714, except as expressly authorized in those sections; or (4) close or limit the operating hours of businesses, including but not limited to gun ranges, that lawfully sell, service, or provide training in the lawful use of any of these items, unless such closing or limitation of hours applies equally to all forms of commerce.\nSection 1 (Minn. Stat. 624.7192, par. (e)): (1) An individual aggrieved by a violation of this section may seek relief in an action at law or in equity or in any other proper proceeding for damages, injunctive relief, or other appropriate redress against a person who commits or causes the commission of this violation. Venue must be in the district court having jurisdiction over the county in which the aggrieved individual resides or in which the violation occurred."
+}

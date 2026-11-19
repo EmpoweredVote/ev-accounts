@@ -1,0 +1,45 @@
+{
+  "id": "MN-HF-1901-2023",
+  "scope": "state:mn",
+  "title": "HF1901 (2023-2024 Regular): Right of the people to keep and bear arms protected, and constitutional amendment proposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1901&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/1901/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Walter Hudson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "37a6b346-470d-4f30-843f-7b5e9a20edaa"
+    },
+    {
+      "name": "Harry Niska",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a653e944-5dbf-4a40-bf03-02868ee902e7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-16; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1901/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1901-2023.introduced.html",
+      "sha256": "52536dfcc7374c55df8ea9b7ed5a1593d3b6954270fd1d24c1a0318b8f7bc514"
+    },
+    "note": "Version read: introduced bill (as filed), 2023-02-16. No votes recorded. Ballot question to be put to voters at the 2024 general election."
+  },
+  "operative_text": "Section 1 (Minn. Const. art. I, new sec. 18): A well regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall not be infringed.\nSection 2 (ballot question): Shall the Minnesota Constitution be amended to protect the right of the people to keep and bear arms?"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-4032-2017",
+  "scope": "state:mn",
+  "title": "SF4032 (2017-2018 Regular): Firearms safety training course completion reimbursements authorization; firearm transferee permit validity extension; permissive background checks and transfers between unlicensed persons; public awareness campaign requirement; appropriation",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF4032&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/4032/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott M. Jensen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "be356b86-d751-4731-a65c-a25d9c2c0c78"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/4032/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4032-2017.introduced.html",
+      "sha256": "a72b9888cca6de61f91c786ed6030a8a19f5c3d68d2b06d89c3499716a165248"
+    },
+    "note": "Introduced text (as filed; no date given). Section 3 strikes the old one-year permit term. Section 2 amends 609.66, subd. 1f (gross misdemeanor for transferring a pistol or assault weapon without a background check) so it also refers to 624.7134; no struck words show in the text. Section 6 appropriation amount is blank. No votes recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 299A.625, subd. 2): A person who completes a firearms safety training course of the type described in section 624.714, subdivision 2a, may apply to the commissioner of public safety in the manner directed by the commissioner for reimbursement of up to 50 percent of the cost of the course.\nSection 3 (Minn. Stat. 624.7131, subd. 6): Transferee permits issued pursuant to this section are valid statewide and shall expire after five years.\nSection 4 (Minn. Stat. 624.7134, subd. 2): When an unlicensed person wishes to transfer a firearm to another unlicensed person, the person who is transferring the firearm may require as a condition of the transfer that the transferee appear before a sheriff and submit to a background check under this section. Upon completion of the investigation, the sheriff shall inform the transferor and the transferee whether the transferee is prohibited by section 624.713 or any other law from possessing a firearm.\nSection 4 (Minn. Stat. 624.7134, subd. 4): The sheriff may not charge a fee to conduct a background check or comply with the sheriff's duties under this section.\nSection 5: The commissioner of public safety shall conduct a public awareness campaign to increase knowledge about Minnesota Statutes, section 609.66, subdivision 1f."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-1115-2019",
+  "scope": "state:mn",
+  "title": "SF1115 (2019-2020 Regular): Constitutional amendment providing for right of people to keep and bear arms",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1115&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/1115/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Utke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Michael P. Goggin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/1115/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1115-2019.introduced.html",
+      "sha256": "ff6ad69cc40781112e7f684c3e5114dd5116058abaf28a982b0ba74474d386b8"
+    },
+    "note": "Version read: introduced text (as filed). Proposed constitutional amendment, to go to voters at the 2020 general election."
+  },
+  "operative_text": "Section 1 (Minn. Const. art. I, new Sec. 18): The right of the people to keep and bear arms shall not be infringed."
+}

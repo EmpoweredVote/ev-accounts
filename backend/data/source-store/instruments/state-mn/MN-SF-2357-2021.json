@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-2357-2021",
+  "scope": "state:mn",
+  "title": "SF2357 (2021-2022 Regular): Lawful possession, purchase, and transfer of firearms and ammunition regulation; mandatory minimum sentences establishment; new criminal offenses establishment; restoration of firearms rights procedures establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2357&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/2357/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Pratt",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa8d5cfb-5feb-4112-b68b-f1c2de963dc3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-04-05; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/2357/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2357-2021.introduced.html",
+      "sha256": "d6ccbfe2696d964b048ddac19305775ca7aff659b8c45d22b9380dc24d55fb45"
+    },
+    "note": "Read the introduced bill (2021-03-25); no vote data in file. Strikes only old cross-references (subd. 4 -> 6) and repeals 624.713 subd. 4. Mandatory minimums apply to a gun crime, so not a second subject. Section 8 quote is only the lead-in; its clauses follow in the text (felony if the transferee uses the weapon in a felony crime of violence within a year, or the transferor knows of that intent). The 60- and 120-month mandatory minimums (Sections 1 and 6) are not quoted, for space."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.165, subd. 1b): (a) Any person who has been convicted of a crime of violence, as defined in section 624.712, subdivision 5, and who ships, transports, possesses, or receives a firearm or ammunition, commits a felony and may be sentenced to imprisonment for not more than 15 years or to payment of a fine of not more than $30,000, or both.\nSection 2 (Minn. Stat. 609.505, new subd. 3): (a) Whoever files a written report with a peace officer that a firearm has been lost or stolen, knowing that the report is false, is guilty of a gross misdemeanor.\nSection 3 (Minn. Stat. 609.84, subd. 2): (2) provides to a licensed dealer or private seller of firearms or ammunition what the person knows to be false information with intent to deceive the dealer or seller about the legality of a transfer of a firearm or ammunition.\nSection 6 (Minn. Stat. 624.713, subd. 2): (c) A person named in any other clause of subdivision 1 who possesses any type of firearm or ammunition is guilty of a gross misdemeanor.\nSection 7 (Minn. Stat. 624.713, new subd. 6): (a) A person who is subject to the disabilities in subdivision 1, clause (3), (4), or (5), or United States Code, title 18, section 922(d)(4) or 922(g)(4), as amended through February 15, 2019, because of an adjudication or commitment that occurred under the laws of this state may petition the court in which the adjudication or commitment proceedings occurred or a district court of competent jurisdiction to remove all the disabilities.\nSection 8 (Minn. Stat. 624.7141, subd. 2): A violation of this section is a felony:"
+}

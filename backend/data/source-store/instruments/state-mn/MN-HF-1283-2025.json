@@ -1,0 +1,51 @@
+{
+  "id": "MN-HF-1283-2025",
+  "scope": "state:mn",
+  "title": "HF1283 (2025-2026 Regular): Discharge papers of a veteran made to be considered the legal equivalent of a permit to carry a firearm.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1283?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1283/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cal Warwas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a40d131f-8e2e-4185-a52f-0d8cdfd03fe9"
+    },
+    {
+      "name": "Ben Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
+    },
+    {
+      "name": "Tom Sexton",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c0e174a4-b9c8-42d7-9bd3-937f642ae1d3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-20; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/1283/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1283-2025.introduced.html",
+      "sha256": "2460d82c97952f25f5d37a12ba33df8acf11c47bbdd4fc7e0d286dece2e35c2f"
+    },
+    "note": "As filed Feb 20, 2025."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, new subd. 25): Notwithstanding any provision in this section or other law to the contrary, a veteran, as defined in section 197.447, may carry a pistol as provided in this subdivision under any circumstances and in any location in which a permit to carry is otherwise required.\nSection 1 (Minn. Stat. 624.714, new subd. 25): The veteran must possess the original or a certified copy of the veteran's government form DD214 while carrying the pistol.\nSection 1 (Minn. Stat. 624.714, new subd. 25): The veteran is not required to apply for a permit to carry, pay any fees, or demonstrate training in the safe use of a pistol."
+}

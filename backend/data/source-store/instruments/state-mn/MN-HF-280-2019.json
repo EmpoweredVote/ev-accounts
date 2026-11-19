@@ -1,0 +1,107 @@
+{
+  "id": "MN-HF-280-2019",
+  "scope": "state:mn",
+  "title": "HF280 (2019-2020 Regular): Firearms; permitted and trained school staff allowed to carry firearms.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0280&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/280/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Lucero",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Brian Johnson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Joe McDonald",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Anderson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d46d88e-ad1e-4a88-81c2-782da83d77f1"
+    },
+    {
+      "name": "Steve Green",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/280/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-280-2019.introduced.html",
+      "sha256": "cb7c59e810e2ac12ee6d68575f42bd8f7e98eb54567f1e01b4c2e740b2c4d14c"
+    },
+    "note": "Introduced text. Section 2 also strikes an \"or\" and a period to add clause (10). Effective the day after final enactment."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 299C.26): (a) The superintendent of the Bureau of Criminal Apprehension, in consultation with security and law enforcement experts with appropriate qualifications and experience in responding to active shooter situations, must establish a school and postsecondary institution teacher and employee firearm training program that includes at a minimum training in active shooter situations. (b) The training must be provided at no cost to teachers and other employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137.\nSection 2 (Minn. Stat. 609.66, subd. 1d): (10) teachers and employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137 who have a school permit to carry under section 624.714, subdivision 8b.\nSection 3 (Minn. Stat. 624.714, new subd. 8b): (a) A teacher or other employee of a public elementary, middle, or secondary school; charter school under chapter 124E; or postsecondary institution under chapter 136F or 137 may apply to the sheriff of the county where the teacher or employee resides for a school permit to carry. (b) Unless a sheriff denies a permit under the exception in subdivision 6, paragraph (a), clause (3), a sheriff must issue a school permit to carry to an applicant if, at the time of submitting an application to the sheriff, the applicant: (3) has successfully completed the training program under section 299C.26 within one year of the date of the application for the school permit to carry; (h) A school permit to carry issued under this subdivision expires one year after the date of issue.\nSection 4 (Minn. Stat. 624.714, subd. 18): (d) This subdivision does not apply to teachers and employees authorized to carry firearms under section 609.66, subdivision 1d, paragraph (f)."
+}

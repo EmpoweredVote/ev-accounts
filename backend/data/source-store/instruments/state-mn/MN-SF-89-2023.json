@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-89-2023",
+  "scope": "state:mn",
+  "title": "SF89 (2023-2024 Regular): Denial of the right to purchase, own, possess or carry a firearm solely on the basis that the person is enrolled as a patient in the medical cannabis registry prohibition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0089&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/89/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Koran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Jeff Howe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f3440eb0-e3cc-4968-8ef5-2b670d88aadc"
+    },
+    {
+      "name": "Bill Lieske",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-06; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/89/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-89-2023.introduced.html",
+      "sha256": "edb100cc865b1e0a16a16bf7abfd17948fcf231c7aa941d932a1d988cc97285c"
+    },
+    "note": "Introduced 2023-01-06. Sections 1 to 3 add definitions. Section 6 also strikes an 'or' and a period to add clause (7). Section 7 (624.7151) adds a sentence on forms. The registry parts concern firearm eligibility only and do not change cannabis law."
+  },
+  "operative_text": "Section 8 (Minn. Stat. 624.7152, new), paragraph (a): A person may not be denied the right to purchase, own, possess, or carry a firearm solely on the basis that the person is a qualifying patient.\nSection 8 (Minn. Stat. 624.7152, new), paragraph (b): A state or local agency may not access a database containing the identities of qualifying patients to obtain information for the purpose of approving or disapproving a person from purchasing, owning, possessing, or carrying a firearm.\nSection 8 (Minn. Stat. 624.7152, new), paragraph (d): A state or local agency may not inquire about a person's status as a qualifying patient for the purpose of approving or disapproving the person from purchasing, owning, possessing, or carrying a firearm.\nSection 5 (Minn. Stat. 624.714, subd. 6), paragraph (f): A sheriff shall not deny an application for a permit to carry solely because the applicant is a patient enrolled in the medical cannabis registry under sections 152.22 to 152.37 and uses medical cannabis for a qualifying medical condition.\nSection 4 (Minn. Stat. 624.713, subd. 1): Participation as a patient in the medical cannabis registry under sections 152.22 to 152.37 does not disqualify the person from possessing firearms and ammunition under this section.\nSection 6 (Minn. Stat. 624.7142, subd. 1), clause (7): (7) when the person is enrolled as a patient in the medical cannabis registry under sections 152.22 to 152.37, uses medical cannabis, and knows or has reason to know that the medical cannabis used by the person has the capacity to cause impairment."
+}

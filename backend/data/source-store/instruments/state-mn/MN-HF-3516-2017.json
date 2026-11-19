@@ -1,0 +1,49 @@
+{
+  "id": "MN-HF-3516-2017",
+  "scope": "state:mn",
+  "title": "HF3516 (2017-2018 Regular): Minimum age to possess a semiautomatic military-style assault weapon raised, definition of semiautomatic military-style assault weapon expanded, and transfer of a semiautomatic military-style assault weapon to underage persons criminalized.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3516&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/HF/3516/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peggy Flanagan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cheryl Youakim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/HF/3516/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3516-2017.introduced.html",
+      "sha256": "c55e08304d978a779930d6edd051e841fddfbba21daaccb5195041ae6121e877"
+    },
+    "note": "As-filed text, undated in the file (2018 session). Section 4 also strikes some old under-18 pistol wording and re-sorts the age exceptions. Sections 2 and 3 add definitions of detachable and fixed magazines. [Session A, 2026-11-19: quote line reformatted for the quote check (label, or \"...\" between separate clauses); words unchanged.]"
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.712, subd. 7): (2) semiautomatic pistol, or any semiautomatic, centerfire, or rimfire rifle with a fixed magazine, that has the capacity to accept more than seven rounds of ammunition;\nSection 4 (Minn. Stat. 624.713, subd. 1): (1) a person under the age of 21 years except that: ... (iv) a person under the age of 21 years may carry or possess a semiautomatic military-style assault weapon:\nSection 5 (Minn. Stat. 624.7132, subd. 15): (1) transfers a pistol to a person under the age of 18 or a semiautomatic military-style assault weapon to a person under the age of 21, in violation of subdivisions 1 to 13; or\nSection 6 (Minn. Stat. 624.7141, subd. 1): (4) is under the age of 21 years and the firearm transferred is a semiautomatic military-style assault weapon"
+}

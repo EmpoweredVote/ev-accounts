@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-1390-2025",
+  "scope": "state:mn",
+  "title": "SF1390 (2025-2026 Regular): Certain retired peace officers possession of firearms in the Capitol complex authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1390?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1390/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Drazkowski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-12; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/1390/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1390-2025.introduced.html",
+      "sha256": "720f00220000b07b085aff2a3534084592c13a627d9067a3f0696cc9677b5646"
+    },
+    "note": "Introduced text. The new clause (5) joins a list of exemptions in paragraph (b); the quote is the clause as it would read. Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1g): (5) licensed peace officers and retired peace officers who carry pistols as authorized by, and in compliance with, United States Code, title 18, part I, chapter 44, section 926C, in buildings in the Capitol Area."
+}

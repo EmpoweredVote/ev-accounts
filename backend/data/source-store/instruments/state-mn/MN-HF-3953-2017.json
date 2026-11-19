@@ -1,0 +1,54 @@
+{
+  "id": "MN-HF-3953-2017",
+  "scope": "state:mn",
+  "title": "HF3953 (2017-2018 Regular): Firearm and ammunition transfer and eligibility to possess a firearm provisions modified, possession of certain firearms and firearm accessories limited or prohibited, and criminal penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3953&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/HF/3953/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Linda Slocum",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jean Wagenius",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Bly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/HF/3953/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3953-2017.introduced.html",
+      "sha256": "1adf64ece36dce55bb311075a6388e585ff2d4c3570dd59635b9a8a731548242"
+    },
+    "note": "Introduced version (as filed, no date given on the page); about 49,000 characters, quoted in part. Other parts: widens pistol and assault-weapon rules to all firearms (Sections 6, 12-21, 23-27), registration of existing assault weapons (624.7134, subd. 5), grace periods (Sections 32-33), data privacy for firearms records (Section 1), a rewrite of the silencer felony (Section 3) with exceptions for peace officers, wildlife control and licensed dealers (Section 4), and repealers (Section 35). Section 33 refers to section 624.7134 as printed."
+  },
+  "operative_text": "Section 28 (Minn. Stat. 624.7134, subd. 2): It is unlawful for a person to manufacture, import, transfer, or possess an assault weapon.\nSection 28 (Minn. Stat. 624.7134, subd. 4): (a) A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 29 (Minn. Stat. 624.7135, subd. 2): It is unlawful for a person to manufacture, import, transfer, or possess a large-capacity magazine.\nSection 29 (Minn. Stat. 624.7135, subd. 4): (a) A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 22 (Minn. Stat. 624.7132, subd. 7a): No person shall transfer a firearm unless the transferor or transferee is a federally licensed firearms dealer.\nSection 2 (Minn. Stat. 97B.031, subd. 4a): Except as provided in section 609.66, subdivision 1i, a person may not own or possess a silencer for a firearm or a firearm equipped to have a silencer attached.\nSection 31 (Minn. Stat. 624.7161, subd. 4): (a) A firearms dealer shall ensure that all ammunition is displayed behind a checkout counter where the public is not permitted and is offered for sale only by an employee who is at least 21 years of age and not prohibited by state or federal law from possessing a firearm.\nSection 12 (Minn. Stat. 624.713, subd. 1a): A person presently charged with a crime punishable by imprisonment for a term exceeding one year shall not be entitled to receive, ship, or transport a firearm or ammunition. A violation of this subdivision is a gross misdemeanor.\nSection 33 (uncodified): Any person who, on August 1, 2018, is in possession of a large-capacity magazine has 120 days to do either of the following without being subject to prosecution under Minnesota Statutes, section 624.7134:"
+}

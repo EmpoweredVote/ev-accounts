@@ -1,0 +1,738 @@
+{
+  "politician_id": "738daece-ad27-449f-8fad-8d614e296f63",
+  "findings": [
+    {
+      "id": "bf22c635f523d28663d653c295acaa0502a8581993c589b2616c4681082f72dd",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2609&ssn=0&y=2023",
+      "date": "2024-05-09",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-2609-2023",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2024-05-09: yea (tally 34–33); census gate: none.",
+      "subjects": [
+        "report on gun trafficking and seizures",
+        "forced-reset trigger devices added to trigger activator definition",
+        "felony for transferring any firearm to an ineligible person"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (CCR-HF2609, 2024-05-16; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/2609/versions/ccr/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2609-2023.ccr.html",
+          "sha256": "c0136004af668c4f580e296d1d01062908dfffe969a596f6dbe36f5a7b0a3990"
+        }
+      }
+    },
+    {
+      "id": "2c4527c7eecb01650b73ae154764024ddf2200ad7b0015bf5f316d2661a09e50",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-05-13",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2026-05-13: yea (tally 67–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "01173fc3da566319127bf8a91425a025c771b6fac53d0cd3b9e7ab41e61dd7aa",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-29",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2026-04-29: yea (tally 40–25); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    },
+    {
+      "id": "c5e33b6c17a6d5aaf7b912882435c21e6e33f24095ec5cfe77a0480cd8a875c5",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2673&ssn=0&y=2022",
+      "date": "2022-04-29",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-2673-2021",
+      "act": "yea",
+      "motion": "House Bill was passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed as amended, 2022-04-29: yea (tally 68–61); census gate: multi-subject.",
+      "subjects": [
+        "gunshot-detection grant for a county sheriff",
+        "mandatory minimums where an accomplice had a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (3rd Engrossment, 2022-04-25; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/2673/versions/3/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2673-2021.engrossed3.html",
+          "sha256": "a68f2681a2d8ae53666ae22a637c1ac935d51e310abece0828810aa332598b58"
+        }
+      }
+    },
+    {
+      "id": "919584e5558f747eb1c819f331d07c83dd50f8daa49663eecab87cfc8374a60c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/4067?body=Senate",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-4067-2025",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2026-05-04: yea (tally 34–33); census gate: multi-subject.",
+      "subjects": [
+        "certification and sales limits on assault weapons and magazines over 17 rounds",
+        "ghost-gun and unserialized firearm ban",
+        "negligent storage offence widened",
+        "extreme risk protection order changes",
+        "reenacted binary-trigger ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-30; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4067/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4067-2025.engrossed2.html",
+          "sha256": "8bed7150fe7bd3749a11193d241eba1091f6fade0e9fd5f2dc38e016c80a9d4b"
+        }
+      }
+    },
+    {
+      "id": "11197292b89c687199c9408deba4595bfe4c3fe57fd336b4a82e57c2183a7a9e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1654&ssn=0&y=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-1654-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-1654-2021 (Open States sponsor list): HF1654 (2021-2022 Regular): Law enforcement and family members enabled to petition a court to prohibit people from possessing firearms if they pose a significant danger to themselves or others by possessing a firearm, and money appropriated..",
+      "subjects": [
+        "court orders removing guns from people at significant risk",
+        "family and law enforcement may petition",
+        "emergency orders",
+        "five-year gun ban for violating an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-25; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/1654/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1654-2021.introduced.html",
+          "sha256": "92268ba2251c07d5ff9a6ddc4b1048e60b2d3d82c6a67a41a212a160951cc0bd"
+        }
+      }
+    },
+    {
+      "id": "ffd41d3d84f51706e517d06a27103b5f483689b0abf833541e49bc84fb0920f6",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2498&ssn=0&y=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-2498-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of MN-HF-2498-2021 (Open States sponsor list): HF2498 (2021-2022 Regular): Dangerous weapon possession prohibited in the Capitol complex, and permit to carry holder exception to crime of carrying rifles and shotguns in public places eliminated..",
+      "subjects": [
+        "weapons ban in Capitol Area state buildings",
+        "permit holders no longer exempt from rifle and shotgun public-carry crime"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-04-09; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/2498/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2498-2021.introduced.html",
+          "sha256": "6decc1066adb1ebf99e1260614bea02543059664aba5edf43547fa147a254cc2"
+        }
+      }
+    },
+    {
+      "id": "e20578bcdd5a7e773d337463c08004bba54ad56fedc09339c5b198f99e7d7daf",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0694&ssn=0&y=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-694-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-694-2021 (Open States sponsor list): HF694 (2021-2022 Regular): Firearm transfer criminal background checks required, and transferee permit disqualification grounds modified..",
+      "subjects": [
+        "background check for private pistol and assault-weapon transfers",
+        "record of transfer kept 20 years",
+        "deny transfer permit to person who is a danger"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-04; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/694/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-694-2021.introduced.html",
+          "sha256": "40d130991a361334fe4bb1f27b4b113fb92b63a13bc195b177bd7ac852253235"
+        }
+      }
+    },
+    {
+      "id": "ea2d911f12970618da4b9d3f7e3da96b1692aaf62fe43081aab560f0ad86e66c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1186&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-1186-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-1186-2023 (Open States sponsor list): SF1186 (2023-2024 Regular): Criminal background checks for firearms transfers; grounds for disqualification of a transferee permit modification.",
+      "subjects": [
+        "background check or transferee permit for private pistol and assault-weapon sales",
+        "record of transfer kept 20 years",
+        "permit refused to people judged a danger to self or others"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-01; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1186/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1186-2023.introduced.html",
+          "sha256": "bcabe938d5494e411ed9cce52ad9aa8cf7597bee11d2b082d31bc64852d16baa"
+        }
+      }
+    },
+    {
+      "id": "9d74bad20affc35125392a54d297494716eb2a09bfeb127412b901a72c63de92",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1402&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-1402-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-1402-2023 (Open States sponsor list): SF1402 (2023-2024 Regular): Visitor carrying of firearms regulation on campuses of public postsecondary institutions.",
+      "subjects": [
+        "public colleges may bar visitors from carrying firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-07; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1402/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1402-2023.introduced.html",
+          "sha256": "e6c33e9fabec225be7e1ece347161d3429387c425cc9b7d845235cd2bd47c546"
+        }
+      }
+    },
+    {
+      "id": "a20d7c1ce256b425209b885f9d6bbecdae47f418431b612ce27afe27a7f43231",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1429&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-1429-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-1429-2023 (Open States sponsor list): SF1429 (2023-2024 Regular): Criminal background checks requirement for firearms transfers.",
+      "subjects": [
+        "transferee permit needed for private pistol and assault weapon transfers",
+        "permit denied to people who are a danger to self or others"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-07; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1429/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1429-2023.introduced.html",
+          "sha256": "c59d99f0c1b721143573fd8dff4c0e7fbcb719ce2e1e55ee4d7c01a443944621"
+        }
+      }
+    },
+    {
+      "id": "6a3cf496aec1b53a51c8283f12bfbd92e54decf35028cd603d5f688312971faf",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2025/0/SF/1596?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-1596-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-1596-2025 (Open States sponsor list): SF1596 (2025-2026 Regular): Sale or transfer of a semiautomatic military-style assault weapon prohibition.",
+      "subjects": [
+        "ban on transferring assault weapons",
+        "state buyback of assault weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-17; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/1596/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1596-2025.introduced.html",
+          "sha256": "36408f752691175bf57c2715ef62a0d634eb407fe6fe63463a4db32a3ab765e9"
+        }
+      }
+    },
+    {
+      "id": "147b7cb7bdddbfdc4714cd5d2671f3446f0eddc336482e8a7eddab85576b835d",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1723&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-1723-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-1723-2023 (Open States sponsor list): SF1723 (2023-2024 Regular): Concealed carry of firearms modification.",
+      "subjects": [
+        "license required to own or possess any firearm",
+        "firearm registration and liability insurance",
+        "ban on large-capacity magazines, .50 caliber firearms, assault weapons and ghost guns",
+        "ban on open carry of pistols"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-14; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/1723/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1723-2023.introduced.html",
+          "sha256": "370fd5b603e59712b113941cbedf7aa6d99c76014f36ed4cb6d1190bc312fda9"
+        }
+      }
+    },
+    {
+      "id": "d4c9b3c71868aa5a132b5e2877833a6ed8e845ea3716cd94bc79fdf78becde39",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2482&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-2482-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-2482-2023 (Open States sponsor list): SF2482 (2023-2024 Regular): Possession of dangerous weapons prohibition in the Capitol complex.",
+      "subjects": [
+        "no permit-holder carry in Capitol Area state buildings",
+        "felony for weapons in courthouse complex or Capitol Area buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-03-01; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/2482/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2482-2023.introduced.html",
+          "sha256": "2fb13fc0540cca9aec0d5f57ba3a29fd559f15ff3dc7c71a3c71a65ce785cefe"
+        }
+      }
+    },
+    {
+      "id": "2c1396d56f874eb041e3bb89aea8598e1648cb104bc652b2d204d4b653d73eec",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2025/0/SF/264?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-264-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-264-2025 (Open States sponsor list): SF264 (2025-2026 Regular): Possession of dangerous weapons in the Capitol complex.",
+      "subjects": [
+        "firearms barred from state buildings in the Capitol Area",
+        "permit holders lose exception for carrying rifles and shotguns in public"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-15; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/264/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-264-2025.introduced.html",
+          "sha256": "11a5b5811f441f1f437437e95b12c9b6f90e3552eb8e661681e8836d27317464"
+        }
+      }
+    },
+    {
+      "id": "1b436d220f10b615ba7a2c595cd081e1208df00253d0737c1668792ee06f537e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3352&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3352-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3352-2023 (Open States sponsor list): SF3352 (2023-2024 Regular): Prohibiting the sale or transfer of a semiautomatic military-style assault weapons, authorizing a buyback program for these weapons and appropriating money.",
+      "subjects": [
+        "ban on transferring assault weapons",
+        "wider assault-weapon definition",
+        "statewide buyback program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-05-19; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/3352/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3352-2023.introduced.html",
+          "sha256": "8a3dbbf02215b6cb990f8685ca470430ff3909678e4d17d7430f07488d4f8f12"
+        }
+      }
+    },
+    {
+      "id": "ceecb0ee6040820069c72a0016dc1c8ecdbbbc55a59b7cd0b72ab6adc0ae21c7",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3477&ssn=0&y=2024",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3477-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3477-2023 (Open States sponsor list): SF3477 (2023-2024 Regular): Dangerous weapons in public libraries prohibition and criminal penalty imposition.",
+      "subjects": [
+        "no dangerous weapons in public libraries",
+        "misdemeanor for lawful firearm carriers in libraries"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2024-02-07; official copy, https://www.revisor.mn.gov/bills/93/2024/0/SF/3477/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3477-2023.introduced.html",
+          "sha256": "a5cdf05a88c1871f5529f6cda5ec99a4f2d07ca1f2605d9cc3e0f9669c354c03"
+        }
+      }
+    },
+    {
+      "id": "9fe7f97fbda0e8e5e7d17e2270d6aa0958f457dffc2b8efa024f1462320e0f3c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0353&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-353-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-353-2023 (Open States sponsor list): SF353 (2023-2024 Regular): Possessions of dangerous weapons in the capitol complex prohibition.",
+      "subjects": [
+        "weapons banned in Capitol Area state buildings",
+        "permit holders lose exemption from the rifle and shotgun public-carry crime"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-13; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/353/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-353-2023.introduced.html",
+          "sha256": "2c2ac4077b0f79361cc7a77816025483c7e316628edafeaffe124ee5e138e525"
+        }
+      }
+    },
+    {
+      "id": "43fd70f08358d6d9d2d66a5dccfbac0840271cb29389767b8b62dffdbccbe10c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/3549?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3549-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3549-2025 (Open States sponsor list): SF3549 (2025-2026 Regular): State preemption of local units of government regulating firearms repeal.",
+      "subjects": [
+        "repeal of state preemption of local firearm rules",
+        "local zoning of gun dealers kept"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-12; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3549/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3549-2025.introduced.html",
+          "sha256": "a752d9a288cf93ead3a42b22fa78e73845da03caf6a57a810d2091bb2631c6a1"
+        }
+      }
+    },
+    {
+      "id": "17dd48686416dc51820b9d324fc7185159a3340d150d8344620583420a14c715",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/3631?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3631-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3631-2025 (Open States sponsor list): SF3631 (2025-2026 Regular): Capitol complex dangerous weapons prohibition provision.",
+      "subjects": [
+        "ban on dangerous weapons and ammunition in Capitol Area state buildings and courthouses",
+        "permit-holder exceptions for carrying in a vehicle in the Capitol Area"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-17; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3631/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3631-2025.introduced.html",
+          "sha256": "2aef13dfc2481b8e3bc2cd2a04275a2fdb037ce9d0f3599b52b95c8f5dc4d512"
+        }
+      }
+    },
+    {
+      "id": "b42006711a63a875bda50ce6f1c2c6e9cfc8d5b82ded2698c732169815f1d87a",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3680&ssn=0&y=2024",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3680-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3680-2023 (Open States sponsor list): SF3680 (2023-2024 Regular): Possession of large-capacity ammunition magazines, semiautomatic military-style assault weapons, .50 caliber or larger firearms, undetectable firearms and other weapons prohibition.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "ban on assault weapons, .50 caliber and undetectable firearms",
+        "registration and secure storage for current owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2024-02-13; official copy, https://www.revisor.mn.gov/bills/93/2024/0/SF/3680/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3680-2023.introduced.html",
+          "sha256": "6eb273206d6a10ccb413fe083648a2ce9e56f826544fe6e1af7ce1d06593e7ee"
+        }
+      }
+    },
+    {
+      "id": "515db966227c9e3cb53aff7ead55ca5c11793c8242770374908b3576e28485ed",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/3681?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3681-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3681-2025 (Open States sponsor list): SF3681 (2025-2026 Regular): Semiautomatic military-style assault weapons and large-capacity ammunition magazine prohibition and criminal penalties provision.",
+      "subjects": [
+        "ban on owning or transferring assault weapons",
+        "ban on large-capacity magazines",
+        "certification for assault weapon owners; surrender or alter magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3681/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3681-2025.introduced.html",
+          "sha256": "17732c9e3f6f85f256d283e4dce2ebd4924dc7aa3394adddd020152ba57c818c"
+        }
+      }
+    },
+    {
+      "id": "c9c85c9757e47bbca073303f9932e8826e98ee0f4fe6156df1bcb1e272f41f45",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/3714?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3714-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-3714-2025 (Open States sponsor list): SF3714 (2025-2026 Regular): Ban possession of large-capacity ammunition magazines.",
+      "subjects": [
+        "ban on magazines holding more than ten rounds",
+        "surrender, alter or remove existing magazines by July 2027"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3714/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3714-2025.introduced.html",
+          "sha256": "33faa3b6445686de7032904b2520af1db0acb6f89c7f3bae8863122bf9fc5627"
+        }
+      }
+    },
+    {
+      "id": "537c141d56ac4d2aa194d3e177a5782e4cf6ff982967cc544b6fa316e590c5ae",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/4231?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-4231-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-4231-2025 (Open States sponsor list): SF4231 (2025-2026 Regular): Owners of firearms requirement to have liability insurance.",
+      "subjects": [
+        "mandatory liability insurance for gun owners",
+        "insurers must offer coverage",
+        "fines for no insurance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-05; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4231/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4231-2025.introduced.html",
+          "sha256": "3d2bf7d54b50a3ccbb58d792ad0af44f3172d3fac90d09658304c683ff6db0ac"
+        }
+      }
+    },
+    {
+      "id": "de2cd7d2eca5c336762749cf1d092e0f076eb9fece69b84fda807d662dc84e46",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/4290?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-4290-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-4290-2025 (Open States sponsor list): SF4290 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons and large-capacity ammunition magazines banishment.",
+      "subjects": [
+        "ban on owning or selling assault weapons",
+        "ban on magazines over ten rounds",
+        "certification and secure storage for current owners",
+        "felony penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-06; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4290/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4290-2025.introduced.html",
+          "sha256": "cf3c8e6c11e17f958e4fd19f9bf7387ef72f1f27d1cb411ca04cad45e9bc64e4"
+        }
+      }
+    },
+    {
+      "id": "2e10fa345fb21bc801c7c2d5be9db50cf3ceaf6761144094aaec3340ba921bd7",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/4466?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-4466-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-SF-4466-2025 (Open States sponsor list): SF4466 (2025-2026 Regular): Visitors of public postsecondary institutions carrying of firearms regulations provision.",
+      "subjects": [
+        "public colleges may bar visitors' guns on campus",
+        "petty-misdemeanor fine up to $25 for refusing to leave"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-12; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4466/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4466-2025.introduced.html",
+          "sha256": "b912fa8fc2669eb1cd4949b560e3411df25d59631765104e9f2504030ceeb77a"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

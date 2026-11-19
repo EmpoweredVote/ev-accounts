@@ -1,0 +1,93 @@
+{
+  "politician_id": "fd5b1256-82d8-4553-86e5-eed68f85a2e4",
+  "findings": [
+    {
+      "id": "73faf65a8ac9a8ec1747b9b0e5404307e35bbd2e25f074f4eefee3176cd1b37c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 134–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "2517ed3665f50412fe0c57ee49df3b1d04c99063e96b727f54e9128fb850603e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 111–21); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.house.mn.gov/members/membersR.asp?id=Rep_Tom_Dippel (official member page, read: only legislative-update list, nothing on the subject)",
+        "https://www.house.mn.gov/members/profile/news/15628/51310 (his legislative update of Oct 2025 after the Annunciation shooting: talks of school security grants, mental health and repeat offenders; no firearm-law position, nothing on the subject)",
+        "https://www.house.mn.gov/members/profile/news/15628/50612 (update list, nothing on the subject)",
+        "https://ivoterguide.com/candidate/70184/race/12238/election/1249 (lead only: lists him in the 2026 State Senate District 41 general; the gun-restriction and teachers-carry questions are marked did not answer)",
+        "blocked: https://ballotpedia.org/Tom_Dippel (403)",
+        "one web search on name plus gun words (results were bill pages and advocacy-group pages; none carried his own words)",
+        "campaign site: not found in search, not reviewed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:30:15.233Z",
+      "by": "source-collector"
+    }
+  ]
+}

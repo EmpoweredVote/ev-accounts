@@ -1,0 +1,98 @@
+{
+  "id": "MN-HF-3672-2023",
+  "scope": "state:mn",
+  "title": "HF3672 (2023-2024 Regular): State preemption of local units of government regulating firearms repealed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3672&ssn=0&y=2024",
+    "https://www.revisor.mn.gov/bills/93/2024/0/HF/3672/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dave Pinto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Tina Liebling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+    },
+    {
+      "name": "María Isa Pérez-Vega",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2b1b89f8-5692-4acf-b437-e8f1ae677b13"
+    },
+    {
+      "name": "Kaohly Her",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Samakab Hussein",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    },
+    {
+      "name": "Athena Hollins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "27d3b46b-befc-4169-9bf0-f87e09d47d8b"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2024-02-13; official copy, https://www.revisor.mn.gov/bills/93/2024/0/HF/3672/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3672-2023.introduced.html",
+      "sha256": "f96edf6bc4f16a20a785af68098f00c414b194fd12359013cfc3d4a55d78edf6"
+    },
+    "note": "Introduced 2024-02-13; no votes. Section 1 strikes the opening 'Notwithstanding section 471.633' and the cross-reference to sections 471.633 and 471.634. The repealed sections (in the appendix, not quoted as law) are the preemption of local rules on firearms, ammunition and components (with local power over discharge and identical-to-state rules kept), the school-district carve-out, the exclusivity of permit-to-carry criteria, supersession of local pistol rules, and supersession of local ammunition rules."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 471.635): A governmental subdivision may regulate by reasonable, nondiscriminatory, and nonarbitrary zoning ordinances, the location of businesses where firearms are sold by a firearms dealer. For the purposes of this section, a firearms dealer is a person who is federally licensed to sell firearms.\nSec. 2 (repealer): Minnesota Statutes 2022, sections 471.633; 471.634; 624.714, subdivision 23; 624.717; and 624.7191, subdivision 4, are repealed."
+}

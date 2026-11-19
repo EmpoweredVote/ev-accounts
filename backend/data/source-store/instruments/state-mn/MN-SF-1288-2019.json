@@ -1,0 +1,54 @@
+{
+  "id": "MN-SF-1288-2019",
+  "scope": "state:mn",
+  "title": "SF1288 (2019-2020 Regular): People posing a significant danger by firearm possession; law enforcement and family members court petition to prohibit possession authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1288&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/1288/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Isaacson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard Cohen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "Susan Kent",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/1288/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1288-2019.introduced.html",
+      "sha256": "04a262fef1540a0cad7d1ed214ea859dca8439fe87f8f59c68df42d36b3d452e"
+    },
+    "note": "Introduced text, no date shown on file; amendments are not in the text. The bill also adds an extreme risk order to the list of people barred from possessing firearms (Sec. 1, 624.713 subd. 1). Struck text left out of quotes. Version read: introduced text (as filed). No passage vote is recorded for this bill."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7161, subd. 4): A petition for relief shall allege that the respondent poses a significant danger of bodily harm to self or to other persons by possessing a firearm.\nSection 3 (Minn. Stat. 624.7162, subd. 2): At the hearing, the petitioner must prove by a preponderance of the evidence that the respondent poses a significant danger of bodily injury to self or other persons by possessing a firearm.\nSection 6 (Minn. Stat. 624.7165): Upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours, to a federally licensed firearms dealer or a law enforcement agency.\nSection 8 (Minn. Stat. 624.7167, subd. 1): A person who petitions for an extreme risk protection order under section 624.7162 or 624.7164, knowing any information in the petition to be materially false or with the intent to harass, abuse, or threaten, is guilty of a misdemeanor."
+}

@@ -1,0 +1,73 @@
+{
+  "id": "MN-HF-3227-2019",
+  "scope": "state:mn",
+  "title": "HF3227 (2019-2020 Regular): Firearms; providing that a person may not be denied the right to\\r\npurchase, own, possess, or carry a firearm solely on the basis that the person is\\r\nenrolled as a patient in the medical cannabis registry.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3227&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/HF/3227/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rod Hamilton",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "cannabis-policy: Section 8 (Minn. Stat. 624.7152) and Section 5 — limits on use of the medical cannabis patient registry and patient status in gun decisions"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/HF/3227/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3227-2019.introduced.html",
+      "sha256": "caf2e0faabf3c1183aa051d01cc9fc1444a7e4435aaaf329d93204c3f8e82af5"
+    },
+    "note": "Introduced version (no date in file). Also adds definitions (Sections 1-3), makes a carry permit holder who is a registry patient and knows the cannabis can impair unable to carry a pistol in public (Section 6, new clause 7), and requires application forms to let patients leave out medical cannabis use (Section 7). Multi verdict is a judgement call: the whole bill ties gun rights to cannabis registry status."
+  },
+  "operative_text": "Section 4 (Minn. Stat. 624.713, subd. 1): Participation as a patient in the medical cannabis registry under sections 152.22 to 152.37 does not disqualify the person from possessing firearms and ammunition under this section.\nSection 5 (Minn. Stat. 624.714, subd. 6): A sheriff shall not deny an application for a permit to carry solely because the applicant is a patient enrolled in the medical cannabis registry under sections 152.22 to 152.37 and uses medical cannabis for a qualifying medical condition.\nSection 8 (Minn. Stat. 624.7152, new): A person may not be denied the right to purchase, own, possess, or carry a firearm solely on the basis that the person is a qualifying patient.\nSection 8 (Minn. Stat. 624.7152, new): A state or local agency may not access a database containing the identities of qualifying patients to obtain information for the purpose of approving or disapproving a person from purchasing, owning, possessing, or carrying a firearm.\nSection 8 (Minn. Stat. 624.7152, new): A state or local agency may not inquire about a person's status as a qualifying patient for the purpose of approving or disapproving the person from purchasing, owning, possessing, or carrying a firearm."
+}

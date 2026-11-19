@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-667-2025",
+  "scope": "state:mn",
+  "title": "SF667 (2025-2026 Regular): Definition modification of crime of violence for firearms crimes",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/667?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/667/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    },
+    {
+      "name": "Zaynab Mohamed",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    },
+    {
+      "name": "Doron Clark",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3a7411c9-55d4-4eb6-bae0-5f5f6206c517"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-23; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/667/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-667-2025.introduced.html",
+      "sha256": "dc39a0600a5e9f473e11526393e515c5fb0af1870ef544c3d2b9ecf0ef5a8171"
+    },
+    "note": "Introduced text, 2025-01-23. The bill strikes the words 'and chapter 152 (drugs, controlled substances);' from the list, so drug felonies would no longer be a crime of violence for firearms purposes. The quote is the opening of the definition; the long list of offenses continues."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.712, subd. 5): \"Crime of violence\" means: felony convictions of the following offenses: sections 609.185 (murder in the first degree); 609.19 (murder in the second degree); 609.195 (murder in the third degree);"
+}

@@ -1,0 +1,171 @@
+{
+  "politician_id": "512c4ad3-271c-4108-bad5-e59a724fbc2a",
+  "findings": [
+    {
+      "id": "73faf65a8ac9a8ec1747b9b0e5404307e35bbd2e25f074f4eefee3176cd1b37c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 134–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "1c9282cad8ccf521a877811ab8d8e15090aec67d0e21b1b0574384add85d48ee",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3762?body=House",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3762-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-20: yea (tally 128–3); census gate: near-unanimous.",
+      "subjects": [
+        "expunged records usable in gun-permit and transfer checks",
+        "notice to person denied on an expunged record"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3762/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3762-2025.introduced.html",
+          "sha256": "60658974c3ad152d4b6b65505a7a0b7622aea36a77bb662bded5101c78760709"
+        }
+      }
+    },
+    {
+      "id": "2517ed3665f50412fe0c57ee49df3b1d04c99063e96b727f54e9128fb850603e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 111–21); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    },
+    {
+      "id": "54dc0b47e41de4f20695b53a1a35c43aff59769882da450a2555ab02a56fae81",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2025/0/HF/924?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-924-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-924-2025 (Open States sponsor list): HF924 (2025-2026 Regular): Certain retired peace officers authorized to possess firearms in the Capitol complex..",
+      "subjects": [
+        "retired peace officers may carry pistols in Capitol Area buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-14; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/924/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-924-2025.introduced.html",
+          "sha256": "aa8dbede70e5748af49cb56e7d5871241da41295652074bbfc87a625e53f63b4"
+        }
+      }
+    },
+    {
+      "id": "931239fe6a1caeda5b05b6ddd68e6fd751e7d501d76467f680e059b56dec14b2",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15637/51239",
+      "date": "2025-10-01",
+      "date_precision": "day",
+      "passage": "Finally, we must hold criminals accountable. That includes mandatory minimum prison sentences for repeat gun offenders and serious penalties for straw purchasers who put weapons in the wrong hands. These are straightforward, common-sense measures with bipartisan support and potential to pass that would make our communities safer and reduce the risk of future violence.",
+      "note": "From his interim newsletter after the Annunciation shooting, about the special session plan. He backs mandatory minimum sentences for repeat gun offenders and serious penalties for straw purchasers. In the same letter he criticizes the Governor's proposals as hyper-partisan and not vetted in committee, without naming specific gun bills.",
+      "subjects": [
+        "penalties for straw purchasers",
+        "mandatory minimum sentences for repeat gun offenders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:27:26.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit",
+        "penalties for straw purchasers",
+        "repeat gun offenders",
+        "general gun-rights and Second Amendment statements",
+        "self-defense law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.house.mn.gov/members/profile/15637 (confirms Rep. Wayne Johnson, district 41A, sitting member)",
+        "official House news list https://www.house.mn.gov/members/profile/News/15637 (read list; read the Oct 2025 interim update, Mar 2025 update, Jan 2026 commitments, Mar 2026 hearings update, Apr 2026 bill update and May 2026 session recap; only the Oct 2025 update touches the subject)",
+        "no separate campaign site found by search; nothing on the subject in search results",
+        "Ballotpedia: page not fetched at the guessed address (shell error); not reviewed: https://ballotpedia.org/Wayne_Johnson_(Minnesota)",
+        "two news searches on his name plus gun words: nothing on the subject beyond his own newsletter",
+        "sponsor list: covered by bulk bill data",
+        "note: a news report says he lost the Nov 2026 general election for 41A; he remains a sitting member until the term ends"
+      ],
+      "found": 1,
+      "at": "2026-11-19T22:27:26.971Z",
+      "by": "source-collector"
+    }
+  ]
+}

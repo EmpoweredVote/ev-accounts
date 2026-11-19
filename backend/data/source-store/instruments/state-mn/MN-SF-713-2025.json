@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-713-2025",
+  "scope": "state:mn",
+  "title": "SF713 (2025-2026 Regular): Permitted and trained school staff carrying of firearms authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/713?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/713/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Lucero",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Andrew Mathews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    },
+    {
+      "name": "Rich Draheim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a41019c1-8548-4465-bbd6-f23688ed38dd"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-24; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/713/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-713-2025.introduced.html",
+      "sha256": "ca6c1a29980606463a18c228173bd83707705c6f702726f06e3372e893e6fd36"
+    },
+    "note": "Introduced text, 2025-01-24. Strikes only the word 'or' and a period in subd. 1d(f) while adding clause (10). Paragraph (g) of 609.66 subd. 1d may be existing law."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 299C.26): The training program must admit only school and postsecondary institution teachers and employees who have completed training for a permit to carry under section 624.714 within one year of the date of attending the training under this section or have a permit to carry under section 624.714.\nSection 2 (Minn. Stat. 609.66, subd. 1d): (10) teachers and employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137 who have a school permit to carry under section 624.714, subdivision 8b.\nSection 2 (Minn. Stat. 609.66, subd. 1d): (g) Notwithstanding section 471.634, a school district or other entity composed exclusively of school districts may not regulate firearms, ammunition, or their respective components, when possessed or carried by nonstudents or nonemployees, in a manner that is inconsistent with this subdivision.\nSection 3 (Minn. Stat. 624.714, subd. 8b): (a) A teacher or other employee of a public elementary, middle, or secondary school; charter school under chapter 124E; or postsecondary institution under chapter 136F or 137 may apply to the sheriff of the county where the teacher or employee resides for a school permit to carry.\nSection 3 (Minn. Stat. 624.714, subd. 8b): (h) A school permit to carry issued under this subdivision expires one year after the date of issue.\nSection 4 (Minn. Stat. 624.714, subd. 18): (d) This subdivision does not apply to teachers and employees authorized to carry firearms under section 609.66, subdivision 1d, paragraph (f)."
+}

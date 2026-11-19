@@ -1,0 +1,55 @@
+{
+  "id": "MN-HF-4882-2025",
+  "scope": "state:mn",
+  "title": "HF4882 (2025-2026 Regular): Judiciary and public safety; theft of public funds, school safety, and emergency vehicles policy provided; first degree murder and impersonating a peace officer criminal provisions modified; firearms policies established; criminal penalties imposed; and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4882?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4882/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kelly Moller",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Tina Liebling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Sections 5-9 of Article 3 (Minn. Stat. 609.185, 609.4751, 609.4752, 609.539) — changes first-degree murder, impersonating a peace officer, and theft of public funds crimes",
+        "public-safety-approach: Article 3 Sections 2-4 (Minn. Stat. 169.033, 169.98, 299A.956) — emergency vehicle rules and a school safety grant program",
+        "public-safety-approach: Articles 1 and 2 — appropriations for courts, public safety and corrections"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-04-08; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4882/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4882-2025.introduced.html",
+      "sha256": "14537c78949f059a358d275e32e9d11fae91f450d113d8fe105bdd8959d11e81"
+    },
+    "note": "Introduced version, 2026-04-08. No votes recorded. HF 4882 and HF 4967 carry the same text except for a repealer ID number. The bill is a multi-article omnibus; only the gun article is quoted. The bill strikes the state ban on local firearm rules (it repeals Minn. Stat. 471.633 and 471.634 and strikes their cross-references), strikes assault weapons from the pistol-transfer rules, repeals 609.667 and 624.714 subd. 23 and 624.717, and strikes the felony for under-21s carrying assault weapons in public. Section 25 also has a certification-of-ownership path for current owners (not fully quoted)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 471.635): A governmental subdivision may regulate by reasonable, nondiscriminatory, and nonarbitrary zoning ordinances, the location of businesses where firearms are sold by a firearms dealer.\nSection 4 (Minn. Stat. 609.666, subd. 2): A person who owns or possesses a firearm must secure the firearm when the firearm is not in the direct physical control or reach of the person as follows: (1) unloaded and equipped with a locking device; or (2) loaded or unloaded in a locked firearm storage unit.\nSection 4 (Minn. Stat. 609.666, subd. 2a): (a) A person who violates subdivision 2 is guilty of a misdemeanor.\nSection 4 (Minn. Stat. 609.666, subd. 2a): (b) A person who violates subdivision 2 is guilty of a gross misdemeanor if a firearm is not secured and is loaded.\nSection 5 (Minn. Stat. 609.6672, subd. 2): A firearm industry member, by conduct unlawful in itself or unreasonable under all the circumstances, may not knowingly or recklessly create, maintain, or contribute to a public nuisance by selling, manufacturing, importing, or marketing a firearm-related product.\nSection 5 (Minn. Stat. 609.6672, subd. 3): A firearm industry member must establish and implement reasonable controls for manufacturing, selling, distributing, using, and marketing the firearm industry member's firearm-related products.\nSection 7 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than ten rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person.\nSection 22 (Minn. Stat. 624.7139, subd. 1): A person who owns, possesses, or controls a firearm must report the loss or theft of the firearm to a law enforcement agency in the jurisdiction in which the loss or theft occurred as soon as practicable but not later than within 48 hours of the time the person knew or reasonably should have known of the loss or theft.\nSection 25 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer, own, or possess semiautomatic military-style assault weapons.\nSection 25 (Minn. Stat. 624.7145, subd. 4): (a) A person who legally owned or possessed a semiautomatic military-style assault weapon before January 1, 2027, and who desires to keep ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension by May 1, 2027.\nSection 26 (Minn. Stat. 624.7146, subd. 2): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines.\nSection 27 (Minn. Stat. 624.7147, subd. 3): Any person who owns, possesses, or receives a ghost gun may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nSection 28 (Minn. Stat. 624.7148, subd. 2): (a) A person who is not a federal firearms licensee is prohibited from assembling or manufacturing more than three firearms in a calendar year.\nSection 31 (Laws 2024, ch. 127, art. 36, sec. 2): Laws 2024, chapter 127, article 36, section 2, is revived and reenacted."
+}

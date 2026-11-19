@@ -1,0 +1,174 @@
+{
+  "id": "MN-HF-1946-2023",
+  "scope": "state:mn",
+  "title": "HF1946 (2023-2024 Regular): Possession of dangerous weapons in Capitol complex prohibited.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1946&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/1946/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    },
+    {
+      "name": "Cedrick Frazier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Dave Pinto",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Melissa Hortman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rick Hansen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Kaohly Her",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Zack Stephenson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a04547cf-8928-4638-9fe4-bef286cfba0f"
+    },
+    {
+      "name": "Cheryl Youakim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+    },
+    {
+      "name": "Kaela Berg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Kristi Pursell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
+    },
+    {
+      "name": "Lucy Rehm",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f409650c-fed4-467a-9ecd-000de3c99487"
+    },
+    {
+      "name": "Sydney Jordan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
+    },
+    {
+      "name": "Carlie Kotyza-Witthuhn",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
+    },
+    {
+      "name": "Samantha Sencer-Mura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
+    },
+    {
+      "name": "Nathan Coulter",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
+    },
+    {
+      "name": "Leon Lillie",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "31699ccd-426b-4708-9a1d-bdaced1a56dc"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    },
+    {
+      "name": "Mary Clardy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c84dfd1-eb0b-47fa-9fd4-373591ce662d"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-16; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1946/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1946-2023.introduced.html",
+      "sha256": "26f9109349cf347773e93c69fd24decc3ef0db031345fd1fa0c6e47db41eccc7"
+    },
+    "note": "Version read: introduced text as filed (2023-02-16). No votes recorded. Bill strikes the commissioner-of-public-safety consent and notice exceptions for state buildings and the carry-permit-as-notice paragraph (old law removed); Section 1 (Minn. Stat. 299E.04, subd. 4) only drops a data cross-reference. Paragraph (c) keeps the motor-vehicle exception for permit holders, partly in the text as plain words. Quotes for items (1)-(2) in the numbered list are the offence clauses of paragraph (a), which is unchanged."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 609.66, subd. 1g): (1) possesses a dangerous weapon, ammunition, or explosives within any courthouse complex; or\nSection 2 (Minn. Stat. 609.66, subd. 1g): (2) possesses a dangerous weapon, ammunition, or explosives in any state building within the Capitol Area described in chapter 15B, other than the National Guard Armory.\nSection 2 (Minn. Stat. 609.66, subd. 1g): (2) persons who carry pistols according to the terms of a permit issued under section 624.714 in a courthouse complex and who so notify the sheriff;\nSection 2 (Minn. Stat. 609.66, subd. 1g): (4) persons who possess dangerous weapons in a courthouse complex with the express consent of the county sheriff; or\nSection 2 (Minn. Stat. 609.66, subd. 1g): (5) retired peace officers who carry pistols as authorized by, and in compliance with, United States Code, title 18, part I, chapter 44, section 926C, in buildings in the Capitol Area and who are employed by the Minnesota House of Representatives working in a primary security function with the House Sergeant-at-Arms."
+}

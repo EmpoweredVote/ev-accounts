@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3572-2025",
+  "scope": "state:mn",
+  "title": "SF3572 (2025-2026 Regular): Circumstances when firearms are permitted on school property modification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3572?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3572/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Steve Cwodzinski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7845f8df-cc58-49fa-a87c-6483d6cdcf47"
+    },
+    {
+      "name": "Alice Mann",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-17; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3572/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3572-2025.engrossed1.html",
+      "sha256": "e5212e75e25a4a3ce6c2895703eb932eb13c3af1fa45cbc32b39ed70958f34a1"
+    },
+    "note": "Version read is the 1st engrossment (2026-03-17), not an enrolled text; no passage vote is recorded in the file. The bill strikes the exceptions for guns stored in a vehicle, for written permission of the principal or child care director, and for unimproved school-owned land (old law removed, in my words). Effective August 1, 2026."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1d): (a) Except as provided under paragraphs (d) and (f), whoever possesses, stores, or keeps a dangerous weapon while knowingly on school property is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (d) Notwithstanding paragraph (a), (b), or (c), it is a misdemeanor for a person authorized to carry a firearm under the provisions of a permit or otherwise to carry a firearm on or about the person's clothes or person in a location the person knows is school property. Notwithstanding section 609.531, a firearm carried in violation of this paragraph is not subject to forfeiture.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (f) Except as provided for in paragraph (h), this subdivision does not apply to: (1) active licensed peace officers; (2) military personnel or students participating in military training, who are on-duty, performing official duties; (3) persons authorized to carry a pistol under section 624.714 while in a motor vehicle or outside of a motor vehicle to directly place a firearm in, or retrieve it from, the trunk or rear area of the vehicle; (4) firearm safety or marksmanship courses or activities conducted on school property; (5) possession of dangerous weapons, BB guns, or replica firearms by a ceremonial color guard; or (6) a gun or knife show held on school property.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (g) Notwithstanding section 471.634, a school district or other entity composed exclusively of school districts may not regulate firearms, ammunition, or their respective components, when possessed or carried by nonstudents or nonemployees, in a manner that is inconsistent with this subdivision.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (h) Notwithstanding sections 97B.045, 624.714, and 624.715, a person who is authorized to carry a firearm on school property pursuant to paragraph (f) must secure and store their firearms as provided for in this paragraph when the person is no longer in an eligible on-duty status or not participating in that portion of the activity for which firearm possession is authorized. Each firearm subject to this paragraph must be secured and stored as follows: (1) unloaded; (2) in a locked container, safe, or other secure device made to contain a firearm that, when locked, cannot be readily opened without use of a key, combination, or electronic code, and that is constructed to resist forced entry, tampering, and unauthorized access; and (3) placed in a locked trunk compartment of a motor vehicle or, if the motor vehicle does not have a trunk compartment with a functioning lock, placed out of plain sight within the vehicle."
+}

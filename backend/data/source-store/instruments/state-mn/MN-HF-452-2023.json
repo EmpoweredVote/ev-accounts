@@ -1,0 +1,63 @@
+{
+  "id": "MN-HF-452-2023",
+  "scope": "state:mn",
+  "title": "HF452 (2023-2024 Regular): Lawful carry and possession of firearms at State Fair authorized.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0452&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/452/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ben Davis",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "Isaac Schultz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a6159eb9-ec8c-42a4-951a-b27e41a936bd"
+    },
+    {
+      "name": "Bernie Perryman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d12d13ea-dbb8-4871-b35e-f37e2385db9a"
+    },
+    {
+      "name": "Tom Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca967473-dabb-4bfa-9019-63cc6b1bd2e5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-13; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/452/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-452-2023.introduced.html",
+      "sha256": "940e4f3bae38b2346168d33f41b2e3e8071984df27d0919e814a5ad9d4215ded"
+    },
+    "note": "Introduced version, 2023-01-13. Section 1 applies retroactively to bylaws, rules and ordinances in effect on August 1, 2023. The bill text shows the changes as plain text with no struck words; the full subd. 17 is reprinted."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 37.16): The society may make all bylaws, ordinances, and rules consistent with law which it considers necessary or proper for the government of the fairgrounds and all fairs to be held on them, and for the protection, health, safety, and comfort of the public on the fairgrounds provided no bylaw, ordinance, or rule prohibits the lawful carry or possession of firearms consistent with section 624.714.\nSection 2 (Minn. Stat. 624.714, subd. 17): (5) \"Governmental entity\" includes but is not limited to the State Agricultural Society when it conducts activities on the State Fairgrounds consistent with the public purposes identified in section 37.01."
+}

@@ -1,0 +1,299 @@
+{
+  "politician_id": "c35bd7ef-eafe-47be-b21b-928f579fbf73",
+  "findings": [
+    {
+      "id": "bf22c635f523d28663d653c295acaa0502a8581993c589b2616c4681082f72dd",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2609&ssn=0&y=2023",
+      "date": "2024-05-09",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-2609-2023",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2024-05-09: yea (tally 34–33); census gate: none.",
+      "subjects": [
+        "report on gun trafficking and seizures",
+        "forced-reset trigger devices added to trigger activator definition",
+        "felony for transferring any firearm to an ineligible person"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (CCR-HF2609, 2024-05-16; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/2609/versions/ccr/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2609-2023.ccr.html",
+          "sha256": "c0136004af668c4f580e296d1d01062908dfffe969a596f6dbe36f5a7b0a3990"
+        }
+      }
+    },
+    {
+      "id": "2c4527c7eecb01650b73ae154764024ddf2200ad7b0015bf5f316d2661a09e50",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-05-13",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2026-05-13: yea (tally 67–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "01173fc3da566319127bf8a91425a025c771b6fac53d0cd3b9e7ab41e61dd7aa",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-29",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2026-04-29: yea (tally 40–25); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    },
+    {
+      "id": "919584e5558f747eb1c819f331d07c83dd50f8daa49663eecab87cfc8374a60c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/4067?body=Senate",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-4067-2025",
+      "act": "yea",
+      "motion": "Senate Third reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN Senate, Senate Third reading Passed, 2026-05-04: yea (tally 34–33); census gate: multi-subject.",
+      "subjects": [
+        "certification and sales limits on assault weapons and magazines over 17 rounds",
+        "ghost-gun and unserialized firearm ban",
+        "negligent storage offence widened",
+        "extreme risk protection order changes",
+        "reenacted binary-trigger ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-30; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4067/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4067-2025.engrossed2.html",
+          "sha256": "8bed7150fe7bd3749a11193d241eba1091f6fade0e9fd5f2dc38e016c80a9d4b"
+        }
+      }
+    },
+    {
+      "id": "1a36e71af1ab89b353d4f1ad70724d944f18dba44fbe8f7d650b96d9f6738a8a",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3762?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-3762-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-3762-2025 (Open States sponsor list): HF3762 (2025-2026 Regular): Chiefs of police and sheriffs authorized to open certain expunged records to determine eligibility to purchase, receive, or carry a firearm..",
+      "subjects": [
+        "expunged records usable in gun-permit and transfer checks",
+        "notice to person denied on an expunged record"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3762/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3762-2025.introduced.html",
+          "sha256": "60658974c3ad152d4b6b65505a7a0b7622aea36a77bb662bded5101c78760709"
+        }
+      }
+    },
+    {
+      "id": "37db6cfa81e1966b9d7805551e5974f3c873973a451f345ea43028dab94c8346",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/3929?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-3929-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of MN-SF-3929-2025 (Open States sponsor list): SF3929 (2025-2026 Regular): Chiefs of police and sheriffs authorization to open certain expunged records to determine eligibility to purchase, receive, or carry a firearm.",
+      "subjects": [
+        "expunged records usable in firearm eligibility checks",
+        "notice to person denied a gun permit or transfer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3929/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3929-2025.introduced.html",
+          "sha256": "e606ef32a09a0fc626b740314242386fafabddc5b68e90587184e929ae14acfc"
+        }
+      }
+    },
+    {
+      "id": "8e3d1824414d33acc9cf6da32a5fe2e7c6d205f54d96405fc4ec78b5479731ee",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/SF/4896?body=Senate",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-SF-4896-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of MN-SF-4896-2025 (Open States sponsor list): SF4896 (2025-2026 Regular): Firearm transfer to an unauthorized person penalty increase provision, mandatory minimum sentence for certain transfers of a firearm to an ineligible person establishment provision and affirmative defense removal provision.",
+      "subjects": [
+        "longer prison term for transferring a firearm to an ineligible person",
+        "three-year mandatory minimum for aggravated transfers",
+        "coercion defense repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4896/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4896-2025.introduced.html",
+          "sha256": "a349fbb1f77f5d8ecc794c03feedfee1ea74e02bd33b23488828cae479a70d3d"
+        }
+      }
+    },
+    {
+      "id": "4be848f0b9fd0d1ef2a480637462c5674999d2a49e26a8fcce8d2c01bc88c625",
+      "kind": "own-words",
+      "url": "https://www.fox9.com/news/minnesota-senator-weighs-gun-control-next-legislative-session",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "In my opinion, everything's on the table. And anything that comes to me that has the support and will save lives, I will be a yes on,",
+      "note": "Quoted by a TV news outlet at a Stillwater town hall. The story says that after talking with constituents she would support full bans on assault-style weapons and high-capacity magazines proposed by the governor.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:38.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92c61edf10ce8e5e33ed246ef4370b05942c056d097d9aeedcb292ac41eb744e",
+      "kind": "own-words",
+      "url": "https://www.fox9.com/news/minnesota-senator-weighs-gun-control-next-legislative-session",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "It should not be a partisan issue in the first place. But we do really need to work together and find that common ground,",
+      "note": "Quoted by a TV news outlet on gun violence legislation; she calls for working across sides.",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:38.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2eb314c62e68d177f7c176350b478222f6108a64bb1980b1e09e4d7c42c2862f",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2025/11/10/supposedly-moderate-minnesota-dem-comes-out-in-favor-of-gun-ban-n1230550",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "I’ll be yes on anything and everything that comes through that will really make a difference to reduce gun violence here in the state of Minnesota,",
+      "note": "A gun-rights outlet quotes her from what it calls a recent interview; it reports her saying she would support whatever it takes to make the state safer. Original interview not reached.",
+      "subjects": [
+        "general gun safety statement",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:30:38.223Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page: https://www.senate.mn/members/index.html?mem_id=12861 (fetched, page carried no subject content)",
+        "campaign site: none found (https://www.judyseeberger.com did not load)",
+        "blocked: https://ballotpedia.org/Judy_Seeberger",
+        "blocked: https://www.startribune.com/how-one-minnesota-swing-district-democrat-decided-to-support-an-assault-style-weapons-ban/601497738",
+        "blocked: https://www.axios.com/local/twin-cities/2026/05/04/minnesota-senate-gun-safety-bill-assault-weapons-ban-school-shooting-response",
+        "blocked: https://minnesotareformer.com/2026/05/04/minnesota-senate-approves-gun-control-package-but-its-unlikely-to-pass-house/",
+        "news search on name plus gun words (two searches); a TV news story read, a gun-rights outlet read",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:30:38.223Z",
+      "by": "source-collector"
+    }
+  ]
+}

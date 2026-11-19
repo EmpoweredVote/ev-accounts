@@ -1,0 +1,51 @@
+{
+  "id": "MN-HF-1313-2025",
+  "scope": "state:mn",
+  "title": "HF1313 (2025-2026 Regular): Local governmental units authorized to prohibit or restrict the possession of dangerous weapons, ammunition, or explosives in local government-owned or leased buildings and land.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1313?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1313/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Samakab Hussein",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-20; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/1313/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1313-2025.introduced.html",
+      "sha256": "483ee3a324706889be4c611f2688b220e774661b6936853c411cdb808e4ff70c"
+    },
+    "note": "As filed (introduced version). Covers dangerous weapons and explosives as well as guns; sign rules are in paragraphs (c) and (d). Effective Aug 1, 2025."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, new subd. 1i): (a) Notwithstanding sections 624.714, subdivision 23, and 624.717, the elected governing body of a local governmental unit may prohibit or restrict a person from possessing a dangerous weapon, ammunition, or explosives within a building or on land owned or leased by the local governmental unit, except as provided under subdivision 1g.\nSection 1 (Minn. Stat. 609.66, new subd. 1i): (b) A person who possesses a dangerous weapon, ammunition, or explosives within a building or on land owned or leased by a local governmental unit that has prohibited or restricted possession under paragraph (a) is guilty of a misdemeanor."
+}

@@ -1,0 +1,81 @@
+{
+  "id": "MN-HF-4362-2025",
+  "scope": "state:mn",
+  "title": "HF4362 (2025-2026 Regular): Visitor carrying of firearms on campuses of public postsecondary institutions regulated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4362?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4362/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nathan Coulter",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
+    },
+    {
+      "name": "Brion Curran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "131b330a-cbc2-477e-a94b-3eeec70418a5"
+    },
+    {
+      "name": "Emma Greenman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    },
+    {
+      "name": "Dan Wolgamott",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef03b5f-8da7-46b6-b609-433ffb993f10"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Katie Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14b8fcd1-1981-4bbf-b766-287c664133f5"
+    },
+    {
+      "name": "Kristi Pursell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56a81dd0-5e0e-446f-8835-65d643520b72"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-13; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4362/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4362-2025.introduced.html",
+      "sha256": "f02c6a5afb2381ab367af5a8cb118f6af10294fccb2240a18f4f3a13916bd716"
+    },
+    "note": "Introduced version, 2026-03-13. The bill only relabels old paragraph (c) as (d) (struck text) and adds a cross-reference to the new paragraph (c)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 18): (c) A public postsecondary institution regulated under chapter 136F or 137 may establish policies that restrict the carry or possession of firearms by visitors while on the institution's property. A person carrying a firearm in violation of the public postsecondary institution policies may be ordered to leave the premises. A person who fails to leave when so requested is guilty of a petty misdemeanor. The fine for a first offense must not exceed $25. Notwithstanding section 609.531, a firearm carried in violation of this subdivision is not subject to forfeiture.\nSection 1 (Minn. Stat. 624.714, subd. 18): (d) Notwithstanding paragraphs (a), (b), and (c), an employer or a postsecondary institution may not prohibit the lawful carry or possession of firearms in a parking facility or parking area."
+}

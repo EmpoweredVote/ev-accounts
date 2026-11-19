@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-3343-2023",
+  "scope": "state:mn",
+  "title": "SF3343 (2023-2024 Regular): Providing an exception to the crime of illegal possession of a firearm in certain situations",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3343&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/3343/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jen McEwen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a3656b66-f796-4b26-a29e-2b9d7c1c064e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-05-16; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/3343/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3343-2023.introduced.html",
+      "sha256": "d95d19c7bbc248dff2706b3ae82dbc6efc7a030dad1b148ca916486605cd98bd"
+    },
+    "note": "Version read: as-filed (introduced) text; no passage vote recorded. Paragraphs (d) in both sections are the new language; the other paragraphs are existing law shown for context."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.165, subd. 1b): (d) A person who is otherwise prohibited from possessing a firearm, ammunition, or explosive under Minnesota law is not prohibited under paragraph (a) from doing so exclusively for the purposes of surrendering such an item to law enforcement without undue delay. This paragraph does not grant immunity for any crimes committed with that item, including prior unlawful possession of the item if the person surrendering the item knowingly had prior possession of it without the intent to surrender it to law enforcement.\nSection 2 (Minn. Stat. 624.713, subd. 2): (d) A person who is otherwise prohibited from possessing a firearm, ammunition, or explosive under Minnesota law is not prohibited under this subdivision from doing so exclusively for the purposes of surrendering such an item to law enforcement without undue delay. This paragraph does not grant immunity for any crimes committed with that item, including prior unlawful possession of the item if the person surrendering the item knowingly had prior possession of it without the intent to surrender it to law enforcement."
+}

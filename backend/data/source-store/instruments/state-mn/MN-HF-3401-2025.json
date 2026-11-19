@@ -1,0 +1,147 @@
+{
+  "id": "MN-HF-3401-2025",
+  "scope": "state:mn",
+  "title": "HF3401 (2025-2026 Regular): Circumstances when firearms are permitted on school property modified, and uniform storage requirements for firearms permitted on school property established.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3401?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3401/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Julie Greene",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df29702a-88ca-45a4-b3b9-1a5eb4509ac7"
+    },
+    {
+      "name": "Sydney Jordan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1b23f52f-50da-48bf-877b-e1182a1e7679"
+    },
+    {
+      "name": "Alex Falconer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "71bbd8ad-1ea0-4755-8d14-81739e898a70"
+    },
+    {
+      "name": "Samantha Sencer-Mura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
+    },
+    {
+      "name": "Brad Tabke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "cdcc38fe-555e-456f-9511-85f4cf7283e3"
+    },
+    {
+      "name": "Kaela Berg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Pete Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "51834ca0-6073-4d6c-863e-adf4264bdede"
+    },
+    {
+      "name": "Cheryl Youakim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d365578-3cfd-444b-80fa-bd6927b3b72c"
+    },
+    {
+      "name": "Ginny Klevorn",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "34b532b9-de36-4647-82f1-6bc17ed0d627"
+    },
+    {
+      "name": "Patty Acomb",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f1f2ffaf-c9fb-4555-adf8-6c9c8114d9f3"
+    },
+    {
+      "name": "Carlie Kotyza-Witthuhn",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    },
+    {
+      "name": "Nathan Coulter",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
+    },
+    {
+      "name": "Jay Xiong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Katie Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14b8fcd1-1981-4bbf-b766-287c664133f5"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-11; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3401/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3401-2025.introduced.html",
+      "sha256": "b4a0f897a89b5b2a3b7b78be850b74f2fb85ed7134c9bf7f5df3b468859b1d64"
+    },
+    "note": "As-filed text, introduced 2026-02-11. The bill strikes the old exceptions for firearms kept in a locked vehicle (4), possession with the principal's written permission (8), and persons on unimproved school or child care land (9). It adds Minnesota State High School League events to \"school property\"."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1d): (a) Except as provided under paragraphs (d) and (f), whoever possesses, stores, or keeps a dangerous weapon while knowingly on school property is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (d) Notwithstanding paragraph (a), (b), or (c), it is a misdemeanor for a person authorized to carry a firearm under the provisions of a permit or otherwise to carry a firearm on or about the person's clothes or person in a location the person knows is school property.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (3) persons authorized to carry a pistol under section 624.714 while in a motor vehicle or outside of a motor vehicle to directly place a firearm in, or retrieve it from, the trunk or rear area of the vehicle;\nSection 1 (Minn. Stat. 609.66, subd. 1d): (g) Notwithstanding section 471.634, a school district or other entity composed exclusively of school districts may not regulate firearms, ammunition, or their respective components, when possessed or carried by nonstudents or nonemployees, in a manner that is inconsistent with this subdivision.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (h) Notwithstanding sections 97B.045, 624.714, and 624.715, a person who is authorized to carry a firearm on school property pursuant to paragraph (f) must secure and store their firearms as provided for in this paragraph when the person is no longer in an eligible on-duty status or not participating in that portion of the activity for which firearm possession is authorized. (1) unloaded; (2) in a locked container, safe, or other secure device made to contain a firearm that, when locked, cannot be readily opened without use of a key, combination, or electronic code, and that is constructed to resist forced entry, tampering, and unauthorized access; and (3) placed in a locked trunk compartment of a motor vehicle or, if the motor vehicle does not have a trunk compartment with a functioning lock, placed out of plain sight within the vehicle."
+}

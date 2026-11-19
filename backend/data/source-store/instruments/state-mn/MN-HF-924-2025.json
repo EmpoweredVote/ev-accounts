@@ -1,0 +1,69 @@
+{
+  "id": "MN-HF-924-2025",
+  "scope": "state:mn",
+  "title": "HF924 (2025-2026 Regular): Certain retired peace officers authorized to possess firearms in the Capitol complex.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/924?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/924/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Nash",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+    },
+    {
+      "name": "Paul Novotny",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fbbc53e2-d3c8-4fbc-9df5-28cec3be9f41"
+    },
+    {
+      "name": "Terry Stier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "961a4084-a4a5-4a8e-ae85-3d647870689b"
+    },
+    {
+      "name": "Bidal Duran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b94e5477-4c6c-48d4-8232-60631494cc27"
+    },
+    {
+      "name": "Jeff Witte",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "78a28a3b-98d0-46a6-bdf2-1d8b961fa6ed"
+    },
+    {
+      "name": "Wayne Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "512c4ad3-271c-4108-bad5-e59a724fbc2a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-14; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/924/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-924-2025.introduced.html",
+      "sha256": "aa8dbede70e5748af49cb56e7d5871241da41295652074bbfc87a625e53f63b4"
+    },
+    "note": "Version read: introduced text (as filed). The new part is clause (5) of paragraph (b); clause (2) of paragraph (a) is existing law kept in the section. The text does not change the courthouse rule."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1g): (2) possesses a dangerous weapon, ammunition, or explosives in any state building within the Capitol Area described in chapter 15B, other than the National Guard Armory.\nSection 1 (Minn. Stat. 609.66, subd. 1g): (5) licensed peace officers and retired peace officers who carry pistols as authorized by, and in compliance with, United States Code, title 18, part I, chapter 44, section 926C, in buildings in the Capitol Area."
+}

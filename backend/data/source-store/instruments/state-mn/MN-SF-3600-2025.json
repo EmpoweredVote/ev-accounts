@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3600-2025",
+  "scope": "state:mn",
+  "title": "SF3600 (2025-2026 Regular): Lifetime firearms ban on persons who are convicted of certain misdemeanor and gross misdemeanor domestic assault offenses establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3600?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3600/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-16; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3600/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3600-2025.introduced.html",
+      "sha256": "ee21e2c95f0c17b6bd01145fc009fec771d0a6971745a4981743f51b4c3891cb"
+    },
+    "note": "Introduced version, as filed (2026-02-16); official copy from revisor.mn.gov. No passage vote recorded. Struck old law: the court 'may' order a ban, and the ban of 'any period longer than three years'; the bill makes the court 'shall' order a lifetime ban. The bill also changes the notice wording to 'firearms' where it said 'pistol'."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 609.2242, subd. 3): (c) When a person is convicted of assaulting a family or household member and is determined by the court to have used a firearm in any way during commission of the assault or the offense otherwise qualifies as a misdemeanor crime of domestic violence, as defined in United States Code, title 18, section 921(a)(33), the court shall order that the person is prohibited from possessing any type of firearm for the remainder of the person's life. A person who violates this paragraph is guilty of a gross misdemeanor. At the time of the conviction, the court shall inform the defendant of the lifetime prohibition on possessing a firearm and that it is a gross misdemeanor to violate this paragraph. The failure of the court to provide this information to a defendant does not affect the applicability of the firearm possession prohibition or the gross misdemeanor penalty to that defendant. A firearms restriction imposed pursuant to this paragraph expires if the person receives an expungement or pardon for the offense unless the pardon or expungement expressly provides that the person may not ship, transport, possess, or receive firearms. Expiration of a firearms restriction imposed pursuant to this paragraph has no impact on any other conviction or adjudication that restricts the person's firearms rights.\nSection 3 (Minn. Stat. 624.713, subd. 1, clause 9): (9) a person who has either been convicted in this state or elsewhere of (i) assaulting a family or household member and who was found by the court to have used a firearm in any way during commission of the assault, or (ii) an offense that qualifies as a misdemeanor crime of domestic violence, as defined in United States Code, title 18, section 921(a)(33), is prohibited from possessing any type of firearm or ammunition for the remainder of the person's life;\nSection 1 (Minn. Stat. 518B.01, subd. 14): (j) When a person is convicted under paragraph (b) or (c) of violating an order for protection and the court determines that the person used a firearm in any way during commission of the violation or the offense otherwise qualifies as a misdemeanor crime of domestic violence, as defined in United States Code, title 18, section 921(a)(33), the court shall order that the person is prohibited from possessing any type of firearm for the remainder of the person's life.\nSection 1 (Minn. Stat. 518B.01, subd. 14): At the time of the conviction, the court shall inform the defendant of the lifetime prohibition on possessing a firearm and that it is a gross misdemeanor to violate this paragraph. The failure of the court to provide this information to a defendant does not affect the applicability of the firearm possession prohibition or the gross misdemeanor penalty to that defendant."
+}

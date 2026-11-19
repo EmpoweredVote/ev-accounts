@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-50-S1-2021",
+  "scope": "state:mn",
+  "title": "SF50 (2021, First Special): Firearm purchase, ownership, possession, or carrying authorization denial based solely on the basis that the person is enrolled as a patient in the medical cannabis registry prohibition",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0050&ssn=1&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/1/SF/50/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Koran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/92/2021/1/SF/50/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-50-S1-2021.introduced.html",
+      "sha256": "ca2e86d3ba2433423bbb68e654fadd3ee07597046e60053c1e4d39042eec801a"
+    },
+    "note": "Introduced text as filed (2021 special session; no date given in the source); no votes recorded. Treated as single: every part decides gun eligibility; cannabis appears only as the status protected. Sections 1-4 add definitions. Sec. 7 also strikes only an 'or' and a period (formatting)."
+  },
+  "operative_text": "Section 5 (Minn. Stat. 624.713, subd. 1): The use of medical cannabis by a patient enrolled in the registry program does not constitute the unlawful use of a controlled substance under this item;\nSection 5 (Minn. Stat. 624.713, subd. 1): Participation as a patient in the registry program does not disqualify the person from possessing firearms and ammunition under this section.\nSection 6 (Minn. Stat. 624.714, subd. 6): (f) A sheriff shall not deny an application for a permit to carry solely because the applicant is a patient enrolled in the registry program and uses medical cannabis for a qualifying medical condition.\nSection 7 (Minn. Stat. 624.7142, subd. 1): (7) when the person is enrolled as a patient in the registry program, uses medical cannabis, and knows or has reason to know that the medical cannabis used by the person has the capacity to cause impairment.\nSection 9 (Minn. Stat. 624.7152): (a) A person may not be denied the right to purchase, own, possess, or carry a firearm solely on the basis that the person is a patient in the registry program.\nSection 9 (Minn. Stat. 624.7152): (b) A state or local agency may not access a database containing the identities of patients in the registry program to obtain information for the purpose of approving or disapproving a person from purchasing, owning, possessing, or carrying a firearm.\nSection 9 (Minn. Stat. 624.7152): (d) A state or local agency may not inquire about a person's status as a patient in the registry program for the purpose of approving or disapproving the person from purchasing, owning, possessing, or carrying a firearm."
+}

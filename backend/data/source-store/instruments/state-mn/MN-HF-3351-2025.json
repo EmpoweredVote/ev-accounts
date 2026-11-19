@@ -1,0 +1,93 @@
+{
+  "id": "MN-HF-3351-2025",
+  "scope": "state:mn",
+  "title": "HF3351 (2025-2026 Regular): State preemption of local units of government regulating firearms repealed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3351?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3351/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dave Pinto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Jamie Long",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e9ae384-03ef-4f76-831b-3ccc266509a4"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Samakab Hussein",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "940b9e75-ae5d-458e-a888-6d7096e7df54"
+    },
+    {
+      "name": "Leigh Finke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
+    },
+    {
+      "name": "Nathan Coulter",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3386966b-b6fe-4ffb-8796-e755be9b44ab"
+    },
+    {
+      "name": "Katie Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14b8fcd1-1981-4bbf-b766-287c664133f5"
+    },
+    {
+      "name": "Mike Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6082f4d-56fd-4fc7-b29a-2da8ad703979"
+    },
+    {
+      "name": "Bianca Virnig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "01a09876-9713-4c34-b4a4-03b57c8b1535"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-10; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3351/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3351-2025.introduced.html",
+      "sha256": "78c37bed653f267268c76c21d221824ef685472ebd657b26b8e30a7a361ad811"
+    },
+    "note": "Introduced version, 2026-02-10. The repealed sections (471.633 firearms preemption, 471.634 definition, 624.714 subd. 23 exclusivity of carry permit rules, 624.717 local regulation of pistols, 624.7191 subd. 4 local regulation of ammunition) are printed in the appendix as old law; not quoted."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 471.635): A governmental subdivision may regulate by reasonable, nondiscriminatory, and nonarbitrary zoning ordinances, the location of businesses where firearms are sold by a firearms dealer.\nSection 2 (repealer): Minnesota Statutes 2024, sections 471.633; 471.634; 624.714, subdivision 23; 624.717; and 624.7191, subdivision 4, are repealed."
+}

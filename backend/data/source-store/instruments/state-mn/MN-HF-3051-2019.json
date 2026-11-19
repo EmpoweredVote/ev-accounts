@@ -1,0 +1,67 @@
+{
+  "id": "MN-HF-3051-2019",
+  "scope": "state:mn",
+  "title": "HF3051 (2019-2020 Regular): Firearms; cause of action provided when a person who is prohibited from carrying a firearm on a property suffers a loss by not having the firearm.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3051&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/HF/3051/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/HF/3051/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3051-2019.introduced.html",
+      "sha256": "6376399cef4392260d6afcb9460945a922c9dd922718d3002228554241e2eafa"
+    },
+    "note": "Introduced version; no vote listed. Section 1 strikes the sentence saying subd. 17 does not apply to private residences, and rewrites what counts as a 'reasonable request' under the posting law to include the custodial-responsibility notice. Subd. 17 paragraph (b)(1)(i) (sign wording) is also changed; only the oral-notice clause is quoted."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7195, subd. 2): A property owner or entity who prohibits the carrying of firearms by a person who is otherwise authorized to carry a firearm or who is not otherwise prohibited from carrying a firearm shall assume absolute custodial responsibility for the safety and defense of the unarmed person while the person is located on the owner's or entity's property that is posted with a sign prohibiting firearms.\nSection 2 (Minn. Stat. 624.7195, subd. 3): A person who may otherwise lawfully carry a firearm or who is not otherwise prohibited from carrying a firearm and who is injured, suffers bodily injury or death, incurs economic loss or expense, property damage, or any other compensable loss, that could have been avoided by carrying a firearm, as the result of conduct occurring on property with a posted written notice that prohibits firearms shall have a civil cause of action against the owner or entity that exercises control over the property on which the written notice was posted.\nSection 2 (Minn. Stat. 624.7195, subd. 4): The statute of limitations for an action under this section is two years from the date of the occurrence of the conduct which gave rise to damages under this section.\nSection 2 (Minn. Stat. 624.7195, subd. 5): Any notice or signage that prohibits firearms as provided in subdivision 3 shall also contain language stating that any person on the posted property who is authorized to carry a firearm or who is not prohibited from carrying a firearm is under the custodial responsibility of the property owner or entity that has posted a sign on the property.\nSection 1 (Minn. Stat. 624.714, subd. 17, para. (b)(1)(ii)): the requester or the requester's agent personally informs the person that guns are prohibited in the premises and demands compliance and that the person is under the custodial responsibility of the requester according to section 624.7195."
+}

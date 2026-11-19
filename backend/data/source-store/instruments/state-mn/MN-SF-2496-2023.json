@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-2496-2023",
+  "scope": "state:mn",
+  "title": "SF2496 (2023-2024 Regular): Enforcement provision of judicially ordered firearms restrictions for abusing parties",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2496&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/2496/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Kreun",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f05556a2-a3e8-4f98-9b62-9d169dec312d"
+    },
+    {
+      "name": "Eric Pratt",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fa8d5cfb-5feb-4112-b68b-f1c2de963dc3"
+    },
+    {
+      "name": "Julia Coleman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b1f2628a-6264-4849-a14f-0f708fef5394"
+    },
+    {
+      "name": "Heather Gustafson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+    },
+    {
+      "name": "Carla Nelson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "15788263-ad8f-4233-ac48-c9de61d2b55e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-03-01; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/2496/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2496-2023.introduced.html",
+      "sha256": "459702041e05316fd87ff6314130d2c8291451bd02f0f957674f6fb64080b6bf"
+    },
+    "note": "Read the introduced bill (2023-03-01); no vote data in file. No struck text in the file. Section 3 (Minn. Stat. 609.2242 subd. 3) carries the same transfer rules for domestic assault convictions (not quoted, space)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260C.201, subd. 3(d)): Except as provided in paragraph (f), the court shall order the abusing party to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 1 (Minn. Stat. 260C.201, subd. 3(f)): Upon a finding of imminent risk, the court shall order that the local law enforcement agency take immediate possession of all firearms in the abusing party's possession.\nSection 1 (Minn. Stat. 260C.201, subd. 3(g)): The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (d), (e), and (f), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 2 (Minn. Stat. 518B.01, subd. 6(g)): An order granting relief shall prohibit the abusing party from possessing firearms for the length the order is in effect if the order (1) restrains the abusing party from harassing, stalking, or threatening the petitioner or restrains the abusing party from engaging in other conduct that would place the petitioner in reasonable fear of bodily injury, and (2) includes a finding that the abusing party represents a credible threat to the physical safety of the petitioner or prohibits the abusing party from using, attempting to use, or threatening to use physical force against the petitioner.\nSection 4 (Minn. Stat. 609.749, subd. 8(e)): Except as otherwise provided in paragraphs (d) and (g), when a person is convicted of harassment or stalking under this section, the court shall order the defendant to transfer any firearms that the person possesses, within three business days, to a federally licensed firearms dealer, a law enforcement agency, or a third party who may lawfully receive them.\nSection 4 (Minn. Stat. 609.749, subd. 8(h)): The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required in paragraphs (e), (f), and (g), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction."
+}

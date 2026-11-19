@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-2779-2017",
+  "scope": "state:mn",
+  "title": "SF2779 (2017-2018 Regular): Centralized register of individuals voluntarily choosing to be ineligible to purchase firearms for a self-determined period of time creation by Bureau of Criminal Apprehension (BCA) requirement",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2779&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2779/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "John Marty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Ann Rest",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3295d8e3-953f-4312-b660-a08b5ba8d862"
+    },
+    {
+      "name": "Steve Cwodzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7845f8df-cc58-49fa-a87c-6483d6cdcf47"
+    },
+    {
+      "name": "Matt Little",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2779/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2779-2017.introduced.html",
+      "sha256": "29282e95c2a09a842ec69e85d6f26dacadc2d270fed026c5841df111d6d4a359"
+    },
+    "note": "Version read: introduced (no date given). Sections 3 and 7 strike the words that made a prohibited-person finding the only ground for refusal. No votes recorded."
+  },
+  "operative_text": "Section 11 (Minn. Stat. 624.7163, subd. 2): The bureau shall develop a form for an individual to submit to the bureau to request, or to renew a request, that the individual be prohibited from purchasing a pistol, semiautomatic military-style assault weapon, or any other firearm. The form must provide the individual the choice of term of prohibition as follows: (1) a one-year, irrevocable term; (2) a five-year term, the first year irrevocable; or (3) a 20-year term, the first year irrevocable.\nSection 11 (Minn. Stat. 624.7163, subd. 2): If an individual submits a form requesting that the individual be prohibited from purchasing a pistol, semiautomatic military-style assault weapon, or any other firearm, the bureau shall enter the individual's identifying information into a database maintained by the bureau.\nSection 3 (Minn. Stat. 624.7131, subd. 4): A chief of police or sheriff shall refuse to grant a transferee permit if the applicant is: (1) prohibited by section 624.713 from possessing a pistol or semiautomatic military-style assault weapon; or (2) listed in the voluntary database under section 624.7163.\nSection 4 (Minn. Stat. 624.7131, subd. 9): A valid permit to carry issued pursuant to section 624.714 constitutes a transferee permit for the purposes of this section and section 624.7132 except if the person is listed in the voluntary database under section 624.7163."
+}

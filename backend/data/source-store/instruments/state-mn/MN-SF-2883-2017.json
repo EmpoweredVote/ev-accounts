@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-2883-2017",
+  "scope": "state:mn",
+  "title": "SF2883 (2017-2018 Regular): Gun violence protective orders issuance and enforcement; emergency issuance of gun violence protective order; firearms transfer and return; offenses, violation, and liability protection",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2883&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/2883/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandy Pappas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "Melissa Wiklund",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9e2e19df-eca0-4b74-8d0b-6ef205f5431c"
+    },
+    {
+      "name": "Nick Frentz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c2d7c018-141c-4c34-a605-e8b1f53acdee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/2883/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2883-2017.introduced.html",
+      "sha256": "99ac19b72f2d35299ad434f16ce26913700ef4b1fad05bf1165ddf9f5e8d2666"
+    },
+    "note": "Introduced version as filed (SF 2883, 2017-2018 session, no date given); no later amendments in the text read. Section 9 adds the new order type to the list of persons not entitled to possess firearms; the bill strikes the word 'or' and a period in that list (punctuation only)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 245.9901, subd. 4): There shall exist an action known as a petition for a gun violence protective order for protection from gun violence, which order shall enjoin and prohibit the respondent from possessing firearms for a fixed period. A petition for relief shall allege that the respondent poses a significant danger of bodily injury to self or to other persons by possessing a firearm, and shall allege that less restrictive alternatives are inadequate or inappropriate to the circumstances.\nSection 2 (Minn. Stat. 245.9902, subd. 2): If the court finds there is a preponderance of the evidence to issue a gun violence protective order, the court shall issue the order prohibiting the person from possessing a firearm for the duration of the order. The order shall have a fixed period, to be determined by the court, of not less than six months and not more than two years, subject to renewal or extension under section 245.9903.\nSection 4 (Minn. Stat. 245.9904): If the court finds there is reasonable grounds that (1) the respondent poses a significant danger of bodily injury to the respondent's self or to other persons by possessing a firearm, (2) less restrictive alternatives are inappropriate or inadequate to the circumstances, and (3) the respondent presents an immediate and present danger of bodily injury, the court shall issue an ex parte emergency order prohibiting the respondent from possessing a firearm for the duration of the order. The emergency order shall have a fixed period of 14 days, unless a hearing is set under section 245.9902 on an earlier date, in which case the order shall expire upon a judge's finding that no order is issued under section 245.9902.\nSection 5 (Minn. Stat. 245.9905): Upon issuance of a gun violence protective order, the court shall direct the respondent to transfer any firearms the person possesses, within 24 hours, to a federally licensed firearms dealer, a law enforcement agency, or third party.\nSection 6 (Minn. Stat. 245.9906, subd. 1): A local law enforcement agency that accepted temporary transfer of firearms under section 245.9905 shall return the firearms to the respondent upon request after the expiration of the order, provided the respondent is not otherwise prohibited from possessing firearms under state or federal law.\nSection 7 (Minn. Stat. 245.9907, subd. 2): A person who possesses a firearm and knows or should have known that the person is prohibited from doing so by a gun violence protective order under section 245.9902 or 245.9904, or by an order of protection granted by a judge or referee pursuant to a substantially similar law of another state, is guilty of a misdemeanor and shall be prohibited from possessing firearms for a period of five years.\nSection 9 (Minn. Stat. 624.713, subd. 1): (14) a person who is subject to a gun violence protective order as described in section 245.9902 or 245.9904."
+}

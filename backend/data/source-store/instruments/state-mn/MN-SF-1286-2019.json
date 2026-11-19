@@ -1,0 +1,56 @@
+{
+  "id": "MN-SF-1286-2019",
+  "scope": "state:mn",
+  "title": "SF1286 (2019-2020 Regular): People posing a significant danger by firearm possession; law enforcement and family members court petition to prohibit possession authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1286&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/1286/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ann Rest",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3295d8e3-953f-4312-b660-a08b5ba8d862"
+    },
+    {
+      "name": "Scott Dibble",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+    },
+    {
+      "name": "Patricia Torres Ray",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Carlson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bfde1ba1-0aab-416e-884d-708bb14ee500"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/1286/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1286-2019.introduced.html",
+      "sha256": "d4763d3eb435e30d421357a448e3f521bcc1b6efccf3bae0198186d1df2f4732"
+    },
+    "note": "Version read: introduced (as filed). No passage vote recorded. Also creates an emergency order (624.7164), return of firearms (624.7166), a false-petition offence and liability protection; Section 10 is a revisor renumbering instruction. Same text as MN-SF-1285-2019 apart from the heading of Section 10."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.713, subd. 1): (14) a person who is subject to an extreme risk protection order as described in section 624.7162 or 624.7164.\nSection 3 (Minn. Stat. 624.7162, subd. 2): (d) If the court finds there is a preponderance of the evidence to issue an extreme risk protection order, the court shall issue the order prohibiting the person from possessing a firearm for the duration of the order.\nSection 6 (Minn. Stat. 624.7165): (a) Upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours, to a federally licensed firearms dealer or a law enforcement agency. If the respondent elects to transfer the respondent's firearms to a law enforcement agency, the agency must accept the transfer.\nSection 8 (Minn. Stat. 624.7167, subd. 2): A person who possesses a firearm and knows or should have known that the person is prohibited from doing so by an extreme risk protection order under section 624.7162 or 624.7164, or by an order of protection granted by a judge or referee pursuant to a substantially similar law of another state, is guilty of a misdemeanor and shall be prohibited from possessing firearms for a period of five years."
+}

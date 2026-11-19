@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-4837-2025",
+  "scope": "state:mn",
+  "title": "SF4837 (2025-2026 Regular): Individuals who own firearms obtaining and maintaining liability insurance requirement provision and firearm liability insurance surcharge imposition provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4837?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4837/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Dibble",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-24; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4837/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4837-2025.introduced.html",
+      "sha256": "29bf92b72a83c97f49618fae5906ad3451dfa0936c1c628cdfd8867cb23b9aa8"
+    },
+    "note": "Introduced text as filed 2026-03-24; no votes recorded. The surcharge percentage is left blank in the text (\".....\")."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 65A.60, subd. 2): (a) An individual who owns a firearm must obtain, and during ownership continuously maintain, a policy of liability insurance specifically covering any damages resulting from negligent or accidental discharge of a firearm resulting in death, injury, or property damage.\nSection 1 (Minn. Stat. 65A.60, subd. 4): Each plan of firearm liability insurance must contain stated limits of liability, exclusive of interest and costs, with respect to each firearm for which coverage is granted, of not less than $250,000 per occurrence.\nSection 1 (Minn. Stat. 65A.60, subd. 6): (a) A person who violates this section by failing to obtain or maintain insurance required under this section is guilty of a misdemeanor.\nSection 1 (Minn. Stat. 65A.60, subd. 7): This section does not apply to law enforcement and active duty military personnel while acting in the course of official duties.\nSection 2 (Minn. Stat. 297I.12, subd. 2): The gun harm reduction account is established in the special revenue fund."
+}

@@ -1,0 +1,129 @@
+{
+  "id": "MN-HF-1678-2017",
+  "scope": "state:mn",
+  "title": "HF1678 (2017-2018 Regular): Taylor Hayden Gun Violence Prevention Act established, and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1678&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/HF/1678/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Fue Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "Maye Quade",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Raymond Dehn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Carlson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "JoAnn Ward",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Erin Murphy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f9f2c3e6-ae73-4844-91c2-c472d74c3aa9"
+    },
+    {
+      "name": "Paul Rosenthal",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dave Pinto",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Jean Wagenius",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peggy Flanagan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tina Liebling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+    },
+    {
+      "name": "Connie Bernardy",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rena Moran",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Kunesh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+    },
+    {
+      "name": "Alice Hausman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ilhan Omar",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peter Fischer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e6333290-8189-415a-af13-7cfc594ca86b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/HF/1678/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1678-2017.introduced.html",
+      "sha256": "977ca2c25292336496676b76d356a878f94e76c9b7936d7833f3d80f19956fc9"
+    },
+    "note": "Version read: introduced bill (as filed), no date shown. No votes recorded."
+  },
+  "operative_text": "Section 1: To reduce the number of injuries and deaths of innocent individuals in the community and to increase community safety, the commissioner of human services shall develop a competitive bidding process to award grants to nonprofit organizations with expertise in gun violence prevention.\nSection 1: A nonprofit organization awarded a grant must use the money for gun violence prevention or public awareness and education campaigns on gun violence prevention.\nSection 2: $200,000 in fiscal year 2018 and $200,000 in fiscal year 2019 are appropriated from the general fund to the commissioner of human services to provide grants described in section 1."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "MN-HF-4081-2025",
+  "scope": "state:mn",
+  "title": "HF4081 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons banned, and criminal penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4081?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/4081/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Emma Greenman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-06; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4081/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4081-2025.introduced.html",
+      "sha256": "e771132b6496971363d2dc197f204d77ff4371b56167196ebd048965d3fd8ebc"
+    },
+    "note": "Introduced version (as filed, 2026-03-06); no passage vote on file. Article 1, Section 1 strikes the sporting-purposes exclusion from the definition and adds feature-based types. Article 2 makes conforming changes (data on certifications is private, removal of assault-weapon references from other firearm laws) and is not quoted."
+  },
+  "operative_text": "Article 1, Section 1 (Minn. Stat. 624.712, subd. 7): (2) semiautomatic pistol or any semiautomatic, centerfire, or rimfire rifle with a fixed magazine that has the capacity to accept more than ten rounds of ammunition;\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer, own, or possess semiautomatic military-style assault weapons.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 4): (a) A person who legally owned or possessed a semiautomatic military-style assault weapon before January 1, 2027, and who desires to keep ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension by May 1, 2027.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 4): (3) possess the device only on property owned or immediately controlled by the person, while engaged in the legal use of the device at a duly licensed firing range, or while transporting the item in compliance with applicable law; and\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 4): (c) Semiautomatic military-style assault weapons regulated under this subdivision must not be transferred, except for transfer to the appropriate law enforcement agency for the purpose of surrendering the item for destruction.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 4): (f) A person who owns or possesses a semiautomatic military-style assault weapon before January 1, 2027, who does not elect to certify ownership of the device as required in this subdivision must do one of the following before January 1, 2027: (1) surrender the device to the appropriate law enforcement agency for destruction; (2) modify the device to render it permanently inoperable; or (3) remove the device from the state.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 5): (a) A person who violates subdivision 2 or 4, paragraph (a) or (g), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nArticle 1, Section 2 (Minn. Stat. 624.7145, subd. 5): (b) A person who knowingly violates subdivision 4, paragraph (b), (c), (d), or (f), is guilty of a gross misdemeanor."
+}

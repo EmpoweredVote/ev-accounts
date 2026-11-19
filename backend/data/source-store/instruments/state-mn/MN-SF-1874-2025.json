@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-1874-2025",
+  "scope": "state:mn",
+  "title": "SF1874 (2025-2026 Regular): Shooting ranges closure during the state of emergency prohibition provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1874?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/1874/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-24; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/1874/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1874-2025.introduced.html",
+      "sha256": "ceb467cf4daa83cf6b9e06541f162c97d73394614c3311aaae855b7780886292"
+    },
+    "note": "Introduced version as filed, 2025-02-24; no vote recorded. The bill strikes only the word 'or' in clause (c)(4) (the text read as printed with it left out); which other words are new cannot be told from the text."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7192): (a) This section applies only during the effective period of a state of emergency proclaimed by the governor relating to a public disorder or disaster.\nSection 1 (Minn. Stat. 624.7192): (4) close or limit the operating hours of businesses, including but not limited to gun ranges, that lawfully sell, service, or provide training in the lawful use of any of these items, unless such closing or limitation of hours applies equally to all forms of commerce.\nSection 1 (Minn. Stat. 624.7192): (3) In an action or proceeding to enforce this section, the court must award the prevailing plaintiff reasonable court costs and expenses, including attorney fees."
+}

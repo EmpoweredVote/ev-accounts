@@ -1,0 +1,94 @@
+{
+  "id": "MN-HF-1056-2021",
+  "scope": "state:mn",
+  "title": "HF1056 (2021-2022 Regular): Right of the people to keep and bear arms protected, and constitutional amendment proposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1056&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/1056/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Lucero",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jerry Hertaus",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Jim Nash",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Dale Lueck",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-11; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/1056/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1056-2021.introduced.html",
+      "sha256": "75567f0ad1ed3398f4d2b1cdc79d553e541eac954cca88875cc09fbc79c4495f"
+    },
+    "note": "As filed Feb 11, 2021 (introduced version). No vote recorded; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (Minnesota Constitution, new article I, section 18): A well regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall not be infringed."
+}

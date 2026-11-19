@@ -1,0 +1,72 @@
+{
+  "id": "MN-HF-2684-2021",
+  "scope": "state:mn",
+  "title": "HF2684 (2021-2022 Regular): Firearm lawful carry and possession authorized at the State Fair.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2684&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/HF/2684/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-01-24; official copy, https://www.revisor.mn.gov/bills/92/2022/0/HF/2684/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2684-2021.introduced.html",
+      "sha256": "27ea37045480e09a7d408126ce218d5a31a45ecc7ab3ba04e690c6066df633b2"
+    },
+    "note": "Version read: introduced (as filed). The saved text does not mark underlined (added) words, and this bill strikes nothing, so I took the added words from the bill title and the section 1 proviso; the section 2 definition is my best reading of the added part."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 37.16): The society may make all bylaws, ordinances, and rules consistent with law which it considers necessary or proper for the government of the fairgrounds and all fairs to be held on them, and for the protection, health, safety, and comfort of the public on the fairgrounds provided no bylaw, ordinance, or rule prohibits the lawful carry or possession of firearms consistent with section 624.714.\nSection 2 (Minn. Stat. 624.714, subd. 17): (5) \"Governmental entity\" includes but is not limited to the State Agricultural Society when it conducts activities on the State Fairgrounds consistent with the public purposes identified in section 37.01."
+}

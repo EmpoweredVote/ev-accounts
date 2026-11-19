@@ -1,0 +1,63 @@
+{
+  "id": "MN-HF-3368-2025",
+  "scope": "state:mn",
+  "title": "HF3368 (2025-2026 Regular): 2024 amendment to the definition of trigger activator reenacted.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3368?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3368/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kaela Berg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Kari Rehrauer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9918a503-86e6-403c-9c9b-0f2cd5ee0408"
+    },
+    {
+      "name": "Katie Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14b8fcd1-1981-4bbf-b766-287c664133f5"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-10; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3368/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3368-2025.introduced.html",
+      "sha256": "4e56f2f015eb6f2727e3d5e2201a737a4424cc7861a034e1a1bdce855bb8282f"
+    },
+    "note": "Introduced version, 2026-02-10. The reenacted text of Laws 2024, ch. 127, art. 36, sec. 2 is not in the file; the quote is only the reenactment line. Effective the day after enactment and applies to crimes committed on or after that date."
+  },
+  "operative_text": "Section 1 (uncoded reenactment): Laws 2024, chapter 127, article 36, section 2, is reenacted retroactively and without interruption from January 1, 2025."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "MN-SF-264-2025",
+  "scope": "state:mn",
+  "title": "SF264 (2025-2026 Regular): Possession of dangerous weapons in the Capitol complex",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/264?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/264/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Marty",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Jen McEwen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a3656b66-f796-4b26-a29e-2b9d7c1c064e"
+    },
+    {
+      "name": "Steve Cwodzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7845f8df-cc58-49fa-a87c-6483d6cdcf47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-15; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/264/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-264-2025.introduced.html",
+      "sha256": "11a5b5811f441f1f437437e95b12c9b6f90e3552eb8e661681e8836d27317464"
+    },
+    "note": "Version read: introduced, 2025-01-15. Section 2 strikes clause (3) of the \"carry\" definition, which exempted carrying a BB gun, rifle or shotgun by a permit holder; section 1 strikes the commissioner-of-public-safety notice and consent provisions. No votes recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1g): A person who commits either of the following acts is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both: (1) possesses a dangerous weapon, ammunition, or explosives within any courthouse complex; or (2) possesses a dangerous weapon, ammunition, or explosives in any state building within the Capitol Area described in chapter 15B, other than the National Guard Armory.\nSection 1 (Minn. Stat. 609.66, subd. 1g): Unless a person is otherwise prohibited or restricted by other law to possess a firearm, the prohibition in paragraph (a), clause (2), does not apply to persons authorized to carry a pistol under section 624.714, while the person is: (1) in a motor vehicle; or (2) outside of a motor vehicle to directly place a firearm in, or retrieve it from, the trunk or rear area of the vehicle.\nSection 2 (Minn. Stat. 624.7181, subd. 1): (2) the carrying by a person of a BB gun, rifle, or shotgun that is unloaded and in a gun case expressly made to contain a firearm, if the case fully encloses the firearm by being zipped, snapped, buckled, tied, or otherwise fastened, and no portion of the firearm is exposed;"
+}

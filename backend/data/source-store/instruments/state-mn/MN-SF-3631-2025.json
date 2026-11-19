@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3631-2025",
+  "scope": "state:mn",
+  "title": "SF3631 (2025-2026 Regular): Capitol complex dangerous weapons prohibition provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3631?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3631/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-17; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3631/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3631-2025.introduced.html",
+      "sha256": "2aef13dfc2481b8e3bc2cd2a04275a2fdb037ce9d0f3599b52b95c8f5dc4d512"
+    },
+    "note": "Introduced version (as filed), 2026-02-17; no vote. The text file does not show which words are new; the bill strikes the permit-holder notice to the commissioner of public safety and the commissioner-consent exception (struck words not quoted). Section 1 (Minn. Stat. 299E.04, subd. 4) is a data-access conforming change."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 609.66, subd. 1g): A person who commits either of the following acts is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both: (1) possesses a dangerous weapon, ammunition, or explosives within any courthouse complex; or (2) possesses a dangerous weapon, ammunition, or explosives in any state building within the Capitol Area described in chapter 15B, other than the National Guard Armory. Unless a person is otherwise prohibited or restricted by other law to possess a firearm, the prohibition in paragraph (a), clause (2), does not apply to persons authorized to carry a pistol under section 624.714, while the person is: (1) in a motor vehicle, or (2) outside of a motor vehicle to directly place a firearm in, or retrieve it from, the trunk or rear area of the vehicle."
+}

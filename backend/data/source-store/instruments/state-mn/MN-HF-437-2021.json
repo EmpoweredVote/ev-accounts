@@ -1,0 +1,49 @@
+{
+  "id": "MN-HF-437-2021",
+  "scope": "state:mn",
+  "title": "HF437 (2021-2022 Regular): Firearms; cause of action provided when a person who is prohibited from carrying a firearm on a property suffers a loss by not having the firearm.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0437&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/437/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-28; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/437/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-437-2021.introduced.html",
+      "sha256": "0fb4754584b6534317be1ca76a47ae03b856c0fe55fefb17eb39e9889edb5908"
+    },
+    "note": "Introduced version, 2021-01-28. Section 1 amends Minn. Stat. 624.714, subd. 17 only by striking the sentence 'This subdivision does not apply to private residences.' from paragraph (e); the rest of subd. 17 is existing law. The cause of action does not apply where state or federal law required the notice (subd. 6)."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7195, subd. 2): (a) A property owner or entity who prohibits the carrying of firearms by a person who is otherwise authorized to carry a firearm or who is not otherwise prohibited from carrying a firearm shall assume absolute custodial responsibility for the safety and defense of the unarmed person while the person is located on the owner's or entity's property that is posted with a sign prohibiting firearms.\nSection 2 (Minn. Stat. 624.7195, subd. 3): A person who may otherwise lawfully carry a firearm or who is not otherwise prohibited from carrying a firearm and who is injured, suffers bodily injury or death, incurs economic loss or expense, property damage, or any other compensable loss, that could have been avoided by carrying a firearm, as the result of conduct occurring on property with a posted written notice that prohibits firearms shall have a civil cause of action against the owner or entity that exercises control over the property on which the written notice was posted.\nSection 2 (Minn. Stat. 624.7195, subd. 5): Any notice or signage that prohibits firearms as provided in subdivision 3 shall also contain language stating that any person on the posted property who is authorized to carry a firearm or who is not prohibited from carrying a firearm is under the custodial responsibility of the property owner or entity that has posted a sign on the property."
+}

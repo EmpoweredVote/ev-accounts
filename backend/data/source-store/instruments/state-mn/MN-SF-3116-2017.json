@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-3116-2017",
+  "scope": "state:mn",
+  "title": "SF3116 (2017-2018 Regular): School teachers and employees permit to carry firearms in schools; active shooter firearm training",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3116&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/3116/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Mathews",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "99080178-3c14-40f0-be57-c922f870bef9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/3116/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3116-2017.introduced.html",
+      "sha256": "71b74de2de9b50c00f6c9d7bad303895f426ba74452f3ca93285c7fe502db1d5"
+    },
+    "note": "Introduced version as filed (SF 3116, 2017-2018 session). Section 2 strikes the word 'or' and a period in the exceptions list (punctuation). Section 3(b) text says a sheriff must issue a school permit to qualifying applicants unless denied under subd. 6."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 299C.26): The superintendent of the Bureau of Criminal Apprehension, in consultation with security and law enforcement experts with appropriate qualifications and experience in responding to active shooter situations, must establish a school and postsecondary institution teacher and employee firearm training program that includes at a minimum training in active shooter situations.\nSection 2 (Minn. Stat. 609.66, subd. 1d): (10) teachers and employees of public elementary, middle, and secondary schools; charter schools under chapter 124E; and postsecondary institutions under chapter 136F or 137 who have a school permit to carry under section 624.714, subdivision 8b.\nSection 3 (Minn. Stat. 624.714, subd. 8b): A teacher or other employee of a public elementary, middle, or secondary school; charter school under chapter 124E; or postsecondary institution under chapter 136F or 137 may apply to the sheriff of the county where the teacher or employee resides for a school permit to carry. A school permit to carry issued under this subdivision expires one year after the date of issue.\nSection 4 (Minn. Stat. 624.714, subd. 18): This subdivision does not apply to teachers and employees authorized to carry firearms under section 609.66, subdivision 1d, paragraph (f)."
+}

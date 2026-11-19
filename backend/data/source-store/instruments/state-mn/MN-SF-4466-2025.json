@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-4466-2025",
+  "scope": "state:mn",
+  "title": "SF4466 (2025-2026 Regular): Visitors of public postsecondary institutions carrying of firearms regulations provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4466?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4466/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Zaynab Mohamed",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "John Marty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Doron Clark",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3a7411c9-55d4-4eb6-bae0-5f5f6206c517"
+    },
+    {
+      "name": "Erin Maye Quade",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9f089f1-c5a5-4cf6-908b-b9898a078fe7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-03-12; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4466/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4466-2025.introduced.html",
+      "sha256": "b912fa8fc2669eb1cd4949b560e3411df25d59631765104e9f2504030ceeb77a"
+    },
+    "note": "Introduced version (Introduction, 2026-03-12). Adds paragraph (c) on visitors; existing student and employee policy paragraphs are unchanged. Companion bill with a different fine cap ($25 vs. $500)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 18(c)): A public postsecondary institution regulated under chapter 136F or 137 may establish policies that restrict the carry or possession of firearms by visitors while on the institution's property. A person carrying a firearm in violation of the public postsecondary institution policies may be ordered to leave the premises. A person who fails to leave when so requested is guilty of a petty misdemeanor. The fine for a first offense must not exceed $25. Notwithstanding section 609.531, a firearm carried in violation of this subdivision is not subject to forfeiture.\nSection 1 (Minn. Stat. 624.714, subd. 18(d)): Notwithstanding paragraphs (a), (b), and (c), an employer or a postsecondary institution may not prohibit the lawful carry or possession of firearms in a parking facility or parking area."
+}

@@ -81,7 +81,389 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "73faf65a8ac9a8ec1747b9b0e5404307e35bbd2e25f074f4eefee3176cd1b37c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 134–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "1c9282cad8ccf521a877811ab8d8e15090aec67d0e21b1b0574384add85d48ee",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3762?body=House",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3762-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-20: yea (tally 128–3); census gate: near-unanimous.",
+      "subjects": [
+        "expunged records usable in gun-permit and transfer checks",
+        "notice to person denied on an expunged record"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3762/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3762-2025.introduced.html",
+          "sha256": "60658974c3ad152d4b6b65505a7a0b7622aea36a77bb662bded5101c78760709"
+        }
+      }
+    },
+    {
+      "id": "2517ed3665f50412fe0c57ee49df3b1d04c99063e96b727f54e9128fb850603e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 111–21); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    },
+    {
+      "id": "433ca6042d5320f880656aad0af367ffa5e72c362e8b77dd48e857c0a985c4ba",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF4300&ssn=0&y=2024",
+      "date": "2024-05-02",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4300-2023",
+      "act": "nay",
+      "motion": "House Bill was passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed as amended, 2024-05-02: nay (tally 68–64); census gate: none.",
+      "subjects": [
+        "firearms kept unloaded with a lock, or in a locked unit or gun room",
+        "tiered penalties up to a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (3rd Engrossment, 2024-05-02; official copy, https://www.revisor.mn.gov/bills/93/2024/0/HF/4300/versions/3/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4300-2023.engrossed3.html",
+          "sha256": "13f4ba635ac4da0e2ff7f92f0faf3414fa82064006ba38e0c7dc384a474cecc3"
+        }
+      }
+    },
+    {
+      "id": "3705825244a3afdd6f54f62e2fd01352088bf39a1968bc84df445f1af994cc5e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0601&ssn=0&y=2023",
+      "date": "2024-04-29",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-601-2023",
+      "act": "nay",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2024-04-29: nay (tally 68–63); census gate: none.",
+      "subjects": [
+        "report lost or stolen guns within 48 hours",
+        "escalating penalties for failing to report",
+        "reporting system funded"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2024-04-25; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/601/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-601-2023.engrossed2.html",
+          "sha256": "79a554e25fd13bf370bf96dfb5b4aa262ca292ac77a78448ed9987c904539975"
+        }
+      }
+    },
+    {
+      "id": "0677c736c5f59a72035ccf27524524cb5f4ce1b259e28c55e6a8a9b0b49179b0",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0008&ssn=0&y=2019",
+      "date": "2020-02-27",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-8-2019",
+      "act": "nay",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2020-02-27: nay (tally 69–62); census gate: none.",
+      "subjects": [
+        "background check required for private pistol and assault-weapon transfers",
+        "transferee permit and transfer denied to people found a danger to self or others",
+        "false statement to get a transferee permit becomes a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st  Engrossment; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/8/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-8-2019.engrossed1.html",
+          "sha256": "6ee15a292e0bd7467c8100f89007c2ae51f6104a3565040446f39d2c44327fbd"
+        }
+      }
+    },
+    {
+      "id": "0e3d820534189a428564678bcff5dd5fb077561a4617562a9b3d13325e72b8dc",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0009&ssn=0&y=2019",
+      "date": "2020-02-27",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-9-2019",
+      "act": "nay",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2020-02-27: nay (tally 68–62); census gate: none.",
+      "subjects": [
+        "court orders removing guns from people who pose a significant danger",
+        "emergency 14-day gun-removal orders",
+        "guns surrendered to a dealer or police within 24 hours",
+        "grants for safe storage of seized guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st  Engrossment; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/9/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-9-2019.engrossed1.html",
+          "sha256": "dca3210bd2f7ee025a58c0522f74fadf5d44ceea48a0b5d237c96e7febfd134d"
+        }
+      }
+    },
+    {
+      "id": "dbfa4d939daa6e1b5b85caa275b9949947e41ce9a07ce1973f9892b9975d2388",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2673&ssn=0&y=2022",
+      "date": "2022-04-29",
+      "date_precision": "day",
+      "instrument_id": "MN-SF-2673-2021",
+      "act": "nay",
+      "motion": "House Bill was passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed as amended, 2022-04-29: nay (tally 68–61); census gate: multi-subject.",
+      "subjects": [
+        "gunshot-detection grant for a county sheriff",
+        "mandatory minimums where an accomplice had a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (3rd Engrossment, 2022-04-25; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/2673/versions/3/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2673-2021.engrossed3.html",
+          "sha256": "a68f2681a2d8ae53666ae22a637c1ac935d51e310abece0828810aa332598b58"
+        }
+      }
+    },
+    {
+      "id": "6bd07163c67cc9ecd227c44338e32bfde64975ec9c338fdfa8b77f29961d9b66",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF1290&ssn=0&y=2023",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-1290-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-1290-2023 (Open States sponsor list): HF1290 (2023-2024 Regular): Firearm permits to carry without expiration authorized..",
+      "subjects": [
+        "carry permits never expire",
+        "no renewal fee or retraining for renewal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-02-03; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/1290/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1290-2023.introduced.html",
+          "sha256": "037f60c9b1cb74178e6fd8a55abc79171e65fae03474bcec6d104973bd13a178"
+        }
+      }
+    },
+    {
+      "id": "30aa7764621b6a9076061f201f52abc047f04e2aac8519036f3f0dadd812d2e6",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2025/0/HF/2644?body=House",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-2644-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of MN-HF-2644-2025 (Open States sponsor list): HF2644 (2025-2026 Regular): Definition of crime of violence modified for firearms crimes..",
+      "subjects": [
+        "narrower \"crime of violence\" list for gun bans (drug offences removed)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-03-24; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/2644/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2644-2025.introduced.html",
+          "sha256": "776db20ed8209804a91c3f48a5a89d5f523031f21637ffbd7853d7ac4bb0dea7"
+        }
+      }
+    },
+    {
+      "id": "4e459a6f0c3ab598d8adbdaa950636c78d4c2e6d86f00beaa8f83d6d1c275683",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0392&ssn=0&y=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-392-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-392-2021 (Open States sponsor list): HF392 (2021-2022 Regular): Minnesota Personal Protection Act amended, lifetime permits to carry handguns created, and permit to carry application fee reduced..",
+      "subjects": [
+        "lifetime permit to carry a handgun",
+        "one application fee, no renewal fee",
+        "replacement permit cards"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-28; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/392/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-392-2021.introduced.html",
+          "sha256": "3d228e0fe469b1a29594f20e9095e7c9e699c2e1f2780a6088e4f2b3ef34e70f"
+        }
+      }
+    },
+    {
+      "id": "fa1c646faaabb4641d6affcbe2f110117744f447803180bc3a9115e99f12aefe",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0435&ssn=0&y=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MN-HF-435-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of MN-HF-435-2021 (Open States sponsor list): HF435 (2021-2022 Regular): Medical cannabis registry enrollee provided to not be denied the right to purchase, own, possess, or carry a firearm..",
+      "subjects": [
+        "medical cannabis patients may not be denied guns or a carry permit",
+        "no use of the cannabis registry for gun approvals",
+        "no carrying a pistol while impaired by medical cannabis"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-28; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/435/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-435-2021.introduced.html",
+          "sha256": "81f3cafb9c69525da556b390a24222db68b853ca9620f00571ead302b34134cf"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits or waiting periods to buy",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person; extract run with name)",
+        "official House member page https://www.house.mn.gov/members/profile/15476 (read: confirms Rep. Nolan West, District 32A; news list and 2026 legislative update letter read, nothing on the subject)",
+        "official House news items 52189, 52190, 52000, 51929, 51641, 49891, 47987 under https://www.house.mn.gov/members/profile/news/15476 (nothing on the subject)",
+        "not reviewed: https://www.house.mn.gov/32a (not fetched separately; same member page covered)",
+        "blocked: https://ballotpedia.org/Nolan_West (fetch returned an empty page)",
+        "web search on name plus gun, firearm, Second Amendment, permit to carry (no result naming him on the subject)",
+        "web search on 2026 filing: no page found confirming his 2026 ballot status; he is the sitting District 32A member with a term ending January 2027",
+        "sponsor list: covered by bulk bill data",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-11-19T22:32:02.175Z",
+      "by": "source-collector"
+    }
+  ]
 }

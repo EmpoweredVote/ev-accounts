@@ -1,0 +1,76 @@
+{
+  "id": "MN-HF-662-2023",
+  "scope": "state:mn",
+  "title": "HF662 (2023-2024 Regular): Right to carry without a permit provided, and optional permit to carry provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0662&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/HF/662/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Bliss",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb704747-1d31-4a6d-9ce5-c1f7185fb018"
+    },
+    {
+      "name": "Peggy Bennett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e86085c5-e044-49f1-a862-01d35da5f7f9"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Josh Heintzeman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "John Burkel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d6ec0d2d-21d1-4eda-933c-c7eb593389dc"
+    },
+    {
+      "name": "Ben Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-01-20; official copy, https://www.revisor.mn.gov/bills/93/2023/0/HF/662/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-662-2023.introduced.html",
+      "sha256": "efd6be38a770369e443224f67fa77948e27e031f3562c461d0531b2094ef9bed"
+    },
+    "note": "Introduced version, 2023-01-20 (as filed). Section 9 repeals Minn. Stat. 624.714 subds. 1a (permit required, penalty), 1b (display of permit) and 16 (other states' permits), and 624.7181 (rifles and shotguns in public places); the repealed text is in the appendix, not quoted. Sections 3-7 change 'permits' to 'optional permits' and keep the permit criteria (age 21, training). Text identical to the other two right-to-carry bills HF 641/659/662 apart from the title."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, new subd. 1c): (a) The legislature of the state of Minnesota recognizes and declares that the second amendment of the United States Constitution guarantees the fundamental, individual right to keep and bear arms. (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, new subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): This section sets forth the complete and exclusive criteria and procedures for the issuance of optional permits to carry and establishes their nature and scope. No sheriff, police chief, governmental unit, government official, government employee, or other person or body acting under color of law or governmental authority may change, modify, or supplement these criteria or procedures, or limit the exercise of the right to carry a firearm.",
+  "higher_law_duty": "Section 1 (Minn. Stat. 624.714, new subd. 1c)(a): \"the second amendment of the United States Constitution guarantees the fundamental, individual right to keep and bear arms.\""
+}

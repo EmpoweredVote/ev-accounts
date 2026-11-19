@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-4200-2025",
+  "scope": "state:mn",
+  "title": "SF4200 (2025-2026 Regular): Reenact the 2024 amendment to the definition of trigger activator",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4200?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4200/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Heather Gustafson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4200/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4200-2025.engrossed1.html",
+      "sha256": "938207d730c5137ef8168aaffee5f193f6b065f00149b3ee9e46618d99f3aef2"
+    },
+    "note": "1st engrossment, 2026-03-18. The section heading names it a 'ban on binary triggers'; the bill itself only cites the 2024 law and does not restate its words. Amendments made after the version read are not in the text read (no passage vote recorded)."
+  },
+  "operative_text": "Section 1: Laws 2024, chapter 127, article 36, section 2, is reenacted retroactively and without interruption from January 1, 2025."
+}

@@ -1,0 +1,48 @@
+{
+  "id": "MN-SF-2625-2019",
+  "scope": "state:mn",
+  "title": "SF2625 (2019-2020 Regular): Public safety, courts, corrections, criminal, and firearm transfer and possession provisions modifications; reporting; penalties; appropriations",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2625&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/2625/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Kari Dziedzic",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "public-safety-approach: Article 1 and Article 2 — appropriations for public safety, corrections and the POST Board, and a community justice reinvestment account transfer (Minn. Stat. 299A.707)",
+        "judicial-access-to-justice: Article 1 — appropriations for the courts, Guardian Ad Litem Board and Board of Public Defense",
+        "judicial-criminal-justice: Article 2, Section 7 (Minn. Stat. 357.021, subd. 7) — court surcharge disbursement"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/2625/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2625-2019.introduced.html",
+      "sha256": "76370923174b29b93a7c36c762076c6d5d647b2ca60f4a9d348a7c6982052f17"
+    },
+    "note": "Version read: introduced text (no date given); no votes recorded. Large file; read by search and then the firearm articles line by line. Words added to existing law are not marked in the text file. Article 3 strikes the old pistol and \"assault weapon\" wording so the transfer rules cover all firearms, strikes the permit-to-carry shortcut for transferee permits and the transfer-to-unknown-party rule. Article 1 also gives $162,000 each year to process petitions for extreme risk protection orders. Quoted effective dates: Article 3 takes effect August 1, 2019."
+  },
+  "operative_text": "Article 3, Section 1 (Minn. Stat. 624.7131, subd. 1): Any person 21 years of age or older may apply for a transferee permit by providing the following information in writing to the chief of police of an organized full time police department of the municipality in which the person resides or to the county sheriff if there is no such local chief of police:\nArticle 3, Section 1 (Minn. Stat. 624.7131, subd. 6): A transferee permit issued pursuant to this section is valid statewide for the transfer of a single firearm and shall expire immediately after either: (1) the holder receives a firearm from a transferor, unless the transfer is excluded under section 624.7134, subdivision 6; or (2) 30 days have elapsed from the date the transferee permit was issued to the holder.\nArticle 3, Section 1 (Minn. Stat. 624.7131, subd. 11): A person who makes a false statement in order to obtain a transferee permit knowing or having reason to know the statement is false is guilty of a felony.\nArticle 3, Section 2 (Minn. Stat. 624.7132, subd. 4): Except as otherwise provided in subdivision 7 or 8, no person shall deliver a firearm to a proposed transferee until five business days after the date the agreement to transfer is delivered to a chief of police or sheriff in accordance with subdivision 1 unless the chief of police or sheriff waives all or a portion of the seven-day waiting period.\nArticle 3, Section 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring possession or ownership of a firearm to any other person who is not a firearms dealer, unless the transferee presents a valid transferee permit issued under section 624.7131 and a current state or federally issued identification.\nArticle 3, Section 3 (Minn. Stat. 624.7134, subd. 4): A person who refuses or is unable to produce a record of transfer for a firearm transferred under this section in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a gross misdemeanor.\nArticle 4, Section 1 (Minn. Stat. 624.713, subd. 1): (14) a person who is subject to an extreme risk protection order as described in section 624.7162 or 624.7164.\nArticle 4, Section 3 (Minn. Stat. 624.7172, subd. 2): If the court finds there is a preponderance of the evidence to issue an extreme risk protection order, the court shall issue the order prohibiting the person from possessing a firearm for the duration of the order.\nArticle 4, Section 6 (Minn. Stat. 624.7175): Upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours, to a federally licensed firearms dealer or a law enforcement agency.\nArticle 4, Section 8 (Minn. Stat. 624.7177, subd. 2): A person who possesses a firearm and knows or should have known that the person is prohibited from doing so by an extreme risk protection order under section 624.7172 or 624.7174, or by an order of protection granted by a judge or referee pursuant to a substantially similar law of another state, is guilty of a misdemeanor and shall be prohibited from possessing firearms for a period of five years."
+}

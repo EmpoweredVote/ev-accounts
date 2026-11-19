@@ -1,0 +1,86 @@
+{
+  "id": "MN-HF-3570-2023",
+  "scope": "state:mn",
+  "title": "HF3570 (2023-2024 Regular): Sale or transfer of semiautomatic military-style assault weapon prohibited, buyback program authorized, and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3570&ssn=0&y=2024",
+    "https://www.revisor.mn.gov/bills/93/2024/0/HF/3570/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Leigh Finke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1c30fb24-6bda-46ca-94fe-df0579d7ca4d"
+    },
+    {
+      "name": "Esther Agbaje",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
+    },
+    {
+      "name": "Liish Kozlowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b6759469-327d-46fe-9064-0c1ec40bec63"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    },
+    {
+      "name": "Samantha Sencer-Mura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05c8fc85-08b2-4f30-a6a3-65169ca9675d"
+    },
+    {
+      "name": "Lucy Rehm",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f409650c-fed4-467a-9ecd-000de3c99487"
+    },
+    {
+      "name": "Heather Edelson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Elkins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7c525707-de26-453c-9d7b-166ab5dcf9e5"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2024-02-05; official copy, https://www.revisor.mn.gov/bills/93/2024/0/HF/3570/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3570-2023.introduced.html",
+      "sha256": "b977755888ac558e9ebd2682e5522a3151d093bed50915130cc9890645f2d3dc"
+    },
+    "note": "As-filed text, introduced 2024-02-05. The appropriation amounts are blank. Section 1 strikes the sporting-purposes exclusion from the assault-weapon definition."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to transfer a semiautomatic military-style assault weapon.\nSection 2 (Minn. Stat. 624.7145, subd. 4): A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 3 (uncodified buyback program): The commissioner of public safety shall establish a statewide buyback program to purchase semiautomatic military-style assault weapons. The program must accept any semiautomatic military-style assault weapon offered, regardless of the weapon's physical condition, and pay reimbursement at a rate set by the commissioner."
+}

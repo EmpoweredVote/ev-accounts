@@ -1,0 +1,61 @@
+{
+  "id": "MN-SF-2101-2019",
+  "scope": "state:mn",
+  "title": "SF2101 (2019-2020 Regular): Judicially ordered firearms restrictions for abusing parties enforcement authorization",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2101&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/2101/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Pratt",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa8d5cfb-5feb-4112-b68b-f1c2de963dc3"
+    },
+    {
+      "name": "Michelle R. Benson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul T. Anderson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karin Housley",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "302feb80-0c30-4b42-b107-dae60b15fb4f"
+    },
+    {
+      "name": "Scott M. Jensen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "be356b86-d751-4731-a65c-a25d9c2c0c78"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/2101/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2101-2019.introduced.html",
+      "sha256": "5095718fab131595f68660ddbc5f092dcaee5c74ba13329b8beebb8eb9192f2d"
+    },
+    "note": "Introduced version as filed (no date on the copy); no vote recorded. Same firearm-transfer provisions are repeated in Sec. 3 (609.2242, subd. 3) and Sec. 4 (609.749, subd. 8), not quoted for length. Which words are new cannot be told from the text, no struck text appears."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260C.201, subd. 3): (d) An order granting relief that was issued after a hearing of which the abusing party received actual notice and at which the abusing party had the opportunity to participate, shall prohibit the abusing party from possessing firearms for the length the order is in effect if the order (1) restrains the abusing party from harassing, stalking, or threatening the child or restrains the abusing party from engaging in other conduct that would place the child in reasonable fear of bodily injury, and (2) includes a finding that the abusing party represents a credible threat to the physical safety of the child or prohibits the abusing party from using, attempting to use, or threatening to use physical force against the child.\nSection 1 (Minn. Stat. 260C.201, subd. 3): (f) When a court issues an order containing a firearms restriction provided for in paragraph (d), the court shall determine by a preponderance of evidence if an abusing party poses an imminent risk of causing another person substantial bodily harm. Upon a finding of imminent risk, the court shall order that the local law enforcement agency take immediate possession of all firearms in the abusing party's possession.\nSection 1 (Minn. Stat. 260C.201, subd. 3): (g) The court shall ensure that all firearms have been transferred and all proofs of transfer submitted as required by paragraphs (d), (e), and (f), by scheduling and holding a compliance hearing within ten business days of issuing an order containing a firearms restriction.\nSection 2 (Minn. Stat. 518B.01, subd. 6): (g) An order granting relief shall prohibit the abusing party from possessing firearms for the length the order is in effect if the order (1) restrains the abusing party from harassing, stalking, or threatening the petitioner or restrains the abusing party from engaging in other conduct that would place the petitioner in reasonable fear of bodily injury, and (2) includes a finding that the abusing party represents a credible threat to the physical safety of the petitioner or prohibits the abusing party from using, attempting to use, or threatening to use physical force against the petitioner."
+}

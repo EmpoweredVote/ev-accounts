@@ -1,0 +1,125 @@
+{
+  "id": "MN-HF-3954-2017",
+  "scope": "state:mn",
+  "title": "HF3954 (2017-2018 Regular): Transfer of semiautomatic military-style assault weapons prohibited, semiautomatic military-style assault weapon buyback program established, criminal penalties provided, and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3954&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/HF/3954/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Raymond Dehn",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karen Clark",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John (Jack) Considine Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Frank Hornstein",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Rosenthal",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Peggy Flanagan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jennifer Schultz",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tina Liebling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "73b22a9e-e9f8-4419-8f64-7c0ed9806da3"
+    },
+    {
+      "name": "Diane Loeffler",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rena Moran",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Davnie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jon Applebaum",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Bly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alice Hausman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Thissen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ilhan Omar",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/HF/3954/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3954-2017.introduced.html",
+      "sha256": "3ae5015ab048bc812bc6f869a883223bdb802e6ca61ed9341fa28504dc53cdd7"
+    },
+    "note": "Introduced version (as filed, no date given on the page). Section 1 strikes the old list of named weapon models and the sporting-purposes exclusion and writes a features-based definition. Section 2 lists exceptions (law enforcement, family transfers, estates, antiques, curios, temporary transfers) that are not quoted here."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.712, subd. 7): (1) semiautomatic rifle that has the capacity to accept a detachable magazine and has at least two of the following:\nSection 1 (Minn. Stat. 624.712, subd. 7): (4) conversion kit, part, or combination of parts from which a semiautomatic military-style assault weapon can be assembled if those parts are in the possession or under the control of the same person.\nSection 2 (Minn. Stat. 624.7134, subd. 1): It is unlawful to transfer a semiautomatic military-style assault weapon.\nSection 2 (Minn. Stat. 624.7134, subd. 3): A person who violates subdivision 1 is guilty of a gross misdemeanor.\nSection 3 (uncodified): The commissioner of public safety shall create a voluntary semiautomatic military-style assault weapon buyback program.\nSection 3 (uncodified): Nothing in this section compels the owner of a semiautomatic military-style assault weapon to sell the owner's semiautomatic military-style assault weapon to law enforcement or a firearms dealer.\nSection 4 (uncodified): $500,000 in fiscal year 2019 is appropriated from the general fund to the commissioner of public safety for the implementation of the voluntary semiautomatic military-style assault weapon buyback program under section 3."
+}

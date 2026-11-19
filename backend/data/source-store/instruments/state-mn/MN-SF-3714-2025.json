@@ -1,0 +1,51 @@
+{
+  "id": "MN-SF-3714-2025",
+  "scope": "state:mn",
+  "title": "SF3714 (2025-2026 Regular): Ban possession of large-capacity ammunition magazines",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3714?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3714/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Alice Mann",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6fb577f3-ac0b-4faa-9685-d4a0485e4860"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3714/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3714-2025.introduced.html",
+      "sha256": "33faa3b6445686de7032904b2520af1db0acb6f89c7f3bae8863122bf9fc5627"
+    },
+    "note": "Introduced version (as filed), 2026-02-18; no vote."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 624.7145, subd. 2): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines.\nSection 2 (Minn. Stat. 624.7145, subd. 4): A person who violates subdivision 2 is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nSection 2 (Minn. Stat. 624.7145, subd. 5): A person who owned or possessed a large-capacity magazine before July 1, 2026, must do one of the following before July 1, 2027:\nSection 1 (Minn. Stat. 624.712, subd. 22): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than ten rounds or any conversion kit, part, or combination of parts from which this type of device can be assembled if those parts are in the possession or under the control of the same person."
+}

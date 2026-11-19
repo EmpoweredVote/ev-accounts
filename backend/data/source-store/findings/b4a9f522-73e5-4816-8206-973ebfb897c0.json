@@ -1,0 +1,186 @@
+{
+  "politician_id": "b4a9f522-73e5-4816-8206-973ebfb897c0",
+  "findings": [
+    {
+      "id": "73faf65a8ac9a8ec1747b9b0e5404307e35bbd2e25f074f4eefee3176cd1b37c",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3404?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3404-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 134–0); census gate: multi-subject.",
+      "subjects": [
+        "felony for impersonating a peace officer while armed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-02; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3404/versions/1/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3404-2025.engrossed1.html",
+          "sha256": "913860c989b31bb1219ba8bffb0baf8b8c140d402211006c9b485873fc8d32ed"
+        }
+      }
+    },
+    {
+      "id": "1c9282cad8ccf521a877811ab8d8e15090aec67d0e21b1b0574384add85d48ee",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/3762?body=House",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-3762-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-20: yea (tally 128–3); census gate: near-unanimous.",
+      "subjects": [
+        "expunged records usable in gun-permit and transfer checks",
+        "notice to person denied on an expunged record"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3762/versions/0/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3762-2025.introduced.html",
+          "sha256": "60658974c3ad152d4b6b65505a7a0b7622aea36a77bb662bded5101c78760709"
+        }
+      }
+    },
+    {
+      "id": "2517ed3665f50412fe0c57ee49df3b1d04c99063e96b727f54e9128fb850603e",
+      "kind": "record",
+      "url": "https://www.revisor.mn.gov/bills/94/2026/0/HF/4075?body=House",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "MN-HF-4075-2025",
+      "act": "yea",
+      "motion": "House Bill was passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MN House, House Bill was passed, 2026-04-23: yea (tally 111–21); census gate: none.",
+      "subjects": [
+        "one procedure for handing over firearms under protective orders",
+        "proof of transfer and compliance hearing within ten business days",
+        "storage, fees and return of surrendered firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (2nd Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/4075/versions/2/)",
+        "fetched_at": "2026-11-19T20:27:28.037400Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-4075-2025.engrossed2.html",
+          "sha256": "8bef72b68eed3532c14b9f1484540cb7ac5bef9aa475e648b00dc9950ceb877b"
+        }
+      }
+    },
+    {
+      "id": "dcc07969d069bdf9da4b6f465825f8307029d143bf6246f26b53d854ac22287b",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15644/51320",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "Even worse, they’re holding up commonsense safety measures to push for an undefined gun ban, all while Minnesota families continue to face tragedy after tragedy. That’s irresponsible leadership, plain and simple.",
+      "note": "From her official interim newsletter. She criticises the other chamber caucus for tying safety measures to a gun ban she calls undefined.",
+      "subjects": [
+        "ban on assault-style guns",
+        "general gun-law statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:04.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ad568646c249b50ee1685f5e2b2ffe84fe3be7e6cf443a816ea6bc935e5eaef",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15644/51219",
+      "date": "2025-09-12",
+      "date_precision": "day",
+      "passage": "Punishing Criminals: Holding violent offenders accountable through enforcement of existing laws and strengthening penalties where necessary.",
+      "note": "After the Annunciation school shooting, her newsletter lists three actions (school protection, mental health care, enforcing existing laws and stiffer penalties). It names no firearm restriction.",
+      "subjects": [
+        "general gun-law statements",
+        "school safety after a shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:04.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c3731b73d3ef39184f8aa9059c6ac1956e05f72c190099d1aaaf415dc134c87",
+      "kind": "own-words",
+      "url": "https://www.house.mn.gov/members/profile/news/15644/51985",
+      "date": "2026-04-17",
+      "date_precision": "day",
+      "passage": "Instead of moving forward on solutions we largely agree on, the conversation stalled over broader policy debates that, while important, don’t need to stop us from taking action on school safety right now.",
+      "note": "Her newsletter on a school safety proposal that failed in committee; she wants it moved apart from the wider policy debates. Gun measures are not named.",
+      "subjects": [
+        "school safety after a shooting",
+        "general gun-law statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-19T22:29:04.714Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun-law statements",
+        "school safety after a shooting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page for Rep. Erica Schwartz, District 18A (confirms office); news list shows no gun items: https://www.house.mn.gov/members/profile/15644",
+        "member newsletters and releases on the House site (Aug 28, Sep 12, Sep 26, Oct 3, Oct 10 2025; Mar 18, Apr 17 2026), read in full",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia (office and term only, nothing on the subject)",
+        "one news search on name plus gun words",
+        "blocked: https://heartlandsignal.com/2026/02/26/minnesota-house-republicans-vote-down-assault-weapons-ban-in-committee/ (bot check; committee vote reported by a search snippet only, not saved)",
+        "campaign site: not reviewed, none found in search results",
+        "not reviewed: end-of-session update 5/29/2026 and 5/8/2026 legislative update"
+      ],
+      "found": 3,
+      "at": "2026-11-19T22:29:04.714Z",
+      "by": "source-collector"
+    }
+  ]
+}

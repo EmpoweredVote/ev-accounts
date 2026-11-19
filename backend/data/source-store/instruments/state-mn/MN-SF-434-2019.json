@@ -1,0 +1,59 @@
+{
+  "id": "MN-SF-434-2019",
+  "scope": "state:mn",
+  "title": "SF434 (2019-2020 Regular): Firearms transfers and private party firearms transfers criminal background checks requirement",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0434&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/SF/434/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Latz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Jason Isaacson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan Kent",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Hayden",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Matt Little",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/SF/434/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-434-2019.introduced.html",
+      "sha256": "59d7f046abb00e82e7efd6f990c623b8dd46255707da206e97ca43744456dd5e"
+    },
+    "note": "Introduced text (as filed; no date given). The bill strikes 'pistol or semiautomatic military-style assault weapon' throughout 624.7131 and 624.7132 and replaces it with 'firearm', and strikes 'yearly' in 624.714 subd. 4. Transfer exclusions (subd. 6 of new section) not quoted. No votes recorded."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.7134, subd. 2): A person who is not a firearms dealer is prohibited from transferring a firearm to any other person who is not a firearms dealer, unless the transferee presents a valid state permit to carry issued under section 624.714 or a valid transferee permit issued under section 624.7131, and a current state or federally issued identification.\nSection 3 (Minn. Stat. 624.7134, subd. 3(d)): Both the transferor and the transferee must retain a copy of the record of transfer and any attachments to the record of transfer for five years following the transfer.\nSection 3 (Minn. Stat. 624.7134, subd. 4(a)): The transferor and transferee of a firearm transferred under this section must produce the record of transfer when a peace officer requests the record as part of a criminal investigation or case.\nSection 3 (Minn. Stat. 624.7134, subd. 7): A transferor or transferee who engages in the transfer of a firearm in violation of this section is guilty of a gross misdemeanor.\nSection 2 (Minn. Stat. 624.7132, subd. 14(a)): No person shall transfer a firearm to another who is not personally known to the transferor unless the proposed transferee presents evidence of identity to the transferor.\nSection 2 (Minn. Stat. 624.7132, subd. 4): Except as otherwise provided in subdivision 7 or 8, no person shall deliver a firearm to a proposed transferee until five business days after the date the agreement to transfer is delivered to a chief of police or sheriff in accordance with subdivision 1 unless the chief of police or sheriff waives all or a portion of the seven-day waiting period.\nSection 4 (Minn. Stat. 624.714, subd. 4(c)): The sheriff must conduct a background check by means of electronic data transfer on a permit holder through the Minnesota Crime Information System and the National Instant Criminal Background Check System at least monthly to ensure continuing eligibility."
+}

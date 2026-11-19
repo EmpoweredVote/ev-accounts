@@ -1,0 +1,75 @@
+{
+  "id": "MN-HF-896-2025",
+  "scope": "state:mn",
+  "title": "HF896 (2025-2026 Regular): Certain retired law enforcement officers permitted to carry firearms in schools.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/896?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/896/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Krista Knudsen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d0ed90a5-39e0-479b-b450-b57edda4e539"
+    },
+    {
+      "name": "Jim Joy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae296dbc-36aa-444f-89e3-1b1c6b734447"
+    },
+    {
+      "name": "Ben Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "32a1f6b7-ced6-4417-8074-cb37faca7659"
+    },
+    {
+      "name": "Pam Altendorf",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7a84bd40-30d3-4a27-9d54-b8262783f1da"
+    },
+    {
+      "name": "Terry Stier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "961a4084-a4a5-4a8e-ae85-3d647870689b"
+    },
+    {
+      "name": "Jeff Backer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
+    },
+    {
+      "name": "Natalie Zeleznikar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95a65bb4-a540-4f52-8104-11a5bd7abb68"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-14; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/896/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-896-2025.introduced.html",
+      "sha256": "4de4c598f35c5d73de76584e58b31a1d0b13aff9c2f38bd40607c8567af94a5a"
+    },
+    "note": "Version read: introduced text (as filed). The new part is clause (10) of paragraph (f); the other quoted sentences are existing law kept in the section."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1d): (a) Except as provided under paragraphs (d) and (f), whoever possesses, stores, or keeps a dangerous weapon while knowingly on school property is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $10,000, or both.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (10) persons authorized to carry a firearm under United States Code, title 18, part I, chapter 44, section 926C, and who are carrying in compliance with that law.\nSection 1 (Minn. Stat. 609.66, subd. 1d): (g) Notwithstanding section 471.634, a school district or other entity composed exclusively of school districts may not regulate firearms, ammunition, or their respective components, when possessed or carried by nonstudents or nonemployees, in a manner that is inconsistent with this subdivision."
+}

@@ -1,0 +1,60 @@
+{
+  "id": "MN-SF-3131-2017",
+  "scope": "state:mn",
+  "title": "SF3131 (2017-2018 Regular): Slide-fire stock for a semiautomatic firearm is a trigger activator clarification",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3131&ssn=0&y=2018",
+    "https://www.revisor.mn.gov/bills/90/2018/0/SF/3131/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Dibble",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+    },
+    {
+      "name": "Susan Kent",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Charles W. Wiger",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    },
+    {
+      "name": "Erik Simonson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2018/0/SF/3131/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3131-2017.introduced.html",
+      "sha256": "356d955dc9b73f754e5ef580ed298c2639d303bfe8668012f551710e211df78d"
+    },
+    "note": "Introduced version as filed (SF 3131, 2017-2018 session). Text shows no struck words. The bill only changes a definition; the existing offences for trigger activators sit elsewhere in 609.67."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.67, subd. 1): \"Trigger activator\" means a removable manual or power driven trigger activating device constructed and designed so that, when attached to a firearm, the rate at which the trigger may be pulled increases and the rate of fire of the firearm increases to approximate that of a machine gun. For purposes of this section, a device that is designed to use the recoil of a semiautomatic firearm to enable a shooter to fire multiple shots in rapid succession, commonly known as a slide-fire or bump-fire stock, is a trigger activator."
+}

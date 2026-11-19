@@ -1,0 +1,65 @@
+{
+  "id": "MN-HF-824-2021",
+  "scope": "state:mn",
+  "title": "HF824 (2021-2022 Regular): Right of the people provided to acquire, keep, possess, transport, carry, transfer, and use arms including firearms, knives, or any weapons and ammunition, components, and accessories for these arms; and constitutional amendment proposed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0824&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/824/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cal Bahr",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Erik Mortensen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Donald Raleigh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-08; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/824/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-824-2021.introduced.html",
+      "sha256": "1576b5f9d9e55acf5de85069bafd4a2d63f7146435d658f63689a04a84bd9f30"
+    },
+    "note": "Version read: introduced text (as filed). Proposed constitutional amendment, to go to voters at the 2022 general election."
+  },
+  "operative_text": "Section 1 (Minn. Const. art. I, new Sec. 18): The right of individuals to acquire, keep, possess, transport, carry, transfer, and use arms including firearms, knives, or any other weapons and ammunition, components, and accessories for the arms is fundamental and shall not be denied, infringed, or curtailed. Any restriction must be subjected to strict scrutiny review. Registration, mandatory licensing, special taxation, fees, or any other measure, regardless of type, manner, or purpose, that suppresses or discourages the free exercise of the right is forbidden."
+}

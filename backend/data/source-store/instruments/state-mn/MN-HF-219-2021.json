@@ -1,0 +1,55 @@
+{
+  "id": "MN-HF-219-2021",
+  "scope": "state:mn",
+  "title": "HF219 (2021-2022 Regular): Farmed Cervidae provisions modified, firearms restrictions modified, portable stands permanently allowed in wildlife management areas, and Cervidae carcass transportation restrictions modified.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0219&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/219/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Rob Ecklund",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rick Hansen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Fue Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2021-01-28; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/219/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-219-2021.engrossed1.html",
+      "sha256": "5c50b48f4063c8666605ca304133853d38c020242a5dd1d16d5e13ca0830e990"
+    },
+    "note": "Version read: 1st engrossment (2021-01-28), version_read other. No votes recorded. Bill is mainly a game-and-fish bill (farmed deer, portable stands, carcass import); only the firearms parts are quoted. Section 8 repeals Minn. Stat. 97B.318 (shotgun use area, slugs only). Old words struck in sections 3 and 6 are left out of the quotes."
+  },
+  "operative_text": "Section 6 (Minn. Stat. 97B.031, subd. 1): A person may take big game and wolves with a firearm only if:\nSection 6 (Minn. Stat. 97B.031, subd. 1): (1) any rifle, shotgun, or handgun used is a caliber of at least .22 inches and has centerfire ignition;\nSection 6 (Minn. Stat. 97B.031, subd. 1): (2) the firearm is loaded only with single projectile ammunition;\nSection 6 (Minn. Stat. 97B.031, subd. 1): (4) any muzzleloader used has the projectile loaded only at the muzzle;\nSection 7 (Minn. Stat. 97B.031, subd. 7): During the regular firearms deer season, all legal firearms may be used statewide.\nSection 3 (Minn. Stat. 97A.015, subd. 51): (3) for an electronic ignition system, the battery is removed and is disconnected from the firearm; and\nSection 3 (Minn. Stat. 97A.015, subd. 51): (4) for an encapsulated powder charge ignition system, the primer and powder charge are removed from the firearm."
+}

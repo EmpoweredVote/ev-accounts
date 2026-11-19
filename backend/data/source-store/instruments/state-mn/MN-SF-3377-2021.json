@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3377-2021",
+  "scope": "state:mn",
+  "title": "SF3377 (2021-2022 Regular): Reasonable regulation of firearms provision",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF3377&ssn=0&y=2022",
+    "https://www.revisor.mn.gov/bills/92/2022/0/SF/3377/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Marty",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Sandy Pappas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df44f106-1cb2-4c27-b792-af147ae3aa4d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2022-02-18; official copy, https://www.revisor.mn.gov/bills/92/2022/0/SF/3377/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3377-2021.introduced.html",
+      "sha256": "30ec3ce36b6dbc60f1306cfc156407a373614afa8056c30d1945d998c6ba5f6d"
+    },
+    "note": "Version read: as-filed (introduced) text; no passage vote recorded. Large file (43,599 characters); read in full. Many parts are struck in the text and not quoted (for example the old 'loaded' definition and the sporting-purposes exclusion in 624.712 subd. 7); the bill also changes the assault-weapon definition (seven-round limit), adds a ten-round magazine and .50 caliber definitions, makes safety-course and training changes (Sections 2, 18-20), creates a firearm database (Section 5, 299A.07), and lets transfer 'firearm' cover all guns. Several sections start January 1, 2023, or August 1, 2022. Section 6 quote is cut at clause (1); clauses (2) and (3) raise the penalty if the child or ineligible person uses the gun."
+  },
+  "operative_text": "Section 12 (Minn. Stat. 624.7134): (a) A person who intends to own a firearm shall, prior to the ownership of the firearm, obtain, and during ownership continuously maintain, a policy of liability insurance specifically covering any damages resulting from any negligent or willful acts involving the use of the firearm while it is owned by the person.\nSection 13 (Minn. Stat. 624.7135, subd. 1): No person may own or possess a firearm in this state unless the person has a valid, current license issued by the commissioner of public safety under this section.\nSection 13 (Minn. Stat. 624.7135, subd. 2): A person may apply for a license to own or possess a firearm by providing, in person, the following information to the commissioner of public safety or the commissioner's designee: (1) a background check certificate issued within the past 30 days by the chief of police of the municipality in which the person resides or, if there is no chief of police, by the sheriff of the county in which the person resides stating that a background check conducted under subdivision 3 shows that the person is not prohibited from possessing a firearm; (2) a firearms safety certificate accepted by the Department of Public Safety that shows proof of the ability to safely own, store, transport, and use a firearm; and (3) proof of liability insurance under section 624.7134.\nSection 13 (Minn. Stat. 624.7135, subd. 5): (b) The license is valid statewide for four years from the date of issuance and is not transferable.\nSection 14 (Minn. Stat. 624.7136, subd. 3): No person may transfer a firearm to another unless the transferee presents a valid, current license to own and possess the firearm issued under section 624.7135.\nSection 15 (Minn. Stat. 624.7137, subd. 1): (a) A person who purchases or accepts the transfer of more than one firearm within a 30-day period is guilty of a gross misdemeanor.\nSection 16 (Minn. Stat. 624.7138): A person who crosses a state or international border to transport firearms into the state of Minnesota with the intent to transfer the firearms to a person who is ineligible to possess a firearm under section 624.713 or other state or federal law is guilty of a felony.\nSection 17 (Minn. Stat. 624.7139, subd. 1): A person who fails to report a stolen or lost firearm within two days of discovery of the loss is guilty of a gross misdemeanor.\nSection 21 (uncodified, subd. 1): By January 1, 2023, every person who owns a firearm must register the firearm with the commissioner of public safety.\nSection 3 (Minn. Stat. 97B.021, subd. 1): (a) A person at least age 18 but under age 21 may possess a firearm except for a pistol as defined in section 624.712, subdivision 2; semiautomatic military-style assault weapon as defined in section 624.712, subdivision 7; .50 caliber or larger firearm as defined in section 624.712, subdivision 15; or large-capacity magazine if the person possesses a license to possess a firearm under section 624.7135.\nSection 6 (Minn. Stat. 609.666, subd. 2): Unless reasonable action is taken to safely store a firearm, a person who negligently stores, keeps, or leaves a firearm in a location where the person knows, or reasonably should know, that an ineligible person is able to gain access or a child without the permission of the person is able to gain access is guilty of a: (1) misdemeanor;"
+}

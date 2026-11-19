@@ -1,0 +1,61 @@
+{
+  "id": "MN-SF-420-2021",
+  "scope": "state:mn",
+  "title": "SF420 (2021-2022 Regular): Minnesota Personal Protection Act modification to create lifetime permits to carry handguns; application fee for permits reduction",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0420&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/420/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Eichorn",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Ingebrigtsen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Lang",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "98eef5a7-e6f2-48da-a2c7-288fa694476f"
+    },
+    {
+      "name": "Mark Koran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7ac8a6-a126-4eb6-bf68-b10aa124de60"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "521f60ba-6749-4022-b9dc-1474fa63c890"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-01-27; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/420/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-420-2021.introduced.html",
+      "sha256": "29b851234c2ad7fbb1a802cd1d78bb1e19f983a7d6adb79f57d2a00183f7bcc6"
+    },
+    "note": "Introduced 2021-01-27 text (as filed). The bill strikes the five-year expiry and the whole renewal procedure (renewal fee up to $75, late fee), plus 'original or renewal' wording in the training rule (subd. 2a). No votes recorded."
+  },
+  "operative_text": "Section 3 (Minn. Stat. 624.714, subd. 7(c)): A permit to carry a pistol issued under this section does not expire and permit cards issued after August 1, 2021, must prominently state that the permit does not expire.\nSection 2 (Minn. Stat. 624.714, subd. 3(f)): The sheriff may charge an application processing fee in an amount not to exceed the actual and reasonable direct cost of processing the application or $100, whichever is less.\nSection 4 (Minn. Stat. 624.714, subd. 14(a)): Notwithstanding section 138.163, sheriffs must completely purge all files and databases by March 1 of each year to delete all information collected under this section concerning all persons who are no longer current permit holders.\nSection 5: A person with a valid permit to carry a handgun issued under Minnesota Statutes, section 624.714, prior to August 1, 2021, shall request a replacement permit card that conforms with the requirements of Minnesota Statutes, section 624.714, subdivision 7, paragraph (c), prior to the expiration date listed on the permit holder's card. The issuing sheriff may charge up to $10 to issue a replacement card under this section."
+}

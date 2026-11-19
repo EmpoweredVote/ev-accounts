@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-3929-2025",
+  "scope": "state:mn",
+  "title": "SF3929 (2025-2026 Regular): Chiefs of police and sheriffs authorization to open certain expunged records to determine eligibility to purchase, receive, or carry a firearm",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3929?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3929/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Judy Seeberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c35bd7ef-eafe-47be-b21b-928f579fbf73"
+    },
+    {
+      "name": "Michael Kreun",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f05556a2-a3e8-4f98-9b62-9d169dec312d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-25; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3929/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3929-2025.introduced.html",
+      "sha256": "e606ef32a09a0fc626b740314242386fafabddc5b68e90587184e929ae14acfc"
+    },
+    "note": "Introduced 2026-02-25 text (as filed). No votes recorded."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 260B.198, subd. 6): Notwithstanding paragraph (a), a record that is expunged under this subdivision on or after January 1, 2015, may be opened, used, or exchanged to determine if a person is eligible to purchase, receive, or carry a firearm under section 609A.037.\nSection 2 (Minn. Stat. 609A.037, subd. (a)): Notwithstanding the issuance of an expungement order under this chapter, an expunged record of a conviction may be opened and used by a chief of police or sheriff and exchanged between chiefs of police and sheriffs without a court order for purposes of:\nSection 2 (Minn. Stat. 609A.037, subd. (a)(1)): performing an investigation pursuant to section 624.7131, subdivision 2; 624.7132, subdivision 2; or 624.714, subdivision 4, to determine if a person is eligible to purchase, receive, or carry a firearm; and\nSection 2 (Minn. Stat. 609A.037, subd. (c)): If the contents of an expunged record are used as a basis to deny issuance of a permit, disqualify a transferee, or deny an application, the chief of police or sheriff must notify the person that an expunged record establishes the specific factual basis justifying the denial or disqualification. Upon request, the chief of police or sheriff must provide the person with a copy of the expunged record."
+}

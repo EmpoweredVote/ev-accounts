@@ -1,0 +1,128 @@
+{
+  "id": "MN-HF-2441-2019",
+  "scope": "state:mn",
+  "title": "HF2441 (2019-2020 Regular): Firearm transferee permit hearing modified.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2441&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/2441/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Franson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Jim Nash",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Tama Theis",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Josh Heintzeman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    },
+    {
+      "name": "Jerry Hertaus",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Brian Johnson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dan Fabian",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joe McDonald",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "50ce958b-8215-41c2-afa0-cb993d31d2fd"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/2441/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2441-2019.introduced.html",
+      "sha256": "6fe122611def84e94558bb52c6a00e9d2cef9c076fc16ca45611d39d18f6e77a"
+    },
+    "note": "Version read: introduced text as filed (date blank in source). No votes recorded. Bill strikes the old one-sentence appeal right and replaces it with paragraphs (a)-(d). The third quote is the second sentence of paragraph (c)."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7131, subd. 8): (a) Any person aggrieved by denial, revocation, or failure to timely issue a tranferee permit may appeal by petition to the district court with jurisdiction over the county or municipality where the application was submitted.\nSection 1 (Minn. Stat. 624.7131, subd. 8): (b) The district court must hold a hearing at the earliest practicable date and in any event no later than 14 days following the filing of the petition for review.\nSection 1 (Minn. Stat. 624.7131, subd. 8): The court must issue its writ of mandamus directing that the permit be issued and order other appropriate relief unless the chief of police or sheriff establishes by clear and convincing evidence that the applicant is disqualified under the criteria described in subdivision 4.\nSection 1 (Minn. Stat. 624.7131, subd. 8): (d) If the court grants a petition under paragraph (b), the court must award the applicant reasonable costs and expenses including attorney fees."
+}

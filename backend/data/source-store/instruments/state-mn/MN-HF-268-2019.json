@@ -1,0 +1,109 @@
+{
+  "id": "MN-HF-268-2019",
+  "scope": "state:mn",
+  "title": "HF268 (2019-2020 Regular): Firearms; right to carry without a permit provided, and option permit to carry provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0268&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/268/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Drazkowski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Jeremy Munson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Jerry Hertaus",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Shane Mekeland",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "463cdab3-b3bd-4aa9-b834-bf573f4f34bf"
+    },
+    {
+      "name": "John Heinrich",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Josh Heintzeman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+    },
+    {
+      "name": "Sondra Erickson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/268/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-268-2019.introduced.html",
+      "sha256": "e1abfee99f077dfc667204dad0bb72c18c04f657dec926b9fada14b6293619b7"
+    },
+    "note": "Version read: introduced (as filed); no date shown in the file header. Subdivision 1c(a) declares the Second Amendment right, but it is a statement, not a step required of anyone. Struck text not quoted."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): (b) A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 7 (Minn. Stat. 624.714, subd. 20): (d) Nothing contained in any provision of this section or any other law requires or authorizes the registration, documentation, collection, or providing of serial numbers or other data on firearms or on firearms' owners.\nSection 9: Minnesota Statutes 2018, sections 624.714, subdivisions 1a, 1b, and 16; and 624.7181, are repealed."
+}

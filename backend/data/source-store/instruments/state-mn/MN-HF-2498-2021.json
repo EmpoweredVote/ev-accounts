@@ -1,0 +1,80 @@
+{
+  "id": "MN-HF-2498-2021",
+  "scope": "state:mn",
+  "title": "HF2498 (2021-2022 Regular): Dangerous weapon possession prohibited in the Capitol complex, and permit to carry holder exception to crime of carrying rifles and shotguns in public places eliminated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2498&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/HF/2498/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Liz Boldon",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Liz Reyer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6af8f82e-dbee-4ad2-b3ff-7b9e694b849c"
+    },
+    {
+      "name": "Sandra Feist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "641bf895-0822-4ed2-9423-24b1a3fada2a"
+    },
+    {
+      "name": "Jess Hanson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "79ee7fa2-44fb-4681-a7ed-450e74388425"
+    },
+    {
+      "name": "John Thompson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kaela Berg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Esther Agbaje",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
+    },
+    {
+      "name": "Heather Keeler",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4d08487a-cfb1-47d9-b61a-8fb20968b662"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-04-09; official copy, https://www.revisor.mn.gov/bills/92/2021/0/HF/2498/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-2498-2021.introduced.html",
+      "sha256": "6decc1066adb1ebf99e1260614bea02543059664aba5edf43547fa147a254cc2"
+    },
+    "note": "Version read: introduced (as filed). Section 1 strikes the references to the commissioner of public safety in the exceptions and the notice rule for permit holders; section 2 strikes the clause that excluded permit holders from \"carry\" (old clause (3)). Struck text is not quoted. Section 1 paragraph (a) is existing law as amended; the change is that the Capitol Area clause now has no commissioner consent route."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1g): (1) possesses a dangerous weapon, ammunition, or explosives within any courthouse complex; or (2) possesses a dangerous weapon, ammunition, or explosives in any state building within the Capitol Area described in chapter 15B, other than the National Guard Armory.\nSection 1 (Minn. Stat. 609.66, subd. 1g): Unless a person is otherwise prohibited or restricted by other law to possess a firearm, the prohibition in paragraph (a), clause (2), does not apply to persons authorized to carry a pistol under section 624.714, while the person is: (1) in a motor vehicle, or (2) outside of a motor vehicle to directly place a firearm in, or retrieve it from, the trunk or rear area of the vehicle.\nSection 2 (Minn. Stat. 624.7181, subd. 1): (2) the carrying by a person of a BB gun, rifle, or shotgun that is unloaded and in a gun case expressly made to contain a firearm, if the case fully encloses the firearm by being zipped, snapped, buckled, tied, or otherwise fastened, and no portion of the firearm is exposed;"
+}

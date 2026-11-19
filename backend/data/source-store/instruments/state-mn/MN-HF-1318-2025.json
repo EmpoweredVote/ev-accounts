@@ -1,0 +1,116 @@
+{
+  "id": "MN-HF-1318-2025",
+  "scope": "state:mn",
+  "title": "HF1318 (2025-2026 Regular): Persons purchasing a firearm required to be trained in firearm safety, retention of records relating to firearm sales required, and criminal penalties provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1318?body=House",
+    "https://www.revisor.mn.gov/bills/94/2025/0/HF/1318/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kaohly Her",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Liz Lee",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5e54444-041b-4eeb-8043-b691d3a3edfb"
+    },
+    {
+      "name": "Dave Pinto",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Cedrick Frazier",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f7c4959-18a0-4dd3-901e-8d59aece0337"
+    },
+    {
+      "name": "Ethan Cha",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "376e49a2-a73e-4748-b7c4-9195cbfa2ec5"
+    },
+    {
+      "name": "Kaela Berg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a89ba4b9-a684-40a6-b5ec-db0876a65b8d"
+    },
+    {
+      "name": "Liz Reyer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6af8f82e-dbee-4ad2-b3ff-7b9e694b849c"
+    },
+    {
+      "name": "Esther Agbaje",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "285c226e-a195-4d7e-993b-d54b6712e65b"
+    },
+    {
+      "name": "Emma Greenman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9303183-ae2a-4c1b-9777-587bb356f488"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Andy Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3757d377-1cc0-45f0-8b6f-e1f988c6fea2"
+    },
+    {
+      "name": "Amanda Hemmingsen-Jaeger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bd87858e-f045-4b4d-aa3c-cbcfe3613066"
+    },
+    {
+      "name": "Julie Greene",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df29702a-88ca-45a4-b3b9-1a5eb4509ac7"
+    },
+    {
+      "name": "Larry Kraft",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "461ec505-bdae-4b92-af7d-7d2cabf65b20"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-02-20; official copy, https://www.revisor.mn.gov/bills/94/2025/0/HF/1318/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-1318-2025.introduced.html",
+      "sha256": "a3f16d43ef4ec7c51493ca54c272004877e21fc1e3731e87b1c58775b49e2536"
+    },
+    "note": "As filed (introduced version). Effective Jan 1, 2026. Applies to dealer and private sales, with exclusions in subd. 8."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7135, subd. 2): A person may not sell a firearm unless the person purchasing or otherwise taking ownership of the firearm presents evidence of training in the safe use of a firearm as provided in subdivision 3.\nSection 1 (Minn. Stat. 624.7135, subd. 3): (a) A person purchasing or otherwise taking ownership of a firearm must present evidence to the seller that the person has received training in the safe use of a firearm within one year of the date of the sale.\nSection 1 (Minn. Stat. 624.7135, subd. 5): (d) All parties to the sale must retain a copy of the record and any attachments to the record for ten years from the date of the sale.\nSection 1 (Minn. Stat. 624.7135, subd. 6): (b) A person who refuses or is unable to produce the record in response to a request for production made by a peace officer pursuant to paragraph (a) is guilty of a misdemeanor."
+}

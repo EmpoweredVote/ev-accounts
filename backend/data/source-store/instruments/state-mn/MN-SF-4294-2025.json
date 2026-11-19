@@ -1,0 +1,45 @@
+{
+  "id": "MN-SF-4294-2025",
+  "scope": "state:mn",
+  "title": "SF4294 (2025-2026 Regular): Uniform procedure establishment for imposition, implementation, and oversight of firearms restrictions resulting from certain criminal convictions and judicial orders",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4294?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/4294/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Heather Gustafson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4ea59d05-8372-4646-8780-3b388b9bc98a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-04-07; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/4294/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-4294-2025.engrossed1.html",
+      "sha256": "457ecbe2df6a84e47d962239d02aa1cea7a5de1233b11c3b3f05a2e4cd064097"
+    },
+    "note": "1st engrossment, 2026-04-07. Strikes the older, separate transfer rules in 260C.201, 518B.01, 609.2242, 609.749 and 629.715 (three-business-day deadline, affidavit rules) and replaces them with cross-references to new section 518B.03. No passage vote recorded."
+  },
+  "operative_text": "Section 6 (Minn. Stat. 518B.03, subd. 2(b)): Upon issuance of a transfer order, the court must order the subject to transfer any firearms the person possesses or owns as soon as reasonably practicable to a federally licensed firearms dealer, the local law enforcement agency, or a third party who may lawfully receive them. The court shall impose a deadline for the subject to comply with the transfer order that takes into account the subject's custody status and the location of the subject's firearms.\nSection 6 (Minn. Stat. 518B.03, subd. 2(b)): If the subject elects to transfer the subject's firearms to the local law enforcement agency, the agency must accept the transfer. The subject may not transfer firearms to a third party who resides with the subject.\nSection 6 (Minn. Stat. 518B.03, subd. 2(c)): The subject shall provide at least 24-hour notice to the local law enforcement agency of the date and time of a transfer to a third party.\nSection 6 (Minn. Stat. 518B.03, subd. 3(b)): If transfer is made to a federally licensed firearms dealer, the subject must, within two business days after being served with the order, file a copy of the proof of transfer with the court and attest that all firearms owned or possessed at the time of the order have been transferred in accordance with this section and that the person currently does not possess any firearms.\nSection 6 (Minn. Stat. 518B.03, subd. 3(d)): If the subject claims not to own or possess firearms, the subject must file a declaration of nonpossession with the court attesting that, at the time of the order, the subject neither owned nor possessed any firearms and that the subject currently neither owns nor possesses any firearms.\nSection 6 (Minn. Stat. 518B.03, subd. 4(a)): To ensure that all firearms have been transferred, the court issuing a transfer order must hold a compliance hearing within ten business days of issuing the order.\nSection 6 (Minn. Stat. 518B.03, subd. 4(c)): The act of voluntarily surrendering firearms, providing testimony relating to the surrender of firearms, or complying with a transfer order, and any information directly or indirectly derived from such act or testimony, may not be used against the subject in any criminal prosecution, except a prosecution for perjury, giving a false statement, or otherwise failing to comply with the transfer order.\nSection 2 (Minn. Stat. 260C.201, subd. 3(d)): Except as provided in paragraph (e), the court shall order the abusing party to transfer any firearms that the person possesses as provided for in section 518B.03 and direct the abusing party to surrender all permits to carry and purchase firearms to the court.\nSection 9 (Minn. Stat. 629.715, subd. 2(b)): Except as otherwise provided for in this section, the surrender of firearms under this section must comply with section 518B.03."
+}

@@ -1,0 +1,186 @@
+{
+  "id": "MN-HF-188-2017",
+  "scope": "state:mn",
+  "title": "HF188 (2017-2018 Regular): Right to carry without a permit provided, and optional permit to carry provided.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0188&ssn=0&y=2017",
+    "https://www.revisor.mn.gov/bills/90/2017/0/HF/188/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Nash",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c9ea7750-8bd5-4db0-8ea9-40076eec7646"
+    },
+    {
+      "name": "Brian Daniels",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sondra Erickson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Drew Christensen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bud Nornes",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tony Albright",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Josh Heintzeman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0bfc2626-fbf0-44cc-bd0d-ffcd10b12d44"
+    },
+    {
+      "name": "Jerry Hertaus",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Swedzinski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "394260b2-ddfe-4c6d-91dc-544d7fef9fe8"
+    },
+    {
+      "name": "Pat Garofalo",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dan Fabian",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Backer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7beab3d6-e4f9-401d-9859-de2ced5089f2"
+    },
+    {
+      "name": "Greg Davids",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "89f1c6e1-4cb6-4aa4-99d7-2260729fee28"
+    },
+    {
+      "name": "Jim Newberger",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Franson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b96b430e-5ba7-42cc-825f-38e2dbceb466"
+    },
+    {
+      "name": "Deb Kiel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Kathy Lohmer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Matt Grossell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Jason Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e9e8dab5-3add-4eb0-874f-7c7652fad785"
+    },
+    {
+      "name": "Steve Green",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aba3726-4227-4e5b-8498-8a05ff6119b0"
+    },
+    {
+      "name": "Tony Cornish",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marion Rarick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aecee77e-b104-43a1-a907-fc44287dfd06"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/90/2017/0/HF/188/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-188-2017.introduced.html",
+      "sha256": "e1b57da14c66b69450474dd74602e51e6eaa281fe86b97b13a919f685dccd77a"
+    },
+    "note": "Version read: introduced bill (as filed), no date shown. No votes recorded. Section 9 repeals 624.714 subds. 1a, 1b, 16 and 624.7181. The second-amendment sentence is a legislative statement, not a duty; no higher_law_duty is set."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 1c): A person who is not prohibited from possessing a firearm by any law of this state or any federal law shall have the right to carry, hold, or possess a firearm in a motor vehicle, snowmobile, or boat, or on or about the person's clothes or the person, or otherwise in possession or control in a public place.\nSection 1 (Minn. Stat. 624.714, subd. 1c): The legislature of the state of Minnesota recognizes and declares that the second amendment of the United States Constitution guarantees the fundamental, individual right to keep and bear arms.\nSection 2 (Minn. Stat. 624.714, subd. 1d): A person may apply for an optional permit to carry a pistol as provided in this section.\nSection 8 (Minn. Stat. 624.714, subd. 23): This section sets forth the complete and exclusive criteria and procedures for the issuance of optional permits to carry and establishes their nature and scope."
+}

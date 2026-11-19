@@ -1,0 +1,76 @@
+{
+  "id": "MN-HF-3692-2019",
+  "scope": "state:mn",
+  "title": "HF3692 (2019-2020 Regular): Extreme risk protection order enactment or enforcement against individuals regarding firearms prohibited, and criminal violation penalty established.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3692&ssn=0&y=2020",
+    "https://www.revisor.mn.gov/bills/91/2020/0/HF/3692/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Munson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Drazkowski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b697907e-c2ac-40d5-805d-c6a06d88943b"
+    },
+    {
+      "name": "Tim Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Poston",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Heinrich",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brian Johnson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Lucero",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "830820d7-c5a5-4dec-ba83-f8a785a2fb41"
+    },
+    {
+      "name": "Cal Bahr",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa1104a3-2bf0-4fa5-81e4-00b3c95f649f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2020/0/HF/3692/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3692-2019.introduced.html",
+      "sha256": "0710b9573ee7cf402a623a7631e8811e0f7ee3ce3ae1bc8473452c2dfa9658e6"
+    },
+    "note": "Introduced (undated in the text file); no votes. Penalty is for breaking the bill's own rule."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7193, new, para. (b)): The legislature hereby preempts the entire field of legislation in this state concerning in any way federal or state extreme risk protection orders that have been issued against a citizen of Minnesota. No city, county, or other political subdivision of this state shall enact any ordinance, resolution, or regulation providing for extreme risk protection orders nor enforce or aid in the enforcement of any extreme risk protection order issued pursuant to federal law or the laws of another jurisdiction.\nSection 1 (Minn. Stat. 624.7193, new, para. (c)): Any federal statute, rule, or executive order; federal or state judicial order; or other judicial action that would have the effect of enforcing an extreme risk protection order against a resident of Minnesota shall be null, void, unenforceable, and of no effect in the state of Minnesota.\nSection 1 (Minn. Stat. 624.7193, new, para. (d)): No state agency or any city, county, or other political subdivision in the state shall accept any moneys to implement any federal statute, rule, or executive order; federal or state judicial order; or other judicial action that would have the effect of enforcing an extreme risk protection order against or upon a resident of Minnesota.\nSection 1 (Minn. Stat. 624.7193, new, para. (f)): It shall be unlawful for any person, including a law enforcement officer, to enforce or attempt to enforce an extreme risk protection order upon a resident of Minnesota. Any person violating this act is guilty of a felony, and may be sentenced to imprisonment for not more than 18 months, or to a fine of not more than $5,000, or both."
+}

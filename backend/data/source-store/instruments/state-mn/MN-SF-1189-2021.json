@@ -1,0 +1,39 @@
+{
+  "id": "MN-SF-1189-2021",
+  "scope": "state:mn",
+  "title": "SF1189 (2021-2022 Regular): Retired law enforcement officers carrying firearms in schools permission",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF1189&ssn=0&y=2021",
+    "https://www.revisor.mn.gov/bills/92/2021/0/SF/1189/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Utke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2021-02-17; official copy, https://www.revisor.mn.gov/bills/92/2021/0/SF/1189/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-1189-2021.introduced.html",
+      "sha256": "579c13b8d02916e7e6747a5747417ee2d4831b714c234defb18001b8d7110460"
+    },
+    "note": "As filed (Introduction, 2021-02-17); official copy from revisor.mn.gov. Only change of substance is new exemption clause (10); the rest of subd. 1d is existing law shown in full. Effective Aug 1, 2021. No passage vote on file."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 609.66, subd. 1d): (d) Notwithstanding paragraph (a), (b), or (c), it is a misdemeanor for a person authorized to carry a firearm under the provisions of a permit or otherwise to carry a firearm on or about the person's clothes or person in a location the person knows is school property.\nSection 1 (Minn. Stat. 609.66, subd. 1d, paragraph (f), clause (10)): (10) persons authorized to carry a firearm under United States Code, title 18, part I, chapter 44, section 926C, and who are carrying in compliance with that law."
+}

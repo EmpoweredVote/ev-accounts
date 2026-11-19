@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-3655-2025",
+  "scope": "state:mn",
+  "title": "SF3655 (2025-2026 Regular): Possession of semiautomatic military-style assault weapons and large-capacity ammunition magazines banishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3655?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2026/0/SF/3655/versions/1/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Zaynab Mohamed",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8ace4090-cdf6-4a6f-bcee-7aac68c51890"
+    },
+    {
+      "name": "Ron Latz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ab9c3b6-63b4-4afe-bd4a-aa1f7b057646"
+    },
+    {
+      "name": "Doron Clark",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3a7411c9-55d4-4eb6-bae0-5f5f6206c517"
+    },
+    {
+      "name": "John Marty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2744a53f-1558-41c3-8c3c-c6e71c70b682"
+    },
+    {
+      "name": "Clare Oumou Verbeten",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f5763e3f-da57-4213-a7b9-1f07267ab35b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (1st Engrossment, 2026-03-18; official copy, https://www.revisor.mn.gov/bills/94/2026/0/SF/3655/versions/1/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-3655-2025.engrossed1.html",
+      "sha256": "95174d75f3f600834beb459b113abc9492e0753b106a32878130a612db66279c"
+    },
+    "note": "Other: 1st Engrossment, 2026-03-18. No vote in the record. Conforming article changes cross-references only."
+  },
+  "operative_text": "Article 1, Section 3 (Minn. Stat. 624.7145, subd. 2, assault weapons): It is unlawful for a person to transfer, own, or possess semiautomatic military-style assault weapons.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 4, assault weapons): A person who legally owned or possessed a semiautomatic military-style assault weapon before August 1, 2026, and who desires to maintain lawful ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension by February 1, 2027.\nArticle 1, Section 3 (Minn. Stat. 624.7145, subd. 5, assault weapons): A person who violates subdivision 2 or 4, paragraph (a) or (f), is guilty of a felony and may be sentenced to imprisonment for not more than five years or to payment of a fine of not more than $25,000, or both.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 2, large-capacity magazines): It is unlawful for a person to manufacture, import, transfer, own, or possess large-capacity magazines.\nArticle 1, Section 4 (Minn. Stat. 624.7146, subd. 4): A person who legally owned or possessed a large-capacity magazine before August 1, 2026, and who desires to maintain lawful ownership or possession of the device must request certification of ownership of the device from the Bureau of Criminal Apprehension by February 1, 2027."
+}

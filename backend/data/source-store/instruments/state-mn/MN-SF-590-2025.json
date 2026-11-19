@@ -1,0 +1,63 @@
+{
+  "id": "MN-SF-590-2025",
+  "scope": "state:mn",
+  "title": "SF590 (2025-2026 Regular): Permit to carry pistol age of eligibility to apply at 18 years old establishment",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/590?body=Senate",
+    "https://www.revisor.mn.gov/bills/94/2025/0/SF/590/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Utke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "63a54046-caa9-4a19-a824-590c9305de0d"
+    },
+    {
+      "name": "Rich Draheim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a41019c1-8548-4465-bbd6-f23688ed38dd"
+    },
+    {
+      "name": "Torrey Westrom",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "545069b3-7f84-4480-a36b-761f5c6cc415"
+    },
+    {
+      "name": "Glenn Gruenhagen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c835ab1-0d18-463f-a6ad-5991e1281523"
+    },
+    {
+      "name": "Bill Lieske",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbdde0a7-f79e-4b77-8e96-92d77beb603b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2025-01-23; official copy, https://www.revisor.mn.gov/bills/94/2025/0/SF/590/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-590-2025.introduced.html",
+      "sha256": "941c2f63ccb5ade3e6f7065f3329235a9a7f5877c3db62a8d7d132a1aef68d5d"
+    },
+    "note": "Version read: the introduced bill as filed (2025-01-23); no passage vote recorded, no later amendments. The bill strikes the age 21."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.714, subd. 2): Unless a sheriff denies a permit under the exception set forth in subdivision 6, paragraph (a), clause (3), a sheriff must issue a permit to an applicant if the person:\nSection 1 (Minn. Stat. 624.714, subd. 2): (2) is at least 18 years old and a citizen or a permanent resident of the United States;"
+}

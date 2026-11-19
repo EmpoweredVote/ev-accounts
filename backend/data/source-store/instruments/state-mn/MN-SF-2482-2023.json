@@ -1,0 +1,62 @@
+{
+  "id": "MN-SF-2482-2023",
+  "scope": "state:mn",
+  "title": "SF2482 (2023-2024 Regular): Possession of dangerous weapons prohibition in the Capitol complex",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF2482&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/2482/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bonnie Westlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "51a9e676-8adb-4682-b121-aed21a58e66f"
+    },
+    {
+      "name": "Nicole Mitchell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Dibble",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22d35adf-72f2-4b26-b151-579f53c8f2c8"
+    },
+    {
+      "name": "Liz Boldon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "738daece-ad27-449f-8fad-8d614e296f63"
+    },
+    {
+      "name": "Erin Maye Quade",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a9f089f1-c5a5-4cf6-908b-b9898a078fe7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2023-03-01; official copy, https://www.revisor.mn.gov/bills/93/2023/0/SF/2482/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-SF-2482-2023.introduced.html",
+      "sha256": "2fb13fc0540cca9aec0d5f57ba3a29fd559f15ff3dc7c71a3c71a65ce785cefe"
+    },
+    "note": "Read the introduced bill (2023-03-01); no vote data in file. The bill strikes the commissioner-of-public-safety consent and notice exceptions for state buildings, and a data-practices clause in 299E.04 subd. 4 (Section 1, not quoted). Quotes join across struck words."
+  },
+  "operative_text": "Section 2 (Minn. Stat. 609.66, subd. 1g): (2) possesses a dangerous weapon, ammunition, or explosives in any state building within the Capitol Area described in chapter 15B, other than the National Guard Armory.\nSection 2 (Minn. Stat. 609.66, subd. 1g): (2) persons who carry pistols according to the terms of a permit issued under section 624.714 in a courthouse complex and who so notify the sheriff;\nSection 2 (Minn. Stat. 609.66, subd. 1g): (4) persons who possess dangerous weapons in a courthouse complex with the express consent of the county sheriff; or\nSection 2 (Minn. Stat. 609.66, subd. 1g): (5) retired peace officers who carry pistols as authorized by, and in compliance with, United States Code, title 18, part I, chapter 44, section 926C, in buildings in the Capitol Area and who are employed by the Minnesota House of Representatives working in a primary security function with the House Sergeant-at-Arms."
+}

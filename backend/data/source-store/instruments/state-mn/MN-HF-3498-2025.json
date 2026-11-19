@@ -1,0 +1,45 @@
+{
+  "id": "MN-HF-3498-2025",
+  "scope": "state:mn",
+  "title": "HF3498 (2025-2026 Regular): Penalty for transferring a firearm to an unauthorized person increased, mandatory minimum sentence for certain transfers of a firearm to an ineligible person established, and affirmative defense removed.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3498?body=House",
+    "https://www.revisor.mn.gov/bills/94/2026/0/HF/3498/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Witte",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "78a28a3b-98d0-46a6-bdf2-1d8b961fa6ed"
+    },
+    {
+      "name": "Andrew Myers",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4a810646-c2f7-4702-a2ed-263fc3d0f4ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction, 2026-02-19; official copy, https://www.revisor.mn.gov/bills/94/2026/0/HF/3498/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-3498-2025.introduced.html",
+      "sha256": "4ef3136f567d43d9cc403a6e2e38d65d1211eadbad73a28884286d15ac29c9cc"
+    },
+    "note": "As-filed text, introduced 2026-02-19. Section 1 strikes the old two-year maximum. Section 3 repeals subd. 4, the affirmative defense for a family or household member who transferred under compulsion."
+  },
+  "operative_text": "Section 1 (Minn. Stat. 624.7141, subd. 1): (a) A person is guilty of a felony and may be sentenced to imprisonment for up to three years and to payment of a fine of not more than $10,000 if the person intentionally transfers a firearm to another and the person knows or reasonably should know that the transferee:\nSection 2 (Minn. Stat. 624.7141, subd. 2): A person sentenced under this subdivision shall be committed to the commissioner of corrections for not less than three years or the presumptive fixed sentence under the Minnesota Sentencing Guidelines, whichever is greater."
+}

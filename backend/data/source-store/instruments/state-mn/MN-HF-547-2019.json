@@ -1,0 +1,161 @@
+{
+  "id": "MN-HF-547-2019",
+  "scope": "state:mn",
+  "title": "HF547 (2019-2020 Regular): Taylor Hayden Gun Violence Prevention Act established, and money appropriated.",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF0547&ssn=0&y=2019",
+    "https://www.revisor.mn.gov/bills/91/2019/0/HF/547/versions/0/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Fue Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "556de586-e176-4e68-90de-1eabb24a5b4d"
+    },
+    {
+      "name": "Dave Pinto",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8ae767e1-a3bc-406d-a191-5fb5133ec190"
+    },
+    {
+      "name": "Raymond Dehn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tou Xiong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5aac466-971e-4b44-ac6e-91c4cbfa39d7"
+    },
+    {
+      "name": "Mike Freiberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ace1dba6-9927-4224-9e45-6aef5b6b75d6"
+    },
+    {
+      "name": "Jay Xiong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36ac7eb0-5bb1-4fa6-b0e9-bc984a73fdb8"
+    },
+    {
+      "name": "Rena Moran",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kristin Bahner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4269e293-60c0-4348-adca-7a2dbc98dd18"
+    },
+    {
+      "name": "Kelly Moller",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ac902e73-18b8-48dd-9409-657e8bb85af0"
+    },
+    {
+      "name": "Mary Kunesh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bb07b87a-b92b-426d-af32-9d505ff3bb7a"
+    },
+    {
+      "name": "Laurie Halverson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jamie Becker-Finn",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Davnie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carlie Kotyza-Witthuhn",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e3311ba8-aeed-497c-b61c-4487f7a22383"
+    },
+    {
+      "name": "Frank Hornstein",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rick Hansen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "007efefd-7680-44b7-9f07-813340f52366"
+    },
+    {
+      "name": "Tim Mahoney",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mohamud Noor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "afd02cc7-9c13-4345-b3b4-7a507c062414"
+    },
+    {
+      "name": "Hodan Hassan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Aisha Gomez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81033847-4e48-4080-a0c5-8daf154a4761"
+    },
+    {
+      "name": "John Huot",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ff1fbc23-7d83-4b4e-93ca-22a58b60e481"
+    },
+    {
+      "name": "Jennifer Schultz",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Hunter Cantrell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Minnesota) (gun-policy Stage 5, Minnesota); operative text read by a Sonnet fill agent from the official Minnesota text (Introduction; official copy, https://www.revisor.mn.gov/bills/91/2019/0/HF/547/versions/0/)",
+    "fetched_at": "2026-11-19T20:27:28.037400Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MN-HF-547-2019.introduced.html",
+      "sha256": "1e28cb5d54990c161f9a0d8984086177f3af044797582fbad4b20e882f31ceda"
+    },
+    "note": "Introduced version; no date shown on the saved copy."
+  },
+  "operative_text": "Section 1 (Taylor Hayden Gun Violence Prevention Act): To reduce the number of injuries and deaths of innocent individuals in the community and to increase community safety, the commissioner of human services shall develop a competitive bidding process to award grants to nonprofit organizations with expertise in gun violence prevention. A nonprofit organization awarded a grant must use the money for gun violence prevention or public awareness and education campaigns on gun violence prevention.\nSection 2 (appropriation): $200,000 in fiscal year 2020 and $200,000 in fiscal year 2021 are appropriated from the general fund to the commissioner of human services to provide grants described in section 1."
+}
