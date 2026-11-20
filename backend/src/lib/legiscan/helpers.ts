@@ -119,11 +119,27 @@ export function normalizeVoteCast(voteText: string | undefined | null): string {
   return VOTE_MAP[(voteText ?? '').toLowerCase().trim()] ?? 'not_voting';
 }
 
-export function committeeChamber(raw: string | undefined | null): 'house' | 'senate' | 'joint' {
-  const c = (raw ?? '').toUpperCase();
-  if (c === 'H') return 'house';
+/**
+ * LegiScan's committee chamber code -> our chamber. 'A' is an Assembly (California, Nevada, Wisconsin):
+ * the lower chamber, stored as 'house' like every other lower chamber. An unknown code stays unknown
+ * (null): reading it as 'joint' is how every Assembly committee came to be stored as joint.
+ */
+export function committeeChamber(raw: string | undefined | null): 'house' | 'senate' | 'joint' | null {
+  const c = (raw ?? '').trim().toUpperCase();
+  if (c === 'H' || c === 'A') return 'house';
   if (c === 'S') return 'senate';
-  return 'joint';
+  if (c === 'J') return 'joint';
+  return null;
+}
+
+/**
+ * True for a LegiScan people record that stands for a committee, not a legislator. LegiScan lists a
+ * committee that sponsors bills as a "person" with a blank name, committee_sponsor = 1 and its
+ * committee_id. A legislator's record has committee_id 0. LegiScan publishes no committee rosters, so
+ * these records say nothing about who sits on a committee and must never become a member or a bridge.
+ */
+export function isCommitteeRecord(person: { committee_sponsor?: unknown; committee_id?: unknown; [k: string]: unknown }): boolean {
+  return Boolean(Number(person.committee_sponsor)) || Number(person.committee_id) > 0;
 }
 
 export interface DatasetListEntry {

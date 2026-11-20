@@ -39,6 +39,8 @@ import { runExpirationSweep } from '../trivia/cron/expirationSweep.js';
 import { runElectionDetection } from '../trivia/cron/electionDetection.js';
 import { runPipelineCron } from '../trivia/cron/pipelineCron.js';
 import { runLegiscanRefresh } from '../lib/legiscan/refresh.js';
+import { syncMemberIds } from '../lib/memberIdSync.js';
+import { pool } from '../lib/db.js';
 import { runFederalBillsRefresh } from '../lib/federal/federalBillsRefresh.js';
 import { runFederalVotesRefresh } from '../lib/federal/federalVotesRefresh.js';
 import { runJobHealthCheck } from '../lib/jobHealth.js';
@@ -87,6 +89,14 @@ export const JOBS: Record<string, JobFn> = {
   'ocpf': () => runAdapterForAll('ocpf'),
   // Weekly state-legislature votes and bills from LegiScan datasets (ev-cto decision 0031). About 1 query per
   // state when nothing changed. Needs LEGISCAN_API_KEY and migration 1901. Never reads or stores party.
+  // Weekly member ids (CA_0401/CA_0402): every sitting state legislator's Open States person id (and GA, ID, PA,
+  // SC member ids), matched by SEAT from data.openstates.org (public, no key). Adds only; an id held by another
+  // person is listed, never moved. FIRST step of ev-jobs-legiscan, so a new member's id lands the same week.
+  // Fails when a state's Open States file cannot be read, so the gap shows in job health.
+  'member-ids': async () => {
+    const r = await syncMemberIds(pool, { apply: true });
+    if (r.blind.length) throw new Error(`member-ids: no Open States file read for ${r.blind.join(', ')}`);
+  },
   'legiscan': () => runLegiscanRefresh(),
   // Weekly federal bills and cosponsors for the Congress in session, from govinfo BILLSTATUS (public, no key,
   // ~60 MB). Until 2026-10-31 nothing loaded federal bills on a schedule. Creates the session row when a new
