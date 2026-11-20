@@ -31,14 +31,21 @@ export type QueryFn = (sql: string, params?: unknown[]) => Promise<Array<Record<
  * those two apart.
  */
 export class MissingPolygonError extends Error {
-  constructor(public readonly stateFips: string, message: string) {
+  constructor(public readonly stateFips: string, message: string, public readonly geoids: string[] = []) {
     super(message);
     this.name = 'MissingPolygonError';
   }
 }
 
 const COUNTY_SQL = `
-  SELECT geo_id, name
+  SELECT geo_id,
+         name,
+         geometry IS NULL AS geom_null,
+         CASE WHEN geometry IS NULL THEN false ELSE ST_IsValid(geometry) END AS geom_valid,
+         CASE WHEN geometry IS NULL THEN false
+              ELSE ST_XMin(geometry) >= -180 AND ST_XMax(geometry) <= 180
+               AND ST_YMin(geometry) >= -90  AND ST_YMax(geometry) <= 90
+         END AS geom_in_bounds
     FROM essentials.geofence_boundaries
    WHERE mtfcc = 'G4020' AND state = $1
    ORDER BY geo_id`;
@@ -78,6 +85,20 @@ export async function listCounties(stateFips: string, query: QueryFn): Promise<A
   const rows = await query(COUNTY_SQL, [stateFips]);
   if (rows.length === 0) {
     throw new MissingPolygonError(stateFips, `No G4020 county polygons for state '${stateFips}'. Refusing to report zero candidates for a state we cannot test against.`);
+  }
+  // 🔴 A COUNTY'S POLYGON CAN BE PRESENT AND USELESS, and then that county matches
+  // nothing and arrives at the operator looking exactly like a county with no
+  // photographs. NULL, invalid, and valid-but-in-the-wrong-CRS all do this: Holladay's
+  // five wards were Web Mercator metres tagged SRID 4326 and passed every other
+  // geometric check while matching no address at all.
+  const unusable = rows.filter((r) => r.geom_null === true || r.geom_valid === false || r.geom_in_bounds === false);
+  if (unusable.length > 0) {
+    const named = unusable.map((r) => `${String(r.geo_id)} (${String(r.name)})`).join(', ');
+    throw new MissingPolygonError(
+      stateFips,
+      `${unusable.length} county polygon(s) in state '${stateFips}' are NULL, invalid, or outside earth bounds: ${named}. Refusing to report zero candidates for a county we cannot test against.`,
+      unusable.map((r) => String(r.geo_id)),
+    );
   }
   return rows.map((r) => ({ geoid: String(r.geo_id), name: String(r.name) }));
 }

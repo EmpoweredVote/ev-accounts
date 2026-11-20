@@ -48,3 +48,30 @@ describe('filterCandidates', () => {
     expect(r.kept.length + rejected).toBe(input.length);
   });
 });
+
+describe('filterCandidates — licence classes that look free and are not', () => {
+  it('refuses NonCommercial and NoDerivatives, which the bare "cc by" prefix admits', () => {
+    const r = filterCandidates([
+      fileWith({ licence: 'CC BY-NC 4.0' }), fileWith({ licence: 'CC BY-NC-SA 3.0' }), fileWith({ licence: 'CC BY-ND 2.0' }),
+    ]);
+    expect(r.kept).toHaveLength(0);
+    expect(r.rejected.licence_non_free).toBe(3);
+  });
+
+  it('still accepts CC BY and CC BY-SA', () => {
+    expect(filterCandidates([fileWith({ licence: 'CC BY 4.0' }), fileWith({ licence: 'CC BY-SA 4.0' })]).kept).toHaveLength(2);
+  });
+
+  it('counts a licence it cannot classify as unreadable, not as non-free', () => {
+    // GFDL, the Free Art Licence and "No restrictions" are all free and Commons-accepted.
+    // Calling them non-free tells the operator something untrue about the file.
+    const r = filterCandidates([fileWith({ licence: 'Some Bespoke Terms v2' })]).rejected;
+    expect(r.licence_unreadable).toBe(1);
+    expect(r.licence_non_free).toBe(0);
+  });
+
+  it('accepts the free licences Commons actually uses beyond the CC family', () => {
+    const r = filterCandidates([fileWith({ licence: 'GFDL' }), fileWith({ licence: 'Free Art License 1.3' }), fileWith({ licence: 'No restrictions' })]);
+    expect(r.kept).toHaveLength(3);
+  });
+});

@@ -10,7 +10,7 @@ let dir: string;
 beforeEach(() => { dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-state-')); });
 afterEach(() => { fs.rmSync(dir, { recursive: true, force: true }); });
 
-const NE = Array.from({ length: 93 }, (_, i) => ({ geo_id: `31${String(i * 2 + 1).padStart(3, '0')}`, name: `County ${i}` }));
+const NE = Array.from({ length: 93 }, (_, i) => ({ geo_id: `31${String(i * 2 + 1).padStart(3, '0')}`, name: `County ${i}`, geom_null: false, geom_valid: true, geom_in_bounds: true }));
 const good = (title: string): CandidateFile => ({
   title, url: 'u', width: 3000, height: 2000, licence: 'CC BY 4.0', author: 'A', date: null,
   sourceCategory: 'c', lat: 40.8, lon: -99.7,
@@ -92,5 +92,68 @@ describe('buildStateCandidates', () => {
 
   it('rejects an unknown state code rather than querying with undefined', async () => {
     await expect(buildStateCandidates('ZZ', dir, deps())).rejects.toThrow(/ZZ/);
+  });
+});
+
+describe('buildStateCandidates — failures that would otherwise read as absence', () => {
+  it('refuses swept:true when a category errored during the sweep', async () => {
+    // A WAF challenge on ONE request made the client throw correctly, sweepCategories
+    // skipped that category, and the county then claimed it had been swept and found
+    // nothing. The throw was defended in the client and discarded by the caller.
+    const rows = await buildStateCandidates('NE', dir, deps({
+      sweep: async (_roots, opts) => { opts?.onError?.('Category:Blocked', new Error('challenge')); return []; },
+    }));
+    expect(rows[0].swept).toBe(false);
+    expect(rows[0].categoryErrors).toBe(1);
+  });
+
+  it('counts a file that landed in a DIFFERENT county of the same state', async () => {
+    const mine = [good('mine.jpg')];
+    const theirs = [good('theirs.jpg')];
+    const rows = await buildStateCandidates('NE', dir, deps({
+      sweep: async () => [...mine, ...theirs],
+      assign: async () => ({ located: new Map([[NE[0].geo_id, mine], [NE[1].geo_id, theirs]]), unlocated: [], outside: [] }),
+    }));
+    expect(rows.find((r) => r.geoid === NE[0].geo_id)!.otherCounty).toBe(1);
+  });
+
+  it('accounts for every swept file: located + other + unlocated + outside + rejected', async () => {
+    const files = [good('a.jpg'), { ...good('b.jpg'), width: 100, height: 100 }, good('c.jpg')];
+    const rows = await buildStateCandidates('NE', dir, deps({
+      sweep: async () => files,
+      assign: async () => ({ located: new Map([[NE[0].geo_id, [files[0], files[1]]], [NE[1].geo_id, [files[2]]]]), unlocated: [], outside: [] }),
+    }));
+    const r = rows.find((x) => x.geoid === NE[0].geo_id)!;
+    const rejected = Object.values(r.rejected).reduce((a, b) => a + b, 0);
+    expect(r.allCandidates.length + rejected + r.otherCounty + r.unlocated + r.outside).toBe(r.filesSwept);
+  });
+
+  it('records how many categories were found, so a wrong category title is visible', async () => {
+    // Virginia's independent cities are named "Richmond city", so both roots miss and
+    // the county reports zero candidates while looking perfectly swept.
+    const rows = await buildStateCandidates('NE', dir, deps({
+      sweep: async (_r, opts) => { opts?.onStats?.({ categories: 0, files: 0 }); return []; },
+    }));
+    expect(rows[0].categoriesFound).toBe(0);
+  });
+
+  it('treats a truncated county file as unswept instead of dying on it', async () => {
+    const d = deps();
+    await buildStateCandidates('NE', dir, d);
+    fs.writeFileSync(path.join(dir, `${NE[0].geo_id}.json`), '{"geoid":"31001","swep');
+    const rows = await buildStateCandidates('NE', dir, d);
+    expect(rows).toHaveLength(93);
+    expect(rows[0].swept).toBe(true);
+  });
+
+  it('renders the capped candidates, not all of them', async () => {
+    const twelve = Array.from({ length: 12 }, (_, i) => good(`f${i}.jpg`));
+    const rendered: string[] = [];
+    await buildStateCandidates('NE', dir, deps({
+      sweep: async () => twelve,
+      assign: async () => ({ located: new Map([[NE[0].geo_id, twelve]]), unlocated: [], outside: [] }),
+      render: async (f) => { rendered.push(f.title); },
+    }));
+    expect(rendered).toHaveLength(5);
   });
 });

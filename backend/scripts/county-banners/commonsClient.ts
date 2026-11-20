@@ -52,11 +52,18 @@ export async function commonsApi(
     lastStatus = res.status;
     if (res.status >= 200 && res.status < 300) {
       const body = await res.text();
+      let parsed: unknown;
       try {
-        return JSON.parse(body) as unknown;
+        parsed = JSON.parse(body);
       } catch {
         throw new CommonsBlockedError(`Commons answered ${res.status} with a non-JSON body (${body.slice(0, 80)})`);
       }
+      // 🔴 MediaWiki answers 200 with {"error":{...}} for a rate limit, a bad parameter
+      // or readapidenied. That parses, and the caller would read it as an empty result --
+      // the same 'no files' misreading the challenge check exists to prevent.
+      const err = (parsed as { error?: { code?: string; info?: string } }).error;
+      if (err) throw new CommonsBlockedError(`Commons API error ${err.code ?? 'unknown'}: ${err.info ?? ''}`);
+      return parsed;
     }
     if (attempt < MAX_ATTEMPTS) await sleep(backoffMs * attempt);
   }

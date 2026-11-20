@@ -39,10 +39,28 @@ function slack(f: CandidateFile): number {
  * The title tiebreak makes this a total order: two runs over the same candidates give
  * the same page, so what the operator saw yesterday is what they see today.
  */
+/**
+ * Enough slack to move the levers meaningfully. Below this the operator can barely
+ * reframe; ABOVE it, more slack is not better -- a 1700x5000 vertical strip has the
+ * most slack of anything and makes a poor banner. Slack is a gate, not a score.
+ */
+export const MIN_SLACK = 0.12;
+
+/** How far a source's shape is from the asset's own 3.148:1. */
+function shapeDistance(f: CandidateFile): number {
+  if (f.width <= 0 || f.height <= 0) return Number.POSITIVE_INFINITY;
+  return Math.abs(Math.log((f.width / f.height) / ASSET_RATIO));
+}
+
 export function rankCandidates(files: CandidateFile[]): CandidateFile[] {
   return [...files].sort((a, b) => {
-    const s = slack(b) - slack(a);
-    if (Math.abs(s) > 1e-9) return s;
+    // 1. Can the operator reframe it at all?
+    const adequate = Number(slack(b) >= MIN_SLACK) - Number(slack(a) >= MIN_SLACK);
+    if (adequate !== 0) return adequate;
+    // 2. Among those, the closest to the banner's own shape -- which puts an ordinary
+    //    landscape above an ordinary portrait instead of below it.
+    const d = shapeDistance(a) - shapeDistance(b);
+    if (Math.abs(d) > 1e-9) return d;
     const size = Math.max(b.width, b.height) - Math.max(a.width, a.height);
     if (size !== 0) return size;
     return a.title.localeCompare(b.title);

@@ -80,3 +80,35 @@ describe('listCounties', () => {
     await expect(listCounties('99', fakeQuery([], []))).rejects.toBeInstanceOf(MissingPolygonError);
   });
 });
+
+describe('listCounties — a polygon can be present and useless', () => {
+  const healthy = (geo_id: string, name: string) => ({ geo_id, name, geom_null: false, geom_valid: true, geom_in_bounds: true });
+
+  it('names the offending county when its geometry is invalid', async () => {
+    const q: QueryFn = async () => [healthy('31121', 'Merrick County'), { ...healthy('31047', 'Dawson County'), geom_valid: false }];
+    await expect(listCounties('31', q)).rejects.toThrow(/31047/);
+  });
+
+  it('names the offending county when its geometry is NULL', async () => {
+    const q: QueryFn = async () => [{ ...healthy('31047', 'Dawson County'), geom_null: true }];
+    await expect(listCounties('31', q)).rejects.toThrow(/31047/);
+  });
+
+  it('names the offending county when its coordinates are outside earth bounds', async () => {
+    // A Web Mercator polygon tagged SRID 4326 passes every other geometric check.
+    const q: QueryFn = async () => [{ ...healthy('31047', 'Dawson County'), geom_in_bounds: false }];
+    await expect(listCounties('31', q)).rejects.toThrow(/31047/);
+  });
+
+  it('accepts counties whose geometry is healthy', async () => {
+    const q: QueryFn = async () => [healthy('31047', 'Dawson County')];
+    expect(await listCounties('31', q)).toEqual([{ geoid: '31047', name: 'Dawson County' }]);
+  });
+
+  it('asks the database for the geometry health columns', async () => {
+    let sql = '';
+    const q: QueryFn = async (s) => { sql = s; return [healthy('31047', 'D')]; };
+    await listCounties('31', q);
+    expect(sql).toMatch(/ST_IsValid/i);
+  });
+});

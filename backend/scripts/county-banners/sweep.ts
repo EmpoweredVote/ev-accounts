@@ -22,6 +22,8 @@ export interface SweepOptions {
   depth?: number;
   api?: ApiFn;
   onError?: (category: string, error: unknown) => void;
+  /** Zero categories found is a different finding from zero files: the title missed. */
+  onStats?: (stats: { categories: number; files: number }) => void;
 }
 
 interface CatMember { title: string }
@@ -87,6 +89,8 @@ export async function sweepCategories(roots: string[], opts: SweepOptions = {}):
   const cats = new Set<string>();
   for (const r of roots) await subcategories(r, depth, api, cats, opts.onError);
 
+  opts.onStats?.({ categories: cats.size, files: 0 });
+
   const seenTitles = new Set<string>();
   const files: CandidateFile[] = [];
   // Roots first, so `sourceCategory` names the closest category a file was found in.
@@ -105,5 +109,6 @@ export async function sweepCategories(roots: string[], opts: SweepOptions = {}):
       files.push(f);
     }
   }
+  opts.onStats?.({ categories: cats.size, files: files.length });
   return files;
 }

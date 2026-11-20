@@ -38,3 +38,22 @@ describe('rankCandidates', () => {
 
   it('shows five at a time', () => { expect(PAGE_SIZE).toBe(5); });
 });
+
+describe('rankCandidates — slack is a threshold, not a prize', () => {
+  it('prefers an ordinary landscape over an ordinary portrait', () => {
+    // Slack rises monotonically with tallness, so a naive sort puts every portrait
+    // above every landscape. On a county with hundreds of candidates and a page of
+    // five, that is suppression, not ordering.
+    const landscape = c('landscape.jpg', 4000, 2667);
+    const portrait = c('portrait.jpg', 2667, 4000);
+    expect(rankCandidates([portrait, landscape])[0].title).toBe('landscape.jpg');
+  });
+
+  it('puts a tall vertical strip below an ordinary landscape', () => {
+    expect(rankCandidates([c('strip.jpg', 1700, 5000), c('landscape.jpg', 4000, 2667)])[0].title).toBe('landscape.jpg');
+  });
+
+  it('still rejects a source with no slack at all in favour of one that has some', () => {
+    expect(rankCandidates([c('flat.jpg', 3148, 1000), c('landscape.jpg', 4000, 2667)])[0].title).toBe('landscape.jpg');
+  });
+});

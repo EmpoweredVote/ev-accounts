@@ -41,3 +41,10 @@ describe('USER_AGENT', () => {
     expect(USER_AGENT).not.toMatch(/@/);
   });
 });
+
+describe('commonsApi — a 200 that parses but carries an error', () => {
+  it('throws rather than returning an error object that reads downstream as "no files"', async () => {
+    stubFetch([{ status: 200, body: JSON.stringify({ error: { code: 'ratelimited', info: 'slow down' } }) }]);
+    await expect(commonsApi({ action: 'query' }, { backoffMs: 0 })).rejects.toThrow(/ratelimited/);
+  });
+});

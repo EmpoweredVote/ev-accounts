@@ -23,9 +23,15 @@ export const MIN_LONG_EDGE = 1700;
  * 🔴 A LICENCE IS READ, NEVER INFERRED. `null` means we did not read one, which is a
  * different outcome from reading one and finding it non-free -- see the two counters.
  */
-export const FREE_LICENCE = /^(cc0|cc[ _-]?by|public domain|pd-)/i;
+export const FREE_LICENCE = /^(cc0|cc[ _-]?by|public domain|pd-|gfdl|free art licen[cs]e|attribution$|no restrictions)/i;
 
-export type RejectReason = 'too_small' | 'licence_absent' | 'licence_non_free' | 'author_absent';
+/**
+ * 🔴 NonCommercial and NoDerivatives are NOT free, and the bare 'cc by' prefix admits
+ * both: 'CC BY-NC 4.0' and 'CC BY-ND 2.0' match it. Checked first, for that reason.
+ */
+export const NON_FREE_LICENCE = /(^|[\s_-])(nc|nd)([\s_-]|$)|noncommercial|no[ -]?derivat|all rights reserved|fair use|non-?free/i;
+
+export type RejectReason = 'too_small' | 'licence_absent' | 'licence_non_free' | 'licence_unreadable' | 'author_absent';
 
 export interface FilterResult {
   kept: CandidateFile[];
@@ -41,13 +47,18 @@ export interface FilterResult {
  */
 export function filterCandidates(files: CandidateFile[]): FilterResult {
   const rejected: Record<RejectReason, number> = {
-    too_small: 0, licence_absent: 0, licence_non_free: 0, author_absent: 0,
+    too_small: 0, licence_absent: 0, licence_non_free: 0, licence_unreadable: 0, author_absent: 0,
   };
   const kept: CandidateFile[] = [];
   for (const f of files) {
     if (Math.max(f.width, f.height) < MIN_LONG_EDGE) { rejected.too_small++; continue; }
     if (f.licence === null) { rejected.licence_absent++; continue; }
-    if (!FREE_LICENCE.test(f.licence.trim())) { rejected.licence_non_free++; continue; }
+    const licence = f.licence.trim();
+    if (NON_FREE_LICENCE.test(licence)) { rejected.licence_non_free++; continue; }
+    // 🔴 A licence we cannot classify is NOT a licence we read and refused. Counting it
+    // as non-free tells the operator something untrue about the file, and hides a
+    // vocabulary gap behind a number that looks like a finding.
+    if (!FREE_LICENCE.test(licence)) { rejected.licence_unreadable++; continue; }
     if (f.author === null) { rejected.author_absent++; continue; }
     kept.push(f);
   }
