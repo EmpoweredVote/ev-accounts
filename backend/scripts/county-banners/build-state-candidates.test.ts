@@ -157,3 +157,57 @@ describe('buildStateCandidates — failures that would otherwise read as absence
     expect(rendered).toHaveLength(5);
   });
 });
+
+describe('the caption lane', () => {
+  const unlocated = {
+    title: 'File:Bombay Hook.jpg', url: 'https://upload.wikimedia.org/a.jpg',
+    width: 3000, height: 1200, licence: 'cc0', author: 'Someone', date: null,
+    sourceCategory: 'Category:Bombay Hook, Delaware', lat: null, lon: null,
+    caption: 'The refuge at Bombay Hook, Delaware', creditUrl: 'https://www.flickr.com/photos/x',
+  };
+
+  const deps = (overrides = {}) => ({
+    query: async (sql: string) => {
+      if (sql.includes('G4110')) return [{ state_places: '0', places: [] }];
+      return [{ geo_id: '10001', name: 'Kent County', geom_null: false, geom_valid: true, geom_in_bounds: true }];
+    },
+    sweep: async () => [unlocated],
+    attach: async (f: unknown[]) => f,
+    assign: async () => ({ located: new Map(), unlocated: [unlocated], outside: [] }),
+    render: async () => ({}),
+    fetchText: async () => 'Bombay Hook National Wildlife Refuge, Delaware.',
+    ...overrides,
+  });
+
+  it('persists unlocatedFiles alongside the unlocated count', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-lane-'));
+    const rows = await buildStateCandidates('DE', dir, deps() as never);
+    expect(rows[0].unlocated).toBe(1);
+    expect(rows[0].unlocatedFiles).toHaveLength(1);
+    expect(rows[0].unlocatedFiles[0].title).toBe('File:Bombay Hook.jpg');
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('promotes a confirmed caption file into the options, marked located by caption', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-lane-'));
+    const rows = await buildStateCandidates('DE', dir, deps() as never);
+    const c = rows[0].candidates[0] as unknown as Record<string, unknown>;
+    expect(c.locatedBy).toBe('caption');
+    expect(c.captionText).toBe('The refuge at Bombay Hook, Delaware');
+    expect(c.captionSourceUrl).toContain('commons.wikimedia.org/wiki/');
+    expect(c.confirmingSourceUrl).toBe('https://www.flickr.com/photos/x');
+    // 🔴 Delaware holds no place polygons, so the operator must be TOLD the caption could not
+    // be checked against our own place list rather than being left to assume it was.
+    expect(c.placeListAvailable).toBe(false);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('leaves a file out when the second source does not name the place', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-lane-'));
+    const rows = await buildStateCandidates('DE', dir,
+      deps({ fetchText: async () => 'A photograph of a barn.' }) as never);
+    expect(rows[0].candidates).toHaveLength(0);
+    expect(rows[0].unlocatedFiles).toHaveLength(1);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+});

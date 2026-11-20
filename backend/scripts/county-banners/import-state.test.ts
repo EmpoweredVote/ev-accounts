@@ -153,3 +153,34 @@ describe('importState', () => {
     expect(review.params).toContain(0);
   });
 });
+
+describe('the caption lane reaches the database', () => {
+  it('writes caption rows with located_by caption and all three evidence fields', async () => {
+    const captioned = countyRow({
+      candidates: [candidate({
+        title: 'File:Bombay Hook.jpg', lat: null, lon: null,
+        locatedBy: 'caption',
+        captionText: 'The refuge at Bombay Hook, Delaware',
+        captionSourceUrl: 'https://commons.wikimedia.org/wiki/File:Bombay%20Hook.jpg',
+        confirmingSourceUrl: 'https://www.flickr.com/photos/x',
+        placeListAvailable: false,
+      } as never)],
+    });
+    writeCounty(captioned);
+    const { query, statements } = fakeQuery();
+    await importState('DE', dir, { query, upload: async () => 'https://x/f.jpg' });
+
+    const cand = statements.find((s) => s.sql.includes('county_banner_candidates'))!;
+    expect(cand.params).toContain('caption');
+    expect(cand.params).toContain('The refuge at Bombay Hook, Delaware');
+    expect(cand.params).toContain('https://www.flickr.com/photos/x');
+    expect(cand.params).toContain(false);   // placeListAvailable
+
+    // 🔴 and the two lanes stay apart in the county row
+    const review = statements.find((s) => s.sql.includes('county_banner_review'))!;
+    const geomIdx = review.sql.split(',').findIndex((c) => c.includes('geometry_candidates'));
+    expect(geomIdx).toBeGreaterThan(-1);
+    expect(review.params).toContain(0);   // geometry_candidates: none
+    expect(review.params).toContain(1);   // caption_candidates: one
+  });
+});

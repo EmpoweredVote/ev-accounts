@@ -21,7 +21,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { CandidateFile, CountyCandidates } from './types.js';
-import { listCounties, attachCoordinates, assignToCounties, type QueryFn, type AssignResult } from './locate.js';
+import { listCounties, listPlacesInCounty, attachCoordinates, assignToCounties, type QueryFn, type AssignResult } from './locate.js';
+import { confirmByCaption, type PlaceNames, type CaptionResult } from './caption.js';
 import { sweepCategories, countyCategoryRoots, type SweepOptions } from './sweep.js';
 import { filterCandidates } from './filter.js';
 import { rankCandidates, PAGE_SIZE } from './rank.js';
@@ -60,11 +61,20 @@ export interface BuildDeps {
   assign?: (files: CandidateFile[], stateFips: string, query: QueryFn) => Promise<AssignResult>;
   /** Download and write the review frame. Injected in tests; defaults to a real fetch. */
   render?: (file: CandidateFile, outPath: string) => Promise<unknown>;
+  /** Read a confirming page's text for the caption lane. Injected in tests. */
+  fetchText?: (url: string) => Promise<string>;
 }
 
 /** What is written to disk: the operator's page plus the accounting behind it. */
 export interface CountyFile extends CountyCandidates {
   allCandidates: CandidateFile[];
+  /**
+   * The files the polygon test could not place, KEPT rather than counted and dropped.
+   * Measured on Delaware: 151 of 231 swept files (65%) have no coordinates at all, so a
+   * pipeline that discards them is discarding most of the corpus and reporting the county as
+   * empty. These are what the caption lane reads.
+   */
+  unlocatedFiles: CandidateFile[];
   /** Files the sweep returned at all -- the denominator every other count sums to. */
   filesSwept: number;
   /** Zero categories is a DIFFERENT finding from zero files: the title probably missed. */
@@ -75,6 +85,18 @@ export interface CountyFile extends CountyCandidates {
   otherCounty: number;
   unlocated: number;
   outside: number;
+}
+
+/** 'Category:Bombay Hook, Delaware' -> 'Bombay Hook'. Recall only, never evidence on its own. */
+function leafOf(category: string): string {
+  return category.replace(/^Category:/, '').split(',')[0].trim();
+}
+
+/** Read a page as text, for CONFIRMING a place name we already hold. Never for sourcing one. */
+async function fetchText(url: string): Promise<string> {
+  const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return (await res.text()).slice(0, 200_000);
 }
 
 /** Fetch the file and write its full, uncropped review frame. */
@@ -129,7 +151,7 @@ export async function buildStateCandidates(stateUsps: string, outDir: string, de
 
     const row: CountyFile = {
       geoid: county.geoid, name: county.name, swept: false, candidates: [], rejected: {},
-      allCandidates: [], filesSwept: 0, categoriesFound: 0, categoryErrors: 0,
+      allCandidates: [], unlocatedFiles: [], filesSwept: 0, categoriesFound: 0, categoryErrors: 0,
       otherCounty: 0, unlocated: 0, outside: 0,
     };
 
@@ -163,6 +185,35 @@ export async function buildStateCandidates(stateUsps: string, outDir: string, de
       row.rejected = rejected;
       row.unlocated = placed.unlocated.length;
       row.outside = placed.outside.length;
+      row.unlocatedFiles = placed.unlocated;
+
+      // --- the caption lane ------------------------------------------------------------
+      // 🔴 RUN ONLY WHEN THE GEOMETRY LANE LEFT ROOM. Coordinates are the stronger claim and
+      // the two are never summed; the caption lane fills the remaining option slots, it does
+      // not compete for them.
+      if (row.candidates.length < PAGE_SIZE && placed.unlocated.length > 0) {
+        const { places, placeListAvailable } =
+          await listPlacesInCounty(stateFips, county.geoid, deps.query);
+        const { kept: captionEligible } = filterCandidates(placed.unlocated);
+        for (const f of rankCandidates(captionEligible)) {
+          if (row.candidates.length >= PAGE_SIZE) break;
+          const names: PlaceNames = {
+            county: county.name, state: stateName, stateUsps: usps,
+            places, placeListAvailable,
+            categoryLeaf: leafOf(f.sourceCategory),
+          };
+          const r: CaptionResult = await confirmByCaption(f, names, { fetchText: deps.fetchText ?? fetchText });
+          if (!r.located) continue;
+          row.candidates.push({
+            ...f,
+            locatedBy: 'caption',
+            captionText: r.captionText ?? null,
+            captionSourceUrl: r.captionSourceUrl ?? null,
+            confirmingSourceUrl: r.confirmingSourceUrl ?? null,
+            placeListAvailable: r.placeListAvailable ?? null,
+          } as CandidateFile);
+        }
+      }
 
       // Render only what the operator will actually see.
       for (let i = 0; i < row.candidates.length; i++) {
