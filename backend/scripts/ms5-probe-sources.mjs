@@ -17,7 +17,7 @@
 const PERSONAS = {
   bare:    {},
   chrome:  { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' },
-  project: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' },
+  project: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' },
 };
 
 async function probe(url, persona) {

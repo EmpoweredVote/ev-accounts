@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 
 const URL_ = 'https://biloxi.ms.us/departments/city-council/';
-const r = await fetch(URL_, { headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' } });
+const r = await fetch(URL_, { headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' } });
 const html = await r.text();
 console.log('HTTP', r.status, html.length, 'chars from', r.url);
 

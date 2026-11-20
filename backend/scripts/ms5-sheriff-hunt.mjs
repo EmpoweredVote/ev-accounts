@@ -11,7 +11,7 @@
  * returns a real image for a valid file and an error for an invalid one, so if the control
  * comes back as an image, nothing else here is interpretable.
  */
-const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' };
+const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' };
 const IK = 'https://ik.imagekit.io/hcso/theme/assets/pages/';
 
 const dims = (b) => {
