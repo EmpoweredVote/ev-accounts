@@ -21,7 +21,7 @@
     "floor_rule": "No reader. The bill status page (www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=<n>&year=<yyyy>; past years redirect to /session/archives/measure_indiv_Archives.aspx) prints each floor vote as one status line: \"Passed Final Reading, as amended (CD 1). Ayes, 24; Aye(s) with reservations: none. Noes, 1 (Senator(s) Awa). Excused, 0 (none).\" Members who voted no, voted aye with reservations or were excused are named; members who voted aye are a count only, so a full list needs the journal or the chamber's roster less the named members.",
     "gaps": [
       "www.capitol.hawaii.gov answers our reader 403 (a Cloudflare \"Attention Required\" page): blocked.",
-      "data.capitol.hawaii.gov answers 200 with an open robots.txt and serves the same site, but the Legislature does not announce it as a data host. Reading the blocked site through it may count as getting around the block: the runner decides (2026-11-20). Nothing was read through it for a reader."
+      "data.capitol.hawaii.gov answers 200 with an open robots.txt and serves the same site, but the Legislature does not announce it as a data host. It is not used: reading the blocked site through it would get around the block (runner, 2026-11-20)."
     ]
   },
   "texts": {
@@ -33,7 +33,7 @@
   },
   "reader_access": {
     "www.capitol.hawaii.gov": "blocked: 403, Cloudflare bot check (2026-11-20)",
-    "data.capitol.hawaii.gov": "not checked"
+    "data.capitol.hawaii.gov": "blocked: the same site as www.capitol.hawaii.gov on a second hostname; not used (runner, 2026-11-20)"
   },
   "search_note": "Hawaii has no roll-call reader here: its floor votes are not read from bulk data. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
   "bill_table_note": "- Hawaii bills keep their number across the two years of a biennium (a 2025 bill can pass in 2026).\n- Texts: the marks for new and deleted words were not checked.",
