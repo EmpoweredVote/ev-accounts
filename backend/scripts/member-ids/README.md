@@ -23,8 +23,9 @@ stored. A person may hold several ids of a type (an old and a new one); nothing 
 
 ## Keeping them current
 
-1. After any change to who sits in a legislature (roster refresh, special election, January turnover), run
-   `npx tsx scripts/member-ids/sync-member-ids.ts` (dry run), read the problems, then add `--apply`.
+1. The sync runs by itself every Sunday as the `member-ids` job, the first step of the Render cron
+   `ev-jobs-legiscan` (ev-infra), so a new member's id lands before that week's votes. To run it by hand after a
+   roster change: `npx tsx scripts/member-ids/sync-member-ids.ts` (dry run), read the problems, then add `--apply`.
    Minnesota: also `mn-member-ids.ts`.
 2. `select * from essentials.legislator_member_id_gaps` lists sitting legislators with no trusted Open States id.
    What stays there should be only what the sync reports as a problem: a member Open States has not added yet
@@ -33,3 +34,18 @@ stored. A person may hold several ids of a type (an old and a new one); nothing 
 3. Stage 5: `link_check.py --from-db --add` uses these ids before any name rule.
 
 The sync never deletes and never moves an id from one person to another; a conflict is listed for a person to fix.
+
+## Fixing a LegiScan id on the wrong person
+
+The state LegiScan importer links a LegiScan person to us by name, and every vote, sponsorship and cosponsorship
+follows that link. A wrong link shows one legislator's record on another's page; re-running the importer does not
+undo it. Signs: two `legiscan` ids on one person, or an Assembly member credited with Senate bills.
+
+1. Find whose id it is in the dataset we already hold (`<ds>/<ST>-<session>/…/people/<id>.json`: name, role,
+   district). The Stage 5 cache is `.planning/research/legiscan-cache/datasets`; production keeps every ZIP in the
+   `legiscan-datasets` storage bucket. Do not spend LegiScan queries on it.
+2. `npx tsx scripts/member-ids/repair-legiscan-person.ts --state CA --ds <root> --move <id>=<right politician_id>`
+   (dry run: the writes run and roll back, so the counts are exact), then add `--apply`. It moves the id, its votes,
+   primary sponsorships and cosponsorships in one transaction. Committee seats are not moved; check them apart.
+   California, 2026-11-20: five senators' ids sat on Assembly members (e.g. Susan Rubio's 8,920 votes on Catherine
+   Stefani's page), and two senators' on inactive duplicate rows.
