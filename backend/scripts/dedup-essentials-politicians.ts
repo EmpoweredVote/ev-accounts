@@ -384,6 +384,16 @@ async function rerouteFKsForSpare(
   );
   result.identifiersRerouted = identifiersR;
 
+  // legislative_politician_id_map — member ids (LegiScan, bioguide, mn-lrl …). Since CA_0401 it has a
+  // FOREIGN KEY to politicians, so the delete below fails if one is left on the spare. One id names one
+  // person (UNIQUE (id_type, id_value)), so canonical cannot already hold the spare's id and a plain
+  // UPDATE cannot conflict; no row is ever dropped here.
+  const idMapRes = await client.query(
+    `UPDATE essentials.legislative_politician_id_map SET politician_id = $1 WHERE politician_id = $2`,
+    [canonicalId, spareId]
+  );
+  result.identifiersRerouted += idMapRes.rowCount ?? 0;
+
   // politician_committees
   const [committeesR] = await updateOrDelete(
     client, 'sp_committees',

@@ -98,6 +98,32 @@ describe('mnRevisorAuthors', () => {
     expect(await check('https://www.revisor.mn.gov/bills/94/2025/0/HF/1?body=House', { fullName: 'Liz Lee', lastName: 'Lee' })).toBe(false);
     expect(await check('https://example.com/x', { fullName: 'Liz Lee', lastName: 'Lee' })).toBe(false);
   });
+
+  it('with a stored LRL id, compares ids and reads no name or LRL record (CA_0401)', async () => {
+    const { fn, calls } = fakeFetch({ [BILL]: billHtml, [SENATE_BILL]: senateHtml });
+    const check = createRevisorAuthorCheck(fn);
+    // A wrong family name on our record does not matter: the id decides.
+    expect(await check(BILL, { fullName: 'Liz Lee', lastName: 'Nobody', memberIds: { 'mn-lrl': ['15576'] } })).toBe(true);
+    expect(await check(SENATE_BILL, { fullName: 'Mark T. Johnson', lastName: 'Johnson', memberIds: { 'mn-lrl': ['15485'] } })).toBe(true);
+    expect(calls.some((u) => u.includes('fulldetail'))).toBe(false);
+  });
+
+  it('a stored id not on the page is a firm no, even when the name path would say yes', async () => {
+    const { fn } = fakeFetch({ [BILL]: billHtml });
+    const check = createRevisorAuthorCheck(fn);
+    // Name path accepts Liz Lee (LRL 15576 is titled "Liz Lee"); a different stored id must not fall through.
+    expect(await check(BILL, { fullName: 'Liz Lee', lastName: 'Lee', memberIds: { 'mn-lrl': ['15999'] } })).toBe(false);
+    // Rep. Paul H. Anderson (15301) is not credited with a bill authored by former Sen. Paul T. Anderson (14999).
+    const ptaBill = 'https://www.revisor.mn.gov/bills/bill.php?b=Senate&f=SF0001&ssn=0&y=2009';
+    const { fn: fn2 } = fakeFetch({ [ptaBill]: `<h2>Authors (1)</h2><ul><li><a href="https://www.mnsenate.gov/members/member_bio.html?leg_id=14999">Anderson</a></li></ul>` });
+    expect(await createRevisorAuthorCheck(fn2)(ptaBill, { fullName: 'Paul Anderson', lastName: 'Anderson', memberIds: { 'mn-lrl': ['15301'] } })).toBe(false);
+  });
+
+  it('other id types do not switch the check to the id path', async () => {
+    const { fn } = fakeFetch({ [BILL]: billHtml });
+    const check = createRevisorAuthorCheck(fn);
+    expect(await check(BILL, { fullName: 'Liz Lee', lastName: 'Lee', memberIds: { legiscan: ['1'] } })).toBe(true);
+  });
 });
 
 describe('verifyEvidence memberLinkCheck', () => {

@@ -463,6 +463,8 @@ export interface PoliticianNames {
     fullName: string; lastName: string; aliases?: string[];
     /** Terms as governor (essentials.office_terms), for the LegiScan signing line. */
     governorTerms?: GovernorTerm[];
+    /** The person's own member ids by id_type (trusted rows only; memberIds.ts), e.g. { 'mn-lrl': ['15301'] }. */
+    memberIds?: Record<string, string[]>;
   };
 }
 
@@ -498,8 +500,11 @@ export async function verifyEvidence(args: {
    * snippet was found on the page and the name-proximity test failed: a Revisor author list prints a
    * common family name with no title. True only when the page's Authors block links the person's own
    * member record. Ruling 2026-11-19, Chris Andrews (gun-policy mn-01).
+   * `memberIds` (from legislative_politician_id_map, CA_0401) lets the check compare ids, not names.
    */
-  memberLinkCheck?: (url: string, names: { fullName: string; lastName: string; aliases?: string[] }) => Promise<boolean>;
+  memberLinkCheck?: (url: string, names: {
+    fullName: string; lastName: string; aliases?: string[]; memberIds?: Record<string, string[]>;
+  }) => Promise<boolean>;
 }): Promise<VerifyResult> {
   const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match, ownSiteUrls, memberLinkCheck } = args;
 
@@ -627,7 +632,9 @@ export async function verifyEvidence(args: {
               matchOffsetInNormalized: span.offset,
             });
           if (proxVerdict.verdict === 'name_not_present' && memberLinkCheck
-            && await memberLinkCheck(url, { fullName: names.fullName, lastName: names.lastName, aliases: names.aliases })) {
+            && await memberLinkCheck(url, {
+              fullName: names.fullName, lastName: names.lastName, aliases: names.aliases, memberIds: names.memberIds,
+            })) {
             proxVerdict = { verdict: 'verified', matchOffset: span.offset };
           }
           judged.push({
