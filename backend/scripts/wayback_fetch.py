@@ -33,7 +33,7 @@ site by replaying pages to find links.
 """
 import gzip, os, sys, time, urllib.error, urllib.request
 
-CONTACT = os.environ.get('ARCHIVE_CONTACT', 'chris@empowered.vote')
+CONTACT = os.environ.get('ARCHIVE_CONTACT', '+https://empowered.vote')
 UA = f'EmpoweredVote-civic-data/1.0 (+https://empowered.vote; {CONTACT})'
 
 class Blocked(RuntimeError):

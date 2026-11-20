@@ -9,7 +9,7 @@ async function download(name: string, url: string, ext: string) {
   await new Promise(r => setTimeout(r, 3000));
   const resp = await fetch(url, {
     headers: {
-      'User-Agent': 'EmpoweredVote/1.0 (civic data app; contact@empowered.vote)',
+      'User-Agent': 'EmpoweredVote/1.0 (civic data app; +https://empowered.vote)',
     }
   });
   console.log(`  Status: ${resp.status}`);

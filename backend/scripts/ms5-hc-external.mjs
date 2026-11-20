@@ -4,7 +4,7 @@
  * NOTE: harrisoncountysheriff.com SOFT-404s -- a bogus path returns HTTP 200 after redirecting
  * to /404?requestedPage=... -- so status is meaningless there and the FINAL URL is what is read.
  */
-const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' };
+const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' };
 const SITES = [
   ['sheriff',  'https://www.harrisoncountysheriff.com/',        'Matt Haley'],
   ['chancery', 'http://harrisoncountymschanceryclerk.gov/',     'Angela Thrash'],
