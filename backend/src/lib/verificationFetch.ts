@@ -35,6 +35,7 @@ import { fetchCongressPageText } from './adapters/congressAdapter.js';
 import { fetchIgaPageText } from './adapters/igaAdapter.js';
 import { fetchMaRollCallText } from './adapters/maLegislatureAdapter.js';
 import { fetchStateRollCallText } from './adapters/stateRollCallAdapter.js';
+import { isLocalStateRollCallUrl } from './stateRollCallEvidence.js';
 import { fetchWithHostTrust } from './adapters/hostTrust.js';
 
 /**
@@ -804,6 +805,18 @@ export function createVerificationFetchSession(
         if (t && t.trim()) return t;
       } catch {
         /* fall through to the generic ladder */
+      }
+
+      // Source-specific tier — a California vote, read from the Legislature's PUBINFO download kept on this machine
+      // (adapters/caPubinfo.ts). It asks the cited host (leginfo, robots-disallowed) for nothing, so it comes before the
+      // robots gate; when the copy is not here it answers null and the gate below decides as for any page.
+      if (isLocalStateRollCallUrl(url)) {
+        try {
+          const t = await stateRollCallAdapter(url);
+          if (t && t.trim()) return t;
+        } catch {
+          /* fall through to the robots gate */
+        }
       }
 
       // Tier 0 — respect robots.txt. If EmpoweredVoteBot is disallowed we do NOT

@@ -80,11 +80,19 @@ REG = json.load(open(REG_PATH)) if os.path.exists(REG_PATH) else {}
 START = {"session": 900001, "bill": 90000001, "roll_call": 90000001, "doc": 90000001, "people": 9000001}
 
 
+TOP = {}  # kind -> the highest number handed out so far; found once per kind, so a new id costs no scan of the registry
+
+
 def rid(kind, key):
     d = REG.setdefault(kind, {})
     if key not in d:
-        # only our own range counts: bridged real LegiScan ids live in the same dict and are smaller
-        d[key] = max((v for v in d.values() if v >= START[kind]), default=START[kind] - 1) + 1
+        # only our own range counts: bridged real LegiScan ids live in the same dict and are smaller. California
+        # (2026-11-20): this was a max() over the whole dict for every new id, so a state with millions of new ids took
+        # 14 minutes a session; the numbers handed out are the same.
+        if kind not in TOP:
+            TOP[kind] = max((v for v in d.values() if v >= START[kind]), default=START[kind] - 1)
+        TOP[kind] += 1
+        d[key] = TOP[kind]
     return d[key]
 
 
@@ -220,6 +228,12 @@ for r in rows("personvote"):
 #    legislator list, so ms_full_names links them. "or_links": the rows of 2017-2021 carry the old host
 #    olis.leg.state.or.us, which no longer resolves; the same paths answer on olis.oregonlegislature.gov (bill pages and
 #    texts, read 2026-11-20), so the host is rewritten.
+#  - California (2026-11-20): the dump's vote addresses are each bill's Votes page on leginfo, which holds every vote of the
+#    bill, so no dump vote names one roll call; leginfo's robots.txt disallows every crawler and the host answers our bot
+#    with a 403. "record_is_the_floor", as Oregon's: the fetch reads each scanned bill's floor votes from the Legislature's
+#    PUBINFO download kept on this machine (ca_pubinfo.py, CA_PUBINFO_DIR), cited on the Votes page with the vote after a #
+#    (stateRollCallEvidence.ts). The reader names each member in full from the session's member table, so ms_full_names
+#    links them. "https": the rows carry http:// links to leginfo, which serves https.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -236,7 +250,8 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
              "NV": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nv_links": True,
                     "https_texts": True},
              "OR": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "or_links": True,
-                    "https_texts": True}}
+                    "https_texts": True},
+             "CA": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "https_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 
 
@@ -839,6 +854,8 @@ def people_id_for(pid, ch):
         lsid = next(iter(c)) if len(c) == 1 else None
     if lsid:
         REG.setdefault("people", {})[key] = lsid
+        if lsid >= START["people"] and "people" in TOP:
+            TOP["people"] = max(TOP["people"], lsid)
         REG.setdefault("people_bridged", {})[key] = lsid
         return lsid
     return rid("people", key)

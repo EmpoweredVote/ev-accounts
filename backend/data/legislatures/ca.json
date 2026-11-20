@@ -1,26 +1,32 @@
 {
   "state": "ca",
   "name": "California",
-  "verified": "2026-11-13",
-  "source": "gun-policy Season 3 Stage 5, California hand-over (ca/HANDOVER-A.md part 7, ca/MEASURES-B.md, write/ca-01/recipe.json), 2026-11-13",
+  "verified": "2026-11-20",
+  "source": "California reader session (Stage 5 tools), 2026-11-20: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 577-bill dry batch (the 2015-2026 bills one topic's scan found; 890 roll calls) read from the Legislature's PUBINFO bulk download kept on this machine, and each member's vote compared with the dump. Earlier facts: gun-policy Season 3 Stage 5, California hand-over (ca/HANDOVER-A.md part 7, ca/MEASURES-B.md, write/ca-01/recipe.json), 2026-11-13.",
   "chambers": {
     "lower": "Assembly",
     "upper": "Senate"
   },
-  "sessions": "Two-year sessions that start in odd years. No special sessions in LegiScan.",
+  "sessions": "Two-year sessions that start in odd years (2025-2026 is keyed 20252026). PUBINFO keys a bill as <session><special n><type><number>: 202520260AB1127 is AB 1127 of the 2025-2026 regular session (0 = regular, 1 and up = a special session). Open States names the regular sessions 20152016 to 20252026 and the special sessions \"20152016 Special Session 1\" and so on. Assembly 80 seats, Senate 40.",
   "bill_data": [
-    "LegiScan bulk datasets."
+    "LegiScan bulk datasets (CA folders in legiscan/ds), or Open States data converted to the same folder layout (CA-900222 to CA-900232: 2015-2016 to 2025-2026 with the special sessions; scripts/stage5/openstates/README.md). Never mix the two in one --ds root.",
+    "No California dump vote is placed (record_is_the_floor). The dump's floor votes agree with the record, but each points at the bill's Votes page, which holds every vote of the bill, so none can be cited as one vote. scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's floor votes from the PUBINFO copy on this machine (CA_PUBINFO_DIR) and makes no network request: third reading, concurrence in the other chamber's amendments, a conference report, a veto override (a vote whose location is AFLOOR or SFLOOR and whose motion is on the bill). A motion (a reconsideration) is counted and skipped. Committee votes are counted and skipped. Run the fetch for every bill the scan finds, session by session, then convert the whole state again.",
+    "PUBINFO (downloads.leginfo.legislature.ca.gov) is one zip a session (pubinfo_2025.zip, 1.29 GB, almost all bill text). scripts/stage5/openstates/ca_pubinfo.py reads only the vote and member tables (about 9 MB) with range requests, ONCE a session, and keeps them current with the daily change files (pubinfo_<Day>.zip, under 1 MB). Never read a session zip again (runner, 2026-11-20). Cache: legiscan-cache/pubinfo, synced and indexed for 2015 to 2025.",
+    "Compared 2026-11-20: 890 floor roll calls read from the record (2015-16 126, 2017-18 149, 2019-20 124, 2021-22 149, 2023-24 226, 2025-26 116), 0 refused, 0 network requests; 1,520 committee votes skipped. 21 have no dump copy (all 2017-2018: the dump has no vote that day). Of the other 869, 7 were settled among same-moment votes (a reconsideration and a vote on the bill) by the exact member votes. Tally differences: 0. Member votes compared: 53,359, differences: 0. Labels that differ: 0."
   ],
   "votes": {
     "mode": "legiscan-plan",
     "official_hosts": [
-      "leginfo.legislature.ca.gov",
-      "www.leginfo.ca.gov"
+      "leginfo.legislature.ca.gov"
     ],
     "legiscan_args": "--session-start odd",
-    "floor_rule": "LegiScan's roll calls include committee votes: a floor vote is a passage motion whose total is 30 or more (Assembly 80 seats, Senate 40). Consent-calendar votes count as passage.",
+    "floor_rule": "A vote is cited as the bill's Votes page on leginfo with the vote after a #: leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=<202520260AB1127>#<2025-09-12>-<SFLOOR>-<motion id>-<seq>. leginfo answers our fetch with a 403, so the reader (src/lib/stateRollCallEvidence.ts, California) reads the vote only from the PUBINFO copy on this machine: BILL_SUMMARY_VOTE_TBL (ayes, noes, the result), BILL_DETAIL_VOTE_TBL (one row per member: AYE, NOE, ABS; the member's label, \"Gabriel\", \"Jeff Gonzalez\"), BILL_MOTION_TBL (the question) and LEGISLATOR_TBL (label to first and last name). A vote is read only when it is on the floor (AFLOOR, SFLOOR), its question is on the bill, every row is of its bill, day, motion and sequence, the Aye and No groups list the counts the summary prints, the total is not more than the chamber's seats, no member is listed twice, and no two members render as one name. \"No vote recorded\" is counted from the member rows, as the Votes page prints it: the summary's abstain figure differs from the rows on 357 of 43,971 floor votes of 2015-2026, and the page (read through the dump) agrees with the rows. Committee votes are not read.",
     "gaps": [
-      "Official vote pages print surnames only."
+      "Only floor votes on the bill are read: third reading, concurrence, a conference report, a veto override. Motions and committee votes are not mapped (runner, 2026-11-16).",
+      "A member with no vote is recorded as the record lists them (\"had no vote recorded\"), never as an Aye or a No; it seats no one.",
+      "The line can be checked only on a machine holding the PUBINFO copy (CA_PUBINFO_DIR): without it the verifier refuses leginfo as blocked and fetches nothing.",
+      "One floor vote of 2015-2026 (2025 SB 329, sequence 1050) prints an Aye or No count that its member rows do not hold; the reader refuses it.",
+      "The dump starts in 2009; PUBINFO is synced from 2015. Bills before 2015 are not read."
     ]
   },
   "texts": {
@@ -31,16 +37,21 @@
     "note": "Bills are often introduced as spot bills whose real text arrives later: read a sponsor-only bill at its last version."
   },
   "reader_access": {
-    "leginfo.legislature.ca.gov": "blocked: a plain fetch gets a Cloudflare 403 (an earlier topic used Wayback copies)",
+    "leginfo.legislature.ca.gov": "blocked: a plain fetch gets a 403 (2026-11-13 and 2026-11-20); its votes are read from the PUBINFO copy instead",
+    "downloads.leginfo.legislature.ca.gov": "open",
     "www.leginfo.ca.gov": "not checked"
   },
-  "search_note": "California sponsorships and Assembly and Senate floor votes on this topic come from the bulk bill data (listed above): skip the legislature's sponsor lists and vote pages (leginfo.legislature.ca.gov answers a plain fetch with a 403), and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
-  "bill_table_note": "- California bill text marks changes to existing law; `operative_text` quotes the law as the bill leaves it. Where the instrument's `provenance.note` says an earlier version differs, the earlier chamber vote was on that wording: say so in `why` and flag it if the rung would differ.\n- Each instrument's `votes[].note` names the text version each roll call was taken on.",
+  "search_note": "California sponsorships and Assembly and Senate floor votes for 2015 to 2026 come from the bill data on disk, checked against the Legislature's own vote tables (PUBINFO): skip the legislature's sponsor lists and vote pages (leginfo.legislature.ca.gov answers a plain fetch with a 403), and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- California bill text marks changes to existing law; `operative_text` quotes the law as the bill leaves it. Where the instrument's `provenance.note` says an earlier version differs, the earlier chamber vote was on that wording: say so in `why` and flag it if the rung would differ.\n- Each instrument's `votes[].note` names the text version each roll call was taken on.\n- Floor votes kept: third reading, concurrence, a conference report, a veto override. Motions to reconsider are skipped.",
   "fill_quotes": {
     "label_strips": []
   },
   "quirks": [
     "Name matching: LegiScan lists some members with a title (\"Dr.\") or a two-part surname. 10 older idmap.tsv lines pointed senators at the wrong chamber's record (fixed 2026-11-13): check every line against name and chamber.",
-    "Long records: a median of 57 record findings a person, up to 144. Record-only coding cost twice Missouri's per person."
+    "Long records: a median of 57 record findings a person, up to 144. Record-only coding cost twice Missouri's per person.",
+    "The record labels a member by family name, with a given name or initial where two share it (\"Gabriel\", \"Jeff Gonzalez\"); the line names the member as LEGISLATOR_TBL does (first and last name, a Jr. or Sr. kept, a degree such as Ph.D. dropped). The dump names the member as of the day or by a short given name (\"Ali Macedo\" for Alexandra Macedo, \"Tom Umberg\" for Thomas Umberg); link_check.py links a name-only record whose whole name is a roster member's without initials or a quoted nickname.",
+    "The record names a member as of the session, so a member who changed name is printed under the old one: Tasha Boerner as \"Tasha Boerner Horvath\" (2019-2024; the 2023 list holds both, AD77) and Akilah Weber Pierson as \"Akilah Weber\" (Assembly 2021-2024). The converter links the first by name_overrides.json (CA:<session>:H:Tasha Boerner Horvath) and the second by her Open States record; the line names the member as the record does, so each needs the old name in essentials.politicians.alternate_names or the line tool writes no line for her (323 votes in the dry batch).",
+    "PUBINFO has no robots.txt and no terms text (2026-11-20) and needs no key. The daily change files are overwritten weekly: run ca_pubinfo.py daily at least once a week, or a gap is reported and the session must be read again.",
+    "Store politician ids in state-ca name a dump bill on 162 of 163; CA-PROP-39-2026 is a ballot measure, not a bill."
   ]
 }

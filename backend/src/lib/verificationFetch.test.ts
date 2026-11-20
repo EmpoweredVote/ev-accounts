@@ -485,3 +485,39 @@ describe('createVerificationFetchSession — iga.in.gov adapter tier', () => {
     expect(await session.fetch(url)).toBe(page);
   });
 });
+
+describe('createVerificationFetchSession — California local PUBINFO tier', () => {
+  const url = 'https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1127#2025-09-13-AFLOOR-187240-1186';
+  const render = 'California Assembly vote of 2025-09-13 (2025-2026), AB 1127, AFLOOR 187240 1186.';
+
+  it('reads the vote from the local copy before the robots gate, and never asks leginfo or robots.txt', async () => {
+    let robotsAsked = false;
+    let httpCalled = false;
+    const session = createVerificationFetchSession({
+      congressAdapter: async () => null,
+      igaAdapter: async () => null,
+      maRollCallAdapter: async () => null,
+      stateRollCallAdapter: async () => render,
+      robotsAllows: async () => { robotsAsked = true; return false; },
+      httpFetch: async () => { httpCalled = true; return 'live'; },
+      wayback: async () => null,
+    });
+    expect(await session.fetch(url)).toBe(render);
+    expect([robotsAsked, httpCalled]).toEqual([false, false]);
+  });
+
+  it('without the local copy, the robots gate decides as for any page and the live site is not fetched', async () => {
+    let httpCalled = false;
+    const session = createVerificationFetchSession({
+      congressAdapter: async () => null,
+      igaAdapter: async () => null,
+      maRollCallAdapter: async () => null,
+      stateRollCallAdapter: async () => null,
+      robotsAllows: async () => false,
+      httpFetch: async () => { httpCalled = true; return 'live'; },
+      wayback: async () => null,
+    });
+    await expect(session.fetch(url)).rejects.toBeInstanceOf(RobotsDisallowedError);
+    expect(httpCalled).toBe(false);
+  });
+});
