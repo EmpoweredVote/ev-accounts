@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meReadVotes, meSenateRows, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meReadVotes, meSenateRows } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -774,6 +776,60 @@ describe('the legislature\'s own vote list — Nevada', () => {
     expect(buildRollCall('AB 448', v, docs, '82')).toMatchObject({ chamber: 'S', yea: 13, nay: 8, absent: 0, passed: 0, date: '2023-06-05' });
     expect(buildRollCall('AB 449', v, docs, '82')).toEqual({ refused: 'the page is for AB 448, not AB 449' });
     expect(buildRollCall('AB 448', { ...v, tally: [14, 7, 0] }, docs, '82')).toMatchObject({ refused: expect.stringMatching(/tally 13-8-0 is not the bill file's 14-7-0/) });
+  });
+});
+
+describe('the legislature\'s own vote list — California, from the PUBINFO copy on this machine', () => {
+  const fx = (f: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${f}.json`, import.meta.url)), 'utf8');
+  const B = fx('ca-2025-202520260AB1127');
+  const L = fx('ca-2025-legislators');
+  const CA = 'https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1127';
+
+  it('turns Open States\' session and bill into PUBINFO\'s bill id, and refuses what is not one', () => {
+    expect(californiaBillIdOf('20252026', 'AB 1127')).toBe('202520260AB1127');
+    expect(californiaBillIdOf('20232024 Special Session 1', 'SBX1 2'.replace('X1', ''))).toBe('202320241SB2');
+    expect(californiaBillIdOf('20172018', 'ACR 81')).toBe('201720180ACR81');
+    for (const [s, b] of [['20242025', 'AB 1'], ['20252027', 'AB 1'], ['2025', 'AB 1'], ['20252026', 'HB 1'], ['20252026', 'AB 0']]) {
+      expect([s, b, californiaBillIdOf(s, b)]).toEqual([s, b, null]);
+    }
+    expect(INDEX.CA.billUrl('20252026', 'AB 1127')).toBe('pubinfo:2025/bills/202520260AB1127.json');
+  });
+
+  it('lists the floor votes on the bill with their tally, counts committee votes and motions, and reads each through the verifier\'s reader', () => {
+    const bi = INDEX.CA.read(B, '20252026', 'AB 1127');
+    expect(bi.floor).toEqual([
+      { url: `${CA}#2025-06-03-AFLOOR-185195-1051`, motion: 'AB 1127 Gabriel Assembly Third Reading, passed', tally: [58, 17, 4] },
+      { url: `${CA}#2025-09-12-SFLOOR-187281-1034`, motion: 'Assembly 3rd Reading AB1127 Gabriel et al. By Blakespear, passed', tally: [29, 9, 2] },
+      { url: `${CA}#2025-09-13-AFLOOR-187240-1186`, motion: 'AB 1127 GABRIEL Concurrence in Senate Amendments, passed', tally: [54, 16, 10] },
+    ]);
+    expect(bi.committee).toBeGreaterThan(0);
+    for (const v of bi.floor) expect(buildRollCall('AB 1127', v, [B, L], '20252026')).toMatchObject({ yea: v.tally![0], nay: v.tally![1] });
+    expect(buildRollCall('AB 1127', bi.floor[2], [B, L], '20252026')).toMatchObject({ chamber: 'H', date: '2025-09-13', passed: 1 });
+    expect(buildRollCall('AB 1127', { ...bi.floor[2], tally: [55, 15, 10] }, [B, L], '20252026')).toMatchObject({ refused: expect.stringMatching(/tally/) });
+    // a motion on the floor is counted, never listed as a vote on the bill
+    const j = JSON.parse(B);
+    j.motions['187240'] = 'AB 1127 GABRIEL Concurrence in Senate Amendments Motion to Reconsider';
+    const m = INDEX.CA.read(JSON.stringify(j), '20252026', 'AB 1127');
+    expect([m.floor.length, m.motion]).toEqual([2, 1]);
+    expect(() => INDEX.CA.read(B, '20252026', 'AB 1128')).toThrow(/is of 202520260AB1127/);
+    // the summary's abstain figure is not the page's: No vote recorded is counted from the member rows (AB 3064 of 2024)
+    const k = JSON.parse(B);
+    k.summary.find((x: Record<string, string>) => x.vote_date_seq === '1186').abstain = '4';
+    const f = INDEX.CA.read(JSON.stringify(k), '20252026', 'AB 1127').floor[2];
+    expect(f.tally).toEqual([54, 16, 10]);
+    expect(buildRollCall('AB 1127', f, [JSON.stringify(k), L], '20252026')).toMatchObject({ yea: 54, nay: 16 });
+  });
+
+  it('reads the files from CA_PUBINFO_DIR only: a bill with no file in a synced year has no votes, and a missing copy stops the run', () => {
+    expect(() => pubinfoBody('pubinfo:2025/bills/202520260AB1127.json', undefined)).toThrow(/CA_PUBINFO_DIR is not set/);
+    const dir = mkdtempSync(path.join(tmpdir(), 'pubinfo-'));
+    mkdirSync(path.join(dir, '2025', 'bills'), { recursive: true });
+    writeFileSync(path.join(dir, '2025', 'bills', '202520260AB1127.json'), B);
+    expect(pubinfoBody('pubinfo:2025/bills/202520260AB1127.json', dir)).toBe(B);
+    expect(() => pubinfoBody('pubinfo:2025/bills/202520260AB9.json', dir)).toThrow(/not in/);
+    writeFileSync(path.join(dir, '2025', 'MANIFEST.json'), '{}');
+    expect(INDEX.CA.read(pubinfoBody('pubinfo:2025/bills/202520260AB9.json', dir), '20252026', 'AB 9')).toMatchObject({ floor: [], committee: 0 });
+    expect(() => pubinfoBody('pubinfo:2023/legislators.json', dir)).toThrow(/not in/);
   });
 });
 

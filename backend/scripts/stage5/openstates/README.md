@@ -27,7 +27,9 @@ From there the state runs like any other: `scan_bills.py`, `sponsor_cover.py`, `
 
 🔴 **Keep `id_registry.json`.** It maps Open States ids to the numbers we hand out (`session_id` 900001+, `bill_id`,
 `roll_call_id` and `doc_id` 90000001+, `people_id` 9000001+). Without it every number changes, and every `idmap.tsv`
-and saved pair breaks. `convert.py` refuses to start a new registry unless `OPENSTATES_NEW_REGISTRY=1`.
+and saved pair breaks. `convert.py` refuses to start a new registry unless `OPENSTATES_NEW_REGISTRY=1`. A new number is the kind's highest
+plus one, kept per kind as the run goes (2026-11-20: finding it by scanning the whole registry for each new id took
+14 minutes a California session; the numbers handed out are the same).
 
 🔴 **Never keep an Open States folder and a LegiScan folder for the same session in one `ds/`**: the scan counts
 every bill twice.
@@ -86,7 +88,7 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
   links from the sessions either side.
 - Committee and voice votes are counted in the supplement's `checked` block and not read.
-- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada, Oregon and Maine state none, and the tool waits 1 second),
+- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada, Oregon and Maine state none, and the tool waits 1 second; California reads files on this machine and does not wait),
   and bodies are kept in `supplements/<ST>/raw/`.
 - Ohio: once a bill's record is read, the record IS the bill's floor votes. `convert.py` adds the votes the dump
   misses and drops a dump floor vote of that bill that is not on the record (counted in `.openstates.json` as
@@ -202,6 +204,27 @@ the bills under `rollcalls_from_legislature`.
   `convert.py` rewrites the dump's old host `olis.leg.state.or.us` to `olis.oregonlegislature.gov` (`or_links`).
   The dump's name for a member can differ from the record's ("Em Levy" for Emerson Levy): the converter then makes a
   name-only record per session, and `link_check.py` links a name-only record whose whole name is a roster member's.
+- 🔴 California: **no dump vote is placed** either (`record_is_the_floor`). Each dump vote points at the bill's Votes
+  page on leginfo, which holds every vote of the bill, and leginfo is closed to us: robots.txt disallows every crawler
+  and the host answers our bot with a Cloudflare 403. The record comes instead from the Legislature's bulk download,
+  PUBINFO (`downloads.leginfo.legislature.ca.gov`: open, no key, no robots.txt). `ca_pubinfo.py sync <cache> <years>`
+  reads each session's zip **once**, by byte ranges (about 30 MB of a 0.8–1.3 GB zip), and keeps eight tables on disk
+  with a `MANIFEST.json`; it never reads a session on disk again (`--refresh` to force), and refuses a host that answers
+  a range with the whole file. `ca_pubinfo.py daily <cache>` keeps the newest session current from the daily change
+  files (`pubinfo_<Day>.zip`, applied newer than the last, merged on each table's key), and stops when the oldest daily
+  file is more than a week after the last applied, because a change may be lost. `ca_pubinfo.py index <cache>` writes
+  one file per bill (`<year>/bills/<bill id>.json`: its vote summaries, member rows and motion texts) and the session's
+  member list (`<year>/legislators.json`, no party). Run `index` after `daily`. Set **`CA_PUBINFO_DIR`** to the cache for
+  the fetch, the line tool and the verifier, as `LEGISCAN_DATASETS` is set for LegiScan's.
+  A vote is cited on the bill's Votes page with the vote after a #
+  (`billVotesClient.xhtml?bill_id=202520260AB1127#2025-09-13-AFLOOR-187240-1186`: day, floor, motion id, the vote's
+  sequence number) and read from the two local files, never from leginfo: the verifier reads it before its robots gate
+  and asks the host for nothing. Without `CA_PUBINFO_DIR` no California vote line verifies. The fetch keeps a floor vote
+  whose motion is a vote on the bill (`caQuestionIsOnTheBill`: third reading, concurrence, consent calendar, a
+  conference report, "W/O REF. TO FILE"); a motion (reconsider, table, amend, urgency clause, re-refer, appeal) is
+  counted and skipped, and committee votes are counted. PUBINFO prints AYE, NOE and ABS: the line words ABS "had no vote
+  recorded", never Yes or No. Each member row prints a label (the member list's `author_name`, "Gabriel", "Jeff
+  Gonzalez"); the member list gives the full name. A label the list does not hold once is kept as printed and gives no line.
 - A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
 - A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
   page reader below.
@@ -212,10 +235,10 @@ the bills under `rollcalls_from_legislature`.
    pattern, the site's crawl delay, and a function from the page's markup to members under Yea, Nay and absent),
    with a saved page as a fixture and the refusals tested. The reader must fail closed: refuse the page unless every
    group holds the count its heading prints and the counts are the printed tally. Utah, Ohio, South Dakota,
-   Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada, Oregon and Maine are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
+   Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada, Oregon, California and Maine are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
    script-shell page and reads the vote's data, Mississippi's reads a PDF with the bill's history and two member
    lists, Maryland's reads a PDF (some printed sideways) with the chamber's committee pages, Kansas's reads one page in
-   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list, North Dakota's reads the day's journal PDF with the Assembly's member list, Minnesota's reads the day's House journal page or Senate journal PDF with the LRL member list, Nevada's reads the vote's member list with the bill's vote list and the bill's page, Oregon's reads the vote's rows, its history action and two sessions' legislator lists from the Open Data Service, Maine's reads a House or Senate roll-call PDF by the position of each mark, with the Senate's member list (see the file's header).
+   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list, North Dakota's reads the day's journal PDF with the Assembly's member list, Minnesota's reads the day's House journal page or Senate journal PDF with the LRL member list, Nevada's reads the vote's member list with the bill's vote list and the bill's page, Oregon's reads the vote's rows, its history action and two sessions' legislator lists from the Open Data Service, California's reads a bill's vote file and the session's member list from the PUBINFO copy on this machine, Maine's reads a House or Senate roll-call PDF by the position of each mark, with the Senate's member list (see the file's header).
 2. **Its rules in `SRC_RULES` in `convert.py`**, when its Open States rows are wrong about something the roll-call
    address states. Utah: the rows carry the bill's chamber, not the chamber that voted, and nothing marks a committee
    vote; both are read from the address. Ohio: the stored addresses and text links are dead (v1) and are rewritten
@@ -258,6 +281,7 @@ roll-call pages.
 - `coverage.py`: sessions of an extract that hold bills and no roll calls. Reads only.
 - `convert.py`: the TSVs -> dataset folders. `--work`, `--out`, `--legiscan-root` (read only, to keep a person's real
   LegiScan `people_id` when the state also has LegiScan datasets), `--sessions`.
+- `ca_pubinfo.py`: California's PUBINFO download -> a local copy, kept current, indexed by bill (`sync`, `daily`, `index`, `votes`).
 - `verify.py`: compare a converted session with a real LegiScan dataset of the same session, where one exists.
 
 ## Checked
@@ -275,6 +299,7 @@ roll-call pages.
 | Minnesota | 90th to 94th Legislature (2017-2026, regular sessions; no scanned bill of a special session had a floor vote) | 19 floor roll calls of a 736-bill dry batch (735 scanned, plus 2023 SF 2909 from the store), 0 refused; 2017-2018 has none (the 80 scanned bills had no floor vote with a tally); 7 have no dump copy; of 12 with one, 1 filed a day later in the dump; 0 tally and 0 of 1,374 member-vote differences; see `backend/data/legislatures/mn.json` (2026-11-19) |
 | Nevada | 79th to 83rd session (2017-2025, regular sessions; the scan found no special-session bill) | 76 floor roll calls of a 78-bill dry batch, 0 refused; 39 (2019, 2021) have no dump copy; of 37 with one, 1 settled by the tally; 0 tally and 0 of 1,134 member-vote differences (13 dump labels read only after repairing "OâNeill"); see `backend/data/legislatures/nv.json` (2026-11-19) |
 | Oregon | 2017R1 to 2026R1 (regular sessions; the scan found no special-session bill); 2015 SB 941 read live only | 33 floor roll calls of a 184-bill dry batch, 0 refused, 15 votes on a motion skipped; 3 have no dump copy; of 30 with one, 6 settled by the question or the tally; 0 tally and 0 of 1,320 member-vote differences (5 members the dump names otherwise: a short given name or a former name); see `backend/data/legislatures/or.json` (2026-11-20) |
+| California | 2015-2016 to 2025-2026 (regular sessions; the scan found no special-session bill) | 890 floor roll calls of a 577-bill dry batch, read from the PUBINFO copy on this machine, 0 refused, 0 network requests; 21 (all 2017-2018) have no dump copy; of 869 with one, 7 settled among same-moment votes by the exact member votes; 0 tally and 0 of 53,359 member-vote differences; "No vote recorded" counted from the member rows (the summary's abstain figure differs on 357 of 43,971 floor votes); see `backend/data/legislatures/ca.json` (2026-11-20) |
 | Maine | 131st (House only) and 132nd Legislature (2023-2026); the 128th-130th give no line (House surnames only, no Senate member list) | 7 floor roll calls of a 130-bill dry batch (5 House 131st, 1 House and 1 Senate 132nd), 119 votes on a motion skipped from the lists (80 to accept a committee report) and 3 more found to be motions in the PDF (to refer to committee), 6 Senate votes of the 131st not read (no member list for it); 6 with a dump copy, 2 settled by the tally, 1 day with two copies of one tally left unsettled; 0 tally and 0 of 786 member-vote differences; see `backend/data/legislatures/me.json` (2026-11-20) |
 | Mississippi | 2018 to 2026 (2017 holds no bills; 20171E only resolutions) | 67 floor roll calls of a 289-bill dry batch, all with a dump copy: 2 dump tallies short by one vote (the name before a total that runs over a line), 8 member votes missing from the dump, 0 of 5,975 member-vote differences; 5,919 of 5,983 record votes linked to a person (four members Open States does not hold); see `backend/data/legislatures/ms.json` (2026-11-17) |
 

@@ -34,8 +34,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
+import { isPubinfoDoc, readPubinfoDoc } from '../../../src/lib/adapters/caPubinfo.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { explainMaineVote, meQuestionIsOnTheBill, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsOnTheBill, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -197,6 +198,16 @@ export function meReadVotes(houseList: string, session: string, bill: string, mo
   }
   return { floor, committee: 0, voice: 0, motion: motions.length, motions, unread };
 }
+// ── California ─────────────────────────────────────────────────────────────────────────────────────────
+const CA_BILL = /^(AB|SB|ACR|SCR|AJR|SJR|ACA|SCA|HR|SR)0*([1-9]\d{0,4})$/i;
+/** Open States' session ("20252026", "20232024 Special Session 1") and bill ("AB 1127") -> PUBINFO's bill id. */
+export function californiaBillIdOf(session: string, bill: string): string | null {
+  const s = /^(20\d{2})(20\d{2})(?: Special Session ([1-9]))?$/.exec(session.trim());
+  const m = CA_BILL.exec(bill.replace(/[\s.]+/g, ''));
+  if (!s || !m || Number(s[2]) !== Number(s[1]) + 1 || Number(s[1]) % 2 !== 1) return null;
+  return californiaBillId(`${s[1]}${s[2]}`, Number(s[3] ?? 0), m[1], Number(m[2]));
+}
+
 // ── Oregon ─────────────────────────────────────────────────────────────────────────────────────────────
 const OR_BILL = /^(HB|SB|HJR|SJR|HCR|SCR|HJM|SJM|HM|SM|HR|SR)0*([1-9]\d{0,4})$/i;
 
@@ -671,6 +682,40 @@ export const INDEX: Record<string, StateIndex> = {
     billUrl: (session) => meHouseListUrl(session),
     follow: meFollow,
     read: meReadVotes,
+  },
+  // California: the Legislature's PUBINFO bulk download, kept on this machine by ca_pubinfo.py (CA_PUBINFO_DIR; read
+  // 2026-11-20: open, no key, no robots.txt, no terms text). A bill's file lists every vote of the bill: floor votes
+  // (AFLOOR, SFLOOR) with their motion, and committee votes (any other location), counted and not read. A floor vote whose
+  // motion is not a vote on the bill (caQuestionIsOnTheBill) is counted as a motion. Each vote is cited on the bill's Votes
+  // page on leginfo with the vote after a # (never fetched: robots.txt disallows it) and read from the same file
+  // (stateRollCallEvidence.ts). A bill with no vote has no file.
+  CA: {
+    minGapMs: 0, // files on this machine
+    billUrl(session, bill) {
+      const id = californiaBillIdOf(session, bill);
+      return id ? californiaBillDoc(id) : null;
+    },
+    read(body, session, bill) {
+      const id = californiaBillIdOf(session, bill);
+      if (!id) throw new Error(`California: no session ${session} or no bill ${bill}`);
+      const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+      if (body === CA_NO_VOTES) return out;
+      const b = caBillDoc(body);
+      if (b.bill_id !== id) throw new Error(`the vote file of ${id} is of ${b.bill_id}`);
+      for (const v of [...b.summary].sort((x, y) => x.vote_date_time.localeCompare(y.vote_date_time) || Number(x.vote_date_seq) - Number(y.vote_date_seq))) {
+        if (v.location_code !== 'AFLOOR' && v.location_code !== 'SFLOOR') { out.committee++; continue; }
+        const text = (b.motions[v.motion_id] ?? '').replace(/\s+/g, ' ').trim();
+        const url = californiaVoteUrl(id, v.vote_date_time, v.location_code, v.motion_id, v.vote_date_seq);
+        if (!caQuestionIsOnTheBill(text)) { out.motion!++; out.motions!.push(`${url} ${text}`); continue; }
+        const n = (x: string | null): number => (x !== null && /^\d+$/.test(x) ? Number(x) : -1);
+        // No vote recorded: the member rows, as leginfo's page prints it (the summary's figure differs on 357 of 43,971
+        // floor votes of 2015-2026; stateRollCallEvidence.ts readCalifornia)
+        const nvr = b.detail.filter((d) => d.location_code === v.location_code && d.motion_id === v.motion_id && d.vote_date_seq === v.vote_date_seq
+          && d.vote_date_time === v.vote_date_time && d.vote_code === 'ABS').length;
+        out.floor.push({ url, motion: `${text}, ${v.vote_result === '(PASS)' ? 'passed' : v.vote_result === '(FAIL)' ? 'failed' : '?'}`, tally: [n(v.ayes), n(v.noes), nvr] });
+      }
+      return out;
+    },
   },
   // api.oregonlegislature.gov, the Legislature's Open Data Service (read 2026-11-20; no robots.txt on it or on OLIS; its
   // Acceptable Use Agreement asks a client to use the service instead of scraping the website, and allows on-demand
@@ -1149,7 +1194,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
       : parseMinnesotaVoteUrl(v.url) ? explainMinnesotaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseNevadaVoteUrl(v.url) ? explainNevadaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseOregonVoteUrl(v.url) ? explainOregonVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseMaineVoteUrl(v.url) ? explainMaineVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseMaineVoteUrl(v.url) ? explainMaineVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseCaliforniaVoteUrl(v.url) ? explainCaliforniaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
@@ -1185,6 +1231,19 @@ export function alsoVotes(bill: string, bi: BillIndex, also: Record<string, stri
     .map((u) => ({ url: u, motion: 'a vote the bill page does not link', tally: null }));
 }
 
+/** A bill with no vote has no PUBINFO file: this stands for its empty vote list. */
+const CA_NO_VOTES = '{"no votes": true}';
+
+/** A local PUBINFO document. Throws when the copy is not on this machine; a bill's missing file is a bill with no vote. */
+export function pubinfoBody(doc: string, dir: string | undefined = process.env.CA_PUBINFO_DIR): string {
+  if (!dir) throw new Error('CA_PUBINFO_DIR is not set: run ca_pubinfo.py sync and index, then set it');
+  const body = readPubinfoDoc(doc, dir);
+  if (body !== null) return body;
+  const year = /^pubinfo:(\d{4})\//.exec(doc)?.[1];
+  if (/\/bills\//.test(doc) && year && existsSync(path.join(dir, year, 'MANIFEST.json'))) return CA_NO_VOTES;
+  throw new Error(`${doc}: not in ${dir} (run ca_pubinfo.py sync <dir> ${year ?? '<year>'} and index)`);
+}
+
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
   const flag = (n: string): string | undefined => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : undefined; };
@@ -1210,6 +1269,8 @@ async function main(): Promise<void> {
   let asked = 0;
   /** A paced GET, kept on disk. A 429 or 503 is waited out twice, then it is an error: nothing is guessed. */
   async function get(url: string, gap: number): Promise<string> {
+    // California: a file on this machine (caPubinfo.ts), never a request
+    if (isPubinfoDoc(url)) return pubinfoBody(url);
     const file = path.join(raw, createHash('sha256').update(url).digest('hex').slice(0, 24));
     if (!refetch && existsSync(file)) return readFileSync(file, 'utf8');
     for (let attempt = 0; ; attempt++) {

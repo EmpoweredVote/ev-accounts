@@ -3755,6 +3755,223 @@ function verifyMaineLine(line: string, url: string, text: string, lastName: stri
   return { verdict: 'verified', matchOffset: 0 };
 }
 
+// ── California: the Legislature's PUBINFO bulk download, cited on the bill's leginfo Votes page ──────────────────────────
+// Read 2026-11-20. The vote pages (leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=...) answer our bot with a
+// Cloudflare 403 and that host's robots.txt says "Disallow: /" to every crawler (KNOWN_DISALLOW_HOSTS), so they are never
+// fetched. The Legislature's own bulk download, PUBINFO (downloads.leginfo.legislature.ca.gov: open, no key, no robots.txt,
+// no terms), holds the same votes: BILL_SUMMARY_VOTE_TBL one row per vote (location, time, sequence, motion, ayes, noes,
+// abstain, result), BILL_DETAIL_VOTE_TBL one row per member's vote (AYE, NOE, ABS) by the member's label ("Gabriel"),
+// BILL_MOTION_TBL the motion's text, LEGISLATOR_TBL each member of the session by that label (author_name) with first and
+// last name. The runner's rule (2026-11-20): read each session's zip once and keep it current with the daily change files.
+// scripts/stage5/openstates/ca_pubinfo.py keeps that copy (only the vote and member tables, read by range requests) and
+// writes one file per bill and one member list per session, under CA_PUBINFO_DIR. Those are the documents read here, as
+//   pubinfo:2025/bills/202520260AB1127.json    the bill's vote summaries, member votes and motion texts
+//   pubinfo:2025/legislators.json              the session's members
+// (runner's standing answer: cite a page a person can read, verify from the legislature's data). The page a person opens
+// lists every vote of the bill, so the vote is named after a #: its day, location, motion id and sequence number:
+//   https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1127#2025-09-13-AFLOOR-187240-1186
+// That page prints each member by the same label. A vote is read only when exactly one summary row of the bill fits the
+// fragment, it is a floor vote (AFLOOR, SFLOOR), its motion is a vote on the bill (caQuestionIsOnTheBill), each kind's count
+// of member rows equals the summary's, every member row is of that vote's exact time, no label is listed twice and the total
+// fits the chamber (80 / 40). A member is named by the one legislator of the session and chamber whose label it is; a label
+// the list does not hold (2025 Senate "Weber", 4 votes) is kept as printed and gives no line. The render prints no party (the
+// member table has one; it is never read):
+//
+//   California Assembly vote of 2025-09-13 (2025-2026), AB 1127, AFLOOR 187240 1186.
+//   Question: AB 1127 GABRIEL Concurrence in Senate Amendments, passed
+//   Aye 54; No 16; No vote recorded 10.
+//   Aye (54): Jesse Gabriel; …
+//   California Assembly vote of 2025-09-13 (2025-2026), AB 1127 - AB 1127 GABRIEL Concurrence in Senate Amendments, passed: Jesse Gabriel voted Aye.
+
+export const CA_VOTES = ['Aye', 'No', 'No vote recorded'] as const;
+export type CaVote = (typeof CA_VOTES)[number];
+const CA_CODE: Record<string, CaVote> = { AYE: 'Aye', NOE: 'No', ABS: 'No vote recorded' };
+const CA_SITE = 'https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=';
+/** The documents are files on this machine: no request is made, so no wait. */
+const CA_GAP_MS = 0;
+const CA_SIZE: Record<Chamber, number> = { House: 80, Senate: 40 };
+const CA_TYPES = '(?:AB|SB|ACR|SCR|AJR|SJR|ACA|SCA|HR|SR)';
+const CA_URL = new RegExp(`^https://leginfo\\.legislature\\.ca\\.gov/faces/billVotesClient\\.xhtml\\?bill_id=((20\\d{2})(20\\d{2})([0-9])(${CA_TYPES})([1-9]\\d{0,4}))#(\\d{4}-\\d{2}-\\d{2})-(AFLOOR|SFLOOR)-([1-9]\\d{0,9})-([1-9]\\d{0,6})$`);
+export const CA_DOC = 'pubinfo:';
+
+export interface CaVoteRef { state: 'CA'; stateName: 'California'; billId: string; year: number; session: string; bill: string; date: string; location: 'AFLOOR' | 'SFLOOR'; motionId: string; seq: string }
+export interface CaVoteRecord { state: 'CA'; stateName: 'California'; chamber: Chamber; session: string; billId: string; bill: string; location: string; motionId: string; seq: string; question: string; date: string; groups: Record<CaVote, string[]>; labels: Record<CaVote, string[]> }
+export interface CaVoteLine { state: 'CA'; stateName: 'California'; chamber: Chamber; session: string; bill: string; question: string; date: string; name: string; vote: CaVote }
+
+/** "2025-2026", or "2023-2024 Special Session 1": the session as Open States names it, read from the bill id. */
+function caSessionName(y1: string, y2: string, n: string): string {
+  return `${y1}-${y2}${n === '0' ? '' : ` Special Session ${n}`}`;
+}
+
+export function parseCaliforniaVoteUrl(url: string): CaVoteRef | null {
+  const m = CA_URL.exec(url.trim());
+  if (!m || Number(m[3]) !== Number(m[2]) + 1 || Number(m[2]) % 2 !== 1) return null;
+  return { state: 'CA', stateName: 'California', billId: m[1], year: Number(m[2]), session: caSessionName(m[2], m[3], m[4]), bill: `${m[5]} ${m[6]}`,
+    date: m[7], location: m[8] as 'AFLOOR' | 'SFLOOR', motionId: m[9], seq: m[10] };
+}
+
+/** PUBINFO's bill id: "20252026" + session number (0 regular, n the nth special session) + "AB1127". */
+export function californiaBillId(sessionYears: string, specialSession: number, type: string, num: number): string {
+  return `${sessionYears}${specialSession}${type.toUpperCase()}${num}`;
+}
+
+/** The address a vote is cited on: the bill's Votes page on leginfo, the vote after a #. */
+export function californiaVoteUrl(billId: string, voteDateTime: string, location: string, motionId: string, seq: string): string {
+  return `${CA_SITE}${billId}#${voteDateTime.slice(0, 10)}-${location}-${motionId}-${seq}`;
+}
+
+/** The local documents (under CA_PUBINFO_DIR) one bill's votes are read from: the bill's file, the session's members. */
+export function californiaBillDoc(billId: string): string { return `${CA_DOC}${billId.slice(0, 4)}/bills/${billId}.json`; }
+function californiaDocs(r: CaVoteRef): string[] {
+  return [californiaBillDoc(r.billId), `${CA_DOC}${r.year}/legislators.json`];
+}
+
+/**
+ * Is a California floor motion a vote on the bill? Third reading (and the other chamber's third reading of it), concurrence
+ * in the other chamber's amendments ("Unfinished Business ... Concurrence"), a consent calendar, passage without reference to
+ * file, a conference report, and the Assembly's "Third Reading Urgency" (the bill and its urgency clause in one roll call).
+ * Not: the Senate's separate vote on an urgency clause, a vote on an amendment or to lay one on the table, to reconsider, to
+ * appeal the chair, to suspend the rules, to re-refer, to adjourn, to postpone, to take a bill from the inactive file, and a
+ * motion the text gives no reading for (a resolution's "HR 2 RENDON By CALDERON").
+ */
+export function caQuestionIsOnTheBill(motion: string): boolean {
+  const s = squash(motion);
+  if (/\b(?:reconsider\w*|motion|amend(?:ment)?s? by|amend by|amendment set|set #\s*\d|lay on (?:the )?table|urgency clause|appeal the decision|re-?refer|suspend the rules|adjourn|postpone|inactive file|final form)\b/i.test(s)) return false;
+  return /\b(?:third reading|3rd reading|second reading|2nd reading|concurrence|consent|w\/o ref\. to file|conference report)\b/i.test(s);
+}
+
+interface CaSummary { location_code: string; vote_date_time: string; vote_date_seq: string; motion_id: string; ayes: string | null; noes: string | null; abstain: string | null; vote_result: string | null }
+interface CaDetail { location_code: string; legislator_name: string; vote_date_time: string; vote_date_seq: string; vote_code: string | null; motion_id: string }
+interface CaBillDoc { bill_id: string; summary: CaSummary[]; detail: CaDetail[]; motions: Record<string, string | null> }
+interface CaMember { session_year: string; house_type: string; author_name: string | null; first_name: string | null; last_name: string | null; name_suffix: string | null }
+
+/** A bill's PUBINFO file (ca_pubinfo.py index). Throws when it is not one. */
+export function caBillDoc(body: string): CaBillDoc {
+  const j = JSON.parse(body) as CaBillDoc;
+  if (!j || typeof j.bill_id !== 'string' || !Array.isArray(j.summary) || !Array.isArray(j.detail) || !j.motions || typeof j.motions !== 'object') throw new Error('not a PUBINFO bill file');
+  return j;
+}
+
+const caInt = (v: string | null): number => (v !== null && /^\d+$/.test(v) ? Number(v) : NaN);
+
+function readCalifornia(bodies: string[], r: CaVoteRef): CaVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 2) return fail('not a bill file and a member list');
+  const b = caBillDoc(bodies[0]);
+  const legs = JSON.parse(bodies[1]) as CaMember[];
+  if (!Array.isArray(legs)) return fail('the member list is not a list');
+  if (b.bill_id !== r.billId) return fail(`the bill file is of ${b.bill_id}, not ${r.billId}`);
+  const fits = b.summary.filter((s) => s.location_code === r.location && s.vote_date_time.slice(0, 10) === r.date && s.motion_id === r.motionId && s.vote_date_seq === r.seq);
+  if (fits.length !== 1) return fail(`${fits.length} votes of the bill fit the address`);
+  const s = fits[0];
+  const ch: Chamber = r.location === 'AFLOOR' ? 'House' : 'Senate';
+  const motion = squash(b.motions[s.motion_id] ?? '');
+  if (!motion) return fail('the vote has no motion text');
+  if (!caQuestionIsOnTheBill(motion)) return fail(`the question is not a vote on the bill: ${motion}`);
+  const result = s.vote_result === '(PASS)' ? 'passed' : s.vote_result === '(FAIL)' ? 'failed' : null;
+  if (!result) return fail(`a result the reader does not know: ${s.vote_result}`);
+  const tally: Record<CaVote, number> = { Aye: caInt(s.ayes), No: caInt(s.noes), 'No vote recorded': caInt(s.abstain) };
+  if (CA_VOTES.some((k) => Number.isNaN(tally[k]))) return fail('the vote prints no tally');
+  const labels = Object.fromEntries(CA_VOTES.map((k) => [k, [] as string[]])) as Record<CaVote, string[]>;
+  for (const d of b.detail) {
+    if (d.location_code !== s.location_code || d.motion_id !== s.motion_id || d.vote_date_seq !== s.vote_date_seq || d.vote_date_time.slice(0, 10) !== r.date) continue;
+    if (d.vote_date_time !== s.vote_date_time) return fail(`a member row of another time: ${d.legislator_name}`);
+    const kind = CA_CODE[d.vote_code ?? ''];
+    if (!kind) return fail(`a kind of vote the reader does not know: ${d.vote_code}`);
+    const label = squash(d.legislator_name ?? '');
+    if (!label) return fail('a member row names no member');
+    labels[kind].push(label);
+  }
+  // Aye and No must be the summary's counts. No vote recorded is counted from the member rows, as leginfo's Votes page
+  // prints it: the summary's "abstain" figure differs from the rows on 357 of 43,971 floor votes of 2015-2026 (AB 3064
+  // of 2024: summary 4, rows and page 11), while Aye and No differ on 1 (which stays refused).
+  for (const k of ['Aye', 'No'] as const) if (labels[k].length !== tally[k]) return fail(`the ${k} group lists ${labels[k].length} members and the tally prints ${tally[k]}`);
+  const all = CA_VOTES.flatMap((k) => labels[k]);
+  if (all.length > CA_SIZE[ch]) return fail('more members than the chamber has');
+  if (new Set(all.map(fold)).size !== all.length) return fail('a member is listed twice');
+  const sy = r.billId.slice(0, 8);
+  const house = ch === 'House' ? 'A' : 'S';
+  // keyed by the label exactly as the member list prints it: 2025 lists Anamarie Ávila Farías twice, as "Ávila Farías" and
+  // as "Avila Farias", and the votes print the first
+  const byLabel = new Map<string, string[]>();
+  for (const l of legs) {
+    if (l.session_year !== sy) return fail('the member list is of another session');
+    if (l.house_type !== house || !l.author_name || !l.first_name || !l.last_name) continue;
+    // a generational suffix is part of the name ("José Luis Solache Jr."); a degree is not ("Steven Choi" for the
+    // list's "Ph.D."), and no roster name carries one
+    const suffix = /^(?:Jr|Sr|I{2,3}|IV|V)\.?$/i.test(l.name_suffix ?? '') ? ` ${l.name_suffix}` : '';
+    const name = squash(`${l.first_name} ${l.last_name}${suffix}`);
+    const k = squash(l.author_name);
+    byLabel.set(k, [...new Set([...(byLabel.get(k) ?? []), name])]);
+  }
+  if (!byLabel.size) return fail('the member list holds no member of the chamber');
+  const nameOf = (label: string): string => { const n = byLabel.get(label) ?? []; return n.length === 1 ? n[0] : label; };
+  const groups = Object.fromEntries(CA_VOTES.map((k) => [k, labels[k].map(nameOf)])) as Record<CaVote, string[]>;
+  const names = CA_VOTES.flatMap((k) => groups[k]).map(fold);
+  if (new Set(names).size !== names.length) return fail('two members render as one name');
+  return { state: 'CA', stateName: 'California', chamber: ch, session: r.session, billId: r.billId, bill: r.bill, location: r.location, motionId: r.motionId, seq: r.seq,
+    question: `${motion}, ${result}`, date: r.date, groups, labels };
+}
+
+const CA_CHAMBER: Record<Chamber, string> = { House: 'Assembly', Senate: 'Senate' };
+const CA_SAID: Record<CaVote, string> = { Aye: 'voted Aye', No: 'voted No', 'No vote recorded': 'had no vote recorded' };
+
+export function renderCaliforniaVote(v: CaVoteRecord): string {
+  return [
+    `California ${CA_CHAMBER[v.chamber]} vote of ${v.date} (${v.session}), ${v.bill}, ${v.location} ${v.motionId} ${v.seq}.`,
+    `Question: ${v.question}`,
+    CA_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...CA_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const CA_RENDER_HEAD = /^California (Assembly|Senate) vote of (\d{4}-\d{2}-\d{2}) \((20\d{2}-20\d{2}(?: Special Session \d)?)\), ([A-Z]{2,3} \d{1,5}), (AFLOOR|SFLOOR) (\d+) (\d+)\.$/;
+
+function parseCaliforniaRender(text: string, url: string): Omit<CaVoteRecord, 'labels'> | null {
+  const r = parseCaliforniaVoteUrl(url);
+  const rows = text.split('\n');
+  const h = CA_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + CA_VOTES.length) return null;
+  if (h[2] !== r.date || h[3] !== r.session || h[4] !== r.bill || h[5] !== r.location || h[6] !== r.motionId || h[7] !== r.seq) return null;
+  if ((h[1] === 'Assembly') !== (r.location === 'AFLOOR')) return null;
+  const groups = {} as Record<CaVote, string[]>;
+  for (const [i, v] of CA_VOTES.entries()) {
+    const m = /^([A-Za-z ]+) \((\d+)\):(.*)$/.exec(rows[3 + i]);
+    if (!m || m[1] !== v) return null;
+    groups[v] = m[3].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[2])) return null;
+  }
+  if (rows[2] !== CA_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'CA', stateName: 'California', chamber: h[1] === 'Assembly' ? 'House' : 'Senate', session: r.session, billId: r.billId, bill: r.bill,
+    location: r.location, motionId: r.motionId, seq: r.seq, date: h[2], question: q[1], groups };
+}
+
+const CA_LINE = /^California (Assembly|Senate) vote of (\d{4}-\d{2}-\d{2}) \((20\d{2}-20\d{2}(?: Special Session \d)?)\), ([A-Z]{2,3} \d{1,5}) - (.+): (.+?) (voted Aye|voted No|had no vote recorded)\.$/;
+
+export function formatCaliforniaVoteLine(l: CaVoteLine): string {
+  return `California ${CA_CHAMBER[l.chamber]} vote of ${l.date} (${l.session}), ${l.bill} - ${l.question}: ${l.name} ${CA_SAID[l.vote]}.`;
+}
+
+function parseCaliforniaLine(text: string): CaVoteLine | null {
+  const m = CA_LINE.exec(text.trim());
+  const vote = m ? CA_VOTES.find((v) => CA_SAID[v] === m[7]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'CA', stateName: 'California', chamber: m[1] === 'Assembly' ? 'House' : 'Senate', date: m[2], session: m[3], bill: m[4], question: m[5], name: m[6].trim(), vote };
+}
+
+function verifyCaliforniaLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseCaliforniaLine(line);
+  const r = parseCaliforniaRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = CA_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
 function maineLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
   const r = parseMaineRender(text, url);
   if (!r) return [];
@@ -3762,6 +3979,18 @@ function maineLinesFor(url: string, text: string, lastName: string, fullName: st
   for (const vote of meVotes(r.chamber)) {
     for (const name of r.groups[vote]) {
       if (meFits(r.chamber, name, lastName, fullName)) out.push(formatMaineVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+function californiaLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseCaliforniaRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of CA_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatCaliforniaVoteLine({ ...r, name, vote }));
     }
   }
   return out.length === 1 ? out : [];
@@ -3779,6 +4008,19 @@ export function explainMaineVote(bodies: string[], url: string): MeVoteRecord | 
   if (!r) return { refused: 'not a Maine vote address' };
   if (bodies.length !== maineDocs(r).length) return { refused: 'not the vote and its documents' };
   try { return r.chamber === 'House' ? readMaineHouse(bodies[0], r) : readMaineSenate(bodies, r); } catch (e) { return { refused: e instanceof Error ? e.message : String(e) }; }
+}
+
+/** The vote an address names, read from the PUBINFO bill file and member list. Null when any check fails. */
+export function readCaliforniaVote(bodies: string[], url: string): CaVoteRecord | null {
+  const v = explainCaliforniaVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readCaliforniaVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainCaliforniaVote(bodies: string[], url: string): CaVoteRecord | { refused: string } {
+  const r = parseCaliforniaVoteUrl(url);
+  if (!r) return { refused: 'not a California vote address' };
+  try { return readCalifornia(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
 /** How a fetched PDF reaches its reader: Maryland's and Minnesota's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
@@ -3813,11 +4055,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseNevadaVoteUrl(url)) return NV_GAP_MS;
   if (parseOregonVoteUrl(url)) return OR_GAP_MS;
   if (parseMaineVoteUrl(url)) return ME_GAP_MS;
+  if (parseCaliforniaVoteUrl(url)) return CA_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null || parseOregonVoteUrl(url) !== null || parseMaineVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null || parseOregonVoteUrl(url) !== null || parseMaineVoteUrl(url) !== null || parseCaliforniaVoteUrl(url) !== null;
 }
 
 /**
@@ -3847,7 +4090,15 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (or) return oregonDocs(or);
   const me = parseMaineVoteUrl(url);
   if (me) return maineDocs(me);
+  const ca = parseCaliforniaVoteUrl(url);
+  if (ca) return californiaDocs(ca);
   return formatOf(url) ? [url.trim()] : null;
+}
+
+/** A vote whose documents are all files on this machine (California's PUBINFO copy): read with no request at all. */
+export function isLocalStateRollCallUrl(url: string): boolean {
+  const docs = parseCaliforniaVoteUrl(url) ? stateRollCallDocs(url) : null;
+  return !!docs && docs.every((d) => d.startsWith(CA_DOC));
 }
 
 /** The render of the vote an address names, from the bodies of stateRollCallDocs(url) in order; null when any check fails. */
@@ -3895,6 +4146,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseMaineVoteUrl(url)) {
     const v = readMaineVote(bodies, url);
     return v ? renderMaineVote(v) : null;
+  }
+  if (parseCaliforniaVoteUrl(url)) {
+    const v = readCaliforniaVote(bodies, url);
+    return v ? renderCaliforniaVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -3982,6 +4237,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.rollNum, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': meVotes(v.chamber).filter((k) => k !== 'Yea' && k !== 'Nay').flatMap((k) => v.groups[k]) } } : null;
   }
+  if (parseCaliforniaVoteUrl(url)) {
+    // California: members by the names the session's member list gives their labels (a label the list does not hold, as
+    // printed); the roll-call number is the vote's sequence number. No vote recorded is the absent group here.
+    const v = readCaliforniaVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: Number(v.seq), bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Aye, Nay: v.groups.No, 'Absent or not voting': v.groups['No vote recorded'] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -4006,8 +4268,10 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | MeVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | Omit<OrVoteRecord, 'codes'> | Omit<CaVoteRecord, 'labels'> | MeVoteRecord | null {
   if (parseMaineVoteUrl(url)) return parseMaineRender(text, url);
+  if (parseCaliforniaVoteUrl(url)) return parseCaliforniaRender(text, url);
+  if (parseOregonVoteUrl(url)) return parseOregonRender(text, url);
   if (parseNevadaVoteUrl(url)) return parseNevadaRender(text, url);
   if (parseMinnesotaVoteUrl(url)) return parseMinnesotaRender(text, url);
   if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
@@ -4045,8 +4309,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | OrVoteLine | MeVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text) ?? parseOregonLine(text) ?? parseMaineLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | OrVoteLine | CaVoteLine | MeVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text) ?? parseOregonLine(text) ?? parseCaliforniaLine(text) ?? parseMaineLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -4135,6 +4399,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseNevadaVoteUrl(url)) return verifyNevadaLine(line, url, text, lastName, fullName);
   if (parseOregonVoteUrl(url)) return verifyOregonLine(line, url, text, lastName, fullName);
   if (parseMaineVoteUrl(url)) return verifyMaineLine(line, url, text, lastName, fullName);
+  if (parseCaliforniaVoteUrl(url)) return verifyCaliforniaLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -4167,6 +4432,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseNevadaVoteUrl(url)) return nevadaLinesFor(url, text, lastName, fullName);
   if (parseOregonVoteUrl(url)) return oregonLinesFor(url, text, lastName, fullName);
   if (parseMaineVoteUrl(url)) return maineLinesFor(url, text, lastName, fullName);
+  if (parseCaliforniaVoteUrl(url)) return californiaLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];

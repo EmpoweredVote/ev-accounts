@@ -15,7 +15,7 @@ import requests
 
 API = "https://commons.wikimedia.org/w/api.php"
 S = requests.Session()
-S.headers["User-Agent"] = "EmpoweredVote-banner-sourcing/1.0 (chris@empowered.vote)"
+S.headers["User-Agent"] = "EmpoweredVote-banner-sourcing/1.0 (+https://empowered.vote)"
 
 src, out = sys.argv[1], sys.argv[2]
 files = json.load(open(src, encoding="utf-8"))

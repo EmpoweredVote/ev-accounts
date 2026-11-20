@@ -1,6 +1,6 @@
 import io, urllib.request
 from PIL import Image
-UA={'User-Agent':'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)'}
+UA={'User-Agent':'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)'}
 cands=[('a2017','https://biloxi.ms.us/wp-content/uploads/2017/08/MayorAndrewFoFoGilich1.png'),
        ('b2015','https://biloxi.ms.us/wp-content/uploads/2015/05/MayorFoFoGilich.jpg')]
 ims=[]

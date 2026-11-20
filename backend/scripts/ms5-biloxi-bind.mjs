@@ -8,7 +8,7 @@
  * So the only evidence left is what text the page places WITH each image.
  */
 const URL_ = 'https://biloxi.ms.us/departments/city-council/';
-const html = await (await fetch(URL_, { headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' } })).text();
+const html = await (await fetch(URL_, { headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' } })).text();
 
 const re = /<img\b[^>]*src\s*=\s*"([^"]*2025\/06\/[^"]*)"[^>]*>/gi;
 let m;

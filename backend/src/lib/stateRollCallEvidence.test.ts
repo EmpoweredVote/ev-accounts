@@ -10,6 +10,7 @@ import {
   explainColoradoVote, coQuestionIsOnTheBill, coMemberName, coMembers, coBillTag, parseColoradoVoteUrl,
   explainNorthDakotaVote, ndQuestionIsOnTheBill, ndMembers, ndMemberNames, parseNorthDakotaVoteUrl,
   explainNevadaVote, nvMemberName, nvVoteList, parseNevadaVoteUrl,
+  explainCaliforniaVote, caQuestionIsOnTheBill, californiaVoteUrl, californiaBillId, isLocalStateRollCallUrl, parseCaliforniaVoteUrl,
   explainOregonVote, orQuestionIsOnTheBill, orTally, parseOregonVoteUrl, oregonVoteUrl, OR_DATA,
   explainMaineVote, meQuestionIsOnTheBill, meSenators, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK, ME_SENATORS,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
@@ -2089,6 +2090,204 @@ describe('state roll-call pages — Oregon lines', () => {
     expect(r).toMatchObject({ bill: 'SB 66', date: '2017-05-25', chamber: 'House', rollNum: 411795 });
     expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length]).toEqual([54, 0, 6]);
     expect(r.groups['Absent or not voting']).toContain('Tina Kotek');
+  });
+});
+
+// Saved 2026-11-20 from the Legislature's PUBINFO download (pubinfo_2025.zip, pubinfo_2017.zip) through ca_pubinfo.py: a
+// bill's file and the session's member list. The member list is cut to label, names, district and chamber: no fixture holds
+// a party.
+const caJson = (name: string): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${name}.json`, import.meta.url)), 'utf8');
+const CA = 'https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=';
+const CA_25A = `${CA}202520260AB1127#2025-09-13-AFLOOR-187240-1186`;
+const CA_25S = `${CA}202520260AB1127#2025-09-12-SFLOOR-187281-1034`;
+const CA_17A = `${CA}201720180AB1419#2018-01-29-AFLOOR-158903-1039`;
+const caBodies = (url: string): string[] => url.includes('2017')
+  ? [caJson('ca-2017-201720180AB1419'), caJson('ca-2017-legislators')]
+  : [caJson('ca-2025-202520260AB1127'), caJson('ca-2025-legislators')];
+/** Change the bill file, and fail the test when the change did not apply. */
+const caEdit = (body: string, f: (b: { summary: Record<string, string | null>[]; detail: Record<string, string | null>[]; motions: Record<string, string | null>; bill_id: string }) => void): string => {
+  const j = JSON.parse(body);
+  f(j);
+  const out = JSON.stringify(j);
+  expect(out).not.toBe(JSON.stringify(JSON.parse(body)));
+  return out;
+};
+const caWhy = (url: string, docs: string[]): string => {
+  const v = explainCaliforniaVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const caRender = (url: string, docs = caBodies(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error(`the vote did not read: ${caWhy(url, docs)}`);
+  return t;
+};
+const CA_GABRIEL = 'California Assembly vote of 2025-09-13 (2025-2026), AB 1127 - AB 1127 GABRIEL Concurrence in Senate Amendments, passed: Jesse Gabriel voted Aye.';
+
+describe('state roll-call pages — California address', () => {
+  it('knows a bill\'s Votes page on leginfo with the vote after a #, and reads it from two local PUBINFO files, never the site', () => {
+    expect(parseCaliforniaVoteUrl(CA_25A)).toEqual({ state: 'CA', stateName: 'California', billId: '202520260AB1127', year: 2025, session: '2025-2026',
+      bill: 'AB 1127', date: '2025-09-13', location: 'AFLOOR', motionId: '187240', seq: '1186' });
+    expect(californiaVoteUrl('202520260AB1127', '2025-09-13 16:02:11', 'AFLOOR', '187240', '1186')).toBe(CA_25A);
+    expect(californiaBillId('20232024', 1, 'ab', 4)).toBe('202320241AB4');
+    expect(parseCaliforniaVoteUrl(`${CA}202320241AB4#2023-12-01-SFLOOR-1-2`)).toMatchObject({ session: '2023-2024 Special Session 1', bill: 'AB 4' });
+    expect(stateRollCallDocs(CA_25A)).toEqual(['pubinfo:2025/bills/202520260AB1127.json', 'pubinfo:2025/legislators.json']);
+    expect(stateRollCallMinGapMs(CA_25A)).toBe(0);
+    expect(isStateRollCallUrl(CA_25A)).toBe(true);
+    expect(isLocalStateRollCallUrl(CA_25A)).toBe(true);
+    expect(isLocalStateRollCallUrl(OR_25H)).toBe(false);
+    // no vote named, plain http, a committee's vote, an even first year, years that are not one session, a look-alike host
+    for (const u of [`${CA}202520260AB1127`, CA_25A.replace('https', 'http'), CA_25A.replace('AFLOOR', 'CX18'), CA_25A.replace('20252026', '20242025'),
+      CA_25A.replace('20252026', '20252027'), CA_25A.replace('leginfo.legislature.ca.gov', 'leginfo.legislature.ca.gov.example.com'),
+      CA_25A.replace('billVotesClient', 'billNavClient')]) {
+      expect([u, isStateRollCallUrl(u)]).toEqual([u, false]);
+    }
+  });
+
+  it('takes third readings, concurrence, consent calendars and conference reports as votes on the bill, and every motion as not', () => {
+    for (const q of ['AB 1127 GABRIEL Assembly Third Reading', 'Assembly 3rd Reading AB1127 Gabriel et al. By Blakespear', 'AB 199 EGGMAN Concurrence in Senate Amendments',
+      'Unfinished Business SB1176 Galgiani Concurrence', 'AB 2788 GATTO Consent Calendar Second Day Regular Session', 'Special Consent AB1900',
+      'AB 199 EGGMAN Third Reading Urgency', 'AB 526 HOLDEN Concurrence - Urgency Added', 'W/O REF. TO FILE ACR81 Chiu By Pan', 'Conference Report SB2 Hernandez',
+      'Senate 3rd Reading SB119      B. & F.R.']) {
+      expect([q, caQuestionIsOnTheBill(q)]).toEqual([q, true]);
+    }
+    for (const q of ['Assembly 3rd Reading AB199 Eggman Urgency Clause', 'Senate 3rd Reading SB1033 Hill Reconsider', 'SB 1176 Galgiani Senate Third Reading Amendment Set #1',
+      'AB 37 Berman Assembly Third Reading Amend By GALLAGHER Set #1 Motion to Lay on the Table By REYES', 'SB 32 Pavley Motion to Reconsider',
+      'AB 645 WILLIAMS Assembly Third Reading Motion to Appeal the Decision of the Chair By JONES', 'AB 1066 GONZALEZ Concurrence in Senate Amendments Motion to Re-refer to Committee By OBERNOLTE',
+      'AB 3234 GLORIA Remove from Inactive File By TING Amendment Set #1', 'HR 2 RENDON By CALDERON', 'Do pass as amended']) {
+      expect([q, caQuestionIsOnTheBill(q)]).toEqual([q, false]);
+    }
+  });
+});
+
+describe('state roll-call pages — reading California', () => {
+  it('reads a 2025 Assembly vote: bill, question, day, tally, and every member by the session\'s full name', () => {
+    const t = caRender(CA_25A);
+    expect(t.split('\n').slice(0, 3)).toEqual(['California Assembly vote of 2025-09-13 (2025-2026), AB 1127, AFLOOR 187240 1186.',
+      'Question: AB 1127 GABRIEL Concurrence in Senate Amendments, passed', 'Aye 54; No 16; No vote recorded 10.']);
+    expect(t).toMatch(/^Aye \(54\): .*\bJesse Gabriel\b/m);
+    expect(t).toMatch(/^No \(16\): .*\bJeff Gonzalez\b/m);
+    expect(t).toMatch(/^No vote recorded \(10\): .*\bDiane Dixon\b|^No vote recorded \(10\): .*\bMia Bonta\b/m);
+    // the member list holds her twice, "Ávila Farías" and "Avila Farias"; the vote prints the first
+    expect(t).toMatch(/\bAnamarie Ávila Farías\b/);
+  });
+
+  it('reads the Senate vote of the same bill, and a failed 2017 vote', () => {
+    expect(caRender(CA_25S).split('\n').slice(0, 3)).toEqual(['California Senate vote of 2025-09-12 (2025-2026), AB 1127, SFLOOR 187281 1034.',
+      'Question: Assembly 3rd Reading AB1127 Gabriel et al. By Blakespear, passed', 'Aye 29; No 9; No vote recorded 2.']);
+    expect(caRender(CA_25S)).toMatch(/^No vote recorded \(2\): .*\bLena Gonzalez\b/m);
+    expect(caRender(CA_17A).split('\n').slice(1, 3)).toEqual(['Question: AB 1419 QUIRK Assembly Third Reading, failed', 'Aye 35; No 26; No vote recorded 16.']);
+  });
+
+  it('refuses a vote whose summary, member rows or member list do not hold together', () => {
+    const [b, l] = caBodies(CA_25A);
+    expect(caWhy(CA_25A, [b, l])).toBe('read');
+    const vote = (x: Record<string, string | null>) => x.location_code === 'AFLOOR' && x.vote_date_seq === '1186';
+    // another bill's file, a vote the address does not name, a committee's vote, a motion, a result it does not know
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.bill_id = '202520260AB1128'; }), l])).toBe('the bill file is of 202520260AB1128, not 202520260AB1127');
+    expect(caWhy(CA_25A.replace('1186', '1187'), [b, l])).toBe('0 votes of the bill fit the address');
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.summary.push({ ...j.summary.find(vote)! }); }), l])).toBe('2 votes of the bill fit the address');
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.motions['187240'] = 'AB 1127 GABRIEL Motion to Reconsider'; }), l])).toMatch(/^the question is not a vote on the bill/);
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.motions['187240'] = null; }), l])).toBe('the vote has no motion text');
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.summary.find(vote)!.vote_result = '(TIE)'; }), l])).toBe('a result the reader does not know: (TIE)');
+    // a member's vote flipped, so a count no longer equals the tally; a kind it does not know; a row of another time
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.detail.find((x) => vote(x) && x.legislator_name === 'Castillo')!.vote_code = 'AYE'; }), l]))
+      .toBe('the Aye group lists 55 members and the tally prints 54');
+    // a No turned into a member with no vote recorded: the No group no longer holds the summary's count
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.detail.find((x) => vote(x) && x.legislator_name === 'Castillo')!.vote_code = 'ABS'; }), l]))
+      .toBe('the No group lists 15 members and the tally prints 16');
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.detail.find((x) => vote(x) && x.legislator_name === 'Castillo')!.vote_code = 'PAIR'; }), l]))
+      .toBe('a kind of vote the reader does not know: PAIR');
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { const d = j.detail.find((x) => vote(x) && x.legislator_name === 'Castillo')!; d.vote_date_time = `${d.vote_date_time!.slice(0, 11)}23:59:59`; }), l]))
+      .toBe('a member row of another time: Castillo');
+    // a member listed twice, and more members than the chamber has
+    expect(caWhy(CA_25A, [caEdit(b, (j) => { j.detail.find((x) => vote(x) && x.legislator_name === 'Castillo')!.legislator_name = 'Chen'; }), l])).toBe('a member is listed twice');
+    expect(caWhy(CA_25A, [caEdit(b, (j) => {
+      const s = j.summary.find(vote)!; s.ayes = String(Number(s.ayes) + 1);
+      j.detail.push({ ...j.detail.find(vote)!, legislator_name: 'Extra', vote_code: 'AYE' });
+    }), l])).toBe('more members than the chamber has');
+    // a member list of another session, or two members given one name
+    expect(caWhy(CA_25A, [b, caJson('ca-2017-legislators')])).toBe('the member list is of another session');
+    const two = JSON.parse(l) as Record<string, string | null>[];
+    Object.assign(two.find((x) => x.author_name === 'Castillo' && x.house_type === 'A')!, { first_name: 'Jesse', last_name: 'Gabriel' });
+    expect(caWhy(CA_25A, [b, JSON.stringify(two)])).toBe('two members render as one name');
+    expect(caWhy(CA_25A, [b])).toBe('not a bill file and a member list');
+  });
+
+  it('counts No vote recorded from the member rows, as the Votes page prints it, when the summary\'s figure differs', () => {
+    // 2026-11-20: over 43,971 floor votes of 2015-2026 the summary's "abstain" figure is below the member rows on 341
+    // Assembly votes and above them on 16 (AB 3064 of 2024: summary 4, rows and leginfo's page 11); Aye and No differ on 1
+    const [b, l] = caBodies(CA_25A);
+    const vote = (x: Record<string, string | null>) => x.location_code === 'AFLOOR' && x.vote_date_seq === '1186';
+    for (const n of ['4', '12']) {
+      const t = caRender(CA_25A, [caEdit(b, (j) => { j.summary.find(vote)!.abstain = n; }), l]);
+      expect(t.split('\n')[2]).toBe('Aye 54; No 16; No vote recorded 10.');
+    }
+  });
+
+  it('keeps a label the member list does not hold as printed: no name is made up', () => {
+    const [b, l] = caBodies(CA_25A);
+    const less = (JSON.parse(l) as Record<string, string | null>[]).filter((x) => !(x.author_name === 'Gabriel' && x.house_type === 'A'));
+    const t = caRender(CA_25A, [b, JSON.stringify(less)]);
+    expect(t).toMatch(/^Aye \(54\): (?:.*; )?Gabriel(?:;|$)/m);
+    expect(stateRollCallLinesFor(CA_25A, t, 'Gabriel', 'Jesse Gabriel')).toEqual([]);
+  });
+});
+
+describe('state roll-call pages — California lines', () => {
+  const t = caRender(CA_25A);
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(CA_25A, t, 'Gabriel', 'Jesse Gabriel')).toEqual([CA_GABRIEL]);
+    expect(verifyStateRollCallLine(CA_GABRIEL, CA_25A, t, 'Gabriel', 'Jesse Gabriel')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(CA_GABRIEL)).toMatchObject({ state: 'CA', chamber: 'House', vote: 'Aye', name: 'Jesse Gabriel', bill: 'AB 1127' });
+  });
+
+  it('names a member as the member list does, with a Jr. or Sr. and without a degree', () => {
+    // the 2025 list prints Steven Choi's suffix as "Ph.D.": no roster name ends in a degree, so it gave him no line
+    const s = caRender(CA_25S);
+    expect(s).toMatch(/^No vote recorded \(2\): Steven Choi; Lena Gonzalez$/m);
+    expect(stateRollCallLinesFor(CA_25S, s, 'Choi', 'Steven "Steve" Choi')).toEqual([
+      'California Senate vote of 2025-09-12 (2025-2026), AB 1127 - Assembly 3rd Reading AB1127 Gabriel et al. By Blakespear, passed: Steven Choi had no vote recorded.']);
+    expect(caRender(CA_25A)).toMatch(/\bJosé Luis Solache Jr\.(;|$)/m);
+  });
+
+  it('tells members of one family name apart, in the Assembly and across chambers', () => {
+    expect(stateRollCallLinesFor(CA_25A, t, 'Gonzalez', 'Jeff Gonzalez')).toEqual([CA_GABRIEL.replace('Jesse Gabriel voted Aye', 'Jeff Gonzalez voted No')]);
+    expect(stateRollCallLinesFor(CA_25A, t, 'Gonzalez', 'Lena Gonzalez')).toEqual([]);
+    const s = caRender(CA_25S);
+    expect(stateRollCallLinesFor(CA_25S, s, 'Gonzalez', 'Lena Gonzalez')[0]).toMatch(/: Lena Gonzalez had no vote recorded\.$/);
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const vr = (line: string, last = 'Gabriel', full = 'Jesse Gabriel', url = CA_25A) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(vr(CA_GABRIEL.replace('voted Aye', 'voted No'))).toBe('snippet_not_found');
+    expect(vr(CA_GABRIEL.replace('voted Aye', 'had no vote recorded'))).toBe('snippet_not_found');
+    expect(vr(CA_GABRIEL.replace('Jesse Gabriel', 'Mia Bonta'))).not.toBe('verified');
+    expect(vr(CA_GABRIEL, 'Bonta', 'Mia Bonta')).toBe('name_not_present');
+    expect(vr(CA_GABRIEL.replace('AB 1127 -', 'AB 1128 -'))).toBe('snippet_not_found');
+    expect(vr(CA_GABRIEL.replace('2025-09-13', '2025-09-12'))).toBe('snippet_not_found');
+    expect(vr(CA_GABRIEL.replace(', passed:', ', failed:'))).toBe('snippet_not_found');
+    expect(vr(CA_GABRIEL, 'Gabriel', 'Jesse Gabriel', CA_25A.replace('1186', '1187'))).toBe('snippet_not_found');
+    expect(vr(CA_GABRIEL.replace('California Assembly', 'California Senate'))).toBe('snippet_not_found');
+  });
+
+  it('reads the tally as Aye, No and No vote recorded, the last never a Yea or a Nay', () => {
+    const r = readStateRollCallRecord(caBodies(CA_25A), CA_25A)!;
+    expect(r).toMatchObject({ bill: 'AB 1127', date: '2025-09-13', chamber: 'House', rollNum: 1186 });
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length]).toEqual([54, 16, 10]);
+  });
+
+  it('reads the vote from the local copy through the verifier\'s adapter, and from nowhere when the copy is missing', async () => {
+    resetStateRollCallPacing();
+    const asked: string[] = [];
+    const fetchImpl = async (u: string): Promise<Response> => { asked.push(u); return new Response('', { status: 403 }); };
+    const [b, l] = caBodies(CA_25A);
+    const local = (d: string): string | null => (d.endsWith('202520260AB1127.json') ? b : d.endsWith('legislators.json') ? l : null);
+    expect(await fetchStateRollCallText(CA_25A, { fetchImpl, readLocal: local })).toBe(t);
+    expect(await fetchStateRollCallText(CA_25A, { fetchImpl, readLocal: () => null, toText: (h) => h })).toBeNull();
+    // a vote the files refuse hands on no plain text: a data file is not a page
+    expect(await fetchStateRollCallText(CA_25A.replace('1186', '1187'), { fetchImpl, readLocal: local, toText: (h) => h })).toBeNull();
+    expect(asked).toEqual([]);
   });
 });
 

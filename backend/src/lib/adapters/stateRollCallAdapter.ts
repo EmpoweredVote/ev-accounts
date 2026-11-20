@@ -16,6 +16,7 @@
 import { pdfBodyFor, readStateRollCallDocs, readStateRollCallHtml, renderStateRollCall, stateRollCallDocs, stateRollCallMinGapMs } from '../stateRollCallEvidence.js';
 import { extractPdfItems, looksLikePdfBytes } from '../pdfText.js';
 import { fetchWithHostTrust } from './hostTrust.js';
+import { isPubinfoDoc, readPubinfoDoc } from './caPubinfo.js';
 
 export type FetchLike = (url: string, init?: RequestInit) => Promise<Response>;
 export interface StateRollCallDeps {
@@ -29,6 +30,8 @@ export interface StateRollCallDeps {
    * time inside its crawl delay. No vote line verifies against plain text.
    */
   toText?: (html: string) => string;
+  /** Read a local PUBINFO document (California); caPubinfo.readPubinfoDoc when not given. For tests. */
+  readLocal?: (doc: string) => string | null;
   /** Injectable clock and wait, for tests. */
   now?: () => number;
   sleep?: (ms: number) => Promise<void>;
@@ -65,6 +68,13 @@ export async function fetchStateRollCallText(url: string, deps: StateRollCallDep
   const bodies: string[] = [];
   for (const doc of docs) {
     const several = docs.length > 1;
+    // California: a file on this machine (caPubinfo.ts), never a request
+    if (isPubinfoDoc(doc)) {
+      const local = (deps.readLocal ?? readPubinfoDoc)(doc);
+      if (local === null) return null;
+      bodies.push(local);
+      continue;
+    }
     const hit = several ? kept.get(doc) : undefined;
     if (hit && now() - hit.at < KEEP_MS) { bodies.push(hit.body); continue; }
     const body = await fetchOne(doc, gap, deps);
@@ -77,6 +87,8 @@ export async function fetchStateRollCallText(url: string, deps: StateRollCallDep
   }
   const render = readStateRollCallDocs(bodies, url);
   if (render) return render;
+  // a local data file is no page: nothing to hand on as plain text
+  if (docs.every(isPubinfoDoc)) return null;
   const plain = deps.toText?.(bodies[0]).trim();
   return plain || null;
 }

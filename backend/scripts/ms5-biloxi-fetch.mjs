@@ -9,7 +9,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' };
+const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' };
 const OUT = 'data/seed-ms-2026/_assets/biloxi';
 fs.mkdirSync(OUT, { recursive: true });
 

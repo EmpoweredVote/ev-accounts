@@ -31,7 +31,7 @@ import { fileURLToPath } from 'url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const GEOJSON = path.join(HERE, '..', 'data', 'seed-sc-cities-2026', 'columbia-council-districts.geojson');
-const UA = { 'User-Agent': 'ev-accounts-knight/1.0 (civic data seeding; chris@empowered.vote)' };
+const UA = { 'User-Agent': 'ev-accounts-knight/1.0 (civic data seeding; +https://empowered.vote)' };
 
 /** Neighbourhoods taken verbatim from the council's Districts page, with the district that page
  *  assigns them to. Chosen because each is a named place a geocoder can resolve. */

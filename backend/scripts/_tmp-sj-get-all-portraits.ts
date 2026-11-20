@@ -50,7 +50,7 @@ async function getWikiUrl(filename: string): Promise<{url:string,license:string}
 async function downloadWiki(name: string, url: string, ext: string): Promise<string> {
   await new Promise(r => setTimeout(r, 2000));
   const resp = await fetch(url, {
-    headers: { 'User-Agent': 'EmpoweredVote/1.0 (civic data; jmadison@empowered.vote)' }
+    headers: { 'User-Agent': 'EmpoweredVote/1.0 (civic data; +https://empowered.vote)' }
   });
   if (resp.status !== 200) { console.log(`  ${name}: FAILED ${resp.status}`); return ''; }
   const buf = Buffer.from(await resp.arrayBuffer());

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Read each member page: resolve the Ward 3 name, and find the mayor's portrait. */
-const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' };
+const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' };
 const pages = [
   ['ward-3', 'https://biloxi.ms.us/city-council-ward-3/'],
   ['mayor',  'https://biloxi.ms.us/departments/mayor/'],
