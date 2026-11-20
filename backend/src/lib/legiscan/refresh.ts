@@ -42,7 +42,7 @@ export async function runLegiscanRefresh(): Promise<ReturnType<typeof emptyResul
       const r = await importState(apiKey, state, { dryRun, force, sessions });
       total.bridgeRows += r.bridgeRows; total.bills += r.bills; total.votes += r.votes;
       total.cosponsors += r.cosponsors; total.committees += r.committees;
-      total.memberships += r.memberships; total.sessionsSkipped += r.sessionsSkipped;
+      total.sessionsSkipped += r.sessionsSkipped;
       if (r.errors.length) {
         failed.push(state);
         console.error(`[legiscan] ${state}: ${r.errors.length} errors, first: ${r.errors.slice(0, 3).join(' | ')}`);
