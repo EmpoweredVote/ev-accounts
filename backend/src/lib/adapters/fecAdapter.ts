@@ -39,6 +39,57 @@ const MAX_RECORDS_PER_POLITICIAN = parseInt(process.env.MAX_RECORDS_PER_POLITICI
 // forward whatever cursor keys FEC returns in last_indexes.
 const FEC_SORT = process.env.FEC_SORT ?? '-contribution_receipt_amount';
 
+// One Schedule A or Schedule B pull for a committee. The main pull (every line, largest first, capped at
+// MAX_RECORDS_PER_POLITICIAN) is unchanged. The two line passes (CA_0399, 2026-11-19) are small and uncapped:
+//   COMMITTEE_GIFTS_PASS — gifts from PACs (11C) and party committees (11B). Run when the main pull hit the cap,
+//     because the cap keeps only the largest gifts and drops the small PAC ones.
+//   REFUNDS_PASS — refunds the campaign paid back: to individuals (20A), party committees (20B) and other
+//     committees, PACs included (20C). The main pull reads Schedule A only, so before this no FEC refund was
+//     ever stored. Stored as negative rows, which every reader already treats as refunds (REFUND_SQL).
+// 🔴 ONE LINE PER REQUEST. FEC's API takes only the FIRST line_number it is sent and silently ignores the rest
+// (measured 2026-11-19 on C00492645, 2024: 'F3-11C' alone = 29 rows; '11B' then '11C' = 0; '11C' then '11B' = 29).
+// So each pass is a list of single-line pulls.
+export interface FecPass { schedule: 'a' | 'b'; line: string | null; capped: boolean }
+const MAIN_PASS: FecPass = { schedule: 'a', line: null, capped: true };
+const linePass = (schedule: 'a' | 'b', line: string): FecPass => ({ schedule, line, capped: false });
+export const COMMITTEE_GIFTS_PASS: FecPass[] = [linePass('a', 'F3-11B'), linePass('a', 'F3-11C')];
+export const REFUNDS_PASS: FecPass[] = [linePass('b', 'F3-20A'), linePass('b', 'F3-20B'), linePass('b', 'F3-20C')];
+
+/** Prefix on a refund row's source_transaction_id, so a Schedule B sub_id can never meet a Schedule A one. */
+export const REFUND_ID_PREFIX = 'sb:';
+
+/**
+ * refundAsReceipt maps one Schedule B refund (lines 20A-C) into the Schedule A shape normalizeRecord reads, with the
+ * amount negated. Returns null for a row that is not a positive refund (a zero or negative disbursement is a void or
+ * a correction; storing it negated would count it as a donation).
+ */
+export function refundAsReceipt(r: Record<string, unknown>): Record<string, unknown> | null {
+  const amt = r['disbursement_amount'];
+  const sub = r['sub_id'];
+  if (typeof amt !== 'number' || !(amt > 0) || typeof sub !== 'string' || sub === '') return null;
+  return {
+    sub_id: REFUND_ID_PREFIX + sub,
+    contributor_name: r['recipient_name'],
+    entity_type: r['entity_type'],
+    contributor_city: r['recipient_city'],
+    contributor_state: r['recipient_state'],
+    contributor_id: r['recipient_committee_id'],
+    contribution_receipt_amount: -amt,
+    contribution_receipt_date: r['disbursement_date'],
+    committee_id: r['committee_id'],
+    two_year_transaction_period: r['two_year_transaction_period'],
+    memo_code: r['memo_code'],
+    line_number: r['line_number'],
+    file_number: r['file_number'],
+    report_year: r['report_year'],
+    report_type: r['report_type'],
+    load_date: r['load_date'],
+    transaction_id: r['transaction_id'],
+    amendment_indicator: r['amendment_indicator'],
+    election_type: r['election_type'],
+  };
+}
+
 // Per-page delay between Schedule A pages. Raised + env-configurable so a long
 // backfill can stay well under the shared FEC 1,000 req/hr ceiling (the cron and
 // the backfill share one key; near the limit FEC hangs connections rather than
@@ -353,7 +404,8 @@ async function streamPagesForWindow(
   maxDate: string | null,
   minLoadDate: string | null,
   progress: WindowProgress | null,
-  signal?: AbortSignal
+  signal?: AbortSignal,
+  pass: FecPass = MAIN_PASS
 ): Promise<number> {
   // Resume fast-exit: this exact committee+window was already fully fetched before.
   if (minDate && maxDate && progress) {
@@ -365,7 +417,7 @@ async function streamPagesForWindow(
     }
   }
 
-  const baseUrl = 'https://api.open.fec.gov/v1/schedules/schedule_a/';
+  const baseUrl = `https://api.open.fec.gov/v1/schedules/schedule_${pass.schedule}/`;
   let totalExpected = 0;
   let firstPage = true;
   let lastIndexes: FecLastIndexes | null = null;
@@ -378,8 +430,9 @@ async function streamPagesForWindow(
       committee_id: committeeId,
       two_year_transaction_period: cycle,
       per_page: '100',
-      sort: FEC_SORT,
+      sort: pass.schedule === 'a' ? FEC_SORT : '-disbursement_date',
     });
+    if (pass.line) params.set('line_number', pass.line);
     if (minDate) params.set('min_date', minDate);
     if (maxDate) params.set('max_date', maxDate);
     if (minLoadDate) params.set('min_load_date', minLoadDate);
@@ -401,11 +454,14 @@ async function streamPagesForWindow(
 
     // Incremental commit: persist this page's records before fetching the next page.
     if (page.results.length > 0) {
-      await onBatch(page.results);
+      const rows = pass.schedule === 'b'
+        ? page.results.map(refundAsReceipt).filter((x): x is Record<string, unknown> => x !== null)
+        : page.results;
+      if (rows.length > 0) await onBatch(rows);
       counter.fetched += page.results.length;
     }
 
-    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN) {
+    if (pass.capped && counter.fetched >= MAX_RECORDS_PER_POLITICIAN) {
       console.warn(
         `[fecAdapter] Record cap reached at committee ${committeeId}: ${counter.fetched} records. ` +
         `Capping at ${MAX_RECORDS_PER_POLITICIAN}.`
@@ -464,10 +520,11 @@ async function streamWindowAdaptive(
   minLoadDate: string | null,
   depth: number,
   progress: WindowProgress | null,
-  signal?: AbortSignal
+  signal?: AbortSignal,
+  pass: FecPass = MAIN_PASS
 ): Promise<number> {
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, minLoadDate, progress, signal);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, minDate, maxDate, minLoadDate, progress, signal, pass);
   } catch (err) {
     if (!isTooLarge(err) || depth >= MAX_WINDOW_SUBDIVISION_DEPTH || minDate === maxDate) {
       throw err;
@@ -477,8 +534,8 @@ async function streamWindowAdaptive(
     );
     let total = 0;
     for (const [ws, we] of splitRange(minDate, maxDate, 2)) {
-      if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
-      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, minLoadDate, depth + 1, progress, signal);
+      if ((pass.capped && counter.fetched >= MAX_RECORDS_PER_POLITICIAN) || signal?.aborted) break;
+      total += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, minLoadDate, depth + 1, progress, signal, pass);
     }
     return total;
   }
@@ -503,13 +560,16 @@ async function streamAllPagesForCommittee(
   counter: StreamCounter,
   minLoadDate: string | null,
   progress: WindowProgress | null,
-  signal?: AbortSignal
+  signal?: AbortSignal,
+  pass: FecPass = MAIN_PASS
 ): Promise<number> {
+  // Window progress is keyed by committee and window only, so it belongs to the main pull alone.
+  if (pass !== MAIN_PASS) progress = null;
   // Fast path — whole cycle (or incremental-since-cursor) in one query. Common case;
   // no window progress tracking (a whole-cycle window that completes means the pair
   // is done anyway).
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, minLoadDate, null, signal);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, minLoadDate, null, signal, pass);
   } catch (err) {
     if (!isTooLarge(err)) throw err;
     console.warn(
@@ -521,8 +581,8 @@ async function streamAllPagesForCommittee(
   const [cycleStart, cycleEnd] = cycleDateRange(cycle);
   let totalExpected = 0;
   for (const [ws, we] of splitRange(cycleStart, cycleEnd, 8)) {
-    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
-    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, minLoadDate, 0, progress, signal);
+    if ((pass.capped && counter.fetched >= MAX_RECORDS_PER_POLITICIAN) || signal?.aborted) break;
+    totalExpected += await streamWindowAdaptive(committeeId, cycle, apiKey, onBatch, counter, ws, we, minLoadDate, 0, progress, signal, pass);
   }
   return totalExpected;
 }
@@ -574,7 +634,64 @@ async function streamAllPages(
     totalExpected += count;
   }
 
+  // CA_0399 line passes, kept off the nightly path unless they can find something (see FecPass): the uncapped
+  // PAC pass only when the cap cut the main pull short; the refund pass only on a first load or when the main
+  // pull found new rows (FEC loaded a report since the cursor). They do not change the completeness counters:
+  // their rows are a re-read of lines the main pull also covers, or Schedule B rows it never counted.
+  const passes = linePassesFor({ capped: counter.fetched >= MAX_RECORDS_PER_POLITICIAN, firstLoad: minLoadDate === null, fetched: counter.fetched });
+  if (passes.length > 0 && !signal?.aborted) {
+    const extra = await streamLinePasses(committeeIds, cycle, apiKey ?? '', onBatch, passes, minLoadDate, signal);
+    console.log(`[fecAdapter] line passes for candidate ${candidateId} cycle ${cycle}: ${passes.map(passName).join(', ')} — ${extra} row(s)`);
+  }
+
   return { totalExpected, totalFetched: counter.fetched };
+}
+
+const passName = (p: FecPass): string => p.line ?? 'main';
+
+/** Which line passes a nightly pair runs, from what its main pull did. Pure; exported for tests. */
+export function linePassesFor(main: { capped: boolean; firstLoad: boolean; fetched: number }): FecPass[] {
+  const out: FecPass[] = [];
+  if (main.capped) out.push(...COMMITTEE_GIFTS_PASS);
+  if (main.firstLoad || main.fetched > 0) out.push(...REFUNDS_PASS);
+  return out;
+}
+
+/** Run the given line passes over every committee; returns the rows FEC reported. */
+async function streamLinePasses(
+  committeeIds: string[],
+  cycle: string,
+  apiKey: string,
+  onBatch: BatchSink,
+  passes: FecPass[],
+  minLoadDate: string | null,
+  signal?: AbortSignal
+): Promise<number> {
+  const counter: StreamCounter = { fetched: 0 };
+  for (const pass of passes) {
+    for (const committeeId of committeeIds) {
+      if (signal?.aborted) return counter.fetched;
+      await streamAllPagesForCommittee(committeeId, cycle, apiKey, onBatch, counter, minLoadDate, null, signal, pass);
+    }
+  }
+  return counter.fetched;
+}
+
+/**
+ * fetchFecLinePasses — the whole-cycle line passes for one source, with no load-date cursor. Used by
+ * scripts/fec-burst-gaps-backfill.ts to fill refunds and the giver id on rows stored before CA_0399.
+ */
+export async function fetchFecLinePasses(
+  ps: PoliticianSource,
+  cycle: string,
+  onBatch: BatchSink,
+  passes: FecPass[],
+  signal?: AbortSignal
+): Promise<{ committees: number; fetched: number }> {
+  const apiKey = process.env.FEC_API_KEY ?? '';
+  const committeeIds = await resolveCommitteeIds(ps.external_id, cycle, apiKey);
+  const fetched = await streamLinePasses(committeeIds, cycle, apiKey, onBatch, passes, null, signal);
+  return { committees: committeeIds.length, fetched };
 }
 
 /**
@@ -785,6 +902,10 @@ const FEC_KEPT_FIELDS = [
   // amendment/election fields the bulk path (fecBulkLoader.ts mapBulkRow) now retains.
   // Forward-only — no re-ingest, no backfill, no behavioural change to any existing query.
   'amendment_indicator', 'election_type',
+  // CA_0399: the giving committee's FEC id (PAC gifts; refunds carry the refunded committee's id here) and the
+  // form line (11A individuals, 11B parties, 11C PACs, 20A-C refunds). Filled into src_contributor_committee_id and
+  // fec_line_number by contributions_fill_typed; the JSON itself is stripped from FEC rows (CA_0398).
+  'contributor_id', 'line_number',
 ] as const;
 
 /** Keep only the fields we read or need for audit — see FEC_KEPT_FIELDS. */
@@ -1159,7 +1280,11 @@ async function upsertBatch(
     ON CONFLICT (data_source, source_transaction_id)
     DO UPDATE SET
       updated_at = NOW(),
-      donor_name_normalized = EXCLUDED.donor_name_normalized
+      donor_name_normalized = EXCLUDED.donor_name_normalized,
+      -- CA_0399: re-send the JSON so contributions_fill_typed refills every typed column from it (a stored FEC row
+      -- keeps no JSON, so this is how a re-fetched row gains the giver id and line). contributions_strip_fec_raw then
+      -- drops it again. The row was being rewritten for updated_at anyway.
+      raw_record = EXCLUDED.raw_record
     RETURNING (xmax = 0) AS is_insert
   `;
 
