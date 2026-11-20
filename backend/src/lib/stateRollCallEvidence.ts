@@ -2760,6 +2760,255 @@ export function explainMinnesotaVote(bodies: string[], url: string): MnVoteRecor
   try { return readMinnesota(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Nevada: NELIS, three fragments per vote (the members, the bill's vote list, the bill's page) ──────────────────────────
+// www.leg.state.nv.us (robots.txt read 2026-11-19: disallows */Reports/* and a few other paths, never /App/NELIS/; no
+// Crawl-delay). NELIS holds every session from 2011. The Open States rows carry 2017's votes on the old /Session/79th2017/
+// Reports/ pages (moved to an archive host, 404, and a path robots.txt disallows) and hold no roll call for 2019 or 2021.
+// A bill's Votes tab (/Bill/FillSelectedBillTab?selectedTab=Votes&billKey=12727) links its vote list,
+// /Bill/GetBillVotes?billKey=12727&voteTypeId=3 ("Final Passage", the only kind it has shown, 2017-2025): one block per
+// roll call, headed by the chamber and the version voted on ("Senate (1st Reprint)"), with the result ("Passed: Yes" or
+// "Passed: No"), the day ("Thursday, May 22, 2025") and the count of each kind (All, Yea, Nay, Excused, Not Voting, Absent),
+// each linking the vote's member list, /Bill/GetBillVoteMembers?voteKey=12948&voteResultPanel=All. That fragment prints
+// each member as "Anderson, Natha (Yea )", family name first and given name in full, and is the page a person can read.
+// It names no bill and no chamber, so the address carries the bill's key as a parameter the site ignores, and the bill
+// after a #:
+//   https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/GetBillVoteMembers?voteKey=12948&voteResultPanel=All&billKey=12727#SB404
+// The reader reads that fragment, the bill's vote list (the vote must be in it exactly once) and the bill's page
+// (/Bill/12727/Overview, whose heading must be the bill and whose session label must be the address's session). A bill
+// voted twice in one chamber on one version (a vote that failed for want of two thirds, then passed on reconsideration)
+// is two roll calls with two keys; both are votes on the bill.
+//
+//   Nevada Senate vote 12636 (83rd2025), SB 404, 2025-04-22.
+//   Question: Final Passage (1st Reprint) - Passed
+//   Yea 21; Nay 0; Excused 0; Not voting 0; Absent 0.
+//   Yea (21): Edgar Flores; …
+//   Nevada Senate vote 12636 (83rd2025), SB 404 - Final Passage (1st Reprint) - Passed (2025-04-22): Edgar Flores voted Yea.
+//
+// A vote is read only when every kind lists the count the vote list prints for it, All is their sum and not more than the
+// chamber's seats, every member row says the same kind in its class and its text, and no member is listed twice. The
+// Assembly is "House" inside the record and "Assembly" in the render and the line.
+
+export const NV_VOTES = ['Yea', 'Nay', 'Excused', 'Not voting', 'Absent'] as const;
+export type NvVote = (typeof NV_VOTES)[number];
+const NV_SITE = 'https://www.leg.state.nv.us/App/NELIS/REL/';
+/** robots.txt states no Crawl-delay (2026-11-19): one request a second is ours. */
+const NV_GAP_MS = 1_000;
+const NV_SIZE: Record<Chamber, number> = { House: 42, Senate: 21 };
+/** Open States' session identifier -> the NELIS session folder. */
+export const NV_SESSIONS: Readonly<Record<string, string>> = {
+  '79': '79th2017', '80': '80th2019', '2020Special31': '31st2020Special', '2020Special32': '32nd2020Special', '81': '81st2021',
+  '2021Special33': '33rd2021Special', '82': '82nd2023', '2023Special34': '34th2023Special', '2023Special35': '35th2023Special',
+  '83': '83rd2025', '2025Special36': '36th2025Special', '84': '84th2027',
+};
+const NV_URL = /^https:\/\/www\.leg\.state\.nv\.us\/App\/NELIS\/REL\/(\d{2}(?:st|nd|rd|th)20\d{2}(?:Special)?)\/Bill\/GetBillVoteMembers\?voteKey=([1-9]\d{0,6})&voteResultPanel=All&billKey=([1-9]\d{0,6})#((?:A|S)(?:B|R|JR|CR))([1-9]\d{0,3})$/;
+/** Each kind as the vote list's panel names it, and as a member row's class and text print it. */
+const NV_KIND: Record<NvVote, { panel: string; cls: string[]; text: string }> = {
+  Yea: { panel: 'Yea', cls: ['yea'], text: 'Yea' },
+  Nay: { panel: 'Nay', cls: ['nay'], text: 'Nay' },
+  Excused: { panel: 'Excused', cls: ['excused'], text: 'Excused' },
+  'Not voting': { panel: 'NotVoting', cls: ['notvoting', 'not-voting'], text: 'Not Voting' },
+  Absent: { panel: 'Absent', cls: ['absent'], text: 'Absent' },
+};
+const NV_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+export interface NvVoteRef { state: 'NV'; stateName: 'Nevada'; session: string; voteKey: number; billKey: number; bill: string }
+export interface NvVoteRecord { state: 'NV'; stateName: 'Nevada'; chamber: Chamber; session: string; voteKey: number; bill: string; question: string; date: string; groups: Record<NvVote, string[]> }
+export interface NvVoteLine extends Omit<NvVoteRecord, 'groups'> { name: string; vote: NvVote }
+
+export function parseNevadaVoteUrl(url: string): NvVoteRef | null {
+  const m = NV_URL.exec(url.trim());
+  if (!m) return null;
+  return { state: 'NV', stateName: 'Nevada', session: m[1], voteKey: Number(m[2]), billKey: Number(m[3]), bill: `${m[4]} ${m[5]}` };
+}
+
+/** The address of one vote's member list, as cited. */
+export function nevadaVoteUrl(session: string, voteKey: number, billKey: number, bill: string): string {
+  return `${NV_SITE}${session}/Bill/GetBillVoteMembers?voteKey=${voteKey}&voteResultPanel=All&billKey=${billKey}#${bill.replace(/\s+/g, '').toUpperCase()}`;
+}
+
+export function nevadaVoteListUrl(session: string, billKey: number): string {
+  return `${NV_SITE}${session}/Bill/GetBillVotes?billKey=${billKey}&voteTypeId=3`;
+}
+
+export function nevadaBillPageUrl(session: string, billKey: number): string {
+  return `${NV_SITE}${session}/Bill/${billKey}/Overview`;
+}
+
+function nevadaDocs(r: NvVoteRef): string[] {
+  return [nevadaVoteUrl(r.session, r.voteKey, r.billKey, r.bill).replace(/#.*$/, ''), nevadaVoteListUrl(r.session, r.billKey), nevadaBillPageUrl(r.session, r.billKey)];
+}
+
+/** One roll call of a bill's vote list (GetBillVotes). */
+export interface NvListedVote { voteKey: number; chamber: Chamber; version: string; passed: boolean; date: string; counts: Record<NvVote | 'All' | 'Vacant', number> }
+
+/** Every roll call a bill's vote list prints, in order. Throws on a block it cannot read: nothing is guessed. */
+export function nvVoteList(html: string): NvListedVote[] {
+  const out: NvListedVote[] = [];
+  const starts = [...html.matchAll(/<div id="billVoteTitleForVoteKey (\d+)" class="vote-revision">/g)];
+  if ((html.match(/billVoteTitleForVoteKey/g) ?? []).length !== starts.length) throw new Error('a vote block the reader cannot read');
+  for (const [i, s] of starts.entries()) {
+    const voteKey = Number(s[1]);
+    const before = html.slice(0, s.index!);
+    const h = /<h2 class="h4">([^<]*)<\/h2>\s*$/.exec(before);
+    const head = h ? /^(Assembly|Senate) \((As Introduced|\d{1,2}(?:st|nd|rd|th) Reprint)\)$/.exec(squash(h[1])) : null;
+    if (!head) throw new Error(`vote ${voteKey} has no chamber heading`);
+    const block = html.slice(s.index!, starts[i + 1]?.index ?? html.length);
+    const res = [...block.matchAll(/<span>\s*Passed\s*<\/span>\s*<span>\s*(Yes|No)\b[^<]*<\/span>/g)];
+    const day = [...block.matchAll(/Date\s*<span>\s*(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), ([A-Z][a-z]+) (\d{1,2}), (\d{4})\s*<\/span>/g)];
+    if (res.length !== 1 || day.length !== 1) throw new Error(`vote ${voteKey} prints no one result and day`);
+    const month = NV_MONTHS.indexOf(day[0][1]) + 1;
+    if (!month) throw new Error(`vote ${voteKey}: a month the reader does not know: ${day[0][1]}`);
+    const counts = { Vacant: 0 } as Record<NvVote | 'All' | 'Vacant', number>;
+    // a seat empty on the day has its own panel, Vacant, from 2019 (80th 2019 SB 6556: All 42, Yea 40, Excused 1, Vacant 1)
+    const panels = [...block.matchAll(/voteResultPanel=([A-Za-z]+)"[^>]*>\s*[A-Za-z ]+:\s*(\d+)\s*<\/a>/g)];
+    const vacantPanels = panels.filter((p) => p[1] === 'Vacant').length;
+    for (const p of panels) {
+      if (p[1] === 'Vacant') { counts.Vacant = Number(p[2]); continue; }
+      const kind = p[1] === 'All' ? 'All' : NV_VOTES.find((v) => NV_KIND[v].panel === p[1]);
+      if (!kind) throw new Error(`vote ${voteKey}: a kind of vote the reader does not know: ${p[1]}`);
+      if (kind in counts) throw new Error(`vote ${voteKey}: the count of ${p[1]} is printed twice`);
+      counts[kind] = Number(p[2]);
+    }
+    if ((block.match(/voteResultPanel=/g) ?? []).length !== panels.length || vacantPanels > 1 || panels.length !== 1 + NV_VOTES.length + vacantPanels) throw new Error(`vote ${voteKey} prints no full tally`);
+    for (const p of panels) if (!block.includes(`voteKey=${voteKey}&amp;voteResultPanel=${p[1]}`)) throw new Error(`vote ${voteKey} links another vote's members`);
+    out.push({ voteKey, chamber: head[1] === 'Assembly' ? 'House' : 'Senate', version: head[2], passed: res[0][1] === 'Yes',
+      date: `${day[0][3]}-${String(month).padStart(2, '0')}-${day[0][2].padStart(2, '0')}`, counts });
+  }
+  return out;
+}
+
+/** "Anderson, Natha" -> "Natha Anderson"; "Cruz-Crawford, Michelee \"Shelly\"" -> "Michelee \"Shelly\" Cruz-Crawford". Null with no comma. */
+export function nvMemberName(label: string): string | null {
+  const m = /^([^,]+),\s*(\S.*)$/.exec(squash(label));
+  return m ? `${m[2].trim()} ${m[1].trim()}` : null;
+}
+
+/** The ordinal and kind a session folder names: "83rd2025" -> 83rd (2025) Session; "31st2020Special" -> 31st (2020) Special Session. */
+function nvSessionLabelFits(label: string, session: string): boolean {
+  const s = /^(\d{2}(?:st|nd|rd|th))(20\d{2})(Special)?$/.exec(session);
+  const l = /^(\d{2}(?:st|nd|rd|th)) \((20\d{2})\) (Special )?Session$/.exec(squash(label));
+  return !!s && !!l && s[1] === l[1] && !!s[3] === !!l[3];
+}
+
+/** The vote, or why it was refused (the first check that failed). */
+function readNevada(bodies: string[], r: NvVoteRef): NvVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 3) return fail('not a member list, a vote list and a bill page');
+  const [membersHtml, listHtml, pageHtml] = bodies;
+  const h1 = [...pageHtml.matchAll(/<h1>\s*([^<]*?)\s*<\/h1>/g)];
+  if (h1.length !== 1 || squash(h1[0][1]).replace(/\s+/g, '').toUpperCase() !== r.bill.replace(/\s+/g, '')) return fail(`the bill page is for ${h1.map((x) => squash(x[1])).join(', ') || 'no bill'}, not ${r.bill}`);
+  const label = [...pageHtml.matchAll(/class="[^"]*\bsession-year\b[^"]*">\s*([^<]*?)\s*<\/div>/g)];
+  if (label.length !== 1 || !nvSessionLabelFits(label[0][1], r.session)) return fail(`the bill page is not of the ${r.session} session`);
+  let listed: NvListedVote[];
+  try { listed = nvVoteList(listHtml); } catch (e) { return fail(`the vote list did not read: ${e instanceof Error ? e.message : e}`); }
+  const hit = listed.filter((v) => v.voteKey === r.voteKey);
+  if (hit.length !== 1) return fail(`the bill's vote list holds vote ${r.voteKey} ${hit.length} times`);
+  const v = hit[0];
+  const rows = [...membersHtml.matchAll(/<div class="vote-([a-z-]+) vote pl-1">\s*<i class="fas fa-[a-z-]+" aria-hidden="true"><\/i>\s*([^<(]+?)\s*\(\s*([A-Za-z ]+?)\s*\)\s*<\/div>/g)];
+  // an empty seat is a row of its own with no icon: "District No. 17 (Vacant)"
+  const vacant = [...membersHtml.matchAll(/<div class="vote-vacant vote pl-1">\s*District No\. \d{1,2}\s*\(Vacant\)\s*<\/div>/g)].length;
+  if ((membersHtml.match(/<div class="vote-/g) ?? []).length !== rows.length + vacant) return fail('a member row the reader cannot read');
+  if (vacant !== v.counts.Vacant) return fail(`${vacant} vacant seats listed and the vote list prints ${v.counts.Vacant}`);
+  const labels = Object.fromEntries(NV_VOTES.map((k) => [k, [] as string[]])) as Record<NvVote, string[]>;
+  for (const row of rows) {
+    const kind = NV_VOTES.find((k) => NV_KIND[k].cls.includes(row[1]));
+    if (!kind) return fail(`a kind of vote the reader does not know: ${row[1]}`);
+    if (squash(row[3]) !== NV_KIND[kind].text) return fail(`a member row that disagrees with itself: ${squash(row[2])}`);
+    const name = nvMemberName(htmlText(row[2]));
+    if (!name) return fail(`a member label with no given name: ${squash(row[2])}`);
+    labels[kind].push(name);
+  }
+  for (const k of NV_VOTES) if (labels[k].length !== v.counts[k]) return fail(`the ${k} group lists ${labels[k].length} members and the vote list prints ${v.counts[k]}`);
+  const all = NV_VOTES.flatMap((k) => labels[k]);
+  if (all.length + vacant !== v.counts.All) return fail(`${all.length} members and ${vacant} vacant seats listed and All prints ${v.counts.All}`);
+  if (all.length + vacant > NV_SIZE[v.chamber]) return fail('more members than the chamber has');
+  if (new Set(all.map((n) => fold(n))).size !== all.length) return fail('a member is listed twice');
+  const question = `Final Passage (${v.version}) - ${v.passed ? 'Passed' : 'Failed'}`;
+  return { state: 'NV', stateName: 'Nevada', chamber: v.chamber, session: r.session, voteKey: r.voteKey, bill: r.bill, question, date: v.date, groups: labels };
+}
+
+const NV_SAID: Record<NvVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', Excused: 'was excused', 'Not voting': 'did not vote', Absent: 'was absent' };
+const nvChamber = (c: Chamber): string => (c === 'House' ? 'Assembly' : 'Senate');
+
+export function renderNevadaVote(v: NvVoteRecord): string {
+  return [
+    `Nevada ${nvChamber(v.chamber)} vote ${v.voteKey} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    NV_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...NV_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const NV_RENDER_HEAD = /^Nevada (Assembly|Senate) vote (\d+) \((\d{2}(?:st|nd|rd|th)20\d{2}(?:Special)?)\), ([A-Z]{2,3} \d{1,4}), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseNevadaRender(text: string, url: string): NvVoteRecord | null {
+  const r = parseNevadaVoteUrl(url);
+  const rows = text.split('\n');
+  const h = NV_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + NV_VOTES.length) return null;
+  if (Number(h[2]) !== r.voteKey || h[3] !== r.session || h[4] !== r.bill) return null;
+  const groups = {} as Record<NvVote, string[]>;
+  for (const [i, v] of NV_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== NV_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'NV', stateName: 'Nevada', chamber: h[1] === 'Assembly' ? 'House' : 'Senate', session: r.session, voteKey: r.voteKey, bill: r.bill, date: h[5], question: q[1], groups };
+}
+
+const NV_LINE = /^Nevada (Assembly|Senate) vote (\d+) \((\d{2}(?:st|nd|rd|th)20\d{2}(?:Special)?)\), ([A-Z]{2,3} \d{1,4}) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Yea|voted Nay|was excused|did not vote|was absent)\.$/;
+
+export function formatNevadaVoteLine(l: NvVoteLine): string {
+  return `Nevada ${nvChamber(l.chamber)} vote ${l.voteKey} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${NV_SAID[l.vote]}.`;
+}
+
+function parseNevadaLine(text: string): NvVoteLine | null {
+  const m = NV_LINE.exec(text.trim());
+  const vote = m ? NV_VOTES.find((v) => NV_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'NV', stateName: 'Nevada', chamber: m[1] === 'Assembly' ? 'House' : 'Senate', voteKey: Number(m[2]), session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifyNevadaLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseNevadaLine(line);
+  const r = parseNevadaRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.voteKey !== r.voteKey || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = NV_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function nevadaLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseNevadaRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of NV_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatNevadaVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from its member list, the bill's vote list and the bill's page. Null when any check fails. */
+export function readNevadaVote(bodies: string[], url: string): NvVoteRecord | null {
+  const v = explainNevadaVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readNevadaVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainNevadaVote(bodies: string[], url: string): NvVoteRecord | { refused: string } {
+  const r = parseNevadaVoteUrl(url);
+  if (!r) return { refused: 'not a Nevada vote address' };
+  try { return readNevada(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's and Minnesota's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\/|^https:\/\/www\.mnsenate\.gov\/journals\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
@@ -2787,11 +3036,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseColoradoVoteUrl(url)) return CO_GAP_MS;
   if (parseNorthDakotaVoteUrl(url)) return ND_GAP_MS;
   if (parseMinnesotaVoteUrl(url)) return MN_GAP_MS;
+  if (parseNevadaVoteUrl(url)) return NV_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null;
 }
 
 /**
@@ -2815,6 +3065,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (nd) return northDakotaDocs(nd);
   const mn = parseMinnesotaVoteUrl(url);
   if (mn) return minnesotaDocs(mn);
+  const nv = parseNevadaVoteUrl(url);
+  if (nv) return nevadaDocs(nv);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -2851,6 +3103,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseMinnesotaVoteUrl(url)) {
     const v = readMinnesotaVote(bodies, url);
     return v ? renderMinnesotaVote(v) : null;
+  }
+  if (parseNevadaVoteUrl(url)) {
+    const v = readNevadaVote(bodies, url);
+    return v ? renderNevadaVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -2917,6 +3173,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.page, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [] } } : null;
   }
+  if (parseNevadaVoteUrl(url)) {
+    // Nevada: members by the full names the member list prints, given name first; the roll-call number is the vote key.
+    // Excused, not voting and absent are one group here.
+    const v = readNevadaVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteKey, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups.Excused, ...v.groups['Not voting'], ...v.groups.Absent] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -2941,7 +3204,8 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | null {
+  if (parseNevadaVoteUrl(url)) return parseNevadaRender(text, url);
   if (parseMinnesotaVoteUrl(url)) return parseMinnesotaRender(text, url);
   if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
   if (parseNorthDakotaVoteUrl(url)) return parseNorthDakotaRender(text, url);
@@ -2978,8 +3242,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -3062,6 +3326,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseColoradoVoteUrl(url)) return verifyColoradoLine(line, url, text, lastName, fullName);
   if (parseNorthDakotaVoteUrl(url)) return verifyNorthDakotaLine(line, url, text, lastName, fullName);
   if (parseMinnesotaVoteUrl(url)) return verifyMinnesotaLine(line, url, text, lastName, fullName);
+  if (parseNevadaVoteUrl(url)) return verifyNevadaLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -3091,6 +3356,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseColoradoVoteUrl(url)) return coloradoLinesFor(url, text, lastName, fullName);
   if (parseNorthDakotaVoteUrl(url)) return northDakotaLinesFor(url, text, lastName, fullName);
   if (parseMinnesotaVoteUrl(url)) return minnesotaLinesFor(url, text, lastName, fullName);
+  if (parseNevadaVoteUrl(url)) return nevadaLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];
@@ -3127,7 +3393,11 @@ export function fullNameLabelFits(printed: string, lastName: string, fullName: s
     const given = [...fs, ...quoted].filter(Boolean);
     if (!given.length) continue;
     const whole = printedGiven.filter((w) => w.length > 1);
-    const fits = (w: string) => given.some((g) => g.length > 1 && (g === w || getNameVariants(g).includes(w) || getNameVariants(w).includes(g)));
+    // Initials printed run together are the same initials printed apart, in order: Nevada's NELIS prints "PK O’Neill"
+    // for "P. K. O'Neill" (2026-11-19). Only all of the given initials, never a part of them.
+    const initials = fs.filter((g) => g.length === 1).join('');
+    const fits = (w: string) => (initials.length > 1 && w === initials)
+      || given.some((g) => g.length > 1 && (g === w || getNameVariants(g).includes(w) || getNameVariants(w).includes(g)));
     if (printedQuoted.some(fits)) return true;
     if (whole.length) {
       if (whole.some(fits)) return true;

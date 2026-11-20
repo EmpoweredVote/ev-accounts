@@ -35,7 +35,7 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -53,8 +53,13 @@ interface StateIndex {
   minGapMs: number;
   /** The address of the bill's vote list, or null when the session or bill is not one this site can name. */
   billUrl: (_session: string, _bill: string) => string | null;
-  /** Read the vote list. Throws when the document is not the bill asked for. */
-  read: (_body: string, _session: string, _bill: string) => BillIndex;
+  /** Read the vote list. Throws when the document is not the bill asked for. `more`: the bodies of follow(body), in order. */
+  read: (_body: string, _session: string, _bill: string, _more?: string[]) => BillIndex;
+  /**
+   * Documents the vote list only links (Nevada: the Votes tab links one list per kind of vote), fetched after it and
+   * handed to read() as `more`. Throws on a link it does not know.
+   */
+  follow?: (_body: string, _session: string, _bill: string) => string[];
   /**
    * A site that names a bill's vote list by its own bill id (South Dakota): the session's bill list, read first, and
    * the vote-list address taken from it. Throws when the list does not hold the bill exactly once.
@@ -65,6 +70,63 @@ interface StateIndex {
   voteFromIndex?: (_body: string, _session: string, _bill: string, _v: IndexedVoteVia) => string;
   /** An address whose redirect is the answer (Minnesota's House page resolver): kept as "LOCATION <address>", not followed. */
   manualRedirect?: (_url: string) => boolean;
+}
+
+// ── Nevada ────────────────────────────────────────────────────────────────────────────────────────────────
+const NV_REL = 'https://www.leg.state.nv.us/App/NELIS/REL/';
+const NV_BILL = /^((?:A|S)(?:B|R|JR|CR))\s*0*([1-9]\d{0,3})$/i;
+
+/** The session's bill list (every bill and resolution, each linked by its key). */
+export function nvListUrl(session: string): string | null {
+  const s = NV_SESSIONS[session];
+  return s ? `${NV_REL}${s}/HomeBill/BillsTab?selectedTab=List&Filters.PageSize=5000` : null;
+}
+
+/** The bill's Votes tab, by its key in the session's bill list. Throws unless the list holds the bill exactly once. */
+export function nvBillUrlFromList(list: string, session: string, bill: string): string {
+  const s = NV_SESSIONS[session];
+  const b = NV_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+  if (!s || !b) throw new Error(`Nevada: no session ${session} or no bill ${bill}`);
+  const tag = `${b[1].toUpperCase()}${b[2]}`;
+  const hits = [...list.matchAll(new RegExp(`href="/App/NELIS/REL/${s}/Bill/(\\d+)/Overview">\\s*${tag}\\s*<`, 'g'))];
+  if (hits.length !== 1) throw new Error(`Nevada ${s}: the bill list holds ${tag} ${hits.length} times`);
+  return `${NV_REL}${s}/Bill/FillSelectedBillTab?selectedTab=Votes&billKey=${hits[0][1]}`;
+}
+
+const nvKeyOf = (url: string): number => Number(/[?&]billKey=(\d+)/.exec(url)?.[1]);
+
+/** The Votes tab's lists: Final Passage (voteTypeId 3) is the only kind read; any other kind throws, to be looked at. */
+export function nvFollow(tab: string, session: string, bill: string): string[] {
+  const s = NV_SESSIONS[session];
+  const links = [...tab.matchAll(/<a href="\/App\/NELIS\/REL\/([^/]+)\/Bill\/GetBillVotes\?billKey=(\d+)&amp;voteTypeId=(\d+)">([^<]*)<\/a>/g)];
+  if ((tab.match(/GetBillVotes/g) ?? []).length !== links.length) throw new Error(`Nevada ${bill}: a vote list link the reader cannot read`);
+  return links.map((l) => {
+    if (l[1] !== s) throw new Error(`Nevada ${bill}: the Votes tab links session ${l[1]}, not ${s}`);
+    if (l[3] !== '3' || l[4].trim() !== 'Final Passage') throw new Error(`Nevada ${bill}: a kind of vote the fetch does not know: ${l[3]} ${l[4].trim()}`);
+    return nevadaVoteListUrl(s!, Number(l[2]));
+  });
+}
+
+/** Every Final Passage roll call of the bill's vote list, cited as its member list (stateRollCallEvidence.ts). */
+export function nvReadVotes(tab: string, session: string, bill: string, more: string[] = []): BillIndex {
+  const s = NV_SESSIONS[session];
+  const b = NV_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+  if (!s || !b) throw new Error(`Nevada: no session ${session} or no bill ${bill}`);
+  // a bill never voted on: the tab prints "No Votes Recorded" and links nothing
+  const none = /<div class="alert alert-info">\s*No Votes Recorded\s*<\/div>/.test(tab);
+  if (none && !more.length && !/GetBillVotes/.test(tab)) return { floor: [], committee: 0, voice: 0 };
+  if (none || !/<div id="vote-revisions">/.test(tab)) throw new Error(`Nevada ${bill}: not a Votes tab`);
+  const floor: IndexedVote[] = [];
+  for (const body of more) {
+    for (const v of nvVoteList(body)) {
+      const key = nvKeyOf(tab.replace(/&amp;/g, '&'));
+      if (!key) throw new Error(`Nevada ${bill}: the Votes tab names no bill key`);
+      floor.push({ url: nevadaVoteUrl(s, v.voteKey, key, `${b[1]}${b[2]}`),
+        motion: `${v.chamber === 'House' ? 'Assembly' : 'Senate'} final passage (${v.version}) ${v.passed ? 'passed' : 'failed'}`,
+        tally: [v.counts.Yea, v.counts.Nay, v.counts.Excused + v.counts['Not voting'] + v.counts.Absent] });
+    }
+  }
+  return { floor, committee: 0, voice: 0 };
 }
 
 const UT_BILL = /^([HS])\.?([A-Z])?\.?([A-Z])?\.?\s*0*(\d{1,4})$/i;
@@ -472,6 +534,19 @@ function headOverHttp1(url: string): Promise<Response> {
 }
 
 export const INDEX: Record<string, StateIndex> = {
+  // www.leg.state.nv.us, NELIS (read 2026-11-19; robots.txt disallows */Reports/*, never /App/NELIS/, no Crawl-delay). The
+  // Open States dump holds no roll call for 2019 or 2021, and its 2017 vote addresses are /Session/79th2017/Reports/ pages
+  // (404 on the archive host, and disallowed). NELIS holds every session from 2011: the session's bill list gives a bill's
+  // key, its Votes tab links the Final Passage list (nvFollow), and each roll call is read from its member list with the
+  // vote list and the bill's page (stateRollCallEvidence.ts).
+  NV: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay: one a second is ours
+    billUrl: () => null,
+    listUrl: nvListUrl,
+    billUrlFromList: nvBillUrlFromList,
+    follow: nvFollow,
+    read: nvReadVotes,
+  },
   // www.revisor.mn.gov (read 2026-11-19; robots.txt disallows nothing under /bills/, no Crawl-delay). The Open States dump
   // holds no roll call for 2020's special sessions, 2021-2022 or 2021's special session, and its vote addresses for
   // 2017-2020 are House pages that now answer 500. A bill's page lists each chamber's actions with the tally of each
@@ -893,7 +968,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
       : parseKansasVoteUrl(v.url) ? explainKansasVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseColoradoVoteUrl(v.url) ? explainColoradoVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseNorthDakotaVoteUrl(v.url) ? explainNorthDakotaVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseMinnesotaVoteUrl(v.url) ? explainMinnesotaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseMinnesotaVoteUrl(v.url) ? explainMinnesotaVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseNevadaVoteUrl(v.url) ? explainNevadaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
@@ -1020,7 +1096,10 @@ async function main(): Promise<void> {
       if (list) url = idx.billUrlFromList(await get(list, idx.minGapMs), session, bill);
     }
     if (!url) throw new Error(`${ST} has no vote-list address for session ${session}, bill ${bill}`);
-    const bi = idx.read(await get(url, idx.minGapMs), session, bill);
+    const first = await get(url, idx.minGapMs);
+    const more: string[] = [];
+    for (const u of idx.follow?.(first, session, bill) ?? []) more.push(await get(u, idx.minGapMs));
+    const bi = idx.read(first, session, bill, more);
     // a vote the list does not link: its file from the index page that does, then read like a linked vote (tally compared)
     for (const v of bi.viaIndex ?? []) {
       if (!idx.voteFromIndex) throw new Error(`${ST} has votes on an index page and no reader for it`);

@@ -9,6 +9,7 @@ import {
   explainKansasVote, ksQuestionIsOnTheBill, ksMemberName, parseKansasVoteUrl,
   explainColoradoVote, coQuestionIsOnTheBill, coMemberName, coMembers, coBillTag, parseColoradoVoteUrl,
   explainNorthDakotaVote, ndQuestionIsOnTheBill, ndMembers, ndMemberNames, parseNorthDakotaVoteUrl,
+  explainNevadaVote, nvMemberName, nvVoteList, parseNevadaVoteUrl,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
@@ -1735,5 +1736,174 @@ describe('state roll-call pages — Minnesota lines', () => {
     const r = readStateRollCallRecord(mnDocs(MN_S), MN_S)!;
     expect(r).toMatchObject({ bill: 'SF 2909', date: '2023-04-14', chamber: 'Senate', rollNum: 5105 });
     expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting']]).toEqual([34, 33, []]);
+  });
+});
+
+// ── Nevada ────────────────────────────────────────────────────────────────────────────────────────────────
+// Saved 2026-11-19 from www.leg.state.nv.us (NELIS) with the verifier's own user-agent. The member list prints no party.
+const NV = 'https://www.leg.state.nv.us/App/NELIS/REL/';
+const NV_83 = `${NV}83rd2025/Bill/GetBillVoteMembers?voteKey=12948&voteResultPanel=All&billKey=12727#SB404`;
+const NV_82_FAIL = `${NV}82nd2023/Bill/GetBillVoteMembers?voteKey=10886&voteResultPanel=All&billKey=10448#AB448`;
+const NV_82_PASS = `${NV}82nd2023/Bill/GetBillVoteMembers?voteKey=10889&voteResultPanel=All&billKey=10448#AB448`;
+const NV_80 = `${NV}80th2019/Bill/GetBillVoteMembers?voteKey=6502&voteResultPanel=All&billKey=6800#AB422`;
+const nvDocs: Record<string, string[]> = {
+  [NV_83]: ['nv-83-members-12948', 'nv-83-votes-12727', 'nv-83-bill-12727'],
+  [NV_82_FAIL]: ['nv-82-members-10886', 'nv-82-votes-10448', 'nv-82-bill-10448'],
+  [NV_82_PASS]: ['nv-82-members-10889', 'nv-82-votes-10448', 'nv-82-bill-10448'],
+  [NV_80]: ['nv-80-members-6502', 'nv-80-votes-6800', 'nv-80-bill-6800'],
+};
+const nvBodies = (url: string): string[] => nvDocs[url].map(ksPage);
+const nvWhy = (url: string, docs: string[]): string => {
+  const v = explainNevadaVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const nvRender = (url: string, docs = nvBodies(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error(`the page did not read: ${nvWhy(url, docs)}`);
+  return t;
+};
+const NV_ANDERSON = 'Nevada Assembly vote 12948 (83rd2025), SB 404 - Final Passage (2nd Reprint) - Passed (2025-05-22): Natha Anderson voted Yea.';
+
+describe('state roll-call pages — Nevada address', () => {
+  it('knows a vote\'s member list named with its bill key and bill, and reads it with the vote list and the bill page, a second apart', () => {
+    expect(parseNevadaVoteUrl(NV_83)).toEqual({ state: 'NV', stateName: 'Nevada', session: '83rd2025', voteKey: 12948, billKey: 12727, bill: 'SB 404' });
+    expect(parseNevadaVoteUrl(`${NV}31st2020Special/Bill/GetBillVoteMembers?voteKey=7&voteResultPanel=All&billKey=7128#SB4`)).toMatchObject({ session: '31st2020Special', bill: 'SB 4' });
+    expect(stateRollCallDocs(NV_83)).toEqual([`${NV}83rd2025/Bill/GetBillVoteMembers?voteKey=12948&voteResultPanel=All&billKey=12727`,
+      `${NV}83rd2025/Bill/GetBillVotes?billKey=12727&voteTypeId=3`, `${NV}83rd2025/Bill/12727/Overview`]);
+    expect(stateRollCallMinGapMs(NV_83)).toBe(1_000);
+    expect(isStateRollCallUrl(NV_83)).toBe(true);
+    // the dump's 2017 pages (a disallowed path), the Votes tab, no bill, no bill key, one panel only, plain http, a look-alike host
+    for (const u of ['http://www.leg.state.nv.us/Session/79th2017/Reports/BillVote.cfm?VoteID=1087&fldReprint=3&fldDocTypeCode=SB&fldBillNumber=149&fldBillname=SB149',
+      `${NV}83rd2025/Bill/FillSelectedBillTab?selectedTab=Votes&billKey=12727`, NV_83.replace('#SB404', ''), NV_83.replace('&billKey=12727', ''),
+      NV_83.replace('voteResultPanel=All', 'voteResultPanel=Yea'), NV_83.replace('https', 'http'), NV_83.replace('www.leg.state.nv.us', 'www.leg.state.nv.us.example.com')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('names a member given name first, and refuses a label with no given name', () => {
+    expect(nvMemberName('Anderson, Natha')).toBe('Natha Anderson');
+    expect(nvMemberName('La Rue Hatch, Selena')).toBe('Selena La Rue Hatch');
+    expect(nvMemberName('Cruz-Crawford, Michelee "Shelly"')).toBe('Michelee "Shelly" Cruz-Crawford');
+    expect(nvMemberName('Anderson')).toBeNull();
+  });
+
+  it('reads a bill\'s vote list: every roll call with its chamber, version, result, day and counts', () => {
+    expect(nvVoteList(ksPage('nv-82-votes-10448')).map((v) => [v.voteKey, v.chamber, v.version, v.passed, v.date, v.counts.Yea, v.counts.Nay])).toEqual([
+      [10220, 'House', 'As Introduced', true, '2023-05-25', 42, 0], [10886, 'Senate', 'As Introduced', false, '2023-06-05', 13, 8],
+      [10889, 'Senate', 'As Introduced', true, '2023-06-05', 21, 0]]);
+    expect(() => nvVoteList(tamper(ksPage('nv-82-votes-10448'), 'voteResultPanel=Absent', 'voteResultPanel=Paired'))).toThrow(/a kind of vote the reader does not know: Paired/);
+    expect(() => nvVoteList(tamper(ksPage('nv-82-votes-10448'), '<h2 class="h4">Senate (As Introduced)</h2>', '<h2 class="h4">Joint (As Introduced)</h2>'))).toThrow(/has no chamber heading/);
+  });
+});
+
+describe('state roll-call pages — reading Nevada', () => {
+  it('reads a 2025 Assembly vote: bill, question, day, tally, and every member by full name', () => {
+    const t = nvRender(NV_83);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Nevada Assembly vote 12948 (83rd2025), SB 404, 2025-05-22.', 'Question: Final Passage (2nd Reprint) - Passed',
+      'Yea 42; Nay 0; Excused 0; Not voting 0; Absent 0.']);
+    expect(t).toMatch(/^Yea \(42\): Natha Anderson; Shea Backus;.*; Selena La Rue Hatch;.*; Cinthia Zermeño Moore;/m);
+  });
+
+  it('reads a vote that failed for want of two thirds and the same day\'s vote that passed as two roll calls', () => {
+    expect(nvRender(NV_82_FAIL).split('\n').slice(0, 3)).toEqual(['Nevada Senate vote 10886 (82nd2023), AB 448, 2023-06-05.',
+      'Question: Final Passage (As Introduced) - Failed', 'Yea 13; Nay 8; Excused 0; Not voting 0; Absent 0.']);
+    expect(nvRender(NV_82_PASS).split('\n').slice(0, 3)).toEqual(['Nevada Senate vote 10889 (82nd2023), AB 448, 2023-06-05.',
+      'Question: Final Passage (As Introduced) - Passed', 'Yea 21; Nay 0; Excused 0; Not voting 0; Absent 0.']);
+  });
+
+  it('counts an empty seat apart from the members (80th 2019 AB 168: All 42, Yea 40, Excused 1, Vacant 1)', () => {
+    const url = `${NV}80th2019/Bill/GetBillVoteMembers?voteKey=6556&voteResultPanel=All&billKey=6255#AB168`;
+    const docs = ['nv-80-members-6556', 'nv-80-votes-6255', 'nv-80-bill-6255'].map(ksPage);
+    expect(nvRender(url, docs).split('\n')[2]).toBe('Yea 40; Nay 0; Excused 1; Not voting 0; Absent 0.');
+    expect(nvRender(url, docs)).not.toMatch(/District No/);
+    expect(nvWhy(url, [tamper(docs[0], 'District No. 17', 'District No. 17x'), docs[1], docs[2]])).toMatch(/^a member row the reader cannot read$/);
+    expect(nvWhy(url, [docs[0], tamper(docs[1], 'voteResultPanel=Vacant" onclick', 'voteResultPanel=Paired" onclick'), docs[2]])).toMatch(/a kind of vote the reader does not know: Paired/);
+  });
+
+  it('reads excused members as excused', () => {
+    const t = nvRender(NV_80);
+    expect(t.split('\n')[2]).toBe('Yea 19; Nay 0; Excused 2; Not voting 0; Absent 0.');
+    expect(t).toMatch(/^Excused \(2\): Ben Kieckhefer; Marcia Washington$/m);
+  });
+
+  it('refuses a vote whose member list, vote list or bill page do not hold together', () => {
+    const [m, l, b] = nvBodies(NV_82_FAIL);
+    expect(nvWhy(NV_82_FAIL, [m, l, b])).toBe('read');
+    // the bill page is another bill, or another session
+    expect(nvWhy(NV_82_FAIL, [m, l, tamper(b, '<h1>AB448', '<h1>AB449')])).toMatch(/^the bill page is for AB449, not AB 448$/);
+    expect(nvWhy(NV_82_FAIL, [m, l, tamper(b, 'session-year">82nd (2023) Session', 'session-year">82nd (2023) Special Session')])).toMatch(/^the bill page is not of the 82nd2023 session$/);
+    // the vote is not on the bill's vote list
+    expect(nvWhy(NV_82_FAIL, [m, tamper(l, 'billVoteTitleForVoteKey 10886', 'billVoteTitleForVoteKey 10887'), b])).toMatch(/^the vote list did not read: vote 10887 links another vote's members$/);
+    expect(nvWhy(NV_82_FAIL, [m, ksPage('nv-83-votes-12727'), b])).toMatch(/^the bill's vote list holds vote 10886 0 times$/);
+    // a printed count no longer equals the members under it
+    expect(nvWhy(NV_82_FAIL, [m, tamper(l, 'voteKey=10886&amp;voteResultPanel=Yea">Yea: 13', 'voteKey=10886&amp;voteResultPanel=Yea">Yea: 14'), b])).toMatch(/^the Yea group lists 13 members and the vote list prints 14$/);
+    expect(nvWhy(NV_82_FAIL, [m, tamper(l, 'voteKey=10886&amp;voteResultPanel=All">All: 21', 'voteKey=10886&amp;voteResultPanel=All">All: 22'), b])).toMatch(/^21 members and 0 vacant seats listed and All prints 22$/);
+    // a member row whose class and text disagree, or a kind the reader does not know
+    expect(nvWhy(NV_82_FAIL, [tamper(m, '(Nay ', '(Yea '), l, b])).toMatch(/^a member row that disagrees with itself/);
+    expect(nvWhy(NV_82_FAIL, [tamper(m, 'class="vote-nay vote pl-1"', 'class="vote-paired vote pl-1"'), l, b])).toMatch(/^a kind of vote the reader does not know: paired$/);
+    // a member listed twice
+    expect(nvWhy(NV_82_PASS, [tamper(ksPage('nv-82-members-10889'), 'Cannizzaro, Nicole', 'Buck, Carrie'), ksPage('nv-82-votes-10448'), b])).toMatch(/^a member is listed twice$/);
+    // the wrong number of documents
+    expect(nvWhy(NV_82_FAIL, [m, l])).toMatch(/^not a member list, a vote list and a bill page$/);
+  });
+});
+
+describe('state roll-call pages — Nevada lines', () => {
+  const t = nvRender(NV_83);
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(NV_83, t, 'Anderson', 'Natha Anderson')).toEqual([NV_ANDERSON]);
+    expect(verifyStateRollCallLine(NV_ANDERSON, NV_83, t, 'Anderson', 'Natha Anderson')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(NV_ANDERSON)).toMatchObject({ state: 'NV', chamber: 'House', vote: 'Yea', name: 'Natha Anderson', bill: 'SB 404' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const v = (line: string, last = 'Anderson', full = 'Natha Anderson', url = NV_83) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(NV_ANDERSON.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(NV_ANDERSON.replace('Natha Anderson', 'Shea Backus'))).not.toBe('verified');
+    expect(v(NV_ANDERSON, 'Backus', 'Shea Backus')).toBe('name_not_present');
+    expect(v(NV_ANDERSON.replace('SB 404 -', 'SB 405 -'))).toBe('snippet_not_found');
+    expect(v(NV_ANDERSON.replace('2025-05-22', '2025-05-23'))).toBe('snippet_not_found');
+    expect(v(NV_ANDERSON, 'Anderson', 'Natha Anderson', NV_83.replace('12948', '12949'))).toBe('snippet_not_found');
+  });
+
+  it('gives an excused member "was excused", never a Yea or a Nay', () => {
+    const s = nvRender(NV_80);
+    const [l] = stateRollCallLinesFor(NV_80, s, 'Washington', 'Marcia Washington');
+    expect(l).toBe('Nevada Senate vote 6502 (80th2019), AB 422 - Final Passage (3rd Reprint) - Passed (2019-05-24): Marcia Washington was excused.');
+    expect(verifyStateRollCallLine(l.replace('was excused', 'voted Yea'), NV_80, s, 'Washington', 'Marcia Washington').verdict).toBe('snippet_not_found');
+  });
+
+  it('reads the tally as Yea, Nay and the rest absent or not voting', () => {
+    const r = readStateRollCallRecord(nvBodies(NV_80), NV_80)!;
+    expect(r).toMatchObject({ bill: 'AB 422', date: '2019-05-24', chamber: 'Senate', rollNum: 6502 });
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting']]).toEqual([19, 0, ['Ben Kieckhefer', 'Marcia Washington']]);
+  });
+});
+
+describe('state roll-call pages — Nevada names the roster holds otherwise', () => {
+  // NELIS prints "O’Neill, PK" (initials run together) for the member the roster holds as "P. K. O'Neill", and "Taylor,
+  // Angie" for Sen. Angela D. Taylor. Neither had a line in the dry batch of 2026-11-19 (13 votes).
+  it('fits initials printed run together to the same initials printed apart, and no other initials', () => {
+    expect(fullNameLabelFits('PK O’Neill', "O'Neill", "P. K. O'Neill")).toBe(true);
+    expect(fullNameLabelFits('Philip PK O’Neill', "O'Neill", "P. K. O'Neill")).toBe(true);
+    expect(fullNameLabelFits('PK O’Neill', "O'Neill", "P.K. O'Neill")).toBe(true);
+    expect(fullNameLabelFits('PJ O’Neill', "O'Neill", "P. K. O'Neill")).toBe(false);
+    expect(fullNameLabelFits('KP O’Neill', "O'Neill", "P. K. O'Neill")).toBe(false);
+    expect(fullNameLabelFits('Pat O’Neill', "O'Neill", "P. K. O'Neill")).toBe(false);
+  });
+
+  it('fits Angie to Angela', () => {
+    expect(fullNameLabelFits('Angie Taylor', 'Taylor', 'Angela D. Taylor')).toBe(true);
+    expect(fullNameLabelFits('Annie Taylor', 'Taylor', 'Angela D. Taylor')).toBe(false);
+  });
+
+  it('gives P. K. O\'Neill his line on a real page', () => {
+    const text = nvRender(NV_83);
+    const lines = stateRollCallLinesFor(NV_83, text, "O'Neill", "P. K. O'Neill");
+    expect(lines).toHaveLength(1);
+    expect(lines[0]).toMatch(/: PK O’Neill (voted Yea|voted Nay|was excused|did not vote|was absent)\.$/);
+    expect(verifyStateRollCallLine(lines[0], NV_83, text, "O'Neill", "P. K. O'Neill")).toMatchObject({ verdict: 'verified' });
+    expect(verifyStateRollCallLine(lines[0], NV_83, text, "O'Neill", 'P. J. O\'Neill').verdict).not.toBe('verified');
   });
 });

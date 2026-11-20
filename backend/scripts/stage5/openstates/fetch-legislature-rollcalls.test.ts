@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -727,5 +727,52 @@ describe('the legislature\'s own vote list — Minnesota', () => {
     expect(buildRollCall('SF 2909', v, docs, '2023-2024')).toMatchObject({ yea: 34, nay: 33, absent: 0, passed: 1, chamber: 'S', date: '2023-04-14' });
     expect(buildRollCall('SF 2909', { ...v, tally: [35, 33, -1] }, docs, '2023-2024')).toEqual({ refused: "the page's tally 34-33-0 is not the bill file's 35-33--1" });
     expect(buildRollCall('SF 2909', { ...v, url: v.url.replace('Page5105', 'Page5107') }, docs, '2023-2024')).toMatchObject({ refused: expect.stringMatching(/take in page 5107$/) });
+  });
+});
+
+describe('the legislature\'s own vote list — Nevada', () => {
+  const fx = (f: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${f}.html`, import.meta.url)), 'utf8');
+  const REL = 'https://www.leg.state.nv.us/App/NELIS/REL/';
+  // three rows of the 79th session's bill list as NELIS prints them (saved 2026-11-19)
+  const LIST = ['SB11', 'SB110', 'SB115'].map((b, i) => `<a id="${b}" href="/App/NELIS/REL/79th2017/Bill/${[4604, 4856, 4875][i]}/Overview">${b}</a>`).join('\n');
+
+  it('finds a bill\'s key in the session\'s bill list, and refuses a bill the list does not hold once', () => {
+    expect(nvListUrl('79')).toBe(`${REL}79th2017/HomeBill/BillsTab?selectedTab=List&Filters.PageSize=5000`);
+    expect(nvListUrl('2020Special31')).toBe(`${REL}31st2020Special/HomeBill/BillsTab?selectedTab=List&Filters.PageSize=5000`);
+    expect(nvListUrl('2019')).toBeNull();
+    expect(nvBillUrlFromList(LIST, '79', 'SB 115')).toBe(`${REL}79th2017/Bill/FillSelectedBillTab?selectedTab=Votes&billKey=4875`);
+    expect(nvBillUrlFromList(LIST, '79', 'SB11')).toBe(`${REL}79th2017/Bill/FillSelectedBillTab?selectedTab=Votes&billKey=4604`);
+    expect(() => nvBillUrlFromList(LIST, '79', 'SB 116')).toThrow(/holds SB116 0 times/);
+    expect(() => nvBillUrlFromList(`${LIST}\n${LIST}`, '79', 'SB 115')).toThrow(/holds SB115 2 times/);
+    expect(() => nvBillUrlFromList(LIST, '80', 'SB 115')).toThrow(/holds SB115 0 times/);
+  });
+
+  it('follows the Votes tab to the Final Passage list only, and refuses any other kind of vote', () => {
+    const tab = fx('nv-82-tab-10448');
+    expect(nvFollow(tab, '82', 'AB 448')).toEqual([`${REL}82nd2023/Bill/GetBillVotes?billKey=10448&voteTypeId=3`]);
+    expect(nvFollow(fx('nv-tab-no-votes'), '79', 'AB 87')).toEqual([]);
+    expect(() => nvFollow(tab.replace('voteTypeId=3">Final Passage', 'voteTypeId=4">Concurrence'), '82', 'AB 448')).toThrow(/a kind of vote the fetch does not know: 4 Concurrence/);
+    expect(() => nvFollow(tab, '83', 'AB 448')).toThrow(/links session 82nd2023, not 83rd2025/);
+  });
+
+  it('lists every roll call of the vote list as its member list, with the bill after a #, and its tally', () => {
+    const bi = nvReadVotes(fx('nv-82-tab-10448'), '82', 'AB 448', [fx('nv-82-votes-10448')]);
+    expect(bi.floor).toEqual([
+      { url: `${REL}82nd2023/Bill/GetBillVoteMembers?voteKey=10220&voteResultPanel=All&billKey=10448#AB448`, motion: 'Assembly final passage (As Introduced) passed', tally: [42, 0, 0] },
+      { url: `${REL}82nd2023/Bill/GetBillVoteMembers?voteKey=10886&voteResultPanel=All&billKey=10448#AB448`, motion: 'Senate final passage (As Introduced) failed', tally: [13, 8, 0] },
+      { url: `${REL}82nd2023/Bill/GetBillVoteMembers?voteKey=10889&voteResultPanel=All&billKey=10448#AB448`, motion: 'Senate final passage (As Introduced) passed', tally: [21, 0, 0] },
+    ]);
+    // a bill never voted on
+    expect(nvReadVotes(fx('nv-tab-no-votes'), '79', 'AB 87', [])).toEqual({ floor: [], committee: 0, voice: 0 });
+    // a page that is neither
+    expect(() => nvReadVotes('<html></html>', '82', 'AB 448', [])).toThrow(/not a Votes tab/);
+  });
+
+  it('reads a listed roll call through the verifier\'s reader, its tally compared, and refuses another bill or another tally', () => {
+    const v = nvReadVotes(fx('nv-82-tab-10448'), '82', 'AB 448', [fx('nv-82-votes-10448')]).floor[1];
+    const docs = [fx('nv-82-members-10886'), fx('nv-82-votes-10448'), fx('nv-82-bill-10448')];
+    expect(buildRollCall('AB 448', v, docs, '82')).toMatchObject({ chamber: 'S', yea: 13, nay: 8, absent: 0, passed: 0, date: '2023-06-05' });
+    expect(buildRollCall('AB 449', v, docs, '82')).toEqual({ refused: 'the page is for AB 448, not AB 449' });
+    expect(buildRollCall('AB 448', { ...v, tally: [14, 7, 0] }, docs, '82')).toMatchObject({ refused: expect.stringMatching(/tally 13-8-0 is not the bill file's 14-7-0/) });
   });
 });
