@@ -31,7 +31,11 @@
 --   first, then alter type ... drop attribute fec_line_number), then
 --   alter table transparent_motivations.contributions drop column if exists fec_line_number;
 --
--- STATUS: WRITTEN 2026-11-19, not applied.
+-- STATUS: APPLIED to prod 2026-11-20 00:13 UTC via apply-migration-file.mjs (operator approval: Chris Andrews, "Yes, apply
+--   it"); post-verify probe passed. Before that: dry run OK; two tampers each stopped by their own gate (mapping without
+--   contributor_id -> mapping check; trigger without the fec_line_number assignment -> 'insert-line update-line').
+--   First backfill (Chris Murphy S2CT00132, 2024 + 2026): 647 rows inserted (28 PAC/party gifts on 11C, 619 refunds),
+--   all 28 committee gifts that FEC gave an id carry it; no FEC row kept its JSON.
 
 set local lock_timeout = '3s';
 
