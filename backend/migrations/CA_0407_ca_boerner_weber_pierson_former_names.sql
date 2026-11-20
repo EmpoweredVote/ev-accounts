@@ -23,6 +23,8 @@
 --   e5470008-3c0d-4970-a485-053621d8f0a6  Akilah Weber Pierson  alternate_names = '{}'
 -- To undo: set alternate_names back to '{}' on these two ids.
 --
+-- Applied to production 2026-11-20 on the runner's approval (apply-migration-file.mjs; both UPDATEs 1 row, gate passed).
+--
 -- A name is added, never replaced: a second run changes nothing. No Season data, seat, term or stance is touched.
 
 BEGIN;
