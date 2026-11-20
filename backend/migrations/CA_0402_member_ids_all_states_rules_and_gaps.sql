@@ -32,7 +32,9 @@
 -- ROLLBACK: drop view essentials.legislator_member_id_gaps; restore the CA_0401 CHECK (its list plus every
 --   '<st>-…' type then present); re-insert the 8 rows above from this header only if they were somehow right.
 --
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED 2026-11-19 (dry run OK, then apply-migration-file.mjs). Then `sync-member-ids.ts --apply` wrote 5,162 rows
+--   (8 more than the pre-apply dry run: the 8 deleted CA ids went to their right holders) and confirmed 21 by seat.
+--   After: gaps view 91 rows; a rerun finds 0 new rows; 2 conflicts left (Strickland, Menjivar duplicate person rows).
 
 BEGIN;
 set local lock_timeout = '3s';
