@@ -42,7 +42,7 @@ BUCKET = 'politician_photos'
 CDN_BASE = f'{SUPABASE_URL.replace(".supabase.co", ".storage.supabase.co")}/storage/v1/object/public/{BUCKET}'
 TARGET_SIZE = (600, 750)
 JPEG_QUALITY = 90
-UA = 'EmpoweredVote-civic-data/1.0 (https://empowered.vote; contact chris@empowered.vote)'
+UA = 'EmpoweredVote-civic-data/1.0 (https://empowered.vote)'
 WIKI_API = 'https://en.wikipedia.org/w/api.php'
 
 POLITICAL_KW = ['politic', 'governor', 'attorney general', 'secretary of state', 'treasurer',

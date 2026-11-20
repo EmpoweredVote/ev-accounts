@@ -16,7 +16,7 @@ matched pairs do not score far below the mismatched ones, the comparison is blin
 import io, json, urllib.request
 from PIL import Image
 
-UA = {'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)'}
+UA = {'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)'}
 B = 'https://biloxi.ms.us/wp-content/uploads/'
 
 THUMBS = {  # ward -> (thumbnail url, the caption the PAGE places beside it)

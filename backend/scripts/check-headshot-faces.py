@@ -288,7 +288,7 @@ def main():
               'OUTRANKS the profile column on every ballot page.')
 
     session = requests.Session()
-    session.headers['User-Agent'] = 'EmpoweredVote-civic-data/1.0 (contact chris@empowered.vote)'
+    session.headers['User-Agent'] = 'EmpoweredVote-civic-data/1.0 (+https://empowered.vote)'
 
     def check(row):
         rec = dict(row)
