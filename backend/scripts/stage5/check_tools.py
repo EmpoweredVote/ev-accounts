@@ -1433,6 +1433,30 @@ def link_check_stops_on_a_legislator_with_no_vote_link(t):
 
 
 @check
+def link_check_pairs_by_database_member_id_and_never_overwrites(t):
+    """CA_0402: an Open States person matched to the seat links by id, whatever the names say; a disagreeing idmap line is a CONFLICT."""
+    os.makedirs(f'{t}/ds/XX-1/2025/s/bill'); os.makedirs(f'{t}/ds/XX-1/2025/s/people')
+    json.dump({'bill': {'session': {'year_end': 2026}}}, open(f'{t}/ds/XX-1/2025/s/bill/1.json', 'w'))
+    # Open States calls her "Cassie Chambers": no name rule would pair her with "Cassie Chambers Armstrong" … but her id does.
+    for i, first, last, osid in ((9000001, 'Cassie', 'Chambers', 'ocd-person/aaa'), (9000002, 'Bo', 'Kim', 'ocd-person/bbb')):
+        json.dump({'person': {'people_id': i, 'first_name': first, 'last_name': last, 'name': f'{first} {last}', 'role': 'Rep',
+                              'district': 'HD-1', '_openstates': {'person_id': osid}}}, open(f'{t}/ds/XX-1/2025/s/people/{i}.json', 'w'))
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tscope\toffice\npa\tCassie Chambers Armstrong\tsitting\tRepresentative\n'
+                                       'pb\tBo Kim\tsitting\tRepresentative\n')
+    ids = 'politician_id\tid_type\tid_value\tmatch_method\n'
+    def go(*extra): return run('link_check.py', '--state', 'xx', '--roster', f'{t}/roster.tsv', '--ds', f'{t}/ds', '--idmap', f'{t}/idmap.tsv',
+                               '--member-ids', f'{t}/ids.tsv', *extra, ok=False)
+    open(f'{t}/ids.tsv', 'w').write(ids + 'pa\topenstates\tocd-person/aaa\tseat\npb\topenstates\tocd-person/bbb\tname\n')
+    open(f'{t}/idmap.tsv', 'w').write('')
+    p = go('--add'); assert 'Cassie Chambers Armstrong  <-  9000001' in p.stdout and 'by Open States id' in p.stdout, p.stdout
+    db = [l for l in open(f'{t}/idmap.tsv').read().splitlines() if 'link_check database id' in l]
+    assert len(db) == 1 and db[0].startswith('9000001\tpa\t'), 'only the seat-matched Open States id links; a name-matched one does not'
+    open(f'{t}/idmap.tsv', 'w').write('9000001\tsomeone-else\n9000002\tpb\n')
+    p = go(); assert p.returncode == 1 and 'CONFLICT: idmap has 9000001' in p.stdout, p.stdout
+    assert open(f'{t}/idmap.tsv').read() == '9000001\tsomeone-else\n9000002\tpb\n', 'a conflict changes nothing'
+
+
+@check
 def state_legiscan_cites_the_legislatures_own_page_for_an_open_states_roll_call(t):
     """A roll call converted from Open States data has no legiscan.com page: its pair names the legislature's own
     roll-call page, taken from the hit. One with no page is unmapped, with that reason. A sponsorship on such a bill
