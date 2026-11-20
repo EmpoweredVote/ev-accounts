@@ -43,7 +43,8 @@
 --    bills move with scripts/member-ids/repair-legiscan-person.ts, not here. The inactive rows keep their older
 --    compass answers and are not deleted.
 --
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED 2026-11-20 (dry run OK, then apply-migration-file.mjs), right after repair-legiscan-person.ts --apply moved
+--   the 7 LegiScan ids (58,606 votes, 456 sponsorships). Sync rerun after: the Strickland/Menjivar conflicts are gone.
 
 BEGIN;
 
