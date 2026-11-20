@@ -1,0 +1,56 @@
+{
+  "state": "or",
+  "name": "Oregon",
+  "verified": "2026-11-20",
+  "source": "Oregon reader session (Stage 5 tools), 2026-11-20: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 184-bill dry batch (the regular-session bills of 2017-2026 one topic's scan found; 33 roll calls) read from the Legislature's Open Data Service with the verifier's own fetch, and each member's vote compared with the dump. Two texts of 2021 SB 554 (B-Engrossed, Enrolled) were read for their marks; no text was measured in bulk.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "The Legislative Assembly meets every year: a long session in odd years (January to June) and a short session in even years (February to March). The Legislature keys each session as <year><type><n>: 2025R1 is the 2025 regular session, 2024S1 the first special session of 2024, 2025I1 the interim. Open States names the regular sessions \"2017 Regular Session\" to \"2021 Regular Session\", then \"2022R1\" onward, and the special sessions \"2018 Special Session\", \"2020S1\" and so on. Bill numbers start again each session and their range says the session: odd-year bills are HB 2001 up and SB 1 up; even-year short-session bills are HB 4001 up and SB 1501 up; special-session bills continue from there (HB 4201, SB 1601 in 2020S1); budget bills are HB 5001 up and SB 5501 up. Resolutions and memorials are HJR, SJR, HCR, SCR, HJM, SJM, HR, SR, HM, SM. House 60 seats, Senate 30.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Oregon. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (OR-900154 to OR-900171: 2017R1 to 2026R1 with the special sessions; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them. The dump starts in 2017.",
+    "No Oregon dump vote is placed (record_is_the_floor). The dump's floor votes agree with the record, but each points at the bill's Overview page, which holds every vote of the bill, so none can be cited as one vote; the dump also files every committee vote, under the chamber or \"legislature\". scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's history actions from the Open Data Service (MeasureHistoryActions) and keeps an action that is a vote on the bill and prints a tally: third reading, concurrence in the other chamber's amendments and repassage, a conference committee report adopted with repassage, a veto override. A motion (to rerefer, to substitute the minority report, to postpone, to reconsider) is counted and skipped. Run the fetch for every bill the scan finds, session by session, then convert the whole state again.",
+    "Compared 2026-11-20: 33 floor roll calls read from the record, 0 refused, 15 votes on a motion skipped (2017 4, 2018 5, 2019 3, 2021 3, 2023 6, 2024 2, 2025 7, 2026 3). 3 have no dump copy. Of the other 30, 6 were settled by the question's text or the tally among two on one day. Tally differences: 0. Member votes compared: 1,320, differences: 0.",
+    "The Legislature's list names each member as of today, in every session: Sheri Schouten in 2017 (she voted as Sheri Malstrom), Sara Gelser Blouin (then Sara Gelser), Elizabeth Steiner (then Elizabeth Steiner Hayward), Courtney Neron Misslin (then Courtney Neron). The dump names the member as of the day, or by a short given name (\"Greg Smith\", \"Em Levy\"). The line names the member as the record does, so it matches the roster's current name. Roster legislators: 90 (60 House, 30 Senate), all linked by their Open States id. The converter could not tie the record's \"Emerson Levy\" to the dump's \"Em Levy\" and made a name-only record for her in each session (2023, 2024, 2025, 2026: 10 record votes); link_check.py now links a name-only record whose whole name is a roster member's (and did so for her four and for Gregory Smith's 2025S1 one)."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "olis.oregonlegislature.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A vote is cited as its member list on OLIS, with the bill after a #: olis.oregonlegislature.gov/liz/<2025R1>/Measures/MeasureVotes?id=<624489>#HB3041. The id is the bill history action's (MeasureHistoryId). That page prints each member's label and vote, and names no bill and no tally, so the reader reads the vote from the Open Data Service (api.oregonlegislature.gov/odata/ODataService.svc/): MeasureVotes for the id (one row per member: Aye, Nay, Excused, Excused for Business, Absent; the member's code, \"Rep Isadore\"), MeasureHistoryActions for the id (the question, \"Third reading. Carried by McLain. Passed.\", the day, and the tally as the journal prints it, naming every member who did not vote Aye: \"Ayes, 35; Nays, 19--Boice, ...; Excused, 6--Evans, ...\"), and the legislator lists of the session and the session before (code to first and last name). A vote is read only when the action is a vote on the bill, every row is of its bill, session, chamber and time, each kind lists the count the tally prints, the members the tally names under a kind are the members listed under it, the total is not more than the chamber's seats, no member is listed twice, and no two members render as one name. A group of 0 is left out of the tally text. Committee votes are not read.",
+    "gaps": [
+      "Only floor votes on the bill are read: third reading, concurrence and repassage, a conference report with repassage, a veto override. Motions and committee votes are not mapped (runner, 2026-11-16).",
+      "Excused, Excused for Business (a member, often the presiding officer, away on the chamber's business) and Absent are recorded as the record lists them (\"was excused\", \"was excused for legislative business\", \"was absent\"), never as a Aye or a Nay; they seat no one.",
+      "The dump starts in 2017, so the dry batch covers 2017R1 to 2026R1. The service holds sessions from 2007; the reader reads a vote of 2013S1 onward when one is cited (a 2015 SB 941 line verified live), but no bill before 2017 is found by the scan.",
+      "Special sessions were not in the dry batch (the scan found no special-session bill)."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "olis.oregonlegislature.gov"
+    ],
+    "marks": "Read on 2 texts (2021 SB 554 B-Engrossed and Enrolled; 2026-11-20). An engrossed text prints the legend \"NOTE: Matter in boldfaced type in an amended section is new; matter [italic and bracketed] is existing law to be omitted. New sections are in boldfaced type.\" Words deleted from law are in [brackets] (\"[$50] $100 to the sheriff\"), so plain text keeps them: never quote a bracketed passage as the law. New words are bold, which plain text loses: a quote from plain text cannot tell new words from old. The enrolled text prints no legend but keeps the brackets. The engrossed text's SUMMARY (an editor's statement, not part of the bill) brackets the summary of an earlier version, and page numbers print as \"[2]\": neither is a deletion.",
+    "note": "Texts are PDFs at /liz/<2021R1>/Downloads/MeasureDocument/<SB554>/<version>: Introduced, A-Engrossed, B-Engrossed, Enrolled, and amendments by name (\"House Amendments to A-Engrossed\") or as /Downloads/ProposedAmendment/<id>. The dump's text addresses are on the old host olis.leg.state.or.us; convert.py rewrites them to olis.oregonlegislature.gov (or_links), where the same path answers."
+  },
+  "reader_access": {
+    "olis.oregonlegislature.gov": "open",
+    "api.oregonlegislature.gov": "open"
+  },
+  "search_note": "Oregon sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the Legislature's own vote records (OLIS and its Open Data Service): skip OLIS's bill and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Oregon's Legislative Assembly meets every year: a long session in odd years, a short one in even years; bill numbers start again each session (odd years HB 2001 and SB 1 up, even years HB 4001 and SB 1501 up).\n- Floor votes kept: third reading, concurrence and repassage, a conference report with repassage, a veto override. Motions are skipped.\n- Texts: words in [brackets] are deleted from law; never quote a bracketed passage as the law. New words are bold, which plain text does not show.",
+  "fill_quotes": {
+    "label_strips": [],
+    "brackets_delete": true
+  },
+  "quirks": [
+    "olis.oregonlegislature.gov and api.oregonlegislature.gov have no robots.txt (404 on 2026-11-20). The Open Data Service needs no key. Its Acceptable Use Agreement (www.oregonlegislature.gov/citizen_engagement/Documents/OLODataAcceptableUseAgreement.pdf) asks a client to use the service and forego regular scraping of the website, allows on-demand queries and one full refresh a day, and says the data is not the official record. It also says a user must accept it electronically, and the service offers no place to do so; using the service as the agreement asks is enough (runner, 2026-11-20). The reader waits one second between requests. No 403, 429 or bot check was met.",
+    "One vote needs four service queries (the rows, the action and two legislator lists). The line tool wrote 864 lines in 1 minute 22 seconds from an empty page cache (33 vote pages, 132 requests). The time goes with the number of vote pages, not votes: every member's line comes from the same four queries.",
+    "The service's tally text leaves out a group of 0 (\"Ayes, 29; Excused, 1--Woods.\"), sometimes writes \"nays\" in lower case (2015, 2017), and names the presiding officer with the office (\"Speaker Kotek\", \"President Wagner\") where the rows write \"Rep Speaker Kotek\". A bare \"Passed.\" can carry the tally of the third reading on the row before it (2026 HB 4145).",
+    "A session's legislator list holds the members seated at its end. A member who left during it (died, resigned, was expelled, moved chambers) is looked up in the session before's list (2019R1 Sen Winters, 2021R1 Rep Nearman); a member who moved chambers keeps the old chamber's code on that chamber's votes (2019R1 \"Rep Boles\", in the Senate list).",
+    "Two members share a family name and are told apart by an initial in the code: Rep Levy B (Bobby Levy) and Rep Levy E (Emerson Levy); Rep Smith G and Rep Smith DB in 2017 (Sen Smith DB in 2025). Match by code, never by family name.",
+    "The dump's old host olis.leg.state.or.us still serves, but convert.py rewrites it so every cited address is on olis.oregonlegislature.gov."
+  ]
+}

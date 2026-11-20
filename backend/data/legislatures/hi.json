@@ -1,0 +1,46 @@
+{
+  "state": "hi",
+  "name": "Hawaii",
+  "verified": "2026-11-20",
+  "source": "State reader session, 2026-11-20 (two-page probes: robots.txt and one bill status page; www.capitol.hawaii.gov answered 403). No reader was built.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "The Legislature meets every year from January to early May; the two years of a Legislature form one biennium (2025-2026), and a bill introduced in the first year can carry over to the second under the same number (HB 300). House 51 seats, Senate 25.",
+  "bill_data": [
+    "The Open States dump for Hawaii was not converted: the Legislature's own site refused our reader (403), so no record could be checked.",
+    "No data service from the Legislature was found."
+  ],
+  "votes": {
+    "mode": "none",
+    "official_hosts": [
+      "www.capitol.hawaii.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "No reader. The bill status page (www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=<n>&year=<yyyy>; past years redirect to /session/archives/measure_indiv_Archives.aspx) prints each floor vote as one status line: \"Passed Final Reading, as amended (CD 1). Ayes, 24; Aye(s) with reservations: none. Noes, 1 (Senator(s) Awa). Excused, 0 (none).\" Members who voted no, voted aye with reservations or were excused are named; members who voted aye are a count only, so a full list needs the journal or the chamber's roster less the named members.",
+    "gaps": [
+      "www.capitol.hawaii.gov answers our reader 403 (a Cloudflare \"Attention Required\" page): blocked.",
+      "data.capitol.hawaii.gov answers 200 with an open robots.txt and serves the same site, but the Legislature does not announce it as a data host. It is not used: reading the blocked site through it would get around the block (runner, 2026-11-20)."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "www.capitol.hawaii.gov"
+    ],
+    "marks": "Not checked (2026-11-20).",
+    "note": "No bill text was read."
+  },
+  "reader_access": {
+    "www.capitol.hawaii.gov": "blocked: 403, Cloudflare bot check (2026-11-20)",
+    "data.capitol.hawaii.gov": "blocked: the same site as www.capitol.hawaii.gov on a second hostname; not used (runner, 2026-11-20)"
+  },
+  "search_note": "Hawaii has no roll-call reader here: its floor votes are not read from bulk data. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Hawaii bills keep their number across the two years of a biennium (a 2025 bill can pass in 2026).\n- Texts: the marks for new and deleted words were not checked.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "A status line names a member as \"Senator(s) Awa\" or \"Representative(s) …\": surnames only."
+  ]
+}

@@ -35,7 +35,7 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { explainMaineVote, meQuestionIsOnTheBill, meSenators, ME_SENATORS, parseMaineVoteUrl, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { explainMaineVote, meQuestionIsOnTheBill, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -188,6 +188,8 @@ export function meReadVotes(houseList: string, session: string, bill: string, mo
   }
   return { floor, committee: 0, voice: 0, motion: motions.length, motions, unread };
 }
+// ── Oregon ─────────────────────────────────────────────────────────────────────────────────────────────
+const OR_BILL = /^(HB|SB|HJR|SJR|HCR|SCR|HJM|SJM|HM|SM|HR|SR)0*([1-9]\d{0,4})$/i;
 
 // ── Nevada ────────────────────────────────────────────────────────────────────────────────────────────────
 const NV_REL = 'https://www.leg.state.nv.us/App/NELIS/REL/';
@@ -661,6 +663,46 @@ export const INDEX: Record<string, StateIndex> = {
     follow: meFollow,
     read: meReadVotes,
   },
+  // api.oregonlegislature.gov, the Legislature's Open Data Service (read 2026-11-20; no robots.txt on it or on OLIS; its
+  // Acceptable Use Agreement asks a client to use the service instead of scraping the website, and allows on-demand
+  // queries). A bill's history actions (MeasureHistoryActions, filtered to the bill) carry each recorded floor vote with
+  // VoteText, the tally ("Ayes, 35; Nays, 19--...; Excused, 6--..."); committee votes are a separate set and are not in it.
+  // A recorded action that is not a vote on the bill (orQuestionIsOnTheBill: a motion to rerefer, to substitute the
+  // minority report, ...) is counted, not read. Each vote is cited on its member list on OLIS and read from the service
+  // (stateRollCallEvidence.ts). The Open States rows cite the bill's Overview page, which holds every vote of the bill.
+  OR: {
+    minGapMs: 1_000, // no robots.txt and no rate in the use agreement: one a second is ours
+    billUrl(session, bill) {
+      const s = OR_SESSIONS[session];
+      const m = OR_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      return s && m ? oregonBillActionsUrl(s, m[1].toUpperCase(), Number(m[2])) : null;
+    },
+    read(body, session, bill) {
+      const s = OR_SESSIONS[session];
+      const m = OR_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      if (!s || !m) throw new Error(`Oregon: no session ${session} or no bill ${bill}`);
+      const prefix = m[1].toUpperCase();
+      const number = Number(m[2]);
+      const j = JSON.parse(body) as { value?: Record<string, unknown>[]; 'odata.nextLink'?: unknown };
+      if (!Array.isArray(j.value) || j['odata.nextLink']) throw new Error(`the history of ${s} ${bill} is not one list`);
+      if (!j.value.length) throw new Error(`the history of ${s} ${bill} is empty`);
+      const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+      for (const a of j.value) {
+        if (a.SessionKey !== s || a.MeasurePrefix !== prefix || a.MeasureNumber !== number) throw new Error(`a history action of another bill in the history of ${s} ${bill}`);
+        const vt = typeof a.VoteText === 'string' ? a.VoteText.trim() : '';
+        if (!vt) continue;
+        const id = a.MeasureHistoryId;
+        const text = typeof a.ActionText === 'string' ? a.ActionText.replace(/\s+/g, ' ').trim() : '';
+        if (typeof id !== 'number' || !Number.isInteger(id) || (a.Chamber !== 'H' && a.Chamber !== 'S') || !text) throw new Error(`a vote the tool cannot read: ${JSON.stringify(a)}`);
+        const url = oregonVoteUrl(s, id, prefix, number);
+        if (!orQuestionIsOnTheBill(text)) { out.motion!++; out.motions!.push(`${url} ${text}`); continue; }
+        const t = orTally(vt);
+        const n = (k: Parameters<typeof t.get>[0]): number => t.get(k)?.n ?? 0;
+        out.floor.push({ url, motion: text, tally: [n('Aye'), n('Nay'), n('Excused') + n('Excused for business') + n('Absent')] });
+      }
+      return out;
+    },
+  },
   // www.leg.state.nv.us, NELIS (read 2026-11-19; robots.txt disallows */Reports/*, never /App/NELIS/, no Crawl-delay). The
   // Open States dump holds no roll call for 2019 or 2021, and its 2017 vote addresses are /Session/79th2017/Reports/ pages
   // (404 on the archive host, and disallowed). NELIS holds every session from 2011: the session's bill list gives a bill's
@@ -1097,6 +1139,7 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
       : parseNorthDakotaVoteUrl(v.url) ? explainNorthDakotaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseMinnesotaVoteUrl(v.url) ? explainMinnesotaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseNevadaVoteUrl(v.url) ? explainNevadaVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseOregonVoteUrl(v.url) ? explainOregonVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseMaineVoteUrl(v.url) ? explainMaineVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }

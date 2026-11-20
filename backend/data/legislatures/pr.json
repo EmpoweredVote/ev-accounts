@@ -1,0 +1,48 @@
+{
+  "state": "pr",
+  "name": "Puerto Rico",
+  "verified": "2026-11-20",
+  "source": "State reader session, 2026-11-20 (the November 2026 Open States dump, and probes of sutra.oslpr.org, www.senado.pr.gov and votaciones.senado.evotepr.com). No reader was built.",
+  "chambers": {
+    "lower": "Cámara de Representantes",
+    "upper": "Senado"
+  },
+  "sessions": "The Legislative Assembly sits for a four-year term (cuatrienio, 2025-2028), in ordinary sessions each year. Measures are numbered by type and chamber through the term: P. de la C. and P. del S. (bills), R. C. de la C. and R. C. del S. (joint resolutions), R. de la C. and R. del S. (resolutions). House 51 seats, Senate 27 (both can grow under the minority-representation rule).",
+  "bill_data": [
+    "The Open States dump's Puerto Rico extract is empty (72 KB, no bills): there is no bulk data.",
+    "No data service from the Office of Legislative Services (OSL) was found."
+  ],
+  "votes": {
+    "mode": "none",
+    "official_hosts": [
+      "sutra.oslpr.org"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "No reader. A SUTRA measure page (sutra.oslpr.org/medidas/<id>) prints each vote's tally (\"Votos a favor: 33, Votos en contra: 16, Votos abstenidos: 1, Votos ausentes: 3\") with no member names; the attached vote files sit under /SutraFiles/ and /SutraFilesGen/, which robots.txt disallows. The Senate links its own public vote site, votaciones.senado.evotepr.com, run by an outside company, a browser-only app with an undocumented feed at public.senado.evotepr.com; it was not called. No House source of named votes was found.",
+    "gaps": [
+      "No named roll call was found on an allowed government page.",
+      "Whether the Senate's vote site names each senator's vote is not known (2026-11-20)."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "sutra.oslpr.org"
+    ],
+    "marks": "Not checked (2026-11-20).",
+    "note": "Texts are attached files under /SutraFiles/, which robots.txt disallows."
+  },
+  "reader_access": {
+    "sutra.oslpr.org": "open",
+    "votaciones.senado.evotepr.com": "not checked",
+    "www.senado.pr.gov": "open"
+  },
+  "search_note": "Puerto Rico has no roll-call reader here: its floor votes are not read from bulk data. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Puerto Rico measures are numbered by type and chamber through the four-year term (P. de la C. 1, P. del S. 1).\n- Texts: the marks for new and deleted words were not checked.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "Older Senate vote PDFs at www.senado.pr.gov/document_vault/voting/… return 404 (two tried, 2026-11-20).",
+    "Pages are in Spanish."
+  ]
+}

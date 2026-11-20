@@ -1,0 +1,48 @@
+{
+  "state": "me",
+  "name": "Maine",
+  "verified": "2026-11-20",
+  "source": "State reader session, 2026-11-20 (scripts/stage5/openstates/, the November 2026 Open States dump, and two-page probes of legislature.maine.gov: robots.txt, the House and Senate roll-call lists, one House and one Senate roll-call PDF). No reader was built.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "The Legislature is numbered and sits for two years: the 132nd is 2025-2026, with a First Regular Session in the odd year and a Second Regular Session in the even year, and special sessions as called. Bills are Legislative Documents numbered LD 1 up through the whole Legislature, and each also has a paper number by the chamber it starts in (HP 1491, SP 12). House 151 seats plus three non-voting tribal representatives; Senate 35.",
+  "bill_data": [
+    "The Open States dump holds Maine, but its roll calls are of little use: for the 129th Legislature no member vote is linked to a person, and it holds no bill of the 132nd (2025-2026). It was not converted.",
+    "No data service from the Legislature was found."
+  ],
+  "votes": {
+    "mode": "none",
+    "official_hosts": [
+      "legislature.maine.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "No reader. robots.txt on legislature.maine.gov disallows /LawMakerWeb and /legis/LawMakerWeb, which hold the roll-call database pages, so they are not read. Two allowed paths publish each floor roll call as a PDF naming every member: the House at /house/Repository/Documents/<132>/RollCalls/<nnn>.<roll call>.<132R2>.pdf (listed at /house/Documents/RollCalls; members as \"Surname, Initials\" with a Y, N or X mark; the tally prints YES, NO, NV, EXC DAY, EXC VOTE, RES and VACANT), and the Senate at /uploads/visual_edit/roll-call-<n>[-ld-<n>].pdf (listed at /132nd-roll-calls; surnames with an X under Yea, Nay, Abs or Exc). The mark sits in a column, so a reader must pair it by position. Whether to build a reader on these PDFs is the runner's decision (2026-11-20).",
+    "gaps": [
+      "No floor vote is read from bulk data or from the record.",
+      "The House roll-call list links its entries to /LawMakerWeb pages on www.mainelegislature.org, which robots.txt disallows: those links must be skipped.",
+      "The House PDF's file name carries no LD number: a reader must take the bill from the PDF's own heading."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "legislature.maine.gov"
+    ],
+    "marks": "Not checked (2026-11-20).",
+    "note": "No bill text was read."
+  },
+  "reader_access": {
+    "legislature.maine.gov": "open",
+    "www.mainelegislature.org": "blocked: robots.txt Disallow: /LawMakerWeb (the House list's roll-call links)"
+  },
+  "search_note": "Maine has no roll-call reader here: its floor votes are not read from bulk data. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Maine bills are Legislative Documents (LD) numbered through the whole two-year Legislature; the paper number (HP, SP) names the chamber a bill starts in.\n- Texts: the marks for new and deleted words were not checked.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "One House roll-call page in the disallowed /LawMakerWeb path was fetched by mistake on 2026-11-20 and deleted unread; nothing from it was used.",
+    "The roll-call PDFs print members by surname (House with initials); two members of one surname are told apart only by initials."
+  ]
+}
