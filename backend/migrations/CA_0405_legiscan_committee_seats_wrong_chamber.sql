@@ -168,7 +168,7 @@
 -- To undo: 1. set chamber back to 'joint' for the ids in part 1; 2a/2b. set committee_id / politician_id / role
 -- back to the old values above; 2c. re-insert the rows above (congress_number 0, is_current true).
 --
--- STATUS: NOT APPLIED.
+-- STATUS: APPLIED 2026-11-20 (0 LegiScan committee seats left in the other chamber after apply).
 
 BEGIN;
 
