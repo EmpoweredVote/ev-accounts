@@ -18,6 +18,13 @@ import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
 import { invalidateRoleCache } from '../lib/roleService.js';
 import {
+  listStates as listCountyBannerStates,
+  getStateCounties as getCountyBannerState,
+  recordDecision as recordCountyBannerDecision,
+  isWritable as countyBannersWritable,
+  CountyBannerDecisionError,
+} from '../lib/countyBannerReviewService.js';
+import {
   sanctionInvitee,
   clearSlotLock,
   setInviteCapOverride,
@@ -1409,6 +1416,72 @@ router.post('/evidence/:id/rehome', async (req: any, res) => {
   } catch (err: any) {
     if (/issue/.test(err?.message)) return res.status(400).json({ error: err.message });
     console.error('[admin/evidence/rehome]', err); res.status(500).json({ error: 'failed' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// County banner review (plan 2 of the county banner programme)
+//
+// 🔴 A REFUSED DECISION IS A 400 CARRYING THE SERVICE'S OWN SENTENCE, NEVER A 500. The spec
+// requires the surface to show "NOT SAVED" with the REASON, and a generic 500 gives the
+// operator nothing to act on. Only an unexpected failure is a 500, and its detail stays in the
+// log rather than in the response.
+
+const countyBannerDecisionSchema = z.object({
+  status: z.enum(['keep', 'needs_another_look']),
+  chosenTitle: z.string().min(1).nullable(),
+  verticalAnchor: z.number().min(0).max(1).nullable(),
+  focus: z.string().min(1).nullable(),
+  captionSighted: z.boolean(),
+});
+
+router.get('/county-banners/states', async (_req, res) => {
+  try {
+    res.json(await listCountyBannerStates());
+  } catch (err) {
+    console.error('[admin/county-banners/states] GET error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Answers "is saving switched on at all", which the page shows from load. Declared before
+// '/county-banners/:state' so a state code can never shadow it.
+router.get('/county-banners/health', async (_req, res) => {
+  try {
+    res.json({ writable: await countyBannersWritable() });
+  } catch (err) {
+    console.error('[admin/county-banners/health] GET error:', err);
+    // A health probe that cannot answer must say so, not claim writability.
+    res.status(200).json({ writable: false, error: 'could not reach the review table' });
+  }
+});
+
+router.get('/county-banners/:state', async (req, res) => {
+  try {
+    res.json(await getCountyBannerState(req.params.state));
+  } catch (err) {
+    console.error('[admin/county-banners/:state] GET error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+router.post('/county-banners/:geoid/decision', async (req: any, res) => {
+  const parsed = countyBannerDecisionSchema.safeParse(req.body ?? {});
+  if (!parsed.success) {
+    res.status(400).json({ error: `That is not a decision: ${parsed.error.issues[0]?.message ?? 'invalid body'}` });
+    return;
+  }
+  // actorId is this file's own helper, used by every other write handler here.
+  const actor = actorId(req);
+  try {
+    res.json(await recordCountyBannerDecision(req.params.geoid, parsed.data, actor));
+  } catch (err) {
+    if (err instanceof CountyBannerDecisionError) {
+      res.status(400).json({ error: err.message });
+      return;
+    }
+    console.error('[admin/county-banners/decision] POST error:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
