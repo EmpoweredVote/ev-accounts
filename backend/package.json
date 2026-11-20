@@ -103,6 +103,7 @@
     "check:seating:control": "node scripts/control-seating-invariants.mjs",
     "check:incumbent-claims": "node scripts/check-incumbent-claims.mjs",
     "check:incumbency": "node scripts/reconcile-incumbency.mjs --check",
+    "banners:candidates": "node --import ./scripts/lib/main-checkout-fallback.mjs --import tsx scripts/county-banners/cli.ts",
     "check:user-agents": "node scripts/check-user-agent-privacy.mjs"
   },
   "overrides": {
@@ -114,6 +115,7 @@
     "@anthropic-ai/sdk": "^1.8.0",
     "@aws-sdk/client-sqs": "^3.1168.0",
     "@mozilla/readability": "^0.6.0",
+    "@napi-rs/canvas": "^0.1.80",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.119.0",
     "@types/compression": "^1.8.1",
