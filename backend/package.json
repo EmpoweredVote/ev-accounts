@@ -103,7 +103,8 @@
     "check:seating:control": "node scripts/control-seating-invariants.mjs",
     "check:incumbent-claims": "node scripts/check-incumbent-claims.mjs",
     "check:incumbency": "node scripts/reconcile-incumbency.mjs --check",
-    "check:user-agents": "node scripts/check-user-agent-privacy.mjs"
+    "check:user-agents": "node scripts/check-user-agent-privacy.mjs",
+    "banners:candidates": "node --import ./scripts/lib/main-checkout-fallback.mjs --import tsx scripts/county-banners/cli.ts"
   },
   "overrides": {
     "qs": "^6.17.1",
