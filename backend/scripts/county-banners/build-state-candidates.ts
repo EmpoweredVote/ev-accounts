@@ -54,6 +54,21 @@ const STATE_NAME: Record<string, string> = {
   PR: 'Puerto Rico',
 };
 
+/**
+ * What this pipeline knows how to produce. BUMP IT whenever a change means an already-swept
+ * county holds less than a fresh sweep would give.
+ *
+ * 🔴 WITHOUT THIS, RESUME SILENTLY DISABLES EVERY NEW STAGE. Resume used to skip any county
+ * with `swept: true`, so Nebraska's 93 counties — already on disk from the 2026-11-19 run,
+ * with no `unlocatedFiles` because that field did not exist — would never have been re-swept,
+ * and the caption lane would have had no state left where it could fire. The lane was built
+ * for exactly those 20 empty Nebraska counties. Found in review (I5).
+ *
+ *   1  the original pipeline (plan 1): geometry lane only, unlocated files counted and dropped
+ *   2  plan 2: unlocated files KEPT, caption lane, captions and credit URLs captured
+ */
+export const PIPELINE_VERSION = 2;
+
 export interface BuildDeps {
   query: QueryFn;
   sweep?: (roots: string[], opts?: SweepOptions) => Promise<CandidateFile[]>;
@@ -75,6 +90,8 @@ export interface CountyFile extends CountyCandidates {
    * empty. These are what the caption lane reads.
    */
   unlocatedFiles: CandidateFile[];
+  /** The PIPELINE_VERSION that produced this row. Absent means version 1. */
+  pipelineVersion: number;
   /** Files the sweep returned at all -- the denominator every other count sums to. */
   filesSwept: number;
   /** Zero categories is a DIFFERENT finding from zero files: the title probably missed. */
@@ -146,12 +163,15 @@ export async function buildStateCandidates(stateUsps: string, outDir: string, de
     // run is NOT -- that is the whole reason the flag exists.
     if (fs.existsSync(file)) {
       const prev = readPrevious(file);
-      if (prev?.swept) { rows.push(prev); continue; }
+      // Swept is not enough: a county swept by an OLDER pipeline holds less than a fresh sweep
+      // would give it, and skipping it would disable every stage added since.
+      if (prev?.swept && (prev.pipelineVersion ?? 1) >= PIPELINE_VERSION) { rows.push(prev); continue; }
     }
 
     const row: CountyFile = {
       geoid: county.geoid, name: county.name, swept: false, candidates: [], rejected: {},
-      allCandidates: [], unlocatedFiles: [], filesSwept: 0, categoriesFound: 0, categoryErrors: 0,
+      allCandidates: [], unlocatedFiles: [], pipelineVersion: PIPELINE_VERSION,
+      filesSwept: 0, categoriesFound: 0, categoryErrors: 0,
       otherCounty: 0, unlocated: 0, outside: 0,
     };
 

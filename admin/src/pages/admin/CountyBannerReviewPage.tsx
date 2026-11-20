@@ -23,7 +23,7 @@ import {
   ASSET_W, ASSET_H, DESKTOP_RATIO, MOBILE_RATIO, assetRect, bandRect, formatFocus, parseFocus,
 } from './countyBannerCrop';
 import {
-  emptyKind, keepBlocker, savingLineText, saveStampText, frameStatus, creditLine,
+  emptyKind, keepBlocker, savingLineText, saveStampText, frameStatus, creditLine, mergeSaved,
   type CountyReviewRow, type CandidateRow, type SaveState,
 } from './countyBannerReviewState';
 
@@ -41,8 +41,16 @@ function CropPreview({ c, anchor, focus }: { c: CandidateRow; anchor: number; fo
   const scale = ASSET_W / src.w;
   return (
     <div className="space-y-1">
+      {/* 🔴 THE BORDER GOES ON THE OUTER ELEMENT, THE ASPECT RATIO ON THE INNER ONE. Tailwind
+          sets box-sizing: border-box globally, so `aspect-ratio` on a BORDERED box sizes the
+          border box while the absolutely-positioned image is laid out against the PADDING box.
+          Measured in Chrome: 3.1667 instead of 3.1481 — the image sat about a pixel low and
+          the preview showed ~0.6% more of the source than the asset will. Found in review
+          (I7), and it also means the Task 7 measurement in the ledger was taken against a box
+          this component did not have. */}
+      <div className="border border-gray-300 dark:border-gray-700">
       <div
-        className="relative overflow-hidden border border-gray-300 dark:border-gray-700"
+        className="relative overflow-hidden"
         style={{ aspectRatio: `${ASSET_W} / ${ASSET_H}` }}
       >
         <img
@@ -69,6 +77,7 @@ function CropPreview({ c, anchor, focus }: { c: CandidateRow; anchor: number; fo
           style={{ height: `${((ASSET_H - band.y - band.h) / ASSET_H) * 100}%` }}
         />
       </div>
+      </div>
       <p className="text-xs text-gray-500">
         Full asset 1700×540 · desktop band {Math.round((band.h / ASSET_H) * 1000) / 10}% ·
         mobile shows {Math.round((mobile.h / ASSET_H) * 1000) / 10}%
@@ -91,7 +100,7 @@ function CountyCard({ row, onSaved }: { row: CountyReviewRow; onSaved: (r: Count
   // The blocker is computed against the crop the operator can see right now, not against the
   // row as it was loaded.
   const live = { ...row, focus, verticalAnchor: anchor };
-  const blocker = keepBlocker(live, selected, sighted);
+  const blocker = keepBlocker(live, selected, sighted, failedFrames);
   const empty = emptyKind(row);
   const chosen = row.candidates.find((c) => c.commonsTitle === selected) ?? null;
 
@@ -257,7 +266,7 @@ export function CountyBannerReviewPage() {
   }, []);
 
   const onSaved = useCallback((saved: CountyReviewRow) => {
-    setRows((prev) => prev?.map((r) => (r.geoid === saved.geoid ? { ...r, ...saved } : r)) ?? prev);
+    setRows((prev) => prev?.map((r) => (r.geoid === saved.geoid ? mergeSaved(r, saved) : r)) ?? prev);
   }, []);
 
   const line = useMemo(() => savingLineText(health), [health]);

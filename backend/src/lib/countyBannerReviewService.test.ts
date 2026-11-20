@@ -130,7 +130,7 @@ describe('reads', () => {
     expect(await isWritable(db)).toBe(true);
     expect(db.seen[0]).toContain('has_table_privilege');
     expect(db.seen[0].toUpperCase()).not.toContain('INSERT');
-    expect(db.seen[0].toUpperCase()).not.toContain('UPDATE INTO');
+    expect(db.seen[0].toUpperCase()).not.toContain('UPDATE ');
   });
 
   it('listStates counts each status separately', async () => {
@@ -161,5 +161,79 @@ describe('reads', () => {
     const db = fakeDb([[{ ...savedRow[0], candidates: null }]]);
     const rows = await getStateCounties('DE', db);
     expect(rows[0].candidates).toEqual([]);
+  });
+});
+
+describe('the saved row is a WHOLE row (review C2)', () => {
+  const savedWithCandidates = [{
+    ...savedRow[0],
+    candidates: [{
+      commons_title: 'File:A.jpg', rank_position: 0, frame_url: 'https://x/f.jpg',
+      source_page_url: 'https://commons.wikimedia.org/wiki/File:A.jpg', width: 3000, height: 2000,
+      licence: 'cc0', author: 'Someone', located_by: 'geometry', caption_text: null,
+      caption_source_url: null, confirming_source_url: null, place_list_available: null,
+    }],
+  }];
+
+  it('returns the county\'s candidates, not an empty list', async () => {
+    // 🔴 The page merges this row over the loaded one. A row carrying candidates:[] wipes the
+    // options the operator just chose from — the card then prints "none is usable as a banner"
+    // for a county that was just KEPT, and the Keep button disables itself. Review finding C2.
+    //
+    // ⚠ The fake answers the way POSTGRES would: `RETURNING *` on county_banner_review has no
+    // candidates column, so a write that does not ASK for them gets none. A fake that handed
+    // them over regardless would pass whatever the SQL did — which is exactly how the first
+    // version of this test passed while the bug was still there.
+    let n = 0;
+    const db = {
+      query: (async (sql: string) => {
+        n++;
+        if (n === 1) return { rows: geometryCandidate, rowCount: 1 };
+        const asked = sql.includes('county_banner_candidates');
+        return { rows: [asked ? savedWithCandidates[0] : savedRow[0]], rowCount: 1 };
+      }) as Queryable['query'],
+    };
+    const row = await recordDecision('10001', KEEP, 'tester', db);
+    expect(row.candidates).toHaveLength(1);
+    expect(row.candidates[0].commonsTitle).toBe('File:A.jpg');
+  });
+
+  it('asks for the candidates in the same statement that writes', async () => {
+    const db = fakeDb([geometryCandidate, savedWithCandidates]);
+    await recordDecision('10001', KEEP, 'tester', db);
+    expect(db.seen[1]).toContain('county_banner_candidates');
+  });
+});
+
+describe('the caption gate is enforced by the WRITE, not only by a prior read (review I2)', () => {
+  it('carries the caption condition into the update statement itself', async () => {
+    const db = fakeDb([geometryCandidate, savedRow]);
+    await recordDecision('10001', KEEP, 'tester', db);
+    const write = db.seen[1];
+    expect(write).toMatch(/located_by/);
+    expect(write).toMatch(/caption/);
+  });
+
+  it('says the option changed under them when the write matches nothing after a passing read', async () => {
+    // Two statements can run on two different pooled connections. If the gate passed on the
+    // read and the write still matched no row, something moved in between — say so, rather
+    // than reporting a county that does not exist.
+    const db = fakeDb([geometryCandidate, []]);
+    await expect(recordDecision('10001', KEEP, 'tester', db))
+      .rejects.toThrow(/changed while you were deciding|no such county/i);
+  });
+});
+
+describe('the focus bound matches the page (review M2)', () => {
+  it('refuses a focus above 100%, which the preview would render centred', async () => {
+    const db = fakeDb([geometryCandidate, savedRow]);
+    await expect(recordDecision('10001', { ...KEEP, focus: '500% 30%' }, 'tester', db))
+      .rejects.toThrow(/focus/i);
+  });
+
+  it('still accepts 100%', async () => {
+    const db = fakeDb([geometryCandidate, savedRow]);
+    await expect(recordDecision('10001', { ...KEEP, focus: '100% 100%' }, 'tester', db))
+      .resolves.toBeDefined();
   });
 });

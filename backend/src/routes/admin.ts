@@ -1474,7 +1474,27 @@ router.post('/county-banners/:geoid/decision', async (req: any, res) => {
   // actorId is this file's own helper, used by every other write handler here.
   const actor = actorId(req);
   try {
-    res.json(await recordCountyBannerDecision(req.params.geoid, parsed.data, actor));
+    const saved = await recordCountyBannerDecision(req.params.geoid, parsed.data, actor);
+    // ADMN-05: every admin mutation in this file is logged. A decision changes what a voter
+    // eventually sees on a county page, so it belongs in the same audit trail as the rest.
+    //
+    // 🔴 BUT THE SAVE HAS ALREADY HAPPENED. Letting a failed audit write throw would turn a
+    // SUCCESSFUL save into a 500, and the page would show the operator "NOT SAVED" for a
+    // county that is saved — the precise lie this whole surface was built to stop. The audit
+    // failure is logged where an operator cannot miss it and the response tells the truth.
+    try {
+      await logAdminAction(actor, 'county_banner_decision', null, {
+        geoid: req.params.geoid,
+        status: parsed.data.status,
+        chosenTitle: parsed.data.chosenTitle,
+        focus: parsed.data.focus,
+        verticalAnchor: parsed.data.verticalAnchor,
+        captionSighted: parsed.data.captionSighted,
+      });
+    } catch (auditErr) {
+      console.error('[admin/county-banners/decision] SAVED but NOT AUDITED:', auditErr);
+    }
+    res.json(saved);
   } catch (err) {
     if (err instanceof CountyBannerDecisionError) {
       res.status(400).json({ error: err.message });

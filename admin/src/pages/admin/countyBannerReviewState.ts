@@ -110,10 +110,17 @@ export function emptyKind(row: CountyReviewRow): { kind: EmptyKind; text: string
  */
 export function keepBlocker(
   row: CountyReviewRow, selectedTitle: string | null, captionSighted: boolean,
+  failedFrames: Set<string> = new Set(),
 ): string | null {
   if (!selectedTitle) return 'Choose one of the options first.';
   const chosen = row.candidates.find((c) => c.commonsTitle === selectedTitle);
   if (!chosen) return 'That is not an option for this county any more. Reload the state.';
+  // 🔴 An option the operator cannot SEE cannot be cropped. The thumbnail already says the
+  // frame is missing or broken, but nothing stopped them moving both sliders against an
+  // invisible image and keeping it — a crop certified against nothing.
+  if (frameStatus(chosen, failedFrames) !== 'ok') {
+    return 'This option has no image to crop. Pick another, or re-import the state.';
+  }
   if (row.focus === null || row.verticalAnchor === null) {
     return 'Set the crop first — move both sliders, or accept the defaults by nudging them.';
   }
@@ -178,4 +185,22 @@ export function creditLine(author: string): string {
     .replace(/\s+/g, ' ')
     .trim();
   return text || 'author unreadable — do not ship this one';
+}
+
+
+/**
+ * Fold a saved row into the loaded one without losing what the operator can see.
+ *
+ * 🔴 Review finding C2: the save used to return a row with `candidates: []` (its UPDATE's
+ * RETURNING clause could not carry them), and a plain `{...loaded, ...saved}` wiped the
+ * options off the card the moment a county was kept — the card then printed "none is usable
+ * as a banner" for a county that had just been kept. The service now returns them, so this is
+ * the second line of defence, not the first: never let a save shrink the option list.
+ */
+export function mergeSaved(loaded: CountyReviewRow, saved: CountyReviewRow): CountyReviewRow {
+  return {
+    ...loaded,
+    ...saved,
+    candidates: saved.candidates?.length ? saved.candidates : loaded.candidates,
+  };
 }

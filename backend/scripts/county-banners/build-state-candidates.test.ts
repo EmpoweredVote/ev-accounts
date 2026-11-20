@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { buildStateCandidates, STATE_FIPS } from './build-state-candidates.js';
+import { buildStateCandidates, STATE_FIPS, PIPELINE_VERSION } from './build-state-candidates.js';
 import type { CandidateFile } from './types.js';
 import type { QueryFn } from './locate.js';
 
@@ -208,6 +208,53 @@ describe('the caption lane', () => {
       deps({ fetchText: async () => 'A photograph of a barn.' }) as never);
     expect(rows[0].candidates).toHaveLength(0);
     expect(rows[0].unlocatedFiles).toHaveLength(1);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+});
+
+describe('resume and the pipeline version (review I5)', () => {
+  const county = { geo_id: '10001', name: 'Kent County', geom_null: false, geom_valid: true, geom_in_bounds: true };
+  const deps = () => ({
+    query: async (sql: string) => (sql.includes('G4110') ? [{ state_places: '0', places: [] }] : [county]),
+    sweep: async () => [],
+    attach: async (f: unknown[]) => f,
+    assign: async () => ({ located: new Map(), unlocated: [], outside: [] }),
+    render: async () => ({}),
+    fetchText: async () => '',
+  });
+
+  it('stamps the pipeline version it was swept by', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-ver-'));
+    const rows = await buildStateCandidates('DE', dir, deps() as never);
+    expect(rows[0].pipelineVersion).toBe(PIPELINE_VERSION);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('re-sweeps a county swept by an OLDER pipeline, so a new lane can reach it', async () => {
+    // 🔴 Nebraska's 20 empty counties are already on disk as swept:true with no unlocatedFiles.
+    // Resuming on `swept` alone would mean the caption lane never runs for the state it was
+    // built for — the lane would have no state left where it could fire. Review finding I5.
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-ver-'));
+    fs.writeFileSync(path.join(dir, '10001.json'), JSON.stringify({
+      geoid: '10001', name: 'Kent County', swept: true, candidates: [], rejected: {},
+      allCandidates: [], filesSwept: 9, categoriesFound: 1, categoryErrors: 0,
+      otherCounty: 0, unlocated: 7, outside: 0,            // no unlocatedFiles, no version
+    }));
+    let swept = false;
+    const d = { ...deps(), sweep: async () => { swept = true; return []; } };
+    const rows = await buildStateCandidates('DE', dir, d as never);
+    expect(swept).toBe(true);
+    expect(rows[0].pipelineVersion).toBe(PIPELINE_VERSION);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('still skips a county already swept by THIS pipeline', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cb-ver-'));
+    await buildStateCandidates('DE', dir, deps() as never);
+    let swept = false;
+    const d = { ...deps(), sweep: async () => { swept = true; return []; } };
+    await buildStateCandidates('DE', dir, d as never);
+    expect(swept).toBe(false);
     fs.rmSync(dir, { recursive: true, force: true });
   });
 });

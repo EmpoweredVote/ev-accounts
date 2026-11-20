@@ -418,3 +418,17 @@ describe('POST /api/admin/county-banners/:geoid/decision', () => {
     expect(mockRecordDecision).not.toHaveBeenCalled();
   });
 });
+
+describe('the audit log must not undo a save (review I10)', () => {
+  it('still returns the saved row when the audit write fails', async () => {
+    // 🔴 The decision is already in the database by this point. A throw here would report
+    // "NOT SAVED" for a county that IS saved — the exact failure this surface exists to stop.
+    mockRecordDecision.mockReset();
+    mockRecordDecision.mockResolvedValue({ geoid: '10001', status: 'keep', focus: '50% 30%' });
+    const res = await request(app)
+      .post('/api/admin/county-banners/10001/decision')
+      .send({ status: 'keep', chosenTitle: 'File:A.jpg', verticalAnchor: 0.35, focus: '50% 30%', captionSighted: false });
+    expect(res.status).toBe(200);
+    expect(res.body.focus).toBe('50% 30%');
+  });
+});

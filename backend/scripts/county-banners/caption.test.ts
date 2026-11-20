@@ -72,7 +72,9 @@ describe('captionNamesPlace', () => {
 describe('registrableDomain', () => {
   it('reduces a host to its last two labels', () => {
     expect(registrableDomain('https://www.flickr.com/photos/x')).toBe('flickr.com');
-    expect(registrableDomain('https://commons.wikimedia.org/wiki/File:A.jpg')).toBe('wikimedia.org');
+    // Every WMF host collapses to one identity, so Commons cannot 'confirm' Commons.
+    expect(registrableDomain('https://commons.wikimedia.org/wiki/File:A.jpg')).toBe('wikimedia-family');
+    expect(registrableDomain('https://en.wikipedia.org/wiki/Dover')).toBe('wikimedia-family');
   });
 
   it('returns null for something that is not a url', () => {
@@ -136,5 +138,75 @@ describe('confirmByCaption', () => {
     );
     expect(r.located).toBe(true);
     expect(r.placeListAvailable).toBe(false);
+  });
+});
+
+describe('the state leg must not match an ordinary word (review C1)', () => {
+  const indiana: PlaceNames = {
+    county: 'Marion County', state: 'Indiana', stateUsps: 'IN',
+    places: ['Marion'], placeListAvailable: true,
+  };
+  const delaware: PlaceNames = {
+    county: 'Kent County', state: 'Delaware', stateUsps: 'DE',
+    places: ['Dover'], placeListAvailable: true,
+  };
+  const oregon: PlaceNames = {
+    county: 'Lane County', state: 'Oregon', stateUsps: 'OR',
+    places: ['Eugene'], placeListAvailable: true,
+  };
+  const maine: PlaceNames = {
+    county: 'Knox County', state: 'Maine', stateUsps: 'ME',
+    places: ['Rockland'], placeListAvailable: true,
+  };
+
+  it('does not read the English word "in" as Indiana', () => {
+    // 🔴 This caption is about MARION, OHIO. Accepting it is the spec's named anti-goal:
+    // a photograph from the wrong county, placed by a word that is not a state at all.
+    expect(captionNamesPlace('The courthouse in Marion, Ohio, photographed in 1912', indiana))
+      .toBeNull();
+  });
+
+  it('does not read the Spanish word "de" as Delaware', () => {
+    // Commons captions are frequently not in English.
+    expect(captionNamesPlace('Vista de Dover, acantilados de Inglaterra', delaware)).toBeNull();
+  });
+
+  it('does not read the English word "or" as Oregon', () => {
+    expect(captionNamesPlace('Eugene Delacroix, oil or canvas', oregon)).toBeNull();
+  });
+
+  it('does not read the English word "me" as Maine', () => {
+    expect(captionNamesPlace('Rockland Harbor; photo given to me by the author', maine)).toBeNull();
+  });
+
+  it('still accepts a postal abbreviation in postal shape', () => {
+    expect(captionNamesPlace('Courthouse, Marion, IN', indiana)).toBe('Marion');
+    expect(captionNamesPlace('Dover, DE 19901', delaware)).toBe('Dover');
+  });
+
+  it('still accepts the full state name in any case', () => {
+    expect(captionNamesPlace('Courthouse at Marion, indiana', indiana)).toBe('Marion');
+  });
+});
+
+describe('independence is judged on the WMF family, not on a string (review I3)', () => {
+  it('treats wikipedia.org as the same source as wikimedia.org', async () => {
+    const r = await confirmByCaption(
+      file({ caption: 'Dover, Delaware', creditUrl: 'https://en.wikipedia.org/wiki/Dover' }),
+      { county: 'Kent County', state: 'Delaware', stateUsps: 'DE', places: ['Dover'], placeListAvailable: true },
+      { fetchText: async () => 'Dover is the capital of Delaware.' },
+    );
+    expect(r.located).toBe(false);
+    expect(r.reason).toMatch(/independent/i);
+  });
+
+  it('reports which host confirmed it, so the operator can judge the source', async () => {
+    const r = await confirmByCaption(
+      file({ caption: 'Dover, Delaware', creditUrl: 'https://www.loc.gov/item/x' }),
+      { county: 'Kent County', state: 'Delaware', stateUsps: 'DE', places: ['Dover'], placeListAvailable: true },
+      { fetchText: async () => 'Dover, Delaware.' },
+    );
+    expect(r.located).toBe(true);
+    expect(r.confirmingDomain).toBe('loc.gov');
   });
 });

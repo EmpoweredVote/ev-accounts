@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  emptyKind, keepBlocker, savingLineText, saveStampText, frameStatus, creditLine,
+  emptyKind, keepBlocker, savingLineText, saveStampText, frameStatus, creditLine, mergeSaved,
   type CountyReviewRow, type CandidateRow,
 } from './countyBannerReviewState';
 
@@ -159,5 +159,43 @@ describe('creditLine — Commons Artist is HTML and the operator must be able to
 
   it('says so, rather than showing nothing, when the field strips to empty', () => {
     expect(creditLine('<div></div>')).toMatch(/unreadable/i);
+  });
+});
+
+describe('mergeSaved — a save must never shrink what the operator can see (review C2)', () => {
+  it('keeps the loaded candidates when the saved row carries none', () => {
+    const loaded = county();
+    const saved = { ...county({ status: 'keep', chosenTitle: 'File:A.jpg' }), candidates: [] };
+    const merged = mergeSaved(loaded, saved);
+    expect(merged.status).toBe('keep');
+    expect(merged.candidates).toHaveLength(1);   // not wiped
+  });
+
+  it('takes the saved candidates when it has them', () => {
+    const loaded = county();
+    const saved = county({ status: 'keep', candidates: [candidate({ commonsTitle: 'File:NEW.jpg' })] });
+    expect(mergeSaved(loaded, saved).candidates[0].commonsTitle).toBe('File:NEW.jpg');
+  });
+});
+
+describe('keepBlocker and the frame (review I8)', () => {
+  it('blocks a keep on an option whose frame was never stored', () => {
+    // The thumbnail says "no frame was stored", but nothing stopped the operator setting both
+    // sliders against an invisible image and clicking Keep.
+    const c = county({
+      focus: '50% 30%', verticalAnchor: 0.3,
+      candidates: [candidate({ frameUrl: '' })],
+    });
+    expect(keepBlocker(c, 'File:A.jpg', false)).toMatch(/no image to crop/i);
+  });
+
+  it('blocks a keep on an option whose frame failed to load in this browser', () => {
+    const c = county({ focus: '50% 30%', verticalAnchor: 0.3 });
+    expect(keepBlocker(c, 'File:A.jpg', false, new Set(['https://x/f.jpg']))).toMatch(/no image to crop/i);
+  });
+
+  it('still allows a keep when the frame is fine', () => {
+    const c = county({ focus: '50% 30%', verticalAnchor: 0.3 });
+    expect(keepBlocker(c, 'File:A.jpg', false, new Set())).toBeNull();
   });
 });

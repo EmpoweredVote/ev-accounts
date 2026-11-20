@@ -45,6 +45,8 @@ export interface CaptionResult {
   captionText?: string;
   captionSourceUrl?: string;
   confirmingSourceUrl?: string;
+  /** The host that confirmed it, so the operator can judge the source rather than trust it. */
+  confirmingDomain?: string;
   placeListAvailable?: boolean;
 }
 
@@ -66,6 +68,37 @@ function names(haystack: string, needle: string): boolean {
 }
 
 /**
+ * Does this caption name the state?
+ *
+ * 🔴 THE POSTAL ABBREVIATION IS AN ORDINARY WORD IN TWO LANGUAGES, AND MATCHING IT CASE-BLIND
+ * REBUILDS THE WRONG-COUNTY FAILURE THIS WHOLE MODULE EXISTS TO PREVENT. Found in review,
+ * reproduced against this function:
+ *     Indiana  (IN): "The courthouse in Marion, Ohio, photographed in 1912" -> matched Marion
+ *     Delaware (DE): "Vista de Dover, acantilados de Inglaterra"            -> matched Dover
+ *     Oregon   (OR): "Eugene Delacroix, oil or canvas"                      -> matched Eugene
+ *     Maine    (ME): "Rockland Harbor; photo given to me by the author"     -> matched Rockland
+ * The first is the spec's named anti-goal exactly: a photograph of Marion, OHIO, offered as a
+ * candidate for Marion County, INDIANA. Commons descriptions are often not in English, which
+ * puts DE, LA, AL, PA, MA, SC and MS in the same trap.
+ *
+ * So the abbreviation is matched ONLY in postal shape: uppercase, in the UNFOLDED caption,
+ * and preceded by a comma or whitespace. Folding lowercases, which destroys the one signal
+ * that separates `IN` from `in` — so this check runs BEFORE fold(), which is why it cannot
+ * live inside names().
+ *
+ * The full state name is matched case-insensitively as before; "indiana" is never a stray word.
+ */
+function namesState(caption: string, p: PlaceNames): boolean {
+  if (names(caption, p.state)) return true;
+  const u = p.stateUsps.toUpperCase();
+  if (!u) return false;
+  // ⚠ `\\s` and `\\p`, not `\s` and `\p`: inside a TEMPLATE LITERAL an unrecognised escape
+  // loses its backslash, so `\s` would reach the RegExp as a bare `s` and this would match
+  // "Marion, IN" only when preceded by a literal 's'. Caught by the postal-shape test.
+  return new RegExp(`(^|[,\\s(])${u}($|[^\\p{L}\\p{N}])`, 'u').test(caption);
+}
+
+/**
  * The place this caption names, or null.
  *
  * Requires BOTH a place and the state. The place may be the county itself, one of our own
@@ -74,7 +107,7 @@ function names(haystack: string, needle: string): boolean {
  */
 export function captionNamesPlace(caption: string, p: PlaceNames): string | null {
   if (!caption) return null;
-  if (!names(caption, p.state) && !names(caption, p.stateUsps)) return null;
+  if (!namesState(caption, p)) return null;
 
   const countyShort = p.county.replace(/\s+(County|Parish|Borough|Census Area|Municipality)$/i, '');
   const candidates = [
@@ -95,11 +128,24 @@ export function registrableDomain(url: string): string | null {
     const host = new URL(url).hostname.toLowerCase();
     const parts = host.split('.').filter(Boolean);
     if (parts.length < 2) return host || null;
-    return parts.slice(-2).join('.');
+    const base = parts.slice(-2).join('.');
+    // 🔴 THE WIKIMEDIA FAMILY IS ONE SOURCE. wikipedia.org and wikimedia.org are different
+    // strings and the same organisation, and Wikipedia articles and Commons files routinely
+    // copy each other's captions — so a Wikipedia URL 'confirming' a Commons caption is one
+    // assertion cited twice. Found in review: the control that was watched failing used
+    // upload.wikimedia.org, the one WMF host a bare string comparison happens to catch.
+    if (WMF_DOMAINS.has(base)) return 'wikimedia-family';
+    return base;
   } catch {
     return null;
   }
 }
+
+const WMF_DOMAINS = new Set([
+  'wikimedia.org', 'wikipedia.org', 'wikidata.org', 'wikisource.org', 'wikivoyage.org',
+  'wikibooks.org', 'wikiquote.org', 'wikinews.org', 'wiktionary.org', 'wikiversity.org',
+  'mediawiki.org', 'wikimediafoundation.org',
+]);
 
 const COMMONS_FILE_BASE = 'https://commons.wikimedia.org/wiki/';
 
@@ -166,6 +212,7 @@ export async function confirmByCaption(
     captionText: caption,
     captionSourceUrl: captionSource(f.title),
     confirmingSourceUrl: confirming,
+    confirmingDomain: confirmHost,
     placeListAvailable: p.placeListAvailable,
   };
 }

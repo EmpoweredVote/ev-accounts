@@ -84,8 +84,21 @@ export class CountyBannerDecisionError extends Error {
   }
 }
 
-/** `50% 30%` -> two percentages. Anything else is not an object-position. */
+/**
+ * `50% 30%` -> two percentages. Anything else is not an object-position.
+ *
+ * ⚠ The bound matters and used to differ from the page's. This accepted up to 999% while
+ * countyBannerCrop.parseFocus rejects anything over 100%, so the service would happily STORE a
+ * focus the preview then rendered centred — the operator's crop silently ignored, which is the
+ * exact failure the focus string exists to prevent. Found in review (M2). Both now cap at 100.
+ */
 const FOCUS_RE = /^\s*(\d{1,3}(?:\.\d+)?)%\s+(\d{1,3}(?:\.\d+)?)%\s*$/;
+
+function focusInRange(focus: string): boolean {
+  const m = FOCUS_RE.exec(focus);
+  if (!m) return false;
+  return Number(m[1]) <= 100 && Number(m[2]) <= 100;
+}
 
 async function runner(db?: Queryable): Promise<Queryable> {
   // Imported lazily so this module can be unit-tested without a database.
@@ -115,17 +128,45 @@ const CHOSEN_SQL = `
   SELECT located_by FROM essentials.county_banner_candidates
    WHERE geoid = $1 AND commons_title = $2`;
 
+// 🔴 ONE STATEMENT, FOR TWO REASONS THE REVIEW FOUND.
+//
+// 1. IT RETURNS A WHOLE ROW. `RETURNING *` on county_banner_review has no candidates column,
+//    so the saved row came back with `candidates: []` — and the page merges the saved row over
+//    the loaded one, wiping the very options the operator had just chosen from. The card then
+//    printed "Swept 231 files and none is usable as a banner" for a county that had just been
+//    KEPT, and disabled its own Keep button. The CTE carries the candidates back.
+//
+// 2. THE CAPTION GATE IS IN THE WRITE. The gate used to be a separate SELECT; under a pg POOL
+//    those two statements can run on different backends, so a candidate flipped to
+//    located_by='caption' in between would be written unsighted. The EXISTS clause closes that
+//    window without needing a transaction or a row lock. The earlier SELECT stays, because it
+//    is what turns a refusal into a SENTENCE the operator can read — but it is no longer the
+//    thing that enforces the rule.
 const DECIDE_SQL = `
-  UPDATE essentials.county_banner_review
-     SET status          = $2,
-         chosen_title    = $3,
-         vertical_anchor = $4,
-         focus           = $5,
-         caption_sighted = $6,
-         decided_at      = now(),
-         decided_by      = $7
-   WHERE geoid = $1
-   RETURNING *`;
+  WITH upd AS (
+    UPDATE essentials.county_banner_review r
+       SET status          = $2,
+           chosen_title    = $3,
+           vertical_anchor = $4,
+           focus           = $5,
+           caption_sighted = $6,
+           decided_at      = now(),
+           decided_by      = $7
+     WHERE r.geoid = $1
+       AND (
+         $2 <> 'keep' OR EXISTS (
+           SELECT 1 FROM essentials.county_banner_candidates c
+            WHERE c.geoid = r.geoid AND c.commons_title = $3
+              AND (c.located_by <> 'caption' OR $6)
+         )
+       )
+     RETURNING *
+  )
+  SELECT u.*,
+         (SELECT json_agg(c ORDER BY c.rank_position)
+            FROM essentials.county_banner_candidates c
+           WHERE c.geoid = u.geoid) AS candidates
+    FROM upd u`;
 
 const WRITABLE_SQL = `
   SELECT has_table_privilege('essentials.county_banner_review', 'UPDATE') AS writable`;
@@ -218,7 +259,7 @@ export async function recordDecision(
     if (!chosenTitle) {
       throw new CountyBannerDecisionError('A keep must name the chosen candidate.');
     }
-    if (!focus || !FOCUS_RE.test(focus)) {
+    if (!focus || !focusInRange(focus)) {
       throw new CountyBannerDecisionError(
         `A keep needs a focus as two percentages, e.g. '50% 30%'. Got ${focus === null ? 'nothing' : `'${focus}'`}.`,
       );
@@ -247,6 +288,17 @@ export async function recordDecision(
   ]);
   if (saved.length === 0) {
     // "0 rows updated" looks exactly like success to a caller that only catches exceptions.
+    // Two things produce it, and they need different sentences: the county is not there, or
+    // the write's own caption gate refused after the read above had passed — which means the
+    // candidate changed underneath the operator while they were deciding.
+    const { rows: exists } = await r.query<Record<string, unknown>>(
+      'SELECT 1 FROM essentials.county_banner_review WHERE geoid = $1', [geoid],
+    );
+    if (exists.length > 0) {
+      throw new CountyBannerDecisionError(
+        `County ${geoid} was NOT SAVED: the chosen option changed while you were deciding. Reload the state and look again.`,
+      );
+    }
     throw new CountyBannerDecisionError(`County ${geoid} was NOT SAVED: no such county in the review table.`);
   }
   return toRow(saved[0]);
