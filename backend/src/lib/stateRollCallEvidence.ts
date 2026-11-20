@@ -3009,8 +3009,472 @@ export function explainNevadaVote(bodies: string[], url: string): NvVoteRecord |
   try { return readNevada(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Maine: one PDF per roll call, read by position ────────────────────────────────────────────────────────────────────
+// legislature.maine.gov (read 2026-11-20). robots.txt disallows /LawMakerWeb and /legis/LawMakerWeb, which hold the
+// roll-call database pages: they are never read, and every House list's own roll-call links point there. Two allowed paths
+// publish each floor roll call as a one-page PDF:
+//
+// The House: /house/Repository/Documents/<legislature>/RollCalls/<day>.<roll call>.<legislature><session>.pdf, listed at
+// /house/Documents/RollCallPDF?Legislature=<n> (130th on). Roll calls are numbered through the whole Legislature; the session
+// is R1, R2 (regular) or S1 (special). The page prints "First Special Session", "132nd LEGISLATURE", "ROLL CALL NO. 67",
+// "MAINE HOUSE OF REPRESENTATIVES", the LD ("LD 48"), "DATE: 4/3/2025", "MOTION: OTP-AM", and one tally row: "YES: 142",
+// "NO: 0", "NV: 8", "EXC DAY: 0", "EXC VOTE: 0", "RES: 1" (from the 132nd), "VACANT: 0", "MOTION: PREVAILS". Then four
+// columns of members, each a mark and a label, "Y  Abdi, M.H.": the mark is one letter in one of three slots before the
+// label, Y in the first, N in the second, and X (not voting), E (excused) or Z (restricted) in the third. A long label runs
+// onto a second line in its column ("Schmersal-Burgess," / "T.L."). Last, "EXCUSED DAY:", "EXCUSED VOTE:" and "RESTRICTED
+// VOTE:" each name their members ("Rep. Eaton, H.R., Rep. Griffin, A.W."). The 131st and 132nd print every label as
+// "Surname, Initials"; the 130th prints surnames only, so its votes are refused: a bare surname names no one.
+//
+// The Senate: /uploads/visual_edit/roll-call-<n>[-<paper>].pdf, listed at /<n>th-roll-calls. The page prints "MAINE STATE
+// SENATE", the LD and paper ("LD 1971", "HP 1315"), "1st Special Session", "132nd Legislature", "DATE: June 18, 2025",
+// "Question: Enactment (L.D. 1971) ( H.P. 1315)" (it may run onto a second line), one tally row ("YEA: 20", "NAY: 14",
+// "ABSENT: 0", "EXCUSED: 1", "MOTION: PREVAILS"), two column heads "Yea Nay Abs Exc", and per member a surname ("Bailey",
+// "Talbot Ross", "Pro Tem Bennett") with an X under one head. Below: "Senator Rafferty excused." (and "Senator Hickman
+// abstain.", whose X is under Exc), and "ROLL CALL #634". A surname is named in full from the Senate's member list
+// (/senate/senators/9536), which lists the current Legislature only: a vote is read only when the list's Legislature is the
+// vote's. A surname no member or two members of the list fit is kept as printed, and gives no line.
+//
+// A mark is paired with its member by position, never by the order the PDF stores its text (root CLAUDE.md, "PDF text has no
+// rows"): same row, the label to the right, in the slot (House) or under the head (Senate) the letter belongs to. The address
+// names the bill after a #, #LD1971. A vote is read only when its question is a vote on the bill (meQuestionIsOnTheBill), each
+// mark sits where its letter belongs, each group holds the count the tally prints, and the members listed by the footer are
+// the members marked excused or restricted.
+//
+//   Maine House roll call 67 (132nd Legislature, First Special Session), LD 48, 2025-04-03.
+//   Question: Enactment
+//   Yea 142; Nay 0; Not voting 8; Excused 0; Restricted 1.
+//   Yea (142): Abdi, M.H.; …
+//   Maine House roll call 67 (132nd Legislature, First Special Session), LD 48 - Enactment (2025-04-03): Abdi, M.H. voted Yea.
+//
+//   Maine Senate roll call 634 (132nd Legislature, First Special Session), LD 1971 - Enactment (2025-06-18): Donna Bailey voted Yea.
+
+/** A PDF handed to a reader as its positioned runs: the marker, then one run a line, "page<TAB>x<TAB>y<TAB>text". */
+export const PDF_ITEMS_MARK = '%PDF-ITEMS';
+
+/** A PDF's runs with their positions (to a tenth of a unit), page by page from the top, left to right. */
+export function pdfItemsBody(items: { page: number; x: number; y: number; str: string }[]): string {
+  const r1 = (n: number): number => Math.round(n * 10) / 10;
+  const kept = items.filter((i) => i.str.trim()).map((i) => ({ page: i.page, x: r1(i.x), y: r1(i.y), str: squash(i.str) }))
+    .sort((a, b) => a.page - b.page || b.y - a.y || a.x - b.x);
+  return [PDF_ITEMS_MARK, ...kept.map((i) => `${i.page}\t${i.x}\t${i.y}\t${i.str}`)].join('\n');
+}
+
+interface Item { page: number; x: number; y: number; s: string }
+function pdfItems(body: string): Item[] | null {
+  if (!body.startsWith(PDF_ITEMS_MARK + '\n')) return null;
+  const out: Item[] = [];
+  for (const l of body.split('\n').slice(1)) {
+    const m = /^(\d+)\t(-?[\d.]+)\t(-?[\d.]+)\t(.+)$/.exec(l);
+    if (!m) return null;
+    out.push({ page: Number(m[1]), x: Number(m[2]), y: Number(m[3]), s: m[4] });
+  }
+  return out;
+}
+
+export const ME_HOUSE_VOTES = ['Yea', 'Nay', 'Not voting', 'Excused', 'Restricted'] as const;
+export const ME_SENATE_VOTES = ['Yea', 'Nay', 'Absent', 'Excused'] as const;
+export type MeVote = (typeof ME_HOUSE_VOTES)[number] | (typeof ME_SENATE_VOTES)[number];
+const meVotes = (c: Chamber): readonly MeVote[] => (c === 'House' ? ME_HOUSE_VOTES : ME_SENATE_VOTES);
+const ME_SITE = 'https://legislature.maine.gov/';
+/** The Senate's member list: the current Legislature's senators, each linked to a district page. */
+export const ME_SENATORS = `${ME_SITE}senate/senators/9536`;
+/** robots.txt states no Crawl-delay (2026-11-20): one request a second is ours. */
+const ME_GAP_MS = 1_000;
+const ME_HOUSE_SEATS = 151;
+const ME_SENATE_SEATS = 35;
+const ME_HOUSE_URL = /^https:\/\/legislature\.maine\.gov\/house\/Repository\/Documents\/(1[3-9]\d)\/RollCalls\/(\d{3})\.(\d{3,4})\.(1[3-9]\d)(R[12]|S[1-9])\.pdf#LD([1-9]\d{0,3})$/;
+const ME_SENATE_URL = /^https:\/\/legislature\.maine\.gov\/uploads\/visual_edit\/roll-call-([1-9]\d{0,3})(?:-[a-z0-9]+)*\.pdf#LD([1-9]\d{0,3})$/;
+const ME_ORDINAL = ['First', 'Second', 'Third', 'Fourth'];
+const ME_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+/** The House's presiding officer, printed by office: kept as printed, so it gives no line. */
+const ME_SPEAKER = /^(?:Mr\.|Madam) Speaker$/;
+/** A House label: a surname of one or more words, a comma, one to four initials ("McCabe, J.A.G."). */
+const ME_HOUSE_LABEL = /^[\p{L}][\p{L}'’ -]*[\p{L}], (?:[\p{L}]\.){1,4}$/u;
+/** A Senate label: a surname of one or two words, with the office some members are printed under. */
+const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\p{L}][\p{L}'’-]*)?)$/u;
+
+/**
+ * Is a Maine question a vote on the bill? Its parenthesised papers dropped ("Enactment (L.D. 1971) ( H.P. 1315)"). Enactment,
+ * final passage, passage to be engrossed, an emergency measure's passage, and the vote on a veto are. Every motion is not
+ * (runner, 2026-11-16): to accept a committee's report (Ought to Pass or Ought Not to Pass), to adopt or postpone an amendment,
+ * to recede, concur, insist or adhere, to table, to reconsider, to commit. Only the wordings listed are read.
+ */
+export function meQuestionIsOnTheBill(q: string): boolean {
+  const s = squash(q.replace(/\([^)]*\)/g, ' ')).replace(/[.?]$/, '');
+  return /^(?:Final )?Enactment(?: ?- ?(?:Emer|Emergency|Bond Issue|Mandate))?$|^Emergency ?- ?Enactment$|^Final Passage(?: ?- ?Emer)?$|^Passage$|^Passage of Emergency Measure$|^Passage to be Engrossed(?: as Amended(?: by (?:Committee|Senate|House) Amendments? "[A-Z]"(?: as Amended by (?:Senate|House) Amendment "[A-Z]")?)?)?$|^Reconsideration ?- ?Veto$|^Shall (?:this|the) (?:Bill|Resolve) become (?:a )?law notwithstanding the objections? of the Governor$/i.test(s);
+}
+
+export interface MeVoteRef { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; ld: number; file: string; legislature?: number; session?: string; day?: number }
+export interface MeVoteRecord { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; session: string; bill: string; question: string; date: string; groups: Record<MeVote, string[]> }
+export interface MeVoteLine extends Omit<MeVoteRecord, 'groups'> { name: string; vote: MeVote }
+
+export function parseMaineVoteUrl(url: string): MeVoteRef | null {
+  const u = url.trim();
+  const h = ME_HOUSE_URL.exec(u);
+  if (h) {
+    if (h[1] !== h[4]) return null;
+    return { state: 'ME', stateName: 'Maine', chamber: 'House', rollNum: Number(h[3]), ld: Number(h[6]), file: u.replace(/#.*$/, ''), legislature: Number(h[1]), session: h[5], day: Number(h[2]) };
+  }
+  const s = ME_SENATE_URL.exec(u);
+  if (s) return { state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: Number(s[1]), ld: Number(s[2]), file: u.replace(/#.*$/, '') };
+  return null;
+}
+
+function maineDocs(r: MeVoteRef): string[] {
+  return r.chamber === 'House' ? [r.file] : [r.file, ME_SENATORS];
+}
+
+/** "132nd Legislature, First Special Session" */
+const meSession = (legislature: number, nth: string, kind: string): string => `${ordinal(legislature)} Legislature, ${nth} ${kind} Session`;
+const meDay = (y: number, m: number, d: number): string | null => {
+  const iso = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  const t = new Date(`${iso}T00:00:00Z`);
+  return !Number.isNaN(t.getTime()) && t.getUTCMonth() === m - 1 && t.getUTCDate() === d ? iso : null;
+};
+/** The one item whose text a pattern matches, or a refusal naming it. */
+function meOne(items: Item[], re: RegExp, what: string): { it: Item; m: RegExpExecArray } {
+  const hits = items.map((it) => ({ it, m: re.exec(it.s) })).filter((x): x is { it: Item; m: RegExpExecArray } => x.m !== null);
+  if (hits.length !== 1) throw new Error(`the vote prints ${hits.length === 0 ? 'no' : 'more than one'} ${what}`);
+  return hits[0];
+}
+
+function readMaineHouse(body: string, r: MeVoteRef): MeVoteRecord {
+  const items = pdfItems(body);
+  if (!items) throw new Error('the vote is not a PDF');
+  if (items.some((i) => i.page !== 1)) throw new Error('the vote runs past one page');
+  const title = meOne(items, /^MAINE HOUSE OF REPRESENTATIVES$/, 'House heading');
+  const leg = meOne(items, /^(\d{3})(?:st|nd|rd|th) LEGISLATURE$/, 'Legislature');
+  if (Number(leg.m[1]) !== r.legislature) throw new Error(`the vote is of the ${leg.m[1]} Legislature`);
+  if (r.legislature! < 131) throw new Error(`the ${ordinal(r.legislature!)} Legislature's House votes print surnames only`);
+  const sess = meOne(items, /^(First|Second) (Regular|Special) Session$/, 'session');
+  if (`${sess.m[2][0]}${ME_ORDINAL.indexOf(sess.m[1]) + 1}` !== r.session) throw new Error(`the vote is of the ${sess.m[0]}, not ${r.session}`);
+  const no = meOne(items, /^ROLL CALL NO\. (\d+)$/, 'roll-call number');
+  if (Number(no.m[1]) !== r.rollNum) throw new Error(`the vote is roll call ${no.m[1]}`);
+  const ld = meOne(items, /^LD (\d+)$/, 'LD');
+  if (Number(ld.m[1]) !== r.ld) throw new Error(`the vote is on LD ${ld.m[1]}`);
+  const dt = meOne(items, /^DATE: (\d{1,2})\/(\d{1,2})\/(\d{4})$/, 'date');
+  const date = meDay(Number(dt.m[3]), Number(dt.m[1]), Number(dt.m[2]));
+  if (!date) throw new Error('the date is not a real day');
+  const tallyAt = meOne(items, /^YES: \d+$/, 'YES count').it.y;
+  const onTally = items.filter((i) => Math.abs(i.y - tallyAt) <= 2);
+  const count = (label: string, optional = false): number => {
+    const hits = onTally.map((i) => new RegExp(`^${label}: (\\d+)$`).exec(i.s)).filter(Boolean);
+    if (hits.length === 0 && optional) return 0;
+    if (hits.length !== 1) throw new Error(`the tally prints ${label} ${hits.length} times`);
+    return Number(hits[0]![1]);
+  };
+  const tally = { Yea: count('YES'), Nay: count('NO'), 'Not voting': count('NV'), Excused: count('EXC DAY'), Restricted: count('RES', true) };
+  const excVote = count('EXC VOTE');
+  const vacant = count('VACANT');
+  // a member excused from one vote is marked with a letter not yet seen on any vote read: refused until it is
+  if (excVote) throw new Error(`the vote prints EXC VOTE: ${excVote}`);
+  if (onTally.length !== 6 + (onTally.some((i) => /^RES: /.test(i.s)) ? 1 : 0) + 1) throw new Error('the tally row prints something the reader cannot read');
+  meOne(onTally, /^MOTION: (?:PREVAILS|FAILS)$/, 'outcome');
+  const motions = items.filter((i) => i.y > tallyAt + 2 && /^MOTION: /.test(i.s));
+  if (motions.length !== 1) throw new Error('the vote prints no question, or more than one');
+  const question = squash(motions[0].s.slice('MOTION: '.length));
+  if (!meQuestionIsOnTheBill(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
+  // the header: the rows above the tally hold only what is read above, the bill's title and the votes required
+  const known = new Set([title.it, leg.it, sess.it, no.it, ld.it, dt.it, motions[0]]);
+  for (const i of items.filter((x) => x.y > tallyAt + 2 && !known.has(x))) {
+    const titleLine = i.y < title.it.y - 2 && i.y > dt.it.y + 2 && i.x > 150;
+    if (!titleLine && !/^VOTES REQUIRED: \d+$/.test(i.s)) throw new Error(`a header item the reader cannot read: ${i.s}`);
+  }
+  // the footer: each list's label, and the members it names (in the column to its right, down to the next label)
+  const footLabels = items.filter((i) => i.y < tallyAt && /^(?:EXCUSED DAY|EXCUSED VOTE|RESTRICTED VOTE):$/.test(i.s)).sort((a, b) => b.y - a.y);
+  if (!footLabels.length || footLabels[0].s !== 'EXCUSED DAY:') throw new Error('the vote has no EXCUSED DAY list');
+  const footTop = footLabels[0].y + 6;
+  const footNames = new Map<string, string[]>();
+  for (const [k, lab] of footLabels.entries()) {
+    const below = footLabels[k + 1]?.y ?? -Infinity;
+    const text = squash(items.filter((i) => i.x > lab.x + 20 && i.y <= lab.y + 2 && i.y > below + 2).sort((a, b) => b.y - a.y || a.x - b.x).map((i) => i.s).join(' '));
+    footNames.set(lab.s.slice(0, -1), text ? text.split(/,?\s*\bRep\.\s+/).map(squash).filter(Boolean).map((n) => n.replace(/,$/, '')) : []);
+  }
+  if (new Set(footLabels.map((l) => l.s)).size !== footLabels.length) throw new Error('a footer list is printed twice');
+  // the members: every item between the tally and the footer is a mark or a label
+  const grid = items.filter((i) => i.y < tallyAt - 2 && i.y > footTop);
+  const marks = grid.filter((i) => /^[A-Z]$/.test(i.s));
+  const labels = grid.filter((i) => !/^[A-Z]$/.test(i.s));
+  const markOf = new Map<Item, Item>();
+  const SLOT: Record<string, number> = { Y: 0, N: 1, X: 2, E: 2, Z: 2 };
+  const GAP = [34.6, 25.9, 17.3];
+  for (const m of marks) {
+    const right = labels.filter((l) => Math.abs(l.y - m.y) <= 1 && l.x > m.x && l.x - m.x < 45).sort((a, b) => a.x - b.x);
+    if (!right.length) throw new Error(`a mark ${m.s} with no member beside it`);
+    const slot = GAP.findIndex((g) => Math.abs(right[0].x - m.x - g) <= 1.5);
+    if (slot < 0) throw new Error(`a mark ${m.s} in no slot (${(right[0].x - m.x).toFixed(1)} before ${right[0].s})`);
+    if (!(m.s in SLOT)) throw new Error(`a mark the reader cannot read: ${m.s}`);
+    if (SLOT[m.s] !== slot) throw new Error(`the mark ${m.s} of ${right[0].s} sits in slot ${slot + 1}`);
+    if (markOf.has(right[0])) throw new Error(`two marks for ${right[0].s}`);
+    markOf.set(right[0], m);
+  }
+  // a label with no mark is the second line of the label above it in its column, which ends with a comma
+  const members: { label: string; mark: string }[] = [];
+  const cont = new Set<Item>();
+  for (const l of labels) {
+    if (markOf.has(l)) continue;
+    const above = labels.filter((a) => Math.abs(a.x - l.x) <= 1 && a.y > l.y && a.y - l.y < 16 && markOf.has(a));
+    if (above.length !== 1 || !above[0].s.endsWith(',')) throw new Error(`a member with no mark: ${l.s}`);
+    if (labels.some((o) => o !== l && Math.abs(o.x - l.x) <= 1 && o.y < above[0].y && o.y > l.y)) throw new Error(`a label between ${above[0].s} and ${l.s}`);
+    cont.add(l);
+  }
+  for (const [l, m] of markOf) {
+    if (l.s.endsWith(',')) {
+      const next = [...cont].filter((c) => Math.abs(c.x - l.x) <= 1 && c.y < l.y && l.y - c.y < 16);
+      if (next.length !== 1) throw new Error(`the label ${l.s} runs onto no line`);
+      cont.delete(next[0]);
+      members.push({ label: squash(`${l.s} ${next[0].s}`).replace(/\s+,/g, ','), mark: m.s });
+    } else members.push({ label: squash(l.s).replace(/\s+,/g, ','), mark: m.s });
+  }
+  if (cont.size) throw new Error('a second line with no label above it');
+  const groups = Object.fromEntries(ME_HOUSE_VOTES.map((v) => [v, [] as string[]])) as Record<MeVote, string[]>;
+  const KIND: Record<string, MeVote> = { Y: 'Yea', N: 'Nay', X: 'Not voting', E: 'Excused', Z: 'Restricted' };
+  // reading order: column by column, top to bottom (as printed)
+  members.sort((a, b) => a.label.localeCompare(b.label));
+  for (const { label, mark } of members) {
+    if (!ME_HOUSE_LABEL.test(label) && !ME_SPEAKER.test(label)) throw new Error(`a label the reader cannot read: ${label}`);
+    groups[KIND[mark]].push(label);
+  }
+  for (const v of ME_HOUSE_VOTES) if (groups[v].length !== tally[v as keyof typeof tally]) throw new Error(`the ${v} group lists ${groups[v].length} members and the tally prints ${tally[v as keyof typeof tally]}`);
+  const all = members.map((m) => m.label);
+  if (new Set(all.map(fold)).size !== all.length) throw new Error('a label is printed twice');
+  if (all.length + vacant !== ME_HOUSE_SEATS) throw new Error(`${all.length} members and ${vacant} vacant seats are not the House's ${ME_HOUSE_SEATS}`);
+  const sameSet = (a: string[], b: string[]): boolean => a.length === b.length && a.every((x) => b.some((y) => fold(y) === fold(x)));
+  if (!sameSet(footNames.get('EXCUSED DAY') ?? [], groups.Excused)) throw new Error('the EXCUSED DAY list is not the members marked E');
+  if ((footNames.get('EXCUSED VOTE') ?? []).length) throw new Error('the EXCUSED VOTE list names members');
+  if (!sameSet(footNames.get('RESTRICTED VOTE') ?? [], groups.Restricted)) throw new Error('the RESTRICTED VOTE list is not the members marked Z');
+  return { state: 'ME', stateName: 'Maine', chamber: 'House', rollNum: r.rollNum, session: meSession(r.legislature!, sess.m[1], sess.m[2]), bill: `LD ${r.ld}`, question, date, groups };
+}
+
+/** The member list's Legislature and its senators' names ("Donna Bailey"), or null when it is not that list. */
+export function meSenators(html: string): { legislature: number; names: string[] } | null {
+  const head = /<strong>\s*(\d{3})(?:st|nd|rd|th) Maine Senators\s*<\/strong>/.exec(html);
+  if (!head) return null;
+  const names: string[] = [];
+  const rest = html.slice(head.index + head[0].length);
+  for (const m of rest.matchAll(/<p>\s*<a href="\/[Dd]istrict(\d{1,2})">([^<]+)<\/a>/g)) names.push(htmlText(m[2]));
+  if (names.length < 30 || names.length > ME_SENATE_SEATS) return null;
+  if (new Set(names.map(fold)).size !== names.length) return null;
+  return { legislature: Number(head[1]), names };
+}
+
+/** Runs of one page on one baseline (within 2 units) as a row, left to right; rows from the top. */
+function meRows(items: Item[]): { y: number; items: Item[]; text: string }[] {
+  const rows: { y: number; items: Item[]; text: string }[] = [];
+  for (const i of [...items].sort((a, b) => b.y - a.y || a.x - b.x)) {
+    const last = rows[rows.length - 1];
+    if (last && Math.abs(last.y - i.y) <= 2) last.items.push(i); else rows.push({ y: i.y, items: [i], text: '' });
+  }
+  for (const r of rows) { r.items.sort((a, b) => a.x - b.x); r.text = squash(r.items.map((i) => i.s).join(' ')); }
+  return rows;
+}
+
+function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
+  const items = pdfItems(bodies[0]);
+  if (!items) throw new Error('the vote is not a PDF');
+  if (items.some((i) => i.page !== 1)) throw new Error('the vote runs past one page');
+  // the Senate's PDFs are typed in a word processor, which stores a line in pieces ("M" / "otion by Senator ..."): every
+  // check below reads a row's pieces together, left to right
+  const rows = meRows(items);
+  const at = (re: RegExp, what: string): { row: (typeof rows)[number]; m: RegExpExecArray } => {
+    const hits = rows.map((row) => ({ row, m: re.exec(row.text) })).filter((x): x is { row: (typeof rows)[number]; m: RegExpExecArray } => x.m !== null);
+    if (hits.length !== 1) throw new Error(`the vote prints ${hits.length === 0 ? 'no' : 'more than one'} ${what}`);
+    return hits[0];
+  };
+  meOne(items, /^MAINE STATE SENATE$/, 'Senate heading');
+  const leg = meOne(items, /^(\d{3})(?:st|nd|rd|th) Legislature$/, 'Legislature');
+  const legislature = Number(leg.m[1]);
+  const sess = meOne(items, /^(1st|2nd) (Regular|Special) Session$/, 'session');
+  const no = at(/^ROLL CALL #(\d+)$/, 'roll-call number');
+  if (Number(no.m[1]) !== r.rollNum) throw new Error(`the vote is roll call ${no.m[1]}`);
+  // the bill and its paper print at the right of the first two rows ("LD 1971", "HP 1315")
+  const papers = items.filter((i) => i.y > leg.it.y + 2 && i.x > 400);
+  const lds = papers.map((i) => /^LD (\d+)$/.exec(i.s)).filter(Boolean);
+  if (papers.some((i) => !/^(?:LD|SP|HP|SC) \d+$/.test(i.s))) throw new Error('a paper the reader cannot read');
+  if (lds.length !== 1) throw new Error(`the vote prints ${lds.length === 0 ? 'no' : 'more than one'} LD`);
+  if (Number(lds[0]![1]) !== r.ld) throw new Error(`the vote is on LD ${lds[0]![1]}`);
+  const dt = at(new RegExp(`^DATE: (${ME_MONTHS.join('|')}) (\\d{1,2}), (\\d{4})$`), 'date');
+  const date = meDay(Number(dt.m[3]), ME_MONTHS.indexOf(dt.m[1]) + 1, Number(dt.m[2]));
+  if (!date) throw new Error('the date is not a real day');
+  const tally = at(/^YEA: (\d+) NAY: (\d+) ABSENT: (\d+) EXCUSED: (\d+) MOTION: (?:PREVAILS|FAILS)$/, 'tally');
+  const printed = { Yea: Number(tally.m[1]), Nay: Number(tally.m[2]), Absent: Number(tally.m[3]), Excused: Number(tally.m[4]) };
+  // the question, and the rows it runs onto, down to the tally
+  const q = at(/^Question: (.+)$/, 'question');
+  const question = squash([q.m[1], ...rows.filter((row) => row.y < q.row.y - 2 && row.y > tally.row.y + 2).map((row) => row.text)].join(' ')
+    .replace(/\([^)]*\)/g, ' ')).replace(/[.?]$/, '');
+  // the header: the headings read above, the bill's title, and who moved the question
+  for (const row of rows.filter((x) => x.y > tally.row.y + 2 && x.y < leg.it.y - 2 && x !== dt.row && x !== q.row && x.y > q.row.y + 2)) {
+    const titleLine = row.y > dt.row.y + 2 && row.items[0].x > 150;
+    if (!titleLine && !/^(?:MOTION: |M ?otion by Senator )/.test(row.text)) throw new Error(`a header row the reader cannot read: ${row.text}`);
+  }
+  if (!meQuestionIsOnTheBill(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
+  // the column heads: two groups of Yea Nay Abs Exc on one row
+  const headRow = at(/^Yea Nay Abs Exc Yea Nay Abs Exc$/, 'row of column heads').row;
+  const heads = headRow.items;
+  if (heads.length !== 8) throw new Error('the column heads are not eight');
+  const KIND = ['Yea', 'Nay', 'Absent', 'Excused'] as const;
+  const groups = Object.fromEntries(ME_SENATE_VOTES.map((v) => [v, [] as string[]])) as Record<MeVote, string[]>;
+  // the rows below the heads: members down to the footer (the first row that opens with "Senator "), then the footer
+  const below = rows.filter((row) => row.y < headRow.y - 2 && row.y > no.row.y + 2);
+  const footAt = below.findIndex((row) => /^Senator /.test(row.text));
+  const grid = footAt < 0 ? below : below.slice(0, footAt);
+  const foot = footAt < 0 ? [] : below.slice(footAt);
+  const all: string[] = [];
+  // the 132nd's pages close the right column with each head's count: "TOTALS =>  20  14  0  1"
+  const totals: number[][] = [];
+  for (const row of grid) {
+    const t = row.items.findIndex((i) => i.s === 'TOTALS =>');
+    if (t >= 0) {
+      const nums = row.items.slice(t + 1);
+      if (row.items.slice(0, t).some((i) => i.x >= heads[3].x + 14) || nums.length !== 4 || nums.some((n, k) => !/^\d+$/.test(n.s) || Math.abs(n.x - heads[4 + k].x - 5) > 8))
+        throw new Error(`a TOTALS row the reader cannot read: ${row.text}`);
+      totals.push(nums.map((n) => Number(n.s)));
+      row.items = row.items.slice(0, t);
+    }
+    for (const h of [0, 1] as const) {
+      const lo = h === 0 ? -Infinity : heads[3].x + 14;
+      const nameItems = row.items.filter((i) => i.x >= lo && i.x < heads[h * 4].x - 5);
+      const markItems = row.items.filter((i) => i.x >= heads[h * 4].x - 5 && i.x <= heads[h * 4 + 3].x + 14);
+      if (!nameItems.length && !markItems.length) continue;
+      const label = squash(nameItems.map((i) => i.s).join(' '));
+      if (!label) throw new Error(`a mark with no member beside it (${row.text})`);
+      if (markItems.length !== 1 || markItems[0].s !== 'X') throw new Error(`${label} has ${markItems.filter((i) => i.s === 'X').length} marks`);
+      const col = heads.slice(h * 4, h * 4 + 4).findIndex((c) => markItems[0].x - c.x >= 2 && markItems[0].x - c.x <= 10);
+      if (col < 0) throw new Error(`the mark of ${label} is under no column head`);
+      const l = ME_SENATE_LABEL.exec(label);
+      if (!l) throw new Error(`a label the reader cannot read: ${label}`);
+      groups[KIND[col]].push(l[1]);
+      all.push(l[1]);
+    }
+    if (row.items.some((i) => i.x > heads[7].x + 14)) throw new Error(`an item right of the column heads: ${row.text}`);
+  }
+  // the footer: "Senator A, Senator B excused." and "Senator C abstain.", each a sentence that may run onto a second row
+  const said: string[] = [];
+  const footText = squash(foot.map((row) => row.text).join(' '));
+  for (const sentence of footText ? footText.split(/(?<=\.)\s+/) : []) {
+    const m = /^(Senator [\p{L}'’ -]+?(?:, Senator [\p{L}'’ -]+?)*) (?:excused|abstain)\.$/u.exec(sentence);
+    if (!m) throw new Error(`a footer sentence the reader cannot read: ${sentence}`);
+    said.push(...m[1].split(/,\s*/).map((x) => squash(x.replace(/^Senator /, ''))));
+  }
+  if (totals.length > 1) throw new Error('the vote prints more than one TOTALS row');
+  if (totals.length && totals[0].join() !== [printed.Yea, printed.Nay, printed.Absent, printed.Excused].join()) throw new Error(`the TOTALS row ${totals[0].join('-')} is not the tally`);
+  for (const v of ME_SENATE_VOTES) {
+    groups[v].sort((a, b) => a.localeCompare(b));
+    if (groups[v].length !== printed[v as keyof typeof printed]) throw new Error(`the ${v} group lists ${groups[v].length} members and the tally prints ${printed[v as keyof typeof printed]}`);
+  }
+  if (said.length !== groups.Excused.length || !said.every((n) => groups.Excused.some((g) => fold(g) === fold(n)))) throw new Error('the members the footer names excused or abstaining are not the members marked Exc');
+  if (new Set(all.map(fold)).size !== all.length) throw new Error('a label is printed twice');
+  if (all.length > ME_SENATE_SEATS) throw new Error('more members than the Senate has');
+  // the members in full, from the Senate's list of the same Legislature
+  const list = meSenators(bodies[1] ?? '');
+  if (!list) throw new Error('the member list is not the Senate\'s list of senators');
+  if (list.legislature !== legislature) throw new Error(`the member list is the ${ordinal(list.legislature)} Legislature's, the vote the ${ordinal(legislature)}'s`);
+  const full = (label: string): string => {
+    const fits = list.names.filter((n) => fold(n) === fold(label) || fold(n).endsWith(` ${fold(label)}`));
+    return fits.length === 1 ? fits[0] : label;
+  };
+  for (const v of ME_SENATE_VOTES) groups[v] = groups[v].map(full);
+  const ord = sess.m[1] === '1st' ? 'First' : 'Second';
+  return { state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: r.rollNum, session: meSession(legislature, ord, sess.m[2]), bill: `LD ${r.ld}`, question, date, groups };
+}
+
+const ME_SAID: Record<MeVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', 'Not voting': 'did not vote', Absent: 'was absent', Excused: 'was excused', Restricted: 'was restricted from voting' };
+
+export function renderMaineVote(v: MeVoteRecord): string {
+  const kinds = meVotes(v.chamber);
+  return [
+    `Maine ${v.chamber} roll call ${v.rollNum} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    kinds.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...kinds.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const ME_SESSION_RE = '\\d{3}(?:st|nd|rd|th) Legislature, (?:First|Second|Third|Fourth) (?:Regular|Special) Session';
+const ME_RENDER_HEAD = new RegExp(`^Maine (House|Senate) roll call (\\d+) \\((${ME_SESSION_RE})\\), (LD \\d+), (\\d{4}-\\d{2}-\\d{2})\\.$`);
+
+function parseMaineRender(text: string, url: string): MeVoteRecord | null {
+  const r = parseMaineVoteUrl(url);
+  const rows = text.split('\n');
+  const h = ME_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q) return null;
+  const kinds = meVotes(r.chamber);
+  if (rows.length !== 3 + kinds.length) return null;
+  if (h[1] !== r.chamber || Number(h[2]) !== r.rollNum || h[4] !== `LD ${r.ld}`) return null;
+  if (r.legislature !== undefined && !h[3].startsWith(`${ordinal(r.legislature)} Legislature, `)) return null;
+  const groups = Object.fromEntries([...ME_HOUSE_VOTES, ...ME_SENATE_VOTES].map((v) => [v, [] as string[]])) as Record<MeVote, string[]>;
+  for (const [i, v] of kinds.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== kinds.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'ME', stateName: 'Maine', chamber: r.chamber, rollNum: r.rollNum, session: h[3], bill: h[4], date: h[5], question: q[1], groups };
+}
+
+const ME_LINE = new RegExp(`^Maine (House|Senate) roll call (\\d+) \\((${ME_SESSION_RE})\\), (LD \\d+) - (.+) \\((\\d{4}-\\d{2}-\\d{2})\\): (.+?) (voted Yea|voted Nay|did not vote|was absent|was excused|was restricted from voting)\\.$`);
+
+export function formatMaineVoteLine(l: MeVoteLine): string {
+  return `Maine ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${ME_SAID[l.vote]}.`;
+}
+
+function parseMaineLine(text: string): MeVoteLine | null {
+  const m = ME_LINE.exec(text.trim());
+  if (!m) return null;
+  const chamber = m[1] as Chamber;
+  const vote = meVotes(chamber).find((v) => ME_SAID[v] === m[8]);
+  if (!vote) return null;
+  return { state: 'ME', stateName: 'Maine', chamber, rollNum: Number(m[2]), session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+/** A House label ("Abdi, M.H.") fits by surname and initials; a Senate name is printed in full ("Donna Bailey"). */
+const meFits = (chamber: Chamber, printed: string, lastName: string, fullName: string): boolean =>
+  (chamber === 'House' ? stateLabelFits(printed, lastName, fullName) : fullNameLabelFits(printed, lastName, fullName));
+
+function verifyMaineLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseMaineLine(line);
+  const r = parseMaineRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.rollNum !== r.rollNum || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = meVotes(r.chamber).flatMap((v) => r.groups[v]).filter((n) => meFits(r.chamber, n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function maineLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseMaineRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of meVotes(r.chamber)) {
+    for (const name of r.groups[vote]) {
+      if (meFits(r.chamber, name, lastName, fullName)) out.push(formatMaineVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from its PDF (and, for the Senate, the member list). Null when any check fails. */
+export function readMaineVote(bodies: string[], url: string): MeVoteRecord | null {
+  const v = explainMaineVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readMaineVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainMaineVote(bodies: string[], url: string): MeVoteRecord | { refused: string } {
+  const r = parseMaineVoteUrl(url);
+  if (!r) return { refused: 'not a Maine vote address' };
+  if (bodies.length !== maineDocs(r).length) return { refused: 'not the vote and its documents' };
+  try { return r.chamber === 'House' ? readMaineHouse(bodies[0], r) : readMaineSenate(bodies, r); } catch (e) { return { refused: e instanceof Error ? e.message : String(e) }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's and Minnesota's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
+  // Maine's marks are paired with their members by position, so its reader gets every run with its place (pdfItemsBody)
+  if (/^https:\/\/legislature\.maine\.gov\/(?:house\/Repository\/Documents\/\d+\/RollCalls\/|uploads\/visual_edit\/roll-call-)/i.test(url.trim())) return pdfItemsBody(items);
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\/|^https:\/\/www\.mnsenate\.gov\/journals\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
 }
 
@@ -3037,11 +3501,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseNorthDakotaVoteUrl(url)) return ND_GAP_MS;
   if (parseMinnesotaVoteUrl(url)) return MN_GAP_MS;
   if (parseNevadaVoteUrl(url)) return NV_GAP_MS;
+  if (parseMaineVoteUrl(url)) return ME_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null || parseMaineVoteUrl(url) !== null;
 }
 
 /**
@@ -3067,6 +3532,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (mn) return minnesotaDocs(mn);
   const nv = parseNevadaVoteUrl(url);
   if (nv) return nevadaDocs(nv);
+  const me = parseMaineVoteUrl(url);
+  if (me) return maineDocs(me);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -3107,6 +3574,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseNevadaVoteUrl(url)) {
     const v = readNevadaVote(bodies, url);
     return v ? renderNevadaVote(v) : null;
+  }
+  if (parseMaineVoteUrl(url)) {
+    const v = readMaineVote(bodies, url);
+    return v ? renderMaineVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -3180,6 +3651,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteKey, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups.Excused, ...v.groups['Not voting'], ...v.groups.Absent] } } : null;
   }
+  if (parseMaineVoteUrl(url)) {
+    // Maine: House members by the label the PDF prints ("Abdi, M.H."), Senate members by their full names from the Senate's
+    // member list (a surname no member or two fit, as printed). Not voting, absent, excused and restricted are one group here.
+    const v = readMaineVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.rollNum, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups['Not voting'], ...v.groups.Absent, ...v.groups.Excused, ...v.groups.Restricted] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -3204,7 +3682,8 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | MeVoteRecord | null {
+  if (parseMaineVoteUrl(url)) return parseMaineRender(text, url);
   if (parseNevadaVoteUrl(url)) return parseNevadaRender(text, url);
   if (parseMinnesotaVoteUrl(url)) return parseMinnesotaRender(text, url);
   if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
@@ -3242,8 +3721,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | MeVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text) ?? parseMaineLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -3327,6 +3806,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseNorthDakotaVoteUrl(url)) return verifyNorthDakotaLine(line, url, text, lastName, fullName);
   if (parseMinnesotaVoteUrl(url)) return verifyMinnesotaLine(line, url, text, lastName, fullName);
   if (parseNevadaVoteUrl(url)) return verifyNevadaLine(line, url, text, lastName, fullName);
+  if (parseMaineVoteUrl(url)) return verifyMaineLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -3357,6 +3837,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseNorthDakotaVoteUrl(url)) return northDakotaLinesFor(url, text, lastName, fullName);
   if (parseMinnesotaVoteUrl(url)) return minnesotaLinesFor(url, text, lastName, fullName);
   if (parseNevadaVoteUrl(url)) return nevadaLinesFor(url, text, lastName, fullName);
+  if (parseMaineVoteUrl(url)) return maineLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];
