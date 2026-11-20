@@ -2,47 +2,58 @@
   "state": "me",
   "name": "Maine",
   "verified": "2026-11-20",
-  "source": "State reader session, 2026-11-20 (scripts/stage5/openstates/, the November 2026 Open States dump, and two-page probes of legislature.maine.gov: robots.txt, the House and Senate roll-call lists, one House and one Senate roll-call PDF). No reader was built.",
+  "source": "Maine reader session (Stage 5 tools), 2026-11-20: the November 2026 Open States dump converted with scripts/stage5/openstates/ (128th to 132nd Legislature); every House and Senate floor roll call of a 130-bill dry batch (the LD bills of 2017-2026 one topic's scan found; 7 roll calls) read from the Legislature's own roll-call PDFs, and each member's vote compared with the dump. No bill text was measured.",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
   },
   "sessions": "The Legislature is numbered and sits for two years: the 132nd is 2025-2026, with a First Regular Session in the odd year and a Second Regular Session in the even year, and special sessions as called. Bills are Legislative Documents numbered LD 1 up through the whole Legislature, and each also has a paper number by the chamber it starts in (HP 1491, SP 12). House 151 seats plus three non-voting tribal representatives; Senate 35.",
   "bill_data": [
-    "The Open States dump holds Maine, but its roll calls are of little use: for the 129th Legislature no member vote is linked to a person, and it holds no bill of the 132nd (2025-2026). It was not converted.",
-    "No data service from the Legislature was found."
+    "No LegiScan dataset is on disk for Maine. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (ME-900172 to ME-900176: the 128th to the 132nd Legislature, 2017-2026; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "No Maine dump vote is placed (record_is_the_floor). The dump names House members by a label (\"FAIRCLOTH of Bangor\") and links some to the wrong person (\"MILLETT of Waterford\" on 1,162 votes to the Cape Elizabeth member), and every one of its bill and vote addresses is a /LawMakerWeb/ page, which robots.txt disallows. scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each scanned LD's House roll-call list (/house/Documents/RollCalls, by LD and Legislature) and Senate list (/<132nd>-roll-calls), keeps a row whose motion is a vote on the bill or prints none, and reads that roll call's PDF. Each list's printed count of roll calls and PDF files must equal the rows read. A row with no motion typed is read; the PDF's question decides.",
+    "Compared 2026-11-20: 7 floor roll calls read from the record (131st House 5; 132nd House 1, Senate 1). Votes on a motion skipped from the lists: 131st 45 (28 to accept a committee report), 132nd 74 (52); 3 more were read and refused as motions by the PDF's question (Refer the Bill to the Committee on Judiciary, 132nd Senate). 6 Senate floor votes of the 131st were not read: the Senate's site shows only the 132nd's member list. All 7 have a dump copy; 2 were settled by the tally among two on one day, and one day (131st LD 2224, House roll call 516) holds two dump copies with the same tally (73-66), left unsettled. Tally differences: 0. Member votes compared: 786, differences: 0 (3 labels fit two members of one family who voted alike; \"BOYER of Poland\" was paired by elimination).",
+    "Roster legislators: 188 (151 Representatives, 35 Senators, 2 Tribal Representatives seated). 186 are linked: 185 by their Open States id and Aaron Dana by name. 2 are excused (no person record in the 132nd dataset): Brian Reynolds (Tribal Representative) and Nancy J. Theriault. The House PDF prints \"Bridgeo, W.R.\" where the dump says \"Bill Bridgeo\", so the converter kept 18 such labels as name-only records; link_check.py links a label of that shape to the one member of its chamber whose family name it is and whose first given name starts with its first initial. Open States holds Senator Susan Bernard twice (her House-era person and her Senate one, same member email): the Senate record resolves to the House-era id, linked by hand in idmap.tsv. Every record Yea or Nay by a roster member (709) became a pair; the line tool wrote 709 lines."
   ],
   "votes": {
-    "mode": "none",
+    "mode": "legiscan-plan",
     "official_hosts": [
       "legislature.maine.gov"
     ],
     "legiscan_args": null,
-    "floor_rule": "No reader. robots.txt on legislature.maine.gov disallows /LawMakerWeb and /legis/LawMakerWeb, which hold the roll-call database pages, so they are not read. Two allowed paths publish each floor roll call as a PDF naming every member: the House at /house/Repository/Documents/<132>/RollCalls/<nnn>.<roll call>.<132R2>.pdf (listed at /house/Documents/RollCalls; members as \"Surname, Initials\" with a Y, N or X mark; the tally prints YES, NO, NV, EXC DAY, EXC VOTE, RES and VACANT), and the Senate at /uploads/visual_edit/roll-call-<n>[-ld-<n>].pdf (listed at /132nd-roll-calls; surnames with an X under Yea, Nay, Abs or Exc). The mark sits in a column, so a reader must pair it by position. Whether to build a reader on these PDFs is the runner's decision (2026-11-20).",
+    "floor_rule": "A vote is cited as its roll-call PDF on legislature.maine.gov, with the LD after a #. House: /house/Repository/Documents/<131>/RollCalls/<day>.<roll call>.<131R2>.pdf#LD2224 (the day's number, the roll call's number, the Legislature and session). Senate: /uploads/visual_edit/roll-call-<n>[-ld-<n>].pdf#LD1126. The House PDF prints the Legislature, session, roll call number, the question, the LD and the day, then each member as \"Surname, Initials\" with Y, N or X in a column (X: absent or excused), and a tally (YES, NO, NV, EXC DAY, EXC VOTE, RES, VACANT). The Senate PDF prints the question and each senator's surname with an X under Yea, Nay, Abs or Exc; its member list, from the Senate's senators page, gives the full name. Text order is not the order of the columns, so the reader pairs each mark with its member by x and y position. A vote is read only when the question is a vote on the bill (enactment, passage to be engrossed, final passage, a veto vote), the LD and the Legislature in the PDF are the address's, the column heads are where the layout puts them, every member has one mark, each group holds the count the tally prints, and no two members render as one name. The Speaker is printed as \"Mr. Speaker\" or \"Madam Speaker\" and gets no line.",
     "gaps": [
-      "No floor vote is read from bulk data or from the record.",
-      "The House roll-call list links its entries to /LawMakerWeb pages on www.mainelegislature.org, which robots.txt disallows: those links must be skipped.",
-      "The House PDF's file name carries no LD number: a reader must take the bill from the PDF's own heading."
+      "Only floor votes on the bill are read. Votes to accept a committee report, to refer, to table, to indefinitely postpone or to reconsider are motions and are not mapped (runner, 2026-11-16). 80 report-acceptance votes were skipped against 7 bill votes read in the 131st and 132nd for one topic.",
+      "Absent, excused and \"restricted from voting\" are recorded as the record lists them, never as a Yea or a Nay; they seat no one.",
+      "House PDFs before the 131st Legislature print surnames only, with no initials, so two members of one family cannot be told apart: the reader refuses them. The 128th to 130th give no line.",
+      "The Senate PDF prints surnames only; the reader takes full names from the senators page, which shows the current Legislature only (the 132nd until the 133rd is seated in December 2026). A Senate vote of another Legislature is not read, and after December 2026 the 132nd's Senate votes stop reading too until a member list for it is supplied.",
+      "The Speaker's own vote (6 in the dry batch) gives no line: the PDF prints the office, not the name.",
+      "The House roll-call list links its rows to /LawMakerWeb pages on www.mainelegislature.org, which robots.txt disallows: those links are never followed; the PDF links on the allowed path are read instead.",
+      "A paper with no LD (HP 899 in the dry batch) has no allowed bill page and is not scanned (me_bill_page_disallowed)."
     ]
   },
   "texts": {
     "hosts": [
-      "legislature.maine.gov"
+      "www.mainelegislature.org"
     ],
     "marks": "Not checked (2026-11-20).",
-    "note": "No bill text was read."
+    "note": "Texts are PDFs at /legis/bills/getPDF.asp?paper=<HP0001>&item=<n>&snum=<132>, served over https (https_texts). They print line numbers inline and the sponsors on page 1 (\"Presented by Representative ... Cosponsored by ...\"). How amendments mark new and deleted words was not read."
   },
   "reader_access": {
     "legislature.maine.gov": "open",
-    "www.mainelegislature.org": "blocked: robots.txt Disallow: /LawMakerWeb (the House list's roll-call links)"
+    "www.mainelegislature.org": "open"
   },
-  "search_note": "Maine has no roll-call reader here: its floor votes are not read from bulk data. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
-  "bill_table_note": "- Maine bills are Legislative Documents (LD) numbered through the whole two-year Legislature; the paper number (HP, SP) names the chamber a bill starts in.\n- Texts: the marks for new and deleted words were not checked.",
+  "search_note": "Maine sponsorships for 2017 to 2026 and House and Senate floor votes on the bill for the 131st (House only) and 132nd Legislature come from the bill data on disk, checked against the Legislature's own roll-call PDFs: skip the Legislature's roll-call lists and PDFs, and add the place \"sponsor list: covered by bulk bill data\". Never open a /LawMakerWeb page (robots.txt). Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Maine bills are Legislative Documents (LD) numbered through the whole two-year Legislature; the paper number (HP, SP) names the chamber a bill starts in.\n- Floor votes kept: enactment, passage to be engrossed, final passage, a veto vote. Votes to accept a committee report and other motions are skipped.\n- Texts: the marks for new and deleted words were not checked.",
   "fill_quotes": {
     "label_strips": []
   },
   "quirks": [
+    "robots.txt on legislature.maine.gov disallows /LawMakerWeb and /legis/LawMakerWeb only; the roll-call lists and PDFs are on allowed paths. robots.txt on www.mainelegislature.org disallows /LawMakerWeb and blocks several named AI crawlers entirely; the verifier's user agent is not among them, and the texts (/legis/bills/getPDF.asp) are on an allowed path.",
     "One House roll-call page in the disallowed /LawMakerWeb path was fetched by mistake on 2026-11-20 and deleted unread; nothing from it was used.",
-    "The roll-call PDFs print members by surname (House with initials); two members of one surname are told apart only by initials."
+    "The 132nd House PDFs print \"Collins, A. C\" (no stop after the last initial) on every roll call; the label rule allows it.",
+    "The House record prints \"OHalloran, D.L.\" without the apostrophe; the label fit ignores apostrophes in a family name.",
+    "The Senate list on the Legislature's site splits rows by paragraph, by a bill-title block, and sometimes holds two roll calls in one paragraph (131st #304 and #305); one roll call can have two PDF links (#31), and a file number can differ from the roll call's (#107 in file 108). The fetch splits each row at the next roll call's link, checks every PDF on the page falls in a row, and skips a file already read.",
+    "No crawl delay is stated; the fetch waits 1 second between requests. No 403, 429 or bot check was met. The line tool wrote 709 lines in 9.7 seconds from an empty page cache (7 PDFs and the senators page): under 3 seconds per 200 votes.",
+    "The store's one Maine instrument, ME-LD-652-2015 (127th Legislature), is older than the converted sessions (128th on), so the scan cannot find it, and the reader refuses House votes before the 131st."
   ]
 }

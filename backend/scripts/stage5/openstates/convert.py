@@ -228,6 +228,14 @@ for r in rows("personvote"):
 #    legislator list, so ms_full_names links them. "or_links": the rows of 2017-2021 carry the old host
 #    olis.leg.state.or.us, which no longer resolves; the same paths answer on olis.oregonlegislature.gov (bill pages and
 #    texts, read 2026-11-20), so the host is rewritten.
+#  - Maine (2026-11-20): the dump's roll calls name members by a label ("FAIRCLOTH of Bangor") it often links to the
+#    wrong person or to no one, and it files every vote under the bill's page, which is /LawMakerWeb/ (disallowed by
+#    robots.txt). "record_is_the_floor": only votes read from the record are placed. The fetch reads each scanned LD's
+#    House and Senate roll-call list on legislature.maine.gov and each floor vote's PDF (stateRollCallEvidence.ts). The
+#    Senate PDF names members from the Senate's member list in full, so ms_full_names links them; the House PDF prints
+#    "Bridgeo, W.R.", kept as a name-only record that link_check.py links by family name and initial. "me_links": a
+#    /LawMakerWeb/ bill page becomes /legis/bills/display_ps.asp?LD=<n>&snum=<Legislature>; a paper with no LD keeps no
+#    page (me_bill_page_disallowed). "https_texts": the getPDF.asp texts are served over https too (read 2026-11-20).
 #  - California (2026-11-20): the dump's vote addresses are each bill's Votes page on leginfo, which holds every vote of the
 #    bill, so no dump vote names one roll call; leginfo's robots.txt disallows every crawler and the host answers our bot
 #    with a 403. "record_is_the_floor", as Oregon's: the fetch reads each scanned bill's floor votes from the Legislature's
@@ -251,6 +259,8 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
                     "https_texts": True},
              "OR": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "or_links": True,
                     "https_texts": True},
+             "ME": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "me_links": True,
+                    "https_texts": True},
              "CA": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "https_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 
@@ -258,6 +268,13 @@ RULES = SRC_RULES.get(ST, {})
 def or_link(u):
     """Oregon: the dead host olis.leg.state.or.us -> olis.oregonlegislature.gov, same path (see SRC_RULES, or_links)."""
     return re.sub(r"^https?://olis\.leg\.state\.or\.us/", "https://olis.oregonlegislature.gov/", u)
+def me_bill_page(u, ident, session):
+    """Maine: the dump's bill page is /LawMakerWeb/summary.asp, which robots.txt disallows. The allowed page of an LD is
+    /legis/bills/display_ps.asp?LD=<n>&snum=<Legislature> (see SRC_RULES, me_links); a paper with no LD keeps no page."""
+    if not re.match(r"^https?://(?:legislature\.maine\.gov|www\.mainelegislature\.org)/(?:legis/)?LawMakerWeb/", u, re.I):
+        return u
+    m = re.match(r"^LD ?([1-9]\d{0,3})$", ident.strip())
+    return f"https://legislature.maine.gov/legis/bills/display_ps.asp?LD={int(m.group(1))}&snum={session}" if m and re.match(r"^1\d{2}$", session) else None
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
 NP = "sd_" if RULES.get("sd_record_is_the_floor") else ""  # South Dakota's counts keep their names
@@ -1046,6 +1063,15 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
         if RULES.get("or_links"):
             for r in ex["billsource"]:
                 r["url"] = or_link(r["url"])
+        if RULES.get("me_links"):
+            kept = []
+            for r in ex["billsource"]:
+                u = me_bill_page(r["url"], b["identifier"], sessions[b["legislative_session_id"]]["identifier"])
+                if u is None:
+                    DUPES[b["legislative_session_id"]]["me_bill_page_disallowed"] += 1
+                elif not any(k["url"] == u for k in kept):
+                    kept.append({**r, "url": u})
+            ex["billsource"] = kept
         if RULES.get("ks_bill_page"):
             for r in ex["billsource"]:
                 r["url"] = ks_bill_page(r["url"], sessions[b["legislative_session_id"]]["identifier"])

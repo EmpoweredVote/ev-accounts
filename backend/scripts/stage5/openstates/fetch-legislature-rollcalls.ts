@@ -36,7 +36,7 @@ import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificatio
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { isPubinfoDoc, readPubinfoDoc } from '../../../src/lib/adapters/caPubinfo.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsOnTheBill, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -47,7 +47,8 @@ export interface IndexedVote { url: string; motion: string; tally: [number, numb
  * page prints the action and its tally, and links the day's floor proceedings, which link the vote file). The fetch
  * reads that page with the state's voteFromIndex and then reads the vote like a linked one, its tally compared.
  */
-export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[]; viaIndex?: IndexedVoteVia[] }
+/** unread: floor votes on the bill that are not read, each with the reason (Maine: a Senate with no member list of its Legislature). */
+export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[]; viaIndex?: IndexedVoteVia[]; unread?: string[] }
 export interface IndexedVoteVia { index: string; chamber: 'house' | 'senate'; motion: string; tally: [number, number, number] }
 interface StateIndex {
   /** The least time between two requests to the site (its robots.txt Crawl-delay). */
@@ -73,6 +74,130 @@ interface StateIndex {
   manualRedirect?: (_url: string) => boolean;
 }
 
+// ── Maine ─────────────────────────────────────────────────────────────────────────────────────────────────
+const ME_SITE = 'https://legislature.maine.gov';
+const ME_BILL = /^LD\s*0*([1-9]\d{0,3})$/i;
+const meOrdinal = (n: number): string => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] ?? 'th'}`;
+const meText = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+
+/** The House's list of the Legislature's roll calls: number, day, paper and motion. Its links go to /LawMakerWeb and are never followed. */
+export function meHouseListUrl(session: string): string | null {
+  return /^1[3-9]\d$/.test(session) ? `${ME_SITE}/house/Documents/RollCalls?Legislature=${session}` : null;
+}
+
+/** The House's PDF list, the Senate's roll-call list, and the Senate's member list (whose Legislature says whether its votes can be read). */
+export function meFollow(_list: string, session: string): string[] {
+  return [`${ME_SITE}/house/Documents/RollCallPDF?Legislature=${session}`, `${ME_SITE}/${meOrdinal(Number(session))}-roll-calls`, ME_SENATORS];
+}
+
+/** The House list's rows: roll call, paper ("LD 1349", "HO 1") and motion. Throws when the list is not this Legislature's. */
+export function meHouseRows(html: string, session: string): { rc: number; paper: string; motion: string }[] {
+  if (!new RegExp(`<option value="${session}" selected`).test(html) || !/id="rollCallsTable"/.test(html)) throw new Error(`Maine: not the House's roll-call list of the ${meOrdinal(Number(session))}`);
+  const out: { rc: number; paper: string; motion: string }[] = [];
+  for (const tr of html.replace(/\s+/g, ' ').matchAll(/<tr> <td> <span class="badge bg-secondary">(\d+)<\/span> <\/td>(.*?)<\/tr>/g)) {
+    const cells = [...tr[2].matchAll(/<td\b[^>]*>(.*?)<\/td>/g)].map((c) => meText(c[1]));
+    if (cells.length !== 5) throw new Error(`Maine House roll call ${tr[1]}: a list row the fetch cannot read`);
+    out.push({ rc: Number(tr[1]), paper: cells[1], motion: cells[3] });
+  }
+  if (!out.length) throw new Error('Maine: the House list holds no roll call');
+  // the list prints its own count ("<strong>812</strong> roll call vote(s) found"): a row the pattern missed is a vote never looked at
+  const printed = /<strong>(\d+)<\/strong> roll call vote\(s\) found/.exec(html);
+  if (!printed || Number(printed[1]) !== out.length) throw new Error(`Maine House: the list prints ${printed ? printed[1] : 'no'} roll calls and ${out.length} read`);
+  return out;
+}
+
+/** The House PDF list: roll call -> its file. Throws on a roll call listed twice. */
+export function meHousePdfs(html: string, session: string): Map<number, string> {
+  if (!new RegExp(`Roll Call PDF documents for the ${meOrdinal(Number(session))} Legislature`).test(html)) throw new Error(`Maine: not the House's PDF list of the ${meOrdinal(Number(session))}`);
+  const out = new Map<number, string>();
+  // the list prints its own count ("<strong>835</strong> PDF file(s)"), and every file of it must be of the address form
+  const printed = /<strong>(\d+)<\/strong> PDF file\(s\)/.exec(html);
+  const files = [...html.matchAll(new RegExp(`href="(/house/Repository/Documents/${session}/RollCalls/\\d{3}\\.(\\d{3,4})\\.${session}(?:R[12]|S[1-9])\\.pdf)"`, 'g'))];
+  const any = (html.match(/href="\/house\/Repository\/Documents\/[^"]*\/RollCalls\//g) ?? []).length;
+  if (!printed || Number(printed[1]) !== files.length || any !== files.length) throw new Error(`Maine House: the PDF list prints ${printed ? printed[1] : 'no'} files, links ${any} and ${files.length} read`);
+  for (const m of files) {
+    const rc = Number(m[2]);
+    if (rc === 0) continue;
+    if (out.has(rc)) throw new Error(`Maine House: roll call ${rc} has two PDFs`);
+    out.set(rc, `${ME_SITE}${m[1]}`);
+  }
+  return out;
+}
+
+/**
+ * The Senate list's rows: roll call, its file(s), paper ("LD 3", "SP 97") and motion. The list is typed by hand: "# 634 </a>",
+ * "&nbsp;# 33", a row whose number and file are two links, a row that links two files (#31: roll-call-31-hp-131-1.pdf and
+ * roll-call-31-hp-131.pdf), #107 linking roll-call-108-...pdf. So every roll-call link of the page must fall in a row (a <p>, or in places a <div class="bill-title">), the
+ * number is the file's (the PDF must print it: the reader checks "ROLL CALL #108"), and the paper and motion are only where to
+ * look: the PDF's own bill and question decide.
+ */
+export function meSenateRows(html: string, session: string): { rc: number; files: string[]; papers: string[]; motion: string }[] {
+  if (!new RegExp(`<h1>${meOrdinal(Number(session))} Roll Calls</h1>`).test(html)) throw new Error(`Maine: not the Senate's roll-call list of the ${meOrdinal(Number(session))}`);
+  const flat = html.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
+  const FILE = /href="(\/uploads\/visual_edit\/roll-call-([1-9]\d*)[^"]*\.pdf)"/g;
+  const everywhere = new Set([...flat.matchAll(FILE)].map((m) => m[1]));
+  const out: { rc: number; files: string[]; papers: string[]; motion: string }[] = [];
+  const seen = new Set<string>();
+  for (const para of flat.split(/<(?:p\b[^>]*|div class="bill-title")>/).slice(1).map((x) => x.split(/<\/(?:p|div)>/)[0])) {
+    // A row ends where a link to another roll call begins: the 131st's list has two rows in one <p> (#304 and #305).
+    const links = [...para.matchAll(FILE)];
+    const starts = links.filter((m, i) => i === 0 || m[2] !== links[i - 1][2]).map((m) => m.index!);
+    starts.forEach((at, i) => {
+      // up to the next row's link, cut where that link's tag opens
+      const seg = para.slice(at, starts[i + 1] === undefined ? para.length : para.lastIndexOf('<a', starts[i + 1]));
+      const files = [...new Set([...seg.matchAll(FILE)].map((m) => m[1]))];
+      const rest = meText(`<a ${seg}`);
+      const typed = /^#?\s*\d+\s*\([\d-]+\)\s*((?:LD|SP|HP|SC|SO|HO|HC) ?\d+)\b/.exec(rest)?.[1];
+      // Where to look, from the text and from the file name ("roll-call-239-ld-61.pdf" is typed "LD 60"): the PDF decides.
+      const papers = new Set<string>();
+      if (typed) papers.add(typed.replace(/^([A-Z]+) ?/, '$1 '));
+      for (const f of files) { const n = /roll-call-\d+-(ld|sp|hp)-(\d+)/.exec(f); if (n) papers.add(`${n[1].toUpperCase()} ${Number(n[2])}`); }
+      const motion = /\(Motion:\s*([^)]*)\)\s*$/.exec(rest)?.[1].trim() ?? '';
+      files.forEach((f) => seen.add(f));
+      out.push({ rc: Number(links.find((m) => m.index === at)![2]), files: files.map((f) => `${ME_SITE}${f}`), papers: [...papers], motion });
+    });
+  }
+  if (!out.length) throw new Error('Maine: the Senate list holds no roll call');
+  if (seen.size !== everywhere.size) throw new Error(`Maine Senate: the list links ${everywhere.size} roll-call files and ${seen.size} are in a row`);
+  return out;
+}
+
+/** A list's motion that may be a vote on the bill: its PDF's question is read and checked (meQuestionIsOnTheBill). */
+export function meListMotionIsOnTheBill(motion: string): boolean {
+  const m = motion.replace(/\s+/g, ' ').trim();
+  return meQuestionIsOnTheBill(m) || /^PTBE(?:-A)?$|^Emergency[- ]Enactment$|^Enact-Emer\b|^Veto Override$|^Final Enactment$/i.test(m);
+}
+
+/** Every floor roll call on the bill, House and Senate, from the three lists; motions are counted. */
+export function meReadVotes(houseList: string, session: string, bill: string, more: string[] = []): BillIndex {
+  const b = ME_BILL.exec(bill.replace(/\s+/g, ' ').trim());
+  if (!b) throw new Error(`Maine: not an LD: ${bill}`);
+  if (more.length !== 3) throw new Error('Maine: the House PDF list, the Senate list and the Senate member list are needed');
+  const ld = Number(b[1]);
+  const pdfs = meHousePdfs(more[0], session);
+  const senate = meSenateRows(more[1], session);
+  const senators = meSenators(more[2]);
+  const floor: IndexedVote[] = [];
+  const motions: string[] = [];
+  const unread: string[] = [];
+  for (const row of meHouseRows(houseList, session).filter((x) => x.paper === `LD ${ld}`)) {
+    if (row.motion && !meListMotionIsOnTheBill(row.motion)) { motions.push(`House ${row.rc} ${row.motion}`); continue; }
+    const f = pdfs.get(row.rc);
+    if (!f) { unread.push(`House ${row.rc} ${row.motion}: no PDF on the House's list`); continue; }
+    floor.push({ url: `${f}#LD${ld}`, motion: row.motion, tally: null });
+  }
+  const sent = new Set<string>();
+  for (const row of senate.filter((x) => x.papers.includes(`LD ${ld}`))) {
+    // A row with no motion typed is read: the PDF's question decides, and a motion is refused there.
+    if (row.motion && !meListMotionIsOnTheBill(row.motion)) { motions.push(`Senate ${row.rc} ${row.motion}`); continue; }
+    if (row.files.length !== 1) { unread.push(`Senate ${row.rc} ${row.motion}: the list links ${row.files.length} files for it (${row.files.join(', ')})`); continue; }
+    if (sent.has(row.files[0])) continue;
+    sent.add(row.files[0]);
+    if (!senators || senators.legislature !== Number(session)) { unread.push(`Senate ${row.rc} ${row.motion}: the Senate's member list is of the ${senators ? meOrdinal(senators.legislature) : 'no'} Legislature, so its surnames name no one`); continue; }
+    floor.push({ url: `${row.files[0]}#LD${ld}`, motion: row.motion, tally: null });
+  }
+  return { floor, committee: 0, voice: 0, motion: motions.length, motions, unread };
+}
 // ── California ─────────────────────────────────────────────────────────────────────────────────────────
 const CA_BILL = /^(AB|SB|ACR|SCR|AJR|SJR|ACA|SCA|HR|SR)0*([1-9]\d{0,4})$/i;
 /** Open States' session ("20252026", "20232024 Special Session 1") and bill ("AB 1127") -> PUBINFO's bill id. */
@@ -548,6 +673,16 @@ function headOverHttp1(url: string): Promise<Response> {
 }
 
 export const INDEX: Record<string, StateIndex> = {
+  // legislature.maine.gov (read 2026-11-20; robots.txt disallows /LawMakerWeb and /legis/LawMakerWeb, where every House list
+  // links its roll calls, and states no Crawl-delay). No page lists a bill's votes on an allowed path, so each Legislature's
+  // roll-call lists are the index: the House's list (number, paper, motion), its PDF list (number -> file), and the Senate's
+  // list (number, file, paper, motion). Each vote on the bill is read from its PDF (stateRollCallEvidence.ts).
+  ME: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay: one a second is ours
+    billUrl: (session) => meHouseListUrl(session),
+    follow: meFollow,
+    read: meReadVotes,
+  },
   // California: the Legislature's PUBINFO bulk download, kept on this machine by ca_pubinfo.py (CA_PUBINFO_DIR; read
   // 2026-11-20: open, no key, no robots.txt, no terms text). A bill's file lists every vote of the bill: floor votes
   // (AFLOOR, SFLOOR) with their motion, and committee votes (any other location), counted and not read. A floor vote whose
@@ -1059,6 +1194,7 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
       : parseMinnesotaVoteUrl(v.url) ? explainMinnesotaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseNevadaVoteUrl(v.url) ? explainNevadaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseOregonVoteUrl(v.url) ? explainOregonVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseMaineVoteUrl(v.url) ? explainMaineVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseCaliforniaVoteUrl(v.url) ? explainCaliforniaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
@@ -1231,7 +1367,7 @@ async function main(): Promise<void> {
     if (refused.length) out.refused[bill] = refused; else delete out.refused[bill];
     out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}),
       ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(extra.length ? { not_on_the_vote_list: extra.length, not_on_the_vote_list_refused: alsoRefused } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}),
-      ...(bi.viaIndex?.length ? { vote_index_pages: [...new Set(bi.viaIndex.map((v) => v.index))] } : {}) };
+      ...(bi.viaIndex?.length ? { vote_index_pages: [...new Set(bi.viaIndex.map((v) => v.index))] } : {}), ...(bi.unread?.length ? { floor_not_read: bi.unread } : {}) };
     floor += rcs.length;
     if (ST === 'SD') {
       // the bill's sponsors and its introduced text (see sdSponsorsOnText); a fault refuses the sponsors, not the votes
@@ -1250,7 +1386,7 @@ async function main(): Promise<void> {
         refusedNow.push(`${bill} sponsors: ${e instanceof Error ? e.message : e}`);
       }
     }
-    console.log(`${bill}: ${rcs.length} of ${bi.floor.length} floor roll calls read (${bi.committee} committee${bi.motion ? `, ${bi.motion} motion` : ''} and ${bi.voice} voice votes not read)`);
+    console.log(`${bill}: ${rcs.length} of ${bi.floor.length} floor roll calls read (${bi.committee} committee${bi.motion ? `, ${bi.motion} motion` : ''} and ${bi.voice} voice votes not read${bi.unread?.length ? `; ${bi.unread.length} floor votes not read: ${bi.unread.join('; ')}` : ''})`);
   }
   writeFileSync(outFile, JSON.stringify({
     state: ST, session, source: `${new URL(idx.billUrl(session, bills[0]) ?? idx.listUrl?.(session) ?? '')!.host}: each bill's own vote list and each roll call's own page`,

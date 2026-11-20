@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meReadVotes, meSenateRows } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -830,5 +830,82 @@ describe('the legislature\'s own vote list — California, from the PUBINFO copy
     writeFileSync(path.join(dir, '2025', 'MANIFEST.json'), '{}');
     expect(INDEX.CA.read(pubinfoBody('pubinfo:2025/bills/202520260AB9.json', dir), '20252026', 'AB 9')).toMatchObject({ floor: [], committee: 0 });
     expect(() => pubinfoBody('pubinfo:2023/legislators.json', dir)).toThrow(/not in/);
+  });
+});
+
+describe('the legislature\'s own vote list — Maine', () => {
+  // Saved 2026-11-19 from legislature.maine.gov and cut to what the tool reads: the House's list and PDF list (rows of
+  // LD 1971, roll calls 1 and 67), and the Senate's list (LD 1971, and rows typed by hand in ways the tool must survey).
+  const fx = (f: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${f}`, import.meta.url)), 'utf8');
+  const LIST = fx('me-132-house-list.html');
+  const PDFS = fx('me-132-house-pdfs.html');
+  const SEN = fx('me-132-senate-list.html');
+  const SENATORS = fx('me-senators-132.html');
+  const swap = (t: string, from: string, to: string): string => {
+    expect(t.includes(from)).toBe(true);
+    return t.replace(from, to);
+  };
+  const H = 'https://legislature.maine.gov/house/Repository/Documents/132/RollCalls/';
+  const S = 'https://legislature.maine.gov/uploads/visual_edit/';
+
+  it('starts from the House\'s list of the Legislature, then its PDF list, the Senate\'s list and the Senate\'s members', () => {
+    expect(meHouseListUrl('132')).toBe('https://legislature.maine.gov/house/Documents/RollCalls?Legislature=132');
+    expect(meHouseListUrl('2025')).toBeNull();
+    expect(meFollow(LIST, '132')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=132',
+      'https://legislature.maine.gov/132nd-roll-calls', 'https://legislature.maine.gov/senate/senators/9536']);
+    expect(INDEX.ME.minGapMs).toBe(1_000);
+  });
+
+  it('finds the bill\'s floor votes on the bill in both chambers, and counts its motions', () => {
+    const bi = meReadVotes(LIST, '132', 'LD 1971', [PDFS, SEN, SENATORS]);
+    expect(bi.floor.map((v) => [v.url, v.motion])).toEqual([[`${H}034.574.132S1.pdf#LD1971`, 'Enactment'],
+      [`${S}roll-call-606-ld-1971.pdf#LD1971`, 'PASSAGE TO BE ENGROSSED'], [`${S}roll-call-634-ld-1971.pdf#LD1971`, 'ENACTMENT']]);
+    expect(bi.motions).toEqual(['House 541 ACC MAJ OTP AS AMENDED REP', 'Senate 605 ACCEPT MAJ OTP-A REPORT']);
+    expect(bi.unread).toEqual([]);
+  });
+
+  it('reads the Senate list as typed: a number and file in two links, a row with no motion, a number the file contradicts', () => {
+    const rows = meSenateRows(SEN, '132');
+    expect(rows.find((r) => r.rc === 31)).toMatchObject({ files: [`${S}roll-call-31-hp-131-1.pdf`, `${S}roll-call-31-hp-131.pdf`], papers: ['LD 209', 'HP 131'], motion: 'ADOPTION' });
+    expect(rows.find((r) => r.rc === 39)).toMatchObject({ files: [`${S}roll-call-39-ld-209.pdf`], papers: ['LD 209'], motion: '' });
+    // "# 107" links roll-call-108-ld-436.pdf: the file's number is kept, and the PDF must print it
+    expect(rows.filter((r) => r.rc === 108).map((r) => r.files[0])).toEqual([`${S}roll-call-108-ld-436.pdf`, `${S}roll-call-108-ld-827.pdf`]);
+    // a row with no motion typed is read (the PDF's question decides); a row linking two files is not
+    const bi = meReadVotes(LIST.replace(/LD 1971/g, 'LD 209'), '132', 'LD 209', [PDFS, SEN, SENATORS]);
+    expect(bi.floor.map((v) => v.url)).toContain(`${S}roll-call-39-ld-209.pdf#LD209`);
+    expect(bi.motions).toContain('Senate 31 ADOPTION');
+    const two = meReadVotes(LIST, '132', 'LD 209', [PDFS, swap(SEN, '(Motion: ADOPTION)', '(Motion: ENACTMENT)'), SENATORS]);
+    expect(two.unread).toEqual([`Senate 31 ENACTMENT: the list links 2 files for it (${S}roll-call-31-hp-131-1.pdf, ${S}roll-call-31-hp-131.pdf)`]);
+  });
+
+  it('reads two rows typed in one paragraph as two, and a file listed twice once', () => {
+    const p605 = /<p><a href="\/uploads\/visual_edit\/roll-call-605-[^]*?<\/p>\n/.exec(SEN)![0];
+    const joined = swap(SEN, `${p605}<p>`, p605.replace(/<\/p>\n$/, ' ')); // the 131st's list has #304 and #305 so
+    expect(meSenateRows(joined, '132').filter((r) => r.rc === 605 || r.rc === 606).map((r) => [r.rc, r.files.length, r.motion]))
+      .toEqual([[605, 1, 'ACCEPT MAJ OTP-A REPORT'], [606, 1, 'PASSAGE TO BE ENGROSSED']]);
+    expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, joined, SENATORS]).floor).toHaveLength(3);
+    const p634 = /<p><a href="\/uploads\/visual_edit\/roll-call-634-[^]*?<\/p>\n/.exec(SEN)![0];
+    expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, swap(SEN, p634, p634 + p634), SENATORS]).floor).toHaveLength(3);
+  });
+
+  it('reads no Senate vote while the member list is of another Legislature, and says so', () => {
+    const bi = meReadVotes(LIST, '132', 'LD 1971', [PDFS, SEN, swap(SENATORS, '132nd Maine Senators', '133rd Maine Senators')]);
+    expect(bi.floor.map((v) => v.url)).toEqual([`${H}034.574.132S1.pdf#LD1971`]);
+    expect(bi.unread).toHaveLength(2);
+    expect(bi.unread![0]).toMatch(/^Senate 606 PASSAGE TO BE ENGROSSED: the Senate's member list is of the 133rd Legislature/);
+  });
+
+  it('refuses a list whose printed count is not the rows it read, a row it cannot read, and another Legislature\'s list', () => {
+    expect(() => meHouseRows(swap(LIST, '<strong>4</strong> roll call', '<strong>5</strong> roll call'), '132')).toThrow(/the list prints 5 roll calls and 4 read/);
+    expect(() => meHouseRows(LIST, '131')).toThrow(/not the House's roll-call list of the 131st/);
+    expect(() => meHousePdfs(swap(PDFS, '<strong>4</strong> PDF', '<strong>3</strong> PDF'), '132')).toThrow(/the PDF list prints 3 files, links 4 and 4 read/);
+    expect(() => meHousePdfs(swap(PDFS, '034.574.132S1.pdf', '034.574.132X1.pdf'), '132')).toThrow(/the PDF list prints 4 files, links 4 and 3 read/);
+    expect(() => meHousePdfs(swap(PDFS, '033.541.132S1.pdf', '033.574.132S1.pdf'), '132')).toThrow(/roll call 574 has two PDFs/);
+    expect(() => meSenateRows(swap(SEN, '<p><a href="/uploads/visual_edit/roll-call-39', '<span><a href="/uploads/visual_edit/roll-call-39'), '132')).toThrow(/the list links \d+ roll-call files and \d+ are in a row/);
+    expect(() => meSenateRows(SEN, '131')).toThrow(/not the Senate's roll-call list of the 131st/);
+    expect(() => meReadVotes(LIST, '132', 'SP 97', [PDFS, SEN, SENATORS])).toThrow(/not an LD/);
+    // a House vote on the bill with no PDF is not read, and is reported
+    const noPdf = swap(swap(PDFS, '<strong>4</strong> PDF', '<strong>3</strong> PDF'), /<tr>(?:(?!<tr>).)*?034\.574\.132S1\.pdf.*?<\/tr>/s.exec(PDFS)![0], '');
+    expect(meReadVotes(LIST, '132', 'LD 1971', [noPdf, SEN, SENATORS]).unread).toEqual(['House 574 Enactment: no PDF on the House\'s list']);
   });
 });

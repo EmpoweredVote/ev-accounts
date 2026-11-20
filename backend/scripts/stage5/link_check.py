@@ -146,6 +146,39 @@ if made:
     print(f"{'added' if ADD else 'not yet in idmap (run with --add):'} {len(made)} name-only record(s) the converter made for a linked member's votes:")
     for ls, pid in made: print(f"  {legs[pid]['full_name']}  <-  {ls}\t{people[ls].get('name')}")
 
+# Maine 2026-11-20: the House record prints a member as "Bridgeo, W.R." or "Ray, D.M." (family name, then initials), and
+# the converter keeps that label as a name-only record when the dump gives another given name ("Bill Bridgeo"). The
+# whole-name rule above cannot see it. A name-only label of that shape links to the one roster member of that chamber
+# whose family name is the label's and whose first given name starts with the label's first initial; one that fits
+# two members, or none, is left for the report below.
+LABEL = re.compile(r"^([^,]+), ((?:[A-Za-z]\. ?)*[A-Za-z]\.?)$")
+def family_of(full):
+    w = [x for x in re.sub(r'[",]', ' ', full).split() if norm(x) not in SUFFIX]
+    return w
+def label_fits(lab, full):
+    m = LABEL.match(lab or '')
+    if not m: return False
+    w = family_of(full); fam = norm(m.group(1)); first = norm(m.group(2))[:1]
+    for k in range(1, len(w)):
+        if norm(''.join(w[k:])) == fam: return bool(first) and norm(w[0])[:1] == first
+    return False
+CHAMBER = {'Rep': 'representative', 'Sen': 'senator'}
+labelled = []
+for ls in sorted(people):
+    pr = people[ls]
+    if ls in idmap or not (pr.get('_openstates') or {}).get('name_only') or not LABEL.match(pr.get('name') or ''): continue
+    office = CHAMBER.get(pr.get('role'))
+    fits = [pid for pid, r in legs.items() if (not office or office in norm(r.get('office')))
+            and label_fits(pr.get('name'), r['full_name'])]
+    if len(fits) == 1: labelled.append((ls, fits[0]))
+if labelled:
+    if ADD:
+        with open(IDMAP, 'a') as fh:
+            for ls, pid in labelled: fh.write(f"{ls}\t{pid}\t# {people[ls].get('name')} (link_check record label: family name and initial)\n")
+        for ls, pid in labelled: idmap[ls] = pid; linked.add(pid)
+    print(f"{'added' if ADD else 'not yet in idmap (run with --add):'} {len(labelled)} record label(s) of the form \"Family, I.\" fitting one member:")
+    for ls, pid in labelled: print(f"  {legs[pid]['full_name']}  <-  {ls}\t{people[ls].get('name')}")
+
 
 def who(ls):
     p = people[ls]

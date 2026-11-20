@@ -1490,6 +1490,32 @@ def link_check_links_a_converter_made_record_of_a_member_already_linked(t):
 
 
 @check
+def link_check_links_a_record_label_of_family_name_and_initials(t):
+    """Maine 2026-11-20: the House record prints "Bridgeo, W.R." and "Ray, D.M."; the dump says "Bill Bridgeo", so the
+    converter kept the record's label as a name-only record, and 18 such records (every vote of 14 members on the
+    record) were linked to no one. A label of that shape links to the one roster member of its chamber whose family
+    name it is and whose first given name starts with its first initial. Two members who fit, an initial that does
+    not, a member of the other chamber, and a record that is not name-only all stay unlinked."""
+    d = f'{t}/ds/XX-1/2025/s'; os.makedirs(f'{d}/bill'); os.makedirs(f'{d}/people')
+    json.dump({'bill': {'session': {'year_end': 2026}}}, open(f'{d}/bill/1.json', 'w'))
+    def person(i, name, role='Rep', name_only=True):
+        json.dump({'person': {'people_id': i, 'first_name': '', 'last_name': name.split(',')[0], 'name': name, 'role': role,
+                              'district': '', '_openstates': {'person_id': None, **({'name_only': True} if name_only else {})}}},
+                  open(f'{d}/people/{i}.json', 'w'))
+    person(9000001, 'Bridgeo, W.R.'); person(9000002, 'Ray, D.M.'); person(9000003, 'Smith, J.')
+    person(9000004, 'Bridgeo, X.'); person(9000005, 'Talbot Ross, R.'); person(9000006, 'Ray, D.M.', role='Sen')
+    person(9000007, 'Ray, D.M.', name_only=False)
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tscope\toffice\n'
+        'pb\tWilliam Bridgeo\tsitting\tRepresentative\npr\tD. Michael Ray\tsitting\tRepresentative\n'
+        'pj\tJohn Smith\tsitting\tRepresentative\npk\tJane Smith\tsitting\tRepresentative\n'
+        'pt\tRachel Talbot Ross\tsitting\tRepresentative\n')
+    open(f'{t}/idmap.tsv', 'w').write('')
+    p = run('link_check.py', '--state', 'xx', '--roster', f'{t}/roster.tsv', '--ds', f'{t}/ds', '--idmap', f'{t}/idmap.tsv', '--add', ok=False)
+    got = sorted(tuple(l.split('\t')[:2]) for l in open(f'{t}/idmap.tsv').read().splitlines() if 'record label' in l)
+    assert got == [('9000001', 'pb'), ('9000002', 'pr'), ('9000005', 'pt')], (got, p.stdout)
+
+
+@check
 def state_legiscan_cites_the_legislatures_own_page_for_an_open_states_roll_call(t):
     """A roll call converted from Open States data has no legiscan.com page: its pair names the legislature's own
     roll-call page, taken from the hit. One with no page is unmapped, with that reason. A sponsorship on such a bill
