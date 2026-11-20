@@ -31,6 +31,7 @@ Yes/No, not Yea/Nay; a sponsor page whose snippet prints no bill number; and oth
 """
 import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))  # -I drops the script dir
 from _args import opt
+from _against import against_the_bill
 import csv, glob, json, re, shutil
 from _legiscan_people import Matcher, read_idmap, read_people, read_roster
 
@@ -76,8 +77,10 @@ def main():
                 if not pid: stats['voters not on roster'] += 1; continue
                 act = {1: 'yea', 2: 'nay'}.get(x['vote_id'])
                 if not act: continue
+                kill = against_the_bill(rc['desc'])  # a Yea to accept a Majority Ought Not to Pass report (_against.py)
                 add(pid, {'kind': 'record', 'url': b['link'], 'date': rc['date'], 'date_precision': 'day', 'instrument_id': ins, 'act': act, 'motion': rc['desc'],
-                          'note': f"{ST} {CH[rc['chamber']]}, {rc['desc']}, {rc['date']}: {act} (tally {rc['yea']}–{rc['nay']}).", 'topic_keys': [TOPIC],
+                          **({'against_bill': True} if kill else {}),
+                          'note': f"{ST} {CH[rc['chamber']]}, {rc['desc']}, {rc['date']}: {act} (tally {rc['yea']}–{rc['nay']})." + (' A Yea on this motion is a vote against the bill.' if kill else ''), 'topic_keys': [TOPIC],
                           '_pilot': {'roll_call_id': rc['roll_call_id'], 'state_link': rc['state_link']}}); stats['vote findings'] += 1
     if not find: raise SystemExit('NO VERDICT: no roster legislator has a vote or a sponsorship on a scanned bill (check idmap.tsv and the bill scan)')
     os.makedirs(f'{P}/findings', exist_ok=True); os.makedirs(f'{P}/batch', exist_ok=True)

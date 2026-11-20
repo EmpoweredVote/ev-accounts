@@ -42,8 +42,11 @@ evidence, but never seats anyone alone.
 Work through the codebook in its fixed order (V1 attribution → V2 relevance → V3 evidence class → V4 shape →
 V5 time → V6 chair) for each finding, then decide the row. Apply the furthest-act rule, "an escape open to
 everyone", "a fallback does not erase a stated requirement" and every gate in RULINGS.md. A pre-filled vote's
-`gate` says which census gate it met on this topic (`none` = no gate); a gated vote cannot seat. Every
-finding in your file is on this topic; cite them by `id`.
+`gate` says which census gate it met on this topic (`none` = no gate); a gated vote cannot seat. A vote
+marked `against_bill: true` is a vote to accept a committee's report that the bill ought not to pass, which
+kills it: its Yea is a vote AGAINST the bill and its Nay a vote for it. Read it that way, and in the reasoning
+say what the person voted for ("voted to accept the report that HB 12 (2023) ought not to pass"), never
+"voted Yea on HB 12". Every finding in your file is on this topic; cite them by `id`.
 
 Give exactly one outcome:
 

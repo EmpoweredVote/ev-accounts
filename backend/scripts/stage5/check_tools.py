@@ -547,6 +547,36 @@ def bill_table_settle_closes_a_flag_and_check_refuses_an_answer_left_in_it(t):
 
 
 @check
+def bill_table_reads_a_yea_to_kill_the_bill_as_a_vote_against_it(t):
+    """Maine 2026-11-20 (runner: "Both, with the flag"): a Yea to accept a Majority Ought Not to Pass report is a vote
+    against the bill. The finding keeps its literal act and carries `against_bill`; the bill table counts it as a No,
+    and a Nay on that motion as a Yes. `a` voted Yea at rung 4 and Yea to kill the rung-2 bill: one side only.
+    `b` voted Nay on killing the rung-2 bill (a Yes there) and Yea at rung 4: both sides."""
+    S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'yea', 'none')],
+                  'b': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'nay', 'none')]},
+              {'XX-HB-1-2025': 'x', 'XX-HB-2-2025': 'y'})
+    for pid in ('a', 'b'):
+        f = f'{S}/findings/{pid}.json'; d = json.load(open(f)); d['findings'][1]['against_bill'] = True; json.dump(d, open(f, 'w'))
+    json.dump({'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 4}, 'XX-HB-2-2025': {'rung': 2}}}, open(f'{t}/t.json', 'w'))
+    open(f'{t}/ids', 'w').write('a b\n')
+    run('bill_table.py', 'questions', f'{t}/t.json', '--store', S, '--ids', f'{t}/ids', '--out', f'{t}/q.md')
+    md = open(f'{t}/q.md').read()
+    assert '- b: XX-HB-2-2025 r2 nay (against the bill) | XX-HB-1-2025 r4 yea' in md and '- a:' not in md, md
+    p = run('bill_table.py', 'affected', f'{t}/t.json', 'XX-HB-2-2025', '--ids', f'{t}/ids', '--store', S, '--out', f'{t}/again.txt')
+    assert open(f'{t}/again.txt').read().split() == ['b'], open(f'{t}/again.txt').read()
+    sys.path.insert(0, TOOLS); import _against
+    for m, way in [('ACC MAJ OUGHT NOT TO PASS REP', True), ('ACC MAJ ONTP REP', True), ('Accept Majority Ought Not to Pass Report from the Committee on Judiciary', True),
+                   ('Accept M ajority Ought Not to Pass Report from the Committee on Judiciary', True), ('Acceptance Majority Ought Not to Pass Report', True),
+                   ('Accept Majority Ought Not Pass Report from the Committee on Judiciary', True), ('acc maj otp-am by ca-a', False),
+                   # as convert.py writes the motion, with the chamber first (Maine dry batch 2026-11-20: 0 of 30 flagged without it)
+                   ('House ACC MAJ OUGHT NOT TO PASS REP', True), ('Senate ACCEPT MAJ ONTP RPT', True), ('House ACC MAJ OTP AS AMENDED REP', False),
+                   ('ACC MAJ OTP AS AMENDED REP', False), ('Accept Majority Ought to Pass as Amended Report from the Committee on Taxation', False),
+                   ('ACC MIN OUGHT NOT TO PASS REP', False), ('Enactment', False), ('', False)]:
+        assert _against.against_the_bill(m) is way, m
+    assert _against.act_words({'act': 'yea', 'against_bill': True}) == 'yea (a vote against the bill)' and _against.act_words({'act': 'nay'}) == 'nay'
+
+
+@check
 def bill_table_questions_find_both_sides_and_skip_gated(t):
     S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'sponsor', 'none')],
                   'b': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'yea', 'multi-subject')],

@@ -18,8 +18,20 @@
  * database, no network.
  */
 import { findingId, type Finding, type Instrument, type PersonFindings, type Vote } from './sourceStore.js';
+import { meMajorityReport } from '../../src/lib/stateRollCallEvidence.js';
 import type { RosterRow } from './stage5Roster.js';
 import { instrumentBill, matchRollCall, tableAct, type TableRollCall } from './federalTableVotes.js';
+
+/**
+ * A motion whose Yea is a vote against the bill: to accept a committee's Majority Ought Not to Pass report (Maine, runner
+ * 2026-11-20: "Both, with the flag"). Maine's committees report out every bill, and accepting that report kills it with no
+ * later vote. The wordings are the Maine reader's own (`meMajorityReport`); scripts/stage5/_against.py holds the same
+ * rule for the Python tools.
+ */
+export function againstTheBill(motion: string): boolean {
+  // convert.py writes the chamber first ("House ACC MAJ OUGHT NOT TO PASS REP"); the record prints the motion alone
+  return meMajorityReport(motion.trim().replace(/^(?:House|Senate) /, '')) === 'against';
+}
 
 export type GateRow = { instrument_id: string; vote_date: string; body: string; motion: string; gate: string };
 export type UnmatchedVote = { instrument_id: string; date: string; body: string; motion: string; name: string; vote: string };
@@ -93,10 +105,11 @@ export function prefillFindings(
     const vote = findVote(inst, g);
     if (!vote) { skip('no single store vote matches this body, motion or date'); continue; }
 
+    const against = againstTheBill(vote.motion);
     const addVote = (pid: string, act: string, from = '') => add(pid, {
       kind: 'record' as const, url: inst.urls[0], date: vote.date, date_precision: 'day' as const,
-      instrument_id: inst.id, act: act as Finding['act'], motion: vote.motion, gate_by_topic: { [topicKey]: g.gate || 'none' },
-      note: `${vote.body}, ${vote.motion}, ${vote.date}: ${act} (tally ${vote.yes}–${vote.no}); census gate: ${g.gate || 'none'}.${from}`,
+      instrument_id: inst.id, act: act as Finding['act'], motion: vote.motion, ...(against ? { against_bill: true as const } : {}), gate_by_topic: { [topicKey]: g.gate || 'none' },
+      note: `${vote.body}, ${vote.motion}, ${vote.date}: ${act} (tally ${vote.yes}–${vote.no}); census gate: ${g.gate || 'none'}.${from}${against ? ' A Yea on this motion is a vote against the bill.' : ''}`,
       subjects: tags, topic_keys: [topicKey], provenance: inst.provenance,
     });
 

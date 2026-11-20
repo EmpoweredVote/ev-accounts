@@ -36,7 +36,7 @@ import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificatio
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { isPubinfoDoc, readPubinfoDoc } from '../../../src/lib/adapters/caPubinfo.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsOnTheBill, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsRead, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -162,10 +162,16 @@ export function meSenateRows(html: string, session: string): { rc: number; files
   return out;
 }
 
-/** A list's motion that may be a vote on the bill: its PDF's question is read and checked (meQuestionIsOnTheBill). */
+/**
+ * A list's motion that may be a vote on the bill or on its Majority report: its PDF's question is read and checked
+ * (meQuestionIsRead). A Majority report is typed many ways ("ACC MAJ OTP AS AMENDED REP", "ACCEPT MAJ OTNP RPT", "ACCEPT
+ * ACCEPT MAJORITY OTP-A RPT"), so any motion naming the Majority and a report of Ought (Not) to Pass is passed on, and the
+ * PDF decides. A Minority or lettered report never names the Majority, and stays a motion.
+ */
 export function meListMotionIsOnTheBill(motion: string): boolean {
   const m = motion.replace(/\s+/g, ' ').trim();
-  return meQuestionIsOnTheBill(m) || /^PTBE(?:-A)?$|^Emergency[- ]Enactment$|^Enact-Emer\b|^Veto Override$|^Final Enactment$/i.test(m);
+  const majority = /^ACC(?:EPT)?\b.*\bMAJ(?:ORITY)?\b/i.test(m) && /\b(?:OTP|ONTP|OTNP|OUGHT)\b/i.test(m);
+  return meQuestionIsRead(m) || majority || /^PTBE(?:-A)?$|^Emergency[- ]Enactment$|^Enact-Emer\b|^Veto Override$|^Final Enactment$/i.test(m);
 }
 
 /** Every floor roll call on the bill, House and Senate, from the three lists; motions are counted. */

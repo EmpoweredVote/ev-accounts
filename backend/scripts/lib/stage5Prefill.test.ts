@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { prefillFindings, parseGatesTsv, type GateRow } from './stage5Prefill.js';
+import { againstTheBill, prefillFindings, parseGatesTsv, type GateRow } from './stage5Prefill.js';
 import { PersonFindingsSchema, type Instrument } from './sourceStore.js';
 import type { RosterRow } from './stage5Roster.js';
 import type { TableRollCall } from './federalTableVotes.js';
@@ -42,6 +42,21 @@ describe('prefillFindings', () => {
     });
     expect(pf.findings[0].note).toMatch(/gate: near-unanimous/);
     expect(pf.findings[0].gate_by_topic).toEqual({ 'voting-rights': 'near-unanimous' });
+  });
+
+  it('marks a Yea to accept a Majority Ought Not to Pass report as a vote against the bill, and says so in the note', () => {
+    // Maine, runner 2026-11-20: "Both, with the flag". The act stays as the record prints it.
+    const motion = 'Accept Majority Ought Not to Pass Report from the Committee on Judiciary';
+    const i = inst('IN-SB-483-2011', [{ name: 'One', politician_id: P1, vote: 'yea' }, { name: 'Two', politician_id: P2, vote: 'nay' }], motion);
+    const { findings } = prefillFindings([i], [{ ...gate('IN-SB-483-2011'), motion }], roster, 'voting-rights', subjects);
+    const by = Object.fromEntries(findings.map((p) => [p.politician_id, PersonFindingsSchema.parse(p).findings[0]]));
+    expect([by[P1].act, by[P1].against_bill, by[P2].act, by[P2].against_bill]).toEqual(['yea', true, 'nay', true]);
+    expect(by[P1].note).toMatch(/; census gate: none\. A Yea on this motion is a vote against the bill\.$/);
+    for (const m of ['ACC MAJ OUGHT NOT TO PASS REP', 'ACC MAJ ONTP REP', 'House ACC MAJ OUGHT NOT TO PASS REP', 'Senate ACCEPT MAJ ONTP RPT']) expect([m, againstTheBill(m)]).toEqual([m, true]);
+    for (const m of ['ACC MAJ OTP AS AMENDED REP', 'House ACC MAJ OTP AS AMENDED REP', 'ACC MIN OUGHT NOT TO PASS REP', 'House Enactment', 'final passage', 'Accept Majority Ought to Pass Report'])
+      expect([m, againstTheBill(m)]).toEqual([m, false]);
+    const plain = prefillFindings([inst('IN-SB-483-2011', [{ name: 'One', politician_id: P1, vote: 'yea' }])], [gate('IN-SB-483-2011')], roster, 'voting-rights', subjects);
+    expect('against_bill' in plain.findings[0].findings[0]).toBe(false);
   });
 
   it('ignores a vote the census did not count (an earlier reading)', () => {

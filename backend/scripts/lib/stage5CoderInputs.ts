@@ -28,6 +28,8 @@ export interface CoderFinding {
   instrument_id?: string;
   act?: Finding['act'];
   motion?: string;
+  /** A Yea on this motion is a vote against the bill (sourceStore `against_bill`). */
+  against_bill?: true;
   /** This topic's census gate for a pre-filled vote (`none` = no gate). */
   gate?: string;
   local_record?: boolean;
@@ -93,6 +95,7 @@ export function projectFinding(f: Finding, topicKey: string): CoderFinding {
   if (f.instrument_id !== undefined) o.instrument_id = f.instrument_id;
   if (f.act !== undefined) o.act = f.act;
   if (f.motion !== undefined) o.motion = f.motion;
+  if (f.against_bill !== undefined) o.against_bill = f.against_bill;
   const g = f.gate_by_topic?.[topicKey];
   if (g !== undefined) o.gate = g;
   if (f.local_record !== undefined) o.local_record = f.local_record;
@@ -335,6 +338,8 @@ function sponsorParts(f: CoderFinding): { role: string; tail: string; motionTail
  */
 export function isPlainRecord(f: CoderFinding): boolean {
   if (f.kind !== 'record' || !f.instrument_id || !f.act || f.local_record !== undefined || f.passage !== undefined) return false;
+  // A Yea to kill the bill is never a plain "yea" line: it stays word for word, and the record script leaves it to Opus.
+  if (f.against_bill !== undefined) return false;
   return !!(voteParts(f) ?? sponsorParts(f));
 }
 

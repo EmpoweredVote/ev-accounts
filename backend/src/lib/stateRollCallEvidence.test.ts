@@ -12,7 +12,7 @@ import {
   explainNevadaVote, nvMemberName, nvVoteList, parseNevadaVoteUrl,
   explainCaliforniaVote, caQuestionIsOnTheBill, californiaVoteUrl, californiaBillId, isLocalStateRollCallUrl, parseCaliforniaVoteUrl,
   explainOregonVote, orQuestionIsOnTheBill, orTally, parseOregonVoteUrl, oregonVoteUrl, OR_DATA,
-  explainMaineVote, meQuestionIsOnTheBill, meSenators, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK, ME_SENATORS,
+  explainMaineVote, meMajorityReport, meQuestionIsOnTheBill, meQuestionIsRead, meSenators, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK, ME_SENATORS,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
@@ -2304,8 +2304,9 @@ const ME_HMOT = 'https://legislature.maine.gov/house/Repository/Documents/132/Ro
 const ME_S634 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-634-ld-1971.pdf#LD1971';
 const ME_S454 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-454-ld-1138.pdf#LD1138';
 const ME_S184 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-184-ld-16.pdf#LD16';
+const ME_HMIN = 'https://legislature.maine.gov/house/Repository/Documents/131/RollCalls/012.051.131S1.pdf#LD541';
 const meBody: Record<string, string> = { [ME_H131]: 'me-131-house-012', [ME_H132]: 'me-132-house-574', [ME_H130]: 'me-130-house-002', [ME_HMOT]: 'me-132-house-127',
-  [ME_S634]: 'me-132-senate-634', [ME_S454]: 'me-132-senate-454', [ME_S184]: 'me-132-senate-184' };
+  [ME_S634]: 'me-132-senate-634', [ME_S454]: 'me-132-senate-454', [ME_S184]: 'me-132-senate-184', [ME_HMIN]: 'me-131-house-051' };
 const ME_SEN = meFix('me-senators-132.html');
 const meDocs = (url: string, body = meFix(`${meBody[url]}.txt`), sen = ME_SEN): string[] => (/uploads/.test(url) ? [body, sen] : [body]);
 const meWhy = (url: string, docs: string[]): string => {
@@ -2338,6 +2339,33 @@ describe('state roll-call pages — Maine address', () => {
       ME_H132.replace('https', 'http'), ME_S634.replace('legislature.maine.gov', 'legislature.maine.gov.example.com'), ME_S634.replace('#LD1971', '#LD0')]) {
       expect([u, isStateRollCallUrl(u)]).toEqual([u, false]);
     }
+  });
+
+  it('reads a vote to accept the Majority report, Ought to Pass or Ought Not to Pass, and says which way it goes', () => {
+    // runner, 2026-11-20: "read majority report votes for Maine", "Both, with the flag". Maine reports out every bill, so the
+    // chamber's vote on the Majority report is its vote on the bill; accepting Ought Not to Pass kills it. A Minority,
+    // lettered or unanimous report is still a motion.
+    for (const [q, way] of [['ACC MAJ OTP AS AMENDED REP', 'for'], ['ACC MAJ OUGHT TO PASS REP', 'for'], ['ACC MAJ OTP REP', 'for'],
+      ['ACC MAJ OUGHT NOT TO PASS REP', 'against'], ['Acc Maj Ought Not to Pass Rep', 'against'],
+      ['Accept Majority Ought to Pass as Amended Report from the Committee on Appropriations and Financial Affairs ( HP 257 ) ( LD 424 )', 'for'],
+      ['Accept Majority Ought Not To Pass Report from the Committee on Environment and Natural Resources ( LD 425)(HP 258 )', 'against'],
+      ['Accept Majority Ought to Pass Report from the Committee on Judiciary', 'for'],
+      // as the 132nd's Senate and House PDFs print them (fetched 2026-11-20): an amendment named, no "Report", a word
+      // dropped, "Acceptance", and words the PDF splits
+      ['Accept Majority Ought to Pass as Amended by Committee Amendment "A" from the Committee on Judiciary', 'for'],
+      ['Accept Majority Ought to Pass as Amended by Committee Amendment "A" Report from the Committee on Judiciary', 'for'],
+      ['acc maj otp-am by ca-a', 'for'], ['Accept Majority Ought Not Pass Report from the Committee on Judiciary', 'against'],
+      ['Accept M ajority Ought Not to Pass Report from the Committee on Judiciary', 'against'],
+      ['Acceptance Majority Ought Not to Pass Report from the Committee on Judiciary', 'against']] as const) {
+      expect([q, meMajorityReport(q), meQuestionIsRead(q), meQuestionIsOnTheBill(q)]).toEqual([q, way, true, false]);
+    }
+    for (const q of ['ACC MIN OUGHT NOT TO PASS REP', 'ACC MIN OTP AS AMENDED REP', 'Accept Minority Ought to Pass as Amended Report from the Committee on Taxation',
+      'ACC OTP-AM BY CA "A"', 'ACCEPT REPORT "A" OTP-AM', 'Accept Report "B" Ought Not to Pass', 'INDEF PP HAH-285', 'Enactment',
+      'Recede from Passage to be Engrossed as Amended by Committee Amendment "A" and Concur Acceptance of the Minority Ought Not to Pass Report',
+      'Reconsider Acceptance of the Majority Ought Not to Pass Report', 'ACC MAJ OUGHT NOT TO PASS REP AND SEND FORTHWITH']) {
+      expect([q, meMajorityReport(q)]).toEqual([q, null]);
+    }
+    expect(meQuestionIsRead('Enactment')).toBe(true);
   });
 
   it('takes enactment, engrossing, final passage and a veto vote as votes on the bill, and every motion as not', () => {
@@ -2395,6 +2423,17 @@ describe('state roll-call pages — reading Maine', () => {
       'Maine House roll call 574 (132nd Legislature, First Special Session), LD 1971 - Enactment (2025-06-18): Collins, A. C voted Nay.']);
   });
 
+  it('reads a House and a Senate vote to accept the Majority Ought Not to Pass report, its question as printed', () => {
+    const h = meRender(ME_HMOT);
+    expect(h.split('\n')[1]).toBe('Question: ACC MAJ OUGHT NOT TO PASS REP');
+    // the fixture prints N at x 170.6 beside "Eder, J." on row 567.4
+    expect(stateRollCallLinesFor(ME_HMOT, h, 'Eder', 'John Eder')).toEqual([
+      'Maine House roll call 127 (132nd Legislature, First Special Session), LD 644 - ACC MAJ OUGHT NOT TO PASS REP (2025-05-13): Eder, J. voted Nay.']);
+    const s = meRender(ME_S184);
+    expect(s.split('\n')[1]).toBe('Question: Accept Majority Ought Not to Pass Report from the Committee on Judiciary');
+    expect(s).not.toMatch(/\b(?:Democrat|Republican|Independent)\b|\([DRIU]\)/);
+  });
+
   it('reads the same bill\'s Senate vote, naming each senator from the member list', () => {
     const t = meRender(ME_S634);
     expect(t.split('\n').slice(0, 3)).toEqual(['Maine Senate roll call 634 (132nd Legislature, First Special Session), LD 1971, 2025-06-18.',
@@ -2411,8 +2450,9 @@ describe('state roll-call pages — reading Maine', () => {
   });
 
   it('refuses a vote that is not on the bill, a Legislature that prints surnames only, and a vote with no LD', () => {
-    expect(meWhy(ME_HMOT, meDocs(ME_HMOT))).toBe('the question is not a vote on the bill: ACC MAJ OUGHT NOT TO PASS REP');
-    expect(meWhy(ME_S184, meDocs(ME_S184))).toMatch(/^the question is not a vote on the bill: Accept Majority Ought Not to Pass Report/);
+    expect(meWhy(ME_HMIN, meDocs(ME_HMIN))).toBe('the question is not a vote on the bill: ACC MIN OUGHT NOT TO PASS REP');
+    expect(meWhy(ME_HMOT, meTamper(ME_HMOT, 'MOTION: ACC MAJ OUGHT NOT TO PASS REP', 'MOTION: ACC MIN OUGHT NOT TO PASS REP'))).toBe('the question is not a vote on the bill: ACC MIN OUGHT NOT TO PASS REP');
+    expect(meWhy(ME_S184, meTamper(ME_S184, 'Accept Majority', 'Accept Minority'))).toMatch(/^the question is not a vote on the bill: Accept Minority Ought Not to Pass Report/);
     expect(meWhy(ME_H130, meDocs(ME_H130))).toBe('the 130th Legislature\'s House votes print surnames only');
     expect(meWhy(ME_H132, ['not a pdf'])).toBe('the vote is not a PDF');
     expect(meWhy(ME_S634, [meFix('me-132-senate-634.txt')])).toBe('not the vote and its documents');
@@ -2425,7 +2465,7 @@ describe('state roll-call pages — reading Maine', () => {
       ['ROLL CALL NO. 574', 'ROLL CALL NO. 575', /^the vote is roll call 575$/],
       ['\tLD 1971\n', '\tLD 1972\n', /^the vote is on LD 1972$/],
       ['DATE: 6/18/2025', 'DATE: 6/31/2025', /^the date is not a real day$/],
-      ['MOTION: Enactment', 'MOTION: ACC MAJ OTP REP', /^the question is not a vote on the bill/],
+      ['MOTION: Enactment', 'MOTION: ACC MIN OTP REP', /^the question is not a vote on the bill/],
       ['1\t20.2\t687.5\tDATE', '2\t20.2\t687.5\tDATE', /^the vote runs past one page$/],
       ['1\t459.8\t662.2\tVOTES REQUIRED: 75', '1\t459.8\t662.2\tNOTE: 75', /^a header item the reader cannot read: NOTE: 75$/],
     ] as const) {
