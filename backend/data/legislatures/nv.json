@@ -1,0 +1,58 @@
+{
+  "state": "nv",
+  "name": "Nevada",
+  "verified": "2026-11-19",
+  "source": "Nevada reader session (Stage 5 tools), 2026-11-19: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 78-bill dry batch (the regular-session bills of 2017-2025 one topic's scan found; 76 roll calls) read from NELIS with the verifier's own fetch, and each member's vote compared with the dump where the dump holds one. Two bill texts were read for their marks (2025 AB 451 first reprint, 2025 SB 404 as introduced); no text was measured in bulk.",
+  "chambers": {
+    "lower": "Assembly",
+    "upper": "Senate"
+  },
+  "sessions": "The Legislature meets in odd years only, February to early June, and is numbered: the 79th 2017, the 80th 2019, the 81st 2021, the 82nd 2023, the 83rd 2025, the 84th 2027. Open States names the regular sessions \"79\" to \"84\". Special sessions are numbered on their own count (the 31st and 32nd 2020, the 33rd 2021, the 34th and 35th 2023, the 36th 2025) and Open States names them \"2020Special31\" and so on. NELIS names a session's folder by number and year: 79th2017, 80th2019, 81st2021, 82nd2023, 83rd2025, 31st2020Special, 36th2025Special. Bill numbers start again each session: Assembly Bills AB 1 up, Senate Bills SB 1 up; resolutions are AJR, SJR, ACR, SCR, AR, SR. Before a session, requested bills are BDRs (bill draft requests, \"BDR 3-307\"), and the 84th's pre-filed bills sit in NELIS under /Bdrs/. Assembly 42 seats, Senate 21.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Nevada. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (NV-900142 to NV-900153: the regular sessions 79-84 and the special sessions 2020-2025; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The dump holds no roll call for 2019 (80th) or 2021 (81st), and its 2017 votes are linked to people for about three quarters of member votes. So no Nevada dump vote is placed: scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads the session's bill list from NELIS to find each bill's key, then the bill's Votes tab, which links one vote list per vote type; it reads only \"Final Passage\" (the only type met, 2017-2025) and refuses another type or another session. convert.py places only the votes read from the record (record_is_the_floor) and keeps every other dump vote marked committee, with the reason in _openstates.not_placed. Run the fetch for every bill the scan finds, session by session, then convert the whole state again.",
+    "Compared 2026-11-19: 76 floor roll calls read from the record, 0 refused (2017 10, 2019 28, 2021 11, 2023 16, 2025 11). 39 have no dump copy (all of 2019 and 2021). Of the other 37, 1 was settled by the tally among two on one day (2025 AB 451). Tally differences: 0. Member votes compared: 1,134, differences: 0.",
+    "NELIS prints a member as \"Last, First\" with the name the member used that session (\"Torres, Selena\" 2019-2023, then \"Torres-Fossett, Selena\"; \"Daly, Skip\"; \"O’Neill, PK\" with a curly apostrophe and the initials run together; \"Taylor, Angie\"). The reader turns it into \"First Last\" and the line names that. A member listed under a former name needs that name in essentials.politicians.alternate_names before the line tool and the verifier can give the member a line. Roster legislators: 63 (42 Assembly, 21 Senate), all linked. 58 by name match; 5 idmap lines by hand, for three people the dump holds under two or three records each (Skip Daly as \"Richard Daly\" in the Assembly 2017-2019; Shea Backus; Michelee Cruz-Crawford)."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "www.leg.state.nv.us"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A vote is cited as its member list, with the bill after a #: www.leg.state.nv.us/App/NELIS/REL/<83rd2025>/Bill/GetBillVoteMembers?voteKey=<12948>&voteResultPanel=All&billKey=<12727>#SB404 (the site ignores billKey; it lets the reader find the bill's pages). The member list prints one row per seat with its vote (\"Anderson, Natha (Yea )\"), and a vacant seat as \"District No. 17 (Vacant)\". The reader also reads the bill's vote list (Bill/GetBillVotes?billKey=<K>&voteTypeId=3), which prints each vote under its chamber and version (\"Senate (1st Reprint)\"), the result (Passed or Failed), the day and the count of each group (Yea, Nay, Excused, Not Voting, Absent, Vacant), and the bill's page (Bill/<K>/Overview), whose heading names the bill and the session. A vote is read only when the bill and session agree, the vote is on the bill's list once, each row's class agrees with its text, each group lists the count the vote list prints, the rows plus vacant seats make the whole list, no member is listed twice, and the list is no larger than the chamber. A bill can fail for want of two thirds and pass the same day: two vote keys, both floor votes on the bill. Committee votes are not on these pages.",
+    "gaps": [
+      "Only Final Passage votes are read: NELIS's Votes tab lists no other vote type for the bills read (2017-2025). Committee votes and motions are not on it and are not mapped (runner, 2026-11-16).",
+      "Excused, Not Voting and Absent are recorded as the record lists them (\"was excused\", \"did not vote\", \"was absent\"), never as a Yea or a Nay; they seat no one.",
+      "A member listed under a former name gives no line until that name is an alternate name of the person (Selena Torres-Fossett, listed \"Torres, Selena\" 2019-2023: 27 votes in the dry batch, given lines by CA_0403).",
+      "NELIS covers 2011 onward; the reader is proved on 2017-2025. Special sessions were not in the dry batch (the scan found no special-session bill)."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "www.leg.state.nv.us",
+      "archive.leg.state.nv.us"
+    ],
+    "marks": "Read on 2 texts (2025 AB 451 first reprint, 2025 SB 404 as introduced; 2026-11-19). Each prints the legend \"EXPLANATION – Matter in bolded italics is new; matter between brackets [omitted material] is material to be omitted.\" Words deleted from law are in plain [brackets] (\"Any person [or persons] who is legally qualified [.] upon a\"), so plain text keeps them: never quote a bracketed passage as the law. Words added are bold italics, which plain text loses: a quote from plain text cannot tell new words from old. Each line carries its line number in the margin; a reprint's heading names the amendments it carries (\"Reprinted with amendments adopted on April 18, 2025\").",
+    "note": "Texts are PDFs: introduced /Session/<83rd2025>/Bills/<AB|SB>/<AB451>.pdf, reprints _R1, _R2, enrolled _EN, and amendments /Bills/Amendments/A_<AB451>_<405>.pdf. Each address on www.leg.state.nv.us redirects (302) to the same path on archive.leg.state.nv.us. The dump types every reprint \"Introduced\": read the version from the file name."
+  },
+  "reader_access": {
+    "www.leg.state.nv.us": "open",
+    "archive.leg.state.nv.us": "open"
+  },
+  "search_note": "Nevada sponsorships and Assembly and Senate final-passage votes for 2017 to 2025 come from the bill data on disk, checked against the Legislature's own vote pages (NELIS): skip NELIS's bill and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Nevada's Legislature meets in odd years (the 83rd is 2025); bill numbers start again each session (AB 1, SB 1 up).\n- Floor votes kept: Final Passage, in each chamber. A bill can fail for want of two thirds and pass the same day: both are floor votes.\n- Texts: words in plain [brackets] are deleted from law; never quote a bracketed passage as the law. New words are bold italics, which plain text does not show.",
+  "fill_quotes": {
+    "label_strips": [],
+    "brackets_delete": true
+  },
+  "quirks": [
+    "robots.txt on www.leg.state.nv.us disallows */Reports/* (the old history.cfm bill pages, which the dump links; convert.py rewrites them to the NELIS Overview) and states no crawl delay; archive.leg.state.nv.us states none either. The reader waits one second between requests. No 403, 429 or bot check was met on 2026-11-19.",
+    "One vote needs three pages: the member list (about 20 KB), the bill's vote list and the bill's page. The line tool took 2 minutes 6 seconds for 200 votes from an empty page cache (51 vote pages).",
+    "Finding a bill's key costs one more request per session: the session's bill list (HomeBill/BillsTab?selectedTab=List&Filters.PageSize=5000) links each bill as /Bill/<key>/Overview. A bill with no vote prints \"No Votes Recorded\" on its Votes tab.",
+    "The Open States dump stores some names as UTF-8 read as Latin-1 (\"OâNeill, PK\" for O’Neill). The record's names come from NELIS and are not affected.",
+    "The dump holds no Assembly memberships for 2017-2025, so the converter linked about 206 Assembly names by name alone; each was checked against the record's list.",
+    "The dump splits some members across records: Skip Daly is \"Richard Daly\" in the Assembly (2017-2019) and \"Skip Daly\" in the Senate; Shea Backus and Michelee Cruz-Crawford each have two or three records. Link every record a member votes under.",
+    "Members move between chambers often (Dina Neal, Edgar Flores, John Ellison, Lisa Krasner, Robin Titus, Rochelle Nguyen: Assembly, then Senate): match by chamber and years, not by name alone."
+  ]
+}

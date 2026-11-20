@@ -63,6 +63,8 @@ const NICKNAME_GROUPS: Array<[string, string]> = [
   // Peter Johnson and Patricia Anderson, with "Lucy", "Kim", "Pete" and "Patti" as the names they are known by; the
   // roster holds those.
   ['lucy', 'lucille'], ['kim', 'kimberly'], ['pete', 'peter'], ['patti', 'patricia'],
+  // gun-policy NV, 2026-11-19: the Legislature's own vote pages (NELIS) print Sen. Angela D. Taylor as "Taylor, Angie".
+  ['angie', 'angela'],
 ];
 
 const NICKNAME_MAP: Map<string, Set<string>> = (() => {

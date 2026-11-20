@@ -205,6 +205,14 @@ for r in rows("personvote"):
 #    each member in full from the Legislative Reference Library's member list, so ms_full_names links them. The bill
 #    pages (bills/bill.php?...) redirect to the current form and the texts (bills/text.php?...) still answer, so neither
 #    is rewritten (read 2026-11-19).
+#  - Nevada (2026-11-19): the dump holds no roll call for the 80th and 81st sessions (2019, 2021), and its 79th-session
+#    (2017) vote and bill addresses are /Session/79th2017/Reports/ pages, 404 on the archive host they moved to and a path
+#    robots.txt disallows. "record_is_the_floor", as Minnesota's: the fetch reads each scanned bill's Final Passage list on
+#    NELIS and every roll call on it from its member list, cited as that list with the bill after a #
+#    (stateRollCallEvidence.ts). The member list prints each member's full name, so ms_full_names links them. "nv_links":
+#    a 79th bill's page (Reports/history.cfm?ID=282) becomes its NELIS page (/App/NELIS/REL/79th2017/Bill/4875/Overview)
+#    when the fetch read the bill, which gives its key; any other is kept and counted (nv_bill_page_not_rewritten).
+#    "https_texts": the texts are served over https too (read 2026-11-19).
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -217,7 +225,9 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
                     "ks_bill_page": True, "ks_texts": True},
              "CO": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "co_texts": True},
              "ND": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nd_links": True},
-             "MN": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True}}
+             "MN": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True},
+             "NV": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nv_links": True,
+                    "https_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
@@ -400,6 +410,7 @@ def sd_same_member(printed, m):
     return given is None or k(m["name"]).startswith(k(given)[:2])
 
 
+NV_PAGE = {}  # Nevada: bill id -> its NELIS page, from the Votes tab the fetch read (see SRC_RULES, nv_links)
 SD_SP = {}  # South Dakota: bill id -> the record's sponsors and the introduced text (supplements 'sponsors')
 # South Dakota votes a consent calendar as ONE roll call on many bills, and the dump files a copy under each bill: there a
 # roll call is known by (bill, address), so one bill's copy never stands in for another's.
@@ -489,6 +500,10 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
         cb = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
         if cb:
             CHECKED_BILLS.add(cb)
+            if RULES.get("nv_links"):
+                k = re.search(r"/App/NELIS/REL/([^/]+)/Bill/FillSelectedBillTab\?selectedTab=Votes&billKey=(\d+)$", sp["checked"][ident].get("vote_list", ""))
+                if k:
+                    NV_PAGE[cb] = f"https://www.leg.state.nv.us/App/NELIS/REL/{k.group(1)}/Bill/{k.group(2)}/Overview"
     for ident, rcs in sorted(sp.get("bills", {}).items()):
         bid = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
         if not bid:
@@ -990,6 +1005,13 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
         if RULES.get("nd_links"):
             for r in ex["billsource"]:
                 r["url"] = nd_link(r["url"], b["legislative_session_id"])
+        if RULES.get("nv_links"):
+            for r in ex["billsource"]:
+                if re.match(r"^https?://www\.leg\.state\.nv\.us/Session/\d{2}(?:st|nd|rd|th)20\d{2}/Reports/", r["url"]):
+                    if bid in NV_PAGE:
+                        r["url"] = NV_PAGE[bid]
+                    else:
+                        DUPES[b["legislative_session_id"]]["nv_bill_page_not_rewritten"] += 1
         if RULES.get("ks_bill_page"):
             for r in ex["billsource"]:
                 r["url"] = ks_bill_page(r["url"], sessions[b["legislative_session_id"]]["identifier"])
