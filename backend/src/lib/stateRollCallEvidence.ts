@@ -3397,7 +3397,9 @@ const ME_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July
 /** The House's presiding officer, printed by office: kept as printed, so it gives no line. */
 const ME_SPEAKER = /^(?:Mr\.|Madam) Speaker$/;
 /** A House label: a surname of one or more words, a comma, one to four initials ("McCabe, J.A.G."). */
-const ME_HOUSE_LABEL = /^[\p{L}][\p{L}'’ -]*[\p{L}], (?:[\p{L}]\.){1,4}$/u;
+// "Abdi, M.H."; the 132nd prints one member "Collins, A. C" on every roll call, so a space between initials and a last
+// initial without its point are read too.
+const ME_HOUSE_LABEL = /^[\p{L}][\p{L}'’ -]*[\p{L}], (?:[\p{L}]\. ?){0,3}[\p{L}]\.?$/u;
 /** A Senate label: a surname of one or two words, with the office some members are printed under. */
 const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\p{L}][\p{L}'’-]*)?)$/u;
 
@@ -3409,7 +3411,7 @@ const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\
  */
 export function meQuestionIsOnTheBill(q: string): boolean {
   const s = squash(q.replace(/\([^)]*\)/g, ' ')).replace(/[.?]$/, '');
-  return /^(?:Final )?Enactment(?: ?- ?(?:Emer|Emergency|Bond Issue|Mandate))?$|^Emergency ?- ?Enactment$|^Final Passage(?: ?- ?Emer)?$|^Passage$|^Passage of Emergency Measure$|^Passage to be Engrossed(?: as Amended(?: by (?:Committee|Senate|House) Amendments? "[A-Z]"(?: as Amended by (?:Senate|House) Amendment "[A-Z]")?)?)?$|^Reconsideration ?- ?Veto$|^Shall (?:this|the) (?:Bill|Resolve) become (?:a )?law notwithstanding the objections? of the Governor$/i.test(s);
+  return /^(?:Final )?Enactment(?: ?- ?(?:Emer|Emergency|Bond Issue|Mandate))?$|^Emergency ?-? ?Enactment$|^Final Passage(?: ?- ?Emer)?$|^Passage$|^Passage of Emergency Measure$|^Passage to be Engrossed(?: as Amended(?: by (?:Committee|Senate|House) Amendments? "[A-Z]"(?: as Amended by (?:Senate|House) Amendment "[A-Z]")?)?)?$|^Reconsideration ?- ?Veto$|^Shall (?:this|the) (?:Bill|Resolve) become (?:a )?law notwithstanding the objections? of the Governor$/i.test(s);
 }
 
 export interface MeVoteRef { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; ld: number; file: string; legislature?: number; session?: string; day?: number }
@@ -3978,7 +3980,7 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     // member list (a surname no member or two fit, as printed). Not voting, absent, excused and restricted are one group here.
     const v = readMaineVote(bodies, url);
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.rollNum, bill: v.bill, question: v.question,
-      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups['Not voting'], ...v.groups.Absent, ...v.groups.Excused, ...v.groups.Restricted] } } : null;
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': meVotes(v.chamber).filter((k) => k !== 'Yea' && k !== 'Nay').flatMap((k) => v.groups[k]) } } : null;
   }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }

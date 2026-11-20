@@ -91,7 +91,7 @@ export function meFollow(_list: string, session: string): string[] {
 
 /** The House list's rows: roll call, paper ("LD 1349", "HO 1") and motion. Throws when the list is not this Legislature's. */
 export function meHouseRows(html: string, session: string): { rc: number; paper: string; motion: string }[] {
-  if (!new RegExp(`<option value="${session}" selected`).test(html) || !/id="rollCallsTable"/.test(html)) throw new Error(`Maine: not the House's roll-call list of the ${session}th`);
+  if (!new RegExp(`<option value="${session}" selected`).test(html) || !/id="rollCallsTable"/.test(html)) throw new Error(`Maine: not the House's roll-call list of the ${meOrdinal(Number(session))}`);
   const out: { rc: number; paper: string; motion: string }[] = [];
   for (const tr of html.replace(/\s+/g, ' ').matchAll(/<tr> <td> <span class="badge bg-secondary">(\d+)<\/span> <\/td>(.*?)<\/tr>/g)) {
     const cells = [...tr[2].matchAll(/<td\b[^>]*>(.*?)<\/td>/g)].map((c) => meText(c[1]));
@@ -99,6 +99,9 @@ export function meHouseRows(html: string, session: string): { rc: number; paper:
     out.push({ rc: Number(tr[1]), paper: cells[1], motion: cells[3] });
   }
   if (!out.length) throw new Error('Maine: the House list holds no roll call');
+  // the list prints its own count ("<strong>812</strong> roll call vote(s) found"): a row the pattern missed is a vote never looked at
+  const printed = /<strong>(\d+)<\/strong> roll call vote\(s\) found/.exec(html);
+  if (!printed || Number(printed[1]) !== out.length) throw new Error(`Maine House: the list prints ${printed ? printed[1] : 'no'} roll calls and ${out.length} read`);
   return out;
 }
 
@@ -106,7 +109,12 @@ export function meHouseRows(html: string, session: string): { rc: number; paper:
 export function meHousePdfs(html: string, session: string): Map<number, string> {
   if (!new RegExp(`Roll Call PDF documents for the ${meOrdinal(Number(session))} Legislature`).test(html)) throw new Error(`Maine: not the House's PDF list of the ${meOrdinal(Number(session))}`);
   const out = new Map<number, string>();
-  for (const m of html.matchAll(new RegExp(`href="(/house/Repository/Documents/${session}/RollCalls/\\d{3}\\.(\\d{3,4})\\.${session}(?:R[12]|S[1-9])\\.pdf)"`, 'g'))) {
+  // the list prints its own count ("<strong>835</strong> PDF file(s)"), and every file of it must be of the address form
+  const printed = /<strong>(\d+)<\/strong> PDF file\(s\)/.exec(html);
+  const files = [...html.matchAll(new RegExp(`href="(/house/Repository/Documents/${session}/RollCalls/\\d{3}\\.(\\d{3,4})\\.${session}(?:R[12]|S[1-9])\\.pdf)"`, 'g'))];
+  const any = (html.match(/href="\/house\/Repository\/Documents\/[^"]*\/RollCalls\//g) ?? []).length;
+  if (!printed || Number(printed[1]) !== files.length || any !== files.length) throw new Error(`Maine House: the PDF list prints ${printed ? printed[1] : 'no'} files, links ${any} and ${files.length} read`);
+  for (const m of files) {
     const rc = Number(m[2]);
     if (rc === 0) continue;
     if (out.has(rc)) throw new Error(`Maine House: roll call ${rc} has two PDFs`);
@@ -134,7 +142,8 @@ export function meSenateRows(html: string, session: string): { rc: number; files
     const links = [...para.matchAll(FILE)];
     const starts = links.filter((m, i) => i === 0 || m[2] !== links[i - 1][2]).map((m) => m.index!);
     starts.forEach((at, i) => {
-      const seg = para.slice(at, starts[i + 1] ?? para.length);
+      // up to the next row's link, cut where that link's tag opens
+      const seg = para.slice(at, starts[i + 1] === undefined ? para.length : para.lastIndexOf('<a', starts[i + 1]));
       const files = [...new Set([...seg.matchAll(FILE)].map((m) => m[1]))];
       const rest = meText(`<a ${seg}`);
       const typed = /^#?\s*\d+\s*\([\d-]+\)\s*((?:LD|SP|HP|SC|SO|HO|HC) ?\d+)\b/.exec(rest)?.[1];

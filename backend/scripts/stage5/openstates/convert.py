@@ -236,6 +236,8 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
              "NV": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nv_links": True,
                     "https_texts": True},
              "OR": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "or_links": True,
+                    "https_texts": True},
+             "ME": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "me_links": True,
                     "https_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 
@@ -243,6 +245,13 @@ RULES = SRC_RULES.get(ST, {})
 def or_link(u):
     """Oregon: the dead host olis.leg.state.or.us -> olis.oregonlegislature.gov, same path (see SRC_RULES, or_links)."""
     return re.sub(r"^https?://olis\.leg\.state\.or\.us/", "https://olis.oregonlegislature.gov/", u)
+def me_bill_page(u, ident, session):
+    """Maine: the dump's bill page is /LawMakerWeb/summary.asp, which robots.txt disallows. The allowed page of an LD is
+    /legis/bills/display_ps.asp?LD=<n>&snum=<Legislature> (see SRC_RULES, me_links); a paper with no LD keeps no page."""
+    if not re.match(r"^https?://(?:legislature\.maine\.gov|www\.mainelegislature\.org)/(?:legis/)?LawMakerWeb/", u, re.I):
+        return u
+    m = re.match(r"^LD ?([1-9]\d{0,3})$", ident.strip())
+    return f"https://legislature.maine.gov/legis/bills/display_ps.asp?LD={int(m.group(1))}&snum={session}" if m and re.match(r"^1\d{2}$", session) else None
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
 NP = "sd_" if RULES.get("sd_record_is_the_floor") else ""  # South Dakota's counts keep their names
@@ -1029,6 +1038,15 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
         if RULES.get("or_links"):
             for r in ex["billsource"]:
                 r["url"] = or_link(r["url"])
+        if RULES.get("me_links"):
+            kept = []
+            for r in ex["billsource"]:
+                u = me_bill_page(r["url"], b["identifier"], sessions[b["legislative_session_id"]]["identifier"])
+                if u is None:
+                    DUPES[b["legislative_session_id"]]["me_bill_page_disallowed"] += 1
+                elif not any(k["url"] == u for k in kept):
+                    kept.append({**r, "url": u})
+            ex["billsource"] = kept
         if RULES.get("ks_bill_page"):
             for r in ex["billsource"]:
                 r["url"] = ks_bill_page(r["url"], sessions[b["legislative_session_id"]]["identifier"])

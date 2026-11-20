@@ -11,6 +11,7 @@ import {
   explainNorthDakotaVote, ndQuestionIsOnTheBill, ndMembers, ndMemberNames, parseNorthDakotaVoteUrl,
   explainNevadaVote, nvMemberName, nvVoteList, parseNevadaVoteUrl,
   explainOregonVote, orQuestionIsOnTheBill, orTally, parseOregonVoteUrl, oregonVoteUrl, OR_DATA,
+  explainMaineVote, meQuestionIsOnTheBill, meSenators, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK, ME_SENATORS,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
@@ -2084,5 +2085,218 @@ describe('state roll-call pages — Oregon lines', () => {
     expect(r).toMatchObject({ bill: 'SB 66', date: '2017-05-25', chamber: 'House', rollNum: 411795 });
     expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length]).toEqual([54, 0, 6]);
     expect(r.groups['Absent or not voting']).toContain('Tina Kotek');
+  });
+});
+
+// ── Maine ─────────────────────────────────────────────────────────────────────────────────────────────────
+// Saved 2026-11-19 and 2026-11-20 from legislature.maine.gov (allowed paths; robots.txt disallows /LawMakerWeb only):
+// House and Senate roll-call PDFs, kept as the positioned runs the adapter hands on (pdfItemsBody), one House PDF as
+// the file itself, and the Senate's member list cut to its heading and its members' links (the page also names each
+// senator's party; the fixture does not). No fixture prints a party.
+const meFix = (name: string): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${name}`, import.meta.url)), 'utf8').replace(/\n$/, '');
+const ME_H131 = 'https://legislature.maine.gov/house/Repository/Documents/131/RollCalls/020.012.131R1.pdf#LD32';
+const ME_H132 = 'https://legislature.maine.gov/house/Repository/Documents/132/RollCalls/034.574.132S1.pdf#LD1971';
+const ME_H130 = 'https://legislature.maine.gov/house/Repository/Documents/130/RollCalls/002.002.130R1.pdf#LD1';
+const ME_HMOT = 'https://legislature.maine.gov/house/Repository/Documents/132/RollCalls/016.127.132S1.pdf#LD644';
+const ME_S634 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-634-ld-1971.pdf#LD1971';
+const ME_S454 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-454-ld-1138.pdf#LD1138';
+const ME_S184 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-184-ld-16.pdf#LD16';
+const meBody: Record<string, string> = { [ME_H131]: 'me-131-house-012', [ME_H132]: 'me-132-house-574', [ME_H130]: 'me-130-house-002', [ME_HMOT]: 'me-132-house-127',
+  [ME_S634]: 'me-132-senate-634', [ME_S454]: 'me-132-senate-454', [ME_S184]: 'me-132-senate-184' };
+const ME_SEN = meFix('me-senators-132.html');
+const meDocs = (url: string, body = meFix(`${meBody[url]}.txt`), sen = ME_SEN): string[] => (/uploads/.test(url) ? [body, sen] : [body]);
+const meWhy = (url: string, docs: string[]): string => {
+  const v = explainMaineVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const meRender = (url: string, docs = meDocs(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error(`the vote did not read: ${meWhy(url, docs)}`);
+  return t;
+};
+/** A House or Senate body with one change, failing the test when it did not apply. */
+const meTamper = (url: string, from: string, to: string): string[] => meDocs(url, tamper(meFix(`${meBody[url]}.txt`), from, to));
+const ME_ABDI = 'Maine House roll call 574 (132nd Legislature, First Special Session), LD 1971 - Enactment (2025-06-18): Abdi, M.H. voted Yea.';
+const ME_LIBBY = 'Maine Senate roll call 634 (132nd Legislature, First Special Session), LD 1971 - Enactment (2025-06-18): James D. Libby voted Nay.';
+
+describe('state roll-call pages — Maine address', () => {
+  it('knows a House PDF and a Senate PDF named with the LD, read a second apart; the Senate with its member list', () => {
+    expect(parseMaineVoteUrl(ME_H132)).toEqual({ state: 'ME', stateName: 'Maine', chamber: 'House', rollNum: 574, ld: 1971,
+      file: ME_H132.replace('#LD1971', ''), legislature: 132, session: 'S1', day: 34 });
+    expect(parseMaineVoteUrl(ME_S634)).toEqual({ state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: 634, ld: 1971, file: ME_S634.replace('#LD1971', '') });
+    expect(stateRollCallDocs(ME_H132)).toEqual([ME_H132.replace('#LD1971', '')]);
+    expect(stateRollCallDocs(ME_S634)).toEqual([ME_S634.replace('#LD1971', ''), ME_SENATORS]);
+    expect(stateRollCallMinGapMs(ME_H132)).toBe(1_000);
+    expect(stateRollCallMinGapMs(ME_S634)).toBe(1_000);
+    // no LD, the two Legislatures of a House path disagreeing, the disallowed roll-call pages, http, a look-alike host, LD 0
+    for (const u of [ME_H132.replace('#LD1971', ''), ME_H132.replace('/132/RollCalls', '/131/RollCalls'), ME_S634.replace('#LD1971', ''),
+      'https://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=280096418&chamber=House&serialnumber=574',
+      'https://legislature.maine.gov/legis/LawMakerWeb/rollcall.asp?ID=280096418&chamber=Senate&serialnumber=634',
+      ME_H132.replace('https', 'http'), ME_S634.replace('legislature.maine.gov', 'legislature.maine.gov.example.com'), ME_S634.replace('#LD1971', '#LD0')]) {
+      expect([u, isStateRollCallUrl(u)]).toEqual([u, false]);
+    }
+  });
+
+  it('takes enactment, engrossing, final passage and a veto vote as votes on the bill, and every motion as not', () => {
+    for (const q of ['Enactment', 'ENACTMENT', 'Enactment - Emer', 'Emergency Enactment', 'Final Enactment', 'PASSAGE TO BE ENGROSSED', 'Passage to be Engrossed as Amended by Committee Amendment "A"',
+      'Passage to be Engrossed as Amended by Committee Amendment "A" as Amended by Senate Amendment "B"', 'Final Passage', 'Reconsideration - Veto',
+      'Shall this Bill become law notwithstanding the objections of the Governor?']) {
+      expect([q, meQuestionIsOnTheBill(q)]).toEqual([q, true]);
+    }
+    // accepting a committee's report is a motion: the bill is not voted on (standing answer 3)
+    for (const q of ['ACC MAJ OTP AS AMENDED REP', 'ACC MAJ OUGHT NOT TO PASS REP', 'Accept Majority Ought Not to Pass Report from the Committee on Judiciary',
+      'INDEF PP HAH-285', 'Adopt Senate Amendment "A"', 'RECEDE AND CONCUR', 'Suspend Rules for Reconsideration', 'OTP-AM', 'Adjournment',
+      'Recede from Passage to be Engrossed as Amended by Committee Amendment "A" and Concur Acceptance of the Minority Ought Not to Pass Report']) {
+      expect([q, meQuestionIsOnTheBill(q)]).toEqual([q, false]);
+    }
+  });
+
+  it('hands a Maine PDF on as positioned runs, and every other PDF as before', () => {
+    const items = [{ page: 1, x: 18.71, y: 622.54, str: 'Y' }, { page: 1, x: 53.3, y: 622.5, str: ' Abdi,  M.H. ' }, { page: 1, x: 1, y: 1, str: ' ' }];
+    expect(pdfItemsBody(items)).toBe(`${PDF_ITEMS_MARK}\n1\t18.7\t622.5\tY\n1\t53.3\t622.5\tAbdi, M.H.`);
+    expect(pdfBodyFor(ME_H132, items)).toBe(pdfItemsBody(items));
+    expect(pdfBodyFor(ME_S634, items)).toBe(pdfItemsBody(items));
+    expect(pdfBodyFor('https://www.mnsenate.gov/journals/2025-2026/20250519.pdf#x', items).startsWith(PDF_ITEMS_MARK)).toBe(false);
+  });
+
+  it('reads the 132nd Senate\'s member list, and nothing else', () => {
+    const l = meSenators(ME_SEN)!;
+    expect(l.legislature).toBe(132);
+    expect(l.names).toHaveLength(35);
+    expect(l.names).toContain('James D. Libby');
+    expect(meSenators(ME_SEN.replace(/<p>\s*<a href="\/[Dd]istrict\d+">[^<]+<\/a><\/p>\n/g, ''))).toBeNull();
+    expect(meSenators(tamper(ME_SEN, 'Maine Senators', 'Maine Representatives'))).toBeNull();
+    expect(meSenators(tamper(ME_SEN, 'Mike Tipping', 'Donna Bailey'))).toBeNull();
+  });
+});
+
+describe('state roll-call pages — reading Maine', () => {
+  it('reads a 131st House vote: bill, question, day, tally, and every member by the label the PDF prints', () => {
+    const t = meRender(ME_H131);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maine House roll call 12 (131st Legislature, First Regular Session), LD 32, 2023-03-28.',
+      'Question: PASSAGE TO BE ENGROSSED', 'Yea 122; Nay 12; Not voting 16; Excused 0; Restricted 0.']);
+    expect(t).toMatch(/^Nay \(12\): Adams, J\.S\.; Bagshaw, B\.A\.;/m);
+    expect(t).toMatch(/^Not voting \(16\): Abdi, M\.H\.;/m);
+    expect(t).not.toMatch(/\b(?:Democrat|Republican|Independent)\b|\([DRIU]\)/);
+  });
+
+  it('reads a 132nd House vote with its excused members, a label printed "Collins, A. C" and the Speaker as printed', () => {
+    const t = meRender(ME_H132);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maine House roll call 574 (132nd Legislature, First Special Session), LD 1971, 2025-06-18.',
+      'Question: Enactment', 'Yea 75; Nay 73; Not voting 1; Excused 2; Restricted 0.']);
+    expect(t).toMatch(/^Excused \(2\): Eaton, H\.R\.; Griffin, A\.W\.$/m);
+    expect(t).toMatch(/^Nay \(73\): .*; Collins, A\. C;/m);
+    expect(t).toMatch(/Mr\. Speaker/);
+    expect(stateRollCallLinesFor(ME_H132, t, 'Fecteau', 'Ryan M. Fecteau')).toEqual([]);
+    expect(stateRollCallLinesFor(ME_H132, t, 'Collins', 'Alicia Collins')).toEqual([
+      'Maine House roll call 574 (132nd Legislature, First Special Session), LD 1971 - Enactment (2025-06-18): Collins, A. C voted Nay.']);
+  });
+
+  it('reads the same bill\'s Senate vote, naming each senator from the member list', () => {
+    const t = meRender(ME_S634);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maine Senate roll call 634 (132nd Legislature, First Special Session), LD 1971, 2025-06-18.',
+      'Question: Enactment', 'Yea 20; Nay 14; Absent 0; Excused 1.']);
+    expect(t).toMatch(/^Excused \(1\): Joseph Rafferty$/m);
+    expect(t).toMatch(/^Nay \(14\): .*\bJames D\. Libby\b/m);
+    expect(meRender(ME_S454).split('\n')[1]).toBe('Question: Passage to be Engrossed as Amended by Committee Amendment "A"');
+  });
+
+  it('keeps a Senate surname as printed when no senator or two of them fit it', () => {
+    const t = meRender(ME_S634, meDocs(ME_S634, undefined, tamper(ME_SEN, 'Joseph Martin', 'Joseph Libby')));
+    expect(t).toMatch(/^Nay \(14\): .*; Libby; Martin;/m);
+    expect(stateRollCallLinesFor(ME_S634, t, 'Libby', 'James D. Libby')).toEqual([]);
+  });
+
+  it('refuses a vote that is not on the bill, a Legislature that prints surnames only, and a vote with no LD', () => {
+    expect(meWhy(ME_HMOT, meDocs(ME_HMOT))).toBe('the question is not a vote on the bill: ACC MAJ OUGHT NOT TO PASS REP');
+    expect(meWhy(ME_S184, meDocs(ME_S184))).toMatch(/^the question is not a vote on the bill: Accept Majority Ought Not to Pass Report/);
+    expect(meWhy(ME_H130, meDocs(ME_H130))).toBe('the 130th Legislature\'s House votes print surnames only');
+    expect(meWhy(ME_H132, ['not a pdf'])).toBe('the vote is not a PDF');
+    expect(meWhy(ME_S634, [meFix('me-132-senate-634.txt')])).toBe('not the vote and its documents');
+  });
+
+  it('refuses a House PDF whose heading is not the address\'s vote', () => {
+    for (const [from, to, why] of [
+      ['132nd LEGISLATURE', '131st LEGISLATURE', /^the vote is of the 131 Legislature$/],
+      ['First Special Session', 'Second Regular Session', /^the vote is of the Second Regular Session, not S1$/],
+      ['ROLL CALL NO. 574', 'ROLL CALL NO. 575', /^the vote is roll call 575$/],
+      ['\tLD 1971\n', '\tLD 1972\n', /^the vote is on LD 1972$/],
+      ['DATE: 6/18/2025', 'DATE: 6/31/2025', /^the date is not a real day$/],
+      ['MOTION: Enactment', 'MOTION: ACC MAJ OTP REP', /^the question is not a vote on the bill/],
+      ['1\t20.2\t687.5\tDATE', '2\t20.2\t687.5\tDATE', /^the vote runs past one page$/],
+      ['1\t459.8\t662.2\tVOTES REQUIRED: 75', '1\t459.8\t662.2\tNOTE: 75', /^a header item the reader cannot read: NOTE: 75$/],
+    ] as const) {
+      expect([to, meWhy(ME_H132, meTamper(ME_H132, from, to))]).toEqual([to, expect.stringMatching(why)]);
+    }
+  });
+
+  it('refuses a House tally the marks do not add up to, a mark out of its slot, and a label it cannot read', () => {
+    for (const [from, to, why] of [
+      ['YES: 75', 'YES: 76', /^the Yea group lists 75 members and the tally prints 76$/],
+      ['EXC VOTE: 0', 'EXC VOTE: 1', /^the vote prints EXC VOTE: 1$/],
+      ['VACANT: 0', 'VACANT: 1', /^151 members and 1 vacant seats are not the House's 151$/],
+      ['1\t18.7\t622.5\tY', '1\t18.7\t622.5\tN', /^the mark N of Abdi, M\.H\. sits in slot 1$/],
+      ['1\t18.7\t622.5\tY', '1\t27.4\t622.5\tY', /^the mark Y of Abdi, M\.H\. sits in slot 2$/],
+      ['1\t18.7\t622.5\tY', '1\t10.0\t622.5\tY', /^a mark Y in no slot/],
+      ['1\t18.7\t622.5\tY\n', '', /^a member with no mark: Abdi, M\.H\.$/],
+      ['Lavigne, T.A.', 'Lavigne T.A.', /^a label the reader cannot read: Lavigne T\.A\.$/],
+      ['Lance, M.J.', 'Abdi, M.H.', /^a label is printed twice$/],
+      ['Rep. Eaton, H.R., Rep. Griffin, A.W.', 'Rep. Eaton, H.R.', /^the EXCUSED DAY list is not the members marked E$/],
+    ] as const) {
+      expect([to, meWhy(ME_H132, meTamper(ME_H132, from, to))]).toEqual([to, expect.stringMatching(why)]);
+    }
+  });
+
+  it('refuses a Senate PDF whose heading, marks, totals or footer disagree, and a member list of another Legislature', () => {
+    for (const [from, to, why] of [
+      ['ROLL CALL #634', 'ROLL CALL #635', /^the vote is roll call 635$/],
+      ['1\t495.5\t766.2\tLD 1971', '1\t495.5\t766.2\tLD 1972', /^the vote is on LD 1972$/],
+      ['HP 1315\n', 'LD 1315\n', /^the vote prints more than one LD$/],
+      ['DATE: June 18, 2025', 'DATE: June 31, 2025', /^the date is not a real day$/],
+      ['Question: Enactment', 'Question: Adopt Senate Amendment "A"', /^the question is not a vote on the bill: Adopt Senate Amendment "A"$/],
+      ['1\t202.6\t558.2\tX', '1\t231.4\t558.2\tX', /^the Yea group lists 19 members and the tally prints 20$/],
+      ['1\t202.6\t558.2\tX', '1\t202.6\t558.2\tX\n1\t231.4\t558.2\tX', /^Bailey has 2 marks$/],
+      ['1\t202.6\t558.2\tX', '1\t215.0\t558.2\tX', /^the mark of Bailey is under no column head$/],
+      ['1\t462.2\t185.4\t14', '1\t462.2\t185.4\t15', /^the TOTALS row 20-15-0-1/],
+      ['Senator Rafferty excused.', 'Senator Lawrence excused.', /^the members the footer names excused/],
+      ['Senator Rafferty excused.', 'Senator Rafferty left.', /^a footer sentence the reader cannot read: Senator Rafferty left\.$/],
+      ['1\t516.8\t579.8\tExc\n', '', /^the vote prints no row of column heads$/],
+      ['1\t196.5\t579.8\tYea\n1\t225.3\t579.8\tNay\n', '1\t196.5\t579.8\tYea Nay\n', /^the column heads are not eight$/],
+    ] as const) {
+      expect([to, meWhy(ME_S634, meTamper(ME_S634, from, to))]).toEqual([to, expect.stringMatching(why)]);
+    }
+    expect(meWhy(ME_S634, meDocs(ME_S634, undefined, tamper(ME_SEN, '132nd Maine Senators', '133rd Maine Senators')))).toBe('the member list is the 133rd Legislature\'s, the vote the 132nd\'s');
+    expect(meWhy(ME_S634, meDocs(ME_S634, undefined, '<p>no list</p>'))).toBe('the member list is not the Senate\'s list of senators');
+  });
+});
+
+describe('state roll-call pages — Maine lines', () => {
+  it('gives a House member and a senator their line, and refuses the line with the vote flipped or given to another member', () => {
+    const h = meRender(ME_H132);
+    expect(stateRollCallLinesFor(ME_H132, h, 'Abdi', 'Mana Abdi')).toEqual([ME_ABDI]);
+    expect(verifyStateRollCallLine(ME_ABDI, ME_H132, h, 'Abdi', 'Mana Abdi')).toMatchObject({ verdict: 'verified' });
+    expect(verifyStateRollCallLine(ME_ABDI.replace('voted Yea', 'voted Nay'), ME_H132, h, 'Abdi', 'Mana Abdi').verdict).not.toBe('verified');
+    expect(verifyStateRollCallLine(ME_ABDI, ME_H132, h, 'Adams', 'Jennifer Adams').verdict).not.toBe('verified');
+    expect(verifyStateRollCallLine(ME_ABDI.replace('LD 1971', 'LD 1972'), ME_H132, h, 'Abdi', 'Mana Abdi').verdict).not.toBe('verified');
+    const s = meRender(ME_S634);
+    expect(stateRollCallLinesFor(ME_S634, s, 'Libby', 'James D. Libby')).toEqual([ME_LIBBY]);
+    expect(verifyStateRollCallLine(ME_LIBBY, ME_S634, s, 'Libby', 'James D. Libby')).toMatchObject({ verdict: 'verified' });
+    expect(verifyStateRollCallLine(ME_LIBBY.replace('voted Nay', 'voted Yea'), ME_S634, s, 'Libby', 'James D. Libby').verdict).not.toBe('verified');
+    expect(verifyStateRollCallLine(ME_LIBBY, ME_S634, s, 'Bailey', 'Donna Bailey').verdict).not.toBe('verified');
+    expect(parseStateRollCallLine(ME_LIBBY)).toMatchObject({ state: 'ME', chamber: 'Senate', rollNum: 634, bill: 'LD 1971', name: 'James D. Libby', vote: 'Nay' });
+  });
+
+  it('gives the record Yea, Nay and one group for everyone else', () => {
+    const r = readStateRollCallRecord(meDocs(ME_H132), ME_H132)!;
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length]).toEqual([75, 73, 3]);
+    const s = readStateRollCallRecord(meDocs(ME_S634), ME_S634)!;
+    expect(s.groups['Absent or not voting']).toEqual(['Joseph Rafferty']);
+  });
+
+  it('reads the House PDF itself through the adapter', async () => {
+    const pdf = readFileSync(fileURLToPath(new URL('./__fixtures__/stateRollCall/me-132-house-574.pdf', import.meta.url)));
+    const fetchImpl = async (u: string) => new Response(u === ME_H132.replace('#LD1971', '') ? pdf : 'not found', { status: u === ME_H132.replace('#LD1971', '') ? 200 : 404 });
+    expect(await fetchStateRollCallText(ME_H132, { fetchImpl, now: () => 0, sleep: async () => {} })).toBe(meRender(ME_H132));
+    resetStateRollCallPacing();
   });
 });
