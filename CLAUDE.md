@@ -43,6 +43,15 @@ The full rules moved to [`backend/migrations/CLAUDE.md`](backend/migrations/CLAU
   **One migration per file — never concatenate.**
 - 🔴 **A migration that overwrites a value records the old value in its own header.**
 - 🔴 **Never create a table or view in `public`**; grant, enable RLS and add policies in the same file.
+  - 🔴🔴 **ON `essentials`, RLS IS NOT BELT-AND-BRACES — IT IS THE ONLY BELT.** `ALTER DEFAULT
+    PRIVILEGES` there already grants **`anon` and `authenticated` SELECT, and `ev_api`
+    `arwd` (including DELETE), on every new table**, before any migration says a word
+    (`{anon=r, authenticated=r, ev_api=arwd}`, measured on prod 2026-11-20 by `CC_0457`). So a
+    new table in that schema **is readable by `anon` from the moment it exists** unless the same
+    file enables RLS, and nothing errors if it does not.
+  - ⚠ A consequence worth knowing when you read an old migration: **a `GRANT SELECT ... TO
+    ev_api` block there is largely decorative** — the role already holds more than it lists.
+    If you mean a role NOT to have something, `REVOKE` it explicitly and say why.
 
 ## Working alongside other sessions
 
