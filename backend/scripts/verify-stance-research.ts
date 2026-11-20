@@ -83,6 +83,7 @@ import {
   type VerifiedRow,
 } from '../src/lib/researchVerifier.js';
 import { createVerificationFetchSession, htmlToText } from '../src/lib/verificationFetch.js';
+import { createRevisorAuthorCheck } from '../src/lib/mnRevisorAuthors.js';
 import { markHumanSaved } from '../src/lib/humanSavedCopy.js';
 import { loadHumanSavedCopies } from './lib/humanSavedCopies.js';
 import { withOtrTranscripts } from '../src/lib/otrTranscript.js';
@@ -514,6 +515,8 @@ const { pushable, needsReResearch } = await verifyEvidence({
   threshold: THRESHOLD,
   politicianNames,
   ownSiteUrls,
+  // Minnesota Revisor author lists: attribution by the member link (ruling 2026-11-19).
+  memberLinkCheck: createRevisorAuthorCheck(),
 });
 
 const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);

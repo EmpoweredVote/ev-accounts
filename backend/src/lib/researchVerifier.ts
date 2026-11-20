@@ -493,8 +493,15 @@ export async function verifyEvidence(args: {
    * snippet must still be found on the page; only the name-proximity test is waived.
    */
   ownSiteUrls?: ReadonlySet<string>;
+  /**
+   * Attribution by the legislature's own member link (mnRevisorAuthors.ts). Consulted only when the
+   * snippet was found on the page and the name-proximity test failed: a Revisor author list prints a
+   * common family name with no title. True only when the page's Authors block links the person's own
+   * member record. Ruling 2026-11-19, Chris Andrews (gun-policy mn-01).
+   */
+  memberLinkCheck?: (url: string, names: { fullName: string; lastName: string; aliases?: string[] }) => Promise<boolean>;
 }): Promise<VerifyResult> {
-  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match, ownSiteUrls } = args;
+  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match, ownSiteUrls, memberLinkCheck } = args;
 
   const grouped = new Map<string, Map<string, EvidenceRow[]>>();
   for (const ev of evidenceRows) {
@@ -610,7 +617,7 @@ export async function verifyEvidence(args: {
             continue;
           }
           // Name proximity is measured from the SPAN — the text that will be published.
-          const proxVerdict: SnippetVerdict = ownSiteUrls?.has(url)
+          let proxVerdict: SnippetVerdict = ownSiteUrls?.has(url)
             ? { verdict: 'verified', matchOffset: span.offset }
             : checkNameProximity({
               fullName: names.fullName,
@@ -619,6 +626,10 @@ export async function verifyEvidence(args: {
               pageText: fetched.text,
               matchOffsetInNormalized: span.offset,
             });
+          if (proxVerdict.verdict === 'name_not_present' && memberLinkCheck
+            && await memberLinkCheck(url, { fullName: names.fullName, lastName: names.lastName, aliases: names.aliases })) {
+            proxVerdict = { verdict: 'verified', matchOffset: span.offset };
+          }
           judged.push({
             snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: proxVerdict,
             // I6 + display: the span is what a voter reads, so it is stored decoded. The snippet beside it
