@@ -141,6 +141,15 @@ describe('collapseBatch', () => {
     expect(c.bills['XX-HB-9-2025'].rung).toBeUndefined();
     expect(c.people[1].record.find((l) => l.bill === 'XX-HB-9-2025')!.rung).toBeUndefined();
   });
+  it('shows a coder that a Yea is a vote against the bill, word for word', () => {
+    const kill = { ...pre('k', 'XX-HB-1-2025', 'yea', '2025-05-02', 'XX House', '80–64', 'none'), motion: 'ACC MAJ OUGHT NOT TO PASS REP', against_bill: true as const };
+    kill.note = 'XX House, ACC MAJ OUGHT NOT TO PASS REP, 2025-05-02: yea (tally 80–64); census gate: none. A Yea on this motion is a vote against the bill.';
+    const one = [{ row: row(P, 'Pat'), pf: { politician_id: P, searches: [], findings: [kill] } as PersonFindings }];
+    const cc = collapseBatch(one, 'gun-policy', 3, (id) => `state-xx/${id}.json`, table);
+    expect(cc.people[0].record).toEqual([]);
+    expect(cc.people[0].findings).toEqual([expect.objectContaining({ act: 'yea', against_bill: true, note: kill.note })]);
+    expect(collapsedRoundTripProblems(one, cc, 'gun-policy', 3)).toEqual([]);
+  });
   it('never collapses a note that says more than the plain facts: it stays word for word', () => {
     expect(c.people[0].findings.map((f) => f.id)).toEqual(['7'.repeat(64), '8'.repeat(64)]);
     expect(c.people[0].findings[0].note).toBe(doubt.note);
@@ -163,6 +172,8 @@ describe('collapseBatch', () => {
     expect(isPlainRecord({ ...one, kind: 'own-words' })).toBe(false);
     expect(isPlainRecord({ ...one, motion: 'Another motion' })).toBe(false);
     expect(isPlainRecord({ ...one, gate: 'near-unanimous' })).toBe(false);
+    // a Yea to kill the bill (Maine 2026-11-20) is never collapsed into a plain "yea" line, even with a plain note
+    expect(isPlainRecord({ ...one, against_bill: true })).toBe(false);
     expect(isPlainRecord({ ...one, passage: 'Quoted words.' })).toBe(false);
     expect(isPlainRecord({ ...one, local_record: true })).toBe(false);
     expect(isPlainRecord({ ...one, note: 'He voted for the bill after a long debate.' })).toBe(false);

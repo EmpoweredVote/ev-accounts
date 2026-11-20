@@ -3344,7 +3344,7 @@ export function explainOregonVote(bodies: string[], url: string): OrVoteRecord |
 //
 // A mark is paired with its member by position, never by the order the PDF stores its text (root CLAUDE.md, "PDF text has no
 // rows"): same row, the label to the right, in the slot (House) or under the head (Senate) the letter belongs to. The address
-// names the bill after a #, #LD1971. A vote is read only when its question is a vote on the bill (meQuestionIsOnTheBill), each
+// names the bill after a #, #LD1971. A vote is read only when its question is a vote on the bill or on its Majority report (meQuestionIsRead), each
 // mark sits where its letter belongs, each group holds the count the tally prints, and the members listed by the footer are
 // the members marked excused or restricted.
 //
@@ -3406,12 +3406,38 @@ const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\
 /**
  * Is a Maine question a vote on the bill? Its parenthesised papers dropped ("Enactment (L.D. 1971) ( H.P. 1315)"). Enactment,
  * final passage, passage to be engrossed, an emergency measure's passage, and the vote on a veto are. Every motion is not
- * (runner, 2026-11-16): to accept a committee's report (Ought to Pass or Ought Not to Pass), to adopt or postpone an amendment,
+ * (runner, 2026-11-16): to accept a committee's report (the Majority report is read on its own, meMajorityReport), to adopt or postpone an amendment,
  * to recede, concur, insist or adhere, to table, to reconsider, to commit. Only the wordings listed are read.
  */
 export function meQuestionIsOnTheBill(q: string): boolean {
   const s = squash(q.replace(/\([^)]*\)/g, ' ')).replace(/[.?]$/, '');
   return /^(?:Final )?Enactment(?: ?- ?(?:Emer|Emergency|Bond Issue|Mandate))?$|^Emergency ?-? ?Enactment$|^Final Passage(?: ?- ?Emer)?$|^Passage$|^Passage of Emergency Measure$|^Passage to be Engrossed(?: as Amended(?: by (?:Committee|Senate|House) Amendments? "[A-Z]"(?: as Amended by (?:Senate|House) Amendment "[A-Z]")?)?)?$|^Reconsideration ?- ?Veto$|^Shall (?:this|the) (?:Bill|Resolve) become (?:a )?law notwithstanding the objections? of the Governor$/i.test(s);
+}
+
+/**
+ * A vote to accept a committee's Majority report, and which way it goes: 'for' the bill (Ought to Pass, as amended or not)
+ * or 'against' it (Ought Not to Pass). Runner, 2026-11-20: "read majority report votes for Maine", "Both, with the flag".
+ * Maine's committees report out every bill, and the chamber's vote on the Majority report decides it: accepting Ought Not
+ * to Pass kills the bill, with no later vote on it. Measured 2017-2026: a member's vote to accept the Majority Ought to
+ * Pass report agreed with their next vote on the bill 96.8% of the time (16,852 pairs), above the 94.6% two successive
+ * votes on the bill agree. A Minority, lettered or unanimous report is still a motion (null). The House prints the motion
+ * abbreviated ("ACC MAJ OUGHT NOT TO PASS REP"), the Senate in words, with the committee ("Accept Majority Ought Not to
+ * Pass Report from the Committee on Judiciary"), and some pages name the amendment, drop "Report" or "to", or write
+ * "Acceptance". Only the wordings listed are read.
+ */
+export function meMajorityReport(q: string): 'for' | 'against' | null {
+  // read with every space dropped: the PDFs split words ("Accept M ajority", "Committee o n Judiciary")
+  const t = q.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, '').replace(/[.?]$/, '').toLowerCase();
+  const house = /^acc(?:ept)?maj(otp|oughttopass|ontp|otnp|oughtnottopass)(?:-a|-am|asamended)?(?:byca(?:-[a-z]|"[a-z]"))?(?:rep|rpt|report)?$/.exec(t);
+  const senate = /^accept(?:ance)?majority(oughttopass|oughtnot(?:to)?pass)(?:asamended(?:bycommitteeamendment"[a-z]")?)?(?:report)?(?:fromthecommitteeon[a-z,&'’-]+)?$/.exec(t);
+  const way = (house ?? senate)?.[1];
+  if (!way) return null;
+  return /not|ontp|otnp/.test(way) ? 'against' : 'for';
+}
+
+/** Is a Maine question read? A vote on the bill (meQuestionIsOnTheBill), or on its Majority report (meMajorityReport). */
+export function meQuestionIsRead(q: string): boolean {
+  return meQuestionIsOnTheBill(q) || meMajorityReport(q) !== null;
 }
 
 export interface MeVoteRef { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; ld: number; file: string; legislature?: number; session?: string; day?: number }
@@ -3483,7 +3509,7 @@ function readMaineHouse(body: string, r: MeVoteRef): MeVoteRecord {
   const motions = items.filter((i) => i.y > tallyAt + 2 && /^MOTION: /.test(i.s));
   if (motions.length !== 1) throw new Error('the vote prints no question, or more than one');
   const question = squash(motions[0].s.slice('MOTION: '.length));
-  if (!meQuestionIsOnTheBill(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
+  if (!meQuestionIsRead(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
   // the header: the rows above the tally hold only what is read above, the bill's title and the votes required
   const known = new Set([title.it, leg.it, sess.it, no.it, ld.it, dt.it, motions[0]]);
   for (const i of items.filter((x) => x.y > tallyAt + 2 && !known.has(x))) {
@@ -3617,7 +3643,7 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
     const titleLine = row.y > dt.row.y + 2 && row.items[0].x > 150;
     if (!titleLine && !/^(?:MOTION: |M ?otion by Senator )/.test(row.text)) throw new Error(`a header row the reader cannot read: ${row.text}`);
   }
-  if (!meQuestionIsOnTheBill(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
+  if (!meQuestionIsRead(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
   // the column heads: two groups of Yea Nay Abs Exc on one row
   const headRow = at(/^Yea Nay Abs Exc Yea Nay Abs Exc$/, 'row of column heads').row;
   const heads = headRow.items;

@@ -180,6 +180,11 @@ export const FindingSchema = z
     /** For a vote: the motion, as the instrument's vote records it (two votes on one day differ here). */
     motion: z.string().min(1).optional(),
     local_record: z.boolean().optional(),
+    /**
+     * For a vote: a Yea on this motion is a vote AGAINST the bill (to accept a Majority Ought Not to Pass report; Maine,
+     * runner 2026-11-20). `act` stays as the record prints it; a tool that reads a Yea as support flips it.
+     */
+    against_bill: z.literal(true).optional(),
     /** For a pre-filled vote: the census gate it met, per topic (one vote can be on file for two topics). */
     gate_by_topic: z.record(z.string(), z.string()).optional(),
     note: z.string().min(1),

@@ -30,6 +30,7 @@ Exit 1, writing nothing for that prompt, when a `{{…}}` slot stays unfilled or
 """
 import csv, datetime, glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
+from _against import act_words
 from _args import opt, positional
 from session_card import load_profile
 import legislature
@@ -119,7 +120,7 @@ def search_briefs():
         if os.path.exists(f'{store}/{p}.json'):
             for f in json.load(open(f'{store}/{p}.json')).get('findings', []):
                 if topic not in (f.get('topic_keys') or []): continue
-                if f.get('kind') == 'record' and f.get('instrument_id'): on.add(f"- {f['instrument_id']}: {f.get('act')} on {f.get('motion') or 'the bill'} ({f.get('date')})")
+                if f.get('kind') == 'record' and f.get('instrument_id'): on.add(f"- {f['instrument_id']}: {act_words(f)} on {f.get('motion') or 'the bill'} ({f.get('date')})")
                 elif f.get('kind') == 'own-words': on.add(f"- own words already saved: {f.get('url')} ({f.get('date')})")
         text = fill(T, {
             'TOPIC_KEY': topic, 'DATE': today(), 'FORBIDDEN_FOLDERS': f'any folder under {os.path.dirname(prof["research"].rstrip("/"))} (and any other research folder)',

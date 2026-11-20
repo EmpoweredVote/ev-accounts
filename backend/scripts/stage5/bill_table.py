@@ -52,6 +52,7 @@ script read every bill as unanswered and coded 0 of 154 people. `check` now refu
 import glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, positional
+from _against import act_for_bill
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STORE = os.path.normpath(os.path.join(HERE, '..', '..', 'data', 'source-store'))
@@ -135,8 +136,9 @@ def questions(table, store, ids, rungs):
         lo, hi = set(), set()
         for f in person_findings(store, pid, topic):
             row = table['bills'].get(f.get('instrument_id') or '')
-            if not row or row.get('rung') is None or f.get('act') not in YES or gated(f, topic): continue
-            (lo if row['rung'] < mid else hi if row['rung'] > mid else set()).add(f"{f['instrument_id']} r{row['rung']} {f['act']}")
+            act = act_for_bill(f)  # a Yea to kill the bill is a No (_against.py)
+            if not row or row.get('rung') is None or act not in YES or gated(f, topic): continue
+            (lo if row['rung'] < mid else hi if row['rung'] > mid else set()).add(f"{f['instrument_id']} r{row['rung']} {f['act']}" + (' (against the bill)' if f.get('against_bill') else ''))
         if lo and hi: both.append((pid, sorted(lo), sorted(hi)))
     out.append(f'\n## Yes on both sides of rung {mid:g} ({len(both)})\n')
     out += [f"- {pid}: {', '.join(lo)} | {', '.join(hi)}" for pid, lo, hi in both] or ['- none']
@@ -163,7 +165,7 @@ def affected(table, store, ids, bills):
                 other = True  # any other finding on the topic, a vote or the person's own words: they were coded on it
                 continue
             touched.add(pid)
-            if table['bills'][bid].get('rung') is not None and f.get('act') in YES and not gated(f, table['topic_key']):
+            if table['bills'][bid].get('rung') is not None and act_for_bill(f) in YES and not gated(f, table['topic_key']):
                 hit.setdefault(pid, set()).add(bid)
         if pid in touched and not other: first.add(pid)
     return hit, touched, first
@@ -205,8 +207,8 @@ def votes_on_disk(table, store, ids, ds, state):
             seen += 1
             y, sp = int(m.group(4)), 1 if m.group(3) else 0
             on = [v for (a, z, s), v in idx.get((m.group(1), int(m.group(2))), []) if a <= y <= z and s == sp]
-            if any(on): on_disk.add((row['rung'], f['act']))
-            else: off.append((bid, 'the bill is on disk with no roll call' if on else 'the bill is not in the datasets on disk', (row['rung'], f['act'])))
+            if any(on): on_disk.add((row['rung'], act_for_bill(f)))
+            else: off.append((bid, 'the bill is on disk with no roll call' if on else 'the bill is not in the datasets on disk', (row['rung'], act_for_bill(f))))
         for bid, why, k in off:
             # "only": the person has no other vote of that kind at that rung with a roll call, so the seat would rest on it
             e = miss.setdefault(bid, (why, set(), set())); e[1].add(pid)

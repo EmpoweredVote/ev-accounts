@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meReadVotes, meSenateRows } from './fetch-legislature-rollcalls.js';
+import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateRows } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -856,12 +856,27 @@ describe('the legislature\'s own vote list — Maine', () => {
     expect(INDEX.ME.minGapMs).toBe(1_000);
   });
 
-  it('finds the bill\'s floor votes on the bill in both chambers, and counts its motions', () => {
+  it('finds the bill\'s floor votes on the bill and on its Majority report in both chambers, and counts its motions', () => {
     const bi = meReadVotes(LIST, '132', 'LD 1971', [PDFS, SEN, SENATORS]);
-    expect(bi.floor.map((v) => [v.url, v.motion])).toEqual([[`${H}034.574.132S1.pdf#LD1971`, 'Enactment'],
-      [`${S}roll-call-606-ld-1971.pdf#LD1971`, 'PASSAGE TO BE ENGROSSED'], [`${S}roll-call-634-ld-1971.pdf#LD1971`, 'ENACTMENT']]);
-    expect(bi.motions).toEqual(['House 541 ACC MAJ OTP AS AMENDED REP', 'Senate 605 ACCEPT MAJ OTP-A REPORT']);
+    expect(bi.floor.map((v) => [v.url, v.motion])).toEqual([[`${H}033.541.132S1.pdf#LD1971`, 'ACC MAJ OTP AS AMENDED REP'], [`${H}034.574.132S1.pdf#LD1971`, 'Enactment'],
+      [`${S}roll-call-605-ld-1971.pdf#LD1971`, 'ACCEPT MAJ OTP-A REPORT'], [`${S}roll-call-606-ld-1971.pdf#LD1971`, 'PASSAGE TO BE ENGROSSED'], [`${S}roll-call-634-ld-1971.pdf#LD1971`, 'ENACTMENT']]);
+    expect(bi.motions).toEqual([]);
     expect(bi.unread).toEqual([]);
+    const min = meReadVotes(swap(LIST, 'ACC MAJ OTP AS AMENDED REP', 'ACC MIN OUGHT NOT TO PASS REP'), '132', 'LD 1971', [PDFS, swap(SEN, '(Motion: ACCEPT&nbsp;MAJ&nbsp;OTP-A REPORT)', '(Motion: ACCEPT REPORT "B" OTP-A)'), SENATORS]);
+    expect(min.motions).toEqual(['House 541 ACC MIN OUGHT NOT TO PASS REP', 'Senate 605 ACCEPT REPORT "B" OTP-A']);
+    expect(min.floor).toHaveLength(3);
+  });
+
+  it('passes on every Majority report motion the lists type, and no Minority, lettered or unanimous one', () => {
+    // the spellings the 128th-132nd lists type (counted 2026-11-20); the PDF's printed question decides (meMajorityReport)
+    for (const m of ['ACC MAJ OTP AS AMENDED REP', 'ACC MAJ OUGHT NOT TO PASS REP', 'ACC MAJ OUGHT TO PASS REP', 'Acc Maj Ought Not to Pass Rep', 'acc maj otp-am by ca "a"',
+      'ACCEPT MAJ OTP-A RPT', 'ACCEPT MAJ ONTP RPT', 'ACCEPT MAJ OTP-A REPORT', 'ACCEPT MAJ ONTP REPORT', 'ACCEPT MAJ OTP RPT', 'ACCEPT MAJ OTNP RPT',
+      'ACCEPT ACCEPT MAJORITY OTP-A RPT', 'ACCEPT MAJ OTP REPORT']) {
+      expect([m, meListMotionIsOnTheBill(m)]).toEqual([m, true]);
+    }
+    for (const m of ['ACC MIN OUGHT NOT TO PASS REP', 'ACCEPT MIN OTP-A RPT', 'ACCEPT REPORT "A" OTP-A', 'ACCEPT REPORT', 'ACC OTP-AM BY CA "A"', 'ADOPTION', 'INDEF PP']) {
+      expect([m, meListMotionIsOnTheBill(m)]).toEqual([m, false]);
+    }
   });
 
   it('reads the Senate list as typed: a number and file in two links, a row with no motion, a number the file contradicts', () => {
@@ -883,16 +898,16 @@ describe('the legislature\'s own vote list — Maine', () => {
     const joined = swap(SEN, `${p605}<p>`, p605.replace(/<\/p>\n$/, ' ')); // the 131st's list has #304 and #305 so
     expect(meSenateRows(joined, '132').filter((r) => r.rc === 605 || r.rc === 606).map((r) => [r.rc, r.files.length, r.motion]))
       .toEqual([[605, 1, 'ACCEPT MAJ OTP-A REPORT'], [606, 1, 'PASSAGE TO BE ENGROSSED']]);
-    expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, joined, SENATORS]).floor).toHaveLength(3);
+    expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, joined, SENATORS]).floor).toHaveLength(5);
     const p634 = /<p><a href="\/uploads\/visual_edit\/roll-call-634-[^]*?<\/p>\n/.exec(SEN)![0];
-    expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, swap(SEN, p634, p634 + p634), SENATORS]).floor).toHaveLength(3);
+    expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, swap(SEN, p634, p634 + p634), SENATORS]).floor).toHaveLength(5);
   });
 
   it('reads no Senate vote while the member list is of another Legislature, and says so', () => {
     const bi = meReadVotes(LIST, '132', 'LD 1971', [PDFS, SEN, swap(SENATORS, '132nd Maine Senators', '133rd Maine Senators')]);
-    expect(bi.floor.map((v) => v.url)).toEqual([`${H}034.574.132S1.pdf#LD1971`]);
-    expect(bi.unread).toHaveLength(2);
-    expect(bi.unread![0]).toMatch(/^Senate 606 PASSAGE TO BE ENGROSSED: the Senate's member list is of the 133rd Legislature/);
+    expect(bi.floor.map((v) => v.url)).toEqual([`${H}033.541.132S1.pdf#LD1971`, `${H}034.574.132S1.pdf#LD1971`]);
+    expect(bi.unread).toHaveLength(3);
+    expect(bi.unread![0]).toMatch(/^Senate 605 ACCEPT MAJ OTP-A REPORT: the Senate's member list is of the 133rd Legislature/);
   });
 
   it('refuses a list whose printed count is not the rows it read, a row it cannot read, and another Legislature\'s list', () => {

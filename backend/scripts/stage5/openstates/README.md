@@ -188,9 +188,13 @@ the bills under `rollcalls_from_legislature`.
   Bangor" and links some to the wrong person (MILLETT of Waterford, 1,162 votes, to the Cape Elizabeth member), and its
   bill and vote pages are under `/LawMakerWeb/`, which robots.txt disallows. The fetch reads each LD's roll-call list on
   legislature.maine.gov (House: `/house/Documents/RollCalls`; Senate: `/<132nd>-roll-calls`) and each floor vote's PDF,
-  pairing each Y/N/X mark with its member by position (`meQuestionIsOnTheBill`: enactment, passage to be engrossed,
-  final passage, a veto vote; a vote to accept a committee report, to refer, table or indefinitely postpone is a motion
-  and is skipped). The House record before the 131st prints surnames only, and the Senate reads only the Legislature
+  pairing each Y/N/X mark with its member by position (`meQuestionIsRead`: enactment, passage to be engrossed,
+  final passage, a veto vote, and the vote to accept the **Majority** report, Ought to Pass or Ought Not to Pass,
+  `meMajorityReport`; a Minority, lettered or unanimous report, a referral, tabling or indefinite postponement is a
+  motion and is skipped). Maine's committees report out every bill, so the Majority report vote decides it (runner,
+  2026-11-20). 🔴 **A Yea to accept Ought Not to Pass is a vote AGAINST the bill**: the finding keeps `act: yea` (the
+  record's word) and carries `against_bill: true` (`_against.py`, `againstTheBill` in `stage5Prefill.ts`); the bill
+  table counts it as a No, the coder inputs keep it word for word, and the record script leaves it to Opus. The House record before the 131st prints surnames only, and the Senate reads only the Legislature
   whose member list the Senate's site shows (the 132nd until December 2026): earlier votes fail closed.
 - 🔴 Oregon: **no dump vote is placed** either (`record_is_the_floor`). The dump's floor votes agree with the record
   (0 of 1,320 member votes differ), but each points at the bill's Overview page, which holds every vote of the bill, so
