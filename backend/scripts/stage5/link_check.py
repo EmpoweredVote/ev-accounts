@@ -17,26 +17,36 @@ Each must have an idmap line that points at a LegiScan person of this state's da
     unlinked LegiScan people are listed, so the pair can be made by hand.
   - A member who truly has no LegiScan record (seated after the newest dataset) goes in --no-record:
     `<politician_id>\t<reason>` per line. The reason is required.
-Exit 0: every legislator is linked or excused. Exit 1: someone is not. Exit 2: usage, or the check was blind (no
+  - `--from-db` reads the member ids we hold (essentials.legislative_politician_id_map, via
+    scripts/member-ids/export-member-ids.ts, saved as member-ids.tsv beside idmap.tsv; `--member-ids <tsv>` reads a
+    saved export instead). A dataset person converted from Open States is paired by its Open States id, which
+    sync-member-ids.ts matched to the seat: no name involved. A LegiScan id from the database is paired too, marked
+    with how it was matched. `--add` writes these lines first. An idmap line that disagrees with the database is a
+    CONFLICT: printed, never changed, and the exit is 1.
+Exit 0: every legislator is linked or excused. Exit 1: someone is not, or a CONFLICT. Exit 2: usage, or the check was blind (no
 legislators matched --offices, or no LegiScan people were read): it gives no verdict then.
 """
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt
 from _legiscan_people import Matcher, norm, read_idmap, read_roster, SUFFIX
-import glob, json, re
+import csv, glob, json, re, subprocess
 
-USAGE = 'link_check.py --state XX --roster <tsv> --ds <ds root> --idmap <idmap.tsv> [--add] [--no-record <tsv>] [--offices <regex>]'
+USAGE = ('link_check.py --state XX --roster <tsv> --ds <ds root> --idmap <idmap.tsv> [--add] [--from-db | --member-ids <tsv>] '
+         '[--no-record <tsv>] [--offices <regex>]')
 ST = opt('--state', required=True, usage=USAGE).upper()
 IDMAP = opt('--idmap', required=True, usage=USAGE)
+ROSTER = opt('--roster', required=True, usage=USAGE)
 OFFICES = re.compile(opt('--offices', r'senat|represent|assembl|delegate|legislat'), re.I)
 ADD = '--add' in sys.argv
+FROM_DB = '--from-db' in sys.argv
+TRUSTED = {'seat', 'id_crosswalk', 'manual'}
 
 
 def blind(msg):
     print(f'link check: NO VERDICT. {msg}'); sys.exit(2)
 
 
-roster = read_roster([opt('--roster', required=True, usage=USAGE)])
+roster = read_roster([ROSTER])
 legs = {pid: r for pid, r in roster.items() if OFFICES.search(r.get('office') or '') and (r.get('scope') or 'sitting') != 'candidate'}
 if not legs: blind(f'no roster row has an office matching /{OFFICES.pattern}/ (is the office column filled? pass --offices)')
 
@@ -52,6 +62,35 @@ for d in glob.glob(os.path.join(opt('--ds', required=True, usage=USAGE), f'{ST}-
 if not people: blind(f'no LegiScan people found for {ST} under --ds')
 
 idmap = read_idmap(IDMAP)
+
+# Member ids from the database (CA_0401/CA_0402): an Open States person id matched to the seat, or a LegiScan id.
+# A dataset person converted from Open States carries `_openstates.person_id`, so the pair is made by id, not by
+# name. LegiScan ids in the database were mostly matched by name (match_method 'name'): check those like a name match.
+db_lines, db_conflicts = [], []
+MEMBER_IDS = opt('--member-ids')
+if FROM_DB or MEMBER_IDS:
+    if FROM_DB:
+        MEMBER_IDS = MEMBER_IDS or os.path.join(os.path.dirname(os.path.abspath(IDMAP)), 'member-ids.tsv')
+        backend = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        run = subprocess.run(['npx', 'tsx', 'scripts/member-ids/export-member-ids.ts', '--roster', os.path.abspath(ROSTER),
+                              '--out', os.path.abspath(MEMBER_IDS)], cwd=backend, capture_output=True, text=True)
+        if run.returncode: blind(f'--from-db: export-member-ids failed: {(run.stderr or run.stdout).strip()[-300:]}')
+        print(run.stdout.strip())
+    by_os, by_ls = {}, {}
+    for row in csv.DictReader(open(MEMBER_IDS), delimiter='\t'):
+        if row['id_type'] == 'openstates' and row['match_method'] in TRUSTED: by_os[row['id_value']] = row['politician_id']
+        elif row['id_type'] == 'legiscan': by_ls[row['id_value']] = (row['politician_id'], row['match_method'])
+    for ls, p in sorted(people.items()):
+        osid = (p.get('_openstates') or {}).get('person_id')
+        if osid in by_os: pid, how = by_os[osid], 'by Open States id'
+        elif str(ls) in by_ls: pid, how = by_ls[str(ls)][0], f"by LegiScan id ({by_ls[str(ls)][1]} match: check it)"
+        else: continue
+        if pid not in legs: continue
+        if ls in idmap:
+            if idmap[ls] != pid: db_conflicts.append((ls, pid, how))
+            continue
+        db_lines.append((ls, pid, how))
+
 linked = {pid for ls, pid in idmap.items() if ls in people}
 excused = {}
 if opt('--no-record'):
@@ -60,6 +99,19 @@ if opt('--no-record'):
         if not parts[0].strip() or parts[0].startswith('#'): continue
         if len(parts) < 2 or not parts[1].strip(): blind(f'--no-record line for {parts[0]} gives no reason')
         excused[parts[0].strip()] = parts[1].strip()
+
+if db_lines:
+    if ADD:
+        with open(IDMAP, 'a') as fh:
+            for ls, pid, how in db_lines: fh.write(f"{ls}\t{pid}\t# {people[ls].get('name')} (link_check database id, {how})\n")
+        for ls, pid, how in db_lines: idmap[ls] = pid; linked.add(pid)
+        print(f'added {len(db_lines)} line(s) from database ids to {IDMAP}:')
+    else:
+        print(f'{len(db_lines)} database id(s) not yet in idmap (run with --add to write them):')
+    for ls, pid, how in db_lines: print(f"  {legs[pid]['full_name']}  <-  {ls}\t{people[ls].get('name')}\t{how}")
+for ls, pid, how in db_conflicts:
+    print(f"CONFLICT: idmap has {ls} ({people[ls].get('name')}) -> {idmap[ls]}, but the database says -> {pid} "
+          f"({legs[pid]['full_name']}, {how}). Fix the wrong one; nothing was changed.")
 
 m = Matcher(legs, idmap, people)
 # The shared rule keys on LegiScan's last_name field, which holds "Mays Bledsoe" for Amanda Mays Bledsoe: a whole
@@ -94,7 +146,7 @@ print(f'link check {ST}: {len(legs)} legislator(s) on the roster, {len(legs) - l
       f'{len([p for p in excused if p in legs and p not in linked])} excused, {len(missing)} NOT linked; {len(people)} LegiScan people read')
 for pid, why in excused.items():
     if pid in legs and pid not in linked: print(f"  excused: {legs[pid]['full_name']}: {why}")
-if not missing: sys.exit(0)
+if not missing: sys.exit(1 if db_conflicts else 0)
 
 print('NOT linked: these people have no votes or sponsorships on file until idmap.tsv has their line.')
 for pid in sorted(missing, key=lambda p: legs[p]['full_name']):
