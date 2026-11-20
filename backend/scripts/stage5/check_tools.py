@@ -1457,6 +1457,32 @@ def link_check_pairs_by_database_member_id_and_never_overwrites(t):
 
 
 @check
+def link_check_links_a_converter_made_record_of_a_member_already_linked(t):
+    """Oregon 2026-11-20: the record names Rep. Emerson Levy in full; the dump holds her as "Em Levy". The converter could not
+    tie the two, so it made a name-only record for her in each session (four ids, ten record votes). She was linked by her
+    Open States id, so the name rule skipped every other record of hers, and the link check said nothing: her votes made no
+    finding. A name-only record whose whole name is one roster member's links to that member; one that fits no one, or a
+    dump label such as "Rep Levy", does not."""
+    d = f'{t}/ds/XX-1/2025/s'; os.makedirs(f'{d}/bill'); os.makedirs(f'{d}/people')
+    json.dump({'bill': {'session': {'year_end': 2026}}}, open(f'{d}/bill/1.json', 'w'))
+    def person(i, name, osid=None, name_only=False):
+        json.dump({'person': {'people_id': i, 'first_name': '' if name_only else name.split()[0], 'last_name': name.split()[0] if name_only else name.split()[-1],
+                              'name': name, 'role': 'Rep', 'district': '', '_openstates': {'person_id': osid, **({'name_only': True} if name_only else {})}}},
+                  open(f'{d}/people/{i}.json', 'w'))
+    person(9000001, 'Em Levy', 'ocd-person/aaa'); person(9000002, 'Bobby Levy', 'ocd-person/bbb')
+    person(9000003, 'Emerson Levy', name_only=True); person(9000004, 'Emerson Levy', name_only=True)
+    person(9000005, 'Rep Levy', name_only=True); person(9000006, 'Pat Nobody', name_only=True)
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tscope\toffice\npe\tEmerson Levy\tsitting\tRepresentative\n'
+                                       'pb\tBobby Levy\tsitting\tRepresentative\n')
+    open(f'{t}/ids.tsv', 'w').write('politician_id\tid_type\tid_value\tmatch_method\npe\topenstates\tocd-person/aaa\tseat\npb\topenstates\tocd-person/bbb\tseat\n')
+    open(f'{t}/idmap.tsv', 'w').write('')
+    p = run('link_check.py', '--state', 'xx', '--roster', f'{t}/roster.tsv', '--ds', f'{t}/ds', '--idmap', f'{t}/idmap.tsv', '--member-ids', f'{t}/ids.tsv', '--add', ok=False)
+    got = sorted(tuple(l.split('\t')[:2]) for l in open(f'{t}/idmap.tsv').read().splitlines() if l.strip())
+    assert got == [('9000001', 'pe'), ('9000002', 'pb'), ('9000003', 'pe'), ('9000004', 'pe')], (got, p.stdout)
+    assert '2 name-only record(s)' in p.stdout, p.stdout
+
+
+@check
 def state_legiscan_cites_the_legislatures_own_page_for_an_open_states_roll_call(t):
     """A roll call converted from Open States data has no legiscan.com page: its pair names the legislature's own
     roll-call page, taken from the hit. One with no page is unmapped, with that reason. A sponsorship on such a bill
@@ -1520,6 +1546,18 @@ def legiscan_merge_cross_checks_a_vote_cited_on_a_legislature_page(t):
         assert code == 0 and [c['agree'] for c in cross] == [True], (said, code, cross)
         code, cross, _ = go(said)
         assert code == 1 and [c['agree'] for c in cross] == [False], (said, code, cross)
+    # Oregon 2026-11-20: the record says Aye and Nay, and a member away on the chamber's business "was excused for legislative
+    # business". Before this the merge read each as "?" and disagreed on 696 of the dry batch's 855 votes.
+    code, cross, _ = go('voted Aye')
+    assert code == 0 and [c['agree'] for c in cross] == [True], ('Aye', code, cross)
+    code, cross, _ = go('voted Aye', act='nay')
+    assert code == 1 and [c['agree'] for c in cross] == [False], ('Aye/nay', code, cross)
+    code, cross, _ = go('voted Nay', act='nay')
+    assert code == 0 and [c['agree'] for c in cross] == [True], ('Nay', code, cross)
+    code, cross, _ = go('was excused for legislative business', act='abstain')
+    assert code == 0 and [c['agree'] for c in cross] == [True], ('business', code, cross)
+    code, cross, _ = go('was excused for legislative business')
+    assert code == 1 and [c['agree'] for c in cross] == [False], ('business/yea', code, cross)
 
 
 def openstates_extract(t, st='ut'):

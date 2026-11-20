@@ -3009,6 +3009,314 @@ export function explainNevadaVote(bodies: string[], url: string): NvVoteRecord |
   try { return readNevada(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Oregon: the legislature's Open Data Service, cited on the vote's own OLIS page ──────────────────────────────────────
+// Read 2026-11-20. olis.oregonlegislature.gov and api.oregonlegislature.gov have no robots.txt (404). The Legislature
+// publishes an Open Data Service (OData, no key) and its Acceptable Use Agreement asks a client to use it and "forego
+// regular scraping" of the website (www.oregonlegislature.gov/citizen_engagement/Documents/OLODataAcceptableUseAgreement.pdf),
+// so the vote is READ from the service and CITED on the page a person opens, the vote's member list on OLIS:
+//   https://olis.oregonlegislature.gov/liz/2025R1/Measures/MeasureVotes?id=624489#HB3041
+// That page prints each member of the chamber by the label the record uses ("Levy B", "Speaker Fahey") with the vote, and
+// names no bill: the bill is named after a #. The id is the bill history action's (MeasureHistoryId). The Open States rows
+// point at the bill's Overview page, which holds every vote of the bill, so they cannot be cited as one vote.
+//
+// The reader reads four records of the service:
+//   MeasureVotes?$filter=MeasureHistoryId eq 624489   one row per member: Vote (Aye, Nay, Excused, Excused for Business,
+//                                                     Absent), VoteName ("Rep Isadore"), the chamber, session and bill
+//   MeasureHistoryActions?$filter=MeasureHistoryId eq 624489   the action ("Third reading. Carried by McLain. Passed."),
+//                                                     its day, and VoteText, the tally as the journal prints it, with
+//                                                     every member who did not vote Aye named:
+//                                                     "Ayes, 35; Nays, 19--Boice, ...; Excused, 6--Evans, ..."
+//   Legislators?$filter=SessionKey eq '2025R1'        each member of the session by LegislatorCode ("Rep Isadore"), the
+//                                                     same code VoteName carries, with first and last name
+//   Legislators?$filter=SessionKey eq '2024S1'        the same for the session before, for a member who left during
+//                                                     this one (OR_SESSION_ORDER)
+// The list gives a member's name of today in every session ("Sheri Schouten" in 2017, when she voted as Sheri Malstrom;
+// "Courtney Neron Misslin" in 2023), so a line names the member as the roster does.
+// A vote is read only when the action is a vote on the bill (orQuestionIsOnTheBill), every row is of that action's bill,
+// session and chamber, each kind lists exactly the count VoteText prints for it, the members VoteText names under a kind
+// are exactly the members listed under it, the total is not more than the chamber's seats, and no member is listed
+// twice. A member is named by the one legislator of that session and chamber whose code is the row's VoteName, else of
+// the session before when no member of this session carries the code; a code neither list holds is kept as printed and
+// gives no line. The render prints no party (the legislator record has one;
+// it is never read):
+//
+//   Oregon House vote 624489 (2025R1), HB 3041, 2025-02-25.
+//   Question: Third reading. Carried by McLain. Passed.
+//   Aye 35; Nay 19; Excused 6; Excused for business 0; Absent 0.
+//   Aye (35): Tom Andersen; …
+//   Oregon House vote 624489 (2025R1), HB 3041 - Third reading. Carried by McLain. Passed. (2025-02-25): Tom Andersen voted Aye.
+
+export const OR_VOTES = ['Aye', 'Nay', 'Excused', 'Excused for business', 'Absent'] as const;
+export type OrVote = (typeof OR_VOTES)[number];
+/** The kind as a MeasureVotes row prints it, and as VoteText heads its group. */
+const OR_KIND: Record<OrVote, { row: string; text: RegExp }> = {
+  Aye: { row: 'Aye', text: /^Ayes?$/i },
+  Nay: { row: 'Nay', text: /^Nays?$/i },
+  Excused: { row: 'Excused', text: /^Excused$/i },
+  'Excused for business': { row: 'Excused for Business', text: /^Excused for Business of the (?:House|Senate)$/i },
+  Absent: { row: 'Absent', text: /^Absent$/i },
+};
+export const OR_DATA = 'https://api.oregonlegislature.gov/odata/ODataService.svc/';
+const OR_SITE = 'https://olis.oregonlegislature.gov/liz/';
+/** No robots.txt and no rate in the use agreement (2026-11-20): one request a second is ours. */
+const OR_GAP_MS = 1_000;
+const OR_SIZE: Record<Chamber, number> = { House: 60, Senate: 30 };
+const OR_PREFIX = '(?:HB|SB|HJR|SJR|HCR|SCR|HJM|SJM|HM|SM|HR|SR|HJ|SJ)';
+const OR_URL = new RegExp(`^https://olis\\.oregonlegislature\\.gov/liz/(20\\d{2}[RS]\\d)/Measures/MeasureVotes\\?id=([1-9]\\d{0,8})#(${OR_PREFIX})([1-9]\\d{0,4})$`);
+/** Open States' session identifier -> the Legislature's SessionKey. */
+export const OR_SESSIONS: Readonly<Record<string, string>> = {
+  '2017 Regular Session': '2017R1', '2018 Regular Session': '2018R1', '2018 Special Session': '2018S1', '2019 Regular Session': '2019R1',
+  '2020 Regular Session': '2020R1', '2020S1': '2020S1', '2020S2': '2020S2', '2020S3': '2020S3', '2021 Regular Session': '2021R1',
+  '2021S1': '2021S1', '2021S2': '2021S2', '2022R1': '2022R1', '2023R1': '2023R1', '2024R1': '2024R1', '2024S1': '2024S1',
+  '2025R1': '2025R1', '2025S1': '2025S1', '2026R1': '2026R1',
+};
+
+export interface OrVoteRef { state: 'OR'; stateName: 'Oregon'; session: string; historyId: number; prefix: string; number: number; bill: string }
+export interface OrVoteRecord { state: 'OR'; stateName: 'Oregon'; chamber: Chamber; session: string; historyId: number; bill: string; question: string; date: string; groups: Record<OrVote, string[]>; codes: Record<OrVote, string[]> }
+export interface OrVoteLine extends Omit<OrVoteRecord, 'groups' | 'codes'> { name: string; vote: OrVote }
+
+export function parseOregonVoteUrl(url: string): OrVoteRef | null {
+  const m = OR_URL.exec(url.trim());
+  if (!m) return null;
+  return { state: 'OR', stateName: 'Oregon', session: m[1], historyId: Number(m[2]), prefix: m[3], number: Number(m[4]), bill: `${m[3]} ${Number(m[4])}` };
+}
+
+/** The address a vote is cited on: its member list on OLIS, the bill after a #. */
+export function oregonVoteUrl(session: string, historyId: number, prefix: string, number: number): string {
+  return `${OR_SITE}${session}/Measures/MeasureVotes?id=${historyId}#${prefix.toUpperCase()}${number}`;
+}
+
+const orQuery = (set: string, filter: string): string => `${OR_DATA}${set}?$filter=${encodeURIComponent(filter).replace(/%27/g, "'")}&$format=json`;
+/** Every history action of one bill (the fetch tool's index). */
+export function oregonBillActionsUrl(session: string, prefix: string, number: number): string {
+  return orQuery('MeasureHistoryActions', `SessionKey eq '${session}' and MeasurePrefix eq '${prefix}' and MeasureNumber eq ${number}`);
+}
+
+/**
+ * Every regular and special SessionKey from 2013, in order (the dump starts in 2017; the store holds 2015 SB 941). A
+ * session's legislator list holds the members seated at its end, so a member who left during it (died, resigned, was
+ * expelled, moved to the other chamber) is not on it: such a code is looked up in the session before's list (2019R1
+ * "Sen Winters", 2021R1 "Rep Nearman", 2019R1 "Rep Boles", who sits in the Senate list).
+ */
+export const OR_SESSION_ORDER: readonly string[] = ['2013R1', '2013S1', '2013S2', '2014R1', '2015R1', '2016R1', '2017R1', '2018R1', '2018S1', '2019R1', '2020R1', '2020S1', '2020S2', '2020S3',
+  '2021R1', '2021S1', '2021S2', '2022R1', '2023R1', '2024R1', '2024S1', '2025R1', '2025S1', '2026R1'];
+
+function oregonDocs(r: OrVoteRef): string[] | null {
+  const i = OR_SESSION_ORDER.indexOf(r.session);
+  if (i < 1) return null;
+  return [
+    orQuery('MeasureVotes', `MeasureHistoryId eq ${r.historyId}`),
+    orQuery('MeasureHistoryActions', `MeasureHistoryId eq ${r.historyId}`),
+    orQuery('Legislators', `SessionKey eq '${r.session}'`),
+    orQuery('Legislators', `SessionKey eq '${OR_SESSION_ORDER[i - 1]}'`),
+  ];
+}
+
+/**
+ * Is an Oregon history action a vote on the bill? Third reading (passed, failed, adopted), concurring in the other
+ * chamber's amendments and repassing, repassing after a conference committee's report, and a veto override. Every other
+ * recorded vote (a motion to rerefer, to substitute the minority report, to reconsider, to suspend the rules) is not.
+ */
+export function orQuestionIsOnTheBill(q: string): boolean {
+  // "Rules suspended. Third reading. ... Passed." is one vote (2023 HB 2005); the suspension is not voted apart
+  const s = squash(q).toLowerCase().replace(/^rules suspended\.\s*/, '');
+  // a bare result is the vote on the third reading the row before it reads (2026 HB 4145: "Third reading. Carried by
+  // McDonald." with no tally, then "Passed." with the tally)
+  if (/^(?:passed|failed)\.?$/.test(s)) return true;
+  if (/\b(?:motion|reconsider|rerefer|re-refer|minority report|suspend|lay on the table|tabled?)\b/.test(s)) return false;
+  return /^third reading\b.*\b(?:passed|failed|adopted|failed to pass)\.?$/.test(s)
+    || /\bconcurred in (?:house|senate) amendments and repassed\b/.test(s)
+    || /\b(?:adopted conference committee report|conference committee report adopted)\b.*\brepassed\b/.test(s)
+    || /^repassed\b/.test(s)
+    || /\bveto\b.*\boverrid/.test(s);
+}
+
+/** "Rep Levy B", "Speaker Fahey", "Levy B" -> "levy b": the label without its office, for comparing VoteText with the rows. */
+// 2017 prints the Speaker's row "Rep Speaker Kotek" and the tally "Speaker Kotek": every office word goes
+const orLabel = (s: string): string => fold(squash(s).replace(/^(?:(?:Rep|Sen|Representative|Senator|Speaker|President)\.?\s+)+/i, ''));
+
+/** VoteText as [kind, count, named labels or null]. Throws on a group it cannot read. */
+export function orTally(voteText: string): Map<OrVote, { n: number; named: string[] | null }> {
+  const out = new Map<OrVote, { n: number; named: string[] | null }>();
+  const t = squash(voteText).replace(/\.$/, '');
+  for (const part of t.split(/;\s*/)) {
+    const m = /^([A-Za-z][A-Za-z ]*?),\s*(\d+)(?:\s*--\s*(.+))?$/.exec(part.trim());
+    if (!m) throw new Error(`a tally group the reader cannot read: ${part}`);
+    const kind = OR_VOTES.find((k) => OR_KIND[k].text.test(m[1].trim()));
+    if (!kind) throw new Error(`a kind of vote the reader does not know: ${m[1]}`);
+    if (out.has(kind)) throw new Error(`the count of ${kind} is printed twice`);
+    const named = m[3] ? m[3].split(/,\s*/).map((x) => x.trim()).filter(Boolean) : null;
+    if (named && named.length !== Number(m[2])) throw new Error(`${kind} prints ${m[2]} and names ${named.length}`);
+    out.set(kind, { n: Number(m[2]), named });
+  }
+  return out;
+}
+
+type OData = { 'odata.nextLink'?: unknown; value?: unknown };
+function orRows(body: string, what: string): Record<string, unknown>[] {
+  const j = JSON.parse(body) as OData;
+  if (!j || !Array.isArray(j.value)) throw new Error(`${what} is not a list`);
+  if (j['odata.nextLink']) throw new Error(`${what} runs past one page`);
+  return j.value as Record<string, unknown>[];
+}
+const orStr = (v: unknown): string => (typeof v === 'string' ? squash(v) : '');
+
+/** The vote, or why it was refused (the first check that failed). */
+function readOregon(bodies: string[], r: OrVoteRef): OrVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 4) return fail('not a vote, its history action and two sessions\' legislators');
+  const before = OR_SESSION_ORDER[OR_SESSION_ORDER.indexOf(r.session) - 1];
+  if (!before) return fail(`a session the reader does not know: ${r.session}`);
+  const votes = orRows(bodies[0], 'the vote');
+  const actions = orRows(bodies[1], 'the history action');
+  const legs = orRows(bodies[2], 'the legislator list');
+  const legsBefore = orRows(bodies[3], 'the session before\'s legislator list');
+  if (actions.length !== 1) return fail(`the history holds action ${r.historyId} ${actions.length} times`);
+  const a = actions[0];
+  const ofBill = (x: Record<string, unknown>): boolean => x.MeasureHistoryId === r.historyId && x.SessionKey === r.session && x.MeasurePrefix === r.prefix && x.MeasureNumber === r.number;
+  if (!ofBill(a)) return fail(`action ${r.historyId} is not of ${r.bill} in ${r.session}`);
+  const ch = a.Chamber === 'H' ? 'House' : a.Chamber === 'S' ? 'Senate' : null;
+  if (!ch) return fail('the action names no chamber');
+  const day = /^(\d{4}-\d{2}-\d{2})T/.exec(orStr(a.ActionDate));
+  if (!day) return fail('the action has no day');
+  const question = orStr(a.ActionText);
+  if (!orQuestionIsOnTheBill(question)) return fail(`the question is not a vote on the bill: ${question}`);
+  if (!orStr(a.VoteText)) return fail('the action prints no tally');
+  const tally = orTally(orStr(a.VoteText));
+  const codes = Object.fromEntries(OR_VOTES.map((k) => [k, [] as string[]])) as Record<OrVote, string[]>;
+  for (const v of votes) {
+    if (!ofBill(v) || v.Chamber !== a.Chamber) return fail(`a vote row of another bill, session or chamber: ${orStr(v.VoteName)}`);
+    if (orStr(v.ActionDate) !== orStr(a.ActionDate)) return fail(`a vote row of another time: ${orStr(v.VoteName)}`);
+    const kind = OR_VOTES.find((k) => OR_KIND[k].row === orStr(v.Vote));
+    if (!kind) return fail(`a kind of vote the reader does not know: ${orStr(v.Vote)}`);
+    const code = orStr(v.VoteName);
+    if (!code) return fail('a vote row names no member');
+    codes[kind].push(code);
+  }
+  for (const k of OR_VOTES) {
+    const t = tally.get(k) ?? { n: 0, named: null };
+    if (codes[k].length !== t.n) return fail(`the ${k} group lists ${codes[k].length} members and the tally prints ${t.n}`);
+    if (t.named) {
+      const listed = codes[k].map(orLabel).sort().join('|');
+      if (t.named.map(orLabel).sort().join('|') !== listed) return fail(`the ${k} members the tally names are not the members listed`);
+    } else if (k !== 'Aye' && t.n > 0) return fail(`the tally names no ${k} member`);
+  }
+  // a group of 0 is left out (2025 SB 473: "Ayes, 29; Excused, 1--Woods."), but a vote always prints Ayes or Nays
+  if (!tally.has('Aye') && !tally.has('Nay')) return fail('the tally prints no Ayes and no Nays');
+  const all = OR_VOTES.flatMap((k) => codes[k]);
+  if (all.length > OR_SIZE[ch]) return fail('more members than the chamber has');
+  if (new Set(all.map(orLabel)).size !== all.length) return fail('a member is listed twice');
+  const index = (list: Record<string, unknown>[], session: string): Map<string, string[]> | null => {
+    const m = new Map<string, string[]>();
+    for (const l of list) {
+      if (l.SessionKey !== session) return null;
+      const code = fold(orStr(l.LegislatorCode));
+      const name = `${orStr(l.FirstName)} ${orStr(l.LastName)}`.trim();
+      // keyed by chamber and code: "Rep Boles" is a House code even when its holder sits in the Senate list
+      if (code && name) m.set(`${orStr(l.Chamber)}|${code}`, [...(m.get(`${orStr(l.Chamber)}|${code}`) ?? []), name]);
+    }
+    return m;
+  };
+  const now = index(legs, r.session);
+  const prev = index(legsBefore, before);
+  if (!now || !prev) return fail('a legislator list is of another session');
+  if (![...now.keys()].some((k) => k.startsWith(`${orStr(a.Chamber)}|`))) return fail('the legislator list holds no member of the chamber');
+  const anyChamber = (m: Map<string, string[]>, code: string): boolean => [...m.keys()].some((k) => k.endsWith(`|${fold(code)}`));
+  const nameOf = (code: string): string => {
+    const n = now.get(`${orStr(a.Chamber)}|${fold(code)}`) ?? [];
+    if (n.length) return n.length === 1 ? n[0] : code;
+    // not seated at the session's end: the session before, only when no member of this session carries the code at all
+    if (anyChamber(now, code)) return code;
+    const p = prev.get(`${orStr(a.Chamber)}|${fold(code)}`) ?? [];
+    return p.length === 1 ? p[0] : code;
+  };
+  const groups = Object.fromEntries(OR_VOTES.map((k) => [k, codes[k].map(nameOf)])) as Record<OrVote, string[]>;
+  const names = OR_VOTES.flatMap((k) => groups[k]).map(fold);
+  if (new Set(names).size !== names.length) return fail('two members render as one name');
+  return { state: 'OR', stateName: 'Oregon', chamber: ch, session: r.session, historyId: r.historyId, bill: r.bill, question, date: day[1], groups, codes };
+}
+
+const OR_SAID: Record<OrVote, string> = { Aye: 'voted Aye', Nay: 'voted Nay', Excused: 'was excused', 'Excused for business': 'was excused for legislative business', Absent: 'was absent' };
+
+export function renderOregonVote(v: OrVoteRecord): string {
+  return [
+    `Oregon ${v.chamber} vote ${v.historyId} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    OR_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...OR_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const OR_RENDER_HEAD = /^Oregon (House|Senate) vote (\d+) \((20\d{2}[RS]\d)\), ([A-Z]{2,3} \d{1,5}), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseOregonRender(text: string, url: string): Omit<OrVoteRecord, 'codes'> | null {
+  const r = parseOregonVoteUrl(url);
+  const rows = text.split('\n');
+  const h = OR_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + OR_VOTES.length) return null;
+  if (Number(h[2]) !== r.historyId || h[3] !== r.session || h[4] !== r.bill) return null;
+  const groups = {} as Record<OrVote, string[]>;
+  for (const [i, v] of OR_VOTES.entries()) {
+    const m = /^([A-Za-z ]+) \((\d+)\):(.*)$/.exec(rows[3 + i]);
+    if (!m || m[1] !== v) return null;
+    groups[v] = m[3].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[2])) return null;
+  }
+  if (rows[2] !== OR_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'OR', stateName: 'Oregon', chamber: h[1] as Chamber, session: r.session, historyId: r.historyId, bill: r.bill, date: h[5], question: q[1], groups };
+}
+
+const OR_LINE = /^Oregon (House|Senate) vote (\d+) \((20\d{2}[RS]\d)\), ([A-Z]{2,3} \d{1,5}) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Aye|voted Nay|was excused for legislative business|was excused|was absent)\.$/;
+
+export function formatOregonVoteLine(l: OrVoteLine): string {
+  return `Oregon ${l.chamber} vote ${l.historyId} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${OR_SAID[l.vote]}.`;
+}
+
+function parseOregonLine(text: string): OrVoteLine | null {
+  const m = OR_LINE.exec(text.trim());
+  const vote = m ? OR_VOTES.find((v) => OR_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'OR', stateName: 'Oregon', chamber: m[1] as Chamber, historyId: Number(m[2]), session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifyOregonLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseOregonLine(line);
+  const r = parseOregonRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.historyId !== r.historyId || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = OR_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function oregonLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseOregonRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of OR_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatOregonVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from the Open Data Service's vote, history action and legislator list. Null when any check fails. */
+export function readOregonVote(bodies: string[], url: string): OrVoteRecord | null {
+  const v = explainOregonVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readOregonVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainOregonVote(bodies: string[], url: string): OrVoteRecord | { refused: string } {
+  const r = parseOregonVoteUrl(url);
+  if (!r) return { refused: 'not an Oregon vote address' };
+  try { return readOregon(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's and Minnesota's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\/|^https:\/\/www\.mnsenate\.gov\/journals\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
@@ -3037,11 +3345,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseNorthDakotaVoteUrl(url)) return ND_GAP_MS;
   if (parseMinnesotaVoteUrl(url)) return MN_GAP_MS;
   if (parseNevadaVoteUrl(url)) return NV_GAP_MS;
+  if (parseOregonVoteUrl(url)) return OR_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null || parseOregonVoteUrl(url) !== null;
 }
 
 /**
@@ -3067,6 +3376,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (mn) return minnesotaDocs(mn);
   const nv = parseNevadaVoteUrl(url);
   if (nv) return nevadaDocs(nv);
+  const or = parseOregonVoteUrl(url);
+  if (or) return oregonDocs(or);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -3107,6 +3418,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseNevadaVoteUrl(url)) {
     const v = readNevadaVote(bodies, url);
     return v ? renderNevadaVote(v) : null;
+  }
+  if (parseOregonVoteUrl(url)) {
+    const v = readOregonVote(bodies, url);
+    return v ? renderOregonVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -3180,6 +3495,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteKey, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups.Excused, ...v.groups['Not voting'], ...v.groups.Absent] } } : null;
   }
+  if (parseOregonVoteUrl(url)) {
+    // Oregon: members by the names the session's legislator list gives their codes (a code no legislator carries, as
+    // printed); the roll-call number is the history action's id. Excused, excused for business and absent are one group here.
+    const v = readOregonVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.historyId, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Aye, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups.Excused, ...v.groups['Excused for business'], ...v.groups.Absent] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -3242,8 +3564,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | OrVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text) ?? parseOregonLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -3327,6 +3649,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseNorthDakotaVoteUrl(url)) return verifyNorthDakotaLine(line, url, text, lastName, fullName);
   if (parseMinnesotaVoteUrl(url)) return verifyMinnesotaLine(line, url, text, lastName, fullName);
   if (parseNevadaVoteUrl(url)) return verifyNevadaLine(line, url, text, lastName, fullName);
+  if (parseOregonVoteUrl(url)) return verifyOregonLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -3357,6 +3680,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseNorthDakotaVoteUrl(url)) return northDakotaLinesFor(url, text, lastName, fullName);
   if (parseMinnesotaVoteUrl(url)) return minnesotaLinesFor(url, text, lastName, fullName);
   if (parseNevadaVoteUrl(url)) return nevadaLinesFor(url, text, lastName, fullName);
+  if (parseOregonVoteUrl(url)) return oregonLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];
