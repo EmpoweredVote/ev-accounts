@@ -43,7 +43,11 @@
 --     alter column id_type drop not null, alter column id_value drop not null;
 --   drop index essentials.uq_leg_id_map_type_value;
 --
--- STATUS: NOT APPLIED. Dry run only, until the runner says to apply.
+-- STATUS: APPLIED to prod 2026-11-19 via apply-migration-file.mjs (operator approval: Chris Andrews, "Yes, apply it");
+--   21 rows updated, 467 inserted, every guard passed. Before that: dry run OK twice; a tamper (LRL 15301 moved off
+--   Paul Anderson) was stopped by the post-guard. After: 200 mn-lrl / 67 mn-senate-mem (seat), 200 openstates
+--   (id_crosswalk); the FK, both CHECKs and uq_leg_id_map_type_value exist; mn-member-ids.ts re-run finds 0 new rows;
+--   loadMemberIds returns { 'mn-lrl': ['15301'] } for Paul Anderson.
 
 BEGIN;
 set local lock_timeout = '3s';
