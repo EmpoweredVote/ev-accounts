@@ -25,6 +25,8 @@
  *   node scripts/check-council-district-vintage.mjs --json
  *
  * Exit 0 = every registered layer matches its authority. Exit 1 = a registered layer has drifted.
+ * An authority that is down, errors, or returns no features prints a WARN and does not fail the
+ * build: that layer is unverified this run, but nothing says our data drifted.
  *
  * Layers with no registry entry are UNGATED: they are printed on every run but do not fail the
  * build unless --strict is passed. That is deliberate -- a check that is red from the day it lands
@@ -393,7 +395,15 @@ function samplePoints(polys, bbox, want) {
   return pts;
 }
 
-/** Transport-level failure: the authority is unreachable, which says nothing about our data. */
+/**
+ * The authority gave us nothing to compare against: unreachable, an HTTP error, an error body, or
+ * an empty layer. None of that says anything about OUR data, so it is a loud WARN, not a failure.
+ *
+ * 🔴 An empty answer is not a stale map. LA County's layer 27 ("Supervisorial District
+ * (Current)") started answering count 0 in Nov 2026 and turned CI red on every push. The fix is
+ * NOT to point the entry at layer 26 — that is the 2021 map, and gating against it would assert
+ * that the 2021 map is current. Wait for the county to repopulate 27, or prove a new authority.
+ */
 class UpstreamUnavailable extends Error {}
 
 async function fetchUpstream(entry) {
@@ -404,8 +414,21 @@ async function fetchUpstream(entry) {
     throw new UpstreamUnavailable(`could not reach the authority: ${err.message}`);
   }
   if (!res.ok) throw new UpstreamUnavailable(`authority returned HTTP ${res.status}`);
-  const fc = await res.json();
-  if (!fc.features?.length) throw new Error(`upstream returned no features for ${entry.key}`);
+  let fc;
+  try {
+    fc = await res.json();
+  } catch (err) {
+    throw new UpstreamUnavailable(`authority returned a body that is not JSON: ${err.message}`);
+  }
+  // ArcGIS servers report query errors as HTTP 200 with an `error` object in the body.
+  if (fc?.error) {
+    throw new UpstreamUnavailable(
+      `authority returned an error: ${fc.error.code ?? ''} ${fc.error.message ?? JSON.stringify(fc.error)}`.trim()
+    );
+  }
+  if (!fc?.features?.length) {
+    throw new UpstreamUnavailable(`authority returned no features (layer is empty) for ${entry.key}`);
+  }
   // Some authorities publish one regional layer covering many jurisdictions (San Diego's is
   // county-wide), so an entry may narrow it to the city we actually serve.
   // Esri JSON names the attribute bag `attributes` and the geometry `rings`; GeoJSON uses
@@ -414,7 +437,12 @@ async function fetchUpstream(entry) {
   const features = entry.filter
     ? raw.filter((f) => entry.filter(f.properties ?? f.attributes))
     : raw;
-  if (!features.length) throw new Error(`filter left no features for ${entry.key}`);
+  if (!features.length) {
+    throw new UpstreamUnavailable(
+      `authority returned ${raw.length} feature(s) but none matched this entry's filter for ${entry.key} ` +
+      `— the layer may have been re-cut or its fields renamed; re-read it`
+    );
+  }
   const parts = features.map((f) => {
     const props = f.properties ?? f.attributes;
     const rings = f.geometry?.rings;
@@ -578,8 +606,12 @@ try {
       if (!r.ok) failed = true;
     } catch (err) {
       if (err instanceof UpstreamUnavailable) {
-        // A green skip beats a red build nobody can fix. We gate DRIFT, not the authority's uptime.
-        results.push({ key: entry.key, label: entry.label, ok: true, skipped: true, problems: [`SKIPPED — ${err.message}`] });
+        // A loud warning beats a red build nobody can fix. We gate DRIFT, not the authority's
+        // uptime or its publishing mistakes. The layer is NOT verified this run — say so plainly.
+        results.push({
+          key: entry.key, label: entry.label, ok: true, skipped: true,
+          problems: [`NOT VERIFIED — ${err.message}. Not failing the build: this is not drift in our data.`],
+        });
       } else {
         results.push({ key: entry.key, ok: false, problems: [`check could not run: ${err.message}`] });
         failed = true;
@@ -608,8 +640,12 @@ try {
     console.log(JSON.stringify({ ok: !failed, results, ungated }, null, 2));
   } else {
     for (const r of results) {
-      const tag = r.skipped ? 'SKIP' : r.ok ? 'OK  ' : 'FAIL';
+      const tag = r.skipped ? 'WARN' : r.ok ? 'OK  ' : 'FAIL';
       console.log(`${tag}  ${r.key.padEnd(6)} ${r.label ?? ''}`);
+      // Also raise it as a GitHub Actions annotation, so a passing run still shows it.
+      if (r.skipped && process.env.GITHUB_ACTIONS) {
+        console.log(`::warning title=district vintage: ${r.key} not verified::${r.problems.join(' ')}`);
+      }
       if (r.districts) {
         console.log(`        ${r.districts} districts · worst area delta ${r.worstAreaDelta} · ` +
                     `${r.pointsDisagreed}/${r.pointsTested} interior points disagree`);
