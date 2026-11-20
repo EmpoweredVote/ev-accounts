@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   getNameVariants, normalizeBillStatus, normalizeVoteCast, pickSessionDatasets,
-  sessionName, parseIsoDate, jurisdictionFor, committeeChamber, STATE_NAMES,
+  sessionName, parseIsoDate, jurisdictionFor, committeeChamber, isCommitteeRecord, STATE_NAMES,
   type DatasetListEntry,
 } from './helpers.js';
 
@@ -81,6 +81,22 @@ describe('normalizers', () => {
     expect(committeeChamber('H')).toBe('house');
     expect(committeeChamber('s')).toBe('senate');
     expect(committeeChamber('J')).toBe('joint');
+  });
+  it("maps an Assembly ('A': California, Nevada, Wisconsin) to the lower chamber, not joint", () => {
+    expect(committeeChamber('A')).toBe('house');
+    expect(committeeChamber('a')).toBe('house');
+  });
+  it('leaves an unknown chamber code unknown instead of calling it joint', () => {
+    expect(committeeChamber('')).toBeNull();
+    expect(committeeChamber(undefined)).toBeNull();
+    expect(committeeChamber('X')).toBeNull();
+  });
+  it('tells a committee-as-sponsor people record from a legislator', () => {
+    // Shapes copied from the California 2025-2026 dataset (people/19386.json and a member's file).
+    expect(isCommitteeRecord({ people_id: 19386, name: 'Education', first_name: '', last_name: '', committee_sponsor: 1, committee_id: 477 })).toBe(true);
+    expect(isCommitteeRecord({ people_id: 1, first_name: 'A', last_name: 'B', committee_sponsor: 0, committee_id: 0 })).toBe(false);
+    expect(isCommitteeRecord({ people_id: 2, first_name: 'A', last_name: 'B', committee_id: '455' })).toBe(true);
+    expect(isCommitteeRecord({ people_id: 3, first_name: 'A', last_name: 'B' })).toBe(false);
   });
   it('accepts only real ISO dates', () => {
     expect(parseIsoDate('2026-02-30')).toBeNull();

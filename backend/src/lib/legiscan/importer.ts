@@ -4,6 +4,7 @@
  * Flow per state (about 1 query when nothing changed, 3 per changed session):
  *   getDatasetList -> per session: skip if dataset_hash unchanged -> getDataset (ZIP)
  *   -> getSessionPeople -> match legislators -> bills, sponsors, committees, roll calls.
+ *   Committees only: LegiScan has no committee rosters, so no memberships are written.
  * Everything after the downloads is local work on the ZIP contents (zero queries).
  * ev-cto decision 0031. Ported from backend/scripts/legiscan/import_state_legislative.py.
  *
@@ -16,6 +17,7 @@ import {
   STATE_NAMES,
   committeeChamber,
   getNameVariants,
+  isCommitteeRecord,
   jurisdictionFor,
   normalizeBillStatus,
   normalizeVoteCast,
@@ -42,13 +44,12 @@ export interface ImportResult {
   votes: number;
   cosponsors: number;
   committees: number;
-  memberships: number;
   sessionsSkipped: number;
   errors: string[];
 }
 
 const emptyResult = (): ImportResult => ({
-  bridgeRows: 0, bills: 0, votes: 0, cosponsors: 0, committees: 0, memberships: 0,
+  bridgeRows: 0, bills: 0, votes: 0, cosponsors: 0, committees: 0,
   sessionsSkipped: 0, errors: [],
 });
 
@@ -375,6 +376,8 @@ export async function buildLegislatorBridge(
 
   let matched = 0, alreadyBridged = 0, noMatch = 0, ambiguous = 0;
   for (const person of people) {
+    // A committee listed as a sponsor is not a legislator, even if an old id row points at it.
+    if (isCommitteeRecord(person)) continue;
     const first = String(person.first_name ?? '').trim();
     const last = String(person.last_name ?? '').trim();
     if (!first || !last) { noMatch++; continue; }
@@ -431,35 +434,12 @@ async function upsertCommittee(
        (id, session_id, external_id, jurisdiction, name, type, chamber, is_current, source)
      VALUES (gen_random_uuid(), $1, $2, $3, $4, 'committee', $5, true, 'legiscan')
      ON CONFLICT (external_id, jurisdiction) DO UPDATE SET
-       name = EXCLUDED.name, chamber = EXCLUDED.chamber, session_id = EXCLUDED.session_id
+       name = EXCLUDED.name, chamber = COALESCE(EXCLUDED.chamber, legislative_committees.chamber),
+       session_id = EXCLUDED.session_id
      RETURNING id`,
     [sessionId, ext, jurisdiction, c.name ?? 'Unknown Committee', committeeChamber(c.chamber)],
   );
   return rows[0]?.id ?? null;
-}
-
-async function upsertMemberships(
-  people: Json[], bridge: Map<number, string>, sessionId: string,
-  committees: Map<number, string>, dryRun: boolean,
-): Promise<number> {
-  let n = 0;
-  for (const p of people) {
-    const dbCommittee = p.committee_id ? committees.get(p.committee_id) : undefined;
-    const politicianId = bridge.get(p.people_id);
-    if (!dbCommittee || !politicianId) continue;
-    n++;
-    if (dryRun) continue;
-    // congress_number 0 = state level (unique index on committee, politician, congress_number).
-    await query(
-      `INSERT INTO essentials.legislative_committee_memberships
-         (id, committee_id, politician_id, congress_number, role, is_current, session_id)
-       VALUES (gen_random_uuid(), $1, $2, 0, $3, true, $4)
-       ON CONFLICT (committee_id, politician_id, congress_number) DO UPDATE SET
-         role = EXCLUDED.role, is_current = EXCLUDED.is_current, session_id = EXCLUDED.session_id`,
-      [dbCommittee, politicianId, p.committee_sponsor ? 'chair' : 'member', sessionId],
-    );
-  }
-  return n;
 }
 
 // ---------------------------------------------------------------------------
@@ -743,7 +723,6 @@ export async function importState(
     return result;
   }
 
-  const allCommittees = new Map<number, string>();
   for (const { label, dataset: ds } of picks) {
     // `dataset_size` is LegiScan's own figure for the ZIP, and it is logged BEFORE the
     // download on purpose: on 2026-10-11 the job died inside the fetch, so every number that
@@ -764,7 +743,7 @@ export async function importState(
     const sessionId = await getOrCreateSession(
       jurisdiction, sessionName(stateName, ds), ds.session_id, label === 'current',
     );
-    const { bridge, people } = await buildLegislatorBridge(apiKey, ds.session_id, stateCode, dryRun);
+    const { bridge } = await buildLegislatorBridge(apiKey, ds.session_id, stateCode, dryRun);
     result.bridgeRows += bridge.size;
     if (!bridge.size) {
       log(`${stateCode} ${label}: no legislators matched, skipping bills and votes`);
@@ -772,13 +751,14 @@ export async function importState(
     }
 
     const r = await importBills(reader, sessionId, jurisdiction, bridge, dryRun);
-    for (const [k, v] of r.committees) allCommittees.set(k, v);
     result.bills += r.bills;
     result.votes += r.votes;
     result.cosponsors += r.cosponsors;
     result.committees += r.committees.size;
     result.errors.push(...r.errors);
-    result.memberships += await upsertMemberships(people, bridge, sessionId, allCommittees, dryRun);
+    // No committee memberships: LegiScan publishes no rosters. Its people records with a committee_id
+    // are committees listed as bill sponsors (isCommitteeRecord), not members. Seats come from the
+    // legislatures' own rosters or Open States, never from here.
 
     if (!dryRun && r.bills > 0 && r.errors.length === 0) {
       await markImported(ds.session_id, jurisdiction, ds.dataset_hash, bridge.size, r.bills);
