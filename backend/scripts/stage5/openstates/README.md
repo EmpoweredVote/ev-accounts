@@ -86,7 +86,7 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
   links from the sessions either side.
 - Committee and voice votes are counted in the supplement's `checked` block and not read.
-- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada and Oregon state none, and the tool waits 1 second),
+- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada, Oregon and Maine state none, and the tool waits 1 second),
   and bodies are kept in `supplements/<ST>/raw/`.
 - Ohio: once a bill's record is read, the record IS the bill's floor votes. `convert.py` adds the votes the dump
   misses and drops a dump floor vote of that bill that is not on the record (counted in `.openstates.json` as
@@ -182,6 +182,14 @@ the bills under `rollcalls_from_legislature`.
   prints "Last, First" with the name the member used that session, so a member listed under a former name needs it
   as an alternate name. `convert.py` rewrites the dump's `/Session/<83rd2025>/Reports/` bill pages, which robots.txt
   disallows, to the NELIS Overview (`nv_links`).
+- 🔴 Maine: **no dump vote is placed** either (`record_is_the_floor`). The dump labels members "FAIRCLOTH of
+  Bangor" and links some to the wrong person (MILLETT of Waterford, 1,162 votes, to the Cape Elizabeth member), and its
+  bill and vote pages are under `/LawMakerWeb/`, which robots.txt disallows. The fetch reads each LD's roll-call list on
+  legislature.maine.gov (House: `/house/Documents/RollCalls`; Senate: `/<132nd>-roll-calls`) and each floor vote's PDF,
+  pairing each Y/N/X mark with its member by position (`meQuestionIsOnTheBill`: enactment, passage to be engrossed,
+  final passage, a veto vote; a vote to accept a committee report, to refer, table or indefinitely postpone is a motion
+  and is skipped). The House record before the 131st prints surnames only, and the Senate reads only the Legislature
+  whose member list the Senate's site shows (the 132nd until December 2026): earlier votes fail closed.
 - 🔴 Oregon: **no dump vote is placed** either (`record_is_the_floor`). The dump's floor votes agree with the record
   (0 of 1,320 member votes differ), but each points at the bill's Overview page, which holds every vote of the bill, so
   none can be cited as one vote. The Legislature publishes an Open Data Service (OData, no key, no robots.txt) whose
@@ -204,10 +212,10 @@ the bills under `rollcalls_from_legislature`.
    pattern, the site's crawl delay, and a function from the page's markup to members under Yea, Nay and absent),
    with a saved page as a fixture and the refusals tested. The reader must fail closed: refuse the page unless every
    group holds the count its heading prints and the counts are the printed tally. Utah, Ohio, South Dakota,
-   Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada and Oregon are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
+   Mississippi, Maryland, Kansas, Colorado, North Dakota, Minnesota, Nevada, Oregon and Maine are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
    script-shell page and reads the vote's data, Mississippi's reads a PDF with the bill's history and two member
    lists, Maryland's reads a PDF (some printed sideways) with the chamber's committee pages, Kansas's reads one page in
-   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list, North Dakota's reads the day's journal PDF with the Assembly's member list, Minnesota's reads the day's House journal page or Senate journal PDF with the LRL member list, Nevada's reads the vote's member list with the bill's vote list and the bill's page, Oregon's reads the vote's rows, its history action and two sessions' legislator lists from the Open Data Service (see the file's header).
+   two layouts and names each member from the member id in the link, Colorado's reads one page with the session's member list, North Dakota's reads the day's journal PDF with the Assembly's member list, Minnesota's reads the day's House journal page or Senate journal PDF with the LRL member list, Nevada's reads the vote's member list with the bill's vote list and the bill's page, Oregon's reads the vote's rows, its history action and two sessions' legislator lists from the Open Data Service, Maine's reads a House or Senate roll-call PDF by the position of each mark, with the Senate's member list (see the file's header).
 2. **Its rules in `SRC_RULES` in `convert.py`**, when its Open States rows are wrong about something the roll-call
    address states. Utah: the rows carry the bill's chamber, not the chamber that voted, and nothing marks a committee
    vote; both are read from the address. Ohio: the stored addresses and text links are dead (v1) and are rewritten
@@ -267,6 +275,7 @@ roll-call pages.
 | Minnesota | 90th to 94th Legislature (2017-2026, regular sessions; no scanned bill of a special session had a floor vote) | 19 floor roll calls of a 736-bill dry batch (735 scanned, plus 2023 SF 2909 from the store), 0 refused; 2017-2018 has none (the 80 scanned bills had no floor vote with a tally); 7 have no dump copy; of 12 with one, 1 filed a day later in the dump; 0 tally and 0 of 1,374 member-vote differences; see `backend/data/legislatures/mn.json` (2026-11-19) |
 | Nevada | 79th to 83rd session (2017-2025, regular sessions; the scan found no special-session bill) | 76 floor roll calls of a 78-bill dry batch, 0 refused; 39 (2019, 2021) have no dump copy; of 37 with one, 1 settled by the tally; 0 tally and 0 of 1,134 member-vote differences (13 dump labels read only after repairing "OâNeill"); see `backend/data/legislatures/nv.json` (2026-11-19) |
 | Oregon | 2017R1 to 2026R1 (regular sessions; the scan found no special-session bill); 2015 SB 941 read live only | 33 floor roll calls of a 184-bill dry batch, 0 refused, 15 votes on a motion skipped; 3 have no dump copy; of 30 with one, 6 settled by the question or the tally; 0 tally and 0 of 1,320 member-vote differences (5 members the dump names otherwise: a short given name or a former name); see `backend/data/legislatures/or.json` (2026-11-20) |
+| Maine | 131st (House only) and 132nd Legislature (2023-2026); the 128th-130th give no line (House surnames only, no Senate member list) | 7 floor roll calls of a 130-bill dry batch (5 House 131st, 1 House and 1 Senate 132nd), 119 votes on a motion skipped from the lists (80 to accept a committee report) and 3 more found to be motions in the PDF (to refer to committee), 6 Senate votes of the 131st not read (no member list for it); 6 with a dump copy, 2 settled by the tally, 1 day with two copies of one tally left unsettled; 0 tally and 0 of 786 member-vote differences; see `backend/data/legislatures/me.json` (2026-11-20) |
 | Mississippi | 2018 to 2026 (2017 holds no bills; 20171E only resolutions) | 67 floor roll calls of a 289-bill dry batch, all with a dump copy: 2 dump tallies short by one vote (the name before a total that runs over a line), 8 member votes missing from the dump, 0 of 5,975 member-vote differences; 5,919 of 5,983 record votes linked to a person (four members Open States does not hold); see `backend/data/legislatures/ms.json` (2026-11-17) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its

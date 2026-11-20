@@ -132,6 +132,10 @@ describe('state roll-call pages — whose label', () => {
     expect(stateLabelFits('Shipp, R.P.', 'Shipp', 'Rex P. Shipp')).toBe(true);
     expect(stateLabelFits('Dailey-Provost, J.', 'Dailey-Provost', 'Jennifer Dailey-Provost')).toBe(true);
     expect(stateLabelFits('Ward, R.', 'Ward', 'Raymond "Ray" Ward')).toBe(true);
+    // Maine 132nd House roll call 557 prints the family name without its apostrophe.
+    expect(stateLabelFits('OHalloran, D.L.', "O'Halloran", "Dani O'Halloran")).toBe(true);
+    expect(stateLabelFits("O'Halloran, D.L.", 'OHalloran', 'Dani OHalloran')).toBe(true);
+    expect(stateLabelFits('OHalloran, D.L.', "O'Hara", "Dani O'Hara")).toBe(false);
     expect(stateLabelFits('Wilcox, R.', 'Wilcox', 'Ryan D. Wilcox, Jr.')).toBe(true);
     // An initial that is also a Roman numeral is an initial ("V" is not "the fifth").
     expect(stateLabelFits('Mauga, V.', 'Mauga', 'Verona Mauga')).toBe(true);

@@ -220,6 +220,14 @@ for r in rows("personvote"):
 #    legislator list, so ms_full_names links them. "or_links": the rows of 2017-2021 carry the old host
 #    olis.leg.state.or.us, which no longer resolves; the same paths answer on olis.oregonlegislature.gov (bill pages and
 #    texts, read 2026-11-20), so the host is rewritten.
+#  - Maine (2026-11-20): the dump's roll calls name members by a label ("FAIRCLOTH of Bangor") it often links to the
+#    wrong person or to no one, and it files every vote under the bill's page, which is /LawMakerWeb/ (disallowed by
+#    robots.txt). "record_is_the_floor": only votes read from the record are placed. The fetch reads each scanned LD's
+#    House and Senate roll-call list on legislature.maine.gov and each floor vote's PDF (stateRollCallEvidence.ts). The
+#    Senate PDF names members from the Senate's member list in full, so ms_full_names links them; the House PDF prints
+#    "Bridgeo, W.R.", kept as a name-only record that link_check.py links by family name and initial. "me_links": a
+#    /LawMakerWeb/ bill page becomes /legis/bills/display_ps.asp?LD=<n>&snum=<Legislature>; a paper with no LD keeps no
+#    page (me_bill_page_disallowed). "https_texts": the getPDF.asp texts are served over https too (read 2026-11-20).
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},

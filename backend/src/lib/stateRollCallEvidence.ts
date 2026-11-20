@@ -4077,10 +4077,13 @@ const dropSuffix = (folded: string): string => folded.replace(/ (jr|sr|ii|iii|iv
 export function stateLabelFits(printed: string, lastName: string, fullName: string): boolean {
   const m = splitLabel(printed);
   if (!m) return false;
-  const sur = fold(m[0]);
-  const last = fold(lastName);
+  // An apostrophe is dropped from the family name on both sides: Maine's House record prints "OHalloran, D.L." for
+  // Dani O'Halloran (132nd, roll call 557), and the fit left her with no line.
+  const bare = (s: string): string => s.replace(/['’]/g, '');
+  const sur = bare(fold(m[0]));
+  const last = bare(fold(lastName));
   const quoted = [...fullName.matchAll(/["“]([^"”]+)["”]/g)].map((x) => fold(x[1])).filter(Boolean);
-  const full = dropSuffix(fold(fullName.replace(/["“][^"”]*["”]/g, ' ')));
+  const full = bare(dropSuffix(fold(fullName.replace(/["“][^"”]*["”]/g, ' '))));
   if (!sur || (sur !== last && !(full === sur || full.endsWith(` ${sur}`)))) return false;
   const given = [...(full.endsWith(` ${sur}`) ? full.slice(0, -sur.length - 1) : full).split(' '), ...quoted].filter(Boolean);
   // "C.K." is two initials; "J. Stuart" an initial and a name.
