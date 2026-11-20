@@ -6,7 +6,7 @@
  * Each fetch is checked for an actual image, with a control that must NOT be one.
  */
 import fs from 'node:fs';
-const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' };
+const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' };
 const OUT = 'data/seed-ms-2026/_assets/harrison';
 fs.mkdirSync(OUT, { recursive: true });
 // The county's pages carry <base href="https://www.harrisoncountyms.gov/">, so every relative

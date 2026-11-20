@@ -16,7 +16,7 @@ from PIL import Image, ImageDraw
 
 SRC, OUT, N = sys.argv[1], sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 12
 CACHE = ".tmp-banner-cache"; os.makedirs(CACHE, exist_ok=True)
-UA = {"User-Agent": "EmpoweredVote-banner-sourcing/1.0 (chris@empowered.vote)"}
+UA = {"User-Agent": "EmpoweredVote-banner-sourcing/1.0 (+https://empowered.vote)"}
 ASSET = (1700, 540); RATIO = ASSET[0] / ASSET[1]
 BAND_TOP, BAND_BOT = 128, 412
 

@@ -18,7 +18,7 @@ const BASE = 'https://billstatus.ls.state.ms.us/members/';
 function rawReq(url, agent, method) {
   const lib = url.startsWith('http://') ? http : https;
   return new Promise((resolve, reject) => {
-    const req = lib.request(url, { method, agent, headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' } }, (res) => {
+    const req = lib.request(url, { method, agent, headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' } }, (res) => {
       const chunks = [];
       res.on('data', (c) => chunks.push(c));
       res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) }));

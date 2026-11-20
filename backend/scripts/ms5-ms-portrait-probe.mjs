@@ -20,7 +20,7 @@ const INTERMEDIATE = 'http://secure.globalsign.com/cacert/gsrsaovsslca2018.crt';
 function rawGet(url, agent) {
   const lib = url.startsWith('http://') ? http : https;
   return new Promise((resolve, reject) => {
-    const req = lib.get(url, { agent, headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' } }, (res) => {
+    const req = lib.get(url, { agent, headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' } }, (res) => {
       const chunks = [];
       res.on('data', (c) => chunks.push(c));
       res.on('end', () => resolve({ status: res.statusCode, body: Buffer.concat(chunks), headers: res.headers }));

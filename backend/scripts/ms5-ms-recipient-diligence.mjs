@@ -17,7 +17,7 @@ import tls from 'node:tls';
 
 const get = (u, a) => new Promise((res) => {
   const l = u.startsWith('http://') ? http : https;
-  const q = l.get(u, { agent: a, headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' } }, (r) => {
+  const q = l.get(u, { agent: a, headers: { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' } }, (r) => {
     const c = [];
     r.on('data', (d) => c.push(d));
     r.on('end', () => res({ status: r.statusCode, body: Buffer.concat(c), url: u }));

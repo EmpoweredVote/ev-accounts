@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Look for a better official portrait of Mayor Andrew "FoFo" Gilich than the lectern shot. */
-const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (chris@empowered.vote)' };
+const UA = { 'User-Agent': 'EmpoweredVote-asset-probe/1.0 (+https://empowered.vote)' };
 // 1. The city's own media library, by the WordPress search endpoint.
 for (const q of ['Gilich', 'mayor portrait', 'FoFo']) {
   const u = `https://biloxi.ms.us/wp-json/wp/v2/media?search=${encodeURIComponent(q)}&per_page=30`;
