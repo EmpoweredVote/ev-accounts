@@ -23,6 +23,17 @@ export interface CandidateFile {
   sourceCategory: string;
   lat: number | null;
   lon: number | null;
+  /**
+   * The caption published on the file page (ImageDescription, else ObjectName), tags stripped.
+   * Recall aid and, for a file with no coordinates, the first leg of the caption rule --
+   * never on its own evidence of location.
+   */
+  caption: string | null;
+  /**
+   * A URL from the file page's Source field, where it is one. Used as the SECOND, INDEPENDENT
+   * source the caption rule requires, which is why its host is compared against Commons'.
+   */
+  creditUrl: string | null;
 }
 
 /**

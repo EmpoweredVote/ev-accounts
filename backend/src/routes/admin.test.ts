@@ -44,6 +44,29 @@ vi.mock('../lib/researchEvidenceService.js', () => ({
   rejectResearchReview: mockRejectResearchReview,
 }));
 
+// County banner review (plan 2). The route's only job beyond calling the service is turning a
+// CountyBannerDecisionError into a 400 the operator can READ, so the mock exports a real class.
+// The class lives inside vi.hoisted because vi.mock's factory is hoisted above every top-level
+// declaration, and a plain `class` up here is not initialised by the time the factory runs.
+const {
+  mockListStates, mockGetStateCounties, mockRecordDecision, mockIsWritable, FakeDecisionError,
+} = vi.hoisted(() => ({
+  mockListStates: vi.fn(),
+  mockGetStateCounties: vi.fn(),
+  mockRecordDecision: vi.fn(),
+  mockIsWritable: vi.fn(),
+  FakeDecisionError: class extends Error {
+    constructor(message: string) { super(message); this.name = 'CountyBannerDecisionError'; }
+  },
+}));
+vi.mock('../lib/countyBannerReviewService.js', () => ({
+  listStates: mockListStates,
+  getStateCounties: mockGetStateCounties,
+  recordDecision: mockRecordDecision,
+  isWritable: mockIsWritable,
+  CountyBannerDecisionError: FakeDecisionError,
+}));
+
 import adminRouter from './admin.js';
 
 const app = express();
@@ -308,5 +331,104 @@ describe('POST /api/admin/research-review/:id/reject', () => {
     mockRejectResearchReview.mockRejectedValueOnce(Object.assign(new Error('Not found'), { code: 'NOT_FOUND' }));
     const res = await request(app).post('/api/admin/research-review/nope/reject').send({});
     expect(res.status).toBe(404);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// County banner review (plan 2 of the county banner programme)
+
+describe('GET /api/admin/county-banners/*', () => {
+  beforeEach(() => {
+    mockListStates.mockReset();
+    mockGetStateCounties.mockReset();
+    mockRecordDecision.mockReset();
+    mockIsWritable.mockReset();
+  });
+
+  it('lists states with a count per status', async () => {
+    mockListStates.mockResolvedValue([
+      { stateUsps: 'DE', counties: 3, pending: 2, keep: 1, needsAnotherLook: 0 },
+    ]);
+    const res = await request(app).get('/api/admin/county-banners/states');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([
+      { stateUsps: 'DE', counties: 3, pending: 2, keep: 1, needsAnotherLook: 0 },
+    ]);
+  });
+
+  it('reports whether saving is switched on at all', async () => {
+    // The page shows this from load. Discovering it on the twentieth county is the failure.
+    mockIsWritable.mockResolvedValue(false);
+    const res = await request(app).get('/api/admin/county-banners/health');
+    expect(res.status).toBe(200);
+    expect(res.body.writable).toBe(false);
+  });
+
+  it('returns a state\'s counties', async () => {
+    mockGetStateCounties.mockResolvedValue([{ geoid: '10001', countyName: 'Kent County', candidates: [] }]);
+    const res = await request(app).get('/api/admin/county-banners/DE');
+    expect(res.status).toBe(200);
+    expect(mockGetStateCounties).toHaveBeenCalledWith('DE');
+    expect(res.body[0].geoid).toBe('10001');
+  });
+});
+
+describe('POST /api/admin/county-banners/:geoid/decision', () => {
+  const body = {
+    status: 'keep', chosenTitle: 'File:A.jpg', verticalAnchor: 0.35,
+    focus: '50% 30%', captionSighted: false,
+  };
+
+  beforeEach(() => { mockRecordDecision.mockReset(); });
+
+  it('returns the saved row with focus unchanged', async () => {
+    // Review Focus 2: a round trip that reformats the string is a silent re-centre.
+    mockRecordDecision.mockResolvedValue({
+      geoid: '10001', status: 'keep', focus: '50% 30%', decidedAt: '2026-11-20T10:00:00.000Z',
+    });
+    const res = await request(app).post('/api/admin/county-banners/10001/decision').send(body);
+    expect(res.status).toBe(200);
+    expect(res.body.focus).toBe('50% 30%');
+    expect(res.body.decidedAt).toBe('2026-11-20T10:00:00.000Z');
+  });
+
+  it('returns 400 carrying the service message when the decision is refused', async () => {
+    // 🔴 NOT a 500. The operator has to be able to read WHY the save was refused — that is the
+    // "NOT SAVED, with the reason" half of the spec's saving rule.
+    mockRecordDecision.mockRejectedValue(
+      new FakeDecisionError('A county that needs another look ships blank.'),
+    );
+    const res = await request(app).post('/api/admin/county-banners/10001/decision').send(body);
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain('ships blank');
+  });
+
+  it('returns 500 without leaking internals when something unexpected breaks', async () => {
+    mockRecordDecision.mockRejectedValue(new Error('connection terminated at 10.0.0.4'));
+    const res = await request(app).post('/api/admin/county-banners/10001/decision').send(body);
+    expect(res.status).toBe(500);
+    expect(JSON.stringify(res.body)).not.toContain('10.0.0.4');
+  });
+
+  it('rejects a body that is not a decision', async () => {
+    const res = await request(app)
+      .post('/api/admin/county-banners/10001/decision')
+      .send({ status: 'maybe' });
+    expect(res.status).toBe(400);
+    expect(mockRecordDecision).not.toHaveBeenCalled();
+  });
+});
+
+describe('the audit log must not undo a save (review I10)', () => {
+  it('still returns the saved row when the audit write fails', async () => {
+    // 🔴 The decision is already in the database by this point. A throw here would report
+    // "NOT SAVED" for a county that IS saved — the exact failure this surface exists to stop.
+    mockRecordDecision.mockReset();
+    mockRecordDecision.mockResolvedValue({ geoid: '10001', status: 'keep', focus: '50% 30%' });
+    const res = await request(app)
+      .post('/api/admin/county-banners/10001/decision')
+      .send({ status: 'keep', chosenTitle: 'File:A.jpg', verticalAnchor: 0.35, focus: '50% 30%', captionSighted: false });
+    expect(res.status).toBe(200);
+    expect(res.body.focus).toBe('50% 30%');
   });
 });

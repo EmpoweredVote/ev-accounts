@@ -143,3 +143,49 @@ export async function assignToCounties(files: CandidateFile[], stateFips: string
   const outside = placeable.filter((f) => !matched.has(f.title));
   return { located, unlocated, outside };
 }
+
+/**
+ * The names of places inside a county, and whether we hold a place list for that state at all.
+ *
+ * 🔴 THE SECOND HALF OF THAT RETURN IS THE POINT. Measured on prod 2026-11-20: 52 states have
+ * G4020 county polygons and only 32 have G4110 place polygons — Nebraska and Delaware, the two
+ * states this programme has swept, have NONE. An empty list therefore means one of two
+ * completely different things, and a caption rule that could not tell them apart would report
+ * "no caption evidence" across 20 states and look like a finding rather than a gap.
+ *
+ * `placeListAvailable` is false only when the STATE has no place polygons. A county that
+ * genuinely contains no incorporated place returns an empty list with the flag TRUE.
+ */
+const PLACES_SQL = `
+  WITH c AS (
+    SELECT geometry FROM essentials.geofence_boundaries
+     WHERE mtfcc = 'G4020' AND state = $1 AND geo_id = $2
+  ), p AS (
+    SELECT name, geometry FROM essentials.geofence_boundaries
+     WHERE mtfcc = 'G4110' AND state = $1
+  )
+  SELECT (SELECT count(*) FROM p) AS state_places,
+         coalesce((
+           SELECT array_agg(p.name ORDER BY p.name)
+             FROM p, c
+            WHERE ST_Contains(c.geometry, ST_Centroid(p.geometry))
+         ), ARRAY[]::text[]) AS places`;
+
+export async function listPlacesInCounty(
+  stateFips: string, geoid: string, query: QueryFn,
+): Promise<{ places: string[]; placeListAvailable: boolean }> {
+  const rows = await query(PLACES_SQL, [stateFips, geoid]);
+  const row = rows[0] ?? {};
+  // 🔴 TIGER STORES THE LSAD SUFFIX IN THE NAME: 'Champaign city', 'Bondville village',
+  // 'St. Joseph village'. A caption says "Urbana, Illinois", never "Urbana city, Illinois", so
+  // matching the stored names verbatim would have made this list DEAD WEIGHT in all 32 states
+  // that have one — present, queried, and never matching anything. Found by running this query
+  // against prod rather than against the fake db in the tests above.
+  const places = ((row.places as string[] | null) ?? [])
+    .map((n) => n.replace(/\s+(city|town|village|borough|municipality|township|CDP)$/i, '').trim())
+    .filter(Boolean);
+  return {
+    places: [...new Set(places)],
+    placeListAvailable: Number(row.state_places ?? 0) > 0,
+  };
+}

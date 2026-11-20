@@ -27,6 +27,7 @@ const navItems = [
   { label: 'Evidence Review', to: '/admin/review/evidence' },
   { label: 'Read & Rank Quotes', to: '/admin/readrank-quotes' },
   { label: 'Read & Rank Coverage', to: '/admin/readrank-coverage' },
+  { label: 'County Banners', to: '/admin/county-banners' },
 ];
 
 export function AdminLayout() {

@@ -28,6 +28,7 @@ import { ResearchReviewPage } from './pages/admin/ResearchReviewPage';
 import { EvidenceReviewPage } from './pages/admin/EvidenceReviewPage';
 import { ReadRankQuotesPage } from './pages/admin/ReadRankQuotesPage';
 import { ReadRankCoveragePage } from './pages/admin/ReadRankCoveragePage';
+import { CountyBannerReviewPage } from './pages/admin/CountyBannerReviewPage';
 import { StanceBreakdownPage } from './pages/admin/StanceBreakdownPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -154,6 +155,7 @@ function App() {
           <Route path="review/topics/:id" element={<TopicRevisionReviewPage />} />
           <Route path="readrank-quotes" element={<ReadRankQuotesPage />} />
           <Route path="readrank-coverage" element={<ReadRankCoveragePage />} />
+          <Route path="county-banners" element={<CountyBannerReviewPage />} />
         </Route>
       </Route>
 

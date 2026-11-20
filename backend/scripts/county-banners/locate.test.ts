@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { attachCoordinates, assignToCounties, listCounties, MissingPolygonError, type QueryFn } from './locate.js';
+import { listPlacesInCounty, attachCoordinates, assignToCounties, listCounties, MissingPolygonError, type QueryFn } from './locate.js';
 import type { ApiFn } from './sweep.js';
 import type { CandidateFile } from './types.js';
 
@@ -110,5 +110,60 @@ describe('listCounties — a polygon can be present and useless', () => {
     const q: QueryFn = async (s) => { sql = s; return [healthy('31047', 'D')]; };
     await listCounties('31', q);
     expect(sql).toMatch(/ST_IsValid/i);
+  });
+});
+
+describe('listPlacesInCounty', () => {
+  it('reports placeListAvailable false for a state with NO place polygons at all', async () => {
+    // 🔴 Measured on prod 2026-11-20: 52 states have G4020 county polygons, only 32 have G4110
+    // place polygons. Nebraska and Delaware — the two states swept so far — have NONE. Without
+    // this flag the caption rule would match nothing in 20 states and report it as a finding.
+    const query = async () => [{ state_places: '0', places: [] }];
+    const r = await listPlacesInCounty('10', '10001', query);
+    expect(r.placeListAvailable).toBe(false);
+    expect(r.places).toEqual([]);
+  });
+
+  it('returns the places whose centroid falls inside the county', async () => {
+    const query = async () => [{ state_places: '626', places: ['Cozad', 'Gothenburg', 'Lexington'] }];
+    const r = await listPlacesInCounty('31', '31047', query);
+    expect(r.placeListAvailable).toBe(true);
+    expect(r.places).toEqual(['Cozad', 'Gothenburg', 'Lexington']);
+  });
+
+  it('distinguishes "no places in this county" from "no place data for this state"', async () => {
+    const query = async () => [{ state_places: '626', places: [] }];
+    const r = await listPlacesInCounty('31', '31999', query);
+    expect(r.placeListAvailable).toBe(true);   // we DO hold data; this county just has none
+    expect(r.places).toEqual([]);
+  });
+
+  it('keys on the (mtfcc, geo_id) pair, never on geo_id alone', async () => {
+    // geo_id is not unique: 1,159 collisions across 13 states, because a place and a county
+    // subdivision can share a number.
+    let seen = '';
+    const query = async (sql: string) => { seen = sql; return [{ state_places: '0', places: [] }]; };
+    await listPlacesInCounty('10', '10001', query);
+    expect(seen).toContain("mtfcc = 'G4020'");
+    expect(seen).toContain("mtfcc = 'G4110'");
+  });
+});
+
+describe('listPlacesInCounty — LSAD suffixes', () => {
+  it('strips the TIGER suffix, because a caption never carries it', async () => {
+    // Measured on prod: Champaign County IL returns 'Champaign city', 'Bondville village',
+    // 'St. Joseph village'. A caption says "Urbana, Illinois".
+    const query = async () => [{
+      state_places: '1294',
+      places: ['Bondville village', 'Champaign city', 'St. Joseph village', 'Urbana city'],
+    }];
+    const r = await listPlacesInCounty('17', '17019', query);
+    expect(r.places).toEqual(['Bondville', 'Champaign', 'St. Joseph', 'Urbana']);
+  });
+
+  it('does not collapse a name whose last word is part of the place', async () => {
+    const query = async () => [{ state_places: '10', places: ['Lake City city', 'Oklahoma City city'] }];
+    const r = await listPlacesInCounty('40', '40109', query);
+    expect(r.places).toEqual(['Lake City', 'Oklahoma City']);
   });
 });

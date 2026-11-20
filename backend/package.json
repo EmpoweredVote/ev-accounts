@@ -104,6 +104,7 @@
     "check:incumbent-claims": "node scripts/check-incumbent-claims.mjs",
     "check:incumbency": "node scripts/reconcile-incumbency.mjs --check",
     "banners:candidates": "node --import ./scripts/lib/main-checkout-fallback.mjs --import tsx scripts/county-banners/cli.ts",
+    "banners:import": "node --import ./scripts/lib/main-checkout-fallback.mjs --import tsx scripts/county-banners/import-state.ts",
     "check:user-agents": "node scripts/check-user-agent-privacy.mjs"
   },
   "overrides": {

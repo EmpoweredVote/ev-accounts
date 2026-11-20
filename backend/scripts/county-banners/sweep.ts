@@ -75,11 +75,36 @@ async function filesIn(cat: string, api: ApiFn): Promise<CandidateFile[]> {
         sourceCategory: cat,
         lat: null,
         lon: null,
+        // Already in the response -- iiprop asks for all of extmetadata -- and simply never
+        // read until the caption lane needed them. ImageDescription is HTML; ObjectName is the
+        // plainer title and is preferred when the description strips to nothing.
+        caption: plainText(md.ImageDescription?.value) ?? plainText(md.ObjectName?.value),
+        creditUrl: firstUrl(md.Credit?.value),
       });
     }
     if (!d.continue) return out;
     cont = d.continue;
   }
+}
+
+/** Commons metadata fields are HTML. A caption a person cannot read is not a caption. */
+function plainText(v: string | undefined): string | null {
+  if (!v) return null;
+  const s = v
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/<[^>]*$/, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return s ? s.slice(0, 400) : null;
+}
+
+/** The first http(s) URL inside a Source field, which is usually HTML carrying an anchor. */
+function firstUrl(v: string | undefined): string | null {
+  if (!v) return null;
+  const m = /https?:\/\/[^\s"'<>]+/.exec(v);
+  return m ? m[0] : null;
 }
 
 /** Every distinct file in `roots` and their subcategories, first category wins. */
