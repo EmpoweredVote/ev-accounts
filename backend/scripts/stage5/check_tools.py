@@ -146,30 +146,33 @@ def state_legiscan_places_a_conference_report_and_names_bills_as_the_datasets_do
     out, and says so. With the datasets on disk, a sponsorship's LegiScan page takes LegiScan's own bill number and
     the session's first year (South Carolina: S 109 of 2024 is /S0109/2023); without them, the flags decide."""
     B = batch(f'{t}/b', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 'tp', 'evidence_type': 'record',
-              'urls': ['https://off.gov/h1', 'https://off.gov/h2', 'https://off.gov/s109', 'https://off.gov/s7', 'https://off.gov/h1c']}], ncols=5)
+              'urls': ['https://off.gov/h1', 'https://off.gov/h2', 'https://off.gov/s109', 'https://off.gov/s7', 'https://off.gov/h1c', 'https://off.gov/h3']}], ncols=6)
     os.makedirs(f'{t}/f')
     v = lambda u, ins, d, tal, mo: {'kind': 'record', 'url': u, 'act': 'yea', 'instrument_id': ins, 'chamber': 'S', 'date': d, 'note': f'tally {tal}', 'motion': mo}
     json.dump({'findings': [v('https://off.gov/h1', 'XX-H-1-2024', '2024-03-06', '28-18', 'Adopt Committee of Conference report'),
                             v('https://off.gov/h2', 'XX-H-2-2024', '2024-03-07', '9-3', 'Judiciary Committee: favorable'),
                             v('https://off.gov/h1c', 'XX-H-1-2024', '2024-03-08', '20-5', 'Senate Conference Committee - Final Passage'),  # Utah's wording
+                            # California: a bill a committee wrote names its author after the bill (2015 SB 843, Senate floor)
+                            v('https://off.gov/h3', 'XX-H-3-2024', '2024-03-09', '30-6', 'Senate 3rd Reading SB843 Committee On B. & F.R. (Leno)'),
                             {'kind': 'record', 'url': 'https://off.gov/s109', 'act': 'cosponsor', 'instrument_id': 'XX-S-109-2024'},
                             {'kind': 'record', 'url': 'https://off.gov/s7', 'act': 'sponsor', 'instrument_id': 'XX-S-7-2024'}]}, open(f'{t}/f/a.json', 'w'))
     ds = f'{t}/ds'
     def session(folder, y0, y1, special, bills):
         d = f'{ds}/XX-{folder}/XX/s{folder}/bill'; os.makedirs(d)
         for n in bills: json.dump({'bill': {'bill_number': n, 'session': {'year_start': y0, 'year_end': y1, 'special': special}}}, open(f'{d}/{n}.json', 'w'))
-    session(1, 2021, 2022, 0, ['S0109', 'H0001']); session(2, 2023, 2024, 0, ['S0109', 'H0001', 'S0007']); session(3, 2024, 2024, 1, ['S0109'])
+    session(1, 2021, 2022, 0, ['S0109', 'H0001']); session(2, 2023, 2024, 0, ['S0109', 'H0001', 'S0007', 'H0003']); session(3, 2024, 2024, 1, ['S0109'])
     session(4, 2024, 2024, 0, ['S0007'])  # S 7 sits in two regular sessions that cover 2024: the datasets do not decide, the flags do
     env = {'LEGISCAN_DATASETS': ds}
     run('state_legiscan.py', 'plan', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', env=env)
     pages = json.load(open(f'{B}/legiscan/vote-pages.json'))
-    assert sorted((p['bill'], p['year']) for p in pages) == [('H0001', 2024), ('H0001', 2024), ('H2', 2024)], pages  # H 1 as the datasets print it
+    assert sorted((p['bill'], p['year']) for p in pages) == [('H0001', 2024), ('H0001', 2024), ('H0003', 2024), ('H2', 2024)], pages  # H 1 as the datasets print it
     json.dump([{'url': 'XX-H-1-2024|S|2024-03-06|28-18', 'hits': [{'roll_call_id': 5, 'date': '2024-03-06', 'desc': 'Senate: To Adopt The Conference Report', 'bill_url': 'https://legiscan.com/XX/bill/H0001/2023'}]},
-               {'url': 'XX-H-1-2024|S|2024-03-08|20-5', 'hits': [{'roll_call_id': 6, 'date': '2024-03-08', 'desc': 'Senate Conference Committee - Final Passage', 'bill_url': 'https://legiscan.com/XX/bill/H0001/2023'}]}],
+               {'url': 'XX-H-1-2024|S|2024-03-08|20-5', 'hits': [{'roll_call_id': 6, 'date': '2024-03-08', 'desc': 'Senate Conference Committee - Final Passage', 'bill_url': 'https://legiscan.com/XX/bill/H0001/2023'}]},
+               {'url': 'XX-H-3-2024|S|2024-03-09|30-6', 'hits': [{'roll_call_id': 7, 'date': '2024-03-09', 'desc': 'Senate Senate 3rd Reading SB843 Committee On B. & F.R. (Leno)', 'bill_url': 'https://legiscan.com/XX/bill/H0003/2023'}]}],
               open(f'{B}/legiscan/rollcall-hits.json', 'w'))
     run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', '--topic', 'tp', env=env)
     got = sorted(r['source_url'] for r in read_csv(f'{B}/legiscan/pairs.csv'))
-    assert got == ['https://legiscan.com/XX/bill/S0109/2023', 'https://legiscan.com/XX/bill/S7/2024', 'https://legiscan.com/XX/rollcall/H0001/id/5', 'https://legiscan.com/XX/rollcall/H0001/id/6'], got
+    assert got == ['https://legiscan.com/XX/bill/S0109/2023', 'https://legiscan.com/XX/bill/S7/2024', 'https://legiscan.com/XX/rollcall/H0001/id/5', 'https://legiscan.com/XX/rollcall/H0001/id/6', 'https://legiscan.com/XX/rollcall/H0003/id/7'], got
     un = json.load(open(f'{B}/legiscan/unmapped.json'))
     assert [(u[2], 'a committee vote' in u[3]) for u in un] == [('XX-H-2-2024', True)], un
     run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', '--topic', 'tp', '--bill-pad', '4', '--session-start', 'odd')  # no datasets
@@ -1472,14 +1475,18 @@ def link_check_links_a_converter_made_record_of_a_member_already_linked(t):
     person(9000001, 'Em Levy', 'ocd-person/aaa'); person(9000002, 'Bobby Levy', 'ocd-person/bbb')
     person(9000003, 'Emerson Levy', name_only=True); person(9000004, 'Emerson Levy', name_only=True)
     person(9000005, 'Rep Levy', name_only=True); person(9000006, 'Pat Nobody', name_only=True)
+    # California 2026-11-20: the record prints "Alexandra Macedo", the dump "Ali Macedo", the roster "Alexandra M. Macedo":
+    # a middle initial the record leaves out still names her; another given name does not
+    person(9000007, 'Ali Macedo', 'ocd-person/ccc'); person(9000008, 'Alexandra Macedo', name_only=True); person(9000009, 'Alexander Macedo', name_only=True)
     open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tscope\toffice\npe\tEmerson Levy\tsitting\tRepresentative\n'
-                                       'pb\tBobby Levy\tsitting\tRepresentative\n')
-    open(f'{t}/ids.tsv', 'w').write('politician_id\tid_type\tid_value\tmatch_method\npe\topenstates\tocd-person/aaa\tseat\npb\topenstates\tocd-person/bbb\tseat\n')
+                                       'pb\tBobby Levy\tsitting\tRepresentative\npm\tAlexandra M. Macedo\tsitting\tRepresentative\n')
+    open(f'{t}/ids.tsv', 'w').write('politician_id\tid_type\tid_value\tmatch_method\npe\topenstates\tocd-person/aaa\tseat\npb\topenstates\tocd-person/bbb\tseat\n'
+                                    'pm\topenstates\tocd-person/ccc\tseat\n')
     open(f'{t}/idmap.tsv', 'w').write('')
     p = run('link_check.py', '--state', 'xx', '--roster', f'{t}/roster.tsv', '--ds', f'{t}/ds', '--idmap', f'{t}/idmap.tsv', '--member-ids', f'{t}/ids.tsv', '--add', ok=False)
     got = sorted(tuple(l.split('\t')[:2]) for l in open(f'{t}/idmap.tsv').read().splitlines() if l.strip())
-    assert got == [('9000001', 'pe'), ('9000002', 'pb'), ('9000003', 'pe'), ('9000004', 'pe')], (got, p.stdout)
-    assert '2 name-only record(s)' in p.stdout, p.stdout
+    assert got == [('9000001', 'pe'), ('9000002', 'pb'), ('9000003', 'pe'), ('9000004', 'pe'), ('9000007', 'pm'), ('9000008', 'pm')], (got, p.stdout)
+    assert '3 name-only record(s)' in p.stdout, p.stdout
 
 
 @check
@@ -1558,6 +1565,14 @@ def legiscan_merge_cross_checks_a_vote_cited_on_a_legislature_page(t):
     assert code == 0 and [c['agree'] for c in cross] == [True], ('business', code, cross)
     code, cross, _ = go('was excused for legislative business')
     assert code == 1 and [c['agree'] for c in cross] == [False], ('business/yea', code, cross)
+    # California 2026-11-20: PUBINFO prints AYE, NOE and ABS; the reader words ABS "had no vote recorded" (the record does not
+    # say why), which is no Yea and no Nay
+    code, cross, _ = go('had no vote recorded', act='abstain')
+    assert code == 0 and [c['agree'] for c in cross] == [True], ('no vote recorded', code, cross)
+    code, cross, _ = go('had no vote recorded', act='nay')
+    assert code == 1 and [c['agree'] for c in cross] == [False], ('no vote recorded/nay', code, cross)
+    code, cross, _ = go('voted No', act='nay')
+    assert code == 0 and [c['agree'] for c in cross] == [True], ('No', code, cross)
 
 
 def openstates_extract(t, st='ut'):
@@ -2603,6 +2618,95 @@ def bill_table_check_reads_a_rung_per_vote(t):
     for bad, word in (([V(date='Feb 2018')], 'needs entries'), ([V(chamber='Assembly')], 'needs entries'), ([V(rung=3)], 'needs entries'), ([], 'needs entries'),
                       ([V(tally='about 76')], 'needs entries'), ([V(), V(rung=4)], 'give each its tally'), ([V(tally='76-44'), V(tally='76–44', rung=4)], 'give each its tally'), ([V(tally='76-44'), V(rung=4)], 'give each its tally')):
         table(bad); p = chk(ok=False); assert p.returncode == 2 and word in p.stdout, (bad, p.stdout)
+
+
+def ca_pubinfo_module():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('ca_pubinfo_under_check', os.path.join(TOOLS, 'openstates', 'ca_pubinfo.py'))
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
+
+
+class FakeHost:
+    """downloads.leginfo.legislature.ca.gov in miniature: HEAD and byte ranges of the files it is given. `whole` answers a
+    range with the whole file (HTTP 200), as a host that ignores ranges would."""
+    def __init__(self, files, modified, whole=False, size=None):
+        self.files, self.modified, self.whole, self.size, self.asked = files, modified, whole, size or {}, []
+    def __call__(self, req):
+        import types
+        name = req.full_url.rsplit('/', 1)[1]; body = self.files[name]; rng = req.get_header('Range'); self.asked.append((req.get_method(), name, rng))
+        h = {'Content-Length': str(self.size.get(name, len(body))), 'ETag': '"e"', 'Last-Modified': self.modified[name]}
+        if req.get_method() == 'HEAD': return types.SimpleNamespace(status=200, headers=h, read=lambda: b'')
+        if rng and not self.whole:
+            a, b = (int(x) for x in rng.split('=')[1].split('-'))
+            return types.SimpleNamespace(status=206, headers=h, read=lambda: body[a:b + 1])
+        return types.SimpleNamespace(status=200, headers=h, read=lambda: body)
+
+
+def ca_zip(m, rows):
+    import io, zipfile
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as z:
+        for t in m.TABLES: z.writestr(f'{t}.dat', m.write_dat([{c: None for c in m.COLS[t]} | r for r in rows.get(t, [])], t))
+    return buf.getvalue()
+
+
+@check
+def ca_pubinfo_reads_a_session_once_by_ranges_and_keeps_it_current_from_the_daily_files(t):
+    """California 2026-11-20: PUBINFO's session zips are 0.8-1.3 GB, so a session is read once, by byte ranges (about 30 MB),
+    and never again; a host that answers a range with the whole file is refused. The daily change files are applied newer
+    than the last one, merged on each table's key; a gap past the oldest daily file stops and asks for a fresh read. A
+    backquoted field may hold a tab or a newline; a row of the wrong width stops the parse. The index writes one file per
+    bill and a member list without a party."""
+    m = ca_pubinfo_module()
+    det = m.COLS['BILL_DETAIL_VOTE_TBL']
+    row = {c: f'v{i}' for i, c in enumerate(det)}
+    text = m.write_dat([row | {'legislator_name': 'Ávila Farías\tx\ny', 'speaker': None}], 'BILL_DETAIL_VOTE_TBL')
+    assert m.parse_dat(text, 'BILL_DETAIL_VOTE_TBL') == [row | {'legislator_name': 'Ávila Farías\tx\ny', 'speaker': None}], text
+    try: m.parse_dat(text.replace('\t', '\t\t', 1), 'BILL_DETAIL_VOTE_TBL'); raise AssertionError('a row one field too wide was read')
+    except ValueError as e: assert 'fields' in str(e), e
+    S = lambda **k: {'bill_id': '202520260AB1', 'location_code': 'AFLOOR', 'vote_date_time': '2025-06-03 10:00:00', 'vote_date_seq': '1', 'motion_id': '9',
+                     'ayes': '41', 'noes': '0', 'abstain': '39', 'vote_result': '(PASS)', **k}
+    D = lambda name, code='AYE', **k: {'bill_id': '202520260AB1', 'location_code': 'AFLOOR', 'vote_date_time': '2025-06-03 10:00:00', 'vote_date_seq': '1',
+                                       'motion_id': '9', 'legislator_name': name, 'vote_code': code, **k}
+    L = {'session_year': '20252026', 'house_type': 'A', 'district': '01', 'legislator_name': 'ABLE', 'first_name': 'Ann', 'last_name': 'Able',
+         'author_name': 'Able', 'party': 'X'}
+    session = ca_zip(m, {'BILL_SUMMARY_VOTE_TBL': [S()], 'BILL_DETAIL_VOTE_TBL': [D('Able')], 'BILL_MOTION_TBL': [{'motion_id': '9', 'motion_text': 'AB 1 ABLE Assembly Third Reading'}],
+                         'LEGISLATOR_TBL': [L]})
+    big = 1_200_000_000
+    mod = {'pubinfo_2025.zip': 'Mon, 10 Nov 2025 06:00:00 GMT'}
+    C = f'{t}/cache'
+    try: m.sync(C, ['2025'], opener=FakeHost({'pubinfo_2025.zip': session}, mod, whole=True)); raise AssertionError('a whole-file answer was read')
+    except SystemExit as e: assert 'refusing to read the whole zip' in str(e), e
+    assert not os.path.exists(f'{C}/2025/MANIFEST.json'), 'a refused read left a manifest'
+    host = FakeHost({'pubinfo_2025.zip': session}, mod)
+    m.sync(C, ['2025'], opener=host)
+    assert all(meth == 'HEAD' or rng for meth, _, rng in host.asked), host.asked
+    man = json.load(open(f'{C}/2025/MANIFEST.json'))
+    assert man['bytes_read'] > 0 and man['daily_applied'] == [] and set(man['tables']) == set(m.TABLES), man
+    n = len(host.asked); m.sync(C, ['2025'], opener=host); assert len(host.asked) == n, 'a session on disk is read again'
+    # two daily files, one older than the session zip (skipped), one newer: it changes Able's vote and adds Baker; a row of
+    # another session is left out
+    daily = {f'pubinfo_{d}.zip': ca_zip(m, {}) for d in m.DAYS}
+    dmod = {f'pubinfo_{d}.zip': f'{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}, {3 + i:02d} Nov 2025 06:00:00 GMT' for i, d in enumerate(m.DAYS)}
+    daily['pubinfo_Tue.zip'] = ca_zip(m, {'BILL_DETAIL_VOTE_TBL': [D('Able', 'NOE'), D('Baker', vote_date_seq='1'), D('Old', bill_id='202320240AB1')]})
+    dmod['pubinfo_Tue.zip'] = 'Tue, 11 Nov 2025 06:00:00 GMT'
+    assert m.daily(C, opener=FakeHost(daily, dmod)) == 0
+    rows = m.parse_dat(open(f'{C}/2025/BILL_DETAIL_VOTE_TBL.dat').read(), 'BILL_DETAIL_VOTE_TBL')
+    assert sorted((r['legislator_name'], r['vote_code']) for r in rows) == [('Able', 'NOE'), ('Baker', 'AYE')], rows
+    man = json.load(open(f'{C}/2025/MANIFEST.json'))
+    assert [a['file'] for a in man['daily_applied']] == ['pubinfo_Tue.zip'], man['daily_applied']
+    assert m.daily(C, opener=FakeHost(daily, dmod)) == 0 and len(json.load(open(f'{C}/2025/MANIFEST.json'))['daily_applied']) == 1, 'a daily file applied twice'
+    # every daily file newer than the last applied, and the oldest more than a week after it: a change may be lost
+    late = {k: v.replace('Nov 2025', 'Dec 2025') for k, v in dmod.items()}
+    assert m.daily(C, opener=FakeHost(daily, late)) == 1 and len(json.load(open(f'{C}/2025/MANIFEST.json'))['daily_applied']) == 1
+    near = {k: v.replace(' Nov 2025', ' Nov 2025').replace('Tue, 11', 'Tue, 12') for k, v in dmod.items()}
+    try: m.daily(C, opener=FakeHost(daily, near, size={'pubinfo_Tue.zip': 60_000_000})); raise AssertionError('a 60 MB daily file was read')
+    except SystemExit as e: assert 'Not read' in str(e), e
+    m.index(C, ['2025'])
+    b = json.load(open(f'{C}/2025/bills/202520260AB1.json'))
+    assert b['bill_id'] == '202520260AB1' and b['motions'] == {'9': 'AB 1 ABLE Assembly Third Reading'} and len(b['detail']) == 2, b
+    legs = json.load(open(f'{C}/2025/legislators.json'))
+    assert legs and all('party' not in x for x in legs) and legs[0]['author_name'] == 'Able', legs
 
 
 fails = 0

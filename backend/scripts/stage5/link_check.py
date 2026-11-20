@@ -129,8 +129,15 @@ for ls in sorted(people):
 # Levy", the dump "Em Levy") holds that member's votes under a new id each session. It has no Open States id, and the
 # member is already linked by another record, so the name rule above skips it and nothing is reported. Link a name-only
 # record whose whole name is one roster member's, and say so.
-made = [(ls, whole[norm(people[ls].get('name'))]) for ls in sorted(people)
-        if ls not in idmap and (people[ls].get('_openstates') or {}).get('name_only') and whole.get(norm(people[ls].get('name'))) in linked]
+# California 2026-11-20: the record prints "Alexandra Macedo" for the roster's "Alexandra M. Macedo" (the dump: "Ali Macedo"). A
+# whole name equal to a roster name with its initials and quoted nickname left out counts too, when it is one member's.
+bare = lambda n: norm(' '.join(w for w in re.sub(r'["“][^"”]*["”]', ' ', n or '').split() if not re.fullmatch(r'[A-Za-z]\.?', w)))
+plain = {}
+for pid, r in legs.items(): plain.setdefault(bare(r['full_name']), []).append(pid)
+plain = {k: v[0] for k, v in plain.items() if len(v) == 1}
+member_of = lambda ls: whole.get(norm(people[ls].get('name'))) or plain.get(bare(people[ls].get('name')))
+made = [(ls, member_of(ls)) for ls in sorted(people)
+        if ls not in idmap and (people[ls].get('_openstates') or {}).get('name_only') and member_of(ls) in linked]
 if made:
     if ADD:
         with open(IDMAP, 'a') as fh:

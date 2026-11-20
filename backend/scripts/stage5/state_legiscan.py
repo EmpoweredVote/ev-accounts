@@ -50,7 +50,10 @@ pid = {p['full_name']: p['politician_id'] for p in pol}
 # wa-01: "House Final Passage as recommended by the Conference Committee (#22)" held five people the same way.
 # Utah, 2026-11-15: "House Conference Committee - Final Passage" is the chamber's vote on the report (63-8-4), and 90
 # votes on a bill that became law were left out as committee votes.
-FLOOR = re.compile(r'Conference Committee|Committee of Conference|Conference Report|Committee Substitute|Committee Amendment', re.I)
+# California, 2026-11-20: a bill a committee wrote names its author after the bill number ("3rd Reading SB843 Committee
+# On B. & F.R. (Leno)", "Assembly 3rd Reading AB1602 Committee On BUDGET (Ting)"), and five floor votes of 2015 were held.
+FLOOR = re.compile(r'Conference Committee|Committee of Conference|Conference Report|Committee Substitute|Committee Amendment|'
+                   r'\b[A-Z]{1,4} ?\d+ Committee On\b', re.I)
 committee = lambda mo: bool(re.search(r'\bCommittee\b', mo or '') and not FLOOR.search(mo or ''))
 
 
