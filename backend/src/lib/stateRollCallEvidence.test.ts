@@ -10,6 +10,7 @@ import {
   explainColoradoVote, coQuestionIsOnTheBill, coMemberName, coMembers, coBillTag, parseColoradoVoteUrl,
   explainNorthDakotaVote, ndQuestionIsOnTheBill, ndMembers, ndMemberNames, parseNorthDakotaVoteUrl,
   explainNevadaVote, nvMemberName, nvVoteList, parseNevadaVoteUrl,
+  explainOregonVote, orQuestionIsOnTheBill, orTally, parseOregonVoteUrl, oregonVoteUrl, OR_DATA,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
@@ -1905,5 +1906,183 @@ describe('state roll-call pages — Nevada names the roster holds otherwise', ()
     expect(lines[0]).toMatch(/: PK O’Neill (voted Yea|voted Nay|was excused|did not vote|was absent)\.$/);
     expect(verifyStateRollCallLine(lines[0], NV_83, text, "O'Neill", "P. K. O'Neill")).toMatchObject({ verdict: 'verified' });
     expect(verifyStateRollCallLine(lines[0], NV_83, text, "O'Neill", 'P. J. O\'Neill').verdict).not.toBe('verified');
+  });
+});
+
+// Saved 2026-11-20 from the Oregon Legislature's Open Data Service. The legislator lists are cut to the session, code,
+// first and last name and chamber, so no fixture holds a party.
+const orJson = (name: string): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${name}.json`, import.meta.url)), 'utf8');
+const OR = 'https://olis.oregonlegislature.gov/liz/';
+const OR_25H = `${OR}2025R1/Measures/MeasureVotes?id=624489#HB3041`;
+const OR_17H = `${OR}2017R1/Measures/MeasureVotes?id=411795#SB66`;
+const OR_25S = `${OR}2025R1/Measures/MeasureVotes?id=640802#SB473`;
+const orFix: Record<string, string> = { [OR_25H]: 'or-2025-h-624489', [OR_17H]: 'or-2017-h-411795', [OR_25S]: 'or-2025-s-640802' };
+const orBodies = (url: string): string[] => ['votes', 'action', 'legislators', 'legislators-before'].map((d) => orJson(`${orFix[url]}-${d}`));
+/** Change one body's rows, and fail the test when the change did not apply. */
+const orEdit = (body: string, f: (rows: Record<string, unknown>[]) => void): string => {
+  const j = JSON.parse(body) as { value: Record<string, unknown>[] };
+  f(j.value);
+  const out = JSON.stringify(j);
+  expect(out).not.toBe(JSON.stringify(JSON.parse(body)));
+  return out;
+};
+const orWhy = (url: string, docs: string[]): string => {
+  const v = explainOregonVote(docs, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const orRender = (url: string, docs = orBodies(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error(`the vote did not read: ${orWhy(url, docs)}`);
+  return t;
+};
+const OR_ISADORE = 'Oregon House vote 624489 (2025R1), HB 3041 - Third reading. Carried by McLain. Passed. (2025-02-25): Shannon Isadore voted Aye.';
+
+describe('state roll-call pages — Oregon address', () => {
+  it('knows a vote\'s member list on OLIS named with its bill, and reads it from four Open Data Service queries, a second apart', () => {
+    expect(parseOregonVoteUrl(OR_25H)).toEqual({ state: 'OR', stateName: 'Oregon', session: '2025R1', historyId: 624489, prefix: 'HB', number: 3041, bill: 'HB 3041' });
+    expect(oregonVoteUrl('2025R1', 624489, 'hb', 3041)).toBe(OR_25H);
+    expect(stateRollCallDocs(OR_25H)).toEqual([
+      `${OR_DATA}MeasureVotes?$filter=MeasureHistoryId%20eq%20624489&$format=json`,
+      `${OR_DATA}MeasureHistoryActions?$filter=MeasureHistoryId%20eq%20624489&$format=json`,
+      `${OR_DATA}Legislators?$filter=SessionKey%20eq%20'2025R1'&$format=json`,
+      `${OR_DATA}Legislators?$filter=SessionKey%20eq%20'2024S1'&$format=json`]);
+    expect(stateRollCallMinGapMs(OR_25H)).toBe(1_000);
+    expect(isStateRollCallUrl(OR_25H)).toBe(true);
+    // a session with no session before it in the reader's list
+    expect(stateRollCallDocs(`${OR}2013R1/Measures/MeasureVotes?id=1#HB1`)).toBeNull();
+    // the dump's old host, plain http, no bill, the bill's overview, a zero id, a look-alike host
+    for (const u of ['https://olis.leg.state.or.us/liz/2025R1/Measures/MeasureVotes?id=624489#HB3041', OR_25H.replace('https', 'http'),
+      OR_25H.replace('#HB3041', ''), `${OR}2025R1/Measures/Overview/HB3041`, OR_25H.replace('id=624489', 'id=0'),
+      OR_25H.replace('olis.oregonlegislature.gov', 'olis.oregonlegislature.gov.example.com')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('takes third readings, repassage and overrides as votes on the bill, and every motion as not', () => {
+    for (const q of ['Third reading. Carried by McLain. Passed.', 'Rules suspended. Third reading. Carried by Nosse. Passed.', 'Passed.',
+      'Third reading. Carried by Prozanski. Failed.', 'House concurred in Senate amendments and repassed bill.',
+      'Senate adopted Conference Committee report and repassed bill.', 'Repassed.', 'Vote to override Governor\'s veto. Veto overridden.']) {
+      expect([q, orQuestionIsOnTheBill(q)]).toEqual([q, true]);
+    }
+    for (const q of ['Motion to rerefer to Rules failed.', 'Motion to substitute Minority Report for Committee Report failed.',
+      'Vote explanation(s) filed by Boice.', 'Motion to reconsider carried. Third reading. Passed.', 'Rules suspended.', 'Motion to lay on the table carried.']) {
+      expect([q, orQuestionIsOnTheBill(q)]).toEqual([q, false]);
+    }
+  });
+
+  it('reads a tally line, case-blind, and refuses a group it cannot read or a count its names disagree with', () => {
+    const t = orTally('Ayes, 54; nays, 1--Post; Excused for Business of the House, 1--Speaker Kotek.');
+    expect([...t.entries()]).toEqual([['Aye', { n: 54, named: null }], ['Nay', { n: 1, named: ['Post'] }], ['Excused for business', { n: 1, named: ['Speaker Kotek'] }]]);
+    expect(() => orTally('Ayes, 54; Paired, 1--Post.')).toThrow(/a kind of vote the reader does not know: Paired/);
+    expect(() => orTally('Ayes, 54; Nays, 2--Post.')).toThrow(/Nay prints 2 and names 1/);
+    expect(() => orTally('Ayes, 54; Ayes, 1.')).toThrow(/the count of Aye is printed twice/);
+    expect(() => orTally('Ayes 54.')).toThrow(/a tally group the reader cannot read/);
+  });
+});
+
+describe('state roll-call pages — reading Oregon', () => {
+  it('reads a 2025 House vote: bill, question, day, tally, and every member by the session\'s full name', () => {
+    const t = orRender(OR_25H);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Oregon House vote 624489 (2025R1), HB 3041, 2025-02-25.', 'Question: Third reading. Carried by McLain. Passed.',
+      'Aye 35; Nay 19; Excused 6; Excused for business 0; Absent 0.']);
+    expect(t).toMatch(/^Nay \(19\): .*\bBobby Levy\b/m);
+    expect(t).toMatch(/^Aye \(35\): .*\bShannon Isadore\b/m);
+    expect(t).not.toMatch(/Rep /);
+  });
+
+  it('reads the Speaker excused for the business of the House (2017), whose row and tally print the office differently', () => {
+    const t = orRender(OR_17H);
+    expect(t.split('\n')[2]).toBe('Aye 54; Nay 0; Excused 5; Excused for business 1; Absent 0.');
+    expect(t).toMatch(/^Excused for business \(1\): Tina Kotek$/m);
+    expect(t).toMatch(/^Excused \(5\): .*\bGregory Smith\b/m);
+    // the office is not part of the member: the tally may print him with it or without it
+    const [v, act, l, b] = orBodies(OR_17H);
+    expect(orRender(OR_17H, [v, orEdit(act, (rows) => { rows[0].VoteText = String(rows[0].VoteText).replace('--Speaker Kotek', '--Kotek'); }), l, b])).toMatch(/^Excused for business \(1\): Tina Kotek$/m);
+  });
+
+  it('reads a tally that leaves out its empty groups, and names a member seated only in the session before', () => {
+    const t = orRender(OR_25S);
+    expect(t.split('\n').slice(1, 3)).toEqual(['Question: Third reading. Carried by Broadman. Passed.', 'Aye 29; Nay 0; Excused 1; Excused for business 0; Absent 0.']);
+    expect(t).toMatch(/^Excused \(1\): Aaron Woods$/m);
+    // without the session before's list, the member keeps the code he is printed under: no name is made up
+    const [v, a, l, b] = orBodies(OR_25S);
+    expect(orRender(OR_25S, [v, a, l, orEdit(b, (rows) => { rows.splice(rows.findIndex((x) => x.LegislatorCode === 'Sen Woods'), 1); })])).toMatch(/^Excused \(1\): Sen Woods$/m);
+    // nor when a member of this session carries the code in the other chamber: the code is then not his to give away
+    expect(orRender(OR_25S, [v, a, orEdit(l, (rows) => { rows.push({ SessionKey: '2025R1', LegislatorCode: 'Sen Woods', FirstName: 'Pat', LastName: 'Woods', Chamber: 'H' }); }), b]))
+      .toMatch(/^Excused \(1\): Sen Woods$/m);
+  });
+
+  it('refuses a vote whose rows, history action or legislator lists do not hold together', () => {
+    const [v, a, l, b] = orBodies(OR_25H);
+    expect(orWhy(OR_25H, [v, a, l, b])).toBe('read');
+    const act = (f: (x: Record<string, unknown>) => void): string => orEdit(a, (rows) => f(rows[0]));
+    const row = (f: (rows: Record<string, unknown>[]) => void): string => orEdit(v, f);
+    // the history action is of another bill, missing, a motion, or prints no tally
+    expect(orWhy(OR_25H, [v, act((x) => { x.MeasureNumber = 3042; }), l, b])).toBe('action 624489 is not of HB 3041 in 2025R1');
+    expect(orWhy(OR_25H, [v, orEdit(a, (rows) => { rows.length = 0; }), l, b])).toBe('the history holds action 624489 0 times');
+    expect(orWhy(OR_25H, [v, act((x) => { x.ActionText = 'Motion to rerefer to Rules failed.'; }), l, b])).toMatch(/^the question is not a vote on the bill/);
+    expect(orWhy(OR_25H, [v, act((x) => { x.VoteText = null; }), l, b])).toBe('the action prints no tally');
+    // a row of another time, of another chamber, or of a kind the reader does not know
+    expect(orWhy(OR_25H, [row((r) => { r[0].ActionDate = '2025-02-26T11:52:04'; }), a, l, b])).toBe('a vote row of another time: Rep Isadore');
+    expect(orWhy(OR_25H, [row((r) => { r[0].Chamber = 'S'; }), a, l, b])).toBe('a vote row of another bill, session or chamber: Rep Isadore');
+    expect(orWhy(OR_25H, [row((r) => { r[0].Vote = 'Paired'; }), a, l, b])).toBe('a kind of vote the reader does not know: Paired');
+    // a row's vote flipped, so a count no longer equals the tally
+    expect(orWhy(OR_25H, [row((r) => { r.find((x) => x.VoteName === 'Rep Wallan')!.Vote = 'Aye'; }), a, l, b])).toBe('the Aye group lists 36 members and the tally prints 35');
+    // the tally names another member, or does not name a group it must
+    expect(orWhy(OR_25H, [v, act((x) => { x.VoteText = String(x.VoteText).replace('Wallan', 'Walland'); }), l, b])).toBe('the Nay members the tally names are not the members listed');
+    expect(orWhy(OR_25H, [v, act((x) => { x.VoteText = String(x.VoteText).replace(/Nays, 19--[^;]+;/, 'Nays, 19;'); }), l, b])).toBe('the tally names no Nay member');
+    // a member listed twice
+    expect(orWhy(OR_25H, [row((r) => { r.find((x) => x.VoteName === 'Rep Nathanson')!.VoteName = 'Rep Isadore'; }), a, l, b])).toBe('a member is listed twice');
+    // more members than the chamber has seats (the Senate has 30)
+    const [sv, sa, sl, sb] = orBodies(OR_25S);
+    expect(orWhy(OR_25S, [orEdit(sv, (r) => { r.push({ ...r[0], VoteName: 'Sen Extra' }); }),
+      orEdit(sa, (r) => { r[0].VoteText = 'Ayes, 30; Excused, 1--Woods.'; }), sl, sb])).toBe('more members than the chamber has');
+    // a legislator list of another session, or two members given one name
+    expect(orWhy(OR_25H, [v, a, b, b])).toBe('a legislator list is of another session');
+    expect(orWhy(OR_25H, [v, a, orEdit(l, (rows) => { Object.assign(rows.find((x) => x.LegislatorCode === 'Rep Isadore')!, { FirstName: 'Tom', LastName: 'Andersen' }); }), b])).toBe('two members render as one name');
+    // a body that runs past one page, and the wrong number of documents
+    expect(orWhy(OR_25H, [JSON.stringify({ ...JSON.parse(v), 'odata.nextLink': 'x' }), a, l, b])).toBe('the reader failed: the vote runs past one page');
+    expect(orWhy(OR_25H, [v, a, l])).toBe('not a vote, its history action and two sessions\' legislators');
+  });
+});
+
+describe('state roll-call pages — Oregon lines', () => {
+  const t = orRender(OR_25H);
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(OR_25H, t, 'Isadore', 'Shannon Isadore')).toEqual([OR_ISADORE]);
+    expect(verifyStateRollCallLine(OR_ISADORE, OR_25H, t, 'Isadore', 'Shannon Isadore')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(OR_ISADORE)).toMatchObject({ state: 'OR', chamber: 'House', vote: 'Aye', name: 'Shannon Isadore', bill: 'HB 3041' });
+  });
+
+  it('tells two members of one family name apart', () => {
+    expect(stateRollCallLinesFor(OR_25H, t, 'Levy', 'Bobby Levy')).toEqual([OR_ISADORE.replace('Shannon Isadore voted Aye', 'Bobby Levy voted Nay')]);
+    expect(stateRollCallLinesFor(OR_25H, t, 'Levy', 'Emerson Levy')).toHaveLength(1);
+    expect(stateRollCallLinesFor(OR_25H, t, 'Levy', 'Emerson Levy')[0]).toMatch(/: Emerson Levy voted Aye\.$/);
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const vr = (line: string, last = 'Isadore', full = 'Shannon Isadore', url = OR_25H) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(vr(OR_ISADORE.replace('voted Aye', 'voted Nay'))).toBe('snippet_not_found');
+    expect(vr(OR_ISADORE.replace('Shannon Isadore', 'Tom Andersen'))).not.toBe('verified');
+    expect(vr(OR_ISADORE, 'Andersen', 'Tom Andersen')).toBe('name_not_present');
+    expect(vr(OR_ISADORE.replace('HB 3041 -', 'HB 3042 -'))).toBe('snippet_not_found');
+    expect(vr(OR_ISADORE.replace('(2025-02-25)', '(2025-02-26)'))).toBe('snippet_not_found');
+    expect(vr(OR_ISADORE, 'Isadore', 'Shannon Isadore', OR_25H.replace('624489', '624490'))).toBe('snippet_not_found');
+  });
+
+  it('gives the Speaker "was excused for legislative business", never a Yea or a Nay', () => {
+    const s = orRender(OR_17H);
+    const [l] = stateRollCallLinesFor(OR_17H, s, 'Kotek', 'Tina Kotek');
+    expect(l).toBe('Oregon House vote 411795 (2017R1), SB 66 - Third reading. Carried by Lininger. Passed. (2017-05-25): Tina Kotek was excused for legislative business.');
+    expect(verifyStateRollCallLine(l.replace('was excused for legislative business', 'voted Aye'), OR_17H, s, 'Kotek', 'Tina Kotek').verdict).toBe('snippet_not_found');
+    expect(verifyStateRollCallLine(l.replace('was excused for legislative business', 'was excused'), OR_17H, s, 'Kotek', 'Tina Kotek').verdict).toBe('snippet_not_found');
+  });
+
+  it('reads the tally as Aye, Nay and the rest absent or not voting', () => {
+    const r = readStateRollCallRecord(orBodies(OR_17H), OR_17H)!;
+    expect(r).toMatchObject({ bill: 'SB 66', date: '2017-05-25', chamber: 'House', rollNum: 411795 });
+    expect([r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length]).toEqual([54, 0, 6]);
+    expect(r.groups['Absent or not voting']).toContain('Tina Kotek');
   });
 });

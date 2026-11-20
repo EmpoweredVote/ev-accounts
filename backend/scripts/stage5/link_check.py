@@ -125,6 +125,20 @@ for ls in sorted(people):
     pid = m.match(ls) or whole.get(norm(people[ls].get('name')))
     if pid and pid not in linked: by_name.setdefault(pid, []).append(ls)
 
+# A record the converter made for a voter it could not tie to a dump person (Oregon 2026-11-20: the record prints "Emerson
+# Levy", the dump "Em Levy") holds that member's votes under a new id each session. It has no Open States id, and the
+# member is already linked by another record, so the name rule above skips it and nothing is reported. Link a name-only
+# record whose whole name is one roster member's, and say so.
+made = [(ls, whole[norm(people[ls].get('name'))]) for ls in sorted(people)
+        if ls not in idmap and (people[ls].get('_openstates') or {}).get('name_only') and whole.get(norm(people[ls].get('name'))) in linked]
+if made:
+    if ADD:
+        with open(IDMAP, 'a') as fh:
+            for ls, pid in made: fh.write(f"{ls}\t{pid}\t# {people[ls].get('name')} (link_check name-only record of a linked member)\n")
+        for ls, pid in made: idmap[ls] = pid
+    print(f"{'added' if ADD else 'not yet in idmap (run with --add):'} {len(made)} name-only record(s) the converter made for a linked member's votes:")
+    for ls, pid in made: print(f"  {legs[pid]['full_name']}  <-  {ls}\t{people[ls].get('name')}")
+
 
 def who(ls):
     p = people[ls]

@@ -213,6 +213,13 @@ for r in rows("personvote"):
 #    a 79th bill's page (Reports/history.cfm?ID=282) becomes its NELIS page (/App/NELIS/REL/79th2017/Bill/4875/Overview)
 #    when the fetch read the bill, which gives its key; any other is kept and counted (nv_bill_page_not_rewritten).
 #    "https_texts": the texts are served over https too (read 2026-11-19).
+#  - Oregon (2026-11-20): the dump's vote addresses are each bill's Overview page, which holds every vote of the bill, so
+#    no dump vote names one roll call. "record_is_the_floor", as Nevada's: the fetch reads each scanned bill's history
+#    from the Legislature's Open Data Service and every floor vote on it from the service, cited as the vote's member list
+#    on OLIS with the bill after a # (stateRollCallEvidence.ts). The reader names each member in full from the session's
+#    legislator list, so ms_full_names links them. "or_links": the rows of 2017-2021 carry the old host
+#    olis.leg.state.or.us, which no longer resolves; the same paths answer on olis.oregonlegislature.gov (bill pages and
+#    texts, read 2026-11-20), so the host is rewritten.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -227,8 +234,15 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
              "ND": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nd_links": True},
              "MN": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True},
              "NV": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "nv_links": True,
+                    "https_texts": True},
+             "OR": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "or_links": True,
                     "https_texts": True}}
 RULES = SRC_RULES.get(ST, {})
+
+
+def or_link(u):
+    """Oregon: the dead host olis.leg.state.or.us -> olis.oregonlegislature.gov, same path (see SRC_RULES, or_links)."""
+    return re.sub(r"^https?://olis\.leg\.state\.or\.us/", "https://olis.oregonlegislature.gov/", u)
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
 NP = "sd_" if RULES.get("sd_record_is_the_floor") else ""  # South Dakota's counts keep their names
@@ -1012,6 +1026,9 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                         r["url"] = NV_PAGE[bid]
                     else:
                         DUPES[b["legislative_session_id"]]["nv_bill_page_not_rewritten"] += 1
+        if RULES.get("or_links"):
+            for r in ex["billsource"]:
+                r["url"] = or_link(r["url"])
         if RULES.get("ks_bill_page"):
             for r in ex["billsource"]:
                 r["url"] = ks_bill_page(r["url"], sessions[b["legislative_session_id"]]["identifier"])
@@ -1073,6 +1090,8 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 main = re.sub(r"^http://", "https://", main)
             if RULES.get("ks_texts"):
                 main = ks_text(main)
+            if RULES.get("or_links"):
+                main = or_link(main)
             if RULES.get("nd_links"):
                 main = nd_link(main, b["legislative_session_id"])
             if RULES.get("co_texts"):
