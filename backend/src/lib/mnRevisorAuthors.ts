@@ -21,6 +21,7 @@
  * Such a person stays for human review, or gets the LRL form added as an alternate name.
  */
 import { robotsAllows, EMPOWERED_VOTE_UA, HTTP_TIMEOUT_MS } from './verificationFetch.js';
+import { MN_LRL } from './memberIds.js';
 
 export interface AuthorLink {
   label: string;
@@ -32,6 +33,8 @@ export interface MemberNames {
   fullName: string;
   lastName: string;
   aliases?: string[];
+  /** Stored member ids by id_type (CA_0401). With an 'mn-lrl' id the check compares ids only. */
+  memberIds?: Record<string, string[]>;
 }
 
 export function isRevisorBillUrl(url: string): boolean {
@@ -130,6 +133,11 @@ export function createRevisorAuthorCheck(
   };
   return async (url, names) => {
     if (!isRevisorBillUrl(url)) return false;
+    // By id (CA_0401): a person whose LRL id we hold is an author exactly when an author link carries that
+    // id. No name is read and no LRL record is fetched, so a namesake can never pass — and a stored id that
+    // is not on the page is a firm "no", never a fall-through to the name path below.
+    const lrlIds = names.memberIds?.[MN_LRL];
+    if (lrlIds?.length) return (await links(url)).some((l) => lrlIds.includes(l.id));
     const family = foldName(names.lastName);
     for (const link of await links(url)) {
       if (labelFamily(link.label) !== family) continue;

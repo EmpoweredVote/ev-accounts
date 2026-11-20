@@ -89,6 +89,7 @@ import { loadHumanSavedCopies } from './lib/humanSavedCopies.js';
 import { withOtrTranscripts } from '../src/lib/otrTranscript.js';
 import { createLegiscanRecordFetcher, withLegiscanRecords } from '../src/lib/legiscanEvidence.js';
 import { loadGovernorTerms } from '../src/lib/governorTerms.js';
+import { loadMemberIds, MN_LRL } from '../src/lib/memberIds.js';
 import { legiscanQuery } from '../src/lib/legiscan/client.js';
 import {
   buildEvidenceRowsForInsert,
@@ -400,6 +401,13 @@ const governorTerms = await loadGovernorTerms((q, p) => pool.query(q, p),
 for (const [name, id] of idByName) {
   const terms = id ? governorTerms.get(id) : undefined;
   if (terms?.length) politicianNames[name].governorTerms = terms;
+}
+// Legislators' own member ids (CA_0401): the Revisor author check compares ids, not names, when one is held.
+const memberIds = await loadMemberIds((q, p) => pool.query(q, p),
+  [...idByName.values()].filter((id): id is string => id !== null), [MN_LRL]);
+for (const [name, id] of idByName) {
+  const ids = id ? memberIds.get(id) : undefined;
+  if (ids) politicianNames[name].memberIds = ids;
 }
 
 // 🔴 The open season's question set — not is_live. A stance can only be written to a
