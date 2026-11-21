@@ -58,86 +58,46 @@ apply the answers as the last act.
 npm run steward --prefix backend -- claim state:{{xx}} --label "{{LABEL}} {{STATE}}"
 ```
 
-**A1. Results check and roster.** Drop people who lost or are leaving; keep close races apart; check each new
-winner's level against the race's district type. Rebuild the roster with `topic:stage5-roster` so it has the
-`office` column (a blank office blocks the record pass). Save `{{S}}/batches/{{xx}}-ids.txt` and a scoped roster
-`{{S}}/batches/{{xx}}-roster.tsv` (only this state's in-scope rows). Worked example: the newest
-`results_scope_*.py` under `{{S}}/*/scripts/`. Detail: STAGE5 §1.
-Leg B copies this roster over the shared one (`roster_sync.py`): never edit `roster.tsv` by hand.
-
-**A2. Bills.**
-
-Open States data: run `openstates/coverage.py <extract dir>` first; exit 1 names sessions with no roll calls.
+**A1 to A5 are one tool.** It runs the set-up in order and stops only where you are needed, with the reason and the
+`--from` to resume with. Its header lists the eight steps; each one's full output is in `{{S}}/{{xx}}/setup/step-<n>.log`.
+🔴 Never copy another state's script, prompt or brief by hand for a step it runs: that is how a copy kept another
+state's words. Run it in the foreground, again after each stop:
 
 ```bash
-python3 -I scripts/stage5/scan_bills.py {{S}}/legiscan/ds {{XX}} {{S}}/legiscan/bills-{{xx}}.json --topic {{TOPIC}}
+python3 -I scripts/stage5/run_setup.py --profile {{PROFILE}} --state {{xx}} [--from N] [--seats <lower>,<upper>]
 ```
 
-Pick the core set from contested floor votes by hand (`core-bills-{{xx}}.json`). Then sponsor cover with the scoped
-roster, so names match inside this state only:
+What stays yours, at its stops (exit 10: work for you; exit 4: the runner's material is ready; exit 2: a fault, or
+a check that proved blind):
 
-```bash
-python3 -I scripts/stage5/sponsor_cover.py {{S}}/legiscan/bills-{{xx}}.json --state {{XX}} --roster {{S}}/batches/{{xx}}-roster.tsv \
-  --core {{S}}/legiscan/core-bills-{{xx}}.json --ds {{S}}/legiscan/ds --idmap {{S}}/legiscan/idmap.tsv --since {{SINCE}} \
-  --candidates {{S}}/sponsor-candidates-{{xx}}.json
-```
+- **1 roster.** Read the lines the step names: check every `NAME-MATCH` by hand, and each close race and each
+  sitting person dropped. A row the rules miss goes in `{{S}}/{{xx}}/scope-hints.json` (keys in `results_scope.py`'s
+  header), with who decided and when; then `--from 1`. Leg B copies this roster over the shared one: never edit
+  `roster.tsv` by hand. Detail: STAGE5 §1.
+- **2 scan.** Pick the core set from contested floor votes by hand (`{{S}}/legiscan/core-bills-{{xx}}.json`). Detail:
+  STAGE5 §3a.
+- **3 link.** 🔴 A legislator with no `idmap.tsv` line has **no votes on file**, and nothing else says so. Add each
+  line the step names by hand, on name **and chamber**; refuse a match from another state, and a namesake's record
+  with `<people_id>\t-\t# refused: <why>`. A member seated after the newest dataset goes in
+  `{{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`), and on the stop 1 sheet.
+- **4 sponsors.** Read the "re-file trim" line. A note for the triage agent about this state's titles goes in
+  `{{S}}/{{xx}}/triage-note.md` before the step. Stubs go to stop 1.
+- **5 texts.** The state's own text fetch, `{{S}}/legiscan/scripts/fetch_texts_{{xx}}.py`: write it if there is none
+  (which version to read, and how new and struck words are marked, are this legislature's). Note both for the hand-over.
+- **6 fill.** `{{S}}/legiscan/FILL-BRIEF-{{xx}}.md`, in this legislature's own words. On a miss, fix the fetch or the
+  fill, never the check. The step plants one changed number itself and stops if the check passes it.
+- **7 store.** 🔴 **A core bill with no readable text is settled here, not in session B** (Colorado: 66 people coded
+  again). Where `robots.txt` allows the bill's page, save the legislature's own summary and merge it as
+  `bill_merge.py`'s header says; `check` then wants its row flagged, and stop 1 asks if summaries may stand.
+  After the pre-fill, every person it reports with no vote must be a non-legislator or in the no-record file.
+- **8 table.** A state's note on how its texts mark changes goes in `{{S}}/{{xx}}/billtable-note.md` before the step.
+  `check` must end at 0 problems. Then:
 
-Title triage: one Opus agent, `templates/stage5-sponsor-triage-prompt.md` (fill its ladder slots from the coder
-config), as a one-row `wave.py` wave, into `{{S}}/sponsor-triage-{{xx}}.json`. Then the same `sponsor_cover.py`
-command with `--triage {{S}}/sponsor-triage-{{xx}}.json --write {{S}}/legiscan/core-bills-{{xx}}.json`. Read its
-"re-file trim" line. Stubs go to `core-bills-{{xx}}.stubs.json` for stop 1. Detail: STAGE5 §3a.
-
-Check every `idmap.tsv` line you add against the person's name **and chamber**. Refuse a match from another state.
-
-🔴 Then the link check, before any skeleton or vote is built. A legislator with no `idmap.tsv` line has **no votes on
-file**, and nothing else says so:
-
-```bash
-python3 -I scripts/stage5/link_check.py --state {{XX}} --roster {{S}}/batches/{{xx}}-roster.tsv --ds {{S}}/legiscan/ds --idmap {{S}}/legiscan/idmap.tsv --add
-```
-
-Exit 1 names each unlinked member and who may be the same person. Add the line by hand; go on only at exit 0. A member seated after the newest dataset goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
-stop 1 sheet. After A4, every person the pre-fill reports with no vote must be a non-legislator or in that file.
-
-**A3. Bill texts.** Shared scripts, never a copy of another state's (usage in each header): `bill_skeletons.py`,
-the state's own text fetch, `bill_fill_wave.py` (a `wave.py` wave; the newest `FILL-BRIEF*.md` is the model), then
-`bill_merge.py`. Check the fills' quotes, and watch a planted wrong quote fail once:
-
-```bash
-python3 -I scripts/stage5/check_fill_quotes.py --fills {{S}}/legiscan/fill --texts {{S}}/legiscan/texts --state {{xx}} --flag <the fill brief's on-topic key>
-```
-Write down for the hand-over how this legislature marks new and struck words, how its roll calls name motions, and
-its hosts.
-
-🔴 **A core bill with no readable text is settled here, not in session B** (Colorado: 66 people coded again). Where
-`robots.txt` allows the bill's page, save the legislature's own summary and merge it as `bill_merge.py`'s header says.
-`check` then wants its row flagged: stop 1 asks if summaries may stand, and each rung. On a no, take the bills out.
-
-**A4. Store and pre-fill.** Merge into the store; `npm run source-store --prefix backend -- validate`; then
-
-```bash
-npm run topic:stage5-prefill --prefix backend -- --topic {{TOPIC}} --research {{R}} --subjects {{S}}/subjects.json --units state:{{xx}}
-```
-
-**A5. Bill table.** Build the prompts (the bills are the ids the fill merge kept, as a JSON list or one per line; a
-state's own note on how its texts mark changes goes in `--note-file`), run them as an Opus wave, then join the parts:
-
-```bash
-python3 -I scripts/stage5/stage5_prompts.py bill-table --profile {{PROFILE}} --state {{xx}} --state-name "{{STATE}}" --bills <ids file> --parts 3
-python3 -I scripts/stage5/wave.py {{S}}/waves/{{xx}}-billtable/jobs.tsv --out {{S}}/waves/{{xx}}-billtable/out --add-dir {{R}} --add-dir {{WT}}
-```
-
-Then:
-
-```bash
-python3 -I scripts/stage5/bill_table.py check {{S}}/bill-table-{{xx}}.json --ids {{S}}/batches/{{xx}}-ids.txt
-python3 -I scripts/stage5/bill_table.py questions {{S}}/bill-table-{{xx}}.json --ids {{S}}/batches/{{xx}}-ids.txt --out {{S}}/bill-questions-{{xx}}.md
-```
-
-`check` must end at 0 problems; watch it catch a planted fault once. `questions` also lists bills older than the
-data on disk: do its check. Settle each flag from the rulings already in
-`{{S}}/coder-rulings.md` where you can. Write the rest as grouped questions, each with the people it affects, in
-`{{S}}/{{xx}}/STOP1-QUESTIONS.md`. Detail: STAGE5 §3b.
+**A5. Flags and questions.** `{{S}}/bill-questions-{{xx}}.md` lists every flagged bill, every both-sides person, and
+bills older than the data on disk. 🔴 **Each of those goes on the stop 1 sheet with its people** (hold them, drop
+the rung, or build a path): a page the reader opens is not a vote the recipe can place (Oregon: 9 people held at
+step 7). Settle each flag the rulings in `{{S}}/coder-rulings.md` settle. Write the rest as grouped questions, each
+with the people it affects, in `{{S}}/{{xx}}/STOP1-QUESTIONS.md`. Detail: STAGE5 §3b.
 
 🔴 **A flag is an open question: any text in it keeps that bill's people out of the record script.** Close each
 one with `settle` (now for flags the rulings settle, after stop 1 for the rest); never write an answer into `flag`.
@@ -145,6 +105,7 @@ Then `check` must print `0 flagged`:
 
 ```bash
 python3 -I scripts/stage5/bill_table.py settle {{S}}/bill-table-{{xx}}.json <bill id>...|--all --answer "<the ruling, or the runner's words>"
+python3 -I scripts/stage5/bill_table.py check {{S}}/bill-table-{{xx}}.json --ids {{S}}/batches/{{xx}}-ids.txt
 ```
 
 **A5b. Before asking: probe the write.** Two checks that otherwise surface in session B:

@@ -21,8 +21,12 @@ be tested here: it must find each named bill in the lines the state's reader wro
 lacks a line, the gate finds every named bill in a cited line (`instrument-not-cited` 0), and no vote page is cited
 without a line (`source-without-snippet` on a vote page 0). Exit 1 names each fault with its count and one example.
 Exit 2, no verdict: a file is missing, or nothing was cross-checked. Other gate findings are about the placeholder.
-NOT covered: sponsorships. Their page is fetched only in a real run (recipe step 4), so a sponsor page that prints no
-bill number (Colorado, 18 gate findings) is still found there; --verdict counts those pages and says so.
+Sponsorships (2026-11-21): a sponsorship left on the legislature's own bill page (legiscan/sponsor-own-page.json) is not
+fetched in a dry batch, so run `npx tsx scripts/stage5/sponsor-page-check.ts <pilot dir>/batch` after `pairs`: it reads a
+sample of those pages as the verifier will and writes legiscan/sponsor-page-check.json. --verdict gives NO VERDICT
+without it (or when it is older than the list), and fails on a page that does not print the sponsor or the bill.
+Nevada, Oregon and Hawaii each met that page at step 9 of a live run; their dry batches had listed 81, 428 and 1,266
+such pages, and the verdict counted them and passed.
 
 Why (2026-11-19): this was `make_pilot_batch.py`, copied by hand into seven states' pilot folders, and it stopped
 after the lines. Colorado's first real run then met five format faults in the merge and the gate (the record says
@@ -116,12 +120,26 @@ def verdict():
     inc = [x for x in g if x['check_id'] == 'instrument-not-cited']
     sws = [x for x in g if x['check_id'] == 'source-without-snippet']
     on_vote = [x for x in sws if any(u in x['what'] for u in votes)]
+    # sponsorships left on the legislature's own page: a sample of those pages must have been read (sponsor-page-check.ts)
+    own_f, chk_f = f'{L}/sponsor-own-page.json', f'{L}/sponsor-page-check.json'
+    own = json.load(open(own_f)) if os.path.exists(own_f) else []
+    sp_faults, sp_note = [], 'no sponsorship is left on an official page'
+    if own:
+        if not os.path.exists(chk_f):
+            print(f'NO VERDICT: {len(own)} sponsorship(s) are cited on the legislature\'s own page and none was read: run '
+                  f'`npx tsx scripts/stage5/sponsor-page-check.ts {B}`'); return 2
+        chk = json.load(open(chk_f))
+        if chk.get('on_file') != len(own) or not chk.get('sampled'):
+            print(f'NO VERDICT: sponsor-page-check.json was made for {chk.get("on_file")} sponsorship(s) and read {chk.get("sampled")} page(s); the list now holds {len(own)}. Run it again'); return 2
+        sp_faults = chk.get('faults') or []
+        sp_note = f"{len(own)} sponsorship(s) on an official page, {chk['sampled']} page(s) read, {chk.get('ok')} prove the sponsorship"
     faults = [('unmapped vote(s)', unmapped), ('cross-checked vote(s) that disagree with the finding', bad), ('pair(s) with no line', noline),
-              ('named bill(s) the gate cannot find in a cited line (instrument-not-cited)', inc), ('vote page(s) cited with no line', on_vote)]
+              ('named bill(s) the gate cannot find in a cited line (instrument-not-cited)', inc), ('vote page(s) cited with no line', on_vote),
+              ('sampled sponsorship page(s) that do not print the sponsor or the bill, or cannot be read', sp_faults)]
     print(f'{len(votes)} vote page(s), {len(cross)} vote(s) cross-checked, {len(cross) - len(bad)} agree')
     for what, xs in faults:
         print(f"  {'ok ' if not xs else 'FAULT'} {len(xs)} {what}" + (f': e.g. {json.dumps(xs[0], ensure_ascii=False)[:260]}' if xs else ''))
-    print(f'  not covered here: {len(sws) - len(on_vote)} sponsorship page(s) cited with no line. A real run fetches them at recipe step 4.')
+    print(f'  sponsorships: {sp_note}.' + (' A fault is the runner\'s question HERE: which page proves a sponsorship in this state, or hold them.' if sp_faults else ''))
     return 1 if any(xs for _, xs in faults) else 0
 
 

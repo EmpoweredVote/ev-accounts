@@ -2,6 +2,7 @@
 
 usage: python3 -I bill_table.py check <table.json> [--store <source-store dir>] [--ids <ids file>] [--rungs 5]
        python3 -I bill_table.py questions <table.json> --ids <ids file> [--store <dir>] [--rungs 5] [--out <questions.md>]
+       python3 -I bill_table.py join <table.json> <part file>... [--force]
        python3 -I bill_table.py settle <table.json> (<bill id>... | --all) --answer "<the ruling, or the runner's words>"
 
 <table.json> is what the bill-table prompt (templates/stage5-bill-table-prompt.md) writes:
@@ -56,7 +57,7 @@ from _against import act_for_bill
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STORE = os.path.normpath(os.path.join(HERE, '..', '..', 'data', 'source-store'))
-USAGE = 'bill_table.py check|questions|settle|affected|votes <table.json> [--ds <datasets dir> --state XX] [<bill id>... | --all] [--answer <text>] [--store <dir>] [--ids <file>] [--rungs 5] [--out <md>]'
+USAGE = 'bill_table.py check|questions|join|settle|affected|votes <table.json> [--ds <datasets dir> --state XX] [<bill id>... | --all] [--answer <text>] [--store <dir>] [--ids <file>] [--rungs 5] [--out <md>]'
 ANSWERED = re.compile(r'\[\s*(settled|answered|resolved|ruled)\b|\bas recommended\b', re.I)  # an answer note, not a question that mentions a ruling
 YES = {'yea', 'sponsor', 'author', 'signed'}
 
@@ -171,6 +172,23 @@ def affected(table, store, ids, bills):
     return hit, touched, first
 
 
+def join(out, parts):
+    """One table from the parts the bill-table wave wrote. Until 2026-11-21 every state joined them with a one-off script."""
+    if os.path.exists(out) and '--force' not in sys.argv: raise SystemExit(f'{out} exists: a joined table is edited in place (settle, per_vote). Pass --force to join again; the old one is kept as .bak-join.')
+    if len(parts) < 1: raise SystemExit('join needs the part files')
+    topic, bills = None, {}
+    for p in parts:
+        t = json.load(open(p))
+        if not isinstance(t.get('bills'), dict) or not t.get('topic_key'): raise SystemExit(f'{p} is not a bill-table part (topic_key and a "bills" object)')
+        if topic not in (None, t['topic_key']): raise SystemExit(f'{p} is for {t["topic_key"]!r}, the parts before it for {topic!r}')
+        topic = t['topic_key']; twice = sorted(set(bills) & set(t['bills']))
+        if twice: raise SystemExit(f'{p} repeats {len(twice)} bill(s) of an earlier part, e.g. {twice[0]}. Nothing written.')
+        bills.update(t['bills'])
+    if os.path.exists(out): os.replace(out, out + '.bak-join')
+    json.dump({'topic_key': topic, 'bills': bills}, open(out, 'w'), indent=2, ensure_ascii=False)
+    print(f'joined {len(parts)} part(s): {len(bills)} bill(s) -> {out}')
+
+
 def settle(table, bills, every, answer):
     rows = table['bills']
     if not answer.strip(): raise SystemExit('settle needs --answer: the ruling, or the runner\'s words')
@@ -237,6 +255,7 @@ def main():
     every = '--all' in sys.argv
     if every: sys.argv.remove('--all')  # positional() reads the word after any --flag as its value
     cmd, path = positional(2, USAGE)[:2]
+    if cmd == 'join': join(path, [a for a in sys.argv[3:] if not a.startswith('--')]); return
     table = json.load(open(path))
     store, rungs = opt('--store', STORE), int(opt('--rungs', '5'))
     ids = read_ids(opt('--ids')) if opt('--ids') else []

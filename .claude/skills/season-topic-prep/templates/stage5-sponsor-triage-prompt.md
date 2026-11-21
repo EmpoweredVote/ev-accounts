@@ -3,13 +3,8 @@ Stage 5 sponsor-cover triage (STAGE5.md "3a. Bill round one"). One Opus agent pe
 from `sponsor_cover.py --candidates`. Output: the triage file for `sponsor_cover.py --triage ... --write ...`.
 Round three (2026-11-13): the third answer, "stub". `sponsor_cover.py` turns a "stub" back into "fill" for any bill a
 roster member voted on, and lists the rest for the runner.
-{{RUNG_ACTS}} and {{NO_RUNG_KINDS}} are per topic, written from the ladder and the topic's rulings. Gun-policy (2026-11-13):
-  RUNG_ACTS: it could change who may buy, have or carry a gun, where or how; ban or allow a type of firearm, magazine
-    or part; or add or remove a permit, licence, check, waiting period, registration or order that takes guns away
-  NO_RUNG_KINDS: a rule for dealers' or makers' business (inspections, security, signs, record-keeping, fees they
-    collect), a tax or insurance rule, a storage rule, a report, study, office, grant or training programme, a notice
-    or information duty, police or other officers' own weapons, the sentence for a crime committed with a gun, how
-    police destroy or return guns, or court procedure for people the law already bars
+{{RUNG_ACTS}} and {{NO_RUNG_KINDS}} are per topic, written from the ladder and the topic's rulings: the topic profile's
+"triage" key. `stage5_prompts.py triage` fills this template; never copy another state's filled prompt.
 -->
 # Sponsor-cover triage: {{TOPIC_KEY}}, {{STATE}}
 

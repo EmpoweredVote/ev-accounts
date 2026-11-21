@@ -5,6 +5,7 @@ usage: python3 -I scripts/stage5/stage5_prompts.py search-briefs --profile <json
                                                     [--round 2] [--note-file <md>] [--worktree <dir>] [--date YYYY-MM-DD]
        python3 -I scripts/stage5/stage5_prompts.py bill-table --profile <json> --state xx --state-name <Name> --bills <file>
                                                     [--parts 3] [--note-file <md>] [--worktree <dir>]
+       python3 -I scripts/stage5/stage5_prompts.py triage --profile <json> --state xx --state-name <Name> [--note-file <md>] [--worktree <dir>]
        python3 -I scripts/stage5/stage5_prompts.py quote-check --profile <json> --batch <dir> --dry-run <file> [--per 20]
        python3 -I scripts/stage5/stage5_prompts.py coder-jobs --briefs <dir> --name <prefix> --wave <dir>
 
@@ -21,6 +22,12 @@ bill-table     splits --bills (a JSON list, a JSON object with "kept", or one id
                templates/stage5-bill-table-prompt.md, each writing <stage5>/bill-table-<xx>.part<k>.json; jobs in
                <stage5>/waves/<xx>-billtable/. The rulings given are the `{all}` sections and this state's own.
                --note-file, or else the legislature profile's `bill_table_note`, is added as the state's notes.
+triage         the sponsor-cover title triage (card A, step A2): one Opus prompt from
+               templates/stage5-sponsor-triage-prompt.md, in <stage5>/waves/<xx>-triage/, reading
+               <stage5>/sponsor-candidates-<xx>.json and writing <stage5>/sponsor-triage-<xx>.json. What a bill must do
+               to matter, and the kinds that can carry no position, are the profile's "triage" (two sentences per
+               topic). --note-file, or else the legislature profile's `triage_note`, is added as the state's notes.
+               Until 2026-11-21 each state copied the state before's filled prompt and reworded it by hand.
 quote-check    reads the dry run's "finding <id>…: no quote check" lines, writes <batch>/qc/to-check.json, one prompt
                per --per findings from templates/stage5-quote-check-prompt.md, and <batch>/qc/jobs.tsv. Validate
                the answers with quote-check-validate.ts.
@@ -35,7 +42,7 @@ from _args import opt, positional
 from session_card import load_profile
 import legislature
 
-USAGE = 'stage5_prompts.py search-briefs|bill-table|quote-check|coder-jobs --profile <json> … (see the file header)'
+USAGE = 'stage5_prompts.py search-briefs|bill-table|triage|quote-check|coder-jobs --profile <json> … (see the file header)'
 HERE = os.path.dirname(os.path.abspath(__file__))
 HEAD = 'name\tprompt_file\tmodel\ttools'
 STATES = {'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut',
@@ -163,6 +170,27 @@ def bill_table():
     print(f'{len(ids)} bill(s) in {len(jobs)} part(s); rulings sections {len(keep)}; jobs: {wave}/jobs.tsv')
 
 
+def triage():
+    prof = load_profile(os.path.abspath(opt('--profile', required=True, usage=USAGE)))
+    xx = opt('--state', required=True, usage=USAGE).lower(); name = opt('--state-name', required=True, usage=USAGE)
+    S, wt, cfg = prof['stage5'].rstrip('/'), worktree(), config(prof)
+    tr = prof.get('triage') or {}
+    if not all(isinstance(tr.get(k), str) and tr[k].strip() for k in ('rung_acts', 'no_rung_kinds')):
+        raise SystemExit('the profile has no "triage": {"rung_acts": "...", "no_rung_kinds": "..."} (what a bill must do to carry a position on this '
+                         'topic, and the kinds of bill that carry none). Nothing written.')
+    cand = f'{S}/sponsor-candidates-{xx}.json'
+    if not os.path.exists(cand): raise SystemExit(f'{cand} is missing: run sponsor_cover.py --candidates first. Nothing written.')
+    leg = legislature.load(xx, wt)
+    note = open(opt('--note-file')).read().strip() if opt('--note-file') else (leg or {}).get('triage_note', '')
+    note = (f'\n\nNotes for {name}: ' + note + '\n') if note else ''
+    rungs = '\n'.join(l for l in cfg['ladder_text'].splitlines() if re.match(r'\s*\d+\.\s', l))
+    text = fill(template(wt, 'stage5-sponsor-triage-prompt.md'), {'TOPIC_KEY': prof['topic_key'], 'STATE': name, 'QUESTION': cfg['question'], 'LADDER_TEXT': rungs,
+                'CANDIDATES': cand, 'OUT': f'{S}/sponsor-triage-{xx}.json', 'RUNG_ACTS': tr['rung_acts'].strip(), 'NO_RUNG_KINDS': tr['no_rung_kinds'].strip()}, 'triage') + note
+    wave = f'{S}/waves/{xx}-triage'; os.makedirs(wave, exist_ok=True)
+    open(f'{wave}/prompt.md', 'w').write(text); write_jobs(f'{wave}/jobs.tsv', [(f'triage-{xx}', f'{wave}/prompt.md', 'opus', 'Read,Write')])
+    print(f'{len(json.load(open(cand)))} candidate bill(s); jobs: {wave}/jobs.tsv')
+
+
 def quote_check():
     prof = load_profile(os.path.abspath(opt('--profile', required=True, usage=USAGE)))
     S, wt, cfg = prof['stage5'].rstrip('/'), worktree(), None
@@ -204,7 +232,7 @@ def coder_jobs():
 
 def main():
     cmd = positional(1, USAGE)[0]
-    f = {'search-briefs': search_briefs, 'bill-table': bill_table, 'quote-check': quote_check, 'coder-jobs': coder_jobs}.get(cmd)
+    f = {'search-briefs': search_briefs, 'bill-table': bill_table, 'triage': triage, 'quote-check': quote_check, 'coder-jobs': coder_jobs}.get(cmd)
     if not f: raise SystemExit(USAGE)
     f(); return 0
 

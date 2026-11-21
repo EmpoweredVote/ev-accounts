@@ -163,6 +163,14 @@ def set_aside(b, m):
         src = os.path.join(b, f'{f}.{ext}')
         if os.path.exists(src): os.rename(src, os.path.join(b, f'{f}.before-run-{k}.{ext}'))
     print(f'  (an earlier pass of this step is kept as research-stage5-{m}.before-run-{k}.csv)')
+    if m == 0:
+        # A pass from step 0 builds research.csv afresh, so the pre-step-7 copies are the earlier pass's: left in place,
+        # step 4 refuses to rebuild from the new research.csv (North Dakota nd-01, 2026-11-19: renamed by hand).
+        moved = [p for p in pre7(b) if os.path.exists(p)]
+        for p in moved: os.rename(p, p[:-len('.csv')] + f'.before-run-{k}.csv')
+        if moved:
+            log = load_log(b); log.pop('pre7_stale', None); log.pop('7', None); save_log(b, log)
+            print(f'  (the earlier pass\'s pre-step-7 copies are kept as *-pre-step7.before-run-{k}.csv)')
 
 
 def fallback_cmd(b, dry):

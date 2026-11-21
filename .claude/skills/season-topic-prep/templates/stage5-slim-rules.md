@@ -47,6 +47,10 @@ says rulings go, then carry on from where you stopped. Do not repeat finished st
   of your history. Write down every stop that is not on the card's list, and what caused it. Add each line with
   `python3 -I scripts/stage5/leg.py log "<the line>"` (or pipe the line in, when it holds quote marks). Its reply
   says how large this session is.
+- 🔴 **A log line is never a step of its own.** Every step re-reads this whole session, so a step that only logs costs
+  as much as one that does work (measured over eight states: 3 to 17 such steps a leg, about 0.15M units a state).
+  Put the log call **first in the command that starts the next step**: `python3 -I scripts/stage5/leg.py log "A2 …";
+  <the next command>`. The only log call that stands alone is the last one before a `STOP` or `DONE` line.
 - Long commands (waves, `run_state.py`, `run_recipe.py`, fetches) run in the foreground: you have nothing else to
   do while they run, and a background job outlives nothing here.
 - Close-out: run `close_state.py` only if the card tells this leg to. The desk adds its own transcript.
