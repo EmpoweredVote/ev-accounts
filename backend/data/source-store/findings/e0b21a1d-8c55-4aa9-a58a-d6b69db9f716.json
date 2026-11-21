@@ -32,5 +32,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns and large-capacity magazines",
+        "permit to buy a gun",
+        "carry a gun without a permit",
+        "red flag orders",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "official House member page https://www.oregonlegislature.gov/wise (read; names him as House District 48 representative; nothing on the subject)",
+        "campaign site: none found",
+        "Ballotpedia https://ballotpedia.org/Lamar_Wise (fetch returned an empty page; search listing shows he holds the seat and seeks re-election in 2026)",
+        "https://bluevoterguide.org/OR/candidate_Lamar_Wise/711413 (read; no gun passages in the page text)",
+        "news search on name plus gun words: nothing in his own words",
+        "House caucus release of 2026-02-25 on HB 4145 (https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Makes Fixes to Measure 114 to Reduce Gun Tragedy in Oregon.pdf): four other members quoted, he is not quoted; nothing on the subject from him",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:09:15.714Z",
+      "by": "source-collector"
+    }
+  ]
 }

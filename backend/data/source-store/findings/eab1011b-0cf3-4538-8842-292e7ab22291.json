@@ -30,7 +30,95 @@
           "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
         }
       }
+    },
+    {
+      "id": "4738e47010c7fbed9459e8c315b1c4f9ee576f505c85be73954d38680b471aed",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/houserepublicans/Documents/Release_House%20Republicans%20Condemn%20Unethical%20Process%20and%20%20Advancement%20of%20Gun%20Bill%20that%20Attacks%20Second%20Amendment%20Rights_.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "For many survivors escaping abusive relationships, a concealed handgun permit represents a vital, often last-line defense against a potentially armed abuser. These fee hikes and delays could force vulnerable individuals—frequently women and lower-income families already facing economic hardship—to wait longer or forgo protection altogether, heightening their risk during a dangerous escape period,",
+      "note": "Floor remarks on HB 4145 quoted in a House caucus press release: she says higher permit fees and longer waits would hurt domestic violence survivors who rely on a concealed handgun permit.",
+      "subjects": [
+        "permit fees and delays",
+        "concealed handgun permit",
+        "firearm purchase permits (Measure 114)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:24.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c4ecba2cb862c0f2e446ff44b343c2bc3a01eeb3b73565d43f2bc8099bc0aee",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/4099fbe",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "HB 4145 – Expands timelines and increases fees related to firearm purchase permits under Measure 114, potentially creating longer delays and higher costs for law-abiding individuals seeking to exercise their rights without clear evidence that the changes improve public safety outcomes.",
+      "note": "Her newsletter lists HB 4145 in its 'Bad' section and describes it as lengthening permit timelines and raising fees without shown public safety benefit.",
+      "subjects": [
+        "firearm purchase permits (Measure 114)",
+        "permit fees and delays"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:24.393Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "418e98847a822af5827aa8479177d4a3fa1285a14b106c653662e17fb43838da",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e43bfa",
+      "date": "2025-06-12",
+      "date_precision": "day",
+      "passage": "We’ve passed laws. We’ve debated regulations. But the reality is this: dangerous people are still getting drugs, still getting guns, and still slipping through the cracks.",
+      "note": "Newsletter after a reported bust of a convicted felon with nine firearms and drugs; she says dangerous people still get guns and calls for tougher accountability.",
+      "subjects": [
+        "keeping guns from felons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:24.393Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm purchase permits and fees (Measure 114)",
+        "concealed handgun permit fees and delays",
+        "keeping guns from felons",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/edwards (fetched; confirms sitting Representative, House District 31; no gun items on the page)",
+        "member newsletters on the legislature's bulletin service (4 fetched: 2026 short-session wrap-up, 2026-02-24 Good/Bad/Ugly, 2025-06-12 update; two with nothing on the subject)",
+        "House caucus press release of 2026-02-25 (fetched)",
+        "one web search on name plus subject words; one general search on name",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: news coverage of the HB 4145 House floor debate (video)"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:09:24.393Z",
+      "by": "source-collector"
+    }
+  ]
 }

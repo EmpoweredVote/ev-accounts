@@ -179,7 +179,83 @@
           "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
         }
       }
+    },
+    {
+      "id": "4dff9286a272933f8755f833e6b297a11437d871f0183720c070fb3b70ea87a6",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Democrats%20Call%20for%20Further%20Gun%20Safety%20Policies%20and%20for%20Congress%20to%20Act.pdf",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "For this reason, we desperately need and urge Congress to waive the filibuster and take action before another child is killed. There are sensible gun laws, supported by a majority of Americans, that Congress can pass quickly, including reinstating a ban on assault-style weapons or limiting high-capacity magazines. The Senate can immediately pass H.R. 8 to address background check requirements.",
+      "note": "Joint statement issued by six House members including Ruiz after the Uvalde school shooting. Urges Congress to reinstate an assault-style weapons ban or limit high-capacity magazines, and to pass H.R. 8 on background checks. Shared statement, not Ruiz alone.",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit large-capacity magazines",
+        "check every gun buyer",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:29.121Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d9596ceff89d49d8b44eabee04f0ae82a2d7f31d6971882306a13a383214e8cd",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Democrats%20Call%20for%20Further%20Gun%20Safety%20Policies%20and%20for%20Congress%20to%20Act.pdf",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "In Oregon, we’ve passed legislation that requires background checks, prohibits guns on public school grounds, makes extreme risk protection orders available, and ensures the secure storage of firearms. We are committed to taking bold action during the next legislative session in 2023 to further prevent these types of tragedies from happening.",
+      "note": "Same joint statement. Cites Oregon's existing background check, school-grounds, extreme risk order and secure storage laws and commits to further action in the 2023 session.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "safe storage of guns",
+        "guns on school grounds",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:29.121Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "high-capacity magazine limits",
+        "check every gun buyer",
+        "red-flag orders",
+        "gun safety laws in general",
+        "carry permits",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/ruiz (confirms House District 50, Gresham; welcome letter, nothing on the subject)",
+        "member bills page https://www.oregonlegislature.gov/ruiz/Pages/bills.aspx (sponsor list: covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/Ricki_Ruiz (403)",
+        "Oregon voters' guide page https://oregonvotes.gov/voters-guide-military/rickiruiz.html (fetched, nothing on the subject)",
+        "web search on name plus gun words (found one joint statement issued with five other House members, May 2022)",
+        "not reviewed: https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Passes Crucial Gun Bill to Improve Community Safety.pdf (fetched, does not name him)",
+        "not reviewed: https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Makes Fixes to Measure 114 to Reduce Gun Tragedy in Oregon.pdf (fetched, does not name him)",
+        "no campaign site found; no 2026 questionnaire or interview found"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:23:29.121Z",
+      "by": "source-collector"
+    }
+  ]
 }

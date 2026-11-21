@@ -333,7 +333,142 @@
           "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
         }
       }
+    },
+    {
+      "id": "b1409631fa84eb93131b733a8165dfb36197d9d86ff03ca807f111aa20ab57a6",
+      "kind": "own-words",
+      "url": "https://repgregsmith.com/?p=649",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "In all my years of service in the Oregon Legislature, I have never supported legislation that limits, reduces, or in any way infringes upon our Second Amendment right, and I don’t plan to start now",
+      "note": "Statement in his own press release on his No vote on HB 2005 B, which covers firearms without serial numbers, possession of certain guns under age 21, and public bodies barring concealed handguns in public buildings.",
+      "subjects": [
+        "unserialised (ghost) guns",
+        "minimum age for guns",
+        "carry in public buildings",
+        "general statement on the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:12:02.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da8d3ce6e0640eb240e8b21b813523a8399f090345fcd3ae81c987125a4c2903",
+      "kind": "own-words",
+      "url": "https://elkhornmediagroup.com/?p=118120",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "“If you can lock your guns up, do it,” Rep. Greg Smith (R-Heppner) said. “It’s just smart. But with that said, I would never vote to compromise the Second Amendment. I’d never vote to take away anyone’s right.”",
+      "note": "Direct quote in a local news story (Elkhorn Media Group) on that year's gun bills; he encourages locking up guns but says he would not vote to compromise the Second Amendment.",
+      "subjects": [
+        "safe storage of guns",
+        "general statement on the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:12:02.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bea789d2fbebb137b28a98f834b630c9fa3a59b522b2c344881f29aabacd7bb",
+      "kind": "own-words",
+      "url": "https://elkhornmediagroup.com/?p=118120",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "“In addition, there’s legislative language out there that says only if the state police give a thumbs-up to gun ownership can you acquire a weapon,”",
+      "note": "Direct quote in a local news story (Elkhorn Media Group) describing a pending proposal that state police approve a gun purchase; the story also notes a proposed one-month waiting period.",
+      "subjects": [
+        "permit or approval to buy a gun",
+        "waiting period"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:12:02.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e78f0aa22afbd2a7b0e9184fb47e9bf0c379ae494b6b6e73bedcb4111642e63",
+      "kind": "own-words",
+      "url": "https://repgregsmith.com/?p=604",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "passage": "I often receive questions from constituents regarding Measure 114” said Representative Smith, “having meetings like today are vastly important; where different branches of government can come together and learn from each other. A huge thank you goes out to Judge Raschio for his work to uphold Oregon’s Constitution”.",
+      "note": "In his own press release on a meeting with the Harney County judge who stayed Measure 114, he thanks the judge for his work.",
+      "subjects": [
+        "Measure 114 permit to purchase and magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:12:02.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39032be59ffb0b0ac2dfabc81c8adb775b49ef8162f7c3ef8a0404cfb409899c",
+      "kind": "own-words",
+      "url": "https://elkhornmediagroup.com/?p=158176",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "passage": "“He has a firm conviction in Oregon’s Constitution,” Smith said. “He sat down, he thoroughly read Ballot Measure 114, and using his judiciary discretion, issued the stay order.”",
+      "note": "Direct quote in a local news story (Elkhorn Media Group) about his meeting with the judge who stayed Measure 114; the story says he expressed support for the judge's decision.",
+      "subjects": [
+        "Measure 114 permit to purchase and magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:12:02.526Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns and unserialised firearms",
+        "minimum age to possess certain guns",
+        "carry in public buildings",
+        "waiting period for gun purchases",
+        "state police approval to buy a gun",
+        "Measure 114 (permit to purchase, magazine limit)",
+        "general statements on the Second Amendment",
+        "gun safety storage"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://repgregsmith.com (read two press releases; site search for 'gun' returned 11 results, only the two press-release pages above were read)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Greg_Smith_(Oregon)",
+        "one news search on name plus subject words (results led to local news and the member's own site)",
+        "https://elkhornmediagroup.com local news, two stories read",
+        "blocked: https://www.oregonlegislature.gov/smith-g (404, no member page at that address)",
+        "not reviewed: a House caucus press-release PDF on oregonlegislature.gov condemning passage of gun bills",
+        "not reviewed: https://www.nraila.org/articles/20200228/oregon-legislators-take-a-stand-against-gun-control",
+        "not reviewed: campaign site separate from official site; 2026 ballot status not confirmed by a page"
+      ],
+      "found": 5,
+      "at": "2026-11-21T17:12:02.526Z",
+      "by": "source-collector"
+    }
+  ]
 }

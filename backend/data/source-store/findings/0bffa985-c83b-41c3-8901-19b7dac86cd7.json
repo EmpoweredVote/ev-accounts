@@ -118,7 +118,55 @@
           "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
         }
       }
+    },
+    {
+      "id": "1508bc2a860926b7d75d8da7d1712b66585f73b7b17842d6268dc4bd9fbd8222",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Makes%20Fixes%20to%20Measure%20114%20to%20Reduce%20Gun%20Tragedy%20in%20Oregon.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "“HB 4145 reaffirms the state’s commitment to evidence-based solutions and to respecting the decision voters made at the ballot box. Oregonians voted for action,” said Rep. April Dobson (D-Happy Valley). “By passing this bill from the House floor, Oregon legislators have made a stand to reduce gun violence and follow through on the will of Oregon voters.”",
+      "note": "Quote in a joint House caucus release issued from her office and three others, about HB 4145 (changes to Measure 114: magazine limits and background checks). She ties the bill to the voters' decision and to reducing gun violence.",
+      "subjects": [
+        "Measure 114 fixes",
+        "large-capacity magazine limits",
+        "check every gun buyer",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:05.166Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "large-capacity magazine limits",
+        "check every gun buyer",
+        "Measure 114 fixes",
+        "rapid-fire activators",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/dobson (read; nothing on the subject)",
+        "official biography page (read; nothing on the subject)",
+        "House caucus press release on HB 4145, 2026-02-25 (read)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/April_Dobson (403)",
+        "one news/web search on name plus gun words (only the caucus release found)",
+        "campaign site: not reviewed, none located"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:07:05.166Z",
+      "by": "source-collector"
+    }
+  ]
 }

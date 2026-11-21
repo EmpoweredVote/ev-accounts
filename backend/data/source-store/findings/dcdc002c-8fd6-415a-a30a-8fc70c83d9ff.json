@@ -326,5 +326,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of firearm or large-capacity magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general gun rights and gun safety statements",
+        "Measure 114"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate page https://www.oregonlegislature.gov/neron (read; confirms Senator Courtney Neron Misslin, District 13; nothing on the subject beyond general 'public safety and violence prevention' and 'school safety' wording)",
+        "official biography page https://www.oregonlegislature.gov/neron/Pages/biography.aspx (nothing on the subject)",
+        "official news page https://www.oregonlegislature.gov/neron/Pages/news.aspx (nothing on the subject)",
+        "June 2025 legislative update newsletter https://content.govdelivery.com/accounts/ORLEG/bulletins/3e63000 (read; confirms 2025 appointment to the Senate; nothing on the subject)",
+        "HB 2258 vote explanation PDF https://www.oregonlegislature.gov/pcive/HB%202258%20Neron%20Misslin%206-24-2025.pdf (fetched; contents not confirmed on the subject, not saved)",
+        "Oregon voters' guide page https://oregonvotes.gov/voters-guide/english/courtneyneronmisslin.html (nothing on the subject found)",
+        "Ballotpedia https://ballotpedia.org/Courtney_Neron_Misslin (fetch returned no usable page text; not reviewed)",
+        "two news searches on name plus gun, firearm safety and Measure 114 words (no statement by her found)",
+        "one search on 2026 race status: the search results showed her as the incumbent for Senate District 13 with a general election on 2026-11-03; result of that election not confirmed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:25:03.634Z",
+      "by": "source-collector"
+    }
+  ]
 }

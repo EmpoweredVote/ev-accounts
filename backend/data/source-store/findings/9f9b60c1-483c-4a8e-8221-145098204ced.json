@@ -178,7 +178,57 @@
           "sha256": "279267ee73461358ff520d5e00c4800c05abded3dd30dcd5e1578cd92c5a918f"
         }
       }
+    },
+    {
+      "id": "cba6935925aaf901b654e7d9ec0ca2f15869e6531e5c043abbbd1f640b94244d",
+      "kind": "own-words",
+      "url": "https://oregoncatalyst.com/?p=88858",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "Rural Oregon House Republicans remain vigilant on 2nd amendment rights for rural Oregon and are excited to announce House Bill 3076 was defeated today. HB 3076 would have severely hampered gun dealers in Oregon from selling guns.",
+      "note": "Joint statement by nine rural House members, including her by name, published by an online outlet. It describes SB 243 as an attempt to weaken the 2nd amendment and welcomes the defeat of HB 3076, which it says would have hampered gun dealers. Statement is issued in the group's name, not hers alone.",
+      "subjects": [
+        "Second Amendment",
+        "ban on rapid-fire devices",
+        "gun dealer rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:31.229Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire devices",
+        "gun dealer rules",
+        "Measure 114 changes",
+        "Second Amendment",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red flag orders",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://www.oregonlegislature.gov/mcintire (confirms Representative, House District 56; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Emily_McIntire (403)",
+        "campaign site: https://www.emilymcintire.com is a different person (an author), not used; no campaign site found for the legislator",
+        "news search on name plus gun words: one joint statement found (Oregon Catalyst, 2025-06-26)",
+        "House caucus release PDFs on gun bills: fetched, no passage naming her found",
+        "nothing on the subject: other URL patterns"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:08:31.229Z",
+      "by": "source-collector"
+    }
+  ]
 }

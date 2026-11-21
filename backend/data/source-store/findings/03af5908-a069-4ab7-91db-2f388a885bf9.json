@@ -244,7 +244,58 @@
           "sha256": "871d12e35a22fb1f2e4bc65812e40ba6f4f65c48f8c3b7f0dd38a379b5031eb7"
         }
       }
+    },
+    {
+      "id": "306e6c2ac9e591491bdaa0d06759242ec113053d40b0a055ce35aef06221b208",
+      "kind": "own-words",
+      "url": "https://representativepammarsh.com/rep-pam-marsh-speaks-out-against-this-weeks-measure-114-ruling/",
+      "date": "2023-11-22",
+      "date_precision": "day",
+      "passage": "“The folks who pursued the initiative on the ballot feel that what they would identify as common sense reforms are important for public safety,” Marsh said.",
+      "note": "Quote carried in a KDRV news story, reposted on her own site, after a Harney County judge struck down Measure 114 (permit to purchase, safety course, background check). She describes the backers' view of the measure as common-sense reforms for public safety; the story also reports she expected the case to reach the Oregon Supreme Court.",
+      "subjects": [
+        "Measure 114 permit to purchase",
+        "check every gun buyer",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:25.358Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Measure 114 permit to purchase",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment / gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://www.oregonlegislature.gov/marsh (confirms House District 5, sitting member; nothing on the subject)",
+        "her own site https://representativepammarsh.com (read one post on the subject; its page carries a donate link for her 2026 campaign)",
+        "web search on her name plus gun words (one query, one more for newsletter/statement)",
+        "blocked: https://ballotpedia.org/Pam_Marsh (empty page)",
+        "blocked: https://www.pammarsh.com (domain does not resolve)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages skipped per brief",
+        "not reviewed: Facebook page https://www.facebook.com/representativepammarsh",
+        "not reviewed: 2026 general-election ballot confirmation from an elections page"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:22:25.358Z",
+      "by": "source-collector"
+    }
+  ]
 }

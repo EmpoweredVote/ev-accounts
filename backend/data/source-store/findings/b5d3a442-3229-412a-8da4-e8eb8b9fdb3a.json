@@ -265,5 +265,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Measure 114 permit and magazine limit",
+        "check every gun buyer",
+        "ban on assault-style guns and large magazines",
+        "carry a gun",
+        "Second Amendment",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.oregonlegislature.gov/walters (member page, confirms sitting District 37 representative; nothing on the subject)",
+        "member news page https://www.oregonlegislature.gov/walters/Pages/news.aspx (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jules_Walters (403)",
+        "https://oregonvotes.gov/voters-guide/english/juleswalters.html (fetched; no usable guide content, nothing on the subject)",
+        "blocked: https://www.yahoo.com/news/articles/house-passes-controversial-oregon-gun-215504172.html (429)",
+        "https://www.opb.org/article/2026/02/25/oregon-conentious-gun-control-law/ (fetched; no mention of her in the page text)",
+        "two web searches on name plus gun words (no own words found)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:24:05.140Z",
+      "by": "source-collector"
+    }
+  ]
 }

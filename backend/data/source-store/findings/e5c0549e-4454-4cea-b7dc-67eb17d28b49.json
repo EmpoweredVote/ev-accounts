@@ -418,7 +418,239 @@
           "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
         }
       }
+    },
+    {
+      "id": "5a77819b9c143c34b9ae1abb5cb0e9653aa0c161b6f105e028bbdbccd451b69b",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/evans/Documents/HBpress%20release%20(2)_revised.pdf",
+      "date": "2015-05-04",
+      "date_precision": "day",
+      "passage": "This bill does not infringe upon the 2nd Amendment under any legal interpretation that can be found in case law.",
+      "note": "His public statement on voting for SB 941-A (2015), on his own legislature site, saying the bill does not violate the Second Amendment.",
+      "subjects": [
+        "Second Amendment and gun rights",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c92c66b94ef96a1e873dcbc1abbe9ae88c39614a2926ea92488f119164da8054",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/evans/Documents/HBpress%20release%20(2)_revised.pdf",
+      "date": "2015-05-04",
+      "date_precision": "day",
+      "passage": "Senate Bill 941-A requires people that sell firearms privately to do so by the same rules as everyone else, period.",
+      "note": "In the same statement he describes the bill as applying the same sale rules to private sellers.",
+      "subjects": [
+        "private gun sale background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4bf230363407f9c158c478497b214a7a4445c9ff7892e5b7d24aa1bdbb35a71",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/evans/Documents/HBpress%20release%20(2)_revised.pdf",
+      "date": "2015-05-04",
+      "date_precision": "day",
+      "passage": "Universal background checks for firearms sales may prove to be an important step toward a more peaceful society.",
+      "note": "He says universal background checks may be an important step, and adds that he will keep pressing for a tax credit or deduction for checks and better check technology.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "193837ce76b7b939c74ec52e385bc982a49eb8f2c7f76f36e376fe9146e09ce5",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/evans/Documents/HBpress%20release%20(2)_revised.pdf",
+      "date": "2015-05-04",
+      "date_precision": "day",
+      "passage": "Laws alone do not, cannot, and will not, make our streets safer—or our communities more secure.",
+      "note": "He says laws alone will not make communities safer and calls for investment in mental health care, early intervention and justice systems.",
+      "subjects": [
+        "gun safety laws, general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "469d18bed30cdc6a6648c360022cfc58e7c2d6ba09f4423005fa0d83a1062d1c",
+      "kind": "own-words",
+      "url": "https://lagrandeobserver.com/2023/03/23/oregon-lawmakers-consider-new-gun-legislation",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "I would not support a bill that did not respect individual liberty, even as it provides greater public safety,",
+      "note": "Quoted in a La Grande Observer story on the 2023 House gun bills (HB 2005, 2006, 2007), of which he was a lead crafter.",
+      "subjects": [
+        "gun safety laws, general statement",
+        "Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d6803b987fd76602719e4930bf294c0161231afc0024020f905f1e5e32a4170",
+      "kind": "own-words",
+      "url": "https://lagrandeobserver.com/2023/03/23/oregon-lawmakers-consider-new-gun-legislation",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "I think the attorney general makes the case that having unserialized firearms is a dumb idea,” Evans said. “Responsible gun owners do not want unserialized weapons.",
+      "note": "Quoted by La Grande Observer on the HB 2005 ban on unserialised guns.",
+      "subjects": [
+        "ban on unserialised (ghost) guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca6e4a5e83abdcd66e3228f4fd4d0d3e237cee45dc0e0c6a7c7b9dbe9b8e392b",
+      "kind": "own-words",
+      "url": "https://lagrandeobserver.com/2023/03/23/oregon-lawmakers-consider-new-gun-legislation",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "If you need an AR-15 to shoot a coyote, you probably shouldn’t have that AR-15 in the first place,” Evans said. “A .30-06 (rifle) should do just fine.",
+      "note": "Quoted by La Grande Observer on access to AR-15 rifles for 18-to-20-year-olds under HB 2006.",
+      "subjects": [
+        "minimum age for buying guns",
+        "assault-style rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "677e857b85b75160cfa5b18d8eaa45c31f20d60d17b6872f267eb809bac99fad",
+      "kind": "own-words",
+      "url": "https://lagrandeobserver.com/2023/03/23/oregon-lawmakers-consider-new-gun-legislation",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "I think this package is a good balance between making sure people have the full spectrum of rights they deserve, and at the same time, taking real action to try to prevent needless deaths.",
+      "note": "Quoted by La Grande Observer describing the 2023 gun package as a balance of rights and safety.",
+      "subjects": [
+        "gun safety laws, general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c33a5b84e82d7fb36587351bf9e34a265747e0e472b0532d59a18f3a63f9040",
+      "kind": "own-words",
+      "url": "https://www.kptv.com/2025/02/22/oregon-considers-bill-limiting-contact-between-kids-parents-who-use-gun-dv-abuse/?outputType=amp",
+      "date": "2025-02-21",
+      "date_precision": "day",
+      "passage": "It is a bill about child safety. It is not a bill about the Second Amendment or Article 1 Section 27 of the Oregon constitution,",
+      "note": "Quoted by KPTV in answer to critics of HB 2774 on gun-related abuse and child custody visits; the story calls him a gun owner.",
+      "subjects": [
+        "guns and child safety in domestic abuse cases",
+        "Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78b58f230d67c1b309c4bf0596813cc798b51b15806f60b9ebf041e9cce9861f",
+      "kind": "record",
+      "url": "https://www.kptv.com/2025/02/22/oregon-considers-bill-limiting-contact-between-kids-parents-who-use-gun-dv-abuse/?outputType=amp",
+      "date": "2025-02-21",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2774-2025",
+      "act": "sponsor",
+      "note": "HB 2774 directs courts to bar unsupervised time with a child for a parent who committed abuse involving unlawful use or brandishing of a firearm; he is named as sponsor in a news story.",
+      "subjects": [
+        "guns and child safety in domestic abuse cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:25:02.133Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private gun sale background checks",
+        "keep guns from people in mental health treatment",
+        "ban on unserialised (ghost) guns",
+        "minimum age for buying guns",
+        "assault-style rifles",
+        "guns and child safety in domestic abuse cases",
+        "Second Amendment and gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "his official legislature member site (https://www.oregonlegislature.gov/evans): page fetched, nothing on the subject on its front page; one statement PDF on his site read",
+        "one web search on his name plus firearm words",
+        "news: La Grande Observer 2023 story read",
+        "news: KPTV 2025 story read",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (not fetched)"
+      ],
+      "found": 10,
+      "at": "2026-11-21T17:25:02.133Z",
+      "by": "source-collector"
+    }
+  ]
 }

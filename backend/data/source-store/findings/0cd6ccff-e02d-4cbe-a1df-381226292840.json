@@ -168,7 +168,167 @@
           "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
         }
       }
+    },
+    {
+      "id": "e8e2af3990a5cb4e290119a2c4e6edc5a2c03a4aea22c0049e488250ef54e5d7",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/scharf/Documents/Presser%20HB%202005B.pdf",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "Yesterday, the House of Representatives voted to pass HB 2005 B, an unconstitutional afront to our second amendment right to bear arms. Rather than taking proactive steps to address the safety of our schools and root causes of violence, the House Democratic Majority chose to force unprecedented restrictions on Oregon's law-abiding gun owners.",
+      "note": "Official press release from her office on House passage of HB 2005 B (age 21 to possess, undetectable and unserialised guns, local gun-free zones). She calls it unconstitutional.",
+      "subjects": [
+        "Second Amendment rights",
+        "age limit to possess a gun",
+        "unserialised and undetectable guns",
+        "gun-free zones in public buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:50.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ebe2bc93026cd6add0b57855a103885ca363e70cdb343ed0b81de0cca92661f",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/scharf/Documents/Presser%20HB%202005B.pdf",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "By allowing local governments to designate public buildings as gun-free zones, HB 2005 B will create a false sense of security and make these public buildings more vulnerable to violent attacks. Such gun-free zones disarm law-abiding and responsible gun owners and do nothing to prevent violence at the hands of dangerous criminals; suggesting this policy will reduce gun violence in Oregon is a farce.",
+      "note": "Same release, in the body text issued by her office: argues gun-free zones in public buildings do not prevent violence.",
+      "subjects": [
+        "gun-free zones in public buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:50.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5124147ca154ab6ddeb95859171dde0963174ecf3e69c82ebc7dddad63fe554",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e2ac65",
+      "date": "2025-05-31",
+      "date_precision": "day",
+      "passage": "SB 243 passed the Senate on a party-line vote this week and now awaits referral in the House Chamber. This is a deeply flawed gun control bill that infringes on the constitutional rights of legal, responsible gun owners to defend themselves while doing nothing to keep firearms away from criminals.",
+      "note": "Her legislative newsletter on SB 243 (local limits on concealed carry in public buildings, bump stock ban). Date taken from the only date string on the page; treat as approximate.",
+      "subjects": [
+        "gun-free zones in public buildings",
+        "concealed handgun licence holders carrying",
+        "bump stock ban",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:50.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab2bf1b1e83a1b56c5330c2ff0e9f43abe3e9fb13e4d8bf90e5bdf711cdbec31",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e2ac65",
+      "date": "2025-05-31",
+      "date_precision": "day",
+      "passage": "SB 243 also criminalizes the transport, transfer or manufacturing of bump stocks, making the crime a Class B Felony which is on the same level as possession of child pornography (ORS163.686), Aggravated Theft (ORS 164.057), Assault in the second degree (ORS 163.175), just to name a few.",
+      "note": "Same newsletter: objects to the penalty level for bump stock transport, transfer or manufacture in SB 243.",
+      "subjects": [
+        "bump stock ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:50.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c9d5d2560f35be3541f8651f2b4a074b27b05ab36f401485767607caa421a950",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/40784c3",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "This bill does not resolve the Constitutional problems with Measure 114 - in fact, it does the opposite. HB 4145 adds new barriers to firearm ownership by increasing training requirements and permit fees.",
+      "note": "Her legislative newsletter from the first weeks of the 2026 session on HB 4145 (Measure 114 permit changes), written while the bill was in committee. Exact day not shown on the page.",
+      "subjects": [
+        "permit and training to buy a gun",
+        "permit fees",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:50.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92da75590080e437a150b1c96e0411681562a88fc7e02b2dfc8d8c626b6b862f",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/40784c3",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "The bill would disproportionately impact lower-income and working Oregonians - effectively making lawful firearm ownership out of reach for many people who lack the time or financial resources to comply with increased regulations.",
+      "note": "Same newsletter: says HB 4145's permit fees and training rules would burden lower-income people.",
+      "subjects": [
+        "permit fees",
+        "permit and training to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:50.120Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "permit and training to buy a gun",
+        "permit fees",
+        "age limit to possess a gun",
+        "unserialised and undetectable guns",
+        "gun-free zones in public buildings",
+        "bump stock ban",
+        "concealed handgun licence holders carrying",
+        "Second Amendment rights"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate matches)",
+        "official legislative member page and news page (page loaded; news list is script-driven, no gun items readable)",
+        "official press release on HB 2005 B (read)",
+        "two official newsletters (read): May 2025 and early 2026",
+        "web search on name plus firearms (one search)",
+        "blocked: https://ballotpedia.org/Anna_Scharf",
+        "nothing on the subject: https://oregonvotes.gov/voters-guide/english/annamscharf.html (page returned only generic site content)",
+        "sponsor list: covered by bulk bill data (OLIS bill and vote pages skipped)",
+        "not reviewed: campaign site (none located); ontheissues and vote411 not followed",
+        "still holds the House District 23 seat per her official member page; scope confirmed as sitting official"
+      ],
+      "found": 6,
+      "at": "2026-11-21T17:10:50.120Z",
+      "by": "source-collector"
+    }
+  ]
 }

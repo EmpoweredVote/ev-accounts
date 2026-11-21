@@ -64,5 +64,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun-safety or Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/munoz (read; names her as House District 22 representative; nothing on the subject)",
+        "official news page https://www.oregonlegislature.gov/munoz/Pages/news.aspx (searched for gun and firearm words; nothing on the subject)",
+        "web search on her name plus firearm words (nothing on the subject by her)",
+        "blocked: https://ballotpedia.org/Lesly_Muñoz (empty page)",
+        "blocked: https://ballotpedia.org/Oregon_House_of_Representatives_District_22 (empty page)",
+        "Wikipedia page (read; lists her as a sitting House member, mentions immigration and school issues, nothing on the subject; did not state her 2026 primary result)",
+        "a news story on the May 2026 primary (read; covers her sister's Senate race, nothing on her own primary result or the subject)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: none found",
+        "not reviewed: Oregon Secretary of State certified 2026 primary results for House District 22 (her general-election ballot status not confirmed)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:08:11.246Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -120,5 +120,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and big magazines",
+        "check every gun buyer",
+        "permits and waiting periods to buy",
+        "red flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "repeal of gun laws",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member site https://www.oregonlegislature.gov/fragala (home page, news list, biography page read; no gun items in the news list)",
+        "her 2026 session wrap-up newsletter https://content.govdelivery.com/accounts/ORLEG/bulletins/40e8cc4 (read; nothing on guns)",
+        "House caucus release on SB 243, PDF: fetch returned only binary; her name not found, not reviewed: https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Passes Crucial Gun Bill to Improve Community Safety.pdf",
+        "blocked: https://ballotpedia.org/Lisa_Fragala (HTTP 403)",
+        "news search on her name plus gun words: nothing in her own words; she appears on the SB 243 and HB 4145 passage only as a voter and co-sponsor",
+        "campaign site: none found; third-party candidate pages are leads only, not reviewed: https://goodparty.org/candidate/lisa-fragala/oregon-house-of-representatives-district-8",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:08:29.614Z",
+      "by": "source-collector"
+    }
+  ]
 }

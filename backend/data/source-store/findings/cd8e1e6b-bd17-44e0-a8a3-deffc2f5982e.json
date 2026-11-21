@@ -116,7 +116,119 @@
           "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
         }
       }
+    },
+    {
+      "id": "a64286764fb10acff26112643656f788019b6fb9452a52b73031084a239d37a5",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-cyrus-javadi-what-im-working-on-safe-schools-package-update-on-bad-bills-more",
+      "date": "2023-04",
+      "date_precision": "month",
+      "passage": "It is currently legal under Oregon and Federal law for a person to make an unserialized firearm for their own use as long as they do not sell or otherwise transfer it. This bill would criminalize Oregonians who possess those firearms.",
+      "note": "Legislator's newsletter, reposted by a local paper, describing the home-made and unserialised gun ban inside the HB 2005 omnibus.",
+      "subjects": [
+        "ban on home-made and unserialised guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:37.744Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3d3e366bbb8f8ea8798971be2ae7ee8f0c75c2324c562800210b2d5e4257703",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-cyrus-javadi-what-im-working-on-safe-schools-package-update-on-bad-bills-more",
+      "date": "2023-04",
+      "date_precision": "month",
+      "passage": "I don’t believe we should be deciding who gets to exercise their constitutional rights, like the 2nd Amendment, and who doesn’t.",
+      "note": "Newsletter on the HB 2005 omnibus's proposal to raise the age to buy a rifle to 21; he objects to the age limit.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:37.744Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3e8b2393b3c06ccd9835f3f1e4b3a7f29cebeecdf186f058a17e89939b221b8",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-cyrus-javadi-what-im-working-on-safe-schools-package-update-on-bad-bills-more",
+      "date": "2023-04",
+      "date_precision": "month",
+      "passage": "Everyone should be able to protect themselves, even if they don’t have the State Police protecting them.",
+      "note": "Newsletter on the HB 2005 omnibus's expansion of gun-free zones; he says it would make concealed handgun licenses useless and objects to carry limits on adjacent ground.",
+      "subjects": [
+        "places where carry is allowed",
+        "concealed carry permits",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:37.744Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ffd624fb091b4b532abf06815fcc083bddfd6dfd803a5cf9fedb1e2288764db3",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/?p=78833",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "But, here’s the real tension. If the voters pass a measure, and if the courts ultimately uphold it, do we have an obligation to make it operational? Or do we let it collapse under its own ambiguity so we can say, “See? It never worked”?",
+      "note": "Floor-privilege column on a vote he took that week on HB 4145, which adjusts the Measure 114 permit-to-purchase system (60-day processing, fee caps, permit start delayed to 2028). He lists criticisms from several sides and says he saw neither repeal nor inaction as a serious answer.",
+      "subjects": [
+        "permit to buy a gun",
+        "background checks",
+        "large-capacity magazines",
+        "Measure 114"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:37.744Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on home-made and unserialised guns",
+        "minimum age to buy a rifle",
+        "gun-free zones and carry permits",
+        "permit to buy, training, background checks and large-capacity magazines (Measure 114)",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page and news page (nothing on the subject)",
+        "newsletter bulletin copies on the Tillamook County Pioneer site (2 read)",
+        "https://content.govdelivery.com/accounts/ORLEG/bulletins/351925e (read, same 2023 newsletter text)",
+        "web search on name plus gun words (1 search)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://ballotpedia.org/Cyrus_Javadi",
+        "not reviewed: https://www.yahoo.com/news/articles/gop-constituents-call-him-rino-130000995.html",
+        "not reviewed: https://dailyastorian.com/?p=578007"
+      ],
+      "found": 4,
+      "at": "2026-11-21T17:09:37.744Z",
+      "by": "source-collector"
+    }
+  ]
 }

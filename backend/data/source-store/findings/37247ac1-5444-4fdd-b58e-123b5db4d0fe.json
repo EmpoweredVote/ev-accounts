@@ -238,5 +238,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Measure 114",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "official member page https://www.oregonlegislature.gov/hudson (read: confirms House District 49 representative; nothing on the subject)",
+        "official news list https://www.oregonlegislature.gov/hudson/pages/news.aspx (read: nothing on the subject; one 3/4/2025 school-safety release title, body not shown, not reviewed)",
+        "blocked: https://ballotpedia.org/Zach_Hudson (empty page returned)",
+        "web search: name plus gun/Second Amendment/Measure 114 words (no statement by him found; third-party listing of an endorsement by a gun-safety group is not his own words)",
+        "web search: 2026 candidacy (running for re-election in District 49; a search summary, not read on the page itself)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.facebook.com/hudsondist49",
+        "not reviewed: https://twitter.com/repzachhudson",
+        "not reviewed: his e-newsletters (no archive on the member page)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:23:26.692Z",
+      "by": "source-collector"
+    }
+  ]
 }

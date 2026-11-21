@@ -235,7 +235,79 @@
           "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
         }
       }
+    },
+    {
+      "id": "8866d85c451abeb828be8e1faa49340a394e1571b678d69210b066275082ab85",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2021R1/Downloads/PublicTestimonyDocument/15461",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "The Milwaukie City Council strongly supports HB2510 and urges its passage. Our council supports smart and proactive measures to stem the tide of gun violence.",
+      "note": "Council testimony to the House Health Care committee, signed by Gamba as Mayor of Milwaukie (before he served in the Legislature), with two councilors. It is a statement in the council's name, which he signed. It backs HB 2510 on firearm safety and accountability.",
+      "subjects": [
+        "gun safety laws",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:23.258Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "614c2efe92a30aafd7497b3f484ed9ce2e3da46197f6da4d199166228810595e",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2021R1/Downloads/PublicTestimonyDocument/15461",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "precluding possession of unregistered or untraceable firearms",
+      "note": "One of the concepts the council letter, signed by Gamba as Mayor, says it supports; others listed are locked storage, reporting loss or theft within 72 hours, supervision of minors, and a ban on firearms a metal detector cannot find.",
+      "subjects": [
+        "untraceable or unregistered guns",
+        "safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:23.258Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits and waiting periods",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "safe storage and loss reporting",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislative page https://www.oregonlegislature.gov/gamba (confirms House District 41, Milwaukie; nothing on the subject on the home page)",
+        "official news page https://www.oregonlegislature.gov/gamba/Pages/news.aspx (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mark_Gamba (403)",
+        "campaign site: not reviewed, none found in search",
+        "web search on name plus gun words (found only a 2021 city council letter signed as mayor)",
+        "OLIS bill and vote pages and sponsor list: covered by bulk bill data",
+        "not reviewed: House caucus press releases on gun bills (excerpts did not name him)"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:23:23.258Z",
+      "by": "source-collector"
+    }
+  ]
 }

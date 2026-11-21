@@ -505,5 +505,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns and rapid-fire devices",
+        "safe storage of guns",
+        "guns in public buildings",
+        "carry permits",
+        "general statements on gun safety or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/taylor (confirms Senate District 21 member; no mention of guns)",
+        "campaign site: https://www.kathleentaylor.org did not load, not reviewed",
+        "blocked: https://ballotpedia.org/Kathleen_Taylor (403)",
+        "Senate majority press release on SB 243 (May 29, 2025): quotes other senators, nothing from this person",
+        "House press release on SB 554 (Apr 29, 2021): statement from other members, nothing from this person",
+        "news search on name plus gun words: nothing attributed to this person",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:09:46.888Z",
+      "by": "source-collector"
+    }
+  ]
 }

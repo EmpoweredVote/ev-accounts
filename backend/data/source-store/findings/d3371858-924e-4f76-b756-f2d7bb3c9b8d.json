@@ -64,5 +64,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "waiting periods",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment general statements",
+        "Measure 114"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "https://www.oregonlegislature.gov/chotzen/Pages/default.aspx (own member page read; confirms House District 46 representative; greeting mentions no gun subject)",
+        "https://www.oregonlegislature.gov/chotzen/Pages/biography.aspx (own member page read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Willy_Chotzen (403)",
+        "web search: name plus firearms words (two searches; no page quoting him on the subject)",
+        "news stories on the 2026 Measure 114 bill: not reviewed, results did not name him",
+        "sponsor list: covered by bulk bill data",
+        "no campaign site found; newsletter not reachable (sign-up only)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:09:00.677Z",
+      "by": "source-collector"
+    }
+  ]
 }

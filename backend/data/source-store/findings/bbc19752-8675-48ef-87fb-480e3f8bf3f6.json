@@ -463,7 +463,96 @@
           "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
         }
       }
+    },
+    {
+      "id": "41a3058145d58b5ed987ae752b7de160657aa64297ae53c872fb045622ac0b50",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Passes%20Crucial%20Gun%20Bill%20to%20Improve%20Community%20Safety.pdf",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "At the heart of the bill is this: you cannot have a rapid-fire device in this state. Bump stocks, for example, allow a semi-automatic rifle to be essentially turned into a machine gun,",
+      "note": "Quote in a House majority release issued with his office, on SB 243 (rapid-fire device ban); he also says gun violence harms communities daily and that this is not a status quo to accept.",
+      "subjects": [
+        "ban on rapid-fire devices (bump stocks)",
+        "gun violence prevention bills"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:17.857Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cbeba8cb1ce34ab053a93895adcaf089d358ca4e614ed37e6f0fc365726e0b8",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Democrats%20Prioritize%20Community%20and%20School%20Safety,%20Pass%20Gun%20Violence%20Prevention%20Bill.pdf",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "There are a number of actions we will take this session to build safer and healthier communities, but to tackle the gun violence epidemic, we must also couple those efforts with common sense gun safety laws,",
+      "note": "Quote in a House majority release after HB 2005 passed the House; he is named as chief sponsor and says gun safety laws are needed alongside other community-safety efforts.",
+      "subjects": [
+        "common sense gun safety laws",
+        "gun violence prevention bills"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:17.857Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8fdb2caeb47e77fb13225106834ce23949133e422866ad0e89a5cd53227a0c0",
+      "kind": "own-words",
+      "url": "https://www.ijpr.org/politics-government/2025-06-26/oregon-lawmakers-pass-gun-bill-to-ban-rapid-fire-devices-allow-new-concealed-carry-rules",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "passage": "I am mystified that we can’t keep in our head all the shootings that have happened in our country and our state,",
+      "note": "Floor remark on SB 243 as quoted by a public radio news story (JPR/OPB); he went on to list Clackamas Town Center, Umpqua Community College, Bend Safeway, Parkland and Sandy Hook, calling such shootings commonplace.",
+      "subjects": [
+        "gun violence prevention bills",
+        "ban on rapid-fire devices (bump stocks)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:17.857Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire devices (bump stocks)",
+        "common sense gun safety laws",
+        "gun violence prevention bills",
+        "check every gun buyer",
+        "permit to buy a gun (Measure 114)",
+        "large-capacity magazines",
+        "carry in public buildings"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the member's official legislature page (https://www.oregonlegislature.gov/kropf), read: confirms Rep. Jason Kropf, House District 54; no gun content on the front page",
+        "not reviewed: https://www.oregonlegislature.gov/kropf/Pages/news.aspx",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus gun words (OPB/JPR stories read)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:24:17.857Z",
+      "by": "source-collector"
+    }
+  ]
 }

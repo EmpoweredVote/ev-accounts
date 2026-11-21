@@ -180,7 +180,253 @@
           "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
         }
       }
+    },
+    {
+      "id": "e8cd721723f5e524a736969380b17be1f950783d99a2eddeb6ac582bbceee717",
+      "kind": "own-words",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Downloads/PublicTestimonyDocument/227641",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "passage": "HB 4145 infringes on constitutional rights, burdens law enforcement without support, and fails to deliver measurable public safety improvements. I urge the committee to reject this bill.",
+      "note": "Her written testimony to House Judiciary against HB 4145 (permit to buy a firearm, higher fee, longer wait, 10-round magazine limit).",
+      "subjects": [
+        "permit to buy a gun",
+        "waiting period",
+        "magazine size limit",
+        "Measure 114"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c6a1e788dec64b3e365fba1f389441d78a57b94639dcd63b34cedd9a836f5de",
+      "kind": "own-words",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Downloads/PublicTestimonyDocument/227641",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "passage": "HB 4145 raises the permit fee from $65 to $150—more than doubling the cost for law-abiding citizens. It extends issuance timelines from 30 to 60 days, creating lengthy delays in exercising constitutional rights.",
+      "note": "Objects to the higher permit fee and the 60-day permit wait in HB 4145.",
+      "subjects": [
+        "permit to buy a gun",
+        "waiting period",
+        "permit fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0481a524e1e1d64333a72e5965cc5c165225fde2bde060e606245fa9bf8f6c1",
+      "kind": "own-words",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Downloads/PublicTestimonyDocument/227641",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "passage": "No Public Safety Gains. Most critically, this system does nothing to address the real drivers of gun violence: straw purchasing, criminal trafficking, stolen firearms, domestic violence enforcement, suicide prevention, and mental health intervention.",
+      "note": "Says the permit system does not address what she names as the causes of gun violence.",
+      "subjects": [
+        "permit to buy a gun",
+        "gun violence causes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ac76430618fa6c55bd1d8f880912a35e62341819d33e5c28ddf0cda322db13f",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/houserepublicans/Documents/Release_House%20Republicans%20Condemn%20Unethical%20Process%20and%20%20Advancement%20of%20Gun%20Bill%20that%20Attacks%20Second%20Amendment%20Rights_.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "What occurred in committee surrounding this bill should concern every member of this chamber—regardless of party or position on the policy itself,",
+      "note": "Quote in a House caucus release on HB 4145; she speaks about how the committee vote was handled, not about the gun policy itself.",
+      "subjects": [
+        "permit to buy a gun",
+        "committee process on HB 4145"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "643ebb3240951dea10b80050712125bb170bc95c4826efdf5996fdbb71b27b38",
+      "kind": "own-words",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/159049",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "passage": "I write to oppose both House Bill 3075 and 3076. Oregon already has some of the strictest gun laws in the nation. This Legislature should focus on enforcing those laws instead of passing new ones.",
+      "note": "Written testimony opposing HB 3075 (Measure 114 permit changes) and HB 3076 (gun dealer rules).",
+      "subjects": [
+        "permit to buy a gun",
+        "gun dealer rules",
+        "Measure 114",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3aef30b139aebffbca93d69f092918550cd52523b3fd63f51dbb483667784c4",
+      "kind": "own-words",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/159049",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "passage": "Additional regulations would not enhance public safety but would instead harm small businesses and limit the rights of lawful gun owners.",
+      "note": "Objects to added rules on licensed gun dealers in HB 3076.",
+      "subjects": [
+        "gun dealer rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8fb9e0d6404bf1d2504715e174a3b372d261ebafbc18b8dfea73362fad2974a",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/83601",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "It is currently legal under Oregon and Federal law for a person to make an unserialized firearm themselves for their own use as long as they do not sell or otherwise transfer it. This bill would instantly criminalize thousands of Oregonians who possess these firearms.",
+      "note": "Written testimony against HB 2005 (unserialised home-made guns).",
+      "subjects": [
+        "ghost guns / unserialised guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4c3b00386ca0d07b8b993ee7dbbcc7c2b23d262746f0305674bd731e5957f51",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/83601",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "We should not be deciding who gets to exercise their constitutional rights, like the 2nd Amendment, and who doesn’t.",
+      "note": "Against HB 2006, which would bar 18-to-20-year-olds from having a rifle.",
+      "subjects": [
+        "minimum age to own a rifle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6eb8e1fdc8bb1b28dbf689b775555012cb3fa026ddb0290718b7f00d62d4c9bb",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/83601",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "passage": "Everyone should be able to protect themselves, even if they don’t have the State Police protecting them.",
+      "note": "Against HB 2007, which widens where guns are barred (public buildings and adjacent ground), arguing it undercuts concealed handgun licences.",
+      "subjects": [
+        "carry in public buildings",
+        "concealed handgun licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0387ad2c11c70f3135f6d566b8364dc00b867bd6cc8715d001dbfe9ca5d962cb",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3d54bcd",
+      "date": "2025-03-14",
+      "date_precision": "day",
+      "passage": "This is the biggest threat to Oregonian's Second Amendment Rights in recent memory.",
+      "note": "Her district newsletter on HB 3075 (permit class, 10-round magazine limit, Measure 114 changes), with a call to testify.",
+      "subjects": [
+        "permit to buy a gun",
+        "magazine size limit",
+        "Measure 114",
+        "Second Amendment general statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:56.344Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a gun",
+        "waiting period",
+        "magazine size limit",
+        "ghost guns / unserialised guns",
+        "minimum age to own a rifle",
+        "carry in public buildings",
+        "gun dealer rules",
+        "Measure 114",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member site https://www.oregonlegislature.gov/boshartdavis (confirms sitting House District 15 member; nothing on the subject on the page itself)",
+        "official newsletter: HD-15 legislative update of 2025-03-14 (govdelivery)",
+        "official written committee testimony 2023, 2025, 2026 (OLIS testimony PDFs)",
+        "House caucus release 2026-02-25 (PDF on the legislature site)",
+        "one web search on name plus subject words",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped per brief, covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: other newsletters listed in search (2023-04-07, 2025-02-14, 2025-05-30, 2025-06-23)"
+      ],
+      "found": 10,
+      "at": "2026-11-21T17:07:56.344Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -213,5 +213,29 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red flag",
+        "carry permits",
+        "general gun statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member home page (https://www.oregonlegislature.gov/campos/Pages/default.aspx): confirmed sitting Oregon senator, nothing on the subject",
+        "Ballotpedia (https://ballotpedia.org/Wlnsvey_Campos): nothing on the subject",
+        "one web search on name plus firearms: only vote data and a news story with no quote from them",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://katu.com/news/politics/oregons-emotionally-charged-debate-on-gun-bills-reflects-national-divide",
+        "not reviewed: https://app.legiplex.com/profile/wlnsvey-campos-14248/legislation?page=4"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:23:46.659Z",
+      "by": "source-collector"
+    }
+  ]
 }

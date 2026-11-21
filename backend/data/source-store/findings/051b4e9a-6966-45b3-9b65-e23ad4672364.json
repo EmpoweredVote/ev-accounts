@@ -364,5 +364,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "gun licensing and permits",
+        "safe storage of guns",
+        "guns in public buildings",
+        "Measure 114",
+        "general statement on gun safety or gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings; extractor returned no appearances)",
+        "official legislative page https://www.oregonlegislature.gov/sanchez (confirms Representative, District 43, North and Northeast Portland; nothing on the subject)",
+        "campaign site https://tawnasanchez.com/ (read; covers budget, housing, schools and youth substance abuse; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Tawna_Sanchez (fetched; no gun content found)",
+        "news and web search on her name plus gun words (nothing in her own words)",
+        "House caucus press releases on gun bills: SB 554 statement of 2021-04-29 is issued in the names of other members and does not name her; other releases returned no text when fetched, so those are not reviewed",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped as instructed"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:09:47.709Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -64,5 +64,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large-capacity magazines",
+        "check every gun buyer",
+        "permits to buy",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "https://www.oregonlegislature.gov/isadore (member page, read: nothing on the subject)",
+        "https://content.govdelivery.com/accounts/ORLEG/bulletins/409cd21 (one member newsletter, read: nothing on the subject)",
+        "https://oregonvotes.gov/voters-guide/english/shannonjonesisadore.html (state voters' guide page, fetched; page text had no statement on the subject)",
+        "blocked: https://ballotpedia.org/Shannon_Isadore (403)",
+        "web search: name plus firearms words (results named no statement by her; the bill releases found name other sponsors)",
+        "web search: 2026 election status (a voters' guide lists her as incumbent for the November 3, 2026 general; no primary loss or withdrawal found)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:07:08.653Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -285,7 +285,79 @@
           "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
         }
       }
+    },
+    {
+      "id": "5382e3bb540ff5b7041eb20c243a6203442699a159e407833784f667b4afdd74",
+      "kind": "own-words",
+      "url": "https://bobbylevyfororegon.com/?p=203",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The Second Amendment of the U.S. Constitution is clear, and we have a duty to defend the right to keep and bear arms. We must stand up to the continual attempts to erode this right. Liberal groups continue to advocate for policies to take your rights away. They ignore the fact that where their policies have been implemented, gun violence increases. I do not believe disarming law-abiding citizens, establishing gun-free zones, taxing ammunition, or confiscating firearms are the answer. I will advocate and vote to protect your Second Amendment rights.",
+      "note": "Campaign issues page, undated (year is approximate). Says the right to keep and bear arms must be defended and names gun-free zones, ammunition taxes and confiscation as not the answer.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun-free zones",
+        "ammunition tax",
+        "firearm confiscation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:21.054Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52697c32a3884acce2bcd9c71ef2e7af2800808987b3fde1ba640b3a5f916a3c",
+      "kind": "own-words",
+      "url": "https://oregoncatalyst.com/?p=88858",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "passage": "Today, that came in the form of Senate Bill 243, which attempts to weaken the 2nd amendment. Rural Oregon House Republicans remain vigilant on 2nd amendment rights for rural Oregon and are excited to announce House Bill 3076 was defeated today. HB 3076 would have severely hampered gun dealers in Oregon from selling guns.",
+      "note": "Part of a joint statement issued in the names of nine rural House members including Levy, as carried by a news site. Describes SB 243 as weakening the 2nd amendment and welcomes the defeat of HB 3076, which they say would have hampered gun dealers. Date taken from the SB 243 House vote day the statement refers to as 'today'.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun dealer rules (HB 3076)",
+        "SB 243 firearms bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:21.054Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun-free zones",
+        "ammunition tax",
+        "firearm confiscation",
+        "gun dealer rules (HB 3076)",
+        "SB 243 firearms bill"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://www.oregonlegislature.gov/levy (confirms Representative, District 58, Echo; nothing on the subject)",
+        "campaign site issues page https://bobbylevyfororegon.com/?p=203",
+        "news story https://oregoncatalyst.com/?p=88858 (a joint statement from rural House members)",
+        "blocked: https://ballotpedia.org/Bobby_Levy (403)",
+        "one web search on name plus subject words",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped per brief",
+        "nothing on the subject: other URL-pattern sites not separately fetched beyond the above"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:10:21.054Z",
+      "by": "source-collector"
+    }
+  ]
 }

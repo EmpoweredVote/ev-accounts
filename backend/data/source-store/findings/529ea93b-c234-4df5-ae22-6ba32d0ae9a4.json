@@ -214,5 +214,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns and large magazines",
+        "rapid-fire devices",
+        "carry in public buildings",
+        "safe storage",
+        "delay of Measure 114",
+        "general statements on gun safety or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.oregonlegislature.gov/lieber (read: District 14 senator; no gun content on the home page; News and Bills sections not opened)",
+        "campaign site: blocked: https://www.katelieber.com (no connection)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Kate_Lieber (page returned no text)",
+        "two web searches on her name plus gun and firearm bill terms: results were bill coverage and caucus releases that do not quote her on the subject",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped as instructed",
+        "not reviewed: Senate majority caucus press release PDFs surfaced by search (e.g. https://www.oregonlegislature.gov/senatedemocrats/Documents/Oregon Senate Takes Action for Community Safety.pdf)",
+        "2026 ballot status not confirmed in this search"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:23:15.997Z",
+      "by": "source-collector"
+    }
+  ]
 }

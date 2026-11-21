@@ -205,7 +205,54 @@
           "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
         }
       }
+    },
+    {
+      "id": "dd6de1289cc34681ffc18d4e1925798700e9ae9ca6c486363893b3e7d8cf4273",
+      "kind": "own-words",
+      "url": "https://elkhornmediagroup.com/rep-owens-gives-praise-to-judge-raschios-measure-114-decision/",
+      "date": "2023-11-30",
+      "date_precision": "day",
+      "passage": "If we look at the amount of gun laws that have passed [in] Oregon in the last couple years, we still have a higher rate of gun violence. It is not the tool, it is the person. We need to look at more things than trying to restrict tools that can be used. We need to look at mental health. We need to look at drugs. We need to look at a lot of things in Oregon that could make a difference in gun violence instead of trying to restrict our rights.",
+      "note": "Quoted by a local radio news outlet (KJDY/News102 via Elkhorn Media Group) as he welcomed a judge's ruling against Measure 114, saying more gun laws have not lowered gun violence and pointing to mental health and drugs instead.",
+      "subjects": [
+        "Measure 114 permit and magazine rules",
+        "more gun laws and gun violence",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:40.934Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Measure 114 permit-to-purchase and magazine limits",
+        "gun laws and gun violence",
+        "Second Amendment",
+        "gun bills in the House"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.oregonlegislature.gov/owens (member page confirms Rep. Mark Owens, House District 60; nothing on the subject)",
+        "no separate campaign site reviewed",
+        "web search: one news search on name plus gun terms (10-search allowance not otherwise used)",
+        "https://elkhornmediagroup.com/?p=171696 (local radio news story with a direct quote)",
+        "https://www.thegunmag.com/?p=27352 (gun-issue magazine story; paraphrase only, not saved)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: owens.house.gov (belongs to a different person, a U.S. House member)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:08:40.934Z",
+      "by": "source-collector"
+    }
+  ]
 }

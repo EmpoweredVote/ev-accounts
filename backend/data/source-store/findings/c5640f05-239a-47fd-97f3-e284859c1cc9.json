@@ -434,7 +434,144 @@
           "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
         }
       }
+    },
+    {
+      "id": "4793219b3400f526ed4000e592c4f02350b74bb0889301792be67367ae24fc83",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/PRESS%20RELEASE%20Statement%20on%20SB%20554%20Gun%20Violence%20Destroys%20Lives,%20We%20Can%20Do%20Something%20About%20It.pdf",
+      "date": "2021-04-29",
+      "date_precision": "day",
+      "passage": "Senate Bill 554 requires that firearms be securely stored when they are not under the owners’ immediate control. This will prevent unintentional shootings and suicides. Currently, Oregon has no requirements for gun owners to securely store their guns to prevent unintended access to them.",
+      "note": "Joint statement issued by six House members including Grayber, supporting SB 554: safe storage, letting schools restrict guns, and no guns in the Capitol; says it is not an attack on the Second Amendment.",
+      "subjects": [
+        "safe storage of guns",
+        "guns in schools and the Capitol",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:48.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f48383d190940b736269cdd17dfe13cff9511babe94dc624684e4f99cd8b0dc0",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Democrats%20Call%20for%20Further%20Gun%20Safety%20Policies%20and%20for%20Congress%20to%20Act.pdf",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "There are sensible gun laws, supported by a majority of Americans, that Congress can pass quickly, including reinstating a ban on assault-style weapons or limiting high-capacity magazines. The Senate can immediately pass H.R. 8 to address background check requirements.",
+      "note": "Joint statement after the Uvalde shooting, issued with five other House members including Grayber, urging Congress to reinstate an assault-style weapons ban, limit high-capacity magazines and pass H.R. 8 background checks; also commits to further state action in 2023.",
+      "subjects": [
+        "ban on assault-style guns",
+        "limit large-capacity magazines",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:48.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aaba28dbe021a2c868e53f1f6e15117ccd9b2ad600681cf55c2223fd74c3e4fd",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Democrats%20Prioritize%20Community%20and%20School%20Safety,%20Pass%20Gun%20Violence%20Prevention%20Bill.pdf",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "“We owe action to our children, to our teachers, to every family that kisses their loved ones goodbye in the morning. We owe action to law enforcement who increasingly are risking their own lives and safety,” said Representative Dacia Grayber (D-SW Portland & E Beaverton), a firefighter and chief sponsor of the bill.",
+      "note": "House caucus release on HB 2005 passing the House 35-24 (ghost gun ban, minimum age 21 for certain guns, local option to bar guns in public spaces); quotes Grayber as a chief sponsor.",
+      "subjects": [
+        "home-made unserialised guns",
+        "minimum age to buy a gun",
+        "places where guns are allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:48.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03f69328f037da2ea7493ae658fcb95119546c9c58b987922acdbad29e90573f",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Passes%20Crucial%20Gun%20Bill%20to%20Improve%20Community%20Safety.pdf",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "\"Oregonians deserve to feel safe in our communities, on our streets, and in our homes,\" says Representative Dacia Grayber (D - SW Portland & E Beaverton). \"Firearm modifications with the capacity to unleash devastating violence have no place in our daily life. Today we took a step to get these types of weapons out of our community and create that safer Oregon.\"",
+      "note": "Release on House passage of SB 243 (ban on sale and possession of rapid-fire activators such as bump stocks; local governments may decide on guns in meeting places); quotes Grayber.",
+      "subjects": [
+        "ban on rapid-fire activators",
+        "places where guns are allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:48.600Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f208863f649ed6c477b8eee236cff5a1ecd9577cc067a54e17e3b7cbe07ebc4e",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon%20House%20Makes%20Fixes%20to%20Measure%20114%20to%20Reduce%20Gun%20Tragedy%20in%20Oregon.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "“Voters passed Measure 114 in 2022 because Oregonians are tired of reading about—and experiencing — gun tragedy in their schools, stores, places of worship, and homes,” said Rep. Dacia Grayber (D-SW Portland). “This bill is about respecting that vote and doing the work to make lifesaving policies real, ensuring more communities feel safe, and fewer families suffer the unimaginable tragedy of gun violence.”",
+      "note": "Release on House passage of HB 4145 (implementation timelines for Measure 114 permit-to-purchase and training law); quotes Grayber.",
+      "subjects": [
+        "permit to buy a gun",
+        "Measure 114 implementation",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:48.600Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large-capacity magazines",
+        "check every gun buyer",
+        "permit to buy a gun",
+        "safe storage",
+        "ghost guns",
+        "rapid-fire activators",
+        "carry and places where guns are allowed",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/grayber/Pages/default.aspx (read, nothing on the subject)",
+        "member biography page https://www.oregonlegislature.gov/grayber/Pages/biography.aspx (read, nothing on the subject)",
+        "the House caucus press-release PDFs (5 read)",
+        "blocked: https://ballotpedia.org/Dacia_Grayber (403)",
+        "one news search on name plus gun subject words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site, other news stories, vote411 and ontheissues leads"
+      ],
+      "found": 5,
+      "at": "2026-11-21T17:24:48.600Z",
+      "by": "source-collector"
+    }
+  ]
 }

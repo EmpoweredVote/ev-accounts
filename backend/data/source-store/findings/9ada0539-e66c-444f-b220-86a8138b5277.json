@@ -179,7 +179,95 @@
           "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
         }
       }
+    },
+    {
+      "id": "2f2c30c77474accecfb3e9dc716519b74adfeaca63f9ca508c1f2bf75541e69b",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2026/02/18/jason-kropf-thuy-tran-oregon-lawmakers-gun-bill-vote/",
+      "date": "2026-02-16",
+      "date_precision": "day",
+      "passage": "I am skeptical that our information won’t be used at the federal level in a way that won’t harm Oregonians.",
+      "note": "Quoted by OPB from her remarks in the House Judiciary Committee hearing on HB 4145 (Measure 114 implementation), where she raised concern about sending fingerprints to the FBI for gun-buyer background checks and said she is a gun owner.",
+      "subjects": [
+        "permit to purchase",
+        "fingerprints for gun background checks",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:51.975Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f7a496126724460e13b398703ee1e8c227ee0cfcc5e0d10e127d04271fef9c0",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2026/02/18/jason-kropf-thuy-tran-oregon-lawmakers-gun-bill-vote/",
+      "date": "2026-02-16",
+      "date_precision": "day",
+      "passage": "During the break, it was brought to my attention that in the FBI regulation, that when you submit your information for background checks, fingerprinting, the information is destroyed after 24 hours. I hope we all scrutinize to make sure that it ends up saving lives and all the boxes are checked and it is not put together at the last minute with a lot of loopholes and unintended consequences.",
+      "note": "Quoted by OPB from her committee remarks explaining why she changed her vote on an HB 4145 amendment from no to yes after a recess.",
+      "subjects": [
+        "permit to purchase",
+        "fingerprints for gun background checks",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:51.975Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "58c621cfad6ab9b5b93b5a1b8bc587e36ac25481da3fe1242cf2bd3538947c9a",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2026/02/18/jason-kropf-thuy-tran-oregon-lawmakers-gun-bill-vote/",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "passage": "I have a great deal of respect for Chair Kropf, yet his management of events did create confusion, suspicion, and distrust in the Democratic process",
+      "note": "Quoted by OPB from her statement about how the HB 4145 committee vote was handled; it concerns the process of the gun bill vote, not the content of the policy.",
+      "subjects": [
+        "permit to purchase",
+        "gun bill committee process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:51.975Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "permit to purchase (Measure 114)",
+        "large-capacity magazines",
+        "fingerprints for gun background checks",
+        "gun owner statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/tran (read; names her as House District 45; nothing on the subject)",
+        "campaign site: not reviewed, none found in search",
+        "blocked: https://ballotpedia.org/Thuy_Tran (page came back empty); 2026 ballot status not confirmed from a page, she is a sitting member of the House",
+        "news search on her name plus gun words (OPB story of 2026-02-18 read)",
+        "Oregon sponsorships and floor votes: sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:23:51.975Z",
+      "by": "source-collector"
+    }
+  ]
 }

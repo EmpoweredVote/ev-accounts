@@ -173,7 +173,148 @@
           "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
         }
       }
+    },
+    {
+      "id": "c24cbc78d79c378fbba9860aaa8e278f1c4c80f8799234a681b7aee0d3181655",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3cdf622",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "In the last decade, Oregon has passed several pieces of legislation aimed at making our community safer, but there is much more work to be done. To that end, I am proudly sponsoring legislation that will raise the age required to purchase a firearm to 21 years old, require licenses for gun dealers, limit the locations where concealed firearms are allowed, and end the availability of \"bump stocks\" that turn modern sporting rifles into killing machines.",
+      "note": "Her own e-newsletter says she is sponsoring bills for a minimum purchase age of 21, dealer licences, fewer places for concealed carry, and ending bump stocks.",
+      "subjects": [
+        "minimum age 21 to buy a gun",
+        "licences for gun dealers",
+        "limit where concealed guns are allowed",
+        "ban on bump stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88539b5fc08c98db5c9978bca83569136394769b4faaa3843e7257cc6eafc0b1",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3cdf622",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "It led me to co-found the Oregon chapter of Mom's Demand Action for Gun Sense in America, and later, join the board of the Alliance for a Safe Oregon.",
+      "note": "She describes her own gun-safety advocacy background in her newsletter.",
+      "subjects": [
+        "gun safety advocacy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d69c7f38b17433631b38bd80c703b154246c3836c475952358e876865eef32d",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3cfbff1",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "passage": "To address these issues, we need comprehensive state licensing for gun dealers, including a code of conduct with:",
+      "note": "In her newsletter, as chief sponsor of HB 3076, she argues for state licensing of gun dealers with a code of conduct. The same newsletter urges passage of HB 3075 (technical fixes to Measure 114) and summarises Measure 114's permit, background-check and magazine provisions.",
+      "subjects": [
+        "licences for gun dealers",
+        "permit to purchase",
+        "large-capacity magazine limit",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e7c52e3fbb269e416fdb8a4f7206e6b72e09b4d65d776be7a7e01b69b7871df",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Passes Crucial Gun Bill to Improve Community Safety.pdf",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "“When Oregonians passed Measure 114, they sent a clear message that we need to regulate dangerous firearms,” said Representative Finger McDonald (D – Corvallis). “Rapid-fire activators turn ordinary weapons into weapons of war, and they should not be in our homes or on our streets.”",
+      "note": "Quote in a House caucus release on SB 243 (ban on rapid-fire activators; local governments may bar guns in meeting rooms).",
+      "subjects": [
+        "ban on rapid-fire activators",
+        "Measure 114",
+        "guns at local government meetings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2774f89e6ce5b1ce89d63f63c797adb01d66ed494625e04079430e7e271feada",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Makes Fixes to Measure 114 to Reduce Gun Tragedy in Oregon.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "“This bill turns the commitment Oregon voters made to their communities into a policy that works in the real world,” said Rep. Sarah Finger McDonald (D-Corvallis). “HB 4145 ensures Measure 114 is implemented in a clear and effective way that prioritizes public safety and respects due process.”",
+      "note": "Quote in a House caucus release on HB 4145, which clarifies Measure 114 (permit to purchase, background checks, large-capacity magazines) and delays the permit requirement until court cases end.",
+      "subjects": [
+        "Measure 114",
+        "permit to purchase",
+        "large-capacity magazine limit",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire activators / bump stocks",
+        "large-capacity magazines",
+        "permit to purchase",
+        "background checks",
+        "minimum age 21",
+        "gun dealer licensing",
+        "concealed carry locations",
+        "Measure 114"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member site news list (https://www.oregonlegislature.gov/mcdonald/Pages/news.aspx), read",
+        "legislator e-newsletters on the state bulletin service (two read)",
+        "House caucus press releases (two read)",
+        "web search: name plus gun words (one search)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped, covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Sarah_McDonald",
+        "not reviewed: 2015 public testimony documents on OLIS",
+        "campaign site: nothing on the subject beyond the official site"
+      ],
+      "found": 5,
+      "at": "2026-11-21T17:22:45.238Z",
+      "by": "source-collector"
+    }
+  ]
 }

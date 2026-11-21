@@ -328,7 +328,53 @@
           "sha256": "35bf29f3d0d9a3b65493b148b41686253e0c9b1b70b61a318bacff9749ec3576"
         }
       }
+    },
+    {
+      "id": "93391426de7eca54c0b556c0649e7128c54c8c3d1ba44a84c96373d55fd2594d",
+      "kind": "own-words",
+      "url": "https://idahonews.com/news/local/oregon-moves-toward-safe-storage-of-guns-ban-from-capitol",
+      "date": "2021-05-05",
+      "date_precision": "day",
+      "passage": "When you live out in the country and you dial 911, a police officer isn’t there in a few minutes,\" said Sen. Fred Girod, the Senate Republican leader. “You have to take care of yourself, and this bill prevents that in many ways.”",
+      "note": "Direct quote of Girod in an AP story (carried by KBOI) on Senate passage of the safe-storage and Capitol gun-ban bill (SB 554); he speaks of self-defense in rural areas and says the bill limits it. Date inferred from the story's 'Wednesday' and the 2021-05-05 concurrence vote on file.",
+      "subjects": [
+        "safe storage of guns",
+        "guns banned from the state Capitol",
+        "self-defense with a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:52.091Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in the state Capitol",
+        "safe storage of guns",
+        "self-defense and guns",
+        "gun control bills generally"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/girod (confirms sitting state senator, District 9; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped, covered by bulk bill data",
+        "one web search on name plus gun words (advocacy-group and news leads; one AP story fetched and cited)",
+        "one web search on 2026 candidacy (term runs past 2026; sitting senator, in scope)",
+        "not reviewed: https://www.oregonlegislature.gov/senaterepublicans/Documents/2025-3-27%20Sweeping%20Gun%20Restrictions%20Under%20SB%20243%20Will%20Not%20Reduce%20Gun%20Deaths.pdf (caucus document, text unreadable, no Girod words confirmed)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:07:52.091Z",
+      "by": "source-collector"
+    }
+  ]
 }

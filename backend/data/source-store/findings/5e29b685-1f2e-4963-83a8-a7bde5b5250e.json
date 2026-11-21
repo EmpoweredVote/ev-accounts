@@ -264,5 +264,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "ghost guns",
+        "Measure 114",
+        "general statements on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.oregonlegislature.gov/bowman (member page read: Representative, District 25, a caucus leadership post; no gun content on it)",
+        "campaign site: not found (https://www.benbowmanoregon.com did not respond)",
+        "https://ballotpedia.org/Ben_Bowman: fetch returned an empty page; a search result says he was on the May 19, 2026 primary ballot for District 25; result not confirmed",
+        "House caucus press releases on gun bills (Measure 114 fixes 2026, HB 2005 2023, gun safety call 2025, SB 554 statement, 2025 session results): fetched, none contains words from him on the subject",
+        "two news searches on his name plus gun words: no quote from him found",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: floor debate audio/video on OLIS"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:11:57.224Z",
+      "by": "source-collector"
+    }
+  ]
 }

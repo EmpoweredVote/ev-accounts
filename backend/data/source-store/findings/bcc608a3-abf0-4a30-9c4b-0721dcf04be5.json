@@ -64,5 +64,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permit to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "rapid-fire devices",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "official legislature member page https://www.oregonlegislature.gov/watanabe (read; confirms Representative Mari Watanabe, District 34; nothing on the subject)",
+        "official biography page https://www.oregonlegislature.gov/watanabe/Pages/biography.aspx (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mari_Watanabe (403)",
+        "web search on name plus gun words: only vote listings and caucus releases that do not quote her; no own words found",
+        "web search on 2026 primary: a candidate-listing site shows her as a candidate for District 34 in the 2026 primary and holding the seat until 2027-01-11; official results not retrieved",
+        "not reviewed: https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Passes Crucial Gun Bill to Improve Community Safety.pdf (no passage by her found via fetch)",
+        "not reviewed: floor video of the 2025-06-25 and 2026 House gun-bill debates (video, unreadable)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:08:45.708Z",
+      "by": "source-collector"
+    }
+  ]
 }

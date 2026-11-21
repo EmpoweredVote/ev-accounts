@@ -387,5 +387,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation general",
+        "assault-style weapons and magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.oregon.gov/treasury/pages/default.aspx (Treasurer's office page read; nothing on the subject)",
+        "https://www.oregonlegislature.gov/senatedemocrats/Documents/241106 Steiner Resignation.pdf (confirms they were elected State Treasurer and left the Senate in Nov 2024; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Elizabeth_Steiner (empty bot-check response, HTTP 202)",
+        "not found: https://www.oregonlegislature.gov/steiner (404, member page gone after resignation)",
+        "web searches on name plus gun/firearm words (nothing by this person on the subject)",
+        "https://opb.org/article/2026/10/26/oregon-governor-candidates-how-to-end-gun-violence (news story, does not mention them)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped per brief"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:10:00.932Z",
+      "by": "source-collector"
+    }
+  ]
 }

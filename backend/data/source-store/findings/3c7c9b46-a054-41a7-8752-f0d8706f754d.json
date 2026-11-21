@@ -403,7 +403,276 @@
           "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
         }
       }
+    },
+    {
+      "id": "82bd1209b7c3e19cf6c8ccc52df1d0e20f5dc0562c80dc50aec8512c64c54d58",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/18b8ab0",
+      "date": "2017-03-06",
+      "date_precision": "day",
+      "passage": "Rather than address the real problem, which is an inefficient background checking process, the Democrats want to infringe on the constitutional right-to-bear-arms by delaying the sale of the gun — which could be indefinitely.",
+      "note": "Newsletter from his office on 2017 SB 797 (background-check delay and domestic-abuse gun limits). He says the bill infringes on gun rights and the state should fix the slow check process instead.",
+      "subjects": [
+        "check every gun buyer",
+        "limits on who may have a gun",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f07988353ef4cd1d3c4f8ad360fee9c9fc45c09f5f337afe051a901ea7eac310",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/18b8ab0",
+      "date": "2017-03-06",
+      "date_precision": "day",
+      "passage": "Moreover, Oregon statute already addresses this issue. An abuser loses their gun rights when a court-ordered restraining order is placed against them. We do not need an additional law.",
+      "note": "Same newsletter: he argues existing law already removes guns from people under restraining orders, so SB 797's added limit is not needed.",
+      "subjects": [
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "70c8c5369ee6b5a511f49fadb3dbe3f22b9d065a716f797d432c954407bae565",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/83755",
+      "date": "2023-03-24",
+      "date_precision": "day",
+      "passage": "Guns are not the root cause of the violence problem.",
+      "note": "Written testimony to House Judiciary opposing HB 2005, HB 2006 and HB 2007 (gun control bills). He says the bills add prohibitions instead of addressing root causes of violence.",
+      "subjects": [
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "832c564210057be720a9e4016b239be48a4aff30214c8932e21b4fc1bc81de67",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/83755",
+      "date": "2023-03-24",
+      "date_precision": "day",
+      "passage": "I urge the members of this committee not to move forward HB 2005, HB 2006 or HB 2007.",
+      "note": "Closing request in the same testimony: asks the committee not to advance the three bills.",
+      "subjects": [
+        "gun safety laws",
+        "home-made guns",
+        "permits to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "779857f094dddfb276fc6972fb9c8918b90c2866e8503bdd694361bf2e0bc62f",
+      "kind": "own-words",
+      "url": "https://oregoncatalyst.com/?p=86646",
+      "date": "2025-04-13",
+      "date_precision": "day",
+      "passage": "These bills are an absurd attempt to target law-abiding Oregon gun-owners with expensive regulations on law-abiding citizens that many of them cannot afford.",
+      "note": "Opinion piece by Reschke (published by Oregon Catalyst) opposing HB 3075 (permit-to-purchase changes under Measure 114, higher fees, 60-day wait) and HB 3076 (state licensing of gun dealers).",
+      "subjects": [
+        "permits to buy",
+        "waiting periods",
+        "large-capacity magazines",
+        "permit fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "680546dd0c3b71e8a88e7ea4fc65cd213a03496de7e36ecb1f843836a09d76be",
+      "kind": "own-words",
+      "url": "https://oregoncatalyst.com/?p=86646",
+      "date": "2025-04-13",
+      "date_precision": "day",
+      "passage": "I will stand steadfastly opposed to any form of these bills that diminishes your Second Amendment rights.",
+      "note": "Same piece, also covering SB 243 (72-hour wait, minimum age 21, switch-device ban, local limits on carry in public buildings). He says he will oppose any version.",
+      "subjects": [
+        "waiting periods",
+        "minimum age to buy",
+        "carry permits",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf97a60d3550a0b3cdd7279239d89204fbbdedd11c8b427ca975ff8957537bce",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3db8a63",
+      "date": "2025-04-11",
+      "date_precision": "day",
+      "passage": "I will stand steadfastly opposed to any form of these bills that diminishes your Second Amendment rights.",
+      "note": "Newsletter from his office with the same text on HB 3075, HB 3076 and SB 243.",
+      "subjects": [
+        "permits to buy",
+        "waiting periods",
+        "minimum age to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "33b277f527619962640bcced82ddcec3a15f86a30c4a528cce6a41efbcac23bd",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/215462",
+      "date": "2025-06-12",
+      "date_precision": "day",
+      "passage": "There is no credible evidence that concealed handgun license holders pose a risk to public safety.",
+      "note": "Written testimony to House Rules opposing SB 243, which lets local governments bar concealed-license holders from carrying in public buildings.",
+      "subjects": [
+        "carry permits",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2146cf299771d409805ef2f6a5cd4a12603411711b6c037f73b7ccf161d662d",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/215462",
+      "date": "2025-06-12",
+      "date_precision": "day",
+      "passage": "SB 243 also criminalizes the possession of bump stocks, an accessory rarely used in crimes.",
+      "note": "Same testimony: objects to the bump-stock ban in SB 243, saying there is no evidence it would reduce gun violence.",
+      "subjects": [
+        "ban on a type of firearm accessory"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17337af34d10e25646322317a2567c1890e09f7e8e3b370f396e8ee51afb16b2",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/215462",
+      "date": "2025-06-12",
+      "date_precision": "day",
+      "passage": "Therefore I ask you not to move SB 243 forward.",
+      "note": "Closing request in the same testimony.",
+      "subjects": [
+        "waiting periods",
+        "carry permits",
+        "minimum age to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "268235febcfa1afb66e319f6285c423061b97cdab5da841a87ba84800fccef9c",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e50516",
+      "date": "2025-06-13",
+      "date_precision": "day",
+      "passage": "Section 27 of the Oregon Constitution states, “The people shall have the right to bear arms for the defence [sic] of themselves, and the State.”",
+      "note": "Newsletter from his office on SB 243's public hearing; he cites the state constitution and hopes courts will uphold it against gun bills.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:11:29.197Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types and magazines",
+        "background checks",
+        "permits to buy",
+        "waiting periods",
+        "minimum age",
+        "red-flag and who may have a gun",
+        "ghost guns",
+        "carry permits and places",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "his official legislature page (https://www.oregonlegislature.gov/reschke, loaded; gun material read via his newsletters and testimony)",
+        "his legislative newsletters (govdelivery bulletins, 3 read)",
+        "his written testimony on OLIS (2023 and 2025, 2 read)",
+        "Oregon Catalyst piece by Reschke (read)",
+        "blocked: https://ballotpedia.org/E._Werner_Reschke (403)",
+        "scope: a search shows him as incumbent HD 55 who ran in the May 2026 primary; the 2026 result and general-ballot status were not confirmed on a page I read",
+        "not reviewed: https://klamathfallsnews.squarespace.com/news/op-ed-our-first-amendment-rights-depend-on-the-second (op-ed page returned 404); https://www.nraila.org/articles/20200228/oregon-legislators-take-a-stand-against-gun-control; https://www.chooseklamath.com/?p=2807",
+        "campaign site: not found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 11,
+      "at": "2026-11-21T17:11:29.197Z",
+      "by": "source-collector"
+    }
+  ]
 }

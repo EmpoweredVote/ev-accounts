@@ -363,7 +363,76 @@
           "sha256": "03263adbf19fccbe1f75a6ef7e353bc5224e4faefa8eb58eea546d06af8dbc71"
         }
       }
+    },
+    {
+      "id": "51de222eb141eeeff15a89a441c76b84ecda9072d7f699d977fd10014382b8e1",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/gorsek/Pages/legislative-accomplishments.aspx",
+      "date": "2024-12-31",
+      "date_precision": "year",
+      "passage": "In my first term as a legislator in the Oregon House, I worked on a diverse set of issues, including Community College and apprenticeship funding, an audit of Trimet, and ensuring armed law enforcement officers were welcome in all public buildings.",
+      "note": "His own member page lists, as work from his first House term (listed as 2013), making sure armed law enforcement officers are welcome in all public buildings. The page is undated; the year given is the page's latest listed session.",
+      "subjects": [
+        "places where guns may be carried",
+        "armed police in public buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:33.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b5b72e27db49fa08b34f136dfcce9a0afed3eb80fc75c41065077b4fb56c53f",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/gorsek/Pages/legislative-accomplishments.aspx",
+      "date": "2024-12-31",
+      "date_precision": "year",
+      "passage": "East County Youth Support Project (EMOPI) focusing on gun violence prevention.",
+      "note": "On his member page, in the list of 2023 and 2024 budget achievements, he lists funding for a Gresham youth program described as focused on gun violence prevention. The page is undated; the year given is the page's latest listed session.",
+      "subjects": [
+        "gun violence prevention funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:33.693Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "places where guns may be carried",
+        "gun violence prevention",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.oregonlegislature.gov/gorsek/Pages/legislative-accomplishments.aspx (read; confirms Senate District 25 office; two passing gun-related lines)",
+        "official Senate member home page https://www.oregonlegislature.gov/gorsek/Pages/default.aspx (read; only mentions a school background-check taskforce, not gun sales)",
+        "sponsor list: covered by bulk bill data",
+        "Wikipedia page for Chris Gorsek (nothing on the subject)",
+        "one news search on name plus firearms terms (results thin: no own statements on guns found)",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "no 2026 questionnaire or forum answers on guns found"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:22:33.693Z",
+      "by": "source-collector"
+    }
+  ]
 }

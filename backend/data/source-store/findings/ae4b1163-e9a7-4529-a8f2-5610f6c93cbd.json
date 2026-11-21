@@ -583,7 +583,48 @@
           "sha256": "03263adbf19fccbe1f75a6ef7e353bc5224e4faefa8eb58eea546d06af8dbc71"
         }
       }
+    },
+    {
+      "id": "980e0d2d9e153d66e255bb9dc22845a342289779d489e63a10e6ed91d6e74d04",
+      "kind": "own-words",
+      "url": "https://katu.com/news/politics/oregons-emotionally-charged-debate-on-gun-bills-reflects-national-divide",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "I wonder who they're hunting.",
+      "note": "A news story (KATU, wire copy) quotes the senator saying this about seeing someone in his neighborhood carrying a long gun over their shoulder, during coverage of the 2023 Oregon gun bill debate. Story date inferred from its mention of 2023 Portland shooting counts compared with 2022.",
+      "subjects": [
+        "carrying guns in public",
+        "long guns in neighborhoods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:47.056Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation in general",
+        "carrying guns in neighborhoods",
+        "firearm bills in the Oregon Senate"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://www.oregonlegislature.gov/frederick (read; no gun or firearm text on it)",
+        "one news search on name plus gun words; one news story fetched and read",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, other news and questionnaires (no further pages fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:09:47.056Z",
+      "by": "source-collector"
+    }
+  ]
 }

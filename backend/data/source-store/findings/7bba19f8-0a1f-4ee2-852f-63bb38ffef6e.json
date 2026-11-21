@@ -119,7 +119,124 @@
           "sha256": "992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759"
         }
       }
+    },
+    {
+      "id": "bd89de9d94908da46f5893dc3578f7108ffe20f57d28278a4e7e5b2a78b65327",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/358efad",
+      "date": "2023-05-05",
+      "date_precision": "day",
+      "passage": "House Bill 2005 was passed by the majority party earlier this week. This will strip the following rights from Oregonians:",
+      "note": "Her official e-newsletter, criticising HB 2005 B. It lists: criminalising owners by the type of gun, possession limits for adults aged 18 to 20, and differing gun laws across jurisdictions.",
+      "subjects": [
+        "ban on assault-style guns",
+        "minimum age to own a gun",
+        "gun possession restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:24.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "316b8a02fb9b367bdeb3a597e4355bcfba8a77076d1aba57d2e357e08f5ba5f9",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/358efad",
+      "date": "2023-05-05",
+      "date_precision": "day",
+      "passage": "The U.S. Supreme Court has previously ruled that laws like this are unconstitutional. Immediately after the passage of HB 2005, the House Republicans committed to donating $25,000 to support impending litigation to protect the Second Amendment rights of Oregonians.",
+      "note": "Her official e-newsletter says HB 2005 is unconstitutional and reports the House caucus pledge of money for a court challenge.",
+      "subjects": [
+        "Second Amendment general statement",
+        "gun law court challenge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:24.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f097be0c1b096c614124998a67b0d40cf1ec254f562cf18076eab8f8ac8ab3dc",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/houserepublicans/Documents/RELEASE_HOUSE%20REPUBLICANS%20KILL%20UNCONSTITUTIONAL%20GUN%20BILL.pdf",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "“House Bill 3076 was a clear violation of Oregonians’ constitutional rights,” said Representative Lucetta Elmer (R-McMinnville). “It would have harmed local businesses and law-abiding gun owners alike. I am thrilled that it will no longer be moving this session.”",
+      "note": "Quote of her in a House caucus release on sending HB 3076B (state licensing of firearm dealers) back to committee.",
+      "subjects": [
+        "state licensing of gun dealers",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:24.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80fddd1999ef57bc728c434a6954de63902b57a221a342c3e1afc83b36ce9ab4",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e5df43",
+      "date": "2025-06-22",
+      "date_precision": "day",
+      "passage": "The bill infringes on Oregonians’ Second Amendment rights by turning those who already own bump stocks and other attachments into criminals, replaces public safety with a door sign, and creates confusion across jurisdictions for concealed handgun license carriers.",
+      "note": "Her official e-newsletter on SB 243C (bump stocks, signage in place of carry, carry licence rules, delay of Measure 114). The same item reports caucus amendments she does not name herself as moving: repeal Measure 114, carry reciprocity, legalise suppressors; all rejected.",
+      "subjects": [
+        "bump stocks and gun attachments",
+        "carry a gun with a permit",
+        "carry permit reciprocity",
+        "suppressors",
+        "repeal Measure 114"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:24.602Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and gun possession limits",
+        "minimum age to own a gun",
+        "gun dealer licensing",
+        "carry permits and reciprocity",
+        "suppressors",
+        "Second Amendment general statements",
+        "Measure 114 permits and magazines"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/elmer (confirms Rep., House District 24; nothing on the subject on the page itself)",
+        "official member newsletters (two read, cited below)",
+        "House caucus release of 2025-06-26 (read)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words",
+        "not reviewed: https://ballotpedia.org/Lucetta_Elmer",
+        "not reviewed: https://www.oregonlegislature.gov/elmer/Pages/news.aspx",
+        "not reviewed: campaign site",
+        "not reviewed: https://www.oregonfirearms.org/category/off-alerts (advocacy group page, lead only)"
+      ],
+      "found": 4,
+      "at": "2026-11-21T17:08:24.602Z",
+      "by": "source-collector"
+    }
+  ]
 }

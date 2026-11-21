@@ -183,7 +183,59 @@
           "sha256": "992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759"
         }
       }
+    },
+    {
+      "id": "c41ee861317e3da3fcc0994a79c3b5daa51a9ca7b2fcd6d2c52e4661262eb873",
+      "kind": "own-words",
+      "url": "https://outdoorhub.com/news/2025/04/16/oregons-gun-rights-fire-legislature-advances-three-restrictive-bills",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "The idea that we would put in statute the size of the bars you have to have on the window and the pixels you have to have in your camera, I’m just dumbfounded by the whole idea,",
+      "note": "Direct quote of her in an outdoors news story (outlet: OutdoorHub), given during House Judiciary discussion of the 2025 gun dealer licensing bill (HB 3076); she objects to putting dealer security specifications in law. The story's date is the publication date; the hearing date is not stated.",
+      "subjects": [
+        "gun dealer licensing",
+        "dealer security rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:51.473Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun dealer licensing",
+        "dealer security rules",
+        "Measure 114 permit and magazine limits",
+        "waiting period",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislative page https://www.oregonlegislature.gov/wallan (read: names her as House District 6, Medford; greeting lists her committees; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped per brief",
+        "Ballotpedia https://ballotpedia.org/Kim_Wallan (fetch returned an empty page; not reviewed)",
+        "https://oregonvotes.gov/voters-guide/english/kimwallan.html (page returned only site scaffolding; no candidate statement text; not reviewed)",
+        "web search on her name plus 2026 election (confirms she is the District 6 incumbent seeking re-election; no result source found; no sign of a primary loss or withdrawal)",
+        "web search on her name plus firearm subject words (one news story with her quoted)",
+        "https://outdoorhub.com/news/2025/04/16/oregons-gun-rights-fire-legislature-advances-three-restrictive-bills (read; her quote saved)",
+        "https://www.nraila.org/articles/20200228/oregon-legislators-take-a-stand-against-gun-control (read; advocacy-group list naming her; not her own words, not saved)",
+        "https://www.oregonfirearms.org/category/off-alerts (read; no mention of her in fetched page text)",
+        "blocked: https://www.yahoo.com/news/articles/oregon-house-passes-gun-bill-211521368.html (HTTP 429)",
+        "https://www.opb.org/article/2026/02/25/oregon-conentious-gun-control-law/ (read; does not name her)",
+        "no campaign site found"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:07:51.473Z",
+      "by": "source-collector"
+    }
+  ]
 }

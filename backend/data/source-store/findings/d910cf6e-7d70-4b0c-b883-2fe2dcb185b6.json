@@ -488,7 +488,98 @@
           "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
         }
       }
+    },
+    {
+      "id": "f9070e402e1809362ec50644b91a77ca39fb110b88716dc360a8f46e8d1e1b67",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/PRESS%20RELEASE%20Oregon%20House%20Democrats%20Pass%20Landmark%20Legislation%20to%20Prevent%20Gun%20Violence.pdf",
+      "date": "2021-04-29",
+      "date_precision": "day",
+      "passage": "In my exam room, I ask families if their guns are locked in the homes of my young patients,” said Rep. Lisa Reynolds (D-SW Portland). “It is up to us, the adults, to keep children safe. According to the #NotAnAccident Index, which tracks unintentional shootings by children since 2015, nearly 350 American children under the age of 18 gain access to a firearm and unintentionally shoot themselves or someone else each year — equaling almost one unintentional shooting per day. Over 1,100 children and teens die by gun suicide each year, most often using guns belonging to a family member.",
+      "note": "Quoted in a House caucus release on House passage of SB 554; she speaks as a pediatrician about locking up guns around children.",
+      "subjects": [
+        "safe gun storage",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:54.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cd766d06d4a61397c73805d117b4becdde3d9161defe36cad3b831a5618cb9e",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/PRESS%20RELEASE%20Statement%20on%20SB%20554%20Gun%20Violence%20Destroys%20Lives,%20We%20Can%20Do%20Something%20About%20It.pdf",
+      "date": "2021-04-29",
+      "date_precision": "day",
+      "passage": "Senate Bill 554 takes proven, common-sense steps to address gun violence in Oregon. It is not an attack on the Second Amendment, or untested policy-- it offers effective strategies with a track record of success in other states.",
+      "note": "Joint floor-day statement issued by the chief and co-sponsors of SB 554 (Prusak, Reynolds, Salinas, Grayber, Sollman, Campos); in the name of the group, which includes her. It also backs guns kept out of schools and the Capitol.",
+      "subjects": [
+        "safe gun storage",
+        "guns in schools and the Capitol",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:54.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f76835a36ba468bef28914b61e07188ff8187e5eeeb8fd1db3ac5cc6c2a8eeff",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/senatedemocrats/Documents/Portland%20Legislators%20Decry%20Recent%20Gun%20Violence,%20Demand%20Action.pdf",
+      "date": "2022-02-21",
+      "date_precision": "day",
+      "passage": "Our hearts go out to those affected by these shootings,” said Representative Lisa Reynolds (D-Portland). “We are at a crucial time in our city and our state: we must devote resources to fund deep community work in violence prevention as one way to help communities move past the trauma of violence, of systemic racism as well as the inequities exacerbated by the COVID pandemic.",
+      "note": "Joint release with Sen. Akasha Lawrence Spence after a Portland shooting; she calls for funding community violence prevention work. The release also cites SB 554 as last year's safe-storage law.",
+      "subjects": [
+        "gun violence prevention",
+        "safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:54.064Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe gun storage",
+        "guns in schools and the Capitol",
+        "gun violence prevention",
+        "ban on ghost guns",
+        "Measure 114 permits"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate member page https://www.oregonlegislature.gov/reynolds (confirms Senator, District 17; no gun content on the page)",
+        "sponsor list: covered by bulk bill data",
+        "one news/web search on name plus gun words (found legislature press-release PDFs)",
+        "the House caucus press-release PDFs of 2021-04-29 (two) and the Senate caucus release of 2022-02-21",
+        "not reviewed: https://www.oregonlegislature.gov/reynolds/Pages/news.aspx",
+        "not reviewed: https://apps.oregonlegislature.gov/liz/2025R1/Downloads/PublicTestimonyDocument/157200 (2025 testimony on HB 3075 seen only as a search lead)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages",
+        "no page blocked"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:24:54.064Z",
+      "by": "source-collector"
+    }
+  ]
 }

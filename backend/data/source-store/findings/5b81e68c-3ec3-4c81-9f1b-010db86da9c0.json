@@ -209,7 +209,118 @@
           "sha256": "0cc4851bf31ea767ac8367ed003af0ce0ce5d5bef11fe756a6a8735af48b0308"
         }
       }
+    },
+    {
+      "id": "391e27a32de53a58d7b52ca125c0976d9b7f7ae8f8555d056ac5ea6afd241613",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/35284da",
+      "date": "2023-04-02",
+      "date_precision": "day",
+      "passage": "I’ve seen enough school shootings and community violence to know: We must act to protect our schools, our communities, and all Oregonians from harm. That’s why I strongly support this legislation, voted to move it out of the Judiciary Committee, and will vote for the legislation when it makes it to the House Floor.",
+      "note": "Legislative newsletter in the member's name: says they strongly support the HB 2005 gun-safety package and voted it out of House Judiciary.",
+      "subjects": [
+        "gun violence prevention",
+        "HB 2005 gun safety package"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:19.646Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c14c50a3ab7fbe513874ad31a4e477257d7c43f0b195b4e49323550264b94f8a",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/357f94f",
+      "date": "2023-04-30",
+      "date_precision": "day",
+      "passage": "HB 2005 allows municipal leaders to do now what I could not do then.",
+      "note": "Newsletter in the member's name: supports HB 2005 letting local leaders regulate firearms in public places, citing past attempt as Salem city councilor.",
+      "subjects": [
+        "local control of guns in public places",
+        "HB 2005 gun safety package"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:19.646Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f96ce4db7158259d6edbe293d519b5ee978c70683f04101e7f7679ed1a075cf9",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/357f94f",
+      "date": "2023-04-30",
+      "date_precision": "day",
+      "passage": "Guns are the number one cause of death for children in our country.",
+      "note": "Newsletter in the member's name: gives reasons for supporting HB 2005, including child gun deaths and mass shootings.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:19.646Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc5d5748fe85f3cda97351662049f42941910195787ba4bd7caa5c680632de07",
+      "kind": "record",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/357f94f",
+      "date": "2023-04-30",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2005-2023",
+      "act": "yea",
+      "motion": "House Judiciary Committee vote to send HB 2005 to the floor",
+      "note": "Member's newsletter says they voted for HB 2005 in the House Judiciary Committee.",
+      "subjects": [
+        "gun violence prevention",
+        "HB 2005 gun safety package"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:19.646Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence prevention",
+        "HB 2005 gun package",
+        "local control of guns in public places",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official legislative newsletters (two 2023 bulletins read)",
+        "official member biography page https://www.oregonlegislature.gov/andersen/Pages/biography.aspx (nothing on the subject)",
+        "one web search on name plus gun words",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages skipped: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, news searches (not fetched)"
+      ],
+      "found": 4,
+      "at": "2026-11-21T17:23:19.646Z",
+      "by": "source-collector"
+    }
+  ]
 }

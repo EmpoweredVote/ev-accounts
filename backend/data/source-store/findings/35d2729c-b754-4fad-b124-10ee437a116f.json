@@ -57,7 +57,125 @@
           "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
         }
       }
+    },
+    {
+      "id": "26b80b451d95854d51d383c375316dcc32accc37adf9c888d1dc17eeded01f96",
+      "kind": "own-words",
+      "url": "https://kqennewsradio.com/2025/03/14/skarlatos-responds-to-what-he-calls-dangerous-gun-measures/",
+      "date": "2025-03-14",
+      "date_precision": "day",
+      "passage": "If a terrorist was able to get their hands on a fully automatic AK-47 in the middle of a ‘gun free’ continent, it’s clear that stripping Oregonians of their constitutional rights won’t prevent crime. Instead of attacking responsible gun owners, the Majority should focus on empowering law enforcement and ensuring adequate mental health services",
+      "note": "Quoted by a radio station from his release after the Court of Appeals upheld Measure 114. He opposes new gun restrictions and says to fund police and mental health instead. Station also lists the 2025 bills he named: HB 3075, HB 3076, SB 698, SB 697.",
+      "subjects": [
+        "Measure 114 permit-to-purchase",
+        "general Second Amendment statements",
+        "minimum age to buy a gun",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:27.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8f0b97a7ee666bd185617fdd0a1a556dfcc8d9a11f7e23510468d76d6348ae7",
+      "kind": "own-words",
+      "url": "https://oregoncatalyst.com/?p=85763",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "I survived a terrorist attack on a gun-free continent. The terrorist had a fully automatic AK-47 and a handgun. If you’re going to commit mass murder, you’re not going to worry about committing a Class A misdemeanor along the way.",
+      "note": "Quoted in a news-and-commentary story on his testimony against HB 3075 (Measure 114 amendments). The story reports he objected to the $150 permit fee, the proof-of-qualification rule, the 24-hour approval number, and the 30-round 'high capacity' magazine definition.",
+      "subjects": [
+        "Measure 114 permit-to-purchase",
+        "permit fees",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:27.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b30b8a44127ad267dca5b010f53dc8c84aecc26f98ca99b01db4825ef78540d6",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/houserepublicans/Documents/HOUSE%20REPUBLICANS%20CONDEMN%20PASSAGE%20OF%20UNCONSTITUTIONAL%20GUN%20BILLS.pdf",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "passage": "These bills are an absurd attempt to target law-abiding Oregon gunowners. They will ban standard size magazines, impose fees on the exercise of a constitutional right, and place prohibitive regulations on every local gunsmith and gun store, forcing these small businesses to close.",
+      "note": "Quote in a House caucus release on the 2025 gun bills advancing; he objects to magazine limits, fees and dealer rules.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "permit fees",
+        "gun dealer regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:27.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64ea32cf61fb610c8f9244d37e9e459e7a9112c33089255dbc3529528220b41e",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/houserepublicans/Documents/Release_House%20Republicans%20Condemn%20Unethical%20Process%20and%20%20Advancement%20of%20Gun%20Bill%20that%20Attacks%20Second%20Amendment%20Rights_.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "This bill is an undemocratic attempt by the majority party to strip Oregonians of their Second Amendment rights. As a survivor of a terrorist attack on a gun-free continent, I know firsthand that these sweeping gun restrictions do not stop gun-related crimes.",
+      "note": "Quote in a House caucus release on House passage of HB 4145 (permit-to-purchase, fee $65 to $150, processing 30 to 60 days). The release also says he called requiring federal background checks on top of state ones redundant.",
+      "subjects": [
+        "Measure 114 permit-to-purchase",
+        "background checks on gun sales",
+        "permit fees",
+        "general Second Amendment statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:27.176Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Measure 114 permit-to-purchase and its amendments",
+        "ban on large-capacity magazines",
+        "background checks on gun sales",
+        "minimum age to buy a gun",
+        "concealed carry permits and fees",
+        "general Second Amendment statements",
+        "gun dealer regulation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page on the Legislature site (https://www.oregonlegislature.gov/skarlatos): confirms Representative, District 4; nothing on the subject",
+        "blocked: https://ballotpedia.org/Alek_Skarlatos (403)",
+        "Oregon voters' guide page (https://oregonvotes.gov/voters-guide/english/alekskarlatos.html): fetched, no gun text found in the saved HTML; not used",
+        "House caucus releases of 2025-04-08 and 2026-02-25 (PDFs on the Legislature site)",
+        "news search on name plus gun words (KQEN radio, Oregon Catalyst)",
+        "sponsor list and floor votes: covered by bulk bill data",
+        "no separate campaign site found; 2026 ballot status not confirmed by a page (no 2026 result found)",
+        "not reviewed: https://bearingarms.com/tomknighton/2025/03/15/terror-attack-survivor-calls-out-gun-control-effort-n1227987"
+      ],
+      "found": 4,
+      "at": "2026-11-21T17:07:27.176Z",
+      "by": "source-collector"
+    }
+  ]
 }

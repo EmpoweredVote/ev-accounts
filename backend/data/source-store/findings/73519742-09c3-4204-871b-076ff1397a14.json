@@ -94,5 +94,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "the House majority press release of 2023-05-31 (https://www.oregonlegislature.gov/housedemocrats/Documents/Safer%20Oregon%20Agenda%20Threatened%20as%20Senate%20Republicans%20Refuse%20to%20Do%20Their%20Jobs.pdf): confirms Rep. Daniel Nguyen, Lake Oswego and SW Portland; his quoted words are about public safety generally, nothing on guns, so not saved",
+        "official member page: not found, https://www.oregonlegislature.gov/nguyen and /nguyen-d both returned 404",
+        "Oregon voters' guide page https://oregonvotes.gov/voters-guide/english/daniellocnguyen.html: fetched, script-driven, no readable statement text; nothing on the subject",
+        "blocked: https://ballotpedia.org/Daniel_Nguyen_(Oregon) (403); search result snippet only, not reviewed",
+        "blocked: https://theskanner.com/news/newsbriefs/34154-members-of-oregon-s-bipoc-caucus-mourn-the-victims-of-the-monterey-park-and-half-moon-bay-mass-shootings (526); joint caucus statement, not read",
+        "not reviewed: https://www.yahoo.com/news/articles/oregon-house-passes-gun-bill-211521368.html and https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Makes Fixes to Measure 114 to Reduce Gun Tragedy in Oregon.pdf (leads from search, not fetched)",
+        "two web searches on name plus gun words: no own words on the subject found; 2025-26 testimony against Measure 114 under the name Daniel Nguyen not shown to be this person, not used",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: none found"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:08:03.563Z",
+      "by": "source-collector"
+    }
+  ]
 }

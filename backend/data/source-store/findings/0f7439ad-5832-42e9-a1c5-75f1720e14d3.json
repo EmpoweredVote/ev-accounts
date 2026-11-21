@@ -150,7 +150,115 @@
           "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
         }
       }
+    },
+    {
+      "id": "08f006f2456ae38e4ed6debdd49a3cb0823ae99de83b6ae7c3ed187edc9ad6a3",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3595d53",
+      "date": "2023-05-05",
+      "date_precision": "month",
+      "passage": "The Gun Violence Prevention Bill (HB 2005) offers common-sense solutions that will keep guns out of the wrong hands, help law enforcement do their jobs, and prioritize public safety, all while respecting responsible gun ownership.",
+      "note": "Member newsletter on HB 2005, where they call themselves a regular sponsor and describe the bill's aims.",
+      "subjects": [
+        "gun violence prevention bill",
+        "ban on unserialised guns",
+        "minimum age for guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:43.636Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5037d954cca05a28311403fb2571407e20b1c74941205acc4e9d67d021e7df5c",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3595d53",
+      "date": "2023-05-05",
+      "date_precision": "month",
+      "passage": "House Bill 2005 specifies the firearms that 18 to 20 year olds can possess and purchase – it does not impose a blanket prohibition on all firearms ownership until 21.",
+      "note": "Newsletter explanation of the HB 2005 age rule for buying and having certain guns.",
+      "subjects": [
+        "minimum age for guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:43.636Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2e42cd0b09c7475505d728d66033eadf538ae78861939d8e161c2b5676391a6",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3595d53",
+      "date": "2023-05-05",
+      "date_precision": "month",
+      "passage": "This is why HB 2005 gives locally-elected governments the ability to adopt rules restricting firearms and concealed carry in their facilities and adjacent grounds if they desire.",
+      "note": "Newsletter explanation of the local option to limit guns and concealed carry in public buildings.",
+      "subjects": [
+        "local limits on carry in public buildings",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:43.636Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "abdcd87b00cd0d5553f2a0413b2694c854a36e5f9afdbcc0577e8bede64cc570",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Democrats Prioritize Community and School Safety, Pass Gun Violence Prevention Bill.pdf",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "I have seen the devastating effects of this violence firsthand when treating gun violence victims in the Emergency Department,” said Representative Travis Nelson (D-N & NE Portland), a registered nurse. “It’s time to break this cycle of violence. This will help move our state to one in which our children and communities do not fear for their lives.",
+      "note": "Quote in a House majority press release on House passage of HB 2005.",
+      "subjects": [
+        "gun violence prevention bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:43.636Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on unserialised (ghost) guns",
+        "minimum age to buy or have a gun",
+        "local limits on carry in public buildings",
+        "gun violence prevention",
+        "Measure 114 permits and magazines"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://www.oregonlegislature.gov/nelson/Pages/default.aspx (read; nothing on the subject on the page itself)",
+        "member newsletter https://content.govdelivery.com/accounts/ORLEG/bulletins/3595d53 (read in full)",
+        "House majority press release of 2023-05-02 (read)",
+        "oregonvotes.gov voters guide page for the member (fetched; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Travis_Nelson_(Oregon) (403)",
+        "one web search on name plus firearm words",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 4,
+      "at": "2026-11-21T17:22:43.636Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -179,5 +179,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: https://www.oregonlegislature.gov/levye/Pages/biography.aspx (confirms sitting House District 53 member; no gun or firearm wording)",
+        "official site: https://www.oregonlegislature.gov/levye/Pages/legislative-accomplishments.aspx (school panic alarm funding, no firearm wording)",
+        "official site news list: https://www.oregonlegislature.gov/levye/Pages/news.aspx (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Emerson_Levy (403)",
+        "blocked: https://sierraclub.org/oregon/emerson-levy-or-hd-53-2022 (redirect loop)",
+        "one web search on her name plus firearm words (no own-words gun statement found)",
+        "House caucus gun-bill release PDFs (two fetched; no passage naming her found)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:25:07.849Z",
+      "by": "source-collector"
+    }
+  ]
 }

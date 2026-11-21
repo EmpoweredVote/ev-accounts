@@ -361,7 +361,56 @@
           "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
         }
       }
+    },
+    {
+      "id": "afd80a9d2b1350c17778f1e8755f103a2397a21b219493e3359ad540ed1cbc23",
+      "kind": "own-words",
+      "url": "https://eugeneweekly.com/2024/12/23/fahey-goes-to-school/",
+      "date": "2024-12-18",
+      "date_precision": "day",
+      "passage": "Gun violence prevention is a state level issue,",
+      "note": "Quoted directly by Eugene Weekly after a Dec. 18, 2024 meeting with school board members, teachers and students. She said this in the context of not expecting much movement on gun laws at the federal level. The story also reports, in the reporter's words, that she says the state should now focus on gun safety education and on enforcing existing gun laws (background checks for all transfers and safe storage already passed).",
+      "subjects": [
+        "gun violence prevention",
+        "state versus federal role on guns",
+        "enforcement of existing gun laws",
+        "gun safety education"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:38.933Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence prevention",
+        "enforcement of existing gun laws",
+        "gun safety education",
+        "state versus federal role on guns"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "official member page https://www.oregonlegislature.gov/fahey/Pages/biography.aspx (read: nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus firearms (standard mode)",
+        "a local weekly news story of 2024-12-23 (read; one direct quote and one paraphrase saved)",
+        "not reviewed: https://ballotpedia.org/Julie_Fahey",
+        "not reviewed: https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Makes Fixes to Measure 114 to Reduce Gun Tragedy in Oregon.pdf (download failed)",
+        "not reviewed: https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Passes Crucial Gun Bill to Improve Community Safety.pdf (download failed)",
+        "not reviewed: campaign site and newsletters",
+        "checked a wire news story on the 2025 Measure 114 bill: it does not mention this person, nothing saved"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:22:38.933Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -183,7 +183,96 @@
           "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
         }
       }
+    },
+    {
+      "id": "9cc2f2986faf57b3c89ad3066a6f1da4f35454a98a3604701f3510e0bb9d9ae0",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/pcive/SB%20554%20Patterson%203-25-2021.pdf",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "I fully support our US Constitution, including each of the amendments. I was raised in a household with guns and am part of a family in which hunting, and fishing are valued. I believe Oregonians have a unique relationship with firearms that center on respect and responsibility.",
+      "note": "Written vote explanation filed with the Senate secretary on her yes vote on SB 554; states her general view on the Constitution and Oregonians' relationship with firearms.",
+      "subjects": [
+        "Second Amendment and gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:45.167Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f9c8a2266d02dfd0f11410aee6f011deffab10f5763f8c4c7675d8529b92c47",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/pcive/SB%20554%20Patterson%203-25-2021.pdf",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "This is not a mandate nor, in my view, is it an expression on my opinions on the Second Amendment but rather an expression of my support for allowing local voices to make decisions that work for their community. I believe we need to take reasonable steps to keep Oregonians, particularly our students, safe from gun violence and this gives local jurisdictions the ability to make that decision, if they so choose.",
+      "note": "Explains her yes vote on SB 554 as support for letting local governments decide whether to allow guns in or around public buildings such as schools.",
+      "subjects": [
+        "guns in public buildings and schools",
+        "local control of gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:45.167Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea1cf869a0e4933d8a4292045278a5ced991416538446b30de3ec3ab425b4dac",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/pcive/SB%20554%20Patterson%203-25-2021.pdf",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "I am committed to supporting reasonable gun safety laws that protect both the Second Amendment and protect the lives of Oregonians.",
+      "note": "Closing line of her vote explanation: general statement on gun safety laws and the Second Amendment.",
+      "subjects": [
+        "gun safety laws",
+        "Second Amendment and gun rights statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:45.167Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in or near public buildings and schools",
+        "local control of gun rules",
+        "Second Amendment statement",
+        "gun safety laws",
+        "assault-style weapons and magazines",
+        "background checks",
+        "red flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate page https://www.oregonlegislature.gov/patterson (read; nothing on the subject)",
+        "campaign site https://debpattersonor.org/issues (fetched; page text did not contain gun words in the HTML, likely script-rendered; not reviewed in full)",
+        "Oregon Legislature vote explanation PDF for SB 554 (read)",
+        "one web search on name plus gun words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.ballotpedia.org (not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:23:45.167Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -305,7 +305,163 @@
           "sha256": "5c5f4f283966c47a440079857b1560bc6efd7bd6072599ee24bd1d0635374163"
         }
       }
+    },
+    {
+      "id": "a368b37372e3e701bed196bc5dee35fecbff53d9b965740c8d4f981c68176a38",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/gomberg/Documents/5-5-2015 941 Vote Explanation.pdf",
+      "date": "2015-03-30",
+      "date_precision": "day",
+      "passage": "I honestly believe background checks will help keep firearms out of dangerous hands.",
+      "note": "Official press release explaining his yea vote on SB 941, which extends background checks to all private gun sales.",
+      "subjects": [
+        "check every gun buyer",
+        "private gun sales background check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:41.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d199e0364cd1a3a5706e759a3af6499c47d98104d63beeb213a7666c2aa67dd7",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/gomberg/Documents/5-5-2015 941 Vote Explanation.pdf",
+      "date": "2015-03-30",
+      "date_precision": "day",
+      "passage": "On the House floor, I spoke in favor of waiving the background check for buyers with a concealed carry permit, and allowing “safekeeping” where firearms are temporarily transferred for storage or security.",
+      "note": "In the same release he says he backed floor amendments to exempt concealed-carry permit holders and temporary safekeeping transfers from the private-sale check, and that he would seek changes to ease the burden on law-abiding owners.",
+      "subjects": [
+        "private gun sales background check",
+        "carry permits",
+        "exemptions from background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:41.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01f193beb354cf80123041bcb1abe06ffb1524976ce6a1313b0d5723e6a0856c",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-david-gomberg-firearms-worker-shortages-and-a-note-about-birds/",
+      "date": "2022-06",
+      "date_precision": "month",
+      "passage": "I am myself a gun owner. I respect and support our Second Amendment rights. Those rights should not include the right to own any type of weapon, nor to purchase one without a thorough background check.",
+      "note": "Newsletter column published in a local paper after the May 2022 mass shootings; states his view on gun rights and background checks. Exact day not shown in the text read.",
+      "subjects": [
+        "Second Amendment",
+        "check every gun buyer",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:41.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9bb2eaf2cf4ac844888daab9a931d3f597f767f5ab619b97e4cc80e92b03fddd",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-david-gomberg-firearms-worker-shortages-and-a-note-about-birds/",
+      "date": "2022-06",
+      "date_precision": "month",
+      "passage": "Here in Oregon we have passed measures to require background checks, to prevent people convicted of crimes or domestic violence from buying guns, and to allow the courts to remove firearms from people judged to be a danger to themselves or others. I have supported those measures.",
+      "note": "Says he supported Oregon's background-check, domestic-violence purchase-bar and court removal (extreme-risk) measures.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag or extreme-risk orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:41.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fbb136423606392fa385c2160e8c2e96c74ffdc58a5cfae7740641aa791b26e3",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-david-gomberg-firearms-worker-shortages-and-a-note-about-birds/",
+      "date": "2022-06",
+      "date_precision": "month",
+      "passage": "I have not supported every firearm bill in Oregon and recently voted to oppose a measure that would hold owners liable for the actions of criminals that steal their guns or require secure storage even in homes with no children whenever owners step out the front door. I support and encourage responsible and safe gun ownership. But not every responsible action requires a statute.",
+      "note": "Explains his vote against a secure-storage and owner-liability bill.",
+      "subjects": [
+        "secure gun storage",
+        "owner liability for stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:41.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e309a63f0af586c0834e887ef5c1f09ded8b39e8a93712a83f3a60fa329cb32",
+      "kind": "own-words",
+      "url": "https://www.tillamookcountypioneer.net/news-update-from-state-representative-david-gomberg-firearms-worker-shortages-and-a-note-about-birds/",
+      "date": "2022-06",
+      "date_precision": "month",
+      "passage": "Common sense gun safety laws are essential to decrease the chance of firearms, especially those with military-level capabilities, getting in the hands of those who will do harm.",
+      "note": "General statement in favor of gun safety laws, with attention to military-style weapons.",
+      "subjects": [
+        "gun safety laws",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:41.599Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private gun sales background check",
+        "Second Amendment",
+        "secure storage and owner liability",
+        "red-flag orders",
+        "ban on military-style weapons and large magazines",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site home page https://www.oregonlegislature.gov/gomberg (confirms Representative, House District 10; nothing on the subject on the page)",
+        "official site press release PDF (2015 SB 941 explanation)",
+        "Tillamook County Pioneer newsletter columns by the representative (one read, on firearms)",
+        "one web search on name plus gun/firearm words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://ballotpedia.org/David_Gomberg",
+        "not reviewed: https://www.oregonlegislature.gov/gomberg/Pages/news.aspx"
+      ],
+      "found": 6,
+      "at": "2026-11-21T17:22:41.599Z",
+      "by": "source-collector"
+    }
+  ]
 }

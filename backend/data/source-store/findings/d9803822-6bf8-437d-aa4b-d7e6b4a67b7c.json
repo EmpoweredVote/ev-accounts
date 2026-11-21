@@ -158,5 +158,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "waiting period",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights statements",
+        "Measure 114"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "https://www.oregonlegislature.gov/anderson (own member page read: confirms Senator, District 5, Lincoln City, Deputy Leader; greeting lists education, housing, infrastructure, economy, healthcare and mental health, no gun content; 2026 ballot status not confirmed on it)",
+        "https://www.oregonlegislature.gov/senaterepublicans/Documents/2025-3-27%20Sweeping%20Gun%20Restrictions%20Under%20SB%20243%20Will%20Not%20Reduce%20Gun%20Deaths.pdf (caucus press release on SB 243; quotes only the caucus leader, nothing in Anderson's name)",
+        "web search: Anderson plus firearms, Second Amendment (leads only, no own words of Anderson found)",
+        "blocked: https://ballotpedia.org/Dick_Anderson (empty page returned, no content)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages skipped per brief",
+        "campaign site, news search beyond one query, and the remaining URL patterns not reviewed: search allowance not exhausted but no further own-words leads surfaced"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:09:01.412Z",
+      "by": "source-collector"
+    }
+  ]
 }

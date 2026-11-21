@@ -392,7 +392,138 @@
           "sha256": "03263adbf19fccbe1f75a6ef7e353bc5224e4faefa8eb58eea546d06af8dbc71"
         }
       }
+    },
+    {
+      "id": "69c0b42ca39afeb5f0dcbc89b1c560afaa6422d6a9aafc1230fb50cac679d5ca",
+      "kind": "own-words",
+      "url": "https://www.southeastexaminer.com/2022/07/representatively-speaking-10/",
+      "date": "2022-07-01",
+      "date_precision": "day",
+      "passage": "I am proud that in every legislative session I have served since 2015 we have passed bills to improve gun safety.",
+      "note": "In his monthly newspaper column he describes Oregon's gun laws passed in his time in the legislature and says he is proud of them.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:34.157Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc726fa2645ae101174039545ed194a07d7264efb4d82f1fe4ea927a8fbe2b90",
+      "kind": "own-words",
+      "url": "https://www.southeastexaminer.com/2022/07/representatively-speaking-10/",
+      "date": "2022-07-01",
+      "date_precision": "day",
+      "passage": "Meanwhile, we have elevated the second amendment of the Constitution to something I think our country’s founders would not recognize. The recent US Supreme Court decision overturning a concealed handguns law in NY is a big step backward.",
+      "note": "In the same column he gives his view of the Second Amendment and calls the Supreme Court's ruling striking down New York's concealed-carry law a step backward.",
+      "subjects": [
+        "Second Amendment",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:34.157Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b4319ed7864e416917a56a9e59c8e233d1799b78ceee37c02b710c127d0a507",
+      "kind": "own-words",
+      "url": "https://www.southeastexaminer.com/2022/07/representatively-speaking-10/",
+      "date": "2022-07-01",
+      "date_precision": "day",
+      "passage": "Expanding Criminal Background Checks for Private Gun Sales without a criminal background check this law has closed opportunities for violent criminals and domestic abusers to purchase firearms.",
+      "note": "He lists the private-sale background check law among Oregon's gun safety laws, as one that closed opportunities to buy guns.",
+      "subjects": [
+        "check every gun buyer",
+        "private sale background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:34.157Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa26833e6b563a008f4895ad121c537dd15c2c228e1c25d547ec1e1f75b27ff5",
+      "kind": "own-words",
+      "url": "https://www.southeastexaminer.com/2022/07/representatively-speaking-10/",
+      "date": "2022-07-01",
+      "date_precision": "day",
+      "passage": "Extreme Risk Protection Order allows both loved ones and doctors to petition a court for an extreme risk protection order to prevent suicides and shootings.",
+      "note": "He lists Oregon's extreme risk protection order law among the gun safety laws he describes.",
+      "subjects": [
+        "red-flag or extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:34.157Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b11eca0bca8a0c5633d57315ec8a2cac965bde16bf5de54be3d037bfecf8daeb",
+      "kind": "own-words",
+      "url": "https://www.southeastexaminer.com/2022/07/representatively-speaking-10/",
+      "date": "2022-07-01",
+      "date_precision": "day",
+      "passage": "IP17 would require a “permit-to-purchase” to buy a gun. Such a permit requires a completed background check. IP17 would also limit the size of ammunition magazines to 10 rounds. Nine states and D.C. have similar laws enacted.",
+      "note": "He describes the pending permit-to-purchase and 10-round magazine limit petition (IP17) in neutral terms and says to watch how it plays out; he does not state a position on it in this passage.",
+      "subjects": [
+        "permit to buy a gun",
+        "large-capacity magazine limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:34.157Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "private sale background checks",
+        "permit to purchase",
+        "magazine size limit",
+        "red-flag orders",
+        "keep guns from domestic abusers",
+        "concealed carry on campuses",
+        "safe storage",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislative member page https://www.oregonlegislature.gov/nosse (fetched; nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "news search on name plus gun words (one column found, SE Examiner, fetched)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages skipped as instructed",
+        "campaign site: not reviewed, none located"
+      ],
+      "found": 5,
+      "at": "2026-11-21T17:24:34.157Z",
+      "by": "source-collector"
+    }
+  ]
 }

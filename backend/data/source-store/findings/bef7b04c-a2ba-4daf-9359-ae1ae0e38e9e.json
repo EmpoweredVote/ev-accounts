@@ -753,7 +753,81 @@
           "sha256": "b0c58b40a8a6d770bee3dcf6def35d008a2a9f5299efe3fcb6af450b3fe88be2"
         }
       }
+    },
+    {
+      "id": "36ac024f43468ffafcbd5ed54a76d98a5def40501b11edbc63ef0d6e3afdd8a7",
+      "kind": "own-words",
+      "url": "https://rv-times.com/?p=190883",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "passage": "“Where do you have to go and purchase it right now that you can’t wait a couple more days?”",
+      "note": "Quoted in a news story (Oregonian report reprinted by RV Times) on the Senate Judiciary hearing on SB 243-1; the hearing was the Thursday before the 2025-03-29 publication. He is questioning objections to a 72-hour waiting period.",
+      "subjects": [
+        "waiting period before a gun purchase"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:24.157Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19a38733a4bab220e9db88babeea5916ab031adfb34b028ff78f952cd85cf6a2",
+      "kind": "own-words",
+      "url": "https://rv-times.com/?p=190883",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "passage": "“A firearm is an instrument of death. It is not a toy,” Manning said. “I’m all about self-protection. I own firearms as well. But there is a time when we have to reconcile that with what is going on in America, what is going on in these classrooms. … It’s not the wild, wild West, where anybody can walk around carrying firearms.”",
+      "note": "Quoted in the same news story at the SB 243-1 hearing (age 21 to possess, 72-hour wait, switch-device ban, local limits on carrying in public buildings). He says he owns firearms and speaks on gun safety and carrying guns in public.",
+      "subjects": [
+        "gun safety laws",
+        "carrying guns in public places",
+        "waiting period before a gun purchase",
+        "minimum age 21 to possess a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:24.157Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "waiting period before a gun purchase",
+        "minimum age 21 to possess a gun",
+        "gun safety and carrying guns in public",
+        "ban on rapid-fire switch devices",
+        "ghost guns",
+        "domestic abuser firearm limits"
+      ],
+      "places": [
+        "On the Record (0 appearances linked to this person)",
+        "https://www.oregonlegislature.gov/manning (own member page, read; confirms Senator James I. Manning Jr., District 7; nothing on the subject on the home page)",
+        "web search: name plus firearms bill (one search; leads included news stories, caucus PDFs and gun-rights group pages)",
+        "https://rv-times.com/?p=190883 (news story reprinting an Oregonian report, read; quotes him)",
+        "https://host.theskanner.com/news/northwest/32397-sen-manning-on-the-year-ahead-and-the-year-that-was (fetched; no gun or firearm text found)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped per brief",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: site-wide search of oregonlegislature.gov news for gun terms",
+        "not reviewed: https://www.oregonlegislature.gov/senatedemocrats/Documents/HB2013FirearmSafety.pdf",
+        "not reviewed: https://www.oregonlegislature.gov/senatedemocrats/Documents/Oregon Senate Cracks Down on Ghost Guns.pdf",
+        "not reviewed: floor or committee video of SB 243 (2025)"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:24:24.157Z",
+      "by": "source-collector"
+    }
+  ]
 }

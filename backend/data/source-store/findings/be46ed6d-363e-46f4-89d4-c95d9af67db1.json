@@ -305,5 +305,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and magazine limits",
+        "check every gun buyer",
+        "permit to buy (Measure 114)",
+        "red-flag orders",
+        "carry permits",
+        "gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name candidates)",
+        "official Senate member page https://www.oregonlegislature.gov/meek (read: Senator for District 20; no gun statements)",
+        "official news page https://www.oregonlegislature.gov/meek/Pages/news.aspx (read: two press release titles and 2017-2018 newsletter titles, none on guns)",
+        "blocked: https://www.markmeekoregon.com (no response, campaign site not reachable)",
+        "https://ballotpedia.org/Mark_Meek (fetch returned no page text; not reviewed)",
+        "two news searches on name plus gun words (nothing naming him on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:24:24.506Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -281,5 +281,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "red-flag orders",
+        "carry permits",
+        "general gun safety or Second Amendment statements"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 appearances for this person, no name matches)",
+        "official member site https://www.oregonlegislature.gov/mclain/Pages/default.aspx (read; welcome letter does not mention guns)",
+        "official member site news list https://www.oregonlegislature.gov/mclain/Pages/news.aspx (read 2015-2025 headlines; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Susan_McLain (403)",
+        "news story https://katu.com/news/politics/gallery/recall-petitions-over-gun-control-put-pressure-on-democrats-11-20-2015?photo=1 (read; reports a 2015 recall petition against her over the private-sale background check bill, but quotes no words from her)",
+        "web search on her name plus gun and firearm terms (2 searches): no statement or floor remarks by her found",
+        "no separate campaign site found",
+        "not reviewed: Oregon House caucus gun-bill press releases (PDFs from search results, do not name her)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:23:30.669Z",
+      "by": "source-collector"
+    }
+  ]
 }

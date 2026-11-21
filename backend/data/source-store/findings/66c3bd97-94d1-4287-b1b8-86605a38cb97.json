@@ -126,7 +126,78 @@
           "sha256": "dcda60810eed61d65f8a935d8245e710bb29e0160fdf40309056195d5ebf8bfe"
         }
       }
+    },
+    {
+      "id": "28bd7e68d48ef16dce21f874fc2f5fc3ecad6e2d5ac3bb4ef2c513c734a185b0",
+      "kind": "own-words",
+      "url": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-signs-the-community-safety-firearms-act",
+      "date": "2025-11",
+      "date_precision": "month",
+      "passage": "The Community Safety Firearms Act is now law in Oregon. This matters to every parent dropping their kid off at school. It matters to everyone who deserves to feel safe in their own neighborhood. It matters because gun violence is preventable. And we're proving it.",
+      "note": "Governor's statement in a newsroom release on an event marking her signing of SB 243, which bans rapid-fire devices and clarifies where guns may be carried.",
+      "subjects": [
+        "ban on rapid-fire devices",
+        "where guns may be carried",
+        "gun safety general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:54.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f0d2c1026c86ab652bfca9dabc3e8eff7cb30454d80798fc773f808e1222313",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/victory-for-gun-safety-surrounded-by-moms-demand-action-and-students-demand-action-volunteers-oregon-gov-tina-kotek-signs-rapid-fire-device-ban-into-law/",
+      "date": "2025-11-18",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-243-2025",
+      "act": "signed",
+      "note": "Governor signed SB 243, which bars sale and possession of rapid-fire devices and machine-gun conversion devices such as bump stocks and Glock switches. Source is an advocacy group's release dated 2025-11-18; it was not a governor's page and the signing date there is the release date.",
+      "subjects": [
+        "ban on rapid-fire devices",
+        "machine gun conversion devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:54.563Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire devices",
+        "where guns may be carried",
+        "permit to purchase (Measure 114)",
+        "ghost guns",
+        "gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-signs-the-community-safety-firearms-act (governor's newsroom, read)",
+        "https://www.everytown.org/press/victory-for-gun-safety-surrounded-by-moms-demand-action-and-students-demand-action-volunteers-oregon-gov-tina-kotek-signs-rapid-fire-device-ban-into-law/ (advocacy group release, read)",
+        "https://www.opb.org/article/2025/11/20/oregon-governor-kotek-signs-new-gun-bill-into-law/ (news story, read; no direct quote copied)",
+        "one web search on name plus gun words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: https://katu.com/news/politics/governor-attorney-general-join-gun-control-rally-in-salem",
+        "not reviewed: Measure 114 delay/implementation bill signing pages (2026), ghost-gun bill signing release"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:23:54.563Z",
+      "by": "source-collector"
+    }
+  ]
 }

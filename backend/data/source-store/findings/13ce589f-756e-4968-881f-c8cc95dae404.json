@@ -62,7 +62,52 @@
           "sha256": "fca2c257e6a6cc3df27b47ea32d7851f9a304b652c592b932c93f0ef0f88a094"
         }
       }
+    },
+    {
+      "id": "4a891096ba994133d1c04031fedce76fcdd41c5ca12cad1af537c4a99f58fe2b",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/robinsonn",
+      "date": "2026-11-21",
+      "date_precision": "day",
+      "passage": "I will fight for your Constitutional rights, including those granted under the Second Amendment, and to limit the state government’s ability to infringe on your freedom.",
+      "note": "Statement on the member's official legislature page (date is the day the page was read; the page itself is undated). General commitment to defend Second Amendment rights and limit state action.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:12:02.526Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official member page https://www.oregonlegislature.gov/robinsonn (confirms Senate District 2, Cave Junction; one Second Amendment statement)",
+        "sponsor list: covered by bulk bill data",
+        "web search (one standard search on name plus gun words; returned legislature pages and caucus releases)",
+        "a 2026-03-05 Senate caucus release on HB 4145 (PDF on the member's oregonlegislature.gov/drazan press-release page): text could not be read by the fetch tool, so not confirmed to mention this person; not reviewed",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "news search beyond the one web search: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:12:02.526Z",
+      "by": "source-collector"
+    }
+  ]
 }

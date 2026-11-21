@@ -289,7 +289,56 @@
           "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
         }
       }
+    },
+    {
+      "id": "ca681dca6b087dc26de924432a458f61e6c0e5b7550608d60589b17b64a064e2",
+      "kind": "own-words",
+      "url": "https://www.ijpr.org/politics-government/2025-06-26/oregon-lawmakers-pass-gun-bill-to-ban-rapid-fire-devices-allow-new-concealed-carry-rules",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "passage": "Trust me, I know what it’s like to be fearful, to go into PTSD, all those other things that go on... This bill does not make people safer. This bill punishes law-abiding citizens.",
+      "note": "Floor remarks on SB 243 (rapid-fire device ban and local rules on carry in meeting places), quoted by Jefferson Public Radio in a news story dated 2025-06-26. He recalls responding as a police officer to the 2012 Clackamas Town Center shooting and says the bill does not improve safety and penalises lawful gun owners. The ellipsis joins two quoted fragments in the story.",
+      "subjects": [
+        "ban on rapid-fire devices",
+        "carry a gun in public meeting places",
+        "gun safety laws general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:42.246Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire devices",
+        "carry a gun with a concealed handgun licence",
+        "guns in public meeting places",
+        "gun dealer licensing",
+        "Second Amendment general statements",
+        "background checks",
+        "assault-style guns and magazines",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislative page https://www.oregonlegislature.gov/helfrich (confirms House District 52; nothing on the subject)",
+        "campaign site https://www.helfrichfororegon.com (names a State Senate District 26 run; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jeff_Helfrich (403)",
+        "news search on name plus firearm words (one story with a direct quote saved)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: House caucus release PDFs on gun bills (could not read text; not fetched as readable pages)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:10:42.246Z",
+      "by": "source-collector"
+    }
+  ]
 }

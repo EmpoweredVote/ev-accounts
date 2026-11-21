@@ -112,6 +112,37 @@ def bill_of(letters, num, year, sp=None):
     return letters + num.zfill(PAD), (year - 1 if ODD and year % 2 == 0 else year)
 
 
+def or_sponsor_named(by, full_name):
+    """True when an Oregon sponsor line names the person. OLIS prints family names in capitals and adds the given
+    names' initials only when two members share the family name ("LEVY B" Bobby Levy, "LEVY E" Emerson Levy,
+    "SMITH DB" David Brock Smith, "SMITH G" Greg Smith). An entry with initials names the person only when they are
+    the person's own: a family name alone never decides between two such members."""
+    import unicodedata
+    fold = lambda s: ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c)).upper()
+    toks = [x.strip(',.') for x in fold(full_name).replace('-', ' ').split() if x.strip(',.')]
+    while len(toks) > 1 and toks[-1] in ('JR', 'SR', 'II', 'III', 'IV', 'V'): toks.pop()
+    if not toks: return False
+    # The legislature names each member as of today; a text prints the name of its day (legislatures/or.json).
+    fam = [toks[-1:]] + [x.split() for x in OR_FORMER.get(' '.join(toks), [])]
+    for e in re.split(r'[,;]|\bAND\b', fold(by).replace('-', ' ')):
+        w = [x for x in e.replace('.', ' ').split() if x not in ('REPRESENTATIVE', 'REPRESENTATIVES', 'SENATOR', 'SENATORS', 'SPEAKER', 'PRESIDENT')]
+        while len(w) > 1 and w[-1] in ('JR', 'SR', 'II', 'III', 'IV'): w.pop()  # "MANNING JR" is no initial
+        if not w: continue
+        ini = w.pop() if len(w) > 1 and len(w[-1]) <= 2 else ''
+        k = len(w)
+        if k <= len(toks) - 1 and toks[-k:] == w: given = ''.join(x[0] for x in toks[:-k])
+        elif w in fam[1:]: given = toks[0][0]
+        else: continue
+        if not ini or given.startswith(ini): return True
+    return False
+
+
+# Members whose texts print an earlier family name (legislatures/or.json, "The Legislature's list names each member as
+# of today"): Sheri Schouten voted as Sheri Malstrom in 2017, and so on.
+OR_FORMER = {'SHERI SCHOUTEN': ['MALSTROM'], 'SARA GELSER BLOUIN': ['GELSER'], 'ELIZABETH STEINER': ['STEINER HAYWARD'],
+             'COURTNEY NERON MISSLIN': ['NERON']}
+
+
 def _text_line(bill_file, cited, full_name, pick=None):
     """(the converted bill's introduced text, its "Introduced by:" line, why there is no line) for a sponsorship;
     (None, None, None) when the bill's page is not an introduced text other than the cited page.
@@ -135,7 +166,14 @@ def _text_line(bill_file, cited, full_name, pick=None):
         intro = [x.get('state_link') or '' for x in b.get('texts') or []]
         intro = [x for x in intro if re.search(r'/Bills/[A-Z]+/[A-Z]+\d+\.pdf$', x)]
         tl = pick or (intro[0] if intro else '')
-    if not tl or tl == cited or not has_intro or not tl.lower().endswith('.pdf'): return None, None, None
+    # Oregon (runner, 2026-11-21): the bill's page is the OLIS Overview, which our reader gets as a menu with no
+    # sponsor names. The introduced text prints them ("Sponsored by Representative MORGAN; Representatives CATE,
+    # LEVY B, ..."), so it is cited. OLIS text addresses carry no .pdf: the body's %PDF- mark decides.
+    if ST == 'OR':
+        intro = [x.get('state_link') or '' for x in b.get('texts') or []]
+        intro = [x for x in intro if re.search(r'/Downloads/MeasureDocument/[A-Z]+\d+/Introduced$', x)]
+        tl = pick or (intro[0] if intro else '')
+    if not tl or tl == cited or not has_intro or not (tl.lower().endswith('.pdf') or ST == 'OR'): return None, None, None
     f = f'{B}/pages/{hashlib.sha1(tl.encode()).hexdigest()}.txt'
     if os.path.exists(f): t = open(f).read()
     else:
@@ -156,6 +194,17 @@ def _text_line(bill_file, cited, full_name, pick=None):
         js = re.search(r'JOINT SPONSORS?:\s*(.*)', head)
         if js: by += ' JOINT SPONSORS: ' + js.group(1)
         end = m.end() + len(head if js else by)
+    elif ST == 'OR':
+        # "House Bill 2936 Sponsored by Representative MORGAN; Representatives CATE, LEVY B, SMITH DB, ..., Senators
+        # FINDLEY, ... (Presession filed.) SUMMARY ..."; a committee bill prints "Sponsored by COMMITTEE ON ...".
+        m = re.search(r'(?:(?:House|Senate)\s+(?:Bill|Joint Resolution|Concurrent Resolution|Joint Memorial|Memorial|Resolution)\s+\d+\s+)?Sponsored by\s*', t)
+        if not m: return tl, None, f'no "Sponsored by" line in {tl}'
+        by = re.split(r'\s*(?:\((?:at the request of|Presession|by order)|SUMMARY\b|The following summary|A BILL FOR AN ACT|Relating to|CHAPTER\b)', t[m.end():], maxsplit=1)[0]
+        end = m.end() + len(by)
+        # A name split at a line end ("GELSER BLOU-" / "IN") is rejoined for the match.
+        by = re.sub(r'(\w)- (\w)', r'\1\2', by)
+        return (tl, None, f'{full_name} is not printed in the sponsor line of {tl}') if not or_sponsor_named(by, full_name) else \
+            (tl, ' '.join(t[m.start():].split(' ')[:min(max(len(t[m.start():end].split(' ')) + 8, 25), 80)]), None)
     else:
         m = re.search(r'(?:(?:House|Senate)\s+(?:Bill|Joint Resolution|Concurrent Resolution|Commemoration|Resolution)\s+(?:No\.\s*)?\d+\s+)?Introduced by:\s*', t, re.I)
         if not m: return tl, None, f'no "Introduced by:" line in {tl}'
@@ -179,7 +228,17 @@ def introduced_text_line(bill_file, cited, full_name):
     ("JOINT SPONSOR: SENATOR SCHEIBLE" on 2021 AB 286's third reprint, not on the introduced text), so when the
     introduced text does not print the person, the earliest reprint (_R1, _R2, ...) that does is cited."""
     first = _text_line(bill_file, cited, full_name)
-    if ST != 'NV' or not first[0] or first[1]: return first
+    if ST not in ('NV', 'OR') or not first[0] or first[1]: return first
+    if ST == 'OR':
+        # Oregon: a sponsor added after introduction is printed first on an engrossed or the enrolled text (2023 HB 2005:
+        # FAHEY on A-Engrossed, GAMBA and NELSON on Enrolled), so the earliest later text that prints the person is cited.
+        # A proposed amendment ("House Amendments to A-Engrossed", /ProposedAmendment/) is not a bill text.
+        vs = [x.get('state_link') or '' for x in json.load(open(bill_file))['bill'].get('texts') or []]
+        vs = sorted({x for x in vs if re.search(r'/Downloads/MeasureDocument/[A-Z]+\d+/(?:[A-Z]-Engrossed|Enrolled)$', x)}, key=lambda x: (x.endswith('Enrolled'), x))
+        for v in vs:
+            got = _text_line(bill_file, cited, full_name, pick=v)
+            if got[1]: return got
+        return first
     reps = [x.get('state_link') or '' for x in json.load(open(bill_file))['bill'].get('texts') or []]
     reps = sorted({x for x in reps if re.search(r'/Bills/[A-Z]+/[A-Z]+\d+_R\d+\.pdf$', x)}, key=lambda x: int(re.search(r'_R(\d+)\.pdf$', x).group(1)))
     for r in reps:

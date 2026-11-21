@@ -208,7 +208,99 @@
           "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
         }
       }
+    },
+    {
+      "id": "063443aa788b99462ce889b5484ee77cfdc860fd14bcac49a68cd6d96f23b4d3",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/87175",
+      "date": "2023-03-27",
+      "date_precision": "day",
+      "passage": "We have an opportunity to make the program workable for the State and its residents in a way that balances the rights and responsibilities of gun ownership and valid public concerns around gun safety.",
+      "note": "One-page handout from Rep. Chaichi's office on HB 3511, filed as public testimony in the 2023 session. It frames the bill as a way to make the Measure 114 permit-to-purchase system workable.",
+      "subjects": [
+        "permit to purchase",
+        "gun safety laws general",
+        "Measure 114"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:27.996Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7825570df666ad45b33ca264d4b27f3972a27fbf11c6e44eee70a102c278d09a",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/87175",
+      "date": "2023-03-27",
+      "date_precision": "day",
+      "passage": "A permitting system that uses 36 different forms and processes depending on your county just doesn’t make sense for Oregon.",
+      "note": "From the same HB 3511 handout from the member's office. It describes moving the permit system from county sheriffs to the state transportation agency, with one statewide process, an online application, safe-storage and suicide-prevention training, and a delayed start date.",
+      "subjects": [
+        "permit to purchase",
+        "background checks on gun sales",
+        "gun owner training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:27.996Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1001fd00d8837944140692887c81ad91051bf5d09f497bb61c019ff908a412d4",
+      "kind": "own-words",
+      "url": "https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/87175",
+      "date": "2023-03-27",
+      "date_precision": "day",
+      "passage": "Moving to a permitting system, as modified by HB 3511, makes it possible for purchasers to skip the NICS check, saving money and time, and streamlining the background check process.",
+      "note": "From the same HB 3511 handout. It says an annual permit check would also flag people whose right to have a gun has been restricted by a felony conviction.",
+      "subjects": [
+        "background checks on gun sales",
+        "permit to purchase",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:23:27.996Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to purchase",
+        "background checks on gun sales",
+        "large-capacity magazine ban",
+        "Measure 114",
+        "carry in public buildings",
+        "Second Amendment / gun safety general"
+      ],
+      "places": [
+        "On the Record (0 appearances, none linked)",
+        "official legislature member page https://www.oregonlegislature.gov/chaichi (read; confirms House District 35; nothing on the subject)",
+        "2023 public testimony handout from the member's office on HB 3511 (read)",
+        "news story from a public radio outlet on the Feb 2026 House vote on HB 4145 (read; reporter's words about the member, not saved as own words)",
+        "web search on name plus gun words (one search)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Farrah_Chaichi",
+        "not reviewed: campaign site, newsletters, floor-debate video (not found within allowance)"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:23:27.996Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -90,7 +90,53 @@
           "sha256": "7e8d61c87b88030788bf2e1bcd56a59f05a37f9aa02466bcb0a4e519fcb9f3bb"
         }
       }
+    },
+    {
+      "id": "bee695d8d70fa97080059f06c8becbf8dd2301df65abd88a4fb38fa266941aaa",
+      "kind": "own-words",
+      "url": "https://votetoddnash.com/national-rifle-association-political-victory-fund-awards-todd-nash-highest-possible-ranking/",
+      "date": "2024-05-03",
+      "date_precision": "day",
+      "passage": "“I am deeply honored to receive the highest possible ranking from the NRA-PVF,” said Todd Nash. “I believe strongly in the importance of protecting our Second Amendment rights, and I am committed to defending the freedoms guaranteed to law-abiding citizens by our Constitution. As your representative, I will continue to fight tirelessly to uphold our rights and values.”",
+      "note": "Quote in a campaign-site release (Senate District 29 race) about a gun-rights group's top candidate rating; he speaks of protecting Second Amendment rights.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:39.540Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "carry a gun with or without a permit",
+        "limits on who may have a gun",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site (https://votetoddnash.com/): read the gun-rating release; the in-the-news list had nothing on the subject",
+        "official Senate page https://www.oregonlegislature.gov/nash: read, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "Senate caucus releases of 2025-03-27 (SB 243) and 2026-03-05 (gun bill): fetched, no passage from this person in either",
+        "web search for name plus subject words: one search run",
+        "not reviewed: https://ballotpedia.org/Todd_Nash",
+        "not reviewed: OLIS public testimony pages (bill pages skipped by brief)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:08:39.540Z",
+      "by": "source-collector"
+    }
+  ]
 }

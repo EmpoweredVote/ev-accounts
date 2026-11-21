@@ -88,7 +88,97 @@
           "sha256": "f80b5a155bb5fa94eb644e46372dd3c584f67b76e53de13cfa466b9043d7b20e"
         }
       }
+    },
+    {
+      "id": "e02d66540dd04816acdc857901254203defa7082bb63c551c97cdc9b815f6013",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/yunker",
+      "date": "2026-11-21",
+      "date_precision": "day",
+      "passage": "Our constitutional rights must be protected without apology. I will always stand firm in defense of the Second Amendment and advocate for traditional family values, parental rights, and local control over our education systems.",
+      "note": "Statement on his official legislative page under his priorities. Page date is the date fetched; the text is undated.",
+      "subjects": [
+        "general statement on Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:26.199Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9b8344ba386f79e62044f8cc2200ddfe58083e1f3357906d5fa0362c13eab48",
+      "kind": "own-words",
+      "url": "https://electdwayneyunker.info/",
+      "date": "2026-11-21",
+      "date_precision": "day",
+      "passage": "In Salem, Dwayne is fighting for lower taxes, safer communities, parental rights, Second Amendment freedom, government accountability, and the values of Josephine County.",
+      "note": "Campaign site biography, written in the third person, lists Second Amendment freedom among his priorities; the page also has a 'Defending the Second Amendment' heading listing an endorsement from the Oregon Firearms Federation. Page date is the date fetched; the text is undated.",
+      "subjects": [
+        "general statement on Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:26.199Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4684ab916550a4fd6da12c7ab6eeb86c8325680d1f50ce631e2ab9934a39abab",
+      "kind": "own-words",
+      "url": "https://oregoncatalyst.com/?p=94976",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "This bill proves Oregon Democrats care more about control than public safety, targeting law-abiding Oregonians while failing to address the criminals actually driving crime,",
+      "note": "Quote of him in a House caucus release, reprinted by Oregon Catalyst, about HB 4145 (longer concealed handgun permit processing time, higher permit fee, and a permanent registry).",
+      "subjects": [
+        "concealed handgun permit fees and wait times",
+        "gun registry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:26.199Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "concealed handgun permit fees and processing time",
+        "gun registry",
+        "assault-style weapon and magazine bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry without a permit",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.oregonlegislature.gov/yunker (official member page, read)",
+        "https://electdwayneyunker.info/ (campaign site, read)",
+        "https://oregonvotes.gov/voters-guide/english/dwayneyunker.html (voters guide, fetched; no gun passage found in its text)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Dwayne_Yunker",
+        "House caucus press release on HB 4145 (PDF, fetched; text read via the Oregon Catalyst reprint)",
+        "https://oregoncatalyst.com/?p=94976 (news site reprint of the release, read)",
+        "one web search on name plus gun words",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:09:26.199Z",
+      "by": "source-collector"
+    }
+  ]
 }

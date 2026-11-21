@@ -618,7 +618,116 @@
           "sha256": "b0c58b40a8a6d770bee3dcf6def35d008a2a9f5299efe3fcb6af450b3fe88be2"
         }
       }
+    },
+    {
+      "id": "e8b4a17d9e314460ea180cc5b4786b510bfde9fabd02c7a58d95dfc540e039a2",
+      "kind": "own-words",
+      "url": "https://www.ijpr.org/politics-government/2025-05-30/oregon-senate-passes-hotly-contested-gun-bill",
+      "date": "2025-05-30",
+      "date_precision": "day",
+      "passage": "“These are tools of mass destruction,” said state Sen. Floyd Prozanski, D-Eugene, who added: “The only purpose of those weapons and those accessories are to kill people.”",
+      "note": "Quoted in a public-radio news story on the Senate floor debate over SB 243 (rapid-fire devices, age limit, local carry rules), speaking about the weapons and accessories the bill covers.",
+      "subjects": [
+        "ban on rapid-fire devices and accessories",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:06.994Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afd7bc21f039c6c29c0aa3b6967d2d3e7da7080737f4ae320bc016c54310922e",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2023/05/16/think-out-loud-gun-safety-measure-oregon-senate",
+      "date": "2023-05-16",
+      "date_precision": "day",
+      "passage": "So these are measures that will actually hold both those style or type of guns, non-detectable or non-traceable, to a standard to ensure that they are prohibited by law, and/or that they actually receive a serial number to be in compliance so they can in fact be traced.",
+      "note": "In an OPB radio interview transcript on HB 2005, he explains the bill's rules on undetectable and untraceable (unserialised) guns.",
+      "subjects": [
+        "home-made and unserialised guns",
+        "undetectable guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:06.994Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "90791487d2d084693146f6902b15c00c5dfd55387071dd9ce0a792edd974eaff",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2023/05/16/think-out-loud-gun-safety-measure-oregon-senate",
+      "date": "2023-05-16",
+      "date_precision": "day",
+      "passage": "So we are not denying 18, 19 or 20 year olds to have that experience of owning and possessing and using firearms. They just won’t have access to certain ones, such as semi-automatics.",
+      "note": "In the same interview, he defends HB 2005's limit on semi-automatic guns for people aged 18 to 20.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:06.994Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "171616e106a0e317179da3f3f8ee75687b3aeecf332709f35da911d6ea7e998c",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2023/05/16/think-out-loud-gun-safety-measure-oregon-senate",
+      "date": "2023-05-16",
+      "date_precision": "day",
+      "passage": "And what we’re doing here is we’re just expanding it out for local control to local government entities, such as cities and counties and other governmental entities.",
+      "note": "In the same interview, he describes HB 2005 as letting cities, counties and other local bodies decide whether licence holders may carry concealed in their public buildings.",
+      "subjects": [
+        "places where carry is allowed",
+        "concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:24:06.994Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire devices and assault-style accessories",
+        "undetectable and unserialised guns",
+        "minimum age for semi-automatic guns",
+        "local control of carry in public buildings",
+        "waiting period",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://www.oregonlegislature.gov/prozanski (read; names him as senator for District 4, no gun statement beyond a task force seat; news page not fetched)",
+        "not reviewed: https://www.oregonlegislature.gov/prozanski/Pages/news.aspx",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "news search on name plus gun words (2 searches; results led to a public-radio story and an OPB interview transcript)",
+        "not reviewed: Senate Judiciary committee hearing recordings https://apps.oregonlegislature.gov/liz/2025R1/Downloads/RecordingLog/SJUD/2025-03-27-15-00"
+      ],
+      "found": 4,
+      "at": "2026-11-21T17:24:06.994Z",
+      "by": "source-collector"
+    }
+  ]
 }

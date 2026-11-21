@@ -389,7 +389,103 @@
           "sha256": "03263adbf19fccbe1f75a6ef7e353bc5224e4faefa8eb58eea546d06af8dbc71"
         }
       }
+    },
+    {
+      "id": "2f9743e50602f6c6b74e0286a12e92ab12838f0046e37a2c703d87a0844646cf",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/wagner/Documents/Senate%20President%20press%20release%20SB%201503.pdf",
+      "date": "2024-03-04",
+      "date_precision": "day",
+      "passage": "\"Firearm suicides are a statewide problem and a serious public health risk,\" said Senate President Rob Wagner (D-Lake Oswego), co-chief sponsor of SB 1503. \"This task force will provide the Legislature with evidenced-based, proven steps we can take to reduce firearm suicides, improve public safety, and support Oregonians in crisis.\"",
+      "note": "Statement in a Senate President's office release on Senate passage of SB 1503, which creates a task force on community safety and firearm suicide prevention.",
+      "subjects": [
+        "firearm suicide prevention",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:34.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea19ad26a16c110cc52214b7959183c84a9d223ae0035f2ae4b88be4e289e392",
+      "kind": "own-words",
+      "url": "https://www.ijpr.org/politics-government/2025-03-27/oregon-lawmakers-put-forward-new-gun-bill-on-heels-of-measure-114-court-decision",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "We’ll have to see what happens in terms of the final iteration, but I definitely expect that there will be firearm safety legislation that gets considered in the Senate this session,",
+      "note": "Quoted by Jefferson Public Radio (story dated 2025-03-27, remark made the Monday before). Says he expects firearm safety bills to be considered in the Senate that session; SB 243 was then pending (rapid-fire device ban, waiting period, local say over guns in public buildings). Date taken as Monday 2025-03-24.",
+      "subjects": [
+        "gun safety laws in general",
+        "ban on rapid-fire devices",
+        "waiting period"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:34.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e88a0a7e1e7af41b25b12d2b6eab925aa2fc0eea99287b153952ef674bfd8b4",
+      "kind": "own-words",
+      "url": "https://www.ijpr.org/politics-government/2025-03-27/oregon-lawmakers-put-forward-new-gun-bill-on-heels-of-measure-114-court-decision",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "That’s hard for some of my colleagues on the other side because of just the intensity that they feel out of their base,",
+      "note": "Quoted by Jefferson Public Radio. Speaks about how firearm bills are packaged together and how colleagues in the other caucus feel about them; the story also says he acknowledged firearm bills cause \"deep friction\" (that phrase is the reporter's paraphrase, not a full quote).",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:34.461Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm suicide prevention",
+        "ban on rapid-fire devices",
+        "waiting period",
+        "minimum age to buy",
+        "gun safety laws in general",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page https://www.oregonlegislature.gov/wagner (confirms Senate President, District 19; nothing on the subject on the page)",
+        "Senate President's office press release on SB 1503 (own-words source)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped per brief",
+        "one web search on name plus gun-safety words",
+        "a Senate majority office release on SB 243 (Wagner not quoted; nothing saved)",
+        "news story from OPB on SB 243 (Wagner declined comment; nothing saved)",
+        "news story from Jefferson Public Radio on SB 243 (Wagner quoted)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: ontheissues.org and vote411",
+        "not reviewed: governor's SB 243 signing remarks"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:09:34.461Z",
+      "by": "source-collector"
+    }
+  ]
 }
