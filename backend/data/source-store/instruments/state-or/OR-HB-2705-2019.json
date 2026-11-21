@@ -1,0 +1,39 @@
+{
+  "id": "OR-HB-2705-2019",
+  "scope": "state:or",
+  "title": "HB2705 (2019 Regular): Relating to the firearm Do Not Sell List.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB2705",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2705/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Rayfield",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2705/Introduced; sha256 d82c4ae0a02d9496732846bf220a23be2653129b0621bae8413203fc2e507680)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2705-2019.introduced.pdf",
+      "sha256": "d82c4ae0a02d9496732846bf220a23be2653129b0621bae8413203fc2e507680"
+    },
+    "note": "As-filed text (introduced), no votes recorded. Other parts (not quoted) bar inquiring into list status for school admission, housing, insurance, public assistance and contracts (SECTION 5), bar courts from considering it (SECTION 6), and make use of it in employment an unlawful employment practice (SECTION 8, ORS 659A.885 SECTION 9); judged ancillary privacy protections for the list, not a separate topic."
+  },
+  "operative_text": "SECTION 1 (new): (2) “Do Not Sell List” means a voluntary electronic list maintained by the Department of State Police of persons to whom a transferor may not lawfully transfer a firearm.\nSECTION 2 (new): (1) The Department of State Police shall establish a secure Internet website that allows a person who resides in Oregon to voluntarily request to be added to the Do Not Sell List and to request to be removed from the list.\nSECTION 2 (new): (3)(c) When a transferor requests a criminal background check under ORS 166.412, 166.435 or 166.436 concerning a participant, the department shall inform the transferor of the participant’s status on the Do Not Sell List.\nSECTION 2 (new): (9) Notwithstanding the fact that it is unlawful for a participant to receive a firearm, receipt or possession by a participant shall not give rise to any civil or criminal penalty.\nSECTION 3 (new): (1) A person commits the offense of unlawful transfer of a firearm to a Do Not Sell List participant if the person is a transferor and knowingly transfers a firearm to a person whose name is on the Do Not Sell List at the time of the transfer.\nSECTION 3 (new): (2) Unlawful transfer of a firearm to a Do Not Sell List participant is a Class B violation.\nSECTION 4 (new): (1) A person commits the offense of making a false statement in connection with the Do Not Sell List if the person knowingly makes a false statement concerning the person’s identity when requesting to be added to or removed from the Do Not Sell List."
+}

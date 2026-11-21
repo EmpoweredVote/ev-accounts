@@ -1,0 +1,447 @@
+{
+ "id": "OR-SB-719-2017",
+ "scope": "state:or",
+ "title": "SB719 (2017 Regular): Relating to courts.",
+ "urls": [
+  "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB719",
+  "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB719/Enrolled"
+ ],
+ "version": "other",
+ "sponsors": [],
+ "single_subject": [
+  {
+   "season": 3,
+   "codebook": "0.6",
+   "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+   "verdict": "single",
+   "other_topics": [],
+   "note": "Runner 2026-11-21 (Oregon stop 1, Q1): rung 3; the juvenile dependency e-service sections 9-11 do not make it multi-subject."
+  }
+ ],
+ "votes": [
+  {
+   "date": "2017-05-01",
+   "body": "OR Senate",
+   "motion": "Senate Third reading. Carried by Boquist, Burdick. Passed.",
+   "kind": "roll-call",
+   "yes": 17,
+   "no": 11,
+   "absent": 2,
+   "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263269 https://olis.oregonlegislature.gov/liz/2017R1/Measures/MeasureVotes?id=405286#SB719",
+   "members": [
+    {
+     "name": "Mark Hass",
+     "vote": "yea"
+    },
+    {
+     "name": "Laurie Monnes Anderson",
+     "vote": "yea"
+    },
+    {
+     "name": "Floyd Prozanski",
+     "vote": "yea",
+     "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+     "name": "Ginny Burdick",
+     "vote": "yea"
+    },
+    {
+     "name": "Peter Courtney",
+     "vote": "yea"
+    },
+    {
+     "name": "Richard Devlin",
+     "vote": "yea"
+    },
+    {
+     "name": "Lee Beyer",
+     "vote": "yea"
+    },
+    {
+     "name": "Brian Boquist",
+     "vote": "yea"
+    },
+    {
+     "name": "Chuck Riley",
+     "vote": "yea"
+    },
+    {
+     "name": "Arnie Roblan",
+     "vote": "yea"
+    },
+    {
+     "name": "Sara Gelser Blouin",
+     "vote": "yea",
+     "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+    },
+    {
+     "name": "Rod Monroe",
+     "vote": "yea"
+    },
+    {
+     "name": "Michael Dembrow",
+     "vote": "yea"
+    },
+    {
+     "name": "Elizabeth Steiner",
+     "vote": "yea",
+     "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+     "name": "Lew Frederick",
+     "vote": "yea",
+     "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+     "name": "Kathleen Taylor",
+     "vote": "yea",
+     "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+     "name": "James Manning",
+     "vote": "yea",
+     "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+     "name": "Betsy Johnson",
+     "vote": "nay"
+    },
+    {
+     "name": "Tim Knopp",
+     "vote": "nay"
+    },
+    {
+     "name": "Jeff Kruse",
+     "vote": "nay"
+    },
+    {
+     "name": "Ted Ferrioli",
+     "vote": "nay"
+    },
+    {
+     "name": "Kim Thatcher",
+     "vote": "nay",
+     "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    },
+    {
+     "name": "Fred Girod",
+     "vote": "nay",
+     "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+    },
+    {
+     "name": "Alan Olsen",
+     "vote": "nay"
+    },
+    {
+     "name": "Chuck Thomsen",
+     "vote": "nay"
+    },
+    {
+     "name": "Bill Hansell",
+     "vote": "nay"
+    },
+    {
+     "name": "Alan DeBoer",
+     "vote": "nay"
+    },
+    {
+     "name": "Dennis Linthicum",
+     "vote": "nay"
+    },
+    {
+     "name": "Jackie Winters",
+     "vote": "absent"
+    },
+    {
+     "name": "Herman Baertschiger Jr.",
+     "vote": "absent"
+    }
+   ]
+  },
+  {
+   "date": "2017-07-06",
+   "body": "OR House",
+   "motion": "House Third reading. Carried by Williamson. Passed.",
+   "kind": "roll-call",
+   "yes": 31,
+   "no": 28,
+   "absent": 1,
+   "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263270 https://olis.oregonlegislature.gov/liz/2017R1/Measures/MeasureVotes?id=421856#SB719",
+   "members": [
+    {
+     "name": "Phil Barnhart",
+     "vote": "yea"
+    },
+    {
+     "name": "Mitch Greenlick",
+     "vote": "yea"
+    },
+    {
+     "name": "Paul Holvey",
+     "vote": "yea"
+    },
+    {
+     "name": "Nancy Nathanson",
+     "vote": "yea",
+     "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7"
+    },
+    {
+     "name": "Tina Kotek",
+     "vote": "yea",
+     "politician_id": "66c3bd97-94d1-4287-b1b8-86605a38cb97"
+    },
+    {
+     "name": "Margaret Doherty",
+     "vote": "yea"
+    },
+    {
+     "name": "Alissa Keny-Guyer",
+     "vote": "yea"
+    },
+    {
+     "name": "David Gomberg",
+     "vote": "yea",
+     "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32"
+    },
+    {
+     "name": "Chris Gorsek",
+     "vote": "yea",
+     "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+    },
+    {
+     "name": "Caddy McKeown",
+     "vote": "yea"
+    },
+    {
+     "name": "John Lively",
+     "vote": "yea",
+     "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d"
+    },
+    {
+     "name": "Jeff Reardon",
+     "vote": "yea"
+    },
+    {
+     "name": "Jennifer Williamson",
+     "vote": "yea"
+    },
+    {
+     "name": "Barbara Smith Warner",
+     "vote": "yea"
+    },
+    {
+     "name": "Ann Lininger",
+     "vote": "yea"
+    },
+    {
+     "name": "Rob Nosse",
+     "vote": "yea",
+     "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+    },
+    {
+     "name": "Paul Evans",
+     "vote": "yea",
+     "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+    },
+    {
+     "name": "Carla Piluso",
+     "vote": "yea"
+    },
+    {
+     "name": "Dan Rayfield",
+     "vote": "yea",
+     "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+    },
+    {
+     "name": "Susan McLain",
+     "vote": "yea",
+     "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84"
+    },
+    {
+     "name": "Ken Helm",
+     "vote": "yea",
+     "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a"
+    },
+    {
+     "name": "Teresa Alonso Leon",
+     "vote": "yea"
+    },
+    {
+     "name": "Janelle Bynum",
+     "vote": "yea"
+    },
+    {
+     "name": "Julie Fahey",
+     "vote": "yea",
+     "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+    },
+    {
+     "name": "Diego Hernandez",
+     "vote": "yea"
+    },
+    {
+     "name": "Pam Marsh",
+     "vote": "yea",
+     "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9"
+    },
+    {
+     "name": "Mark Meek",
+     "vote": "yea",
+     "politician_id": "be46ed6d-363e-46f4-89d4-c95d9af67db1"
+    },
+    {
+     "name": "Karin Power",
+     "vote": "yea"
+    },
+    {
+     "name": "Tawna Sanchez",
+     "vote": "yea",
+     "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+    },
+    {
+     "name": "Janeen Sollman",
+     "vote": "yea",
+     "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+     "name": "Sheri Schouten",
+     "vote": "yea"
+    },
+    {
+     "name": "Jeff Barker",
+     "vote": "nay"
+    },
+    {
+     "name": "Greg Smith",
+     "vote": "nay",
+     "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+    },
+    {
+     "name": "Carl Wilson",
+     "vote": "nay"
+    },
+    {
+     "name": "Gene Whisnant",
+     "vote": "nay"
+    },
+    {
+     "name": "Sal Esquivel",
+     "vote": "nay"
+    },
+    {
+     "name": "Andy Olson",
+     "vote": "nay"
+    },
+    {
+     "name": "Brad Witt",
+     "vote": "nay"
+    },
+    {
+     "name": "Brian Clem",
+     "vote": "nay"
+    },
+    {
+     "name": "John E Huffman",
+     "vote": "nay"
+    },
+    {
+     "name": "Cliff Bentz",
+     "vote": "nay"
+    },
+    {
+     "name": "Sherrie Sprenger",
+     "vote": "nay"
+    },
+    {
+     "name": "Bill Kennemer",
+     "vote": "nay"
+    },
+    {
+     "name": "Mark Johnson",
+     "vote": "nay"
+    },
+    {
+     "name": "Mike McLane",
+     "vote": "nay",
+     "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88"
+    },
+    {
+     "name": "Julie Parrish",
+     "vote": "nay"
+    },
+    {
+     "name": "Bill Post",
+     "vote": "nay"
+    },
+    {
+     "name": "Duane Stark",
+     "vote": "nay"
+    },
+    {
+     "name": "Dallas Heard",
+     "vote": "nay"
+    },
+    {
+     "name": "Cedric Hayden",
+     "vote": "nay",
+     "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e"
+    },
+    {
+     "name": "Jodi Hack",
+     "vote": "nay"
+    },
+    {
+     "name": "Mike Nearman",
+     "vote": "nay"
+    },
+    {
+     "name": "Knute Buehler",
+     "vote": "nay"
+    },
+    {
+     "name": "Greg Barreto",
+     "vote": "nay"
+    },
+    {
+     "name": "Ron Noble",
+     "vote": "nay"
+    },
+    {
+     "name": "Werner Reschke",
+     "vote": "nay",
+     "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    },
+    {
+     "name": "David Smith",
+     "vote": "nay",
+     "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    },
+    {
+     "name": "A. Richard Vial",
+     "vote": "nay"
+    },
+    {
+     "name": "Rick Lewis",
+     "vote": "nay",
+     "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325"
+    },
+    {
+     "name": "Deborah Boone",
+     "vote": "absent"
+    }
+   ]
+  }
+ ],
+ "provenance": {
+  "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB719/Enrolled; sha256 dcda60810eed61d65f8a935d8245e710bb29e0160fdf40309056195d5ebf8bfe)",
+  "fetched_at": "2026-11-21T16:35:37.349009Z",
+  "method": "api",
+  "saved_copy": {
+   "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-719-2017.enrolled.pdf",
+   "sha256": "dcda60810eed61d65f8a935d8245e710bb29e0160fdf40309056195d5ebf8bfe"
+  },
+  "note": "Enrolled version (the text both houses passed, Passed by Senate May 1, 2017). Section 2 and later subsections hold hearing, continuance, termination and renewal steps that are not quoted. The “deadly weapon” definition in SECTION 1 covers firearms and other weapons. The quoted SECTION 8 (1) lead-in is cut off before its (A)-(C) sub-items."
+ },
+ "operative_text": "SECTION 2 (new): (1) A law enforcement officer or a family or household member of a person may file a petition requesting that the court issue an extreme risk protection order enjoining the person from having in the person’s custody or control, owning, purchasing, possessing or receiving, or attempting to purchase or receive, a deadly weapon.\nSECTION 6 (new): (1) Upon issuance of an extreme risk protection order under section 2 of this 2017 Act, the court shall further order that the respondent: (a) Within 24 hours surrender all deadly weapons in the respondent’s custody, control or possession to a law enforcement agency, a gun dealer or a third party who may lawfully possess the deadly weapons; and (b) Within 24 hours surrender to a law enforcement agency any concealed handgun license issued to the respondent under ORS 166.291 and 166.292.\nSECTION 6 (new): (3)(a) A law enforcement officer serving an extreme risk protection order issued under section 2 of this 2017 Act shall request that the respondent immediately surrender to the officer all deadly weapons in the respondent’s custody, control or possession and any concealed handgun license issued to the respondent under ORS 166.291 and 166.292.\nSECTION 7 (new): (1) If an extreme risk protection order is terminated or expires without renewal, a law enforcement agency holding any deadly weapon or concealed handgun license that has been surrendered pursuant to the order shall return the surrendered items as requested by the respondent of the order only after: (a) Confirming through a criminal background check, if the deadly weapon is a firearm, that the respondent is legally eligible to own or possess firearms under state and federal law; and (b) Confirming that the extreme risk protection order is no longer in effect.\nSECTION 8 (new): (1) A person commits a Class A misdemeanor if: (a) The person knowingly possesses a deadly weapon; and (b) The person is prohibited from possessing deadly weapons pursuant to an extreme risk protection order:\nSECTION 8 (new): (2) A person convicted under subsection (1) of this section shall be prohibited from having in the person’s custody or control, owning, purchasing, possessing or receiving, or attempting to purchase or receive, any firearms for a five-year period beginning when the extreme risk protection order expires or is terminated, or the judgment of conviction is entered, whichever occurs later."
+}

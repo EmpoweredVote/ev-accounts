@@ -1,0 +1,769 @@
+{
+  "id": "OR-SB-554-2021",
+  "scope": "state:or",
+  "title": "SB554 (2021 Regular): Relating to firearms; and prescribing an effective date.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB554",
+    "https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB554/Enrolled"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Ginny Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Rob Wagner",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+    },
+    {
+      "name": "Rachel Prusak",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Janeen Sollman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Michael Dembrow",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "Elizabeth Steiner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+      "name": "Maxine Dexter",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chuck Riley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kate Lieber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4"
+    },
+    {
+      "name": "Chris Gorsek",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+    },
+    {
+      "name": "Sheri Schouten",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Khanh Pham",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "80ed3ab4-f7f6-4738-a9b7-49e6f52ad61e"
+    },
+    {
+      "name": "Wlnsvey Campos",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73"
+    },
+    {
+      "name": "Marty Wilde",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Smith Warner",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rob Nosse",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "Courtney Neron Misslin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+    },
+    {
+      "name": "Teresa Alonso Leon",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrea Salinas",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrea Valderrama",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a5a3918c-3e24-44fa-9573-440436a05b04"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-03-25",
+      "body": "OR Senate",
+      "motion": "Senate Third reading. Carried by Burdick. Passed.",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 7,
+      "absent": 7,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263281 https://olis.oregonlegislature.gov/liz/2021R1/Measures/MeasureVotes?id=508515#SB554",
+      "members": [
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Wagner",
+          "vote": "yea",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "James Manning",
+          "vote": "yea",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "vote": "yea",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "vote": "yea",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea",
+          "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+        },
+        {
+          "name": "Lew Frederick",
+          "vote": "yea",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "vote": "yea",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Golden",
+          "vote": "yea",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Kate Lieber",
+          "vote": "yea",
+          "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4"
+        },
+        {
+          "name": "Deb Patterson",
+          "vote": "yea",
+          "politician_id": "631cc414-8793-42ec-b883-594ed7f0b249"
+        },
+        {
+          "name": "Kayse Jama",
+          "vote": "yea",
+          "politician_id": "a703adb5-1086-471b-ba8b-2dbeddd8102b"
+        },
+        {
+          "name": "Fred Girod",
+          "vote": "nay",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "nay"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "nay"
+        },
+        {
+          "name": "Dick Anderson",
+          "vote": "nay",
+          "politician_id": "d9803822-6bf8-437d-aa4b-d7e6b4a67b7c"
+        },
+        {
+          "name": "Bill Kennemer",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "absent"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "absent"
+        },
+        {
+          "name": "Chris Gorsek",
+          "vote": "absent",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+        },
+        {
+          "name": "Dennis Linthicum",
+          "vote": "absent"
+        },
+        {
+          "name": "Kim Thatcher",
+          "vote": "absent",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "absent"
+        },
+        {
+          "name": "Art Robinson",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-04-29",
+      "body": "OR House",
+      "motion": "House Third reading. Carried by Prusak. Passed.",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 24,
+      "absent": 2,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263282 https://olis.oregonlegislature.gov/liz/2021R1/Measures/MeasureVotes?id=518582#SB554",
+      "members": [
+        {
+          "name": "Nancy Nathanson",
+          "vote": "yea",
+          "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7"
+        },
+        {
+          "name": "Andrea Salinas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marty Wilde",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Kotek",
+          "vote": "yea",
+          "politician_id": "66c3bd97-94d1-4287-b1b8-86605a38cb97"
+        },
+        {
+          "name": "Janelle Bynum",
+          "vote": "yea"
+        },
+        {
+          "name": "Tawna Sanchez",
+          "vote": "yea",
+          "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+        },
+        {
+          "name": "Janeen Sollman",
+          "vote": "yea",
+          "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+        },
+        {
+          "name": "Dan Rayfield",
+          "vote": "yea",
+          "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+        },
+        {
+          "name": "Sheri Schouten",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Fahey",
+          "vote": "yea",
+          "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+        },
+        {
+          "name": "Karin Power",
+          "vote": "yea"
+        },
+        {
+          "name": "Courtney Neron Misslin",
+          "vote": "yea",
+          "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+        },
+        {
+          "name": "Rachel Prusak",
+          "vote": "yea"
+        },
+        {
+          "name": "Anna Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Maxine Dexter",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad Witt",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Reardon",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan McLain",
+          "vote": "yea",
+          "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84"
+        },
+        {
+          "name": "Paul Holvey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Lively",
+          "vote": "yea",
+          "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d"
+        },
+        {
+          "name": "Barbara Smith Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Pam Marsh",
+          "vote": "yea",
+          "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9"
+        },
+        {
+          "name": "Brian Clem",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Alonso Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Nosse",
+          "vote": "yea",
+          "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+        },
+        {
+          "name": "Ken Helm",
+          "vote": "yea",
+          "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a"
+        },
+        {
+          "name": "Wlnsvey Campos",
+          "vote": "yea",
+          "politician_id": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73"
+        },
+        {
+          "name": "Khanh Pham",
+          "vote": "yea",
+          "politician_id": "80ed3ab4-f7f6-4738-a9b7-49e6f52ad61e"
+        },
+        {
+          "name": "Lisa Reynolds",
+          "vote": "yea",
+          "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+        },
+        {
+          "name": "Ricki Ruiz",
+          "vote": "yea",
+          "politician_id": "5e5e267a-808e-4a57-9f80-7c3e47fcb5f6"
+        },
+        {
+          "name": "Zach Hudson",
+          "vote": "yea",
+          "politician_id": "37247ac1-5444-4fdd-b58e-123b5db4d0fe"
+        },
+        {
+          "name": "Dacia Grayber",
+          "vote": "yea",
+          "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+        },
+        {
+          "name": "Jason Kropf",
+          "vote": "yea",
+          "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+        },
+        {
+          "name": "Andrea Valderrama",
+          "vote": "yea",
+          "politician_id": "a5a3918c-3e24-44fa-9573-440436a05b04"
+        },
+        {
+          "name": "Kim Wallan",
+          "vote": "nay",
+          "politician_id": "3778353d-cbc9-43cf-866a-a7c01397503a"
+        },
+        {
+          "name": "Gary Leif",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Post",
+          "vote": "nay"
+        },
+        {
+          "name": "Duane Stark",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Meek",
+          "vote": "nay",
+          "politician_id": "be46ed6d-363e-46f4-89d4-c95d9af67db1"
+        },
+        {
+          "name": "Werner Reschke",
+          "vote": "nay",
+          "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+        },
+        {
+          "name": "Daniel Bonham",
+          "vote": "nay"
+        },
+        {
+          "name": "Greg Smith",
+          "vote": "nay",
+          "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+        },
+        {
+          "name": "David Smith",
+          "vote": "nay",
+          "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+        },
+        {
+          "name": "Christine Drazan",
+          "vote": "nay",
+          "politician_id": "402a00be-71c3-4584-b29f-bf493365bffb"
+        },
+        {
+          "name": "Mark Owens",
+          "vote": "nay",
+          "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1"
+        },
+        {
+          "name": "Raquel Moore-Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Evans",
+          "vote": "nay",
+          "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+        },
+        {
+          "name": "Cedric Hayden",
+          "vote": "nay",
+          "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e"
+        },
+        {
+          "name": "David Gomberg",
+          "vote": "nay",
+          "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32"
+        },
+        {
+          "name": "Vikki Breese Iverson",
+          "vote": "nay",
+          "politician_id": "7f460988-c9a6-4452-a872-441e7c4ac071"
+        },
+        {
+          "name": "Ron Noble",
+          "vote": "nay"
+        },
+        {
+          "name": "Rick Lewis",
+          "vote": "nay",
+          "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325"
+        },
+        {
+          "name": "Shelly Davis",
+          "vote": "nay",
+          "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d"
+        },
+        {
+          "name": "Suzanne Weber",
+          "vote": "nay",
+          "politician_id": "d34df5c8-9534-4472-814d-971adff16f50"
+        },
+        {
+          "name": "Boomer Wright",
+          "vote": "nay",
+          "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e"
+        },
+        {
+          "name": "Lily Morgan",
+          "vote": "nay"
+        },
+        {
+          "name": "Bobby Levy",
+          "vote": "nay",
+          "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+        },
+        {
+          "name": "Jami Cate",
+          "vote": "nay",
+          "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+        },
+        {
+          "name": "Jack Zika",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Nearman",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-05-05",
+      "body": "OR Senate",
+      "motion": "Senate Senate concurred in House amendments and repassed bill.",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 7,
+      "absent": 6,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263283 https://olis.oregonlegislature.gov/liz/2021R1/Measures/MeasureVotes?id=519485#SB554",
+      "members": [
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Wagner",
+          "vote": "yea",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "James Manning",
+          "vote": "yea",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "vote": "yea",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "vote": "yea",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea",
+          "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+        },
+        {
+          "name": "Lew Frederick",
+          "vote": "yea",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "vote": "yea",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Golden",
+          "vote": "yea",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Kate Lieber",
+          "vote": "yea",
+          "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4"
+        },
+        {
+          "name": "Deb Patterson",
+          "vote": "yea",
+          "politician_id": "631cc414-8793-42ec-b883-594ed7f0b249"
+        },
+        {
+          "name": "Chris Gorsek",
+          "vote": "yea",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+        },
+        {
+          "name": "Kayse Jama",
+          "vote": "yea",
+          "politician_id": "a703adb5-1086-471b-ba8b-2dbeddd8102b"
+        },
+        {
+          "name": "Fred Girod",
+          "vote": "nay",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "nay"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "nay"
+        },
+        {
+          "name": "Dick Anderson",
+          "vote": "nay",
+          "politician_id": "d9803822-6bf8-437d-aa4b-d7e6b4a67b7c"
+        },
+        {
+          "name": "Bill Kennemer",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "absent"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "absent"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "absent"
+        },
+        {
+          "name": "Dennis Linthicum",
+          "vote": "absent"
+        },
+        {
+          "name": "Kim Thatcher",
+          "vote": "absent",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+        },
+        {
+          "name": "Art Robinson",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB554/Enrolled; sha256 009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-554-2021.enrolled.pdf",
+      "sha256": "009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655"
+    },
+    "note": "Enrolled version (Senate passed 16-7 on 2021-03-25; House vote not in the data read). Also: SECTION 3(3), 4(3), 5(3) and 6(2) make a breach negligence per se in a damages suit (not quoted); SECTION 9-11 (ORS 166.360, 166.370, 166.262) add Capitol and airport-terminal rules and make the licensee defense there a Class A misdemeanor instead of a full defense; SECTION 12 (ORS 166.291) raises concealed handgun license fees ($100 initial, $75 renewal), not quoted because of struck text. Takes effect 91st day after sine die."
+  },
+  "operative_text": "SECTION 3 (new): (1)(a) An owner or possessor of a firearm shall, at all times that the firearm is not carried by or under the control of the owner, possessor or authorized person, secure the firearm:\nSECTION 3 (new): (A) With an engaged trigger or cable lock;\nSECTION 3 (new): (B) In a locked container; or\nSECTION 3 (new): (C) In a gun room.\nSECTION 3 (new): (2)(a) A violation of subsection (1) of this section is a Class C violation.\nSECTION 3 (new): (b) Notwithstanding paragraph (a) of this subsection, a violation of subsection (1) of this section is a Class A violation if a minor obtains an unsecured firearm as a result of the violation and the owner or possessor of the firearm knew or should have known that a minor could gain unauthorized access to the unsecured firearm.\nSECTION 4 (new): (1) If a person transfers a firearm and a criminal background check under ORS 166.435 is required prior to the transfer, the person shall transfer the firearm:\nSECTION 4 (new): (a) With an engaged trigger or cable lock; or\nSECTION 4 (new): (b) In a locked container.\nSECTION 5 (new): (1)(a) A person who owns, possesses or controls a firearm shall report the loss or theft of the firearm to a law enforcement agency in the jurisdiction in which the loss or theft occurred as soon as practicable but not later than within 72 hours of the time the person knew or reasonably should have known of the loss or theft.\nSECTION 5 (new): (2)(a) A violation of subsection (1) of this section is a Class B violation.\nSECTION 6 (new): (1) Except as provided in subsections (3) and (4) of this section, a person who delivers or otherwise transfers a firearm to a minor shall directly supervise the minor’s use of the firearm.\nSECTION 7 (new): A gun dealer shall post in a prominent location in the gun dealer’s place of business a notice, in block letters not less than one inch in height, that states, “The purchaser of a firearm has an obligation to store firearms in a safe manner and to prevent unsupervised access to a firearm by a minor. If a minor or unauthorized person obtains access to a firearm and the owner failed to store the firearm in a safe manner, the owner may be in violation of the law.”\nSECTION 8 (new): (1) The governing board of a public university listed in ORS 352.002, the Oregon Health and Science University Board of Directors, the governing board of a community college or a district school board as defined in ORS 332.002 may adopt a policy providing that the affirmative defense described in ORS 166.370 (3)(g), concerning persons licensed to carry a concealed handgun under ORS 166.291 and 166.292, does not apply to the possession of firearms on the grounds of the schools controlled by the board."
+}

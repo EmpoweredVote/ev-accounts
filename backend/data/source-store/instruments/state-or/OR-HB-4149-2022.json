@@ -1,0 +1,117 @@
+{
+  "id": "OR-HB-4149-2022",
+  "scope": "state:or",
+  "title": "HB4149 (2022 Regular): Relating to liability for crimes committed in gun-free zones.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/HB4149",
+    "https://olis.oregonlegislature.gov/liz/2022R1/Downloads/MeasureDocument/HB4149/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lily Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Hansell",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bobby Levy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+    },
+    {
+      "name": "Werner Reschke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    },
+    {
+      "name": "Anna Scharf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0cd6ccff-e02d-4cbe-a1df-381226292840"
+    },
+    {
+      "name": "Greg Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+    },
+    {
+      "name": "Dallas Heard",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kim Thatcher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    },
+    {
+      "name": "Shelly Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d"
+    },
+    {
+      "name": "Jami Cate",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+    },
+    {
+      "name": "Christine Goodwin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    },
+    {
+      "name": "Jack Zika",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Owens",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1"
+    },
+    {
+      "name": "Daniel Bonham",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2022R1/Downloads/MeasureDocument/HB4149/Introduced; sha256 020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4149-2022.introduced.pdf",
+      "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
+    },
+    "note": "Introduced version; no votes on file. Subsection (3) of the section adds treble damages for terrorism or for victims who are disabled, 65 or older, under 16, or targeted as a minority."
+  },
+  "operative_text": "SECTION 1 (new): A person or public body that creates a gun-free zone is liable for damages resulting from a person felony or person Class A misdemeanor, as those terms are defined in the rules of the Oregon Criminal Justice Commission, committed against an individual in the gun-free zone, if a reasonable person would believe that possession of a firearm could have helped the individual defend against the felony or misdemeanor."
+}

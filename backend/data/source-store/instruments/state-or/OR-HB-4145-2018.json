@@ -1,0 +1,448 @@
+{
+  "id": "OR-HB-4145-2018",
+  "scope": "state:or",
+  "title": "HB4145 (2018 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2018R1/Measures/Overview/HB4145",
+    "https://olis.oregonlegislature.gov/liz/2018R1/Downloads/MeasureDocument/HB4145/Enrolled"
+  ],
+  "version": "other",
+  "sponsors": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-02-15",
+      "body": "OR House",
+      "motion": "House Third reading. Carried by Barker, Williamson. Passed.",
+      "kind": "roll-call",
+      "yes": 37,
+      "no": 23,
+      "absent": 0,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263276 https://olis.oregonlegislature.gov/liz/2018R1/Measures/MeasureVotes?id=431479#HB4145",
+      "members": [
+        {
+          "name": "Jeff Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Barnhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Mitch Greenlick",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Holvey",
+          "vote": "yea"
+        },
+        {
+          "name": "Deborah Boone",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad Witt",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Nathanson",
+          "vote": "yea",
+          "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7"
+        },
+        {
+          "name": "Brian Clem",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Kotek",
+          "vote": "yea",
+          "politician_id": "66c3bd97-94d1-4287-b1b8-86605a38cb97"
+        },
+        {
+          "name": "Margaret Doherty",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Parrish",
+          "vote": "yea"
+        },
+        {
+          "name": "Alissa Keny-Guyer",
+          "vote": "yea"
+        },
+        {
+          "name": "David Gomberg",
+          "vote": "yea",
+          "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32"
+        },
+        {
+          "name": "Chris Gorsek",
+          "vote": "yea",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+        },
+        {
+          "name": "John Lively",
+          "vote": "yea",
+          "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d"
+        },
+        {
+          "name": "Jeff Reardon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara Smith Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Nosse",
+          "vote": "yea",
+          "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+        },
+        {
+          "name": "Paul Evans",
+          "vote": "yea",
+          "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+        },
+        {
+          "name": "Carla Piluso",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Rayfield",
+          "vote": "yea",
+          "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+        },
+        {
+          "name": "Susan McLain",
+          "vote": "yea",
+          "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84"
+        },
+        {
+          "name": "Ken Helm",
+          "vote": "yea",
+          "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a"
+        },
+        {
+          "name": "Knute Buehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Alonso Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Janelle Bynum",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Fahey",
+          "vote": "yea",
+          "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+        },
+        {
+          "name": "Diego Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheri Schouten",
+          "vote": "yea"
+        },
+        {
+          "name": "Pam Marsh",
+          "vote": "yea",
+          "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9"
+        },
+        {
+          "name": "Mark Meek",
+          "vote": "yea",
+          "politician_id": "be46ed6d-363e-46f4-89d4-c95d9af67db1"
+        },
+        {
+          "name": "Karin Power",
+          "vote": "yea"
+        },
+        {
+          "name": "Tawna Sanchez",
+          "vote": "yea",
+          "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+        },
+        {
+          "name": "Janeen Sollman",
+          "vote": "yea",
+          "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+        },
+        {
+          "name": "A. Richard Vial",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea Salinas",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Smith",
+          "vote": "nay",
+          "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+        },
+        {
+          "name": "Carl Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Gene Whisnant",
+          "vote": "nay"
+        },
+        {
+          "name": "Sal Esquivel",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Olson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sherrie Sprenger",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Kennemer",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike McLane",
+          "vote": "nay",
+          "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88"
+        },
+        {
+          "name": "Caddy McKeown",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Post",
+          "vote": "nay"
+        },
+        {
+          "name": "Duane Stark",
+          "vote": "nay"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "nay"
+        },
+        {
+          "name": "Cedric Hayden",
+          "vote": "nay",
+          "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e"
+        },
+        {
+          "name": "Mike Nearman",
+          "vote": "nay"
+        },
+        {
+          "name": "Greg Barreto",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Noble",
+          "vote": "nay"
+        },
+        {
+          "name": "Werner Reschke",
+          "vote": "nay",
+          "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+        },
+        {
+          "name": "David Smith",
+          "vote": "nay",
+          "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+        },
+        {
+          "name": "Rick Lewis",
+          "vote": "nay",
+          "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325"
+        },
+        {
+          "name": "Daniel Bonham",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey Helfrich",
+          "vote": "nay",
+          "politician_id": "701f0236-5ca7-4bfa-ab71-8c22bcc5ff8c"
+        },
+        {
+          "name": "Denyc Boles",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2018-02-22",
+      "body": "OR Senate",
+      "motion": "Senate Third reading. Carried by Prozanski. Passed.",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 13,
+      "absent": 1,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263277 https://olis.oregonlegislature.gov/liz/2018R1/Measures/MeasureVotes?id=432290#HB4145",
+      "members": [
+        {
+          "name": "Mark Hass",
+          "vote": "yea"
+        },
+        {
+          "name": "Laurie Monnes Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "vote": "yea",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+        },
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnie Roblan",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "vote": "yea",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+        },
+        {
+          "name": "Rod Monroe",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Lew Frederick",
+          "vote": "yea",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea",
+          "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "vote": "yea",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+        },
+        {
+          "name": "James Manning",
+          "vote": "yea",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+        },
+        {
+          "name": "Rob Wagner",
+          "vote": "yea",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackie Winters",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim Thatcher",
+          "vote": "nay",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+        },
+        {
+          "name": "Fred Girod",
+          "vote": "nay",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+        },
+        {
+          "name": "Alan Olsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "nay"
+        },
+        {
+          "name": "Herman Baertschiger Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan DeBoer",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis Linthicum",
+          "vote": "nay"
+        },
+        {
+          "name": "Cliff Bentz",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Kruse",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2018R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 2986008b98d7e4c92b31e03132859cbffedc1dee5fa9ee41c7667d293cb70908)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2018.enrolled.pdf",
+      "sha256": "2986008b98d7e4c92b31e03132859cbffedc1dee5fa9ee41c7667d293cb70908"
+    },
+    "note": "Enrolled text (HB 4145-A); the House passed it 2018-02-15. SECTION 1 strikes the 'intimate partner' wording and uses 'family or household member' (struck text mixed into those sentences, so not quoted). SECTION 4 (ORS 166.412) adds the State Police duty to notify law enforcement and prosecutors when a dealer or gun-show check finds a prohibited recipient, plus a published report; it is described, not quoted, because of struck text. SECTION 9 applies the changes to possession on or after the effective date."
+  },
+  "operative_text": "SECTION 1 (ORS 166.255): It is unlawful for a person to knowingly possess a firearm or ammunition if:\nSECTION 1 (ORS 166.255): The person has been convicted of stalking under ORS 163.732.\nSECTION 3 (new): Upon receipt of a record of conviction for an offense described in ORS 166.255 (1)(b), the Department of State Police shall immediately enter the conviction into the Law Enforcement Data System and shall cause the conviction to be entered into the databases of the National Crime Information Center of the United States Department of Justice."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "OR-SB-604-2021",
+  "scope": "state:or",
+  "title": "SB604 (2021 Regular): Relating to permits to receive a firearm.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB604",
+    "https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB604/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lew Frederick",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB604/Introduced; sha256 1f96e17a32690f28a65e70be772e4ecaa7e64af9ae5365856261bb474ed6242e)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-604-2021.introduced.pdf",
+      "sha256": "1f96e17a32690f28a65e70be772e4ecaa7e64af9ae5365856261bb474ed6242e"
+    },
+    "note": "Introduced version (as filed). SECTION 4 (ORS 166.435) makes a transferor who skips the permit check guilty of a Class A misdemeanor, and a Class B felony with a prior conviction; SECTIONS 3 and 5 (ORS 166.412, 166.438) carry matching duties and penalties (not quoted, struck text). Applies to transfers on or after the effective date. No votes recorded."
+  },
+  "operative_text": "SECTION 2 (new): (1)(a) A person may apply for a permit to receive firearm under this section from the county sheriff of the county in which the person resides, or the municipal police department with jurisdiction over the municipality in which the person resides.\nSECTION 2 (new): (b) A person is qualified to receive a permit under this section if the person:\nSECTION 2 (new): (A) Is not prohibited from purchasing or otherwise receiving a firearm under state or federal law;\nSECTION 2 (new): (B) Is not the subject of an order described in ORS 166.525 to 166.543;\nSECTION 2 (new): (C) Provides proof of completion of a firearm safety course; and\nSECTION 2 (new): (D) Pays the fee described in subsection (2) of this section.\nSECTION 2 (new): (f) Within 30 days of receiving an application for a permit under this section, if the sheriff or police department has verified the applicant’s identity and determined that the applicant meets the qualifications described in paragraph (b) of this subsection, the sheriff or police department shall issue the permit.\nSECTION 2 (new): (2) The sheriff or police department may charge a reasonable fee for issuing permits under this section, but the fee may not exceed $20.\nSECTION 2 (new): (5)(a) A permit issued under this section is valid for five years from the date of issuance.\nSECTION 4 (ORS 166.435): (5)(a) A transferor who fails to comply with the requirements of this section commits a Class A misdemeanor.\nSECTION 4 (ORS 166.435): (b) Notwithstanding paragraph (a) of this subsection, a transferor who fails to comply with the requirements of this section commits a Class B felony if the transferor has a previous conviction under this section at the time of the offense."
+}

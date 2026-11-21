@@ -1,0 +1,44 @@
+{
+  "id": "OR-HB-2968-2023",
+  "scope": "state:or",
+  "title": "HB2968 (2023 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2968",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2968/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rep Smith DB",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Virgle Osborne",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2968/Introduced; sha256 59807f81929e4fc41ffe53b7445c1e869cbd55247ff5bc4f7e4b04af35e9f8c3)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2968-2023.introduced.pdf",
+      "sha256": "59807f81929e4fc41ffe53b7445c1e869cbd55247ff5bc4f7e4b04af35e9f8c3"
+    },
+    "note": "As-filed text (introduced), no votes recorded. SECTION 1 (ORS 166.250) strikes the paragraphs on carrying a concealed firearm and keeping a concealed, readily accessible handgun in a vehicle, and the open-carry and vehicle-storage rules that went with them, and renumbers the rest. SECTIONS 4-12 conform ORS 166.260, 166.262, 166.273, 166.274, 166.370, 166.380, 166.412, 166.436 and 166.460, mainly tying the public-building felony to buildings that adopt a policy; these are cross-reference changes."
+  },
+  "operative_text": "SECTION 3 (new): (1) An entity that controls a public building may adopt a policy prohibiting the possession of firearms within the public building by any person not described in ORS 166.370 (3).\nSECTION 3 (new): (2)(a) Post a clearly visible sign, at all normal points of entry to the areas subject to the policy described in subsection (1) of this section, indicating that the possession of firearms by persons not described in ORS 166.370 (3) is prohibited."
+}

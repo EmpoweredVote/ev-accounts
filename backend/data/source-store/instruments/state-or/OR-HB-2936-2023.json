@@ -1,0 +1,89 @@
+{
+  "id": "OR-HB-2936-2023",
+  "scope": "state:or",
+  "title": "HB2936 (2023 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2936",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2936/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lily Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Virgle Osborne",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030"
+    },
+    {
+      "name": "Jami Cate",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+    },
+    {
+      "name": "Bobby Levy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+    },
+    {
+      "name": "Rep Smith DB",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Boomer Wright",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e"
+    },
+    {
+      "name": "Lynn Findley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Hansell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kim Thatcher",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    },
+    {
+      "name": "Suzanne Weber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d34df5c8-9534-4472-814d-971adff16f50"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2936/Introduced; sha256 05f8bb5d84a5086c84954b7f3548c2f00811acc13010c53cf8d23da0eacd8b5d)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2936-2023.introduced.pdf",
+      "sha256": "05f8bb5d84a5086c84954b7f3548c2f00811acc13010c53cf8d23da0eacd8b5d"
+    },
+    "note": "As-filed text (introduced), no votes recorded. The repealed ORS sections are named by number only in the text; their content (storage, transfer storage, loss or theft reporting, minor supervision, school-grounds policy) comes from the digest. SECTIONS 2-4 strike the airport terminal from 'public building', the licensee penalty reduction for Capitol, airport and school grounds, and the airport checked-baggage defense. SECTION 5 (ORS 166.291) cuts the sheriff's fee for issuing or renewing a concealed handgun license (the struck $100 initial and $75 renewal fees become $50; per the digest)."
+  },
+  "operative_text": "SECTION 1 (ORS 166.377, 166.390, 166.392, 166.395, 166.397, 166.400, 166.403, 166.405): ORS 166.377, 166.390, 166.392, 166.395, 166.397, 166.400, 166.403 and 166.405 are repealed.\nSECTION 3 (ORS 166.370): (1) Any person who intentionally possesses a loaded or unloaded firearm or any other instrument used as a dangerous weapon, while in or on a public building, shall upon conviction be guilty of a Class C felony."
+}

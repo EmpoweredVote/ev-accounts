@@ -1,0 +1,144 @@
+{
+  "id": "OR-HB-4135-2024",
+  "scope": "state:or",
+  "title": "HB4135 (2024 Regular): Relating to threatening a mass injury event; prescribing an effective date.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/HB4135",
+    "https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4135/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Courtney Neron Misslin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+    },
+    {
+      "name": "Mark Meek",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "be46ed6d-363e-46f4-89d4-c95d9af67db1"
+    },
+    {
+      "name": "Kevin Mannix",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2edbb7a5-a798-4088-8939-7b44b51e682c"
+    },
+    {
+      "name": "Hai Pham",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2e668344-f025-489a-b870-1803269c11fc"
+    },
+    {
+      "name": "Ben Bowman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e29b685-1f2e-4963-83a8-a7bde5b5250e"
+    },
+    {
+      "name": "Mark Gamba",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36db8c55-4b20-408c-bd99-b8488d0ef344"
+    },
+    {
+      "name": "David Gomberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32"
+    },
+    {
+      "name": "Ken Helm",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a"
+    },
+    {
+      "name": "Zach Hudson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "37247ac1-5444-4fdd-b58e-123b5db4d0fe"
+    },
+    {
+      "name": "Hoa Nguyen",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Wlnsvey Campos",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73"
+    },
+    {
+      "name": "Michael Dembrow",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+      "name": "Jeff Golden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+    },
+    {
+      "name": "Tim Knopp",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sen Steiner",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+      "name": "Aaron Woods",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Em Levy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f1d2cfe6-5e70-42f3-a010-bb58ec6a5d86"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: SECTION 1 (new) — creates the non-gun crime of threatening a mass injury event, with penalties, a county supervision change (SECTION 4, ORS 423.478) and a Criminal Justice Commission data report (SECTION 8)"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/HB4135/Introduced; sha256 5c5f4f283966c47a440079857b1560bc6efd7bd6072599ee24bd1d0635374163)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4135-2024.introduced.pdf",
+      "sha256": "5c5f4f283966c47a440079857b1560bc6efd7bd6072599ee24bd1d0635374163"
+    },
+    "note": "Introduced version; no votes on file. SECTION 3 (ORS 166.274) adds this conviction to the bars from which a person may petition for relief. The gun ban is a small part of a bill mostly about the new threat crime."
+  },
+  "operative_text": "SECTION 2 (ORS 166.250): Except as otherwise provided in this section or ORS 166.260, 166.270, 166.273, 166.274, 166.291, 166.292 or 166.410 to 166.470, a person commits the crime of unlawful possession of a firearm if the person knowingly: … Has been convicted of threatening a mass injury event under section 1 of this 2024 Act; or\nSECTION 2 (ORS 166.250): Unlawful possession of a firearm is a Class A misdemeanor."
+}

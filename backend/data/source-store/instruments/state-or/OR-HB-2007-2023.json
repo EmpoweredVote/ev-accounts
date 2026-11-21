@@ -1,0 +1,104 @@
+{
+  "id": "OR-HB-2007-2023",
+  "scope": "state:or",
+  "title": "HB2007 (2023 Regular): Relating to the possession of firearms in certain public areas.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2007",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2007/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Paul Evans",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+      "name": "Janeen Sollman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+      "name": "Jules Walters",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b5d3a442-3229-412a-8da4-e8eb8b9fdb3a"
+    },
+    {
+      "name": "Ben Bowman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e29b685-1f2e-4963-83a8-a7bde5b5250e"
+    },
+    {
+      "name": "Maxine Dexter",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tom Andersen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5b81e68c-3ec3-4c81-9f1b-010db86da9c0"
+    },
+    {
+      "name": "Julie Fahey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2007/Introduced; sha256 13c5cee6280b268595cf22f9404a345b172a916c6c29d0ea6a47c05a9947aa33)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2007-2023.introduced.pdf",
+      "sha256": "13c5cee6280b268595cf22f9404a345b172a916c6c29d0ea6a47c05a9947aa33"
+    },
+    "note": "Introduced version (as filed). Added words are not marked in the text; the operative passages are identified from the digest. Section 4 (ORS 166.262) conforms the no-arrest rule for licensees. No votes recorded."
+  },
+  "operative_text": "SECTION 3 (ORS 166.377): (3) The governing body of a city, county, district as defined in ORS 198.010 or any other entity that falls within the definition of “municipal corporation” in ORS 297.405 may adopt a policy, ordinance or regulation providing that the affirmative defense described in ORS 166.370 (3)(g), concerning persons licensed to carry a concealed handgun under ORS 166.291 and 166.292, does not apply to the possession of firearms within buildings and on grounds adjacent to buildings owned or controlled by the governing body.\nSECTION 3 (ORS 166.377): (4) A governing body that adopts a policy under this section shall: (a) Post a clearly visible sign, at all normal points of entry to the buildings and grounds subject to the policy described in subsection (3) of this section, indicating that the affirmative defense described in ORS 166.370 (3)(g) does not apply. (b) Post a notice on the governing body’s website identifying all buildings and grounds subject to the policy described in subsection (3) of this section.\nSECTION 2 (ORS 166.370): (b) Notwithstanding paragraph (a) of this subsection, in a prosecution under this section for the possession of a firearm within the Capitol, within the passenger terminal of a commercial service airport with over one million passenger boardings per year or within a building and adjacent grounds or on school grounds subject to a policy described in ORS 166.377, if the person proves by a preponderance of the evidence that, at the time of the possession, the person was licensed under ORS 166.291 and 166.292 to carry a concealed handgun, upon conviction the person is guilty of a Class A misdemeanor."
+}

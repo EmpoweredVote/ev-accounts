@@ -1,0 +1,82 @@
+{
+  "id": "OR-HB-3223-2019",
+  "scope": "state:or",
+  "title": "HB3223 (2019 Regular): Relating to assault weapons; declaring an emergency.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB3223",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB3223/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Carla Piluso",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+      "name": "Margaret Doherty",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alissa Keny-Guyer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tawna Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+    },
+    {
+      "name": "Laurie Monnes Anderson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Elizabeth Steiner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+      "name": "Barbara Smith Warner",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB3223/Introduced; sha256 875ff90c2f24a580b6e6c224e8bb56076b7f601a5d3f2ba937d87d3472c7a7ca)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3223-2019.introduced.pdf",
+      "sha256": "875ff90c2f24a580b6e6c224e8bb56076b7f601a5d3f2ba937d87d3472c7a7ca"
+    },
+    "note": "Version read: introduced (as filed). Existing owners must register within one year or remove, sell, surrender or disable the weapon. Registration includes a criminal background check. No passage vote recorded."
+  },
+  "operative_text": "SECTION 5 (new): (1) A person who, as of the effective date of this 2019 Act, lawfully owns an assault weapon shall, within one year after the effective date of this 2019 Act, register each assault weapon owned by the person with the Department of State Police as follows:\nSECTION 5 (new): (d) The department shall maintain a registry of the information obtained during the registration process under this section and shall adopt rules concerning the administration of the registry, including but not limited to renewal and revocation procedures.\nSECTION 6 (new): (1) Notwithstanding any other provision of ORS 166.250 to 166.270 and 166.410 to 166.470, and except as provided in this section and section 5 of this 2019 Act, a person commits the crime of unlawful manufacture, transfer or possession of an assault weapon if the person manufactures, imports, possesses, purchases, sells or otherwise transfers an assault weapon after the effective date of this 2019 Act.\nSECTION 6 (new): (3) Except as provided in subsection (4) of this section, the owner of an assault weapon registered under section 5 of this 2019 Act may not purchase or otherwise acquire an additional assault weapon after the effective date of this 2019 Act.\nSECTION 6 (new): (5) Unlawful manufacture, transfer or possession of an assault weapon is a Class A misdemeanor.\nSECTION 7 (new): (1) The owner of an assault weapon shall report the loss or theft of the assault weapon to the appropriate law enforcement agency as soon as possible and, in any event, no later than within 48 hours of the discovery of the loss or theft."
+}

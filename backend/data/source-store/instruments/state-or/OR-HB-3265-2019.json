@@ -1,0 +1,98 @@
+{
+  "id": "OR-HB-3265-2019",
+  "scope": "state:or",
+  "title": "HB3265 (2019 Regular): Relating to large-capacity ammunition magazines; declaring an emergency.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB3265",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB3265/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mitch Greenlick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carla Piluso",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+      "name": "Margaret Doherty",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alissa Keny-Guyer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rachel Prusak",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tawna Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+    },
+    {
+      "name": "Jeff Golden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+    },
+    {
+      "name": "Laurie Monnes Anderson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Elizabeth Steiner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+      "name": "Barbara Smith Warner",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB3265/Introduced; sha256 4b6a6141522bd1684c007c42c88d4fdeee264226071d7287b7789b884bc4a71c)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3265-2019.introduced.pdf",
+      "sha256": "4b6a6141522bd1684c007c42c88d4fdeee264226071d7287b7789b884bc4a71c"
+    },
+    "note": "Version read: introduced (as filed). Bill defines 'large-capacity magazine' as one accepting more than 10 rounds, with exemptions (altered, .22 tube, lever-action tubular), law enforcement and military exceptions. No passage vote recorded."
+  },
+  "operative_text": "SECTION 4 (new): (1) Except as provided in subsection (4) of this section, a person may not possess a large-capacity magazine at any time after 180 days after the effective date of this 2019 Act.\nSECTION 4 (new): (3) Except as provided in subsection (4) of this section, a person may not use a large-capacity magazine at any time after the effective date of this 2019 Act.\nSECTION 4 (new): (5)(a) The possession of a large-capacity magazine in violation of this section is a Class A violation.\nSECTION 4 (new): (c) The use of a large-capacity magazine in violation of this section is a Class A misdemeanor.\nSECTION 5 (new): (2) A person may not purchase, sell or otherwise transfer a large-capacity magazine at any time after the effective date of this 2019 Act except under the following circumstances:\nSECTION 5 (new): (3) The manufacture, purchase, sale or other transfer of a large-capacity magazine in violation of this section is a Class A misdemeanor.\nSECTION 7 (new): (1) The owner or possessor of a large-capacity magazine that has not been permanently altered shall report the loss or theft of the magazine to the appropriate law enforcement agency as soon as possible and, in any event, no later than within 48 hours of the discovery of the loss or theft."
+}

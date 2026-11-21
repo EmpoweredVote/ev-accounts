@@ -1,0 +1,55 @@
+{
+  "id": "OR-SB-1065-2017",
+  "scope": "state:or",
+  "title": "SB1065 (2017 Regular): Relating to firearms; prescribing an effective date.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB1065",
+    "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB1065/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ginny Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jennifer Williamson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "James Manning",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB1065/Introduced; sha256 eb9efc9924cb409b11c6fa027d0a8096f06a265f919e0af5457a9779ee26dfc3)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1065-2017.introduced.pdf",
+      "sha256": "eb9efc9924cb409b11c6fa027d0a8096f06a265f919e0af5457a9779ee26dfc3"
+    },
+    "note": "Introduced version; no votes on file. A large bill: SECTIONS 7 to 10 (ORS 166.291) change the concealed handgun licence course and application form; SECTIONS 15 to 17 extend defences for honorably retired parole and probation officers; SECTION 3 also adds State Police notice and reporting duties for blocked purchases. Many sections mix struck and added words and were described rather than quoted. The Section 12 stalking sentence is the same added bar that HB 4145 (2018) later carried."
+  },
+  "operative_text": "SECTION 3 (ORS 166.412): The department shall adopt rules establishing alternative fingerprints that a person may provide in lieu of a thumbprint when the person is unable to provide a thumbprint due to a disability or other physical limitation.\nSECTION 6 (ORS 166.436): If the department does not provide the information within 14 days of the date of the criminal background check request, the transferor may deliver the firearm to the recipient as long as the transferor does not know or have reason to believe that the recipient is disqualified from completing the transfer.\nSECTION 12 (ORS 166.255): The person has been convicted of stalking under ORS 163.732.\nSECTION 14 (new): Upon receipt of a record of conviction for a crime constituting a qualifying misdemeanor as defined in ORS 166.255, the Department of State Police shall immediately enter the conviction into the Law Enforcement Data System and shall cause the conviction to be entered into the databases of the National Crime Information Center of the United States Department of Justice."
+}

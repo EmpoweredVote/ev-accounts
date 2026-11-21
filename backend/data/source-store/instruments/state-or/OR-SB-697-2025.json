@@ -1,0 +1,81 @@
+{
+  "id": "OR-SB-697-2025",
+  "scope": "state:or",
+  "title": "SB697 (2025 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB697",
+    "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB697/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Sarah McDonald",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2a116530-8d06-41b5-b965-50d943eae8c2"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "Janeen Sollman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+      "name": "James Manning",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Ricki Ruiz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e5e267a-808e-4a57-9f80-7c3e47fcb5f6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB697/Introduced; sha256 197989db714716dde4685d550d50b71f6cbf792f56b6a1dd65817535afdd0574)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-697-2025.introduced.pdf",
+      "sha256": "197989db714716dde4685d550d50b71f6cbf792f56b6a1dd65817535afdd0574"
+    },
+    "note": "Introduced version; no votes on file. The core age change replaces 18 with 21 in ORS 166.250 (1)(c)(A) and ORS 166.470 (1)(a); those lines run across struck text so they are described here, not quoted. Section 1 names the bill the Russell Paul Evans Act. Quoted passages are items of lists; the lead-ins to those lists (ORS 166.250 (2), ORS 166.470 (3)) are omitted."
+  },
+  "operative_text": "SECTION 2 (ORS 166.250): (b) A person who is at least 18 years of age and under 21 years of age and who is not otherwise prohibited under subsection (1)(c)(B) to (H) of this section from possessing: (A) A single-shot rifle, whether centerfire or rimfire; (B) A double-barreled shotgun; (C) A repeating rifle, whether centerfire or rimfire, that has a bolt, lever, pump, straight-pull or revolving action; (D) A rifle with an attached tubular magazine designed to accept, and capable of operating only with, 0.22 caliber rimfire ammunition; (E) A muzzleloader rifle; or (F) A shotgun with a pump, break, level or revolving action;\nSECTION 3 (ORS 166.260): (5) ORS 166.250 (1)(c)(A) does not apply to or affect police officers, certified reserve officers, reserve officers or active or reserve members of the Army, Navy, Air Force, Coast Guard or Marine Corps of the United States or of the National Guard.\nSECTION 4 (ORS 166.470): (a) The transfer of a firearm to a person under 21 years of age who is a police officer, certified reserve officer, reserve officer or active or reserve member of the Army, Navy, Air Force, Coast Guard or Marine Corps of the United States or of the National Guard; (b) The transfer of a firearm described in ORS 166.250 (2)(b) to a person who is at least 18 years of age and under 21 years of age; or (c) The parent or guardian of a minor from temporarily transferring a firearm described in ORS 166.250 (2)(b) to the minor.\nSECTION 4 (ORS 166.470): (4) Violation of this section is a Class A misdemeanor."
+}

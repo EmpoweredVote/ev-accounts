@@ -1,0 +1,81 @@
+{
+  "id": "OR-SB-698-2025",
+  "scope": "state:or",
+  "title": "SB698 (2025 Regular): Relating to the possession of firearms in certain public areas.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB698",
+    "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB698/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Anthony Broadman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3af0dfad-d1a1-4c91-a859-6f17c5e238b9"
+    },
+    {
+      "name": "Sarah McDonald",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2a116530-8d06-41b5-b965-50d943eae8c2"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "James Manning",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Ricki Ruiz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e5e267a-808e-4a57-9f80-7c3e47fcb5f6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB698/Introduced; sha256 2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-698-2025.introduced.pdf",
+      "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
+    },
+    "note": "Introduced version; no votes on file. Near-identical to the 2023 bill SB 686. SECTION 2 also reworks the Class A misdemeanor outcome for licensees under ORS 166.370 (1)(b); not quoted because it is mixed with existing text; the digest describes it."
+  },
+  "operative_text": "SECTION 3 (ORS 166.377): (3) The governing body of a city, county, district as defined in ORS 198.010 or any other entity that falls within the definition of “municipal corporation” in ORS 297.405 may adopt a policy, ordinance or regulation providing that the affirmative defense described in ORS 166.370 (3)(g), concerning persons licensed to carry a concealed handgun under ORS 166.291 and 166.292, does not apply to the possession of firearms within buildings and on grounds adjacent to buildings owned or controlled by the governing body.\nSECTION 3 (ORS 166.377): (4) A governing body that adopts a policy under subsection (3) of this section shall: (a) Post a clearly visible sign, at all normal points of entry to the buildings and grounds subject to the policy described in subsection (3) of this section, indicating that the affirmative defense described in ORS 166.370 (3)(g) does not apply.\nSECTION 2 (ORS 166.370): (a) Any person who intentionally possesses a loaded or unloaded firearm or any other instrument used as a dangerous weapon, while in or on a public building, shall upon conviction be guilty of a Class C felony."
+}

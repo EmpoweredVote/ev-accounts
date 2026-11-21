@@ -1,0 +1,39 @@
+{
+  "id": "OR-HB-3511-2023",
+  "scope": "state:or",
+  "title": "HB3511 (2023 Regular): Relating to firearm permits; prescribing an effective date.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3511",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3511/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Farrah Chaichi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "62decede-7149-40a1-a68a-16e2d3eb62a6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3511/Introduced; sha256 8e2fe7f3fd92ad1aa4ee457530c6bbd4adc377eb0acd4cbc6819eafb6088265d)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3511-2023.introduced.pdf",
+      "sha256": "8e2fe7f3fd92ad1aa4ee457530c6bbd4adc377eb0acd4cbc6819eafb6088265d"
+    },
+    "note": "Version read: introduced (as filed). SECTION 1 makes the Department of Transportation the permit agent (struck text covers sheriff or police chief). SECTIONS 6 to 9 (ORS 166.412, 166.435, 166.436, 166.438) switch dealer and gun-show transfers from criminal background check to permit verification, with many struck passages, so not quoted. SECTION 15 repeals ORS 166.434. Takes effect on the 91st day after adjournment. No passage vote recorded."
+  },
+  "operative_text": "SECTION 2 (section 4, chapter 1, Oregon Laws 2023): (5)(a) The Department of Transportation and the Department of State Police shall jointly develop a database of all permits issued under this section.\nSECTION 2 (section 4, chapter 1, Oregon Laws 2023): (d) The database described in this subsection must allow for a gun dealer or a person transferring a firearm at a gun show to securely address the database and verify a permit as described in ORS 166.412 and 166.436.\nSECTION 3 (section 5, chapter 1, Oregon Laws 2023): (c) The Department of State Police shall annually complete a criminal background check on each permit holder that includes a check of the National Instant Criminal Background Check System and a determination of whether the permit applicant is prohibited by state or federal law from possessing or receiving a firearm.\nSECTION 4 (new): (1) The Department of State Police shall contract with a private entity to perform an equity analysis of the changes to the firearm permitting process resulting from the amendments to sections 3 to 5, chapter 1, Oregon Laws 2023, by sections 1 to 3 of this 2023 Act.\nSECTION 4 (new): (2) The department shall report the results of the analysis, in the manner described in ORS 192.245, to the appropriate interim committees of the Legislative Assembly no later than December 31, 2026."
+}

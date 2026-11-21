@@ -1,0 +1,51 @@
+{
+  "id": "OR-SB-396-2021",
+  "scope": "state:or",
+  "title": "SB396 (2021 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB396",
+    "https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB396/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Floyd Prozanski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB396/Introduced; sha256 49ce4c703e1415804a7b49ec25e2a52693d5346e3f32479827ad256f11c288e4)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-396-2021.introduced.pdf",
+      "sha256": "49ce4c703e1415804a7b49ec25e2a52693d5346e3f32479827ad256f11c288e4"
+    },
+    "note": "Introduced version (as filed). SECTION 4 (ORS 166.210) adds definitions; SECTION 5 (ORS 166.250) adds a possession offence for prohibited persons holding an unfinished frame or receiver; SECTION 6 (ORS 166.412) extends the dealer background check to unfinished frames or receivers (not quoted). No votes recorded."
+  },
+  "operative_text": "SECTION 2 (new): (2) A person who knowingly manufactures or causes to be manufactured within this state, imports into this state, or offers for sale, sells or transfers, an undetectable firearm commits a Class B felony.\nSECTION 2 (new): (3) A person who knowingly possesses an undetectable firearm commits a Class A misdemeanor.\nSECTION 3 (new): (2) A person who knowingly possesses, manufactures, assembles, causes to be manufactured or assembled, imports into this state, offers for sale, sells or transfers an untraceable firearm commits a Class B felony.\nSECTION 3 (new): (3) A person who knowingly imports into this state, offers for sale, sells or transfers an unfinished frame or receiver commits a Class B felony unless:\nSECTION 3 (new): (a) The person is a federally licensed gun dealer;\nSECTION 3 (new): (4) A person who knowingly possesses an unfinished frame or receiver that is not serialized as provided in subsection (3)(b) of this section commits a Class C felony, unless:\nSECTION 3 (new): (a) The person is a federally licensed gun manufacturer; and\nSECTION 3 (new): (b) The unfinished frame or receiver is an unfinished part within a manufacturing process that includes serialization."
+}

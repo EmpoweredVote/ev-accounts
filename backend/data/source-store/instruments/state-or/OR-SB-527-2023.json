@@ -1,0 +1,44 @@
+{
+  "id": "OR-SB-527-2023",
+  "scope": "state:or",
+  "title": "SB527 (2023 Regular): Relating to minimum age restrictions in places of public accommodation.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/SB527",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/SB527/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Dembrow",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/SB527/Introduced; sha256 a2723711d78a974a9035cc872c11f7438c10e83372bd010c6194a7d36a215ea6)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-527-2023.introduced.pdf",
+      "sha256": "a2723711d78a974a9035cc872c11f7438c10e83372bd010c6194a7d36a215ea6"
+    },
+    "note": "Introduced version (as filed). The exemption from the age-discrimination law exists only to carry out the gun age rule. SECTION 3 makes the change apply to pending cases. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (new): (1) A gun dealer, a person transferring a firearm, a firearm accessory, ammunition or an ammunition component at a gun show, or a business engaged in repairing or servicing a firearm, may establish a minimum age of 21 years for the purchase of firearms, firearm accessories, ammunition or ammunition components or for the repair or service of a firearm.\nSECTION 2 (ORS 659A.403): (d) A gun dealer or person transferring a firearm, a firearm accessory, ammunition or an ammunition component at a gun show from enforcing minimum age restrictions of 21 years, pursuant to section 1 of this 2023 Act, on the purchase of firearms, firearm accessories, ammunition or ammunition components; or\nSECTION 2 (ORS 659A.403): (e) A business engaged in the repairing and servicing of firearms from enforcing minimum age restrictions of 21 years, pursuant to section 1 of this 2023 Act, for the repair or service of a firearm."
+}

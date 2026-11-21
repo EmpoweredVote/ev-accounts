@@ -1,0 +1,55 @@
+{
+  "id": "OR-SB-650-2023",
+  "scope": "state:or",
+  "title": "SB650 (2023 Regular): Relating to felon in possession of a firearm.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/SB650",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/SB650/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tim Knopp",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    },
+    {
+      "name": "Suzanne Weber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d34df5c8-9534-4472-814d-971adff16f50"
+    },
+    {
+      "name": "Bill Hansell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/SB650/Introduced; sha256 be901061cd834740e7542ceda35bc38783435939b34d88f8d79218fbe3f9406f)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-650-2023.introduced.pdf",
+      "sha256": "be901061cd834740e7542ceda35bc38783435939b34d88f8d79218fbe3f9406f"
+    },
+    "note": "Introduced version; no votes on file. The rest of ORS 166.270 is reprinted without change that the digest identifies."
+  },
+  "operative_text": "SECTION 1 (ORS 166.270): (6) The Oregon Criminal Justice Commission shall classify the crime of felon in possession of a firearm as crime category 8 of the sentencing guidelines grid of the commission."
+}

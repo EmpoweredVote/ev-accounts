@@ -1,0 +1,140 @@
+{
+  "id": "OR-HB-3542-2023",
+  "scope": "state:or",
+  "title": "HB3542 (2023 Regular): Relating to firearm purchase permits.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3542",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3542/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "James Hieb",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    },
+    {
+      "name": "Bobby Levy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+    },
+    {
+      "name": "Lily Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ed Diehl",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ea9746ba-9fd2-4622-b781-b3ed35d18d17"
+    },
+    {
+      "name": "Christine Goodwin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Emily McIntire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f9b60c1-483c-4a8e-8221-145098204ced"
+    },
+    {
+      "name": "Virgle Osborne",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030"
+    },
+    {
+      "name": "Anna Scharf",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0cd6ccff-e02d-4cbe-a1df-381226292840"
+    },
+    {
+      "name": "Boomer Wright",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e"
+    },
+    {
+      "name": "Brian Boquist",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lynn Findley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Fred Girod",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+    },
+    {
+      "name": "Bill Hansell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cedric Hayden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e"
+    },
+    {
+      "name": "Dennis Linthicum",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kim Thatcher",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    },
+    {
+      "name": "Suzanne Weber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d34df5c8-9534-4472-814d-971adff16f50"
+    },
+    {
+      "name": "Court Boice",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0e3b9216-cfb9-411f-b80e-684ccaae593f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3542/Introduced; sha256 279267ee73461358ff520d5e00c4800c05abded3dd30dcd5e1578cd92c5a918f)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3542-2023.introduced.pdf",
+      "sha256": "279267ee73461358ff520d5e00c4800c05abded3dd30dcd5e1578cd92c5a918f"
+    },
+    "note": "Version read: introduced (as filed). Amends Ballot Measure 114 (2022) section 4; the bill also strikes and renumbers old wording in that section. No passage vote recorded."
+  },
+  "operative_text": "SECTION 1 (Section 4, chapter 1, Oregon Laws 2023): (B) Holds a valid concealed handgun license issued under ORS 166.291 and 166.292.\nSECTION 1 (Section 4, chapter 1, Oregon Laws 2023): The department shall charge a reduced fee for persons who do not require fingerprinting or a criminal background check due to holding a valid concealed handgun license.\nSECTION 1 (Section 4, chapter 1, Oregon Laws 2023): (c) A criminal background check is not required for a person who: (A) Was qualified at the time the original permit was issued due to holding a valid concealed handgun license; and (B) Continues to hold a valid concealed handgun license."
+}

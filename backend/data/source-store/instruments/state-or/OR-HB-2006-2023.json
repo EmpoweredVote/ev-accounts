@@ -1,0 +1,74 @@
+{
+  "id": "OR-HB-2006-2023",
+  "scope": "state:or",
+  "title": "HB2006 (2023 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2006",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2006/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Evans",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+    },
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "Jules Walters",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b5d3a442-3229-412a-8da4-e8eb8b9fdb3a"
+    },
+    {
+      "name": "Maxine Dexter",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Julie Fahey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2006/Introduced; sha256 d091406ae1985e4517a7e94413ebad40531312f9a6936424b00660bc298e9733)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2006-2023.introduced.pdf",
+      "sha256": "d091406ae1985e4517a7e94413ebad40531312f9a6936424b00660bc298e9733"
+    },
+    "note": "Introduced version (as filed). Raising the age from 18 to 21 appears in the text as '[18] 21' (struck 18); the struck minor exceptions in ORS 166.250 (2)(a) and 166.470 (3) are replaced by the exceptions quoted. Section 1 names the bill the Russell Paul Evans Act. No votes recorded."
+  },
+  "operative_text": "SECTION 2 (ORS 166.250): (b) A person who is at least 18 years of age and under 21 years of age and who is not otherwise prohibited under subsection (1)(c)(B) to (H) of this section from possessing: (A) A single-shot rifle, whether centerfire or rimfire; (B) A double-barreled shotgun; (C) A repeating rifle, whether centerfire or rimfire, that has a bolt, lever, pump, straight-pull or revolving action; (D) A rifle with an attached tubular magazine designed to accept, and capable of operating only with, 0.22 caliber rimfire ammunition; (E) A muzzleloader rifle; or (F) A shotgun with a pump, break, level or revolving action; or (c) A minor, who is not otherwise prohibited under subsection (1)(c)(B) to (H) of this section, from temporarily possessing a firearm listed in paragraph (b) of this subsection if the firearm was transferred to the minor by the minor’s parent or guardian.\nSECTION 2 (ORS 166.250): (5) Unlawful possession of a firearm is a Class A misdemeanor.\nSECTION 4 (ORS 166.470): (3) Subsection (1)(a) of this section does not prohibit:\nSECTION 4 (ORS 166.470): (a) The transfer of a firearm to a person under 21 years of age who is a police officer, certified reserve officer, reserve officer or active or reserve member of the Army, Navy, Air Force, Coast Guard or Marine Corps of the United States or of the National Guard; (b) The transfer of a firearm described in ORS 166.250 (2)(b) to a person who is at least 18 years of age and under 21 years of age; or (c) The parent or guardian of a minor from temporarily transferring a firearm described in ORS 166.250 (2)(b) to the minor.\nSECTION 4 (ORS 166.470): (4) Violation of this section is a Class A misdemeanor."
+}

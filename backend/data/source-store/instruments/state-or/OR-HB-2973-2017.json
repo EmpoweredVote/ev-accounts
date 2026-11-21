@@ -1,0 +1,100 @@
+{
+  "id": "OR-HB-2973-2017",
+  "scope": "state:or",
+  "title": "HB2973 (2017 Regular): Relating to repealing the private firearm transfer criminal background check requirement.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/HB2973",
+    "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/HB2973/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Post",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    },
+    {
+      "name": "Dallas Heard",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sal Esquivel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ron Noble",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Nearman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John E Huffman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Werner Reschke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    },
+    {
+      "name": "Gene Whisnant",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sherrie Sprenger",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carl Wilson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Duane Stark",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andy Olson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/HB2973/Introduced; sha256 c8f6de75c84049d55891279c64f8ab9e980a0d2155dc63bcd5e88ea069dabae7)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2973-2017.introduced.pdf",
+      "sha256": "c8f6de75c84049d55891279c64f8ab9e980a0d2155dc63bcd5e88ea069dabae7"
+    },
+    "note": "As-filed text (introduced), no votes recorded. Also strikes cross-references to ORS 166.435 in ORS 166.412, 166.432, 166.434 and 181A.115, and strikes the gun-show limit on voluntary checks in ORS 166.436 (SECTIONS 1-5), making the check there available to any non-dealer transferor on a voluntary basis."
+  },
+  "operative_text": "SECTION 6 (ORS 166.435): ORS 166.435 and section 1, chapter 50, Oregon Laws 2015, are repealed.\nSECTION 4 (ORS 166.436): (6) The recipient of the firearm must be present when the transferor requests a criminal background check under this section."
+}

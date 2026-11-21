@@ -1,0 +1,44 @@
+{
+  "id": "OR-SB-1577-2022",
+  "scope": "state:or",
+  "title": "SB1577 (2022 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/SB1577",
+    "https://olis.oregonlegislature.gov/liz/2022R1/Downloads/MeasureDocument/SB1577/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Teresa Alonso Leon",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2022R1/Downloads/MeasureDocument/SB1577/Introduced; sha256 43ebd1f0ce4e04417cb8556fb5c0bc77f959585bc9b1ef2a403d225352c4140a)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1577-2022.introduced.pdf",
+      "sha256": "43ebd1f0ce4e04417cb8556fb5c0bc77f959585bc9b1ef2a403d225352c4140a"
+    },
+    "note": "Introduced version (as filed). Penalties by offence number: undetectable firearm manufacture/sale is a Class B felony and possession a Class A misdemeanor; untraceable firearm is a Class B violation, escalating with prior convictions; SECTION 1 (ORS 166.210) adds definitions. Section 4 and 5(1) quotes omit the penalty paragraphs for length. No votes recorded."
+  },
+  "operative_text": "SECTION 3 (new): (1)(a) A person may not knowingly manufacture or cause to be manufactured within this state, import into this state, or offer for sale, sell or transfer, an undetectable firearm.\nSECTION 3 (new): (b) A violation of paragraph (a) of this subsection is a Class B felony.\nSECTION 3 (new): (2)(a) A person may not knowingly possess an undetectable firearm.\nSECTION 3 (new): (b) A violation of paragraph (a) of this subsection is a Class A misdemeanor.\nSECTION 4 (new): (1) A person may not knowingly possess, manufacture, assemble, cause to be manufactured or assembled, import into this state, offer for sale, sell or transfer an untraceable firearm.\nSECTION 4 (new): (3) A person convicted of any offense under this section shall forfeit the untraceable firearm.\nSECTION 5 (new): (1)(a) A person may not knowingly import into this state, offer for sale, sell or transfer an unfinished frame or receiver unless:\nSECTION 5 (new): (A) The person is a federally licensed gun dealer;\nSECTION 5 (new): (2)(a) A person may not knowingly possess an unfinished frame or receiver that is not serialized as provided in subsection (1)(a)(B) of this section, unless:\nSECTION 5 (new): (A) The person is a federally licensed gun manufacturer; and\nSECTION 5 (new): (B) The unfinished frame or receiver is an unfinished part within a manufacturing process that includes serialization.\nSECTION 6 (ORS 166.250): (d) Possesses an unfinished frame or receiver and is prohibited from possessing firearms under paragraph (c) of this subsection.\nSECTION 7 (ORS 166.412): (2) Except as provided in subsections (3)(c) and (12) of this section, a gun dealer shall comply with the following before a firearm or unfinished frame or receiver is delivered to a purchaser:"
+}

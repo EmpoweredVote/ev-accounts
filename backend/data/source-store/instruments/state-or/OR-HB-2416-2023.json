@@ -1,0 +1,50 @@
+{
+  "id": "OR-HB-2416-2023",
+  "scope": "state:or",
+  "title": "HB2416 (2023 Regular): Relating to extreme risk protection orders.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2416",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2416/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Owens",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1"
+    },
+    {
+      "name": "Lynn Findley",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Mannix",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2edbb7a5-a798-4088-8939-7b44b51e682c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2416/Introduced; sha256 f16ce88a9a14eb27b8e7e873b607d286756f8762f3851285d0b05fd18a9a9da8)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2416-2023.introduced.pdf",
+      "sha256": "f16ce88a9a14eb27b8e7e873b607d286756f8762f3851285d0b05fd18a9a9da8"
+    },
+    "note": "Introduced version (as filed). The text strikes the one-year duration of the order and the respondent's right to request a termination hearing (ORS 166.533 and 166.535 are repealed in section 8). Sections 5 to 7 conform ORS 166.537, 166.540 and 166.543 and are not quoted. Added words are not marked in the text; quoted passages are those the digest points to. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (ORS 166.527): (c) The court shall schedule a hearing under ORS 166.530 to occur seven days after issuing an order under this section, and shall further order that the respondent appear at the hearing and obtain a mental health evaluation prior to the hearing.\nSECTION 2 (ORS 166.530): (C) Schedule a hearing under section 4 of this 2023 Act to occur seven days after the date of the hearing described in this section, and further order that the respondent appear at the hearing and obtain a second mental health evaluation prior to the hearing.\nSECTION 4 (new): (3)(a) At the hearing, the court shall determine: (A) Whether to terminate the extreme risk protection order or continue the order for an additional 30 days; and (B) Whether any deadly weapons surrendered to a law enforcement agency pursuant to ORS 166.537 shall be returned to the respondent or retained by the law enforcement agency.\nSECTION 4 (new): (b) The petitioner has the burden of proving, by clear and convincing evidence, that the respondent presents a substantial risk of harm to self or others to such a serious level that it is necessary to temporarily prohibit the respondent from possessing deadly weapons for an additional 30 days.\nSECTION 4 (new): (7) The refusal by a respondent to participate in a mental health evaluation or the failure of a respondent to appear at a hearing described in this section is not the basis for a finding of contempt of court."
+}

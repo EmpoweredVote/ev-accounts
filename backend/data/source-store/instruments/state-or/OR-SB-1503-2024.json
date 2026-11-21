@@ -1,0 +1,614 @@
+{
+  "id": "OR-SB-1503-2024",
+  "scope": "state:or",
+  "title": "SB1503 (2024 Regular): Relating to public health; prescribing an effective date.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1503",
+    "https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/SB1503/Enrolled"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Rob Wagner",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+    },
+    {
+      "name": "Dan Rayfield",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+    },
+    {
+      "name": "Bill Hansell",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Janeen Sollman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+      "name": "Deb Patterson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "631cc414-8793-42ec-b883-594ed7f0b249"
+    },
+    {
+      "name": "Sara Gelser Blouin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+    },
+    {
+      "name": "Maxine Dexter",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Julie Fahey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+    },
+    {
+      "name": "Courtney Neron Misslin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+    },
+    {
+      "name": "Em Levy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f1d2cfe6-5e70-42f3-a010-bb58ec6a5d86"
+    },
+    {
+      "name": "Rob Nosse",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+    },
+    {
+      "name": "John Lively",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "Mark Gamba",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36db8c55-4b20-408c-bd99-b8488d0ef344"
+    },
+    {
+      "name": "Lisa Reynolds",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Ben Bowman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e29b685-1f2e-4963-83a8-a7bde5b5250e"
+    },
+    {
+      "name": "Jules Walters",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b5d3a442-3229-412a-8da4-e8eb8b9fdb3a"
+    },
+    {
+      "name": "Thuy Tran",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9ada0539-e66c-444f-b220-86a8138b5277"
+    },
+    {
+      "name": "Travis Nelson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0f7439ad-5832-42e9-a1c5-75f1720e14d3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-03-04",
+      "body": "OR Senate",
+      "motion": "Senate Third reading. Carried by President Wagner. Passed.",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 11,
+      "absent": 0,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263290 https://olis.oregonlegislature.gov/liz/2024R1/Measures/MeasureVotes?id=610112#SB1503",
+      "members": [
+        {
+          "name": "Rob Wagner",
+          "vote": "yea",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+        },
+        {
+          "name": "Dick Anderson",
+          "vote": "yea",
+          "politician_id": "d9803822-6bf8-437d-aa4b-d7e6b4a67b7c"
+        },
+        {
+          "name": "Wlnsvey Campos",
+          "vote": "yea",
+          "politician_id": "95300e6e-ea4e-47f9-8a24-5f6f762d5c73"
+        },
+        {
+          "name": "James Manning",
+          "vote": "yea",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+        },
+        {
+          "name": "Janeen Sollman",
+          "vote": "yea",
+          "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+        },
+        {
+          "name": "Mark Meek",
+          "vote": "yea",
+          "politician_id": "be46ed6d-363e-46f4-89d4-c95d9af67db1"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "vote": "yea",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "vote": "yea",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea",
+          "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+        },
+        {
+          "name": "Deb Patterson",
+          "vote": "yea",
+          "politician_id": "631cc414-8793-42ec-b883-594ed7f0b249"
+        },
+        {
+          "name": "Lew Frederick",
+          "vote": "yea",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+        },
+        {
+          "name": "Aaron Woods",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Gorsek",
+          "vote": "yea",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "vote": "yea",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+        },
+        {
+          "name": "Kate Lieber",
+          "vote": "yea",
+          "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4"
+        },
+        {
+          "name": "Kayse Jama",
+          "vote": "yea",
+          "politician_id": "a703adb5-1086-471b-ba8b-2dbeddd8102b"
+        },
+        {
+          "name": "Jeff Golden",
+          "vote": "yea",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Girod",
+          "vote": "nay",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+        },
+        {
+          "name": "Suzanne Weber",
+          "vote": "nay",
+          "politician_id": "d34df5c8-9534-4472-814d-971adff16f50"
+        },
+        {
+          "name": "Daniel Bonham",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "nay"
+        },
+        {
+          "name": "David Smith",
+          "vote": "nay",
+          "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+        },
+        {
+          "name": "Dennis Linthicum",
+          "vote": "nay"
+        },
+        {
+          "name": "Art Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim Thatcher",
+          "vote": "nay",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+        },
+        {
+          "name": "Cedric Hayden",
+          "vote": "nay",
+          "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2024-03-06",
+      "body": "OR House",
+      "motion": "House Third reading. Carried by Grayber. Passed.",
+      "kind": "roll-call",
+      "yes": 35,
+      "no": 22,
+      "absent": 3,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263291 https://olis.oregonlegislature.gov/liz/2024R1/Measures/MeasureVotes?id=610840#SB1503",
+      "members": [
+        {
+          "name": "Nancy Nathanson",
+          "vote": "yea",
+          "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7"
+        },
+        {
+          "name": "Zach Hudson",
+          "vote": "yea",
+          "politician_id": "37247ac1-5444-4fdd-b58e-123b5db4d0fe"
+        },
+        {
+          "name": "Travis Nelson",
+          "vote": "yea",
+          "politician_id": "0f7439ad-5832-42e9-a1c5-75f1720e14d3"
+        },
+        {
+          "name": "Thuy Tran",
+          "vote": "yea",
+          "politician_id": "9ada0539-e66c-444f-b220-86a8138b5277"
+        },
+        {
+          "name": "Farrah Chaichi",
+          "vote": "yea",
+          "politician_id": "62decede-7149-40a1-a68a-16e2d3eb62a6"
+        },
+        {
+          "name": "Ben Bowman",
+          "vote": "yea",
+          "politician_id": "5e29b685-1f2e-4963-83a8-a7bde5b5250e"
+        },
+        {
+          "name": "Janelle Bynum",
+          "vote": "yea"
+        },
+        {
+          "name": "Tawna Sanchez",
+          "vote": "yea",
+          "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+        },
+        {
+          "name": "Dacia Grayber",
+          "vote": "yea",
+          "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+        },
+        {
+          "name": "Nathan Sosa",
+          "vote": "yea",
+          "politician_id": "f2bc3bbf-0d29-4ad9-b675-9c53cf081969"
+        },
+        {
+          "name": "Emerson Levy",
+          "vote": "yea",
+          "politician_id": "f1d2cfe6-5e70-42f3-a010-bb58ec6a5d86"
+        },
+        {
+          "name": "Mark Gamba",
+          "vote": "yea",
+          "politician_id": "36db8c55-4b20-408c-bd99-b8488d0ef344"
+        },
+        {
+          "name": "Annessa Hartman",
+          "vote": "yea",
+          "politician_id": "14896652-e36b-4823-afb0-e92e3338929c"
+        },
+        {
+          "name": "Hoa Nguyen",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Rayfield",
+          "vote": "yea",
+          "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+        },
+        {
+          "name": "Julie Fahey",
+          "vote": "yea",
+          "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+        },
+        {
+          "name": "Courtney Neron Misslin",
+          "vote": "yea",
+          "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+        },
+        {
+          "name": "Maxine Dexter",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Kropf",
+          "vote": "yea",
+          "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+        },
+        {
+          "name": "Susan McLain",
+          "vote": "yea",
+          "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84"
+        },
+        {
+          "name": "Ricki Ruiz",
+          "vote": "yea",
+          "politician_id": "5e5e267a-808e-4a57-9f80-7c3e47fcb5f6"
+        },
+        {
+          "name": "Jules Walters",
+          "vote": "yea",
+          "politician_id": "b5d3a442-3229-412a-8da4-e8eb8b9fdb3a"
+        },
+        {
+          "name": "Paul Holvey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Lively",
+          "vote": "yea",
+          "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d"
+        },
+        {
+          "name": "Pam Marsh",
+          "vote": "yea",
+          "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9"
+        },
+        {
+          "name": "Andrea Valderrama",
+          "vote": "yea",
+          "politician_id": "a5a3918c-3e24-44fa-9573-440436a05b04"
+        },
+        {
+          "name": "Tom Andersen",
+          "vote": "yea",
+          "politician_id": "5b81e68c-3ec3-4c81-9f1b-010db86da9c0"
+        },
+        {
+          "name": "Paul Evans",
+          "vote": "yea",
+          "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+        },
+        {
+          "name": "David Gomberg",
+          "vote": "yea",
+          "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32"
+        },
+        {
+          "name": "Rob Nosse",
+          "vote": "yea",
+          "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+        },
+        {
+          "name": "Ken Helm",
+          "vote": "yea",
+          "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a"
+        },
+        {
+          "name": "Khanh Pham",
+          "vote": "yea",
+          "politician_id": "80ed3ab4-f7f6-4738-a9b7-49e6f52ad61e"
+        },
+        {
+          "name": "Lisa Reynolds",
+          "vote": "yea",
+          "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+        },
+        {
+          "name": "Daniel Nguyen",
+          "vote": "yea",
+          "politician_id": "73519742-09c3-4204-871b-076ff1397a14"
+        },
+        {
+          "name": "Hai Pham",
+          "vote": "yea",
+          "politician_id": "2e668344-f025-489a-b870-1803269c11fc"
+        },
+        {
+          "name": "Charlie Conrad",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim Wallan",
+          "vote": "nay",
+          "politician_id": "3778353d-cbc9-43cf-866a-a7c01397503a"
+        },
+        {
+          "name": "Kevin Mannix",
+          "vote": "nay",
+          "politician_id": "2edbb7a5-a798-4088-8939-7b44b51e682c"
+        },
+        {
+          "name": "Ed Diehl",
+          "vote": "nay",
+          "politician_id": "ea9746ba-9fd2-4622-b781-b3ed35d18d17"
+        },
+        {
+          "name": "Brian Stout",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Helfrich",
+          "vote": "nay",
+          "politician_id": "701f0236-5ca7-4bfa-ab71-8c22bcc5ff8c"
+        },
+        {
+          "name": "Court Boice",
+          "vote": "nay",
+          "politician_id": "0e3b9216-cfb9-411f-b80e-684ccaae593f"
+        },
+        {
+          "name": "Cyrus Javadi",
+          "vote": "nay",
+          "politician_id": "cd8e1e6b-bd17-44e0-a8a3-deffc2f5982e"
+        },
+        {
+          "name": "Werner Reschke",
+          "vote": "nay",
+          "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+        },
+        {
+          "name": "Greg Smith",
+          "vote": "nay",
+          "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+        },
+        {
+          "name": "Christine Goodwin",
+          "vote": "nay"
+        },
+        {
+          "name": "Boomer Wright",
+          "vote": "nay",
+          "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e"
+        },
+        {
+          "name": "Emily McIntire",
+          "vote": "nay",
+          "politician_id": "9f9b60c1-483c-4a8e-8221-145098204ced"
+        },
+        {
+          "name": "Virgle Osborne",
+          "vote": "nay",
+          "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030"
+        },
+        {
+          "name": "Bobby Levy",
+          "vote": "nay",
+          "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+        },
+        {
+          "name": "Anna Scharf",
+          "vote": "nay",
+          "politician_id": "0cd6ccff-e02d-4cbe-a1df-381226292840"
+        },
+        {
+          "name": "Jami Cate",
+          "vote": "nay",
+          "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+        },
+        {
+          "name": "Rick Lewis",
+          "vote": "nay",
+          "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325"
+        },
+        {
+          "name": "James Hieb",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucetta Elmer",
+          "vote": "nay",
+          "politician_id": "7bba19f8-0a1f-4ee2-852f-63bb38ffef6e"
+        },
+        {
+          "name": "Vikki Breese Iverson",
+          "vote": "nay",
+          "politician_id": "7f460988-c9a6-4452-a872-441e7c4ac071"
+        },
+        {
+          "name": "Dwayne Yunker",
+          "vote": "nay",
+          "politician_id": "f74bb46f-4e4a-47c0-a3d7-285e57cf8d4d"
+        },
+        {
+          "name": "Tracy Cramer",
+          "vote": "absent"
+        },
+        {
+          "name": "Mark Owens",
+          "vote": "absent",
+          "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1"
+        },
+        {
+          "name": "Shelly Davis",
+          "vote": "absent",
+          "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/SB1503/Enrolled; sha256 f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1503-2024.enrolled.pdf",
+      "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
+    },
+    "note": "Enrolled version read; passed Senate Mar 4 and House Mar 6, 2024. The task force studies extreme risk protection orders and voluntary firearm storage, among other topics, and reports by Sept 15, 2024 and Sept 15, 2025; it ends Dec 31, 2026 (SECTION 3)."
+  },
+  "operative_text": "SECTION 1 (new): (1) The Task Force on Community Safety and Firearm Suicide Prevention is established.\nSECTION 2 (new): In addition to and not in lieu of any other appropriation, there is appropriated to the Department of Justice, for the biennium ending June 30, 2025, out of the General Fund, the amount of $250,000, which may be expended for the purpose of paying a third party for research ordered by the Task Force on Community Safety and Firearm Suicide Prevention, as authorized under section 1 of this 2024 Act."
+}

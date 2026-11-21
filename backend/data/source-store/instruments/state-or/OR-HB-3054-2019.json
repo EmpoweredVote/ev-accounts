@@ -1,0 +1,49 @@
+{
+  "id": "OR-HB-3054-2019",
+  "scope": "state:or",
+  "title": "HB3054 (2019 Regular): Relating to unlawful discharge of a firearm.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB3054",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB3054/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brad Witt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Barker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pam Marsh",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB3054/Introduced; sha256 871d12e35a22fb1f2e4bc65812e40ba6f4f65c48f8c3b7f0dd38a379b5031eb7)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3054-2019.introduced.pdf",
+      "sha256": "871d12e35a22fb1f2e4bc65812e40ba6f4f65c48f8c3b7f0dd38a379b5031eb7"
+    },
+    "note": "As-filed text (introduced), no votes recorded. Exemptions cover police, defense of person or property, owners at their dwelling, and shooting ranges."
+  },
+  "operative_text": "SECTION 1 (new): (1) A person commits the crime of unlawful discharge of a firearm if the person knowingly discharges a firearm within 500 feet of a dwelling or a building that is open to the public.\nSECTION 1 (new): (3) Unlawful discharge of a firearm is a Class B misdemeanor."
+}

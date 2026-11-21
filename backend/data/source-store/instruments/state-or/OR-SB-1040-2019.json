@@ -1,0 +1,187 @@
+{
+  "id": "OR-SB-1040-2019",
+  "scope": "state:or",
+  "title": "SB1040 (2019 Regular): Relating to discharge of firearms from quarries or mines in Polk County adjacent to the Willamette River; declaring an emergency.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/SB1040",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB1040/A-Engrossed"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Bill Post",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kim Thatcher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-04-30",
+      "body": "OR Senate",
+      "motion": "Senate Third reading. Carried by Thatcher. Passed.",
+      "kind": "roll-call",
+      "yes": 24,
+      "no": 4,
+      "absent": 2,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263280 https://olis.oregonlegislature.gov/liz/2019R1/Measures/MeasureVotes?id=462717#SB1040",
+      "members": [
+        {
+          "name": "Mark Hass",
+          "vote": "yea"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "yea"
+        },
+        {
+          "name": "Laurie Monnes Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "vote": "yea",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+        },
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnie Roblan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim Thatcher",
+          "vote": "yea",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "vote": "yea",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+        },
+        {
+          "name": "Cliff Bentz",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Lew Frederick",
+          "vote": "yea",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea",
+          "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "yea"
+        },
+        {
+          "name": "Herman Baertschiger Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "vote": "yea",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "yea"
+        },
+        {
+          "name": "James Manning",
+          "vote": "yea",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+        },
+        {
+          "name": "Rob Wagner",
+          "vote": "yea",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+        },
+        {
+          "name": "Shemia Fagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Golden",
+          "vote": "yea",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan Olsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis Linthicum",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackie Winters",
+          "vote": "absent"
+        },
+        {
+          "name": "Fred Girod",
+          "vote": "absent",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (A-Engrossed, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB1040/A-Engrossed; sha256 1c621f4bf719f7e5e599919bdf91928c45c5868d6e9de4b74346f59a844bcc5f)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1040-2019.a-engrossed.pdf",
+      "sha256": "1c621f4bf719f7e5e599919bdf91928c45c5868d6e9de4b74346f59a844bcc5f"
+    },
+    "note": "A-Engrossed version read; the Senate passed it 24-4 on 2019-04-30, and amendments made after the version read are not in the text read. Subsection (1) also makes the owner, operator or lessee liable if, after notice of stray bullets, they fail to take reasonable measures to stop more. The earlier version (not read) also let injured people sue a city or county; this version strikes that. Emergency clause in SECTION 3."
+  },
+  "operative_text": "SECTION 1 (new): A person who discharges a firearm in an active quarry or mine located on property adjacent to the Willamette River in Polk County and across the river from the City of Keizer is liable for injuries resulting from bullets that stray outside the boundaries of the property."
+}

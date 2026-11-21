@@ -1,0 +1,39 @@
+{
+  "id": "OR-HB-3693-2025",
+  "scope": "state:or",
+  "title": "HB3693 (2025 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3693",
+    "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3693/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Werner Reschke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3693/Introduced; sha256 399adb816f1afff023fb3d8545a4a0388e8be4e02dce617d5d7d61c02ebbb2e4)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3693-2025.introduced.pdf",
+      "sha256": "399adb816f1afff023fb3d8545a4a0388e8be4e02dce617d5d7d61c02ebbb2e4"
+    },
+    "note": "Introduced version; no votes on file. The repeal section removes the sections that SB 554 (2021) added (storage, loss or theft reporting, supervision of minors, and school-grounds carry policy). SECTION 3 (ORS 166.370) and SECTION 4 (ORS 166.262) strike the Capitol and airport carry limits for licence holders; SECTION 5 (ORS 166.291) cuts the sheriff's fee from $100 initial and $75 renewal to $50 for issuance or renewal. Struck words make those sections unsafe to quote, so they are described here."
+  },
+  "operative_text": "SECTION 1 (repeal): ORS 166.377, 166.390, 166.392, 166.395, 166.397, 166.400, 166.403 and 166.405 are repealed."
+}

@@ -1,0 +1,55 @@
+{
+  "id": "OR-SB-925-2019",
+  "scope": "state:or",
+  "title": "SB925 (2019 Regular): Relating to the possession of firearms in certain public locations.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/SB925",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB925/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ginny Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "Michael Dembrow",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB925/Introduced; sha256 b0c58b40a8a6d770bee3dcf6def35d008a2a9f5299efe3fcb6af450b3fe88be2)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-925-2019.introduced.pdf",
+      "sha256": "b0c58b40a8a6d770bee3dcf6def35d008a2a9f5299efe3fcb6af450b3fe88be2"
+    },
+    "note": "Introduced version; no votes on file. Quoted ORS 166.370 items (g) and (k) are exceptions in subsection (3); the digest describes a felony penalty for violating a local rule. SECTION 4 (ORS 166.262) conforms the arrest exception for license holders."
+  },
+  "operative_text": "SECTION 1 (new): (1) Notwithstanding ORS 166.173, a city, a county, a metropolitan service district organized under ORS chapter 268, or a port operating a commercial service airport with at least 2 million passenger boardings per calendar year may adopt an ordinance regulating or prohibiting the possession of firearms in public buildings as defined in ORS 166.360 by persons licensed to carry a concealed handgun under ORS 166.291 and 166.292.\nSECTION 1 (new): (2) A school district, college or university may adopt a policy regulating or prohibiting the possession of firearms in public buildings as defined in ORS 166.360 by persons licensed to carry a concealed handgun under ORS 166.291 and 166.292.\nSECTION 2 (ORS 166.360): (b) The grounds adjacent to a building described in paragraph (a) of this subsection; (c) Real property owned by a college or university; or (d) The passenger terminal and parking area, and grounds adjacent to the passenger terminal and parking area, of a commercial service airport that has at least 2 million passenger boardings per calendar year.\nSECTION 3 (ORS 166.370): (g) A person who is licensed under ORS 166.291 and 166.292 to carry a concealed handgun, unless the person possesses a firearm in violation of an ordinance or policy adopted pursuant to section 1 of this 2019 Act.\nSECTION 3 (ORS 166.370): (k) A person who possesses a firearm in the passenger terminal or parking area, or grounds adjacent to the passenger terminal or parking area, of a commercial service airport that has at least 2 million passenger boardings per year, if the firearm is unloaded and in a locked hard-sided container for the purposes of transporting the firearm as checked baggage in accordance with federal law."
+}

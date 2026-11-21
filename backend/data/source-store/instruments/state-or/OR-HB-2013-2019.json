@@ -1,0 +1,528 @@
+{
+  "id": "OR-HB-2013-2019",
+  "scope": "state:or",
+  "title": "HB2013 (2019 Regular): Relating to court orders; and declaring an emergency.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB2013",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2013/Enrolled"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Jennifer Williamson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ginny Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "Shemia Fagan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rachel Prusak",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Janeen Sollman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+      "name": "Alissa Keny-Guyer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tawna Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+    },
+    {
+      "name": "Anna Williams",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marty Wilde",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cheri Helt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Teresa Alonso Leon",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-04-23",
+      "body": "OR House",
+      "motion": "House Third reading. Carried by Williamson. Passed.",
+      "kind": "roll-call",
+      "yes": 43,
+      "no": 15,
+      "absent": 2,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263278 https://olis.oregonlegislature.gov/liz/2019R1/Measures/MeasureVotes?id=461355#HB2013",
+      "members": [
+        {
+          "name": "Jeff Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Mitch Greenlick",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Smith",
+          "vote": "yea",
+          "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+        },
+        {
+          "name": "Paul Holvey",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Nathanson",
+          "vote": "yea",
+          "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7"
+        },
+        {
+          "name": "Brian Clem",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Kotek",
+          "vote": "yea",
+          "politician_id": "66c3bd97-94d1-4287-b1b8-86605a38cb97"
+        },
+        {
+          "name": "Margaret Doherty",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McLane",
+          "vote": "yea",
+          "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88"
+        },
+        {
+          "name": "Alissa Keny-Guyer",
+          "vote": "yea"
+        },
+        {
+          "name": "David Gomberg",
+          "vote": "yea",
+          "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32"
+        },
+        {
+          "name": "Chris Gorsek",
+          "vote": "yea",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+        },
+        {
+          "name": "Caddy McKeown",
+          "vote": "yea"
+        },
+        {
+          "name": "John Lively",
+          "vote": "yea",
+          "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d"
+        },
+        {
+          "name": "Jeff Reardon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara Smith Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Denyc Boles",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Nosse",
+          "vote": "yea",
+          "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+        },
+        {
+          "name": "Paul Evans",
+          "vote": "yea",
+          "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+        },
+        {
+          "name": "Carla Piluso",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Rayfield",
+          "vote": "yea",
+          "politician_id": "15dbbf1b-da3d-4fb9-8fc5-67b734e7979e"
+        },
+        {
+          "name": "Susan McLain",
+          "vote": "yea",
+          "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84"
+        },
+        {
+          "name": "Ken Helm",
+          "vote": "yea",
+          "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a"
+        },
+        {
+          "name": "Teresa Alonso Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Janelle Bynum",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Fahey",
+          "vote": "yea",
+          "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c"
+        },
+        {
+          "name": "Diego Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheri Schouten",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Meek",
+          "vote": "yea",
+          "politician_id": "be46ed6d-363e-46f4-89d4-c95d9af67db1"
+        },
+        {
+          "name": "Ron Noble",
+          "vote": "yea"
+        },
+        {
+          "name": "Karin Power",
+          "vote": "yea"
+        },
+        {
+          "name": "Tawna Sanchez",
+          "vote": "yea",
+          "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+        },
+        {
+          "name": "Janeen Sollman",
+          "vote": "yea",
+          "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+        },
+        {
+          "name": "Rick Lewis",
+          "vote": "yea",
+          "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325"
+        },
+        {
+          "name": "Andrea Salinas",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheri Helt",
+          "vote": "yea"
+        },
+        {
+          "name": "Tiffiny Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Courtney Neron Misslin",
+          "vote": "yea",
+          "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+        },
+        {
+          "name": "Rachel Prusak",
+          "vote": "yea"
+        },
+        {
+          "name": "Marty Wilde",
+          "vote": "yea"
+        },
+        {
+          "name": "Anna Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Carl Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sherrie Sprenger",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Post",
+          "vote": "nay"
+        },
+        {
+          "name": "Duane Stark",
+          "vote": "nay"
+        },
+        {
+          "name": "Cedric Hayden",
+          "vote": "nay",
+          "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e"
+        },
+        {
+          "name": "Mike Nearman",
+          "vote": "nay"
+        },
+        {
+          "name": "Greg Barreto",
+          "vote": "nay"
+        },
+        {
+          "name": "Werner Reschke",
+          "vote": "nay",
+          "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+        },
+        {
+          "name": "David Smith",
+          "vote": "nay",
+          "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+        },
+        {
+          "name": "Daniel Bonham",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Leif",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelly Davis",
+          "vote": "nay",
+          "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d"
+        },
+        {
+          "name": "Christine Drazan",
+          "vote": "nay",
+          "politician_id": "402a00be-71c3-4584-b29f-bf493365bffb"
+        },
+        {
+          "name": "Kim Wallan",
+          "vote": "nay",
+          "politician_id": "3778353d-cbc9-43cf-866a-a7c01397503a"
+        },
+        {
+          "name": "Jack Zika",
+          "vote": "nay"
+        },
+        {
+          "name": "Pam Marsh",
+          "vote": "absent",
+          "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9"
+        },
+        {
+          "name": "Brad Witt",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2019-05-23",
+      "body": "OR Senate",
+      "motion": "Senate Third reading. Carried by Manning Jr, Prozanski. Passed.",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 3,
+      "absent": 2,
+      "note": "olis.oregonlegislature.gov roll call (read from the legislature) 90263279 https://olis.oregonlegislature.gov/liz/2019R1/Measures/MeasureVotes?id=469121#HB2013",
+      "members": [
+        {
+          "name": "Mark Hass",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "yea"
+        },
+        {
+          "name": "Laurie Monnes Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "vote": "yea",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+        },
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "yea"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Arnie Roblan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim Thatcher",
+          "vote": "yea",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "vote": "yea",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+        },
+        {
+          "name": "Cliff Bentz",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Lew Frederick",
+          "vote": "yea",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea",
+          "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "yea"
+        },
+        {
+          "name": "Herman Baertschiger Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "vote": "yea",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Linthicum",
+          "vote": "yea"
+        },
+        {
+          "name": "James Manning",
+          "vote": "yea",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+        },
+        {
+          "name": "Rob Wagner",
+          "vote": "yea",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+        },
+        {
+          "name": "Shemia Fagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Golden",
+          "vote": "yea",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Girod",
+          "vote": "nay",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackie Winters",
+          "vote": "absent"
+        },
+        {
+          "name": "Alan Olsen",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2013/Enrolled; sha256 403ab743bddf218c661fd2e89e4fdf2921a060944d4c0b5c19d51dfbc7a7181f)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2013-2019.enrolled.pdf",
+      "sha256": "403ab743bddf218c661fd2e89e4fdf2921a060944d4c0b5c19d51dfbc7a7181f"
+    },
+    "note": "Enrolled version, passed the House on 2019-04-23 (43 to 15). Sections 2 to 5 become operative January 1, 2020; emergency clause in section 7. Section 4 mirrors section 3 for people who become subject to a restraining order; section 5 adds a 72-hour hold and notice before police return guns."
+  },
+  "operative_text": "SECTION 1 (ORS 166.255): (1) It is unlawful for a person to knowingly possess a firearm or ammunition if: (a) The person is the subject of a court order that:\nSECTION 1 (ORS 166.255): (ii) Was issued, continued or remains in effect, by order or operation of law, after the person received notice of the opportunity to request a hearing in which to be heard on the order, and either requested a hearing but did not attend the hearing or withdrew the request before the hearing occurred, or did not request a hearing during the time period in which the opportunity was available;\nSECTION 3 (new): (1) When a person is convicted of an offense described in ORS 166.255 (1)(b) or (c), the court shall, at the time of conviction: (a) Indicate in the judgment of conviction that the person is prohibited from possessing firearms and ammunition under ORS 166.250 and 166.255;\nSECTION 3 (new): (c) Order in writing that the person transfer all firearms and ammunition in the person’s possession in accordance with subsection (2) of this section; and (d) Order that the person file a declaration as described in subsection (4) of this section.\nSECTION 3 (new): (2)(a) Within 24 hours of the court’s order under subsection (1) of this section, the person shall transfer all firearms and ammunition in the person’s possession to a local law enforcement agency, to a gun dealer as defined in ORS 166.412 or to a third party who does not reside with the person, and shall obtain a proof of transfer under paragraph (b) of this subsection.\nSECTION 3 (new): (4)(a) Within two judicial days of the court’s order under subsection (1) of this section, the person shall file with the court a declaration under penalty of perjury attesting that:\nSECTION 3 (new): (7) If the person does not file the declaration required under subsection (4) of this section, the district attorney may commence contempt proceedings under ORS 33.015 to 33.155.\nSECTION 4 (new): (2)(a) Within 24 hours of becoming subject to the court order under subsection (1)(a)(B) of this section or receiving the court order under subsection (1)(b)(B) of this section, the respondent shall transfer all firearms and ammunition in the respondent’s possession to a local law enforcement agency, to a gun dealer as defined in ORS 166.412 or to a third party who does not reside with the respondent, and shall obtain a proof of transfer under paragraph (b) of this subsection.\nSECTION 5 (new): (2) Prior to returning the firearm or ammunition, the law enforcement agency shall: (a) Confirm that the person to whom the law enforcement agency will return the firearm or ammunition is the lawful owner of the firearm or ammunition, or a person with a possessory right to the firearm or ammunition; and (b) Perform a criminal background check as defined in ORS 166.432 to confirm that the person is not prohibited from possessing a firearm or ammunition under state or federal law."
+}

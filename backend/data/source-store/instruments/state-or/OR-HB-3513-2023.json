@@ -1,0 +1,50 @@
+{
+  "id": "OR-HB-3513-2023",
+  "scope": "state:or",
+  "title": "HB3513 (2023 Regular): Relating to firearm hold agreements.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3513",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3513/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thuy Tran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9ada0539-e66c-444f-b220-86a8138b5277"
+    },
+    {
+      "name": "Brian Boquist",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Farrah Chaichi",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "62decede-7149-40a1-a68a-16e2d3eb62a6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3513/Introduced; sha256 bd7975d698220735cc3bd71b7266923ee10431ce3311092325d2829192a3eada)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3513-2023.introduced.pdf",
+      "sha256": "bd7975d698220735cc3bd71b7266923ee10431ce3311092325d2829192a3eada"
+    },
+    "note": "Version read: introduced (as filed). SECTION 4 (ORS 166.291) adds firearm hold agreement use to the course content that shows concealed handgun license competence. SECTION 3 appropriates a blank amount to the Oregon Health Authority. No passage vote recorded."
+  },
+  "operative_text": "SECTION 1 (new): (2) A federal firearms licensee or any other person who may lawfully possess firearms may enter into a firearm hold agreement with a firearm owner. The firearm hold agreement may not require the payment of a fee in exchange for holding or storing a firearm.\nSECTION 1 (new): (3)(a) Except as provided in paragraph (b) of this subsection, a federal firearms licensee or other person who takes physical possession of a firearm pursuant to a firearm hold agreement is immune from civil liability arising from taking possession of the firearm, storing the firearm or returning the firearm to the owner.\nSECTION 2 (new): (1) The Oregon Health Authority shall by rule create a grant program to fund the storage of firearms pursuant to firearm hold agreements.\nSECTION 5 (ORS 166.435): (e) The transfer of a firearm pursuant to a firearm hold agreement under section 1 of this 2023 Act."
+}
