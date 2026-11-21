@@ -309,5 +309,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment general statements",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "status check: a BallotReady profile (https://www.ballotready.org/people/danielle-gallant-36adbfec-f405-4a4c-9b28-4dddafaed6bc) lists her as a candidate for Nevada Senate District 20 in the 2026 general election, so she is in scope",
+        "On the Record (0 meetings)",
+        "official legislature member page (https://www.leg.state.nv.us/App/Legislator/A/Assembly/83rd2025/23): read; lists membership in the Nevada Firearms Coalition, 2021-current, but no statement on the subject, so not saved as a finding",
+        "official legislature page for 2027 session (https://www.leg.state.nv.us/App/Legislator/A/Assembly/84th2027/23): read; nothing on the subject",
+        "BallotReady profile: has a third-person summary of a Second Amendment pledge, not her own wording, so not saved",
+        "blocked: https://ballotpedia.org/Danielle_Gallant (403 on curl; fetch tool returned an empty page)",
+        "campaign site: not found by search; not reviewed",
+        "news search on name plus gun words: results were general bill coverage that does not quote her; nothing saved",
+        "sponsor list: covered by bulk bill data",
+        "iVoterGuide, Federalist Society and NRA pages: surfaced in search results only, not fetched; not reviewed: https://ivoterguide.com/candidate/66725/race/32615/election/1472"
+      ],
+      "found": 0,
+      "at": "2026-11-21T02:56:18.310Z",
+      "by": "source-collector"
+    }
+  ]
 }

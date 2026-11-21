@@ -124,7 +124,56 @@
           "sha256": "288ca09901adeb5f7793ef09e5782eec83416c6d4c7c08479c934079187308d7"
         }
       }
+    },
+    {
+      "id": "b373cc1cebd9fbd025631957a28a71b914e5f3a8aa8b33979f9cb3711da3d5ca",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/freshman-orientation-john-steinbecks-path-from-the-fire-department-to-nevada-senate",
+      "date": "2025-02-28",
+      "date_precision": "day",
+      "passage": "I think that it's very important for us to be able to know who's getting some of these semiautomatic and very dangerous weapons,",
+      "note": "Direct quote in a Nevada Independent profile of him. The story says he called himself 'fairly moderate' on gun control and supports background checks, a view shaped by his work helping people after the 1 October shooting.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on gun sales",
+        "semiautomatic weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:06.768Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "minimum age to buy a gun",
+        "Second Amendment general statement",
+        "carry permits",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the Legislature's member page for Senate District 18 (fetched; names him in this office; no subject statements)",
+        "blocked: https://www.nvsenategop.com/steinbeck (no response)",
+        "blocked: https://ballotpedia.org/John_Steinbeck_(Nevada) (403)",
+        "blocked: https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Legislator/Steinbeck (404)",
+        "one web search on his name plus Second Amendment and firearms: one news profile found, read in full",
+        "no personal campaign or official issue page found with gun content",
+        "same news profile also reports his view on the 2024 vetoed buying-age bill, but only as the reporter's paraphrase, so not saved as his words"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:56:06.768Z",
+      "by": "source-collector"
+    }
+  ]
 }

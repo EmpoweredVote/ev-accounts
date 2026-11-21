@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { extractPdfText, looksLikePdfBytes } from './pdfText.js';
+import { extractPdfText, joinTextRuns, looksLikePdfBytes } from './pdfText.js';
 import { fetchViaHttp } from './verificationFetch.js';
 
 const pdf = new Uint8Array(readFileSync(join(__dirname, '__fixtures__', 'home-visiting.pdf')));
@@ -31,5 +31,21 @@ describe('fetchViaHttp on a PDF (2026-10-07 goldentogether.com bug)', () => {
     const spy = serve('application/pdf', new TextEncoder().encode('%PDF-1.4\nnot really a pdf'));
     await expect(fetchViaHttp('https://example.org/x.pdf')).rejects.toBeTruthy();
     spy.mockRestore();
+  });
+});
+
+describe('joinTextRuns', () => {
+  const run = (str: string, x: number, width: number, y = 700, hasEOL = false) => ({ str, transform: [1, 0, 0, 1, x, y], width, hasEOL });
+
+  it('joins a small-caps word printed as two touching runs (Nevada sponsor line, 2026-11-21)', () => {
+    // "H" (large) then "ANSEN" (small) then "," then " " then "HARDY": the old join gave "H ANSEN , HARDY".
+    const items = [run('H', 100, 8), run('ANSEN', 108, 30), run(',', 138, 2), run(' ', 140, 3), run('H', 143, 8), run('ARDY', 151, 22)];
+    expect(joinTextRuns(items).replace(/\s+/g, ' ')).toBe('HANSEN, HARDY');
+  });
+
+  it('keeps a space between runs with a gap, on another line, or after an end of line', () => {
+    expect(joinTextRuns([run('firearm', 100, 30), run('owner', 133, 25)])).toBe('firearm owner');
+    expect(joinTextRuns([run('firearm', 100, 30), run('owner', 130, 25, 688)])).toBe('firearm owner');
+    expect(joinTextRuns([run('firearm', 100, 30, 700, true), run('owner', 130, 25)])).toBe('firearm owner');
   });
 });

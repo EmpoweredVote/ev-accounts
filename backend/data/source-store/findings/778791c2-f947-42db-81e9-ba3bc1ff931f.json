@@ -376,7 +376,111 @@
           "sha256": "27aa63d986b26549bb42f6d2bb5921e8e1da25434e44e9fb435a05f3fddea3fc"
         }
       }
+    },
+    {
+      "id": "0a65b6519fbde68fecd5e36e8b17626e5ac25da9c55b7e5e454e1c06a6859fa7",
+      "kind": "record",
+      "url": "https://thenevadaindependent.com/article/after-background-checks-bill-lawmakers-prepare-wide-variety-of-gun-bills",
+      "date": "2019-02-19",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-202-2019",
+      "act": "sponsor",
+      "note": "A news story reports he introduced AB202, which would let concealed-weapon permit holders keep a handgun on community college property if it is out of sight and in a locked container fixed to a vehicle. Source is a news story, not the Legislature's page; date is when he introduced it per the story (Monday before the 2019-02-20 publication).",
+      "subjects": [
+        "carry permits and where carry is allowed",
+        "guns on school or college property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:02.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ee4314e6d6292e2b3541c2a4305fe7fe5dca0922b875d331ee1e349ae6ef661",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6254/Overview",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-167-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-AB-167-2019 (Open States sponsor list): AB167 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of certain educational entities or child care facilities in certain circumstances. (BDR 15-97).",
+      "subjects": [
+        "concealed-carry permit holders may keep a handgun in a vehicle on school, child care and university property",
+        "handgun must stay out of common observation, in an occupied or locked vehicle or a locked container fixed to it"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB167.pdf; sha256 bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625)",
+        "fetched_at": "2026-11-21T03:06:56.287330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-167-2019.introduced.pdf",
+          "sha256": "bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625"
+        }
+      }
+    },
+    {
+      "id": "bb6a8da344436f18a332a8213d6ee29e667a436888f603fe357d035a7da7b729",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6317/Overview",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-202-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-AB-202-2019 (Open States sponsor list): AB202 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of a community college under certain circumstances. (BDR 15-652).",
+      "subjects": [
+        "handgun allowed in a locked container fixed to a vehicle on community college property",
+        "handgun must stay out of common observation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB202.pdf; sha256 309c1794a8fb21b7e5059338d17970060fea2e1b27c362953868e3a1cbe1d979)",
+        "fetched_at": "2026-11-21T03:06:56.287330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-202-2019.introduced.pdf",
+          "sha256": "309c1794a8fb21b7e5059338d17970060fea2e1b27c362953868e3a1cbe1d979"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permits and where carry is allowed",
+        "guns on school or college property",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Nevada Legislature member page for Senator John Ellison, District 19 (read: confirms sitting state senator since November 2024, Assembly 2010-2022; term runs to 2028, so not on the 2026 ballot)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/John_Ellison (403)",
+        "campaign site: address not found in search results; not reviewed",
+        "web searches on name plus gun, firearm and Second Amendment words: found no first-person statements by him, only bill-list and news items",
+        "Nevada Independent stories on 2025 gun bills (two fetched): do not mention him; nothing on the subject",
+        "not reviewed: https://archive.leg.state.nv.us/Session/81st2021/Minutes/Assembly/JUD/Final/501.pdf",
+        "not reviewed: https://archive.leg.state.nv.us/Session/80th2019/Minutes/Assembly/JUD/Final/669.pdf"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:57:02.893Z",
+      "by": "source-collector"
+    }
+  ]
 }

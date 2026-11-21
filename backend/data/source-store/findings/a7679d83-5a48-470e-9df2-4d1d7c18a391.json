@@ -362,7 +362,58 @@
           "sha256": "80025281542b3e406a8debdaf8e8c6f4837b5caf3378114d53ed98b4590675f9"
         }
       }
+    },
+    {
+      "id": "f6ba060fb658c1547b1cf9f915a4e609d3e20b2e5d106b22341b5fd240932881",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/82nd2023/Journal/Senate/Final/sj099.pdf",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "passage": "I oppose Assembly Bill No. 354. Many of you may not know but I conceal carry. I feel this law would be wrong as I have a right to protect myself. I am not intimidating anyone. In fact, many people do not even know I have my weapon on me. I think we have a right to protect ourselves as citizens of Nevada and of the United States.",
+      "note": "Her floor remarks in the Senate Journal on AB 354 (guns near election sites; serial numbers on home-built frames and receivers). She says she carries concealed and describes protecting oneself as a right.",
+      "subjects": [
+        "carry a gun at or near polling places",
+        "concealed carry",
+        "gun rights",
+        "home-made or unserialised guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:49.870Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun at or near polling places",
+        "concealed carry",
+        "home-made or unserialised guns",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.leg.state.nv.us/App/Legislator/A/Senate/current/5 (confirms Senate District 5; nothing on the subject)",
+        "campaign site https://carriebuckforcongress.com/ and /about (read; nothing on the subject); /issues returned 404",
+        "blocked: https://ballotpedia.org/Carrie_Buck_(Nevada)",
+        "web search on name plus gun words (one lead: iVoterGuide profile shows the gun questions unanswered; not fetched, not a source)",
+        "Senate Journal, 15 May 2023, floor remarks on AB 354 (https://archive.leg.state.nv.us/Session/82nd2023/Journal/Senate/Final/sj099.pdf)",
+        "sponsor list: covered by bulk bill data",
+        "NELIS bill and vote pages: skipped, covered by bulk bill data",
+        "not reviewed: other news coverage and interviews; searched only lightly"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:57:49.870Z",
+      "by": "source-collector"
+    }
+  ]
 }

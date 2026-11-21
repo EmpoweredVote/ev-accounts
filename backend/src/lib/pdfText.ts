@@ -20,6 +20,41 @@ export function isPdfResponse(_contentType: string, buf: Uint8Array): boolean {
   return looksLikePdfBytes(buf);
 }
 
+/** A pdfjs text run: its string, its transform (x at [4], baseline y at [5]), width, and end-of-line flag. */
+export interface RunLike {
+  str: string;
+  transform: number[];
+  width: number;
+  hasEOL?: boolean;
+}
+
+/** Two runs closer than this (PDF units) on one baseline are one piece of text, printed in two runs. */
+const TOUCH_GAP = 0.5;
+
+/**
+ * Join a page's text runs. Runs are joined by a space, except where the next run starts on the same
+ * baseline exactly where the last one ended and neither side has its own space: those are one word
+ * printed in two runs. Small capitals do this (Nevada bill texts from 2019 print "HANSEN" as a large
+ * "H" run and a smaller "ANSEN" run, and "HAFEN," as "HAFEN" and ","), and a space there split every
+ * sponsor's name, so neither a snippet nor the surname could be found (Nevada, 2026-11-21).
+ */
+export function joinTextRuns(items: RunLike[]): string {
+  let out = '';
+  let prev: RunLike | null = null;
+  for (const i of items) {
+    if (prev) {
+      const touching = !prev.hasEOL && prev.str !== '' && i.str !== ''
+        && !/\s$/.test(prev.str) && !/^\s/.test(i.str)
+        && Math.abs(i.transform[5] - prev.transform[5]) < 1
+        && Math.abs(i.transform[4] - (prev.transform[4] + prev.width)) < TOUCH_GAP;
+      out += touching ? '' : ' ';
+    }
+    out += i.str;
+    prev = i;
+  }
+  return out;
+}
+
 /** Extract a PDF's text, pages joined by newlines, whitespace collapsed per page. Throws on a bad PDF. */
 export async function extractPdfText(data: Uint8Array): Promise<string> {
   const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.mjs');
@@ -30,7 +65,7 @@ export async function extractPdfText(data: Uint8Array): Promise<string> {
     const pages: string[] = [];
     for (let p = 1; p <= doc.numPages; p++) {
       const tc = await (await doc.getPage(p)).getTextContent();
-      pages.push(tc.items.map((i) => ('str' in i ? i.str : '')).join(' ').replace(/\s+/g, ' ').trim());
+      pages.push(joinTextRuns(tc.items.filter((i) => 'str' in i) as RunLike[]).replace(/\s+/g, ' ').trim());
     }
     return pages.filter(Boolean).join('\n');
   } finally {

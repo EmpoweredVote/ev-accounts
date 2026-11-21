@@ -473,7 +473,82 @@
           "sha256": "27aa63d986b26549bb42f6d2bb5921e8e1da25434e44e9fb435a05f3fddea3fc"
         }
       }
+    },
+    {
+      "id": "fe14fa0b6d0b4d97f49cf66128081ab14b0d8c1ba782a633651f4cb993cb68e2",
+      "kind": "own-words",
+      "url": "https://voterobintitus.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As a longtime NRA member and proud CCW holder, Dr. Titus successfully led the fight to stop the egregious gun control bill during this last session both times the Democrats tried ramming it through. Dr. Titus will always remain vigilant protecting our Second Amendment.",
+      "note": "Statement on the campaign site's about page, written in the third person. The page is undated; the year is the year it was fetched. It describes her as an NRA member and concealed-carry permit holder who opposed a gun control bill, and it commits her to protecting the Second Amendment.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "concealed carry permit holder",
+        "opposed a gun control bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:49.933Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ee4314e6d6292e2b3541c2a4305fe7fe5dca0922b875d331ee1e349ae6ef661",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6254/Overview",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-167-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-AB-167-2019 (Open States sponsor list): AB167 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of certain educational entities or child care facilities in certain circumstances. (BDR 15-97).",
+      "subjects": [
+        "concealed-carry permit holders may keep a handgun in a vehicle on school, child care and university property",
+        "handgun must stay out of common observation, in an occupied or locked vehicle or a locked container fixed to it"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB167.pdf; sha256 bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625)",
+        "fetched_at": "2026-11-21T03:06:56.287330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-167-2019.introduced.pdf",
+          "sha256": "bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry permits",
+        "gun control bills",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://voterobintitus.com (read)",
+        "Nevada Legislature member page https://www.leg.state.nv.us/App/Legislator/A/Senate/83rd2025/17 (confirms sitting state senator, in office since 2022)",
+        "https://ballotpedia.org/Robin_Titus (fetched; nothing on the subject in the page text)",
+        "one news/web search on name plus Second Amendment and firearms (leads only; votes already on file)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: the individual Vote Smart bill pages (leads only; votes on file)",
+        "not reviewed: the rest of the allowance (no further searches run)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:56:49.933Z",
+      "by": "source-collector"
+    }
+  ]
 }

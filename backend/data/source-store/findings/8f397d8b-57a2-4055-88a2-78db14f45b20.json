@@ -594,7 +594,149 @@
           "sha256": "8229bd6ed3234fa097378a3974e46106c6273fd3b47f2c4398814bf73b365dde"
         }
       }
+    },
+    {
+      "id": "3f2a3d5d746545a82f126746eb21e186e6e604f7248cf76287f07eba7b24bed8",
+      "kind": "own-words",
+      "url": "https://news3lv.com/news/local/nevada-democratic-lawmaker-to-introduce-bill-raising-age-to-purchase-assault-weapons",
+      "date": "2023-02-03",
+      "date_precision": "day",
+      "passage": "Having survived something like One October, I've made it my mission to make sure that I'm doing everything I can to keep our community safe,",
+      "note": "Quoted in a local TV news story (News 3 LV) while announcing a bill to raise the purchase age for assault-style weapons from 18 to 21; she cited her earlier work on red flag, child safe storage and ghost gun laws.",
+      "subjects": [
+        "raise the age to buy assault-style guns",
+        "gun safety laws general statement",
+        "red flag orders",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:35.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23adefb7c8000f8ece7a48b9ed77230a262dd11193bc2c06a61162cc42b1669f",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/newshour/politics/nevada-democrats-push-3-gun-control-bills-5-years-after-deadly-las-vegas-shooting",
+      "date": "2023-04-07",
+      "date_precision": "day",
+      "passage": "I never want a Nevadan to experience the trauma that I and so many have endured,",
+      "note": "Quoted by a public broadcaster's news story while presenting her 2023 gun bills (AB354, AB355) at a committee hearing.",
+      "subjects": [
+        "gun safety laws general statement",
+        "raise the age to buy assault-style guns",
+        "guns near polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:35.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50df82af3c703850e5dfe0a8617c727673562e8bbeb4de2401f0f6928c38237b",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/newshour/politics/nevada-democrats-push-3-gun-control-bills-5-years-after-deadly-las-vegas-shooting",
+      "date": "2023-04-07",
+      "date_precision": "day",
+      "passage": "protect second graders and the second amendment at the same time",
+      "note": "Quoted in a public broadcaster news story describing her 2023 gun package ahead of a hearing; this is a fragment of a longer sentence in the story.",
+      "subjects": [
+        "Second Amendment general statement",
+        "gun safety laws general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:35.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "062ff41cc98e211ddd37176ead82d73403f87d3c86ff7d272ecf7eee2ef14c3d",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/wide-ranging-gun-bill-to-move-ahead-after-adding-red-flag-laws-gun-storage-provisions",
+      "date": "2019-05-28",
+      "date_precision": "day",
+      "passage": "I think this is too important of an issue to me, and to the public safety of Nevada to move forward with a policy that doesn't have the broad support of all of the coalition members,",
+      "note": "Quoted in a Nevada Independent story on AB291: she said the bill would drop its repeal of state preemption of local gun ordinances, keep a bump-stock-style ban, and add red flag and safe storage provisions, and that she would bring preemption back later.",
+      "subjects": [
+        "local government gun rules (preemption)",
+        "bump stock-style ban",
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:35.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54018b156e74aebf986e67adc7ed87f9ac68fb8b104959f727d72cecb0980feb",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/wide-ranging-gun-bill-to-move-ahead-after-adding-red-flag-laws-gun-storage-provisions",
+      "date": "2019-05-28",
+      "date_precision": "day",
+      "passage": "This is something that local law enforcement has been asking for,",
+      "note": "Quoted in the same Nevada Independent story on AB291 about the red flag provisions, which let a court temporarily remove firearms from a person judged a danger to themselves or others.",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:35.976Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "permits to buy / waiting periods",
+        "minimum age to buy",
+        "red flag orders",
+        "ghost guns",
+        "pistol-brace rule",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "Second Amendment and gun safety general statements"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot as the nominee for lieutenant governor, after winning the June 9 primary (https://wtop.com/news/2026/06/sandra-jauregui-wins-democratic-nomination-for-lieutenant-governor-in-nevada/)",
+        "On the Record (0 meetings found)",
+        "official legislature member page (https://www.leg.state.nv.us/App/Legislator/A/Assembly/83rd2025/41): read, shows service 2017-2025, nothing on the subject in the page itself",
+        "blocked: https://sandrafornevada.com (server error 522)",
+        "Ballotpedia page (https://ballotpedia.org/Sandra_Jauregui): fetched, returned almost no text, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "Nevada legislature bill and vote pages: skipped as instructed, covered by bulk bill data",
+        "news stories: News 3 LV (2023), a public broadcaster (2023), Nevada Independent (2019, 2023): own quotes saved",
+        "a gun-safety advocacy group's endorsement page (https://giffords.org/candidates/sandra-jauregui/): read, it is the group's text not her words, so nothing saved",
+        "web searches: 3 of 10 run, no ontheissues or vote411 lead followed",
+        "not reviewed: committee hearing minutes PDFs on archive.leg.state.nv.us (2019, 2021, 2023 Judiciary), found by search but not fetched"
+      ],
+      "found": 5,
+      "at": "2026-11-21T02:58:35.976Z",
+      "by": "source-collector"
+    }
+  ]
 }

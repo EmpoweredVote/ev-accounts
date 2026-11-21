@@ -307,7 +307,57 @@
           "sha256": "175d7c1303b422e2f9bc17134e1cacdbe75907d1469aadc74b152b68c26146fb"
         }
       }
+    },
+    {
+      "id": "47da9516c97fa0898fb64d36763f0ebc5a0c4fda38d324d6b947da70bf37fcbf",
+      "kind": "own-words",
+      "url": "https://koenigforassembly.com/about/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Strong defender of 2nd amendment rights",
+      "note": "One item in a bulleted list of positions on his campaign site's About page. The page is undated; the year is the year it was read. It is a general statement on gun rights with no bill or policy named.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:23.376Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://www.leg.state.nv.us/App/Legislator/A/Assembly/83rd2025/38 (member page: Assembly District 38, confirms office; no statements on the subject)",
+        "campaign site https://koenigforassembly.com/about/ (read; one line on the subject)",
+        "campaign site home page https://koenigforassembly.com/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Gregory_Koenig (empty page returned)",
+        "blocked: https://www.koenigfornevada.com (no such host)",
+        "two local news stories of 2025-10-16 announcing his re-election bid (https://www.thefallonpost.org/article/8271,assemblyman-greg-koenig-announces-reelection-bid-for-assembly-district-38 and https://www.fernleyreporter.com/article/5074,koenig-announces-re-election-bid-for-assembly-district-38): nothing on the subject; they confirm he said he would seek re-election in District 38; I did not find a page confirming the 2026 general-election ballot or result",
+        "https://thenevadaindependent.com/article/freshman-orientation-assemblyman-gregory-koenig-brings-rural-voice-from-fallon (profile; nothing on the subject)",
+        "web search on his name plus gun and Second Amendment words (no gun-specific statement by him found beyond the campaign site)",
+        "not reviewed: https://open.pluralpolicy.com/person/gregory-koenig-rQ9rC7Dyai5V7tSFSJ7cn",
+        "not reviewed: Nevada committee hearing minutes for the 2023 and 2025 gun bills"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:56:23.376Z",
+      "by": "source-collector"
+    }
+  ]
 }

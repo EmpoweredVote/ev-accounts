@@ -124,7 +124,53 @@
           "sha256": "288ca09901adeb5f7793ef09e5782eec83416c6d4c7c08479c934079187308d7"
         }
       }
+    },
+    {
+      "id": "2344f34641e3e969aacb57eef37fdd88c79a76d2db41d8b4d872788e0146d74b",
+      "kind": "record",
+      "url": "https://www.senatorlorirogich.com/endorsements",
+      "date": "2024",
+      "date_precision": "year",
+      "act": "other",
+      "motion": "Endorsement by Nevada Firearms Coalition PAC, listed on her campaign site",
+      "note": "Her campaign endorsements page lists the Nevada Firearms Coalition PAC among the groups backing her. The page gives no date and no statement about guns.",
+      "subjects": [
+        "gun-rights group endorsement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:32.958Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "gun-rights group endorsements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site https://www.senatorlorirogich.com/ (home, priorities, public-safety, endorsements, newsroom, about: no gun statements by her)",
+        "https://www.leg.state.nv.us/App/Legislator/A/Senate/83rd2025/11 (confirms she is a sitting state senator; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Lori_Rogich (empty page returned)",
+        "one news search on name plus gun words: coverage of 2025 gun bills does not quote her",
+        "not reviewed: Nevada Independent profile https://thenevadaindependent.com/article/freshman-orientation-lori-rogichs-advocacy-for-her-daughter-informs-priorities-in-senate (search lead only, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:56:32.958Z",
+      "by": "source-collector"
+    }
+  ]
 }

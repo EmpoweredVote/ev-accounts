@@ -307,7 +307,56 @@
           "sha256": "175d7c1303b422e2f9bc17134e1cacdbe75907d1469aadc74b152b68c26146fb"
         }
       }
+    },
+    {
+      "id": "6110007a08aa35133a895598f4fddb1d5084c602a0f8c9a8d079f2cad94c476a",
+      "kind": "own-words",
+      "url": "https://www.delongfornevada.com/post/week-15-legislative-update",
+      "date": "2023-07-06",
+      "date_precision": "day",
+      "passage": "Last week the Governor vetoed the three Democrat-passed gun control bills: AB354, AB355, and SB171.",
+      "note": "Campaign-site weekly legislative update in his name. Reports the Governor's veto of AB354, AB355 and SB171 and calls them gun control bills; date is the page's publish metadata, and the post is numbered week 15 of the 2023 session, so the actual writing date may be earlier.",
+      "subjects": [
+        "gun control bills vetoed in 2023",
+        "check every gun buyer",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:05.317Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "limits on who may have a gun",
+        "ghost guns",
+        "carry a gun without a permit",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Legislature member page, 2025 and 2027 sessions (read; no gun content on the page)",
+        "Legislature 2026 general-election candidate list (read; confirms Richard DeLong on the District 26 general ballot)",
+        "campaign site https://www.delongfornevada.com (home page and one weekly update post read; home page nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rich_DeLong (403)",
+        "web search: name plus Second Amendment/firearm words (two searches; no statements by him found)",
+        "news coverage of 2023 and 2025 gun bills: nothing naming him",
+        "sponsor list and final-passage votes: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:57:05.317Z",
+      "by": "source-collector"
+    }
+  ]
 }

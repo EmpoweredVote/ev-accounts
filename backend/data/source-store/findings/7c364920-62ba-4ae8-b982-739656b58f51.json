@@ -363,7 +363,76 @@
           "sha256": "175d7c1303b422e2f9bc17134e1cacdbe75907d1469aadc74b152b68c26146fb"
         }
       }
+    },
+    {
+      "id": "069d910aa7cd476b8e02f991222a83bacfae79ae86622c84240230fca9bb7f4d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/67080/race/32647/election/1472",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Law-abiding citizens should not be punished for the actions of criminals. Nevada & federal law already prohibit felons, domestic abusers, and adjudicated mentally ill individuals from possessing firearms. The priority should be fully enforcing these laws before creating new restrictions. Penalties should be strengthened for use of firearms in violent crimes. The deterrent should target criminals, not responsible gun owners. Addressing root causes of violence is more effective than restrictions",
+      "note": "Her written answer to a 2026 voter-guide question on what gun-ownership restrictions are needed for public safety. Exact day not shown on the page.",
+      "subjects": [
+        "limits on who may have a gun",
+        "enforce existing gun laws before new ones",
+        "tougher penalties for gun use in violent crime"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1de5f4d6ebecee6f78386269bcd95624474a7dee2d79c10e4eb7ae412ebc7931",
+      "kind": "own-words",
+      "url": "https://thenevadaglobe.com/legislature/nv-freedom-caucus-will-safeguard-the-2a-from-the-feds/",
+      "date": "2022-07-31",
+      "date_precision": "day",
+      "passage": "Republican Assemblywoman and Freedom Caucus vice chair Jill Dickman (AD31) just submitted a Bill Draft Request for the upcoming legislative session that would ensure Nevadans remain in control of how firearms are regulated in the Silver State.",
+      "note": "Op-ed co-bylined by her and the caucus's state director, published by Nevada Globe. It says she filed a bill draft request to stop state and local authorities from cooperating with federal firearm restrictions such as a national assault-weapons ban or a federal ban on home-made firearms. The passage is written in the third person under a shared byline, so it is not purely her own wording.",
+      "subjects": [
+        "state non-cooperation with federal gun rules",
+        "ban on assault-style guns",
+        "home-made guns",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:36.519Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun restrictions to protect public safety",
+        "federal gun rules and state non-cooperation",
+        "assault-style gun ban",
+        "who may own a gun",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.leg.state.nv.us/App/Legislator/A/Assembly/84th2027/31 (legislator page read; lists her as a current Assembly member, District 31; bill list is script-loaded, nothing readable)",
+        "sponsor list: covered by bulk bill data",
+        "https://ivoterguide.com/candidate/67080/race/32647/election/1472 (her own questionnaire answers)",
+        "https://thenevadaglobe.com/?p=52708 (co-bylined op-ed)",
+        "one web search on her name plus Second Amendment/firearms",
+        "not reviewed: Ballotpedia, campaign site, news search beyond one query (not fetched in this pass)"
+      ],
+      "found": 2,
+      "at": "2026-11-21T02:56:36.519Z",
+      "by": "source-collector"
+    }
+  ]
 }

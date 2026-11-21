@@ -309,5 +309,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member page on the Nevada Legislature site (read; names him as District 33 Assembly member, lists no gun statements)",
+        "campaign site: none found in search results",
+        "blocked: https://ballotpedia.org/Bert_Gurr (403)",
+        "iVoterGuide candidate page (read; lists him on the 2026 general ballot; Second Amendment questions marked did not answer)",
+        "two web searches on name plus gun subject words: no statement of his own found",
+        "sponsor list: covered by bulk bill data",
+        "Assembly and Senate final-passage votes 2017-2025: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T02:56:43.833Z",
+      "by": "source-collector"
+    }
+  ]
 }

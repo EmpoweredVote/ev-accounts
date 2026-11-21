@@ -501,7 +501,126 @@
           "sha256": "d7c3f3d6080f4302e5dc2d037cf6bce5b61a749540c37ee19fb9a08a86bccea5"
         }
       }
+    },
+    {
+      "id": "dd26017b3e0575f25506a53c67c8ad52a155e81b98c9e2f28408c710af3c2484",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/after-background-checks-bill-lawmakers-prepare-wide-variety-of-gun-bills",
+      "date": "2019-02-20",
+      "date_precision": "day",
+      "passage": "common sense gun law",
+      "note": "A news story (Nevada Independent) quotes him describing his bill AB167, which would let carry-permit holders keep guns out of sight in a locked or occupied vehicle, or locked container, on school, campus and child care property, as a \"common sense gun law\". Only the three-word phrase is his direct quote; the rest is the reporter's description.",
+      "subjects": [
+        "carry permit holders storing guns on school grounds",
+        "carrying guns: places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:57.729Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c47e95e4ef2c7a5adfe2fca2bec6687252dc5020bf349cfeee70a25becb9043",
+      "kind": "own-words",
+      "url": "https://hafen4nevada.com",
+      "date": "2026-11-20",
+      "date_precision": "year",
+      "passage": "Defended our Second Amendment right to keep and bear arms",
+      "note": "Campaign site list of what he says he has done as Assemblyman. Page is undated; date is the fetch date, so only the year is reliable.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:57.729Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88d76d667bfefb8236c299f629cbe574599103c70bb17172f29ddd61df614e4a",
+      "kind": "record",
+      "url": "https://thenevadaindependent.com/article/after-background-checks-bill-lawmakers-prepare-wide-variety-of-gun-bills",
+      "date": "2019-02-20",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-167-2019",
+      "act": "sponsor",
+      "note": "A news story reports him sponsoring AB167, introduced that week, allowing carry-permit holders to store firearms out of sight in a locked or occupied vehicle, or in a locked container, at public schools, college campuses and child care facilities. Sponsorship is from the news story, not the Legislature's own page.",
+      "subjects": [
+        "carry permit holders storing guns on school grounds",
+        "carrying guns: places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:57.729Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ee4314e6d6292e2b3541c2a4305fe7fe5dca0922b875d331ee1e349ae6ef661",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6254/Overview",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-167-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-AB-167-2019 (Open States sponsor list): AB167 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of certain educational entities or child care facilities in certain circumstances. (BDR 15-97).",
+      "subjects": [
+        "concealed-carry permit holders may keep a handgun in a vehicle on school, child care and university property",
+        "handgun must stay out of common observation, in an occupied or locked vehicle or a locked container fixed to it"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB167.pdf; sha256 bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625)",
+        "fetched_at": "2026-11-21T03:06:56.287330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-167-2019.introduced.pdf",
+          "sha256": "bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permit holders storing guns on school grounds",
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://leg.state.nv.us/App/Legislator/A/Assembly/Current/36 (member page read: District 36, confirms office)",
+        "https://hafen4nevada.com (campaign site home page read; one general line on gun rights; /issues page returned nothing on the subject)",
+        "Pahrump Valley Times reelection story 2025-10-24 (confirms he is running again; nothing on guns)",
+        "Nevada Independent 2026 general results page listed him as a candidate in District 36 against one other candidate; outcome not confirmed",
+        "Ballotpedia Gregory_Hafen page fetched: nothing on the subject",
+        "web search on name plus subject words (two searches)",
+        "Patch/Nevada Current story 2023-04-10: not reviewed beyond a search lead; no own words from him captured",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Nevada Legislature bill and vote pages (skipped per brief)",
+        "nothing on the subject: no floor remarks, interviews or questionnaires found"
+      ],
+      "found": 3,
+      "at": "2026-11-21T02:57:57.729Z",
+      "by": "source-collector"
+    }
+  ]
 }

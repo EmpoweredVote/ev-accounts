@@ -151,6 +151,9 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   // South Dakota's 2018 and 2019 introduced texts head the bill "HOUSE BILL NO. 1041" / "SENATE BILL NO. 47" in
   // capitals (sd-01, 2026-11-17: a sponsorship cited on that text). Folds to "hb1041" / "sb47" as above.
   /\b(?:HOUSE|SENATE) BILL NO\.\s?\d{1,4}\b/,
+  // Nevada's bill texts head the bill "ASSEMBLY BILL NO. 80" / "SENATE BILL NO. 143" (nv-01, 2026-11-21: a
+  // sponsorship cited on the introduced text, runner's ruling). "ASSEMBLY BILL NO. 80" folds to "ab80".
+  /\bASSEMBLY BILL NO\.\s?\d{1,4}\b/,
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
   // The U.S. House Clerk prints "H. R. 22" (a space after each period) and "H. J. RES. 44" (2026-10-07).
   /\bH\.?\s?R\.?\s?\d+\b/,
@@ -242,7 +245,7 @@ export function extractInstrumentIdentifiers(text: string): string[] {
 // "House Joint Resolution B" match a reasoning's "SB 303" and "HJR B" (Michigan, 2026-10-30).
 const SPELLED_OUT: [RegExp, string][] = [
   [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^houseconcurrentresolution/, 'hcr'], [/^senateconcurrentresolution/, 'scr'],
-  [/^senateresolution/, 'sr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
+  [/^senateresolution/, 'sr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'], [/^assemblybill/, 'ab'],
 ];
 
 /**
@@ -259,7 +262,7 @@ export function canonicalizeInstrumentId(text: string): string {
   if (co) return co[1] + co[2].replace(/^0+(?=\d)/, '');
   let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
   for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
-  c = c.replace(/^([hs]b|[hs][jc]r)(?:no|number)(?=\d)/, '$1');
+  c = c.replace(/^([hsa]b|[hs][jc]r)(?:no|number)(?=\d)/, '$1');
   return c.replace(/^([a-z]+)0+(?=\d)/, '$1');
 }
 

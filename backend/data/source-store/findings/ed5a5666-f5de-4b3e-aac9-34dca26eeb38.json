@@ -419,7 +419,204 @@
           "sha256": "175d7c1303b422e2f9bc17134e1cacdbe75907d1469aadc74b152b68c26146fb"
         }
       }
+    },
+    {
+      "id": "00b8ace30e21908017306e398bd96f614348bf707493973a776873ca95961480",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/freshman-orientation-assemblywoman-alexis-hansen",
+      "date": "2019-01-29",
+      "date_precision": "day",
+      "passage": "Water issues as they relate to rural Nevada, the protection of gun rights, educational reforms that produce results, and small business-friendly legislation.",
+      "note": "Her written answer in a news outlet's new-member Q&A, asked for her top priorities for the 2019 session; it lists protecting gun rights among them.",
+      "subjects": [
+        "protection of gun rights",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d368859dbb3665939f2d0bde58a3908ae282d816e88bfc635a6f1050036efbc",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/80th2019/Minutes/Assembly/JUD/Final/669.pdf",
+      "date": "2019-04-01",
+      "date_precision": "day",
+      "passage": "I have a question in regard to section 1, subsection 1, paragraph (c), \"Any semiautomatic firearm that has been modified in any way.\" As a female, with my firearm, sometimes a 10-pound trigger is not comfortable. It is too tight for me. If I had my gun modified to a 5-pound trigger, would I be in violation of this law?",
+      "note": "Her question in the Assembly Judiciary hearing on AB 291 (public safety, firearms), asking whether a trigger modification would break the bill's ban on modified semiautomatic firearms.",
+      "subjects": [
+        "ban on modified semiautomatic guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "20876b4b92d017bf926bef147bd7ffef200980413ae3e50fa310786c45b65bed",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/80th2019/Minutes/Assembly/JUD/Final/669.pdf",
+      "date": "2019-04-01",
+      "date_precision": "day",
+      "passage": "We want to solve problems, but we need to make sure that we are solving a problem, and that is what I am wrestling with. Did the district attorney in Clark County not prosecute the other suffering parents that went through this tragedy because he did not have the law to do it? Or he did not want to?",
+      "note": "Her remarks in the AB 291 hearing, questioning whether a new law on gun access by children is needed when existing law might already apply.",
+      "subjects": [
+        "safe storage of firearms",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c0719c51a0fd3af56314179d461cc734140b1cbf8cfb8e698ab3174b71c34e8",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/81st2021/Minutes/Assembly/JUD/Final/501.pdf",
+      "date": "2021-03-17",
+      "date_precision": "day",
+      "passage": "I think the difference is now the first offense is a misdemeanor. The second offense is a gross misdemeanor. For concealed weapons permit holders who are new to Nevada and realize they cannot have it in the hotel, they may leave it in their cars. I am worrying about the punitive side of the legislation as well as some other things.",
+      "note": "Her remark in the Assembly Judiciary hearing on AB 286 (prohibits certain acts relating to firearms, including carrying on opted-in lodging property), raising concern about penalties for permit holders.",
+      "subjects": [
+        "carry permit holders and where they may carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc45ab66b3bf0766c74936391e33c76b030081bbfb03c9b3d17a3cc2ba3661b8",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/82nd2023/Minutes/Assembly/JUD/Final/684.pdf",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "passage": "In regard to the conversation that has been had regarding a CCW person coming into the mall or grocery store and they are carrying their concealed weapon and have their permit, and then they realize they cannot have it—I believe Assemblywoman Jauregui said they could go put it in their car. If it is about safety, Every Town research and policy has an article from March 2022 that says gun thefts from cars are the largest source of stolen guns. Are we concerned we are replacing one worry with a substantially greater worry?",
+      "note": "Her question in the Assembly Judiciary hearing that included AB 355 (firearms provisions), about leaving guns in cars where carry is limited.",
+      "subjects": [
+        "carry permit holders and where they may carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30e11f983f0815a673dc29c606cc08e4cc815a7638c4d9cfa7f8c88c264966c4",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/82nd2023/Minutes/Assembly/JUD/Final/684.pdf",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "passage": "Domestic violence is a gross misdemeanor, as I recall. Is a gross misdemeanor and a felony the ones we suspend gun rights for currently?",
+      "note": "Her question in the same 2023 Judiciary hearing, asking which offenses currently remove a person's gun rights, during discussion of a bill limiting gun possession.",
+      "subjects": [
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f63659be057476a77716b149eb72cc1fe0191a81bdaaff0f7d4d0a9ceb1f278",
+      "kind": "own-words",
+      "url": "https://archive.leg.state.nv.us/Session/82nd2023/Minutes/Assembly/JUD/Final/1149.pdf",
+      "date": "2023-05-25",
+      "date_precision": "day",
+      "passage": "Thank you for the work that you have done as the bill has come over here. I have more comfort with it, and I appreciate your working with a lot of other people.",
+      "note": "Her remark to the presenters of SB 294 (safe storage of firearms) in the Assembly Judiciary hearing, before she asked about how the bill treats ages 18 to 21.",
+      "subjects": [
+        "safe storage of firearms",
+        "minimum age and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:07.708Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ee4314e6d6292e2b3541c2a4305fe7fe5dca0922b875d331ee1e349ae6ef661",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6254/Overview",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-167-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-AB-167-2019 (Open States sponsor list): AB167 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of certain educational entities or child care facilities in certain circumstances. (BDR 15-97).",
+      "subjects": [
+        "concealed-carry permit holders may keep a handgun in a vehicle on school, child care and university property",
+        "handgun must stay out of common observation, in an occupied or locked vehicle or a locked container fixed to it"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB167.pdf; sha256 bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625)",
+        "fetched_at": "2026-11-21T03:06:56.287330Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-167-2019.introduced.pdf",
+          "sha256": "bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "protection of gun rights",
+        "ban on modified semiautomatic guns",
+        "carry permit holders and where they may carry",
+        "safe storage of firearms",
+        "who may have a gun (misdemeanor-based limits)",
+        "minimum age and guns"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official legislator page https://www.leg.state.nv.us/App/Legislator/A/Assembly/84th2027/32 (fetched; page body is mostly script, nothing on the subject)",
+        "campaign site: none found in search",
+        "Ballotpedia https://ballotpedia.org/Alexis_Hansen (search results show her on the 2026 general-election ballot for Assembly District 32; fetch returned an empty page, so nothing quoted from it)",
+        "news search on her name plus gun words (one profile story with her own answers, used)",
+        "Assembly Judiciary committee minutes 2019, 2021, 2023 (her questions and remarks, used)",
+        "sponsor list: covered by bulk bill data",
+        "NELIS bill and vote pages: skipped as instructed",
+        "not reviewed: floor-remark or interview video, none located"
+      ],
+      "found": 7,
+      "at": "2026-11-21T02:58:07.708Z",
+      "by": "source-collector"
+    }
+  ]
 }

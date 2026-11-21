@@ -112,7 +112,7 @@ def bill_of(letters, num, year, sp=None):
     return letters + num.zfill(PAD), (year - 1 if ODD and year % 2 == 0 else year)
 
 
-def introduced_text_line(bill_file, cited, full_name):
+def _text_line(bill_file, cited, full_name, pick=None):
     """(the converted bill's introduced text, its "Introduced by:" line, why there is no line) for a sponsorship;
     (None, None, None) when the bill's page is not an introduced text other than the cited page.
     South Dakota (runner, 2026-11-17): a sponsorship is cited on the bill's introduced text, and convert.py makes that
@@ -127,6 +127,14 @@ def introduced_text_line(bill_file, cited, full_name):
     # convert.py points the bill's page at the introduced text's PDF; 2018 and 2019 bills still list the old HTML
     # address under texts[] (sd-01: 14 bills), so the PDF page itself, not the texts list, decides.
     has_intro = any(t.get('type') == 'Introduced' for t in b.get('texts') or [])
+    # Nevada (runner, 2026-11-21): the bill's page is the NELIS Overview, whose sponsor panel loads by script and
+    # prints no name. The introduced text prints the sponsors on its first line ("ASSEMBLY BILL NO. 167–ASSEMBLYMEN
+    # HAFEN, TITUS, ..."), so it is cited. The dump types every reprint "Introduced": the as-introduced PDF is the one
+    # whose file name carries no _R1/_EN suffix.
+    if ST == 'NV':
+        intro = [x.get('state_link') or '' for x in b.get('texts') or []]
+        intro = [x for x in intro if re.search(r'/Bills/[A-Z]+/[A-Z]+\d+\.pdf$', x)]
+        tl = pick or (intro[0] if intro else '')
     if not tl or tl == cited or not has_intro or not tl.lower().endswith('.pdf'): return None, None, None
     f = f'{B}/pages/{hashlib.sha1(tl.encode()).hexdigest()}.txt'
     if os.path.exists(f): t = open(f).read()
@@ -138,17 +146,46 @@ def introduced_text_line(bill_file, cited, full_name):
         t = re.sub(r'\s+', ' ', subprocess.run(['pdftotext', '-layout', '-', '-'], input=body, capture_output=True).stdout.decode('utf-8', 'replace')).strip()
         os.makedirs(os.path.dirname(f), exist_ok=True); open(f, 'w').write(t)
     # 2020 on prints "House Bill 1227 Introduced by: ..."; 2018 and 2019 print "HOUSE BILL NO. 1041 Introduced by: ...".
-    m = re.search(r'(?:(?:House|Senate)\s+(?:Bill|Joint Resolution|Concurrent Resolution|Commemoration|Resolution)\s+(?:No\.\s*)?\d+\s+)?Introduced by:\s*', t, re.I)
-    if not m: return tl, None, f'no "Introduced by:" line in {tl}'
-    rest = t[m.end():]
-    by = re.split(r'\s+(?:FOR AN ACT|An Act|A LEGISLATIVE|A (?:CONCURRENT|JOINT) RESOLUTION|ENTITLED)\b', rest, maxsplit=1)[0]
+    if ST == 'NV':
+        # "ASSEMBLY BILL NO. 167–ASSEMBLYMEN HAFEN, ...; HANSEN, ... AND WHEELER FEBRUARY 15, 2019" (or "Prefiled ...")
+        m = re.search(r'(?:ASSEMBLY|SENATE)\s+(?:BILL|JOINT RESOLUTION|CONCURRENT RESOLUTION|RESOLUTION)\s+NO\.\s*\d+\s*[–—-]\s*', t)
+        if not m: return tl, None, f'no "BILL NO. n–" sponsor line in {tl}'
+        head = re.split(r'\s+(?:Referred to|SUMMARY)', t[m.end():], maxsplit=1)[0]
+        by = re.split(r'\s+(?:(?:JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)\s+\d|Prefiled|PREFILED)', head, maxsplit=1)[0]
+        # A Senate bill can name Assembly members after the date ("JOINT SPONSORS: ASSEMBLYMEN TITUS, ELLISON; ..."), and the reverse.
+        js = re.search(r'JOINT SPONSORS?:\s*(.*)', head)
+        if js: by += ' JOINT SPONSORS: ' + js.group(1)
+        end = m.end() + len(head if js else by)
+    else:
+        m = re.search(r'(?:(?:House|Senate)\s+(?:Bill|Joint Resolution|Concurrent Resolution|Commemoration|Resolution)\s+(?:No\.\s*)?\d+\s+)?Introduced by:\s*', t, re.I)
+        if not m: return tl, None, f'no "Introduced by:" line in {tl}'
+        rest = t[m.end():]
+        by = re.split(r'\s+(?:FOR AN ACT|An Act|A LEGISLATIVE|A (?:CONCURRENT|JOINT) RESOLUTION|ENTITLED)\b', rest, maxsplit=1)[0]
+        end = m.end() + len(by)
     toks = [x.strip(',.') for x in full_name.split()]
     while len(toks) > 1 and toks[-1].lower() in ('jr', 'sr', 'ii', 'iii', 'iv', 'v'): toks.pop()
     sur = toks[-1] if toks else ''
-    if not sur or not re.search(r'\b' + re.escape(sur) + r'\b', by, re.I): return tl, None, f'{sur} is not printed after "Introduced by:" in {tl}'
+    import unicodedata
+    fold = lambda s: ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
+    # Nevada prints names in capitals without accents ("DONATE" for Doñate): compare with accents dropped.
+    if not sur or not re.search(r'\b' + re.escape(fold(sur)) + r'\b', fold(by), re.I): return tl, None, f'{sur} is not printed in the sponsor line of {tl}'
     words = t[m.start():].split(' ')
-    n = max(len(t[m.start():m.end() + len(by)].split(' ')) + 8, 25)
+    n = max(len(t[m.start():end].split(' ')) + 8, 25)
     return tl, ' '.join(words[:min(n, 80)]), None
+
+
+def introduced_text_line(bill_file, cited, full_name):
+    """See _text_line. Nevada: a member added as a joint sponsor after introduction is printed first on a reprint
+    ("JOINT SPONSOR: SENATOR SCHEIBLE" on 2021 AB 286's third reprint, not on the introduced text), so when the
+    introduced text does not print the person, the earliest reprint (_R1, _R2, ...) that does is cited."""
+    first = _text_line(bill_file, cited, full_name)
+    if ST != 'NV' or not first[0] or first[1]: return first
+    reps = [x.get('state_link') or '' for x in json.load(open(bill_file))['bill'].get('texts') or []]
+    reps = sorted({x for x in reps if re.search(r'/Bills/[A-Z]+/[A-Z]+\d+_R\d+\.pdf$', x)}, key=lambda x: int(re.search(r'_R(\d+)\.pdf$', x).group(1)))
+    for r in reps:
+        got = _text_line(bill_file, cited, full_name, pick=r)
+        if got[1]: return got
+    return first
 
 
 VOTE = ('yea', 'nay', 'abstain'); AUTH =('author', 'coauthor', 'sponsor', 'cosponsor', 'co-sponsor', 'chief patron', 'patron', 'copatron')

@@ -280,5 +280,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "the Legislature's member page for Assembly District 12 (https://www.leg.state.nv.us/App/Legislator/A/Assembly/83rd2025/12): read, confirms the office; no gun statements",
+        "scope check: the Legislature's 2026 general-election candidate list (seen in a search result, https://www.leg.state.nv.us/Division/Research/Documents/CandidatesList_2026General.pdf) shows them on the Nov 3 2026 ballot for District 12; the list itself was not fetched",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Max_Carter_II (403)",
+        "https://thenevadaindependent.com/article/freshman-orientation-for-assemblyman-max-carter-ii-tragedy-changed-his-trajectory: a profile story, nothing on the subject",
+        "https://ivoterguide.com/candidate/71200/race/16112/election/968: the candidate did not answer the 2nd Amendment questionnaire items",
+        "https://www.ballotready.org/people/max-elden-carter-ii: nothing on the subject",
+        "one news search on name plus gun words: nothing in their own words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: other URL patterns, news archive, social media (search allowance not fully used)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T02:57:17.267Z",
+      "by": "source-collector"
+    }
+  ]
 }

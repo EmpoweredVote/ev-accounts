@@ -423,7 +423,76 @@
           "sha256": "80025281542b3e406a8debdaf8e8c6f4837b5caf3378114d53ed98b4590675f9"
         }
       }
+    },
+    {
+      "id": "78b3709136ec973a46118cd5c3df0c6a6e68f07b6dcc273d44490e7afdcbee56",
+      "kind": "own-words",
+      "url": "https://thenevadaglobe.com/?p=69945",
+      "date": "2023-05-05",
+      "date_precision": "day",
+      "passage": "Action Alert 🚨 This morning, we just had #GunControl legislation dropped at the last minute for a work session in Senate Judiciary that starts at 1pm. We need citizens to make their voice heard on these two egregious bills.",
+      "note": "His post on X, embedded in a Nevada Globe news story, urging the public to speak out against AB354 and AB355 ahead of a Senate Judiciary work session.",
+      "subjects": [
+        "gun control bills",
+        "age limits for owning guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:15.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de345c9181b5be4311b75dd652cb6e01df54eaf33cf0d58f7a1ffec153c09c22",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/Session/76th2011/Bills/AB/AB217_EN.pdf",
+      "date": "2011-01-01",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-217-2011",
+      "act": "sponsor",
+      "note": "Enrolled text lists him among the Assembly sponsors of AB217, which repealed NRS 597.910 so interstate sales of rifles and shotguns follow federal law.",
+      "subjects": [
+        "repeal of firearm sale restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:58:15.552Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun control bills",
+        "repeal of firearm sale restrictions",
+        "Second Amendment",
+        "age limits for owning guns",
+        "carrying guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.irahansen.com (read; home page has no gun text, lists a video titled as defending Second Amendment rights for students)",
+        "not reviewed: video on https://www.irahansen.com titled 'Ira Hansen Defends Second Amendment Rights For Students' (cannot read video)",
+        "sponsor list: covered by bulk bill data",
+        "Nevada Legislature 2011 enrolled text of AB217 (read)",
+        "blocked: https://ballotpedia.org/Ira_Hansen (empty response)",
+        "Wikipedia page on Ira Hansen (read; confirms office, lifetime NRA member, 2011 and 2015 gun bills; 2015 AB167 not verified on an official page)",
+        "news search on name plus gun words (one story with his embedded post found)",
+        "Nevada Legislature candidate lists: confirmed in scope via search result showing him as District 14 incumbent running in 2026 (general-election outcome not confirmed)",
+        "nothing on the subject: no campaign-site gun page beyond the video"
+      ],
+      "found": 2,
+      "at": "2026-11-21T02:58:15.552Z",
+      "by": "source-collector"
+    }
+  ]
 }

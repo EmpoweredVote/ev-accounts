@@ -1,0 +1,39 @@
+{
+  "id": "NV-AB-202-2019",
+  "scope": "state:nv",
+  "title": "AB202 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of a community college under certain circumstances. (BDR 15-652)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6317/Overview",
+    "https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB202.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Assemblyman John Ellison",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB202.pdf; sha256 309c1794a8fb21b7e5059338d17970060fea2e1b27c362953868e3a1cbe1d979)",
+    "fetched_at": "2026-11-21T03:06:56.287330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-202-2019.introduced.pdf",
+      "sha256": "309c1794a8fb21b7e5059338d17970060fea2e1b27c362953868e3a1cbe1d979"
+    },
+    "note": "As-filed (introduced) text, no passage vote recorded. NRS 202.265 changes in this version also strike old wording (a 'vehicle' definition and the word 'vehicle' in subsection 1, and renumbering letters); those struck words are not quoted."
+  },
+  "operative_text": "Section 1 (NRS 202.265): (b) A handgun on the property of a community college within the Nevada System of Higher Education by a person, if the handgun remains out of common observation and is stored in a locked container which is affixed securely to the frame of a motor vehicle, other than a school bus.\nSection 2 (NRS 202.3673): (2) Possesses a handgun in accordance with the provisions of paragraph (b) of subsection 3 of NRS 202.265."
+}

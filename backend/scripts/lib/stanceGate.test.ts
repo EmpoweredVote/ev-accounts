@@ -435,6 +435,14 @@ describe('instrument-not-cited: South Dakota 2018-2019 text headings (2026-11-17
     expect(ids({ ...good, reasoning: 'Sponsored HB 104 (2019).' }, { evidence: snip('HOUSE BILL NO. 1041') })).toContain('instrument-not-cited'));
 });
 
+describe('instrument-not-cited: Nevada text headings (2026-11-21)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t}–ASSEMBLYMAN HAFEN PREFILED JANUARY 26, 2021 Referred to Committee on Judiciary` }];
+  it('reads "ASSEMBLY BILL NO. 80" as AB 80', () =>
+    expect(ids({ ...good, reasoning: 'Sponsored AB 80 (2021).' }, { evidence: snip('ASSEMBLY BILL NO. 80') })).not.toContain('instrument-not-cited'));
+  it('still tells AB 8 from "ASSEMBLY BILL NO. 80"', () =>
+    expect(ids({ ...good, reasoning: 'Sponsored AB 8 (2021).' }, { evidence: snip('ASSEMBLY BILL NO. 80') })).toContain('instrument-not-cited'));
+});
+
 describe('instrument-not-cited: Ohio bill headings (2026-11-06)', () => {
   const snip = (t: string) => [{ ...ev[0], snippet: `${t} General Assembly Regular Session 2025-2026 Representative Doe` }];
   it('reads "Sub. S. J. R. No. 10" and "(Substitute House Bill Number 458)" as SJR 10 and HB 458', () => {
