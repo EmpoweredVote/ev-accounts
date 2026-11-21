@@ -1,0 +1,68 @@
+{
+  "politician_id": "14896652-e36b-4823-afb0-e92e3338929c",
+  "findings": [
+    {
+      "id": "01266a4bacb19e012fcc9578871153606c92f5717e9a291eec366b628714b51d",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2005",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2005-2023",
+      "act": "yea",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2023-06-21: yea (tally 34–14); census gate: none.",
+      "subjects": [
+        "ban on undetectable firearms",
+        "serial numbers required to sell, transfer or possess a firearm",
+        "ghost-gun rules for unfinished frames and receivers",
+        "dealer background check for unfinished frames or receivers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2005/Enrolled; sha256 64a7110eded5e3d7c7732b239704f787bda527d69bdcfc1dc20b34765d043771)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2005-2023.enrolled.pdf",
+          "sha256": "64a7110eded5e3d7c7732b239704f787bda527d69bdcfc1dc20b34765d043771"
+        }
+      }
+    },
+    {
+      "id": "b9659a6d5218e47b964367ee8da29f54c45512309baf7e3a36653b848c8a13fc",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1503",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-1503-2024",
+      "act": "yea",
+      "motion": "House Third reading. Carried by Grayber. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Grayber. Passed., 2024-03-06: yea (tally 35–22); census gate: none.",
+      "subjects": [
+        "task force on firearm suicide prevention",
+        "$250,000 for research on gun violence and suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/SB1503/Enrolled; sha256 f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1503-2024.enrolled.pdf",
+          "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

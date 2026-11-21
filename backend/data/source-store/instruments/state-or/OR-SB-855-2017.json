@@ -1,0 +1,60 @@
+{
+  "id": "OR-SB-855-2017",
+  "scope": "state:or",
+  "title": "SB855 (2017 Regular): Relating to authorizing persons without concealed handgun licenses to possess concealed firearms in certain circumstances.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB855",
+    "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB855/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Herman Baertschiger Jr.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alan Olsen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dennis Linthicum",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Fred Girod",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+    },
+    {
+      "name": "Kim Thatcher",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB855/Introduced; sha256 35bf29f3d0d9a3b65493b148b41686253e0c9b1b70b61a318bacff9749ec3576)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-855-2017.introduced.pdf",
+      "sha256": "35bf29f3d0d9a3b65493b148b41686253e0c9b1b70b61a318bacff9749ec3576"
+    },
+    "note": "Introduced version; no votes on file. Quoted items are in ORS 166.260 (3), which exempts these people from ORS 166.250 unless otherwise barred from having a firearm. The bill replaces the old target-range clause in the same section."
+  },
+  "operative_text": "SECTION 1 (ORS 166.260): (a) A person possessing a firearm while at an established target range, whether public or private, for the purpose of practicing target shooting, or while traveling to or from the target range, including traveling by public transportation as defined in ORS 166.116.\nSECTION 1 (ORS 166.260): (c) A person protected by a stalking protective order, a restraining order as defined in ORS 24.190 or any other court order prohibiting another person from contacting the person, provided that the person: (A) Has a pending application for a concealed handgun license under ORS 166.291 and 166.292; or (B) Has a scheduled appointment to submit an application for a concealed handgun license under ORS 166.291 and 166.292.\nSECTION 1 (ORS 166.260): (d) A person possessing a newly purchased firearm while traveling from the place of purchase, including traveling by public transportation as defined in ORS 166.116.\nSECTION 2 (new): The amendments to ORS 166.260 by section 1 of this 2017 Act apply to firearm possessions occurring on or after the effective date of this 2017 Act."
+}

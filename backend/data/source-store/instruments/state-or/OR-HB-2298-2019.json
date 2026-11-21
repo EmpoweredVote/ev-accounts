@@ -1,0 +1,49 @@
+{
+  "id": "OR-HB-2298-2019",
+  "scope": "state:or",
+  "title": "HB2298 (2019 Regular): Relating to concealed handgun license reciprocity.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB2298",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2298/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Post",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Nearman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2298/Introduced; sha256 f6b90e839ea554bfc3831df1fa6ca6254fa0ed057ec6c214f7ffda553a90b383)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2298-2019.introduced.pdf",
+      "sha256": "f6b90e839ea554bfc3831df1fa6ca6254fa0ed057ec6c214f7ffda553a90b383"
+    },
+    "note": "Introduced version (as filed). Sections 2 to 9 add the same out-of-state licensee exception to ORS 166.173, 166.260, 166.262, 166.370, 166.375, 166.380, 166.663 and 821.240; only two are quoted. Added words are not marked in the text. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (new): (1) The Department of State Police shall create and maintain a list of states that: (a) Authorize a person who is licensed under ORS 166.291 and 166.292 to carry a concealed handgun in the other state; and (b) In order to obtain a concealed handgun license or permit, require license or permit applicants to demonstrate competency with a handgun by any one of the methods listed in ORS 166.291 (1)(f)(A) to (E).\nSECTION 1 (new): (2) The Department of State Police shall provide the list described in subsection (1) of this section to all law enforcement agencies within this state. (3) The Department of State Police shall make the list described in subsection (1) of this section available to the public without charge on an Internet website.\nSECTION 3 (ORS 166.260): (j) A person who is not a resident of this state and who is authorized to carry a concealed handgun pursuant to a valid license or permit that was issued, in a state on the list described in section 1 of this 2019 Act, by a state or local law enforcement agency, a court or another issuing authority of that state.\nSECTION 4 (ORS 166.262): (2) For a person who is not a resident of this state, a valid license or permit that was issued, in a state on the list described in section 1 of this 2019 Act, by a state or local law enforcement agency, a court or another issuing authority of that state, and that authorizes the person to carry a concealed handgun;"
+}

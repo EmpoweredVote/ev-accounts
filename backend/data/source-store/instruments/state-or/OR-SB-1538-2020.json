@@ -1,0 +1,116 @@
+{
+  "id": "OR-SB-1538-2020",
+  "scope": "state:or",
+  "title": "SB1538 (2020 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2020R1/Measures/Overview/SB1538",
+    "https://olis.oregonlegislature.gov/liz/2020R1/Downloads/MeasureDocument/SB1538/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ginny Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Mark Hass",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lee Beyer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael Dembrow",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+      "name": "Sara Gelser Blouin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6"
+    },
+    {
+      "name": "Jeff Golden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+    },
+    {
+      "name": "Laurie Monnes Anderson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Floyd Prozanski",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378"
+    },
+    {
+      "name": "Chuck Riley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Elizabeth Steiner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+      "name": "Rob Wagner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+    },
+    {
+      "name": "Shemia Fagan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2020R1/Downloads/MeasureDocument/SB1538/Introduced; sha256 1a53eede76be51663be03b5ce72e31da44c9da5a607139bbbcc135f1ec052d0c)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1538-2020.introduced.pdf",
+      "sha256": "1a53eede76be51663be03b5ce72e31da44c9da5a607139bbbcc135f1ec052d0c"
+    },
+    "note": "Introduced version (as filed). SECTION 2 (ORS 166.360) rewrites the 'public building' definition (adds buildings owned by a state, city, county or metro district and college-owned real property; struck words not quoted). SECTION 3 and 4 also add cross-references to the new section 1; SECTION 4 quote is truncated at the lead-in, the arrest bar for licensees yields where a local ordinance applies. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (new): (1) A city, a county or a metropolitan service district organized under ORS chapter 268 may adopt an ordinance limiting or precluding the use of the affirmative defense described in ORS 166.370 (3)(g) concerning the possession of firearms in public buildings, within each entity’s respective jurisdiction, by persons licensed to carry a concealed handgun under ORS 166.291 and 166.292.\nSECTION 1 (new): (2) A school district, college or university may adopt a policy limiting or precluding the use of the affirmative defense described in ORS 166.370 (3)(g) concerning the possession of firearms in public buildings by persons licensed to carry a concealed handgun under ORS 166.291 and 166.292.\nSECTION 1 (new): (3) An entity that adopts an ordinance or policy under this section shall post a sign, visible to the public, identifying all locations where the affirmative defense described in ORS 166.370 (3)(g) is limited or precluded.\nSECTION 3 (ORS 166.370): (1) Any person who intentionally possesses a loaded or unloaded firearm or any other instrument used as a dangerous weapon, while in or on a public building, shall upon conviction be guilty of a Class C felony.\nSECTION 4 (ORS 166.262): A peace officer may not arrest or charge a person for violating ORS 166.250 (1)(a) or (b) or 166.370 (1) if the person has in the person’s immediate possession:"
+}

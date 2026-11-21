@@ -1,0 +1,322 @@
+{
+  "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030",
+  "findings": [
+    {
+      "id": "95c08efe2d7720c5c0f6595b744e6aa5f3c89ead90212e9c53cb7ab0354285cb",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4145",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-4145-2026",
+      "act": "yea",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2026-03-06: yea (tally 50–3); census gate: near-unanimous.",
+      "subjects": [
+        "delay Measure 114 permit-to-purchase until 2028",
+        "delay large-capacity magazine ban until 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2026.enrolled.pdf",
+          "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
+        }
+      }
+    },
+    {
+      "id": "ee79f3f35320e0d83a66ad49d55c6f15fe80ef6fe8dfcde440cc02e41a64d4f1",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1503",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-1503-2024",
+      "act": "nay",
+      "motion": "House Third reading. Carried by Grayber. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Grayber. Passed., 2024-03-06: nay (tally 35–22); census gate: none.",
+      "subjects": [
+        "task force on firearm suicide prevention",
+        "$250,000 for research on gun violence and suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/SB1503/Enrolled; sha256 f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1503-2024.enrolled.pdf",
+          "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
+        }
+      }
+    },
+    {
+      "id": "a7224b8f053caf5c9526432fca47df1cca87571a0e2a231a721b7c48b3547827",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2396",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2396-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-2396-2025 (Open States sponsor list): HB2396 (2025 Regular): Relating to firearm purchase permits..",
+      "subjects": [
+        "concealed handgun license holders qualify for a purchase permit",
+        "no fingerprints, background check or safety course for them",
+        "reduced permit fee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB2396/Introduced; sha256 7e8d61c87b88030788bf2e1bcd56a59f05a37f9aa02466bcb0a4e519fcb9f3bb)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2396-2025.introduced.pdf",
+          "sha256": "7e8d61c87b88030788bf2e1bcd56a59f05a37f9aa02466bcb0a4e519fcb9f3bb"
+        }
+      }
+    },
+    {
+      "id": "56d6798d2099b2c2488a255f39e735b47f94881135980a353139a177ca1fe8f3",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2704",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2704-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-2704-2023 (Open States sponsor list): HB2704 (2023 Regular): Relating to the regulation of firearms in public buildings..",
+      "subjects": [
+        "school boards may bar concealed-handgun licensees from school grounds",
+        "metal detectors required at entrances where bar adopted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2704/Introduced; sha256 992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2704-2023.introduced.pdf",
+          "sha256": "992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759"
+        }
+      }
+    },
+    {
+      "id": "53467e22f0b43398065af7ef3b2a7c62cd4b32291e23b094d55f6fa6d1970aa3",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2936",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2936-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-HB-2936-2023 (Open States sponsor list): HB2936 (2023 Regular): Relating to firearms..",
+      "subjects": [
+        "repeal safe-storage, theft-reporting and minor-supervision requirements",
+        "repeal limits on concealed licensees in Capitol, airports and school grounds",
+        "cut concealed handgun license fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2936/Introduced; sha256 05f8bb5d84a5086c84954b7f3548c2f00811acc13010c53cf8d23da0eacd8b5d)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2936-2023.introduced.pdf",
+          "sha256": "05f8bb5d84a5086c84954b7f3548c2f00811acc13010c53cf8d23da0eacd8b5d"
+        }
+      }
+    },
+    {
+      "id": "7f5d81e4e3541f68de6e3397a84d3b3ed1c2a65be92ea61630dc9ae560578cac",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2968",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2968-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-HB-2968-2023 (Open States sponsor list): HB2968 (2023 Regular): Relating to firearms..",
+      "subjects": [
+        "end crime of carrying a concealed firearm or concealed handgun in a vehicle",
+        "public-building owners may ban firearms with posted signs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2968/Introduced; sha256 59807f81929e4fc41ffe53b7445c1e869cbd55247ff5bc4f7e4b04af35e9f8c3)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2968-2023.introduced.pdf",
+          "sha256": "59807f81929e4fc41ffe53b7445c1e869cbd55247ff5bc4f7e4b04af35e9f8c3"
+        }
+      }
+    },
+    {
+      "id": "7ae7c2be06ea0b2354126649312e86e3e8a85534d2cba703f6fb0a24d099f709",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3542",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-3542-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-3542-2023 (Open States sponsor list): HB3542 (2023 Regular): Relating to firearm purchase permits..",
+      "subjects": [
+        "concealed handgun license holders qualify for purchase permit",
+        "reduced permit fee for license holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3542/Introduced; sha256 279267ee73461358ff520d5e00c4800c05abded3dd30dcd5e1578cd92c5a918f)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3542-2023.introduced.pdf",
+          "sha256": "279267ee73461358ff520d5e00c4800c05abded3dd30dcd5e1578cd92c5a918f"
+        }
+      }
+    },
+    {
+      "id": "a0af60639eabaa362a93bfe50825b61788ac6b7b478c591b996466688fb85eef",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3742",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-3742-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-3742-2025 (Open States sponsor list): HB3742 (2025 Regular): Relating to the possession of firearms in the Capitol..",
+      "subjects": [
+        "licensed legislators and staff may carry in the Capitol",
+        "no arrest for licensed legislators and staff carrying in the Capitol"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3742/Introduced; sha256 e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3742-2025.introduced.pdf",
+          "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
+        }
+      }
+    },
+    {
+      "id": "0b11568476dcbde5b29758824e39b35bd1c30624f9d40955b9950774c05f9312",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3d7e7d9",
+      "date": "2025-03-21",
+      "date_precision": "day",
+      "passage": "HB 3075 is a dangerous attack on gun owners and threatens to block access to gun ownership by expanding Measure 114. HB 3075 is stuffed with unnecessary mandates and restrictions, more bans on firearms, threats to retroactively criminalize law-abiding gun owners, and expensive permits designed to price you out from keeping your family safe.",
+      "note": "From his House District 2 newsletter: opposes HB 3075 (expanding Measure 114 permit rules) and urges readers to contact legislators and vote no.",
+      "subjects": [
+        "permit to buy a gun",
+        "ban on assault-style guns",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:43.867Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e66d0fd95c3685a014907ece442f85ad72dea912122b7d3b7406dcf79fd18173",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3d7e7d9",
+      "date": "2025-03-21",
+      "date_precision": "day",
+      "passage": "Second Amendment rights are under attack once again.",
+      "note": "Newsletter section headed as an attack on Second Amendment rights, listing five 2025 firearm bills (HB 2606, 3074, 3884, 2774, 3075) as going against those rights.",
+      "subjects": [
+        "Second Amendment",
+        "check every gun buyer",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:43.867Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a571f1e9aa46730275d13594fa37817e99f72918781194926c83a04186bd2168",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e771e5",
+      "date": "2025-06",
+      "date_precision": "month",
+      "passage": "We were able to kill 2 out of the 3 worst gun bills and I’m quite sure the one that did pass will be challenged in court.",
+      "note": "2025 session-end newsletter: describes stopping two of three gun bills he called worst, expects a court challenge to the one that passed.",
+      "subjects": [
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:43.867Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permit to buy a gun (Measure 114)",
+        "ghost guns",
+        "carry a gun without a permit",
+        "general statements on the Second Amendment and gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://www.oregonlegislature.gov/osborne (read; no gun statements on the page itself)",
+        "HD2 legislative newsletters on govdelivery (3/14/25, 3/21/25, 2025 sine die, 2/21/26, 2/27/26 read)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: surfaced by search, not fetched; nothing added beyond office confirmation",
+        "one web search on name plus firearm words",
+        "blocked: https://www.courthousenews.com/key-oregon-house-committee-takes-up-bill-to-criminalize-ghost-guns/ (403)",
+        "not reviewed: https://apps.oregonlegislature.gov/liz/2023R1/Downloads/PublicTestimonyDocument/79929 (PDF, author not confirmed as this person)",
+        "campaign site: not found"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:10:43.867Z",
+      "by": "source-collector"
+    }
+  ]
+}

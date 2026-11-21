@@ -1,0 +1,171 @@
+{
+  "id": "OR-HB-2704-2023",
+  "scope": "state:or",
+  "title": "HB2704 (2023 Regular): Relating to the regulation of firearms in public buildings.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2704",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2704/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anna Scharf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0cd6ccff-e02d-4cbe-a1df-381226292840"
+    },
+    {
+      "name": "Jami Cate",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+    },
+    {
+      "name": "James Hieb",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bobby Levy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+    },
+    {
+      "name": "Lily Morgan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rep Smith DB",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Werner Reschke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    },
+    {
+      "name": "Kim Wallan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3778353d-cbc9-43cf-866a-a7c01397503a"
+    },
+    {
+      "name": "Emily McIntire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f9b60c1-483c-4a8e-8221-145098204ced"
+    },
+    {
+      "name": "Virgle Osborne",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030"
+    },
+    {
+      "name": "Cyrus Javadi",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "cd8e1e6b-bd17-44e0-a8a3-deffc2f5982e"
+    },
+    {
+      "name": "Ed Diehl",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ea9746ba-9fd2-4622-b781-b3ed35d18d17"
+    },
+    {
+      "name": "Mark Owens",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1"
+    },
+    {
+      "name": "Vikki Breese Iverson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7f460988-c9a6-4452-a872-441e7c4ac071"
+    },
+    {
+      "name": "Jeff Helfrich",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "701f0236-5ca7-4bfa-ab71-8c22bcc5ff8c"
+    },
+    {
+      "name": "Rick Lewis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325"
+    },
+    {
+      "name": "Tracy Cramer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Mannix",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2edbb7a5-a798-4088-8939-7b44b51e682c"
+    },
+    {
+      "name": "Charlie Conrad",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lucetta Elmer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7bba19f8-0a1f-4ee2-852f-63bb38ffef6e"
+    },
+    {
+      "name": "Shelly Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d"
+    },
+    {
+      "name": "Boomer Wright",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e"
+    },
+    {
+      "name": "Greg Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28"
+    },
+    {
+      "name": "Christine Goodwin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2704/Introduced; sha256 992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2704-2023.introduced.pdf",
+      "sha256": "992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759"
+    },
+    "note": "As-filed text (introduced), no votes recorded. Per the digest the metal-detector requirement in (2)(c) is the new part."
+  },
+  "operative_text": "SECTION 1 (ORS 166.377): (1) The governing board of a public university listed in ORS 352.002, the Oregon Health and Science University Board of Directors, the governing board of a community college or a district school board as defined in ORS 332.002 may adopt a policy providing that the affirmative defense described in ORS 166.370 (3)(g), concerning persons licensed to carry a concealed handgun under ORS 166.291 and 166.292, does not apply to the possession of firearms on the grounds of the schools controlled by the board.\nSECTION 1 (ORS 166.377): (2)(c) Install metal detectors at all entrances to any building subject to the policy."
+}

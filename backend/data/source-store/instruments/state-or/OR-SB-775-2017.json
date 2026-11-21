@@ -1,0 +1,39 @@
+{
+  "id": "OR-SB-775-2017",
+  "scope": "state:or",
+  "title": "SB775 (2017 Regular): Relating to criminal background check exemption for concealed handgun licensees.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB775",
+    "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB775/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Fred Girod",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB775/Introduced; sha256 bbfaddfffbb2c3b44bfeaed51f4e8de2d6d34d1b077fd080c4d69a8f69bb4d5e)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-775-2017.introduced.pdf",
+      "sha256": "bbfaddfffbb2c3b44bfeaed51f4e8de2d6d34d1b077fd080c4d69a8f69bb4d5e"
+    },
+    "note": "Introduced version; no votes on file. The rest of ORS 166.435 (private transfers must go through a gun dealer; Class A misdemeanor for failure) is reprinted unchanged by the digest. Quoted item is one of the exceptions listed in subsection (4)."
+  },
+  "operative_text": "SECTION 1 (ORS 166.435): (e) The transfer of a firearm to a person licensed under ORS 166.291 and 166.292 to carry a concealed handgun."
+}

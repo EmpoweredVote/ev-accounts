@@ -1,0 +1,41 @@
+{
+  "id": "OR-HB-3075-2025",
+  "scope": "state:or",
+  "title": "HB3075 (2025 Regular): Relating to firearms; declaring an emergency.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3075",
+    "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3075/A-Engrossed"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jason Kropf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-access-to-justice: SECTION 18 — any court challenge to the Act's legality must be filed in Marion County Circuit Court, with a copy served on the Attorney General"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (A-Engrossed, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3075/A-Engrossed; sha256 329334d7ed7ce4a7dba29d8da6a7f8056837cef20a20349ce16a19f91f43b101)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3075-2025.a-engrossed.pdf",
+      "sha256": "329334d7ed7ce4a7dba29d8da6a7f8056837cef20a20349ce16a19f91f43b101"
+    },
+    "note": "Version read: A-Engrossed (ordered by the House April 15, 2025). No passage vote is recorded in the data, but amendments made after this version are not in the text read. SECTION 1 repeals sections 1 and 10 of Measure 114. SECTION 3/4 strike old definition and permit-agent wording, so not quoted. SECTION 11 (ORS 166.355) edits the large-capacity magazine ban and strikes the 180-day wind-down; not quoted for struck text. Sections 6 to 9 set transfer-permit rules before July 1, 2026; sections 12 to 15 set them after. SECTION 20 is an emergency clause. The LegiScan desc shows struck italic notes for earlier-version terms (60-day issuance, temporary exception to 2028)."
+  },
+  "operative_text": "SECTION 4 (ORS 166.505): (A) An applicant whose residence is in an incorporated area may apply for a permit to purchase a firearm to either the police chief of the city in which the applicant resides or the county sheriff of the county in which the applicant resides.\nSECTION 4 (ORS 166.505): (B) An applicant whose residence is in an unincorporated area may apply for a permit to purchase a firearm to the county sheriff of the county in which the applicant resides.\nSECTION 4 (ORS 166.505): (h) The record of information obtained during the permit application process or during a request for a criminal background check by a permit agent is exempt from disclosure as a public record under ORS 192.311 to 192.478.\nSECTION 4 (ORS 166.505): The portion of the fee payable to the department for conducting the state and federal criminal background check shall be established by the department and may not exceed $48.\nSECTION 13 (ORS 166.435): (6) A valid permit to purchase a firearm issued under ORS 166.505 is not required for a firearm transfer under this section if the transferee is a peace officer as defined in ORS 133.005, a parole and probation officer as defined in ORS 181A.355 or a retired peace officer or parole and probation officer who is a qualified retired law enforcement officer as defined in 18 U.S.C. 926C.\nSECTION 11a (new): (1) Notwithstanding ORS 166.355, a person may not be prosecuted for any manufacture, importation, possession, use, purchase, sale or transfer of a large-capacity magazine that occurs while the enforcement of ORS 166.355 is enjoined by a court of law within this state.\nSECTION 11a (new): (2) If an injunction prohibiting the enforcement of ORS 166.355 is reversed or vacated by an appellate court, ORS 166.355 (2) does not apply to the following conduct occurring within 180 days after the date of the appellate judgment reversing or vacating the injunction:\nSECTION 16 (new): (2) The amendments to ORS 166.412, 166.435, 166.436 and 166.438 by sections 12 to 15 of this 2025 Act apply to firearm transfers occurring on or after July 1, 2026."
+}

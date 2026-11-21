@@ -1,0 +1,67 @@
+{
+  "politician_id": "ce386a55-7cc5-4006-89db-97e06e0e0279",
+  "findings": [
+    {
+      "id": "95c08efe2d7720c5c0f6595b744e6aa5f3c89ead90212e9c53cb7ab0354285cb",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4145",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-4145-2026",
+      "act": "yea",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2026-03-06: yea (tally 50–3); census gate: near-unanimous.",
+      "subjects": [
+        "delay Measure 114 permit-to-purchase until 2028",
+        "delay large-capacity magazine ban until 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2026.enrolled.pdf",
+          "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and carry without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety laws",
+        "Measure 114"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "official legislative member page and biography (https://www.oregonlegislature.gov/bunch, https://www.oregonlegislature.gov/bunch/Pages/biography.aspx): read, nothing on the subject",
+        "official press release list (https://www.oregonlegislature.gov/bunch/Pages/news.aspx): read, no release on the subject",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Matt_Bunch (HTTP 202, no page text returned)",
+        "blocked: https://ballotpedia.org/Oregon_House_of_Representatives_District_51 (HTTP 202, no page text returned)",
+        "blocked: https://oregoncapitalchronicle.com/voter-guides/contests/2026-republican-primary-oregon-house-district-51/ (HTTP 403)",
+        "news story on the 2026 general-election count (https://youroregonnews.com/2026/11/03/election-2026-bunch-leads-race-for-oregon-house-district-51/): confirms he is the incumbent on the 2026 general ballot; nothing on the subject",
+        "web searches on name plus gun, firearm, Second Amendment, Measure 114: no statement by him found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T17:09:33.780Z",
+      "by": "source-collector"
+    }
+  ]
+}

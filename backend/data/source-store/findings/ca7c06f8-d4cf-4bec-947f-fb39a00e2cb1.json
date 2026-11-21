@@ -1,0 +1,258 @@
+{
+  "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1",
+  "findings": [
+    {
+      "id": "04e68df120a022dd731fdd5cae963f59a63a5b9cb8028f15b787ca2711266bb5",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2005",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2005-2023",
+      "act": "nay",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2023-06-21: nay (tally 34–14); census gate: none.",
+      "subjects": [
+        "ban on undetectable firearms",
+        "serial numbers required to sell, transfer or possess a firearm",
+        "ghost-gun rules for unfinished frames and receivers",
+        "dealer background check for unfinished frames or receivers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2005/Enrolled; sha256 64a7110eded5e3d7c7732b239704f787bda527d69bdcfc1dc20b34765d043771)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2005-2023.enrolled.pdf",
+          "sha256": "64a7110eded5e3d7c7732b239704f787bda527d69bdcfc1dc20b34765d043771"
+        }
+      }
+    },
+    {
+      "id": "ae8c73b1602c3f26bad366dae5fda6cf7524cad503dcadbf3a08b72cc31634d7",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB243",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-243-2025",
+      "act": "nay",
+      "motion": "House Third reading. Carried by McDonald. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by McDonald. Passed., 2025-06-25: nay (tally 33–10); census gate: none.",
+      "subjects": [
+        "ban on bump stocks, forced reset triggers and other rapid fire activators",
+        "cities, counties and districts may bar licensed carry in meeting buildings",
+        "licensed carry at the Capitol and airport terminals is a misdemeanor",
+        "Measure 114 permit and magazine rules start March 15, 2026"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB243/Enrolled; sha256 fca2c257e6a6cc3df27b47ea32d7851f9a304b652c592b932c93f0ef0f88a094)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-243-2025.enrolled.pdf",
+          "sha256": "fca2c257e6a6cc3df27b47ea32d7851f9a304b652c592b932c93f0ef0f88a094"
+        }
+      }
+    },
+    {
+      "id": "24bdf2eea191df9f0ebc20a371841cdf626df1f20a5cb79e18c7fe054c9e1f04",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB554",
+      "date": "2021-04-29",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-554-2021",
+      "act": "nay",
+      "motion": "House Third reading. Carried by Prusak. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Prusak. Passed., 2021-04-29: nay (tally 34–24); census gate: none.",
+      "subjects": [
+        "safe storage of firearms (lock, container or gun room)",
+        "locked transfers and 72-hour loss/theft reporting",
+        "adult supervision when a minor uses a firearm",
+        "schools may bar licensed carry on school grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB554/Enrolled; sha256 009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-554-2021.enrolled.pdf",
+          "sha256": "009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655"
+        }
+      }
+    },
+    {
+      "id": "783175d818aff5725d79aeae0c00e4eba0b002cd430a48040fffd3a8430a81cb",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2416",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2416-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-HB-2416-2023 (Open States sponsor list): HB2416 (2023 Regular): Relating to extreme risk protection orders..",
+      "subjects": [
+        "extreme risk protection orders: second and third hearings with mental health evaluations",
+        "order lasts at most about 37 days instead of one year",
+        "court decides at each hearing whether surrendered guns are returned"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2416/Introduced; sha256 f16ce88a9a14eb27b8e7e873b607d286756f8762f3851285d0b05fd18a9a9da8)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2416-2023.introduced.pdf",
+          "sha256": "f16ce88a9a14eb27b8e7e873b607d286756f8762f3851285d0b05fd18a9a9da8"
+        }
+      }
+    },
+    {
+      "id": "56d6798d2099b2c2488a255f39e735b47f94881135980a353139a177ca1fe8f3",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2704",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2704-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-2704-2023 (Open States sponsor list): HB2704 (2023 Regular): Relating to the regulation of firearms in public buildings..",
+      "subjects": [
+        "school boards may bar concealed-handgun licensees from school grounds",
+        "metal detectors required at entrances where bar adopted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2704/Introduced; sha256 992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2704-2023.introduced.pdf",
+          "sha256": "992c1238c8a80824c1a9964297da3fd2c58319074cc15c27f4a8ba642c2c3759"
+        }
+      }
+    },
+    {
+      "id": "3e206249a5f13c1177c873a6b8025722b4d10f4a4039b883fd1821bbec9fa4c7",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3445",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-3445-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-HB-3445-2023 (Open States sponsor list): HB3445 (2023 Regular): Relating to firearm purchase permits..",
+      "subjects": [
+        "counties may opt out of firearm purchase permits",
+        "no permit for in-county firearm transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3445/Introduced; sha256 6ee6d5154d3fdb1e88960b8fe136f7edbb7d8e84b533f12915963bde24c06148)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3445-2023.introduced.pdf",
+          "sha256": "6ee6d5154d3fdb1e88960b8fe136f7edbb7d8e84b533f12915963bde24c06148"
+        }
+      }
+    },
+    {
+      "id": "7cf4d5bb10baf38ed55aba04fbf3956623d172765982548a2ab44a7ae97fd90f",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/HB4149",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-4149-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-4149-2022 (Open States sponsor list): HB4149 (2022 Regular): Relating to liability for crimes committed in gun-free zones..",
+      "subjects": [
+        "liability for operators of gun-free zones when crimes occur",
+        "treble damages in some cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2022R1/Downloads/MeasureDocument/HB4149/Introduced; sha256 020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4149-2022.introduced.pdf",
+          "sha256": "020e6328fb82a797da7f35fac446fd452325da491c05df7d223df142ad341280"
+        }
+      }
+    },
+    {
+      "id": "dd6de1289cc34681ffc18d4e1925798700e9ae9ca6c486363893b3e7d8cf4273",
+      "kind": "own-words",
+      "url": "https://elkhornmediagroup.com/rep-owens-gives-praise-to-judge-raschios-measure-114-decision/",
+      "date": "2023-11-30",
+      "date_precision": "day",
+      "passage": "If we look at the amount of gun laws that have passed [in] Oregon in the last couple years, we still have a higher rate of gun violence. It is not the tool, it is the person. We need to look at more things than trying to restrict tools that can be used. We need to look at mental health. We need to look at drugs. We need to look at a lot of things in Oregon that could make a difference in gun violence instead of trying to restrict our rights.",
+      "note": "Quoted by a local radio news outlet (KJDY/News102 via Elkhorn Media Group) as he welcomed a judge's ruling against Measure 114, saying more gun laws have not lowered gun violence and pointing to mental health and drugs instead.",
+      "subjects": [
+        "Measure 114 permit and magazine rules",
+        "more gun laws and gun violence",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:08:40.934Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Measure 114 permit-to-purchase and magazine limits",
+        "gun laws and gun violence",
+        "Second Amendment",
+        "gun bills in the House"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.oregonlegislature.gov/owens (member page confirms Rep. Mark Owens, House District 60; nothing on the subject)",
+        "no separate campaign site reviewed",
+        "web search: one news search on name plus gun terms (10-search allowance not otherwise used)",
+        "https://elkhornmediagroup.com/?p=171696 (local radio news story with a direct quote)",
+        "https://www.thegunmag.com/?p=27352 (gun-issue magazine story; paraphrase only, not saved)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: owens.house.gov (belongs to a different person, a U.S. House member)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T17:08:40.934Z",
+      "by": "source-collector"
+    }
+  ]
+}

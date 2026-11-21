@@ -29,7 +29,411 @@
           "sha256": "60a0a530252fa303431ccd57c9d8e642de29fad5c20d98d85654aa418e913f3b"
         }
       }
+    },
+    {
+      "id": "01266a4bacb19e012fcc9578871153606c92f5717e9a291eec366b628714b51d",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2005",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2005-2023",
+      "act": "yea",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2023-06-21: yea (tally 34–14); census gate: none.",
+      "subjects": [
+        "ban on undetectable firearms",
+        "serial numbers required to sell, transfer or possess a firearm",
+        "ghost-gun rules for unfinished frames and receivers",
+        "dealer background check for unfinished frames or receivers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2005/Enrolled; sha256 64a7110eded5e3d7c7732b239704f787bda527d69bdcfc1dc20b34765d043771)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2005-2023.enrolled.pdf",
+          "sha256": "64a7110eded5e3d7c7732b239704f787bda527d69bdcfc1dc20b34765d043771"
+        }
+      }
+    },
+    {
+      "id": "b98bfdb02380d87942469ebcef3889b83eea345bf78a6fe86d72b8a0279d78f2",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB2013",
+      "date": "2019-04-23",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2013-2019",
+      "act": "yea",
+      "motion": "House Third reading. Carried by Williamson. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Williamson. Passed., 2019-04-23: yea (tally 43–15); census gate: none.",
+      "subjects": [
+        "firearm and ammunition ban for people under certain protective orders",
+        "court orders turning in guns and ammunition within 24 hours",
+        "sworn declaration within two judicial days, contempt if not filed",
+        "background check before police return relinquished guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2013/Enrolled; sha256 403ab743bddf218c661fd2e89e4fdf2921a060944d4c0b5c19d51dfbc7a7181f)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2013-2019.enrolled.pdf",
+          "sha256": "403ab743bddf218c661fd2e89e4fdf2921a060944d4c0b5c19d51dfbc7a7181f"
+        }
+      }
+    },
+    {
+      "id": "f145085842fc169e9d91c7cb0e3f16316e78a6bd366cce23100beb51c76772a4",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2018R1/Measures/Overview/HB4145",
+      "date": "2018-02-15",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-4145-2018",
+      "act": "yea",
+      "motion": "House Third reading. Carried by Barker, Williamson. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Barker, Williamson. Passed., 2018-02-15: yea (tally 37–23); census gate: none.",
+      "subjects": [
+        "firearm and ammunition ban after a stalking conviction",
+        "family-or-household-member terms in the possession bar",
+        "State Police must enter disqualifying convictions in databases and notify law enforcement of blocked purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2018R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 2986008b98d7e4c92b31e03132859cbffedc1dee5fa9ee41c7667d293cb70908)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2018.enrolled.pdf",
+          "sha256": "2986008b98d7e4c92b31e03132859cbffedc1dee5fa9ee41c7667d293cb70908"
+        }
+      }
+    },
+    {
+      "id": "b9659a6d5218e47b964367ee8da29f54c45512309baf7e3a36653b848c8a13fc",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1503",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-1503-2024",
+      "act": "yea",
+      "motion": "House Third reading. Carried by Grayber. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Grayber. Passed., 2024-03-06: yea (tally 35–22); census gate: none.",
+      "subjects": [
+        "task force on firearm suicide prevention",
+        "$250,000 for research on gun violence and suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/SB1503/Enrolled; sha256 f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1503-2024.enrolled.pdf",
+          "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
+        }
+      }
+    },
+    {
+      "id": "a3a094c99f1f6bfea39924370fb17c83a0088361cb93e97566fc81503fbda546",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB554",
+      "date": "2021-04-29",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-554-2021",
+      "act": "yea",
+      "motion": "House Third reading. Carried by Prusak. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Prusak. Passed., 2021-04-29: yea (tally 34–24); census gate: none.",
+      "subjects": [
+        "safe storage of firearms (lock, container or gun room)",
+        "locked transfers and 72-hour loss/theft reporting",
+        "adult supervision when a minor uses a firearm",
+        "schools may bar licensed carry on school grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB554/Enrolled; sha256 009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-554-2021.enrolled.pdf",
+          "sha256": "009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655"
+        }
+      }
+    },
+    {
+      "id": "067a80fc9d1c50e576bab147779b9323fe45bfb1d1c8addd7114d5b10539d14a",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB719",
+      "date": "2017-07-06",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-719-2017",
+      "act": "yea",
+      "motion": "House Third reading. Carried by Williamson. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "OR House, House Third reading. Carried by Williamson. Passed., 2017-07-06: yea (tally 31–28); census gate: multi-subject.",
+      "subjects": [
+        "extreme risk protection orders to remove guns",
+        "24-hour surrender of weapons and concealed handgun license",
+        "5-year firearm ban after violating an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/SB719/Enrolled; sha256 dcda60810eed61d65f8a935d8245e710bb29e0160fdf40309056195d5ebf8bfe)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-719-2017.enrolled.pdf",
+          "sha256": "dcda60810eed61d65f8a935d8245e710bb29e0160fdf40309056195d5ebf8bfe"
+        }
+      }
+    },
+    {
+      "id": "4f643eb580cf10c3a271224f1ccfa04d2500c4fe3cab49a12f42ea1fb3a1c501",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB2705",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-2705-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-HB-2705-2019 (Open States sponsor list): HB2705 (2019 Regular): Relating to the firearm Do Not Sell List..",
+      "subjects": [
+        "voluntary state list of people who ask not to be sold a gun",
+        "crime to knowingly sell a gun to a listed person",
+        "list status shown on background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2705/Introduced; sha256 d82c4ae0a02d9496732846bf220a23be2653129b0621bae8413203fc2e507680)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2705-2019.introduced.pdf",
+          "sha256": "d82c4ae0a02d9496732846bf220a23be2653129b0621bae8413203fc2e507680"
+        }
+      }
+    },
+    {
+      "id": "3bd79c83fe3667e875d11a26802c0ace1680ae4aa01b82d31435beae8237af86",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1503",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "OR-SB-1503-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-SB-1503-2024 (Open States sponsor list): SB1503 (2024 Regular): Relating to public health; prescribing an effective date..",
+      "subjects": [
+        "task force on firearm suicide prevention",
+        "$250,000 for research on gun violence and suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2024R1/Downloads/MeasureDocument/SB1503/Enrolled; sha256 f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-1503-2024.enrolled.pdf",
+          "sha256": "f0857ae1b88a70cad38c3e888e45d7f9b50d090300f556ea7192446414b25500"
+        }
+      }
+    },
+    {
+      "id": "5072e2d38ebe4bbe47a69883891d2937e173f8dbc7c0a1fa1f19d8d6089a2f78",
+      "kind": "own-words",
+      "url": "https://www.doj.state.or.us/media-home/news-media-releases/attorney-general-rayfield-takes-action-to-defend-federal-gun-safety-measures/",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "passage": "“I am proud to join today’s effort to defend the modest gains our federal government has made on gun safety,” Attorney General Rayfield said. “Community safety is one of my top priorities, and I will continue to do everything in my power as Attorney General to protect Oregonians from gun violence.”",
+      "note": "Quoted in a DOJ release announcing Oregon and 15 other states joining to defend a federal rule on machine-gun conversion devices (forced reset triggers) and a federal rule requiring gun sellers to run background checks.",
+      "subjects": [
+        "background checks on gun sales",
+        "machine-gun conversion devices",
+        "federal agency gun rules",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:10.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b62f39b9937244eb6dafed00fdf518f0013e281673d2896703f061b5bfdda9f",
+      "kind": "record",
+      "url": "https://www.doj.state.or.us/media-home/news-media-releases/attorney-general-rayfield-takes-action-to-defend-federal-gun-safety-measures/",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Oregon joins multistate filings to defend federal forced-reset-trigger classification and the federal 'engaged in the business' gun-seller background check rule",
+      "note": "As Attorney General, announced Oregon's participation in two multistate court filings backing two federal gun rules.",
+      "subjects": [
+        "background checks on gun sales",
+        "machine-gun conversion devices",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:10.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16acd3e87ecea509381fcfe86ee20b90474e5430be83fcacbc48f92a729d2b53",
+      "kind": "own-words",
+      "url": "https://www.doj.state.or.us/media-home/news-media-releases/appeals-court-lifts-hold-on-measure-114-ruling-that-oregon-gun-law-is-constitutional/",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "“Oregonians voted for this, and it’s time we move ahead with common-sense safety measures,” Rayfield said. “Today’s decision is a big step forward for gun safety in Oregon. This measure gives us the tools to make sure gun buyers go through background checks and get proper permits, helping to keep firearms out of the wrong hands and making our communities safer.”",
+      "note": "Statement after the Oregon Court of Appeals reinstated Measure 114 (permit to buy, closing the three-day background-check default, limit of ten rounds on magazines).",
+      "subjects": [
+        "permit to buy a gun",
+        "background checks on gun sales",
+        "limit on magazine size",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:10.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f14a505ba19e5b64e06be7b4f4c67e90e54ea4d9b50e9025412be0297fb1219",
+      "kind": "own-words",
+      "url": "https://www.doj.state.or.us/media-home/news-media-releases/appeals-court-lifts-hold-on-measure-114-ruling-that-oregon-gun-law-is-constitutional/",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "“We know there will be a lot of conversation around this, but the bottom line is that we’re committed to protecting the rights of responsible gun owners while doing what we can to reduce gun violence,” said Attorney General Rayfield.",
+      "note": "Same Measure 114 statement; says the office is committed to protecting responsible gun owners and reducing gun violence.",
+      "subjects": [
+        "gun rights of responsible owners",
+        "permit to buy a gun",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:10.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "252dbacb2e60e19048c1c460b03290d92cca54d60a81bc1be812196fb7ed3ce2",
+      "kind": "own-words",
+      "url": "https://www.doj.state.or.us/media-home/news-media-releases/attorney-general-dan-rayfield-sues-trump-administration-to-prevent-efforts-to-distribute-thousands-of-machine-gun-devices-across-country/",
+      "date": "2025-06-09",
+      "date_precision": "day",
+      "passage": "“These devices turn regular guns into machine guns, and there’s a reason they’re illegal. They’re designed to unleash rapid, uncontrolled fire, and they’ve been linked to deadly school shootings across the country,” said Rayfield. “The idea that the federal government would hand thousands of these devices back out into our communities is a serious threat to public safety.”",
+      "note": "Quoted in a DOJ release on the multistate suit against ATF over a settlement to redistribute seized forced reset triggers.",
+      "subjects": [
+        "machine-gun conversion devices",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:10.937Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d12a9b586773ace7290ea8329ba2a7bc41863ecb7f64a065eb7b0d94a5cf9203",
+      "kind": "record",
+      "url": "https://www.doj.state.or.us/media-home/news-media-releases/attorney-general-dan-rayfield-sues-trump-administration-to-prevent-efforts-to-distribute-thousands-of-machine-gun-devices-across-country/",
+      "date": "2025-06-09",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Oregon and 15 other attorneys general sue ATF over settlement to redistribute seized forced reset triggers",
+      "note": "As Attorney General, filed a multistate lawsuit to stop ATF from returning forced reset triggers.",
+      "subjects": [
+        "machine-gun conversion devices",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:07:10.937Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "permit to buy a gun",
+        "limit on magazine size",
+        "machine-gun conversion devices and forced reset triggers",
+        "federal gun rules",
+        "ghost guns",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Oregon DOJ attorney general press releases (3 read)",
+        "the campaign site https://www.danrayfield.com/ (read; one short gun-violence line on the home page, no dated passage, not saved)",
+        "blocked: https://ballotpedia.org/Dan_Rayfield",
+        "one web search on name plus gun words (Giffords and Everytown endorsement pages, a news story on the Texas cases appeared as leads; not fetched)",
+        "sponsor list: covered by bulk bill data",
+        "Oregon DOJ attorney general page: nothing on the subject",
+        "status: sitting Oregon Attorney General, confirmed by the Oregon DOJ releases"
+      ],
+      "found": 6,
+      "at": "2026-11-21T17:07:10.937Z",
+      "by": "source-collector"
+    }
+  ]
 }

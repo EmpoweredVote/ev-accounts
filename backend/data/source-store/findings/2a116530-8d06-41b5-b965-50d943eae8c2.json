@@ -1,0 +1,320 @@
+{
+  "politician_id": "2a116530-8d06-41b5-b965-50d943eae8c2",
+  "findings": [
+    {
+      "id": "95c08efe2d7720c5c0f6595b744e6aa5f3c89ead90212e9c53cb7ab0354285cb",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4145",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-4145-2026",
+      "act": "yea",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2026-03-06: yea (tally 50–3); census gate: near-unanimous.",
+      "subjects": [
+        "delay Measure 114 permit-to-purchase until 2028",
+        "delay large-capacity magazine ban until 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2026.enrolled.pdf",
+          "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
+        }
+      }
+    },
+    {
+      "id": "69157e3c2bc18be21e479340ee680d185bfb080b5d25b71beeaa88c5b9b892c1",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB243",
+      "date": "2025-06-25",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-243-2025",
+      "act": "yea",
+      "motion": "House Third reading. Carried by McDonald. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by McDonald. Passed., 2025-06-25: yea (tally 33–10); census gate: none.",
+      "subjects": [
+        "ban on bump stocks, forced reset triggers and other rapid fire activators",
+        "cities, counties and districts may bar licensed carry in meeting buildings",
+        "licensed carry at the Capitol and airport terminals is a misdemeanor",
+        "Measure 114 permit and magazine rules start March 15, 2026"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB243/Enrolled; sha256 fca2c257e6a6cc3df27b47ea32d7851f9a304b652c592b932c93f0ef0f88a094)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-243-2025.enrolled.pdf",
+          "sha256": "fca2c257e6a6cc3df27b47ea32d7851f9a304b652c592b932c93f0ef0f88a094"
+        }
+      }
+    },
+    {
+      "id": "d7c62b4ab054b34346d67acfc28e41f2f9c3118579da2b68d99cffd982d9ec3c",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3076",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-3076-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-HB-3076-2025 (Open States sponsor list): HB3076 (2025 Regular): Relating to gun dealer licenses; prescribing an effective date..",
+      "subjects": [
+        "state licence required for firearm dealers",
+        "dealer storage and security rules",
+        "felony for selling firearms without a dealer licence",
+        "dealer trace-request records"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (A-Engrossed, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3076/A-Engrossed; sha256 0cc4851bf31ea767ac8367ed003af0ce0ce5d5bef11fe756a6a8735af48b0308)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3076-2025.a-engrossed.pdf",
+          "sha256": "0cc4851bf31ea767ac8367ed003af0ce0ce5d5bef11fe756a6a8735af48b0308"
+        }
+      }
+    },
+    {
+      "id": "0dcee71c51c8af715a8b6a10490709a8823fad047db82669f9ad1a5c92983197",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4145",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "OR-HB-4145-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of OR-HB-4145-2026 (Open States sponsor list): HB4145 (2026 Regular): Relating to firearms; and declaring an emergency..",
+      "subjects": [
+        "delay Measure 114 permit-to-purchase until 2028",
+        "delay large-capacity magazine ban until 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2026.enrolled.pdf",
+          "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
+        }
+      }
+    },
+    {
+      "id": "56f59350f6d8eb96143a40ae5e605fd64c11d9b717412d1a35adf7ed79817e13",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB697",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OR-SB-697-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-SB-697-2025 (Open States sponsor list): SB697 (2025 Regular): Relating to firearms..",
+      "subjects": [
+        "minimum age 21 to possess a firearm",
+        "no transfers to anyone under 21",
+        "exceptions for listed long guns, police and military"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB697/Introduced; sha256 197989db714716dde4685d550d50b71f6cbf792f56b6a1dd65817535afdd0574)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-697-2025.introduced.pdf",
+          "sha256": "197989db714716dde4685d550d50b71f6cbf792f56b6a1dd65817535afdd0574"
+        }
+      }
+    },
+    {
+      "id": "7ea8af47e0cdd5b03974138d86398735acd721bb8a7e392832b61bad2d6706f1",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB698",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OR-SB-698-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of OR-SB-698-2025 (Open States sponsor list): SB698 (2025 Regular): Relating to the possession of firearms in certain public areas..",
+      "subjects": [
+        "local option to remove concealed-license defense in public buildings",
+        "signs required where the option is used"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/SB698/Introduced; sha256 2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-698-2025.introduced.pdf",
+          "sha256": "2fda8f6d88332c903a89b2d905c9b335627d746718f3f209d56c5c4b3fd33b68"
+        }
+      }
+    },
+    {
+      "id": "c24cbc78d79c378fbba9860aaa8e278f1c4c80f8799234a681b7aee0d3181655",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3cdf622",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "In the last decade, Oregon has passed several pieces of legislation aimed at making our community safer, but there is much more work to be done. To that end, I am proudly sponsoring legislation that will raise the age required to purchase a firearm to 21 years old, require licenses for gun dealers, limit the locations where concealed firearms are allowed, and end the availability of \"bump stocks\" that turn modern sporting rifles into killing machines.",
+      "note": "Her own e-newsletter says she is sponsoring bills for a minimum purchase age of 21, dealer licences, fewer places for concealed carry, and ending bump stocks.",
+      "subjects": [
+        "minimum age 21 to buy a gun",
+        "licences for gun dealers",
+        "limit where concealed guns are allowed",
+        "ban on bump stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88539b5fc08c98db5c9978bca83569136394769b4faaa3843e7257cc6eafc0b1",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3cdf622",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "It led me to co-found the Oregon chapter of Mom's Demand Action for Gun Sense in America, and later, join the board of the Alliance for a Safe Oregon.",
+      "note": "She describes her own gun-safety advocacy background in her newsletter.",
+      "subjects": [
+        "gun safety advocacy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d69c7f38b17433631b38bd80c703b154246c3836c475952358e876865eef32d",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3cfbff1",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "passage": "To address these issues, we need comprehensive state licensing for gun dealers, including a code of conduct with:",
+      "note": "In her newsletter, as chief sponsor of HB 3076, she argues for state licensing of gun dealers with a code of conduct. The same newsletter urges passage of HB 3075 (technical fixes to Measure 114) and summarises Measure 114's permit, background-check and magazine provisions.",
+      "subjects": [
+        "licences for gun dealers",
+        "permit to purchase",
+        "large-capacity magazine limit",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e7c52e3fbb269e416fdb8a4f7206e6b72e09b4d65d776be7a7e01b69b7871df",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Passes Crucial Gun Bill to Improve Community Safety.pdf",
+      "date": "2025-06-26",
+      "date_precision": "day",
+      "passage": "“When Oregonians passed Measure 114, they sent a clear message that we need to regulate dangerous firearms,” said Representative Finger McDonald (D – Corvallis). “Rapid-fire activators turn ordinary weapons into weapons of war, and they should not be in our homes or on our streets.”",
+      "note": "Quote in a House caucus release on SB 243 (ban on rapid-fire activators; local governments may bar guns in meeting rooms).",
+      "subjects": [
+        "ban on rapid-fire activators",
+        "Measure 114",
+        "guns at local government meetings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2774f89e6ce5b1ce89d63f63c797adb01d66ed494625e04079430e7e271feada",
+      "kind": "own-words",
+      "url": "https://www.oregonlegislature.gov/housedemocrats/Documents/Oregon House Makes Fixes to Measure 114 to Reduce Gun Tragedy in Oregon.pdf",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "“This bill turns the commitment Oregon voters made to their communities into a policy that works in the real world,” said Rep. Sarah Finger McDonald (D-Corvallis). “HB 4145 ensures Measure 114 is implemented in a clear and effective way that prioritizes public safety and respects due process.”",
+      "note": "Quote in a House caucus release on HB 4145, which clarifies Measure 114 (permit to purchase, background checks, large-capacity magazines) and delays the permit requirement until court cases end.",
+      "subjects": [
+        "Measure 114",
+        "permit to purchase",
+        "large-capacity magazine limit",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:22:45.238Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on rapid-fire activators / bump stocks",
+        "large-capacity magazines",
+        "permit to purchase",
+        "background checks",
+        "minimum age 21",
+        "gun dealer licensing",
+        "concealed carry locations",
+        "Measure 114"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official member site news list (https://www.oregonlegislature.gov/mcdonald/Pages/news.aspx), read",
+        "legislator e-newsletters on the state bulletin service (two read)",
+        "House caucus press releases (two read)",
+        "web search: name plus gun words (one search)",
+        "sponsor list: covered by bulk bill data",
+        "OLIS bill and vote pages: skipped, covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Sarah_McDonald",
+        "not reviewed: 2015 public testimony documents on OLIS",
+        "campaign site: nothing on the subject beyond the official site"
+      ],
+      "found": 5,
+      "at": "2026-11-21T17:22:45.238Z",
+      "by": "source-collector"
+    }
+  ]
+}

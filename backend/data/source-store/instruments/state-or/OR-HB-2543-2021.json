@@ -1,0 +1,95 @@
+{
+  "id": "OR-HB-2543-2021",
+  "scope": "state:or",
+  "title": "HB2543 (2021 Regular): Relating to firearm transfers.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/HB2543",
+    "https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/HB2543/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Janeen Sollman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fa9d50e7-7e9b-4eed-b105-bf8277b51f95"
+    },
+    {
+      "name": "Zach Hudson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "37247ac1-5444-4fdd-b58e-123b5db4d0fe"
+    },
+    {
+      "name": "Jason Kropf",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Ginny Burdick",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kate Lieber",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4"
+    },
+    {
+      "name": "Courtney Neron Misslin",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "dcdc002c-8fd6-415a-a30a-8fc70c83d9ff"
+    },
+    {
+      "name": "Maxine Dexter",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rachel Prusak",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marty Wilde",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/HB2543/Introduced; sha256 115ca2e7a2da68d34e3b3f00492eb4fe319763790ea3d3feae0a9dc55ffee1aa)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2543-2021.introduced.pdf",
+      "sha256": "115ca2e7a2da68d34e3b3f00492eb4fe319763790ea3d3feae0a9dc55ffee1aa"
+    },
+    "note": "Introduced version (as filed). The text strikes ORS 166.412 (3)(c), which let a dealer deliver the firearm if the department had not answered by the close of the next business day. Added words are not marked in the text; quoted passages are those the digest points to. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (ORS 166.412): (b) If the department is unable to determine if the purchaser is qualified or disqualified from completing the transfer within 30 minutes, the department shall notify the gun dealer and provide the gun dealer with an estimate of the time when the department will provide the requested information. The dealer may not transfer the firearm unless the dealer receives a unique approval number from the department.\nSECTION 2 (ORS 166.435): (B) Receives notification that the transferee is prohibited by state or federal law from possessing or receiving the firearm, or that the department is unable to determine if the transferee is qualified or disqualified from completing the transfer, the gun dealer shall notify the transferor and neither the transferor nor the gun dealer shall transfer the firearm to the transferee.\nSECTION 3 (ORS 166.436): (b) If the department is unable to determine whether the recipient is qualified for or disqualified from completing the transfer within 30 minutes of receiving the request, the department shall notify the transferor and provide the transferor with an estimate of the time when the department will provide the requested information. The transferor may not transfer the firearm unless the transferor receives a unique approval number from the department."
+}

@@ -1,0 +1,100 @@
+{
+  "politician_id": "402a00be-71c3-4584-b29f-bf493365bffb",
+  "findings": [
+    {
+      "id": "f5e9ed534a9d3bedc202ae933040e35ed91fe2816f0dcda9ddeef6a487a8fe76",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/HB2013",
+      "date": "2019-04-23",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-2013-2019",
+      "act": "nay",
+      "motion": "House Third reading. Carried by Williamson. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Williamson. Passed., 2019-04-23: nay (tally 43–15); census gate: none.",
+      "subjects": [
+        "firearm and ammunition ban for people under certain protective orders",
+        "court orders turning in guns and ammunition within 24 hours",
+        "sworn declaration within two judicial days, contempt if not filed",
+        "background check before police return relinquished guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/HB2013/Enrolled; sha256 403ab743bddf218c661fd2e89e4fdf2921a060944d4c0b5c19d51dfbc7a7181f)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2013-2019.enrolled.pdf",
+          "sha256": "403ab743bddf218c661fd2e89e4fdf2921a060944d4c0b5c19d51dfbc7a7181f"
+        }
+      }
+    },
+    {
+      "id": "032249bd546377506725672b592605be00432f82e32fc49ae503651438cbb875",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4145",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-4145-2026",
+      "act": "yea",
+      "motion": "Senate Rules suspended. Third reading. Carried by Reynolds. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OR Senate, Senate Rules suspended. Third reading. Carried by Reynolds. Passed., 2026-03-05: yea (tally 30–0); census gate: near-unanimous.",
+      "subjects": [
+        "delay Measure 114 permit-to-purchase until 2028",
+        "delay large-capacity magazine ban until 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2026.enrolled.pdf",
+          "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
+        }
+      }
+    },
+    {
+      "id": "24bdf2eea191df9f0ebc20a371841cdf626df1f20a5cb79e18c7fe054c9e1f04",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB554",
+      "date": "2021-04-29",
+      "date_precision": "day",
+      "instrument_id": "OR-SB-554-2021",
+      "act": "nay",
+      "motion": "House Third reading. Carried by Prusak. Passed.",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OR House, House Third reading. Carried by Prusak. Passed., 2021-04-29: nay (tally 34–24); census gate: none.",
+      "subjects": [
+        "safe storage of firearms (lock, container or gun room)",
+        "locked transfers and 72-hour loss/theft reporting",
+        "adult supervision when a minor uses a firearm",
+        "schools may bar licensed carry on school grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB554/Enrolled; sha256 009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-554-2021.enrolled.pdf",
+          "sha256": "009901d1e6d2b44795d11ecd337ee6e8d1e1c000384f498b7b2945e3a0fee655"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

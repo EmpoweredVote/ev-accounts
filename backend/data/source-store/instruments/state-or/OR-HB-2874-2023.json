@@ -1,0 +1,47 @@
+{
+  "id": "OR-HB-2874-2023",
+  "scope": "state:or",
+  "title": "HB2874 (2023 Regular): Relating to public safety.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2874",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2874/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Evans",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+    },
+    {
+      "name": "Jules Walters",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b5d3a442-3229-412a-8da4-e8eb8b9fdb3a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: SECTION 6 (new) — creates the general crime of domestic terrorism (attempting catastrophic harm), classifies it in the sentencing grid and bars probation in specified cases"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2874/Introduced; sha256 14ff68b81d48508cb727a15328a026c12131af388965564dd6da01a6dddae4df)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2874-2023.introduced.pdf",
+      "sha256": "14ff68b81d48508cb727a15328a026c12131af388965564dd6da01a6dddae4df"
+    },
+    "note": "As-filed text (introduced), no votes recorded. SECTION 1 adds definitions (ORS 166.210). Penalties are graded by prior convictions and by whether 10 or more frames or receivers are involved (SECTIONS 4, 5). SECTION 8 amends ORS 166.412 as amended by Measure 114 (chapter 1, Oregon Laws 2023), extending the permit-to-purchase and dealer check to unfinished frames or receivers. The domestic-terrorism crime in SECTION 6 does not require a gun; its no-probation clause refers to possession of 10 or more unserialized frames or receivers."
+  },
+  "operative_text": "SECTION 3 (new): (1)(a) A person may not knowingly manufacture or cause to be manufactured within this state, import into this state, or offer for sale, sell or transfer, an undetectable firearm.\nSECTION 3 (new): (1)(b) A violation of paragraph (a) of this subsection is a Class B felony.\nSECTION 3 (new): (2)(a) A person may not knowingly possess an undetectable firearm.\nSECTION 4 (new): (1) A person may not knowingly possess, manufacture, assemble, cause to be manufactured or assembled, import into this state, offer for sale, sell or transfer an untraceable firearm.\nSECTION 5 (new): (1)(a) A person may not knowingly import into this state, offer for sale, sell or transfer an unfinished frame or receiver unless:\nSECTION 5 (new): (2)(a) A person may not knowingly possess an unfinished frame or receiver that is not serialized as provided in subsection (1)(a)(B) of this section, unless:\nSECTION 7 (ORS 166.250): (d) Possesses an unfinished frame or receiver and is prohibited from possessing firearms under paragraph (c) of this subsection.\nSECTION 8 (ORS 166.412): (c) The dealer may not transfer the firearm or unfinished frame or receiver unless the dealer receives a unique approval number from the department and, within 48 hours of completing the transfer, the dealer shall notify the state that the transfer to the permit holder was completed."
+}

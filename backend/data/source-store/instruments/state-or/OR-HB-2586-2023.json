@@ -1,0 +1,73 @@
+{
+  "id": "OR-HB-2586-2023",
+  "scope": "state:or",
+  "title": "HB2586 (2023 Regular): Relating to the reciprocity of concealed handgun licenses.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2586",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2586/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lily Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Helfrich",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "701f0236-5ca7-4bfa-ab71-8c22bcc5ff8c"
+    },
+    {
+      "name": "Jami Cate",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+    },
+    {
+      "name": "Bobby Levy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+    },
+    {
+      "name": "Anna Scharf",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0cd6ccff-e02d-4cbe-a1df-381226292840"
+    },
+    {
+      "name": "Rep Smith DB",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Werner Reschke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2586/Introduced; sha256 f10f475e56389fcbe10b7a0f5adec13eb5212b569aad2960937c64e7a8acfaad)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2586-2023.introduced.pdf",
+      "sha256": "f10f475e56389fcbe10b7a0f5adec13eb5212b569aad2960937c64e7a8acfaad"
+    },
+    "note": "As-filed text (introduced), no votes recorded. Added out-of-state-license paragraphs are quoted from existing-law lines the digest identifies as new; they are not marked in plain text. Also amends ORS 166.262, 166.375, 166.377 and 166.663 the same way (SECTIONS 3, 5, 6, 8), and renumbers some paragraphs (struck letters). Applies to conduct on or after the effective date."
+  },
+  "operative_text": "SECTION 1 (ORS 166.173): (d) A person who is authorized to carry a concealed handgun pursuant to a valid out-of-state license as defined in ORS 166.370.\nSECTION 2 (ORS 166.260): (j) A person who is authorized to carry a concealed handgun pursuant to a valid out-of-state license as defined in ORS 166.370.\nSECTION 4 (ORS 166.370): (h) A person who is authorized to carry a concealed handgun pursuant to a valid out-of-state license, except as provided in subsection (1)(b) of this section.\nSECTION 4 (ORS 166.370): (b) “Out-of-state license” means a license or permit issued by another state, or a city or county of another state, to carry a concealed handgun.\nSECTION 7 (ORS 166.380): (b) A person who is authorized to carry a concealed handgun pursuant to a valid out-of-state license as defined in ORS 166.370 may present the valid out-of-state license to the peace officer instead of providing the firearm to the peace officer for examination.\nSECTION 9 (ORS 821.240): (b) A person who is authorized to carry a concealed handgun pursuant to a valid out-of-state license;"
+}

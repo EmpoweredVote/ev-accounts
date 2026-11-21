@@ -1,0 +1,99 @@
+{
+  "id": "OR-HB-3076-2025",
+  "scope": "state:or",
+  "title": "HB3076 (2025 Regular): Relating to gun dealer licenses; prescribing an effective date.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3076",
+    "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3076/A-Engrossed"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jason Kropf",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6"
+    },
+    {
+      "name": "Dacia Grayber",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9"
+    },
+    {
+      "name": "Lisa Reynolds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d910cf6e-7d70-4b0c-b883-2fe2dcb185b6"
+    },
+    {
+      "name": "Sarah McDonald",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2a116530-8d06-41b5-b965-50d943eae8c2"
+    },
+    {
+      "name": "Anthony Broadman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3af0dfad-d1a1-4c91-a859-6f17c5e238b9"
+    },
+    {
+      "name": "Mark Gamba",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36db8c55-4b20-408c-bd99-b8488d0ef344"
+    },
+    {
+      "name": "April Dobson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0bffa985-c83b-41c3-8901-19b7dac86cd7"
+    },
+    {
+      "name": "Tom Andersen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5b81e68c-3ec3-4c81-9f1b-010db86da9c0"
+    },
+    {
+      "name": "Ben Bowman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5e29b685-1f2e-4963-83a8-a7bde5b5250e"
+    },
+    {
+      "name": "Lisa Fragala",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "763d9c0d-e1a4-4ddd-b919-b1a70d1f99ac"
+    },
+    {
+      "name": "Rob Nosse",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (A-Engrossed, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3076/A-Engrossed; sha256 0cc4851bf31ea767ac8367ed003af0ce0ce5d5bef11fe756a6a8735af48b0308)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3076-2025.a-engrossed.pdf",
+      "sha256": "0cc4851bf31ea767ac8367ed003af0ce0ce5d5bef11fe756a6a8735af48b0308"
+    },
+    "note": "Version read: A-Engrossed (ordered by the House April 15, 2025). No passage vote is recorded in the data, but amendments made after this version are not in the text read. The LegiScan desc describes a later version (July 1, 2027 and July 1, 2028 start dates, appropriation to the Department of Justice, effective on the 91st day) that differs from this text (January 1, 2027; October 15, 2027 for Type 02 licensees; emergency clause in SECTION 18). SECTIONS 13 to 16 amend ORS 166.433, 166.436, 166.438 and 166.441 so gun-show transferors need a state license; SECTION 5 covers suspension, revocation and civil penalties; SECTION 9 requires an annual report."
+  },
+  "operative_text": "SECTION 2 (new): (1) Beginning January 1, 2027, a state license is required for all dealers to sell firearms, frames, receivers and unfinished frames and receivers in this state.\nSECTION 3 (new): (1) A person is eligible for a state firearms dealer license if the person: (a) Currently holds and is eligible for a valid federal firearms license; (b) Has never had a permit or license to sell, lease, transfer, purchase or possess a firearm or ammunition from the federal government, any state or any subdivision of a state, or an application for such a permit or license, revoked, suspended or denied for good cause within the five years prior to submitting an application for a state license; (c) Has not been convicted of violating any federal or state law concerning the possession, purchase or sale of firearms within the 10 years prior to submitting an application; and (d) Provides proof of residence in Oregon and the physical address of the place where business will be conducted.\nSECTION 6 (new): (1)(a) The Department of Justice shall adopt rules for the secure storage of firearms and ammunition by retailer licensees and other licensees in a manner that prevents unauthorized access.\nSECTION 7 (new): (1) A licensee shall: (a) Maintain for six years copies of all firearm trace requests received, including notations for trace requests received by phone.\nSECTION 8 (new): (1) A person who is a dealer and who knowingly sells firearms without a valid state license issued under sections 2 and 3 of this 2025 Act commits a Class C felony.\nSECTION 8 (new): (2) Any firearm transferred or possessed in violation of this section is an instrumentality of the crime and subject to forfeiture under ORS chapter 131A."
+}

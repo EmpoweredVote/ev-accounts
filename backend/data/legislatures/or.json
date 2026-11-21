@@ -1,8 +1,8 @@
 {
   "state": "or",
   "name": "Oregon",
-  "verified": "2026-11-20",
-  "source": "Oregon reader session (Stage 5 tools), 2026-11-20: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 184-bill dry batch (the regular-session bills of 2017-2026 one topic's scan found; 33 roll calls) read from the Legislature's Open Data Service with the verifier's own fetch, and each member's vote compared with the dump. Two texts of 2021 SB 554 (B-Engrossed, Enrolled) were read for their marks; no text was measured in bulk.",
+  "verified": "2026-11-21",
+  "source": "Oregon reader session (Stage 5 tools), 2026-11-20: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 184-bill dry batch (the regular-session bills of 2017-2026 one topic's scan found; 33 roll calls) read from the Legislature's Open Data Service with the verifier's own fetch, and each member's vote compared with the dump. Two texts of 2021 SB 554 (B-Engrossed, Enrolled) were read for their marks; no text was measured in bulk. Texts: 59 bills read 2026-11-21 (gun-policy set-up session).",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
@@ -33,7 +33,7 @@
       "olis.oregonlegislature.gov"
     ],
     "marks": "Read on 2 texts (2021 SB 554 B-Engrossed and Enrolled; 2026-11-20). An engrossed text prints the legend \"NOTE: Matter in boldfaced type in an amended section is new; matter [italic and bracketed] is existing law to be omitted. New sections are in boldfaced type.\" Words deleted from law are in [brackets] (\"[$50] $100 to the sheriff\"), so plain text keeps them: never quote a bracketed passage as the law. New words are bold, which plain text loses: a quote from plain text cannot tell new words from old. The enrolled text prints no legend but keeps the brackets. The engrossed text's SUMMARY (an editor's statement, not part of the bill) brackets the summary of an earlier version, and page numbers print as \"[2]\": neither is a deletion.",
-    "note": "Texts are PDFs at /liz/<2021R1>/Downloads/MeasureDocument/<SB554>/<version>: Introduced, A-Engrossed, B-Engrossed, Enrolled, and amendments by name (\"House Amendments to A-Engrossed\") or as /Downloads/ProposedAmendment/<id>. The dump's text addresses are on the old host olis.leg.state.or.us; convert.py rewrites them to olis.oregonlegislature.gov (or_links), where the same path answers."
+    "note": "Texts are PDFs at /liz/<2021R1>/Downloads/MeasureDocument/<SB554>/<version>: Introduced, A-Engrossed, B-Engrossed, Enrolled, and amendments by name (\"House Amendments to A-Engrossed\") or as /Downloads/ProposedAmendment/<id>. The dump's text addresses are on the old host olis.leg.state.or.us; convert.py rewrites them to olis.oregonlegislature.gov (or_links), where the same path answers. Read on 59 texts (2026-11-21: 47 introduced, 4 A-engrossed, 8 enrolled). OLIS PDFs split words across line ends with a hyphen (\"pro-\" / \"cess\"); rejoin them, but keep the hyphen where the same text prints the compound whole elsewhere (\"large-capacity\"); without this 13 of 266 quotes failed. The dump can list a proposed amendment (\"House Amendments to A-Engrossed\") as a bill's latest text; it is not a bill text, so read the version it amends."
   },
   "reader_access": {
     "olis.oregonlegislature.gov": "open",

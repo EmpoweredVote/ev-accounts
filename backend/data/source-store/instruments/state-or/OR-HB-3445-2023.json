@@ -1,0 +1,71 @@
+{
+  "id": "OR-HB-3445-2023",
+  "scope": "state:or",
+  "title": "HB3445 (2023 Regular): Relating to firearm purchase permits.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB3445",
+    "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3445/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Owens",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1"
+    },
+    {
+      "name": "Lynn Findley",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bobby Levy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0"
+    },
+    {
+      "name": "Ed Diehl",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ea9746ba-9fd2-4622-b781-b3ed35d18d17"
+    },
+    {
+      "name": "Lily Morgan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Hansell",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Knopp",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB3445/Introduced; sha256 6ee6d5154d3fdb1e88960b8fe136f7edbb7d8e84b533f12915963bde24c06148)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3445-2023.introduced.pdf",
+      "sha256": "6ee6d5154d3fdb1e88960b8fe136f7edbb7d8e84b533f12915963bde24c06148"
+    },
+    "note": "Version read: introduced (as filed). SECTIONS 4 to 7 (ORS 166.412, 166.435, 166.436, 166.438) add cross-references so those transfer and background-check rules yield where a county ordinance removes the permit requirement. No passage vote recorded."
+  },
+  "operative_text": "SECTION 3 (new): (1) A county may adopt an ordinance providing that: (a) The county sheriff is not required to act as a permit agent under sections 3 to 5, chapter 1, Oregon Laws 2023; (b) A police chief of a law enforcement agency with jurisdiction entirely within the county is not required to act as a permit agent under sections 3 to 5, chapter 1, Oregon Laws 2023; (c) A gun dealer or a transferor located within the county is not required to verify that a transferee who is a resident of the county has a permit to purchase a firearm prior to delivering the firearm to the transferee; and (d) A resident of the county is not required to obtain a permit to purchase a firearm prior to purchasing or otherwise receiving a firearm from a gun dealer or transferor located within the county.\nSECTION 3 (new): (2) If a county adopts an ordinance described in this section, the governing body of the county shall provide the text of the ordinance to: (a) The Department of State Police; (b) The county sheriff and all police chiefs within the county; and (c) All gun dealers within the county."
+}

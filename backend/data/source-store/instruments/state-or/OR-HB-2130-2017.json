@@ -1,0 +1,59 @@
+{
+  "id": "OR-HB-2130-2017",
+  "scope": "state:or",
+  "title": "HB2130 (2017 Regular): Relating to preventing access to firearms by minors.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/HB2130",
+    "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/HB2130/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elizabeth Steiner",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+      "name": "Alissa Keny-Guyer",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Smith Warner",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carla Piluso",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael Dembrow",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/HB2130/Introduced; sha256 b12ed1af6e8dc961c005d9a29157e443964bdfcdfdff2ea2adb83dc1433ef9e7)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-2130-2017.introduced.pdf",
+      "sha256": "b12ed1af6e8dc961c005d9a29157e443964bdfcdfdff2ea2adb83dc1433ef9e7"
+    },
+    "note": "Introduced version (as filed). Section 1 also grades the crime up to a Class B misdemeanor off the premises and a Class A misdemeanor on school property, and delays arrest for seven days of relatives of a victim. Section 4 only adds a cross-reference to the Oregon Criminal Code. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (new): (1) A person 18 years of age or older commits the crime of endangering a minor by allowing access to a firearm if: (a) The person leaves an operable firearm, loaded or unloaded, in a location where the person knows or reasonably should know that a minor could gain unsupervised access to the firearm; and (b) A minor obtains the firearm without the express prior consent of the minor’s parent or legal guardian.\nSECTION 1 (new): (2) Subsection (1) of this section does not apply if: (a) The minor obtains the firearm as the result of an unlawful entry into the premises by any person; (b) The firearm is located in a locked container that a reasonable person would believe is secure from being opened by a minor; or (c) The firearm is locked with a device that: (A) A reasonable person would believe is secure from being unlocked by a minor; (B) Is designed to prevent unauthorized users of the firearm from firing the firearm; and (C) Has rendered the firearm temporarily inoperable.\nSECTION 1 (new): (3)(a) Except as provided in paragraph (b) of this subsection, endangering a minor by allowing access to a firearm is a Class C misdemeanor.\nSECTION 1 (new): (C) A Class C felony if the minor obtains the firearm and any person is seriously injured or killed as a result of the minor’s obtainment of the firearm.\nSECTION 2 (new): A gun dealer, as defined in ORS 166.412, shall post in a prominent location in the gun dealer’s place of business a notice in block letters not less than one inch in height that states: “The owner of a firearm has a legal obligation to prevent minors from accessing firearms without the consent of the minor’s parent or legal guardian.”\nSECTION 3 (ORS 166.470): (j) Has been convicted of endangering a minor by allowing access to a firearm under section 1 of this 2017 Act within the previous five years."
+}

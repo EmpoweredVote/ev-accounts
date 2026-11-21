@@ -29,7 +29,80 @@
           "sha256": "60a0a530252fa303431ccd57c9d8e642de29fad5c20d98d85654aa418e913f3b"
         }
       }
+    },
+    {
+      "id": "9e0448be53063340a85bfb2bd52ae69c98840b6bb2b82e36c7404920ed751d6b",
+      "kind": "own-words",
+      "url": "https://ktvz.com/?p=106572",
+      "date": "2018-11",
+      "date_precision": "month",
+      "passage": "“As a fiduciary of a large, diversified investment portfolio, we frequently engage companies and encourage them to operate in ways that increase the odds of strong long-term returns and to reduce future investment risks,” said Treasurer Tobias Read, who is also a member of the Oregon Investment Council. “These principles are a significant step forward because without them we do not believe the current path is sustainable.”",
+      "note": "Quoted in a news story (KTVZ) on Oregon, as State Treasurer, joining an investor coalition's five principles for the firearms industry. The principles call for safer, more traceable guns, universal background checks, and training for gun retailers.",
+      "subjects": [
+        "check every gun buyer",
+        "safer and traceable guns",
+        "gun industry investor principles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:16.649Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bee914cf0316b2d08462a772399273a60f73956f0aacb1ae660824ee7932645d",
+      "kind": "record",
+      "url": "https://ktvz.com/?p=106572",
+      "date": "2018-11",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Oregon Treasury joins Principles for a Responsible Civilian Firearms Industry (investor coalition)",
+      "note": "As State Treasurer he announced Oregon's participation in the investor coalition's principles for the firearms industry, which include no firearm sold without a completed background check.",
+      "subjects": [
+        "check every gun buyer",
+        "gun industry investor principles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:10:16.649Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safer and traceable guns",
+        "gun industry investor principles",
+        "Second Amendment general statements",
+        "ban on assault-style guns",
+        "carry permits",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://sos.oregon.gov/about/Pages/tobias-read.aspx (404, official page not found at that address; not reviewed further)",
+        "official State Treasury news/biography pages: appeared in search results, not fetched; not reviewed: https://www.oregon.gov/treasury/AboutTreasury/Pages/tobias-read.aspx",
+        "Ballotpedia page fetched: nothing on the subject",
+        "Wikipedia page fetched: nothing on the subject",
+        "news search on name plus gun subject words: found a 2018 news story quoting him and a 2024 advocacy-group release",
+        "campaign site: not found in search results, not reviewed",
+        "debates/interviews/questionnaires: nothing found on the subject"
+      ],
+      "found": 2,
+      "at": "2026-11-21T17:10:16.649Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1,0 +1,44 @@
+{
+  "id": "OR-SB-501-2019",
+  "scope": "state:or",
+  "title": "SB501 (2019 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/SB501",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB501/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rob Wagner",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+    },
+    {
+      "name": "Andrea Salinas",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB501/Introduced; sha256 a073e026222f7c769c45e3bcfcf88712b15655a846d68ab2d64e8636a8f31cc9)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-501-2019.introduced.pdf",
+      "sha256": "a073e026222f7c769c45e3bcfcf88712b15655a846d68ab2d64e8636a8f31cc9"
+    },
+    "note": "Introduced version (as filed). SECTION 3 sets a court appeal for permit denials; SECTIONS 8-11 amend ORS 166.412, 166.435, 166.436 and 166.438 (14-day waiting period for transfers; not quoted because of struck text). Large-capacity magazine means more than five rounds. No votes recorded."
+  },
+  "operative_text": "SECTION 2 (new): (1) Except as provided in subsection (9) of this section, a person may not purchase or otherwise receive a firearm unless the person has first secured a permit to receive a firearm under this section.\nSECTION 2 (new): (3) Within 30 days of receiving an application for a permit under this section, the sheriff shall issue a permit to receive a firearm if the applicant:\nSECTION 2 (new): (a) Is at least 21 years of age;\nSECTION 2 (new): (b) Has no prior criminal convictions;\nSECTION 2 (new): (e) Provides proof of completion of a firearm safety course.\nSECTION 2 (new): (10) A person who knowingly receives a firearm without a valid permit issued under this section commits a Class A misdemeanor.\nSECTION 4 (new): (1) A person who owns or possesses a firearm must secure the firearm:\nSECTION 4 (new): (a) With a trigger lock or cable lock; or\nSECTION 4 (new): (b) In a locked container.\nSECTION 4 (new): (3) A violation of subsection (1) of this section is a Class C misdemeanor.\nSECTION 5 (new): (1)(a) A person who owns or possesses a firearm shall report the loss or theft of the firearm to a law enforcement agency with jurisdiction over the location in which the loss or theft occurred within 24 hours of the time the person knew or should have known of the loss or theft.\nSECTION 6 (new): (2) Except as provided in this section, a person may not possess a large-capacity magazine at any time after 180 days after the effective date of this 2019 Act.\nSECTION 6 (new): (5)(a) A person commits the crime of unlawful possession of a large-capacity magazine if the person knowingly possesses a large-capacity magazine in violation of this section.\nSECTION 6 (new): (b) Unlawful possession of a large-capacity magazine is a Class A misdemeanor.\nSECTION 7 (new): (1) Notwithstanding the fact that ORS 166.412, 166.435 and 166.438 require a gun dealer or other person transferring a firearm to request a criminal background check only when transferring a firearm, a gun dealer or other person transferring ammunition shall comply with the requirements of ORS 166.412, 166.435 and 166.438 before transferring any ammunition to another person.\nSECTION 7 (new): (2) A person may not receive more than 20 rounds of ammunition in any 30-day time period."
+}

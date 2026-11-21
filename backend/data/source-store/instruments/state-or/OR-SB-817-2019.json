@@ -1,0 +1,132 @@
+{
+  "id": "OR-SB-817-2019",
+  "scope": "state:or",
+  "title": "SB817 (2019 Regular): Relating to firearms.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2019R1/Measures/Overview/SB817",
+    "https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB817/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ginny Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jennifer Williamson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lew Frederick",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd"
+    },
+    {
+      "name": "Kathleen Taylor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac"
+    },
+    {
+      "name": "Michael Dembrow",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Golden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39"
+    },
+    {
+      "name": "Mark Hass",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James Manning",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e"
+    },
+    {
+      "name": "Laurie Monnes Anderson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chuck Riley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Elizabeth Steiner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c712d9cb-6a42-4fc6-b025-67cd5064605f"
+    },
+    {
+      "name": "Rob Wagner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0"
+    },
+    {
+      "name": "Margaret Doherty",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Gorsek",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5"
+    },
+    {
+      "name": "Rob Nosse",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426"
+    },
+    {
+      "name": "Karin Power",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrea Salinas",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tawna Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2019R1/Downloads/MeasureDocument/SB817/Introduced; sha256 03263adbf19fccbe1f75a6ef7e353bc5224e4faefa8eb58eea546d06af8dbc71)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-SB-817-2019.introduced.pdf",
+      "sha256": "03263adbf19fccbe1f75a6ef7e353bc5224e4faefa8eb58eea546d06af8dbc71"
+    },
+    "note": "Introduced version; no votes on file. Quoted SECTION 1 items (c) and (d) are two of the exceptions in subsection (3). The five-year ban on transfers to someone convicted of unlawful storage is ORS 166.470 (1)(j), which runs across struck text, so it is described here and not quoted."
+  },
+  "operative_text": "SECTION 1 (new): (1) A person commits the crime of unlawful storage of a firearm if: (a) The person, with criminal negligence, stores or leaves a firearm in a location where the person knows, or reasonably should know, that a minor under 17 years of age is likely to gain access to the firearm; (b) A minor under 17 years of age gains access to the firearm; and (c) The minor: (A) Possesses the firearm in a public place; (B) Exhibits the firearm in a careless, angry or threatening manner; or (C) Injures or kills a person by means of the firearm.\nSECTION 1 (new): (c) The firearm is equipped with a trigger lock or other safe storage device; (d) The firearm is stored in a securely locked container or in a location that a reasonable person would believe to be secure;\nSECTION 2 (new): A gun dealer shall post in a prominent location in the gun dealer’s place of business a notice, in block letters not less than one inch in height, that states: “The purchaser of a firearm has an obligation to store firearms in a safe manner and to prevent unsupervised access to a firearm by a minor. If a minor obtains access to a firearm and the owner failed to store the firearm in a safe manner, the owner may be guilty of a crime.”\nSECTION 3 (ORS 166.470): (4) Violation of this section is a Class A misdemeanor."
+}

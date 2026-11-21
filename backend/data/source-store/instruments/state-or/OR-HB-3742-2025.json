@@ -1,0 +1,99 @@
+{
+  "id": "OR-HB-3742-2025",
+  "scope": "state:or",
+  "title": "HB3742 (2025 Regular): Relating to the possession of firearms in the Capitol.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3742",
+    "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3742/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Helfrich",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "701f0236-5ca7-4bfa-ab71-8c22bcc5ff8c"
+    },
+    {
+      "name": "Jami Cate",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67"
+    },
+    {
+      "name": "Court Boice",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0e3b9216-cfb9-411f-b80e-684ccaae593f"
+    },
+    {
+      "name": "Farrah Chaichi",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "62decede-7149-40a1-a68a-16e2d3eb62a6"
+    },
+    {
+      "name": "Cyrus Javadi",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "cd8e1e6b-bd17-44e0-a8a3-deffc2f5982e"
+    },
+    {
+      "name": "Alek Skarlatos",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "35d2729c-b754-4fad-b124-10ee437a116f"
+    },
+    {
+      "name": "Mike McLane",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88"
+    },
+    {
+      "name": "David Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ae7e8d67-e8a4-49a7-bb5c-715c99168374"
+    },
+    {
+      "name": "Kim Thatcher",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515"
+    },
+    {
+      "name": "Paul Evans",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49"
+    },
+    {
+      "name": "Virgle Osborne",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "558e9c8c-5e52-4685-9e24-1367810f8030"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2025R1/Downloads/MeasureDocument/HB3742/Introduced; sha256 e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3742-2025.introduced.pdf",
+      "sha256": "e38223edd32c7f31099893aa3ea9ea8fbfbb47d5345104f5b87166ba6036aaa9"
+    },
+    "note": "Introduced version; no votes on file. SECTION 2 (ORS 166.262) also changes the rule that bars arrest or charge of a licence holder, so the Capitol carve-out no longer applies to legislators and staff (the text has a struck comma in that clause, so it is not quoted)."
+  },
+  "operative_text": "SECTION 1 (ORS 166.370): Members of the Legislative Assembly who are licensed under ORS 166.291 and 166.292 to carry a concealed handgun, and legislative branch employees who are licensed under ORS 166.291 and 166.292 to carry a concealed handgun, qualify for the affirmative defense described in subsection (3)(g) of this section concerning the possession of a firearm within the Capitol."
+}

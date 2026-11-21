@@ -1,0 +1,128 @@
+{
+  "politician_id": "f3fb09eb-adb0-4543-b6a2-32f90003569b",
+  "findings": [
+    {
+      "id": "95c08efe2d7720c5c0f6595b744e6aa5f3c89ead90212e9c53cb7ab0354285cb",
+      "kind": "record",
+      "url": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/HB4145",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "OR-HB-4145-2026",
+      "act": "yea",
+      "motion": "House House concurred in Senate amendments and repassed bill.",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OR House, House House concurred in Senate amendments and repassed bill., 2026-03-06: yea (tally 50–3); census gate: near-unanimous.",
+      "subjects": [
+        "delay Measure 114 permit-to-purchase until 2028",
+        "delay large-capacity magazine ban until 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Enrolled, official copy, https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4145/Enrolled; sha256 e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9)",
+        "fetched_at": "2026-11-21T16:35:37.349009Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-4145-2026.enrolled.pdf",
+          "sha256": "e22844c07418474b6644fed433c3eacaa0fdb0affdf8e16dd3b8f62d5c118ad9"
+        }
+      }
+    },
+    {
+      "id": "22de520b823388da208d2256f6c4fcb145dff36ede38311202a6400dd4d8c70c",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e71746",
+      "date": "2025-06",
+      "date_precision": "month",
+      "passage": "In the last days of session democrats passed SB 243 C , a deeply flawed gun control measure that does nothing to reduce gun violence, address mental health, or make our communities safer. The bill infringes on Oregonians’ Second Amendment rights by turning those who already own bump stocks and other attachments into criminals, replaces public safety with a door sign, and creates confusion across jurisdictions for concealed handgun license carriers.",
+      "note": "First-person end-of-session newsletter from his legislative office describing SB 243 (bump-stock/attachment limits, carry signage, Measure 114 delay) as a Second Amendment infringement. Exact date not shown on the page; session ended late June 2025.",
+      "subjects": [
+        "bump stock and attachment limits",
+        "Second Amendment",
+        "places where carry is allowed",
+        "delay of Measure 114"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:14.130Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74de1b253f0694c3e630bc16c156c7a557e8b49321e8b4bde158b9182ca0ae10",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e71746",
+      "date": "2025-06",
+      "date_precision": "month",
+      "passage": "An amendment that would create concealed carry reciprocity across state lines and would recognize valid Concealed Carry Licenses from other states and allow visitors to exercise their rights when coming to Oregon.",
+      "note": "Newsletter lists amendments his caucus offered to SB 243: repeal Measure 114, honor other states' concealed carry licenses, and allow suppressors. Presented as proposals that were rejected.",
+      "subjects": [
+        "honor other states' carry permits",
+        "repeal Measure 114",
+        "legalize suppressors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:14.130Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "953c5af021ec5e3a1a73324532a2de564640cc55310a3b64294f936c6d8cec5d",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/ORLEG/bulletins/3e71746",
+      "date": "2025-06",
+      "date_precision": "month",
+      "passage": "Thankfully, House Republicans were able to kill a different gun bill HB 3076. This bill would hurt responsible firearms dealers by adding a new state licensing program, even though arms dealers are already highly regulated by the federal government.",
+      "note": "Newsletter welcomes the defeat of HB 3076 (state licensing of firearms dealers), saying it would burden dealers.",
+      "subjects": [
+        "state licensing of gun dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T17:09:14.130Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and Measure 114",
+        "bump stocks",
+        "check every gun buyer",
+        "concealed carry reciprocity",
+        "suppressors",
+        "gun dealer licensing",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official legislative site https://www.oregonlegislature.gov/harbick (read; confirms Representative, District 12; no gun content on the page itself)",
+        "official end-of-session newsletter https://content.govdelivery.com/accounts/ORLEG/bulletins/3e71746 (read)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Darin_Harbick (403)",
+        "one web search on name plus firearms terms (only the newsletter was his own words)",
+        "campaign site: not reviewed: none found in search results",
+        "OLIS bill and vote pages: skipped per brief"
+      ],
+      "found": 3,
+      "at": "2026-11-21T17:09:14.130Z",
+      "by": "source-collector"
+    }
+  ]
+}

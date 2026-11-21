@@ -1,0 +1,74 @@
+{
+  "id": "OR-HB-3271-2017",
+  "scope": "state:or",
+  "title": "HB3271 (2017 Regular): Relating to the regulation of firearms by state agencies.",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/HB3271",
+    "https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/HB3271/Introduced"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Post",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Werner Reschke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d"
+    },
+    {
+      "name": "Brad Witt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike Nearman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Betsy Johnson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sherrie Sprenger",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carl Wilson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andy Olson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Oregon) (gun-policy Stage 5, Oregon); operative text read by a Sonnet fill agent from the official Oregon text (Introduced, official copy, https://olis.oregonlegislature.gov/liz/2017R1/Downloads/MeasureDocument/HB3271/Introduced; sha256 7303466934798a6d3deae272d6ff2c2329722842fb7732302a75ee5d1288c5ef)",
+    "fetched_at": "2026-11-21T16:35:37.349009Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OR-HB-3271-2017.introduced.pdf",
+      "sha256": "7303466934798a6d3deae272d6ff2c2329722842fb7732302a75ee5d1288c5ef"
+    },
+    "note": "Version read: introduced (as filed). Subsection (2) of ORS 166.170 adds 'a state agency as defined in ORS 292.065' to the bodies that may not regulate firearms, including through employment policies; that sentence is not quoted because a struck word ([-no-]) runs inside it. No passage vote recorded."
+  },
+  "operative_text": "SECTION 1 (ORS 166.170): Except as expressly authorized by state statute, the authority to regulate in any matter whatsoever the sale, acquisition, transfer, ownership, possession, storage, transportation or use of firearms or any element relating to firearms and components thereof, including ammunition, is vested solely in the Legislative Assembly.\nSECTION 1 (ORS 166.170): Ordinances, rules and policies that are contrary to this subsection are void.\nSECTION 2: The amendments to ORS 166.170 by section 1 of this 2017 Act apply to contracts and collective bargaining agreements entered into or renewed on or after the effective date of this 2017 Act."
+}

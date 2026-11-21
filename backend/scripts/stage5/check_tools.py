@@ -181,6 +181,41 @@ def state_legiscan_places_a_conference_report_and_names_bills_as_the_datasets_do
 
 
 @check
+def oregon_sponsorship_is_cited_on_the_introduced_text_and_initials_decide(t):
+    """Oregon (runner, 2026-11-21): a sponsorship on a converted bill is cited on its introduced text, not the OLIS
+    Overview. "LEVY B" names Bobby Levy and never Emerson Levy; a sponsor the introduced text does not print is
+    cited on the earliest engrossed or enrolled text that does; printed on none, they get no line (and are held)."""
+    people = [('Bobby Levy', 'a'), ('Emerson Levy', 'b'), ('Virgle Osborne', 'c')]
+    ov = 'https://olis.oregonlegislature.gov/liz/2023R1/Measures/Overview/HB2936'
+    tx = 'https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureDocument/HB2936/Introduced'
+    en, am = tx.replace('Introduced', 'Enrolled'), tx.replace('Introduced', 'House%20Amendments%20to%20Introduced')  # an amendment is never read
+    B = batch(f'{t}/b', people, [{'full_name': n, 'topic_key': 'tp', 'evidence_type': 'record', 'urls': [ov]} for n, _ in people])
+    os.makedirs(f'{t}/f')
+    for n, p in people:
+        json.dump({'findings': [{'kind': 'record', 'url': ov, 'act': 'cosponsor', 'instrument_id': 'OR-HB-2936-2023'}]}, open(f'{t}/f/{p}.json', 'w'))
+    d = f'{t}/ds/OR-1/OR/2023_Regular_Session/bill'; os.makedirs(d); open(f'{t}/ds/OR-1/.openstates.json', 'w').write('{}')
+    json.dump({'bill': {'bill_number': 'HB2936', 'state_link': ov, 'session': {'year_start': 2023, 'year_end': 2023, 'special': 0},
+                        'texts': [{'type': 'Introduced', 'state_link': tx}, {'type': 'Engrossed', 'state_link': am}, {'type': 'Enrolled', 'state_link': en}]}}, open(f'{d}/HB2936.json', 'w'))
+    os.makedirs(f'{B}/pages')
+    open(f'{B}/pages/{hashlib.sha1(en.encode()).hexdigest()}.txt', 'w').write(
+        'Enrolled House Bill 2936 Sponsored by Representative MORGAN; Representatives CATE, LEVY B, OSBORNE (Presession filed.) CHAPTER ......')
+    open(f'{B}/pages/{hashlib.sha1(tx.encode()).hexdigest()}.txt', 'w').write(
+        '82nd OREGON LEGISLATIVE ASSEMBLY--2023 Regular Session House Bill 2936 Sponsored by Representative MORGAN; '
+        'Representatives CATE, LEVY B, SMITH DB, WRIGHT, Senators FINDLEY, HANSELL (Presession filed.) SUMMARY The following summary is not prepared')
+    env = {'LEGISCAN_DATASETS': f'{t}/ds'}
+    run('state_legiscan.py', 'plan', B, f'{t}/f', '--state', 'OR', '--host', 'olis.oregonlegislature.gov', env=env)
+    json.dump([], open(f'{B}/legiscan/rollcall-hits.json', 'w'))  # no votes here: the vote fetch writes no hits
+    run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'OR', '--host', 'olis.oregonlegislature.gov', '--topic', 'tp', env=env)
+    lines = read_csv(f'{B}/legiscan/sponsor-text-lines.csv')
+    got = sorted((r['full_name'], r['source_url']) for r in lines)
+    assert got == [('Bobby Levy', tx), ('Virgle Osborne', en)], got  # Osborne is printed first on the enrolled text
+    assert [r['snippet'] for r in lines if r['full_name'] == 'Bobby Levy'][0].startswith('House Bill 2936 Sponsored by Representative MORGAN;'), lines
+    no = json.load(open(f'{B}/legiscan/sponsor-text-no-line.json'))
+    assert sorted(x[0] for x in no) == ['Emerson Levy'], no
+    assert json.load(open(f'{B}/legiscan/sponsor-own-page.json')) == [], 'no Oregon sponsorship is left on the Overview page'
+
+
+@check
 def legiscan_is_read_from_the_datasets_on_disk_by_default(t):
     """The recipe and the write script set LEGISCAN_DATASETS themselves when the state has datasets on disk; the live
     API only on LEGISCAN_LIVE=1 / "legiscan_live". Step 7 says which was read and the newest roll call on disk, stops
