@@ -1,0 +1,81 @@
+{
+  "id": "NV-SB-307-2017",
+  "scope": "state:nv",
+  "title": "SB307 (2017 Regular): Revises provisions governing concealed weapons. (BDR 15-198)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/5283/Overview",
+    "https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB307.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robin Titus",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+    },
+    {
+      "name": "Donald (Don) G. Gustavson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pete Goicoechea",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "John Ellison",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+    },
+    {
+      "name": "Richard McArthur",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Marchant",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a87f7095-125a-471f-98e2-90ce850634aa"
+    },
+    {
+      "name": "Keith Pickard",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Wheeler",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James A. Settelmeyer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB307.pdf; sha256 27aa63d986b26549bb42f6d2bb5921e8e1da25434e44e9fb435a05f3fddea3fc)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-307-2017.introduced.pdf",
+      "sha256": "27aa63d986b26549bb42f6d2bb5921e8e1da25434e44e9fb435a05f3fddea3fc"
+    },
+    "note": "As-filed text (March 17, 2017); no passage vote is recorded. The key change is struck text that is not quoted: Section 2 strikes the concealed pistol/revolver/firearm paragraph from NRS 202.350 and the sentence barring sheriffs from permitting concealed firearms, and strikes the permit exception language from subsection 1. Sections 3-8 (NRS 33.018, 171.1225, 213.10983, 213.10985, 217.400, 424.044) mostly strike 'without a permit' and add 'firearm' wording. Section 9 repeals the listed NRS sections (leadlines show carry-permit duties, public-building carry and out-of-state permits)."
+  },
+  "operative_text": "Section 2 (NRS 202.350): 6. The provisions of paragraph (b) of subsection 1 do not apply to any person who is licensed, authorized or permitted to possess or use a machine gun or silencer pursuant to federal law. 3. Except as otherwise provided in this subsection, the sheriff of any county may, upon written application by a resident of that county showing the reason or the purpose for which a concealed weapon is to be carried, issue a permit authorizing the applicant to carry in this State the concealed weapon described in the permit.\nSection 9 (NRS 202.3667, 202.3673, 202.3688, 202.3689): NRS 202.3667, 202.3673, 202.3688 and 202.3689 are hereby repealed."
+}

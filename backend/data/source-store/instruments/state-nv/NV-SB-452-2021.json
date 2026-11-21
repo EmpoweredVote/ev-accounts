@@ -1,0 +1,145 @@
+{
+  "id": "NV-SB-452-2021",
+  "scope": "state:nv",
+  "title": "SB452 (2021 Regular): Prohibits the carrying or possession of a firearm on a covered premises in certain circumstances. (BDR 15-1154)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/8210/Overview",
+    "https://archive.leg.state.nv.us/Session/81st2021/Bills/SB/SB452_R1.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Nicole Cannizzaro",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-05-26",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 11,
+      "no": 10,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241943 https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/GetBillVoteMembers?voteKey=7915&voteResultPanel=All&billKey=8210#SB452",
+      "members": [
+        {
+          "name": "Chris Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Fabian Doñate",
+          "vote": "yea",
+          "politician_id": "7b4022ca-9722-4947-a369-ee0e528b1af9"
+        },
+        {
+          "name": "Marilyn Dondero Loop",
+          "vote": "yea",
+          "politician_id": "44c59b6c-de01-4c1b-b696-a57ad3947dba"
+        },
+        {
+          "name": "Dallas Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberta Lange",
+          "vote": "yea",
+          "politician_id": "40367549-65f3-449e-add5-ce67abc516b5"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "yea",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Melanie Scheible",
+          "vote": "yea",
+          "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrie Buck",
+          "vote": "nay",
+          "politician_id": "a7679d83-5a48-470e-9df2-4d1d7c18a391"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "nay"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "nay",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "nay"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "nay",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "Keith F. Pickard",
+          "vote": "nay"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "nay"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Reprint 1, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/SB/SB452_R1.pdf; sha256 80ace63448f67130d0d9f0b16eb78086b9189170d5c7c26fd3a501f3cdfe64c0)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-452-2021.reprint1.pdf",
+      "sha256": "80ace63448f67130d0d9f0b16eb78086b9189170d5c7c26fd3a501f3cdfe64c0"
+    },
+    "note": "Version read: Reprint 1 (amended May 25, 2021). The Senate passed it 11-10 on 2021-05-26 on this reprint; amendments made after the version read are not in the text read. Subsection 4(a) applies the ban to concealed-carry permit holders. Section 3.3 sends the incident reports to the Legislature. Sections 2 and 3 were deleted by amendment."
+  },
+  "operative_text": "Section 1 (new section in chapter 202 of NRS): 1. Except as otherwise provided in this section, a person shall not carry or possess a firearm on a covered premises if an owner or operator of a covered premises or an agent thereof does all of the following:\nSection 1 (new section in chapter 202 of NRS): (a) Elects to prohibit a person from carrying or possessing a firearm on the covered premises.\nSection 1 (new section in chapter 202 of NRS): 2. Except as otherwise provided in this section, a person who violates subsection 1 is guilty of a gross misdemeanor.\nSection 1 (new section in chapter 202 of NRS): 3. Before making an arrest pursuant to this section, a peace officer must provide the person an opportunity to comply with the policies and procedures of the covered premises.\nSection 1 (new section in chapter 202 of NRS): (b) Does not apply to: (1) A peace officer;\nSection 1 (new section in chapter 202 of NRS): (4) A person who has the written consent of the owner or operator of a covered premises or an agent thereof to carry or possess a firearm on the covered premises.\nSection 1 (new section in chapter 202 of NRS): (b) “Covered premises” means any real property containing a licensed gaming establishment which is owned or operated by a person who holds a nonrestricted license, as defined in NRS 463.0177, or any affiliate thereof."
+}

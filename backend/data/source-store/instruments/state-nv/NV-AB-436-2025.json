@@ -1,0 +1,102 @@
+{
+  "id": "NV-AB-436-2025",
+  "scope": "state:nv",
+  "title": "AB436 (2025 Regular): Revises provisions relating to firearms. (BDR 15-830)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12642/Overview",
+    "https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB436.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ken Gray",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "PK OâNeill",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bert Gurr",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9dc6edd9-7406-476c-82b7-bee3f2865bcc"
+    },
+    {
+      "name": "Jill Dickman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7c364920-62ba-4ae8-b982-739656b58f51"
+    },
+    {
+      "name": "Rich DeLong",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b1499860-79d4-43b3-878c-def5f28037d8"
+    },
+    {
+      "name": "Rebecca Edgeworth",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6a42f3ff-5ac8-40ff-a0ea-9b18e626c9aa"
+    },
+    {
+      "name": "Danielle Gallant",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6cffc86c-7d40-4fd9-8690-51d6d33ff1e4"
+    },
+    {
+      "name": "Greg Hafen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+    },
+    {
+      "name": "Alexis Hansen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+    },
+    {
+      "name": "Brian Hibbetts",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "55370ca6-5c1a-4ab4-9a75-3ee266ec3d53"
+    },
+    {
+      "name": "Gregory Koenig",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36cba838-66a0-497c-a0c9-56f6f917f6c7"
+    },
+    {
+      "name": "Toby Yurek",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB436.pdf; sha256 175d7c1303b422e2f9bc17134e1cacdbe75907d1469aadc74b152b68c26146fb)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-436-2025.introduced.pdf",
+      "sha256": "175d7c1303b422e2f9bc17134e1cacdbe75907d1469aadc74b152b68c26146fb"
+    },
+    "note": "As-filed version (introduced March 17, 2025); no passage vote on record. Section 1 also strikes the words requiring officers and others to be acting within the scope of their employment for the background-check exemption; that sentence is not quoted because it runs across struck text."
+  },
+  "operative_text": "Section 1 (NRS 202.2548): As used in this section, “qualified retired law enforcement officer” has the meaning ascribed to it in 18 U.S.C. § 926C.\nSection 2 (NRS 202.3657): Any person who is a resident of this State may apply to the sheriff of the county in which he or she resides for a permit on a uniform statewide form prescribed by regulation of the Department.\nSection 2 (NRS 202.3657): Any person who is not a resident of this State may apply to the sheriff of any county in this State for a permit on a uniform statewide form prescribed by regulation of the Department.\nSection 2 (NRS 202.3657): A sheriff may not approve a course in firearm safety pursuant to subparagraph (1) unless the sheriff determines that the course meets any uniform statewide standards that are established by the Nevada Sheriffs’ and Chiefs’ Association or, if the Nevada Sheriffs’ and Chiefs’ Association ceases to exist, its legal successor.\nSection 3 (NRS 202.3677): A sheriff may not prescribe such a course unless the sheriff determines that the course meets any uniform statewide standards, including, without limitation, the timeframe for completing a course and the length of the course, that are established for renewing the permit by the Nevada Sheriffs’ and Chiefs’ Association or, if the Nevada Sheriffs’ and Chiefs’ Association ceases to exist, its legal successor.\nSection 4 (NRS 202.3678): A retired law enforcement officer who is not a resident of this State may apply, on a uniform statewide form prescribed by regulation of the Department, to the sheriff of any county for any certification required pursuant to 18 U.S.C. § 926C(d) to become a qualified retired law enforcement officer.\nSection 5 (NRS 179A.140): (d) For information provided to a licensed firearm dealer if the dealer is required to conduct a background check pursuant to federal law for a peace officer or qualified retired law enforcement officer."
+}

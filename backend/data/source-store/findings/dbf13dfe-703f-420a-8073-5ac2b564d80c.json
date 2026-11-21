@@ -1,0 +1,53 @@
+{
+  "politician_id": "dbf13dfe-703f-420a-8073-5ac2b564d80c",
+  "findings": [
+    {
+      "id": "1b99d454b9fbe8cb85fd405269a39e9dbbf119dce0ba1297fa2867d638cf173d",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/bills-raising-gun-purchase-age-limiting-firearms-near-election-sites-draw-heated-response",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "passage": "Our elections only work because of the people who run them. In recent years, election workers and voters have felt threatened when all they wanted to do was their job or their civic duty. We need to look at all of the options for ensuring our elections are conducted safely.",
+      "note": "Emailed statement quoted by The Nevada Independent. The story says he was thankful to the Assemblywoman for AB354, which would make it a crime to bring a gun within 100 yards of an election site. The quote itself does not mention guns.",
+      "subjects": [
+        "guns at polling places and election sites"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:57:13.463Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns at polling places and election sites",
+        "age limit for buying semi-automatic guns",
+        "unserialised ghost guns",
+        "gun ownership restrictions for public safety",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the official Secretary of State site: blocked: https://www.nvsos.gov/sos/about-us/office-facts/about-francisco-v-aguilar (bot-check page returned)",
+        "the campaign site: blocked: https://www.ciscoaguilar.com (no connection)",
+        "blocked: https://ballotpedia.org/Cisco_Aguilar (403)",
+        "blocked: https://knpr.org/nevada-primary-election-2022/cisco-aguilar (404)",
+        "iVoterGuide 2022 questionnaire https://ivoterguide.com/candidate/74596/race/32597/election/1472: the gun-restrictions question is marked as not answered",
+        "news search on name plus gun words: one 2023 news story with a direct quote on the election-site bill",
+        "news search on name plus polling-place gun words: nothing on the subject",
+        "scope check: a news search shows a sitting Secretary of State who stood in the 2026 general election and won; a 2023 news story names him in this office"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:57:13.463Z",
+      "by": "source-collector"
+    }
+  ]
+}

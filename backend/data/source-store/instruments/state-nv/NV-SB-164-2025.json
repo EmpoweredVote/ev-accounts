@@ -1,0 +1,39 @@
+{
+  "id": "NV-SB-164-2025",
+  "scope": "state:nv",
+  "title": "SB164 (2025 Regular): Revises provisions relating to permits to carry a concealed firearm. (BDR 15-607)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12182/Overview",
+    "https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB164.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Ellison",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB164.pdf; sha256 028612bc35b0b28e6f79d031287db3fe121c348707267f5a37553a6452fbe76d)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-164-2025.introduced.pdf",
+      "sha256": "028612bc35b0b28e6f79d031287db3fe121c348707267f5a37553a6452fbe76d"
+    },
+    "note": "As-filed text (prefiled Feb. 3, 2025); no passage vote is recorded. Section 1 (NRS 202.366, subsection 4) strikes the 5-year term and substitutes 10 years; that sentence is not quoted because the struck number sits inside it. Only the application clause is quoted."
+  },
+  "operative_text": "Section 2 (NRS 202.366): The amendatory provisions of this act apply to a permit to carry a concealed firearm that is issued on or after October 1, 2025."
+}

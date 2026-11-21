@@ -1,0 +1,39 @@
+{
+  "id": "NV-AB-78-2021",
+  "scope": "state:nv",
+  "title": "AB78 (2021 Regular): Revises provisions relating to background checks for certain sales or transfers of firearms. (BDR 15-16)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/7347/Overview",
+    "https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB78.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Ellison",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB78.pdf; sha256 e351d51fad4c7f87771f18ebf37bcdf7ceaf41d90b467ef598e07be0e8618d79)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-78-2021.introduced.pdf",
+      "sha256": "e351d51fad4c7f87771f18ebf37bcdf7ceaf41d90b467ef598e07be0e8618d79"
+    },
+    "note": "As-filed version (prefiled January 26, 2021); no passage vote on record. The quoted paragraph is new subsection 7 of NRS 202.2548 per the digest."
+  },
+  "operative_text": "Section 1 (NRS 202.2548): The sale or transfer of a firearm to a person who possesses a permit to carry a concealed firearm issued pursuant to the provisions of NRS 202.3653 to 202.369, inclusive."
+}

@@ -1,0 +1,82 @@
+{
+  "id": "NV-AB-167-2019",
+  "scope": "state:nv",
+  "title": "AB167 (2019 Regular): Authorizes the possession of a handgun in a motor vehicle that is on the property of certain educational entities or child care facilities in certain circumstances. (BDR 15-97)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6254/Overview",
+    "https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB167.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Assemblyman Gregory Hafen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+    },
+    {
+      "name": "Assemblywoman Robin Titus",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+    },
+    {
+      "name": "Assemblyman Glen Leavitt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblyman John Ellison",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+    },
+    {
+      "name": "Assemblywoman Alexis Hansen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+    },
+    {
+      "name": "Assemblywoman Melissa Hardy",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblyman Tom Roberts",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Jill Tolles",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblyman Jim Wheeler",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB167.pdf; sha256 bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625)",
+    "fetched_at": "2026-11-21T03:06:56.287330Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-167-2019.introduced.pdf",
+      "sha256": "bbdfc0ffc67d4358d53fd3f59f57d5ff396dd241b6195f04f207f62dc654a625"
+    },
+    "note": "As-filed (introduced) text, no passage vote recorded. NRS 202.265 changes in this version also strike old wording (a 'vehicle' definition and the word 'vehicle' in subsection 1, and renumbering letters); those struck words are not quoted."
+  },
+  "operative_text": "Section 1 (NRS 202.265): (b) A handgun on the property of the Nevada System of Higher Education or a private or public school or child care facility by a person who holds a permit to carry a concealed firearm that was issued pursuant to the provisions of NRS 202.3653 to 202.369, inclusive, if the handgun remains out of common observation and is: (1) Inside a motor vehicle, other than a school bus, that is: (I) Occupied; or (II) Unoccupied and locked; or (2) Stored in a locked container that is affixed securely to a motor vehicle, other than a school bus.\nSection 2 (NRS 202.3673): (2) Possesses a handgun in accordance with the provisions of paragraph (b) of subsection 3 of NRS 202.265."
+}

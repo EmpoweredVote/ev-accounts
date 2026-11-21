@@ -1,0 +1,285 @@
+{
+  "id": "NV-AB-153-2019",
+  "scope": "state:nv",
+  "title": "AB153 (2019 Regular): Revises provisions governing the storage of firearms. (BDR 15-119)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6229/Overview",
+    "https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB153_R1.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Assemblyman Ozzie Fumo",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Shannon Bilbray-Axelrod",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblyman Alexander Assefa",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Lesley Cohen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Bea Duran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Michelle Gorelow",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Sandra Jauregui",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblyman William McCurdy",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Daniele Monroe-Moreno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblywoman Selena Torres",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Assemblyman Howard Watts",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-04-23",
+      "body": "NV House",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 32,
+      "no": 9,
+      "absent": 1,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241924 https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/GetBillVoteMembers?voteKey=5852&voteResultPanel=All&billKey=6229#AB153",
+      "members": [
+        {
+          "name": "Alexander Assefa",
+          "vote": "yea"
+        },
+        {
+          "name": "Shea Backus",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Benitez-Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Bilbray-Axelrod",
+          "vote": "yea"
+        },
+        {
+          "name": "Maggie Carlton",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Lesley Cohen",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Daly",
+          "vote": "yea",
+          "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+        },
+        {
+          "name": "Bea Duran",
+          "vote": "yea"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Jason Frierson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ozzie Fumo",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Gorelow",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Glen Leavitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Susie Martinez",
+          "vote": "yea"
+        },
+        {
+          "name": "William McCurdy II",
+          "vote": "yea"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "yea",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Connie Munk",
+          "vote": "yea"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "yea",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "Rochelle Nguyen",
+          "vote": "yea",
+          "politician_id": "3885166f-532a-4bf2-a04c-9c846768f5eb"
+        },
+        {
+          "name": "Sarah Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellen B Spiegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Swank",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyrone Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jill Tolles",
+          "vote": "yea"
+        },
+        {
+          "name": "Selena Torres-Fossett",
+          "vote": "yea",
+          "politician_id": "0f31ccad-c79c-43cb-bb06-9392b9b2c908"
+        },
+        {
+          "name": "Howard Watts",
+          "vote": "yea",
+          "politician_id": "efadbe7a-0b07-42bb-912d-c2a3021e06d6"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Chris Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "John Ellison",
+          "vote": "nay",
+          "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+        },
+        {
+          "name": "Greg Hafen",
+          "vote": "nay",
+          "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+        },
+        {
+          "name": "Alexis Hansen",
+          "vote": "nay",
+          "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+        },
+        {
+          "name": "Melissa Hardy",
+          "vote": "nay",
+          "politician_id": "02fa5b8b-2be7-4c5c-ae0b-ae01963625d1"
+        },
+        {
+          "name": "Al Kramer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "nay",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "nay",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        },
+        {
+          "name": "Jim Wheeler",
+          "vote": "nay"
+        },
+        {
+          "name": "John Hambrick",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Reprint 1, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB153_R1.pdf; sha256 3273ff4ac16bf78243a4bcf828d79e88887a4547792f6fa38247878be4bad71f)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-153-2019.reprint1.pdf",
+      "sha256": "3273ff4ac16bf78243a4bcf828d79e88887a4547792f6fa38247878be4bad71f"
+    },
+    "note": "First reprint read; amendments made after the reprint are not in the text read. House passage vote April 23, 2019 was on the first reprint. Section 2 (NRS 502.010) only updates a cross-reference to subsections of NRS 202.300."
+  },
+  "operative_text": "Section 1 (NRS 202.300): 5. Unless a greater penalty is provided by law, a person is guilty of a misdemeanor who: (a) Negligently stores or leaves a firearm at a location under his or her control; and (b) Knows or has reason to know that there is a substantial risk that a child prohibited from handling or having in his or her possession or under his or her control any firearm pursuant to this section may obtain such a firearm."
+}

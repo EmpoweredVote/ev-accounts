@@ -1,0 +1,179 @@
+{
+  "politician_id": "129ebeb5-0bb7-489d-998c-53bea72fb1ba",
+  "findings": [
+    {
+      "id": "09a02c24dfa5faa8c298f4c9f8eb9a14f9bc368b108a05cbd02f11039a5e3123",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12000/Overview",
+      "date": "2025-05-30",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-105-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2025-05-30: nay (tally 13–8); census gate: none.",
+      "subjects": [
+        "no firearms at or near polling places and ballot drop boxes",
+        "felony for armed voter intimidation at election sites"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB105_EN.pdf; sha256 d7b696bb74d7045cbb3ddf13103bfc5c03a9b63919108a08ee6931eb9866ce93)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-105-2025.enrolled.pdf",
+          "sha256": "d7b696bb74d7045cbb3ddf13103bfc5c03a9b63919108a08ee6931eb9866ce93"
+        }
+      }
+    },
+    {
+      "id": "4f02ce8946c18d675882f2f2f31c1c261e9781d4b592ca2f70f3d8ec91c06709",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12275/Overview",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-245-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2025-05-21: nay (tally 12–8); census gate: none.",
+      "subjects": [
+        "minimum age 21 for semiautomatic shotguns and centerfire rifles",
+        "felony to sell such a gun to an under-21",
+        "safe storage duty where an under-21 could reach a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB245_EN.pdf; sha256 c6044aefcd62e07749a17590dd76eb197b0f9647f13e7b7578dc159622ebc929)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-245-2025.enrolled.pdf",
+          "sha256": "c6044aefcd62e07749a17590dd76eb197b0f9647f13e7b7578dc159622ebc929"
+        }
+      }
+    },
+    {
+      "id": "7d3af6a8b3c4e4417dcdda9289fa67fa44bce16fa19c9d75f1e199f40bc664ce",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12137/Overview",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-156-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (2nd Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (2nd Reprint) passed, 2025-05-28: nay (tally 11–8); census gate: none.",
+      "subjects": [
+        "state special counsel for gun violence prevention",
+        "grants for community gun-violence prevention",
+        "data on arrests under gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB156_EN.pdf; sha256 3208a05b36e8ff14e8471f5be9d6f442780dde69b70b67e83e7be3af98bde43a)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-156-2025.enrolled.pdf",
+          "sha256": "3208a05b36e8ff14e8471f5be9d6f442780dde69b70b67e83e7be3af98bde43a"
+        }
+      }
+    },
+    {
+      "id": "1790ff1b97fa90043c54b016b4b49f54e907480b5e214928ca35553a842a3835",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11966/Overview",
+      "date": "2025-05-19",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-89-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (As Introduced) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (As Introduced) passed, 2025-05-19: nay (tally 12–8); census gate: none.",
+      "subjects": [
+        "firearm ban after hate-crime conviction",
+        "10-year ban for non-violent hate crimes",
+        "each firearm a separate violation",
+        "grandfathers guns owned before July 1, 2025"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB89_EN.pdf; sha256 288ca09901adeb5f7793ef09e5782eec83416c6d4c7c08479c934079187308d7)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-89-2025.enrolled.pdf",
+          "sha256": "288ca09901adeb5f7793ef09e5782eec83416c6d4c7c08479c934079187308d7"
+        }
+      }
+    },
+    {
+      "id": "b373cc1cebd9fbd025631957a28a71b914e5f3a8aa8b33979f9cb3711da3d5ca",
+      "kind": "own-words",
+      "url": "https://thenevadaindependent.com/article/freshman-orientation-john-steinbecks-path-from-the-fire-department-to-nevada-senate",
+      "date": "2025-02-28",
+      "date_precision": "day",
+      "passage": "I think that it's very important for us to be able to know who's getting some of these semiautomatic and very dangerous weapons,",
+      "note": "Direct quote in a Nevada Independent profile of him. The story says he called himself 'fairly moderate' on gun control and supports background checks, a view shaped by his work helping people after the 1 October shooting.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on gun sales",
+        "semiautomatic weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T02:56:06.768Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "minimum age to buy a gun",
+        "Second Amendment general statement",
+        "carry permits",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the Legislature's member page for Senate District 18 (fetched; names him in this office; no subject statements)",
+        "blocked: https://www.nvsenategop.com/steinbeck (no response)",
+        "blocked: https://ballotpedia.org/John_Steinbeck_(Nevada) (403)",
+        "blocked: https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Legislator/Steinbeck (404)",
+        "one web search on his name plus Second Amendment and firearms: one news profile found, read in full",
+        "no personal campaign or official issue page found with gun content",
+        "same news profile also reports his view on the 2024 vetoed buying-age bill, but only as the reporter's paraphrase, so not saved as his words"
+      ],
+      "found": 1,
+      "at": "2026-11-21T02:56:06.768Z",
+      "by": "source-collector"
+    }
+  ]
+}

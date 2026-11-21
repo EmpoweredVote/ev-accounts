@@ -25,7 +25,462 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "09a02c24dfa5faa8c298f4c9f8eb9a14f9bc368b108a05cbd02f11039a5e3123",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12000/Overview",
+      "date": "2025-05-30",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-105-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2025-05-30: nay (tally 13–8); census gate: none.",
+      "subjects": [
+        "no firearms at or near polling places and ballot drop boxes",
+        "felony for armed voter intimidation at election sites"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB105_EN.pdf; sha256 d7b696bb74d7045cbb3ddf13103bfc5c03a9b63919108a08ee6931eb9866ce93)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-105-2025.enrolled.pdf",
+          "sha256": "d7b696bb74d7045cbb3ddf13103bfc5c03a9b63919108a08ee6931eb9866ce93"
+        }
+      }
+    },
+    {
+      "id": "d34d748abb369f536583c8da5437d03f9d92e63b19a02d98f7bacab3bad59feb",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4854/Overview",
+      "date": "2017-04-17",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-118-2017",
+      "act": "yea",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (1st Reprint) passed, 2017-04-17: yea (tally 34–4); census gate: none.",
+      "subjects": [
+        "concealed carry permit for ages 18 to 20 who serve or served honorably in the military",
+        "deny or revoke permit for under-21 with other-than-honorable discharge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB118_EN.pdf; sha256 a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-118-2017.enrolled.pdf",
+          "sha256": "a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7"
+        }
+      }
+    },
+    {
+      "id": "d3804faaa67e4e5f19cec2381151ea54f710b64b31cb8aff2c540657697b5d9b",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6229/Overview",
+      "date": "2019-04-23",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-153-2019",
+      "act": "nay",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (1st Reprint) passed, 2019-04-23: nay (tally 32–9); census gate: none.",
+      "subjects": [
+        "misdemeanor for negligent firearm storage within a child's reach"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Reprint 1, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB153_R1.pdf; sha256 3273ff4ac16bf78243a4bcf828d79e88887a4547792f6fa38247878be4bad71f)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-153-2019.reprint1.pdf",
+          "sha256": "3273ff4ac16bf78243a4bcf828d79e88887a4547792f6fa38247878be4bad71f"
+        }
+      }
+    },
+    {
+      "id": "4f02ce8946c18d675882f2f2f31c1c261e9781d4b592ca2f70f3d8ec91c06709",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12275/Overview",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-245-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2025-05-21: nay (tally 12–8); census gate: none.",
+      "subjects": [
+        "minimum age 21 for semiautomatic shotguns and centerfire rifles",
+        "felony to sell such a gun to an under-21",
+        "safe storage duty where an under-21 could reach a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB245_EN.pdf; sha256 c6044aefcd62e07749a17590dd76eb197b0f9647f13e7b7578dc159622ebc929)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-245-2025.enrolled.pdf",
+          "sha256": "c6044aefcd62e07749a17590dd76eb197b0f9647f13e7b7578dc159622ebc929"
+        }
+      }
+    },
+    {
+      "id": "d1b7171016ef37b654df89d26ea499f63a154381d5088724d48c9af887e992ca",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/7778/Overview",
+      "date": "2021-04-20",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-286-2021",
+      "act": "nay",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (1st Reprint) passed, 2021-04-20: nay (tally 26–16); census gate: none.",
+      "subjects": [
+        "ban on unserialized firearms and ghost-gun parts",
+        "no possessing, buying or selling unfinished frames or receivers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB286_EN.pdf; sha256 34c6c37d215c10bdeccede592f7663b0e242ffb9b6879fc68e230eee1614a6a2)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-286-2021.enrolled.pdf",
+          "sha256": "34c6c37d215c10bdeccede592f7663b0e242ffb9b6879fc68e230eee1614a6a2"
+        }
+      }
+    },
+    {
+      "id": "7f6020509d1d3dc026707ede9fc515bfe7377ae5396f9c373274c695f8459d87",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6530/Overview",
+      "date": "2019-04-23",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-291-2019",
+      "act": "nay",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (1st Reprint) passed, 2019-04-23: nay (tally 28–13); census gate: none.",
+      "subjects": [
+        "court orders to remove guns from a person at high risk of harm",
+        "ban on devices that make semiautomatic guns fire like machine guns",
+        "misdemeanor for negligent firearm storage within a child's reach",
+        "0.08 alcohol limit for possessing a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB291_EN.pdf; sha256 3e9fbf1a398d8151453871be9b15b8d080bdde6b592b69a9831ee11e471b6474)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-291-2019.enrolled.pdf",
+          "sha256": "3e9fbf1a398d8151453871be9b15b8d080bdde6b592b69a9831ee11e471b6474"
+        }
+      }
+    },
+    {
+      "id": "f343a4919bdd2e1f795b43430251187043ce2e9ed8fd3fbe95b7a67581c4477a",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/10249/Overview",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-354-2023",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2023-05-15: nay (tally 12–8); census gate: none.",
+      "subjects": [
+        "no firearms at or near polling places and ballot drop boxes",
+        "ban on unserialized ready and market gun frames or receivers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/AB/AB354_EN.pdf; sha256 0bea69a1f1ce7c3a89e4bbbed618f613e2db0d30acaa1d683fef8341285a716d)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-354-2023.enrolled.pdf",
+          "sha256": "0bea69a1f1ce7c3a89e4bbbed618f613e2db0d30acaa1d683fef8341285a716d"
+        }
+      }
+    },
+    {
+      "id": "29214a6067433c9851766255c31e553fb554dec3591f1ca25ff11fa5a6b2d44d",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/10251/Overview",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-355-2023",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2023-05-15: nay (tally 12–8); census gate: none.",
+      "subjects": [
+        "minimum age 21 for semiautomatic shotguns and centerfire rifles",
+        "penalties for adults who let under-21s have them or store guns carelessly",
+        "children 14+ barred from semiautomatic long guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/AB/AB355_EN.pdf; sha256 78516b8e307333d42bd5f1aab56caa4cbae5f336760b407652ee9f3d6bf20c66)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-355-2023.enrolled.pdf",
+          "sha256": "78516b8e307333d42bd5f1aab56caa4cbae5f336760b407652ee9f3d6bf20c66"
+        }
+      }
+    },
+    {
+      "id": "4d6e8191f4a136e6070f256c97da2665d4fd9bd4cc68705b21c328d28e00aa0a",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4923/Overview",
+      "date": "2017-06-03",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-124-2017",
+      "act": "nay",
+      "motion": "House Assembly final passage (3rd Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (3rd Reprint) passed, 2017-06-03: nay (tally 28–9); census gate: none.",
+      "subjects": [
+        "surrender or sell guns under extended domestic-violence protection order",
+        "firearm ban after domestic-violence stalking conviction",
+        "category B felony for violating a gun-surrender order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB124_EN.pdf; sha256 c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-124-2017.enrolled.pdf",
+          "sha256": "c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93"
+        }
+      }
+    },
+    {
+      "id": "7d3af6a8b3c4e4417dcdda9289fa67fa44bce16fa19c9d75f1e199f40bc664ce",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12137/Overview",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-156-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (2nd Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (2nd Reprint) passed, 2025-05-28: nay (tally 11–8); census gate: none.",
+      "subjects": [
+        "state special counsel for gun violence prevention",
+        "grants for community gun-violence prevention",
+        "data on arrests under gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB156_EN.pdf; sha256 3208a05b36e8ff14e8471f5be9d6f442780dde69b70b67e83e7be3af98bde43a)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-156-2025.enrolled.pdf",
+          "sha256": "3208a05b36e8ff14e8471f5be9d6f442780dde69b70b67e83e7be3af98bde43a"
+        }
+      }
+    },
+    {
+      "id": "a92aecce5386b40e9290126d029da5ab3605d611667eb8a374bcae634dab9223",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/9888/Overview",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-171-2023",
+      "act": "nay",
+      "motion": "Senate Senate final passage (As Introduced) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (As Introduced) passed, 2023-04-20: nay (tally 13–8); census gate: none.",
+      "subjects": [
+        "firearm ban after hate-crime conviction",
+        "10-year ban for gross-misdemeanor hate crimes",
+        "guns owned before July 1, 2023 may be kept"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB171_EN.pdf; sha256 ceb7e24f187da97aa1e83c61785eb0da861b82001265f20e0f3cf51c28224452)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-171-2023.enrolled.pdf",
+          "sha256": "ceb7e24f187da97aa1e83c61785eb0da861b82001265f20e0f3cf51c28224452"
+        }
+      }
+    },
+    {
+      "id": "20b83d16dcc922049abdded4f1a8ab8233be4f49f0ff4a19fe1f7a17d9d3e71c",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/10156/Overview",
+      "date": "2023-04-25",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-294-2023",
+      "act": "nay",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2023-04-25: nay (tally 15–6); census gate: multi-subject.",
+      "subjects": [
+        "locking device with every gun sale",
+        "dealer warning sign on negligent storage",
+        "state safe firearm storage education campaign",
+        "schools tell parents about gun storage law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB294_EN.pdf; sha256 2b02e13fd70730ee0956b3c0219b1afb1bd12790982bd80ab9f7c11d9954f33e)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-294-2023.enrolled.pdf",
+          "sha256": "2b02e13fd70730ee0956b3c0219b1afb1bd12790982bd80ab9f7c11d9954f33e"
+        }
+      }
+    },
+    {
+      "id": "1790ff1b97fa90043c54b016b4b49f54e907480b5e214928ca35553a842a3835",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11966/Overview",
+      "date": "2025-05-19",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-89-2025",
+      "act": "nay",
+      "motion": "Senate Senate final passage (As Introduced) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (As Introduced) passed, 2025-05-19: nay (tally 12–8); census gate: none.",
+      "subjects": [
+        "firearm ban after hate-crime conviction",
+        "10-year ban for non-violent hate crimes",
+        "each firearm a separate violation",
+        "grandfathers guns owned before July 1, 2025"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB89_EN.pdf; sha256 288ca09901adeb5f7793ef09e5782eec83416c6d4c7c08479c934079187308d7)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-89-2025.enrolled.pdf",
+          "sha256": "288ca09901adeb5f7793ef09e5782eec83416c6d4c7c08479c934079187308d7"
+        }
+      }
+    },
+    {
+      "id": "36667846722c44a0d6aff916f1092dd6e41c4f4d0de203fabae62b1825b7a65b",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/9933/Overview",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "NV-SB-188-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-SB-188-2023 (Open States sponsor list): SB188 (2023 Regular): Revises provisions governing firearms. (BDR 15-172).",
+      "subjects": [
+        "concealed carry permitted on higher-education campuses",
+        "no campus permission needed for permit holders",
+        "ban at venues seating 1,000 or more"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB188.pdf; sha256 80025281542b3e406a8debdaf8e8c6f4837b5caf3378114d53ed98b4590675f9)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-188-2023.introduced.pdf",
+          "sha256": "80025281542b3e406a8debdaf8e8c6f4837b5caf3378114d53ed98b4590675f9"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "safe storage of guns",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "scope: confirmed on the 2026 general ballot for Senate District 16 via https://www.leg.state.nv.us/Division/Research/Documents/CandidatesList_2026General.pdf",
+        "On the Record (0 meetings found)",
+        "official legislator page https://www.leg.state.nv.us/App/Legislator/A/Senate/83rd2025/16 (no gun statements; no bill list shown)",
+        "campaign/official site https://www.lisakrasner.com (page read, nothing on the subject in its text)",
+        "blocked: https://ballotpedia.org/Lisa_Krasner (403)",
+        "not reviewed: https://krasnerfornevada.com (did not load)",
+        "2023 Senate Judiciary minutes, 5 April 2023 (https://archive.leg.state.nv.us/Session/82nd2023/Minutes/Senate/JUD/Final/700.pdf): lists her as a member, no remarks of hers on firearms",
+        "news searches on her name plus gun terms: no direct quote of hers found; a news story page returned no mention of her",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T02:58:10.160Z",
+      "by": "source-collector"
+    }
+  ]
 }

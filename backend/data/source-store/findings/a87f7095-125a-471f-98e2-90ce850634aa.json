@@ -1,0 +1,94 @@
+{
+  "politician_id": "a87f7095-125a-471f-98e2-90ce850634aa",
+  "findings": [
+    {
+      "id": "d34d748abb369f536583c8da5437d03f9d92e63b19a02d98f7bacab3bad59feb",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4854/Overview",
+      "date": "2017-04-17",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-118-2017",
+      "act": "yea",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (1st Reprint) passed, 2017-04-17: yea (tally 34–4); census gate: none.",
+      "subjects": [
+        "concealed carry permit for ages 18 to 20 who serve or served honorably in the military",
+        "deny or revoke permit for under-21 with other-than-honorable discharge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB118_EN.pdf; sha256 a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-118-2017.enrolled.pdf",
+          "sha256": "a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7"
+        }
+      }
+    },
+    {
+      "id": "4d6e8191f4a136e6070f256c97da2665d4fd9bd4cc68705b21c328d28e00aa0a",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4923/Overview",
+      "date": "2017-06-03",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-124-2017",
+      "act": "nay",
+      "motion": "House Assembly final passage (3rd Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (3rd Reprint) passed, 2017-06-03: nay (tally 28–9); census gate: none.",
+      "subjects": [
+        "surrender or sell guns under extended domestic-violence protection order",
+        "firearm ban after domestic-violence stalking conviction",
+        "category B felony for violating a gun-surrender order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB124_EN.pdf; sha256 c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-124-2017.enrolled.pdf",
+          "sha256": "c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93"
+        }
+      }
+    },
+    {
+      "id": "5498409f09487fcb314a39f7aaf92892d840b7e236b844fa8c3474a8726fa21b",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/5283/Overview",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "NV-SB-307-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of NV-SB-307-2017 (Open States sponsor list): SB307 (2017 Regular): Revises provisions governing concealed weapons. (BDR 15-198).",
+      "subjects": [
+        "carry a concealed firearm without a permit",
+        "repeal permit carry rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB307.pdf; sha256 27aa63d986b26549bb42f6d2bb5921e8e1da25434e44e9fb435a05f3fddea3fc)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-307-2017.introduced.pdf",
+          "sha256": "27aa63d986b26549bb42f6d2bb5921e8e1da25434e44e9fb435a05f3fddea3fc"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

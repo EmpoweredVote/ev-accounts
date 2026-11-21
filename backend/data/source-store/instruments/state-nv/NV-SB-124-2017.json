@@ -1,0 +1,382 @@
+{
+  "id": "NV-SB-124-2017",
+  "scope": "state:nv",
+  "title": "SB124 (2017 Regular): Revises provisions concerning the ownership, possession and control of firearms by certain persons. (BDR 3-307)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4923/Overview",
+    "https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB124_EN.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Pat Spearman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joyce Woodhouse",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kelvin Atkinson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Aaron D. Ford",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288"
+    },
+    {
+      "name": "Julia Ratti",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark A. Manendo",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Cannizzaro",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+    },
+    {
+      "name": "Michael C. Sprinkle",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David R. Parks",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Yvanna D. Cancela",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tick Segerblom",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-05-23",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (2nd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 2,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241906 https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/GetBillVoteMembers?voteKey=4950&voteResultPanel=All&billKey=4923#SB124",
+      "members": [
+        {
+          "name": "Kelvin Atkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Yvanna D. Cancela",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Patricia Farley",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron D. Ford",
+          "vote": "yea",
+          "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark A. Manendo",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tick Segerblom",
+          "vote": "yea"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Joyce Woodhouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald (Don) G. Gustavson",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2017-06-03",
+      "body": "NV House",
+      "motion": "House Assembly final passage (3rd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 9,
+      "absent": 5,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241907 https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/GetBillVoteMembers?voteKey=5351&voteResultPanel=All&billKey=4923#SB124",
+      "members": [
+        {
+          "name": "Elliot T. Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson Araujo",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Benitez-Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Bilbray-Axelrod",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Irene Bustamante Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Maggie Carlton",
+          "vote": "yea"
+        },
+        {
+          "name": "Lesley Cohen",
+          "vote": "yea"
+        },
+        {
+          "name": "Skip Daly",
+          "vote": "yea",
+          "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+        },
+        {
+          "name": "Olivia Diaz",
+          "vote": "yea"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Jason Frierson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ozzie Fumo",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Amber Joiner",
+          "vote": "yea"
+        },
+        {
+          "name": "William McCurdy II",
+          "vote": "yea"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "yea",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "yea",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "yea",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "Keith F. Pickard",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellen B Spiegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael C. Sprinkle",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Swank",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyrone Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jill Tolles",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Watkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Paul Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "John Ellison",
+          "vote": "nay",
+          "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+        },
+        {
+          "name": "John Hambrick",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Kramer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "nay",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Jim Marchant",
+          "vote": "nay",
+          "politician_id": "a87f7095-125a-471f-98e2-90ce850634aa"
+        },
+        {
+          "name": "Richard McArthur",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Wheeler",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Carrillo",
+          "vote": "absent"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "absent",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "James Oscarson",
+          "vote": "absent"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "absent",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        },
+        {
+          "name": "Melissa Woodbury",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB124_EN.pdf; sha256 c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-124-2017.enrolled.pdf",
+      "sha256": "c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93"
+    },
+    "note": "Enrolled version (79th Session, 2017), the text both houses passed (final votes on the 2nd and 3rd Reprints). Section 7 (NRS 202.360) adds the extended-protection-order bar and the stalking-finding bar, and strikes and renumbers some paragraph letters (struck text not quoted). Sections 1 and 3 also raise the penalty for violating a gun provision from a gross misdemeanor to a category B felony (struck wording not quoted). The surrender procedure (receipts, 72-hour reporting, dealer storage fees, seizure on a warrant) is in sections 2 and 5, only partly quoted. The sentences ending in a colon introduce lettered lists that are not quoted in full."
+  },
+  "operative_text": "Section 1 (NRS 33.031): (a) A requirement that the adverse party surrender, sell or transfer any firearm in the adverse party’s possession or under the adverse party’s custody or control in the manner set forth in NRS 33.033; and\nSection 2 (NRS 33.033): 1. If a court orders an adverse party to surrender , sell or transfer any firearm pursuant to NRS 33.031, the adverse party shall, not later than 24 hours after service of the order:\nSection 3 (NRS 200.485): (b) Order the person convicted to permanently surrender, sell or transfer any firearm that he or she owns or that is in his or her possession or under his or her custody or control in the manner set forth in section 5 of this act. 10. A person who violates any provision included in a judgment of conviction or admonishment of rights issued pursuant to this section concerning the surrender, sale, transfer, ownership, possession, custody or control of a firearm is guilty of a category B felony and shall be punished by imprisonment in the state prison for a minimum term of not less than 1 year and a maximum term of not more than 6 years, and may be further punished by a fine of not more than $5,000.\nSection 4 (NRS 200.575): 6. If the court includes such a finding in a judgment of conviction or admonishment of rights issued pursuant to this section, the court shall:\nSection 5 (NRS chapter 202, new): 1. If a person is prohibited from owning, possessing or having under his or her custody or control a firearm pursuant to NRS 202.360, the court in which the person is convicted shall order the person to surrender any firearm that the person owns or that is in his or her possession or under his or her custody or control to a designated law enforcement agency, a person designated by court order or a licensed firearm dealer, and the person shall, not later than 24 hours after service of the order:\nSection 7 (NRS 202.360): 1. A person shall not own or have in his or her possession or under his or her custody or control any firearm if the person: (e) Is a fugitive from justice; A person who violates the provisions of this subsection is guilty of a category B felony and shall be punished by imprisonment in the state prison for a minimum term of not less than 1 year and a maximum term of not more than 6 years, and may be further punished by a fine of not more than $5,000."
+}

@@ -1,0 +1,354 @@
+{
+  "id": "NV-AB-286-2021",
+  "scope": "state:nv",
+  "title": "AB286 (2021 Regular): Prohibits certain acts relating to firearms. (BDR 15-21)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/7778/Overview",
+    "https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB286_EN.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Sandra Jauregui",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+    },
+    {
+      "name": "Melanie Scheible",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-04-20",
+      "body": "NV House",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 16,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241952 https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/GetBillVoteMembers?voteKey=7368&voteResultPanel=All&billKey=7778#AB286",
+      "members": [
+        {
+          "name": "Natha Anderson",
+          "vote": "yea",
+          "politician_id": "4e6d26a0-747c-4ccd-8f83-384732c0f34a"
+        },
+        {
+          "name": "Teresa Benitez-Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Bilbray-Axelrod",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy Brown-May",
+          "vote": "yea",
+          "politician_id": "190de314-e976-4df7-bad9-b3cdc0f2d887"
+        },
+        {
+          "name": "Maggie Carlton",
+          "vote": "yea"
+        },
+        {
+          "name": "Lesley Cohen",
+          "vote": "yea"
+        },
+        {
+          "name": "Venicia Considine",
+          "vote": "yea",
+          "politician_id": "c7fe9357-446f-4998-816a-dbfdd8b319ef"
+        },
+        {
+          "name": "Bea Duran",
+          "vote": "yea"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Jason Frierson",
+          "vote": "yea"
+        },
+        {
+          "name": "Cecelia González",
+          "vote": "yea",
+          "politician_id": "4e31c709-96b4-4938-b01f-d8ba4ff474c8"
+        },
+        {
+          "name": "Michelle Gorelow",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Susie Martinez",
+          "vote": "yea"
+        },
+        {
+          "name": "Elaine Marzola",
+          "vote": "yea",
+          "politician_id": "10957d22-c1ca-4a44-bddb-5bd606b12b76"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Cameron (Cameron (C.H.)) Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "yea",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Rochelle Nguyen",
+          "vote": "yea",
+          "politician_id": "3885166f-532a-4bf2-a04c-9c846768f5eb"
+        },
+        {
+          "name": "David Orentlicher",
+          "vote": "yea",
+          "politician_id": "90572ea8-acf1-4896-8b3d-8efdbd26ad58"
+        },
+        {
+          "name": "Sarah Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Shondra Summers-Armstrong",
+          "vote": "yea"
+        },
+        {
+          "name": "Clara Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Selena Torres-Fossett",
+          "vote": "yea",
+          "politician_id": "0f31ccad-c79c-43cb-bb06-9392b9b2c908"
+        },
+        {
+          "name": "Howard Watts",
+          "vote": "yea",
+          "politician_id": "efadbe7a-0b07-42bb-912d-c2a3021e06d6"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Annie Black",
+          "vote": "nay"
+        },
+        {
+          "name": "Jill Dickman",
+          "vote": "nay",
+          "politician_id": "7c364920-62ba-4ae8-b982-739656b58f51"
+        },
+        {
+          "name": "John Ellison",
+          "vote": "nay",
+          "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+        },
+        {
+          "name": "Greg Hafen",
+          "vote": "nay",
+          "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+        },
+        {
+          "name": "Alexis Hansen",
+          "vote": "nay",
+          "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+        },
+        {
+          "name": "Melissa Hardy",
+          "vote": "nay",
+          "politician_id": "02fa5b8b-2be7-4c5c-ae0b-ae01963625d1"
+        },
+        {
+          "name": "Heidi Kasama",
+          "vote": "nay",
+          "politician_id": "49dc6a5b-4275-48e6-8f11-5e4156b8199e"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "nay",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Glen Leavitt",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Matthews",
+          "vote": "nay",
+          "politician_id": "07a8598f-666f-4ac5-b6ee-09cb9f815783"
+        },
+        {
+          "name": "Richard McArthur",
+          "vote": "nay"
+        },
+        {
+          "name": "Philip P.K. O’Neill",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "nay",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        },
+        {
+          "name": "Jill Tolles",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Wheeler",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-05-21",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (3rd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 12,
+      "no": 9,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241953 https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/GetBillVoteMembers?voteKey=7740&voteResultPanel=All&billKey=7778#AB286",
+      "members": [
+        {
+          "name": "Chris Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Fabian Doñate",
+          "vote": "yea",
+          "politician_id": "7b4022ca-9722-4947-a369-ee0e528b1af9"
+        },
+        {
+          "name": "Marilyn Dondero Loop",
+          "vote": "yea",
+          "politician_id": "44c59b6c-de01-4c1b-b696-a57ad3947dba"
+        },
+        {
+          "name": "Dallas Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberta Lange",
+          "vote": "yea",
+          "politician_id": "40367549-65f3-449e-add5-ce67abc516b5"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "yea",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "yea",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Melanie Scheible",
+          "vote": "yea",
+          "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrie Buck",
+          "vote": "nay",
+          "politician_id": "a7679d83-5a48-470e-9df2-4d1d7c18a391"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "nay"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "nay",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "nay"
+        },
+        {
+          "name": "Keith F. Pickard",
+          "vote": "nay"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "nay"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB286_EN.pdf; sha256 34c6c37d215c10bdeccede592f7663b0e242ffb9b6879fc68e230eee1614a6a2)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-286-2021.enrolled.pdf",
+      "sha256": "34c6c37d215c10bdeccede592f7663b0e242ffb9b6879fc68e230eee1614a6a2"
+    },
+    "note": "Enrolled text read. Each of sections 3, 3.5, 4 and 5 makes a first offence a gross misdemeanor and a second or later offence a category D felony. Sections 3 and 5 take effect January 1, 2022; section 5.5 allows sales of unserialized items to manufacturers or licensed dealers before that date. Section 7 (NRS 202.2548) only edits the antique-firearm wording."
+  },
+  "operative_text": "Section 3 (new section in NRS chapter 202): 1. A person shall not possess, purchase, transport or receive an unfinished frame or receiver unless: (a) The person is a firearms importer or manufacturer; or (b) The unfinished frame or receiver is required by federal law to be imprinted with a serial number issued by a firearms importer or manufacturer and the unfinished frame or receiver has been imprinted with the serial number.\nSection 3.5 (new section in NRS chapter 202): 1. A person shall not sell, offer to sell or transfer an unfinished frame or receiver unless: (a) The person is: (1) A firearms importer or manufacturer; and (2) The recipient of the unfinished frame or receiver is a firearms importer or manufacturer; or (b) The unfinished frame or receiver is required by federal law to be imprinted with a serial number issued by an importer or manufacturer and the unfinished frame or receiver has been imprinted with the serial number.\nSection 4 (new section in NRS chapter 202): 1. A person shall not manufacture or cause to be manufactured or assemble or cause to be assembled a firearm that is not imprinted with a serial number issued by a firearms importer or manufacturer in accordance with federal law and any regulations adopted thereunder unless the firearm: (a) Has been rendered permanently inoperable; (b) Is an antique firearm; or (c) Has been determined to be a collector’s item pursuant to 26 U.S.C. Chapter 53 or a curio or relic pursuant to 18 U.S.C. Chapter 44.\nSection 5 (new section in NRS chapter 202): 1. A person shall not possess, sell, offer to sell, transfer, purchase, transport or receive a firearm that is not imprinted with a serial number issued by a firearms importer or manufacturer in accordance with federal law and any regulations adopted thereunder unless: (a) The person is: (1) A law enforcement agency; or (2) A firearms importer or manufacturer; or (b) The firearm: (1) Has been rendered permanently inoperable; (2) Was manufactured before 1969; (3) Is an antique firearm; or (4) Has been determined to be a collector’s item pursuant to 26 U.S.C. Chapter 53 or a curio or relic pursuant to 18 U.S.C. Chapter 44."
+}

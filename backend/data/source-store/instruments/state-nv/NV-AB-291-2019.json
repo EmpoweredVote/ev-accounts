@@ -1,0 +1,336 @@
+{
+  "id": "NV-AB-291-2019",
+  "scope": "state:nv",
+  "title": "AB291 (2019 Regular): Revises provisions relating to public safety. (BDR 3-759)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6530/Overview",
+    "https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB291_EN.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Assemblywoman Sandra Jauregui",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-04-23",
+      "body": "NV House",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 13,
+      "absent": 1,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241937 https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/GetBillVoteMembers?voteKey=5901&voteResultPanel=All&billKey=6530#AB291",
+      "members": [
+        {
+          "name": "Alexander Assefa",
+          "vote": "yea"
+        },
+        {
+          "name": "Shea Backus",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Benitez-Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Bilbray-Axelrod",
+          "vote": "yea"
+        },
+        {
+          "name": "Maggie Carlton",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Lesley Cohen",
+          "vote": "yea"
+        },
+        {
+          "name": "Bea Duran",
+          "vote": "yea"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Jason Frierson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ozzie Fumo",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Gorelow",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Susie Martinez",
+          "vote": "yea"
+        },
+        {
+          "name": "William McCurdy II",
+          "vote": "yea"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "yea",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Connie Munk",
+          "vote": "yea"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "yea",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "Rochelle Nguyen",
+          "vote": "yea",
+          "politician_id": "3885166f-532a-4bf2-a04c-9c846768f5eb"
+        },
+        {
+          "name": "Sarah Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellen B Spiegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Swank",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyrone Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Selena Torres-Fossett",
+          "vote": "yea",
+          "politician_id": "0f31ccad-c79c-43cb-bb06-9392b9b2c908"
+        },
+        {
+          "name": "Howard Watts",
+          "vote": "yea",
+          "politician_id": "efadbe7a-0b07-42bb-912d-c2a3021e06d6"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Richard Daly",
+          "vote": "nay",
+          "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+        },
+        {
+          "name": "Chris Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "John Ellison",
+          "vote": "nay",
+          "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+        },
+        {
+          "name": "Greg Hafen",
+          "vote": "nay",
+          "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+        },
+        {
+          "name": "Alexis Hansen",
+          "vote": "nay",
+          "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+        },
+        {
+          "name": "Melissa Hardy",
+          "vote": "nay",
+          "politician_id": "02fa5b8b-2be7-4c5c-ae0b-ae01963625d1"
+        },
+        {
+          "name": "Al Kramer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "nay",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Glen Leavitt",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "nay",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        },
+        {
+          "name": "Jill Tolles",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Wheeler",
+          "vote": "nay"
+        },
+        {
+          "name": "John Hambrick",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2019-05-31",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (2nd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 12,
+      "no": 8,
+      "absent": 1,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241938 https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/GetBillVoteMembers?voteKey=6666&voteResultPanel=All&billKey=6530#AB291",
+      "members": [
+        {
+          "name": "Chris Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Yvanna D. Cancela",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn Dondero Loop",
+          "vote": "yea",
+          "politician_id": "44c59b6c-de01-4c1b-b696-a57ad3947dba"
+        },
+        {
+          "name": "Dallas Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "yea",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "David R. Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Melanie Scheible",
+          "vote": "yea",
+          "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Joyce Woodhouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "nay"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "nay",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "nay"
+        },
+        {
+          "name": "Keith F. Pickard",
+          "vote": "nay"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "nay"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Marcia L. Washington",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/80th2019/Bills/AB/AB291_EN.pdf; sha256 3e9fbf1a398d8151453871be9b15b8d080bdde6b592b69a9831ee11e471b6474)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-291-2019.enrolled.pdf",
+      "sha256": "3e9fbf1a398d8151453871be9b15b8d080bdde6b592b69a9831ee11e471b6474"
+    },
+    "note": "Enrolled text read (large file, read by section); effective Jan 1, 2020 for sections 1 to 24, 29 and 30, and on passage for sections 25 to 28 and 31. Ex parte order lasts up to 7 days, extended order up to 1 year (section 19). Applicants are family or household members and law enforcement (section 11). Section 21 makes a knowingly false or harassing application a misdemeanor; section 22 makes violating an order a misdemeanor; section 24 adds an extra felony penalty for felonies committed in violation of such an order. Section 27 (NRS 202.257) lowers the alcohol level for unlawful firearm possession from 0.10 to 0.08 (struck 0.10 not quoted). Sections 29 and 30 make conforming edits to NRS 202.350 and NRS 202.3657 (permit surrender, not quoted)."
+  },
+  "operative_text": "Section 12 (new section in NRS chapter 33): 1. The court shall issue an ex parte order if the court finds by a preponderance of the evidence from facts shown by a verified application filed pursuant to section 11 of this act: (a) That a person poses an imminent risk of causing personal injury to himself or herself or another person by possessing or having under his or her custody or control or by purchasing or otherwise acquiring any firearm; (b) The person engaged in high-risk behavior; and (c) Less restrictive options have been exhausted or are not effective.\nSection 13 (new section in NRS chapter 33): 1. The court shall issue an extended order if the court finds by clear and convincing evidence from facts shown by a verified application filed pursuant to section 11 of this act: (a) That a person poses a risk of causing personal injury to himself or herself or another person by possessing or having under his or her custody or control or by purchasing or otherwise acquiring any firearm; (b) The person engaged in high-risk behavior; and (c) Less restrictive options have been exhausted or are not effective.\nSection 14 (new section in NRS chapter 33): Each ex parte or extended order issued pursuant to section 12 or 13 of this act must: 1. Require the adverse party to surrender any firearm in his or her possession or under his or her custody or control in the manner set forth in section 15 of this act. 2. Prohibit the adverse party from possessing or having under his or her custody or control any firearm while the order is in effect.\nSection 25 (new section in NRS chapter 202): 1. Except as otherwise provided in subsection 3, a person shall not import, sell, manufacture, transfer, receive or possess: (a) Any manual, power-driven or electronic device that is designed such that when the device is attached to a semiautomatic firearm, the device eliminates the need for the operator of a semiautomatic firearm to make a separate movement for each individual function of the trigger and: (1) Materially increases the rate of fire of the semiautomatic firearm; or (2) Approximates the action or rate of fire of a machine gun; 2. A person who violates any provision of this section is guilty of a category D felony and shall be punished as provided in NRS 193.130.\nSection 28 (NRS 202.300): 5. Unless a greater penalty is provided by law, a person is guilty of a misdemeanor who: (a) Negligently stores or leaves a firearm at a location under his or her control; and (b) Knows or has reason to know that there is a substantial risk that a child prohibited from handling or having in his or her possession or under his or her control any firearm pursuant to this section may obtain such a firearm."
+}

@@ -1,0 +1,184 @@
+{
+  "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288",
+  "findings": [
+    {
+      "id": "212b645de407fc9a3163640f01f22e382146aea253677023ced13e8909de7fed",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4854/Overview",
+      "date": "2017-05-11",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-118-2017",
+      "act": "yea",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2017-05-11: yea (tally 20–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry permit for ages 18 to 20 who serve or served honorably in the military",
+        "deny or revoke permit for under-21 with other-than-honorable discharge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB118_EN.pdf; sha256 a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-118-2017.enrolled.pdf",
+          "sha256": "a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7"
+        }
+      }
+    },
+    {
+      "id": "bc2743bfd5203b891c8464171d9676fe2b990f05a17e6baaa67a36137fe77435",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4875/Overview",
+      "date": "2017-03-21",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-115-2017",
+      "act": "yea",
+      "motion": "Senate Senate final passage (As Introduced) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (As Introduced) passed, 2017-03-21: yea (tally 12–9); census gate: none.",
+      "subjects": [
+        "no firearms on public library property without written permission",
+        "concealed-carry permit holders barred from library buildings without permission"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB115.pdf; sha256 dd203dccaeb876f44f53b286e21d703e56df57f08aa01c5222c85f9577b5f027)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-115-2017.introduced.pdf",
+          "sha256": "dd203dccaeb876f44f53b286e21d703e56df57f08aa01c5222c85f9577b5f027"
+        }
+      }
+    },
+    {
+      "id": "028188dd1911d8c1e6e7c31d7e61711c634833e91b4002b8900ccb8b101caa55",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4923/Overview",
+      "date": "2017-05-23",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-124-2017",
+      "act": "yea",
+      "motion": "Senate Senate final passage (2nd Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "NV Senate, Senate Senate final passage (2nd Reprint) passed, 2017-05-23: yea (tally 19–2); census gate: near-unanimous.",
+      "subjects": [
+        "surrender or sell guns under extended domestic-violence protection order",
+        "firearm ban after domestic-violence stalking conviction",
+        "category B felony for violating a gun-surrender order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB124_EN.pdf; sha256 c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-124-2017.enrolled.pdf",
+          "sha256": "c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93"
+        }
+      }
+    },
+    {
+      "id": "368865fbe9d40b9607e2342a009a0b523e0f0ec66b9ad630fade9167fb9b526f",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/5486/Overview",
+      "date": "2017-04-25",
+      "date_precision": "day",
+      "instrument_id": "NV-SB-387-2017",
+      "act": "yea",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV Senate, Senate Senate final passage (1st Reprint) passed, 2017-04-25: yea (tally 12–9); census gate: none.",
+      "subjects": [
+        "extreme-risk protection orders that remove firearms",
+        "firearm surrender and return rules",
+        "concealed-carry permit denial while under such an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Reprint 1, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB387_R1.pdf; sha256 90a2f1715b1b7d38ed5881b9cba19e855b85d36c1a7ac2b4317935cbbc675a80)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-387-2017.reprint1.pdf",
+          "sha256": "90a2f1715b1b7d38ed5881b9cba19e855b85d36c1a7ac2b4317935cbbc675a80"
+        }
+      }
+    },
+    {
+      "id": "c851fa548bff54c0decfe629eb0329129d6e51986087609cffedebcff615e697",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4923/Overview",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "NV-SB-124-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-SB-124-2017 (Open States sponsor list): SB124 (2017 Regular): Revises provisions concerning the ownership, possession and control of firearms by certain persons. (BDR 3-307).",
+      "subjects": [
+        "surrender or sell guns under extended domestic-violence protection order",
+        "firearm ban after domestic-violence stalking conviction",
+        "category B felony for violating a gun-surrender order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB124_EN.pdf; sha256 c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-124-2017.enrolled.pdf",
+          "sha256": "c3c5b2c91814bdc14c6337f87964cf51ca0114eda4506492b2d1225f41be1a93"
+        }
+      }
+    },
+    {
+      "id": "2f5c7518e718ec6e760947ee496f944a96660cecbbcf99b5d0345c86cfc8dd2b",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/5486/Overview",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "NV-SB-387-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of NV-SB-387-2017 (Open States sponsor list): SB387 (2017 Regular): Provides for the issuance of certain orders for protection. (BDR 3-839).",
+      "subjects": [
+        "extreme-risk protection orders that remove firearms",
+        "firearm surrender and return rules",
+        "concealed-carry permit denial while under such an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Reprint 1, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB387_R1.pdf; sha256 90a2f1715b1b7d38ed5881b9cba19e855b85d36c1a7ac2b4317935cbbc675a80)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-387-2017.reprint1.pdf",
+          "sha256": "90a2f1715b1b7d38ed5881b9cba19e855b85d36c1a7ac2b4317935cbbc675a80"
+        }
+      }
+    }
+  ],
+  "searches": []
+}
