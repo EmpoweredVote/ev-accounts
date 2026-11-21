@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-2848-2020",
+  "scope": "state:hi",
+  "title": "SB2848 (2020 Regular): RELATING TO ELECTRIC GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2848&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2848_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2848_.HTM; sha256 6eccd422327900e4775d3aac2932c72d8cb5ff496dd40ec91e015e20ec64fbc3)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2848-2020.introduced.htm",
+      "sha256": "6eccd422327900e4775d3aac2932c72d8cb5ff496dd40ec91e015e20ec64fbc3"
+    },
+    "note": "As-filed SB 2848 (2020). SECTION 5 repeals HRS 134-16, the existing electric-gun ban (struck text not quoted), and SECTION 2 replaces it with a licensing scheme; section letters are placeholders. Electric guns (stun guns) are regulated in HRS ch. 134 but are not firearms strictly, so gun_policy true is a judgment call for the reviewer. SECTIONS 3-4 only change cross-references. Amendments after introduction are not in the text read."
+  },
+  "operative_text": "SECTION 2 (new §134-B): (a) It shall be unlawful for any person to knowingly or recklessly use an electric gun for any purpose except:\nSECTION 2 (new §134-B): (b) It shall be unlawful for any person to knowingly sell, offer for sale, distribute, or otherwise transfer an electric gun or cartridge without a license obtained pursuant to section 134-C.\nSECTION 2 (new §134-B): (d) It shall be unlawful for any person to knowingly sell, offer for sale, distribute, or otherwise transfer an electric gun or cartridge to a minor.\nSECTION 2 (new §134-F): (a) No person who is a fugitive from justice shall own, possess, or control an electric gun.\nSECTION 2 (new §134-F): (e) No minor shall own, possess, or control an electric gun.\nSECTION 2 (new §134-H): (a) No person shall store or keep any electric gun on any premises under the person's control if the person knows or reasonably should know that a minor is likely to gain access to the electric gun, unless the person:\nSECTION 2 (new §134-J): (a) It shall be unlawful for a person to knowingly carry on the person or have within the person's immediate control or intentionally use or threaten to use an electric gun, whether operable or not, while engaged in the commission of a separate felony, provided that a person shall not be prosecuted under this subsection when the separate felony is a felony defined by this chapter.\nSECTION 2 (new §134-J): (c) Any person violating this section shall be guilty of a class B felony."
+}

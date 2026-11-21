@@ -1,0 +1,120 @@
+{
+  "id": "HI-HB-25-2019",
+  "scope": "state:hi",
+  "title": "HB25 (2019 Regular): RELATING TO PUBLIC SAFETY.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=25&year=2019",
+    "https://data.capitol.hawaii.gov/sessions/session2019/bills/HB25_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tom Brower",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Hashem",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f951e14c-168e-42c9-a6ff-d18788a35eff"
+    },
+    {
+      "name": "Troy Hashimoto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+    },
+    {
+      "name": "Daniel Holt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bert Kobayashi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Dee Morikawa",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "60a980b6-15ff-41be-9463-5b5605d17589"
+    },
+    {
+      "name": "NAKAMURA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Nakashima",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Y. Nishimoto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Takashi Ohno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sean Quinlan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96b45c6f-0ac4-498c-8211-d87572d80eea"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Calvin K.Y. Say",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Roy M. Takumi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2019/bills/HB25_.HTM; sha256 21d052643294c799068db2db302cfd6471a9efd797c7fa8b9adcba98280c198b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-25-2019.introduced.htm",
+      "sha256": "21d052643294c799068db2db302cfd6471a9efd797c7fa8b9adcba98280c198b"
+    },
+    "note": "Introduced version as filed; no passage vote on file. Penalty in subsection (b) is left blank in the printed text. Same text filed in both years of the biennium."
+  },
+  "operative_text": "SECTION 1 (new): Notwithstanding sections 134-9, 134-23 to 134-25, and 134-27, it shall be unlawful for any person, including a guest, to store, keep, carry, or possess any firearm or ammunition in any hotel room assigned to a guest. For purposes of this section, \"guest\" and \"hotel\" shall have the same meaning as those terms are defined in section 486K-1."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-416-2024",
+  "scope": "state:hi",
+  "title": "SB416 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=416&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB416_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB416_.HTM; sha256 d4ab08b08b6b1f111747b560d0757831d6d008a7a8ba8443374790115d79238c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-416-2024.introduced.htm",
+      "sha256": "d4ab08b08b6b1f111747b560d0757831d6d008a7a8ba8443374790115d79238c"
+    },
+    "note": "Introduced text (as filed); no passage vote recorded. The bill strikes the old subsection (a) language limiting concealed-carry licenses to an 'exceptional case' where the applicant shows reason to fear injury, and the old subsection (b) procedures and (d) fee, restating them in new subsections; quotes skip sentences that run across struck text, so subsections (a) and (b) (who may be licensed) are not quoted. The same text is filed in the 2023 and 2024 sessions."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): The chief of police of each county shall adopt procedures to require that any person granted a license under this section shall:\n(1) Be qualified to use the firearm in a safe manner;\n(2) Be a suitable person to be so licensed;\n(3) Not be prohibited under section 134-7 or any other law from the ownership or possession of a firearm; and\n(4) Not have been adjudged insane or not appear to be mentally deranged.\nSECTION 1 (HRS 134-9): The chief of police of the appropriate county, or the chief's designated representative, shall perform an inquiry on an applicant for a license under this section by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made.\nSECTION 1 (HRS 134-9): A fee of $10 shall be charged for each license granted under this section.\nSECTION 1 (HRS 134-9): No person shall carry concealed or unconcealed on the person a pistol or revolver without being licensed to do so under this section or in compliance with sections 134-5(c) or 134-25.\nSECTION 1 (HRS 134-9): Any person violating this subsection shall be guilty of a misdemeanor.\nSECTION 1 (HRS 134-9): The failure of a person to:\n(1) Have a valid license in the person's immediate possession while carrying on their person a firearm outside the person's residence shall be prima facie evidence that the person knows the person is carrying a firearm in public without possession of the person's license; or\n(2) Display the person's license upon the demand of a law enforcement officer while carrying on their person a firearm outside the person's residence shall be prima facie evidence that the person has knowingly, intentionally, and recklessly failed to display the license.\nSECTION 1 (HRS 134-9): For the purposes of this section, \"suitable person\" means having the essential character, temperament, and judgment necessary to be entrusted with a weapon and to use it only in a manner that does not endanger oneself or others as evidenced by any information submitted or required as part of the application or found during the investigation thereof that indicates the applicant has not engaged in dangerous, threatening, reckless, or irresponsible conduct and has not otherwise conducted themselves in a manner that indicates they are likely to use the weapon in a manner that endangers themselves or others."
+}

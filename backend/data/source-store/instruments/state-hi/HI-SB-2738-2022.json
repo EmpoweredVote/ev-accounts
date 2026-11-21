@@ -1,0 +1,50 @@
+{
+  "id": "HI-SB-2738-2022",
+  "scope": "state:hi",
+  "title": "SB2738 (2022 Regular): RELATING TO ELECTRIC GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2738&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB2738_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB2738_.HTM; sha256 0a02dd65f7a7fd35e1da7a7c12f10b1f44a3e415eb48054c6c3f39b38110cb39)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2738-2022.introduced.htm",
+      "sha256": "0a02dd65f7a7fd35e1da7a7c12f10b1f44a3e415eb48054c6c3f39b38110cb39"
+    },
+    "note": "Version read: as-filed (introduced). Counted as gun policy because it restricts where an electric gun (a weapon the firearms chapter regulates) may be carried; it does not regulate firearms or ammunition. SECTION 3 (HRS 134-87) adds the new section to the exemption cross-reference for law enforcement and the National Guard. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 2 (new): It shall be unlawful for any person to carry or possesses an electric gun in or near an airport, passenger transportation terminal, commuter operations area, state or county government building, or any meeting place required to be open to the public pursuant to chapter 92; provided that the following shall be exempt:\nSECTION 2 (new): (2) A full time paid peace officer of another state or the federal government who is carrying out official duties while in the State or any person summoned by the peace officer to assist in making arrests or preserving the peace while that person is engaged in assisting the peace officer;\nSECTION 2 (new): Any person violating this section shall be guilty of a misdemeanor."
+}

@@ -1,0 +1,83 @@
+{
+  "id": "HI-SB-2626-2020",
+  "scope": "state:hi",
+  "title": "SB2626 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2626&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2626_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "INOUYE",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kaiali‘i Kahele",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2626_.HTM; sha256 cfd84baf40281b1fb250e44866e2ce3217844fce2780a82c0b657f60d0eb7b7e)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2626-2020.introduced.htm",
+      "sha256": "cfd84baf40281b1fb250e44866e2ce3217844fce2780a82c0b657f60d0eb7b7e"
+    },
+    "note": "Introduced text. Section 4 amends 134-8(a) to add assault rifles, assault shotguns and revolving-cylinder shotguns to the banned list and 134-8(c) to extend the magazine limit to any firearm; subsection (a) is quoted; subsection (c) is described, not quoted, because its sentence runs across struck words. Section 3 adds the new subsection (f) to 134-4 (as the bill marks it, with a July 8, 2020 date). No votes on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-1): \"Assault rifle\" means a semiautomatic rifle that accepts a detachable magazine and has one or more of the following characteristics: \"Assault shotgun\" means a semiautomatic shotgun that has one or more of the following characteristics:\nSECTION 3 (HRS 134-4): (f) After July 8, 2020, no person shall bring or cause to be brought into the State an assault rifle or assault shotgun.\nSECTION 4 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following is prohibited: assault pistols, except as provided by section 134-4(e); assault rifles, except as provided by section 134-32(f); assault shotguns, except as provided by section 134-32(f); automatic firearms; rifles with barrel lengths less than sixteen inches; shotguns with barrel lengths less than eighteen inches; shotguns with a revolving cylinder; cannons; mufflers, silencers, or devices for deadening or muffling the sound of discharged firearms; hand grenades, dynamite, blasting caps, bombs, or bombshells, or other explosives; or any type of ammunition or any projectile component thereof coated with teflon or any other similar coating designed primarily to enhance its capability to penetrate metal or pierce protective armor; and any type of ammunition or any projectile component thereof designed or intended to explode or segment upon impact with its target."
+}

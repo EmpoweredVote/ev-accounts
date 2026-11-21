@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-301-2022",
+  "scope": "state:hi",
+  "title": "SB301 (2022 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=301&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB301_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB301_SD1_.HTM; sha256 cd5ac22fd7f8d54d16b7ee173afe347d27b2ec293a888ab12fe1c78ba47699f6)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-301-2022.sd1.htm",
+      "sha256": "cd5ac22fd7f8d54d16b7ee173afe347d27b2ec293a888ab12fe1c78ba47699f6"
+    },
+    "note": "Senate Draft 1 of SB 301 (2022 session), not the as-filed text. First quoted sentence is joined across struck words ('The', 'which', 'a pistol'), which the bill removes; the quote omits them. Carried over from 2021; amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8(c)): Except as provided in section 134-11, the manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of detachable ammunition magazines with a capacity in excess of ten rounds that are designed for or capable of use with any firearm is prohibited.\nSECTION 2 (HRS 134-8(c)): This subsection shall not apply to magazines originally designed to accept more than ten rounds of ammunition which have been modified to accept no more than ten rounds and which are not capable of being readily restored to a capacity of more than ten rounds."
+}

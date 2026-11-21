@@ -1,0 +1,92 @@
+{
+  "id": "HI-HB-1176-2018",
+  "scope": "state:hi",
+  "title": "HB1176 (2018 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1176&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/HB1176_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Richard P. Creagan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lynn DeCoite",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+    },
+    {
+      "name": "Cindy Evans",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Hashem",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f951e14c-168e-42c9-a6ff-d18788a35eff"
+    },
+    {
+      "name": "Matthew S. LoPresti",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Nakashima",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marcus R. Oshiro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Calvin K.Y. Say",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kyle Yamashita",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fba70db8-4bc3-47b5-bc70-d4c078936cda"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/HB1176_.HTM; sha256 e46067559a854c257c58faf3465806dad5918bbbc62e7464913c353c151d5b47)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1176-2018.introduced.htm",
+      "sha256": "e46067559a854c257c58faf3465806dad5918bbbc62e7464913c353c151d5b47"
+    },
+    "note": "As-filed text. The quoted provisos are clauses printed next to struck periods, so a few are clauses rather than whole sentences; the penalty line for 134-17(b) is a clause stopping before a struck period. Text identical to the 2017 filing; no passage vote on file."
+  },
+  "operative_text": "SECTION 1 (HRS 134-3): provided that the duty to register the firearm shall be an ongoing one, and failure to register the firearm within five days of arrival shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 1 (HRS 134-3): provided that the duty to register the firearm shall be an ongoing one, and failure to register the firearm within five days of acquisition shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 2 (HRS 134-17): (b) Any person who violates section 134-3(a) shall be guilty of a petty misdemeanor\nSECTION 2 (HRS 134-17): provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(a).\nSECTION 2 (HRS 134-17): provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(b)."
+}

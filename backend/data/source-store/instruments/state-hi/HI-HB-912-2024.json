@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-912-2024",
+  "scope": "state:hi",
+  "title": "HB912 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=912&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/HB912_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/HB912_.HTM; sha256 12303b5bc4fe12bdce472ac2190459105b09123199f484d82256baa10a971593)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-912-2024.introduced.htm",
+      "sha256": "12303b5bc4fe12bdce472ac2190459105b09123199f484d82256baa10a971593"
+    },
+    "note": "As-filed text; no passage vote on file. Quotes leave out struck words (the fifteen-day and seventy-five-day lending rules)."
+  },
+  "operative_text": "SECTION 2 (HRS 134-4): (c) Any lawfully acquired rifle or shotgun may be lent to an adult who is twenty-one years of age or older for use for a period not to exceed twelve hours; provided that the adult borrowing a rifle or shotgun possesses a permit pursuant to section 134-2 or owns or possesses a firearm that is registered pursuant to section 134-3, and is not prohibited from ownership or possession of a firearm pursuant to section 134-7.\nSECTION 2 (HRS 134-4): (d) No person shall knowingly lend a firearm to any person who does not have a permit pursuant to section 134-2, does not own or possess a firearm that is registered pursuant to section 134-3, or is prohibited from ownership or possession of a firearm under section 134-7."
+}

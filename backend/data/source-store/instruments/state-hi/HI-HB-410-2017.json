@@ -1,0 +1,44 @@
+{
+  "id": "HI-HB-410-2017",
+  "scope": "state:hi",
+  "title": "HB410 (2017 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=410&year=2017",
+    "https://data.capitol.hawaii.gov/sessions/session2017/bills/HB410_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sam Kong",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+    },
+    {
+      "name": "James Kunane Tokioka",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/HB410_.HTM; sha256 917311e00a6902c83d2c0e34654ec16191a196051766057811b2c14115865401)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-410-2017.introduced.htm",
+      "sha256": "917311e00a6902c83d2c0e34654ec16191a196051766057811b2c14115865401"
+    },
+    "note": "As-filed text (introduced). No passage vote on file. The bill strikes the 'exceptional case' / reason-to-fear-injury and urgency-or-need showings and changes 'may' to 'shall'; the quotes omit those struck words, so they are stitched from the remaining text and not printed exactly in sequence. Carried-over bill; same text as the other year."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): The chief of police of the appropriate county shall grant a license to an applicant who is a citizen of the United States of the age of twenty-one years or more or to a duly accredited official representative of a foreign nation of the age of twenty-one years or more to carry a pistol or revolver and ammunition therefor concealed on the person within the county where the license is granted.\nSECTION 1 (HRS 134-9): The respective chief of police shall grant to an applicant of good moral character who is a citizen of the United States of the age of twenty-one years or more, is engaged in the protection of life and property, and is not prohibited under section 134-7 from the ownership or possession of a firearm, a license to carry a pistol or revolver and ammunition therefor unconcealed on the person within the county where the license is granted.\nSECTION 1 (HRS 134-9): The chief of police of the appropriate county, or the chief's designated representative, shall perform an inquiry on an applicant by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made."
+}

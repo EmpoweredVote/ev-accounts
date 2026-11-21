@@ -1,0 +1,34 @@
+{
+  "politician_id": "c669df3a-8d60-4456-a7db-6eb8488ecd63",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "firearms",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "sponsor list: covered by bulk bill data",
+        "role check: web results show this person as the Maui Resident Trustee of the Office of Hawaiian Affairs (an elected board seat, not a legislative seat), on the 2026 ballot in a rematch against Keeaumoku Kapu",
+        "Civil Beat 2026 candidate Q&A (https://civilbeat.org/2026/07/candidate-qa-office-of-hawaiian-affairs-maui-resident-trustee-carmen-hulu-lindsey/): fetched, nothing on the subject",
+        "Hawaii News Now OHA forum story (https://www.hawaiinewsnow.com/2026/10/14/oha-forum-spotlights-maui-trustee-rematch-between-lindsey-kapu/): fetched, nothing on the subject",
+        "blocked: https://www.oha.org/trustee/carmen-hulu-lindsey/ (403)",
+        "blocked: https://www.staradvertiser.com/2026/07/09/election/2026-election-carmen-hulu-lindsey/ (403)",
+        "blocked: https://www.capitol.hawaii.gov/members/legislator.aspx?member=Lindsey (403)",
+        "not reviewed: https://ballotpedia.org/Carmen_Hulu_Lindsey (returned 202 with no page text; search snippet only)",
+        "web search: name plus firearm terms returned only bill texts that do not name her"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:40:26.568Z",
+      "by": "source-collector"
+    }
+  ]
+}

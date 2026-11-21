@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-307-2022",
+  "scope": "state:hi",
+  "title": "SB307 (2022 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=307&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB307_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB307_SD1_.HTM; sha256 b2b8b9ae33d3ea512e38903f81862ea2fb5f33db068c1e7277aa87a5068ed8e1)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-307-2022.sd1.htm",
+      "sha256": "b2b8b9ae33d3ea512e38903f81862ea2fb5f33db068c1e7277aa87a5068ed8e1"
+    },
+    "note": "Senate Draft 1 (same text in 2022). The quote leaves out words the draft strikes (\"or\", \"teflon\"). Effective date in this draft is May 6, 2137."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following is prohibited: assault pistols, except as provided by section 134-4(e); automatic firearms; rifles with barrel lengths less than sixteen inches; shotguns with barrel lengths less than eighteen inches; any firearm or rifle with the capacity to fire ammunition of fifty caliber or higher except shotguns and muzzle-loading firearms; cannons; mufflers, silencers, or devices for deadening or muffling the sound of discharged firearms; hand grenades, dynamite, blasting caps, bombs, bombshells, or other explosives; or any type of ammunition or any projectile component thereof coated with Teflon or any other similar coating designed primarily to enhance its capability to penetrate metal or pierce protective armor; and any type of ammunition or any projectile component thereof designed or intended to explode or segment upon impact with its target."
+}

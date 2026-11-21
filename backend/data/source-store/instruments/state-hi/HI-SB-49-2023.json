@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-49-2023",
+  "scope": "state:hi",
+  "title": "SB49 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=49&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB49_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB49_.HTM; sha256 2ae14b84976c7c93287a3a31668207c056225417b4a70e2cb20d6e5275a8ca03)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-49-2023.introduced.htm",
+      "sha256": "2ae14b84976c7c93287a3a31668207c056225417b4a70e2cb20d6e5275a8ca03"
+    },
+    "note": "Introduced text (as filed); no passage vote recorded. SECTION 1 adds a whole new section to chapter 134."
+  },
+  "operative_text": "SECTION 1 (new): It shall be unlawful for a person to possess a loaded firearm while the person is intoxicated.\nSECTION 1 (new): Any person violating this section shall be guilty of a petty misdemeanor.\nSECTION 1 (new): A person is in possession of a loaded firearm when the person has immediate physical control over a loaded firearm and the person is outside of the person's dwelling as defined in section 703-300; and\n(2) A person is intoxicated if the person:\n(A) Is under the influence of alcohol in an amount sufficient to impair the person's normal mental faculties or ability to operate a firearm in a careful and prudent manner;\n(B) Has .08 or more grams of alcohol per two hundred ten liters of the person's breath; or\n(C) Has .08 or more grams of alcohol per one hundred milliliters or cubic centimeters of the person's blood."
+}

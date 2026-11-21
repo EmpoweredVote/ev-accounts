@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-295-2022",
+  "scope": "state:hi",
+  "title": "SB295 (2022 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=295&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB295_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB295_.HTM; sha256 48d8d7a75ace23bb0ea3d7a2eb89f161733e169b1798c9cfd22b3e1a605e61b0)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-295-2022.introduced.htm",
+      "sha256": "48d8d7a75ace23bb0ea3d7a2eb89f161733e169b1798c9cfd22b3e1a605e61b0"
+    },
+    "note": "As-filed SB 295 (2022); text identical in both years (effective date July 1, 2021 as printed). Intoxication defined by .08 breath or blood alcohol or impairment. Amendments after introduction are not in the text read."
+  },
+  "operative_text": "SECTION 1 (new §134-): (a) It shall be unlawful for a person to possess a loaded firearm while the person is intoxicated.\nSECTION 1 (new §134-): (b) Any person violating this section shall be guilty of a petty misdemeanor.\nSECTION 1 (new §134-): (1) A person is in possession of a loaded firearm when the person has immediate physical control over a loaded firearm and the person is outside of the person's dwelling as defined in section 703-300; and"
+}

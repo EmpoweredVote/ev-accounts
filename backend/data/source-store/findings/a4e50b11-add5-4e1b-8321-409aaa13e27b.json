@@ -1,0 +1,34 @@
+{
+  "politician_id": "a4e50b11-add5-4e1b-8321-409aaa13e27b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun with or without a permit",
+        "limits on who may have a gun",
+        "ghost guns",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "identity check: pages found name Dan Ahuna as the Kauai and Niihau trustee of the Office of Hawaiian Affairs (a statewide board, not the Legislature), term running to 2028, last on the ballot in 2024; no page found naming a Dan Ahuna in the Legislature; not on the 2026 ballot as far as found",
+        "https://www.civilbeat.org/author/dan-ahuna/ (author page read: trustee bio only, nothing on the subject)",
+        "https://www.oha.org/about/leadership/board-of-trustees/ (fetched, nothing on the subject)",
+        "https://kawaiola.news/ea/hawaii-elections/dan-ahuna/ (fetched, nothing on the subject)",
+        "Ballotpedia: https://ballotpedia.org/Dan_Ahuna (curl returned an interstitial with no page text; only search-result description seen, not reviewed)",
+        "blocked: https://www.capitol.hawaii.gov/members/legislator.aspx?member=Ahuna (403)",
+        "campaign site: https://ahunaforhawaii.com did not resolve; no campaign site found",
+        "sponsor list: covered by bulk bill data",
+        "web searches on name plus gun, firearm, Second Amendment, floor remarks, newsletter, interview: nothing on the subject by this person",
+        "hawaiihousedemocrats.com: fetched, no mention of Ahuna"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:40:06.643Z",
+      "by": "source-collector"
+    }
+  ]
+}

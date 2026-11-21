@@ -1,0 +1,237 @@
+{
+  "id": "HI-SB-2519-2020",
+  "scope": "state:hi",
+  "title": "SB2519 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2519&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2519_SD2_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Kaiali‘i Kahele",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brian T. Taniguchi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Laura H. Thielen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-03-03",
+      "body": "HI Senate",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 2,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595494 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2519&year=2020#2020-03-03-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Breene Harimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Kaiali‘i Kahele",
+          "vote": "yea",
+          "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Laura H. Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "yea",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell E. Ruderman",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "nay"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2519_SD2_.HTM; sha256 1a2727319a28633adfe8c902e4ad22833fcd7eb0b9431d565ef0644a4a56c22a)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2519-2020.sd2.htm",
+      "sha256": "1a2727319a28633adfe8c902e4ad22833fcd7eb0b9431d565ef0644a4a56c22a"
+    },
+    "note": "Senate Draft 2 (SD2). Subsection (c) of 134-8 is amended to drop \"designed for or capable of use with a pistol\" and to exempt magazines legally possessed before the Act; it mixes struck and new words, so it is not quoted. Violating (c) is a misdemeanor, a class C felony if the magazine is inserted in a firearm. The bill has a Senate passage vote (23-2); amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): (d) No person shall sell, barter, trade, gift, transfer, or acquire, except by means of inheritance, a detachable ammunition magazine pursuant to this subsection. (e) Detachable ammunition magazines with a capacity in excess of ten rounds may be acquired, possessed, and used by a law enforcement agency or duly authorized law enforcement officer for official purposes."
+}

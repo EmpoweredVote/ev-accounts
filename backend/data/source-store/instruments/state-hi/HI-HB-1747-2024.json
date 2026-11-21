@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1747-2024",
+  "scope": "state:hi",
+  "title": "HB1747 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1747&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/HB1747_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elijah Pierick",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0f2082b3-f502-4a95-95b2-a23baceadf92"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/HB1747_.HTM; sha256 a709a99f2e3acb0cab93169478261bf8818fb8c1401d7fd420330804cd215a0b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1747-2024.introduced.htm",
+      "sha256": "a709a99f2e3acb0cab93169478261bf8818fb8c1401d7fd420330804cd215a0b"
+    },
+    "note": "As-filed text. The only change of substance is that the chief of police \"shall\" rather than \"may\" grant the licence (the struck word \"may\" is not quoted); the opening sentence of 134-9(b) crosses that edit so only the unaffected final criterion is quoted verbatim. Criteria (1)-(6) listed in the section include urgency or need and engagement in protection of life and property."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): (1) Sufficiently establishes the urgency or need to carry a firearm unconcealed;\nSECTION 1 (HRS 134-9): (2) Is engaged in the protection of life and property;\nSECTION 1 (HRS 134-9): (4) Is not prohibited under section 134-7 from the ownership, possession, or control of a firearm and ammunition;\nSECTION 1 (HRS 134-9): (6) Is a citizen, national, or lawful permanent resident of the United States; and\nSECTION 1 (HRS 134-9): (7) Is of the age of twenty-one years or more."
+}

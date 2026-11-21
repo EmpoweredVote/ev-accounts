@@ -1,0 +1,124 @@
+{
+  "id": "HI-HB-2232-2024",
+  "scope": "state:hi",
+  "title": "HB2232 (2024 Regular): RELATING TO WEAPONS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2232&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/HB2232_HD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Sonny Ganaden",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Della Belatti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+    },
+    {
+      "name": "Elle Cochran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "64339380-b761-4bc8-b1f8-10838924a1d9"
+    },
+    {
+      "name": "Cedric Gates",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Natalia Hussey-Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Darius Kila",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5f5728b8-3d4f-45dd-a1c4-c669bd040ade"
+    },
+    {
+      "name": "Bert Kobayashi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Kanani Souza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d0713764-a426-422d-81dd-9e46fdba7f11"
+    },
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/HB2232_HD1_.HTM; sha256 a80d079244a242b027b638e8e4206f585cfc21e152550fc291990b9db377c40b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2232-2024.hd1.htm",
+      "sha256": "a80d079244a242b027b638e8e4206f585cfc21e152550fc291990b9db377c40b"
+    },
+    "note": "Version read: House Draft 1. Effective 7/1/3000 per section 6. The employment exception in 134-7(f) is stated in the Description; its conditions are in the struck-and-added text of section 2 (not quoted here because the operative paragraphs are list items, plain text cannot show which are new). No passage vote on file."
+  },
+  "operative_text": "SECTION 1 (new): The department of the attorney general shall publish an annual report on its publicly available website that includes, if available, broken down by county, the number of instances in which: (1) A person subject to an order described in section 134-7(f) or 134-86(g) surrendered a firearm, ammunition, or electric gun as a result of that order; and (2) An order described in section 134-7(f) or 134-86(g) was denied, revoked, or allowed to expire, or the corresponding action was withdrawn by the petitioner, because the person subject to the order required a firearm, ammunition, or electric gun for the purposes of the person's employment.\nSECTION 2 (HRS 134-7): The person shall relinquish possession and control of any firearm and ammunition owned by that person to the police department of the appropriate county for safekeeping for the duration of the order or extension thereof. If the person restrained is the registered owner of a firearm and knows the location of the firearm, but refuses to surrender the firearm or disclose the location of the firearm, the person restrained shall be guilty of a misdemeanor.\nSECTION 3 (HRS 134-86): The person shall relinquish possession and control of any electric gun owned by that person to the police department of the appropriate county for safekeeping for the duration of the order or extension thereof."
+}

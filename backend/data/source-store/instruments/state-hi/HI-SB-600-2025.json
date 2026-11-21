@@ -1,0 +1,68 @@
+{
+  "id": "HI-SB-600-2025",
+  "scope": "state:hi",
+  "title": "SB600 (2025 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=600&year=2025",
+    "https://data.capitol.hawaii.gov/sessions/session2025/bills/SB600_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "C.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/SB600_.HTM; sha256 821e9e45dab0980bd9fcbbb5c7b8b7fd6ae9b4d12bd651904a1d1cfc6329cfb9)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-600-2025.introduced.htm",
+      "sha256": "821e9e45dab0980bd9fcbbb5c7b8b7fd6ae9b4d12bd651904a1d1cfc6329cfb9"
+    },
+    "note": "Version read: introduced (as filed). Text is identical to the other year of the biennium apart from the heading. Section 2 also adds definitions of assault rifle and assault shotgun, redefines assault pistol (one feature instead of two, plus listed models), and repeals \"antique pistol or revolver\"; Section 5 (HRS 134-15) swaps that term for \"antique firearm\". Section 4 also keeps the ten-round magazine limit for pistols and adds a penalty split (felony for assault weapons, misdemeanor for magazines unless inserted in a firearm). No passage vote is recorded; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-1): \".50 caliber rifle\" means a centerfire rifle capable of firing a .50 caliber cartridge. \"Assault weapon attachment\" means any device capable of being attached to a firearm that is specifically designed for making or converting a firearm into an assault pistol, assault rifle, or assault shotgun.\nSECTION 3 (HRS 134-4): (f) After July 8, 2025, except as provided by section 134-8(e), no person shall bring or cause to be brought into the State a .50 caliber rifle or assault weapon attachment. No .50 caliber rifle or assault weapon attachment shall be sold or transferred on or after July 8, 2025, to anyone within the State, other than to a dealer licensed under section 134-32 or the chief of police of any county, except as provided by section 134-8(e); provided that any person who obtains title by bequest or intestate succession to a .50 caliber rifle registered within the State shall, within ninety days, render the weapon permanently inoperable, sell or transfer the weapon to a licensed dealer or the chief of police of any county, or remove the weapon from the State.\nSECTION 4 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following is prohibited: assault pistols, except as provided by section 134-4(e); .50 caliber rifles, except as provided by section 134-4(f); assault weapon attachments; automatic firearms; rifles with barrel lengths less than sixteen inches; shotguns with barrel lengths less than eighteen inches; cannons; mufflers, silencers, or devices for deadening or muffling the sound of discharged firearms; hand grenades, dynamite, blasting caps, bombs, or bombshells, or other explosives; or any type of ammunition or any projectile component thereof coated with teflon or any other similar coating designed primarily to enhance its capability to penetrate metal or pierce protective armor; and any type of ammunition or any projectile component thereof designed or intended to explode or segment upon impact with its target. (d) The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of detachable ammunition magazines with a capacity in excess of twenty rounds that are designed for or capable of use with any firearm other than a pistol is prohibited. This subsection shall not apply to magazines originally designed to accept more than twenty rounds of ammunition which have been modified to accept not more than twenty rounds and which are not capable of being readily restored to a capacity of more than twenty rounds. (f) The provisions of this section regarding the acquisition and possession of assault pistols, .50 caliber rifles, assault weapon attachments, and detachable ammunition magazines with a capacity in excess of ten rounds or twenty rounds, as applicable, shall not apply to a person in an exempt category identified in section 134-11."
+}

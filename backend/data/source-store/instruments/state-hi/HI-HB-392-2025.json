@@ -1,0 +1,440 @@
+{
+  "id": "HI-HB-392-2025",
+  "scope": "state:hi",
+  "title": "HB392 (2025 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=392&year=2025",
+    "https://data.capitol.hawaii.gov/sessions/session2025/bills/HB392_HD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Nadine Nakamura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a78d5716-4397-4a95-944d-f5e32d38f6dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-04",
+      "body": "HI House",
+      "motion": "House Passed Third Reading, passed",
+      "kind": "roll-call",
+      "yes": 42,
+      "no": 6,
+      "absent": 3,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595568 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=392&year=2025#2025-03-04-House-Third-Reading",
+      "members": [
+        {
+          "name": "Adrian Tam",
+          "vote": "yea",
+          "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+        },
+        {
+          "name": "Amy Perruso",
+          "vote": "yea",
+          "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+        },
+        {
+          "name": "Andrew Garrett",
+          "vote": "yea",
+          "politician_id": "9c5c9e11-5718-4d6a-b063-d580a7b350b4"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea",
+          "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+        },
+        {
+          "name": "Cory Chun",
+          "vote": "yea",
+          "politician_id": "ccabba98-24c1-437d-87fa-6cd61fc4be73"
+        },
+        {
+          "name": "Daniel Holt",
+          "vote": "yea"
+        },
+        {
+          "name": "Darius Kila",
+          "vote": "yea",
+          "politician_id": "5f5728b8-3d4f-45dd-a1c4-c669bd040ade"
+        },
+        {
+          "name": "David Tarnas",
+          "vote": "yea",
+          "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+        },
+        {
+          "name": "Dee Morikawa",
+          "vote": "yea",
+          "politician_id": "60a980b6-15ff-41be-9463-5b5605d17589"
+        },
+        {
+          "name": "Della Belatti",
+          "vote": "yea",
+          "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+        },
+        {
+          "name": "Elle Cochran",
+          "vote": "yea",
+          "politician_id": "64339380-b761-4bc8-b1f8-10838924a1d9"
+        },
+        {
+          "name": "Gregg Takayama",
+          "vote": "yea",
+          "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+        },
+        {
+          "name": "Greggor Ilagan",
+          "vote": "yea",
+          "politician_id": "bd148989-091e-4def-9caa-04db1abf9357"
+        },
+        {
+          "name": "Ikaika Hussey",
+          "vote": "yea",
+          "politician_id": "a5c32d0d-b04f-4c56-9bb0-35c043434dda"
+        },
+        {
+          "name": "Ikaika Olds",
+          "vote": "yea",
+          "politician_id": "d74cb911-cfda-407d-aa2f-858738f6ad97"
+        },
+        {
+          "name": "Jackson Sayama",
+          "vote": "yea",
+          "politician_id": "d39cb33d-e229-41a8-8d4b-d55f98a1e000"
+        },
+        {
+          "name": "Jenna Takenouchi",
+          "vote": "yea",
+          "politician_id": "e7b158ad-e42f-4db7-89a3-511a5082c931"
+        },
+        {
+          "name": "Julie Reyes Oda",
+          "vote": "yea",
+          "politician_id": "de100c80-d82f-4b90-a15a-0b832d4c1c34"
+        },
+        {
+          "name": "Justin Woodson",
+          "vote": "yea",
+          "politician_id": "84ee05d5-66a5-4845-98eb-01ccac66dd1c"
+        },
+        {
+          "name": "Kanani Souza",
+          "vote": "yea",
+          "politician_id": "d0713764-a426-422d-81dd-9e46fdba7f11"
+        },
+        {
+          "name": "Kim Coco Iwamoto",
+          "vote": "yea",
+          "politician_id": "6b3f7941-64e6-4ff8-a8f0-2fdffe66f584"
+        },
+        {
+          "name": "Kirstin Kahaloa",
+          "vote": "yea",
+          "politician_id": "eb82520d-6d14-4c25-8bf7-f3c804b3ed03"
+        },
+        {
+          "name": "Kyle Yamashita",
+          "vote": "yea",
+          "politician_id": "fba70db8-4bc3-47b5-bc70-d4c078936cda"
+        },
+        {
+          "name": "Linda Ichiyama",
+          "vote": "yea",
+          "politician_id": "bcce79fe-627b-491f-add3-415b40f90469"
+        },
+        {
+          "name": "Lisa Kitagawa",
+          "vote": "yea",
+          "politician_id": "0f02f669-b7ab-4d3b-9ab6-9005db22df9c"
+        },
+        {
+          "name": "Lisa Marten",
+          "vote": "yea",
+          "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+        },
+        {
+          "name": "Luke Evslin",
+          "vote": "yea",
+          "politician_id": "4b4071a9-15b2-4a5a-8c4f-24191d6ac8b8"
+        },
+        {
+          "name": "Mahina Poepoe",
+          "vote": "yea",
+          "politician_id": "8a4be9c7-3441-4b55-9b49-773748761897"
+        },
+        {
+          "name": "Mark Hashem",
+          "vote": "yea",
+          "politician_id": "f951e14c-168e-42c9-a6ff-d18788a35eff"
+        },
+        {
+          "name": "Matthias Kusch",
+          "vote": "yea",
+          "politician_id": "6be0580e-77c1-450e-a273-6e16262e9f37"
+        },
+        {
+          "name": "Mike Lee",
+          "vote": "yea",
+          "politician_id": "6ba300cc-69be-4d3d-9584-a4c03d50f5b1"
+        },
+        {
+          "name": "Nadine Nakamura",
+          "vote": "yea",
+          "politician_id": "a78d5716-4397-4a95-944d-f5e32d38f6dd"
+        },
+        {
+          "name": "Nicole Lowen",
+          "vote": "yea",
+          "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+        },
+        {
+          "name": "Rachele Lamosao",
+          "vote": "yea",
+          "politician_id": "8964f235-03e8-4232-9e12-918c10f2a6ab"
+        },
+        {
+          "name": "Scot Matayoshi",
+          "vote": "yea",
+          "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+        },
+        {
+          "name": "Sean Quinlan",
+          "vote": "yea",
+          "politician_id": "96b45c6f-0ac4-498c-8211-d87572d80eea"
+        },
+        {
+          "name": "Shirley Templo",
+          "vote": "yea",
+          "politician_id": "77155ddd-5f31-4b53-b662-f16a4faa3e72"
+        },
+        {
+          "name": "Sue Lee Loy",
+          "vote": "yea",
+          "politician_id": "547cc600-fa18-4f36-8864-3a1466fabb6c"
+        },
+        {
+          "name": "Terez Amato",
+          "vote": "yea",
+          "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+        },
+        {
+          "name": "Tina Grandinetti",
+          "vote": "yea",
+          "politician_id": "50d713a3-189a-4b95-9686-e8d217aca93a"
+        },
+        {
+          "name": "Trish La Chica",
+          "vote": "yea",
+          "politician_id": "6c63d1b0-0871-499a-847d-68cbfcf6adbe"
+        },
+        {
+          "name": "Tyson Miyake",
+          "vote": "yea",
+          "politician_id": "c502a335-c012-4bad-ae49-331dcac9ee70"
+        },
+        {
+          "name": "Chris Muraoka",
+          "vote": "nay",
+          "politician_id": "aedca6b4-95c9-4fa7-b173-718decb205b4"
+        },
+        {
+          "name": "David Alcos",
+          "vote": "nay",
+          "politician_id": "4b55782c-dba8-46ac-b77f-2692a1c7bca1"
+        },
+        {
+          "name": "Diamond Garcia",
+          "vote": "nay",
+          "politician_id": "0f201793-d29a-41d8-8981-bc791a46efe8"
+        },
+        {
+          "name": "Garner Shimizu",
+          "vote": "nay",
+          "politician_id": "546545ab-339e-42f5-be0c-c89d031e4ac4"
+        },
+        {
+          "name": "Lauren Matsumoto",
+          "vote": "nay",
+          "politician_id": "222c3689-ecac-47d8-9379-c3d329039147"
+        },
+        {
+          "name": "Sam Kong",
+          "vote": "nay",
+          "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+        },
+        {
+          "name": "Elijah Pierick",
+          "vote": "absent",
+          "politician_id": "0f2082b3-f502-4a95-95b2-a23baceadf92"
+        },
+        {
+          "name": "Gene Ward",
+          "vote": "absent"
+        },
+        {
+          "name": "Jeanné Kapela",
+          "vote": "absent",
+          "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "body": "HI Senate",
+      "motion": "Senate Passed Third Reading, passed",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 3,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595569 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=392&year=2025#2025-03-31-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Angus McKelvey",
+          "vote": "yea",
+          "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+        },
+        {
+          "name": "Brandon Elefante",
+          "vote": "yea",
+          "politician_id": "e9eecfc6-7643-44d9-8c40-4cb69c89e625"
+        },
+        {
+          "name": "Carol Fukunaga",
+          "vote": "yea",
+          "politician_id": "88ca2dc9-8505-4d1f-bc5a-d458ed3b5c20"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "Henry Aquino",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Richards",
+          "vote": "yea",
+          "politician_id": "7824026e-b669-4e39-9131-13e6c484b325"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Lynn DeCoite",
+          "vote": "yea",
+          "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Samantha DeCorte",
+          "vote": "yea",
+          "politician_id": "3dcc200d-6b83-4b68-aa44-0ad2bc1e8f73"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Troy Hashimoto",
+          "vote": "yea",
+          "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+        },
+        {
+          "name": "Brenton Awa",
+          "vote": "nay",
+          "politician_id": "f5a2c01d-7cd4-4c03-ae45-33bdc2af8bf8"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "nay",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB392_HD1_.HTM; sha256 e0ed52ade6458d50c9bb36fcf13a4a13ab527976cbf699ce8fd7e41d302add66)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-392-2025.hd1.htm",
+      "sha256": "e0ed52ade6458d50c9bb36fcf13a4a13ab527976cbf699ce8fd7e41d302add66"
+    },
+    "note": "House Draft 1 (HD1). The House passed it on third reading 2025-03-04 (42-6); later amendments are not in the text read. SECTION 3 (HRS 134-8(a)) adds ghost guns to the list of prohibited items (words struck from that subsection are omitted from the quotes); the mandatory minimums apply to a gun-use felony, so not counted as a second subject."
+  },
+  "operative_text": "SECTION 1 (HRS 134-1): \"Ghost gun\" means a firearm, including a firearm frame or firearm receiver, that has not been imprinted with a serial number registered with a federally licensed manufacturer. \"Ghost gun\" does not include a firearm that has been rendered permanently inoperable.\nSECTION 2 (new HRS 706-): A person convicted of a felony, where the person had a ghost gun in the person's possession or threatened its use or used the ghost gun while engaged in the commission of the felony, whether the ghost gun was loaded or not, may in addition to the indeterminate term of imprisonment provided for the grade of offense be sentenced to a mandatory minimum term of imprisonment without possibility of parole or probation the length of which shall be as follows: (a) For murder in the second degree and attempted murder in the second degree—up to fifteen years; (b) For a class A felony—up to ten years; (c) For a class B felony—up to five years; and (d) For a class C felony—up to three years.\nSECTION 3 (HRS 134-8): Any person violating subsection (a) or (b) shall be guilty of a class C felony and shall be imprisoned for a term of five years without probation.\nSECTION 3 (HRS 134-8): In any prosecution for the manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of a ghost gun, it shall be an affirmative defense that the person holds a current license to sell and manufacture firearms for sale under section 134-31, or that the person is a dealer licensed by the United States Department of Justice, or that the firearm is not required to have a serial number under the federal Gun Control Act of 1968."
+}

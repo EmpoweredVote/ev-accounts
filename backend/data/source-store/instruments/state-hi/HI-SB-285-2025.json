@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-285-2025",
+  "scope": "state:hi",
+  "title": "SB285 (2025 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=285&year=2025",
+    "https://data.capitol.hawaii.gov/sessions/session2025/bills/SB285_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/SB285_.HTM; sha256 0b1b5e036c481a53bfbe6c8ff95af50d7d4fea3e5303099b5ce86ea210821635)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-285-2025.introduced.htm",
+      "sha256": "0b1b5e036c481a53bfbe6c8ff95af50d7d4fea3e5303099b5ce86ea210821635"
+    },
+    "note": "As-filed SB 285 (2025 session heading may print 2025; text identical in both years). Section 3 adds 'ghost guns' to the list in HRS 134-8(a), which is not quoted separately because added words are not marked. Mandatory minimum sentence is a penalty for using a gun in a crime, so single subject. Amendments after introduction are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-1): \"Ghost gun\" means a firearm, including a firearm frame or firearm receiver, that has not been imprinted with a serial number registered with a federally licensed manufacturer. It does not include a firearm that has been rendered permanently inoperable.\nSECTION 3 (HRS 134-8): (e) In any prosecution for the manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of a ghost gun, it shall be an affirmative defense that the person holds a current license to sell and manufacture firearms for sale under section 134-31, or that the person is a dealer licensed by the United States Department of Justice, or that the firearm is not required to have a serial number under the federal Gun Control Act of 1968.\nSECTION 3 (HRS 134-8): (d) Any person violating subsection (a) or (b) shall be guilty of a class C felony and shall be imprisoned for a term of five years without probation.\nSECTION 4 (new §706-): A person convicted of a felony, where the person had a ghost gun in the person’s possession or threatened its use or used the ghost gun while engaged in the commission of the felony, whether the ghost gun was loaded or not, may in addition to the indeterminate term of imprisonment provided for the grade of offense be sentenced to a mandatory minimum term of imprisonment without possibility of parole or probation the length of which shall be as follows:"
+}

@@ -1,0 +1,87 @@
+{
+  "id": "HI-HB-664-2026",
+  "scope": "state:hi",
+  "title": "HB664 (2026 Regular): RELATING TO GUN VIOLENCE PREVENTION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=664&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/HB664_SD2_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Darius Kila",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5f5728b8-3d4f-45dd-a1c4-c669bd040ade"
+    },
+    {
+      "name": "Luke Evslin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4071a9-15b2-4a5a-8c4f-24191d6ac8b8"
+    },
+    {
+      "name": "Andrew Garrett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5c9e11-5718-4d6a-b063-d580a7b350b4"
+    },
+    {
+      "name": "Tina Grandinetti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "50d713a3-189a-4b95-9686-e8d217aca93a"
+    },
+    {
+      "name": "Rachele Lamosao",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8964f235-03e8-4232-9e12-918c10f2a6ab"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Jenna Takenouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e7b158ad-e42f-4db7-89a3-511a5082c931"
+    },
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/HB664_SD2_.HTM; sha256 b5417defcd524b2854d776be2162f19d82f1f62851c87f8f28e9ddd9fb1c0bda)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-664-2026.sd2.htm",
+      "sha256": "b5417defcd524b2854d776be2162f19d82f1f62851c87f8f28e9ddd9fb1c0bda"
+    },
+    "note": "Senate Draft 2 (HD1/SD2). Effective July 1, 2077; appropriation amounts are blank. Section 2-3 move the Gun Violence and Violent Crimes Commission (HRS 134C) from the attorney general to the department of law enforcement (struck text not quoted). Text identical in the 2025 and 2026 files except header. Amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 1 (new): There shall be established within the department of law enforcement, for administrative purposes only, an office of gun violence prevention.\nSECTION 1 (new): Administer a grant program for organizations to conduct community-based gun violence intervention initiatives focused on interrupting cycles of gun violence, trauma, and retaliation that are evidence-informed and have demonstrated promise at reducing gun violence without contributing to mass incarceration;\nSECTION 1 (new): Create and maintain a resource bank as a repository for data, research, and statistical information regarding gun violence in Hawaii; and\nSECTION 1 (new): There shall be established in the state treasury the gun violence prevention special fund, to be administered by the office of gun violence prevention, into which shall be deposited all moneys received by the office in the form of:"
+}

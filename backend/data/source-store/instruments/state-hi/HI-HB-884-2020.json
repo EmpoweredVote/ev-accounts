@@ -1,0 +1,44 @@
+{
+  "id": "HI-HB-884-2020",
+  "scope": "state:hi",
+  "title": "HB884 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=884&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB884_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sam Kong",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+    },
+    {
+      "name": "Gene Ward",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB884_.HTM; sha256 b0bb29ea0941ced2bc5d493edf379013bc2ee9f8980fc40380d674db3d507e6a)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-884-2020.introduced.htm",
+      "sha256": "b0bb29ea0941ced2bc5d493edf379013bc2ee9f8980fc40380d674db3d507e6a"
+    },
+    "note": "As-filed text; no passage vote on file. The bill strikes the limit of a license to the county where it is granted (concealed and unconcealed carry) and the one-year expiry. Quotes leave out the struck words."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): In an exceptional case, when an applicant shows reason to fear injury to the applicant's person or property, the chief of police of the appropriate county may grant a license to an applicant who is a citizen of the United States of the age of twenty-one years or more or to a duly accredited official representative of a foreign nation of the age of twenty-one years or more to carry a pistol or revolver and ammunition therefor concealed on the person within the State.\nSECTION 1 (HRS 134-9): Unless renewed, the license shall expire five years from the date of issue."
+}

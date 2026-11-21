@@ -1,0 +1,57 @@
+{
+  "id": "HI-SB-978-2023",
+  "scope": "state:hi",
+  "title": "SB978 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=978&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB978_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB978_.HTM; sha256 d37a97dc8c730da8868fd222e3b877a1315bc283dd3462d4b192671ce61dcd4c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-978-2023.introduced.htm",
+      "sha256": "d37a97dc8c730da8868fd222e3b877a1315bc283dd3462d4b192671ce61dcd4c"
+    },
+    "note": "As filed. HRS 134-8(a) adds \"any firearm or rifle with the capacity to fire ammunition of fifty caliber or higher\" to the list of prohibited manufacture, possession, sale, barter, trade, gift, transfer or acquisition; that long sentence also contains a struck word (\"teflon\"), so only the definition sentences are quoted. No passage vote on file; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): \"Firearm or rifle with the capacity to fire ammunition of fifty caliber of higher\" does not include antique pistols, antique revolvers, or muzzleloaders. \"Muzzleloaders\" means any rifle, pistol, or shotgun that loads from the muzzle, or the open end of a weapon, from which the ammunition is discharged."
+}

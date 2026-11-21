@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-2154-2020",
+  "scope": "state:hi",
+  "title": "SB2154 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2154&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2154_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2154_.HTM; sha256 0dda4825eb2c2998c1e7a0c3175b291daf855bbaa062457e3e31059bbdaf457c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2154-2020.introduced.htm",
+      "sha256": "0dda4825eb2c2998c1e7a0c3175b291daf855bbaa062457e3e31059bbdaf457c"
+    },
+    "note": "As-filed text (introduced). First quote leaves out the struck words 'which are designed for or capable of use with a pistol'. The bill also changes the penalty sentence so that possessing a banned magazine inserted in any firearm (not only a pistol) is a class C felony; otherwise a misdemeanor."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of detachable ammunition magazines with a capacity in excess of ten rounds is prohibited.\nSECTION 2 (HRS 134-8): Detachable ammunition magazines with a capacity in excess of ten rounds may be acquired, possessed, and used by a law enforcement agency or duly authorized law enforcement officer for official purposes.\nSECTION 2 (HRS 134-8): Any person violating subsection (a) or (b) shall be guilty of a class C felony and shall be imprisoned for a term of five years without probation."
+}

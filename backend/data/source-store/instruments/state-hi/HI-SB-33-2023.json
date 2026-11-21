@@ -1,0 +1,51 @@
+{
+  "id": "HI-SB-33-2023",
+  "scope": "state:hi",
+  "title": "SB33 (2023 Regular): RELATING TO FIREARMS AMMUNITION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=33&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB33_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB33_.HTM; sha256 27ab876713d5ce749ce7ae7cd2c97048c526d4614d5fc242d84925711d96205e)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-33-2023.introduced.htm",
+      "sha256": "27ab876713d5ce749ce7ae7cd2c97048c526d4614d5fc242d84925711d96205e"
+    },
+    "note": "As-filed version, identical text in the 2023 and 2024 files (carried-over bill; heading prints 2023). No passage vote. Sections 6 and 7 extend the dealer license conditions and penalties to ammunition; not quoted (struck punctuation). Section 3 (HRS 134-3) adds an alternate-purchaser designation on the registration form."
+  },
+  "operative_text": "SECTION 2 (new): §134- Ammunition purchase; proof of registration; exception. (a) No person shall sell ammunition or shell casings for any firearm unless the purchaser first demonstrates that the purchaser: (1) Is the registered owner of the firearm for which the ammunition or shell casings are to be purchased; or (2) Has been designated by the registered owner of the firearm as the alternate for ammunition purchases on the registration pursuant to section 134-3. Presentation to the seller of the registration issued pursuant to section 134-3, together with government-issued photographic identification, such as a driver's license, a civil identification card issued pursuant to part XVI of chapter 286, a military identification card, or a United States passport, shall be sufficient to demonstrate that the purchaser is the registered owner of the firearm for which the ammunition is to be purchased or the designated alternate. For on-line purchases, a scanned copy of the registration and identification shall be sufficient for compliance with this section. For the purposes of this section, the chief of police of each county may provide duplicates of the registration document or the same information in a format to be determined by the chief of police of each county.\nSECTION 2 (new): (b) Violation of this section is a petty misdemeanor. (c) This section shall not apply to ammunition purchases for firearms manufactured before 1899.\nSECTION 3 (HRS 134-3): (h) A registered owner of a firearm may be issued a permit to purchase ammunition of a caliber that is not the caliber listed on the registered firearm by demonstrating to the police department in the registering county that the firearm is capable of firing a caliber of ammunition that is not the caliber listed on the registration of the firearm. This permit shall designate which caliber of ammunition the firearm is capable of firing. The registered owner of the firearm or their alternate person designated under subsection (g) may purchase ammunition, pursuant to section 134- , that is the caliber designated under this subsection.\nSECTION 4 (HRS 134-4): (d) No person shall knowingly lend a firearm or transfer ammunition to any person who is prohibited from ownership or possession of a firearm under section 134-7.\nSECTION 5 (HRS 134-31): Any person desiring to engage in the business to sell and manufacture firearms or ammunition for sale in the State either at wholesale or retail, shall annually file an application for a license therefor with the director of finance of each county of the State. The annual fee for the issuance of such license shall be $10 and shall be payable to said director of finance. A license issued hereunder shall expire on June 30 next following the date of issuance of the license unless sooner terminated."
+}

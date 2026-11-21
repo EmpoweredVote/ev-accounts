@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-251-2021",
+  "scope": "state:hi",
+  "title": "HB251 (2021 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=251&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/HB251_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Linda Ichiyama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bcce79fe-627b-491f-add3-415b40f90469"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/HB251_.HTM; sha256 b420d9ee4b246cf5d50a7330d3c644bac16e183f189e9c155b465ff03737a744)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-251-2021.introduced.htm",
+      "sha256": "b420d9ee4b246cf5d50a7330d3c644bac16e183f189e9c155b465ff03737a744"
+    },
+    "note": "Introduced version as filed; no passage vote on file. Quote ends at a semicolon mid-sentence of the list (the remainder concerns coated or exploding ammunition and contains a struck word)."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following is prohibited: assault pistols, except as provided by section 134-4(e); automatic firearms; rifles with barrel lengths less than sixteen inches; shotguns with barrel lengths less than eighteen inches; any firearm or rifle with the capacity to fire ammunition of fifty caliber or higher; cannons; mufflers, silencers, or devices for deadening or muffling the sound of discharged firearms; hand grenades, dynamite, blasting caps, bombs, or bombshells, or other explosives;"
+}

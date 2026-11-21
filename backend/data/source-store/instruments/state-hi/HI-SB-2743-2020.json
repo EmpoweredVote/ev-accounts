@@ -1,0 +1,49 @@
+{
+  "id": "HI-SB-2743-2020",
+  "scope": "state:hi",
+  "title": "SB2743 (2020 Regular): RELATING TO ELECTRIC GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2743&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2743_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "GABBARD",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Donna Kim",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2743_.HTM; sha256 4cc3b87b96a77774d4ff56dff63a270b86432802eb96f78b9e6ae4b01904a30e)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2743-2020.introduced.htm",
+      "sha256": "4cc3b87b96a77774d4ff56dff63a270b86432802eb96f78b9e6ae4b01904a30e"
+    },
+    "note": "Version read: as-filed (introduced). The bill strikes the ban in HRS 134-16(a)-(c) (possession, sale, lending, delivery of electric guns, confiscation by the chief of police) and the matching penalty reference in HRS 134-17(c); the quoted parts are the remaining text. Counted as gun policy because it changes a gun-specific offence, though electric guns are not firearms. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 3 (HRS 134-16): The county police departments of this State, the department of public safety, the department of land and natural resources, the army and air national guard, and the department of transportation shall maintain records regarding every electric gun in their custody and control.\nSECTION 3 (HRS 134-16): The department of land and natural resources, the department of public safety, and the department of transportation shall ensure that each of its conservation and resources enforcement officers and law enforcement officers who is authorized to use an electric gun and related equipment shall first receive training from the manufacturer or from a manufacturer-approved training program, as well as by manufacturer-certified or approved instructors in the use of electric guns prior to deployment of the electric guns and related equipment in public.\nSECTION 4 (HRS 134-17(c)): Any person who violates section 134-3(b) shall be guilty of a petty misdemeanor and the firearm shall be confiscated as contraband and disposed of, if the firearm is not registered within five days of the person receiving notice of the violation."
+}

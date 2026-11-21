@@ -1,0 +1,99 @@
+{
+  "id": "HI-SB-2518-2020",
+  "scope": "state:hi",
+  "title": "SB2518 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2518&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2518_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Kaiali‘i Kahele",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brian T. Taniguchi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2518_SD1_.HTM; sha256 8ff44c390fe8d9810b7dc7232e71bd2f4ceb330dc568f17e8a809d83043cfd52)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2518-2020.sd1.htm",
+      "sha256": "8ff44c390fe8d9810b7dc7232e71bd2f4ceb330dc568f17e8a809d83043cfd52"
+    },
+    "note": "Senate Draft 1 (SD1). Section 2 amends 134-9 so the attorney general, not county police chiefs, grants licenses to carry (valid statewide) in exceptional cases; chiefs keep power to license guard-agency employees for the county only; the fee is $100 per application, paid to the State; applicants must have finished a safety course within 180 days. Several of these terms sit in sentences with struck words, so they are described here instead of quoted. No passage vote on file; amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-9): (c) The chief of police of the appropriate county, the attorney general, or the chief's or attorney general's designated representative, shall perform an inquiry on an applicant by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made. Unless renewed, the license shall expire one year from the date of issue. (2) Appear to be a suitable person to be so licensed; (3) Not be prohibited under section 134-7 from the ownership or possession of a firearm; and"
+}

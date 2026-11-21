@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-3043-2022",
+  "scope": "state:hi",
+  "title": "SB3043 (2022 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3043&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB3043_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB3043_.HTM; sha256 108ec5a2e16a0f57ef98a6894cd75e1e8d1da66c485a22eaa5c2cab50f79c518)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-3043-2022.introduced.htm",
+      "sha256": "108ec5a2e16a0f57ef98a6894cd75e1e8d1da66c485a22eaa5c2cab50f79c518"
+    },
+    "note": "Introduced version as filed. Section 2 changes the pistol/revolver permit expiry from ten to thirty days (the quoted sentence with that change contains struck text, so it is not quoted). Findings respond to Yukutake v. Connors; they do not say a higher law requires the steps."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2): Permits to acquire a pistol or revolver shall require a separate application and permit for each transaction.\nSECTION 3 (HRS 134-3): Any person attempting to register a firearm, a firearm receiver, or the parts used to assemble a firearm, and who is found to be disqualified from ownership, possession, or control of firearms or ammunition under section 134-7, shall surrender or dispose of all firearms and ammunition pursuant to section 134-7.3. If the firearm is acquired from a person who is not a dealer licensed under section 134-31 or a dealer licensed by the United States Department of Justice, the firearm shall be physically inspected by the chief of police of the appropriate county or designee at the time of registration. Firearms and firearm receivers with engraved or embedded registration numbers, even if done by a dealer licensed under section 134-31 or a dealer licensed by the United States Department of Justice, shall be physically inspected by the chief of police of the appropriate county or designee at the time of registration."
+}

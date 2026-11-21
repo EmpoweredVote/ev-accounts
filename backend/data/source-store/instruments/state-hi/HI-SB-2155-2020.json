@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-2155-2020",
+  "scope": "state:hi",
+  "title": "SB2155 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2155&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2155_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2155_.HTM; sha256 528f0e364cb31a3e87d84439bc4df36a7180219e5061b81d46d5989bf5d6587f)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2155-2020.introduced.htm",
+      "sha256": "528f0e364cb31a3e87d84439bc4df36a7180219e5061b81d46d5989bf5d6587f"
+    },
+    "note": "As-filed text (introduced). First quote leaves out struck words 'chief of police of the appropriate county' and 'county where the license is granted.'. The bill also moves the fee ($10 per license to $100 per application) to the State treasury and requires a safety course within 180 days before applying (not quoted: struck text in those sentences)."
+  },
+  "operative_text": "SECTION 2 (HRS 134-9): In an exceptional case, when an applicant shows reason to fear injury to the applicant's person or property, and is not prohibited under section 134-7 from the ownership or possession of a firearm, the attorney general may grant a license to an applicant who is a citizen of the United States of the age of twenty-one years or more or to a duly accredited official representative of a foreign nation of the age of twenty-one years or more to carry a pistol or revolver and ammunition therefor concealed or unconcealed on the person within the State.\nSECTION 2 (HRS 134-9): The chief of police of the appropriate county, the attorney general, or the chief's or attorney general's designated representative, shall perform an inquiry on an applicant by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made.\nSECTION 2 (HRS 134-9): No person shall carry concealed or unconcealed on the person a pistol or revolver without being licensed to do so under this section or in compliance with sections 134-5(c) or 134-25."
+}

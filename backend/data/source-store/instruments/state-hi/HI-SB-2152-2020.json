@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-2152-2020",
+  "scope": "state:hi",
+  "title": "SB2152 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2152&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2152_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2152_.HTM; sha256 d3123204943c8a98034b3ebfd27e7f20b42736ce4d53255519faf53bf328e05d)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2152-2020.introduced.htm",
+      "sha256": "d3123204943c8a98034b3ebfd27e7f20b42736ce4d53255519faf53bf328e05d"
+    },
+    "note": "As-filed text (introduced). The first quote runs across a struck word ('or') after 'pistol'; struck words are left out. The bill also strikes the sentence giving rifle and shotgun permits a one-year validity for repeat purchases. SECTION 3 (HRS 463-10.5) makes armed guards hold a license to carry a firearm in place of a permit to acquire (not quoted because it contains struck text)."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2): Permits issued to acquire any pistol, revolver, rifle, or shotgun shall be void unless used within ten days after the date of issue.\nSECTION 2 (HRS 134-2): The issuing authority shall perform an inquiry on an applicant by using the International Justice and Public Safety Network, including the United States Immigration and Customs Enforcement query, the National Crime Information Center, and the National Instant Criminal Background Check System, pursuant to section 846-2.7 before any determination to issue a permit or to deny an application is made."
+}

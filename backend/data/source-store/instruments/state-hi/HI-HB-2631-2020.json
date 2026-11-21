@@ -1,0 +1,127 @@
+{
+  "id": "HI-HB-2631-2020",
+  "scope": "state:hi",
+  "title": "HB2631 (2020 Regular): RELATING TO MENTAL HEALTH.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2631&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2631_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Della Belatti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+    },
+    {
+      "name": "Tom Brower",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard P. Creagan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lynn DeCoite",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+    },
+    {
+      "name": "Stacelynn K.M. Eli",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "ICHIYAMA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bert Kobayashi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Angus McKelvey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+    },
+    {
+      "name": "Dee Morikawa",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "60a980b6-15ff-41be-9463-5b5605d17589"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Calvin K.Y. Say",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "David Tarnas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+    },
+    {
+      "name": "Tina Wildberger",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2631_.HTM; sha256 0d20f8c4982ec404b162d207ceda88474f60b025e4aa81c89830f3e814cffc39)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2631-2020.introduced.htm",
+      "sha256": "0d20f8c4982ec404b162d207ceda88474f60b025e4aa81c89830f3e814cffc39"
+    },
+    "note": "As filed. Title says mental health, but the only operative part amends the firearm permit law."
+  },
+  "operative_text": "SECTION 1 (HRS 134-2(c)): An applicant for a permit shall sign a waiver at the time of application, allowing the chief of police of the county issuing the permit access to any records that have a bearing on the mental health of the applicant. Prior to the issuance of any permit, the chief of police of the county issuing the permit shall attest that a review of any records pertaining to the applicant's mental health, including but not limited to any records relating to court mandated treatment for anger management or domestic violence counseling, has been completed."
+}

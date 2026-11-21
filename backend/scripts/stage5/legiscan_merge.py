@@ -18,7 +18,7 @@ if os.path.exists(f'{B}/legiscan/sponsor-text-lines.csv'): lines += list(csv.Dic
 needs = json.load(open(f'{B}/legiscan/needs.json'))
 have = {(l['full_name'], l['source_url']) for l in lines}
 rows = list(csv.DictReader(open(f'{B}/research.csv'))); cols = list(rows[0].keys()); uc = [c for c in cols if c.startswith('source_url_')]
-log, cross = [], []
+log, cross, replaced = [], [], set()
 ACT = {'yea': 'Yea', 'nay': 'Nay', 'abstain': 'NV'}
 for r in rows:
     n = r['full_name']; vs = needs.get(n, [])
@@ -28,6 +28,10 @@ for r in rows:
         if (n, v['url']) in have and v['url'] not in urls: urls.append(v['url']); log.append([n, 'cite LegiScan', v['url']])
     for off in {v['official'] for v in vs}:
         if off in urls and all((n, v['url']) in have for v in vs if v['official'] == off):
+            if any(v['url'] == off for v in vs):
+                # Hawaii, 2026-11-21: a sponsorship's line is read from the official status page itself (state_legiscan.py
+                # hi_introducer_line), so the page stays cited and its line replaces the finding's own rows for that page.
+                replaced.add((n, off)); log.append([n, f'keep {HOST} (its own line replaces the finding rows)', off]); continue
             urls.remove(off); log.append([n, f'uncite {HOST} (covered by a LegiScan line)', off])
     while len(urls) > len(uc): uc.append(f'source_url_{len(uc) + 1}'); cols.append(uc[-1])
     for i, c in enumerate(uc): r[c] = urls[i] if i < len(urls) else ''
@@ -46,7 +50,7 @@ for r in rows:
 for r in rows:
     for c in cols: r.setdefault(c, '')
 cited = {(r['full_name'], r[c]) for r in rows for c in uc if r[c]}
-ev = [e for e in csv.DictReader(open(f'{B}/evidence.csv')) if (e['full_name'], e['source_url']) in cited] + [l for l in lines if (l['full_name'], l['source_url']) in cited]
+ev = [e for e in csv.DictReader(open(f'{B}/evidence.csv')) if (e['full_name'], e['source_url']) in cited and (e['full_name'], e['source_url']) not in replaced] + [l for l in lines if (l['full_name'], l['source_url']) in cited]
 idx = {}
 for e in ev:
     k = (e['full_name'], e['topic_key']); idx[k] = idx.get(k, 0) + 1; e['snippet_index'] = str(idx[k])

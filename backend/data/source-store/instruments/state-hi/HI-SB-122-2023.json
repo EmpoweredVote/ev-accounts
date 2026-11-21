@@ -1,0 +1,61 @@
+{
+  "id": "HI-SB-122-2023",
+  "scope": "state:hi",
+  "title": "SB122 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=122&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB122_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Donna Kim",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB122_.HTM; sha256 32adb8538c0c016711af3d1225ae37ac43b1819a5436c6f1ba00ff0aacf085f7)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-122-2023.introduced.htm",
+      "sha256": "32adb8538c0c016711af3d1225ae37ac43b1819a5436c6f1ba00ff0aacf085f7"
+    },
+    "note": "As-filed text (introduced). The bill strikes the temporary hunting and sport-shooting permits for aliens, and in (i) strikes the fee exception and sets a fee of not less than $100 (that sentence has struck words, so not quoted). Despite the Description, subsection (g) as filed still refers only to a pistol or revolver. Amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2) subsection (d): The chief of police of the respective counties may issue permits to acquire firearms to citizens of the United States of the age of twenty-one years or more, or duly accredited official representatives of foreign nations, or duly commissioned law enforcement officers of the State who are aliens; provided that any law enforcement officer who is the owner of a firearm and who is an alien shall transfer ownership of the firearm within forty-eight hours after termination of employment from a law enforcement agency.\nSECTION 2 (HRS 134-2) subsection (d): Notwithstanding any law to the contrary and upon joint application, the chief of police may issue permits to acquire firearms jointly to spouses who otherwise qualify to obtain permits\nSECTION 2 (HRS 134-2) subsection (g): No person shall be issued a permit under this section for the acquisition of a pistol or revolver unless the person, at any time prior to the issuance of the permit, has completed: (1) An approved hunter education course as authorized under section 183D-28; (2) A firearms safety or training course or class available to the general public offered by a law enforcement agency of the State or of any county; (3) A firearms safety or training course offered to law enforcement officers, security guards, investigators, deputy sheriffs, or any division or subdivision of law enforcement or security enforcement by a state or county law enforcement agency; or (4) A firearms training or safety course or class conducted by a state certified or National Rifle Association certified firearms instructor or a certified military firearms instructor that provides, at a minimum, a total of at least two hours of firing training at a firing range and a total of at least four hours of classroom instruction, which may include a video, that focuses on: (A) The safe use, handling, and storage of firearms and firearm safety in the home; and (B) Education on the firearm laws of the State."
+}

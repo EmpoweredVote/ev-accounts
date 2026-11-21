@@ -1,0 +1,50 @@
+{
+  "id": "HI-SB-556-2020",
+  "scope": "state:hi",
+  "title": "SB556 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=556&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB556_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB556_.HTM; sha256 cbc94919b00f2d82299f260b7f21a8ba2b797594ce463b7da5a464d6b29fe10c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-556-2020.introduced.htm",
+      "sha256": "cbc94919b00f2d82299f260b7f21a8ba2b797594ce463b7da5a464d6b29fe10c"
+    },
+    "note": "Introduced version; no votes on file, later amendments not in text read. Added words are not marked in the plain text; the Description says the bill adds the Terrorist Screening Center notification."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2): The issuing authority shall perform an inquiry on an applicant by using the International Justice and Public Safety Network, including the United States Immigration and Customs Enforcement query, the National Crime Information Center, and the National Instant Criminal Background Check System, pursuant to section 846-2.7, and shall inform the Federal Bureau of Investigation's Terrorist Screening Center of the application, before any determination to issue a permit or to deny an application is made."
+}

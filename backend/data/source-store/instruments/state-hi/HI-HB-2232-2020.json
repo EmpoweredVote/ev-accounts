@@ -1,0 +1,44 @@
+{
+  "id": "HI-HB-2232-2020",
+  "scope": "state:hi",
+  "title": "HB2232 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2232&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2232_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob McDermott",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2232_.HTM; sha256 49f1203e2f85076c6eb4092356e53af2b075973c38bc9891a8f996b598555711)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2232-2020.introduced.htm",
+      "sha256": "49f1203e2f85076c6eb4092356e53af2b075973c38bc9891a8f996b598555711"
+    },
+    "note": "Introduced version as filed; no passage vote on file. Strikes only renumbering/cross-reference words in 134-7."
+  },
+  "operative_text": "SECTION 1 (HRS 134-7): No person who: (1) As a minor, was diagnosed as having a significant behavioral, emotional, or mental disorder as defined by the most current diagnostic manual of the American Psychiatric Association; (2) Is less than twenty-five years old and has been adjudicated by the family court to have committed not more than one crime of violence in this State or elsewhere; or (3) Is more than twenty-five years old and has been adjudicated by the family court to have committed one or more crimes of violence in this State or elsewhere; shall own, possess, or control any firearm or ammunition therefor, unless the person has been medically documented to be no longer either adversely affected by the behavioral, emotional, or mental disorder or deemed a danger to themselves or others. For the purposes of enforcing this section, and notwithstanding section 571-84 or any other law to the contrary, any agency within the State shall make its records relating to behavioral, emotional, or mental disorders diagnoses or family court adjudications, or both, available to law enforcement officials.\nSECTION 2 (HRS 571-84): Shall be furnished to law enforcement officials if the minor has been diagnosed with having a significant behavioral, emotional, or mental disorder as defined by the most current diagnostic manual of the American Psychiatric Association; or has been adjudicated by the court to have committed a crime of violence."
+}

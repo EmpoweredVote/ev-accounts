@@ -1,0 +1,62 @@
+{
+  "id": "HI-HB-2437-2018",
+  "scope": "state:hi",
+  "title": "HB2437 (2018 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2437&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/HB2437_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kaniela Ing",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard P. Creagan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Tom Brower",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "cannabis-policy: SECTION 1 (HRS 134-7) — medical cannabis authorization cannot by itself disqualify a person from firearm ownership"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/HB2437_.HTM; sha256 4fd98019930c3bef1a3f25fd89369c19ce5614a5b6e56b6338e90ae37d11cbb6)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2437-2018.introduced.htm",
+      "sha256": "4fd98019930c3bef1a3f25fd89369c19ce5614a5b6e56b6338e90ae37d11cbb6"
+    },
+    "note": "Introduced version as filed; no passage vote on file. Quote is the clause before the added proviso; the proviso is stated in the Description (cannabis authorization under part IX of chapter 329 is not alone a basis for denial)."
+  },
+  "operative_text": "SECTION 1 (HRS 134-7): No person who is a fugitive from justice or is a person prohibited from possessing firearms or ammunition under federal law shall own, possess, or control any firearm or ammunition therefor"
+}

@@ -1,0 +1,83 @@
+{
+  "id": "HI-SB-280-2018",
+  "scope": "state:hi",
+  "title": "SB280 (2018 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=280&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/SB280_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Will Espero",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Josh Green",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "76307cf7-47dd-4b0a-ac4b-ed218095bf47"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Russell E. Ruderman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB280_.HTM; sha256 85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-280-2018.introduced.htm",
+      "sha256": "85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085"
+    },
+    "note": "Version read: as-filed (introduced). Text file is identical to the other year of the biennium (heading prints 2017). The penalty subsection (i) makes a violation of the new subsection (g) a class C felony, and a violation of the surrender duty by a listed person a class C felony; it is not quoted because struck words run through it. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-7): Any person who is named on the Terrorist Screening Database maintained by the Terrorist Screening Center administered by the Federal Bureau of Investigation, or any successor to the Terrorist Screening Database, shall be prohibited from owning, possessing, or controlling any firearm or ammunition therefor until the person is removed from the Terrorist Screening Database or the federal government otherwise indicates that there is no basis for disqualifying the person from owning, possessing, or controlling a firearm or ammunition.\nSECTION 2 (HRS 134-7): Any person disqualified from ownership, possession, control, or the right to transfer ownership of firearms and ammunition under this section shall surrender or dispose of all firearms and ammunition in compliance with section 134-7.3."
+}

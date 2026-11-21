@@ -1,0 +1,436 @@
+{
+  "politician_id": "3dcc200d-6b83-4b68-aa44-0ad2bc1e8f73",
+  "findings": [
+    {
+      "id": "ec0f36d3eabf1186acaa99e95bd16f386e1b739d2fb49063ce2838f50f094f46",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=125&year=2025",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-125-2025",
+      "act": "nay",
+      "motion": "Senate Report Adopted; Passed Third Reading, passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Report Adopted; Passed Third Reading, passed, 2025-04-08: nay (tally 23–2); census gate: near-unanimous.",
+      "subjects": [
+        "seller notice of storage law at sale",
+        "secure storage required on all premises, not only where minors may gain access",
+        "strict liability for damages from unsecured firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB125_HD1_.HTM; sha256 a4774e975add1cb7d996ba4b3267a388f964e99acf17bcc28264fd83bdce192c)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-125-2025.hd1.htm",
+          "sha256": "a4774e975add1cb7d996ba4b3267a388f964e99acf17bcc28264fd83bdce192c"
+        }
+      }
+    },
+    {
+      "id": "bb2720ff447c7a5897d9a8d7fbe75c52d8e3d814d09728ad8f01aa21a98bfd67",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=137&year=2025",
+      "date": "2025-03-31",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-137-2025",
+      "act": "nay",
+      "motion": "Senate Passed Third Reading, passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "HI Senate, Senate Passed Third Reading, passed, 2025-03-31: nay (tally 15–10); census gate: none.",
+      "subjects": [
+        "mandatory prison term for violent felons who possess firearms or ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB137_HD1_.HTM; sha256 c8a8e260fe9b6844f73ab95b7aaa15285658b602d873a22079bf6e902cb8caf1)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-137-2025.hd1.htm",
+          "sha256": "c8a8e260fe9b6844f73ab95b7aaa15285658b602d873a22079bf6e902cb8caf1"
+        }
+      }
+    },
+    {
+      "id": "cddab25deeffd7362c4b06a423bdc43e2c036620ddad74b79a2b08c514eab694",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2062&year=2026",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-2062-2026",
+      "act": "nay",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "HI Senate, Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed, 2026-04-14: nay (tally 22–3); census gate: none.",
+      "subjects": [
+        "court staffing funds for gun violence protective orders",
+        "public awareness campaigns on protective orders",
+        "community gun-violence intervention funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/HB2062_SD2_.HTM; sha256 9343a91882f1ff2879c9fe8839cc0e967bbfbbe4e34e5aa1074b6b8e3f2402e8)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2062-2026.sd2.htm",
+          "sha256": "9343a91882f1ff2879c9fe8839cc0e967bbfbbe4e34e5aa1074b6b8e3f2402e8"
+        }
+      }
+    },
+    {
+      "id": "0723b0356f27499ea7ab68e4df23b8d35164bdb0db9c1d2a987853f155ab1fae",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=392&year=2025",
+      "date": "2025-03-31",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-392-2025",
+      "act": "yea",
+      "motion": "Senate Passed Third Reading, passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "HI Senate, Senate Passed Third Reading, passed, 2025-03-31: yea (tally 22–3); census gate: none.",
+      "subjects": [
+        "ban on possessing, selling or transferring ghost guns",
+        "mandatory minimum prison for using a ghost gun in a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB392_HD1_.HTM; sha256 e0ed52ade6458d50c9bb36fcf13a4a13ab527976cbf699ce8fd7e41d302add66)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-392-2025.hd1.htm",
+          "sha256": "e0ed52ade6458d50c9bb36fcf13a4a13ab527976cbf699ce8fd7e41d302add66"
+        }
+      }
+    },
+    {
+      "id": "7b796663f1675e7cc49c1c83ddb5a8d0cf641748c8d1ba318d707be625027aab",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=664&year=2025",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-664-2025",
+      "act": "nay",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed, 2025-04-08: nay (tally 23–2); census gate: near-unanimous.",
+      "subjects": [
+        "office of gun violence prevention",
+        "community gun-violence intervention grants",
+        "gun violence data resource bank and special fund"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB664_SD2_.HTM; sha256 b5417defcd524b2854d776be2162f19d82f1f62851c87f8f28e9ddd9fb1c0bda)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-664-2025.sd2.htm",
+          "sha256": "b5417defcd524b2854d776be2162f19d82f1f62851c87f8f28e9ddd9fb1c0bda"
+        }
+      }
+    },
+    {
+      "id": "ea0c2e791b1e935231b97958bcb8dab68a5fc43f61230ab35d0b8c16049a1acf",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=995&year=2025",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-995-2025",
+      "act": "nay",
+      "motion": "Senate Report Adopted; Passed Third Reading, passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Report Adopted; Passed Third Reading, passed, 2025-04-08: nay (tally 23–2); census gate: near-unanimous.",
+      "subjects": [
+        "annual carry-license data report",
+        "police data due March 31"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB995_.HTM; sha256 626cc56b3541a755a84014330614d90ea422f06ad7792a3cf9e398717ca20475)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-995-2025.introduced.htm",
+          "sha256": "626cc56b3541a755a84014330614d90ea422f06ad7792a3cf9e398717ca20475"
+        }
+      }
+    },
+    {
+      "id": "d2102a5c9ed9299043fdf171913daf99a4d85a127b4734f46f63c97dc566e639",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1030&year=2025",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-1030-2025",
+      "act": "nay",
+      "motion": "Senate Passed Final Reading, as amended (CD 1), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Passed Final Reading, as amended (CD 1), passed, 2025-04-30: nay (tally 23–2); census gate: near-unanimous.",
+      "subjects": [
+        "unconcealed carry of a firearm near polling places counts as voter intimidation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Conference Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/SB1030_CD1_.HTM; sha256 78d6dcc4e419151b638ac1a622781692ffe144343779f837364b5b5efdb18609)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1030-2025.cd1.htm",
+          "sha256": "78d6dcc4e419151b638ac1a622781692ffe144343779f837364b5b5efdb18609"
+        }
+      }
+    },
+    {
+      "id": "88409bcd4a62c113b4dcc3fc01a7f65f80c1255c4fc1bd258c38a62ba231d5a6",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2517&year=2026",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-2517-2026",
+      "act": "nay",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 1), passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "HI Senate, Senate Report Adopted; Passed Third Reading, as amended (SD 1), passed, 2026-03-10: nay (tally 22–3); census gate: none.",
+      "subjects": [
+        "felony penalty for gun possession while under a protective or restraining order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB2517_HD1_.HTM; sha256 7e19c930166c19c2a55fcd6a143bb55f607ccd4b688798c2a43f3ef3c9b89dce)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2517-2026.hd1.htm",
+          "sha256": "7e19c930166c19c2a55fcd6a143bb55f607ccd4b688798c2a43f3ef3c9b89dce"
+        }
+      }
+    },
+    {
+      "id": "8e39258ce424abb40622ee6aee0ebd3fb0d9bc7b96bd2e95df22171f697dd888",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2575&year=2026",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-2575-2026",
+      "act": "yea",
+      "motion": "Senate Report adopted; Passed Third Reading, as amended (SD 2), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Report adopted; Passed Third Reading, as amended (SD 2), passed, 2026-03-10: yea (tally 25–0); census gate: near-unanimous.",
+      "subjects": [
+        "felony for gun possession under a restraining order",
+        "felony for carrying a firearm while on a controlled substance or methamphetamine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB2575_HD1_.HTM; sha256 fffe6df7705e25b0c19c904d7a9930e727cd0d3dd93018290e0eeddb66ade81b)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2575-2026.hd1.htm",
+          "sha256": "fffe6df7705e25b0c19c904d7a9930e727cd0d3dd93018290e0eeddb66ade81b"
+        }
+      }
+    },
+    {
+      "id": "3da882c8462434663cda5f0853f9c7f2fbc1b535c9cb5ed224323f515042270c",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3040&year=2026",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-3040-2026",
+      "act": "nay",
+      "motion": "Senate Passed Third Reading, passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Passed Third Reading, passed, 2026-03-12: nay (tally 22–2); census gate: near-unanimous.",
+      "subjects": [
+        "state office of gun violence prevention",
+        "gun-violence data analysis and recommendations",
+        "funding for the office"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB3040_HD1_.HTM; sha256 cc0a2af21f69886843e41f55a0b493f02094da059e3d4e01fd42841fbe4c46f0)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-3040-2026.hd1.htm",
+          "sha256": "cc0a2af21f69886843e41f55a0b493f02094da059e3d4e01fd42841fbe4c46f0"
+        }
+      }
+    },
+    {
+      "id": "fd1ceabc1e85e80c2a5b2d87556614687ad1297872a93c3476ee3960f6b9b15d",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=308&year=2025",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-308-2025",
+      "act": "nay",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "HI Senate, Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed, 2025-03-04: nay (tally 20–5); census gate: none.",
+      "subjects": [
+        "ban on detachable magazines over 30 rounds for non-pistol firearms",
+        "grandfathering of magazines legally obtained earlier"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/SB308_SD2_.HTM; sha256 31d24f2f1221359e7158ec276bef815964d24e9dbdbccaf85c80291108640a8f)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-308-2025.sd2.htm",
+          "sha256": "31d24f2f1221359e7158ec276bef815964d24e9dbdbccaf85c80291108640a8f"
+        }
+      }
+    },
+    {
+      "id": "9881ab135372e9079f830fe566d623d8fdd47ad7318e8a252c81cef4456aa1eb",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=128&year=2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "HI-SB-128-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of HI-SB-128-2025 (Open States sponsor list): SB128 (2025 Regular): RELATING TO TRESPASS..",
+      "subjects": [
+        "firearm and ammunition ban for people prosecuted or convicted of agricultural trespass"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/SB128_.HTM; sha256 b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-128-2025.introduced.htm",
+          "sha256": "b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb"
+        }
+      }
+    },
+    {
+      "id": "80d9840e8c254bb0bdc81203dabdf8412db9d62c875486479a80f6d2a789ba3c",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=128&year=2026",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "HI-SB-128-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of HI-SB-128-2026 (Open States sponsor list): SB128 (2026 Regular): RELATING TO TRESPASS..",
+      "subjects": [
+        "firearm and ammunition ban for people charged with or convicted of agricultural trespass"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB128_.HTM; sha256 b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-128-2026.introduced.htm",
+          "sha256": "b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb"
+        }
+      }
+    },
+    {
+      "id": "abb227a9a0740808fdf4c69ae2cd6a780a1a901b7b77bd22bdd0613b9d97cc79",
+      "kind": "own-words",
+      "url": "https://www.hawaiinewsnow.com/2025/05/01/hawaii-senators-narrowly-kill-firearms-bill/",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "The bill in its original condition will not only restrict law-abiding citizens who legally carry, but this also restricts our law enforcement officers",
+      "note": "Floor remarks quoted by a TV news story during Senate debate on SB 401 (limits on assault-style guns and large magazines). She says the bill as written would restrict lawful carriers and police officers.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "carry a gun",
+        "floor debate on SB 401"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:41:49.166Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "carry a gun",
+        "limits on who may have a gun",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Hawaii Senate member page: not reviewed: https://www.capitol.hawaii.gov (blocked, 403, not retried)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Samantha_DeCorte",
+        "search result pages for Wikipedia and Ballotpedia show a sitting senator for Senate District 22, term ending 2028, so no 2026 race to confirm; Wikipedia page not fetched",
+        "news search on name plus gun words: one news story (Hawaii News Now, 2025-05-01) quoting her on SB 401",
+        "not reviewed: official senator page and campaign site (no working address found; two guessed addresses did not resolve)",
+        "nothing on the subject: no questionnaires, newsletters or interviews found"
+      ],
+      "found": 1,
+      "at": "2026-11-21T20:41:49.166Z",
+      "by": "source-collector"
+    }
+  ]
+}

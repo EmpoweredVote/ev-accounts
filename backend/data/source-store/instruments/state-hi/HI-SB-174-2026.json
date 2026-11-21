@@ -1,0 +1,68 @@
+{
+  "id": "HI-SB-174-2026",
+  "scope": "state:hi",
+  "title": "SB174 (2026 Regular): RELATING TO FIREARMS AMMUNITION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=174&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB174_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Carol Fukunaga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "88ca2dc9-8505-4d1f-bc5a-d458ed3b5c20"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "C.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB174_.HTM; sha256 079843c03450a6aed967f50bcdab2607f270b34316d9503aaf32b563ea5cb41d)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-174-2026.introduced.htm",
+      "sha256": "079843c03450a6aed967f50bcdab2607f270b34316d9503aaf32b563ea5cb41d"
+    },
+    "note": "As-filed text (introduced). Same text as the other year of the biennium; heading prints 2026. SECTION 3 also adds physical inspection of some registrations and a $100 civil penalty for failing to report a firearm moved out of State, and SECTION 7 exempts owners making ammunition for personal use from the license-violation penalty (not quoted)."
+  },
+  "operative_text": "SECTION 2 (new): No person shall sell ammunition or shell casings for any firearm unless the purchaser first demonstrates that the purchaser: (1) Is the registered owner of the firearm for which the ammunition or shell casings are to be purchased; or (2) Has been designated by the registered owner of the firearm as the alternate for ammunition purchases on the registration pursuant to section 134-3.\nSECTION 2 (new): Violation of this section is a petty misdemeanor.\nSECTION 2 (new): This section shall not apply to ammunition purchases for firearms manufactured before 1899.\nSECTION 3 (HRS 134-3): A registered owner of a firearm may designate on the firearm registration one alternate person to be authorized to purchase ammunition.\nSECTION 4 (HRS 134-4): No person shall intentionally, knowingly, or recklessly lend a firearm or transfer ammunition to any person who is prohibited from ownership, possession, or control of a firearm under section 134-7.\nSECTION 5 (HRS 134-31): Any person desiring to engage in the business to sell and manufacture firearms or ammunition for sale in the State either at wholesale or retail, shall annually file an application for a license therefor with the director of finance of each county of the State."
+}

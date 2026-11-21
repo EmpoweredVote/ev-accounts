@@ -1,0 +1,55 @@
+{
+  "id": "HI-SB-2265-2018",
+  "scope": "state:hi",
+  "title": "SB2265 (2018 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2265&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2265_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Josh Green",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "76307cf7-47dd-4b0a-ac4b-ed218095bf47"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brickwood Galuteria",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "11e54ca2-ac74-4c4c-b9ea-3b68bb89f5d2"
+    },
+    {
+      "name": "Will Espero",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2265_.HTM; sha256 b127e0cd77865174e86990535458a6ae9f5353621fe88ea289d00d82cf652372)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2265-2018.introduced.htm",
+      "sha256": "b127e0cd77865174e86990535458a6ae9f5353621fe88ea289d00d82cf652372"
+    },
+    "note": "As-filed text (introduced). In HRS 134-8 the bill relists the existing prohibited items as a numbered list (1)-(8) and adds items (9)-(12); the quotes give the intro sentence and the added items, each line a separate part."
+  },
+  "operative_text": "SECTION 1 (HRS 134-3): Any registration under this section shall expire five years from the date the registration is issued or December 31, 2023, whichever is later.\nSECTION 1 (HRS 134-3): The registration renewal shall be on forms prescribed by the attorney general, which shall be uniform throughout the State, and shall include the same information as the registration.\nSECTION 2 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following is prohibited:\nSECTION 2 (HRS 134-8): (9) Bump stocks, gat cranks, or any devices that can allow a person to manipulate the trigger mechanism of a firearm more rapidly than the person could without the device;\nSECTION 2 (HRS 134-8): (10) Firearm trigger mechanisms that have been replaced or modified to have a lighter trigger-pull than the trigger mechanism installed in the firearm by the manufacturer;\nSECTION 2 (HRS 134-8): (11) Flash suppressers or any devices that reduce the visible signature of a firearm's discharge; and\nSECTION 2 (HRS 134-8): (12) Any type of firearm modification that significantly increases the amount of time that a firearm may be continuously operated before the firearm overheats."
+}

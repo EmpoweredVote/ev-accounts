@@ -1,0 +1,45 @@
+{
+  "id": "HI-SB-2943-2020",
+  "scope": "state:hi",
+  "title": "SB2943 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2943&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2943_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2943_.HTM; sha256 6dbab87373a73a8657a941750c0cacb7fc0da8e169616652bf68900690fa20f0)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2943-2020.introduced.htm",
+      "sha256": "6dbab87373a73a8657a941750c0cacb7fc0da8e169616652bf68900690fa20f0"
+    },
+    "note": "As-filed SB 2943 (2020). SECTION 4 also strikes the word 'permit' before 'registration number' in HRS 134-3(b) and the word 'and' in a federal agency name (struck text not quoted). Amendments after introduction are not in the text read."
+  },
+  "operative_text": "SECTION 2 (new §134-): (a) A person who is not licensed to manufacture a firearm under section 134-31, or who is not a dealer licensed by the United States Department of Justice, shall not, for the purpose of assembling a firearm, purchase, produce with a three-dimensional printer, or otherwise obtain separately, or as part of a kit:\nSECTION 2 (new §134-): (1) A firearm receiver that is not imprinted with a serial number registered with a federally licensed manufacturer;\nSECTION 2 (new §134-): (3) Any combination of parts from which a firearm without a serial number may be readily assembled and rendered functional.\nSECTION 2 (new §134-): (b) Violation of this section is a class C felony.\nSECTION 3 (HRS 134-1): \"Ghost gun\" means a firearm that is assembled without a serial number or other identification marking.\nSECTION 4 (HRS 134-3): An authorized dealer, as provided in section 134-31, or a dealer licensed by the United States Department of Justice, who brings, assembles, or causes to be brought into the State by any other means, separate parts and an unfinished firearm receiver that when assembled create a firearm, or parts produced by a three-dimensional printer that when assembled create a firearm, shall register the unfinished firearm receiver and receive a serial number before the assembly of the firearm or the sale or transfer of unassembled firearm parts or a receiver to a third party, in accordance with section 134-3(b)."
+}

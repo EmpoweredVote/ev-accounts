@@ -1,0 +1,45 @@
+{
+  "id": "HI-HB-1486-2019",
+  "scope": "state:hi",
+  "title": "HB1486 (2019 Regular): RELATING TO GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1486&year=2019",
+    "https://data.capitol.hawaii.gov/sessions/session2019/bills/HB1486_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2019/bills/HB1486_.HTM; sha256 00be9c8ee9c7f70d8898523a4f8899ef2bcab7d5a42c63d835dc0b30cd367a3b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1486-2019.introduced.htm",
+      "sha256": "00be9c8ee9c7f70d8898523a4f8899ef2bcab7d5a42c63d835dc0b30cd367a3b"
+    },
+    "note": "Introduced text (as filed). Part II (SECTIONS 5-7: HRS 121-34.5, 134-16, 134-17) repeals the ban on possessing, selling or lending electric guns; those sections are mostly struck text and are not quoted. No passage vote recorded."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2): (5) A firearms training or safety course or class conducted by a state certified firearms instructor or a certified military firearms instructor that provides, at a minimum, all of the training of a safety course or class described in paragraph (4) and also provides a total of at least four hours of additional training in:\nSECTION 2 (HRS 134-2): (A) Properly carrying concealed and unconcealed weapons in public;\nSECTION 3 (HRS 134-9): (2) Six months from the date of issue if the license was issued on an initial or renewal basis after June 30, 2019.\nSECTION 3 (HRS 134-9): (5) Also carry on the person an electric gun, as defined in section 134-1, which is intended to be non-lethal by design, whenever the licensee carries a pistol or revolver pursuant to the license.\nSECTION 3 (HRS 134-9): (c) If a licensee violates any requirement relating to the license, the chief of police who issued the license shall revoke the license."
+}

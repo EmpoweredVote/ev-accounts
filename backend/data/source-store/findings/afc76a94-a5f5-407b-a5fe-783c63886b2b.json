@@ -1,0 +1,32 @@
+{
+  "politician_id": "afc76a94-a5f5-407b-a5fe-783c63886b2b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "identity check: web search shows a person of this name is an Office of Hawaiian Affairs at-large trustee (term ending November 2026), not a legislator; the sitting House member with the same surname is a different person (a family member), and her gun remarks were not saved",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov (not retried)",
+        "https://ballotpedia.org/Keoni_Souza (fetched, nothing on the subject)",
+        "https://kawaiola.news/author/ksouza/ (trustee messages list, nothing on the subject)",
+        "https://ballotpedia.org/Kanani_Souza (fetched, empty page; different person)",
+        "web searches on the name plus gun words: nothing by this person on the subject",
+        "not reviewed: 2026 ballot status for this person (not confirmed)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:40:16.015Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "HI-SB-2437-2020",
+  "scope": "state:hi",
+  "title": "SB2437 (2020 Regular): RELATING TO ELECTRIC GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2437&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2437_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Russell E. Ruderman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Gil Riviere",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2437_SD1_.HTM; sha256 4c536bb846c8f15ffed3e0707716e01483d53195e4073cd30a3f8cec830d344b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2437-2020.sd1.htm",
+      "sha256": "4c536bb846c8f15ffed3e0707716e01483d53195e4073cd30a3f8cec830d344b"
+    },
+    "note": "Senate Draft 1 (S.B. 2437, S.D. 1). SECTION 8 repeals HRS 134-16, the existing ban; struck text is not quoted. Only the main use, sale, permit and possession rules are quoted; registration (134-D), seller licensing and record-keeping (134-E, 134-F) and disposal (134-G) are not. Borderline: electric guns are not firearms under HRS ch. 134. Amendments after SD1 are not in the text read."
+  },
+  "operative_text": "SECTION 2 (new, HRS ch. 134 part): It shall be unlawful for any person to knowingly or recklessly use an electric gun for any purpose except: (1) Self-defense; (2) Defense of another person; or (3) Protection of property.\nSECTION 2 (new, HRS ch. 134 part): It shall be unlawful for any person to knowingly sell, offer for sale, distribute, or otherwise transfer an electric gun or cartridge to a minor.\nSECTION 2 (new, HRS ch. 134 part): No person shall acquire the ownership of an electric projectile gun, whether usable or unusable, serviceable or unserviceable, registered by a prior owner or unregistered, either by purchase, gift, inheritance, request, or in any other manner, whether procured in the State or imported by mail, express, freight, or otherwise, until the person has first procured from the chief of police of the county of the person's place of business or, if there is no place of business, the person's residence or, if there is neither place of business nor residence, the person's place of sojourn, a permit to acquire the ownership of an electric projectile gun as prescribed in this section.\nSECTION 2 (new, HRS ch. 134 part): (d) The chief of police of the respective counties may issue permits to acquire electric projectile guns to citizens or legal aliens of the United States of the age of eighteen years or more.\nSECTION 2 (new, HRS ch. 134 part): (g) No person shall be issued a permit under this section unless the person, at any time prior to the issuance of the permit, has completed an electric projectile gun safety or training course, offered by the county, or approved by the county, that focuses on:\nSECTION 2 (new, HRS ch. 134 part): (a) No person who is a fugitive from justice shall purchase, own, possess, or control an electric gun.\nSECTION 2 (new, HRS ch. 134 part): (e) No minor shall purchase, own, possess, or control an electric gun."
+}

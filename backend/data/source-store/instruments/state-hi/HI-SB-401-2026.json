@@ -1,0 +1,51 @@
+{
+  "id": "HI-SB-401-2026",
+  "scope": "state:hi",
+  "title": "SB401 (2026 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=401&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB401_CD2_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Conference Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB401_CD2_.HTM; sha256 fb3845575e6e6fbb49e63aab8c52374f860ff9cb339360d04fc89ad5e0a0bbdf)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-401-2026.cd2.htm",
+      "sha256": "fb3845575e6e6fbb49e63aab8c52374f860ff9cb339360d04fc89ad5e0a0bbdf"
+    },
+    "note": "Conference Draft 2 of SB 401 as printed in the 2026 session. Conference Draft 2 (CD2), the text both houses took to final reading; not proof of enactment. Senate passed SD2 20-5 (2025-03-04) and House passed 39-8 (2025-04-04); amendments after the version read are not in the text read. Quotes skip sentences that run across struck text. Also in the bill: SECTION 3 (HRS 134-8(c)) keeps a ban on manufacture, possession, sale or transfer of detachable magazines over ten rounds, now covering any firearm rather than only pistols (the bill strikes the word 'pistol'); SECTION 1 adds definitions of assault rifle, assault shotgun, .50 caliber firearm, detachable and fixed magazine; effective 1/1/2026."
+  },
+  "operative_text": "SECTION 2 (HRS 134-4): After January 1, 2026, except as provided by section 134-8(e), no person shall bring or cause to be brought into the State an assault rifle, an assault shotgun, or a .50 caliber firearm.\nSECTION 3 (HRS 134-8): This subsection shall not apply to a person's possession of an assault rifle, an assault shotgun, or a .50 caliber firearm registered to the person before January 1, 2026, pursuant to 134-3.\nSECTION 3 (HRS 134-8): A person authorized under this subsection to possess an assault rifle, an assault shotgun, or a .50 caliber firearm shall possess that weapon only:\n(1) On private property owned or immediately controlled by the person;\n(2) On private property that is not open to the public with the express permission of the person who owns or immediately controls the property;\n(3) While on the premises of a licensed firearms dealer or gunsmith for the purpose of lawful repair;\n(4) While engaged in the legal use of the assault rifle, assault shotgun, or .50 caliber firearm at a properly licensed firing range or sport shooting competition venue; or\n(5) While traveling to or from the locations listed in paragraphs (1) through (4); provided that the assault rifle, assault shotgun, or .50 caliber firearm is unloaded in an enclosed container, as defined in section 134-24.\nSECTION 3 (HRS 134-8): Any person violating subsection (a) or (b) shall be guilty of a class C felony and shall be imprisoned for a term of five years without probation.\nSECTION 3 (HRS 134-8): (f) Notwithstanding any provision of this section to the contrary, the possession of an assault rifle, assault shotgun, or detachable magazine with a capacity greater than ten rounds shall be lawful if:\n(1) The assault rifle, assault shotgun, or detachable magazine with a capacity greater than ten rounds was lawfully possessed within the State before January 1, 2026;\n(5) The assault rifle, assault shotgun, or detachable magazine with a capacity greater than ten rounds is registered with the chief of police of the appropriate county on or before July 1, 2026."
+}

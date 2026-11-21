@@ -1,0 +1,44 @@
+{
+  "id": "HI-SB-2800-2022",
+  "scope": "state:hi",
+  "title": "SB2800 (2022 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2800&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB2800_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB2800_.HTM; sha256 79040497fa5e88c62a4c990d472b321304f659749e3e97c6943cf3c29d2a7592)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2800-2022.introduced.htm",
+      "sha256": "79040497fa5e88c62a4c990d472b321304f659749e3e97c6943cf3c29d2a7592"
+    },
+    "note": "Version read: as-filed (introduced). Added words are not marked in the text, so the quotes are not claimed as new law beyond the Description. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2(g)): (5) A firearms training or safety course or class conducted by a state certified firearms instructor or a certified military firearms instructor that provides, at a minimum, all of the training of a safety course or class described in paragraph (4) and also provides a total of at least sixteen hours of additional training in: (A) Properly carrying weapons in public; (B) Situation de-escalation; (C) Interaction with law enforcement; and (D) The proper use of a weapon as a last resort.\nSECTION 3 (HRS 134-9(a)): (2) Six months from the date of issue if the license was issued on an initial or renewal basis after June 30, 2022.\nSECTION 3 (HRS 134-9(b)): (1) Be qualified to use the firearm in a safe manner, as evidenced by documentation showing successful completion by the person of a firearms safety or training course or class approved by the chief of police of the appropriate county and as described in section 134-2(g)(5); provided that the person shall have completed the course within thirty days before applying for or renewing a license;\nSECTION 3 (HRS 134-9(b)): (5) Also carry on the person an electric gun, as defined in section 134-1, which is intended to be non-lethal by design, whenever the licensee carries a pistol or revolver pursuant to the license.\nSECTION 3 (HRS 134-9(c)): If a licensee violates any requirement relating to the license, the chief of police who issued the license shall revoke the license."
+}

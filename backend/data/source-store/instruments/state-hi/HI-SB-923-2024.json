@@ -1,0 +1,45 @@
+{
+  "id": "HI-SB-923-2024",
+  "scope": "state:hi",
+  "title": "SB923 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=923&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB923_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB923_.HTM; sha256 3d2c0cf697c9d41f3ef493fd4e677faf6ae008696078a0f85a0428797b4cd7b3)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-923-2024.introduced.htm",
+      "sha256": "3d2c0cf697c9d41f3ef493fd4e677faf6ae008696078a0f85a0428797b4cd7b3"
+    },
+    "note": "As filed. Subsection (c) of HRS 134-4 is amended, with struck text (the within-the-State use, fifteen-day no-permit loan and seventy-five-day out-of-state loan), to limit a rifle or shotgun loan to an adult 21 or older for twelve hours, provided the borrower has a permit or owns or possesses a registered firearm and is not prohibited; it is not quoted because the sentence runs across struck words. Subsection (d) is quoted. No passage vote on file; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-4): (d) No person shall knowingly lend a firearm to any person who does not have a permit pursuant to section 134-2, does not own or possess a firearm that is registered pursuant to section 134-3, or is prohibited from ownership or possession of a firearm under section 134-7."
+}

@@ -1,0 +1,175 @@
+{
+  "id": "HI-HB-2710-2020",
+  "scope": "state:hi",
+  "title": "HB2710 (2020 Regular): RELATING TO PROTECTIVE ORDERS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2710&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2710_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Della Belatti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+    },
+    {
+      "name": "Tom Brower",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "CABANILLA ARAKAWA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "ICHIYAMA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lisa Kitagawa",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0f02f669-b7ab-4d3b-9ab6-9005db22df9c"
+    },
+    {
+      "name": "Bert Kobayashi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Sylvia Luke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bb3cfd1d-42a2-41c2-978d-c1d1734be93f"
+    },
+    {
+      "name": "Scot Matayoshi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+    },
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dee Morikawa",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "60a980b6-15ff-41be-9463-5b5605d17589"
+    },
+    {
+      "name": "NAKAMURA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Nakashima",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Y. Nishimoto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Takashi Ohno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard Onishi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Saiki",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Calvin K.Y. Say",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Roy M. Takumi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Tarnas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+    },
+    {
+      "name": "Tina Wildberger",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Justin Woodson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "84ee05d5-66a5-4845-98eb-01ccac66dd1c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2710_.HTM; sha256 7cda153d0eaf3c98f3d330a767c78cc4700313a3b90def0c6c15cb54b3e40043)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2710-2020.introduced.htm",
+      "sha256": "7cda153d0eaf3c98f3d330a767c78cc4700313a3b90def0c6c15cb54b3e40043"
+    },
+    "note": "As filed. The firearm-search paragraphs are the bill's additions per its Description; the rest of each section is existing sentencing law restated. Section 2 repeats the seized-firearm sentence of Section 1 and Section 3 repeats it too; only the first is quoted for those parts."
+  },
+  "operative_text": "SECTION 1 (HRS 586-4(e)): A law enforcement officer, as defined in section 710-1000, shall be permitted to search a person convicted under this section, including the person's motor vehicle and the person's residence, for firearms without obtaining a search warrant pursuant to chapter 803 if the law enforcement officer has reason to believe acts of abuse or malicious property damage by the person are imminent. A firearm seized as a result of the search shall not be considered in any subsequent conviction if the court finds there was not probable cause for the search; provided that the firearm may be maintained by law enforcement until the registered owner of the firearm provides sufficient proof to law enforcement that the firearm will be properly stored.\nSECTION 2 (HRS 586-11(a)): A law enforcement officer, as defined in section 710-1000, shall be permitted to search a person convicted under this section, including the person's motor vehicle and the person's residence, for firearms without obtaining a search warrant pursuant to chapter 803 if the law enforcement officer has reason to believe acts of abuse or malicious property damage by the person are imminent.\nSECTION 3 (HRS 604-10.5(i)): A law enforcement officer, as defined in section 710-1000, shall be permitted to search a person convicted under this section, including the person's motor vehicle and the person's residence, for firearms without obtaining a search warrant pursuant to chapter 803 if the law enforcement officer has reason to believe acts of harassment by the person are imminent."
+}

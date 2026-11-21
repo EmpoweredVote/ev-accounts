@@ -1,0 +1,59 @@
+{
+  "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf",
+  "findings": [
+    {
+      "id": "661df53eb5558705f65c8edaf6a72e07cf8c11408ee95f3674b267b5577a5f6d",
+      "kind": "record",
+      "url": "https://mauinow.com/2022/05/28/kahele-joins-house-colleagues-in-call-to-take-action-on-gun-violence-prevention-legislation/",
+      "date": "2022-05-28",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed a House members' letter urging leaders to bring gun violence prevention bills to a floor vote",
+      "note": "A news story reports he was one of 131 House members signing a letter asking House leaders to act now on gun safety legislation. The letter cites the House-passed universal background check bill (H.R. 8) and the Enhanced Background Check Act (H.R. 1446), and welcomes a scheduled floor vote on an extreme risk protection order bill. It is a joint letter, not his individual words.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:45:04.612Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "gun safety laws in general",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: sitting Office of Hawaiian Affairs trustee for Hawaii Island, term to 2028 per the state elections office list of elected officials (https://elections.hawaii.gov/resources/elected-officials/) and Ballotpedia; no page found putting him on the 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://www.capitol.hawaii.gov: not visited, per brief (bill and vote pages covered by bulk data)",
+        "campaign site https://kaikahele.com: read, nothing on the subject",
+        "OHA board of trustees page https://www.oha.org/about/leadership/board-of-trustees/: read, nothing on the subject",
+        "former congressional site https://kahele.house.gov: no gun pages found",
+        "Ballotpedia https://ballotpedia.org/Kai_Kahele: confirms office; nothing on the subject in fetched text",
+        "ontheissues.org: not reviewed (lead-only)",
+        "news searches on his name plus gun, firearm, Second Amendment and assault weapons terms: one relevant item (2022 joint House letter, Maui Now)",
+        "https://omekas-congress.lib.wvu.edu/catalog/10524_84256 and 10524_84252 (archive entries listing a June 2022 press release on a gun-violence vote): fetch returned no readable text, not reviewed",
+        "no state-legislature-era (pre-2021) own-words item on guns found in search"
+      ],
+      "found": 1,
+      "at": "2026-11-21T20:45:04.612Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -223,10 +223,56 @@ def _text_line(bill_file, cited, full_name, pick=None):
     return tl, ' '.join(words[:min(n, 80)]), None
 
 
+def hi_introducer_line(cited, full_name):
+    """Hawaii (runner, 2026-11-21, hi/desk/QUESTION-B-2.md "A"): bill texts print no sponsor names ("INTRODUCED BY:
+    ____"), so a sponsorship stays cited on the bill's status page on www.capitol.hawaii.gov, and its line is the
+    page's "Introducer(s): TARNAS, AMATO, ..." read from the same page on data.capitol.hawaii.gov (www answers a reader
+    403), as votes are. The person's family name must be printed there, or there is no line (the person is held)."""
+    import hashlib, subprocess, time, html as _h, unicodedata
+    if 'measure_indiv' not in cited: return None, None, None
+    rd = re.sub(r'^https?://www\.capitol\.hawaii\.gov', 'https://data.capitol.hawaii.gov', cited.split('#')[0])
+    f = f'{B}/pages/{hashlib.sha1(rd.encode()).hexdigest()}.txt'
+    if os.path.exists(f): t = open(f).read()
+    else:
+        time.sleep(1)
+        r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-w', '\n%{http_code}', '-A', 'Mozilla/5.0', rd], capture_output=True)
+        body, _, status = r.stdout.rpartition(b'\n')
+        if not status.startswith(b'2'): return cited, None, f'the status page {rd} did not load (HTTP {status.decode()})'
+        t = re.sub(r'\s+', ' ', _h.unescape(re.sub(r'<[^>]+>', ' ', body.decode('utf-8', 'replace')))).strip()
+        os.makedirs(os.path.dirname(f), exist_ok=True); open(f, 'w').write(t)
+    m = re.search(r'Introducer\(s\):\s*(.*?)\s+(?:Act:|Measure Status|Current Referral|Companion)', t)
+    if not m: return cited, None, f'no "Introducer(s):" line on {rd}'
+    by = m.group(1)
+    toks = [x.strip(',.') for x in full_name.split()]
+    while len(toks) > 1 and toks[-1].lower() in ('jr', 'sr', 'ii', 'iii', 'iv', 'v'): toks.pop()
+    sur = toks[-1] if toks else ''
+    fold = lambda s: ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c)).replace('ʻ', '').replace("'", '')
+    # Whole entries only, so "LEE" never matches inside "KEOHOKAPU-LEE LOY"; an entry's printed initial ("LEE, C.",
+    # "S. CHANG"), printed when two members share a family name, must be the person's first initial.
+    # "NAKAMURA (Introduced by request of another party)": the note is dropped for the match and kept in the snippet.
+    ents, parts = [], [x.strip() for x in re.sub(r'\([^)]*\)', ' ', fold(by)).split(',') if x.strip()]
+    for x in parts:
+        if re.fullmatch(r'[A-Za-z]\.', x) and ents: ents[-1] = (ents[-1][0], x[0].upper())
+        else:
+            mi = re.match(r'([A-Za-z])\.\s*(.+)$', x)
+            ents.append((mi.group(2), mi.group(1).upper()) if mi else (x, ''))
+    names = {fold(sur).lower(), fold(' '.join(toks[-2:])).lower() if len(toks) > 2 else ''}
+    first = fold(toks[0])[:1].upper() if toks else ''
+    if not sur or not any(e.lower() in names and (not i or i == first) for e, i in ents):
+        return cited, None, f'{sur} is not printed in the Introducer(s) line of {rd}'
+    # The line runs from the page's own heading ("HB427 Measure details Measure Title: ...") through the Introducer(s)
+    # list, so the snippet prints the bill number the gate looks for (hi-01 gate run 2: 46 instrument-not-cited).
+    # The heading can carry the draft and a button: "SB308 SD2 Subscribe Measure details" (hi-01 replay 4: 61 short snippets).
+    hs = [h for h in re.finditer(r'\b[HS][BR]\d+\b[^.:]{0,40}?Measure details\b', t[:m.start()])]
+    st = hs[-1].start() if hs and m.start() - hs[-1].start() < 1500 else m.start()
+    return cited, t[st:m.end(1)].strip(), None
+
+
 def introduced_text_line(bill_file, cited, full_name):
     """See _text_line. Nevada: a member added as a joint sponsor after introduction is printed first on a reprint
     ("JOINT SPONSOR: SENATOR SCHEIBLE" on 2021 AB 286's third reprint, not on the introduced text), so when the
     introduced text does not print the person, the earliest reprint (_R1, _R2, ...) that does is cited."""
+    if ST == 'HI': return hi_introducer_line(cited, full_name)
     first = _text_line(bill_file, cited, full_name)
     if ST not in ('NV', 'OR') or not first[0] or first[1]: return first
     if ST == 'OR':

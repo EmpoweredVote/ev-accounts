@@ -1,0 +1,93 @@
+{
+  "id": "HI-SB-1055-2023",
+  "scope": "state:hi",
+  "title": "SB1055 (2023 Regular): RELATING TO ELECTIONS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1055&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB1055_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Henry Aquino",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Angus McKelvey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "voting-rights: SECTION 1 (HRS 19-3(4)(B)) — makes photographing a voter's face without permission of the voter and an election official, near a voting site, a form of election intimidation"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB1055_.HTM; sha256 74d847d7e18109f7c2a19d45eca4ed66280967932ec424023bbe682caa39287b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1055-2023.introduced.htm",
+      "sha256": "74d847d7e18109f7c2a19d45eca4ed66280967932ec424023bbe682caa39287b"
+    },
+    "note": "Introduced text (as filed). Quoted pieces are fragments of one long list in paragraph (4); the distance ('feet') is blank in the printed text, and the closing words 'at or within feet any voter service center, place of deposit, or polling place' apply to both (A) and (B). Per the Description, the carry and photography language is new. 2024 file is the carry-over of the 2023 text."
+  },
+  "operative_text": "SECTION 1 (HRS 19-3(4)): provided that the practice of intimidation as described in this paragraph includes, among other actions:\nSECTION 1 (HRS 19-3(4)(A)): (A) The carrying of any firearm or weapon; and"
+}

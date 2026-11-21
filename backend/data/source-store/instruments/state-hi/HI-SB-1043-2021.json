@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-1043-2021",
+  "scope": "state:hi",
+  "title": "SB1043 (2021 Regular): RELATING TO THE ACQUISITION OF FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1043&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/SB1043_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/SB1043_.HTM; sha256 0b955a98030dc11a95e1788401d54fcc34ee67577e3bb79b33f3d481783870e1)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1043-2021.introduced.htm",
+      "sha256": "0b955a98030dc11a95e1788401d54fcc34ee67577e3bb79b33f3d481783870e1"
+    },
+    "note": "Introduced text (as filed). The Description says the bill makes clear police may grant acquisition permits to lawful permanent resident aliens and U.S. nationals; the added permit-application sentence in 134-2(b) is the new sentence quoted."
+  },
+  "operative_text": "SECTION 1 (HRS 134-2(b)): The permit application form shall also require an applicant who is a permanent resident alien or a non-citizen United States national to provide the police department with documentary proof of alien status or United States national status.\nSECTION 1 (HRS 134-2(d)): The chief of police of the respective counties may issue permits to acquire firearms to citizens, United States nationals, and lawful permanent residents of the United States of the age of twenty-one years or more, or duly accredited official representatives of foreign nations, or duly commissioned law enforcement officers of the State who are aliens; provided that any law enforcement officer who is the owner of a firearm and who is an alien shall transfer ownership of the firearm within forty-eight hours after termination of employment from a law enforcement agency."
+}

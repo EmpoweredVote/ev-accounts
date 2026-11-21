@@ -1,0 +1,316 @@
+{
+  "id": "HI-HB-2736-2020",
+  "scope": "state:hi",
+  "title": "HB2736 (2020 Regular): RELATING TO FIREARMS AMMUNITION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2736&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2736_HD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Richard P. Creagan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "NAKAMURA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard Onishi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tina Wildberger",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-02-27",
+      "body": "HI House",
+      "motion": "House Passed Third Reading, passed",
+      "kind": "roll-call",
+      "yes": 37,
+      "no": 13,
+      "absent": 1,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595501 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2736&year=2020#2020-02-27-House-Third-Reading",
+      "members": [
+        {
+          "name": "Aaron Ling Johanson",
+          "vote": "yea"
+        },
+        {
+          "name": "Amy Perruso",
+          "vote": "yea",
+          "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+        },
+        {
+          "name": "Bert Kobayashi",
+          "vote": "yea"
+        },
+        {
+          "name": "Cedric Gates",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea",
+          "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+        },
+        {
+          "name": "Cynthia Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Dale T. Kobayashi",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Holt",
+          "vote": "yea"
+        },
+        {
+          "name": "David Tarnas",
+          "vote": "yea",
+          "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+        },
+        {
+          "name": "Dee Morikawa",
+          "vote": "yea",
+          "politician_id": "60a980b6-15ff-41be-9463-5b5605d17589"
+        },
+        {
+          "name": "Della Belatti",
+          "vote": "yea",
+          "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+        },
+        {
+          "name": "Gregg Takayama",
+          "vote": "yea",
+          "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+        },
+        {
+          "name": "May Mizuno",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Woodson",
+          "vote": "yea",
+          "politician_id": "84ee05d5-66a5-4845-98eb-01ccac66dd1c"
+        },
+        {
+          "name": "Kyle Yamashita",
+          "vote": "yea",
+          "politician_id": "fba70db8-4bc3-47b5-bc70-d4c078936cda"
+        },
+        {
+          "name": "Linda Ichiyama",
+          "vote": "yea",
+          "politician_id": "bcce79fe-627b-491f-add3-415b40f90469"
+        },
+        {
+          "name": "Mark Hashem",
+          "vote": "yea",
+          "politician_id": "f951e14c-168e-42c9-a6ff-d18788a35eff"
+        },
+        {
+          "name": "Mark Nakashima",
+          "vote": "yea"
+        },
+        {
+          "name": "Nadine K. Nakamura",
+          "vote": "yea",
+          "politician_id": "a78d5716-4397-4a95-944d-f5e32d38f6dd"
+        },
+        {
+          "name": "Nicole Lowen",
+          "vote": "yea",
+          "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+        },
+        {
+          "name": "Richard Onishi",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard P. Creagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Romy M. Cachola",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy M. Takumi",
+          "vote": "yea"
+        },
+        {
+          "name": "Scot Matayoshi",
+          "vote": "yea",
+          "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+        },
+        {
+          "name": "Scott Saiki",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Y. Nishimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Sylvia Luke",
+          "vote": "yea",
+          "politician_id": "bb3cfd1d-42a2-41c2-978d-c1d1734be93f"
+        },
+        {
+          "name": "Takashi Ohno",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Wildberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Brower",
+          "vote": "yea"
+        },
+        {
+          "name": "Angus McKelvey",
+          "vote": "yea",
+          "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Lisa Kitagawa",
+          "vote": "yea",
+          "politician_id": "0f02f669-b7ab-4d3b-9ab6-9005db22df9c"
+        },
+        {
+          "name": "Sean Quinlan",
+          "vote": "yea",
+          "politician_id": "96b45c6f-0ac4-498c-8211-d87572d80eea"
+        },
+        {
+          "name": "Troy Hashimoto",
+          "vote": "yea",
+          "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+        },
+        {
+          "name": "Bob McDermott",
+          "vote": "nay"
+        },
+        {
+          "name": "Calvin K.Y. Say",
+          "vote": "nay"
+        },
+        {
+          "name": "Gene Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Henry Aquino",
+          "vote": "nay"
+        },
+        {
+          "name": "James Kunane Tokioka",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren Matsumoto",
+          "vote": "nay",
+          "politician_id": "222c3689-ecac-47d8-9379-c3d329039147"
+        },
+        {
+          "name": "Lynn DeCoite",
+          "vote": "nay",
+          "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+        },
+        {
+          "name": "Ryan I. Yamane",
+          "vote": "nay"
+        },
+        {
+          "name": "Sam Kong",
+          "vote": "nay",
+          "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+        },
+        {
+          "name": "Sharon E. Har",
+          "vote": "nay"
+        },
+        {
+          "name": "Stacelynn K.M. Eli",
+          "vote": "nay"
+        },
+        {
+          "name": "Ty J.K. Cullen",
+          "vote": "nay"
+        },
+        {
+          "name": "Val Okimoto",
+          "vote": "nay"
+        },
+        {
+          "name": "Rida Cabanilla Arakawa",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2736_HD1_.HTM; sha256 74a6841edd74c70499adc49285c37af31815ade5640ad81710bae1a0be064362)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2736-2020.hd1.htm",
+      "sha256": "74a6841edd74c70499adc49285c37af31815ade5640ad81710bae1a0be064362"
+    },
+    "note": "House Draft 1. Effective date printed as 7/1/2050 per Description. Amendments made after the version read are not in the text read. Section 7 (HRS 134-33) penalty text contains struck words and is not quoted."
+  },
+  "operative_text": "SECTION 2 (new, HRS ch. 134): (a) No person shall sell ammunition or shell casings for any firearm unless the purchaser first demonstrates that the purchaser: (1) Is the registered owner of the firearm for which the ammunition or shell casings are to be purchased; or (2) Has been designated by the registered owner of the firearm as an alternate for ammunition purchases on the registration pursuant to section 134-3. (b) Violation of this section is a petty misdemeanor.\nSECTION 3 (HRS 134-3): (f) A registered owner of a firearm may designate on the firearm registration an alternate person to be authorized to purchase ammunition. The alternate person shall not be a person prohibited from ownership or possession of a firearm under section 134-7.\nSECTION 4 (HRS 134-4(d)): (d) No person shall knowingly lend a firearm or transfer ammunition to any person who is prohibited from ownership or possession of a firearm under section 134-7.\nSECTION 5 (HRS 134-31): Any person desiring to engage in the business to sell and manufacture firearms or ammunition for sale in the State either at wholesale or retail, shall annually file an application for a license therefor with the director of finance of each county of the State."
+}

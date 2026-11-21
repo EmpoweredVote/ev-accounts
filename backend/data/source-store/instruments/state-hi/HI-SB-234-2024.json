@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-234-2024",
+  "scope": "state:hi",
+  "title": "SB234 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=234&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB234_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB234_.HTM; sha256 3afc13cc7a2de11da56ffb9b3aa2b466110565b80b9e1dc63b2b086401e5e1a6)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-234-2024.introduced.htm",
+      "sha256": "3afc13cc7a2de11da56ffb9b3aa2b466110565b80b9e1dc63b2b086401e5e1a6"
+    },
+    "note": "Introduced text (S.B. 234, as filed; same text appears under the 2024 entry of the carried-over bill). No passage vote is recorded in the text read; later amendments, if any, are not in it."
+  },
+  "operative_text": "SECTION 2 (new, HRS ch. 134): §134- Negligent concealment of a firearm by a licensee. (a) A person commits the offense of negligent concealment of a firearm by a licensee if the person holds a valid concealed carry firearms license and: (1) Without legal justification, displays or fails to completely conceal the licensed firearm, even briefly, causing alarm to any other person; or (2) Fails to secure the firearm on their person by dropping it in open view of any other person or by leaving the firearm in a public place. (b) Negligent concealment of a firearm by a licensee is a petty misdemeanor."
+}

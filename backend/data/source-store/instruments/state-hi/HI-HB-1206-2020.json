@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1206-2020",
+  "scope": "state:hi",
+  "title": "HB1206 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1206&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1206_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Della Belatti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1206_.HTM; sha256 dbdd9e52fef7ed264a626c793b06aefa5f25c3d363e4d04c21830f0d323ff0bf)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1206-2020.introduced.htm",
+      "sha256": "dbdd9e52fef7ed264a626c793b06aefa5f25c3d363e4d04c21830f0d323ff0bf"
+    },
+    "note": "As-filed text. Heading prints the 2019 legislature (carry-over). Per the Description, the Terrorist Screening Center notice is the change; the rest of the sentence is existing law. No passage vote on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2): The issuing authority shall perform an inquiry on an applicant by using the International Justice and Public Safety Network, including the United States Immigration and Customs Enforcement query, the National Crime Information Center, and the National Instant Criminal Background Check System, pursuant to section 846-2.7, and shall inform the Federal Bureau of Investigation's Terrorist Screening Center of the application, before any determination to issue a permit or to deny an application is made.\nSECTION 2 (HRS 134-2): Permits to acquire a pistol or revolver shall require a separate application and permit for each transaction."
+}

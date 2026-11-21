@@ -1,0 +1,85 @@
+{
+  "id": "HI-SB-1542-2023",
+  "scope": "state:hi",
+  "title": "SB1542 (2023 Regular): RELATING TO WEAPON SAFETY.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1542&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB1542_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Carol Fukunaga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "88ca2dc9-8505-4d1f-bc5a-d458ed3b5c20"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB1542_.HTM; sha256 40a55e23842db28fcc78ce4ec5e917753c9111ac5a2a2b2a8bb7b5a2d007be8b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1542-2023.introduced.htm",
+      "sha256": "40a55e23842db28fcc78ce4ec5e917753c9111ac5a2a2b2a8bb7b5a2d007be8b"
+    },
+    "note": "As-filed text. Quotes are selected from long lists of locations; see the bill for all 13 listed place types. Penalties: misdemeanor first offense, class C felony for a repeat within five years, with license revocation. SECTION 8 requires semi-annual attorney general reports on violations through December 1, 2027. No passage vote on file."
+  },
+  "operative_text": "SECTION 2 (new §134-A(a)): No individual carrying a firearm, concealed or unconcealed, on the individual's person shall enter or remain in or on, including the grounds and buildings of, any:\nSECTION 2 (new §134-A(a)(3)): Library, playground, recreation center, or public park;\nSECTION 2 (new §134-A(a)(4)): Nursery school, preschool, or child care facility, including any day care center or camp;\nSECTION 2 (new §134-A(a)(5)): Educational institution, college, university, public school, charter school, private school, or any state-operated or state-supported school;\nSECTION 2 (new §134-A(a)(10)): Establishment licensed for on-premises consumption of liquor;\nSECTION 2 (new §134-B(a)): Except as provided in subsection (b), no individual carrying a firearm, concealed or unconcealed, on the individual's person shall enter or remain in or on any private property, including any place of private business open to the public.\nSECTION 2 (new §134-C(b)): The individual shall store each firearm, unloaded, in an enclosed container, placed out of plain view, and locked with a padlock, keylock, combination lock, or similar locking device; provided that the utility or glove compartment of a motor vehicle shall not serve as an enclosed container.\nSECTION 2 (new §134-D(a)): Any individual licensed to carry a firearm pursuant to section 134-9 who is in possession of or carrying a firearm when contacted by a law enforcement officer shall immediately: (1) Inform the law enforcement officer that the individual is in possession of or carrying the firearm; and (2) Present the individual's license to the law enforcement officer.\nSECTION 3 (new §134-E(a)): No individual carrying or in possession of an electric gun shall enter or remain in or on, including the grounds and buildings of, any:\nSECTION 2 (new §134-A(c)): Any individual carrying a firearm in violation of this section shall be guilty of a: (1) Misdemeanor for a first offense; or (2) Class C felony for any subsequent offense committed within five years after a prior offense, shall be subject to revocation of any license to carry a firearm pursuant to section 134-13, and shall be ineligible to apply for a license to carry a firearm until one year after the individual's sentence has been served."
+}
