@@ -6,8 +6,11 @@ import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 const poolQueryMock = vi.fn();
 vi.mock('../db.js', () => ({ pool: { query: (...args: unknown[]) => poolQueryMock(...args) } }));
 
+// Pacing is tested on its own below; elsewhere it would only slow the suite.
+process.env.OCPF_MIN_INTERVAL_MS = '0';
+
 import {
-  assertOcpfRunHealthy, createOcpfAdapter, ocpfMaxWindow, ocpfWindows, OCPF_PAGE_SIZE_CEILING, parseOcpfAmount,
+  assertOcpfRunHealthy, createOcpfAdapter, ocpfMaxWindow, ocpfWindows, OCPF_PAGE_SIZE_CEILING, parseOcpfAmount, retryAfterMs,
 } from './ocpfAdapter.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
@@ -298,5 +301,61 @@ describe('ocpfAdapter normalize — amount fidelity', () => {
     // No row is dropped, and no amount is truncated.
     expect(norm.contributions.map((c) => c.amount)).toEqual([1000, -250, 945000]);
     expect(norm.skipped).toBe(0);
+  });
+});
+
+describe('ocpfAdapter rate limit — OCPF answers 429 after ~58 quick requests (2026-11-21)', () => {
+  afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); process.env.OCPF_MIN_INTERVAL_MS = '0'; });
+
+  const ok = { status: 200, json: async () => ({ summary: null, items: [] }) } as unknown as Response;
+  const tooMany = (retryAfter: string | null) => ({
+    status: 429,
+    headers: new Headers(retryAfter ? { 'retry-after': retryAfter } : {}),
+    text: async () => '{"title":"Too many requests. Please slow down and retry after the number of seconds in Retry-After."}',
+  }) as unknown as Response;
+
+  it('waits Retry-After on a 429 and carries on, instead of failing the source', async () => {
+    vi.useFakeTimers();
+    let calls = 0;
+    const fetchMock = vi.fn(async () => (++calls === 3 ? tooMany('10') : ok));
+    vi.stubGlobal('fetch', fetchMock);
+
+    const run = createOcpfAdapter().fetch(source());
+    await vi.advanceTimersByTimeAsync(9_000);
+    const before = fetchMock.mock.calls.length;
+    expect(before).toBe(3); // still waiting out the 10 s
+    await vi.advanceTimersByTimeAsync(2_000);
+    await expect(run).resolves.toBeDefined();
+    // Every window read, plus the one retry.
+    expect(fetchMock.mock.calls.length).toBe((THIS_YEAR - 1995 + 1) * 4 + 2 + 1);
+  });
+
+  it('gives up after repeated 429s with the reason in the error', async () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('fetch', vi.fn(async () => tooMany('1')));
+    const run = createOcpfAdapter().fetch(source());
+    const assertion = expect(run).rejects.toThrow(/HTTP 429 .*Too many requests/);
+    await vi.advanceTimersByTimeAsync(60_000);
+    await assertion;
+  });
+
+  it('spaces requests at least OCPF_MIN_INTERVAL_MS apart', async () => {
+    vi.useFakeTimers();
+    process.env.OCPF_MIN_INTERVAL_MS = '1100';
+    const at: number[] = [];
+    vi.stubGlobal('fetch', vi.fn(async () => { at.push(Date.now()); return ok; }));
+    const run = createOcpfAdapter().fetch(source());
+    await vi.advanceTimersByTimeAsync(400_000);
+    await run;
+    const gaps = at.slice(1).map((t, i) => t - at[i]);
+    expect(Math.min(...gaps)).toBeGreaterThanOrEqual(1100);
+  });
+
+  it('reads Retry-After as seconds or a date, with a 10 s default and a 2 min ceiling', () => {
+    expect(retryAfterMs('10')).toBe(10_000);
+    expect(retryAfterMs(null)).toBe(10_000);
+    expect(retryAfterMs('junk')).toBe(10_000);
+    expect(retryAfterMs('9999')).toBe(120_000);
+    expect(retryAfterMs(new Date(5_000 + 30_000).toUTCString(), 5_000)).toBeLessThanOrEqual(30_000);
   });
 });

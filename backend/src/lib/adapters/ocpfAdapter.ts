@@ -148,6 +148,49 @@ export function ocpfWindows(firstYear: number, lastYear: number): OcpfWindow[] {
   return windows;
 }
 
+// ---------------------------------------------------------------------------
+// Rate limit — OCPF answers 429 after ~58 quick requests (measured 2026-11-21)
+// ---------------------------------------------------------------------------
+//
+// 🔴 Measured live 2026-11-21: 58 back-to-back requests succeed, the 59th gets HTTP 429 with
+// `Retry-After: 10` ("Too many requests. Please slow down..."). A source is ~130 quarter requests,
+// so the 2026-11-21 hand run failed all 20 sources within 10 seconds, the first one at 2009-Q4.
+// Two defences: space requests at least OCPF_MIN_INTERVAL_MS apart (default 1,100 ms, under 60 a
+// minute), and on a 429 wait Retry-After and try again. Pacing makes a source ~2.5 min of fetching,
+// inside the 10-minute per-source budget in campaignFinanceScheduler.ts.
+const OCPF_MAX_429_RETRIES = 5;
+let lastOcpfRequestAt = 0;
+
+function ocpfMinIntervalMs(): number {
+  const n = parseInt(process.env.OCPF_MIN_INTERVAL_MS ?? '', 10);
+  return n >= 0 ? n : 1_100;
+}
+
+/** Retry-After in ms: seconds or an HTTP date; 10 s when absent or unreadable, at most 2 min. */
+export function retryAfterMs(header: string | null, now = Date.now()): number {
+  const fallback = 10_000;
+  if (!header) return fallback;
+  const secs = Number(header);
+  const ms = Number.isFinite(secs) ? secs * 1000 : Date.parse(header) - now;
+  return Number.isFinite(ms) && ms >= 0 ? Math.min(ms, 120_000) : fallback;
+}
+
+function sleepOrAbort(ms: number, signal?: AbortSignal): Promise<void> {
+  if (ms <= 0) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    signal?.throwIfAborted();
+    const t = setTimeout(() => { signal?.removeEventListener('abort', onAbort); resolve(); }, ms);
+    const onAbort = () => { clearTimeout(t); reject(signal!.reason); };
+    signal?.addEventListener('abort', onAbort, { once: true });
+  });
+}
+
+async function paceOcpf(signal?: AbortSignal): Promise<void> {
+  const wait = lastOcpfRequestAt + ocpfMinIntervalMs() - Date.now();
+  await sleepOrAbort(wait, signal);
+  lastOcpfRequestAt = Date.now();
+}
+
 async function fetchOcpfWindow(
   cpfId: string,
   window: OcpfWindow,
@@ -168,16 +211,23 @@ async function fetchOcpfWindow(
     (window.end ? `&EndDate=${window.end}` : '');
 
   let response: Response;
-  try {
-    const requestSignal = externalSignal
-      ? AbortSignal.any([externalSignal, AbortSignal.timeout(30_000)])
-      : AbortSignal.timeout(30_000);
-    response = await fetch(url, { signal: requestSignal });
-  } catch (err) {
-    throw new Error(
-      `[ocpfAdapter] fetch error cpfId=${cpfId} window=${label}: ${err instanceof Error ? err.message : String(err)}`,
-      { cause: err }
-    );
+  for (let attempt = 0; ; attempt++) {
+    await paceOcpf(externalSignal);
+    try {
+      const requestSignal = externalSignal
+        ? AbortSignal.any([externalSignal, AbortSignal.timeout(30_000)])
+        : AbortSignal.timeout(30_000);
+      response = await fetch(url, { signal: requestSignal });
+    } catch (err) {
+      throw new Error(
+        `[ocpfAdapter] fetch error cpfId=${cpfId} window=${label}: ${err instanceof Error ? err.message : String(err)}`,
+        { cause: err }
+      );
+    }
+    if (response.status !== 429 || attempt >= OCPF_MAX_429_RETRIES) break;
+    const waitMs = retryAfterMs(response.headers?.get?.('retry-after') ?? null);
+    console.warn(`[ocpfAdapter] 429 for cpfId=${cpfId} window=${label} — waiting ${waitMs}ms (retry ${attempt + 1}/${OCPF_MAX_429_RETRIES})`);
+    await sleepOrAbort(waitMs, externalSignal);
   }
 
   if (response.status !== 200) {
