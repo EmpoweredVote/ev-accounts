@@ -3251,7 +3251,119 @@
           "sha256": "b1b41d2ae3ac1a1781a758e322da9e4ffbea1ba99c41d9013aff18dfdad6903c"
         }
       }
+    },
+    {
+      "id": "0a81b064b4214f1e110ede0252c8ba64eec3c7bd1be244e54c64fd4828ee4bd2",
+      "kind": "own-words",
+      "url": "https://civilbeat.org/2025/05/assault-rifle-ban-victim-politics/",
+      "date": "2025-05",
+      "date_precision": "month",
+      "passage": "This amendment creates a huge carve-out for the sale of assault weapons,” he told his colleagues. “If we pass it, it basically eviscerates the underlying bill.",
+      "note": "Quoted by Civil Beat from Senate floor debate on SB 401 (2025), opposing a floor amendment that added exemptions to the assault-weapons ban. The story also says he would not try to revive the measure next year.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:35.382Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "532da0ca4cdb3ec5ba03250521ebbe68a31751280cf1dc2c0775c5fdaf2a8735",
+      "kind": "own-words",
+      "url": "https://www.civilbeat.org/2024/02/assault-rifles-and-shotguns-would-still-be-allowed-in-hawaii-under-amended-bill/",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "passage": "Rhoads said he had “mixed emotions” about the amendments.",
+      "note": "Civil Beat reports that at the Judiciary hearing he voted for an amended SB 3196 that dropped assault-rifle and assault-shotgun language but kept bans on 50-caliber rifles and 20-round magazines. The story says he would like to see assault rifles such as the AR-15 banned and that he said the original version lacked the votes. Only the 'mixed emotions' wording is a direct quote.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "50-caliber rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:35.382Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ab0c596a79fd69b37fbb8041fdd122d36b51ec32712e01986da63eb9f0bd7ec",
+      "kind": "own-words",
+      "url": "https://www.hawaiipublicradio.org/the-conversation/2026-07-23/state-sen-karl-rhoads-reflects-on-20-years-of-service",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "And I think a lot of the election stuff, the guns, elections, social issues, issues like same-sex marriage and death with dignity, you know, the stuff that I really cared about.",
+      "note": "In a radio interview on retiring after 20 years, he names guns among the issues he cared most about. The program's own text credits him with passing a red-flag law.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:35.382Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c4422a697c6579d32d8f415656518af436d211e4bc02f6da0b8f047d7b95ecc",
+      "kind": "record",
+      "url": "https://www.hawaiipublicradio.org/local-news/2025-05-01/measure-to-ban-assault-rifles-stalls-after-arguments-over-last-minute-amendment",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-401-2025",
+      "act": "other",
+      "note": "As Judiciary chair and an introducer of SB 401, he urged colleagues not to pass the floor amendment with exemptions; the amendment passed and the Senate shelved the assault-weapons ban. A news story is the source for his floor opposition.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:35.382Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines and 50-caliber rifles",
+        "red-flag orders",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "status: sitting state senator (District 13) who is retiring and not seeking reelection, per a July 2026 public radio interview; not on the 2026 ballot",
+        "On the Record (0 meetings)",
+        "campaign site: https://karlrhoads.org returned a server error (500), not read",
+        "blocked: https://www.capitol.hawaii.gov/legislature/memberpage.aspx",
+        "blocked: https://ballotpedia.org/Karl_Rhoads (403)",
+        "not reviewed: https://www.hawaiistatesenate.org/ (no response)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun terms (2 searches)",
+        "public radio interview 2026-07-23 read; one on-subject passage",
+        "news stories from Civil Beat and Hawaii Public Radio read in full text via curl"
+      ],
+      "found": 4,
+      "at": "2026-11-21T20:39:35.382Z",
+      "by": "source-collector"
+    }
+  ]
 }

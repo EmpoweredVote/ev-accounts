@@ -1179,5 +1179,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this politician id; name search returned 0 candidates)",
+        "blocked: https://www.capitol.hawaii.gov/legislature/memberpage.aspx?member=GABBARD&year=2026 (403)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.hawaiistatesenate.org/ (host did not resolve; no own-page for the member was readable)",
+        "Ballotpedia page for Mike Gabbard (fetched; no gun or firearm content could be read from it)",
+        "news search on name plus gun, firearm, Second Amendment words (nothing on the subject by this person; results were about other officials)",
+        "scope check: https://www.civilbeat.org/2026/08/hawai%ca%bbi-legislature-early-results-show-most-incumbents-winning/ lists him among O'ahu senators re-elected outright with no November opponent, so he remains in office and in scope",
+        "campaign site: none found",
+        "ontheissues.org and vote411: not used as sources"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:38:50.789Z",
+      "by": "source-collector"
+    }
+  ]
 }

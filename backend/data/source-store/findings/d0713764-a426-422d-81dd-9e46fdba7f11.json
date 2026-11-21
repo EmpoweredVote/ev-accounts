@@ -549,5 +549,52 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "gun safety laws general statement",
+        "gun storage and limits on who may have a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the House caucus site https://www.hawaiihousegop.com/ (fetched; nothing on the subject found in page text or search)",
+        "blocked: https://www.capitol.hawaii.gov/members/legislators.aspx?member=Souza",
+        "Ballotpedia (fetched; nothing on the subject)",
+        "one web search on name plus firearm words: only a press release from an advocacy group that describes a floor speech by this person, which is words about them, not their own words, so not saved",
+        "not reviewed: floor speech video or transcript from the 2025 assault weapons debate (not reachable)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:41:51.682Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.capitol.hawaii.gov/members/legislemberdetail.aspx?member=Souza",
+        "not reviewed: https://www.hawaiihouserepublicans.com/ (address did not resolve)",
+        "Ballotpedia page fetched, nothing on the subject found in its text",
+        "two news searches on name plus gun words: only an advocacy-group press release describes a floor speech by this person (words about her, not her own words; speech text or video not found); House floor video not reviewed",
+        "sponsor list: covered by bulk bill data",
+        "scope not confirmed from a page naming her in office; only a press release and bill data name her as a House member"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:46:00.721Z",
+      "by": "source-collector"
+    }
+  ]
 }

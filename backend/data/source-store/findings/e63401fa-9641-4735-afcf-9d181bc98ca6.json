@@ -1171,5 +1171,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "the campaign site https://jeannekapela.com (read; confirms State Representative, House District 5, re-election 2026; issue list has no firearms item; nothing on the subject)",
+        "blocked: https://www.capitol.hawaii.gov/members/legislator.aspx?member=Kapela",
+        "blocked: https://data.capitol.hawaii.gov/MemberFiles/House/kapela/kapelanews.txt (403)",
+        "Ballotpedia https://ballotpedia.org/Jeanne_Kapela (fetch returned an empty page; not reviewed)",
+        "two web searches on her name plus gun, firearm, assault weapon and Second Amendment words: no statement by her found; results were bills by other sponsors and outside groups",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:42:11.617Z",
+      "by": "source-collector"
+    }
+  ]
 }

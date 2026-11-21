@@ -671,5 +671,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidate speakers)",
+        "https://repilagan.com/ (own official site): direct fetch returned 406; read only through the fetch tool's page summary, which reported no mention of guns, firearms or the Second Amendment; nothing on the subject",
+        "blocked: https://www.capitol.hawaii.gov/members/legislators.aspx?member=Ilagan (403, not retried)",
+        "sponsor list: covered by bulk bill data",
+        "https://ballotpedia.org/Greggor_Ilagan: fetch returned empty and curl returned an empty 202; not reviewed",
+        "https://en.wikipedia.org/wiki/Greggor_Ilagan: confirms House District 4 incumbent since 2020; nothing on the subject",
+        "https://www.billsponsor.com/politicians/2076/greggor-ilagan: lists no firearm bills; nothing on the subject",
+        "https://www.civilbeat.org/elections-2026/general/ and the Star-Advertiser general election page: list him as an incumbent House candidate (Civil Beat page read; Star-Advertiser page returned 403); scope confirmed from search results and Civil Beat",
+        "web searches (3): name plus gun, firearm, assault and testimony terms returned bill texts and police reports, no statement by him; nothing on the subject",
+        "not reviewed: https://civilbeat.digitaldemocracy.org/hearings/258662 (firearm hearing transcript, speakers not identified as him)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:41:50.807Z",
+      "by": "source-collector"
+    }
+  ]
 }

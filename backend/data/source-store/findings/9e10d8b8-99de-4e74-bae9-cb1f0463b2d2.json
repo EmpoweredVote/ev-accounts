@@ -1430,7 +1430,56 @@
           "sha256": "5a35802d555af790cdf52cc7c87685b11a8b60fff3d3269d5eaa552f5db12c95"
         }
       }
+    },
+    {
+      "id": "831a725516cf54dc893c9dfceed520b69489b8362612d1f7bd3c354f19c51c0b",
+      "kind": "own-words",
+      "url": "https://lisamarten.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I was relieved to help pass protections for our residents in the face of the Supreme Court's attack on access to abortion and removal of the right of our State to prevent conceal carry of firearms.",
+      "note": "From her official site's home page (undated, read 2026). She describes helping pass state protections after the Supreme Court decision that struck down the state's ability to prevent concealed carry of firearms.",
+      "subjects": [
+        "carry a gun without a permit / concealed carry",
+        "state power to limit carry",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:52.760Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit / concealed carry",
+        "gun safety laws in general",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign and member site https://lisamarten.com (home page read; gun mention saved)",
+        "state elections office list of elected officials https://elections.hawaii.gov/?p=13970 (confirms her as the House District 51 member, term listed to 2028, so still in scope)",
+        "Civil Beat 2026 candidate Q&A (read; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Lisa_Marten (fetch returned no usable text; not reviewed)",
+        "news search on her name plus gun words (no statements by her found)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.staradvertiser.com/2026/07/09/election/2026-election-lisa-marten/ (Cloudflare block)",
+        "not reviewed: https://www.capitol.hawaii.gov (blocked per brief, not retried)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T20:39:52.760Z",
+      "by": "source-collector"
+    }
+  ]
 }

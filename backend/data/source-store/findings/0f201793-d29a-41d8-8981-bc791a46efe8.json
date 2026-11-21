@@ -489,7 +489,102 @@
           "sha256": "cc0a2af21f69886843e41f55a0b493f02094da059e3d4e01fd42841fbe4c46f0"
         }
       }
+    },
+    {
+      "id": "7048b082e04e8540882bce407697bbf2ae57d616c6c11d807d868bd056f24f5e",
+      "kind": "own-words",
+      "url": "https://www.civilbeat.org/2023/12/ewa-politician-says-responsible-gun-owners-will-make-hawaii-safer-not-everyone-is-so-sure/",
+      "date": "2023-12-13",
+      "date_precision": "month",
+      "passage": "“I think the state would be safer in fact if we had responsible gun owners who knew how to handle their weapon and understood the responsibility that comes with gun ownership,” Garcia said. “What we should do is not pass more laws restricting gun rights but pass more laws making those penalties tougher for those who are using firearms illegally.”",
+      "note": "Quoted by Civil Beat at his public safety town hall in West Oahu: he says the state would be safer with trained, responsible gun owners and favours tougher penalties for illegal gun use over more laws restricting gun rights.",
+      "subjects": [
+        "gun rights and responsible ownership",
+        "tougher penalties for illegal gun use",
+        "against new limits on gun owners",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:01.646Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd51baec8593f9ffcd4a6a35e069196903b711863719b95ccd3c8fd7f5957723",
+      "kind": "own-words",
+      "url": "https://www.civilbeat.org/2023/12/ewa-politician-says-responsible-gun-owners-will-make-hawaii-safer-not-everyone-is-so-sure/",
+      "date": "2023-12-18",
+      "date_precision": "day",
+      "passage": "“Although carrying a gun is your right, it’s not always the answer,” he said.",
+      "note": "Quoted by Civil Beat on residents asking him how to get licenses to carry: he calls carrying a gun a right but not always the answer.",
+      "subjects": [
+        "carry permits",
+        "gun rights and responsible ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:01.646Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42c012912fdb4afc3aeb7a75a7057a589e6ef5ac7a221d484cb74ba499e79716",
+      "kind": "own-words",
+      "url": "https://wideopenspaces.com/?p=332380",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "\"Those who sell weapons illegally don't care about age, they care about money,\" he said.",
+      "note": "Outdoor-news site quotes him opposing a Hawaii bill setting an age limit for ammunition, saying minors could still get guns and ammo illegally from criminals; the quote says illegal sellers ignore age limits.",
+      "subjects": [
+        "minimum age to buy ammunition",
+        "gun violence and illegal sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:01.646Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits (license to carry)",
+        "penalties for illegal gun use versus new gun limits",
+        "minimum age to buy ammunition",
+        "gun rights and responsible ownership",
+        "background checks",
+        "assault-style weapon bans",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page: blocked: https://www.capitol.hawaii.gov/members/legislator.aspx?member=Garcia (403)",
+        "member bio text file at data.capitol.hawaii.gov (read, nothing on the subject)",
+        "the House caucus member page (read, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Diamond_Garcia (fetch returned an empty 202 page, not read; a search result shows he is the District 42 incumbent with a term ending Nov 2026)",
+        "Civil Beat candidate Q&A pages 2024 (July, October): nothing on the subject",
+        "Civil Beat 2026 candidate Q&A for the District 42 challenger: confirms Diamond Garcia is the incumbent candidate in the 2026 race",
+        "news search on name plus gun/firearm words (Civil Beat Dec 2023 story, Wide Open Spaces July 2024 story)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: none found"
+      ],
+      "found": 3,
+      "at": "2026-11-21T20:39:01.646Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -945,5 +945,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "carry permits and where guns may be carried",
+        "Second Amendment and gun safety statements",
+        "reaction to the 2026 Supreme Court ruling striking down Hawaii's private-property carry rule"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings found)",
+        "her official site https://www.repmatsumoto.com/ and its newsletters page: read, nothing on the subject",
+        "the House minority caucus site https://www.hawaiihousegop.com/: read, nothing on the subject",
+        "Wikipedia page https://en.wikipedia.org/wiki/Lauren_Matsumoto: confirms she is the House Minority Leader for District 38; nothing on the subject",
+        "blocked: https://www.capitol.hawaii.gov/members/legislator.aspx?member=Matsumoto",
+        "blocked: https://ballotpedia.org/Lauren_Matsumoto",
+        "not reviewed: https://www.laurenmatsumoto.com/ (no response; her site is repmatsumoto.com)",
+        "news search on her name plus gun words (two searches): no quote from her; a news story on the 2025 assault-weapons bill SB 401 and an advocacy alert only list her office as a contact, nothing in her own words",
+        "news search on the 2026 Supreme Court carry ruling: no statement from her found",
+        "https://hawaiifreepress.com/Articles-Main/ID/43435/SB401-House-Approves-Gut-n-Replace-Gun-Ban-Bill: only lists her office phone, no words of hers"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:41:52.041Z",
+      "by": "source-collector"
+    }
+  ]
 }

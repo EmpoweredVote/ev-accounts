@@ -1,0 +1,36 @@
+{
+  "politician_id": "e9c692d8-1fe8-41a0-bead-8bb40981874e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits to buy or carry a gun",
+        "red-flag orders",
+        "ghost guns",
+        "carry without a permit",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://derekkawakami.com (home page and lieutenant governor page read; nothing on the subject; /issues returns 404)",
+        "Civil Beat candidate Q&A with Kawakami, July 2026 (read; nothing on the subject)",
+        "Hawaii News Now July 2026 forum story (read; nothing on the subject)",
+        "https://www.hawaiinewsnow.com/2026/08/09/kawakami-wins-lieutenant-governor-race-democratic-primary/ (confirms he won the lieutenant governor primary on Aug 8, 2026 and is on the general-election ballot)",
+        "Wikipedia page (read; nothing on the subject)",
+        "https://ontheissues.org/States/HI_Gun_Control.htm (lead only; does not mention him)",
+        "web searches on his name plus gun, firearm and Second Amendment words (nothing in his own words)",
+        "blocked: https://ballotpedia.org/Derek_Kawakami (202, empty body)",
+        "blocked: https://www.kauai.gov/Government/Mayor (403)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov (not retried)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:41:15.506Z",
+      "by": "source-collector"
+    }
+  ]
+}

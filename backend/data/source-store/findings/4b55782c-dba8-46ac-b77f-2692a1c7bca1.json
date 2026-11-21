@@ -521,5 +521,57 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation in general",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "Second Amendment",
+        "red-flag orders"
+      ],
+      "places": [
+        "scope: a reference page names him as the sitting District 41 House member, not challenged in the 2026 primary, so still in scope",
+        "On the Record (0 appearances, 0 meetings found by name search)",
+        "the House caucus site https://www.hawaiihousegop.com (loaded; home page has nothing on the subject or on him)",
+        "campaign site: https://www.alcosfor41.com did not respond (not reviewed)",
+        "blocked: https://ballotpedia.org/David_Alcos (returned a challenge page with no text)",
+        "blocked: https://www.capitol.hawaii.gov (not fetched, per brief)",
+        "sponsor list: covered by bulk bill data",
+        "web searches on his name plus gun, firearm, Second Amendment: no statement of his own on the subject",
+        "ontheissues.org appeared in results as a lead only; nothing on him"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:42:12.426Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "secure storage of guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://data.capitol.hawaii.gov/MemberFiles/House/Alcos/Alcosbio.txt (member bio page read: nothing on the subject)",
+        "https://www.civilbeat.org/2026/09/the-sunshine-blog-how-do-they-do-it-gop-candidates-surge-in-general/ (news story confirming he is the sitting House member and won the 2026 primary with no opposition; nothing on the subject)",
+        "Ballotpedia (fetched, nothing on the subject found in page text)",
+        "two web searches on name plus gun words (only bill PDFs and vote records, no own words)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov (403 per brief; not retried)",
+        "not reviewed: personal campaign site (none located)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:45:59.693Z",
+      "by": "source-collector"
+    }
+  ]
 }

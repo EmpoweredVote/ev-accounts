@@ -383,7 +383,54 @@
           "sha256": "b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb"
         }
       }
+    },
+    {
+      "id": "abb227a9a0740808fdf4c69ae2cd6a780a1a901b7b77bd22bdd0613b9d97cc79",
+      "kind": "own-words",
+      "url": "https://www.hawaiinewsnow.com/2025/05/01/hawaii-senators-narrowly-kill-firearms-bill/",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "The bill in its original condition will not only restrict law-abiding citizens who legally carry, but this also restricts our law enforcement officers",
+      "note": "Floor remarks quoted by a TV news story during Senate debate on SB 401 (limits on assault-style guns and large magazines). She says the bill as written would restrict lawful carriers and police officers.",
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "carry a gun",
+        "floor debate on SB 401"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:41:49.166Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "carry a gun",
+        "limits on who may have a gun",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Hawaii Senate member page: not reviewed: https://www.capitol.hawaii.gov (blocked, 403, not retried)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Samantha_DeCorte",
+        "search result pages for Wikipedia and Ballotpedia show a sitting senator for Senate District 22, term ending 2028, so no 2026 race to confirm; Wikipedia page not fetched",
+        "news search on name plus gun words: one news story (Hawaii News Now, 2025-05-01) quoting her on SB 401",
+        "not reviewed: official senator page and campaign site (no working address found; two guessed addresses did not resolve)",
+        "nothing on the subject: no questionnaires, newsletters or interviews found"
+      ],
+      "found": 1,
+      "at": "2026-11-21T20:41:49.166Z",
+      "by": "source-collector"
+    }
+  ]
 }

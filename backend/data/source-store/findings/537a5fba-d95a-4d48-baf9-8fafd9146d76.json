@@ -1314,7 +1314,98 @@
           "sha256": "8386214d976e0db4bcb5a4da8ae2393dc8a2c3316af11e60801ac9ec8303f516"
         }
       }
+    },
+    {
+      "id": "056b7c8863624759c2cdd5b12a57b37681dbf4267cf14cf4ebd5ac6b54efdb6b",
+      "kind": "own-words",
+      "url": "https://www.hawaiipublicradio.org/local-news/2025-05-01/measure-to-ban-assault-rifles-stalls-after-arguments-over-last-minute-amendment",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "Let us support responsible ownership. Let us support effective conservation. Let us stop the financial bleeding caused by invasive species, and let us ensure our laws are not enforced at the expense of those who protect the land,",
+      "note": "Floor remarks quoted by a public radio news story, urging her amendment to SB 401 (2025 assault-style gun ban) that added exemptions for subsistence hunters and conservation workers.",
+      "subjects": [
+        "ban on assault-style guns",
+        "exemptions for hunters and conservation workers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:41:25.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "771c84a1a421acc1f9e0377e964cf7b6f99358d5f3be03c172205943f7051639",
+      "kind": "own-words",
+      "url": "https://alohastatedaily.com/2025/05/01/gun-ban-fails-firework-ban-succeeds-in-legislatures-last-day",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "It is not just an ecological issue, it is a budgetary crisis, and we are paying for it with taxpayer dollars,",
+      "note": "Floor remarks quoted by a news outlet, said while she argued that removing powerful guns used against invasive species was a mistake; she introduced the amendment with exemptions to SB 401.",
+      "subjects": [
+        "ban on assault-style guns",
+        "exemptions for hunters and conservation workers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:41:25.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec35ac5713bfe4d3d3e36568f297d4b8dc810d6550c4240a02656771928a241b",
+      "kind": "record",
+      "url": "https://www.hawaiipublicradio.org/local-news/2025-05-01/measure-to-ban-assault-rifles-stalls-after-arguments-over-last-minute-amendment",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-401-2025",
+      "act": "other",
+      "motion": "Floor amendment to SB 401 offered by DeCoite (passed 13-12)",
+      "note": "She proposed a Senate floor amendment to the assault-style gun ban adding private-property use, compensation for surrendered guns, exemptions for dealers, subsistence hunters and conservation workers, and letting magazines over 10 rounds be passed down. It passed 13-12, which per the story effectively ended the bill.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "exemptions for hunters and conservation workers",
+        "compensation for surrendered guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:41:25.181Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "exemptions for hunters and conservation workers",
+        "compensation for surrendered guns",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov/",
+        "not reviewed: official Senate member page (https://www.hawaiisenate.gov/ did not respond); no campaign site found, so none of their own pages were readable",
+        "not reviewed: https://ballotpedia.org/Lynn_DeCoite (returned a challenge page, no content)",
+        "news search on name plus firearm words (news stories from 2025-05-01 fetched: Hawaii Public Radio, Alohastate Daily, Hawaii News Now)",
+        "not reviewed: other URL-pattern pages (campaign site not found); scope rests on news stories naming them as a state senator"
+      ],
+      "found": 3,
+      "at": "2026-11-21T20:41:25.181Z",
+      "by": "source-collector"
+    }
+  ]
 }

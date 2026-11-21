@@ -1132,7 +1132,56 @@
           "sha256": "685d8c23b200b47dbb5ebd3bee1b2860ff7870eceffeb8a3bc6a3147f0bed1a8"
         }
       }
+    },
+    {
+      "id": "ffb73a15bb6734e290d8f7b5e3a289aa72c342b61194a6a8ebc0188fe821bd66",
+      "kind": "own-words",
+      "url": "https://data.capitol.hawaii.gov/memberfiles/House/Sayama/Newsletter/2024MarNewsletter.pdf",
+      "date": "2024-03",
+      "date_precision": "month",
+      "passage": "Rep. Sayama meeting with Moms Demand Action, a grassroots organization fighting for public safety measures that protect people from gun violence.",
+      "note": "Photo caption in the representative's own community newsletter, describing a meeting with a gun-violence prevention group.",
+      "subjects": [
+        "gun safety laws",
+        "meeting with gun violence prevention group"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:41:00.815Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "firearm bills",
+        "assault-style weapons",
+        "background checks",
+        "red flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "member newsletters on data.capitol.hawaii.gov (2024 Mar, 2024 end of session, 2025 Jan-Feb, 2025 May, 2026 Jan): read, one relevant caption",
+        "blocked: https://www.staradvertiser.com/2026/07/09/election/2026-election-jackson-d-sayama/",
+        "blocked: https://www.capitol.hawaii.gov",
+        "Ballotpedia: fetch returned empty page, not reviewed: https://ballotpedia.org/Jackson_Sayama",
+        "not reviewed: campaign site https://www.jacksonsayama.com/ and legislative site https://www.repjacksonsayama.com (not fetched)",
+        "web searches: name plus firearm bills (2); search results suggest a 2026 run for State Senate District 10, not confirmed by a fetched page"
+      ],
+      "found": 1,
+      "at": "2026-11-21T20:41:00.815Z",
+      "by": "source-collector"
+    }
+  ]
 }

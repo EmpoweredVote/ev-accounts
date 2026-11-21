@@ -1229,5 +1229,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "secure gun storage",
+        "ghost guns",
+        "carry permits",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: a search result list shows her as the District 11 incumbent on the 2026 general-election ballot (no primary opponent); not a fetched page",
+        "https://www.wevoteproject.com/officials/terez-amato (fetched; confirms House District 11, Maui; nothing on the subject)",
+        "https://www.civilbeat.org/2026/07/candidate-qa-state-house-district-11-terez-amato/ (fetched; no gun or firearm words found in the page text)",
+        "https://www.staradvertiser.com/2026/07/09/election/2026-election-terez-amato/ (fetched; nothing on the subject)",
+        "https://ballotpedia.org/Terez_Amato (fetch returned HTTP 202 with no content; not reviewed)",
+        "blocked: https://www.capitol.hawaii.gov (known to answer 403; not retried)",
+        "not reviewed: official House caucus member page (host did not resolve)",
+        "campaign site https://www.terezamato.com (did not connect; no own page read)",
+        "two web searches on her name plus gun/firearm words: no statement from her found; only bill listings and sponsor lists",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:40:52.977Z",
+      "by": "source-collector"
+    }
+  ]
 }

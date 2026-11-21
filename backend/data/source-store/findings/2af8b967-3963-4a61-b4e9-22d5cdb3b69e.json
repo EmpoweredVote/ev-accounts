@@ -1147,5 +1147,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun safety laws general statement",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov/members/legislator.aspx?member=Tam",
+        "member newsletters on data.capitol.hawaii.gov (2025 end-of-session, 2026 end-of-session, March and April 2026): nothing on the subject",
+        "Civil Beat 2026 candidate Q&A for House District 24 (https://www.civilbeat.org/2026/07/candidate-qa-state-house-district-24-adrian-tam-3/): nothing on the subject",
+        "Ballotpedia: page fetched but returned almost no content; not reviewed beyond that",
+        "news search on name plus firearms: only bill-sponsor listings, already on file",
+        "primary results search: preliminary August 2026 report shows him well ahead in the primary; general election 3 Nov 2026 not confirmed on an official page"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:39:09.133Z",
+      "by": "source-collector"
+    }
+  ]
 }

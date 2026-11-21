@@ -334,5 +334,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "in scope: sitting House District 45 member (Waianae/Makaha) on the 2026 general-election ballot per https://www.hawaiinewsnow.com/2026/08/09/which-hawaii-primary-candidates-have-already-secured-victory/ and https://civilbeat.org/2026/06/candidate-qa-state-house-district-45-chris-muraoka/",
+        "On the Record (0 meetings)",
+        "campaign site https://chrismuraoka.com (read home page; only a signup/donate shell, nothing on the subject)",
+        "Civil Beat candidate Q&A https://civilbeat.org/2026/06/candidate-qa-state-house-district-45-chris-muraoka/ (read in full; answers mention community safety but nothing on guns or firearms)",
+        "Civil Beat district 45 overview https://civilbeat.org/2026/07/westside-families-and-community-safety-state-house-district-45-candidate-qas/ (nothing on the subject)",
+        "Star-Advertiser 2026 candidate profile https://www.staradvertiser.com/2026/07/06/election/2026-election-chris-muraoka/ (page returned almost no text; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Chris_Muraoka (page returned no readable text; not reviewed)",
+        "two news searches on name plus gun words (nothing naming him on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov (not retried; bill and vote pages covered by bulk bill data)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:40:09.969Z",
+      "by": "source-collector"
+    }
+  ]
 }

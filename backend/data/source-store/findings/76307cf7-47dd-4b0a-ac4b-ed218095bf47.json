@@ -232,7 +232,170 @@
           "sha256": "85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085"
         }
       }
+    },
+    {
+      "id": "6d4da7f757b9ad9c63dcf20cb83253548b4c28efd52737938602ecf906656292",
+      "kind": "own-words",
+      "url": "https://governor.hawaii.gov/?p=1828",
+      "date": "2023-06-02",
+      "date_precision": "day",
+      "passage": "In observance of today’s National Gun Violence Awareness Day, I’m pleased to be signing two bills – SB1230 and HB1239 – as gun violence represents an urgent public health and public safety issue,” said Governor Josh Green. “These bills strike a very appropriate balance between public safety, and protecting people and children in Hawaiʻi, along with respecting the Second Amendment right of individuals.",
+      "note": "Statement in the governor's news release on signing the carry-license and sensitive-places bill and a school active-shooter training bill. The release numbers the second bill HB1239 in the quote and HB1329 in the text below it.",
+      "subjects": [
+        "gun violence as a public health issue",
+        "places where carry is banned",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:10.374Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bed6ecbbb0731452a84c65def7bc6dba9300d8d4df625d8a1c3c3043d2dd474",
+      "kind": "record",
+      "url": "https://governor.hawaii.gov/?p=1828",
+      "date": "2023-06-02",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-1230-2023",
+      "act": "signed",
+      "note": "Signed Act 52 (SB1230, Relating to Firearms): bans firearms in listed sensitive places, requires carrying and disclosing a license, bars carrying while drinking or on private property without permission, and widens who is disqualified from owning a gun. The release says it was written in response to the Bruen decision.",
+      "subjects": [
+        "places where carry is banned",
+        "carry licenses",
+        "who may own a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:10.374Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "895bca2f11c77fe29057a40c126e77cf8743b366376addd01e6db1cf84f40e6d",
+      "kind": "own-words",
+      "url": "https://www.thegardenisland.com/2024/07/11/hawaii-news/new-laws-signed-for-gun-control-child-protection/",
+      "date": "2024-07-09",
+      "date_precision": "day",
+      "passage": "I’m just so pleased that you guys are continuously taking up the question of gun violence and access to guns and access to ammunition,” Green said. “It means something to me personally.",
+      "note": "Remarks at a bill signing, quoted in a Star-Advertiser story reprinted by The Garden Island. The same story reports he said he is a physician who has seen gun violence and that his brother and uncle died by suicide with guns.",
+      "subjects": [
+        "gun violence as a public health issue",
+        "minimum age to buy ammunition",
+        "limits on access to guns and ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:10.374Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40d90cc956143c2149c153863801a26b8e5a679db478d272ab191cb3fce99e7d",
+      "kind": "own-words",
+      "url": "https://governor.hawaii.gov/?p=5821",
+      "date": "2024-07-09",
+      "date_precision": "day",
+      "passage": "By addressing issues ranging from gun control to gambling regulation and support for survivors of abuse, we are building a safer and more just Hawaiʻi.",
+      "note": "Statement in the governor's news release on signing 17 public-safety bills, including the ammunition age limit.",
+      "subjects": [
+        "gun control",
+        "minimum age to buy ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:10.374Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ce0613dea69f0ba78df0b6080084a1d4948bb8bc5d0ab5e78fd5a1e4762c120",
+      "kind": "record",
+      "url": "https://governor.hawaii.gov/?p=5821",
+      "date": "2024-07-09",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-2845-2024",
+      "act": "signed",
+      "note": "Signed SB2845: bars selling, owning or possessing ammunition for anyone under 21, with exemptions for hunting and target shooting, plus seller ID checks and penalties.",
+      "subjects": [
+        "minimum age to buy ammunition",
+        "minimum age to buy guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:10.374Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79d79427d4d32c32f114a7a962df827eab263432e49f91e836ccb0b2177ad296",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/icymi-governor-josh-green-supports-legislation-to-ban-the-weapon-of-choice-of-mass-shooters-in-hawaii/",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-401-2025",
+      "act": "other",
+      "note": "A gun-safety group's press release (not the governor's words) reports that on April 28, 2025 he said on KHON2 that he supports SB 401, which would ban assault rifles and shotguns with military features; the video was not reviewed. The bill was later amended on the Senate floor and died at adjournment, per news searches.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:10.374Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "limits on where guns may be carried",
+        "carry licenses",
+        "minimum age to buy ammunition",
+        "gun violence as a public health issue",
+        "Second Amendment",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the governor's official site (news releases, fetched two release pages on the subject)",
+        "in scope: a news search shows this person is the sitting governor and won the 2026 general election",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Josh_Green (403)",
+        "blocked: https://www.capitol.hawaii.gov (not retried, per brief)",
+        "https://www.joshgreen.com/ is a business person with the same name, not this official; not used",
+        "no campaign site found for this person (greenforhawaii.com did not resolve)",
+        "news search on name plus subject words (Star-Advertiser coverage via The Garden Island, an advocacy group's press release)",
+        "nothing found on background checks, red-flag orders, ghost guns, permitless carry, or repeal of gun laws",
+        "not confirmed: whether any 2026-session assault-rifle bill reached the governor (no news story found)"
+      ],
+      "found": 6,
+      "at": "2026-11-21T20:40:10.374Z",
+      "by": "source-collector"
+    }
+  ]
 }

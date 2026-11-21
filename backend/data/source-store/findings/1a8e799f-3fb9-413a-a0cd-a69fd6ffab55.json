@@ -1,0 +1,37 @@
+{
+  "politician_id": "1a8e799f-3fb9-413a-a0cd-a69fd6ffab55",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits and waiting periods",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "https://www.oha.org/trustees/ (read: lists Keli'i Akina as an at-large trustee of the state Office of Hawaiian Affairs; he is not a legislator, so there is no bill sponsor list; sponsor list: covered by bulk bill data)",
+        "https://www.oha.org/trustee-akina/ (404, no page)",
+        "https://www.grassrootinstitute.org/?s=second+amendment (his own organization's site; nothing by him on the subject)",
+        "https://www.grassrootinstitute.org/?s=firearm (one 2020 column by him mentions firearm rules only inside a quote from a former resident; not his own words on the subject)",
+        "https://www.grassrootinstitute.org/2020/01/aloha-increasingly-means-goodbye-thanks-to-high-taxes/ (read; nothing of his own on the subject)",
+        "blocked: https://ballotpedia.org/Keli%27i_Akina (403)",
+        "web search: name plus Second Amendment/gun terms (nothing by him on the subject)",
+        "web search: name plus 2022 governor race gun position (nothing by him on the subject)",
+        "https://www.hawaiifreepress.com/Articles-Main/ID/41252/Officials-Write-Second-Amendment-Out-of-Hawaii (read; does not mention him)",
+        "capitol.hawaii.gov not fetched, per brief",
+        "campaign site: not found in search"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:38:48.783Z",
+      "by": "source-collector"
+    }
+  ]
+}

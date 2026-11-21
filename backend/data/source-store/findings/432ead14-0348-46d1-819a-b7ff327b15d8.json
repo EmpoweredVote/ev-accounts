@@ -1542,7 +1542,100 @@
           "sha256": "5a35802d555af790cdf52cc7c87685b11a8b60fff3d3269d5eaa552f5db12c95"
         }
       }
+    },
+    {
+      "id": "8b2addd19e6440e3069d7f672c8053efd609d6466dfa69b92b8f5e4997c5ca51",
+      "kind": "own-words",
+      "url": "https://governor.hawaii.gov/?p=1828",
+      "date": "2023-06",
+      "date_precision": "month",
+      "passage": "SB1230 was carefully crafted to ensure that it is consistent with the Court’s interpretation of the Second Amendment, and allows for the establishment of a fair system of regulation for concealed carry,” said House Judiciary and Hawaiian Affairs Chair David A. Tarnas. “We aimed to create a balanced approach that respects the rights of gun owners and the need to maintain safe and protected spaces in Hawaiʻi.",
+      "note": "Quoted in the Governor's release on signing gun bills, on SB 1230 (concealed carry licensing); the signing month is inferred from the release's reference to National Gun Violence Awareness Day.",
+      "subjects": [
+        "carry permits",
+        "Second Amendment",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:03.518Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2cf8761a1bd21b4c5a07372469b5cb01bf6498d66a55cb7f4d0db3600b79aaf",
+      "kind": "own-words",
+      "url": "https://www.hawaiinewsnow.com/2025/04/09/gun-owners-say-they-were-ambushed-by-assault-weapons-bill/",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "passage": "But Tarnas said the process and the regulations follow the law, “so I think that that this is a bill that could be defended successfully in court.”",
+      "note": "News story (Hawaii News Now) paraphrasing and quoting him on the assault-weapons language later placed in SB 401. The story says he argues it is not a ban because weapons registered before it takes effect would be grandfathered, and that it protects the public and the right to bear arms (paraphrase, not his words).",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:03.518Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9abb7038149150f07a56e31ddc57f82fd038d531a07ba68dc41e1f226c872d66",
+      "kind": "own-words",
+      "url": "https://data.capitol.hawaii.gov/MemberFiles/House/Tarnas/Newsletters/2025EoSNewsletter.pdf",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "HB392 - Prohibits the possession, transfer, and sale of ghost guns. Establishes mandatory minimum sentencing for use of a ghost gun in the commission of a felony.",
+      "note": "End-of-session newsletter from his office listing 2025 firearm bills that passed: HB125 safe storage, HB137 mandatory prison term for violent felons with a gun, HB392 ghost guns, HB995 carry licence reporting, and $825,000 for a gun buyback in HB300.",
+      "subjects": [
+        "home-made or unserialised guns",
+        "safe storage",
+        "gun buyback",
+        "who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:39:03.518Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "concealed carry permits",
+        "safe storage of guns",
+        "ghost guns",
+        "gun buyback",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov",
+        "blocked: https://ballotpedia.org/David_Tarnas (403)",
+        "not reviewed: campaign site and member page on the legislature site (not fetched)",
+        "news search on name plus gun words (one search)",
+        "Hawaii News Now story, April 2025 (fetched)",
+        "Governor's news release on gun bill signings (fetched)",
+        "member end-of-session newsletter 2025 on data.capitol.hawaii.gov (fetched)"
+      ],
+      "found": 3,
+      "at": "2026-11-21T20:39:03.518Z",
+      "by": "source-collector"
+    }
+  ]
 }

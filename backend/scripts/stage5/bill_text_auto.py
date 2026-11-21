@@ -66,7 +66,16 @@ def saved_text(ins, _c={}):
             print('saved copy sha256 differs, not used:', p)
         elif raw[:5] == b'%PDF-':
             t = subprocess.run(['pdftotext', '-layout', p, '-'], capture_output=True).stdout.decode('utf-8', 'replace')
-        else: t = raw.decode('utf-8', 'replace')
+        else:
+            cs = re.search(rb'charset=["\']?([\w-]+)', raw[:5000], re.I)  # Word saves Hawaii's .HTM as windows-1252
+            try: t = raw.decode(cs.group(1).decode() if cs else 'utf-8', 'replace')
+            except LookupError: t = raw.decode('utf-8', 'replace')
+            # A saved HTML text (Hawaii's .HTM, saved from Word, hi-01 2026-11-21: a placed quote carried "mso-" style code)
+            # is read as its words: <head> dropped, tags off, entities unescaped.
+            if re.search(r'<(?:html|body|p|span|div)\b', t[:5000], re.I):
+                import html as _h
+                t = re.sub(r'(?is)<head\b.*?</head>|<style\b.*?</style>|<script\b.*?</script>|<!--.*?-->', ' ', t)
+                t = _h.unescape(re.sub(r'<[^>]+>', ' ', t))
     _c[p] = re.sub(r'\s+', ' ', t).strip() if t else None
     return _c[p]
 

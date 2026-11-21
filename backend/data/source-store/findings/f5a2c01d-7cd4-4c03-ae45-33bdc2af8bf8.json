@@ -487,6 +487,27 @@
           "sha256": "54e8b8ce9491f6e7d900bb60bec6ce7878aaaf65261377abafba8882da50d07c"
         }
       }
+    },
+    {
+      "id": "782798bbf0cc81eb746ffbf2b6db4a66944c0b66744b492db8d1b1f1101fe81f",
+      "kind": "own-words",
+      "url": "https://www.civilbeat.org/2025/05/assault-rifle-ban-victim-politics/",
+      "date": "2025-05-29",
+      "date_precision": "day",
+      "passage": "Essentially what this amendment does, if you don’t get caught up in everything that’s in it, is allows us to kill the bill",
+      "note": "Direct quote in a Civil Beat news story (dated by the story's publication day; the floor debate came earlier). On the Senate floor he described an amendment to SB 401, the bill to bar sales of assault-style rifles with large-capacity magazines, as a way to kill the bill. The story also says he, as Senate Minority Leader, was asked to have the amendment introduced in the House.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:55.156Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -546,6 +567,32 @@
       "found": 0,
       "at": "2026-10-27T16:39:54.044Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "gun rights and Second Amendment",
+        "carry permits",
+        "background checks",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "web search: Awa plus firearms terms (one search; results were bill texts, an NRA-affiliated alert list and one news story)",
+        "https://www.civilbeat.org/2025/05/assault-rifle-ban-victim-politics/ (news story naming him as Senate Minority Leader; fetched with curl)",
+        "not reviewed: official Senate member page (the addresses tried did not resolve)",
+        "not reviewed: campaign site",
+        "not reviewed: Ballotpedia",
+        "not reviewed: https://www.nraila.org/articles/20240306/hawaii-anti-gun-bills-passed-in-the-senate-and-referred-to-house-committees",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.capitol.hawaii.gov (not fetched; stated as returning 403)"
+      ],
+      "found": 1,
+      "at": "2026-11-21T20:40:55.156Z",
+      "by": "source-collector"
     }
   ]
 }

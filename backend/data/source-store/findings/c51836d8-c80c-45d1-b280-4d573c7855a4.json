@@ -2399,7 +2399,114 @@
           "sha256": "3519a149da28f2a2bddbe62e999c62552442e1809eaaa16061293cbc0fe0be90"
         }
       }
+    },
+    {
+      "id": "08d8d18dac24dd1dcc40bb58888be6f0d150cda5a3d6d0bec8eb4c3380df1692",
+      "kind": "own-words",
+      "url": "https://data.capitol.hawaii.gov/MemberFiles/House/takayama/takayamabio.txt",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "He authored measures to establish the first-in-the nation Kupuna Caregivers Program to assist family members caring for loved ones; increase gun safety measures; and establish the correctional system oversight commission.",
+      "note": "Member bio page (undated, current) lists increasing gun safety measures among his authored work.",
+      "subjects": [
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:08.762Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39ef3cc017f7f714164250044d7b8bb7ffe7425b1b081497ca2a50df5d671988",
+      "kind": "own-words",
+      "url": "https://data.capitol.hawaii.gov/MemberFiles/House/takayama/takayamaaccomplishments.txt",
+      "date": "2021-01-01",
+      "date_precision": "year",
+      "passage": "Firearms safety. Expands the current law which requires owners of firearms to keep them safely locked from access to young people under 16 years of age 18 years.  This is aimed at increasing gun safety among teenagers between ages 16-18, who have the highest rates of suicides.",
+      "note": "His member page describes the safe-storage law he authored (Act 148, 2021; page text also lists it near Act 63 2017 entries) and its purpose. Date is the act year as listed.",
+      "subjects": [
+        "lock up guns away from minors",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:08.762Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09b9c693ae3ca3c9c13e010fd2fce46eabd9789b8b568136ca852fcbca5080e4",
+      "kind": "own-words",
+      "url": "https://data.capitol.hawaii.gov/MemberFiles/House/takayama/takayamaaccomplishments.txt",
+      "date": "2016-01-01",
+      "date_precision": "year",
+      "passage": "Firearms safety.  Allows police to immediately seize firearms from registered owners certified as seriously mentally ill.  Act 110, 2016",
+      "note": "His member page lists, as a bill he authored that became law, police seizure of guns from registered owners certified seriously mentally ill.",
+      "subjects": [
+        "limits on who may have a gun",
+        "seize guns from people certified mentally ill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:08.762Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052bda319c49baf930633bf25ff3655844934a81b31c30193bf34a588a52407b",
+      "kind": "own-words",
+      "url": "https://data.capitol.hawaii.gov/MemberFiles/House/takayama/takayamaaccomplishments.txt",
+      "date": "2017-01-01",
+      "date_precision": "year",
+      "passage": "Firearms notification. Requiring police to notify the courts and parole and probation offices if someone under their jurisdiction attempts to obtain a firearms permit.  Act 63, 2017",
+      "note": "His member page lists, as a bill he authored that became law, a requirement that police notify courts and supervision offices when someone under their jurisdiction tries to get a gun permit.",
+      "subjects": [
+        "gun permits",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-21T20:40:08.762Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag or seizure from people certified mentally ill",
+        "safe storage of guns around young people",
+        "police notice when a prohibited person seeks a gun permit",
+        "trigger modification ban",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page files (bio, accomplishments list, news/newsletters): read; newsletters are images, not reviewed: https://data.capitol.hawaii.gov/MemberFiles/House/takayama/takayamanews.txt",
+        "Ballotpedia: page fetched but returned no readable text; 2026 ballot status not confirmed there (a search summary said the term ends 2026-11-03)",
+        "one news search on name plus gun words (leads only: NRA and gun-blog pages not fetched)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: not attempted, www.capitol.hawaii.gov per brief",
+        "no campaign site found; remaining URL-pattern pages not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-11-21T20:40:08.762Z",
+      "by": "source-collector"
+    }
+  ]
 }

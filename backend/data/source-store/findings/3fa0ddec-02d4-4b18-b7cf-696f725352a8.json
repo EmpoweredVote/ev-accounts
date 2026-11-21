@@ -1,0 +1,32 @@
+{
+  "politician_id": "3fa0ddec-02d4-4b18-b7cf-696f725352a8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun and firearm regulation",
+        "assault-style weapons and magazines",
+        "background checks and permits",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity: search results and a 2026-10 public radio story show this person is the Oahu trustee on the Office of Hawaiian Affairs board (an elected board, not the Legislature); she was on the 2026 general ballot; result not confirmed",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.oha.org/trustee/carmen-hulu-lindsey/kalei-akaka-2/ (official trustee page, returned 403)",
+        "https://ballotpedia.org/Kalei_Akaka (fetch returned a non-content 202 response, no text read)",
+        "https://www.hawaiipublicradio.org/text/local-news/2026-10-13/oha-race-meet-the-2-candidates-vying-for-the-oahu-seat-this-general-election (read; nothing on the subject)",
+        "web search on name (one search run; no gun-related results)",
+        "campaign site: not found; not reviewed",
+        "blocked: https://www.capitol.hawaii.gov (not fetched per brief)"
+      ],
+      "found": 0,
+      "at": "2026-11-21T20:38:22.210Z",
+      "by": "source-collector"
+    }
+  ]
+}
