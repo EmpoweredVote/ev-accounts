@@ -141,12 +141,15 @@ describe('the migrations directory', () => {
     expect(wronglyRefused).toEqual([]);
   });
 
-  it('still refuses the three that drop real tables in a schema', () => {
+  it('still refuses the ones that drop real tables in a schema', () => {
     const refused = withDrop.filter((f) => unsafeDropTargets(readFileSync(path.join(MIGRATIONS, f), 'utf8')).length > 0);
     expect(refused.sort()).toEqual([
       '1818_retire_app_auth_credentials.sql',
       '1819_drop_app_auth_schema.sql',
       'CA_0351_drop_expired_backup_tables.sql',
+      // 0038 Part D: the swap drops its copy-bookkeeping tables; CA_0406 drops contributions_old.
+      'CA_0398_contributions_swap.sql',
+      'CA_0406_drop_contributions_old.sql',
     ]);
   });
 });
