@@ -58,7 +58,8 @@ export const JOBS: Record<string, JobFn> = {
   'calibration-lapse': () => runCalibrationLapseJob(),
   // The FEC ingest, then the whole-table totals (CA_0379) that the briefing reads instead of scanning
   // contributions itself (ev-cto decision 0038). fec-burst is the LAST step of ev-jobs-fec-burst, so the
-  // totals see the day's rows. A refresh failure is logged and does not fail the job.
+  // totals see the day's rows. The ingest stops starting sources after FEC_BURST_BUDGET_MINUTES (default 9 h)
+  // so the totals still run inside Render's 12-hour ceiling. A refresh failure is logged and does not fail the job.
   'fec-burst': async () => {
     await runFecScheduledJob();
     await refreshContributionTotals();
@@ -73,8 +74,9 @@ export const JOBS: Record<string, JobFn> = {
   // per run, ~30 min. Meant as the SECOND step of ev-jobs-fec-burst: after fec-auto-match, so a link
   // confirmed that morning is summarised the same day.
   'fec-finance-summary': () => runFecFinanceSummaryJob(),
-  // PAC money over a whole career (CA_0390–CA_0394). Nightly, as the LAST step of ev-jobs-fec-burst: reads FEC's
-  // daily e-filing zips (no API key, no rate limit) for our campaigns' reports, keeps their PAC gifts (11C) and
+  // PAC money over a whole career (CA_0390–CA_0394). Nightly, as its OWN Render cron (ev-jobs-pac-career-nightly,
+  // 05:00 UTC). Until 2026-11-21 it was the last step of ev-jobs-fec-burst and never ran when the burst hit Render's
+  // 12-hour ceiling (watchlist #102). Reads FEC's daily e-filing zips (no API key, no rate limit) for our campaigns' reports, keeps their PAC gifts (11C) and
   // refunds (20C) per giver, and rebuilds fec_pac_career when anything changed. Reads no big table.
   'pac-career-nightly': () => runPacCareerNightly(),
   // Weekly: FEC per-cycle candidate totals for every id in fec_candidate_ids, stalest first (~1,900 API calls),

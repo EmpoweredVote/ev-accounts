@@ -23,9 +23,11 @@
  */
 import { pool } from './db.js';
 import { sendEmail } from './emailService.js';
+import { BURST_WINDOW_START_SQL } from './fecBurstResume.js';
 import {
   evaluate,
   formatProblemLine,
+  type FecCoverageRow,
   type HttpRow,
   type PgCronRow,
   type Problem,
@@ -54,7 +56,7 @@ const RENDER_PROOFS: Array<{ job: string; maxAgeMinutes: number; sql: string }> 
   },
   {
     // Written for every daily zip read, even one with nothing kept (CA_0392). FEC posts a zip every day.
-    job: 'ev-jobs-fec-burst (pac-career-nightly)',
+    job: 'ev-jobs-pac-career-nightly',
     maxAgeMinutes: 48 * HOURS,
     sql: `SELECT max(loaded_at) AS newest FROM transparent_motivations.fec_pac_efiling_days`,
   },
@@ -96,6 +98,29 @@ const RENDER_PROOFS: Array<{ job: string; maxAgeMinutes: number; sql: string }> 
   },
 ];
 
+/**
+ * The last COMPLETE FEC burst window — 06:00 UTC yesterday to 06:00 UTC today (relative to the
+ * newest burst) — against the confirmed source list. Not today's window: this check runs at 13:00
+ * UTC, while a burst may still be walking. Small tables only (ingestion_runs is ~270k rows and
+ * read through its politician_source_id index; politician_sources is small).
+ */
+export const FEC_COVERAGE_SQL = `
+  WITH w AS (SELECT (${BURST_WINDOW_START_SQL}) - interval '1 day' AS ws),
+  confirmed AS (
+    SELECT id FROM transparent_motivations.politician_sources
+     WHERE source_system IN ('fec_house', 'fec_senate') AND research_status = 'confirmed'
+  )
+  SELECT w.ws AS window_start,
+         (SELECT count(*) FROM confirmed)::int AS sources,
+         (SELECT count(DISTINCT r.politician_source_id)
+            FROM transparent_motivations.ingestion_runs r
+            JOIN confirmed c ON c.id = r.politician_source_id
+           WHERE r.adapter_name = 'fec'
+             AND r.status IN ('completed', 'completed_with_warning')
+             AND r.started_at >= w.ws AND r.started_at < w.ws + interval '1 day')::int AS covered
+    FROM w
+`;
+
 export interface JobHealthResult {
   problems: Problem[];
   lines: string[];
@@ -132,10 +157,13 @@ export async function runJobHealthCheck(): Promise<JobHealthResult> {
     proofs.push({ job: p.job, newest: rows[0]?.newest ?? null, maxAgeMinutes: p.maxAgeMinutes });
   }
 
-  const problems = evaluate({ now, pgCron, proofs, http, stranded, staleOverrideMinutes });
+  const fecCoverage = (await pool.query<FecCoverageRow>(FEC_COVERAGE_SQL)).rows[0] ?? null;
+
+  const problems = evaluate({ now, pgCron, proofs, http, stranded, fecCoverage, staleOverrideMinutes });
   const lines = problems.map((p) => formatProblemLine(p, now));
   console.info(
     `[job-health] checked ${pgCron.length} pg_cron jobs, ${proofs.length} Render proofs` +
+      (fecCoverage ? `, FEC coverage ${fecCoverage.covered}/${fecCoverage.sources}` : '') +
       `${staleOverrideMinutes !== undefined ? ` (TEST: stale after ${staleOverrideMinutes}m)` : ''}` +
       ` — ${problems.length} problem(s)`,
   );

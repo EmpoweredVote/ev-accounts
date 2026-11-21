@@ -48,6 +48,25 @@ export interface StrandedRow {
   oldest_start: Date;
 }
 
+/** How many sources the last complete FEC burst window covered (see FEC_COVERAGE_MIN_SHARE). */
+export interface FecCoverageRow {
+  /** Start of the burst window checked: 06:00 UTC the day before the newest burst. */
+  window_start: Date;
+  /** Confirmed fec_house / fec_senate sources now. */
+  sources: number;
+  /** Of those, how many had a terminal success that started inside the window. */
+  covered: number;
+}
+
+/**
+ * A complete FEC burst window must cover at least this share of the confirmed sources.
+ * Healthy days 2026-11-13..17 covered 1,650-1,652 of 1,656 (99.6%); the 12-hour cut-offs of
+ * 2026-11-19..21 covered 781, 1,074 and 1,141 (47-69%). A source that never runs writes no row,
+ * so no failure count can see this; runs-covered vs the full list is the only honest measure
+ * (see fecBurstResume.ts). Watchlist #102.
+ */
+export const FEC_COVERAGE_MIN_SHARE = 0.9;
+
 /** A job is stale once its newest run is older than this many of its own intervals. */
 export const STALE_INTERVALS = 3;
 
@@ -108,6 +127,7 @@ export function evaluate(input: {
   proofs: ProofRow[];
   http: HttpRow[];
   stranded: StrandedRow[];
+  fecCoverage?: FecCoverageRow | null;
   staleOverrideMinutes?: number;
 }): Problem[] {
   const { now, staleOverrideMinutes } = input;
@@ -163,6 +183,18 @@ export function evaluate(input: {
       job: `ingestion_runs ${s.adapter_name}`,
       what: `${s.runs} run${s.runs === 1 ? '' : 's'} stuck in 'running' for over 24h`,
       since: s.oldest_start,
+    });
+  }
+
+  // (e) A FEC burst that ran but reached only part of the list (cut off, or starved of the API key).
+  const cov = input.fecCoverage;
+  if (cov && cov.sources > 0 && cov.covered < FEC_COVERAGE_MIN_SHARE * cov.sources) {
+    problems.push({
+      job: 'ev-jobs-fec-burst',
+      what:
+        `the burst from ${cov.window_start.toISOString()} covered ${cov.covered} of ${cov.sources} FEC sources ` +
+        `(${Math.round((100 * cov.covered) / cov.sources)}%, below ${Math.round(100 * FEC_COVERAGE_MIN_SHARE)}%)`,
+      since: cov.window_start,
     });
   }
 

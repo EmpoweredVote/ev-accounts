@@ -6,7 +6,7 @@ vi.mock('./db.js', () => ({ pool: { query: (...a: unknown[]) => poolQueryMock(..
 import {
   pendingFecSourcesSql,
   BURST_WINDOW_START_SQL,
-  FEC_INCREMENTAL_FIRST_ORDER_SQL,
+  FEC_STALEST_FIRST_ORDER_SQL,
 } from './fecBurstResume.js';
 
 beforeEach(() => poolQueryMock.mockReset());
@@ -37,24 +37,24 @@ describe('pending-source derivation for FEC burst resume', () => {
   });
 });
 
-describe('incremental-first walk order', () => {
-  it('sorts sources with a prior terminal success ahead of first-time backfills', () => {
-    // 🔴 A backfill takes ~45s against the shared FEC key; an incremental source ~1.6s.
-    // Known sources must come first so a run cut short by Render's 12h ceiling drops only
-    // backfills. NOT EXISTS is false for a known source, and false sorts first.
-    expect(FEC_INCREMENTAL_FIRST_ORDER_SQL).toMatch(/^\s*NOT EXISTS/i);
-    expect(FEC_INCREMENTAL_FIRST_ORDER_SQL).toMatch(/completed_with_warning/);
-    expect(FEC_INCREMENTAL_FIRST_ORDER_SQL).not.toMatch(/'running'|'failed'/);
-    expect(FEC_INCREMENTAL_FIRST_ORDER_SQL).toMatch(/adapter_name = 'fec'/);
+describe('stalest-first walk order', () => {
+  it('orders by the last terminal success, oldest first, never-ingested last', () => {
+    // 🔴 2026-11-19..21: a fixed order let every cut-off run drop the SAME tail. Ordering by
+    // last success makes today's tail tomorrow's head.
+    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/max\(prior\.started_at\)/);
+    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/\)\s*ASC NULLS LAST/);
+    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/completed_with_warning/);
+    expect(FEC_STALEST_FIRST_ORDER_SQL).not.toMatch(/'running'|'failed'/);
+    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/adapter_name = 'fec'/);
   });
 
-  it('judges "known" over all history, not just this burst window', () => {
-    // Scoping it to the window would reclassify every source as new each morning.
-    expect(FEC_INCREMENTAL_FIRST_ORDER_SQL).not.toMatch(/started_at/);
+  it('judges staleness over all history, not just this burst window', () => {
+    // Scoping it to the window would make every source look never-ingested each morning.
+    expect(FEC_STALEST_FIRST_ORDER_SQL).not.toMatch(/interval/);
   });
 
   it('keeps the resume pass in the same order as the burst it finishes', () => {
-    expect(pendingFecSourcesSql).toContain(`ORDER BY ${FEC_INCREMENTAL_FIRST_ORDER_SQL}`);
+    expect(pendingFecSourcesSql).toContain(`ORDER BY ${FEC_STALEST_FIRST_ORDER_SQL}`);
   });
 });
 

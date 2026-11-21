@@ -6,7 +6,9 @@ import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 const poolQueryMock = vi.fn();
 vi.mock('../db.js', () => ({ pool: { query: (...args: unknown[]) => poolQueryMock(...args) } }));
 
-import { createOcpfAdapter, ocpfWindows, parseOcpfAmount } from './ocpfAdapter.js';
+import {
+  assertOcpfRunHealthy, createOcpfAdapter, ocpfMaxWindow, ocpfWindows, OCPF_PAGE_SIZE_CEILING, parseOcpfAmount,
+} from './ocpfAdapter.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
 const PAGE_SIZE = 250;
@@ -135,6 +137,55 @@ describe('ocpfAdapter fetch', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     await expect(createOcpfAdapter().fetch(source())).rejects.toThrow(/truncat|cap/i);
+  });
+});
+
+describe('ocpfAdapter pageSize — OCPF refuses more than 50,000', () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  // Behaves like api.ocpf.us measured 2026-11-21: 400 "Search too broad" above 50,000.
+  const strictOcpf = () => vi.fn(async (url: string) => {
+    const size = Number(new URL(url).searchParams.get('pageSize'));
+    if (!(size > 0) || size > 50_000) {
+      const body = '{ "title": "Search too broad", "status": 400, "detail": "pageSize can be at most 50000." }';
+      return { status: 400, text: async () => body, json: async () => JSON.parse(body) } as unknown as Response;
+    }
+    return { status: 200, json: async () => ({ summary: null, items: [] }) } as unknown as Response;
+  });
+
+  it('every request it sends is one the server accepts', async () => {
+    const fetchMock = strictOcpf();
+    vi.stubGlobal('fetch', fetchMock);
+
+    await expect(createOcpfAdapter().fetch(source())).resolves.toBeDefined();
+    const sizes = fetchMock.mock.calls.map((c) => Number(new URL(c[0] as string).searchParams.get('pageSize')));
+    expect(Math.max(...sizes)).toBeLessThanOrEqual(50_000);
+  });
+
+  it('clamps an env value above the ceiling instead of sending it', () => {
+    expect(ocpfMaxWindow(undefined)).toBe(OCPF_PAGE_SIZE_CEILING);
+    expect(ocpfMaxWindow('250000')).toBe(50_000);
+    expect(ocpfMaxWindow('20000')).toBe(20_000);
+    expect(ocpfMaxWindow('junk')).toBe(50_000);
+  });
+
+  it("puts OCPF's own reason in the error, not only the status", async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      status: 400, text: async () => '{ "detail": "pageSize can be at most 50000." }',
+    }) as unknown as Response));
+
+    await expect(createOcpfAdapter().fetch(source())).rejects.toThrow(/HTTP 400 .*pageSize can be at most 50000/);
+  });
+});
+
+describe('assertOcpfRunHealthy — a run where every source failed exits non-zero', () => {
+  it('throws when all sources failed', () => {
+    expect(() => assertOcpfRunHealthy({ sources: 20, failed: 20 })).toThrow(/all 20 source/);
+  });
+  it('passes a partial failure and a clean run', () => {
+    expect(() => assertOcpfRunHealthy({ sources: 20, failed: 3 })).not.toThrow();
+    expect(() => assertOcpfRunHealthy({ sources: 20, failed: 0 })).not.toThrow();
+    expect(() => assertOcpfRunHealthy({ sources: 0, failed: 0 })).not.toThrow();
   });
 });
 
