@@ -1,0 +1,142 @@
+{
+  "id": "NV-SB-115-2017",
+  "scope": "state:nv",
+  "title": "SB115 (2017 Regular): Revises provisions concerning the prohibition against carrying or possessing certain weapons while on certain property. (BDR 15-279)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4875/Overview",
+    "https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB115.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shannon Bilbray-Axelrod",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Moises (Mo) Denis",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-03-21",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (As Introduced) passed",
+      "kind": "roll-call",
+      "yes": 12,
+      "no": 9,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241905 https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/GetBillVoteMembers?voteKey=4114&voteResultPanel=All&billKey=4875#SB115",
+      "members": [
+        {
+          "name": "Kelvin Atkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Yvanna D. Cancela",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Patricia Farley",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron D. Ford",
+          "vote": "yea",
+          "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288"
+        },
+        {
+          "name": "Mark A. Manendo",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Tick Segerblom",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Joyce Woodhouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "nay"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald (Don) G. Gustavson",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "nay"
+        },
+        {
+          "name": "Becky Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Roberson",
+          "vote": "nay"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB115.pdf; sha256 dd203dccaeb876f44f53b286e21d703e56df57f08aa01c5222c85f9577b5f027)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-115-2017.introduced.pdf",
+      "sha256": "dd203dccaeb876f44f53b286e21d703e56df57f08aa01c5222c85f9577b5f027"
+    },
+    "note": "As-filed version (prefiled February 13, 2017). The Senate passed the bill as introduced on 2017-03-21 (12-9); amendments made after the version read are not in the text read. In NRS 202.265 subsection 1, the sentence adding 'public library' to the covered property runs across struck text, so it is not quoted; the quoted list item (f) is the firearm line of that ban. The permission wording for libraries (the governing board of the public library) is in subsection 3 and also runs across struck text."
+  },
+  "operative_text": "Section 1 (NRS 202.265): (f) A pistol, revolver or other firearm; or\nSection 1 (NRS 202.265): Any person who violates subsection 1 is guilty of a gross misdemeanor.\nSection 1 (NRS 202.265): This section does not prohibit the possession of a weapon listed in subsection 1 on the property of:\nSection 1 (NRS 202.265): “Public library” has the meaning ascribed to it in NRS 379.0057.\nSection 2 (NRS 202.3673): A public building that is located on the property of a public school , a public library or a child care facility or the property of the Nevada System of Higher Education, unless the permittee has obtained written permission to carry a concealed firearm while he or she is on the premises of the public building pursuant to subparagraph (3) of paragraph (a) of subsection 3 of NRS 202.265.\nSection 2 (NRS 202.3673): A person who violates subsection 2 or 3 is guilty of a misdemeanor."
+}

@@ -1,8 +1,8 @@
 {
   "state": "nv",
   "name": "Nevada",
-  "verified": "2026-11-19",
-  "source": "Nevada reader session (Stage 5 tools), 2026-11-19: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 78-bill dry batch (the regular-session bills of 2017-2025 one topic's scan found; 76 roll calls) read from NELIS with the verifier's own fetch, and each member's vote compared with the dump where the dump holds one. Two bill texts were read for their marks (2025 AB 451 first reprint, 2025 SB 404 as introduced); no text was measured in bulk.",
+  "verified": "2026-11-20",
+  "source": "Nevada reader session (Stage 5 tools), 2026-11-19: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 78-bill dry batch (the regular-session bills of 2017-2025 one topic's scan found; 76 roll calls) read from NELIS with the verifier's own fetch, and each member's vote compared with the dump where the dump holds one. Two bill texts were read for their marks (2025 AB 451 first reprint, 2025 SB 404 as introduced); no text was measured in bulk. Re-checked 2026-11-20 (a topic set-up session): 33 bill texts fetched as PDFs from archive.leg.state.nv.us (15 enrolled, 4 first reprints, 14 as introduced; 181 requests, no block) and read with pdftotext -layout; robots.txt on both hosts read again and one vote member list fetched.",
   "chambers": {
     "lower": "Assembly",
     "upper": "Senate"
@@ -33,7 +33,7 @@
       "www.leg.state.nv.us",
       "archive.leg.state.nv.us"
     ],
-    "marks": "Read on 2 texts (2025 AB 451 first reprint, 2025 SB 404 as introduced; 2026-11-19). Each prints the legend \"EXPLANATION – Matter in bolded italics is new; matter between brackets [omitted material] is material to be omitted.\" Words deleted from law are in plain [brackets] (\"Any person [or persons] who is legally qualified [.] upon a\"), so plain text keeps them: never quote a bracketed passage as the law. Words added are bold italics, which plain text loses: a quote from plain text cannot tell new words from old. Each line carries its line number in the margin; a reprint's heading names the amendments it carries (\"Reprinted with amendments adopted on April 18, 2025\").",
+    "marks": "Read on 2 texts (2025 AB 451 first reprint, 2025 SB 404 as introduced; 2026-11-19). Each prints the legend \"EXPLANATION – Matter in bolded italics is new; matter between brackets [omitted material] is material to be omitted.\" Words deleted from law are in plain [brackets] (\"Any person [or persons] who is legally qualified [.] upon a\"), so plain text keeps them: never quote a bracketed passage as the law. Words added are bold italics, which plain text loses: a quote from plain text cannot tell new words from old. Each line carries its line number in the margin; a reprint's heading names the amendments it carries (\"Reprinted with amendments adopted on April 18, 2025\"). Read again on 33 texts (2026-11-20): the legend was in all 33. Introduced texts and reprints carry a margin line number on each line (pdftotext -layout keeps it at the line start; strip it before quoting); enrolled texts carry none. An enrolled text still prints the brackets and the legend.",
     "note": "Texts are PDFs: introduced /Session/<83rd2025>/Bills/<AB|SB>/<AB451>.pdf, reprints _R1, _R2, enrolled _EN, and amendments /Bills/Amendments/A_<AB451>_<405>.pdf. Each address on www.leg.state.nv.us redirects (302) to the same path on archive.leg.state.nv.us. The dump types every reprint \"Introduced\": read the version from the file name."
   },
   "reader_access": {
@@ -53,6 +53,8 @@
     "The Open States dump stores some names as UTF-8 read as Latin-1 (\"OâNeill, PK\" for O’Neill). The record's names come from NELIS and are not affected.",
     "The dump holds no Assembly memberships for 2017-2025, so the converter linked about 206 Assembly names by name alone; each was checked against the record's list.",
     "The dump splits some members across records: Skip Daly is \"Richard Daly\" in the Assembly (2017-2019) and \"Skip Daly\" in the Senate; Shea Backus and Michelee Cruz-Crawford each have two or three records. Link every record a member votes under.",
-    "Members move between chambers often (Dina Neal, Edgar Flores, John Ellison, Lisa Krasner, Robin Titus, Rochelle Nguyen: Assembly, then Senate): match by chamber and years, not by name alone."
+    "Members move between chambers often (Dina Neal, Edgar Flores, John Ellison, Lisa Krasner, Robin Titus, Rochelle Nguyen: Assembly, then Senate): match by chamber and years, not by name alone.",
+    "The newest Open States dump names the 36th special session (November 2025) folder \"36th_2026_Special_Session\" (NV-900147), not 2025. Members appointed after the 2025 regular session sit in that folder only, so they have no regular-session vote (2026-11-20).",
+    "robots.txt read again 2026-11-20 on www.leg.state.nv.us and archive.leg.state.nv.us (same file): it disallows */Reports/*, */ExhibitDocument/*, *.axd, /AppCF/FiscalNote/29th2015Special and /79th2017, /App/Opinions/* and a lobbyist test page; /App/NELIS and /Session are allowed. One member list fetched: HTTP 200."
   ]
 }

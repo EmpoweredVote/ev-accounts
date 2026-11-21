@@ -1,0 +1,376 @@
+{
+  "id": "NV-SB-156-2025",
+  "scope": "state:nv",
+  "title": "SB156 (2025 Regular): Revises provisions relating to the prevention of gun violence. (BDR 18-958)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12137/Overview",
+    "https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB156_EN.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Edgar Flores",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-05-28",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (2nd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 11,
+      "no": 8,
+      "absent": 2,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241976 https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/GetBillVoteMembers?voteKey=13255&voteResultPanel=All&billKey=12137#SB156",
+      "members": [
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Skip Daly",
+          "vote": "yea",
+          "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+        },
+        {
+          "name": "Fabian Doñate",
+          "vote": "yea",
+          "politician_id": "7b4022ca-9722-4947-a369-ee0e528b1af9"
+        },
+        {
+          "name": "Marilyn Dondero Loop",
+          "vote": "yea",
+          "politician_id": "44c59b6c-de01-4c1b-b696-a57ad3947dba"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Roberta Lange",
+          "vote": "yea",
+          "politician_id": "40367549-65f3-449e-add5-ce67abc516b5"
+        },
+        {
+          "name": "Rochelle Nguyen",
+          "vote": "yea",
+          "politician_id": "3885166f-532a-4bf2-a04c-9c846768f5eb"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "yea",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "Julie Pazina",
+          "vote": "yea",
+          "politician_id": "0e6e4089-78fe-4090-a5d9-0541c3ec45c8"
+        },
+        {
+          "name": "Melanie Scheible",
+          "vote": "yea",
+          "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+        },
+        {
+          "name": "Angie Taylor",
+          "vote": "yea",
+          "politician_id": "49ac6935-2444-4ce9-8e84-545c6f6209f0"
+        },
+        {
+          "name": "Carrie Buck",
+          "vote": "nay",
+          "politician_id": "a7679d83-5a48-470e-9df2-4d1d7c18a391"
+        },
+        {
+          "name": "John Ellison",
+          "vote": "nay",
+          "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "nay",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "nay",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Lori Rogich",
+          "vote": "nay",
+          "politician_id": "3df50c30-f39c-4cd9-a188-c9082a67daa9"
+        },
+        {
+          "name": "John Steinbeck",
+          "vote": "nay",
+          "politician_id": "129ebeb5-0bb7-489d-998c-53bea72fb1ba"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay",
+          "politician_id": "4255a155-7197-40b7-918a-b32ed4d489c4"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "nay",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        },
+        {
+          "name": "Michelee \"Shelly\" Cruz-Crawford",
+          "vote": "absent",
+          "politician_id": "fa2f4a8c-2dba-4985-84c5-e0efda8a314a"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "absent",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        }
+      ]
+    },
+    {
+      "date": "2025-05-31",
+      "body": "NV House",
+      "motion": "House Assembly final passage (2nd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 14,
+      "absent": 3,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241977 https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/GetBillVoteMembers?voteKey=13375&voteResultPanel=All&billKey=12137#SB156",
+      "members": [
+        {
+          "name": "Tracy Brown-May",
+          "vote": "yea",
+          "politician_id": "190de314-e976-4df7-bad9-b3cdc0f2d887"
+        },
+        {
+          "name": "Max Carter",
+          "vote": "yea",
+          "politician_id": "32278145-a538-4cb7-8a2e-d0a571e2b0b5"
+        },
+        {
+          "name": "Venicia Considine",
+          "vote": "yea",
+          "politician_id": "c7fe9357-446f-4998-816a-dbfdd8b319ef"
+        },
+        {
+          "name": "Joe Dalia",
+          "vote": "yea",
+          "politician_id": "0b6f16de-e072-415a-837f-bf3c75caccbd"
+        },
+        {
+          "name": "Reuben D'Silva",
+          "vote": "yea",
+          "politician_id": "3af59cfd-8cd6-4fc3-8c8c-82b07a10af69"
+        },
+        {
+          "name": "Tanya Flanagan",
+          "vote": "yea",
+          "politician_id": "16be39b7-c646-4656-b20c-7f6e038e97ac"
+        },
+        {
+          "name": "Heather Goulding",
+          "vote": "yea",
+          "politician_id": "74f07f06-747c-4e6a-adf3-68133bd2ccbc"
+        },
+        {
+          "name": "Melissa Hardy",
+          "vote": "yea",
+          "politician_id": "02fa5b8b-2be7-4c5c-ae0b-ae01963625d1"
+        },
+        {
+          "name": "Linda Hunt",
+          "vote": "yea",
+          "politician_id": "f59700c8-d453-425a-b3f9-f1189d87a976"
+        },
+        {
+          "name": "Jovan Jackson",
+          "vote": "yea",
+          "politician_id": "b61f2aa3-62c2-41fb-a8e9-a0589a8ee005"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Venise Karris",
+          "vote": "yea",
+          "politician_id": "aa172507-de77-4525-a765-220237c1a9be"
+        },
+        {
+          "name": "Selena La Rue Hatch",
+          "vote": "yea",
+          "politician_id": "086ad172-94bb-4460-8984-4f5b7fa4d2a5"
+        },
+        {
+          "name": "Elaine Marzola",
+          "vote": "yea",
+          "politician_id": "10957d22-c1ca-4a44-bddb-5bd606b12b76"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "yea",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Cinthia Moore",
+          "vote": "yea",
+          "politician_id": "1a9f683e-4ead-49fe-b6b3-30d6379738d4"
+        },
+        {
+          "name": "Erica Mosca",
+          "vote": "yea",
+          "politician_id": "80bf7387-2917-464f-a9e1-58d136fa2b0b"
+        },
+        {
+          "name": "Hanadi Nadeem",
+          "vote": "yea",
+          "politician_id": "55db18bd-c4ed-487a-a5cf-6b672e5376b5"
+        },
+        {
+          "name": "Duy Nguyen",
+          "vote": "yea",
+          "politician_id": "d2c7f3e5-d0c9-40d1-8527-49f2e41e015b"
+        },
+        {
+          "name": "David Orentlicher",
+          "vote": "yea",
+          "politician_id": "90572ea8-acf1-4896-8b3d-8efdbd26ad58"
+        },
+        {
+          "name": "Erica Roth",
+          "vote": "yea",
+          "politician_id": "0181ed7a-410b-4dfe-b0ea-411ffd0f5720"
+        },
+        {
+          "name": "Selena Torres-Fossett",
+          "vote": "yea",
+          "politician_id": "0f31ccad-c79c-43cb-bb06-9392b9b2c908"
+        },
+        {
+          "name": "Howard Watts",
+          "vote": "yea",
+          "politician_id": "efadbe7a-0b07-42bb-912d-c2a3021e06d6"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Lisa Cole",
+          "vote": "nay",
+          "politician_id": "b9f1ab35-5fb3-4177-80c2-29fd388b77a9"
+        },
+        {
+          "name": "Rich DeLong",
+          "vote": "nay",
+          "politician_id": "b1499860-79d4-43b3-878c-def5f28037d8"
+        },
+        {
+          "name": "Jill Dickman",
+          "vote": "nay",
+          "politician_id": "7c364920-62ba-4ae8-b982-739656b58f51"
+        },
+        {
+          "name": "Rebecca Edgeworth",
+          "vote": "nay",
+          "politician_id": "6a42f3ff-5ac8-40ff-a0ea-9b18e626c9aa"
+        },
+        {
+          "name": "Danielle Gallant",
+          "vote": "nay",
+          "politician_id": "6cffc86c-7d40-4fd9-8690-51d6d33ff1e4"
+        },
+        {
+          "name": "Ken Gray",
+          "vote": "nay"
+        },
+        {
+          "name": "Bert Gurr",
+          "vote": "nay",
+          "politician_id": "9dc6edd9-7406-476c-82b7-bee3f2865bcc"
+        },
+        {
+          "name": "Greg Hafen",
+          "vote": "nay",
+          "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+        },
+        {
+          "name": "Alexis Hansen",
+          "vote": "nay",
+          "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+        },
+        {
+          "name": "Brian Hibbetts",
+          "vote": "nay",
+          "politician_id": "55370ca6-5c1a-4ab4-9a75-3ee266ec3d53"
+        },
+        {
+          "name": "Heidi Kasama",
+          "vote": "nay",
+          "politician_id": "49dc6a5b-4275-48e6-8f11-5e4156b8199e"
+        },
+        {
+          "name": "Gregory Koenig",
+          "vote": "nay",
+          "politician_id": "36cba838-66a0-497c-a0c9-56f6f917f6c7"
+        },
+        {
+          "name": "P.K. O'Neill",
+          "vote": "nay"
+        },
+        {
+          "name": "Toby Yurek",
+          "vote": "nay"
+        },
+        {
+          "name": "Natha Anderson",
+          "vote": "absent",
+          "politician_id": "4e6d26a0-747c-4ccd-8f83-384732c0f34a"
+        },
+        {
+          "name": "Shea Backus",
+          "vote": "absent",
+          "politician_id": "06693066-c852-424f-b3f5-925edee51743"
+        },
+        {
+          "name": "Cecelia González",
+          "vote": "absent",
+          "politician_id": "4e31c709-96b4-4938-b01f-d8ba4ff474c8"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/SB/SB156_EN.pdf; sha256 3208a05b36e8ff14e8471f5be9d6f442780dde69b70b67e83e7be3af98bde43a)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-156-2025.enrolled.pdf",
+      "sha256": "3208a05b36e8ff14e8471f5be9d6f442780dde69b70b67e83e7be3af98bde43a"
+    },
+    "note": "Enrolled version (83rd Session, 2025), the text both houses passed (final votes were on the 2nd Reprint). Sections 3, 4, 5, 10 and 13 were deleted by amendment."
+  },
+  "operative_text": "Section 7 (NRS chapter 228, new): 1. The Attorney General shall appoint a Special Counsel for the Prevention of Gun Violence, who shall serve at the pleasure of the Attorney General.\nSection 8 (NRS chapter 228, new): 1. Advise the Attorney General on all matters related to the prevention of gun violence, including, without limitation, the effectiveness of state laws in preventing gun violence, the legal, social and policy barriers to preventing gun violence and strategies and policies to prevent gun violence. 4. Collect data relating to any arrest or prosecution for a violation of NRS 202.3625 to 202.3645, inclusive.\nSection 9 (NRS chapter 228, new): 1. The Special Counsel may, within the limits of money available for this purpose, establish and administer a program to award grants to organizations in this State to conduct gun violence prevention initiatives that are community-based, culturally competent and focused on interrupting cycles of gun violence, trauma and retaliation.\nSection 12 (NRS chapter 228, new): On or before January 1 of each odd-numbered year, the Attorney General shall submit to the Director of the Legislative Counsel Bureau for transmittal to the next regular session of the Legislature a written report concerning: 2. The overall state of gun violence and gun violence prevention in this State."
+}

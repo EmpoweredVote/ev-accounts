@@ -1,0 +1,122 @@
+{
+  "id": "NV-AB-144-2021",
+  "scope": "state:nv",
+  "title": "AB144 (2021 Regular): Revises provisions relating to background checks for certain sales or transfers of firearms. (BDR 15-699)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/7472/Overview",
+    "https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB144.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Glen Leavitt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robin Titus",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+    },
+    {
+      "name": "Jill Dickman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7c364920-62ba-4ae8-b982-739656b58f51"
+    },
+    {
+      "name": "John Ellison",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+    },
+    {
+      "name": "Jim Wheeler",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joseph (Joe) P. Hardy",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Carrie Buck",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a7679d83-5a48-470e-9df2-4d1d7c18a391"
+    },
+    {
+      "name": "Greg Hafen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+    },
+    {
+      "name": "Alexis Hansen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+    },
+    {
+      "name": "Melissa Hardy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "02fa5b8b-2be7-4c5c-ae0b-ae01963625d1"
+    },
+    {
+      "name": "Heidi Kasama",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "49dc6a5b-4275-48e6-8f11-5e4156b8199e"
+    },
+    {
+      "name": "Andy Matthews",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "07a8598f-666f-4ac5-b6ee-09cb9f815783"
+    },
+    {
+      "name": "Richard McArthur",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "P.K. O'Neill",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Hammond",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ben Kieckhefer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB144.pdf; sha256 4acf37a05faec236e4e82624f7d466ddeaf494738a40d642697b94afc5c932db)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-144-2021.introduced.pdf",
+      "sha256": "4acf37a05faec236e4e82624f7d466ddeaf494738a40d642697b94afc5c932db"
+    },
+    "note": "As-filed text read (introduced Feb 16, 2021). No passage vote in the data. The bill drops the current-duty requirement for peace officers, per the digest. Line 1 of the section, which keeps the exemption for law enforcement agencies, security guards, armed forces members and federal officials, is not quoted because it crosses a struck word."
+  },
+  "operative_text": "Section 1 (NRS 202.2548): 2. The sale or transfer of a firearm by or to any peace officer who is: (a) Employed by a law enforcement agency; and (b) In good standing. A peace officer shall be deemed to be in good standing if the peace officer is not currently suspended without pay."
+}

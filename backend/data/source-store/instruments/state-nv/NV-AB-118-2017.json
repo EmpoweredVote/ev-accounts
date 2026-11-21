@@ -1,0 +1,331 @@
+{
+  "id": "NV-AB-118-2017",
+  "scope": "state:nv",
+  "title": "AB118 (2017 Regular): Revises provisions governing the issuance of permits to carry concealed firearms. (BDR 15-572)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4854/Overview",
+    "https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB118_EN.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Skip Daly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-04-17",
+      "body": "NV House",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 4,
+      "absent": 4,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241912 https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/GetBillVoteMembers?voteKey=4212&voteResultPanel=All&billKey=4854#AB118",
+      "members": [
+        {
+          "name": "Elliot T. Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson Araujo",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Benitez-Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Irene Bustamante Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Lesley Cohen",
+          "vote": "yea"
+        },
+        {
+          "name": "Skip Daly",
+          "vote": "yea",
+          "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+        },
+        {
+          "name": "Chris Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Jason Frierson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ozzie Fumo",
+          "vote": "yea"
+        },
+        {
+          "name": "John Hambrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "yea",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Amber Joiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "yea",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Jim Marchant",
+          "vote": "yea",
+          "politician_id": "a87f7095-125a-471f-98e2-90ce850634aa"
+        },
+        {
+          "name": "Richard McArthur",
+          "vote": "yea"
+        },
+        {
+          "name": "William McCurdy II",
+          "vote": "yea"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "yea",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "yea",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "James Oscarson",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith F. Pickard",
+          "vote": "yea"
+        },
+        {
+          "name": "Ellen B Spiegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael C. Sprinkle",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyrone Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "yea",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        },
+        {
+          "name": "Jill Tolles",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Watkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Wheeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Shannon Bilbray-Axelrod",
+          "vote": "nay"
+        },
+        {
+          "name": "Maggie Carlton",
+          "vote": "nay"
+        },
+        {
+          "name": "Olivia Diaz",
+          "vote": "nay"
+        },
+        {
+          "name": "Heidi Swank",
+          "vote": "nay"
+        },
+        {
+          "name": "John Ellison",
+          "vote": "absent",
+          "politician_id": "778791c2-f947-42db-81e9-ba3bc1ff931f"
+        },
+        {
+          "name": "Al Kramer",
+          "vote": "absent"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "absent",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "Melissa Woodbury",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2017-05-11",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 0,
+      "absent": 1,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241913 https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/GetBillVoteMembers?voteKey=4620&voteResultPanel=All&billKey=4854#AB118",
+      "members": [
+        {
+          "name": "Kelvin Atkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Yvanna D. Cancela",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Patricia Farley",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron D. Ford",
+          "vote": "yea",
+          "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald (Don) G. Gustavson",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark A. Manendo",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Roberson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tick Segerblom",
+          "vote": "yea"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Joyce Woodhouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB118_EN.pdf; sha256 a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-118-2017.enrolled.pdf",
+      "sha256": "a8451094b9788516205e83a5672de4dc49e948bc5da12621ec3f8f5b156c52a7"
+    },
+    "note": "Enrolled text read. The age rule itself is in subsection 3(a), set out as a list that restarts after a struck '21' so it cannot be quoted whole without crossing the struck word; it lets a person 18 to under 21 qualify if a current member of the Armed Forces, a reserve component or the National Guard, or discharged under honorable conditions. The quote of subsection 4 opens a list; only paragraph (k) is quoted. Proof of service is required on the application (paragraph (f))."
+  },
+  "operative_text": "Section 1 (NRS 202.3657): 4. The sheriff shall deny an application or revoke a permit if the sheriff determines that the applicant or permittee: (k) Has been discharged or released from service in the Armed Forces of the United States, a reserve component thereof or the National Guard under conditions other than honorable conditions and is less than 21 years of age. (f) If the applicant is a person described in subparagraph (2) of paragraph (a) of subsection 3, proof that the applicant:"
+}

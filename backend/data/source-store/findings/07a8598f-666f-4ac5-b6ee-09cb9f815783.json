@@ -1,0 +1,62 @@
+{
+  "politician_id": "07a8598f-666f-4ac5-b6ee-09cb9f815783",
+  "findings": [
+    {
+      "id": "d1b7171016ef37b654df89d26ea499f63a154381d5088724d48c9af887e992ca",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/7778/Overview",
+      "date": "2021-04-20",
+      "date_precision": "day",
+      "instrument_id": "NV-AB-286-2021",
+      "act": "nay",
+      "motion": "House Assembly final passage (1st Reprint) passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "NV House, House Assembly final passage (1st Reprint) passed, 2021-04-20: nay (tally 26–16); census gate: none.",
+      "subjects": [
+        "ban on unserialized firearms and ghost-gun parts",
+        "no possessing, buying or selling unfinished frames or receivers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB286_EN.pdf; sha256 34c6c37d215c10bdeccede592f7663b0e242ffb9b6879fc68e230eee1614a6a2)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-286-2021.enrolled.pdf",
+          "sha256": "34c6c37d215c10bdeccede592f7663b0e242ffb9b6879fc68e230eee1614a6a2"
+        }
+      }
+    },
+    {
+      "id": "23ff028ae1be2dabf8687e11569812be5f0128c621c73e503dfee706988e0c9b",
+      "kind": "record",
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/81st2021/Bill/7472/Overview",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "NV-AB-144-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Open States sponsor list",
+      "note": "co sponsor of NV-AB-144-2021 (Open States sponsor list): AB144 (2021 Regular): Revises provisions relating to background checks for certain sales or transfers of firearms. (BDR 15-699).",
+      "subjects": [
+        "background-check exemption for sales or transfers to or from peace officers in good standing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/81st2021/Bills/AB/AB144.pdf; sha256 4acf37a05faec236e4e82624f7d466ddeaf494738a40d642697b94afc5c932db)",
+        "fetched_at": "2026-11-21T02:22:49.999198Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-144-2021.introduced.pdf",
+          "sha256": "4acf37a05faec236e4e82624f7d466ddeaf494738a40d642697b94afc5c932db"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

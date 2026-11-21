@@ -1,0 +1,39 @@
+{
+  "id": "NV-AB-81-2023",
+  "scope": "state:nv",
+  "title": "AB81 (2023 Regular): Revises provisions governing firearms. (BDR 15-117)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/9661/Overview",
+    "https://archive.leg.state.nv.us/Session/82nd2023/Bills/AB/AB81.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Greg Hafen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/AB/AB81.pdf; sha256 d7c3f3d6080f4302e5dc2d037cf6bce5b61a749540c37ee19fb9a08a86bccea5)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-81-2023.introduced.pdf",
+      "sha256": "d7c3f3d6080f4302e5dc2d037cf6bce5b61a749540c37ee19fb9a08a86bccea5"
+    },
+    "note": "As-filed version (prefiled January 30, 2023); no passage vote on record. Same change as the 2021 bill AB 80; it also corrects a federal-law citation in NRS 202.3653 (Section 2), and strikes and renumbers other words of NRS 202.265."
+  },
+  "operative_text": "Section 1 (NRS 202.265): A handgun on the property of the Nevada System of Higher Education or a private or public school or child care facility by a person who holds a permit to carry a concealed firearm issued pursuant to the provisions of NRS 202.3653 to 202.369, inclusive, if the handgun remains out of common observation and is: (1) Inside a motor vehicle, other than a school bus, that is: (I) Occupied; or (II) Unoccupied and locked; or (2) Stored in a locked container that is affixed securely to a motor vehicle, other than a school bus.\nSection 3 (NRS 202.3673): (2) Possesses a handgun in accordance with the provisions of paragraph (b) of subsection 3 of NRS 202.265."
+}

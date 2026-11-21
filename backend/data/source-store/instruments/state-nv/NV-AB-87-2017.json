@@ -1,0 +1,39 @@
+{
+  "id": "NV-AB-87-2017",
+  "scope": "state:nv",
+  "title": "AB87 (2017 Regular): Revises provisions relating to permits to carry concealed firearms issued by certain other states. (BDR 15-96)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/4778/Overview",
+    "https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB87.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robin Titus",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/AB/AB87.pdf; sha256 002892daf3cb729ed498380c4f9bb1f457ced8b9221ffb0a059c3cbf4085dc1b)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-87-2017.introduced.pdf",
+      "sha256": "002892daf3cb729ed498380c4f9bb1f457ced8b9221ffb0a059c3cbf4085dc1b"
+    },
+    "note": "As-filed version (prefiled January 27, 2017); no passage vote on record. The bill strikes existing subsection 2, which barred a new resident from carrying on the other state's permit after 60 days without a Nevada permit; the quoted sentence is the remaining text, whose opening words are partly marked as changed."
+  },
+  "operative_text": "Section 1 (NRS 202.3688): A person who possesses a permit to carry a concealed firearm that was issued by a state included in the list prepared pursuant to NRS 202.3689 may carry a concealed firearm in this State in accordance with the requirements set forth in NRS 202.3653 to 202.369, inclusive."
+}

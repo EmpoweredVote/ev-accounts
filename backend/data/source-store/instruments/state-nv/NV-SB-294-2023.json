@@ -1,0 +1,385 @@
+{
+  "id": "NV-SB-294-2023",
+  "scope": "state:nv",
+  "title": "SB294 (2023 Regular): Revises provisions relating to the safe storage of firearms. (BDR 15-47)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/10156/Overview",
+    "https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB294_EN.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Fabian Doñate",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7b4022ca-9722-4947-a369-ee0e528b1af9"
+    },
+    {
+      "name": "Edgar Flores",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+    },
+    {
+      "name": "Dallas Harris",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Melanie Scheible",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+    },
+    {
+      "name": "Shannon Bilbray-Axelrod",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Sections 9.1-9.3 (NRS 388.243, 388A.384, 391.281) — active assailant movement training for school police officers and active assailant plans/training in school emergency plans, support for pupils after a crisis"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-04-25",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 15,
+      "no": 6,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241962 https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/GetBillVoteMembers?voteKey=9892&voteResultPanel=All&billKey=10156#SB294",
+      "members": [
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Skip Daly",
+          "vote": "yea",
+          "politician_id": "0e80946b-8f57-43b7-af44-3c1c8469a51c"
+        },
+        {
+          "name": "Fabian Doñate",
+          "vote": "yea",
+          "politician_id": "7b4022ca-9722-4947-a369-ee0e528b1af9"
+        },
+        {
+          "name": "Marilyn Dondero Loop",
+          "vote": "yea",
+          "politician_id": "44c59b6c-de01-4c1b-b696-a57ad3947dba"
+        },
+        {
+          "name": "Edgar Flores",
+          "vote": "yea",
+          "politician_id": "b89ab6fe-ec36-4c03-a8ff-f1ef1afe1f8a"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "yea"
+        },
+        {
+          "name": "Dallas Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberta Lange",
+          "vote": "yea",
+          "politician_id": "40367549-65f3-449e-add5-ce67abc516b5"
+        },
+        {
+          "name": "Dina Neal",
+          "vote": "yea",
+          "politician_id": "2cd0491f-c9f3-4841-86a8-0c1076b0d81a"
+        },
+        {
+          "name": "Rochelle Nguyen",
+          "vote": "yea",
+          "politician_id": "3885166f-532a-4bf2-a04c-9c846768f5eb"
+        },
+        {
+          "name": "James Ohrenschall",
+          "vote": "yea",
+          "politician_id": "3a17cd52-2112-453f-9fbe-0799235072a6"
+        },
+        {
+          "name": "Julie Pazina",
+          "vote": "yea",
+          "politician_id": "0e6e4089-78fe-4090-a5d9-0541c3ec45c8"
+        },
+        {
+          "name": "Melanie Scheible",
+          "vote": "yea",
+          "politician_id": "8d28af6f-1007-48f6-beb9-f81e33d6fd81"
+        },
+        {
+          "name": "Heidi Seevers O'Gara",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrie Buck",
+          "vote": "nay",
+          "politician_id": "a7679d83-5a48-470e-9df2-4d1d7c18a391"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Ira Hansen",
+          "vote": "nay",
+          "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+        },
+        {
+          "name": "Lisa Krasner",
+          "vote": "nay",
+          "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay",
+          "politician_id": "4255a155-7197-40b7-918a-b32ed4d489c4"
+        },
+        {
+          "name": "Robin Titus",
+          "vote": "nay",
+          "politician_id": "c177ae7c-9da4-4ae4-9704-3fc9004427f2"
+        }
+      ]
+    },
+    {
+      "date": "2023-06-04",
+      "body": "NV House",
+      "motion": "House Assembly final passage (2nd Reprint) passed",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 9,
+      "absent": 2,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241963 https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/GetBillVoteMembers?voteKey=10663&voteResultPanel=All&billKey=10156#SB294",
+      "members": [
+        {
+          "name": "Natha Anderson",
+          "vote": "yea",
+          "politician_id": "4e6d26a0-747c-4ccd-8f83-384732c0f34a"
+        },
+        {
+          "name": "Shea Backus",
+          "vote": "yea",
+          "politician_id": "06693066-c852-424f-b3f5-925edee51743"
+        },
+        {
+          "name": "Shannon Bilbray-Axelrod",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy Brown-May",
+          "vote": "yea",
+          "politician_id": "190de314-e976-4df7-bad9-b3cdc0f2d887"
+        },
+        {
+          "name": "Max Carter",
+          "vote": "yea",
+          "politician_id": "32278145-a538-4cb7-8a2e-d0a571e2b0b5"
+        },
+        {
+          "name": "Lesley Cohen",
+          "vote": "yea"
+        },
+        {
+          "name": "Venicia Considine",
+          "vote": "yea",
+          "politician_id": "c7fe9357-446f-4998-816a-dbfdd8b319ef"
+        },
+        {
+          "name": "Reuben D'Silva",
+          "vote": "yea",
+          "politician_id": "3af59cfd-8cd6-4fc3-8c8c-82b07a10af69"
+        },
+        {
+          "name": "Bea Duran",
+          "vote": "yea"
+        },
+        {
+          "name": "Cecelia González",
+          "vote": "yea",
+          "politician_id": "4e31c709-96b4-4938-b01f-d8ba4ff474c8"
+        },
+        {
+          "name": "Michelle Gorelow",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Hardy",
+          "vote": "yea",
+          "politician_id": "02fa5b8b-2be7-4c5c-ae0b-ae01963625d1"
+        },
+        {
+          "name": "Brian Hibbetts",
+          "vote": "yea",
+          "politician_id": "55370ca6-5c1a-4ab4-9a75-3ee266ec3d53"
+        },
+        {
+          "name": "Sandra Jauregui",
+          "vote": "yea",
+          "politician_id": "8f397d8b-57a2-4055-88a2-78db14f45b20"
+        },
+        {
+          "name": "Heidi Kasama",
+          "vote": "yea",
+          "politician_id": "49dc6a5b-4275-48e6-8f11-5e4156b8199e"
+        },
+        {
+          "name": "Gregory Koenig",
+          "vote": "yea",
+          "politician_id": "36cba838-66a0-497c-a0c9-56f6f917f6c7"
+        },
+        {
+          "name": "Selena La Rue Hatch",
+          "vote": "yea",
+          "politician_id": "086ad172-94bb-4460-8984-4f5b7fa4d2a5"
+        },
+        {
+          "name": "Elaine Marzola",
+          "vote": "yea",
+          "politician_id": "10957d22-c1ca-4a44-bddb-5bd606b12b76"
+        },
+        {
+          "name": "Brittney Miller",
+          "vote": "yea",
+          "politician_id": "bc0a9215-e2dc-46a2-b325-80d90281847d"
+        },
+        {
+          "name": "Cameron (Cameron (C.H.)) Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Erica Mosca",
+          "vote": "yea",
+          "politician_id": "80bf7387-2917-464f-a9e1-58d136fa2b0b"
+        },
+        {
+          "name": "Sabra Newby",
+          "vote": "yea"
+        },
+        {
+          "name": "Duy Nguyen",
+          "vote": "yea",
+          "politician_id": "d2c7f3e5-d0c9-40d1-8527-49f2e41e015b"
+        },
+        {
+          "name": "David Orentlicher",
+          "vote": "yea",
+          "politician_id": "90572ea8-acf1-4896-8b3d-8efdbd26ad58"
+        },
+        {
+          "name": "Sarah Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Shondra Summers-Armstrong",
+          "vote": "yea"
+        },
+        {
+          "name": "Angie Taylor",
+          "vote": "yea",
+          "politician_id": "49ac6935-2444-4ce9-8e84-545c6f6209f0"
+        },
+        {
+          "name": "Clara Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard Watts",
+          "vote": "yea",
+          "politician_id": "efadbe7a-0b07-42bb-912d-c2a3021e06d6"
+        },
+        {
+          "name": "Steve Yeager",
+          "vote": "yea",
+          "politician_id": "e8f4c5c0-d18a-408d-9fff-ee2620a0d23d"
+        },
+        {
+          "name": "Toby Yurek",
+          "vote": "yea"
+        },
+        {
+          "name": "Rich DeLong",
+          "vote": "nay",
+          "politician_id": "b1499860-79d4-43b3-878c-def5f28037d8"
+        },
+        {
+          "name": "Jill Dickman",
+          "vote": "nay",
+          "politician_id": "7c364920-62ba-4ae8-b982-739656b58f51"
+        },
+        {
+          "name": "Danielle Gallant",
+          "vote": "nay",
+          "politician_id": "6cffc86c-7d40-4fd9-8690-51d6d33ff1e4"
+        },
+        {
+          "name": "Ken Gray",
+          "vote": "nay"
+        },
+        {
+          "name": "Bert Gurr",
+          "vote": "nay",
+          "politician_id": "9dc6edd9-7406-476c-82b7-bee3f2865bcc"
+        },
+        {
+          "name": "Greg Hafen",
+          "vote": "nay",
+          "politician_id": "1172767a-6b61-44e7-a372-8455711046bc"
+        },
+        {
+          "name": "Alexis Hansen",
+          "vote": "nay",
+          "politician_id": "ed5a5666-f5de-4b3e-aac9-34dca26eeb38"
+        },
+        {
+          "name": "Richard McArthur",
+          "vote": "nay"
+        },
+        {
+          "name": "Philip PK O’Neill",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniele Monroe-Moreno",
+          "vote": "absent",
+          "politician_id": "690253bf-2c57-443b-a6b2-8c769e0885a3"
+        },
+        {
+          "name": "Selena Torres-Fossett",
+          "vote": "absent",
+          "politician_id": "0f31ccad-c79c-43cb-bb06-9392b9b2c908"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Enrolled, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB294_EN.pdf; sha256 2b02e13fd70730ee0956b3c0219b1afb1bd12790982bd80ab9f7c11d9954f33e)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-294-2023.enrolled.pdf",
+      "sha256": "2b02e13fd70730ee0956b3c0219b1afb1bd12790982bd80ab9f7c11d9954f33e"
+    },
+    "note": "Enrolled version (82nd Session, 2023), the text both houses passed (final votes on the 1st and 2nd Reprints). Sections 2 and 3 were deleted by amendment. Section 5 (NRS 202.253) adds a cross-reference to section 4 and strikes a colon. Sections 9.1-9.3 (school emergency plans and school police training) and section 11 (suicide-prevention website posting and pamphlet on negligent storage) are not quoted."
+  },
+  "operative_text": "Section 4 (NRS chapter 202, new): 1. Every licensed dealer shall: (a) Provide with each firearm sold or otherwise transferred a locking device capable of securing the firearm; and 2. A licensed dealer who violates any provision of subsection 1 is guilty of a misdemeanor and shall be punished by a fine of not more than $500. 3. The provisions of this section do not apply to an antique firearm or a firearm that has been determined to be a curio or relic pursuant to 18 U.S.C. Chapter 44. (b) “Locking device” means a device which prohibits the operation or discharge of a firearm and which can only be disabled with the use of a key, a combination, biometric data or other similar means.\nSection 10 (NRS chapter 439, new): 1. To the extent that money is available, and in consultation with the Department, the Statewide Program for Suicide Prevention shall develop and implement a safe firearm storage education campaign to inform and educate purchasers of firearms, licensed dealers, shooting ranges and safety instructors about the safe storage of firearms and state requirements related to the safe storage of firearms.\nSection 9.1 (NRS 388.243): (m) A plan to inform, at least twice each academic year, a pupil’s parent or legal guardian of any state requirement related to the storage of firearms, including, without limitation, the crimes and penalties described in subsection 5 of NRS 202.300 and section 4 of this act."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "NV-SB-188-2023",
+  "scope": "state:nv",
+  "title": "SB188 (2023 Regular): Revises provisions governing firearms. (BDR 15-172)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/82nd2023/Bill/9933/Overview",
+    "https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB188.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ira Hansen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d7d372d1-e08e-4760-97bd-9edce9ffda05"
+    },
+    {
+      "name": "Jeff Stone",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4255a155-7197-40b7-918a-b32ed4d489c4"
+    },
+    {
+      "name": "Carrie Buck",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a7679d83-5a48-470e-9df2-4d1d7c18a391"
+    },
+    {
+      "name": "Pete Goicoechea",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lisa Krasner",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c68dd099-1804-45bf-a1da-2cffba356e78"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/82nd2023/Bills/SB/SB188.pdf; sha256 80025281542b3e406a8debdaf8e8c6f4837b5caf3378114d53ed98b4590675f9)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-188-2023.introduced.pdf",
+      "sha256": "80025281542b3e406a8debdaf8e8c6f4837b5caf3378114d53ed98b4590675f9"
+    },
+    "note": "As-filed text (Feb. 22, 2023); no passage vote is recorded. Section 2 strikes the old campus-property bar in paragraph (a) of subsection 3 of NRS 202.3673 (struck text not quoted). Section 3 (NRS 62C.060) only updates a cross-reference."
+  },
+  "operative_text": "Section 1 (NRS 202.265): 4. This section does not prohibit the possession of a firearm on the property of the Nevada System of Higher Education by a person who is authorized to carry a concealed firearm pursuant to the provisions of NRS 202.3653 to 202.369, inclusive, except during any period in which the person attends an event specified in subsection 4 of NRS 202.3673.\nSection 2 (NRS 202.3673): 1. Except as otherwise provided in subsection 4, a permittee may carry a concealed firearm while the permittee is on the property of the Nevada System of Higher Education or on the premises of a public building that is located on the property of the Nevada System of Higher Education. 4. A permittee shall not carry a concealed firearm while the permittee is attending any event held on the premises of a stadium, arena, field house or other athletic facility with a seating capacity of 1,000 or more that is located on the property of the Nevada System of Higher Education.\nSection 4 (NRS 396.110): (a) Must allow a person to carry a concealed firearm if the person is authorized to carry a concealed firearm pursuant to the provisions of NRS 202.3653 to 202.369, inclusive. (b) Must not require a person who is authorized to carry a concealed firearm pursuant to the provisions of NRS 202.3653 to 202.369, inclusive, to obtain permission to carry a concealed firearm."
+}

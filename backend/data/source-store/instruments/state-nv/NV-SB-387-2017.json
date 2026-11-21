@@ -1,0 +1,194 @@
+{
+  "id": "NV-SB-387-2017",
+  "scope": "state:nv",
+  "title": "SB387 (2017 Regular): Provides for the issuance of certain orders for protection. (BDR 3-839)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/5486/Overview",
+    "https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB387_R1.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Pat Spearman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark A. Manendo",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Patricia Farley",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Aaron D. Ford",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288"
+    },
+    {
+      "name": "Julia Ratti",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joyce Woodhouse",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Cannizzaro",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+    },
+    {
+      "name": "Kelvin Atkinson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Moises (Mo) Denis",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David R. Parks",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Yvanna D. Cancela",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tick Segerblom",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-04-25",
+      "body": "NV Senate",
+      "motion": "Senate Senate final passage (1st Reprint) passed",
+      "kind": "roll-call",
+      "yes": 12,
+      "no": 9,
+      "absent": 0,
+      "note": "www.leg.state.nv.us roll call (read from the legislature) 90241914 https://www.leg.state.nv.us/App/NELIS/REL/79th2017/Bill/GetBillVoteMembers?voteKey=4417&voteResultPanel=All&billKey=5486#SB387",
+      "members": [
+        {
+          "name": "Kelvin Atkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Yvanna D. Cancela",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicole Cannizzaro",
+          "vote": "yea",
+          "politician_id": "94b171c0-e3b1-4c15-bc6c-27035a0dc831"
+        },
+        {
+          "name": "Moises (Mo) Denis",
+          "vote": "yea"
+        },
+        {
+          "name": "Patricia Farley",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron D. Ford",
+          "vote": "yea",
+          "politician_id": "b71cb940-9a37-4935-8340-bf878c0ad288"
+        },
+        {
+          "name": "Mark A. Manendo",
+          "vote": "yea"
+        },
+        {
+          "name": "David R. Parks",
+          "vote": "yea"
+        },
+        {
+          "name": "Julia Ratti",
+          "vote": "yea"
+        },
+        {
+          "name": "Tick Segerblom",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Spearman",
+          "vote": "yea"
+        },
+        {
+          "name": "Joyce Woodhouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Gansert",
+          "vote": "nay"
+        },
+        {
+          "name": "Pete Goicoechea",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald (Don) G. Gustavson",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Hammond",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph (Joe) P. Hardy",
+          "vote": "nay"
+        },
+        {
+          "name": "Becky Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Kieckhefer",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Roberson",
+          "vote": "nay"
+        },
+        {
+          "name": "James A. Settelmeyer",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (Reprint 1, official copy, https://archive.leg.state.nv.us/Session/79th2017/Bills/SB/SB387_R1.pdf; sha256 90a2f1715b1b7d38ed5881b9cba19e855b85d36c1a7ac2b4317935cbbc675a80)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-SB-387-2017.reprint1.pdf",
+      "sha256": "90a2f1715b1b7d38ed5881b9cba19e855b85d36c1a7ac2b4317935cbbc675a80"
+    },
+    "note": "Version read: Reprint 1 (amended April 24, 2017). The bill passed the Senate 12-9 on 2017-04-25 on this reprint; amendments made after the version read are not in the text read. Sections 17 (court days) and 18 (sentence enhancement cross-reference) support the orders and were left out of the quote; section 15 lets the individual petition to clear Central Repository records. Section 19 strikes only old paragraph letters. Section 8 quote is the lead-in for the emergency-order findings; ex parte and extended orders use similar findings at higher standards of proof. Effective July 1, 2018."
+  },
+  "operative_text": "Section 3 (chapter 33 of NRS): “High-risk individual” means a person who poses a risk of causing personal injury to himself, herself or another person by possessing or having under his or her custody or control, or purchasing or otherwise acquiring, any firearm.\nSection 8 (chapter 33 of NRS): The court may issue an emergency order for protection against a high-risk individual if the court finds there is reasonable cause to believe from specific facts shown by a verified application that:\nSection 9 (chapter 33 of NRS): Each order for protection against a high-risk individual must include: (a) A requirement that the high-risk individual surrender any firearm in his or her possession or under his or her custody or control in the manner set forth in section 10 of this act; and (b) A prohibition on the high-risk individual against possessing or having under his or her custody or control, or purchasing or otherwise acquiring, any firearm while the order is in effect.\nSection 10 (chapter 33 of NRS): The local law enforcement agency shall store any such firearm or may contract with a licensed firearm dealer to provide storage.\nSection 10 (chapter 33 of NRS): If there is probable cause to believe that the high-risk individual has not surrendered any firearm in his or her possession or under his or her custody or control immediately after service of the order, the court may issue and deliver to any law enforcement officer a search warrant which authorizes the officer to enter and search any place where there is probable cause to believe any firearm is located and seize the firearm.\nSection 10 (chapter 33 of NRS): A local law enforcement agency shall return any surrendered or seized firearm to the high-risk individual not less than 14 days after the order expires.\nSection 16 (chapter 33 of NRS): A person who intentionally violates an order for protection against a high-risk individual is: 1. Unless a more severe penalty is prescribed by law for the act that constitutes the violation of the order, guilty of a misdemeanor; and 2. Prohibited from possessing or having under his or her custody or control, or purchasing or otherwise acquiring, a firearm for a period of 5 years.\nSection 19 (NRS 202.3657): (h) Is currently subject to an order for protection against a high-risk individual."
+}

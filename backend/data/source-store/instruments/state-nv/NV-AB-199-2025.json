@@ -1,0 +1,39 @@
+{
+  "id": "NV-AB-199-2025",
+  "scope": "state:nv",
+  "title": "AB199 (2025 Regular): Revises provisions relating to firearms. (BDR 15-881)",
+  "urls": [
+    "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12169/Overview",
+    "https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB199.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Reuben D'Silva",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3af59cfd-8cd6-4fc3-8c8c-82b07a10af69"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Nevada) (gun-policy Stage 5, Nevada); operative text read by a Sonnet fill agent from the official Nevada text (As introduced, official copy, https://archive.leg.state.nv.us/Session/83rd2025/Bills/AB/AB199.pdf; sha256 b2b34a847d977083f7b3d3e09943d7c7e5bcea482644167f05658f5e8cca10f6)",
+    "fetched_at": "2026-11-21T02:22:49.999198Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/NV-AB-199-2025.introduced.pdf",
+      "sha256": "b2b34a847d977083f7b3d3e09943d7c7e5bcea482644167f05658f5e8cca10f6"
+    },
+    "note": "As-filed text read (introduced); no passage vote in the data. Section 1 (NRS 202.280) strikes 'maliciously' and 'wantonly' so the misdemeanor covers only negligent discharge; not quoted because it crosses struck words. Section 3 rewrites NRS 62E.650 so first-offense juvenile penalties (200 to 600 hours community service and 90 days to 2 years licence suspension) follow the old second-offense scale, and the court may add secure confinement for a second offense; most of that section is mixed with struck text and is not quoted."
+  },
+  "operative_text": "Section 2 (NRS 202.290): 3. Discharges any firearm in a public place within an area designated by city or county ordinance as a populated area for the purpose of prohibiting the discharge of weapons or in any place where any person might be endangered thereby, although an injury does not result, is guilty of: (a) For a first offense, a category C felony and shall be punished as provided in NRS 193.130. (b) For a second or subsequent offense, or if the person discharges any firearm more than once in a single occurrence or has previously been convicted of any offense involving the discharge of a firearm, a category B felony and shall be punished by imprisonment in the state prison for a minimum term of not less than 2 years and a maximum term of not more than 15 years.\nSection 3 (NRS 62E.650): (a) Commit the child for confinement in a secure facility for the detention of children, including a facility which is secured by its staff; and (b) Impose any other punitive measures that the juvenile court determines to be in the best interest of the public or the child."
+}
