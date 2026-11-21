@@ -46,30 +46,38 @@ export const BURST_WINDOW_START_SQL = `
 `;
 
 /**
- * Order a FEC walk so sources ingested before run FIRST and first-time backfills run LAST.
+ * Order a FEC walk STALEST FIRST: the source whose last terminal success is oldest runs first,
+ * and sources never ingested run LAST.
  *
- * WHY. An incremental source takes ~1.6s; a source that has never been ingested pulls its
- * whole contribution history and took ~45s on 2026-09-25, all of it spent waiting on the
- * shared ~1,000 req/hr FEC key. That day 959 of 1,631 confirmed sources were new (the
- * 09-24 auto-match confirmed 886 at once), the unordered walk interleaved them, and the
- * burst was still running at 12:07 against Render's 12-hour cron ceiling. Walking the
- * known sources first means a run cut short by that ceiling (or a deploy, or a crash)
- * drops only backfills, which have no data to go stale yet — never the daily refresh of
- * sources voters can already see. The next burst, or the resume pass, picks the rest up.
+ * WHY STALEST FIRST (2026-11-21, ev-cto watchlist #102). From 2026-11-19 the burst was cut at
+ * Render's 12-hour ceiling three days running (808, 1,099 and 1,165 of 1,656 sources). The
+ * walk order was fixed (known sources, then ps.id), so a cut-off run dropped the SAME tail
+ * every day and those campaigns went stale indefinitely. Ordered by last success, the sources a
+ * cut-off run misses are the stalest tomorrow and go first, so every known source is covered
+ * at least once in two days even if each run only gets through half the list. The burst also
+ * stops itself before the ceiling now (FEC_BURST_BUDGET_MINUTES in campaignFinanceScheduler.ts),
+ * so the tail is skipped cleanly instead of killed.
  *
- * "Ingested before" means a terminal success at ANY time, not just in this burst window,
- * so the resume pass keeps the same order as the burst it is finishing.
+ * WHY NEVER-INGESTED LAST. An incremental source takes ~1.6s; a source that has never been
+ * ingested pulls its whole contribution history (~45s on 2026-09-25, all of it waiting on the
+ * shared ~1,000 req/hr FEC key). On 2026-09-25, 959 of 1,631 sources were new and an
+ * interleaved walk ran past 12:00 UTC. A backfill has no stored data to go stale yet, so it
+ * waits until the daily refresh of what voters can already see is done.
  *
- * Expects the politician_sources table aliased as `ps`. `false` sorts before `true`.
+ * "Last success" means a terminal success at ANY time, not just in this burst window, so the
+ * resume pass keeps the same order as the burst it is finishing. 'running' and 'failed' rows do
+ * not count: a source that keeps failing stays stalest and is retried first.
+ *
+ * Expects the politician_sources table aliased as `ps`. Reads ingestion_runs through its
+ * politician_source_id index (~270k rows, 68 MB on 2026-11-21).
  */
-export const FEC_INCREMENTAL_FIRST_ORDER_SQL = `
-  NOT EXISTS (
-    SELECT 1
-      FROM transparent_motivations.ingestion_runs prior
-     WHERE prior.politician_source_id = ps.id
-       AND prior.adapter_name = 'fec'
-       AND prior.status IN ('completed', 'completed_with_warning')
-  ),
+export const FEC_STALEST_FIRST_ORDER_SQL = `
+  (SELECT max(prior.started_at)
+     FROM transparent_motivations.ingestion_runs prior
+    WHERE prior.politician_source_id = ps.id
+      AND prior.adapter_name = 'fec'
+      AND prior.status IN ('completed', 'completed_with_warning')
+  ) ASC NULLS LAST,
   ps.id
 `;
 
@@ -94,7 +102,7 @@ export const pendingFecSourcesSql = `
               AND r.status IN ('completed', 'completed_with_warning')
               AND r.started_at >= ${BURST_WINDOW_START_SQL}
          )
-   ORDER BY ${FEC_INCREMENTAL_FIRST_ORDER_SQL}
+   ORDER BY ${FEC_STALEST_FIRST_ORDER_SQL}
 `;
 
 export interface ResumeResult {

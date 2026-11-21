@@ -33,10 +33,10 @@ import { createIndianaAdapter, indianaYears } from './adapters/indianaAdapter.js
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
 import { createNetfileAdapter, assertNetfileRunHealthy } from './adapters/netfileAdapter.js';
-import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
+import { createOcpfAdapter, assertOcpfRunHealthy } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 import { currentFecCycle } from './fecCycle.js';
-import { FEC_INCREMENTAL_FIRST_ORDER_SQL } from './fecBurstResume.js';
+import { FEC_STALEST_FIRST_ORDER_SQL } from './fecBurstResume.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -224,16 +224,37 @@ export { currentFecCycle };
  * ingestion_runs row, so a failure-count query reports the burst as healthy. Runs STARTED
  * vs. confirmed-source count is the only honest metric.
  */
+export interface FecWalkResult {
+  /** Sources the walk started (each wrote, or tried to write, an ingestion_runs row). */
+  attempted: number;
+  /** Sources left unstarted because the deadline passed. They are the stalest next time. */
+  skipped: number;
+}
+
 export async function runFecForSources(
   sources: PoliticianSourceRow[],
-  cycle: string
-): Promise<void> {
+  cycle: string,
+  opts: { deadline?: number } = {}
+): Promise<FecWalkResult> {
   // Generous next to a normal source (seconds), tight next to a 33-minute walk of 662.
   const PER_SOURCE_TIMEOUT_MS = parseInt(process.env.FEC_PER_SOURCE_TIMEOUT_MS ?? '', 10) || 10 * 60 * 1000;
 
   for (let i = 0; i < sources.length; i++) {
     const ps = sources[i];
     if (i > 0) await sleep(3000); // 3s between politicians — keeps FEC API under 1000 req/hr
+
+    // Stop cleanly before the platform kills the process. Checked only BETWEEN sources, and a
+    // source can run PER_SOURCE_TIMEOUT_MS past it, so the deadline must sit at least that far
+    // inside the 12-hour ceiling. What is left is the freshest part of the list (stalest-first
+    // order), and it goes first on the next run.
+    if (opts.deadline !== undefined && Date.now() >= opts.deadline) {
+      const skipped = sources.length - i;
+      console.warn(
+        `[campaignFinanceScheduler] fec: time budget reached after ${i} of ${sources.length} source(s); ` +
+        `${skipped} left for the next run (they will be the stalest)`
+      );
+      return { attempted: i, skipped };
+    }
 
     const controller = new AbortController();
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
@@ -282,6 +303,22 @@ export async function runFecForSources(
       if (timeoutId) clearTimeout(timeoutId);
     }
   }
+  return { attempted: sources.length, skipped: 0 };
+}
+
+/**
+ * fecBurstDeadline: when the 06:00 burst stops starting new sources, from FEC_BURST_BUDGET_MINUTES
+ * (default 540 = 9 h), counted from when the burst step starts.
+ *
+ * The budget is what keeps ev-jobs-fec-burst under Render's 12-hour cron ceiling (watchlist #102):
+ * fec-auto-match and fec-finance-summary run first (~30 min), one source may run 10 min past the
+ * deadline (FEC_PER_SOURCE_TIMEOUT_MS), and the contribution totals refresh runs after. 9 h + those
+ * stays near 10 h. A non-positive or unreadable value means no budget. Pure; exported for tests.
+ */
+export function fecBurstDeadline(startedAt: number, raw: string | undefined): number | undefined {
+  const minutes = raw === undefined || raw === '' ? 540 : Number(raw);
+  if (!(minutes > 0)) return undefined;
+  return startedAt + minutes * 60_000;
 }
 
 /**
@@ -299,14 +336,15 @@ export async function runFecForSources(
  * Indiana-specific: calls writeUnresolved after all sources processed.
  * Cal-Access-specific: calls saveETag and checks zipWasSkipped.
  */
-export async function runAdapterForAll(adapterName: string): Promise<void> {
+export async function runAdapterForAll(adapterName: string, opts: { deadline?: number } = {}): Promise<void> {
   // FEC sources are stored as 'fec_house' / 'fec_senate' — both map to the FEC adapter.
   const systemValues = adapterName === 'fec' ? ['fec_house', 'fec_senate'] : [adapterName];
   const placeholder = systemValues.map((_, i) => `$${i + 1}`).join(', ');
 
-  // FEC walks known sources before first-time backfills, so a run cut short loses only
-  // backfills (see FEC_INCREMENTAL_FIRST_ORDER_SQL). Other adapters keep their order.
-  const orderBy = adapterName === 'fec' ? `ORDER BY ${FEC_INCREMENTAL_FIRST_ORDER_SQL}` : '';
+  // FEC walks the stalest sources first and first-time backfills last, so a run cut short
+  // drops the freshest sources, which go first tomorrow (see FEC_STALEST_FIRST_ORDER_SQL).
+  // Other adapters keep their order.
+  const orderBy = adapterName === 'fec' ? `ORDER BY ${FEC_STALEST_FIRST_ORDER_SQL}` : '';
 
   const sourcesResult = await pool.query<PoliticianSourceRow>(
     `SELECT id, essentials_politician_id, source_system, external_id,
@@ -332,7 +370,11 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
   switch (adapterName) {
     case 'fec': {
       const cycle = currentFecCycle();
-      await runFecForSources(sources, cycle);
+      const walk = await runFecForSources(sources, cycle, { deadline: opts.deadline });
+      console.log(
+        `[campaignFinanceScheduler] fec: walked ${walk.attempted} of ${sources.length} source(s)` +
+        (walk.skipped ? `, ${walk.skipped} left for the next run` : '')
+      );
       // Update freshness timestamp so X-Data-Updated-At header has a value
       try {
         await pool.query(
@@ -510,6 +552,7 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
       // budget was described as "~36x the worst case" on fetch time alone. 10 min is ~4x
       // the measured end-to-end worst case.
       const PER_SOURCE_TIMEOUT_MS = 10 * 60 * 1000;
+      let failed = 0;
 
       for (const ps of sources) {
         const controller = new AbortController();
@@ -525,6 +568,7 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
           );
           console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} done`);
         } catch (err) {
+          failed++;
           console.error(
             `[campaignFinanceScheduler] ocpf: source=${ps.id} error:`,
             err instanceof Error ? err.message : String(err)
@@ -541,6 +585,8 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
           clearTimeout(timeoutId);
         }
       }
+      // Every source has had its run; a run where all of them failed exits non-zero.
+      assertOcpfRunHealthy({ sources: sources.length, failed });
       break;
     }
 
@@ -748,7 +794,7 @@ export async function runFecScheduledJob(): Promise<void> {
     }
 
     console.log('[campaignFinanceScheduler] fec-ingest: starting');
-    await runAdapterForAll('fec');
+    await runAdapterForAll('fec', { deadline: fecBurstDeadline(Date.now(), process.env.FEC_BURST_BUDGET_MINUTES) });
     console.log('[campaignFinanceScheduler] fec-ingest: complete');
 
     // Optional healthcheck ping on success

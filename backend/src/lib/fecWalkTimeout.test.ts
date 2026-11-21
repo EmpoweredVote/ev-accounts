@@ -86,3 +86,37 @@ describe('runFecForSources — per-source timeout (2026-08-18 burst halt)', () =
     );
   });
 });
+
+describe('runFecForSources — time budget (2026-11-19..21 cut at the 12h ceiling)', () => {
+  it('starts no source once the deadline has passed, and says how many it left', async () => {
+    runIngestionMock.mockImplementation(async () => { await new Promise((r) => setTimeout(r, 5_000)); });
+    const three = [...sources, { id: 'src-third', external_id: 'C' }] as never[];
+
+    const { runFecForSources } = await import('./campaignFinanceScheduler.js');
+    // Each source takes 5s, then 3s between sources. The deadline (7s) passes during the first
+    // source's run plus gap: it finishes, and the second is never started.
+    const walk = runFecForSources(three, '2026', { deadline: Date.now() + 7_000 });
+    await vi.advanceTimersByTimeAsync(200_000);
+
+    await expect(walk).resolves.toEqual({ attempted: 1, skipped: 2 });
+    expect(runIngestionMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('walks everything when no deadline is given', async () => {
+    runIngestionMock.mockResolvedValue(undefined);
+    const { runFecForSources } = await import('./campaignFinanceScheduler.js');
+    const walk = runFecForSources(sources, '2026');
+    await vi.advanceTimersByTimeAsync(10_000);
+    await expect(walk).resolves.toEqual({ attempted: 2, skipped: 0 });
+  });
+});
+
+describe('fecBurstDeadline', () => {
+  it('defaults to 9 hours from the start, reads the env, and treats 0 as no budget', async () => {
+    const { fecBurstDeadline } = await import('./campaignFinanceScheduler.js');
+    expect(fecBurstDeadline(1_000, undefined)).toBe(1_000 + 540 * 60_000);
+    expect(fecBurstDeadline(1_000, '60')).toBe(1_000 + 60 * 60_000);
+    expect(fecBurstDeadline(1_000, '0')).toBeUndefined();
+    expect(fecBurstDeadline(1_000, 'junk')).toBeUndefined();
+  });
+});

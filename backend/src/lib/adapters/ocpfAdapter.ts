@@ -33,7 +33,8 @@
  * largest QUARTER, not the whole history. Live-verified behaviour the windows rely on:
  *   - StartDate / EndDate are INCLUSIVE ("12/31/2025" to "12/31/2025" returns that day).
  *   - Either bound may be sent alone, so the two open-ended edge windows below catch any
- *     record dated before OCPF_FIRST_YEAR or after the current year.
+ *     record dated before OCPF_FIRST_YEAR or after the current year. (Re-checked 2026-11-21.)
+ *   - pageSize is capped at 50,000 by the server (see OCPF_MAX_WINDOW).
  * 🔴 A record with NO date cannot fall in any window. There were none among the 212,497
  * stored ocpf rows on 2026-10-02 (contribution_date is never null), but that is the one
  * shape the windows cannot see.
@@ -68,12 +69,19 @@ const OCPF_BASE = 'https://api.ocpf.us';
 // file header). It must exceed the largest window any filer can produce, because there is
 // no total-count field to check against: `summary` is null on every response.
 //
-// Sizing evidence, measured live 2026-08-17 across ALL 20 ocpf politician_sources, each
-// fetched as full history in one request: the largest filer is cpf 15710 at 89,557 records
-// in 3,491 ms, next is 15931 at 32,941. pageSize=100000 returned 89,557 (not truncated), so
-// the server imposes no ceiling below that. 250,000 leaves ~2.8x headroom over the current
-// worst case while still being a real bound rather than "infinity".
-const OCPF_MAX_WINDOW = parseInt(process.env.OCPF_MAX_WINDOW ?? '250000', 10);
+// 🔴 OCPF REFUSES pageSize > 50,000. Measured live 2026-11-21: any larger value is answered
+// HTTP 400 `{"title":"Search too broad","detail":"pageSize can be at most 50000."}`, and the
+// 2026-11-01 run failed all 20 sources that way. Until then this was 250,000 (sized
+// 2026-08-17, when the server imposed no ceiling and whole-history requests reached 89,557
+// records). Windows are calendar quarters now, and the largest quarter measured is 12,149
+// (cpf 15710, 2026-10-02), so 50,000 is ~4x headroom. An env value above the ceiling is
+// clamped rather than sent, because the server would reject every request.
+export const OCPF_PAGE_SIZE_CEILING = 50_000;
+export function ocpfMaxWindow(raw: string | undefined): number {
+  const n = parseInt(raw ?? '', 10);
+  return n > 0 ? Math.min(n, OCPF_PAGE_SIZE_CEILING) : OCPF_PAGE_SIZE_CEILING;
+}
+const OCPF_MAX_WINDOW = ocpfMaxWindow(process.env.OCPF_MAX_WINDOW);
 
 // First calendar year fetched in quarterly windows. Anything older is still read, by the
 // open-ended "before" window — this only decides where the quarters start. The oldest
@@ -173,8 +181,11 @@ async function fetchOcpfWindow(
   }
 
   if (response.status !== 200) {
+    // Carry OCPF's own reason: on 2026-11-01 every request failed with "HTTP 400 ... window=…–12/31/1994",
+    // which read as a bad date window. The body said "pageSize can be at most 50000."
+    const detail = (await response.text().catch(() => '')).replace(/\s+/g, ' ').slice(0, 200);
     throw new Error(
-      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} window=${label}`
+      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} window=${label}${detail ? `: ${detail}` : ''}`
     );
   }
 
@@ -546,4 +557,16 @@ class OcpfAdapter implements SourceAdapter, StreamingAdapter {
  */
 export function createOcpfAdapter(signal?: AbortSignal): SourceAdapter {
   return new OcpfAdapter(signal);
+}
+
+/**
+ * assertOcpfRunHealthy throws when every source in a run failed, so the job exits non-zero and
+ * Render emails the same day. Each source has already had its turn; a partial failure stays a
+ * per-source 'failed' row. Until 2026-11-21 a run where all 20 sources got HTTP 400 exited 0,
+ * and the monthly job-health staleness rule would have needed 40 days to notice.
+ */
+export function assertOcpfRunHealthy(run: { sources: number; failed: number }): void {
+  if (run.sources > 0 && run.failed >= run.sources) {
+    throw new Error(`ocpf: all ${run.sources} source(s) failed — see ingestion_runs`);
+  }
 }

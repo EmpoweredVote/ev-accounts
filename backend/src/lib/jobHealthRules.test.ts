@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { evaluate, formatProblemLine, HTTP_CONFLICT_MIN_RESPONSES, scheduleIntervalMinutes, type PgCronRow } from './jobHealthRules.js';
+import {
+  evaluate, FEC_COVERAGE_MIN_SHARE, formatProblemLine, HTTP_CONFLICT_MIN_RESPONSES, scheduleIntervalMinutes, type PgCronRow,
+} from './jobHealthRules.js';
 
 const now = new Date('2026-10-26T13:00:00Z');
 const ago = (minutes: number) => new Date(now.getTime() - minutes * 60_000);
@@ -142,5 +144,33 @@ describe('evaluate', () => {
       proofs: [{ job: 'ev-jobs-ocpf', newest: ago(2), maxAgeMinutes: 40 * 1440 }],
     });
     expect(problems.map((p) => p.job)).toEqual(['j', 'odd', 'ev-jobs-ocpf']);
+  });
+});
+
+describe('evaluate — FEC burst coverage (watchlist #102)', () => {
+  const window_start = new Date('2026-11-20T06:00:00Z');
+
+  it('is silent on a healthy day (2026-11-17: 1,652 of 1,656)', () => {
+    expect(evaluate({ ...base, fecCoverage: { window_start, sources: 1656, covered: 1652 } })).toEqual([]);
+  });
+
+  it('flags a burst cut off part-way (2026-11-20: 1,074 of 1,656)', () => {
+    const [p, ...rest] = evaluate({ ...base, fecCoverage: { window_start, sources: 1656, covered: 1074 } });
+    expect(rest).toEqual([]);
+    expect(p.job).toBe('ev-jobs-fec-burst');
+    expect(p.what).toMatch(/covered 1074 of 1656 FEC sources \(65%/);
+    expect(p.since).toEqual(window_start);
+  });
+
+  it('flags a burst that covered nothing, and stays quiet with no data or no sources', () => {
+    expect(evaluate({ ...base, fecCoverage: { window_start, sources: 1656, covered: 0 } })).toHaveLength(1);
+    expect(evaluate({ ...base, fecCoverage: null })).toEqual([]);
+    expect(evaluate({ ...base, fecCoverage: { window_start, sources: 0, covered: 0 } })).toEqual([]);
+  });
+
+  it('draws the line at the declared share', () => {
+    const at = Math.ceil(FEC_COVERAGE_MIN_SHARE * 1000);
+    expect(evaluate({ ...base, fecCoverage: { window_start, sources: 1000, covered: at } })).toEqual([]);
+    expect(evaluate({ ...base, fecCoverage: { window_start, sources: 1000, covered: at - 1 } })).toHaveLength(1);
   });
 });
