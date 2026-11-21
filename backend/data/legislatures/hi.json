@@ -1,46 +1,58 @@
 {
   "state": "hi",
   "name": "Hawaii",
-  "verified": "2026-11-20",
-  "source": "State reader session, 2026-11-20 (two-page probes: robots.txt and one bill status page; www.capitol.hawaii.gov answered 403). No reader was built.",
+  "verified": "2026-11-21",
+  "source": "Hawaii reader session (Stage 5 tools), 2026-11-21: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call on the 433 bills (2017-2026) one topic's scan found (142 roll calls) read from the Legislature's bill status pages and member lists on data.capitol.hawaii.gov with the verifier's own fetch, and each member's vote compared with the dump where the dump holds one. Two bill texts read for their marks (2026 HB 2033 HD1, 2018 SB 2793 SD1). robots.txt read on data.capitol.hawaii.gov. Replaces the profile of 2026-11-20, which recorded no reader because the runner had then ruled the data host out; the runner allowed it on 2026-11-21.",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
   },
-  "sessions": "The Legislature meets every year from January to early May; the two years of a Legislature form one biennium (2025-2026), and a bill introduced in the first year can carry over to the second under the same number (HB 300). House 51 seats, Senate 25.",
+  "sessions": "The Legislature meets every year, from January to early May; the two years of one Legislature form a biennium (the 33rd: 2025-2026), and a bill introduced in the first year carries over to the second under the same number. Bill numbers run on through the biennium rather than starting again in the second year (HB 2033 of 2026 is a second-year bill). Open States names the sessions \"2017 Regular Session\" to \"2023 Regular Session\", then \"2024\", \"2025\", \"2026\", one per year, and repeats a carried-over bill in both years with the first year's votes in both; the record gives each vote once, on the bill's page of the year it was taken. Bills are HB and SB; resolutions are HCR, SCR, HR and SR; GM is a governor's message. Special sessions are rare and none is in the dump for 2017-2026. House 51 seats, Senate 25.",
   "bill_data": [
-    "The Open States dump for Hawaii was not converted: the Legislature's own site refused our reader (403), so no record could be checked.",
-    "No data service from the Legislature was found."
+    "No LegiScan dataset is on disk for Hawaii. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (HI-900233 to HI-900242: the regular sessions 2017-2026; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The dump holds floor votes only for 2017 (filed under the whole Legislature, not a chamber), 2025 and 2026, and none for 2018-2024; its committee votes are many. So no Hawaii dump vote is placed: scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each scanned bill's status page on data.capitol.hawaii.gov, which lists every vote of the bill as a status line, and reads the floor votes on it (third reading, final reading, veto override) with the year's member list. convert.py places only the votes read from the record (record_is_the_floor) and keeps every other dump vote marked committee. Run the fetch for every bill the scan finds, year by year, then convert the whole state again.",
+    "Compared 2026-11-21: 142 floor roll calls read from the record, 0 refused (2017 7, 2018 13, 2019 15, 2020 19, 2021 12, 2022 22, 2023 8, 2024 14, 2025 22, 2026 10). 121 have no dump copy. Of the 21 with one: member votes compared 358, differences 0; 3 tallies differ by one, each a 2026 House vote where the dump counts Rep. M. Cov Ratcliffe and the record cannot place him (below). 11 of the 2025 Senate copies list only the members the page names, so 267 record members had no dump vote to compare.",
+    "Members are matched through the Legislature's own member list for the year and the database's Open States ids: roster legislators 76 (51 House, 25 Senate), 75 linked, 1 with no record (Sen. Danielle M.M. Bass, seated after the 2026 session)."
   ],
   "votes": {
-    "mode": "none",
+    "mode": "legiscan-plan",
     "official_hosts": [
-      "www.capitol.hawaii.gov"
+      "www.capitol.hawaii.gov",
+      "data.capitol.hawaii.gov"
     ],
     "legiscan_args": null,
-    "floor_rule": "No reader. The bill status page (www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=<n>&year=<yyyy>; past years redirect to /session/archives/measure_indiv_Archives.aspx) prints each floor vote as one status line: \"Passed Final Reading, as amended (CD 1). Ayes, 24; Aye(s) with reservations: none. Noes, 1 (Senator(s) Awa). Excused, 0 (none).\" Members who voted no, voted aye with reservations or were excused are named; members who voted aye are a count only, so a full list needs the journal or the chamber's roster less the named members.",
+    "floor_rule": "A vote is cited on the bill's status page on www.capitol.hawaii.gov, the vote after a # (day, chamber, kind): www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2033&year=2026#2026-03-05-House-Third-Reading, and read from the same page on data.capitol.hawaii.gov (runner, 2026-11-21: www answers a reader 403). The page lists every action of the bill, one table row each (day, chamber letter, text). A floor vote is one row: the House prints \"Passed Third Reading with none voting aye with reservations; Representative(s) Amato voting no (1) and Representative(s) Perruso excused (1).\", the Senate \"Report adopted; Passed Third Reading, as amended (SD 2). Ayes, 24; Aye(s) with reservations: none . Noes, 1 (Senator(s) Awa). Excused, 0 (none).\". Members who voted no, voted aye with reservations or were excused are named by family name (\"Lee, C.\", \"S. Chang\", \"J.Keohokalole\"); a member who voted aye is a count (the Senate) or nothing (the House). So the Ayes are the chamber's members seated that day less those named, from the year's member list (data.capitol.hawaii.gov/legislature/legislators.aspx, its year chosen by a form post; it prints \"Appointed\" or \"Term of Office Ended\" on some members who joined or left that year), and a vote is refused unless the numbers close (runner, 2026-11-21): the Senate's printed Aye count must equal the seated members less those named. \"Aye with reservations\" is an Aye, and the line keeps the words. Floor votes read: third reading (passed or failed), final reading, veto override. Not read: second readings, reports adopted and referred, recommittals, floor amendments, and committee and conference committee votes (counted). A carried-over bill's page of the second year lists the first year's votes too: each is read once, on its own year's page.",
     "gaps": [
-      "www.capitol.hawaii.gov answers our reader 403 (a Cloudflare \"Attention Required\" page): blocked.",
-      "data.capitol.hawaii.gov answers 200 with an open robots.txt and serves the same site, but the Legislature does not announce it as a data host. It is not used: reading the blocked site through it would get around the block (runner, 2026-11-20)."
+      "Committee and conference committee votes, second readings and floor amendments are counted, not mapped (runner, 2026-11-16). 2025 SB 401 was stopped in the Senate by a floor amendment (2025-04-30, 13-12): a vote on a motion, so it gives no line.",
+      "Excused is recorded as the record lists it (\"was excused\"), never as an Aye or a No; it seats no one.",
+      "A member with no start date in a district where another member left that year may or may not have sat on a given day: the House prints no Aye count to settle it, so the member gets no line for that vote (43 member votes of 142 roll calls, 7 members: Hashimoto 2018, Costales 2022, Evslin and La Chica 2023, Mizuno 2024, Gedeon 2025, Ratcliffe 2026). The Senate's printed count settles it there. A member the page names is placed.",
+      "The reader is proved on 2017-2026 regular sessions; no special session was in the dry batch."
     ]
   },
   "texts": {
     "hosts": [
+      "data.capitol.hawaii.gov",
       "www.capitol.hawaii.gov"
     ],
-    "marks": "Not checked (2026-11-20).",
-    "note": "No bill text was read."
+    "marks": "Read on 2 texts (2026 HB 2033 HD1, 2018 SB 2793 SD1; 2026-11-21). Each says \"Statutory material to be repealed is bracketed and stricken. New statutory material is underscored.\" Plain text keeps the deleted words in [brackets] (\"[ an original registration ]\"): never quote a bracketed passage as the law. New words are underlined, which plain text loses. The HTML texts are saved from Word and begin with the document's properties (author, template, dates) before the bill: skip them.",
+    "note": "Texts are HTML and PDF: data.capitol.hawaii.gov/sessions/session<YYYY>/bills/<HB2033>_.HTM (introduced), _HD1_, _SD2_, _CD1_ for drafts. The dump stores them on www.capitol.hawaii.gov, which answers a reader 403; convert.py rewrites them to the data host. Committee reports sit beside them under /commreports/."
   },
   "reader_access": {
-    "www.capitol.hawaii.gov": "blocked: 403, Cloudflare bot check (2026-11-20)",
-    "data.capitol.hawaii.gov": "blocked: the same site as www.capitol.hawaii.gov on a second hostname; not used (runner, 2026-11-20)"
+    "www.capitol.hawaii.gov": "blocked: 403, a Cloudflare bot check (2026-11-20, again 2026-11-21); cited, never fetched",
+    "data.capitol.hawaii.gov": "open"
   },
-  "search_note": "Hawaii has no roll-call reader here: its floor votes are not read from bulk data. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
-  "bill_table_note": "- Hawaii bills keep their number across the two years of a biennium (a 2025 bill can pass in 2026).\n- Texts: the marks for new and deleted words were not checked.",
+  "search_note": "Hawaii sponsorships and House and Senate floor votes (third and final readings, veto overrides) for 2017 to 2026 come from the bill data on disk, checked against the Legislature's own bill status pages: skip the Legislature's bill and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). www.capitol.hawaii.gov answers a reader 403: record it as blocked and move on; do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Hawaii bills keep their number across the two years of a biennium (a 2025 bill can pass in 2026).\n- Floor votes kept: third reading, final reading and veto override, in each chamber. A floor amendment is a vote on a motion and is not kept.\n- Texts: words in [brackets] are deleted from law; never quote a bracketed passage as the law. New words are underlined, which plain text does not show.",
   "fill_quotes": {
-    "label_strips": []
+    "label_strips": [],
+    "brackets_delete": true
   },
   "quirks": [
-    "A status line names a member as \"Senator(s) Awa\" or \"Representative(s) …\": surnames only."
+    "robots.txt on data.capitol.hawaii.gov allows every agent and disallows only *.axd; it states no crawl delay. The reader waits one second between requests. No 403, 429 or bot check was met there on 2026-11-21 (several hundred requests, every bill page and member list of the dry batch).",
+    "One vote needs two documents: the bill's status page (about 100 KB) and the year's member list (about 200 KB, read by a form post: the page is fetched, then posted with its hidden fields and the year). The line tool took 76 seconds for 200 votes from an empty page cache (83 vote pages).",
+    "The dump's 2018 bill address /Archives/measure_indiv_Archives8-12.aspx is a not-found page on the data host; convert.py rewrites every bill address to the current form on www, and the reader reads the current form on the data host (a past year redirects to /session/archives/measure_indiv_Archives.aspx).",
+    "Status lines name members as on the floor: \"Lee, C.\" when two members share a family name, \"S. Chang\", \"J.Keohokalole\" (no space). The reader matches each to exactly one seated member, by family name and the initial when one is printed.",
+    "The member list prints a party letter after each name; the reader drops it.",
+    "Members appointed to a seat show \"Appointed MM/DD/YYYY\" only sometimes, and a member who left shows \"Term of Office Ended\"; both members of one district can carry only an end date (2024 Senate district 22). See votes.gaps."
   ]
 }

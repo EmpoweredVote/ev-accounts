@@ -13,7 +13,7 @@
  * The site is public; there is no key. The fetch uses the caller's honest user-agent and is placed AFTER the
  * robots.txt gate in verificationFetch.ts, like any live fetch of a public site.
  */
-import { pdfBodyFor, readStateRollCallDocs, readStateRollCallHtml, renderStateRollCall, stateRollCallDocs, stateRollCallMinGapMs } from '../stateRollCallEvidence.js';
+import { pdfBodyFor, readStateRollCallDocs, readStateRollCallHtml, renderStateRollCall, stateRollCallDocs, stateRollCallMinGapMs, statePostbackOf } from '../stateRollCallEvidence.js';
 import { extractPdfItems, looksLikePdfBytes } from '../pdfText.js';
 import { fetchWithHostTrust } from './hostTrust.js';
 import { isPubinfoDoc, readPubinfoDoc } from './caPubinfo.js';
@@ -93,8 +93,22 @@ export async function fetchStateRollCallText(url: string, deps: StateRollCallDep
   return plain || null;
 }
 
-/** One paced GET of one document; null when it cannot be fetched. */
+/**
+ * One document. Most are one paced GET; a document read by a form post (Hawaii's member list for a year: statePostbackOf)
+ * is its form page fetched first, then the post built from that page's hidden fields.
+ */
 async function fetchOne(url: string, gap: number, deps: StateRollCallDeps): Promise<string | null> {
+  const pb = statePostbackOf(url);
+  if (!pb) return fetchPaced(url, gap, deps);
+  const page = await fetchPaced(pb.page, gap, deps);
+  if (page === null) return null;
+  let form: URLSearchParams;
+  try { form = pb.form(page); } catch { return null; }
+  return fetchPaced(pb.page, gap, deps, form);
+}
+
+/** One paced GET (or, with `form`, POST) of one document; null when it cannot be fetched. */
+async function fetchPaced(url: string, gap: number, deps: StateRollCallDeps, form?: URLSearchParams): Promise<string | null> {
   const now = deps.now ?? Date.now;
   const sleep = deps.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
   const host = new URL(url.trim()).host;
@@ -112,9 +126,11 @@ async function fetchOne(url: string, gap: number, deps: StateRollCallDeps): Prom
       res = await (deps.fetchImpl ?? fetchWithHostTrust)(url.trim(), {
         redirect: 'follow',
         signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
+        ...(form ? { method: 'POST', body: form.toString() } : {}),
         // billstatus.ls.state.ms.us answers 406 to an XML file unless text/xml is accepted (Mississippi's bill
         // history and member lists): the vote would fall through to plain text and verify nothing
-        headers: { ...(deps.userAgent ? { 'user-agent': deps.userAgent } : {}), accept: 'text/html, application/json, application/xml, text/xml, application/pdf' },
+        headers: { ...(deps.userAgent ? { 'user-agent': deps.userAgent } : {}), accept: 'text/html, application/json, application/xml, text/xml, application/pdf',
+          ...(form ? { 'content-type': 'application/x-www-form-urlencoded' } : {}) },
       });
       if ((res.status !== 429 && res.status !== 503) || attempt >= MAX_RETRIES) break;
       const asked = Number(res.headers.get('retry-after'));

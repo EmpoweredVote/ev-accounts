@@ -14,6 +14,7 @@ import {
   explainOregonVote, orQuestionIsOnTheBill, orTally, parseOregonVoteUrl, oregonVoteUrl, OR_DATA,
   explainMaineVote, meMajorityReport, meQuestionIsOnTheBill, meQuestionIsRead, meSenators, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK, ME_SENATORS,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
+  explainHawaiiVote, hawaiiFloorLine, hawaiiLabelMember, hawaiiMembers, hawaiiSeated, hawaiiVoteUrl, parseHawaiiVoteUrl, statePostbackOf, type HiMember,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
 import { verifyEvidence, type StanceRow } from './researchVerifier.js';
@@ -2540,6 +2541,256 @@ describe('state roll-call pages — Maine lines', () => {
     const pdf = readFileSync(fileURLToPath(new URL('./__fixtures__/stateRollCall/me-132-house-574.pdf', import.meta.url)));
     const fetchImpl = async (u: string) => new Response(u === ME_H132.replace('#LD1971', '') ? pdf : 'not found', { status: u === ME_H132.replace('#LD1971', '') ? 200 : 404 });
     expect(await fetchStateRollCallText(ME_H132, { fetchImpl, now: () => 0, sleep: async () => {} })).toBe(meRender(ME_H132));
+    resetStateRollCallPacing();
+  });
+});
+
+
+// ── Hawaii ───────────────────────────────────────────────────────────────────────────────────────────
+// Cut 2026-11-21 from data.capitol.hawaii.gov: each bill page to its title, status tables and text links; each member list
+// to its year field, hidden fields and member cards (name, district, dates). Every party letter is replaced by P.
+const hiPage = (name: string): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${name}.html`, import.meta.url)), 'utf8');
+const HI_26H = hawaiiVoteUrl('HB', 2033, 2026, '2026-03-05', 'House', 'Third-Reading');
+const HI_22H = hawaiiVoteUrl('HB', 1688, 2022, '2022-05-03', 'House', 'Final-Reading');
+const HI_22S = hawaiiVoteUrl('HB', 1688, 2022, '2022-05-03', 'Senate', 'Final-Reading');
+const HI_17S = hawaiiVoteUrl('HB', 1478, 2017, '2017-04-11', 'Senate', 'Third-Reading');
+const HI_17H = hawaiiVoteUrl('HB', 1478, 2017, '2017-03-07', 'House', 'Third-Reading');
+const hiFix: Record<string, [string, string]> = {
+  [HI_26H]: ['hi-hb2033-2026-bill', 'hi-h-2026-members'], [HI_22H]: ['hi-hb1688-2022-bill', 'hi-h-2022-members'],
+  [HI_22S]: ['hi-hb1688-2022-bill', 'hi-s-2022-members'], [HI_17S]: ['hi-hb1478-2017-bill', 'hi-s-2017-members'],
+  [HI_17H]: ['hi-hb1478-2017-bill', 'hi-h-2017-members'],
+};
+const hiBodies = (url: string): string[] => hiFix[url].map(hiPage);
+const hiWhy = (url: string, docs = hiBodies(url)): string => { const v = explainHawaiiVote(docs, url); return 'refused' in v ? v.refused : 'read'; };
+const hiRender = (url: string, docs = hiBodies(url)): string => {
+  const t = readStateRollCallDocs(docs, url);
+  if (!t) throw new Error(`the vote did not read: ${hiWhy(url, docs)}`);
+  return t;
+};
+const HI_AMATO = 'Hawaii House vote of 2026-03-05 (2026), HB 2033 - Passed Third Reading: Terez Amato voted No.';
+const hm = (name: string, district: number, from: string | null = null, to: string | null = null): HiMember => {
+  const [given, ...rest] = name.split(' ');
+  return { name, given, family: rest.join(' '), district, from, to };
+};
+
+describe('state roll-call pages — Hawaii address', () => {
+  it('knows a vote cited on www by bill, year, day, chamber and kind, and reads it from the data host a second apart', () => {
+    expect(HI_26H).toBe('https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2033&year=2026#2026-03-05-House-Third-Reading');
+    expect(parseHawaiiVoteUrl(HI_26H)).toEqual({ state: 'HI', stateName: 'Hawaii', type: 'HB', number: 2033, year: 2026, date: '2026-03-05', chamber: 'House', kind: 'Third-Reading', bill: 'HB 2033' });
+    expect(stateRollCallDocs(HI_26H)).toEqual(['https://data.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2033&year=2026',
+      'https://data.capitol.hawaii.gov/legislature/legislators.aspx?chamber=H&year=2026']);
+    expect(stateRollCallDocs(HI_22S)![1]).toBe('https://data.capitol.hawaii.gov/legislature/legislators.aspx?chamber=S&year=2022');
+    expect(stateRollCallMinGapMs(HI_26H)).toBe(1_000);
+    expect(isStateRollCallUrl(HI_26H)).toBe(true);
+    // cited on the data host, plain http, no vote after the #, a kind it does not read, a look-alike host, and a day of
+    // another year (a carried-over bill's first-year vote is cited on its own year's page, once)
+    for (const u of [HI_26H.replace('www.', 'data.'), HI_26H.replace('https', 'http'), HI_26H.replace(/#.*/, ''), HI_26H.replace('Third-Reading', 'Second-Reading'),
+      HI_26H.replace('www.capitol.hawaii.gov', 'www.capitol.hawaii.gov.example.com'), hawaiiVoteUrl('SB', 1037, 2018, '2017-03-07', 'Senate', 'Third-Reading')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('chooses the member list\'s year by the form the page posts, and only for a member list', () => {
+    const pb = statePostbackOf(stateRollCallDocs(HI_22H)![1])!;
+    expect(pb.page).toBe('https://data.capitol.hawaii.gov/legislature/legislators.aspx?chamber=H');
+    const form = pb.form(hiPage('hi-h-2026-members'));
+    expect(form.get('ctl00$MainContent$DropDownListYear')).toBe('2022');
+    expect(form.get('__EVENTTARGET')).toBe('ctl00$MainContent$DropDownListYear');
+    expect([form.get('__VIEWSTATE'), form.get('__EVENTVALIDATION'), form.get('__VIEWSTATEGENERATOR')]).toEqual(['cut', 'cut', 'cut']);
+    expect(() => pb.form(tamper(hiPage('hi-h-2026-members'), 'name="__EVENTVALIDATION" id="__EVENTVALIDATION"', 'name="__OTHER" id="__OTHER"'))).toThrow(/has no __EVENTVALIDATION/);
+    expect(() => pb.form('<html></html>')).toThrow(/has no year field/);
+    expect(statePostbackOf(HI_26H)).toBeNull();
+    expect(statePostbackOf(stateRollCallDocs(HI_26H)![0])).toBeNull();
+  });
+});
+
+describe('state roll-call pages — Hawaii status rows', () => {
+  it('reads a House floor vote: the members named, and no Aye count, since the House prints none', () => {
+    expect(hawaiiFloorLine('Passed Third Reading with Representative(s) Garcia voting aye with reservations; Representative(s) Amato, Lee, M. voting no (2) and Representative(s) Perruso excused (1).  Transmitted to Senate.', 'House'))
+      .toEqual({ kind: 'Third-Reading', passed: true, question: 'Passed Third Reading', ayes: null, named: { 'Aye with reservations': ['Garcia'], No: ['Amato', 'Lee, M.'], Excused: ['Perruso'] } });
+    // the clause of ayes with reservations is left out on some votes (2017)
+    expect(hawaiiFloorLine('Passed Final Reading with none voting no (0) and Representative(s) Ichiyama excused (1).', 'House')!.named)
+      .toEqual({ 'Aye with reservations': [], No: [], Excused: ['Ichiyama'] });
+    expect(hawaiiFloorLine('Failed to pass Third Reading with none voting aye with reservations; none voting no (0) and none excused (0).', 'House')).toMatchObject({ kind: 'Third-Reading', passed: false });
+  });
+
+  it('reads a Senate floor vote in both of its forms, with every label form the page prints', () => {
+    expect(hawaiiFloorLine('Report adopted; Passed Third Reading, as amended (SD 2). Ayes, 22; Aye(s) with reservations: Senator(s) Lee, C. . Noes, 2 (Senator(s) S. Chang, J.Keohokalole). Excused, 1 (Senator(s) Awa).  Transmitted to House.', 'Senate'))
+      .toEqual({ kind: 'Third-Reading', passed: true, question: 'Report adopted; Passed Third Reading, as amended (SD 2)', ayes: 22, named: { 'Aye with reservations': ['Lee, C.'], No: ['S. Chang', 'J.Keohokalole'], Excused: ['Awa'] } });
+    expect(hawaiiFloorLine('Passed Final Reading, as amended (CD 1). 24 Aye(s); Aye(s) with reservations: none . 1 No(es): Senator(s) Awa. 0 Excused: none.', 'Senate'))
+      .toMatchObject({ kind: 'Final-Reading', ayes: 24, named: { No: ['Awa'], Excused: [] } });
+    // the clause of ayes with reservations left out
+    expect(hawaiiFloorLine('Failed to pass Third Reading. Ayes, 9. Noes, 16 (Senator(s) Awa, Fevella, Inouye, Kanuha, Keith-Agaran, Kidani, Kim, Lee, C., Misalucha, Moriwaki, Nishihara, Rhoads, Riviere, San Buenaventura, Shimabukuro, Wakai). Excused, 0 (none).', 'Senate'))
+      .toMatchObject({ passed: false, ayes: 9, named: { No: expect.arrayContaining(['Lee, C.', 'San Buenaventura', 'Keith-Agaran']) } });
+  });
+
+  it('reads a House veto override with its printed counts', () => {
+    expect(hawaiiFloorLine('Veto overridden with 45 Ayes; 5 Noes Representative(s) Amato, Garcia, Matsumoto, Pierick, Ward; and 1 Excused Representative(s) Perruso.', 'House'))
+      .toMatchObject({ kind: 'Veto-Override', ayes: 45, named: { No: ['Amato', 'Garcia', 'Matsumoto', 'Pierick', 'Ward'], Excused: ['Perruso'] } });
+  });
+
+  it('reads no second reading, referral, committee report or motion, and refuses a count that is not the members named', () => {
+    expect(hawaiiFloorLine('Passed Second Reading as amended in HD 1 and referred to the committee(s) on FIN with none voting aye with reservations; none voting no (0) and none excused (0).', 'House')).toBeNull();
+    expect(hawaiiFloorLine('The committee(s) on JDC recommend(s) that the measure be PASSED, WITH AMENDMENTS. The votes in JDC were as follows: 5 Aye(s)', 'Senate')).toBeNull();
+    expect(hawaiiFloorLine('Passed Third Reading', 'House')).toBeNull();
+    expect(() => hawaiiFloorLine('Passed Third Reading with none voting aye with reservations; Representative(s) Amato voting no (2) and none excused (0).', 'House')).toThrow(/a count that is not the members named/);
+    expect(() => hawaiiFloorLine('Passed Third Reading, as amended (SD 2). Ayes, 24; Aye(s) with reservations: none . Noes, 0 (Senator(s) Awa). Excused, 0 (none).', 'Senate')).toThrow(/a count that is not the members named/);
+    expect(hawaiiFloorLine('Passed Third Reading by a show of hands.', 'Senate')).toBeNull();
+  });
+});
+
+describe('state roll-call pages — Hawaii members', () => {
+  it('reads the year\'s member list, with the dates of a member who joined or left, and refuses another year or chamber', () => {
+    const ms = hawaiiMembers(hiPage('hi-h-2026-members'), 'House', 2026);
+    expect(ms).toHaveLength(52);
+    expect(ms.find((m) => m.family === 'Holt')).toMatchObject({ name: 'Daniel Holt', district: 28, from: null, to: '2026-02-13' });
+    expect(ms.find((m) => m.family === 'Hartsfield')).toMatchObject({ district: 36, from: '2026-01-12', to: null });
+    expect(ms.find((m) => m.family === 'Alcos')).toMatchObject({ name: 'David Alcos III', given: 'David' });
+    expect(() => hawaiiMembers(hiPage('hi-h-2026-members'), 'House', 2022)).toThrow(/is of 2026, not 2022/);
+    expect(() => hawaiiMembers(hiPage('hi-h-2026-members'), 'Senate', 2026)).toThrow(/it is not the Senate's/);
+  });
+
+  it('seats a dated member inside their dates, and leaves unplaced an undated member whose district changed hands that year', () => {
+    const ms = [hm('Ann Able', 1), hm('Ben Baker', 2, null, '2026-02-13'), hm('Cal Cole', 2), hm('Dee Dunn', 3, '2026-01-12'), hm('Eve Ennis', 4, null, '2026-01-02')];
+    const at = (day: string) => { const s = hawaiiSeated(ms, day); return [s.seated.map((m) => m.given), s.uncertain.map((m) => m.given)]; };
+    expect(at('2026-02-01')).toEqual([['Ann', 'Ben', 'Dee'], []]);
+    // Cal is the likely successor, but the list does not date him: he may or may not have sat
+    expect(at('2026-03-05')).toEqual([['Ann', 'Dee'], ['Cal']]);
+    // before Dee's appointment, district 3 is empty; after Eve left, district 4 is
+    expect(at('2026-01-05')).toEqual([['Ann', 'Ben'], []]);
+    expect(() => hawaiiSeated([...ms, hm('Fay Fox', 3, '2026-01-01')], '2026-03-05')).toThrow(/district 3 has two members on 2026-03-05/);
+    expect(() => hawaiiSeated([...ms, hm('Gus Gray', 1)], '2026-03-05')).toThrow(/district 1 has 2 members with no dates/);  });
+
+  it('seats a successor the list gives only an end date after the member before them left (2024 Senate district 22)', () => {
+    const d22 = [hm('Maile Shimabukuro', 22, null, '2024-05-31'), hm('Cross Crabbe', 22, null, '2024-11-05')];
+    const at = (day: string) => { const s = hawaiiSeated(d22, day); return [s.seated.map((m) => m.given), s.uncertain.map((m) => m.given)]; };
+    expect(at('2024-03-05')).toEqual([['Maile'], []]);
+    expect(at('2024-05-31')).toEqual([['Maile'], []]);
+    // when Crabbe was appointed the list does not say: after Shimabukuro left he may or may not have sat
+    expect(at('2024-06-10')).toEqual([[], ['Cross']]);
+    expect(at('2024-11-06')).toEqual([[], []]);
+  });
+
+  it('names a member by family name, and by the initial the page adds when two members share it', () => {
+    const seated = [hm('Chris Lee', 25), hm('Mike Lee', 3), hm('Stanley Chang', 9), hm('Jarrett Keohokalole', 24), hm('Sue Keohokapu-Lee Loy', 4), hm('Terez Amato', 5)];
+    expect(hawaiiLabelMember('Amato', seated)?.name).toBe('Terez Amato');
+    expect(hawaiiLabelMember('Lee, C.', seated)?.name).toBe('Chris Lee');
+    expect(hawaiiLabelMember('S. Chang', seated)?.name).toBe('Stanley Chang');
+    expect(hawaiiLabelMember('J.Keohokalole', seated)?.name).toBe('Jarrett Keohokalole');
+    expect(hawaiiLabelMember('Keohokapu-Lee Loy', seated)?.name).toBe('Sue Keohokapu-Lee Loy');
+    // two members fit, or none does
+    expect(hawaiiLabelMember('Lee', seated)).toBeNull();
+    expect(hawaiiLabelMember('Lee, J.', seated)).toBeNull();
+    expect(hawaiiLabelMember('Chang, T.', seated)).toBeNull();
+  });
+});
+
+describe('state roll-call pages — reading Hawaii', () => {
+  it('reads a 2026 House vote: the Ayes are the members seated that day less those named', () => {
+    const t = hiRender(HI_26H);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Hawaii House vote of 2026-03-05 (2026), HB 2033, Third Reading.', 'Question: Passed Third Reading',
+      'Aye 48; Aye with reservations 0; No 1; Excused 1.']);
+    expect(t).toMatch(/^No \(1\): Terez Amato$/m);
+    expect(t).toMatch(/^Excused \(1\): Amy A\. Perruso$/m);
+    // Holt left on 02-13 and Hartsfield joined on 01-12; Ratcliffe, Holt's undated successor, is unplaced and in no group
+    expect(t).not.toMatch(/Daniel Holt|Ratcliffe/);
+    expect(t).toMatch(/Daisy Hartsfield/);
+    expect(explainHawaiiVote(hiBodies(HI_26H), HI_26H)).toMatchObject({ unplaced: ['M. Cov Ratcliffe'] });
+  });
+
+  it('reads a Senate vote whose printed Aye count equals the members seated less those named', () => {
+    expect(hiRender(HI_22S).split('\n').slice(0, 3)).toEqual(['Hawaii Senate vote of 2022-05-03 (2022), HB 1688, Final Reading.',
+      'Question: Passed Final Reading, as amended (CD 1)', 'Aye 25; Aye with reservations 0; No 0; Excused 0.']);
+    expect(hiRender(HI_17S).split('\n')[2]).toBe('Aye 25; Aye with reservations 0; No 0; Excused 0.');
+  });
+
+  it('reads a 2022 final reading and a 2017 third reading of the House', () => {
+    expect(hiRender(HI_22H).split('\n').slice(1, 3)).toEqual(['Question: Passed Final Reading as amended in CD 1', 'Aye 48; Aye with reservations 0; No 2; Excused 0.']);
+    expect(hiRender(HI_22H)).toMatch(/^No \(2\): Bob McDermott; Gene Ward$/m);
+    expect(explainHawaiiVote(hiBodies(HI_22H), HI_22H)).toMatchObject({ unplaced: ['Luella Costales'] });
+    expect(hiRender(HI_17H).split('\n')[2]).toBe('Aye 50; Aye with reservations 0; No 0; Excused 1.');
+  });
+
+  it('maps the record to Yea (ayes with reservations too), Nay and Absent, with no party', () => {
+    const r = readStateRollCallRecord(hiBodies(HI_26H), HI_26H)!;
+    expect(r).toMatchObject({ bill: 'HB 2033', date: '2026-03-05', chamber: 'House' });
+    expect([r.groups.Yea.length, r.groups.Nay, r.groups['Absent or not voting']]).toEqual([48, ['Terez Amato'], ['Amy A. Perruso']]);
+    expect(hiRender(HI_26H)).not.toMatch(/\((?:D|R|P)\)/);
+  });
+
+  it('refuses a vote whose page or member list does not hold together', () => {
+    const [b, m] = hiBodies(HI_26H);
+    // the member list of another year, the page of another bill, the wrong number of documents
+    expect(hiWhy(HI_26H, [b, hiPage('hi-h-2022-members')])).toMatch(/the member list is of 2022, not 2026/);
+    expect(hiWhy(HI_26H, [hiPage('hi-hb1688-2022-bill'), m])).toMatch(/^the page is for HB 1688, not HB 2033$/);
+    expect(hiWhy(HI_26H, [b])).toBe('not a bill page and a member list');
+    // a vote the page does not hold on that day, or a label no seated member fits
+    expect(hiWhy(HI_26H.replace('2026-03-05', '2026-03-06'), [b, m])).toMatch(/^the page holds 0 House Third Reading votes on 2026-03-06$/);
+    expect(hiWhy(HI_26H, [tamper(b, 'Representative(s) Amato voting no', 'Representative(s) Amatox voting no'), m])).toMatch(/^"Amatox" is not exactly one member seated on 2026-03-05$/);
+    // Holt, who left on 02-13, is named in the vote
+    expect(hiWhy(HI_26H, [tamper(b, 'Representative(s) Amato voting no', 'Representative(s) Holt voting no'), m])).toMatch(/^"Holt" is not exactly one member seated/);
+    // a member named twice
+    expect(hiWhy(HI_26H, [tamper(b, 'Representative(s) Perruso excused (1)', 'Representative(s) Amato excused (1)'), m])).toMatch(/Terez Amato is named twice/);
+    // the Senate's printed Aye count no longer closes
+    const [sb, sm] = hiBodies(HI_22S);
+    const row = /Passed Final Reading, as amended \(CD 1\)\. Ayes, 25;/.exec(sb);
+    expect(row).not.toBeNull();
+    expect(hiWhy(HI_22S, [tamper(sb, row![0], row![0].replace('Ayes, 25', 'Ayes, 24')), sm])).toMatch(/^the page prints 24 Ayes and the members seated less those named are 25$/);
+    // a member card the reader cannot read
+    expect(hiWhy(HI_26H, [b, tamper(m, '<strong>Holt, Daniel (P)</strong>', '<strong>Holt Daniel</strong>')])).toMatch(/a member card the reader cannot read/);
+  });
+});
+
+describe('state roll-call pages — Hawaii lines', () => {
+  const t = hiRender(HI_26H);
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(HI_26H, t, 'Amato', 'Terez Amato')).toEqual([HI_AMATO]);
+    expect(verifyStateRollCallLine(HI_AMATO, HI_26H, t, 'Amato', 'Terez Amato')).toMatchObject({ verdict: 'verified' });
+    expect(parseStateRollCallLine(HI_AMATO)).toMatchObject({ state: 'HI', chamber: 'House', vote: 'No', name: 'Terez Amato', bill: 'HB 2033', date: '2026-03-05' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another day', () => {
+    const v = (line: string, last = 'Amato', full = 'Terez Amato', url = HI_26H) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(HI_AMATO.replace('voted No', 'voted Aye'))).not.toBe('verified');
+    expect(v(HI_AMATO.replace('Terez Amato', 'Amy A. Perruso'), 'Perruso', 'Amy A. Perruso')).not.toBe('verified');
+    expect(v(HI_AMATO, 'Perruso', 'Amy A. Perruso')).not.toBe('verified');
+    expect(v(HI_AMATO.replace('2026-03-05', '2026-03-06'))).not.toBe('verified');
+  });
+
+  it('gives an excused member "was excused", an Aye "voted Aye", and an unplaced member no line', () => {
+    expect(stateRollCallLinesFor(HI_26H, t, 'Perruso', 'Amy A. Perruso')).toEqual(['Hawaii House vote of 2026-03-05 (2026), HB 2033 - Passed Third Reading: Amy A. Perruso was excused.']);
+    expect(stateRollCallLinesFor(HI_26H, t, 'Alcos', 'David Alcos III')).toEqual(['Hawaii House vote of 2026-03-05 (2026), HB 2033 - Passed Third Reading: David Alcos III voted Aye.']);
+    expect(stateRollCallLinesFor(HI_26H, t, 'Ratcliffe', 'M. Cov Ratcliffe')).toEqual([]);
+    expect(stateRollCallLinesFor(HI_26H, t, 'Holt', 'Daniel Holt')).toEqual([]);
+  });
+});
+
+describe('state roll-call pages — the Hawaii adapter', () => {
+  it('reads the bill page by GET and the member list by the form its own page posts, and never asks the cited host', async () => {
+    resetStateRollCallPacing();
+    let clock = 9_000_000;
+    const asked: string[] = [];
+    const [bill, members22] = hiBodies(HI_22H);
+    const deps = {
+      now: () => clock, sleep: async (ms: number) => { clock += ms; },
+      fetchImpl: async (u: string, init?: RequestInit) => {
+        asked.push(`${init?.method ?? 'GET'} ${u}`);
+        clock += 100;
+        if (u.startsWith('https://data.capitol.hawaii.gov/session/measure_indiv.aspx')) return new Response(bill, { status: 200 });
+        if (u === 'https://data.capitol.hawaii.gov/legislature/legislators.aspx?chamber=H') {
+          // the page answers the current year to a GET, and the year posted to a POST
+          if (init?.method !== 'POST') return new Response(hiPage('hi-h-2026-members'), { status: 200 });
+          const form = new URLSearchParams(String(init.body));
+          return new Response(form.get('ctl00$MainContent$DropDownListYear') === '2022' ? members22 : '', { status: 200 });
+        }
+        return new Response('', { status: 403 });
+      },
+    };
+    expect(await fetchStateRollCallText(HI_22H, deps)).toBe(hiRender(HI_22H));
+    expect(asked).toEqual(['GET https://data.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1688&year=2022',
+      'GET https://data.capitol.hawaii.gov/legislature/legislators.aspx?chamber=H', 'POST https://data.capitol.hawaii.gov/legislature/legislators.aspx?chamber=H']);
+    expect(asked.some((a) => a.includes('www.'))).toBe(false);
     resetStateRollCallPacing();
   });
 });

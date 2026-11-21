@@ -1656,6 +1656,12 @@ def legiscan_merge_cross_checks_a_vote_cited_on_a_legislature_page(t):
     assert code == 0 and [c['agree'] for c in cross] == [True], ('business', code, cross)
     code, cross, _ = go('was excused for legislative business')
     assert code == 1 and [c['agree'] for c in cross] == [False], ('business/yea', code, cross)
+    # Hawaii 2026-11-21: the record names a member who "voted aye with reservations", which is an Aye (runner, 2026-11-21) and
+    # which the line keeps. Before this the merge read it as "?" and disagreed on 79 of the dry batch's 3,278 votes.
+    code, cross, _ = go('voted Aye with reservations')
+    assert code == 0 and [c['agree'] for c in cross] == [True], ('reservations', code, cross)
+    code, cross, _ = go('voted Aye with reservations', act='nay')
+    assert code == 1 and [c['agree'] for c in cross] == [False], ('reservations/nay', code, cross)
     # California 2026-11-20: PUBINFO prints AYE, NOE and ABS; the reader words ABS "had no vote recorded" (the record does not
     # say why), which is no Yea and no Nay
     code, cross, _ = go('had no vote recorded', act='abstain')
@@ -2799,6 +2805,33 @@ def ca_pubinfo_reads_a_session_once_by_ranges_and_keeps_it_current_from_the_dail
     legs = json.load(open(f'{C}/2025/legislators.json'))
     assert legs and all('party' not in x for x in legs) and legs[0]['author_name'] == 'Able', legs
 
+
+
+@check
+def openstates_convert_rewrites_hawaii_addresses_to_the_cited_page_and_the_data_host(t):
+    """Hawaii 2026-11-21: www.capitol.hawaii.gov answers a reader 403, and the runner ruled that a bill is cited there and
+    read from data.capitol.hawaii.gov. The dump stores bill pages in four forms (the 2018 one, /Archives/
+    measure_indiv_Archives8-12.aspx, is a not-found page on the data host): each becomes the one current form on www. A
+    bill text becomes its file on the data host. convert.py runs at import, so its three definitions are read alone."""
+    import ast, re as _re
+    src = open(os.path.join(TOOLS, 'openstates', 'convert.py')).read()
+    keep = [n for n in ast.parse(src).body if (isinstance(n, ast.Assign) and any(getattr(x, 'id', '') in ('HI_BILL_PAGE', 'HI_TEXT') for x in n.targets))
+            or (isinstance(n, ast.FunctionDef) and n.name == 'hi_link')]
+    assert len(keep) == 3, [getattr(n, 'name', '') for n in keep]
+    ns = {'re': _re}; exec(compile(ast.Module(body=keep, type_ignores=[]), 'convert.py', 'exec'), ns)
+    hi = ns['hi_link']
+    cite = 'https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2793&year=2018'
+    for u in ('http://www.capitol.hawaii.gov/Archives/measure_indiv_Archives8-12.aspx?billtype=SB&billnumber=2793&year=2018',
+              'https://www.capitol.hawaii.gov/session/archives/measure_indiv_Archives.aspx?billtype=SB&billnumber=2793&year=2018',
+              'https://capitol.hawaii.gov/measure_indiv.aspx?billtype=sb&billnumber=02793&year=2018', cite):
+        assert hi(u) == cite, (u, hi(u))
+    assert hi('https://www.capitol.hawaii.gov/sessions/session2026/bills/HB2033_.HTM') == 'https://data.capitol.hawaii.gov/sessions/session2026/bills/HB2033_.HTM'
+    assert hi('http://www.capitol.hawaii.gov/session2018/bills/SB2793_SD1_.htm') == 'https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2793_SD1_.htm'
+    # anything else is kept: another host, another page of the site, a bill page with no year
+    for u in ('https://www.capitol.hawaii.gov.example.com/measure_indiv.aspx?billtype=SB&billnumber=1&year=2018',
+              'https://www.capitol.hawaii.gov/legislature/legislators.aspx?chamber=H',
+              'https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2793'):
+        assert hi(u) == u, (u, hi(u))
 
 fails = 0
 with tempfile.TemporaryDirectory() as root:
