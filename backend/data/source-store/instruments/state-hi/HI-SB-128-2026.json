@@ -1,0 +1,76 @@
+{
+  "id": "HI-SB-128-2026",
+  "scope": "state:hi",
+  "title": "SB128 (2026 Regular): RELATING TO TRESPASS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=128&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB128_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lynn DeCoite",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+    },
+    {
+      "name": "Henry Aquino",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Samantha DeCorte",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3dcc200d-6b83-4b68-aa44-0ad2bc1e8f73"
+    },
+    {
+      "name": "Dru Kanuha",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: SECTION 2 (new HRS 708-) — creates the non-gun crime of criminal trespass on agricultural land, with a petty misdemeanor grade, escalating fines ($500 to $2,500) and mandatory restitution"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB128_.HTM; sha256 b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-128-2026.introduced.htm",
+      "sha256": "b5f5848ae02d6936bf110e34ca561907f353ac8f0a9101aa08c02f5275365deb"
+    },
+    "note": "As-filed text (introduced), no passage vote on file. Gun part is only SECTION 3; SECTION 2 is a non-gun trespass offense."
+  },
+  "operative_text": "SECTION 3 (HRS 134-7(b)): (b) No person who is being prosecuted for one or more charges for a felony, a crime of violence, a criminal offense relating to firearms, criminal trespass on agricultural land under section 708- , or an illegal sale or distribution of any drug in a court in this State or elsewhere, or who has been convicted in this State or elsewhere of having committed a felony, a crime of violence, a criminal offense relating to firearms, criminal trespass on agricultural land under section 708- , or an illegal sale or distribution of any drug shall own, possess, or control any firearm or ammunition."
+}

@@ -1,0 +1,568 @@
+{
+  "id": "HI-SB-1466-2019",
+  "scope": "state:hi",
+  "title": "SB1466 (2019 Regular): RELATING TO GUN VIOLENCE PROTECTIVE ORDERS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1466&year=2019",
+    "https://data.capitol.hawaii.gov/sessions/session2019/bills/SB1466_HD2_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Breene Harimoto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Russell E. Ruderman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kurt Fevella",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-03-05",
+      "body": "HI Senate",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 2,
+      "absent": 1,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595487 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1466&year=2019#2019-03-05-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Kaiali‘i Kahele",
+          "vote": "yea",
+          "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Laura H. Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell E. Ruderman",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "nay",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Breene Harimoto",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2019-04-09",
+      "body": "HI House",
+      "motion": "House Passed Third Reading as amended in HD 2, passed",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 11,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595488 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1466&year=2019#2019-04-09-House-Third-Reading",
+      "members": [
+        {
+          "name": "Aaron Ling Johanson",
+          "vote": "yea"
+        },
+        {
+          "name": "Amy Perruso",
+          "vote": "yea",
+          "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+        },
+        {
+          "name": "Angus McKelvey",
+          "vote": "yea",
+          "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+        },
+        {
+          "name": "Bert Kobayashi",
+          "vote": "yea"
+        },
+        {
+          "name": "Cedric Gates",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea",
+          "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+        },
+        {
+          "name": "Cynthia Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel Holt",
+          "vote": "yea"
+        },
+        {
+          "name": "David Tarnas",
+          "vote": "yea",
+          "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+        },
+        {
+          "name": "Dee Morikawa",
+          "vote": "yea",
+          "politician_id": "60a980b6-15ff-41be-9463-5b5605d17589"
+        },
+        {
+          "name": "Della Belatti",
+          "vote": "yea",
+          "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+        },
+        {
+          "name": "Gregg Takayama",
+          "vote": "yea",
+          "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+        },
+        {
+          "name": "Henry Aquino",
+          "vote": "yea"
+        },
+        {
+          "name": "May Mizuno",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Woodson",
+          "vote": "yea",
+          "politician_id": "84ee05d5-66a5-4845-98eb-01ccac66dd1c"
+        },
+        {
+          "name": "Kyle Yamashita",
+          "vote": "yea",
+          "politician_id": "fba70db8-4bc3-47b5-bc70-d4c078936cda"
+        },
+        {
+          "name": "Linda Ichiyama",
+          "vote": "yea",
+          "politician_id": "bcce79fe-627b-491f-add3-415b40f90469"
+        },
+        {
+          "name": "Lisa Kitagawa",
+          "vote": "yea",
+          "politician_id": "0f02f669-b7ab-4d3b-9ab6-9005db22df9c"
+        },
+        {
+          "name": "Mark Hashem",
+          "vote": "yea",
+          "politician_id": "f951e14c-168e-42c9-a6ff-d18788a35eff"
+        },
+        {
+          "name": "Mark Nakashima",
+          "vote": "yea"
+        },
+        {
+          "name": "Nadine K. Nakamura",
+          "vote": "yea",
+          "politician_id": "a78d5716-4397-4a95-944d-f5e32d38f6dd"
+        },
+        {
+          "name": "Nicole Lowen",
+          "vote": "yea",
+          "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+        },
+        {
+          "name": "Richard Onishi",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard P. Creagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Rida Cabanilla Arakawa",
+          "vote": "yea"
+        },
+        {
+          "name": "Romy M. Cachola",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy M. Takumi",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan I. Yamane",
+          "vote": "yea"
+        },
+        {
+          "name": "Scot Matayoshi",
+          "vote": "yea",
+          "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+        },
+        {
+          "name": "Scott Saiki",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Y. Nishimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Stacelynn K.M. Eli",
+          "vote": "yea"
+        },
+        {
+          "name": "Sylvia Luke",
+          "vote": "yea",
+          "politician_id": "bb3cfd1d-42a2-41c2-978d-c1d1734be93f"
+        },
+        {
+          "name": "Takashi Ohno",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Wildberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Brower",
+          "vote": "yea"
+        },
+        {
+          "name": "Troy Hashimoto",
+          "vote": "yea",
+          "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+        },
+        {
+          "name": "Ty J.K. Cullen",
+          "vote": "yea"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Bob McDermott",
+          "vote": "nay"
+        },
+        {
+          "name": "Calvin K.Y. Say",
+          "vote": "nay"
+        },
+        {
+          "name": "Dale T. Kobayashi",
+          "vote": "nay"
+        },
+        {
+          "name": "Gene Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "James Kunane Tokioka",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren Matsumoto",
+          "vote": "nay",
+          "politician_id": "222c3689-ecac-47d8-9379-c3d329039147"
+        },
+        {
+          "name": "Lynn DeCoite",
+          "vote": "nay",
+          "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+        },
+        {
+          "name": "Sam Kong",
+          "vote": "nay",
+          "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+        },
+        {
+          "name": "Sean Quinlan",
+          "vote": "nay",
+          "politician_id": "96b45c6f-0ac4-498c-8211-d87572d80eea"
+        },
+        {
+          "name": "Sharon E. Har",
+          "vote": "nay"
+        },
+        {
+          "name": "Val Okimoto",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2019-04-18",
+      "body": "HI Senate",
+      "motion": "Senate Passed Final Reading, passed",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 2,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595489 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1466&year=2019#2019-04-18-Senate-Final-Reading",
+      "members": [
+        {
+          "name": "Breene Harimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Kaiali‘i Kahele",
+          "vote": "yea",
+          "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Laura H. Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell E. Ruderman",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "nay",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2019/bills/SB1466_HD2_.HTM; sha256 bfe0c1f92b26043031fa6ec1efc14108802c64188d59cfc24473db569ad68cad)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1466-2019.hd2.htm",
+      "sha256": "bfe0c1f92b26043031fa6ec1efc14108802c64188d59cfc24473db569ad68cad"
+    },
+    "note": "House Draft 2 (HD2, also SD2) of the bill, not a conference text. Passed Senate third reading (SD2) 22-2, House third reading 40-11 and Senate final reading 23-2; amendments made after the HD2 draft, if any, are not in the text read. SECTIONS 3 and 4 (HRS 134-7(f), 134-7.3(b) and (d)) tie the new orders into the existing surrender rules and cut the surrender deadline from seven days to forty-eight hours; they mix struck and new words so are not quoted. Effective January 1, 2020."
+  },
+  "operative_text": "SECTION 2 (new part, HRS ch. 134): \"Ex parte gun violence protective order\" means an order issued by the family court, pursuant to section 134-D, prohibiting the respondent from owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition until the court-scheduled hearing for a one-year gun violence protective order.\nSECTION 2 (new part, §134-D(a)): A petitioner may request that an ex parte gun violence protective order be issued before a hearing for a one-year gun violence protective order, without notice to the respondent.\nSECTION 2 (new part, §134-E(c)): If the court finds by a preponderance of the evidence at the hearing that the respondent poses a significant danger of causing bodily injury to the respondent's self or another person by owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition, the court shall issue a one-year gun violence protective order.\nSECTION 2 (new part, §134-G(a)): Upon issuance of an ex parte gun violence protective order, a one-year gun violence protective order, or a domestic abuse protective order, the court shall order the respondent to voluntarily surrender or dispose of all firearms and ammunition that the respondent owns or possesses, or has in the respondent's custody or control, in accordance with section 134-7.3(b).\nSECTION 2 (new part, §134-G(b)): Alternatively, if personal service by a police officer is not possible, the respondent shall surrender the firearms and ammunition in a safe manner to the control of the chief of police where the respondent resides within forty-eight hours of being served with the order.\nSECTION 2 (new part, §134-J): A person who files a petition for an ex parte gun violence protective order or a one-year gun violence protective order under this part, knowing the information in the petition to be materially false or with an intent to harass the respondent, is guilty of a misdemeanor."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "HI-SB-2703-2024",
+  "scope": "state:hi",
+  "title": "SB2703 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2703&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB2703_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB2703_.HTM; sha256 46efdff32679565a55196555d0b45e5e4b579816c45cb6cd4640cf6629af605d)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2703-2024.introduced.htm",
+      "sha256": "46efdff32679565a55196555d0b45e5e4b579816c45cb6cd4640cf6629af605d"
+    },
+    "note": "Version read: as-filed (introduced) text. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 2 (new): No person shall sell ammunition for any firearm to any person unless: (1) The person presents a valid firearm registration pursuant to section 134-3, together with a government-issued identification; and (2) The caliber of ammunition is compatible with the person's firearm that is registered pursuant to section 134-3.\nSECTION 2 (new): Any person violating subsection (a) shall be guilty of a misdemeanor."
+}

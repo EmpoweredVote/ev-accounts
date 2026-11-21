@@ -1,0 +1,65 @@
+{
+  "id": "HI-HB-1531-2019",
+  "scope": "state:hi",
+  "title": "HB1531 (2019 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1531&year=2019",
+    "https://data.capitol.hawaii.gov/sessions/session2019/bills/HB1531_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Takashi Ohno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard P. Creagan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+    },
+    {
+      "name": "Tina Wildberger",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2019/bills/HB1531_.HTM; sha256 3e22d915b54b25d4c011fb14c9af14eb3a30534d2aa8a6e8e0768df3369637e7)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1531-2019.introduced.htm",
+      "sha256": "3e22d915b54b25d4c011fb14c9af14eb3a30534d2aa8a6e8e0768df3369637e7"
+    },
+    "note": "Introduced text (as filed). Section 1 also defines 'assault weapon' (§134-A, long model list and feature tests). SECTIONS 2-5 repeal the assault-pistol definition and ban and amend HRS 134-4, 134-8 and 706-660.1 (mostly struck text, not quoted). No passage vote recorded."
+  },
+  "operative_text": "SECTION 1 (new, HRS ch. 134 part): §134-B Distribution, transfer, etc., of assault weapons prohibited; penalty. (a) Any person who, within this State, distributes, transports, imports, brings, or causes to be brought into the State, keeps for sale, or offers or exposes for sale, or who transfers any assault weapon, shall be guilty of a class B felony.\nSECTION 1 (new, HRS ch. 134 part): (b) This section shall not apply to the sale of assault weapons to the department of public safety, police departments, state department of defense, or to the armed services of the United States in connection with the discharge of official duties.\nSECTION 1 (new, HRS ch. 134 part): §134-C Ownership, etc., of assault weapons prohibited; penalty. (a) Any person who, within this State, manufactures, possesses, sells, barters, trades, gifts, or acquires any assault weapon, shall be guilty of a class C felony.\nSECTION 1 (new, HRS ch. 134 part): §134-D Relinquishment of assault weapon to law enforcement. Any individual may arrange in advance to relinquish an assault weapon to a county police department or the department of public safety for disposal, without penalty.\nSECTION 6 (HRS 706-662): (8) The defendant uses an assault weapon, as defined in section 134-A, in the course of committing murder in the first or second degree, manslaughter, kidnapping, sexual assault, assault in the first or second degree, robbery, burglary, or theft."
+}

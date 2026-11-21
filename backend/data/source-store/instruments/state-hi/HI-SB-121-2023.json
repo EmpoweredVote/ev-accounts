@@ -1,0 +1,72 @@
+{
+  "id": "HI-SB-121-2023",
+  "scope": "state:hi",
+  "title": "SB121 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=121&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB121_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB121_.HTM; sha256 8113985e3c567025dbaf30b33faa999829b08c6ad9ef122d735f146fa869d74b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-121-2023.introduced.htm",
+      "sha256": "8113985e3c567025dbaf30b33faa999829b08c6ad9ef122d735f146fa869d74b"
+    },
+    "note": "As-filed text (introduced). SECTION 3 only adds cross-references to HRS 134-11. Amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 2 (new): (a) It shall be unlawful for any person to intentionally, knowingly, or recklessly carry on their person a firearm, concealed or unconcealed, in a sensitive place. (b) Any person violating this section shall be guilty of a class C felony. (c) This section shall preempt any ordinances passed or adopted by any county to the extent that these ordinances conflict with or are inconsistent with the provisions of this section. (d) For the purposes of this section, \"sensitive place\" means: (1) Any government-owned or controlled buildings or offices, excluding: (A) Any dwelling unit or lodging unit when not used as a child care facility; (B) Firing range complex; and (C) Government-owned or controlled building during the operating hours of an organized firearms show or exhibit; (2) Hospitals, medical facilities, medical offices, and medical clinics; (3) Churches or religious assemblies; (4) Public parks or recreational grounds as defined in section 708-814.5; (5) Child care facilities as defined in section 346-151; (6) Schools as defined in section 302A-901; (7) Shelters and residential facilities operated by a government entity or a charitable organization serving homeless children, children involved in the juvenile justice system, or children who are similarly at-risk; (8) Any educational institution, college, or university; (9) Any place, conveyance, or vehicle used for public transportation or public transit; (10) Any facility used for or in connection with service in the transportation of passengers; and (11) Any gathering of individuals to collectively express their constitutional rights to protest or assemble."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "HI-HB-2465-2020",
+  "scope": "state:hi",
+  "title": "HB2465 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2465&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2465_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob McDermott",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB2465_.HTM; sha256 a581513075a568e18bc2f891f64bd94f7e158e5ebaacdce285b6eafacc8dde4b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2465-2020.introduced.htm",
+      "sha256": "a581513075a568e18bc2f891f64bd94f7e158e5ebaacdce285b6eafacc8dde4b"
+    },
+    "note": "Introduced version as filed; no passage vote on file. Section 2 is a new definition per its opening line."
+  },
+  "operative_text": "SECTION 2 (HRS 134-1): \"National of the United States\" shall have the same meaning as in title 8 United States Code section 1101.\nSECTION 3 (HRS 134-2): The chief of police of the respective counties may issue permits to acquire firearms to citizens and nationals of the United States of the age of twenty-one years or more, or duly accredited official representatives of foreign nations, or duly commissioned law enforcement officers of the State who are aliens; provided that any law enforcement officer who is the owner of a firearm and who is an alien shall transfer ownership of the firearm within forty-eight hours after termination of employment from a law enforcement agency."
+}

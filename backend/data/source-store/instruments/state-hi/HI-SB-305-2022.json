@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-305-2022",
+  "scope": "state:hi",
+  "title": "SB305 (2022 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=305&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB305_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB305_.HTM; sha256 1d8c4f834fa62d9e23b681b832c132611d72ecf766a73195c07b749198026a89)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-305-2022.introduced.htm",
+      "sha256": "1d8c4f834fa62d9e23b681b832c132611d72ecf766a73195c07b749198026a89"
+    },
+    "note": "Introduced version as filed (same text in 2022). Subsection (c), not quoted because it runs across struck text, strikes the fifteen-day no-permit loan and the 75-day out-of-State loan, and limits loans of a rifle or shotgun to an adult 21 or older to twelve hours, with the borrower holding a permit or owning a registered firearm."
+  },
+  "operative_text": "SECTION 2 (HRS 134-4): No person shall knowingly lend a firearm to any person who does not have a permit pursuant to section 134-2, does not own or possess a firearm that is registered pursuant to section 134-3, or is prohibited from ownership or possession of a firearm under section 134-7."
+}

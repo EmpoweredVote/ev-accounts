@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1615-2020",
+  "scope": "state:hi",
+  "title": "HB1615 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1615&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1615_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1615_.HTM; sha256 c38978eee015d48974ce41988764f2cb1e36191371f9f8c504232380400a7c5d)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1615-2020.introduced.htm",
+      "sha256": "c38978eee015d48974ce41988764f2cb1e36191371f9f8c504232380400a7c5d"
+    },
+    "note": "As-filed text. Intoxication means impaired by alcohol or .08 breath/blood alcohol. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 1 (new, HRS ch. 134): It shall be unlawful for a person to possess a loaded firearm while the person is intoxicated.\nSECTION 1 (new, HRS ch. 134): Any person violating this section shall be guilty of a petty misdemeanor.\nSECTION 1 (new, HRS ch. 134): A person is in possession of a loaded firearm when the person has immediate physical control over a loaded firearm and the person is outside of the person's dwelling as defined in section 703-300; and"
+}

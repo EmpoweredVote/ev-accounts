@@ -1,0 +1,177 @@
+{
+  "id": "HI-SB-459-2021",
+  "scope": "state:hi",
+  "title": "SB459 (2021 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=459&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/SB459_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Donna Kim",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+    },
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-03-09",
+      "body": "HI Senate",
+      "motion": "Senate Passed Third Reading, as amended (SD 1), passed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 0,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595518 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=459&year=2021#2021-03-09-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Bennette E. Misalucha",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "yea",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "yea",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Laura Acasio",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/SB459_SD1_.HTM; sha256 f1e8e4a9d998ce9f02ced10edb15123c7c7b8227821ae9f68082da8677134f63)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-459-2021.sd1.htm",
+      "sha256": "f1e8e4a9d998ce9f02ced10edb15123c7c7b8227821ae9f68082da8677134f63"
+    },
+    "note": "Senate Draft 1 (SD1), not the final text. Senate passed SD1 25-0 on 2021-03-09; amendments made after the version read are not in the text read. SECTION 2 is a new section; the SECTION 3 sentence is quoted as printed (no struck words in it)."
+  },
+  "operative_text": "SECTION 2 (new): To carry a concealed firearm in this State pursuant to title 18 United States Code section 926B, a qualified law enforcement officer shall comply with all state laws, including but not limited to this chapter.\nSECTION 2 (new): If a qualified law enforcement officer is not on official duty with the officer's government agency and is carrying a concealed firearm pursuant to title 18 United States Code section 926B in this State, state law shall apply to the officer as a person with no law enforcement powers.\nSECTION 2 (new): To carry a concealed firearm in this State pursuant to title 18 United States Code section 926C, a qualified retired law enforcement officer shall comply with all state laws, including but not limited to this chapter and rules adopted under this section.\nSECTION 2 (new): Title 18 United States Code section 926C and state law shall not authorize a qualified retired law enforcement officer to act as a law enforcement officer in this State.\nSECTION 2 (new): The attorney general may issue firearm qualification certifications to qualified retired law enforcement officers, in conformity with title 18 United States Code section 926C.\nSECTION 2 (new): The attorney general may adopt, amend, and repeal rules concerning the issuance of firearm qualification certifications.\nSECTION 3 (HRS 134-9): This section shall not apply to qualified law enforcement officers carrying a concealed firearm in compliance with title 18 United States Code section 926B or qualified retired law enforcement officers carrying a concealed firearm in compliance title 18 United States Code section 926C."
+}

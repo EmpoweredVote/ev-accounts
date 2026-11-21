@@ -1,0 +1,102 @@
+{
+  "id": "HI-HB-425-2024",
+  "scope": "state:hi",
+  "title": "HB425 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=425&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/HB425_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Tarnas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Bert Kobayashi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Mark Nakashima",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Nishimoto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Jackson Sayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d39cb33d-e229-41a8-8d4b-d55f98a1e000"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/HB425_.HTM; sha256 a6222b5cc0ff9a9be6dfb519193ffa88f052afaa0e966cb5614b80d20e7d0640)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-425-2024.introduced.htm",
+      "sha256": "a6222b5cc0ff9a9be6dfb519193ffa88f052afaa0e966cb5614b80d20e7d0640"
+    },
+    "note": "As-filed text (introduced). No passage vote on file. SECTION 1 (HRS 134-5(c)) also changes hunting-transport wording (struck text omitted here). Subsection (b) and the definitions are the same in all three sections. Carried-over bill; same text as the other year."
+  },
+  "operative_text": "SECTION 2 (HRS 134-23): (b) If any person is carrying an unloaded firearm between the places allowed by subsection (a) in a motor vehicle, the firearm shall be located so as not to be readily or directly accessible from the passenger compartment of the vehicle or, if the firearm is being carried in a motor vehicle that does not have a compartment separate from the passenger compartment, the firearm shall be kept in an enclosed container that is locked, other than the glove compartment or console, and not in plain view.\nSECTION 3 (HRS 134-24): (b) If any person is carrying an unloaded firearm between the places allowed by subsection (a) in a motor vehicle, the firearm shall be located so as not to be readily or directly accessible from the passenger compartment of the vehicle or, if the firearm is being carried in a motor vehicle that does not have a compartment separate from the passenger compartment, the firearm shall be kept in an enclosed container that is locked, other than the glove compartment or console, and not in plain view.\nSECTION 4 (HRS 134-25): (b) If any person is carrying an unloaded firearm between the places allowed by subsection (a) in a motor vehicle, the firearm shall be located so as not to be readily or directly accessible from the passenger compartment of the vehicle or, if the firearm is being carried in a motor vehicle that does not have a compartment separate from the passenger compartment, the firearm shall be kept in an enclosed container that is locked, other than the glove compartment or console, and not in plain view.\nSECTION 2 (HRS 134-23): Any person violating this section by carrying or possessing a loaded firearm other than a pistol or revolver shall be guilty of a class B felony.\nSECTION 3 (HRS 134-24): Any person violating this section by carrying or possessing an unloaded firearm other than a pistol or revolver shall be guilty of a class C felony.\nSECTION 4 (HRS 134-25): Any person violating this section by carrying or possessing a loaded or unloaded pistol or revolver shall be guilty of a class B felony."
+}

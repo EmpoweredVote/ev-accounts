@@ -1,0 +1,192 @@
+{
+  "id": "HI-SB-308-2025",
+  "scope": "state:hi",
+  "title": "SB308 (2025 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=308&year=2025",
+    "https://data.capitol.hawaii.gov/sessions/session2025/bills/SB308_SD2_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-04",
+      "body": "HI Senate",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 5,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595565 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=308&year=2025#2025-03-04-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Angus McKelvey",
+          "vote": "yea",
+          "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+        },
+        {
+          "name": "Brandon Elefante",
+          "vote": "yea",
+          "politician_id": "e9eecfc6-7643-44d9-8c40-4cb69c89e625"
+        },
+        {
+          "name": "Carol Fukunaga",
+          "vote": "yea",
+          "politician_id": "88ca2dc9-8505-4d1f-bc5a-d458ed3b5c20"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Lynn DeCoite",
+          "vote": "yea",
+          "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Troy Hashimoto",
+          "vote": "yea",
+          "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+        },
+        {
+          "name": "Henry Aquino",
+          "vote": "yea"
+        },
+        {
+          "name": "Brenton Awa",
+          "vote": "nay",
+          "politician_id": "f5a2c01d-7cd4-4c03-ae45-33bdc2af8bf8"
+        },
+        {
+          "name": "Tim Richards",
+          "vote": "nay",
+          "politician_id": "7824026e-b669-4e39-9131-13e6c484b325"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "nay",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Samantha DeCorte",
+          "vote": "nay",
+          "politician_id": "3dcc200d-6b83-4b68-aa44-0ad2bc1e8f73"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 2, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/SB308_SD2_.HTM; sha256 31d24f2f1221359e7158ec276bef815964d24e9dbdbccaf85c80291108640a8f)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-308-2025.sd2.htm",
+      "sha256": "31d24f2f1221359e7158ec276bef815964d24e9dbdbccaf85c80291108640a8f"
+    },
+    "note": "Senate Draft 2. Effective 1/1/2026. Section 2 is a standalone grandfather clause, not an amendment of HRS 134-8 text. The first sentence of subsection (c) (ten-round pistol limit) is existing law with word edits and is not quoted. Amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 1 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any detachable ammunition magazine with a capacity in excess of thirty rounds that is designed for or capable of use with any firearm other than a pistol is prohibited.\nSECTION 2 (HRS 134-8): This Act shall not prohibit possession of a detachable ammunition magazine with a capacity in excess of thirty rounds that is designed for or capable of use with any firearm other than a pistol that was legally obtained prior to the effective date of this Act."
+}

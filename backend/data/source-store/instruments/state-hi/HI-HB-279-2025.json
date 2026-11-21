@@ -1,0 +1,129 @@
+{
+  "id": "HI-HB-279-2025",
+  "scope": "state:hi",
+  "title": "HB279 (2025 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=279&year=2025",
+    "https://data.capitol.hawaii.gov/sessions/session2025/bills/HB279_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Tarnas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Della Belatti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+    },
+    {
+      "name": "Luke Evslin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4b4071a9-15b2-4a5a-8c4f-24191d6ac8b8"
+    },
+    {
+      "name": "Tina Grandinetti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "50d713a3-189a-4b95-9686-e8d217aca93a"
+    },
+    {
+      "name": "Kim Coco Iwamoto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6b3f7941-64e6-4ff8-a8f0-2fdffe66f584"
+    },
+    {
+      "name": "Kirstin Kahaloa",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eb82520d-6d14-4c25-8bf7-f3c804b3ed03"
+    },
+    {
+      "name": "Darius Kila",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5f5728b8-3d4f-45dd-a1c4-c669bd040ade"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Scot Matayoshi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+    },
+    {
+      "name": "Tyson Miyake",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c502a335-c012-4bad-ae49-331dcac9ee70"
+    },
+    {
+      "name": "Ikaika Olds",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d74cb911-cfda-407d-aa2f-858738f6ad97"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Jackson Sayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d39cb33d-e229-41a8-8d4b-d55f98a1e000"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4fcc8590-73db-44cb-b467-a649cce10699"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2025/bills/HB279_.HTM; sha256 6196b6ec7a7dd8864cfa277edf071eeaf890de6dd89e72dfa9f22564ea417407)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-279-2025.introduced.htm",
+      "sha256": "6196b6ec7a7dd8864cfa277edf071eeaf890de6dd89e72dfa9f22564ea417407"
+    },
+    "note": "As filed (2025 print of the same text; identical to the other year). Sections 5-7 amend HRS 134-23, 134-24, 134-25 to add mandatory probation with prison terms of six months to one year; their penalty sentences contain struck words and are not quoted."
+  },
+  "operative_text": "SECTION 2 (new, HRS ch. 134): (a) Except as provided in sections 134-5 and 134-9, all firearm parts shall be confined to the possessor's place of business, residence, or sojourn; provided that it shall be lawful to carry firearm parts in an enclosed container from the place of purchase to the purchaser's place of business, residence, or sojourn, or between these places upon change of place of business, residence, or sojourn, or between these places and the following: (1) A place of repair; (2) A target range; (3) A licensed dealer's place of business; (4) An organized, scheduled firearms show or exhibit; (5) A place of formal hunter or firearm use training or instruction; or (6) A police station. (b) Any person violating this section by carrying or possessing three or more firearm parts shall be guilty of a misdemeanor; provided that any felon or prohibited person violating this section shall be guilty of a class B felony; provided further that any felon or prohibited person convicted under this section shall be sentenced to a term of probation of four years, with conditions to include a term of imprisonment of not less than one year without possibility of suspension of sentence.\nSECTION 3 (HRS 134-1): \"Firearm parts\" means any item that is specifically designed for or adapted for use in creating a firearm, including the barrel, bolt, slide, frame, receiver, trigger, hammer, firing pin, cylinder, magazine, or any other part necessary for a firearm to operate. \"Prohibited person\" means any person who cannot lawfully possess a firearm as defined by section 134-7(a) and (b).\nSECTION 4 (HRS 134-8(b)): (b) Any person who possesses, installs, removes, or alters a firearm part with the intent to convert the firearm to an automatic firearm, regardless of whether the conversion is readily reversible, shall be deemed to have manufactured an automatic firearm in violation of subsection (a)."
+}

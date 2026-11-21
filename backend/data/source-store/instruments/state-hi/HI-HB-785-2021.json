@@ -1,0 +1,105 @@
+{
+  "id": "HI-HB-785-2021",
+  "scope": "state:hi",
+  "title": "HB785 (2021 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=785&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/HB785_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Takashi Ohno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sonny Ganaden",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Troy Hashimoto",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+    },
+    {
+      "name": "Daniel Holt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Matthew S. LoPresti",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Scot Matayoshi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+    },
+    {
+      "name": "Richard Onishi",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jackson Sayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d39cb33d-e229-41a8-8d4b-d55f98a1e000"
+    },
+    {
+      "name": "Tina Wildberger",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nadine K. Nakamura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a78d5716-4397-4a95-944d-f5e32d38f6dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/HB785_.HTM; sha256 62ee6a0b631da46efc6ecf726e7793c512effb03850434aa4fffc6e1d84b089b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-785-2021.introduced.htm",
+      "sha256": "62ee6a0b631da46efc6ecf726e7793c512effb03850434aa4fffc6e1d84b089b"
+    },
+    "note": "As-filed text. Intoxication defined by impairment or .08 breath/blood alcohol. Same text in 2021 and 2022 files."
+  },
+  "operative_text": "SECTION 1 (new §134-): It shall be unlawful for a person to possess a loaded firearm while the person is intoxicated.\nSECTION 1 (new §134-): Any person violating this section shall be guilty of a petty misdemeanor.\nSECTION 1 (new §134-): A person is in possession of a loaded firearm when the person has immediate physical control over a loaded firearm and the person is outside of the person's dwelling as defined in section 703-300; and"
+}

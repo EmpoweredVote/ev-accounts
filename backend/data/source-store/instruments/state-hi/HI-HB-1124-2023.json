@@ -1,0 +1,97 @@
+{
+  "id": "HI-HB-1124-2023",
+  "scope": "state:hi",
+  "title": "HB1124 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1124&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/HB1124_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Della Belatti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7fb0c498-7788-4dd2-b56b-142ddc84c39f"
+    },
+    {
+      "name": "Sonny Ganaden",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Garrett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5c9e11-5718-4d6a-b063-d580a7b350b4"
+    },
+    {
+      "name": "Cedric Gates",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Mahina Poepoe",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8a4be9c7-3441-4b55-9b49-773748761897"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/HB1124_.HTM; sha256 de14af02c78d1681d539db95a4dcd9dd59bdfbcfbc694d91afa2375399be9c96)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1124-2023.introduced.htm",
+      "sha256": "de14af02c78d1681d539db95a4dcd9dd59bdfbcfbc694d91afa2375399be9c96"
+    },
+    "note": "As-filed text. The bill raises required classroom hours in HRS 134-2(g)(4) from four to fourteen (the struck word \"four\" is not quoted; the paragraph lead-in is bracketed so is omitted). No passage vote on file."
+  },
+  "operative_text": "SECTION 1 (HRS 134-2): Effective July 1, 1995, no person shall be issued a permit under this section for the acquisition of a pistol or revolver unless the person, at any time prior to the issuance of the permit, has completed:\nSECTION 1 (HRS 134-2): (C) Situational awareness; (D) Best practices when encountering law enforcement; (E) Conflict de-escalation; (F) Use of deadly force; (G) Suicide prevention; and (H) The basic principles of marksmanship.\nSECTION 2 (HRS 134-9): The chief of police of each county shall adopt procedures to require that any person granted a license to carry a concealed weapon on the person shall:\nSECTION 2 (HRS 134-9): (3) Be required to demonstrate proficiency by scoring a minimum of eighty per cent correct answers on a written test for the curriculum required in section 134-2(g)(4);\nSECTION 2 (HRS 134-9): (4) Be required to demonstrate that the applicant is of good moral character and sufficient mental competence by:\nSECTION 2 (HRS 134-9): (A) Participating in an in person interview with the chief of police of the appropriate county, or the chief's designated representative;\nSECTION 2 (HRS 134-9): (B) Providing the names and contact information for the applicant's current spouse, domestic partner, and any other adults residing in the applicant's home, including any adult children of the applicant;\nSECTION 2 (HRS 134-9): (D) Providing names and contact information of not less than four character references who can attest to the applicant's good moral character and that the applicant has not engaged in any acts or made any statements that suggest they are likely to engage in conduct that would result in harm to themselves or others;\nSECTION 2 (HRS 134-9): (E) Providing a list of former and current social media accounts of the applicant from the past three years to confirm the information regarding the applicant's character and conduct; and"
+}

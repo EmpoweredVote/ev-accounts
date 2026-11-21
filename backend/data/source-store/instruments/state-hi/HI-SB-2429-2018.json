@@ -1,0 +1,60 @@
+{
+  "id": "HI-SB-2429-2018",
+  "scope": "state:hi",
+  "title": "SB2429 (2018 Regular): RELATING TO GUARDS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2429&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2429_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Will Espero",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2429_.HTM; sha256 563c671d4a80761a045058ede3b0462a29f88dc51a534766ff67f7a98ef7351f)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2429-2018.introduced.htm",
+      "sha256": "563c671d4a80761a045058ede3b0462a29f88dc51a534766ff67f7a98ef7351f"
+    },
+    "note": "Introduced text. The rest of the bill (prior-employment background checks, agency disclosures in SECTIONS 1-3) supports the firearm bar and is not quoted. Amendments after filing are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 463-8): (6) If granted a license, have a restriction placed on the individual's license that prevents the individual from possessing a firearm in the course of employment if the individual has been discharged from employment as a law enforcement officer due to poor employment standing; and\nSECTION 2 (HRS 463-8): (4) Be prohibited from possessing a firearm in the course of employment if the individual has been discharged from employment as a law enforcement officer due to poor employment standing; and\nSECTION 4 (HRS 463-10.5): (5) Agree to refrain from possessing a firearm in the course of employment if the individual has been discharged from employment as a law enforcement officer due to poor employment standing."
+}

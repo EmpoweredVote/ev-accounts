@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-2151-2020",
+  "scope": "state:hi",
+  "title": "SB2151 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2151&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2151_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2151_.HTM; sha256 9eaa3d4624925d4331755697cd165ac688dc110882f13adb7d211c0cf25a05d7)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2151-2020.introduced.htm",
+      "sha256": "9eaa3d4624925d4331755697cd165ac688dc110882f13adb7d211c0cf25a05d7"
+    },
+    "note": "As-filed text (introduced). SECTION 2 is a new section. SECTION 4 also revises registration details (serial and registration numbers on assembled guns, dealer registration of unfinished receivers), not all quoted; it strikes 'permit' before 'registration number' and 'and' in a federal agency name."
+  },
+  "operative_text": "SECTION 2 (new): A person who is not licensed to manufacture a firearm under section 134-31, or who is not a dealer licensed by the United States Department of Justice, shall not, for the purpose of assembling a firearm, purchase, produce with a three-dimensional printer, or otherwise obtain separately, or as part of a kit: (1) A firearm receiver that is not imprinted with a serial number registered with a federally licensed manufacturer; (2) A firearm receiver that has not been provided a serial number that may be registered in accordance with section 134-3(c); or (3) Any combination of parts from which a firearm having no serial number may be readily assembled; provided that the parts do not have the capacity to function as a firearm unless assembled.\nSECTION 2 (new): Violation of this section is a class C felony.\nSECTION 3 (HRS 134-1): \"Ghost gun\" means a firearm that is assembled without a serial number or other identification marking.\nSECTION 4 (HRS 134-3): Any sale or transfer of unfinished firearm receivers by an authorized dealer to a third party shall be conducted as if they were fully assembled firearms with a serial number engraved on the firearm receiver and in accordance with the firearms permitting process in section 134-2."
+}

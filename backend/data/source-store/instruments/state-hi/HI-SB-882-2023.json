@@ -1,0 +1,63 @@
+{
+  "id": "HI-SB-882-2023",
+  "scope": "state:hi",
+  "title": "SB882 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=882&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB882_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB882_.HTM; sha256 e1ccb3356bb98147d8866593557e15318795e932688a2df7e68cd929731a4faf)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-882-2023.introduced.htm",
+      "sha256": "e1ccb3356bb98147d8866593557e15318795e932688a2df7e68cd929731a4faf"
+    },
+    "note": "Version read: introduced (as filed). Text is identical to the other year of the biennium apart from the heading. SECTION 1 raises classroom instruction from four to fourteen hours (the sentence runs across struck \"four\", so it is not quoted; quoted lines are the added course topics). SECTION 2 also requires spouse/adult contact names, minors in the home, four character references and a three-year social media account list (items B-F, not quoted for length). No passage vote is recorded; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 1 (HRS 134-2(g)(4)): (C) Situational awareness; (D) Best practices when encountering law enforcement; (E) Conflict de-escalation; (F) Use of deadly force; (G) Suicide prevention; and (H) The basic principles of marksmanship.\nSECTION 2 (HRS 134-9(b)): (3) Be required to demonstrate proficiency by scoring a minimum of eighty per cent correct answers on a written test for the curriculum required in section 134-2(g)(4); (A) Participating in an in person interview with the chief of police of the appropriate county, or the chief's designated representative;"
+}

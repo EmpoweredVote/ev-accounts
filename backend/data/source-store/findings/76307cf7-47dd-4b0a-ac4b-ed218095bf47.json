@@ -1,0 +1,238 @@
+{
+  "politician_id": "76307cf7-47dd-4b0a-ac4b-ed218095bf47",
+  "findings": [
+    {
+      "id": "527037881767dd8244c4804e3a21ea048869dbd5af2ae5984879e41c967e4447",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=459&year=2017",
+      "date": "2017-05-02",
+      "date_precision": "day",
+      "instrument_id": "HI-HB-459-2017",
+      "act": "yea",
+      "motion": "Senate Passed Final Reading, as amended (CD 1), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Passed Final Reading, as amended (CD 1), passed, 2017-05-02: yea (tally 25–0); census gate: near-unanimous.",
+      "subjects": [
+        "written notice to prosecutors, courts and parole officers when a gun permit is denied"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Conference Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/HB459_CD1_.HTM; sha256 363bc2b6a2ae4b4fa0ef30c20098051c21991011df8319b0457aea66aae98c72)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-459-2017.cd1.htm",
+          "sha256": "363bc2b6a2ae4b4fa0ef30c20098051c21991011df8319b0457aea66aae98c72"
+        }
+      }
+    },
+    {
+      "id": "456c8a6c675552065885bb70eabd137e7ca53ec65ecf5bd1276678128126766f",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1036&year=2017",
+      "date": "2017-03-07",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-1036-2017",
+      "act": "yea",
+      "motion": "Senate Report adopted; Passed Third Reading, as amended (SD 2), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Report adopted; Passed Third Reading, as amended (SD 2), passed, 2017-03-07: yea (tally 25–0); census gate: near-unanimous.",
+      "subjects": [
+        "registration duty continues after the five-day deadline",
+        "no penalty for late registration of a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/SB1036_SD1_.HTM; sha256 e9d70495336c7720a7c310993de228632ef1d1018abb0e44b75c14300edcdf90)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1036-2017.sd1.htm",
+          "sha256": "e9d70495336c7720a7c310993de228632ef1d1018abb0e44b75c14300edcdf90"
+        }
+      }
+    },
+    {
+      "id": "5857a9f05cf81b20ddb912c36c80faa56d94830ee338f3b17d5b5dc612871cfc",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1037&year=2017",
+      "date": "2017-03-07",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-1037-2017",
+      "act": "yea",
+      "motion": "Senate Report adopted; Passed Third Reading, as amended (SD 2), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Report adopted; Passed Third Reading, as amended (SD 2), passed, 2017-03-07: yea (tally 25–0); census gate: near-unanimous.",
+      "subjects": [
+        "notice to agencies, courts and probation officers when a firearm permit is denied"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/SB1037_SD1_.HTM; sha256 a7eec9a44ad75e8b399868745f17453bd55d82e63192ad249aba2ee84809b68c)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1037-2017.sd1.htm",
+          "sha256": "a7eec9a44ad75e8b399868745f17453bd55d82e63192ad249aba2ee84809b68c"
+        }
+      }
+    },
+    {
+      "id": "6e5e70cfb36d9d1d2ae9d98dc036e3f76abedf7ef3c014b58306ecd45a6430d8",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2046&year=2018",
+      "date": "2018-04-25",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-2046-2018",
+      "act": "yea",
+      "motion": "Senate Passed Final Reading, passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Passed Final Reading, passed, 2018-04-25: yea (tally 24–0); census gate: near-unanimous.",
+      "subjects": [
+        "ban on bump fire stocks, multiburst trigger activators and trigger cranks",
+        "class C felony for making, selling or possessing them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2046_HD1_.HTM; sha256 802e822a156051e458473a74eb1ff3066949a7e65e2ab450942b84c5cdb4b459)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2046-2018.hd1.htm",
+          "sha256": "802e822a156051e458473a74eb1ff3066949a7e65e2ab450942b84c5cdb4b459"
+        }
+      }
+    },
+    {
+      "id": "b6deb1fbebf753b2cd6ea3bf8c72e7484fb1e7bb41f585e476a9a73454365a9f",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2436&year=2018",
+      "date": "2018-05-01",
+      "date_precision": "day",
+      "instrument_id": "HI-SB-2436-2018",
+      "act": "yea",
+      "motion": "Senate Passed Final Reading, as amended (CD 1), passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "HI Senate, Senate Passed Final Reading, as amended (CD 1), passed, 2018-05-01: yea (tally 25–0); census gate: near-unanimous.",
+      "subjects": [
+        "seven-day deadline to surrender or dispose of guns after disqualification",
+        "police seizure of guns not surrendered"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Conference Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2436_CD1_.HTM; sha256 edae661b42ee338e81845eeb83debbd840f40fd6dd30c0578b34b1624c67cb14)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2436-2018.cd1.htm",
+          "sha256": "edae661b42ee338e81845eeb83debbd840f40fd6dd30c0578b34b1624c67cb14"
+        }
+      }
+    },
+    {
+      "id": "b5f704d0e16690a5398e0c3756071c51c6ff42d930f6a0ad0711d2edc8e44d09",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2265&year=2018",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "HI-SB-2265-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of HI-SB-2265-2018 (Open States sponsor list): SB2265 (2018 Regular): RELATING TO FIREARMS..",
+      "subjects": [
+        "firearm registration renewed every five years",
+        "ban on bump stocks, gat cranks and lighter trigger mechanisms",
+        "ban on flash suppressors and overheat-reduction modifications"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2265_.HTM; sha256 b127e0cd77865174e86990535458a6ae9f5353621fe88ea289d00d82cf652372)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2265-2018.introduced.htm",
+          "sha256": "b127e0cd77865174e86990535458a6ae9f5353621fe88ea289d00d82cf652372"
+        }
+      }
+    },
+    {
+      "id": "75f6b62efdcf188734e7dd8703fa041b2a66bb1a465fc48ffb2d04b62f7fa561",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=280&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "HI-SB-280-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of HI-SB-280-2017 (Open States sponsor list): SB280 (2017 Regular): RELATING TO FIREARMS..",
+      "subjects": [
+        "no guns or ammunition for people on the federal terrorist watchlist",
+        "disqualified owners must surrender or dispose of firearms",
+        "penalties for violating the new ban (class C felony)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/SB280_.HTM; sha256 85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-280-2017.introduced.htm",
+          "sha256": "85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085"
+        }
+      }
+    },
+    {
+      "id": "4d5a1d4ca65cdb7533d12361553a3a81ab36df69955656ad0cf34938e1b9ebd2",
+      "kind": "record",
+      "url": "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=280&year=2018",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "HI-SB-280-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of HI-SB-280-2018 (Open States sponsor list): SB280 (2018 Regular): RELATING TO FIREARMS..",
+      "subjects": [
+        "no guns or ammunition for people on the federal terrorist watchlist",
+        "disqualified owners must surrender or dispose of firearms",
+        "penalties for violating the new ban (class C felony)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB280_.HTM; sha256 85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085)",
+        "fetched_at": "2026-11-21T20:03:54.952954Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-280-2018.introduced.htm",
+          "sha256": "85c5d4d7c92512f3b7ae918b9f7698eb61eb471052c1b754ca8fb7fc29d14085"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

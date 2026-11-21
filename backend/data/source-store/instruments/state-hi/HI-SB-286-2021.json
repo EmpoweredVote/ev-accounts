@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-286-2021",
+  "scope": "state:hi",
+  "title": "SB286 (2021 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=286&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/SB286_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/SB286_.HTM; sha256 88bb2ca98d0e3ce37a6a09b743e20c5e264f067a071ff11002d3123355e1bcef)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-286-2021.introduced.htm",
+      "sha256": "88bb2ca98d0e3ce37a6a09b743e20c5e264f067a071ff11002d3123355e1bcef"
+    },
+    "note": "As-filed SB 286 (2021); text identical in both years. The quoted sentence is the changed part of HRS 134-2(e) per the bill's Description (notice to the Terrorist Screening Center). Amendments after introduction are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2): The issuing authority shall perform an inquiry on an applicant by using the International Justice and Public Safety Network, including the United States Immigration and Customs Enforcement query, the National Crime Information Center, and the National Instant Criminal Background Check System, pursuant to section 846-2.7, and shall inform the Federal Bureau of Investigation's Terrorist Screening Center of the application, before any determination to issue a permit or to deny an application is made."
+}

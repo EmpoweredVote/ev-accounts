@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-3349-2022",
+  "scope": "state:hi",
+  "title": "SB3349 (2022 Regular): RELATING TO FIREARMS LICENSES.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3349&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB3349_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kurt Fevella",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB3349_.HTM; sha256 678dbfafa64ac89ffd2e020ac1609871bab16e5c14f8227ec3d8ae5724346107)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-3349-2022.introduced.htm",
+      "sha256": "678dbfafa64ac89ffd2e020ac1609871bab16e5c14f8227ec3d8ae5724346107"
+    },
+    "note": "As-filed. The bill replaces \"may\" with \"shall\" (struck \"may\") in the first two sentences of 134-9(a), which carry struck words and are not quoted; the quoted sentences are existing text of the same subsection. No passage vote."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): The chief of police of the appropriate county, or the chief's designated representative, shall perform an inquiry on an applicant by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made. Unless renewed, the license shall expire one year from the date of issue."
+}

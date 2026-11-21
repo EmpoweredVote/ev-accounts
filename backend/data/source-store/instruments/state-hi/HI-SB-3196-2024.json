@@ -1,0 +1,202 @@
+{
+  "id": "HI-SB-3196-2024",
+  "scope": "state:hi",
+  "title": "SB3196 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3196&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB3196_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-03-05",
+      "body": "HI Senate",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 1), passed",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 8,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595558 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3196&year=2024#2024-03-05-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Carol Fukunaga",
+          "vote": "yea",
+          "politician_id": "88ca2dc9-8505-4d1f-bc5a-d458ed3b5c20"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Brandon Elefante",
+          "vote": "yea",
+          "politician_id": "e9eecfc6-7643-44d9-8c40-4cb69c89e625"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Henry Aquino",
+          "vote": "yea"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Troy Hashimoto",
+          "vote": "yea",
+          "politician_id": "027b4e6e-109e-40c2-87da-9970e0c05723"
+        },
+        {
+          "name": "Angus McKelvey",
+          "vote": "nay",
+          "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+        },
+        {
+          "name": "Brenton Awa",
+          "vote": "nay",
+          "politician_id": "f5a2c01d-7cd4-4c03-ae45-33bdc2af8bf8"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "nay",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Tim Richards",
+          "vote": "nay",
+          "politician_id": "7824026e-b669-4e39-9131-13e6c484b325"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Lorraine Inouye",
+          "vote": "nay",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Lynn DeCoite",
+          "vote": "nay",
+          "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "nay",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB3196_SD1_.HTM; sha256 54e8b8ce9491f6e7d900bb60bec6ce7878aaaf65261377abafba8882da50d07c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-3196-2024.sd1.htm",
+      "sha256": "54e8b8ce9491f6e7d900bb60bec6ce7878aaaf65261377abafba8882da50d07c"
+    },
+    "note": "Version read is Senate Draft 1 (SD1); the Senate passed it 17-8 on 2024-03-05 and amendments made after the version read are not in the text read. Effective date printed as April 14, 2112 (placeholder). SECTION 2 also amends the definition of \"assault pistol\" and adds \"assault rifle\"/\"assault shotgun\" definitions; those and the penalty sentence in 134-8(e), which carries struck words, are not quoted. 134-8(c) is quoted nowhere because it carries struck words."
+  },
+  "operative_text": "SECTION 2 (HRS 134-1): \"Assault weapon attachment\" means any device capable of being attached to a firearm that is specifically designed for making or converting a firearm into an assault pistol, assault rifle, or assault shotgun.\nSECTION 3 (HRS 134-4): (f) After July 8, 2024, except as provided by section 134-8(e), no person shall bring or cause to be brought into the State a .50 caliber rifle or assault weapon attachment. No .50 caliber rifle or assault weapon attachment shall be sold or transferred on or after July 8, 2024, to anyone within the State, other than to a dealer licensed under section 134-32 or the chief of police of any county, except as provided by section 134-8(e); provided that any person who obtains title by bequest or intestate succession to a .50 caliber rifle registered within the State shall, within ninety days, render the weapon permanently inoperable, sell or transfer the weapon to a licensed dealer or the chief of police of any county, or remove the weapon from the State.\nSECTION 4 (HRS 134-8): (d) The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of detachable ammunition magazines with a capacity in excess of twenty rounds that are designed for or capable of use with any firearm other than a pistol is prohibited. This subsection shall not apply to magazines originally designed to accept more than twenty rounds of ammunition which have been modified to accept no more than twenty rounds and which are not capable of being readily restored to a capacity of more than twenty rounds.\nSECTION 4 (HRS 134-8): (f) The provisions of this section regarding the acquisition and possession of assault pistols, .50 caliber rifles, assault weapon attachments, and detachable ammunition magazines with a capacity in excess of ten rounds or twenty rounds, as applicable, shall not apply to a person in an exempt category identified in section 134-11."
+}

@@ -1,0 +1,60 @@
+{
+  "id": "HI-SB-1321-2019",
+  "scope": "state:hi",
+  "title": "SB1321 (2019 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1321&year=2019",
+    "https://data.capitol.hawaii.gov/sessions/session2019/bills/SB1321_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kurt Fevella",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+    },
+    {
+      "name": "Donna Kim",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2019/bills/SB1321_.HTM; sha256 1a474b53b95f120f06746020ba77bbb0d551b35dc6e8a0cdd040ecfcc2e102b7)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1321-2019.introduced.htm",
+      "sha256": "1a474b53b95f120f06746020ba77bbb0d551b35dc6e8a0cdd040ecfcc2e102b7"
+    },
+    "note": "As-filed text. Quotes omit the periods the bill strikes. No passage vote on file."
+  },
+  "operative_text": "SECTION 1 (HRS 134-3(a)): Every person arriving in the State who brings or by any other manner causes to be brought into the State a firearm of any description, whether usable or unusable, serviceable or unserviceable, modern or antique, shall register the firearm within five days after arrival of the person or of the firearm, whichever arrives later, with the chief of police of the county of the person's place of business or, if there is no place of business, the person's residence or, if there is neither a place of business nor residence, the person's place of sojourn; provided that the duty to register the firearm shall be an ongoing one, and failure to register the firearm within five days of arrival shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 1 (HRS 134-3(b)): Every person who acquires a firearm pursuant to section 134-2 shall register the firearm in the manner prescribed by this section within five days of acquisition; provided that the duty to register the firearm shall be an ongoing one, and failure to register the firearm within five days of acquisition shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 2 (HRS 134-17(b)): Any person who violates section 134-3(a) shall be guilty of a petty misdemeanor; provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(a).\nSECTION 2 (HRS 134-17(d)): Any person who violates section 134-3(b) shall be guilty of a petty misdemeanor and the firearm shall be confiscated as contraband and disposed of, if the firearm is not registered within five days of the person receiving notice of the violation; provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(b)."
+}

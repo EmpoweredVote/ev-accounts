@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-257-2021",
+  "scope": "state:hi",
+  "title": "HB257 (2021 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=257&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/HB257_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Linda Ichiyama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bcce79fe-627b-491f-add3-415b40f90469"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/HB257_.HTM; sha256 d73c30f403ab9425e59891cc8ac6de49cc7137c9d3291a0b89b24c0c799487b6)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-257-2021.introduced.htm",
+      "sha256": "d73c30f403ab9425e59891cc8ac6de49cc7137c9d3291a0b89b24c0c799487b6"
+    },
+    "note": "Introduced version as filed; no passage vote on file. The core change (strikes the state criminal-justice-data-center and rap back checks, leaving the federal instant check; strikes county police authority in 846-2.7(b)(43)) is described in the bill's Description; quotes are unchanged-looking sentences from the amended sections because the changed sentences run across struck text."
+  },
+  "operative_text": "SECTION 1 (HRS 134-2): Permits issued to acquire any pistol or revolver shall be void unless used within ten days after the date of issue. Permits to acquire a pistol or revolver shall require a separate application and permit for each transaction.\nSECTION 2 (HRS 134-3): Every person who acquires a firearm pursuant to section 134-2 shall register the firearm in the manner prescribed by this section within five days of acquisition."
+}

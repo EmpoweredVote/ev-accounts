@@ -1,0 +1,207 @@
+{
+  "id": "HI-SB-2406-2020",
+  "scope": "state:hi",
+  "title": "SB2406 (2020 Regular): RELATING TO EXPLOSION DETECTION TECHNOLOGY.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2406&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2406_HD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Kurt Fevella",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Russell E. Ruderman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Donna Kim",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+    },
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "surveillance-technology: SECTION 2 — study of deploying acoustic explosion/gunshot detection technology to police"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-03-03",
+      "body": "HI Senate",
+      "motion": "Senate Report Adopted; Passed Third Reading, as amended (SD 2), passed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 0,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595502 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2406&year=2020#2020-03-03-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Breene Harimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Kaiali‘i Kahele",
+          "vote": "yea",
+          "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "yea",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Laura H. Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "yea",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell E. Ruderman",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2406_HD1_.HTM; sha256 6aace025dd2c9f9e84903f4a35eee66b7cd66f93074f7566b360428a289c6cf3)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2406-2020.hd1.htm",
+      "sha256": "6aace025dd2c9f9e84903f4a35eee66b7cd66f93074f7566b360428a289c6cf3"
+    },
+    "note": "House Draft 1, effective 7/1/2050 (placeholder date). Borderline gun_policy: a feasibility study of gunshot-detection tech that also covers illegal fireworks. Amendments after HD1 are not in the text read."
+  },
+  "operative_text": "SECTION 2 (new, uncodified): (a) The police department of each county having a population of more than five hundred thousand shall create a working group to study the feasibility of purchasing and deploying explosion detection technology for the purpose of assisting in locating and responding to explosions caused by the illegal use of firearms and fireworks."
+}

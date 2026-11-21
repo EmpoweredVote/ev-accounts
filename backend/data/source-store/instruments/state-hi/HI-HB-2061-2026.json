@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-2061-2026",
+  "scope": "state:hi",
+  "title": "HB2061 (2026 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2061&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/HB2061_HD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Nadine Nakamura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a78d5716-4397-4a95-944d-f5e32d38f6dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/HB2061_HD1_.HTM; sha256 6bd7652c40df082eb4b470544c3fd36dea584925479bf05f3957d4ad1aafd8f5)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2061-2026.hd1.htm",
+      "sha256": "6bd7652c40df082eb4b470544c3fd36dea584925479bf05f3957d4ad1aafd8f5"
+    },
+    "note": "House Draft 1. Dollar amount is blank in the text. Effective July 1, 3000 (a placeholder date). Amendments after HD1 are not in the text read; the file lists no passage vote."
+  },
+  "operative_text": "SECTION 2 (appropriation, no HRS): There is appropriated out of the general revenues of the State of Hawaii the sum of $ or so much thereof as may be necessary for fiscal year 2026-2027 to support the State's gun buyback program, including at least two gun buyback events in each county.\nSECTION 2 (appropriation, no HRS): The sum appropriated shall be expended by the department of law enforcement for the purposes of this Act."
+}

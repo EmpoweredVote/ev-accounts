@@ -1,0 +1,207 @@
+{
+  "id": "HI-SB-1037-2017",
+  "scope": "state:hi",
+  "title": "SB1037 (2017 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1037&year=2017",
+    "https://data.capitol.hawaii.gov/sessions/session2017/bills/SB1037_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "INOUYE",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kaiali‘i Kahele",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-03-07",
+      "body": "HI Senate",
+      "motion": "Senate Report adopted; Passed Third Reading, as amended (SD 2), passed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 0,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595455 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1037&year=2017#2017-03-07-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Breene Harimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Brickwood Galuteria",
+          "vote": "yea",
+          "politician_id": "11e54ca2-ac74-4c4c-b9ea-3b68bb89f5d2"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jill N. Tokuda",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Green",
+          "vote": "yea",
+          "politician_id": "76307cf7-47dd-4b0a-ac4b-ed218095bf47"
+        },
+        {
+          "name": "Kaiali‘i Kahele",
+          "vote": "yea",
+          "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Laura H. Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "yea",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell E. Ruderman",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Will Espero",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/SB1037_SD1_.HTM; sha256 a7eec9a44ad75e8b399868745f17453bd55d82e63192ad249aba2ee84809b68c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1037-2017.sd1.htm",
+      "sha256": "a7eec9a44ad75e8b399868745f17453bd55d82e63192ad249aba2ee84809b68c"
+    },
+    "note": "Senate Draft 1 (SD1) read; the summary describes an SD2, and the bill passed the Senate 25-0 as SD2 on 2017-03-07, so later amendments are not in the text read. In the text read, the time limits in new HRS 134-2(j) ('within , shall send notice') are blank, so those two paragraphs (notice of denial to the county prosecutor, attorney general, U.S. Attorney and public safety department; and to the court that issued a protective order under 134-7(f)) are described here rather than quoted. Heading names the text effective date May 22, 2050 (placeholder)."
+  },
+  "operative_text": "SECTION 1 (HRS 134-2(j)): Whenever the department of public safety receives notice that an applicant has been denied a permit because of a prior criminal conviction, the department shall determine whether the applicant is currently serving a term of probation or parole and, if the applicant is serving such a term, send notice of the denial to the applicant's probation or parole officer."
+}

@@ -1,0 +1,167 @@
+{
+  "id": "HI-SB-301-2021",
+  "scope": "state:hi",
+  "title": "SB301 (2021 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=301&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/SB301_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-03-09",
+      "body": "HI Senate",
+      "motion": "Senate Passed Third Reading, as amended (SD 1), passed",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 6,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595509 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=301&year=2021#2021-03-09-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Bennette E. Misalucha",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Lee",
+          "vote": "yea",
+          "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Dru Kanuha",
+          "vote": "yea",
+          "politician_id": "804ffc14-005b-4a15-92a1-6550554f1a89"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jarrett Keohokalole",
+          "vote": "yea",
+          "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+        },
+        {
+          "name": "Joy San Buenaventura",
+          "vote": "yea",
+          "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Sharon Moriwaki",
+          "vote": "yea",
+          "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "nay"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "nay",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "Kurt Fevella",
+          "vote": "nay",
+          "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+        },
+        {
+          "name": "Laura Acasio",
+          "vote": "nay"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "nay",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/SB301_SD1_.HTM; sha256 3e8cadb1b359106d3aa941def4101332ce4594ead33b7ffecc049a445714e97a)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-301-2021.sd1.htm",
+      "sha256": "3e8cadb1b359106d3aa941def4101332ce4594ead33b7ffecc049a445714e97a"
+    },
+    "note": "Senate Draft 1 of SB 301 (2021 session), not the as-filed text. First quoted sentence is joined across struck words ('The', 'which', 'a pistol'), which the bill removes; the quote omits them. The Senate passed it on third reading as amended (SD 1) on 2021-03-09, 19-6; amendments made after the version read are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8(c)): Except as provided in section 134-11, the manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of detachable ammunition magazines with a capacity in excess of ten rounds that are designed for or capable of use with any firearm is prohibited.\nSECTION 2 (HRS 134-8(c)): This subsection shall not apply to magazines originally designed to accept more than ten rounds of ammunition which have been modified to accept no more than ten rounds and which are not capable of being readily restored to a capacity of more than ten rounds."
+}

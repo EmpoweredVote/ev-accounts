@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1810-2024",
+  "scope": "state:hi",
+  "title": "HB1810 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1810&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/HB1810_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Hashem",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f951e14c-168e-42c9-a6ff-d18788a35eff"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/HB1810_.HTM; sha256 5cfa9db92dc1e96175ea3373f8575e1d23f4ffb11a472bd688716edc662d41ae)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1810-2024.introduced.htm",
+      "sha256": "5cfa9db92dc1e96175ea3373f8575e1d23f4ffb11a472bd688716edc662d41ae"
+    },
+    "note": "As-filed text; per the Description the age-21 sale and possession bans are the new rules. Section 3 also letters/renumbers later subsections of 134-7 and adds subsection (g) to the misdemeanor list."
+  },
+  "operative_text": "SECTION 2 (new, HRS ch. 134): No person shall knowingly sell, offer to sell, distribute, or otherwise transfer ammunition for any firearm to any person who is under the age of twenty-one.\nSECTION 2 (new, HRS ch. 134): Any person violating subsection (a) shall be guilty of a misdemeanor.\nSECTION 3 (HRS 134-7): (g) No person who is less than twenty-one years of age shall own, possess, or control any ammunition for any firearm; provided that this subsection shall not apply to:\nSECTION 3 (HRS 134-7): (1) Law enforcement officers as defined in section 701-118;\nSECTION 3 (HRS 134-7): (3) Members of the armed services or reserve forces of the United States or the Hawaii National Guard, while performing their official duties or while traveling to or from their places of duty."
+}

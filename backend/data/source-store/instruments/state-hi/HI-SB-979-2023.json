@@ -1,0 +1,51 @@
+{
+  "id": "HI-SB-979-2023",
+  "scope": "state:hi",
+  "title": "SB979 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=979&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/SB979_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/SB979_.HTM; sha256 b1b41d2ae3ac1a1781a758e322da9e4ffbea1ba99c41d9013aff18dfdad6903c)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-979-2023.introduced.htm",
+      "sha256": "b1b41d2ae3ac1a1781a758e322da9e4ffbea1ba99c41d9013aff18dfdad6903c"
+    },
+    "note": "As filed. Adds a new section to HRS chapter 134. No passage vote on file; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 1 (new): (a) No person shall be granted a license to carry under section 134-9 unless the person, at any time prior to the granting of the license, has completed a firearms skills assessment, safety course, and education course. (b) The requirements under this section shall be in addition to the education and safety or training course prerequisites for a permit to acquire under section 134-2(g)."
+}

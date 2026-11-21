@@ -1,0 +1,74 @@
+{
+  "id": "HI-SB-3212-2026",
+  "scope": "state:hi",
+  "title": "SB3212 (2026 Regular): RELATING TO DETACHABLE AMMUNITION MAGAZINES.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3212&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB3212_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "C.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Tim Richards",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7824026e-b669-4e39-9131-13e6c484b325"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB3212_.HTM; sha256 3856b7d52d68cc0e14484213df79f6dd17b8871b0fb6af0aca95579db95601a3)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-3212-2026.introduced.htm",
+      "sha256": "3856b7d52d68cc0e14484213df79f6dd17b8871b0fb6af0aca95579db95601a3"
+    },
+    "note": "As-filed version. The bill restates all of HRS 134-8 as printed; only subsection (d) is described by the Description as new. Subsection (e) (relettered from (d), carries a codifier bracket) penalizes violations of (c) or (d) as a misdemeanor, or a class C felony if the magazine is inserted in a firearm; not quoted."
+  },
+  "operative_text": "SECTION 1 (HRS 134-8): (d) The use of a detachable ammunition magazine possessing a capacity in excess of fifty rounds with any firearm, except a pistol, shall be prohibited; provided that the use of a detachable ammunition magazine with a pistol shall be in accordance with subsection (c); provided further that this subsection shall not apply to ammunition magazines originally designed to accept more than fifty rounds of ammunition that: (1) Have been modified to have a capacity of less than fifty rounds; and (2) Are not capable of being readily restored to a capacity in excess of fifty rounds."
+}

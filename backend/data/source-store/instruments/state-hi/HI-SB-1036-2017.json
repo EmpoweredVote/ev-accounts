@@ -1,0 +1,213 @@
+{
+  "id": "HI-SB-1036-2017",
+  "scope": "state:hi",
+  "title": "SB1036 (2017 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1036&year=2017",
+    "https://data.capitol.hawaii.gov/sessions/session2017/bills/SB1036_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michelle Kidani",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kaiali‘i Kahele",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lorraine R. Inouye",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-03-07",
+      "body": "HI Senate",
+      "motion": "Senate Report adopted; Passed Third Reading, as amended (SD 2), passed",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 0,
+      "absent": 0,
+      "note": "www.capitol.hawaii.gov roll call (read from the legislature) 90595460 https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1036&year=2017#2017-03-07-Senate-Third-Reading",
+      "members": [
+        {
+          "name": "Breene Harimoto",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian T. Taniguchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Brickwood Galuteria",
+          "vote": "yea",
+          "politician_id": "11e54ca2-ac74-4c4c-b9ea-3b68bb89f5d2"
+        },
+        {
+          "name": "Clarence K. Nishihara",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Kim",
+          "vote": "yea",
+          "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+        },
+        {
+          "name": "Donovan Dela Cruz",
+          "vote": "yea",
+          "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+        },
+        {
+          "name": "Gil Riviere",
+          "vote": "yea"
+        },
+        {
+          "name": "Gilbert S.C. Keith-Agaran",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Wakai",
+          "vote": "yea",
+          "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+        },
+        {
+          "name": "J. Kalani English",
+          "vote": "yea"
+        },
+        {
+          "name": "Jill N. Tokuda",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Green",
+          "vote": "yea",
+          "politician_id": "76307cf7-47dd-4b0a-ac4b-ed218095bf47"
+        },
+        {
+          "name": "Kaiali‘i Kahele",
+          "vote": "yea",
+          "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+        },
+        {
+          "name": "Karl Rhoads",
+          "vote": "yea",
+          "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+        },
+        {
+          "name": "Laura H. Thielen",
+          "vote": "yea"
+        },
+        {
+          "name": "Les Ihara",
+          "vote": "yea",
+          "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+        },
+        {
+          "name": "Lorraine R. Inouye",
+          "vote": "yea",
+          "politician_id": "aa4fc7e7-e99f-4cde-a11c-d26ddf06dd5b"
+        },
+        {
+          "name": "Maile Shimabukuro",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Kidani",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Gabbard",
+          "vote": "yea",
+          "politician_id": "288b6f32-227c-408c-a7ed-7c9ddc01ab7e"
+        },
+        {
+          "name": "Ron Kouchi",
+          "vote": "yea",
+          "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+        },
+        {
+          "name": "Rosalyn H. Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "Russell E. Ruderman",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley Chang",
+          "vote": "yea",
+          "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+        },
+        {
+          "name": "Will Espero",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/SB1036_SD1_.HTM; sha256 e9d70495336c7720a7c310993de228632ef1d1018abb0e44b75c14300edcdf90)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1036-2017.sd1.htm",
+      "sha256": "e9d70495336c7720a7c310993de228632ef1d1018abb0e44b75c14300edcdf90"
+    },
+    "note": "Senate Draft 1 (SD1) read; the bill's summary describes an SD2, so later amendments are not in the text read (the SD2 passed the Senate 25-0 on 2017-03-07). Quotes are 'provided that' clauses that follow a struck period in the printed text; whole sentences carry struck punctuation so only the clauses are quoted. The effective-date section in the text is 'upon its approval' but the summary says it takes effect 1/7/2059 (a placeholder date added in a later draft)."
+  },
+  "operative_text": "SECTION 1 (HRS 134-3(a)): provided that the duty to register the firearm shall be an ongoing one, and failure to register the firearm within five days of arrival shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 1 (HRS 134-3(b)): provided that the duty to register the firearm shall be an ongoing one, and failure to register the firearm within five days of acquisition shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 2 (HRS 134-17(b)): provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(a).\nSECTION 2 (HRS 134-17(d)): provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(b)."
+}

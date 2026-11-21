@@ -1,0 +1,59 @@
+{
+  "id": "HI-SB-245-2020",
+  "scope": "state:hi",
+  "title": "SB245 (2020 Regular): RELATING TO ELECTRIC GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=245&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB245_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "GABBARD",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Gilbert S.C. Keith-Agaran",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gil Riviere",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB245_.HTM; sha256 4c4c9ed2ca181fabf3c7d08cf68c6491ad40cb7a92d6972e66c9b5b12c03cc51)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-245-2020.introduced.htm",
+      "sha256": "4c4c9ed2ca181fabf3c7d08cf68c6491ad40cb7a92d6972e66c9b5b12c03cc51"
+    },
+    "note": "Introduced text (identical to the other-year entry; 2020 entry of a carried-over bill). The core change is struck text in SECTION 3 (the old HRS 134-16(a)-(c) ban) and in SECTIONS 2 and 4 (cross-references), which cannot be quoted; the quoted sentences are the retained records and training duties. Borderline: electric guns are not firearms under HRS ch. 134. Amendments after filing are not in the text read."
+  },
+  "operative_text": "SECTION 3 (HRS 134-16): The county police departments of this State, the department of public safety, the department of land and natural resources, and the army and air national guard shall maintain records regarding every electric gun in their custody and control. The records shall report every instance of usage of an electric gun; in particular, records shall be maintained in a similar manner as for those of discharging of firearms. The county police departments, the department of public safety, the department of land and natural resources, and the army and air national guard shall annually report to the legislature regarding these records no later than twenty days before the beginning of each regular session of the legislature. … shall first receive training from the manufacturer or from a manufacturer-approved training program, as well as by manufacturer-certified or approved instructors in the use of electric guns prior to deployment of the electric gun and related equipment in public."
+}

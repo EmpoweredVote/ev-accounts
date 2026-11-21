@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-728-2026",
+  "scope": "state:hi",
+  "title": "SB728 (2026 Regular): RELATING TO FIREARMS POSSESSION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=728&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB728_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB728_.HTM; sha256 439d1e0d34f13e29adcc5fe276aa31df330a70f5ae50e60603a09f0a35a74f60)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-728-2026.introduced.htm",
+      "sha256": "439d1e0d34f13e29adcc5fe276aa31df330a70f5ae50e60603a09f0a35a74f60"
+    },
+    "note": "Version read: introduced (as filed). Text is identical to the other year of the biennium apart from the heading. The bill strikes the voluntary-surrender options and changes \"may\" seize to \"shall\" seize in HRS 134-7(f), 134-7.3, 134-7.5(a) and 806-11 (struck text not quoted; the sworn-statement and mandatory-seizure sentences run across struck words, so are not quoted). No passage vote is recorded; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-7(f)): No person who has been restrained pursuant to an order of any court, including a gun violence protective order issued pursuant to part IV, from contacting, threatening, or physically abusing any person, shall possess, control, or transfer ownership of any firearm or ammunition, so long as the protective order, restraining order, or any extension is in effect. The person restrained shall relinquish possession and control of any firearm and ammunition owned by that person to the police department of the appropriate county for safekeeping for the duration of the order or extension thereof.\nSECTION 3 (HRS 134-7.3): The chief of police shall search all applicable records to determine whether the applicant has been issued any permits to acquire or has registered any firearms. The chief of police shall search all applicable records to determine whether the person has been issued any permits to acquire or has registered any firearms.\nSECTION 4 (HRS 134-7.5(a)): Firearms seized under this section shall be taken to the appropriate county police department for safekeeping or as evidence.\nSECTION 5 (HRS 806-11): The chief of police shall search all applicable records to determine whether the defendant has been issued any permits to acquire or has registered any firearms. A defendant's compliance with the forty-eight hour requirement of this section shall not give rise to a prosecution for violations of sections 134-2, 134-3 or 134-4."
+}

@@ -1,0 +1,56 @@
+{
+  "id": "HI-SB-1000-2024",
+  "scope": "state:hi",
+  "title": "SB1000 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1000&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB1000_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "KEITH-AGARAN",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB1000_.HTM; sha256 370ab0dcba7c854dec6051933d235b6b60ba2a7c8b4ee42a3745aa7a16f819b4)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1000-2024.introduced.htm",
+      "sha256": "370ab0dcba7c854dec6051933d235b6b60ba2a7c8b4ee42a3745aa7a16f819b4"
+    },
+    "note": "As-filed text; no passage vote on file. Same new subsection (b) appears in three sections; penalties for violating the sections are class B/C felonies."
+  },
+  "operative_text": "SECTION 2 (HRS 134-23): (b) If any person is carrying an unloaded firearm between the places allowed by subsection (a) in a motor vehicle, the firearm shall be located so as not to be readily or directly accessible from the passenger compartment of the vehicle or, if the firearm is being carried in a motor vehicle that does not have a compartment separate from the passenger compartment, the firearm shall be kept in an enclosed container that is locked, other than the glove compartment or console, and not in plain view.\nSECTION 3 (HRS 134-24): (b) If any person is carrying an unloaded firearm between the places allowed by subsection (a) in a motor vehicle, the firearm shall be located so as not to be readily or directly accessible from the passenger compartment of the vehicle or, if the firearm is being carried in a motor vehicle that does not have a compartment separate from the passenger compartment, the firearm shall be kept in an enclosed container that is locked, other than the glove compartment or console, and not in plain view.\nSECTION 4 (HRS 134-25): (b) If any person is carrying an unloaded firearm between the places allowed by subsection (a) in a motor vehicle, the firearm shall be located so as not to be readily or directly accessible from the passenger compartment of the vehicle or, if the firearm is being carried in a motor vehicle that does not have a compartment separate from the passenger compartment, the firearm shall be kept in an enclosed container that is locked, other than the glove compartment or console, and not in plain view."
+}

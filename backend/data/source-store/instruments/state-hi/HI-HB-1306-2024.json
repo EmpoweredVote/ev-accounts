@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1306-2024",
+  "scope": "state:hi",
+  "title": "HB1306 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1306&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/HB1306_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sam Kong",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/HB1306_.HTM; sha256 c131e4b4f64b52662a86db4daa6528c993e309b04b002b7eb677b07b9496ee6b)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1306-2024.introduced.htm",
+      "sha256": "c131e4b4f64b52662a86db4daa6528c993e309b04b002b7eb677b07b9496ee6b"
+    },
+    "note": "As-filed text. Two quotes are printed with the bill's struck words removed (the first sentence of 134-9(a) and the expiry sentence), because the text has bracketed strikes inside them; the wording is the bill's remaining text. The bill strikes the \"exceptional case\" fear-of-injury showing and the county-only limit. Text identical to 2023 filing; no passage vote on file."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): The chief of police of the appropriate county, or the chief's designated representative, shall perform an inquiry on an applicant by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made.\nSECTION 1 (HRS 134-9): Unless renewed, the license shall expire five years from the date of issue.\nSECTION 1 (HRS 134-9): (a) The chief of police of the appropriate county may grant a license to an applicant who is a citizen of the United States of the age of twenty-one years or more or to a duly accredited official representative of a foreign nation of the age of twenty-one years or more to carry a pistol or revolver and ammunition therefor concealed on the person within the State."
+}

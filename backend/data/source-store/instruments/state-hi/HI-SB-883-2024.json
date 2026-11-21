@@ -1,0 +1,69 @@
+{
+  "id": "HI-SB-883-2024",
+  "scope": "state:hi",
+  "title": "SB883 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=883&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB883_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Jarrett Keohokalole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4439ea32-1275-4cb2-9e0b-5a4d398a2d7a"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Joy San Buenaventura",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "41d7e647-6454-4589-afcb-f244e4c7dc82"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB883_.HTM; sha256 04df8290c997fdebb6e6ab7dcd198c8756ddc28297b6e21bb77186d8ce117343)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-883-2024.introduced.htm",
+      "sha256": "04df8290c997fdebb6e6ab7dcd198c8756ddc28297b6e21bb77186d8ce117343"
+    },
+    "note": "Version read: introduced (as filed). Text is identical to the other year of the biennium apart from the heading. Both sections are new (\"by adding two new sections\"). SECTION 2 (HRS 134-11) extends the existing law enforcement and film-prop exemptions to the new sensitive-location offence. No passage vote is recorded; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 1 (new, HRS 134-A): (a) It shall be unlawful for a person to possess a firearm in a sensitive location, whether the firearm was loaded or not, and whether operable or not; provided that the person knows or reasonably should know that the location is a sensitive location. (b) For the purposes of this section, \"sensitive location\" means: (1) Any place owned or under the control of federal, state, or local government, for the purpose of government administration, including but not limited to courts; (2) Any location providing health, behavioral health, or chemical dependance care or services; (3) Any place of worship or religious observation; (4) Libraries; (5) Public parks or recreational grounds as defined in section 708-814.5; (6) Child care facilities as defined in section 346-151; (7) Schools as defined in section 302A-901; (8) Adult foster homes as defined in section 321-11.2; (9) Developmental disabilities apartment complexes as defined in section 321-15.9; (10) Developmental disabilities domiciliary homes as defined in section 321-15.9; (11) Behavioral health crisis centers as defined in section 334-1; (12) Community mental health centers as defined in section 334-1; (13) Psychiatric facilities as defined in section 334-1; (14) Special treatment facilities as defined in section 334-1; (15) Emergency shelters as defined in section 346-361; (16) Homeless facilities as defined in section 346-361; (17) Transitional shelters as defined in section 346-361; (18) Shelters as defined in section 127A-19; (19) Any family shelter, shelter for adult, domestic violence shelter, or residential program for victims of domestic violence; (20) Any building or grounds, owned or leased, of any educational institution, college, or university; (21) Any place, conveyance, or vehicle used for public transportation or public transit, including but not limited to: (A) Buses; (B) Train cars; (C) Ferries; (D) Railroad; (E) Omnibus; and (F) Marine or aviation transportation; (22) Any facility used for or in connection with service in the transportation of passengers, including but not limited to: (A) Airports; (B) Bus terminals; (C) Train stations; and (D) Rail stations; (23) Any establishment issued a license for on-premise consumption pursuant to sections 281-31 and 281-32.5; (24) Any place used for performance, art, entertainment, or sporting events, including but not limited to: (A) Theaters; (B) Stadiums; (C) Racetracks; (D) Museums; (E) Amusement parks; (F) Performance venues; (G) Concerts; (H) Exhibits; (I) Conference centers; and (J) Banquet halls; (25) Any location being used as a polling place; (26) Any public sidewalk or other public area restricted from general public access for a limited time or special event that has been issued a permit for such time or event by a governmental entity, or subject to specific, heightened law enforcement protection, or has otherwise had such access restricted by a governmental entity; provided that the location is identified as such by clear and conspicuous signage; (27) Any gathering of individuals to collectively express their constitutional rights to protest or assemble; and (28) Any area within Waikiki as defined in section 712-1207; provided that the area shall be clearly and conspicuously identified with signage. (c) Any person violating this section shall be guilty of a class C felony.\nSECTION 1 (new, HRS 134-B): (a) A person granted a license to carry a concealed or unconcealed firearm and who is in possession of or carrying their licensed firearm when contacted by a law enforcement officer shall immediately inform the law enforcement officer that the person is in possession of or carrying their licensed firearm, and shall present the license to the law enforcement officer. (b) Any person violating this section shall be subject to revocation of their license to carry a concealed firearm under section 134-13, and disqualified from renewing their license to carry a concealed firearm under section 134-9.\""
+}

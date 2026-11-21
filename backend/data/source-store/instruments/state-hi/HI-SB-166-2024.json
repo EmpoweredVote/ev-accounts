@@ -1,0 +1,50 @@
+{
+  "id": "HI-SB-166-2024",
+  "scope": "state:hi",
+  "title": "SB166 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=166&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB166_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "KEITH-AGARAN",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB166_.HTM; sha256 4e605b14e12f4197831777f5bb978832ff1cf58e2214aaf89eba83d047261ff0)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-166-2024.introduced.htm",
+      "sha256": "4e605b14e12f4197831777f5bb978832ff1cf58e2214aaf89eba83d047261ff0"
+    },
+    "note": "As-filed text, carried over from 2023 (heading may print 2023). The quote leaves out words the bill strikes (the old wording limited the ban to magazines for a pistol). No passage vote on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8(c)): Except as provided in section 134-11, the manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of detachable ammunition magazines with a capacity in excess of ten rounds that are designed for or capable of use with any firearm is prohibited."
+}

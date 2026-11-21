@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1598-2020",
+  "scope": "state:hi",
+  "title": "HB1598 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1598&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1598_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1598_.HTM; sha256 894d1f35f8697fcc7bc368cca05ce17348ac0b829f9ef44c16c00af9ded7a860)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1598-2020.introduced.htm",
+      "sha256": "894d1f35f8697fcc7bc368cca05ce17348ac0b829f9ef44c16c00af9ded7a860"
+    },
+    "note": "Introduced text. The quoted parts are the clean sentences; the bill's core changes (attorney general may grant a statewide license to carry a pistol or revolver concealed or unconcealed, county chiefs limited to on-duty security guards, training course within 180 days before applying, fee changed from $10 to $100 paid to the State) sit in subsections that carry struck words, so they are described here and not quoted. No passage vote is recorded in the data; the text read is the bill as filed."
+  },
+  "operative_text": "SECTION 2 (HRS 134-9): The chief of police of each county and the attorney general shall adopt procedures to require that any person granted a license to carry a concealed or unconcealed weapon on the person shall:\nSECTION 2 (HRS 134-9): (2) Appear to be a suitable person to be so licensed; (3) Not be prohibited under section 134-7 from the ownership or possession of a firearm; and (4) Not have been adjudged insane or not appear to be mentally deranged.\nSECTION 2 (HRS 134-9): No person shall carry concealed or unconcealed on the person a pistol or revolver without being licensed to do so under this section or in compliance with sections 134-5(c) or 134-25."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "HI-SB-400-2026",
+  "scope": "state:hi",
+  "title": "SB400 (2026 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=400&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB400_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB400_.HTM; sha256 6718bce66d239ccbb6147422a411768970295bbbbd9570f84d5d9bd03be92bb1)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-400-2026.introduced.htm",
+      "sha256": "6718bce66d239ccbb6147422a411768970295bbbbd9570f84d5d9bd03be92bb1"
+    },
+    "note": "Introduced text (as filed). Version read is the bill as introduced; no passage vote is recorded. SECTION 2 (c) is quoted with the words the bill strikes (the in-State and fifteen-day/seventy-five-day lending language) left out; the bill strikes the authority to lend a rifle or shotgun without a permit and to lend one for use outside the State."
+  },
+  "operative_text": "SECTION 2 (HRS 134-4): Any lawfully acquired rifle or shotgun may be lent to an adult who is twenty-one years of age or older for use for a period not to exceed twelve hours; provided that the adult borrowing a rifle or shotgun possesses a permit pursuant to section 134-2 or owns or possesses a firearm that is registered pursuant to section 134-3, and is not prohibited from ownership or possession of a firearm pursuant to section 134-7.\nSECTION 2 (HRS 134-4): No person shall intentionally, knowingly, or recklessly lend a firearm to any person who does not have a permit pursuant to section 134-2, does not own or possess a firearm that is registered pursuant to section 134-3, or is prohibited from ownership, possession, or control of a firearm under section 134-7."
+}

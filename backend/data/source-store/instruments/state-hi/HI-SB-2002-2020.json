@@ -1,0 +1,61 @@
+{
+  "id": "HI-SB-2002-2020",
+  "scope": "state:hi",
+  "title": "SB2002 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2002&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2002_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2002_.HTM; sha256 fc0615578850f505d2583c2b4a434c5a3f10d7c0fd3de68d1e4a4fa9e2d8d486)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2002-2020.introduced.htm",
+      "sha256": "fc0615578850f505d2583c2b4a434c5a3f10d7c0fd3de68d1e4a4fa9e2d8d486"
+    },
+    "note": "As-filed text (introduced). The section is new (adds a section to chapter 134). Intoxicated means impaired by alcohol or .08 breath or blood level; possession excludes the person's own dwelling."
+  },
+  "operative_text": "SECTION 1 (new): It shall be unlawful for a person to possess a loaded firearm while the person is intoxicated.\nSECTION 1 (new): Any person violating this section shall be guilty of a petty misdemeanor."
+}

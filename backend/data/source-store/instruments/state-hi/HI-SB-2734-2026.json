@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-2734-2026",
+  "scope": "state:hi",
+  "title": "SB2734 (2026 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2734&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB2734_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB2734_.HTM; sha256 77e24ee3715d00bf1c0b1c9bb8abf23e53ffb52536f04f1de4fba2d1e440f2ad)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2734-2026.introduced.htm",
+      "sha256": "77e24ee3715d00bf1c0b1c9bb8abf23e53ffb52536f04f1de4fba2d1e440f2ad"
+    },
+    "note": "Version read: as-filed (introduced). The list in HRS 134-8(a) also names other already-listed items; the bill adds the .50 caliber item and a Teflon capitalisation. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following shall be prohibited: assault pistols, except as provided by section 134-4(e); after July 1, 2026, any firearms with the capacity to fire ammunition of fifty caliber or higher; automatic firearms; rifles with barrel lengths less than sixteen inches; ghost guns; shotguns with barrel lengths less than eighteen inches; cannons; mufflers, silencers, or devices for deadening or muffling the sound of discharged firearms; hand grenades, dynamite, blasting caps, bombs, or bombshells, or other explosives; or any type of ammunition or any projectile component thereof coated with Teflon or any other similar coating designed primarily to enhance its capability to penetrate metal or pierce protective armor; and any type of ammunition or any projectile component thereof designed or intended to explode or segment upon impact with its target.\nSECTION 2 (HRS 134-8): \"Firearm with the capacity to fire ammunition of fifty caliber or higher\" does not include antique pistols, antique revolvers, or muzzleloaders.\nSECTION 3: This Act shall not prohibit possession of a firearm with the capacity to fire ammunition of fifty caliber or higher that was legally obtained prior to July 1, 2026."
+}

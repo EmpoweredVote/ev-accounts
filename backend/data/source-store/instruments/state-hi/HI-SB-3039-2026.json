@@ -1,0 +1,56 @@
+{
+  "id": "HI-SB-3039-2026",
+  "scope": "state:hi",
+  "title": "SB3039 (2026 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3039&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB3039_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "C.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB3039_.HTM; sha256 478085a8c6db001b98ed6bb19b5b9aee328895576bd2fa6428ae742e4aa96296)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-3039-2026.introduced.htm",
+      "sha256": "478085a8c6db001b98ed6bb19b5b9aee328895576bd2fa6428ae742e4aa96296"
+    },
+    "note": "Introduced version as filed; no votes recorded. Section 2 adds a new section to HRS chapter 134 part I (number blank). First sentence quoted is from subsection (a)."
+  },
+  "operative_text": "SECTION 2 (new): A person with a license issued under section 134-9 shall not carry a firearm on the licensee's person within the State without also carrying an electric gun on the licensee's person. (b) A person's license issued under section 134-9 shall be subject to revocation under section 134-13 if the licensee violates subsection (a)."
+}

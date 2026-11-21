@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1600-2020",
+  "scope": "state:hi",
+  "title": "HB1600 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1600&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1600_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1600_.HTM; sha256 9c3374c26ea500d24fea9a4830fa99ba86e352ec150263cde54999f002283fbe)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1600-2020.introduced.htm",
+      "sha256": "9c3374c26ea500d24fea9a4830fa99ba86e352ec150263cde54999f002283fbe"
+    },
+    "note": "Introduced text. The bill strikes the old subsections allowing rifle/shotgun loans for 15 or 75 days without a permit and the bar on lending to prohibited persons; those are in struck brackets and not quoted. The assault pistol sentence is existing law relettered to subsection (d); SECTION 3 (HRS 134-8(a)) only updates a cross-reference. No passage vote is recorded in the data; the text read is the bill as filed."
+  },
+  "operative_text": "SECTION 2 (HRS 134-4): No person shall transfer the possession or ownership of any firearm to any person except as expressly authorized by this chapter.\nSECTION 2 (HRS 134-4): After July 1, 1992, no person shall bring or cause to be brought into the State an assault pistol."
+}

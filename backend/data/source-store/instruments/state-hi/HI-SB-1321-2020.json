@@ -1,0 +1,60 @@
+{
+  "id": "HI-SB-1321-2020",
+  "scope": "state:hi",
+  "title": "SB1321 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1321&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB1321_SD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kurt Fevella",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+    },
+    {
+      "name": "Donna Kim",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "225bc70a-1793-44ad-882d-a50f2f073114"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Senate Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB1321_SD1_.HTM; sha256 3dc95489a61c85f65ff7957496057261ad3e14d7f66a72ef4a8c52ec6e862f13)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1321-2020.sd1.htm",
+      "sha256": "3dc95489a61c85f65ff7957496057261ad3e14d7f66a72ef4a8c52ec6e862f13"
+    },
+    "note": "Senate Draft 1 (SD1), carried over from 2019 (heading prints 2019). Quotes omit the periods the bill strikes. No passage vote on file; later amendments would not be in this text."
+  },
+  "operative_text": "SECTION 1 (HRS 134-3(a)): Every person arriving in the State who brings or by any other manner causes to be brought into the State a firearm of any description, whether usable or unusable, serviceable or unserviceable, modern or antique, shall register the firearm within five days after arrival of the person or of the firearm, whichever arrives later, with the chief of police of the county of the person's place of business or, if there is no place of business, the person's residence or, if there is neither a place of business nor residence, the person's place of sojourn; provided that the duty to register the firearm shall be an ongoing duty, and failure to register the firearm within five days of arrival shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 1 (HRS 134-3(b)): Every person who acquires a firearm pursuant to section 134-2 shall register the firearm in the manner prescribed by this section within five days of acquisition; provided that the duty to register the firearm shall be an ongoing duty, and failure to register the firearm within five days of acquisition shall not relieve the person of the duty to register the firearm thereafter.\nSECTION 2 (HRS 134-17(b)): Any person who violates section 134-3(a) shall be guilty of a petty misdemeanor; provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(a).\nSECTION 2 (HRS 134-17(d)): Any person who violates section 134-3(b) shall be guilty of a petty misdemeanor and the firearm shall be confiscated as contraband and disposed of, if the firearm is not registered within five days of the person receiving notice of the violation; provided that this subsection shall not apply when the violation is discovered solely due to the person registering the firearm after the time period specified in section 134-3(b).\nSECTION 1 (HRS 134-3(d)): Registration, including any ongoing duty to register pursuant to this section, shall not be required for: (1) Any device that is designed to fire loose black powder or that is a firearm manufactured before 1899; (2) Any device not designed to fire or made incapable of being readily restored to a firing condition; or (3) All unserviceable firearms and destructive devices registered with the Bureau of Alcohol, Tobacco, and Firearms of the United States Department of Justice pursuant to Title 27, Code of Federal Regulations."
+}

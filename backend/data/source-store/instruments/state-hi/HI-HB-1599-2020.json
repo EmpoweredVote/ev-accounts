@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1599-2020",
+  "scope": "state:hi",
+  "title": "HB1599 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1599&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1599_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB1599_.HTM; sha256 83c4275c1d351a081e865870a1b1b3c15c0d4c80f0491edb9669fa5db2d1e22e)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1599-2020.introduced.htm",
+      "sha256": "83c4275c1d351a081e865870a1b1b3c15c0d4c80f0491edb9669fa5db2d1e22e"
+    },
+    "note": "Introduced text. SECTION 2 also strikes the passage letting one rifle/shotgun permit cover purchases for a year, and extends the 10-day use limit and per-transaction permit to rifles and shotguns; those sentences carry struck words and are not quoted. SECTION 3 (HRS 463-10.5(e)) changes the permit a security guard carrying a firearm must hold (not quoted). No passage vote is recorded in the data; the text read is the bill as filed."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2(e)): Except for sales to dealers licensed under section 134-31, or dealers licensed by the United States Department of Justice, or law enforcement officers, or where a license is granted under section 134-9, or where any firearm is registered pursuant to section 134-3(a), no permit shall be issued to an applicant earlier than fourteen calendar days after the date of the application; provided that a permit shall be issued or the application denied before the twentieth day from the date of application.\nSECTION 2 (HRS 134-2(e)): The issuing authority shall perform an inquiry on an applicant by using the International Justice and Public Safety Network, including the United States Immigration and Customs Enforcement query, the National Crime Information Center, and the National Instant Criminal Background Check System, pursuant to section 846-2.7 before any determination to issue a permit or to deny an application is made."
+}

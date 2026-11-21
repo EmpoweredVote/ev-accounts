@@ -1,0 +1,44 @@
+{
+  "id": "HI-HB-879-2020",
+  "scope": "state:hi",
+  "title": "HB879 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=879&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/HB879_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Cedric Gates",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/HB879_.HTM; sha256 3519a149da28f2a2bddbe62e999c62552442e1809eaaa16061293cbc0fe0be90)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-879-2020.introduced.htm",
+      "sha256": "3519a149da28f2a2bddbe62e999c62552442e1809eaaa16061293cbc0fe0be90"
+    },
+    "note": "As-filed text. The 'ongoing duty' proviso and the no-penalty exception in HRS 134-17(b) and (d) sit in sentences with struck text, so are paraphrased. Same text in 2019 and 2020 files."
+  },
+  "operative_text": "SECTION 1 (HRS 134-3): Every person registering a firearm under this subsection shall be fingerprinted and photographed by the police department of the county of registration; provided that this requirement shall be waived where fingerprints and photographs are already on file with the police department.\nSECTION 2 (HRS 134-17): Any person who violates section 134-2, 134-4, 134-10, 134-15, or 134-16(a) shall be guilty of a misdemeanor."
+}

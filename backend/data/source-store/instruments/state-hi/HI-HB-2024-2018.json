@@ -1,0 +1,71 @@
+{
+  "id": "HI-HB-2024-2018",
+  "scope": "state:hi",
+  "title": "HB2024 (2018 Regular): RELATING TO GUN VIOLENCE PROTECTIVE ORDERS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=2024&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/HB2024_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "Aaron Ling Johanson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "May Mizuno",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Nakashima",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Y. Nishimoto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/HB2024_.HTM; sha256 4a32bce1165254e597deb7fec2af9a004f59bdd6d362a825a05f2660ad4ba8e2)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-2024-2018.introduced.htm",
+      "sha256": "4a32bce1165254e597deb7fec2af9a004f59bdd6d362a825a05f2660ad4ba8e2"
+    },
+    "note": "As-filed text. Section 2 adds a new part to HRS ch. 134 (letters stand in for section numbers; revisor assigns them). Sections 3 and 4 amend HRS 134-7(f) and 134-7.3 to match (not quoted: they cross struck text). Sections 5-7 direct rules and procedures. Effective Jan 1, 2019 (sections 5-7 July 1, 2018). The bill has no passage vote on file; later drafts are not in the text read."
+  },
+  "operative_text": "SECTION 2 (new, HRS ch. 134 part): \"Ex parte gun violence protective order\" means an order issued by the family court, pursuant to section 134-D, prohibiting the respondent from owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition until the court-scheduled hearing for a one-year gun violence protective order.\nSECTION 2 (new, HRS ch. 134 part): \"Petitioner\" means a law enforcement officer or a family or household member of the respondent who files a petition pursuant to section 134-D or section 134-E.\nSECTION 2 (new, HRS ch. 134 part): (f) If the court finds probable cause to believe that the respondent poses an imminent danger of causing bodily injury to the respondent's self or another person by owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition, the court shall issue an ex parte gun violence protective order.\nSECTION 2 (new, HRS ch. 134 part): (d) If the court finds by a preponderance of the evidence at the hearing that the respondent poses a significant danger of causing bodily injury to the respondent's self or another person by owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition, the court shall issue a one-year gun violence protective order.\nSECTION 2 (new, HRS ch. 134 part): (a) Upon issuance of an ex parte or one-year gun violence protective order, the court shall order the respondent to voluntarily surrender or dispose of all firearms and ammunition that the respondent owns or possesses, or has in the respondent's custody or control, in accordance with section 134-7.3(b).\nSECTION 2 (new, HRS ch. 134 part): (e) The Hawaii criminal justice data center shall immediately make information about an ex parte or one-year gun violence protective order issued, renewed, dissolved, or terminated pursuant to this chapter available to the National Instant Criminal Background Check System for the purposes of firearm purchaser background checks.\nSECTION 2 (new, HRS ch. 134 part): A person who files a petition for a gun violence protective order under this part, knowing the information in the petition to be materially false or with an intent to harass the respondent, is guilty of a misdemeanor."
+}

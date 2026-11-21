@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-523-2021",
+  "scope": "state:hi",
+  "title": "SB523 (2021 Regular): RELATING TO FIREARMS AMMUNITION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=523&year=2021",
+    "https://data.capitol.hawaii.gov/sessions/session2021/bills/SB523_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2021/bills/SB523_.HTM; sha256 5985f7791fb6f57574cdc653c02b8eca43c2877b1b7eec968123cc77fbd1b953)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-523-2021.introduced.htm",
+      "sha256": "5985f7791fb6f57574cdc653c02b8eca43c2877b1b7eec968123cc77fbd1b953"
+    },
+    "note": "Introduced version; no votes on file, later amendments not in text read. The bill also amends HRS 134-3 (alternate purchaser and caliber permit on registration), 134-4, 134-32 and 134-33 (struck words are old law; not quoted). Text identical to the other year's carry-over."
+  },
+  "operative_text": "SECTION 2 (new): No person shall sell ammunition or shell casings for any firearm unless the purchaser first demonstrates that the purchaser:\n(1) Is the registered owner of the firearm for which the ammunition or shell casings are to be purchased; or\n(2) Has been designated by the registered owner of the firearm as the alternate for ammunition purchases on the registration pursuant to section 134-3.\nSECTION 2 (new): Violation of this section is a petty misdemeanor. This section shall not apply to ammunition purchases for firearms manufactured before 1899.\nSECTION 5 (HRS 134-31): Any person desiring to engage in the business to sell and manufacture firearms or ammunition for sale in the State either at wholesale or retail, shall annually file an application for a license therefor with the director of finance of each county of the State. The annual fee for the issuance of such license shall be $10 and shall be payable to said director of finance."
+}

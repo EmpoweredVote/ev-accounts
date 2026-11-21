@@ -1,0 +1,56 @@
+{
+  "id": "HI-SB-2815-2026",
+  "scope": "state:hi",
+  "title": "SB2815 (2026 Regular): RELATED TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2815&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/SB2815_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    },
+    {
+      "name": "C.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brandon Elefante",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e9eecfc6-7643-44d9-8c40-4cb69c89e625"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/SB2815_.HTM; sha256 8af430dafc582665cab129be67f97499e21ce1ae32741be5669d1d4bbc32e397)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2815-2026.introduced.htm",
+      "sha256": "8af430dafc582665cab129be67f97499e21ce1ae32741be5669d1d4bbc32e397"
+    },
+    "note": "Version read: as-filed (introduced). Most of the long sections (HRS 134-3, 134-7, 134-7.2, 134-7.3, 134-7.5, 806-11) repeat existing law with 'firearm part' added; added words are not marked, so only the Description's claim (extension to firearm parts) is relied on. Bill has no passage vote on file."
+  },
+  "operative_text": "SECTION 1 (HRS 134-1): \"Firearm part\" means any item specifically designed for or adapted for use in a firearm, including the barrel, bolt, slide, frame, receiver, trigger, hammer, sear, or cylinder.\nSECTION 3 (HRS 134-4(d)): No person shall intentionally, knowingly, or recklessly lend a firearm, firearm part, or ammunition to any person who is prohibited from ownership, possession, or control of a firearm, firearm part, or ammunition under section 134-7.\nSECTION 4 (HRS 134-7(a)): No person who is a fugitive from justice or prohibited from possessing a firearm or ammunition under title 18 United States Code section 922 or any other provision of federal law shall own, possess, or control any firearm, firearm part, or ammunition.\nSECTION 4 (HRS 134-7(d)): No person who is less than twenty-five years old and has been adjudicated by the family court to have committed a felony, a crime of violence, a criminal offense relating to firearms, or an illegal sale or distribution of any drug shall own, possess, or control any firearm, firearm part, or ammunition.\nSECTION 4 (HRS 134-7(h)): Any person disqualified from ownership, possession, control, or the right to transfer ownership of firearms, firearm parts, and ammunition under this section shall surrender or dispose of all firearms, firearm parts, and ammunition in compliance with section 134-7.3.\nSECTION 6 (HRS 134-7.3(b)): Any person disqualified from ownership, possession, or control of firearms, firearm parts, and ammunition under section 134-7 or part IV, within forty-eight hours of disqualification, shall voluntarily surrender all firearms, firearm parts, and ammunition to the chief of police where the person resides or dispose of all firearms, firearm parts, and ammunition."
+}

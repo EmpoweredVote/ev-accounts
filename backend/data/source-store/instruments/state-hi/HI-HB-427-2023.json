@@ -1,0 +1,96 @@
+{
+  "id": "HI-HB-427-2023",
+  "scope": "state:hi",
+  "title": "HB427 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=427&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/HB427_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Tarnas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Andrew Garrett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5c9e11-5718-4d6a-b063-d580a7b350b4"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Mark Nakashima",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Scott Nishimoto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jackson Sayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d39cb33d-e229-41a8-8d4b-d55f98a1e000"
+    },
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    },
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    },
+    {
+      "name": "Bert Kobayashi",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/HB427_.HTM; sha256 db7aec8d84aab6c3c90f06d38a26175316b3b703fc9a6c4bbd93a93e9730a0e4)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-427-2023.introduced.htm",
+      "sha256": "db7aec8d84aab6c3c90f06d38a26175316b3b703fc9a6c4bbd93a93e9730a0e4"
+    },
+    "note": "As-filed text (introduced). No passage vote on file. SECTION 1 (HRS 134-9(a)-(b)) restates who may be licensed (adds lawful permanent residents and U.S. nationals) and strikes the 'exceptional case' reason-to-fear showing; not quoted because struck words are mixed in. Subsection (h) also adds the duty to hold and display a license, with a misdemeanor penalty. Carried-over bill; same text as the other year."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): The chief of police of each county shall adopt procedures to require that any person granted a license under this section shall: (1) Be qualified to use the firearm in a safe manner; (2) Be a suitable person to be so licensed; (3) Not be prohibited under section 134-7 or any other law from the ownership or possession of a firearm; and (4) Not have been adjudged insane or not appear to be mentally deranged.\nSECTION 1 (HRS 134-9): The chief of police of the appropriate county, or the chief's designated representative, shall perform an inquiry on an applicant for a license under this section by using the National Instant Criminal Background Check System, to include a check of the Immigration and Customs Enforcement databases where the applicant is not a citizen of the United States, before any determination to grant a license is made.\nSECTION 1 (HRS 134-9): A fee of $10 shall be charged for each license granted under this section.\nSECTION 1 (HRS 134-9): No person shall carry concealed or unconcealed on the person a pistol or revolver without being licensed to do so under this section or in compliance with sections 134-5(c) or 134-25.\nSECTION 1 (HRS 134-9): Any person violating this subsection shall be guilty of a misdemeanor.\nSECTION 1 (HRS 134-9): The failure of a person to: (1) Have a valid license in the person's immediate possession while carrying on their person a firearm outside the person's residence shall be prima facie evidence that the person knows the person is carrying a firearm in public without possession of the person's license; or (2) Display the person's license upon the demand of a law enforcement officer while carrying on their person a firearm outside the person's residence shall be prima facie evidence that the person has knowingly, intentionally, and recklessly failed to display the license."
+}

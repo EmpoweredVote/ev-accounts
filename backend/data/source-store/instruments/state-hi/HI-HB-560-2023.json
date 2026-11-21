@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-560-2023",
+  "scope": "state:hi",
+  "title": "HB560 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=560&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/HB560_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/HB560_.HTM; sha256 e576544f0ce682d742a5cb43519c018d16f7bf049016705c63c1269779b8f49a)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-560-2023.introduced.htm",
+      "sha256": "e576544f0ce682d742a5cb43519c018d16f7bf049016705c63c1269779b8f49a"
+    },
+    "note": "Introduced text (as filed); no passage vote on record. The quoted first sentence of subsection (a) is printed with the struck word 'teflon' omitted (bill capitalizes Teflon); the list is existing law plus the fifty-caliber item per the Description. Same bill carried over into the second year; text identical."
+  },
+  "operative_text": "SECTION 2 (HRS 134-8): The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following is prohibited: assault pistols, except as provided by section 134-4(e); automatic firearms; rifles with barrel lengths less than sixteen inches; shotguns with barrel lengths less than eighteen inches; any firearm or rifle with the capacity to fire ammunition of fifty caliber or higher; cannons; mufflers, silencers, or devices for deadening or muffling the sound of discharged firearms; hand grenades, dynamite, blasting caps, bombs, or bombshells, or other explosives; or any type of ammunition or any projectile component thereof coated with Teflon or any other similar coating designed primarily to enhance its capability to penetrate metal or pierce protective armor; and any type of ammunition or any projectile component thereof designed or intended to explode or segment upon impact with its target. \"Firearm or rifle with the capacity to fire ammunition of fifty caliber of higher\" does not include antique pistols, antique revolvers, or muzzleloaders."
+}

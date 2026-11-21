@@ -1,0 +1,66 @@
+{
+  "id": "HI-SB-2406-2018",
+  "scope": "state:hi",
+  "title": "SB2406 (2018 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2406&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2406_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Will Espero",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4f741260-981e-4629-b39e-eb846e02c81b"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/SB2406_.HTM; sha256 0771bfd8f2a99112879ef1b8f926e1bdc8369ae14179369dfcdd3eac5d9bb964)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2406-2018.introduced.htm",
+      "sha256": "0771bfd8f2a99112879ef1b8f926e1bdc8369ae14179369dfcdd3eac5d9bb964"
+    },
+    "note": "Introduced text. The bill rewrites the whole list in HRS 134-8(a), so bracketed words are re-lettering only; only new item (9) is quoted; items 1-8 are existing law re-lettered. Any amendments after filing are not in the text read."
+  },
+  "operative_text": "SECTION 1 (HRS 134-8): (9) Bump stocks, gat cranks, or any devices that can allow a person to manipulate the trigger mechanism of a firearm more rapidly than the person could without the device."
+}

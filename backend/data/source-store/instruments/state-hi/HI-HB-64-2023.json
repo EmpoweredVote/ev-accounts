@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-64-2023",
+  "scope": "state:hi",
+  "title": "HB64 (2023 Regular): RELATING TO FIREARMS POSSESSION.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=64&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/HB64_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gregg Takayama",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c51836d8-c80c-45d1-b280-4d573c7855a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/HB64_.HTM; sha256 8b5e4ba555297fc27539bbc35306b6a85d7efb4ec10fd464160507ffa3d24764)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-64-2023.introduced.htm",
+      "sha256": "8b5e4ba555297fc27539bbc35306b6a85d7efb4ec10fd464160507ffa3d24764"
+    },
+    "note": "Introduced text (as filed); no passage vote on record. The bill's main changes (sworn statement of disposal; 'may' to 'shall' seize; removal of voluntary surrender; mandatory seizure of plain-view firearms in household assault cases under 134-7.5) sit in sentences containing struck words, so they are described here, not quoted; see the Description. Quoted lines are clean sentences from the amended sections."
+  },
+  "operative_text": "SECTION 2 (HRS 134-7): No person who has been restrained pursuant to an order of any court, including a gun violence protective order issued pursuant to part IV, from contacting, threatening, or physically abusing any person, shall possess, control, or transfer ownership of any firearm or ammunition therefor, so long as the protective order, restraining order, or any extension is in effect, unless the order, for good cause shown, specifically permits the possession of a firearm and ammunition. The person restrained shall relinquish possession and control of any firearm and ammunition owned by that person to the police department of the appropriate county for safekeeping for the duration of the order or extension thereof.\nSECTION 3 (HRS 134-7.3): The chief of police shall search all applicable records to determine whether the applicant has been issued any permits to acquire or has registered any firearms. The firearms and ammunition shall be held in police custody until the person has been medically documented to be no longer adversely affected as provided in section 134-7 or until transferred or sold by the owner.\nSECTION 4 (HRS 134-7.5): Firearms seized under this section shall be taken to the appropriate county police department for safekeeping or as evidence.\nSECTION 5 (HRS 806-11): At the time of arraignment, the court shall order a defendant who is under indictment for, or who has waived indictment for, or who has been bound over to the circuit court for a felony, or any crime of violence, or an illegal sale of any drug, to dispose of all firearms and ammunition within the defendant's possession in a manner in compliance with the provisions of chapter 134 and shall inform the defendant of the provisions of section 134-7(b) and section 134-12.5."
+}

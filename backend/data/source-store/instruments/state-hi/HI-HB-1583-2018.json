@@ -1,0 +1,39 @@
+{
+  "id": "HI-HB-1583-2018",
+  "scope": "state:hi",
+  "title": "HB1583 (2018 Regular): RELATING TO GUN VIOLENCE PROTECTIVE ORDERS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1583&year=2018",
+    "https://data.capitol.hawaii.gov/sessions/session2018/bills/HB1583_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a03ccf65-4419-40f6-b968-2b232a435497"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2018/bills/HB1583_.HTM; sha256 0eaf52c28789a934c9ef058c15f08a247dd580585f658a541763a972abd710b5)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1583-2018.introduced.htm",
+      "sha256": "0eaf52c28789a934c9ef058c15f08a247dd580585f658a541763a972abd710b5"
+    },
+    "note": "Introduced text (as filed); carried over from 2017 and identical to HI-HB-1583-2017 (heading may print 2017). Also amends HRS 134-7(f) and 134-7.3 (not quoted). Section letters are placeholders. No passage vote is recorded in the data; the text read is the bill as filed."
+  },
+  "operative_text": "SECTION 2 (new §134-A): \"Ex parte gun violence protective order\" means an order issued by the family court, pursuant to section 134-D, prohibiting the respondent from owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition until the court-scheduled hearing for a one-year gun violence protective order.\nSECTION 2 (new §134-A): \"One-year gun violence protective order\" means an order issued by the family court, pursuant to section 134-E, prohibiting the respondent from owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition for a period of one year.\nSECTION 2 (new §134-D): (f) If the court finds probable cause to believe that the respondent poses an imminent danger of causing bodily injury to the respondent's self or another person by owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition, the court shall issue an ex parte gun violence protective order.\nSECTION 2 (new §134-E): (d) If the court finds by a preponderance of the evidence at the hearing that the respondent poses a significant danger of causing bodily injury to the respondent's self or another person by owning, purchasing, possessing, receiving, or having in the respondent's custody or control any firearm or ammunition, the court shall issue a one-year gun violence protective order.\nSECTION 2 (new §134-E): (1) A statement that the respondent shall not own, purchase, possess, receive, transfer ownership of, or have in the respondent's custody or control, or attempt to purchase, receive, or transfer ownership of any firearm or ammunition while the order is in effect;\nSECTION 2 (new §134-G): (a) Upon issuance of an ex parte or one-year gun violence protective order, the court shall order the respondent to voluntarily surrender or dispose of all firearms and ammunition that the respondent owns or possesses, or has in the respondent's custody or control, in accordance with section 134-7.3(b).\nSECTION 2 (new §134-G): (b) A police officer serving a gun violence protective order may take custody of any and all firearms and ammunition in accordance with the procedure described in section 134-7(f). Alternatively, if personal service by a police officer is not possible, the respondent shall surrender the firearms and ammunition in a safe manner to the control of the chief of police where the respondent resides within forty-eight hours of being served with the order.\nSECTION 2 (new §134-H): A county police department shall return any surrendered firearm or ammunition requested by a respondent only after confirming, through a background check, that the respondent is currently eligible to own or possess firearms and ammunition.\nSECTION 2 (new §134-I): (e) The Hawaii criminal justice data center shall immediately make information about an ex parte or one-year gun violence protective order issued, renewed, or terminated pursuant to this chapter available to the National Instant Criminal Background Check System for the purposes of firearm purchaser background checks.\nSECTION 2 (new §134-J): A person who files a petition for a gun violence protective order under this part, knowing the information in the petition to be materially false or with an intent to harass the respondent, is guilty of a misdemeanor."
+}

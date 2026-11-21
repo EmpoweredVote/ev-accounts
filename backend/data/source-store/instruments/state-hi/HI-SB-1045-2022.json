@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-1045-2022",
+  "scope": "state:hi",
+  "title": "SB1045 (2022 Regular): RELATING TO ELECTRIC GUNS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1045&year=2022",
+    "https://data.capitol.hawaii.gov/sessions/session2022/bills/SB1045_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2022/bills/SB1045_.HTM; sha256 589cdfc477cc3ffc41bb5509a14696b9f7a7d30c39f153d2480400f074005ac3)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1045-2022.introduced.htm",
+      "sha256": "589cdfc477cc3ffc41bb5509a14696b9f7a7d30c39f153d2480400f074005ac3"
+    },
+    "note": "Introduced text (as filed); large file, read by section. Electric guns (stun guns, Tasers) are not firearms; the bill regulates them in new HRS chapter 134 provisions that parallel the firearm rules (registration, dealer licence, ownership bans, protective-order bar, penalties), and adds electric guns to HRS 134-3.5 and amends HRS 121-34.5, 266-24, 463-10.5 and 846-2.7 with matching references. Treated as gun policy for that reason. The 2022 file is an identical carry-over of the 2021 text."
+  },
+  "operative_text": "SECTION 2 (new) §134-B(b): It shall be unlawful for any person to knowingly sell, offer for sale, distribute, or otherwise transfer an electric gun or cartridge without a license obtained pursuant to section 134-E.\nSECTION 2 (new) §134-B(d): It shall be unlawful for any person to knowingly sell, offer for sale, distribute, or otherwise transfer an electric gun or cartridge to a minor.\nSECTION 2 (new) §134-C(d): The chief of police of the respective counties may issue permits to acquire electric projectile guns to citizens of the United States, United States nationals, or legal aliens of the age of twenty-one years or more.\nSECTION 2 (new) §134-H(b): No person who is under indictment for, or has waived indictment for, or has been bound over to the circuit court for, or has been convicted in this State or elsewhere of having committed a felony, or any crime of violence, or any illegal sale of any drug shall own, possess, or control an electric gun.\nSECTION 2 (new) §134-H(e): No minor shall own, possess, or control an electric gun.\nSECTION 2 (new) §134-L(a): It shall be unlawful for a person to knowingly carry on the person or have within the person's immediate control or intentionally use or threaten to use an electric gun, whether operable or not, while engaged in the commission of a separate felony, provided that a person shall not be prosecuted under this subsection when the separate felony is a felony defined by this chapter."
+}

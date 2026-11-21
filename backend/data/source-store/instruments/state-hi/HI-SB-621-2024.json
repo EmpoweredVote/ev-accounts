@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-621-2024",
+  "scope": "state:hi",
+  "title": "SB621 (2024 Regular): RELATING TO THE PUBLIC CARRYING OF FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=621&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB621_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kurt Fevella",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "93bf0012-973c-451b-be74-e54419a09991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB621_.HTM; sha256 7001fea3d5e2b3ebaf0f8978852fb73843a9773fbf8e012f5ac5602f0cd699ca)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-621-2024.introduced.htm",
+      "sha256": "7001fea3d5e2b3ebaf0f8978852fb73843a9773fbf8e012f5ac5602f0cd699ca"
+    },
+    "note": "Version read: introduced (as filed). Text is identical to the other year of the biennium apart from the heading. SECTION 3 rewrites HRS 134-9: the first sentence (a citizen aged 21 or older \"may carry a firearm and ammunition therefor, concealed on the person or unconcealed, while frequenting any public place\") runs across struck words, so it is paraphrased, not quoted; the quoted items are its three conditions. The bill strikes the licensing procedure, the $10 fee and the licence requirement. SECTIONS 5-6 and following repeal HRS 134-23, 134-24 and related \"place to keep\" sections (struck text not quoted). The findings cite the US Supreme Court decision in Bruen but the operative text states no duty. No passage vote is recorded; later amendments are not in the text read."
+  },
+  "operative_text": "SECTION 2 (HRS 134-5): A person may carry unconcealed and use a lawfully acquired pistol or revolver while actually engaged in hunting game mammals, if that pistol or revolver and its suitable ammunition are acceptable for hunting by rules adopted pursuant to section 183D-3 and if that person is licensed pursuant to part II of chapter 183D.\nSECTION 3 (HRS 134-9): (1) The person is not prohibited by any provision of this chapter or any other provision of applicable law from owning or possessing a firearm; (2) The firearm was acquired in accordance with the requirements of section 134-2; and (3) An owner or occupant of private property, including a business that is open to the public in the normal course of operations, or a place of public accommodation as defined in section 489-2, may prohibit persons carrying a concealed or unconcealed firearm from entering the property if there is clear and conspicuous signage posted at the property entrance to indicate the no-firearm policy."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "HI-SB-1282-2024",
+  "scope": "state:hi",
+  "title": "SB1282 (2024 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=1282&year=2024",
+    "https://data.capitol.hawaii.gov/sessions/session2024/bills/SB1282_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Kouchi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a415b1bc-0f91-4c0f-b726-cd3b6b7fb991"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2024/bills/SB1282_.HTM; sha256 c2e31253a37444ab44cee93fc2e695bd6edad210cda3d1dceb28c6a975b05b74)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-1282-2024.introduced.htm",
+      "sha256": "c2e31253a37444ab44cee93fc2e695bd6edad210cda3d1dceb28c6a975b05b74"
+    },
+    "note": "As-filed text. Carried over from 2023 (heading prints the 2023 session text differently; body identical). Long bill; quotes are selected. SECTION 7 (HRS 134-9) rewrites the carry license so the chief of police shall grant it if the applicant meets listed criteria (the bill strikes the old 'exceptional case' showing of need). SECTION 4 (HRS 134-2), SECTION 5 (134-4), SECTION 6 (134-7), SECTION 8 (134-13), SECTION 9 (134-17) and SECTION 11 (846-2.7) are not quoted. SECTION 10 (HRS 707-716) raises terroristic threatening with a firearm in a listed place to a class B felony. Not treated as a second subject. No passage vote on file."
+  },
+  "operative_text": "SECTION 2 (new §134-A(a)): It shall be unlawful for a person to intentionally, knowingly, or recklessly carry or possess a loaded or unloaded firearm, whether the firearm is operable or not, and whether the firearm is concealed or unconcealed, while in any of the following places within the State:\nSECTION 2 (new §134-A(f)): Any person who violates subsection (a) shall be guilty of a misdemeanor.\nSECTION 2 (new §134-B(a)): Effective January 1, 2025, every person who carries a firearm in public pursuant to a license issued under section 134-9 shall maintain insurance coverage insuring against loss resulting from liability imposed by law for bodily injury, death, or property damage sustained by any person arising out of the ownership, maintenance, operation, or use of a firearm carried in public. Liability coverage shall be not less than $100,000 per person, with an aggregate limit of not less than $300,000 per occurrence.\nSECTION 2 (new §134-C(a)): A person carrying a firearm pursuant to a license issued under section 134-9 or in accordance with title 18 United States Code section 926B or 926C shall have in the person's immediate possession: (1) The license issued under section 134-9 or credentials as required under title 18 United States Code section 926B or 926C; and (2) Documentary evidence that the firearm being carried is registered under this chapter, and shall, upon request from a law enforcement officer, present the license or credentials and evidence of registration.\nSECTION 2 (new §134-D(a)): No person shall intentionally, knowingly, or recklessly store or otherwise leave a loaded or unloaded firearm out of the person's immediate possession or control inside a vehicle without first securely locking the firearm in a safe storage depository that is out of sight from outside of the vehicle.\nSECTION 2 (new §134-F(a)): A person shall not intentionally, knowingly, or recklessly enter or remain on private property open to the public while carrying or possessing a loaded or unloaded firearm, whether the firearm is operable or not, and whether the firearm is concealed or unconcealed, unless the person has been given express authorization to carry or possess a firearm on the property by the owner, lessee, operator, or manager of the property.\nSECTION 2 (new §134-G): Nothing in this chapter shall be construed to affect the authority of any county to impose requirements relating to firearms that exceed the statewide provisions established in this chapter, including but not limited to prohibitions against carrying or possessing a firearm in additional locations or premises within that county."
+}

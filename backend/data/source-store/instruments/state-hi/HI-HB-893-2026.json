@@ -1,0 +1,110 @@
+{
+  "id": "HI-HB-893-2026",
+  "scope": "state:hi",
+  "title": "HB893 (2026 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=893&year=2026",
+    "https://data.capitol.hawaii.gov/sessions/session2026/bills/HB893_HD1_.HTM"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "David Tarnas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "432ead14-0348-46d1-819a-b7ff327b15d8"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Andrew Garrett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5c9e11-5718-4d6a-b063-d580a7b350b4"
+    },
+    {
+      "name": "Tina Grandinetti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "50d713a3-189a-4b95-9686-e8d217aca93a"
+    },
+    {
+      "name": "Sue Lee Loy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547cc600-fa18-4f36-8864-3a1466fabb6c"
+    },
+    {
+      "name": "Matthias Kusch",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6be0580e-77c1-450e-a273-6e16262e9f37"
+    },
+    {
+      "name": "Mike Lee",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6ba300cc-69be-4d3d-9584-a4c03d50f5b1"
+    },
+    {
+      "name": "M.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Scot Matayoshi",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "71ec04bf-889c-4400-8860-cde16e70e324"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (House Draft 1, official copy, https://data.capitol.hawaii.gov/sessions/session2026/bills/HB893_HD1_.HTM; sha256 5a35802d555af790cdf52cc7c87685b11a8b60fff3d3269d5eaa552f5db12c95)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-893-2026.hd1.htm",
+      "sha256": "5a35802d555af790cdf52cc7c87685b11a8b60fff3d3269d5eaa552f5db12c95"
+    },
+    "note": "Version read: House Draft 1 (HD1). Carried over from 2025; heading prints 2025. Some sentences in HRS 134-8(c)-(d) are mixed with struck words and are not quoted; the bill strikes the antique pistol or revolver definition."
+  },
+  "operative_text": "SECTION 1 (HRS 134-1): \"Assault rifle\" means a semiautomatic rifle:\nSECTION 2 (HRS 134-4): (f) After July 8, 2025, except as provided by section 134-8(e), no person shall bring or cause to be brought into the State an assault rifle, assault shotgun, or .50 caliber rifle.\nSECTION 3 (HRS 134-8): This subsection shall not apply to a person's possession of an assault rifle, assault shotgun, or .50 caliber rifle registered to the person before July 8, 2025, pursuant to 134-3.\nSECTION 3 (HRS 134-8): Any person who installs, removes, or alters a firearm part with the intent to convert the firearm to an automatic firearm shall be deemed to have manufactured an automatic firearm in violation of subsection (a).\nSECTION 3 (HRS 134-8): Any person violating subsection (a) or (b) shall be guilty of a class C felony and shall be imprisoned for a term of five years without probation.\nSECTION 3 (HRS 134-8): This subsection shall not apply to magazines originally designed to accept more than ten rounds of ammunition that have been modified to accept no more than ten rounds and that are not capable of being readily restored to a capacity of more than ten rounds."
+}

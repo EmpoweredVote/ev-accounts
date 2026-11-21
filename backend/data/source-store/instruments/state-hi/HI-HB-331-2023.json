@@ -1,0 +1,90 @@
+{
+  "id": "HI-HB-331-2023",
+  "scope": "state:hi",
+  "title": "HB331 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=331&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/HB331_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Elle Cochran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "64339380-b761-4bc8-b1f8-10838924a1d9"
+    },
+    {
+      "name": "Cedric Gates",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Natalia Hussey-Burdick",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Rachele Lamosao",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8964f235-03e8-4232-9e12-918c10f2a6ab"
+    },
+    {
+      "name": "Nicole Lowen",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f8d0d623-f625-42e9-8ad1-6d30bfd7d07f"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Gene Ward",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/HB331_.HTM; sha256 0c663fbf33fda8f43af9c7eb78684f06b4a687574b0ce4ce58db8d7df156eab8)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-331-2023.introduced.htm",
+      "sha256": "0c663fbf33fda8f43af9c7eb78684f06b4a687574b0ce4ce58db8d7df156eab8"
+    },
+    "note": "As-filed text (introduced). No passage vote on file. Carried-over bill; same text as the other year."
+  },
+  "operative_text": "SECTION 1 (new): It shall be unlawful for a person to possess a loaded firearm while the person is intoxicated.\nSECTION 1 (new): Any person violating this section shall be guilty of a petty misdemeanor.\nSECTION 1 (new): A person is intoxicated if the person: (A) Is under the influence of alcohol in an amount sufficient to impair the person's normal mental faculties or ability to operate a firearm in a careful and prudent manner; (B) Has .08 or more grams of alcohol per two hundred ten liters of the person's breath; or (C) Has .08 or more grams of alcohol per one hundred milliliters or cubic centimeters of the person's blood."
+}

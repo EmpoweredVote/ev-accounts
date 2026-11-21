@@ -1,0 +1,86 @@
+{
+  "id": "HI-HB-1589-2017",
+  "scope": "state:hi",
+  "title": "HB1589 (2017 Regular): RELATING TO HUNTING SAFETY.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1589&year=2017",
+    "https://data.capitol.hawaii.gov/sessions/session2017/bills/HB1589_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ryan I. Yamane",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard P. Creagan",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lynn DeCoite",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "537a5fba-d95a-4d48-baf9-8fafd9146d76"
+    },
+    {
+      "name": "Sharon E. Har",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ken Ito",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sam Kong",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a6c915a4-1e1b-4bb7-ad25-49e04d941d43"
+    },
+    {
+      "name": "Angus McKelvey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7c2b546e-fd31-41e1-aed2-74e6edb6952c"
+    },
+    {
+      "name": "Marcus R. Oshiro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Calvin K.Y. Say",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "TOKIOKA",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2017/bills/HB1589_.HTM; sha256 579c69a85e93906a1ae3093f9a353a6f8b4569f513f987009d88c84af6d0451d)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1589-2017.introduced.htm",
+      "sha256": "579c69a85e93906a1ae3093f9a353a6f8b4569f513f987009d88c84af6d0451d"
+    },
+    "note": "Introduced text; the Description on file reads '(HB1589 HD1)' but the text read is the as-filed version. Strikes the existing ban on silencers and replaces it with a ban on firearm noise suppressors with a hunter exception. SECTION 5 conforms a cross-reference in HRS 134-9(c) and SECTION 6 a list in HRS 806-83 (not quoted). Some quoted sentences start inside a subsection that carries struck words elsewhere; none of the quoted text contains struck words. Identical to HI-HB-1589-2018.No passage vote is recorded in the data; the text read is the bill as filed."
+  },
+  "operative_text": "SECTION 2 (HRS 134-1, new definition): \"Firearm noise suppressor\" means any device for silencing, muffling, or diminishing the report of a portable firearm, including any combination of parts, designed or redesigned, and intended for use in assembling or fabricating a firearm noise suppressor and any part intended only for use in the assembly or fabrication.\nSECTION 3 (HRS 134-5): The pistol or revolver and, if applicable, its firearm noise suppressor, may be transported in an enclosed container, as defined in section 134-25, in the course of going to and from the place of the hunt, notwithstanding section 134-26.\nSECTION 4 (HRS 134-8): (c) The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of a firearm noise suppressor is prohibited; provided that a person who is in full compliance with the other provisions of this chapter may:\nSECTION 4 (HRS 134-8): (A) Possess a lawfully acquired firearm noise suppressor suitable for the firearm; (B) Carry and use the firearm noise suppressor pursuant to section 134-5; and\nSECTION 4 (HRS 134-8): (C) Purchase a firearm noise suppressor suitable for the firearm; provided that the person: (i) Shall purchase the suppressor from a person licensed to do so pursuant to part II; and (ii) Before the sale occurs, shall provide to the seller, in addition to any other documentation required by law, verification of the person's hunting license issued pursuant to chapter 183D, part II; and\nSECTION 4 (HRS 134-8): (2) If licensed to sell and manufacture firearms pursuant to part II, sell or manufacture firearm noise suppressors suitable for rifles, shotguns, or other firearms acceptable for hunting, by rules adopted pursuant to section 183D-3; provided that the person may only sell, barter, trade, gift, or transfer a suppressor to a person: (A) Licensed to sell and manufacture firearms; or (B) Who is legally authorized to purchase a firearm pursuant to this chapter and who provides verification of a valid hunting license issued pursuant to chapter 183D, part II."
+}

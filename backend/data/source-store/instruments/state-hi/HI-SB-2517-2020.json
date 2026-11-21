@@ -1,0 +1,89 @@
+{
+  "id": "HI-SB-2517-2020",
+  "scope": "state:hi",
+  "title": "SB2517 (2020 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2517&year=2020",
+    "https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2517_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clarence K. Nishihara",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Rosalyn H. Baker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1a5bd37-00f4-4dc3-a89c-4bbdf64714d3"
+    },
+    {
+      "name": "Karl Rhoads",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "65c3a270-d006-4455-8d7b-1da09d5442eb"
+    },
+    {
+      "name": "Donovan Dela Cruz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "791a81ed-751f-4b39-b1bb-5a324484e05f"
+    },
+    {
+      "name": "Les Ihara",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "56062ee2-5d4e-4905-84fd-015f8a52e2f4"
+    },
+    {
+      "name": "Kaiali‘i Kahele",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b0a5564e-b8b1-4fd8-805a-44e5cda9bcaf"
+    },
+    {
+      "name": "Sharon Moriwaki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3eb6db54-4e14-439c-ab30-21af44beb5e2"
+    },
+    {
+      "name": "Maile Shimabukuro",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Laura H. Thielen",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2020/bills/SB2517_.HTM; sha256 d2f039c0df2a4dc73bb1eb383daaccd54edb697d0c5e75ea958092fae43b3046)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-SB-2517-2020.introduced.htm",
+      "sha256": "d2f039c0df2a4dc73bb1eb383daaccd54edb697d0c5e75ea958092fae43b3046"
+    },
+    "note": "Introduced text. The Act strikes the existing rule that one rifle/shotgun permit covers purchases for one year. Quoted sentences in Section 2 also contain struck words (\"or\"); they are quoted here without them. No votes on file."
+  },
+  "operative_text": "SECTION 2 (HRS 134-2(e)): Permits issued to acquire any pistol, revolver, rifle, or shotgun shall be void unless used within ten days after the date of issue. Permits to acquire a pistol, revolver, rifle, or shotgun shall require a separate application and permit for each transaction.\nSECTION 3 (HRS 463-10.5(e)): Before beginning employment as a guard or in a guard capacity, in addition to the classroom instruction required by this section, guards and individuals acting in a guard capacity who carry a firearm or other weapon, including but not limited to an electric gun as defined in section 134-1, while on-duty in a guard capacity shall possess a valid license to carry a firearm issued by county police pursuant to procedures established by each county police department under section 134-9 and shall satisfy the safety and suitability requirements of section 134-9(b)."
+}

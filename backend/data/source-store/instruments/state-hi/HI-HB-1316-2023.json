@@ -1,0 +1,80 @@
+{
+  "id": "HI-HB-1316-2023",
+  "scope": "state:hi",
+  "title": "HB1316 (2023 Regular): RELATING TO FIREARMS.",
+  "urls": [
+    "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1316&year=2023",
+    "https://data.capitol.hawaii.gov/sessions/session2023/bills/HB1316_.HTM"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elle Cochran",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "64339380-b761-4bc8-b1f8-10838924a1d9"
+    },
+    {
+      "name": "Terez Amato",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d332475f-1eb5-431b-a41c-819e4a394cfb"
+    },
+    {
+      "name": "Sonny Ganaden",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeanné Kapela",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e63401fa-9641-4735-afcf-9d181bc98ca6"
+    },
+    {
+      "name": "Lisa Marten",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9e10d8b8-99de-4e74-bae9-cb1f0463b2d2"
+    },
+    {
+      "name": "Amy Perruso",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1f6efcdf-be32-42d5-82c9-cabd050085d1"
+    },
+    {
+      "name": "Mahina Poepoe",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8a4be9c7-3441-4b55-9b49-773748761897"
+    },
+    {
+      "name": "Adrian Tam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2af8b967-3963-4a61-b4e9-22d5cdb3b69e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Hawaii) (gun-policy Stage 5, Hawaii); operative text read by a Sonnet fill agent from the official Hawaii text (Introduced, official copy, https://data.capitol.hawaii.gov/sessions/session2023/bills/HB1316_.HTM; sha256 5e9500ac294466d8cc48f16280473c5d8d58befc107b4f07284ea54a02b263f0)",
+    "fetched_at": "2026-11-21T20:03:54.952954Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/HI-HB-1316-2023.introduced.htm",
+      "sha256": "5e9500ac294466d8cc48f16280473c5d8d58befc107b4f07284ea54a02b263f0"
+    },
+    "note": "As-filed text. Per the Description, the possession-and-display duty is the change. No passage vote on file."
+  },
+  "operative_text": "SECTION 1 (HRS 134-9): (c) No person shall carry concealed or unconcealed on the person a pistol or revolver without being licensed to do so under this section or in compliance with sections 134-5(c) or 134-25.\nSECTION 1 (HRS 134-9): Except as otherwise provided by federal or state law, no person who has a valid license pursuant to this section shall carry upon their person a pistol or revolver outside of the person's residence without having the valid license in the person's immediate possession, or fail to display the same upon the demand of a law enforcement officer when being lawfully detained; provided that this prohibition shall not apply to:\nSECTION 1 (HRS 134-9): (1) Qualified law enforcement officers and qualified retired law enforcement officers pursuant to title 18 United States Code sections 926B and 926C and this chapter who have documentation regarding their qualifications in their immediate possession; and\nSECTION 1 (HRS 134-9): (2) Persons exempted under section 134-11."
+}
