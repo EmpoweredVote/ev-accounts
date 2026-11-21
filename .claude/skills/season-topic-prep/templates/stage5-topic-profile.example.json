@@ -28,6 +28,7 @@
     ]
   },
   "_sides": "The ladder's two sides for record-script.ts --sides, e.g. \"1,2,3/4,5\". null until the runner has ruled the sides for this topic.",
+  "_set_up": "Keys run_setup.py and stage5_prompts.py triage read. \"fill_flag\": the fill brief's on-topic key (a word of the topic, as check_fill_quotes.py --flag takes it). \"triage\": {\"rung_acts\": what a bill must do to carry a position on this topic, \"no_rung_kinds\": the kinds of bill on the topic that carry none}, two sentences written from the ladder and the rulings. Optional: \"openstates_extracts\": the Open States extract folder with {xx} for the state; \"topic_list_hash\": the hash this topic's stored records carry (else read from the store).",
   "_editor_id": "Optional key \"editor_id\": the uuid of the admin user the verifier and the approval act as (desk.py write; else pass --editor-id). The desk looked it up again in every state.",
   "_slim_cap": "Optional key \"slim_cap\": tokens a slim session leg may reach before it hands over to a fresh session (leg.py; default 100000, 0 = no cap).",
   "_record_script": "true only after the record pass by script has been approved for this topic (it needs sides and a bill table).",

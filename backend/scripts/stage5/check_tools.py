@@ -574,6 +574,137 @@ def leg_takes_the_runners_words_and_prints_what_it_stopped_on(t):
 
 
 @check
+def results_scope_keeps_drops_and_holds_by_the_shared_rules(t):
+    """Card A step A1 was two scripts copied from the state before with sed, in every state (2026-11-21). The shared tool
+    takes the state's differences as hints, never as edits. Replayed on Oregon, Hawaii and Nevada it gives the same
+    files byte for byte; this pins the rules on a made-up state."""
+    os.makedirs(f'{t}/in'); R = f'{t}/in/roster.tsv'
+    rows = [('p1', 'Ann Able', 'o1', 'state', 'ZZ', 'sitting', 'unknown', '', 'Representative'),      # won her own seat
+            ('p2', 'Bo Best', 'o2', 'state', 'ZZ', 'sitting', 'unknown', '', 'Representative'),        # lost
+            ('p3', 'Cy Cole', 'o3', 'state', 'ZZ', 'sitting', 'unknown', '', 'Senator'),               # seat not up
+            ('p4', 'Di Dunn', 'o4', 'state', 'ZZ', 'sitting', 'unknown', '', 'Representative'),        # seat up without her
+            ('p5', 'Ed Earl', 'o5', 'state', 'ZZ', 'sitting', 'unknown', '', 'Representative'),        # race not called
+            ('p6', 'Flo Fox', 'o6', 'state', 'ZZ', 'sitting', 'unknown', '', 'Governor'),              # row has no id: name match
+            ('p7', 'Gus Gil', 'o7', 'state', 'ZZ', 'sitting', 'unknown', '', 'Trustee'),               # one seat of a multi-seat race, not up
+            ('px', 'Other State', 'ox', 'state', 'YY', 'sitting', 'unknown', '', 'Senator')]
+    open(R, 'w').write('politician_id\tfull_name\toffice_id\tlevel\tstate\tscope\tleaving\trace_ids\toffice\n' + ''.join('\t'.join(r) + '\n' for r in rows))
+    E = 'ZZ 2026 General'
+    c = lambda race, office, pos, dt, pid, name, result, el=E: {'election': el, 'race_id': race, 'office_id': office, 'position_name': pos, 'district_type': dt,
+                                                                   'politician_id': pid, 'full_name': name, 'result': result, 'result_certainty': None, 'candidate_status': None}
+    cands = [c('r1', 'o1', 'House 1', 'STATE_LOWER', 'p1', 'Ann Able', 'won'), c('r1', 'o1', 'House 1', 'STATE_LOWER', 'n1', 'New Loser', 'lost'),
+             c('r2', 'o2', 'House 2', 'STATE_LOWER', 'p2', 'Bo Best', 'lost'), c('r2', 'o2', 'House 2', 'STATE_LOWER', 'n2', 'Nell New', 'won'),
+             c('r4', 'o4', 'House 4', 'STATE_LOWER', None, 'No Record', 'won'),
+             c('r5', 'o5', 'House 5', 'STATE_LOWER', 'p5', 'Ed Earl', None), c('r5', 'o5', 'House 5', 'STATE_LOWER', 'n5', 'Chal Lenger', None),
+             c('r6', 'o6', 'Governor', 'STATE_EXEC', None, 'Florence Fox', 'won'),
+             c('r7', 'o8', 'Trustee at large', 'STATE_BOARD', 'n7', 'Tru Stee', 'won'),
+             c('r9', 'o1', 'House 1', 'STATE_LOWER', 'p1', 'Ann Able', 'lost', 'ZZ 2026 Primary')]
+    json.dump(cands, open(f'{t}/in/cands.json', 'w'))
+    json.dump([{'office_id': f'o{i}', 'district_id': f'd{i}', 'district_type': 'STATE_UPPER' if i == 3 else 'STATE_LOWER' if i < 6 else 'STATE_EXEC', 'label': ''} for i in range(1, 9)], open(f'{t}/in/offices.json', 'w'))
+    def go(*a, ok=True): return run('results_scope.py', '--state', 'zz', '--roster', R, '--cands', f'{t}/in/cands.json', '--offices', f'{t}/in/offices.json', '--out', f'{t}/zz', '--batches', f'{t}/b', *a, ok=ok)
+    json.dump({'_why': 'made up', 'seat_groups': {'trustees': ['o7', 'o8']}, 'not_up': {'o7': 'one of two trustee seats; his is not up (made up)'}}, open(f'{t}/hints.json', 'w'))
+    p = go('--election', E, '--hints', f'{t}/hints.json'); out = p.stdout
+    scope = {l.split('\t')[1]: l.split('\t') for l in open(f'{t}/zz/scope.tsv').read().splitlines()[1:]}
+    want = {'Ann Able': 'keep', 'Bo Best': 'drop', 'Cy Cole': 'keep', 'Di Dunn': 'drop', 'Ed Earl': 'close', 'Flo Fox': 'keep', 'Gus Gil': 'keep',
+            'Nell New': 'keep', 'New Loser': 'drop', 'No Record': 'norecord', 'Chal Lenger': 'close', 'Tru Stee': 'keep'}
+    assert {k: v[5] for k, v in scope.items()} == want, {k: v[5] for k, v in scope.items()}
+    assert 'Other State' not in scope and 'NAME-MATCH\tFlo Fox\t=\tFlorence Fox' in out and scope['Gus Gil'][6].startswith('one of two trustee seats'), out
+    assert scope['Ann Able'][6] == 'general won House 1', 'the primary\'s rows are not read'
+    ids = open(f'{t}/b/zz-ids.txt').read().split(); assert sorted(ids) == ['n2', 'n7', 'p1', 'p3', 'p6', 'p7'], ids
+    ros = list(csv.DictReader(open(f'{t}/b/zz-roster.tsv'), delimiter='\t'))
+    new = next(r for r in ros if r['politician_id'] == 'n2'); assert new['scope'] == 'candidate' and new['office'] == 'House 2' and new['state'] == 'ZZ', new
+    # no election named: the one "General" election with rows is read; two of them is no verdict
+    assert go('--hints', f'{t}/hints.json').returncode == 0
+    json.dump(cands + [c('r8', 'o1', 'House 1', 'STATE_LOWER', 'p1', 'Ann Able', 'won', 'ZZ 2026 Special General')], open(f'{t}/in/cands.json', 'w'))
+    p = go(ok=False); assert p.returncode == 2 and 'NO VERDICT' in p.stdout and 'Special General' in p.stdout, p.stdout
+    json.dump(cands, open(f'{t}/in/cands.json', 'w'))
+    json.dump({'hand': {'Di Dunn': ['Nobody', 'House 4']}}, open(f'{t}/bad.json', 'w'))
+    p = go('--election', E, '--hints', f'{t}/bad.json', ok=False); assert p.returncode != 0 and 'hints.hand' in p.stderr, 'a hint that matches no row stops the run'
+
+
+@check
+def setup_store_copies_once_and_refuses_a_clash(t):
+    """Card A step A4 was six to nine hand commands a state (a clash loop, cp -n, cat >>, an inline script). One tool:
+    everything is checked before anything is written, a second run adds nothing, and a clash writes nothing."""
+    S = f'{t}/research/stage5'; L = f'{S}/legiscan'; st = f'{L}/store-staging-zz/instruments/state-zz'; store = f'{t}/store'
+    os.makedirs(st); os.makedirs(f'{t}/research/stage0'); G = f'{t}/research/stage0/gates.tsv'
+    for b in ('ZZ-HB-1-2025', 'ZZ-SB-2-2025'): json.dump({'id': b}, open(f'{st}/{b}.json', 'w'))
+    open(G, 'w').write('instrument_id\tvote_date\tbody\tgate\nYY-HB-9-2025\t2025-01-01\tYY House\tnone\n')
+    open(f'{L}/gates-add-zz.tsv', 'w').write('ZZ-HB-1-2025\t2025-02-01\tZZ House\tnone\nZZ-HB-1-2025\t2025-03-01\tZZ Senate\tnone\nZZ-SB-2-2025\t\t\tsponsors only\n')
+    json.dump({'YY-HB-9-2025': ['x']}, open(f'{S}/subjects.json', 'w'), indent=2); json.dump({'ZZ-HB-1-2025': ['a'], 'ZZ-SB-2-2025': ['b']}, open(f'{L}/subjects-add-zz.json', 'w'))
+    go = lambda *a: run('setup_store.py', '--stage5', S, '--state', 'zz', '--store', store, '--date', '2026-01-02', *a, ok=False)
+    p = go('--print'); assert p.returncode == 0 and not os.path.exists(f'{store}/state-zz') and open(G).read().count('\n') == 2, '--print writes nothing'
+    p = go(); assert p.returncode == 0 and '2 instrument(s) to copy' in p.stdout and '3 gate row(s) to append' in p.stdout, p.stdout
+    assert len(os.listdir(f'{store}/state-zz')) == 2 and open(G).read().count('\n') == 5 and open(G).read().endswith('sponsors only\n'), 'one bill has a row per chamber: both are kept'
+    assert set(json.load(open(f'{S}/subjects.json'))) == {'YY-HB-9-2025', 'ZZ-HB-1-2025', 'ZZ-SB-2-2025'} and os.path.exists(G + '.bak-2026-01-02-zz') and os.path.exists(f'{S}/subjects.json.bak-2026-01-02-zz')
+    p = go(); assert p.returncode == 0 and 'nothing to do' in p.stdout and open(G).read().count('\n') == 5, 'a second run adds nothing'
+    json.dump({'id': 'ZZ-HB-1-2025', 'changed': True}, open(f'{store}/state-zz/ZZ-HB-1-2025.json', 'w')); json.dump({'id': 'ZZ-HB-3-2025'}, open(f'{st}/ZZ-HB-3-2025.json', 'w'))
+    p = go(); assert p.returncode == 2 and 'nothing written' in p.stdout and not os.path.exists(f'{store}/state-zz/ZZ-HB-3-2025.json'), 'a clash writes nothing, not even the bills that do not clash'
+    shutil.copyfile(f'{st}/ZZ-HB-1-2025.json', f'{store}/state-zz/ZZ-HB-1-2025.json'); g = open(G).read(); open(G, 'w').write(g.rstrip('\n'))
+    p = go(); assert p.returncode == 2 and 'newline' in p.stdout, 'an appended row must not join the last line'
+    shutil.rmtree(st); assert go().returncode == 2, 'nothing staged is no verdict'
+
+
+@check
+def bill_table_join_and_the_triage_prompt_replace_two_hand_copies(t):
+    """Every state joined the bill-table parts with a one-off script and built the triage prompt by rewording the state
+    before's (Oregon's copy had lost two words of the template). Both are commands now; the topic's two triage
+    sentences come from the profile, never from a template or another state's file."""
+    os.makedirs(t); P, S = topic_folder(t, triage={'rung_acts': 'it could change who may own a widget', 'no_rung_kinds': 'a report or a study about widgets'})
+    part = lambda k, bills: json.dump({'topic_key': 'made-up-topic', 'bills': bills}, open(f'{t}/p{k}.json', 'w'))
+    row = {'rung': 2, 'deciding_words': 'w', 'why': 'y', 'flag': ''}
+    part(0, {'ZZ-HB-1-2025': row}); part(1, {'ZZ-HB-2-2025': row, 'ZZ-HB-3-2025': row})
+    T = f'{t}/table.json'; join = lambda *a: run('bill_table.py', 'join', T, *a, ok=False)
+    p = join(f'{t}/p0.json', f'{t}/p1.json'); assert p.returncode == 0 and len(json.load(open(T))['bills']) == 3, p.stdout + p.stderr
+    assert join(f'{t}/p0.json').returncode != 0 and len(json.load(open(T))['bills']) == 3, 'a joined table is edited in place: never rebuilt by accident'
+    p = join(f'{t}/p0.json', '--force'); assert p.returncode == 0 and len(json.load(open(T))['bills']) == 1 and len(json.load(open(T + '.bak-join'))['bills']) == 3
+    os.remove(T); part(2, {'ZZ-HB-1-2025': row}); assert join(f'{t}/p0.json', f'{t}/p2.json').returncode != 0 and not os.path.exists(T), 'a bill in two parts writes nothing'
+    json.dump({'topic_key': 'another', 'bills': {'ZZ-HB-9-2025': row}}, open(f'{t}/p3.json', 'w')); assert join(f'{t}/p0.json', f'{t}/p3.json').returncode != 0, 'parts of two topics'
+    tri = lambda prof=P, *a: run('stage5_prompts.py', 'triage', '--profile', prof, '--state', 'zz', '--state-name', 'Zedland', *a, ok=False)
+    assert tri().returncode != 0, 'no candidates file yet'
+    json.dump([{'bill_id': 'ZZ-HB-1-2025'}], open(f'{S}/sponsor-candidates-zz.json', 'w')); open(f'{t}/note.md', 'w').write('Zedland titles name code sections only.')
+    p = tri(P, '--note-file', f'{t}/note.md'); assert p.returncode == 0, p.stderr
+    text = open(f'{S}/waves/zz-triage/prompt.md').read()
+    assert 'it could change who may own a widget' in text and 'a report or a study about widgets' in text and '"How many widgets?"' not in text and 'How many widgets?' in text
+    assert '{{' not in text and f'{S}/sponsor-triage-zz.json' in text and 'Notes for Zedland: Zedland titles' in text and '<!--' not in text
+    assert 'triage-zz' in open(f'{S}/waves/zz-triage/jobs.tsv').read() and '\topus\t' in open(f'{S}/waves/zz-triage/jobs.tsv').read()
+    for word in ('gun', 'firearm'): assert word not in text, f'the triage prompt of a made-up topic names {word!r}'
+    P2 = profile(f'{t}/two'); shutil.copytree(S, f'{t}/two/research/stage5', dirs_exist_ok=True)
+    p = tri(P2); assert p.returncode != 0 and '"triage"' in p.stderr, 'a profile with no triage sentences writes nothing'
+
+
+@check
+def run_setup_prints_the_set_up_in_order_and_plants_a_plain_fault(t):
+    """Session A took 132 to 151 steps in seven of eight states whatever their size (2026-11-21). run_setup.py is those
+    steps as eight; --print shows every command and runs none. Its quote control changes one number that stands between
+    words to a number the bill prints nowhere, so a check that passes it is blind."""
+    os.makedirs(t); P, S = topic_folder(t, triage={'rung_acts': 'a', 'no_rung_kinds': 'b'}, fill_flag='on_topic', since='2017'); W = f'{t}/wt'; leg_profile(W)
+    p = run('run_setup.py', '--profile', P, '--state', 'zz', '--print', '--seats', '10,5', '--date', '2026-01-02', '--worktree', W)
+    out = p.stdout; order = [l.split(': ')[1] for l in out.splitlines() if l.startswith('# step')]
+    assert order == ['roster', 'scan', 'link', 'sponsors', 'texts', 'fill', 'store', 'table'], order
+    for want in ('results_scope.py --state ZZ', 'results-scope-data.ts --state ZZ --state-name "Zedland"', 'link_check.py --state ZZ', 'stage5_prompts.py triage',
+                 'check_fill_quotes.py', '--flag on_topic', 'bill_merge.py', '--seats 10,5', 'setup_store.py --stage5', 'source-store --prefix . -- validate',
+                 'topic:stage5-prefill', 'bill_table.py join', 'bill_table.py check', 'bill_table.py questions', 'must FAIL'):
+        assert want in out, (want, out)
+    assert out.index('link_check.py') < out.index('sponsor_cover.py'), 'a sponsorship reaches a person only through the link: it is checked first'
+    assert not os.path.exists(f'{S}/zz/setup') and not os.path.exists(f'{S}/batches/zz-roster.tsv.new'), '--print writes nothing'
+    assert run('run_setup.py', '--profile', P, '--state', 'zz', '--print', '--from', '9', '--worktree', W, ok=False).returncode != 0
+    sys.path.insert(0, TOOLS)
+    import importlib; rs = importlib.import_module('run_setup'); importlib.reload(rs)
+    sys.path.remove(TOOLS)
+    os.makedirs(f'{t}/fill'); os.makedirs(f'{t}/texts')
+    law = 'Sec. 3. (4) A dealer shall keep each record for 48 months after the sale and shall report within 3 days to the sheriff of the county.'
+    open(f'{t}/texts/ZZ-HB-1-2025.enrolled.txt', 'w').write(law + ' Sec. 52. Nothing here.')
+    json.dump({'id': 'ZZ-HB-1-2025', 'operative_text': 'Sec. 3 (new): (4) A dealer shall keep each record for 48 months after the sale and shall report within 3 days to the sheriff'}, open(f'{t}/fill/ZZ-HB-1-2025.json', 'w'))
+    got = rs.plant_number(f'{t}/fill/ZZ-HB-1-2025.json', f'{t}/texts', f'{t}/plant'); assert got, 'a quote with a number between words can be planted'
+    new = json.load(open(f'{got[0]}/ZZ-HB-1-2025.json'))['operative_text']
+    assert 'within 7 days' in new and '48 months' in new and '(4) A dealer' in new and 'Sec. 3' in new, 'one number changed, a label never: ' + new
+    assert '3 -> 7' in got[2], 'the first shift (3 + 4 = 7) is free here, and 52 is printed, so 48 would not have gone to 52: ' + got[2]
+    r = run('check_fill_quotes.py', '--fills', got[0], '--texts', got[1], '--state', 'zz', '--worktree', W, ok=False); assert r.returncode == 1 and 'MISS' in r.stdout, 'the planted fault fails the real check'
+    json.dump({'id': 'ZZ-HB-2-2025', 'operative_text': 'A dealer shall keep each record after the sale and shall report to the sheriff of the county'}, open(f'{t}/fill/ZZ-HB-2-2025.json', 'w'))
+    assert rs.plant_number(f'{t}/fill/ZZ-HB-2-2025.json', f'{t}/texts', f'{t}/plant2') is None, 'no number, no plant: the step says the control did not run'
+
+
+@check
 def recipe_keeps_an_earlier_pass_of_step_0_aside(t):
     """Colorado co-01 (2026-11-19): three codes changed in a round after the recipe had started; step 0 from the start
     stopped because the writer refuses to overwrite research-stage5-0.csv, and a session renamed files by hand. The

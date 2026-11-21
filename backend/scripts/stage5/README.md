@@ -206,3 +206,37 @@ does the start-up in one step (fetch, `.env` link, install, tracker, the state f
 lease, the desk card) and `desk.py close` the close-out (`close_state.py`, then `DESK-REPORT.md` with the facts the
 final report needs). It never takes a held lease, never picks a 🛑 row, and writes nothing to the database.
 
+
+**After Oregon and Hawaii (2026-11-21).** Measured over eight states: a state costs 8M to 13M units whatever its
+size (Nevada, 55 people: 143,115 a person; Minnesota, 203: 65,389), because about 3.6M of it is fixed: the desk
+(1.4M to 1.9M over its whole session), session A's own steps (132 to 151 steps, 1.36M to 1.77M, in seven of eight
+states) and session B's (0.67M when nothing goes wrong). What changed, each with the number behind it:
+
+- **Sponsorships in the reader test.** Nevada, Oregon and Hawaii each stopped a live run at recipe step 9 on the page
+  that proves a sponsorship (three runner stops, three tool edits mid-run, 13 of their 18 gate runs). Their dry
+  batches had listed those pages (81, 428 and 1,266) and nothing read one. `sponsor-page-check.ts` reads a sample as
+  the verifier will, and `pilot_batch.py --verdict` gives no verdict without it. On Nevada's old list it fails 6 of
+  6 pages; on Colorado's it passes 6 of 6.
+- **Session A is `run_setup.py`**: eight steps for A1 to A5, stopping only where a person is needed. The scripts each
+  state copied from the state before are shared tools now: `results_scope.py` with `results-scope-data.ts` (the same
+  scope, ids and roster as Oregon's, Hawaii's and Nevada's own copies, byte for byte), `stage5_prompts.py triage`,
+  `setup_store.py` (Oregon's store step replayed: the same files, apart from two rows a ruling changed later) and
+  `bill_table.py join`. The link check runs before the sponsor cover. The quote check's control is built in.
+- **`check_fill_quotes.py` reads numbers and single words.** Over 3,848 real quote parts of eight states, the old
+  rule caught 0 of 996 planted number changes and 424 of 1,422 planted word changes; the new one about 9 in 10 of
+  each, and fails 32 honest parts (a label the fill added in front).
+- **`link_check.py` wants every record of a linked member.** Nevada: 39 of the 40 lines leg B added by hand are
+  named. It also names 3 unlinked records in Hawaii and 257 in North Dakota, on batches already written: check
+  whether the votes on them reached those people another way.
+- **The gate's `snippet-page-code`**: 122 of 27,939 written snippets hold markup or an unreadable character (100 of
+  them in one Virginia batch).
+- **The desk.** `desk.py write` is the write stop in one step, on one of the runner's two kinds of yes, and it never
+  approves when the read-back does not match the write. `leg.py --say` files the runner's words and resumes, and a
+  stop prints its question. `desk.py slim` prints the commands for a desk in a terminal: 6,470 tokens at the start,
+  against about 135,000 in the desktop app.
+- **A log line is never a step of its own** (3 to 17 such steps a leg, about 0.15M a state), and a searcher runs
+  `topic-stage5-find.ts check` on its own file (10 files in three states were refused for a party word and reworded
+  by the main session).
+- Not built: mapping a blank to its reason without a hand step. All 31 such rows of four states were blanks the
+  record script wrote with no `shows_side`; whether a vote on a no-position bill shows a side is in the bill table's
+  free text. It needs a `side` key on a no-position row, which is a ruling.

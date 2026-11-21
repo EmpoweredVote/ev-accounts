@@ -72,6 +72,10 @@ def exact(q, T, idx):
         if cur is not None:
             p = _next(q[k], cur, T, idx)
             if p is not None: cur, k = p, k + 1; continue
+        # A jump is tried before "the text has other words here". The other order was measured (2026-11-21, 3,848 real
+        # parts): it fails 146 honest parts, not 32, because fills leave out a label mid-sentence ("section 134-3(b)
+        # shall"), and catches no more planted changes. So a changed phrase that the bill also prints somewhere else
+        # ("subsection (5)(a) of this section") still passes: about 1 planted change in 10.
         r = _run(q, k, T, idx)                     # the quote carries on from another place
         if r: cur, k = r[1], k + min(RUN, len(q) - k); continue
         sk = 0
