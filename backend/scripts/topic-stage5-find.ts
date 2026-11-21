@@ -6,6 +6,13 @@
  *   npm run topic:stage5-find --prefix backend -- import --topic <key> --season draft --dir <abs stage5/raw/find>
  *        --roster <abs roster.tsv> [--by <collector name>] [--store <abs store root>]
  *
+ *   npx tsx scripts/topic-stage5-find.ts check <abs path>/<politician_id>.json [...]
+ *
+ * `check` is for the searcher: it reads its own file the way `import` will, writes nothing and opens no database, and
+ * prints OK or the reason the import would refuse it (exit 1). Searchers were told the rules three times in the brief
+ * and 10 files in three states were still refused for a party word in a place note, each one reworded by the main
+ * session at a full-price step. The one who wrote the file can now find out before it hands it in.
+ *
  * `next` writes the next batch of people owed a search (roster.tsv columns) for collectors briefed with
  * templates/BRIEF-stage5-find.md. `import` reads every `<politician_id>.json` in `--dir`, validates it (the id inside
  * must match the file name and be on the roster), and
@@ -48,6 +55,24 @@ async function draftSeasonNumber(): Promise<number> {
 
 async function main(): Promise<number> {
   const cmd = argv[2];
+  if (cmd === 'check') {
+    const files = argv.slice(3).filter((a) => !a.startsWith('--'));
+    if (!files.length) throw new Error('usage: topic-stage5-find check <abs path>/<politician_id>.json [...]');
+    let bad = 0;
+    for (const file of files) {
+      const name = file.split('/').pop() ?? file;
+      try {
+        // topic and season do not change what is refused; the roster check is the import's own (it needs the roster)
+        const pf = importFindFile(JSON.parse(readFileSync(abs('check', file), 'utf8')), 'check', 0, { by: 'check', at: new Date(0).toISOString() },
+          { fileId: name.replace(/\.json$/, ''), onRoster: new Set([name.replace(/\.json$/, '')]) });
+        console.log(`OK ${name}: ${pf.findings.length} finding(s)`);
+      } catch (e) {
+        bad++;
+        console.log(`REFUSED ${name}: ${(e as Error).message}`);
+      }
+    }
+    return bad ? 1 : 0;
+  }
   const topic = flag('--topic');
   if (!topic || (cmd !== 'next' && cmd !== 'import')) {
     throw new Error('usage: topic-stage5-find next|import --topic <key> --season draft … (see the file header)');

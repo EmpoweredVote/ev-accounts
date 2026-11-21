@@ -23,7 +23,12 @@ Each must have an idmap line that points at a LegiScan person of this state's da
     sync-member-ids.ts matched to the seat: no name involved. A LegiScan id from the database is paired too, marked
     with how it was matched. `--add` writes these lines first. An idmap line that disagrees with the database is a
     CONFLICT: printed, never changed, and the exit is 1.
-Exit 0: every legislator is linked or excused. Exit 1: someone is not, or a CONFLICT. Exit 2: usage, or the check was blind (no
+  - A linked member may have MORE THAN ONE LegiScan record (a new id in another session). Each record whose name is one
+    linked member's needs a line too, or what it holds is not on file (Nevada, 2026-11-21: 18 members' 2019
+    sponsorships). `--add` writes the ones of the member's own chamber. Refuse a namesake's record with the line
+    `<people_id>\t-\t# refused: <why>`.
+
+Exit 0: every legislator is linked or excused, and every record of a linked member has a line. Exit 1: not so, or a CONFLICT. Exit 2: usage, or the check was blind (no
 legislators matched --offices, or no LegiScan people were read): it gives no verdict then.
 """
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
@@ -194,13 +199,49 @@ if added:
     print(f'added {len(added)} line(s) to {IDMAP}; check each on name and chamber:')
     for ls, pid in added: print(f"  {legs[pid]['full_name']} ({legs[pid].get('office')})  <-  {who(ls)}")
 
+# Nevada 2026-11-21: one line links a member, so a member with a second LegiScan record (the dump gave 18 members a new
+# id for their 2019 sponsorships) passed with that record unlinked, and the sponsorships on it were never on file. Every
+# record whose name is one linked member's must have a line. `--add` writes it when the record is of the member's own
+# chamber, or was made from a sponsor list; a dump person of the other chamber may be the same person's earlier seat or a
+# namesake, so a person decides.
+# To refuse a record, give it the line `<people_id>\t-\t# refused: <why>`: it points at nobody, and is never asked again.
+# A record the converter made from a sponsor list has no given name, no district, a title in its name ("Assemblywoman
+# Dina Neal") and the BILL's chamber as its role, so the name rule and the whole-name rule both miss it (39 of Nevada's
+# 40). It is matched on the name with titles, initials and suffixes left out, and its role is not read as a chamber.
+TITLE = {'assemblyman', 'assemblywoman', 'assemblymember', 'senator', 'representative', 'delegate', 'rep', 'sen', 'del', 'speaker', 'president'}
+loose = lambda n: ''.join(norm(w) for w in re.sub(r'["“][^"”]*["”]', ' ', n or '').replace(',', ' ').split()
+                          if not re.fullmatch(r'[A-Za-z]\.?', w) and norm(w) not in TITLE and norm(w) not in SUFFIX)
+by_loose = {}
+for pid, r in legs.items(): by_loose.setdefault(loose(r['full_name']), []).append(pid)
+by_loose = {k: v[0] for k, v in by_loose.items() if k and len(v) == 1}
+made_from_a_list = lambda ls: not people[ls].get('first_name') and not people[ls].get('district')
+upper = lambda text: bool(re.search(r'senat', text or '', re.I))
+own_chamber = lambda ls, pid: made_from_a_list(ls) or (people[ls].get('role') == 'Sen') == upper(legs[pid].get('office'))
+second = [(ls, pid) for ls in sorted(people) if ls not in idmap and ls not in {a for a, _ in added}
+          for pid in [m.match(ls) or member_of(ls) or (by_loose.get(loose(people[ls].get('name'))) if made_from_a_list(ls) else None)] if pid in linked]
+if second:
+    same = [(ls, pid) for ls, pid in second if own_chamber(ls, pid)]
+    if ADD and same:
+        with open(IDMAP, 'a') as fh:
+            for ls, pid in same: fh.write(f"{ls}\t{pid}\t# {people[ls].get('name')} (link_check other record of a linked member)\n")
+        for ls, pid in same: idmap[ls] = pid
+        print(f'added {len(same)} other record(s) of a linked member to {IDMAP}; check each on name and chamber:')
+        for ls, pid in same: print(f"  {legs[pid]['full_name']} ({legs[pid].get('office')})  <-  {who(ls)}")
+        second = [x for x in second if x not in same]
+if second:
+    print(f'{len(second)} other record(s) of a linked member have no line: the votes and sponsorships on them are NOT on file.')
+    for ls, pid in second:
+        print(f"  {legs[pid]['full_name']} ({legs[pid].get('office')})  <-  {who(ls)}"
+              + ('' if own_chamber(ls, pid) else '   (another chamber: the same person, or a namesake?)'))
+    print(f'  Fix: `--add` writes the ones of the member\'s own chamber. Add the others by hand, or refuse one with `<people_id>\\t-\\t# refused: <why>` in {IDMAP}.')
+
 free = [ls for ls in people if ls not in idmap and ls not in {a for a, _ in added}]
 missing = [pid for pid in legs if pid not in linked and pid not in excused]
 print(f'link check {ST}: {len(legs)} legislator(s) on the roster, {len(legs) - len(missing) - len([p for p in excused if p in legs and p not in linked])} linked, '
       f'{len([p for p in excused if p in legs and p not in linked])} excused, {len(missing)} NOT linked; {len(people)} LegiScan people read')
 for pid, why in excused.items():
     if pid in legs and pid not in linked: print(f"  excused: {legs[pid]['full_name']}: {why}")
-if not missing: sys.exit(1 if db_conflicts else 0)
+if not missing: sys.exit(1 if db_conflicts or second else 0)
 
 print('NOT linked: these people have no votes or sponsorships on file until idmap.tsv has their line.')
 for pid in sorted(missing, key=lambda p: legs[p]['full_name']):

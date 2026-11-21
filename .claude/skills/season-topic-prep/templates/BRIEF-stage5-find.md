@@ -130,12 +130,15 @@ blocked page is a gap, never "nothing": list it in `places` as `blocked: <url>`.
 `findings` may be empty: an honest "found nothing" is a result. `searched.places` must list where you looked
 either way. Return a two-line summary: how many findings, and anything blocked.
 
-## Before you finish — three checks on your own file
+## Before you finish — four checks on your own file
 
 1. **Did you read at least one of this person's own pages** (official, member or campaign page)? If every one was
    blocked or missing, say so for each in `places`. A file that found nothing and read none of their own pages is
    searched again, so try each page once more first.
 2. **No empty fields.** A `record` finding with no bill id has no `instrument_id` key at all (never `null`).
 3. **No party name anywhere in `places`, `status` or a `note`.**
+4. **Run the import's own check on your file, and fix the file until it prints `OK`** (from `{{WORKTREE}}/backend`):
+   `npx tsx scripts/topic-stage5-find.ts check <your file>`. `REFUSED` gives the reason in one line. A file the
+   import refuses is reworded by someone else at many times your cost.
 
 Run repo commands from `{{WORKTREE}}`. Write your file to: `{{OUT_PATH}}`

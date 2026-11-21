@@ -96,12 +96,15 @@ file**, and nothing else says so:
 python3 -I scripts/stage5/link_check.py --state {{XX}} --roster {{S}}/batches/{{xx}}-roster.tsv --ds {{S}}/legiscan/ds --idmap {{S}}/legiscan/idmap.tsv --add
 ```
 
-Exit 1 names each unlinked member and who may be the same person. Add the line by hand; go on only at exit 0. A member seated after the newest dataset goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
+Exit 1 names each unlinked member and who may be the same person. Add the line by hand; go on only at exit 0. It also
+exits 1 while a linked member has another LegiScan record with no line: add it, or refuse a namesake's with
+`<people_id>\t-\t# refused: <why>`. A member seated after the newest dataset goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
 stop 1 sheet. After A4, every person the pre-fill reports with no vote must be a non-legislator or in that file.
 
 **A3. Bill texts.** Shared scripts, never a copy of another state's (usage in each header): `bill_skeletons.py`,
 the state's own text fetch, `bill_fill_wave.py` (a `wave.py` wave; the newest `FILL-BRIEF*.md` is the model), then
-`bill_merge.py`. Check the fills' quotes, and watch a planted wrong quote fail once:
+`bill_merge.py`. Check the fills' quotes, and watch a planted fault fail once: **one changed number** in a real quote,
+in a scratch copy of a fill:
 
 ```bash
 python3 -I scripts/stage5/check_fill_quotes.py --fills {{S}}/legiscan/fill --texts {{S}}/legiscan/texts --state {{xx}} --flag <the fill brief's on-topic key>
@@ -135,7 +138,8 @@ python3 -I scripts/stage5/bill_table.py questions {{S}}/bill-table-{{xx}}.json -
 ```
 
 `check` must end at 0 problems; watch it catch a planted fault once. `questions` also lists bills older than the
-data on disk: do its check. Settle each flag from the rulings already in
+data on disk. 🔴 **Each one goes on the stop 1 sheet with its people** (hold them, drop the rung, or build a
+path): a page the reader opens is not a vote the recipe can place (Oregon: 9 people held at step 7). Settle each flag from the rulings already in
 `{{S}}/coder-rulings.md` where you can. Write the rest as grouped questions, each with the people it affects, in
 `{{S}}/{{xx}}/STOP1-QUESTIONS.md`. Detail: STAGE5 §3b.
 

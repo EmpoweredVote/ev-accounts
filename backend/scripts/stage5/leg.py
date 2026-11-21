@@ -2,7 +2,7 @@
 (three-state review 2026-11-13, change 1; runner's decision 2026-11-13: slim for both legs).
 
 usage: python3 -I scripts/stage5/leg.py A|B --profile <topic-profile.json> --state xx --state-name <Name>
-                                        [--answer <file>] [--worktree <dir>] [--cap N] [--print]
+                                        [--answer <file> | --say "<the runner's words>"] [--worktree <dir>] [--cap N] [--print]
        python3 -I scripts/stage5/leg.py sessions --profile <topic-profile.json> --state xx
        python3 -I scripts/stage5/leg.py log "<one line>"        (run by the slim session itself)
 
@@ -21,7 +21,9 @@ needs the runner, then ends with one last line, which this tool turns into its e
   (anything else)            exit 2    the reply is in <desk>/leg-<leg>.out.txt
 
 --answer resumes the SAME session (`claude --resume`), so the leg keeps what it knows; the file's text is its first
-message. The session id and every run are kept in <stage5>/<xx>/desk/leg-<leg>.json.
+message. --say "<words>" does the same from the command line: it files the words, exactly as given, as the next
+`ANSWER-<leg>-<n>.md` and resumes (one desk step, not two). On `STOP question` and `STOP write` the file the leg named
+is printed above the last line, so the desk does not spend a step opening it. The session id and every run are kept in <stage5>/<xx>/desk/leg-<leg>.json.
 `sessions` prints `--session <transcript>` for every session of every leg on file, for close_state.py.
 
 The size cap (2026-11-14). A slim session starts small but nothing clears it, so every step re-reads all the steps
@@ -46,7 +48,7 @@ from _args import opt, positional
 from session_card import load_profile
 import stage5_usage as U
 
-USAGE = 'leg.py A|B --profile <json> --state xx --state-name <Name> [--answer <file>] [--worktree <dir>] [--cap N] [--print]   |   leg.py sessions --profile <json> --state xx   |   leg.py log "<line>"'
+USAGE = 'leg.py A|B --profile <json> --state xx --state-name <Name> [--answer <file> | --say "<the runner\'s words>"] [--worktree <dir>] [--cap N] [--print]   |   leg.py sessions --profile <json> --state xx   |   leg.py log "<line>"'
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLS = 'Bash,Read,Write,Edit,WebFetch,WebSearch'
 LAST = re.compile(r'^(DONE [AB]|STOP (question|write|approve|blocked|handover) .+)$')
@@ -117,6 +119,15 @@ def main():
     wt = os.path.abspath(opt('--worktree') or os.path.join(HERE, '..', '..', '..'))
     state_file = f'{desk}/leg-{leg}.json'; state = json.load(open(state_file)) if os.path.exists(state_file) else None
     answer = opt('--answer'); cap = int(opt('--cap') or prof.get('slim_cap') or CAP); card = f'{S}/{xx}/CARD-{leg}.md'
+    say = opt('--say')
+    if say is not None:
+        # One step, not two: the desk wrote the answer file, then resumed the leg (eight states, 2026-11-21: 4 to 5
+        # desk steps a stop, each one re-reading the whole desk session). The words are filed exactly as given.
+        if answer: raise SystemExit('--say and --answer are two ways to give one answer: pass one')
+        if not say.strip(): raise SystemExit('--say is empty: pass the runner\'s words')
+        n = 1 + max([int(m.group(1)) for f in glob.glob(f'{desk}/ANSWER-{leg}-*.md') for m in [re.search(r'-(\d+)\.md$', f)] if m] or [0])
+        answer = f'{desk}/ANSWER-{leg}-{n}.md'
+        if '--print' not in sys.argv: open(answer, 'w').write(say.strip() + '\n')
     if cap < 0: raise SystemExit('--cap is a number of tokens (0 turns the cap off)')
     base = ['--model', 'opus', '--output-format', 'json', '--tools', TOOLS, '--allowedTools', TOOLS, '--permission-mode', 'acceptEdits',
             '--strict-mcp-config', '--safe-mode', '--disable-slash-commands',
@@ -191,6 +202,11 @@ def main():
             json.dump(state, open(state_file, 'w'), indent=1)
         if code != 13: break
         handovers += 1; answer = None; cmd, sid = fresh(opening() + carry_on(note))
+    # The desk reads the question (or the preview) next in every case: print it here, and that read is not a step.
+    shown = line.split(' ', 2)[2].strip() if code in (10, 11) and len(line.split(' ', 2)) == 3 else None
+    if shown and os.path.exists(shown):
+        text = open(shown).read().strip()
+        print(f'----- {shown}\n{text[:12000]}' + ('\n[cut: read the file for the rest]' if len(text) > 12000 else '') + '\n-----')
     print(line); return code
 
 

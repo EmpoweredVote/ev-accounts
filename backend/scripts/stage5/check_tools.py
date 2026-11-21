@@ -406,8 +406,10 @@ def evidence_bill_anchor_reads_a_zero_padded_number(t):
 def reader_dry_batch_verdict_fails_on_each_merge_and_gate_fault(t):
     """Colorado 2026-11-19: the reader session's dry batch stopped after the lines, so the merge and the gate first met
     the state's formats in a 117-person run (six replays). `pilot_batch.py --verdict` reads the merge's and the gate's
-    output on the dry batch: every fault alone fails it, an unrun or empty batch gives no verdict, and a sponsorship
-    page with no line (never fetched in a dry batch) is counted, not failed."""
+    output on the dry batch: every fault alone fails it, and an unrun or empty batch gives no verdict.
+    Nevada, Oregon and Hawaii 2026-11-21: a sponsorship left on the legislature's own page was counted, never read, and
+    each state met a page that prints no sponsor at step 9 of a live run. A sample of those pages must have been read
+    (sponsor-page-check.ts): no check file is no verdict, a stale one is no verdict, and a fault in it fails."""
     B = f'{t}/batch'; L = f'{B}/legiscan'; os.makedirs(L)
     V = 'https://leg.example.gov/votes/1#HB1'
     verdict = lambda: run('openstates/pilot_batch.py', '--pilot', t, '--verdict', ok=False)
@@ -420,7 +422,17 @@ def reader_dry_batch_verdict_fails_on_each_merge_and_gate_fault(t):
         write_csv(f'{B}/research.csv', [{'full_name': 'A', 'topic_key': 'tp', 'value': '3', 'reasoning': d['reasoning']}])
         for f, k in (('unmapped.json', 'unmapped'), ('crosscheck.json', 'cross'), ('no-line.json', 'noline')): json.dump(d[k], open(f'{L}/{f}', 'w'))
         json.dump(d['gate'], open(f'{B}/gate-findings.json', 'w'))
-    put(); p = verdict(); assert p.returncode == 0 and '1 sponsorship page(s)' in p.stdout and 'FAULT' not in p.stdout, p.stdout
+    put(); p = verdict(); assert p.returncode == 0 and 'no sponsorship is left on an official page' in p.stdout and 'FAULT' not in p.stdout, p.stdout
+    own = [['A', 'https://leg.example.gov/bills/hb1', 'XX-HB-1-2025', 'sponsor'], ['B', 'https://leg.example.gov/bills/hb2', 'XX-HB-2-2025', 'cosponsor']]
+    json.dump(own, open(f'{L}/sponsor-own-page.json', 'w'))
+    p = verdict(); assert p.returncode == 2 and 'none was read' in p.stdout, 'pages nobody read are not a pass: ' + p.stdout
+    chk = lambda **k: json.dump({'on_file': 2, 'sampled': 2, 'ok': 2, 'faults': [], **k}, open(f'{L}/sponsor-page-check.json', 'w'))
+    chk(); p = verdict(); assert p.returncode == 0 and '2 page(s) read, 2 prove' in p.stdout, p.stdout
+    chk(on_file=1); assert verdict().returncode == 2, 'a check made for another list is stale'
+    chk(sampled=0, ok=0); assert verdict().returncode == 2, 'a check that read no page is not a pass'
+    chk(ok=1, faults=[{'name': 'A', 'url': own[0][1], 'instrument': 'XX-HB-1-2025', 'why': 'no-name', 'detail': 'the page does not print "A"'}])
+    p = verdict(); assert p.returncode == 1 and p.stdout.count('FAULT') == 1 and 'do not print the sponsor' in p.stdout, p.stdout
+    os.remove(f'{L}/sponsor-own-page.json'); os.remove(f'{L}/sponsor-page-check.json')
     faults = {'unmapped': [['A', V]], 'cross': [{'name': 'A', 'agree': False, 'legiscan_vote': '?'}], 'noline': [['A', V, 'yea', 'XX-HB-1-2025']],
               'gate': [{'check_id': 'instrument-not-cited', 'what': 'reasoning names an instrument (canonical "hb1")'}]}
     for k, v in faults.items():
@@ -472,6 +484,96 @@ def desk_start_picks_the_state_and_the_step_and_close_gathers_the_report(t):
 
 
 @check
+def desk_write_runs_the_write_stop_as_one_command_and_only_on_a_yes(t):
+    """Four states, 2026-11-21: the desk spent 18 to 24 steps on the write stop, finding the commands, the editor id and
+    the file names again each time. `desk.py write` is the stop as one step. It writes the database, so: no yes, no
+    write; a standing yes only when its conditions hold; no approval when the read-back does not match the write."""
+    os.makedirs(t); sys.path.insert(0, TOOLS)
+    import importlib; dk = importlib.import_module('desk'); importlib.reload(dk)
+    sys.path.remove(TOOLS)
+    S = f'{t}/stage5'; ED = '11111111-2222-3333-4444-555555555555'
+    json.dump({'topic_key': 'tp', 'stage5': S, 'label': 'l', 'research': t, 'editor_id': ED}, open(f'{t}/p.json', 'w'))
+    ran, rc_of = [], {}
+    def fresh(batch='xx-01'):
+        B = f'{S}/write/{batch}'; shutil.rmtree(B, ignore_errors=True); os.makedirs(B); ran.clear(); rc_of.clear()
+        open(f'{B}/PREVIEW.md', 'w').write('# preview\n\nseated 2\n\n## On yes, the desk runs (from backend/)\n```\nzsh scripts/stage5/write-batch.sh …\n```\n')
+        json.dump({'stage5': S, 'topic': 'tp', 'unit': 'state:xx', 'state': 'xx'}, open(f'{B}/recipe.json', 'w')); return B
+    def fake_sh(cmd, cwd=None, env=None):
+        ran.append(cmd); B = f'{S}/write/xx-01'
+        for key, f, text in (('write-batch.sh', 'stage5-write-apply.txt', 'outcomes:  3 (seated 2, doesnt-fit 1, no-stance 0)\npassages:  1\nWROTE 3 outcomes'),
+                             ('verify-stance-research.ts', 'verify-apply.txt', 'REVIEW: 2\nSUMMARY: reviewed=2 pushed=0 errors=0'),
+                             ('readback-1.txt', 'readback-1.txt', 'outcomes [{"outcome":"seated","count":2}]\npassages [{"count":1}]\nreview [{"status":"pending","count":2}]'),
+                             ('approve-batch.ts', 'approve.txt', 'approved 2, failed 0'),
+                             ('readback-2.txt', 'readback-2.txt', 'outcomes [{"outcome":"seated","count":2}]\npassages [{"count":1}]\nreview [{"status":"resolved","count":2}]')):
+            if key in cmd: open(f'{B}/{f}', 'w').write(text)
+        key = next((k for k in rc_of if k in cmd), None)
+        return (rc_of[key] if key else 3 if 'write-batch.sh' in cmd else 0), ('2026-11-21' if cmd.startswith('date') else 'a condition does not hold' if key else '')
+    dk.sh = fake_sh
+    def go(*a, env=None):
+        old, olde = sys.argv, os.environ.get('STAGE5_NO_DB_WRITE'); sys.argv = ['desk.py', 'write', '--profile', f'{t}/p.json', '--state', 'xx', *a]
+        os.environ.pop('STAGE5_NO_DB_WRITE', None); os.environ.update(env or {})
+        try: dk.write(); return 0
+        except SystemExit as e: return e.code
+        finally:
+            sys.argv = old; os.environ.pop('STAGE5_NO_DB_WRITE', None)
+            if olde is not None: os.environ['STAGE5_NO_DB_WRITE'] = olde
+    wrote = lambda: any('write-batch.sh' in c for c in ran); approved = lambda: any('approve-batch.ts' in c for c in ran)
+    B = fresh()
+    assert go() == 2 and not ran, 'no yes, no write'
+    assert go('--yes', '  ') == 2 and go('--yes', 'ok', '--standing') == 2 and go('--yes', 'ok', '--approve') == 2 and not ran, 'one kind of yes; --approve needs the standing one'
+    assert go('--yes', 'A: write', env={'STAGE5_NO_DB_WRITE': '1'}) == 5 and not ran, 'a slim leg never writes'
+    rc_of['standing_yes.py write'] = 1
+    assert go('--standing', '--approve') == 4 and not wrote(), 'a standing yes whose conditions fail writes nothing'
+    # the runner's own yes: write, verify, read back, compare; no approval without the second yes
+    B = fresh(); assert go('--yes', 'A: write (Recommended)') == 0 and wrote() and not approved(), ran
+    pv = open(f'{B}/PREVIEW.md').read(); assert '## WRITTEN' in pv and '"A: write (Recommended)"' in pv and 'seated 2' in pv and 'matches' in pv and 'APPROVED' not in pv, pv
+    assert any(ED in c and '--apply' in c for c in ran if 'verify-stance' in c) and not any('standing_yes.py write' in c for c in ran), 'the standing check is for a standing yes only'
+    n = len(ran); assert go('--yes', 'again') == 2 and len(ran) == n, 'a written batch is never written twice'
+    assert go('--approve-yes', 'approve') == 0 and approved() and sum('write-batch.sh' in c for c in ran) == 1, 'the second yes approves, and does not write again'
+    pv = open(f'{B}/PREVIEW.md').read(); assert "APPROVED (on the runner: 'approve')" in pv and 'approved 2, failed 0' in pv and pv.count('## WRITTEN') == 1, pv
+    assert go('--approve-yes', 'approve') == 2, 'approved once'
+    # a standing yes: everything in one step, in order
+    B = fresh(); assert go('--standing', '--approve') == 0
+    order = [k for c in ran for k in ('standing_yes.py write', 'write-batch.sh', 'verify-stance', 'readback-1', 'standing_yes.py approve', 'approve-batch.ts', 'readback-2') if k in c]
+    assert order == ['standing_yes.py write', 'write-batch.sh', 'verify-stance', 'readback-1', 'standing_yes.py approve', 'approve-batch.ts', 'readback-2'], order
+    # the read-back does not match what the write wrote: written, said so, and never approved
+    B = fresh(); rc_of['standing_yes.py approve'] = 1
+    assert go('--standing', '--approve') == 4 and wrote() and not approved() and 'DOES NOT MATCH' in open(f'{B}/PREVIEW.md').read()
+    B = fresh(); rc_of['verify-stance-research.ts'] = 1
+    assert go('--yes', 'ok') == 2 and not any('readback' in c for c in ran) and '## WRITTEN' not in open(f'{B}/PREVIEW.md').read(), 'a failed verifier stops the step'
+    B = fresh(); os.remove(f'{B}/recipe.json'); assert go('--yes', 'ok') == 2 and not ran, 'no batch at the write stop, nothing run'
+
+
+@check
+def leg_takes_the_runners_words_and_prints_what_it_stopped_on(t):
+    """Eight states, 2026-11-21: each stop cost the desk 4 to 5 steps (read the output, open the question, ask, write the
+    answer file, resume). The leg runner prints the question it stopped on, and --say files the runner's words and
+    resumes in one command. The words are filed exactly as given."""
+    os.makedirs(t); P, S = topic_folder(t, control_groups=['1:7']); C, bin_ = f'{t}/stub', f'{t}/bin'; os.makedirs(C); os.makedirs(bin_)
+    open(f'{bin_}/claude', 'w').write(FAKE_CLAUDE); os.chmod(f'{bin_}/claude', 0o755)
+    env = dict(os.environ, STUB_DIR=C, PATH=bin_ + os.pathsep + os.environ['PATH']); env.pop('STAGE5_NO_DB_WRITE', None)
+    D = f'{S}/zz/desk'; os.makedirs(D)
+    def leg(reply, *a):
+        open(f'{C}/reply.txt', 'w').write(reply)
+        for f in ('call.json', 'calls.jsonl', 'n.txt'):
+            if os.path.exists(f'{C}/{f}'): os.remove(f'{C}/{f}')
+        p = subprocess.run([sys.executable, '-I', os.path.join(TOOLS, 'leg.py'), 'A', '--profile', P, '--state', 'zz', '--state-name', 'Zedland', *a], capture_output=True, text=True, env=env)
+        return p, (json.load(open(f'{C}/call.json')) if os.path.exists(f'{C}/call.json') else None)
+    open(f'{D}/QUESTION-A-1.md', 'w').write('# Which reading of HB 1?\n\nA: direction only (Recommended)\nB: the second position\n')
+    p, c = leg(f'Bill table done.\n\nSTOP question {D}/QUESTION-A-1.md')
+    out = p.stdout.strip().splitlines()
+    assert p.returncode == 10 and out[-1] == f'STOP question {D}/QUESTION-A-1.md' and 'A: direction only (Recommended)' in p.stdout, p.stdout
+    sid = c['argv'][c['argv'].index('--session-id') + 1]
+    p, c = leg('DONE A', '--say', 'x', '--answer', f'{D}/QUESTION-A-1.md'); assert p.returncode != 0 and c is None, 'one way to answer, not two'
+    p, c = leg('DONE A', '--say', '   '); assert p.returncode != 0 and c is None and not glob.glob(f'{D}/ANSWER-*'), 'empty words are not an answer'
+    words = 'A: direction only (Recommended)'
+    p, c = leg('All steps finished.\nDONE A', '--say', words)
+    a = c['argv']; assert p.returncode == 0 and a[a.index('--resume') + 1] == sid and words in a[1], (p.returncode, p.stderr[-300:])
+    assert open(f'{D}/ANSWER-A-1.md').read() == words + '\n', 'the words are filed exactly as given'
+    assert json.load(open(f'{D}/leg-A.json'))['runs'][-1]['answer'] == f'{D}/ANSWER-A-1.md'
+
+
+@check
 def recipe_keeps_an_earlier_pass_of_step_0_aside(t):
     """Colorado co-01 (2026-11-19): three codes changed in a round after the recipe had started; step 0 from the start
     stopped because the writer refuses to overwrite research-stage5-0.csv, and a session renamed files by hand. The
@@ -487,6 +589,13 @@ def recipe_keeps_an_earlier_pass_of_step_0_aside(t):
     assert open(f'{t}/dry-run-0.before-run-1.txt').read() == 'first log' and open(f'{t}/research-stage5-1.csv').read() == 'other step', 'only this step\'s files move'
     put('research-stage5-0.csv', 'second'); rr.set_aside(t, 0)
     assert open(f'{t}/research-stage5-0.before-run-1.csv').read() == 'first' and open(f'{t}/research-stage5-0.before-run-2.csv').read() == 'second', 'an earlier copy is never overwritten'
+    # North Dakota nd-01 (2026-11-19): a second pass from step 0 left the first pass's pre-step-7 copies in place, step 4
+    # refused to rebuild from the fresh research.csv, and a session renamed them by hand. They belong to the earlier pass.
+    put('research-stage5-0.csv', 'third'); put('research-pre-step7.csv', 'old r'); put('evidence-pre-step7.csv', 'old e')
+    rr.set_aside(t, 1); assert os.path.exists(f'{t}/research-pre-step7.csv'), 'step 2 leaves them: only a pass from step 0 starts afresh'
+    rr.set_aside(t, 0)
+    assert not os.path.exists(f'{t}/research-pre-step7.csv') and not os.path.exists(f'{t}/evidence-pre-step7.csv')
+    assert open(f'{t}/research-pre-step7.before-run-3.csv').read() == 'old r' and open(f'{t}/evidence-pre-step7.before-run-3.csv').read() == 'old e'
 
 
 @check
@@ -1313,6 +1422,33 @@ def check_fill_quotes_reads_the_text_with_and_without_struck_words(t):
     assert go(ok=False).returncode == 1, 'the legislature\'s own label is removed only because its profile names it'
 
 
+@check
+def check_fill_quotes_fails_a_changed_number_or_a_single_changed_word(t):
+    """Nevada, 2026-11-21: "21" changed to "25" and "shall not" changed to "may" both passed, because the check read
+    letters only and let a quarter of a long quote's windows miss. Every token of a quote must be in the text, in order."""
+    os.makedirs(f'{t}/fill'); os.makedirs(f'{t}/texts'); W = f'{t}/wt'; leg_profile(W)
+    law = ('1  A person who is under 21 years of age shall not purchase or possess a semiautomatic widget, and a dealer shall not sell one '
+           'to that person unless the person holds a permit issued under section 202.3657 of this chapter and has completed a course of training '
+           'approved by the sheriff of the county in which the person re- sides. 2  A dealer who violates this section is guilty of a misdemeanor.'
+           ' 3  ' 'The sheriff may charge a fee of not more than 50 dollars for each permit issued under this section.')
+    open(f'{t}/texts/ZZ-HB-7-2025.enrolled.txt', 'w').write(law)
+    def fill(*lines): json.dump({'id': 'ZZ-HB-7-2025', 'operative_text': '\n'.join(lines)}, open(f'{t}/fill/ZZ-HB-7-2025.json', 'w'))
+    go = lambda ok=True: run('check_fill_quotes.py', '--fills', f'{t}/fill', '--texts', f'{t}/texts', '--state', 'zz', '--worktree', W, ok=ok)
+    good = ('A person who is under 21 years of age shall not purchase or possess a semiautomatic widget, and a dealer shall not sell one to that '
+            'person unless the person holds a permit issued under section 202.3657 of this chapter and has completed a course of training approved '
+            'by the sheriff of the county in which the person resides.')
+    # honest: a word the text breaks over a line, a line number inside a quote, a label the fill adds
+    fill(good, 'A dealer who violates this section is guilty of a misdemeanor. The sheriff may charge a fee of not more than 50 dollars',
+         'Sec. 2 (new law): A dealer who violates this section is guilty of a misdemeanor')
+    r = go(ok=False); assert 'checked 3 quote parts; misses 0' in r.stdout, r.stdout
+    for wrong, why in ((good.replace('under 21 years', 'under 25 years'), 'a changed number'),
+                       (good.replace('shall not purchase', 'may purchase'), 'one changed word'),
+                       (good.replace('202.3657', '202.3655'), 'a changed section number'),
+                       ('The sheriff may charge a fee of not more than 500 dollars for each permit issued under this section', 'a changed amount')):
+        fill(wrong); r = go(ok=False)
+        assert r.returncode == 1 and 'MISS ZZ-HB-7-2025' in r.stdout, f'{why} must fail: {r.stdout}'
+
+
 FAKE_CLAUDE = """#!/usr/bin/env python3
 import json, os, sys
 C = os.environ['STUB_DIR']; a = sys.argv[1:]
@@ -1498,6 +1634,28 @@ def link_check_stops_on_a_legislator_with_no_vote_link(t):
     assert open(f'{t}/idmap.tsv').read().count('link_check name match') == 2 and go().returncode == 0   # 9: LegiScan's last_name is "Mays Bell"
     roster([r[:3] + ('',) for r in rows]); assert go().returncode == 2, 'no office column filled: no verdict, never a pass'
     roster(rows); os.rename(f'{t}/ds/XX-1', f'{t}/ds/YY-1'); assert go().returncode == 2, 'no LegiScan people read: no verdict'
+
+
+@check
+def link_check_wants_every_record_of_a_linked_member(t):
+    """Nevada 2026-11-21: 18 members had a line for one LegiScan record and none for the record that held their 2019
+    sponsorships. The check passed, because one line links a member, and the sponsorships were never on file."""
+    os.makedirs(f'{t}/ds/XX-1/2025/s/bill'); os.makedirs(f'{t}/ds/XX-1/2025/s/people')
+    json.dump({'bill': {'session': {'year_end': 2026}}}, open(f'{t}/ds/XX-1/2025/s/bill/1.json', 'w'))
+    for i, first, last, role in ((7, 'Ann', 'Able', 'Rep'), (17, 'Ann', 'Able', 'Rep'), (18, 'Ann', 'Able', 'Sen'), (8, 'Bo', 'Best', 'Sen')):
+        json.dump({'person': {'people_id': i, 'first_name': first, 'last_name': last, 'name': f'{first} {last}', 'role': role, 'district': f'D-{i}'}}, open(f'{t}/ds/XX-1/2025/s/people/{i}.json', 'w'))
+    # a record made from a sponsor list: a title in the name, no given name, no district, the bill's chamber as its role
+    json.dump({'person': {'people_id': 19, 'first_name': '', 'last_name': 'Senator', 'name': 'Senator Bo Best', 'role': 'Rep', 'district': ''}}, open(f'{t}/ds/XX-1/2025/s/people/19.json', 'w'))
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tscope\toffice\npa\tAnn Able\tsitting\tRepresentative\npb\tBo T. Best Jr.\tsitting\tSenator\n')
+    def idmap(lines): open(f'{t}/idmap.tsv', 'w').write(''.join(f'{a}\t{b}\n' for a, b in lines))
+    def go(*extra): return run('link_check.py', '--state', 'xx', '--roster', f'{t}/roster.tsv', '--ds', f'{t}/ds', '--idmap', f'{t}/idmap.tsv', *extra, ok=False)
+    idmap([(7, 'pa'), (8, 'pb')])
+    p = go(); assert p.returncode == 1 and '0 NOT linked' in p.stdout and '3 other record(s)' in p.stdout, p.stdout + p.stderr
+    assert '17\tAnn Able' in p.stdout and '18\tAnn Able' in p.stdout and '19\tSenator Bo Best' in p.stdout
+    p = go('--add'); assert p.returncode == 1 and 'added 2 other record' in p.stdout and '18\tAnn Able' in p.stdout, p.stdout   # the other chamber's record is a person's call
+    m = open(f'{t}/idmap.tsv').read(); assert '17\tpa\t' in m and '19\tpb\t' in m and '18\t' not in m
+    open(f'{t}/idmap.tsv', 'a').write('18\t-\t# refused: a namesake who sat in the other chamber\n')
+    p = go(); assert p.returncode == 0 and 'other record(s)' not in p.stdout, p.stdout
 
 
 @check

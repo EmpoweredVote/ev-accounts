@@ -1,7 +1,10 @@
 """The desk's start-up and close-out, each as ONE command. Read-only apart from what the desk already did by hand.
 
   python3 -I scripts/stage5/desk.py start --profile <topic-profile.json> [--queue <STATE-QUEUE-<topic>.md>] [--state xx]
+  python3 -I scripts/stage5/desk.py write --profile <topic-profile.json> --state xx [--batch xx-01] (--standing | --yes "<runner's words>")
+                                          [--approve | --approve-yes "<runner's words>"] [--editor-id <uuid>] [--print]
   python3 -I scripts/stage5/desk.py close --profile <topic-profile.json> --state xx [--batch xx-01] [--session <desk .jsonl>] [--release]
+  python3 -I scripts/stage5/desk.py slim  --profile <topic-profile.json> --queue <STATE-QUEUE-<topic>.md> --next <NEXT.md> [--name <worktree name>]
 
 Why (2026-11-19): the desk is the one session left in the desktop app. It starts at about 135,000 tokens before it
 reads a word and re-reads all of that on every step: Kansas's desk took 63 steps and cost 0.97M units, of which
@@ -20,6 +23,25 @@ start   does, in order, and prints one short report:
   Exit 0: desk, card made, the last line names it. Exit 3: this is a reader session, the last line says so.
   Exit 2: stop and tell the runner what the report says. It never asks which state, and never takes a held lease.
 
+write   the write stop, as one command (2026-11-21: 18 to 24 desk steps and 0.37M to 0.52M units in four states, most of
+  them the desk finding the commands, the editor id and the file names again). 🔴 It writes the database, so it needs
+  the runner's yes and says which one it is acting on:
+    --yes "<words>"   the runner's own answer to this batch's preview, word for word; or
+    --standing        the runner's own message gave a standing yes for this state. Then `standing_yes.py write` must
+                      hold (it wants the desk's own `desk-check.json`); if it does not, nothing is written (exit 4).
+  It runs write-batch.sh apply, the verifier with --apply, and the read-back, and then checks the read-back against
+  what the write wrote (`standing_yes.py approve`'s conditions, whichever yes it has). It adds the WRITTEN lines to
+  PREVIEW.md. With --approve (under --standing) or --approve-yes "<words>" (the runner's separate yes to approve) it
+  goes on, only when that check holds: approve-batch.ts, the read-back again, and the APPROVED line.
+  The editor id is --editor-id, or the profile's "editor_id". --print shows the commands and runs nothing.
+  Exit 0: done as far as asked. Exit 4: a condition does not hold; each is printed; ask the runner. Exit 2: a
+  command failed, or no yes was given. It refuses in a slim session (STAGE5_NO_DB_WRITE), as every write tool does.
+
+slim    prints the two commands that start the desk in a TERMINAL instead of the desktop app: a fresh worktree, then a
+  slim interactive session (no connectors, no skills, the five tools the desk uses). A desktop session starts at about
+  135,000 tokens and the desk re-reads them on each of its 60 to 79 steps (about 1.5M units a state, eight states); a
+  slim one starts at 6,470 (measured). It starts nothing itself: the runner runs the commands, and answers in that terminal.
+
 close   after leg B ended `DONE B`: runs close_state.py with every leg's transcripts and this desk's own, then
   gathers what the final report needs into `<stage5>/<xx>/desk/DESK-REPORT.md` and prints it: the written counts,
   every question and the runner's answer, each line a leg logged as off its card, the record script's line, the
@@ -32,7 +54,8 @@ import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  
 from _args import opt
 import glob, json, re, subprocess
 
-USAGE = 'desk.py start --profile <json> [--queue <md>] [--state xx] | close --profile <json> --state xx [--batch xx-01] [--session <jsonl>] [--release]'
+USAGE = ('desk.py start --profile <json> [--queue <md>] [--state xx] | write --profile <json> --state xx (--standing | --yes "<words>") [--approve | --approve-yes "<words>"] '
+         '| close --profile <json> --state xx [--batch xx-01] [--session <jsonl>] [--release] | slim --profile <json> --queue <md> --next <NEXT.md>')
 HERE = os.path.dirname(os.path.abspath(__file__))
 BACKEND = os.path.dirname(os.path.dirname(HERE))
 ROOT = os.path.dirname(BACKEND)
@@ -176,6 +199,92 @@ def digest(S, xx, batch):
     return L
 
 
+def write():
+    """The write stop in one step. See the header: it never writes without one of the runner's two kinds of yes."""
+    pfile = opt('--profile', required=True, usage=USAGE); prof = json.load(open(pfile)); S = prof['stage5'].rstrip('/')
+    xx = opt('--state', required=True, usage=USAGE).lower(); batch = opt('--batch', f'{xx}-01'); B = f'{S}/write/{batch}'
+    yes, standing, dry = opt('--yes'), '--standing' in sys.argv, '--print' in sys.argv
+    ayes, approve = opt('--approve-yes'), '--approve' in sys.argv or opt('--approve-yes') is not None
+    stop = lambda code, why: (print(f'STOP: {why}'), sys.exit(code))
+    if os.environ.get('STAGE5_NO_DB_WRITE') == '1': stop(5, 'REFUSED: desk.py write. STAGE5_NO_DB_WRITE=1: this is a slim leg, which never writes the database.')
+    done = read(f'{B}/PREVIEW.md').split('## On yes')[-1]
+    written = '## WRITTEN' in done; later = written and ayes is not None and not yes and not standing   # the approval alone, after an earlier write
+    if written and 'APPROVED' in done: stop(2, f'{B}/PREVIEW.md says this batch is written and approved. Nothing run.')
+    if not later and bool(yes and yes.strip()) == standing: stop(2, 'the write needs the runner\'s yes for this batch, one kind of it: --yes "<their words>", or --standing when their own message gave a standing yes.')
+    if '--approve' in sys.argv and not standing: stop(2, '--approve goes with --standing. Without a standing yes the approval needs its own: --approve-yes "<the runner\'s words>".')
+    if ayes is not None and not ayes.strip(): stop(2, '--approve-yes is empty: pass the runner\'s words')
+    if not os.path.exists(f'{B}/PREVIEW.md') or not os.path.exists(f'{B}/recipe.json'): stop(2, f'{B} has no PREVIEW.md or recipe.json: leg B has not reached the write stop.')
+    if written and not later and not dry: stop(2, f'{B}/PREVIEW.md already has a WRITTEN part: this batch was written. To approve it, pass only --approve-yes "<the runner\'s words>".')
+    editor = opt('--editor-id') or prof.get('editor_id')
+    if not editor or not re.fullmatch(r'[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}', editor): stop(2, 'no editor id: pass --editor-id <uuid>, or set "editor_id" in the topic profile.')
+    c = json.load(open(f'{B}/recipe.json'))
+    from _onfile import onfile_env
+    env = {'ADMIN_INGEST_TOKEN': 'placeholder', **(onfile_env(c['stage5'], c.get('state', '')) if not c.get('legiscan_live') else {})}
+    tsx = 'npx tsx --env-file=.env'
+    back = lambda n: f"{tsx} scripts/stage5/readback.ts --topic {c['topic']} {B}/pids-write.txt --batch-id {batch} > {B}/readback-{n}.txt 2>&1"
+    steps = [('write', f"zsh scripts/stage5/write-batch.sh {c['stage5']} {B} {c['topic']} {c['unit']} apply"),
+             ('verify', f"{tsx} scripts/verify-stance-research.ts --dir {B} --season draft --threshold 1 --batch-id {batch} --apply --editor-id {editor} > {B}/verify-apply.txt 2>&1"),
+             ('read-back', back(1))]
+    more = [('approve', f"{tsx} scripts/stage5/approve-batch.ts {editor} {batch} > {B}/approve.txt 2>&1"), ('read-back again', back(2))]
+    check = lambda which: sh(f'python3 -I scripts/stage5/standing_yes.py {which} {B}')
+    if later: steps = []
+    if dry:
+        print('\n'.join([f'on: {"the standing yes" if standing else "the runner said " + repr((yes or ayes).strip())}'] + ([f'standing_yes.py write {B}'] if standing else [])
+                        + [cmd for _, cmd in steps] + [f'standing_yes.py approve {B}'] + ([cmd for _, cmd in more] if approve else []))); return
+    if standing:
+        rc, out = check('write')
+        if rc: print(out); stop(4, 'the standing yes does not cover this write. Nothing was written. Show the runner the lines above and ask.')
+    pick = lambda pat, text: (re.search(pat, text, re.M).group(0).strip() if re.search(pat, text, re.M) else '?')
+    for name, cmd in steps:
+        rc, out = sh(cmd, env=env)
+        # the writer exits 3 when it lists refused passages or held people beside what it wrote: that is a finished write
+        if rc and not (name == 'write' and rc == 3 and 'WROTE' in read(f'{B}/stage5-write-apply.txt')):
+            stop(2, f'{name} failed (exit {rc}). {"Nothing" if name == "write" else "The write is"} in the database{"" if name == "write" else ": do not run it again"}. Tail:\n'
+                    + (out or read(f"{B}/{'stage5-write-apply.txt' if name == 'write' else 'verify-apply.txt' if name == 'verify' else 'readback-1.txt'}"))[-900:])
+    w, v, r1 = read(f'{B}/stage5-write-apply.txt'), read(f'{B}/verify-apply.txt'), read(f'{B}/readback-1.txt')
+    rc, cond = check('approve')
+    on = 'the runner\'s standing yes' if standing else f'the runner\'s answer at the write stop: "{(yes or "").strip()}"'
+    lines = [f'\n## WRITTEN (desk.py write, {sh("date -u +%Y-%m-%d")[1]}, on {on})',
+             f"- write-batch.sh apply: {pick(r'^outcomes:.*', w)}; {pick(r'^passages:.*', w)}",
+             f"- verify-stance-research --apply: {pick(r'^SUMMARY:.*', v)}",
+             '- read-back: ' + ' '.join(l.strip() for l in r1.splitlines() if re.match(r'(outcomes|passages|review) ', l)),
+             f"- read-back against the write: {'matches' if not rc else 'DOES NOT MATCH, see below'}"]
+    if not later: open(f'{B}/PREVIEW.md', 'a').write('\n'.join(lines) + '\n'); print('\n'.join(lines))
+    if rc: print(cond); stop(4, 'the batch is WRITTEN, and the read-back does not match what the write wrote. Not approved. Show the runner the lines above.')
+    if not approve:
+        print('WRITTEN, not approved. Ask the runner for the separate yes to approve; then run this command again with only --approve-yes "<their words>".'); return
+    for name, cmd in more:
+        rc, out = sh(cmd, env=env)
+        if rc: stop(2, f'{name} failed (exit {rc}). The batch is written; the approval may be part done. Tail:\n' + (out or read(f'{B}/approve.txt'))[-900:])
+    a, r2 = read(f'{B}/approve.txt'), read(f'{B}/readback-2.txt')
+    lines = [f"- APPROVED (on {'the standing yes' if standing else 'the runner: ' + repr(ayes.strip())}): {pick(r'.*approved \d+.*', a)}",
+             '- read-back again: ' + ' '.join(l.strip() for l in r2.splitlines() if re.match(r'(outcomes|passages|review) ', l))]
+    open(f'{B}/PREVIEW.md', 'a').write('\n'.join(lines) + '\n'); print('\n'.join(lines))
+    print('WRITTEN and APPROVED. Resume leg B: leg.py B … --say "written and approved"')
+
+
+def slim():
+    """Print the commands for a desk in a terminal. Starts nothing."""
+    pfile = os.path.abspath(opt('--profile', required=True, usage=USAGE)); prof = json.load(open(pfile))
+    queue, nxt = (os.path.abspath(opt(k, required=True, usage=USAGE)) for k in ('--queue', '--next'))
+    for f in (queue, nxt):
+        if not os.path.exists(f): raise SystemExit(f'{f} does not exist')
+    rc, main = sh('git rev-parse --path-format=absolute --git-common-dir', ROOT)
+    if rc: raise SystemExit('not inside a git checkout')
+    repo = os.path.dirname(main.strip()); name = opt('--name') or f"desk-{prof['topic_key']}-{sh('date +%m%d-%H%M')[1]}"
+    wt = os.path.join(os.path.dirname(repo), '_worktrees', os.path.basename(repo), name)
+    tools = 'Bash,Read,Write,Edit,AskUserQuestion'   # a session with these starts at 6,470 tokens (measured 2026-11-21)
+    first = (f"You are the desk for Stage 5 of the topic {prof['topic_key']}. Read {nxt} and do what it says. The topic profile is {pfile} "
+             f"and the queue is {queue}. This is a terminal session with no pull-request tools: use `gh` when the runner says to open one.")
+    print('\n'.join([
+        '# The desk, from a terminal (run both lines yourself; answer the desk\'s questions in that terminal):',
+        f'git -C {repo} fetch -q origin && git -C {repo} worktree add -b {name} {wt} origin/master',
+        f"cd {wt} && claude --model opus --tools {tools} --allowedTools {tools} --permission-mode acceptEdits --strict-mcp-config "
+        f"--safe-mode --disable-slash-commands --add-dir {os.path.dirname(prof['research'].rstrip('/'))} {json.dumps(first)}",
+        f'# Add your standing yes, or leave to open a pull request, to that first message in your own words if you mean to give them.',
+        f'# When the pull request has merged: git -C {repo} worktree remove {wt}']))
+
+
 def close():
     pfile = opt('--profile', required=True, usage=USAGE); prof = json.load(open(pfile)); S, topic = prof['stage5'], prof['topic_key']
     xx = opt('--state', required=True, usage=USAGE).lower(); batch = opt('--batch', f'{xx}-01'); D = f'{S}/{xx}/desk'
@@ -203,5 +312,7 @@ def close():
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else ''
     if cmd == 'start': start()
+    elif cmd == 'write': write()
+    elif cmd == 'slim': slim()
     elif cmd == 'close': close()
     else: raise SystemExit('usage: ' + USAGE)

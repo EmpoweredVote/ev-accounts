@@ -60,6 +60,21 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
   it('snippet-too-short', () => {
     expect(ids(good, { evidence: [{ ...ev[0], snippet: 'Jane Doe voted yes on HB 1001.' }] })).toEqual(['snippet-too-short']);
   });
+  it('snippet-page-code: a snippet of page markup or of unreadable characters is not a passage', () => {
+    // Hawaii hi-01 (2026-11-21): a bill text saved from Word was read raw, the placed quote was style code
+    // ("mso-..."), and then text in the wrong character set. Both passed every check; a person saw them.
+    const long = 'Jane Doe voted yes on HB 1001, the measure that requires a background check before every private sale of a firearm in the state, and said on the floor that she had backed the same rule in each of the last three sessions.';
+    for (const bad of [
+      `<p class=MsoNormal style='margin-left:.5in'>${long}</p>`,
+      `mso-style-name:"Regular" mso-pagination:none ${long}`,
+      `${long} font-family:"Courier New";text-indent:-.25in`,
+      long.replace('requires', 'requires \uFFFD'),
+    ]) expect(ids(good, { evidence: [{ ...ev[0], snippet: bad }] })).toEqual(['snippet-page-code']);
+    // The words of a law may hold these marks without being page code.
+    for (const fine of [long, `${long} A person under 21 (<21 years) may not; see s. 134-2 & 134-7; "font" is not a style.`,
+      `[H.R. 625 Introduced in House (IH)] <DOC> 118th CONGRESS 1st Session H. R. 625 ${long}`])
+      expect(ids(good, { evidence: [{ ...ev[0], snippet: fine }] })).toEqual([]);
+  });
   it('a canonical roll-call line on a House roll-call XML is not held to the snippet length', () => {
     const url = 'https://clerk.house.gov/evs/2025/roll102.xml';
     const line = 'House roll call 102 (2025), H R 22, On Passage: Doe (IN) voted Yea.';

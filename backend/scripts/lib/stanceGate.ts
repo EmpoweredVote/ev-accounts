@@ -71,7 +71,7 @@ export const GATE_CHECK_IDS = [
   'topic-out-of-scope', 'level-unknown', 'no-source', 'source-without-snippet', 'snippet-too-short',
   'evidence-type-invalid', 'record-no-instrument', 'statement-needs-review', 'party-inference',
   'reasoning-empty', 'ballotpedia-only', 'ballotpedia-non-survey', 'source-no-path', 'pointer-only-source', 'instrument-not-cited',
-  'quote-not-in-snippet', 'evidence-url-not-cited', 'blank-reason-invalid', 'blank-unexamined-fallback',
+  'quote-not-in-snippet', 'evidence-url-not-cited', 'blank-reason-invalid', 'blank-unexamined-fallback', 'snippet-page-code',
 ] as const;
 export type GateCheckId = typeof GATE_CHECK_IDS[number];
 export interface GateFinding {
@@ -271,6 +271,17 @@ export function extractQuotedPhrases(text: string): string[] {
   return [...text.matchAll(/"([^"]+)"|“([^”]+)”/g)].map((m) => m[1] ?? m[2] ?? '');
 }
 
+/**
+ * A snippet is the words a voter is shown from a source. Page markup is not words: an HTML tag, Word's style code
+ * ("mso-..."), a CSS declaration, or U+FFFD, the mark a page read in the wrong character set leaves behind.
+ * Hawaii hi-01 (2026-11-21): a bill text saved from Word was read raw and a placed quote was style code; once that was
+ * fixed it was read as UTF-8 and printed U+FFFD. Every check passed both times, and a person saw them by eye.
+ * Narrow on purpose: "<21 years", "&" and the word "font" are a law's own words, and "<DOC>" is printed in the text
+ * file of every bill on congress.gov, so only the names of real HTML tags count. Over the 27,939 snippets of 54 written
+ * gun-policy batches (2026-11-21) it reads 122 as page code, every one of them markup or U+FFFD.
+ */
+export const PAGE_CODE = /<\/?(?:p|i|b|u|a|em|strong|span|div|br|hr|font|table|tr|td|th|ul|ol|li|h[1-6]|style|script|o:p)(?:\s[^<>]*)?\/?>|\bmso-[a-z]|\b(?:font-family|font-size|text-indent|margin-(?:left|right|top|bottom)|line-height)\s*:|\uFFFD/i;
+
 export function checkStanceRow(
   row: ResearchRow,
   ctx: {
@@ -328,6 +339,8 @@ export function checkStanceRow(
       // A legislature's own roll-call page (le.utah.gov svotes.jsp; stateRollCallEvidence.ts), Open States runs.
       if (isStateRollCallUrl(url) && parseStateRollCallLine(e.snippet)) continue;
       if (isActionAgendaUrl(url) && parseActionAgendaLine(e.snippet)) continue;
+      const code = PAGE_CODE.exec(e.snippet);
+      if (code) { add('snippet-page-code', 'high', `snippet ${e.snippet_index} for ${url} holds page code or an unreadable character ("${code[0].slice(0, 40)}"): the reader saved markup, not the page's words`); continue; }
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);
     }
