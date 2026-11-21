@@ -36,7 +36,7 @@ import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificatio
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { isPubinfoDoc, readPubinfoDoc } from '../../../src/lib/adapters/caPubinfo.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsRead, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsRead, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, statePostbackOf, hawaiiBillPageUrl, hawaiiStatusRows, hawaiiPageBill, hawaiiFloorLine, hawaiiRowHasVote, hawaiiVoteUrl, explainHawaiiVote, parseHawaiiVoteUrl, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -48,7 +48,9 @@ export interface IndexedVote { url: string; motion: string; tally: [number, numb
  * reads that page with the state's voteFromIndex and then reads the vote like a linked one, its tally compared.
  */
 /** unread: floor votes on the bill that are not read, each with the reason (Maine: a Senate with no member list of its Legislature). */
-export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[]; viaIndex?: IndexedVoteVia[]; unread?: string[] }
+export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[]; viaIndex?: IndexedVoteVia[]; unread?: string[];
+  /** Hawaii: votes of the year before, on a carried-over bill's page; read in that year's session instead. */
+  earlier?: number }
 export interface IndexedVoteVia { index: string; chamber: 'house' | 'senate'; motion: string; tally: [number, number, number] }
 interface StateIndex {
   /** The least time between two requests to the site (its robots.txt Crawl-delay). */
@@ -678,7 +680,62 @@ function headOverHttp1(url: string): Promise<Response> {
   });
 }
 
+const HI_BILL = /^(HB|SB|HCR|SCR|HR|SR|GM)\s*0*([1-9]\d{0,4})$/i;
+/** Open States names Hawaii's sessions "2017 Regular Session" to "2023 Regular Session", then "2024", "2025", "2026". */
+export function hiYear(session: string): number | null {
+  const m = /^(20\d{2})(?: Regular Session)?$/.exec(session.trim());
+  return m ? Number(m[1]) : null;
+}
+
+/**
+ * Hawaii: every floor vote on one bill page, each cited on www.capitol.hawaii.gov with the vote after a # (day, chamber,
+ * kind). A row with a committee's vote ("The committee(s) on ... recommend(s) ...") is counted; any other row that records a
+ * vote and is not a floor vote on the bill (a second reading, a report adopted and referred, a recommittal) is a motion.
+ * Two floor votes of one kind, chamber and day give one address, which the reader refuses (it finds two).
+ */
+export function hiReadBillPage(body: string, session: string, bill: string): BillIndex {
+  const year = hiYear(session);
+  const m = HI_BILL.exec(bill.replace(/[\s.]+/g, ''));
+  if (!year || !m) throw new Error(`Hawaii: no session ${session} or no bill ${bill}`);
+  const type = m[1].toUpperCase();
+  const number = Number(m[2]);
+  const page = hawaiiPageBill(body);
+  if (!page || page.bill !== `${type} ${number}`) throw new Error(`the page is not the status page of ${type} ${number}: ${page?.bill ?? 'no title'}`);
+  if (page.year !== year) throw new Error(`the page of ${type} ${number} is of ${page.year ?? 'no year it names'}, not ${year}`);
+  const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+  for (const row of hawaiiStatusRows(body)) {
+    if (row.chamber === 'D' || !hawaiiRowHasVote(row.text)) continue;
+    // a carried-over bill's page of the second year lists the first year's votes too: they are read from the first
+    // year's page, in that session (Open States repeats them in both; the record gives each vote once)
+    if (Number(row.date.slice(0, 4)) !== year) { out.earlier = (out.earlier ?? 0) + 1; continue; }
+    if (/^The (?:Conference )?committee/i.test(row.text)) { out.committee++; continue; } // a conference committee is a committee too
+    const chamber = row.chamber === 'H' ? 'House' : 'Senate';
+    const line = hawaiiFloorLine(row.text, chamber);
+    if (!line) { out.motion!++; out.motions!.push(`${row.date} ${chamber} ${row.text}`); continue; }
+    const url = hawaiiVoteUrl(type, number, year, row.date, chamber, line.kind);
+    if (out.floor.some((v) => v.url === url)) continue;
+    // the House prints no Aye count: its votes are checked by the reader alone
+    const ayes = line.ayes;
+    out.floor.push({ url, motion: `${line.question}, ${line.passed ? 'passed' : 'failed'}`,
+      tally: ayes === null ? null : [ayes, line.named.No.length, line.named.Excused.length] });
+  }
+  return out;
+}
+
 export const INDEX: Record<string, StateIndex> = {
+  // data.capitol.hawaii.gov (read 2026-11-21; robots.txt allows every agent, disallows only *.axd, states no Crawl-delay).
+  // www.capitol.hawaii.gov answers bots 403 (Cloudflare); the runner allowed the data host and ruled that votes are cited
+  // on www (2026-11-21). The bill's status page lists every floor vote; each is read from that page and the year's member
+  // list (stateRollCallEvidence.ts).
+  HI: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay: one a second is ours
+    billUrl(session, bill) {
+      const year = hiYear(session);
+      const m = HI_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      return year && m ? hawaiiBillPageUrl(m[1], Number(m[2]), year) : null;
+    },
+    read: hiReadBillPage,
+  },
   // legislature.maine.gov (read 2026-11-20; robots.txt disallows /LawMakerWeb and /legis/LawMakerWeb, where every House list
   // links its roll calls, and states no Crawl-delay). No page lists a bill's votes on an allowed path, so each Legislature's
   // roll-call lists are the index: the House's list (number, paper, motion), its PDF list (number -> file), and the Senate's
@@ -1201,7 +1258,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
       : parseNevadaVoteUrl(v.url) ? explainNevadaVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseOregonVoteUrl(v.url) ? explainOregonVote(Array.isArray(docs) ? docs : [docs], v.url)
       : parseMaineVoteUrl(v.url) ? explainMaineVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseCaliforniaVoteUrl(v.url) ? explainCaliforniaVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseCaliforniaVoteUrl(v.url) ? explainCaliforniaVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseHawaiiVoteUrl(v.url) ? explainHawaiiVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
@@ -1279,15 +1337,33 @@ async function main(): Promise<void> {
     if (isPubinfoDoc(url)) return pubinfoBody(url);
     const file = path.join(raw, createHash('sha256').update(url).digest('hex').slice(0, 24));
     if (!refetch && existsSync(file)) return readFileSync(file, 'utf8');
+    // Hawaii's member list for a year: its form page, then the post its hidden fields build (statePostbackOf)
+    const pb = statePostbackOf(url);
+    if (pb) {
+      const formPage = await getOnce(pb.page, gap);
+      const body = await getOnce(pb.page, gap, pb.form(formPage));
+      writeFileSync(file, body);
+      return body;
+    }
+    const body = await getOnce(url, gap, undefined, manualOf(url));
+    writeFileSync(file, body);
+    return body;
+  }
+  const manualOf = (url: string): boolean => idx.manualRedirect?.(url) ?? false;
+
+  /** One paced request, not kept (get() keeps it). With `form`, a POST of that form. */
+  async function getOnce(url: string, gap: number, form?: URLSearchParams, manual = false): Promise<string> {
     for (let attempt = 0; ; attempt++) {
       const wait = last + gap - Date.now();
       if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       last = Date.now();
       asked++;
-      const manual = idx.manualRedirect?.(url) ?? false;
       let res: Response;
       try {
-        res = manual ? await headOverHttp1(url) : await fetchWithHostTrust(url, { headers: { 'user-agent': EMPOWERED_VOTE_UA }, signal: AbortSignal.timeout(60_000) });
+        res = manual ? await headOverHttp1(url) : await fetchWithHostTrust(url, {
+          headers: { 'user-agent': EMPOWERED_VOTE_UA, ...(form ? { 'content-type': 'application/x-www-form-urlencoded' } : {}) },
+          ...(form ? { method: 'POST', body: form.toString() } : {}), signal: AbortSignal.timeout(60_000),
+        });
       } catch (e) {
         // Node's "fetch failed" names neither the address nor the cause: say both, and try twice more after a pause
         const why = `${e instanceof Error ? e.message : String(e)}${e instanceof Error && e.cause ? ` (${String((e.cause as Error).message ?? e.cause)})` : ''}`;
@@ -1298,16 +1374,13 @@ async function main(): Promise<void> {
       if (manual) {
         const loc = res.headers.get('location');
         if (res.status < 300 || res.status > 399 || !loc) throw new Error(`HTTP ${res.status} and no redirect for ${url}`);
-        writeFileSync(file, `LOCATION ${loc}`);
         return `LOCATION ${loc}`;
       }
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       const bytes = new Uint8Array(await res.arrayBuffer());
       // a PDF (Mississippi's and Maryland's votes) is kept as the verifier's reader reads it (pdfBodyFor); anything else by
       // the page's declared charset, as the verifier reads it
-      const body = looksLikePdfBytes(bytes) ? pdfBodyFor(url, await extractPdfItems(bytes)) : decodeHtmlBytes(bytes, res.headers.get('content-type') ?? '');
-      writeFileSync(file, body);
-      return body;
+      return looksLikePdfBytes(bytes) ? pdfBodyFor(url, await extractPdfItems(bytes)) : decodeHtmlBytes(bytes, res.headers.get('content-type') ?? '');
     }
   }
 
@@ -1361,6 +1434,13 @@ async function main(): Promise<void> {
     for (const v of [...bi.floor, ...extra]) {
       const isExtra = !bi.floor.includes(v);
       const docs: string[] = [];
+      // Hawaii's cited host answers 403 to a reader (a bot check): its address is cited, never fetched. A vote the reader
+      // cannot place gives no documents to read from the data host, so it is refused, not fetched from the cited host.
+      if (!stateRollCallDocs(v.url) && /^https:\/\/www\.capitol\.hawaii\.gov\//.test(v.url)) {
+        refused.push({ url: v.url, why: 'the reader cannot place this address' });
+        refusedNow.push(`${bill} ${v.url}: the reader cannot place this address`);
+        continue;
+      }
       for (const d of stateRollCallDocs(v.url) ?? [v.url]) docs.push(await get(d, Math.max(idx.minGapMs, stateRollCallMinGapMs(v.url))));
       const rc = buildRollCall(bill, v, docs, session);
       if ('refused' in rc && isExtra) { alsoRefused.push({ url: v.url, why: rc.refused }); continue; }
@@ -1373,7 +1453,7 @@ async function main(): Promise<void> {
     if (refused.length) out.refused[bill] = refused; else delete out.refused[bill];
     out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}),
       ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(extra.length ? { not_on_the_vote_list: extra.length, not_on_the_vote_list_refused: alsoRefused } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}),
-      ...(bi.viaIndex?.length ? { vote_index_pages: [...new Set(bi.viaIndex.map((v) => v.index))] } : {}), ...(bi.unread?.length ? { floor_not_read: bi.unread } : {}) };
+      ...(bi.viaIndex?.length ? { vote_index_pages: [...new Set(bi.viaIndex.map((v) => v.index))] } : {}), ...(bi.unread?.length ? { floor_not_read: bi.unread } : {}), ...(bi.earlier ? { earlier_year_votes_not_read_here: bi.earlier } : {}) };
     floor += rcs.length;
     if (ST === 'SD') {
       // the bill's sponsors and its introduced text (see sdSponsorsOnText); a fault refuses the sponsors, not the votes

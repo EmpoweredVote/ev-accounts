@@ -39,9 +39,9 @@ for r in rows:
                 # as its record lists it: "was excused", "was absent", "did not vote", "voted present", "was suspended",
                 # "was excused for legislative business" (Oregon); "had no vote recorded" (California)
                 # (stateRollCallEvidence.ts). Each is no Yea and no Nay.
-                got = (re.search(r'voted (Yea|Nay|Yes|No|Aye)\.?$', l['snippet']) or re.search(r'(?:was (absent) or not voting|was (?:excused|absent|suspended)|was excused for legislative business|did not vote|voted present|had no vote recorded)\.$', l['snippet']))
+                got = (re.search(r'voted (Yea|Nay|Yes|No|Aye)(?: with reservations)?\.?$', l['snippet']) or re.search(r'(?:was (absent) or not voting|was (?:excused|absent|suspended)|was excused for legislative business|did not vote|voted present|had no vote recorded)\.$', l['snippet']))
                 got = ('NV' if got.group(0).startswith(('was', 'did', 'voted present', 'had no vote')) else got.group(1)) if got else '?'
-                got = {'Yes': 'Yea', 'No': 'Nay', 'Aye': 'Yea'}.get(got, got)  # a state record prints Yes/No (Colorado) or Aye/Nay (Oregon)
+                got = {'Yes': 'Yea', 'No': 'Nay', 'Aye': 'Yea'}.get(got, got)  # a state record prints Yes/No (Colorado) or Aye/Nay (Oregon); Hawaii's "voted Aye with reservations" is an Aye
                 cross.append({'name': n, 'legiscan': v['url'], 'official': v['official'], 'legiscan_vote': got, 'finding_act': v['act'], 'agree': got == ACT.get(v['act'])})
 for r in rows:
     for c in cols: r.setdefault(c, '')

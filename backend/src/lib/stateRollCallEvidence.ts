@@ -4049,6 +4049,455 @@ export function explainCaliforniaVote(bodies: string[], url: string): CaVoteReco
   try { return readCalifornia(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Hawaii: one bill page holds every vote of the bill ───────────────────────────────────────────────────────────────
+// www.capitol.hawaii.gov answers our reader 403 (a Cloudflare bot check, 2026-11-20). data.capitol.hawaii.gov serves the
+// same site with an open robots.txt (User-agent: * Allow: /; only *.axd is disallowed); the runner allowed reading it and
+// ruled that a vote is cited on www.capitol.hawaii.gov, the address a person opens, and read from the same path on the
+// data host (2026-11-21). The bill status page (/session/measure_indiv.aspx?billtype=HB&billnumber=2033&year=2026; a past
+// year redirects to /session/archives/measure_indiv_Archives.aspx with the same query) lists every action of the bill,
+// one table row each: day, chamber letter, status text. A floor vote is one row:
+//
+//   House:  "Passed Third Reading with none voting aye with reservations; Representative(s) Amato voting no (1) and
+//            Representative(s) Perruso excused (1).  Transmitted to Senate."
+//   Senate: "Report adopted; Passed Third Reading, as amended (SD 2). Ayes, 24; Aye(s) with reservations: none . Noes, 1
+//            (Senator(s) Awa). Excused, 0 (none).  Transmitted to House."
+//
+// Members who voted no, voted aye with reservations or were excused are named, by family name ("Lee, C.", "S. Chang",
+// "J.Keohokalole"); a member who voted aye is a count (the Senate) or nothing at all (the House). So the Ayes are the
+// chamber's members seated that day less the members named (runner, 2026-11-21: refused unless the numbers close). The
+// members come from the Legislature's member list for the year (/legislature/legislators.aspx, its year chosen by a form
+// post: statePostbackOf), which lists every member who sat that year with their district, and prints "Appointed
+// 01/12/2026" or "Term of Office Ended: 02/13/2026" on a member who joined or left during it. A vote is read only when:
+// the page is the bill and year asked for; exactly one row of that day and chamber is a floor vote of the kind the
+// address names; each district holds at most one member that day (a member with no date in a district where another
+// member left or joined that year may or may not have sat: they get no line, unless the page names them or the Senate's
+// printed Aye count settles it); every named label is exactly one seated member; each
+// printed count equals the members named under it; the Senate's printed Aye count (it includes the ayes with
+// reservations) equals the seated members less the noes and the excused; and the House's override count, where printed,
+// does too. A floor vote here is a third reading (passed or failed), a final reading (a conference draft, or agreeing to
+// the other chamber's amendments) and a veto override. A second reading, a report adopted and referred, a recommittal and
+// every committee vote are not read. The render prints no party (the member list prints one; it is never read):
+//
+//   Hawaii House vote of 2026-03-05 (2026), HB 2033, Third Reading.
+//   Question: Passed Third Reading
+//   Aye 49; Aye with reservations 0; No 1; Excused 1.
+//   Aye (49): David Alcos III; …
+//   Hawaii House vote of 2026-03-05 (2026), HB 2033 - Passed Third Reading: David Alcos III voted Aye.
+
+export const HI_VOTES = ['Aye', 'Aye with reservations', 'No', 'Excused'] as const;
+export type HiVote = (typeof HI_VOTES)[number];
+export const HI_KINDS = ['Third-Reading', 'Final-Reading', 'Veto-Override'] as const;
+export type HiKind = (typeof HI_KINDS)[number];
+const HI_CITE = 'https://www.capitol.hawaii.gov/session/measure_indiv.aspx';
+export const HI_DATA = 'https://data.capitol.hawaii.gov/';
+/** robots.txt states no Crawl-delay (2026-11-21): one request a second is ours. */
+const HI_GAP_MS = 1_000;
+const HI_SIZE: Record<Chamber, number> = { House: 51, Senate: 25 };
+const HI_TYPES = '(?:HB|SB|HCR|SCR|HR|SR|GM)';
+const HI_URL = new RegExp(`^https://www\\.capitol\\.hawaii\\.gov/session/measure_indiv\\.aspx\\?billtype=(${HI_TYPES})&billnumber=([1-9]\\d{0,4})&year=(20\\d{2})#(20\\d{2}-\\d{2}-\\d{2})-(House|Senate)-(${HI_KINDS.join('|')})$`);
+const HI_LIST = /^https:\/\/data\.capitol\.hawaii\.gov\/legislature\/legislators\.aspx\?chamber=([HS])&year=(20\d{2})$/;
+
+export interface HiVoteRef { state: 'HI'; stateName: 'Hawaii'; type: string; number: number; year: number; date: string; chamber: Chamber; kind: HiKind; bill: string }
+/** unplaced: members who may have sat (the list gives no date) and whom the page does not name: they get no line. */
+export interface HiVoteRecord { state: 'HI'; stateName: 'Hawaii'; chamber: Chamber; session: string; year: number; kind: HiKind; bill: string; question: string; date: string; groups: Record<HiVote, string[]>; unplaced: string[] }
+export interface HiVoteLine extends Omit<HiVoteRecord, 'groups' | 'year' | 'kind' | 'unplaced'> { name: string; vote: HiVote }
+
+export function parseHawaiiVoteUrl(url: string): HiVoteRef | null {
+  const m = HI_URL.exec(url.trim());
+  if (!m) return null;
+  const year = Number(m[3]);
+  // a bill carried into the second year of the two-year Legislature lists the first year's votes on its page of that
+  // year too (2018 SB 1037: the Senate's third reading of 2017-03-07). Such a vote is cited on the page of its own year,
+  // once: an address whose day is of another year is not one
+  if (Number(m[4].slice(0, 4)) !== year) return null;
+  return { state: 'HI', stateName: 'Hawaii', type: m[1], number: Number(m[2]), year, date: m[4], chamber: m[5] as Chamber, kind: m[6] as HiKind, bill: `${m[1]} ${Number(m[2])}` };
+}
+
+/** The address a vote is cited on: the bill's status page on www.capitol.hawaii.gov, the vote after a #. */
+export function hawaiiVoteUrl(type: string, number: number, year: number, date: string, chamber: Chamber, kind: HiKind): string {
+  return `${HI_CITE}?billtype=${type.toUpperCase()}&billnumber=${number}&year=${year}#${date}-${chamber}-${kind}`;
+}
+
+/** The bill's status page on the data host (the fetch tool's index, and the reader's first document). */
+export function hawaiiBillPageUrl(type: string, number: number, year: number): string {
+  return `${HI_DATA}session/measure_indiv.aspx?billtype=${type.toUpperCase()}&billnumber=${number}&year=${year}`;
+}
+
+/** The member list of one chamber and year: read by a form post (statePostbackOf). */
+export function hawaiiMemberListUrl(chamber: Chamber, year: number): string {
+  return `${HI_DATA}legislature/legislators.aspx?chamber=${chamber === 'House' ? 'H' : 'S'}&year=${year}`;
+}
+
+function hawaiiDocs(r: HiVoteRef): string[] {
+  return [hawaiiBillPageUrl(r.type, r.number, r.year), hawaiiMemberListUrl(r.chamber, r.year)];
+}
+
+/**
+ * A document that is read by an ASP.NET form post rather than a plain GET: `page` is fetched first, and `form` builds the
+ * post from its hidden fields. Hawaii's member list chooses its year this way and ignores a year in the address, so a
+ * plain GET of the address answers with the current year's list, which the reader refuses (it checks the year chosen).
+ */
+export interface StatePostback { page: string; form: (pageBody: string) => URLSearchParams }
+
+export function statePostbackOf(url: string): StatePostback | null {
+  const m = HI_LIST.exec(url.trim());
+  if (!m) return null;
+  const page = `${HI_DATA}legislature/legislators.aspx?chamber=${m[1]}`;
+  return {
+    page,
+    form(body: string): URLSearchParams {
+      const hidden = (name: string): string => {
+        const h = new RegExp(`<input[^>]*\\bname="${name}"[^>]*\\bvalue="([^"]*)"`, 'i').exec(body) ?? new RegExp(`<input[^>]*\\bid="${name}"[^>]*\\bvalue="([^"]*)"`, 'i').exec(body);
+        if (!h) throw new Error(`the member list form has no ${name}`);
+        return decodeEntities(h[1]);
+      };
+      if (!/name="ctl00\$MainContent\$DropDownListYear"/.test(body)) throw new Error('the member list has no year field');
+      return new URLSearchParams({
+        __EVENTTARGET: 'ctl00$MainContent$DropDownListYear', __EVENTARGUMENT: '', __VIEWSTATE: hidden('__VIEWSTATE'),
+        __VIEWSTATEGENERATOR: hidden('__VIEWSTATEGENERATOR'), __EVENTVALIDATION: hidden('__EVENTVALIDATION'), ctl00$MainContent$DropDownListYear: m[2],
+      });
+    },
+  };
+}
+
+const decodeEntities = (s: string): string => s
+  .replace(/&#(\d+);/g, (_, d: string) => String.fromCodePoint(Number(d)))
+  .replace(/&#x([0-9a-f]+);/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
+  .replace(/&nbsp;/g, ' ').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+const hiText = (html: string): string => squash(decodeEntities(html.replace(/<[^>]+>/g, ' ')));
+const hiDay = (mdy: string): string | null => {
+  const m = /^(\d{1,2})\/(\d{1,2})\/(20\d{2})$/.exec(mdy.trim());
+  return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : null;
+};
+
+/** One row of the bill's status table. */
+export interface HiStatusRow { date: string; chamber: 'H' | 'S' | 'D'; text: string }
+
+/** Every status row of a bill page, in page order. */
+export function hawaiiStatusRows(html: string): HiStatusRow[] {
+  const out: HiStatusRow[] = [];
+  for (const tr of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...tr[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((c) => hiText(c[1]));
+    if (cells.length !== 3) continue;
+    const date = hiDay(cells[0]);
+    if (!date || !/^[HSD]$/.test(cells[1])) continue;
+    out.push({ date, chamber: cells[1] as 'H' | 'S' | 'D', text: cells[2] });
+  }
+  return out;
+}
+
+/** The bill and year a status page is of: from its title, and for the current year from its own text links. */
+export function hawaiiPageBill(html: string): { bill: string; year: number | null } | null {
+  const t = /<title>\s*Measure Status Details for ((?:HB|SB|HCR|SCR|HR|SR|GM) \d+)(?: \((20\d{2}) Archives\))?\s*<\/title>/i.exec(html);
+  if (!t) return null;
+  const bill = t[1].toUpperCase().replace(/\s+/, ' ');
+  if (t[2]) return { bill, year: Number(t[2]) };
+  const tag = bill.replace(' ', '');
+  const years = new Set([...html.matchAll(new RegExp(`/sessions?/session(20\\d{2})/bills/${tag}_`, 'gi'))].map((m) => Number(m[1])));
+  return { bill, year: years.size === 1 ? [...years][0] : null };
+}
+
+/** A floor vote's status text, read: its kind, the question as printed, the counts and the labels named. */
+export interface HiFloorLine {
+  kind: HiKind; passed: boolean; question: string;
+  /** The Senate's (and a House override's) printed Aye count, ayes with reservations included; null when none is printed. */
+  ayes: number | null;
+  named: { 'Aye with reservations': string[]; No: string[]; Excused: string[] };
+}
+
+const HI_FLOOR_KIND: [RegExp, HiKind, boolean][] = [
+  [/^(?:Report adopted;\s*)?Passed Third Reading\b/i, 'Third-Reading', true],
+  [/^(?:Report adopted;\s*)?Failed to pass Third Reading\b/i, 'Third-Reading', false],
+  [/^Passed Final Reading\b/i, 'Final-Reading', true],
+  [/^Failed to pass Final Reading\b/i, 'Final-Reading', false],
+  [/^Veto overridden\b/i, 'Veto-Override', true],
+];
+/** A row that records a vote (a tally or named members): a floor vote, or a motion the reader counts and does not read. */
+export function hawaiiRowHasVote(text: string): boolean {
+  return /\bvoting no \(\d+\)|\bAyes,\s*\d+|\d+\s+Aye\(s\)|\bwith \d+ Ayes\b/i.test(text);
+}
+
+/** A list of labels after "Senator(s)" or "Representative(s)", or none. Throws on any other form. */
+function hiNames(s: string, who: 'Senator' | 'Representative'): string[] {
+  const t = squash(s).replace(/\s*\.$/, '');
+  if (/^none$/i.test(t)) return [];
+  const m = new RegExp(`^${who}\\(s\\)\\s+(.+)$`).exec(t);
+  if (!m) throw new Error(`a list of names the reader cannot read: ${s}`);
+  const out: string[] = [];
+  for (const x of m[1].split(/\s*,\s*(?:and\s+)?|\s+and\s+/).map((y) => y.trim()).filter(Boolean)) {
+    // "Lee, C." is one label inside a comma list: a lone initial closes the label before it
+    if (/^[A-Z]\.?$/.test(x) && out.length) out[out.length - 1] += `, ${x.replace(/\.?$/, '.')}`; else out.push(x);
+  }
+  return out;
+}
+
+/**
+ * Read a floor vote's status text. Null when the row is not a floor vote on the bill (a second reading, a referral, a
+ * recommittal, a committee report). Throws when it is one and its tally is in a form the reader does not know.
+ */
+export function hawaiiFloorLine(text: string, chamber: Chamber): HiFloorLine | null {
+  const t = squash(text);
+  const k = HI_FLOOR_KIND.find(([re]) => re.test(t));
+  if (!k || !hawaiiRowHasVote(t)) return null;
+  const [, kind, passed] = k;
+  if (chamber === 'House') {
+    const ov = /^(.+?) with (\d+) Ayes; (\d+) Noes (none|Representative\(s\) [^;]+); and (\d+) Excused (none|Representative\(s\) .+?)\.?$/.exec(t);
+    if (ov && kind === 'Veto-Override') {
+      const no = hiNames(ov[4], 'Representative');
+      const ex = hiNames(ov[6], 'Representative');
+      if (no.length !== Number(ov[3]) || ex.length !== Number(ov[5])) throw new Error(`a count that is not the members named: ${t}`);
+      return { kind, passed, question: ov[1], ayes: Number(ov[2]), named: { 'Aye with reservations': [], No: no, Excused: ex } };
+    }
+    // the clause of ayes with reservations is left out on some votes (2017: "Passed Final Reading with none voting no (0) and ...")
+    const m = /^(.+?) with (?:(none|Representative\(s\) .+?) voting aye with reservations; )?(none|Representative\(s\) .+?) voting no \((\d+)\) and (none|Representative\(s\) .+?) excused \((\d+)\)\.(?:\s+Transmitted to Senate\.)?$/.exec(t);
+    if (!m) throw new Error(`a House floor vote the reader cannot read: ${t}`);
+    const res = hiNames(m[2] ?? 'none', 'Representative');
+    const no = hiNames(m[3], 'Representative');
+    const ex = hiNames(m[5], 'Representative');
+    if (no.length !== Number(m[4]) || ex.length !== Number(m[6])) throw new Error(`a count that is not the members named: ${t}`);
+    return { kind, passed, question: m[1].replace(/[;,]\s*$/, ''), ayes: null, named: { 'Aye with reservations': res, No: no, Excused: ex } };
+  }
+  const head = /^(.+?)[.:]?\s+(?:Ayes,\s*(\d+)|(\d+)\s+Aye\(s\))[;.]\s*(.*)$/.exec(t);
+  if (!head) throw new Error(`a Senate floor vote the reader cannot read: ${t}`);
+  // the clause of ayes with reservations is left out on some votes ("Ayes, 9. Noes, 16 (...)")
+  const rest = /^Aye\(s\) with reservations:/.test(head[4]) ? head[4].replace(/^Aye\(s\) with reservations:\s*/, '') : `none . ${head[4]}`;
+  const r = /^(none|Senator\(s\) .+?)\s*\.\s+(?=Noes,|\d+\s+No\(es\):)(.*)$/.exec(rest);
+  if (!r) throw new Error(`a Senate floor vote the reader cannot read: ${t}`);
+  const noM = /^(?:Noes,\s*(\d+)\s*\((none|Senator\(s\) [^)]*)\)|(\d+)\s+No\(es\):\s*(none|Senator\(s\) .+?))\s*\.\s+(?=Excused,|\d+\s+Excused:)(.*)$/.exec(r[2]);
+  if (!noM) throw new Error(`a Senate floor vote the reader cannot read: ${t}`);
+  const exM = /^(?:Excused,\s*(\d+)\s*\((none|Senator\(s\) [^)]*)\)|(\d+)\s+Excused:\s*(none|Senator\(s\) .+?))\s*\.(?:\s+Transmitted to House\.)?$/.exec(noM[5]);
+  if (!exM) throw new Error(`a Senate floor vote the reader cannot read: ${t}`);
+  const res = hiNames(r[1], 'Senator');
+  const no = hiNames(noM[2] ?? noM[4], 'Senator');
+  const ex = hiNames(exM[2] ?? exM[4], 'Senator');
+  if (no.length !== Number(noM[1] ?? noM[3]) || ex.length !== Number(exM[1] ?? exM[3])) throw new Error(`a count that is not the members named: ${t}`);
+  return { kind, passed, question: head[1].replace(/[;,.]\s*$/, ''), ayes: Number(head[2] ?? head[3]), named: { 'Aye with reservations': res, No: no, Excused: ex } };
+}
+
+/** One member card of the year's member list. `name` is printed "Family, Given"; the party after it is dropped. */
+export interface HiMember { name: string; family: string; given: string; district: number; from: string | null; to: string | null }
+
+const HI_SUFFIX = /^(?:jr|sr|ii|iii|iv)\.?$/i;
+
+/** "Alcos III, David" -> ["Alcos", "III", "David"]; "Ihara, Jr., Les" -> ["Ihara", "Jr.", "Les"]; "Richards, III, Herbert M. "Tim"". */
+function hiSplitName(printed: string): { family: string; suffix: string; given: string } | null {
+  const parts = squash(printed).split(/\s*,\s*/);
+  if (parts.length < 2) return null;
+  let family = parts[0];
+  let suffix = '';
+  const rest = parts.slice(1);
+  if (rest.length > 1 && HI_SUFFIX.test(rest[0])) suffix = rest.shift()!;
+  const fw = family.split(' ');
+  if (fw.length > 1 && HI_SUFFIX.test(fw[fw.length - 1])) { suffix = fw.pop()!; family = fw.join(' '); }
+  const given = rest.join(', ').trim();
+  return family && given ? { family, suffix, given } : null;
+}
+
+/** The member list of the chamber and year asked for. Throws when the page is of another year or chamber, or a card cannot be read. */
+export function hawaiiMembers(html: string, chamber: Chamber, year: number): HiMember[] {
+  const sel = /<select[^>]*name="ctl00\$MainContent\$DropDownListYear"[^>]*>([\s\S]*?)<\/select>/i.exec(html);
+  const chosen = sel ? /<option[^>]*selected="selected"[^>]*value="(\d{4})"/i.exec(sel[1]) : null;
+  if (!chosen || Number(chosen[1]) !== year) throw new Error(`the member list is of ${chosen?.[1] ?? 'no year'}, not ${year}`);
+  const body = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+  const heads = [...body.matchAll(/<h2[^>]*>\s*<strong>([\s\S]*?)<\/strong>\s*<\/h2>/gi)];
+  const out: HiMember[] = [];
+  for (const [i, h] of heads.entries()) {
+    const seg = body.slice(h.index! + h[0].length, i + 1 < heads.length ? heads[i + 1].index : body.length);
+    const head = hiText(h[1]);
+    const nm = /^(.+?)\s*\([A-Z]{1,3}\)$/.exec(head); // the party letter in brackets is dropped, never read
+    if (!nm) throw new Error(`a member card the reader cannot read: ${head}`);
+    const txt = hiText(seg);
+    const d = /\b(House|Senate) District (\d+)\b/.exec(txt);
+    if (!d) throw new Error(`a member card with no district: ${nm[1]}`);
+    if (d[1] !== chamber) throw new Error(`the member list holds a ${d[1]} member (${nm[1]}): it is not the ${chamber}'s`);
+    const sp = hiSplitName(nm[1]);
+    if (!sp) throw new Error(`a member name the reader cannot read: ${nm[1]}`);
+    const from = /\bAppointed:?\s*(\d{1,2}\/\d{1,2}\/20\d{2})/.exec(txt);
+    const to = /\bTerm of Office Ended:?\s*(\d{1,2}\/\d{1,2}\/20\d{2})/.exec(txt);
+    const name = [sp.given, sp.family, sp.suffix].filter(Boolean).join(' ');
+    out.push({ name, family: sp.family, given: sp.given, district: Number(d[2]), from: from ? hiDay(from[1]) : null, to: to ? hiDay(to[1]) : null });
+  }
+  if (!out.length) throw new Error('the member list holds no member');
+  return out;
+}
+
+/**
+ * The members seated on a day. The list prints "Appointed" on some members who joined during the year and "Term of Office
+ * Ended" on members who left, so a member's start is often unknown. A member with a start sits from it to their end (or
+ * the year's end). A member with no start sits from the year's start, unless another member of the district left before
+ * this one's end: then this one came after, on a day the list does not give, so on a day after the other left they are
+ * `uncertain` (they may or may not have been seated yet), and on a day before it they are not seated. Measured: 2023's
+ * House prints "Term of Office Ended: 01/02/2023" for Tokioka and nothing for his successor Evslin; 2024's Senate prints
+ * an end for both members of district 22, Shimabukuro (05/31/2024) and her successor Crabbe (11/05/2024).
+ * Throws when a district holds two members on the day, or two members with no date at all.
+ */
+export function hawaiiSeated(members: HiMember[], day: string): { seated: HiMember[]; uncertain: HiMember[] } {
+  const byDistrict = new Map<number, HiMember[]>();
+  for (const m of members) byDistrict.set(m.district, [...(byDistrict.get(m.district) ?? []), m]);
+  const seated: HiMember[] = [];
+  const uncertain: HiMember[] = [];
+  for (const [d, ms] of byDistrict) {
+    if (ms.filter((m) => !m.from && !m.to).length > 1) throw new Error(`district ${d} has ${ms.filter((m) => !m.from && !m.to).length} members with no dates`);
+    const sure: HiMember[] = [];
+    const maybe: HiMember[] = [];
+    for (const m of ms) {
+      if (m.to && day > m.to) continue;
+      if (m.from) { if (m.from <= day) sure.push(m); continue; }
+      // the latest end, before this member's own, of another member of the district: this member came after it
+      const before = ms.filter((o) => o !== m && o.to && (!m.to || o.to < m.to)).map((o) => o.to!).sort().pop();
+      if (!before) sure.push(m); else if (day > before) maybe.push(m);
+    }
+    if (sure.length > 1) throw new Error(`district ${d} has two members on ${day}`);
+    if (sure.length) seated.push(sure[0]); else uncertain.push(...maybe);
+  }
+  return { seated, uncertain };
+}
+
+/**
+ * The seated member a printed label names: "Amato", "Lee, C.", "S. Chang", "J.Keohokalole", "Keohokapu-Lee Loy". The
+ * family name must be the member's, and a printed initial the first letter of their given name. Null unless exactly one
+ * member fits.
+ */
+export function hawaiiLabelMember(label: string, seated: HiMember[]): HiMember | null {
+  const l = squash(label);
+  let family = l;
+  let initial = '';
+  const after = /^(.+?),\s*([A-Z])\.?$/.exec(l);
+  const before = /^([A-Z])\.\s*(.+)$/.exec(l);
+  if (after) { family = after[1]; initial = after[2]; } else if (before) { initial = before[1]; family = before[2]; }
+  const fits = seated.filter((m) => fold(m.family) === fold(family) && (!initial || fold(m.given).startsWith(initial.toLowerCase())));
+  return fits.length === 1 ? fits[0] : null;
+}
+
+/** The vote, or why it was refused (the first check that failed). */
+function readHawaii(bodies: string[], r: HiVoteRef): HiVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 2) return fail('not a bill page and a member list');
+  const page = hawaiiPageBill(bodies[0]);
+  if (!page) return fail('the page is not a bill status page');
+  if (page.bill !== r.bill) return fail(`the page is for ${page.bill}, not ${r.bill}`);
+  if (page.year !== r.year) return fail(`the page is of ${page.year ?? 'no year it names'}, not ${r.year}`);
+  const letter = r.chamber === 'House' ? 'H' : 'S';
+  const hits: { row: HiStatusRow; line: HiFloorLine }[] = [];
+  for (const row of hawaiiStatusRows(bodies[0])) {
+    if (row.date !== r.date || row.chamber !== letter) continue;
+    const line = hawaiiFloorLine(row.text, r.chamber);
+    if (line && line.kind === r.kind) hits.push({ row, line });
+  }
+  if (hits.length !== 1) return fail(`the page holds ${hits.length} ${r.chamber} ${r.kind.replace('-', ' ')} votes on ${r.date}`);
+  const { line } = hits[0];
+  const { seated, uncertain } = hawaiiSeated(hawaiiMembers(bodies[1], r.chamber, r.year), r.date);
+  if (seated.length > HI_SIZE[r.chamber]) return fail('more members than the chamber has');
+  const named = new Map<HiMember, HiVote>();
+  for (const k of ['Aye with reservations', 'No', 'Excused'] as const) {
+    for (const label of line.named[k]) {
+      // a member the list does not date is placed when the page names them: they sat that day
+      const m = hawaiiLabelMember(label, [...seated, ...uncertain]);
+      if (!m) return fail(`"${label}" is not exactly one member seated on ${r.date}`);
+      if (named.has(m)) return fail(`${m.name} is named twice`);
+      named.set(m, k);
+    }
+  }
+  const sitting = [...seated, ...uncertain.filter((m) => named.has(m))];
+  let unplaced = uncertain.filter((m) => !named.has(m));
+  const groups = Object.fromEntries(HI_VOTES.map((k) => [k, [] as string[]])) as Record<HiVote, string[]>;
+  for (const m of sitting) groups[named.get(m) ?? 'Aye'].push(m.name);
+  let ayes = groups.Aye.length + groups['Aye with reservations'].length;
+  if (line.ayes !== null && unplaced.length && line.ayes === ayes + unplaced.length) {
+    // the printed count settles it: the undated members sat, and voted aye
+    groups.Aye.push(...unplaced.map((m) => m.name));
+    ayes += unplaced.length;
+    unplaced = [];
+  } else if (line.ayes !== null) unplaced = [];
+  if (sitting.length + (line.ayes !== null ? 0 : unplaced.length) > HI_SIZE[r.chamber]) return fail('more members than the chamber has');
+  for (const k of HI_VOTES) groups[k].sort((a, b) => a.localeCompare(b));
+  if (line.ayes !== null && line.ayes !== ayes) return fail(`the page prints ${line.ayes} Ayes and the members seated less those named are ${ayes}`);
+  const names = HI_VOTES.flatMap((k) => groups[k]).map(fold);
+  if (new Set(names).size !== names.length) return fail('two members render as one name');
+  return { state: 'HI', stateName: 'Hawaii', chamber: r.chamber, session: String(r.year), year: r.year, kind: r.kind, bill: r.bill, question: line.question, date: r.date, groups, unplaced: unplaced.map((m) => m.name) };
+}
+
+const HI_SAID: Record<HiVote, string> = { Aye: 'voted Aye', 'Aye with reservations': 'voted Aye with reservations', No: 'voted No', Excused: 'was excused' };
+
+export function renderHawaiiVote(v: HiVoteRecord): string {
+  return [
+    `Hawaii ${v.chamber} vote of ${v.date} (${v.session}), ${v.bill}, ${v.kind.replace('-', ' ')}.`,
+    `Question: ${v.question}`,
+    HI_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...HI_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const HI_RENDER_HEAD = /^Hawaii (House|Senate) vote of (\d{4}-\d{2}-\d{2}) \((20\d{2})\), ([A-Z]{2,3} \d{1,5}), (Third Reading|Final Reading|Veto Override)\.$/;
+
+function parseHawaiiRender(text: string, url: string): Omit<HiVoteRecord, 'year' | 'unplaced'> | null {
+  const r = parseHawaiiVoteUrl(url);
+  const rows = text.split('\n');
+  const h = HI_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + HI_VOTES.length) return null;
+  if (h[1] !== r.chamber || h[2] !== r.date || Number(h[3]) !== r.year || h[4] !== r.bill || h[5] !== r.kind.replace('-', ' ')) return null;
+  const groups = {} as Record<HiVote, string[]>;
+  for (const [i, v] of HI_VOTES.entries()) {
+    const m = /^([A-Za-z ]+) \((\d+)\):(.*)$/.exec(rows[3 + i]);
+    if (!m || m[1] !== v) return null;
+    groups[v] = m[3].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[2])) return null;
+  }
+  if (rows[2] !== HI_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'HI', stateName: 'Hawaii', chamber: r.chamber, session: String(r.year), kind: r.kind, bill: r.bill, date: r.date, question: q[1], groups };
+}
+
+const HI_LINE = /^Hawaii (House|Senate) vote of (\d{4}-\d{2}-\d{2}) \((20\d{2})\), ([A-Z]{2,3} \d{1,5}) - (.+): (.+?) (voted Aye with reservations|voted Aye|voted No|was excused)\.$/;
+
+export function formatHawaiiVoteLine(l: HiVoteLine): string {
+  return `Hawaii ${l.chamber} vote of ${l.date} (${l.session}), ${l.bill} - ${l.question}: ${l.name} ${HI_SAID[l.vote]}.`;
+}
+
+function parseHawaiiLine(text: string): HiVoteLine | null {
+  const m = HI_LINE.exec(text.trim());
+  const vote = m ? HI_VOTES.find((v) => HI_SAID[v] === m[7]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'HI', stateName: 'Hawaii', chamber: m[1] as Chamber, date: m[2], session: m[3], bill: m[4], question: m[5], name: m[6].trim(), vote };
+}
+
+function verifyHawaiiLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseHawaiiLine(line);
+  const r = parseHawaiiRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = HI_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function hawaiiLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseHawaiiRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of HI_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatHawaiiVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from the bill page and the year's member list. Null when any check fails. */
+export function readHawaiiVote(bodies: string[], url: string): HiVoteRecord | null {
+  const v = explainHawaiiVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readHawaiiVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainHawaiiVote(bodies: string[], url: string): HiVoteRecord | { refused: string } {
+  const r = parseHawaiiVoteUrl(url);
+  if (!r) return { refused: 'not a Hawaii vote address' };
+  try { return readHawaii(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's and Minnesota's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   // Maine's marks are paired with their members by position, so its reader gets every run with its place (pdfItemsBody)
@@ -4082,11 +4531,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseOregonVoteUrl(url)) return OR_GAP_MS;
   if (parseMaineVoteUrl(url)) return ME_GAP_MS;
   if (parseCaliforniaVoteUrl(url)) return CA_GAP_MS;
+  if (parseHawaiiVoteUrl(url)) return HI_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null || parseOregonVoteUrl(url) !== null || parseMaineVoteUrl(url) !== null || parseCaliforniaVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null || parseColoradoVoteUrl(url) !== null || parseNorthDakotaVoteUrl(url) !== null || parseMinnesotaVoteUrl(url) !== null || parseNevadaVoteUrl(url) !== null || parseOregonVoteUrl(url) !== null || parseMaineVoteUrl(url) !== null || parseCaliforniaVoteUrl(url) !== null || parseHawaiiVoteUrl(url) !== null;
 }
 
 /**
@@ -4118,6 +4568,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (me) return maineDocs(me);
   const ca = parseCaliforniaVoteUrl(url);
   if (ca) return californiaDocs(ca);
+  const hi = parseHawaiiVoteUrl(url);
+  if (hi) return hawaiiDocs(hi);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -4176,6 +4628,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseCaliforniaVoteUrl(url)) {
     const v = readCaliforniaVote(bodies, url);
     return v ? renderCaliforniaVote(v) : null;
+  }
+  if (parseHawaiiVoteUrl(url)) {
+    const v = readHawaiiVote(bodies, url);
+    return v ? renderHawaiiVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -4270,6 +4726,11 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: Number(v.seq), bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Aye, Nay: v.groups.No, 'Absent or not voting': v.groups['No vote recorded'] } } : null;
   }
+  if (parseHawaiiVoteUrl(url)) {
+    const v = readHawaiiVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: 0, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: [...v.groups.Aye, ...v.groups['Aye with reservations']], Nay: v.groups.No, 'Absent or not voting': v.groups.Excused } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -4294,7 +4755,8 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | Omit<OrVoteRecord, 'codes'> | Omit<CaVoteRecord, 'labels'> | MeVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | CoVoteRecord | NdVoteRecord | MnVoteRecord | NvVoteRecord | Omit<OrVoteRecord, 'codes'> | Omit<CaVoteRecord, 'labels'> | MeVoteRecord | Omit<HiVoteRecord, 'year' | 'unplaced'> | null {
+  if (parseHawaiiVoteUrl(url)) return parseHawaiiRender(text, url);
   if (parseMaineVoteUrl(url)) return parseMaineRender(text, url);
   if (parseCaliforniaVoteUrl(url)) return parseCaliforniaRender(text, url);
   if (parseOregonVoteUrl(url)) return parseOregonRender(text, url);
@@ -4335,8 +4797,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | OrVoteLine | CaVoteLine | MeVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text) ?? parseOregonLine(text) ?? parseCaliforniaLine(text) ?? parseMaineLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | CoVoteLine | NdVoteLine | MnVoteLine | NvVoteLine | OrVoteLine | CaVoteLine | MeVoteLine | HiVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text) ?? parseColoradoLine(text) ?? parseNorthDakotaLine(text) ?? parseMinnesotaLine(text) ?? parseNevadaLine(text) ?? parseOregonLine(text) ?? parseCaliforniaLine(text) ?? parseMaineLine(text) ?? parseHawaiiLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -4426,6 +4888,7 @@ function verifyOneName(line: string, url: string, text: string, lastName: string
   if (parseOregonVoteUrl(url)) return verifyOregonLine(line, url, text, lastName, fullName);
   if (parseMaineVoteUrl(url)) return verifyMaineLine(line, url, text, lastName, fullName);
   if (parseCaliforniaVoteUrl(url)) return verifyCaliforniaLine(line, url, text, lastName, fullName);
+  if (parseHawaiiVoteUrl(url)) return verifyHawaiiLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -4459,6 +4922,7 @@ function linesForOneName(url: string, text: string, lastName: string, fullName: 
   if (parseOregonVoteUrl(url)) return oregonLinesFor(url, text, lastName, fullName);
   if (parseMaineVoteUrl(url)) return maineLinesFor(url, text, lastName, fullName);
   if (parseCaliforniaVoteUrl(url)) return californiaLinesFor(url, text, lastName, fullName);
+  if (parseHawaiiVoteUrl(url)) return hawaiiLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];

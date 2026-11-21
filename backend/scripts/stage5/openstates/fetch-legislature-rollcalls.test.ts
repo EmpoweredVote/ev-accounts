@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateRows } from './fetch-legislature-rollcalls.js';
+import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateRows, hiReadBillPage, hiYear } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -922,5 +922,49 @@ describe('the legislature\'s own vote list — Maine', () => {
     // a House vote on the bill with no PDF is not read, and is reported
     const noPdf = swap(swap(PDFS, '<strong>4</strong> PDF', '<strong>3</strong> PDF'), /<tr>(?:(?!<tr>).)*?034\.574\.132S1\.pdf.*?<\/tr>/s.exec(PDFS)![0], '');
     expect(meReadVotes(LIST, '132', 'LD 1971', [noPdf, SEN, SENATORS]).unread).toEqual(['House 574 Enactment: no PDF on the House\'s list']);
+  });
+});
+
+
+describe('the legislature\'s own vote list — Hawaii', () => {
+  // Cut 2026-11-21 from data.capitol.hawaii.gov (see stateRollCallEvidence.test.ts).
+  const page = (name: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${name}.html`, import.meta.url)), 'utf8');
+  const B22 = page('hi-hb1688-2022-bill');
+  const CITE = 'https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1688&year=2022#';
+  /** Change one thing in a page, and fail the test when the change did not apply. */
+  const edit = (html: string, from: string, to: string): string => { expect(html.includes(from)).toBe(true); return html.replace(from, to); };
+
+  it('names the bill page on the data host by the session\'s year, in both of Open States\' session names', () => {
+    expect(hiYear('2017 Regular Session')).toBe(2017);
+    expect(hiYear('2024')).toBe(2024);
+    expect(hiYear('2024 Special Session')).toBeNull();
+    expect(INDEX.HI.billUrl('2022 Regular Session', 'HB 1688')).toBe('https://data.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1688&year=2022');
+    expect(INDEX.HI.billUrl('2026', 'SB0012')).toBe('https://data.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=12&year=2026');
+    expect(INDEX.HI.billUrl('2026', 'Bill 12')).toBeNull();
+    expect(INDEX.HI.minGapMs).toBe(1_000);
+  });
+
+  it('cites each floor vote on www with the vote after a #, with the Senate\'s printed tally; counts committee votes and motions', () => {
+    const bi = hiReadBillPage(B22, '2022 Regular Session', 'HB 1688');
+    expect(bi.floor.map((v) => [v.url.replace(CITE, ''), v.tally])).toEqual([
+      ['2022-05-03-House-Final-Reading', null], ['2022-05-03-Senate-Final-Reading', [25, 0, 0]],
+      ['2022-04-12-Senate-Third-Reading', [25, 0, 0]], ['2022-03-03-House-Third-Reading', null]]);
+    // three committee reports and the conference committee's vote; a second reading and a report adopted and referred
+    expect([bi.committee, bi.motion, bi.earlier]).toEqual([4, 2, undefined]);
+    expect(bi.motions!.map((m) => m.slice(0, 22))).toEqual(['2022-02-17 House Repor', '2022-02-08 House Passe']);
+  });
+
+  it('reads no vote of the year before on a carried-over bill\'s page: that year\'s session reads it, once', () => {
+    const bi = hiReadBillPage(edit(B22, '<td><font color="Black">3/3/2022</font></td><td><font color="Black">H</font></td><td><font color="Black">Passed Third Reading with',
+      '<td><font color="Black">3/3/2021</font></td><td><font color="Black">H</font></td><td><font color="Black">Passed Third Reading with'), '2022 Regular Session', 'HB 1688');
+    expect(bi.floor.map((v) => v.url.replace(CITE, ''))).not.toContain('2021-03-03-House-Third-Reading');
+    expect([bi.floor.length, bi.earlier]).toEqual([3, 1]);
+  });
+
+  it('refuses a page of another bill or year, and a floor vote it cannot read', () => {
+    expect(() => hiReadBillPage(B22, '2022 Regular Session', 'HB 1689')).toThrow(/not the status page of HB 1689: HB 1688/);
+    expect(() => hiReadBillPage(B22, '2026', 'HB 1688')).toThrow(/is of 2022, not 2026/);
+    expect(() => hiReadBillPage(edit(B22, 'Representative(s) McDermott, Ward voting no (2)', 'Representative(s) McDermott, Ward voting no (3)'), '2022 Regular Session', 'HB 1688'))
+      .toThrow(/a count that is not the members named/);
   });
 });

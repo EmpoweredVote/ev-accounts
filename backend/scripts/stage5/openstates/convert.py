@@ -242,6 +242,17 @@ for r in rows("personvote"):
 #    PUBINFO download kept on this machine (ca_pubinfo.py, CA_PUBINFO_DIR), cited on the Votes page with the vote after a #
 #    (stateRollCallEvidence.ts). The reader names each member in full from the session's member table, so ms_full_names
 #    links them. "https": the rows carry http:// links to leginfo, which serves https.
+#  - Hawaii (2026-11-21): the dump's vote addresses are each bill's status page, which holds every vote of the bill, and
+#    its member lists for the House are the Ayes Open States inferred from its own roster (2026 HB 2033's third reading
+#    lists 48 Ayes where the Legislature's member list gives 48 seated members less those named, one district unplaced).
+#    "record_is_the_floor", as Oregon's: the fetch reads each scanned bill's status page on data.capitol.hawaii.gov and
+#    every floor vote on it with the year's member list, cited on www.capitol.hawaii.gov with the vote after a #
+#    (stateRollCallEvidence.ts). The reader names each member in full from the member list, so ms_full_names links them.
+#    "hi_links": the bill pages (five address forms on capitol.hawaii.gov, 2011-2026) become the one form a person opens,
+#    www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=..&billnumber=..&year=.. (a past year redirects to the
+#    archive page); the texts (/session2018/bills/..., /sessions/session2024/bills/...) are read from the data host,
+#    data.capitol.hawaii.gov/sessions/session<year>/bills/<file>, as Open States already gives them for 2025-2026: the
+#    main host answers bots 403 (runner, 2026-11-21: read the data host).
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -261,13 +272,31 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
                     "https_texts": True},
              "ME": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "me_links": True,
                     "https_texts": True},
-             "CA": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "https_texts": True}}
+             "CA": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "https_texts": True},
+             "HI": {"https": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True, "hi_links": True,
+                    "https_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 
 
 def or_link(u):
     """Oregon: the dead host olis.leg.state.or.us -> olis.oregonlegislature.gov, same path (see SRC_RULES, or_links)."""
     return re.sub(r"^https?://olis\.leg\.state\.or\.us/", "https://olis.oregonlegislature.gov/", u)
+HI_BILL_PAGE = re.compile(r"^https?://(?:www\.)?capitol\.hawaii\.gov/(?:session/archives/measure_indiv_Archives|Archives/measure_indiv_Archives(?:8-12)?|session/measure_indiv|measure_indiv)\.aspx\?billtype=([A-Z]+)&billnumber=(\d+)&year=(20\d{2})$", re.I)
+HI_TEXT = re.compile(r"^https?://(?:www\.|data\.)?capitol\.hawaii\.gov/(?:sessions/)?session(20\d{2})/bills/([^/?#]+)$", re.I)
+
+
+def hi_link(u):
+    """Hawaii: a bill page -> the one form cited on www.capitol.hawaii.gov; a text -> the data host (see SRC_RULES, hi_links).
+    Any other address is kept."""
+    m = HI_BILL_PAGE.match(u)
+    if m:
+        return f"https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype={m.group(1).upper()}&billnumber={int(m.group(2))}&year={m.group(3)}"
+    m = HI_TEXT.match(u)
+    if m:
+        return f"https://data.capitol.hawaii.gov/sessions/session{m.group(1)}/bills/{m.group(2)}"
+    return u
+
+
 def me_bill_page(u, ident, session):
     """Maine: the dump's bill page is /LawMakerWeb/summary.asp, which robots.txt disallows. The allowed page of an LD is
     /legis/bills/display_ps.asp?LD=<n>&snum=<Legislature> (see SRC_RULES, me_links); a paper with no LD keeps no page."""
@@ -1063,6 +1092,9 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
         if RULES.get("or_links"):
             for r in ex["billsource"]:
                 r["url"] = or_link(r["url"])
+        if RULES.get("hi_links"):
+            for r in ex["billsource"]:
+                r["url"] = hi_link(r["url"])
         if RULES.get("me_links"):
             kept = []
             for r in ex["billsource"]:
@@ -1135,6 +1167,8 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 main = ks_text(main)
             if RULES.get("or_links"):
                 main = or_link(main)
+            if RULES.get("hi_links"):
+                main = hi_link(main)
             if RULES.get("nd_links"):
                 main = nd_link(main, b["legislative_session_id"])
             if RULES.get("co_texts"):
