@@ -3,7 +3,8 @@ import { homedir, tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { LOCKDOWN_CONFIG, cleanEnv, dropUnusable, extractAssistantText, failCheck, familyOf, parseModelReply, prepareOutsidePrompt, runOpencode, toCheck } from './summary-second-opinion.js';
+import { LOCKDOWN_CONFIG, cleanEnv, dropUnusable, extractAssistantText, failCheck, familyOf, parseModelReply, prepareOutsidePrompt, runOpencode, secondOpinion, toCheck } from './summary-second-opinion.js';
+import { mkdirSync } from 'node:fs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const fixture = (n: string) => readFileSync(join(here, 'fixtures', n), 'utf8');
@@ -155,3 +156,84 @@ describe('nothing local reaches an outside model', () => {
     expect(before).not.toContain(homedir());
   });
 });
+
+describe('batch run: pairing by person, skipping checked pairs', () => {
+  const MODELS = ['opencode-go/gpt-x', 'opencode-go/gemini-x'];
+  const FAMS = MODELS.map((m) => familyOf(m)!);
+  const checkerMd = (pid: string, sha: string) => `Check this.\n\n\`\`\`json\n{ "politician_id": "${pid}", "topic_key": "gun-policy", "text_sha256": "${sha}" }\n\`\`\`\n`;
+  function batch(rows: { pid: string; sha: string; mdSha?: string }[], existing: object[] = []) {
+    const dir = mkdtempSync(join(tmpdir(), 'so-batch-'));
+    mkdirSync(join(dir, 'checker'));
+    writeFileSync(join(dir, 'summaries.jsonl'), rows.map((r) => JSON.stringify({ politician_id: r.pid, topic_key: 'gun-policy', sha256: r.sha, cites: [['f']] })).join('\n') + '\n');
+    for (const r of rows) writeFileSync(join(dir, 'checker', `${r.pid}.md`), checkerMd(r.pid, r.mdSha ?? r.sha));
+    if (existing.length) writeFileSync(join(dir, 'checks.jsonl'), existing.map((c) => JSON.stringify(c)).join('\n') + '\n');
+    const calls: string[] = [];
+    const logs: string[] = [];
+    const call = (file: string, model: string) => {
+      const pid = /"politician_id": "([^"]+)"/.exec(readFileSync(file, 'utf8'))![1];
+      calls.push(`${pid}|${model}`);
+      return { text: JSON.stringify({ ...reply, politician_id: pid }), seconds: 0 };
+    };
+    const go = (retry = false) => secondOpinion({ dir, models: MODELS, families: FAMS, call, retry, log: (l) => logs.push(l) });
+    const recorded = () => readFileSync(join(dir, 'checks.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
+    return { dir, calls, logs, go, recorded };
+  }
+  const prior = (pid: string, sha: string, model: string) => ({
+    politician_id: pid, topic_key: 'gun-policy', text_sha256: sha, checker: model, family: familyOf(model), at: '2026-11-22T10:00:00Z',
+    verdict: 'pass', sentences: [{ index: 0, verdict: 'pass', reason: 'ok' }],
+  });
+
+  it('reads checker/<politician_id>.md for each row and skips a (person, sha, model) already in checks.jsonl', () => {
+    const b = batch([{ pid: 'p1', sha: 'S1' }, { pid: 'p2', sha: 'S2' }], [prior('p1', 'S1', MODELS[0])]);
+    b.go();
+    expect(b.calls.sort()).toEqual([`p1|${MODELS[1]}`, `p2|${MODELS[0]}`, `p2|${MODELS[1]}`].sort());
+    expect(b.recorded()).toHaveLength(4);
+    b.calls.length = 0;
+    b.go();
+    expect(b.calls).toEqual([]);
+    expect(b.recorded()).toHaveLength(4);
+  });
+
+  it('after one person is rewritten, a whole-batch run checks only the new text and keeps the old lines', () => {
+    const b = batch([{ pid: 'p1', sha: 'S1' }, { pid: 'p2', sha: 'S2' }]);
+    b.go();
+    // p1 rewritten: new sha in summaries.jsonl and in its checker file; p2 unchanged.
+    writeFileSync(join(b.dir, 'summaries.jsonl'), [JSON.stringify({ politician_id: 'p1', topic_key: 'gun-policy', sha256: 'S1b', cites: [['f']] }), JSON.stringify({ politician_id: 'p2', topic_key: 'gun-policy', sha256: 'S2', cites: [['f']] })].join('\n') + '\n');
+    writeFileSync(join(b.dir, 'checker', 'p1.md'), checkerMd('p1', 'S1b'));
+    b.calls.length = 0;
+    b.go();
+    expect(b.calls.sort()).toEqual([`p1|${MODELS[0]}`, `p1|${MODELS[1]}`].sort());
+    const r = b.recorded();
+    expect(r).toHaveLength(6);
+    expect(r.filter((c) => c.politician_id === 'p2')).toHaveLength(2);
+    expect(r.filter((c) => c.text_sha256 === 'S1b')).toHaveLength(2);
+  });
+
+  it('refuses to send a checker file whose sha256 is not that person\'s row, records nothing and says so', () => {
+    const b = batch([{ pid: 'p1', sha: 'S1' }, { pid: 'p2', sha: 'S2', mdSha: 'OLD' }]);
+    b.go();
+    expect(b.calls.every((c) => c.startsWith('p1|'))).toBe(true);
+    expect(b.recorded().some((c) => c.politician_id === 'p2')).toBe(false);
+    expect(b.logs.join('\n')).toMatch(/REFUSED p2.*OLD.*S2/);
+  });
+
+  it('refuses a checker file that names another person', () => {
+    const b = batch([{ pid: 'p1', sha: 'S1' }]);
+    writeFileSync(join(b.dir, 'checker', 'p1.md'), checkerMd('p9', 'S1'));
+    b.go();
+    expect(b.calls).toEqual([]);
+    expect(existsSync(join(b.dir, 'checks.jsonl'))).toBe(false);
+    expect(b.logs.join('\n')).toMatch(/REFUSED p1/);
+  });
+
+  it('--retry-unusable re-runs only the unusable calls and rewrites the file once', () => {
+    const unusable = failCheck({ politician_id: 'p1', topic_key: 'gun-policy', sha256: 'S1' }, MODELS[0], 'gpt', 'timed out');
+    const b = batch([{ pid: 'p1', sha: 'S1' }], [unusable, prior('p1', 'S1', MODELS[1])]);
+    b.go(true);
+    expect(b.calls).toEqual([`p1|${MODELS[0]}`]);
+    const r = b.recorded();
+    expect(r).toHaveLength(2);
+    expect(r.every((c) => c.verdict === 'pass')).toBe(true);
+  });
+});
+

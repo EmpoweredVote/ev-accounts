@@ -5,8 +5,11 @@
  *   npx tsx scripts/stage5/summary-second-opinion.ts --profile <stage5>/topic-profile.json --batch <name>
  *     [--models opencode-go/gpt-6-luna,opencode-go/gemini-4-argon] [--timeout 180] [--retry-unusable]
  *
- * For each `<stage5>/summaries/<batch>/checker/<n>.md` (line n of summaries.jsonl) and each model: copies the file
- * alone into a fresh empty temp dir, runs `opencode run -m <model> --format json --archived -f <copy> "<instruction>"`
+ * For each row of summaries.jsonl, its checker file `<stage5>/summaries/<batch>/checker/<politician_id>.md`, and each
+ * model: skips the call when checks.jsonl already holds a line for that (politician_id, sha256, model), so re-running
+ * the whole batch is safe and only new text is sent (a rewrite has a new sha256). Refuses to send a checker file whose
+ * embedded `text_sha256` or `politician_id` is not that row's (it prints REFUSED and records nothing; re-run
+ * summary-assemble). Otherwise copies the file alone into a fresh empty temp dir, runs `opencode run -m <model> --format json --archived -f <copy> "<instruction>"`
  * there with an environment stripped of secrets (never `--auto`), pulls the assistant's text out of the event stream,
  * validates the JSON with SummaryCheckSchema, stamps `checker`, `family`, `at` and the summary's own sha256, and
  * appends one line per (summary, model) to `checks.jsonl`. A timeout, a non-zero exit, an error event, an empty or
@@ -205,6 +208,85 @@ export function runOpencode(file: string, model: string, timeoutS: number, env =
   }
 }
 
+/** The `"key": "value"` strings a checker file embeds; every occurrence, in order. */
+function embedded(text: string, key: string): string[] {
+  return [...text.matchAll(new RegExp(`"${key}"\\s*:\\s*"([^"]*)"`, 'g'))].map((m) => m[1]);
+}
+
+/** Why a checker file may not be sent for this row; null when it is that row's file. */
+export function checkerMismatch(text: string, s: Pick<SummaryRow, 'politician_id' | 'sha256'>): string | null {
+  const shas = embedded(text, 'text_sha256');
+  const pids = embedded(text, 'politician_id');
+  if (shas.length === 0 || shas.some((x) => x !== s.sha256)) return `checker file holds text_sha256 ${shas.join(',') || '(none)'}, not the summary's ${s.sha256}`;
+  if (pids.length === 0 || pids.some((x) => x !== s.politician_id)) return `checker file names politician ${pids.join(',') || '(none)'}, not ${s.politician_id}`;
+  return null;
+}
+
+export interface Tally { pass: number; fail: number; noReply: number; skipped: number; refused: number }
+
+/**
+ * Run every (summary, model) call the batch still needs and record it in checks.jsonl. `call` is the opencode call
+ * (injected so it can be tested). With `retry`, the "no usable reply" lines are dropped first, only those calls run,
+ * and the file is rewritten once at the end.
+ */
+export function secondOpinion(o: {
+  dir: string; models: string[]; families: Family[]; call: (file: string, model: string) => RunResult; retry?: boolean; log?: (line: string) => void;
+}): Tally {
+  const log = o.log ?? ((l: string) => console.log(l));
+  const rows = readFileSync(join(o.dir, 'summaries.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l) as SummaryRow);
+  const out = join(o.dir, 'checks.jsonl');
+  const existing = existsSync(out) ? readFileSync(out, 'utf8').split('\n').filter((l) => l.trim()) : [];
+  let only: Set<string> | null = null;
+  // Retry mode: the old lines stay on disk until every re-run is in; then ONE write replaces the file.
+  let keptLines: string[] = [];
+  const fresh: string[] = [];
+  let base = existing;
+  if (o.retry) {
+    const { kept, removed } = dropUnusable(existing);
+    keptLines = kept; base = kept; only = removed;
+    log(`retrying ${removed.size} unusable call(s)`);
+  }
+  const pairKey = (pid: string | undefined, sha: string | undefined, model: string | undefined) => `${pid}|${sha}|${model}`;
+  const done = new Set<string>();
+  for (const l of base) {
+    try { const c = JSON.parse(l) as SummaryCheck; done.add(pairKey(c.politician_id, c.text_sha256, c.checker)); } catch { /* not JSON: not a check */ }
+  }
+  const tally: Tally = { pass: 0, fail: 0, noReply: 0, skipped: 0, refused: 0 };
+  for (const s of rows) {
+    const todo = o.models
+      .map((model, mi) => ({ model, family: o.families[mi] }))
+      .filter(({ model }) => !only || only.has(`${s.sha256}|${model}`))
+      .filter(({ model }) => {
+        if (!done.has(pairKey(s.politician_id, s.sha256, model))) return true;
+        tally.skipped++;
+        return false;
+      });
+    if (todo.length === 0) continue;
+    const file = join(o.dir, 'checker', `${s.politician_id}.md`);
+    if (existsSync(file)) {
+      const why = checkerMismatch(readFileSync(file, 'utf8'), s);
+      if (why) { log(`REFUSED ${s.politician_id}: ${why}; nothing sent, nothing recorded (re-run summary-assemble)`); tally.refused++; continue; }
+    }
+    for (const { model, family } of todo) {
+      let check: SummaryCheck;
+      let note = '';
+      if (!existsSync(file)) check = failCheck(s, model, family, `checker file ${s.politician_id}.md is missing`);
+      else {
+        const r = o.call(file, model);
+        check = r.why ? failCheck(s, model, family, r.why) : toCheck(s, r.text, model, family);
+        note = ` ${r.seconds.toFixed(1)}s`;
+      }
+      done.add(pairKey(s.politician_id, s.sha256, model));
+      if (only) fresh.push(JSON.stringify(check)); else appendFileSync(out, `${JSON.stringify(check)}\n`);
+      if (check.sentences[0]?.reason.startsWith('no usable reply')) tally.noReply++;
+      else if (check.verdict === 'pass') tally.pass++; else tally.fail++;
+      log(`${s.politician_id} ${model}: ${check.verdict}${note}`);
+    }
+  }
+  if (only) writeFileSync(out, [...keptLines, ...fresh].map((l) => `${l}\n`).join(''));
+  return tally;
+}
+
 export function main(argv: string[]): void {
   const { flags } = parseArgs(argv);
   const last = (k: string) => flags.get(k)?.[flags.get(k)!.length - 1];
@@ -221,40 +303,12 @@ export function main(argv: string[]): void {
   if (!(timeout > 0)) { console.error('--timeout must be a positive number of seconds'); process.exit(2); }
 
   const dir = join(profile.stage5, 'summaries', batch);
-  const rows = readFileSync(join(dir, 'summaries.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l) as SummaryRow);
   const out = join(dir, 'checks.jsonl');
-  let only: Set<string> | null = null;
-  // Retry mode: the old lines stay on disk until every re-run is in; then ONE write replaces the file.
-  let keptLines: string[] = [];
-  const fresh: string[] = [];
-  if (last('retry-unusable')) {
-    const { kept, removed } = dropUnusable(existsSync(out) ? readFileSync(out, 'utf8').split('\n') : []);
-    keptLines = kept;
-    only = removed;
-    console.log(`retrying ${removed.size} unusable call(s)`);
-  }
-  const tally = { pass: 0, fail: 0, noReply: 0 };
-  rows.forEach((s, i) => {
-    const file = join(dir, 'checker', `${i + 1}.md`);
-    models.forEach((model, mi) => {
-      const family = families[mi]!;
-      if (only && !only.has(`${s.sha256}|${model}`)) return;
-      let check: SummaryCheck;
-      let note = '';
-      if (!existsSync(file)) check = failCheck(s, model, family, `checker file ${i + 1}.md is missing`);
-      else {
-        const r = runOpencode(file, model, timeout, process.env, [resolve(dir), homedir()]);
-        check = r.why ? failCheck(s, model, family, r.why) : toCheck(s, r.text, model, family);
-        note = ` ${r.seconds.toFixed(1)}s`;
-      }
-      if (only) fresh.push(JSON.stringify(check)); else appendFileSync(out, `${JSON.stringify(check)}\n`);
-      if (check.sentences[0]?.reason.startsWith('no usable reply')) tally.noReply++;
-      else if (check.verdict === 'pass') tally.pass++; else tally.fail++;
-      console.log(`${s.politician_id} ${model}: ${check.verdict}${note}`);
-    });
+  const tally = secondOpinion({
+    dir, models, families: families as Family[], retry: !!last('retry-unusable'),
+    call: (file, model) => runOpencode(file, model, timeout, process.env, [resolve(dir), homedir()]),
   });
-  if (only) writeFileSync(out, [...keptLines, ...fresh].map((l) => `${l}\n`).join(''));
-  console.log(`checks written ${tally.pass + tally.fail + tally.noReply}: pass ${tally.pass}, fail ${tally.fail}, no usable reply ${tally.noReply} -> ${out}`);
+  console.log(`checks written ${tally.pass + tally.fail + tally.noReply}: pass ${tally.pass}, fail ${tally.fail}, no usable reply ${tally.noReply}; already checked ${tally.skipped}; refused ${tally.refused} -> ${out}`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
