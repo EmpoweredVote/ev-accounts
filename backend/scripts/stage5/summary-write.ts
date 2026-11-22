@@ -8,10 +8,15 @@
  * The check set for each summary is `<batch>/checks.jsonl` (the GPT and Gemini checks) plus one JSON file per Claude
  * checker in `<batch>/claude-checks/` (an object or an array; a missing `checker` is filled with "claude-subagent" and a missing `at` with the file's mtime; each must pass SummaryCheckSchema and be family
  * 'claude'). Required families: claude, gpt, gemini (`summaryVerdict`). Before a summary is trusted, its text is
- * re-hashed with `shownSha256`; a stored sha256 that differs refuses the row.
+ * re-hashed with `shownSha256`; a stored sha256 that differs refuses the row. Every check, of every family, must give
+ * a verdict on every sentence: a check that skips sentence k is a failed check ("claude check skipped sentence k").
+ * The code file (`<stage5>/codes/<politician_id>.json`) is re-read: a row whose code outcome, seat value or file sha256
+ * differs from what summary-assemble recorded is held ("code changed since check").
  *
  * Dry run (default): writes PREVIEW.md (table, then each passed summary with numbered sources) and held.md (each held
- * or failed person, every failing sentence, every checker's reason) and prints the batch agreement rate. No writes.
+ * or failed person, every failing sentence, every checker's reason) and prints the all-pass rate (all three checks
+ * present and passing) and, per outside family, its verdict agreement with Claude (summaries checked by both whose
+ * summary-level pass/fail matches). PREVIEW.md carries both. No writes.
  * Apply: needs `--yes` with the runner's words; the season must be the draft one (assertDraftSeason). In ONE
  * transaction: SELECT each passed person's current reasoning/sources, append them to `old-context.jsonl`, then
  * `UPDATE ... WHERE politician_id, topic_id, season_id`. An UPDATE only: a person with no context row in the season is
@@ -26,12 +31,21 @@ import { shownSha256 } from '../lib/stage5QuoteCheck.js';
 import { resolveSeasonTarget } from '../lib/seasonTarget.js';
 import { SummaryCheckSchema, agreementRate, summaryVerdict, type SummaryCheck } from '../lib/stage5Summary.js';
 import { parseArgs } from './coder-io.js';
+import { readCodeRecord, type CodeRecord } from './summary-assemble.js';
 
 type Query = (sql: string, params?: unknown[]) => Promise<{ rows: any[]; rowCount?: number | null }>;
 type Family = SummaryCheck['family'];
 export const REQUIRED: Family[] = ['claude', 'gpt', 'gemini'];
 
-export interface SummaryRow { politician_id: string; topic_key: string; text: string; sha256: string; sources: string[]; cites: string[][] }
+export interface SummaryRow {
+  politician_id: string; topic_key: string; text: string; sha256: string; sources: string[]; cites: string[][];
+  /** Written by summary-assemble: the code the summary was checked against. A row without them is held. */
+  code_outcome?: string; code_value?: number | null; code_sha256?: string;
+}
+/** The code file as it is now, for one person. */
+export type CodeLookup = (politicianId: string) => CodeRecord | { error: string };
+type OutsideFamily = Exclude<Family, 'claude'>;
+export type FamilyAgreement = Record<OutsideFamily, { agree: number; both: number }>;
 interface PersonRow { politician_id: string; name?: string; outcome?: string }
 export interface Batch { dir: string; summaries: SummaryRow[]; checks: SummaryCheck[]; people: Map<string, PersonRow>; problems: string[] }
 export interface Evaluated {
@@ -83,8 +97,46 @@ export function loadBatch(dir: string): Batch {
   return { dir, summaries, checks, people, problems };
 }
 
-/** One verdict per summary. A row whose stored sha256 is not the hash of its text is refused (held, with the reason). */
-export function evaluate(summaries: SummaryRow[], checks: SummaryCheck[], required: Family[], topicKey?: string): Evaluated[] {
+const failedCheck = (c: SummaryCheck) => c.verdict === 'fail' || c.sentences.some((x) => x.verdict === 'fail');
+
+/**
+ * A check must give a verdict on every sentence of the summary (indexes exactly 0..n-1), whatever its family — the
+ * outside checks are held to it by `toCheck`, and this holds the Claude check to it too. A check that skips a sentence
+ * (or names one the summary does not have) becomes a failed check, with one failing entry per gap.
+ */
+export function requireCoverage(c: SummaryCheck, n: number): SummaryCheck {
+  const have = new Set(c.sentences.map((x) => x.index));
+  const missing = Array.from({ length: n }, (_, k) => k).filter((k) => !have.has(k));
+  const extra = c.sentences.filter((x) => x.index >= n);
+  if (!missing.length && !extra.length) return c;
+  return {
+    ...c, verdict: 'fail', sentences: [
+      ...c.sentences,
+      ...missing.map((k) => ({ index: k, verdict: 'fail' as const, reason: `${c.family} check skipped sentence ${k + 1}` })),
+      ...extra.map((x) => ({ index: x.index, verdict: 'fail' as const, reason: `${c.family} check names sentence ${x.index + 1}, which the summary does not have` })),
+    ],
+  };
+}
+
+/** Why a row's code record no longer matches the code file; null when it matches. */
+function codeDrift(s: SummaryRow, codeNow: CodeLookup): string | null {
+  if (s.code_outcome === undefined || s.code_value === undefined || s.code_sha256 === undefined) {
+    return 'code changed since check: the row carries no code record (re-run summary-assemble); row held';
+  }
+  const now = codeNow(s.politician_id);
+  if ('error' in now) return `code changed since check: the code file is ${now.error}; row held`;
+  const diffs: string[] = [];
+  if (now.code_outcome !== s.code_outcome) diffs.push(`outcome ${s.code_outcome} -> ${now.code_outcome}`);
+  if (now.code_value !== s.code_value) diffs.push(`value ${s.code_value} -> ${now.code_value}`);
+  if (now.code_sha256 !== s.code_sha256) diffs.push('code file bytes');
+  return diffs.length ? `code changed since check (${diffs.join(', ')}); row held` : null;
+}
+
+/**
+ * One verdict per summary. A row whose stored sha256 is not the hash of its text is refused (held, with the reason).
+ * With `codeNow`, a row whose code file changed since it was assembled (outcome, value or bytes) is held.
+ */
+export function evaluate(summaries: SummaryRow[], checks: SummaryCheck[], required: Family[], topicKey?: string, codeNow?: CodeLookup): Evaluated[] {
   const count = new Map<string, number>();
   for (const s of summaries) count.set(`${s.politician_id}|${s.topic_key}`, (count.get(`${s.politician_id}|${s.topic_key}`) ?? 0) + 1);
   return summaries.map((s) => {
@@ -94,10 +146,13 @@ export function evaluate(summaries: SummaryRow[], checks: SummaryCheck[], requir
     if (n > 1) problems.push(`duplicate: ${n} rows for this person and topic; every one refused`);
     const real = shownSha256(s.text);
     if (real !== s.sha256) problems.push(`stored sha256 ${s.sha256} is not the hash of the text (${real}); row refused`);
-    const mine = checks.filter((c) => c.politician_id === s.politician_id && c.topic_key === s.topic_key && c.text_sha256 === real);
+    if (codeNow) { const d = codeDrift(s, codeNow); if (d) problems.push(d); }
+    const nSentences = s.cites?.length ?? splitSentences(s.text).length;
+    const mine = checks
+      .filter((c) => c.politician_id === s.politician_id && c.topic_key === s.topic_key && c.text_sha256 === real)
+      .map((c) => requireCoverage(c, nSentences));
     const verdict = problems.length ? 'held' : summaryVerdict(mine, real, required);
-    const failed = (c: SummaryCheck) => c.verdict === 'fail' || c.sentences.some((x) => x.verdict === 'fail');
-    const allAgree = problems.length === 0 && required.every((f) => mine.some((c) => c.family === f)) && !mine.some(failed);
+    const allAgree = problems.length === 0 && required.every((f) => mine.some((c) => c.family === f)) && !mine.some(failedCheck);
     return { summary: s, verdict, allAgree, problems, checks: mine };
   });
 }
@@ -107,17 +162,49 @@ export function splitSentences(text: string): string[] {
   return text.split(/(?<=\[[\d,\s]+\][.!?])\s+/).filter(Boolean);
 }
 
-export function writeReports(dir: string, b: Batch, ev: Evaluated[], topicKey: string): { agreement: number; passed: number; held: number; failed: number } {
+/**
+ * For each outside family: among summaries that have both a Claude check and a check of that family, how many give
+ * the same summary-level verdict (any failed check of a family = that family fails the summary).
+ */
+export function familyAgreement(ev: Evaluated[]): FamilyAgreement {
+  const verdictOf = (cs: SummaryCheck[], f: Family) => {
+    const x = cs.filter((c) => c.family === f);
+    return x.length === 0 ? null : x.some(failedCheck) ? 'fail' : 'pass';
+  };
+  const out = { gpt: { agree: 0, both: 0 }, gemini: { agree: 0, both: 0 } };
+  for (const f of ['gpt', 'gemini'] as const) {
+    for (const e of ev) {
+      const cl = verdictOf(e.checks, 'claude'); const o = verdictOf(e.checks, f);
+      if (cl === null || o === null) continue;
+      out[f].both += 1;
+      if (cl === o) out[f].agree += 1;
+    }
+  }
+  return out;
+}
+
+const pct = (a: number, b: number) => `${((a / b) * 100).toFixed(0)}%`;
+const LABEL: Record<OutsideFamily, string> = { gpt: 'GPT', gemini: 'Gemini' };
+/** "GPT agrees with Claude on 1 of 3 (33%); Gemini agrees with Claude on 2 of 3 (67%)". */
+export function familyAgreementText(fa: FamilyAgreement): string {
+  return (['gpt', 'gemini'] as const).map((f) => fa[f].both
+    ? `${LABEL[f]} agrees with Claude on ${fa[f].agree} of ${fa[f].both} (${pct(fa[f].agree, fa[f].both)})`
+    : `${LABEL[f]} agrees with Claude on 0 of 0 (no summary checked by both)`).join('; ');
+}
+
+export function writeReports(dir: string, b: Batch, ev: Evaluated[], topicKey: string): { agreement: number; familyAgreement: FamilyAgreement; passed: number; held: number; failed: number } {
   const name = (id: string) => b.people.get(id)?.name ?? id;
   const outcome = (id: string) => b.people.get(id)?.outcome ?? '';
   const agreement = agreementRate(ev.map((e) => ({ all_agree: e.allAgree })));
+  const fa = familyAgreement(ev);
   const passed = ev.filter((e) => e.verdict === 'passed');
   const notPassed = ev.filter((e) => e.verdict !== 'passed');
   const table = ['| Person | Outcome | Verdict | Every check agrees |', '| --- | --- | --- | --- |',
     ...ev.map((e) => `| ${name(e.summary.politician_id)} | ${outcome(e.summary.politician_id)} | ${e.verdict} | ${e.allAgree ? 'yes' : 'no'} |`)].join('\n');
   const preview = [
     `# Position summaries to write: ${topicKey}`, '',
-    `${passed.length} of ${ev.length} passed every check. Agreement rate ${(agreement * 100).toFixed(0)}%.`, '', table, '',
+    `${passed.length} of ${ev.length} passed every check. All-pass rate ${(agreement * 100).toFixed(0)}% (all three checks present and passing).`, '',
+    `Verdict agreement with Claude, per summary: ${familyAgreementText(fa)}.`, '', table, '',
     ...passed.flatMap((e) => [
       `## ${name(e.summary.politician_id)}`, '', e.summary.text, '',
       ...e.summary.sources.map((u, i) => `${i + 1}. ${u}`), '',
@@ -140,7 +227,7 @@ export function writeReports(dir: string, b: Batch, ev: Evaluated[], topicKey: s
       return [...lines, ''];
     })].join('\n');
   writeFileSync(join(dir, 'held.md'), heldMd);
-  return { agreement, passed: passed.length, held: ev.filter((e) => e.verdict === 'held').length, failed: ev.filter((e) => e.verdict === 'failed').length };
+  return { agreement, familyAgreement: fa, passed: passed.length, held: ev.filter((e) => e.verdict === 'held').length, failed: ev.filter((e) => e.verdict === 'failed').length };
 }
 
 export interface WriteResult { written: string[]; refused: { politician_id: string; reason: string }[] }
@@ -192,14 +279,14 @@ export async function applyWrite(q: Query, o: { rows: Evaluated[]; topicKey: str
   return { written, refused };
 }
 
-export interface RunResult extends WriteResult { applied: boolean; passed: number; held: number; failed: number; agreement: number; problems: string[] }
+export interface RunResult extends WriteResult { applied: boolean; passed: number; held: number; failed: number; agreement: number; familyAgreement: FamilyAgreement; problems: string[] }
 
 export async function run(o: { profile: string; batch: string; q?: Query; apply?: boolean; yes?: string }): Promise<RunResult> {
   const profile = JSON.parse(readFileSync(o.profile, 'utf8')) as { topic_key: string; stage5: string };
   if (o.apply && !(o.yes ?? '').trim()) throw new Error('--apply needs --yes "<the runner\'s words>"; nothing written');
   const dir = join(profile.stage5, 'summaries', o.batch);
   const b = loadBatch(dir);
-  const ev = evaluate(b.summaries, b.checks, REQUIRED, profile.topic_key);
+  const ev = evaluate(b.summaries, b.checks, REQUIRED, profile.topic_key, (pid) => readCodeRecord(join(profile.stage5, 'codes', `${pid}.json`)));
   const rep = writeReports(dir, b, ev, profile.topic_key);
   let result: WriteResult = { written: [], refused: [] };
   if (o.apply) {
@@ -230,9 +317,14 @@ async function main(argv: string[]): Promise<void> {
   await finish(await run({ profile, batch }));
 }
 
+/** The run's one-line tally: counts, the all-pass rate, and each outside family's verdict agreement with Claude. */
+export function summaryLine(r: Pick<RunResult, 'passed' | 'held' | 'failed' | 'agreement' | 'familyAgreement'>): string {
+  return `passed ${r.passed}, held ${r.held}, failed ${r.failed}; all-pass rate ${(r.agreement * 100).toFixed(0)}%; ${familyAgreementText(r.familyAgreement)}`;
+}
+
 function finish(r: RunResult): void {
   for (const p of r.problems) console.log(`WARNING: ${p}`);
-  console.log(`passed ${r.passed}, held ${r.held}, failed ${r.failed}; batch agreement rate ${(r.agreement * 100).toFixed(0)}%`);
+  console.log(summaryLine(r));
   if (r.applied) {
     console.log(`written ${r.written.length}: ${r.written.join(', ')}`);
     for (const x of r.refused) console.log(`REFUSED ${x.politician_id}: ${x.reason}`);

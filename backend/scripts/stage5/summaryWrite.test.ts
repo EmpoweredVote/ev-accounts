@@ -1,27 +1,39 @@
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { shownSha256 } from '../lib/stage5QuoteCheck.js';
-import { REQUIRED, applyWrite, evaluate, loadBatch, run, writeReports } from './summary-write.js';
+import type { SummaryCheck } from '../lib/stage5Summary.js';
+import { REQUIRED, applyWrite, evaluate, loadBatch, run, summaryLine, writeReports } from './summary-write.js';
 
 const AT = '2026-11-22T10:00:00Z';
 const mkText = (n: string) => `${n} voted for the bill [1].`;
-const check = (pid: string, sha: string, family: 'claude' | 'gpt' | 'gemini', ok = true) => ({
+const check = (pid: string, sha: string, family: 'claude' | 'gpt' | 'gemini', ok = true): SummaryCheck => ({
   politician_id: pid, topic_key: 'gun-policy', text_sha256: sha, checker: `${family}-x`, family, at: AT,
   verdict: ok ? 'pass' : 'fail',
   sentences: [{ index: 0, verdict: ok ? 'pass' : 'fail', reason: ok ? 'fine' : `${family} says unsupported` }],
 });
 
 interface Setup { profile: string; dir: string }
+const TWO = { politician_id: 'p9', topic_key: 'gun-policy', text: 'A voted yes [1]. B spoke [1].', sha256: shownSha256('A voted yes [1]. B spoke [1].'), sources: ['https://x.gov/9'], cites: [['f1'], ['f1']] };
+const both = (family: 'claude' | 'gpt' | 'gemini', sha: string) => ({
+  ...check('p9', sha, family), sentences: [0, 1].map((index) => ({ index, verdict: 'pass' as const, reason: 'fine' })),
+});
 function setup(opts: { fails?: Record<string, 'claude' | 'gpt'>; skipClaude?: string[]; badSha?: string } = {}): Setup {
   const stage5 = mkdtempSync(join(tmpdir(), 'sw-'));
   const dir = join(stage5, 'summaries', 'b1');
   mkdirSync(join(dir, 'claude-checks'), { recursive: true });
   const ids = ['p1', 'p2', 'p3'];
+  mkdirSync(join(stage5, 'codes'), { recursive: true });
   const rows = ids.map((id) => {
     const text = mkText(id);
-    return { politician_id: id, topic_key: 'gun-policy', text, sha256: id === opts.badSha ? 'deadbeef' : shownSha256(text), sources: [`https://x.gov/${id}`], cites: [['f1']] };
+    const code = JSON.stringify({ politician_id: id, topic_key: 'gun-policy', outcome: 'seated', value: 1, finding_ids: ['f1'] });
+    writeFileSync(join(stage5, 'codes', `${id}.json`), code);
+    return {
+      politician_id: id, topic_key: 'gun-policy', text, sha256: id === opts.badSha ? 'deadbeef' : shownSha256(text), sources: [`https://x.gov/${id}`], cites: [['f1']],
+      code_outcome: 'seated', code_value: 1, code_sha256: createHash('sha256').update(code).digest('hex'),
+    };
   });
   writeFileSync(join(dir, 'summaries.jsonl'), rows.map((r) => JSON.stringify(r)).join('\n') + '\n');
   writeFileSync(join(dir, 'people.json'), JSON.stringify(ids.map((id) => ({ politician_id: id, name: `Name ${id}`, outcome: 'seated', value: 1, finding_ids: ['f1'] }))));
@@ -214,6 +226,81 @@ describe('summary-write', () => {
     expect(r.written).toEqual(['p2', 'p3']);
     expect(db.updates().map((u) => u.params![0])).not.toContain('p1');
     expect(readFileSync(join(dir, 'held.md'), 'utf8')).toMatch(/other-topic.*not gun-policy|topic_key/);
+  });
+
+  it('a Claude check that lists no sentence is a failed check, not a pass', () => {
+    const sha = shownSha256(TWO.text);
+    const claude = { ...check('p9', sha, 'claude'), sentences: [] };
+    const [e] = evaluate([TWO], [claude, both('gpt', sha), both('gemini', sha)], REQUIRED);
+    expect(e.verdict).toBe('failed');
+    expect(e.problems.join(' ') + JSON.stringify(e.checks)).toMatch(/claude check skipped sentence 1/);
+    expect(JSON.stringify(e.checks)).toMatch(/claude check skipped sentence 2/);
+  });
+
+  it('a Claude check that covers only the first of two sentences is a failed check', () => {
+    const sha = shownSha256(TWO.text);
+    const claude = check('p9', sha, 'claude');
+    const [e] = evaluate([TWO], [claude, both('gpt', sha), both('gemini', sha)], REQUIRED);
+    expect(e.verdict).toBe('failed');
+    const c = e.checks.find((x) => x.family === 'claude')!;
+    expect(c.verdict).toBe('fail');
+    expect(c.sentences.find((x) => x.index === 1)).toMatchObject({ verdict: 'fail', reason: 'claude check skipped sentence 2' });
+    expect(JSON.stringify(c)).not.toMatch(/skipped sentence 1\b/);
+  });
+
+  it('a Claude check covering every sentence still passes', () => {
+    const sha = shownSha256(TWO.text);
+    const [e] = evaluate([TWO], [both('claude', sha), both('gpt', sha), both('gemini', sha)], REQUIRED);
+    expect(e.verdict).toBe('passed');
+  });
+
+  it('holds a row whose code file changed since the check (value, outcome or bytes)', async () => {
+    const { profile, dir } = setup();
+    const stage5 = join(dir, '..', '..');
+    writeFileSync(join(stage5, 'codes', 'p1.json'), JSON.stringify({ politician_id: 'p1', topic_key: 'gun-policy', outcome: 'seated', value: 4, finding_ids: ['f1'] }));
+    writeFileSync(join(stage5, 'codes', 'p2.json'), JSON.stringify({ politician_id: 'p2', topic_key: 'gun-policy', outcome: 'seated', value: 1, finding_ids: ['f1'], reasoning: 're-coded' }));
+    const db = fakeDb();
+    const r = await run({ profile, batch: 'b1', q: db.q, apply: true, yes: 'go' });
+    expect(r.written).toEqual(['p3']);
+    const held = readFileSync(join(dir, 'held.md'), 'utf8');
+    expect(held).toMatch(/Name p1[\s\S]*code changed since check[\s\S]*value/);
+    expect(held).toMatch(/Name p2[\s\S]*code changed since check/);
+  });
+
+  it('holds a row with a missing code file, or a row assembled without the code record', async () => {
+    const { profile, dir } = setup();
+    const stage5 = join(dir, '..', '..');
+    const { rmSync } = await import('node:fs');
+    rmSync(join(stage5, 'codes', 'p1.json'));
+    const rows = readFileSync(join(dir, 'summaries.jsonl'), 'utf8').trim().split('\n').map((l) => JSON.parse(l));
+    delete rows[1].code_sha256;
+    writeFileSync(join(dir, 'summaries.jsonl'), rows.map((l) => JSON.stringify(l)).join('\n') + '\n');
+    const db = fakeDb();
+    const r = await run({ profile, batch: 'b1', q: db.q, apply: true, yes: 'go' });
+    expect(r.written).toEqual(['p3']);
+    expect(readFileSync(join(dir, 'held.md'), 'utf8').match(/code changed since check/g)).toHaveLength(2);
+  });
+
+  it('reports each outside family\'s verdict agreement with Claude, beside the all-pass rate', async () => {
+    // p1 all pass; p2 Claude pass, GPT fail; p3 Claude fail, GPT and Gemini pass.
+    const { profile, dir } = setup({ fails: { p2: 'gpt', p3: 'claude' } });
+    const r = await run({ profile, batch: 'b1' });
+    expect(r.agreement).toBeCloseTo(1 / 3);
+    expect(r.familyAgreement.gpt).toEqual({ agree: 1, both: 3 });
+    expect(r.familyAgreement.gemini).toEqual({ agree: 2, both: 3 });
+    const line = summaryLine(r);
+    expect(line).toMatch(/all-pass rate 33%/);
+    expect(line).toMatch(/GPT agrees with Claude on 1 of 3 \(33%\)/);
+    expect(line).toMatch(/Gemini agrees with Claude on 2 of 3 \(67%\)/);
+    const preview = readFileSync(join(dir, 'PREVIEW.md'), 'utf8');
+    expect(preview).toMatch(/GPT agrees with Claude on 1 of 3 \(33%\)/);
+    expect(preview).toMatch(/Gemini agrees with Claude on 2 of 3 \(67%\)/);
+  });
+
+  it('family agreement counts only summaries both checked', async () => {
+    const { profile } = setup({ skipClaude: ['p1'] });
+    const r = await run({ profile, batch: 'b1' });
+    expect(r.familyAgreement.gpt).toEqual({ agree: 2, both: 2 });
   });
 
   it('refuses every row of a duplicated (politician, topic) pair', async () => {

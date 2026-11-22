@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -59,15 +60,15 @@ describe('assemble', () => {
     expect(refused[0].politician_id).toBe(pid(2));
     expect(refused[0].problems.join(' ')).toMatch(/party/);
     const checkers = readdirSync(join(batchDir, 'checker'));
-    expect(checkers).toEqual(['1.md']);
-    expect(readFileSync(join(batchDir, 'checker', '1.md'), 'utf8')).toContain(s[0].sha256);
+    expect(checkers).toEqual([`${pid(1)}.md`]);
+    expect(readFileSync(join(batchDir, 'checker', `${pid(1)}.md`), 'utf8')).toContain(s[0].sha256);
   });
 
   it('each checker file names the absolute path its Claude checker writes to', () => {
     const { batchDir, run } = world({ '1.json': [draft(1)] });
     run();
-    const md = readFileSync(join(batchDir, 'checker', '1.md'), 'utf8');
-    expect(md).toContain(join(resolve(batchDir), 'claude-checks', '1.json'));
+    const md = readFileSync(join(batchDir, 'checker', `${pid(1)}.md`), 'utf8');
+    expect(md).toContain(join(resolve(batchDir), 'claude-checks', `${pid(1)}.json`));
     expect(md).not.toMatch(/\{\{/);
   });
 
@@ -111,5 +112,48 @@ describe('assemble', () => {
     expect(lines(join(batchDir, 'summaries.jsonl')).map((x) => x.politician_id)).toEqual([pid(3)]);
     const refused = lines(join(batchDir, 'lint-refused.jsonl'));
     expect(refused.every((x) => /code file unreadable/.test(x.problems.join(' ')))).toBe(true);
+  });
+
+  it('records the code file\'s outcome, seat value and sha256 on each summary row', () => {
+    const { batchDir, run } = world({ '1.json': [draft(1)] });
+    run();
+    const [row] = lines(join(batchDir, 'summaries.jsonl'));
+    const bytes = readFileSync(join(batchDir, '..', '..', 'codes', `${pid(1)}.json`));
+    expect(row).toMatchObject({ code_outcome: 'seated', code_value: 3, code_sha256: createHash('sha256').update(bytes).digest('hex') });
+  });
+
+  it('a marked rewrite replaces one person\'s draft and leaves everyone else\'s files alone', () => {
+    const { batchDir, run } = world({ '1.json': [draft(1), draft(2)] });
+    run();
+    const before = lines(join(batchDir, 'summaries.jsonl'));
+    // Both people have a Claude check on disk; the rewrite must not touch either file.
+    mkdirSync(join(batchDir, 'claude-checks'), { recursive: true });
+    for (const n of [1, 2]) writeFileSync(join(batchDir, 'claude-checks', `${pid(n)}.json`), `{"sentinel":${n}}`);
+    const p2md = readFileSync(join(batchDir, 'checker', `${pid(2)}.md`), 'utf8');
+    writeFileSync(join(batchDir, 'drafts', 'rewrite-1.json'), JSON.stringify(draft(1, ['Voted for a bill on risk orders.'], [[fid(1)]])));
+    const r = run();
+    expect(r.replaced).toEqual([pid(1)]);
+    const after = lines(join(batchDir, 'summaries.jsonl'));
+    expect(after.map((x) => x.politician_id)).toEqual([pid(1), pid(2)]);
+    expect(after[0].sha256).not.toBe(before[0].sha256);
+    expect(after[1].sha256).toBe(before[1].sha256);
+    expect(readFileSync(join(batchDir, 'checker', `${pid(1)}.md`), 'utf8')).toContain(after[0].sha256);
+    expect(readFileSync(join(batchDir, 'checker', `${pid(2)}.md`), 'utf8')).toBe(p2md);
+    for (const n of [1, 2]) expect(readFileSync(join(batchDir, 'claude-checks', `${pid(n)}.json`), 'utf8')).toBe(`{"sentinel":${n}}`);
+    expect(lines(join(batchDir, 'lint-refused.jsonl')).some((x) => x.politician_id === pid(1))).toBe(false);
+  });
+
+  it('allows one rewrite per person; a second is refused and the first rewrite is kept', () => {
+    const { batchDir, run } = world({
+      '1.json': [draft(1)],
+      'rewrite-1.json': draft(1, ['Voted for a bill on risk orders.'], [[fid(1)]]),
+      'rewrite-2.json': draft(1, ['Voted for a second bill.'], [[fid(2)]]),
+    });
+    const r = run();
+    expect(r.replaced).toEqual([pid(1)]);
+    const [row] = lines(join(batchDir, 'summaries.jsonl'));
+    expect(row.text).toContain('risk orders');
+    const refused = lines(join(batchDir, 'lint-refused.jsonl'));
+    expect(refused.find((x) => x.file === 'rewrite-2.json').problems.join(' ')).toMatch(/more than one rewrite/);
   });
 });
