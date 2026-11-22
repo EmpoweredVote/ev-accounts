@@ -162,13 +162,16 @@ No new table.
   citation order) on the person's `politician_context` row for that topic and season. It replaces the coder's
   reasoning text **(builder's call:** keep the coder's text in the batch folder as history; the migration or write
   tool records the old value, root `CLAUDE.md`). `politician_context_evidence` snippets stay as they are.
-- **`doesnt-fit` people:** they have no answer, so a `politician_context` row for them today is an
-  `ORPHAN_CONTEXT` in `check-stance-sources.mjs`. Teach that gate one exception: a context row whose
-  (person, topic, season) has a `topic_research_outcomes` row with outcome `doesnt-fit` is a summary, not an
-  orphan. Its reasoning must state no position on the scale (rule 2 in §5 already forbids naming a rung).
-  **(builder's call)** whether the exception keys on the outcome row alone or also on a marker in the row.
-- **Read path:** the context endpoint already serves `reasoning` + `sources` per topic; make sure it serves them
-  for a `doesnt-fit` topic too, and that every reader still excludes draft seasons (`SEASON_IS_PUBLISHED`).
+- **`doesnt-fit` people:** Stage 5 already writes them a `value = 0` answer and a `politician_context` row (the
+  coder's blank reasoning and the URLs it examined; `stage5Write.ts` `planBatch`), so there is no orphan to
+  explain. What hides it is the read: `getPoliticianContext` returns nothing when the season's answer is `0`. The
+  summary step overwrites that row's `reasoning` and `sources`, and a new column
+  `politician_context.summary_sha256` records the sha256 of the checked summary text. The read serves a `0`-answer
+  context **only when** that column equals the sha256 of the stored `reasoning`, so a coder's blank notes never
+  reach a voter, and text edited after the check falls back to hidden. Mark the read `-- @zero-scope:` (root
+  `CLAUDE.md`): it shows a blank's checked summary and no position.
+- **Read path:** `getPoliticianContext` (`backend/src/lib/compassService.ts`) as above; draft seasons stay
+  excluded (`SEASON_IS_PUBLISHED`, already in that read).
 - **Display:** `StanceAccordion` shows the reasoning and references for a `doesnt-fit` topic the same way it does
   for a seated one, above the "In their own words" quotes. Turning `[n]` into links to the reference list is a
   small `ev-ui` change **(builder's call)**.
@@ -207,8 +210,8 @@ runner's yes, as in Stage 5.
 
 1. Summary step built and tested on gun-policy people already coded (backfill dry run, research folder only).
 2. Show the runner a sample of 20 summaries with references before any write. 🛑
-3. The `ORPHAN_CONTEXT` exception, the read path and the display, in one PR per repo (backend, `ev-ui`,
-   `essentials`); the `evidence_basis` fix migration (dry run, then apply, each on the runner's yes).
+3. Two migrations (the `summary_sha256` column; the `evidence_basis` fix), each dry run then applied on the
+   runner's yes; the read path; the display, one PR per repo (backend, `ev-ui`, `essentials`).
 4. Write the gun-policy backfill, one batch per state, as Stage 5 writes.
 5. Local pilot (§8). 🛑
 6. Other topics, by the same step.
