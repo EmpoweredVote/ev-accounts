@@ -12,7 +12,7 @@ import {
   explainNevadaVote, nvMemberName, nvVoteList, parseNevadaVoteUrl,
   explainCaliforniaVote, caQuestionIsOnTheBill, californiaVoteUrl, californiaBillId, isLocalStateRollCallUrl, parseCaliforniaVoteUrl,
   explainOregonVote, orQuestionIsOnTheBill, orTally, parseOregonVoteUrl, oregonVoteUrl, OR_DATA,
-  explainMaineVote, meMajorityReport, meQuestionIsOnTheBill, meQuestionIsRead, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK,
+  explainMaineVote, maineRecordVoteUrl, type MeVoteRecord, meMajorityReport, meQuestionIsOnTheBill, meQuestionIsRead, parseMaineVoteUrl, pdfItemsBody, PDF_ITEMS_MARK,
   explainMinnesotaVote, mnQuestionIsOnTheBill, mnMembers, mnMemberNames, MN_LABEL_ALIASES, parseMinnesotaVoteUrl, pdfBodyFor,
   explainHawaiiVote, hawaiiFloorLine, hawaiiLabelMember, hawaiiMembers, hawaiiSeated, hawaiiVoteUrl, parseHawaiiVoteUrl, statePostbackOf, type HiMember,
 } from './stateRollCallEvidence.js';
@@ -2400,7 +2400,11 @@ describe('state roll-call pages — Maine address', () => {
       ['Accept Majority Ought to Pass as Amended by Committee Amendment "A" Report from the Committee on Judiciary', 'for'],
       ['acc maj otp-am by ca-a', 'for'], ['Accept Majority Ought Not Pass Report from the Committee on Judiciary', 'against'],
       ['Accept M ajority Ought Not to Pass Report from the Committee on Judiciary', 'against'],
-      ['Acceptance Majority Ought Not to Pass Report from the Committee on Judiciary', 'against']] as const) {
+      ['Acceptance Majority Ought Not to Pass Report from the Committee on Judiciary', 'against'],
+      // as the Legislative Record prints them: the Senate's motion in capitals, the House's "Acceptance of the", and the
+      // 130th Senate's roll call 344, which prints "AS AMENDMENT"
+      ['ACCEPT the Majority OUGHT NOT TO PASS Report', 'against'], ['Acceptance of the Majority Ought to Pass as Amended Report', 'for'],
+      ['ACCEPT the Majority OUGHT TO PASS AS AMENDMENT Report', 'for']] as const) {
       expect([q, meMajorityReport(q), meQuestionIsRead(q), meQuestionIsOnTheBill(q)]).toEqual([q, way, true, false]);
     }
     for (const q of ['ACC MIN OUGHT NOT TO PASS REP', 'ACC MIN OTP AS AMENDED REP', 'Accept Minority Ought to Pass as Amended Report from the Committee on Taxation',
@@ -2415,7 +2419,7 @@ describe('state roll-call pages — Maine address', () => {
   it('takes enactment, engrossing, final passage and a veto vote as votes on the bill, and every motion as not', () => {
     for (const q of ['Enactment', 'ENACTMENT', 'Enactment - Emer', 'Emergency Enactment', 'Final Enactment', 'PASSAGE TO BE ENGROSSED', 'Passage to be Engrossed as Amended by Committee Amendment "A"',
       'Passage to be Engrossed as Amended by Committee Amendment "A" as Amended by Senate Amendment "B"', 'Final Passage', 'Reconsideration - Veto',
-      'Shall this Bill become law notwithstanding the objections of the Governor?']) {
+      'Shall this Bill become law notwithstanding the objections of the Governor?', 'Passage to be Enacted']) {
       expect([q, meQuestionIsOnTheBill(q)]).toEqual([q, true]);
     }
     // accepting a committee's report is a motion: the bill is not voted on (standing answer 3)
@@ -2811,6 +2815,147 @@ const hm = (name: string, district: number, from: string | null = null, to: stri
   const [given, ...rest] = name.split(' ');
   return { name, given, family: rest.join(' '), district, from, to };
 };
+
+// The Legislative Record: one PDF per chamber per sitting day, kept at lldc.mainelegislature.org (no robots.txt). Trimmed
+// to the library's cover, the title page and the two pages that hold the vote (fetched 2026-11-22).
+const ME_RH = 'https://lldc.mainelegislature.org/Open/LegRec/128/House/LegRec_2018-07-09_HD_pH1790-1837.pdf#RC729-LD1884';
+const ME_RS = 'https://lldc.mainelegislature.org/Open/LegRec/130/Senate/LegRec_2021-06-14_SD_pS0915-0963.pdf#RC338-LD805';
+const meRec: Record<string, string> = { [ME_RH]: 'me-record-128-house-2018-07-09.txt', [ME_RS]: 'me-record-130-senate-2021-06-14.txt' };
+const meRecDocs = (url: string): string[] => [meFix(meRec[url])];
+/** The Record's body for `url` with each change made in turn (one that changes nothing is skipped), failing the test when one did not apply. */
+const meRecTamper = (url: string, ...changes: [string, string][]): string[] => [changes.filter(([f, t]) => f !== t).reduce((b, [f, t]) => tamper(b, f, t), meFix(meRec[url]))];
+const meRecRead = (url: string, docs = meRecDocs(url)): MeVoteRecord => {
+  const v = explainMaineVote(docs, url);
+  if ('refused' in v) throw new Error(v.refused);
+  return v;
+};
+/** The Senate fixture's closing sentence, as its first two runs print it. */
+const ME_RS_CLOSE1 = '44\t34.2\t142.3\t25 Senators having voted in the affirmative and 10 Senators';
+const ME_RS_CLOSE2 = '44\t34.2\t131.9\thaving voted in the negative, the motion by Senator';
+/** The Senate fixture with its closing sentence's two first runs replaced. */
+const meRsClose = (one: string, two: string, ...more: [string, string][]): string[] =>
+  meRecTamper(ME_RS, [ME_RS_CLOSE1, `44\t34.2\t142.3\t${one}`], [ME_RS_CLOSE2, `44\t34.2\t131.9\t${two}`], ...more);
+
+describe('state roll-call pages — Maine Legislative Record address', () => {
+  it('knows a vote by the day\'s file, its roll call and its LD, read a second apart, alone', () => {
+    expect(parseMaineVoteUrl(ME_RH)).toEqual({ state: 'ME', stateName: 'Maine', chamber: 'House', rollNum: 729, ld: 1884,
+      file: ME_RH.replace('#RC729-LD1884', ''), legislature: 128, recordDay: '2018-07-09' });
+    expect(parseMaineVoteUrl(ME_RS)).toMatchObject({ chamber: 'Senate', rollNum: 338, ld: 805, legislature: 130, recordDay: '2021-06-14' });
+    expect(stateRollCallDocs(ME_RS)).toEqual([ME_RS.replace('#RC338-LD805', '')]);
+    expect(stateRollCallMinGapMs(ME_RS)).toBe(1_000);
+    expect(maineRecordVoteUrl(ME_RS.replace(/#.*/, ''), 338, 805)).toBe(ME_RS);
+    // the later 130th's page numbers carry no letter, and some run to three digits
+    for (const u of ['https://lldc.mainelegislature.org/Open/LegRec/130/Senate/LegRec_2022-04-07_SD_p1785-1817.pdf#RC709-LD1884',
+      'https://lldc.mainelegislature.org/Open/LegRec/129/Senate/LegRec_2019-05-23_SD_pS724-0764.pdf#RC1-LD1']) expect([u, !!parseMaineVoteUrl(u)]).toEqual([u, true]);
+    // a House file in the Senate's folder, a day that is not one, a day outside the Legislature, no roll call, no LD,
+    // roll call 0, http, a look-alike host, a volume's index
+    for (const u of [ME_RS.replace('/Senate/', '/House/'), ME_RS.replace('2021-06-14', '2021-02-30'), ME_RS.replace('2021-06-14', '2019-06-14'),
+      ME_RS.replace('#RC338-LD805', '#LD805'), ME_RS.replace('-LD805', ''), ME_RS.replace('#RC338', '#RC0'), ME_RS.replace('https:', 'http:'),
+      ME_RS.replace('lldc.mainelegislature.org', 'lldc.mainelegislature.org.example.com'),
+      'https://lldc.mainelegislature.org/Open/LegRec/128/House/LegRec128vHD_p2041-2052_RollCallNumberIndex.pdf#RC1-LD1']) {
+      expect([u, parseMaineVoteUrl(u)]).toEqual([u, null]);
+    }
+  });
+});
+
+describe('state roll-call pages — reading Maine\'s Legislative Record', () => {
+  it('reads a 128th House veto vote: bill, question, day, tally, and every member named from the roster', () => {
+    const t = readStateRollCallDocs(meRecDocs(ME_RH), ME_RH)!;
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maine House roll call 729 (128th Legislature, Second Special Session), LD 1884, 2018-07-09.',
+      'Question: Shall this Bill become a law notwithstanding the objections of the Governor', 'Yea 76; Nay 67; Not voting 8; Excused 0; Restricted 0.']);
+    expect(t).toContain('Christopher W. Babbidge');
+    // the same four shared surnames the House's own PDF of the 128th leaves as printed
+    expect(meRecRead(ME_RH).unnamed?.map((u) => u.label)).toEqual(['Fecteau', 'Foley', 'Mason', 'White']);
+    // a title page whose date is stored in pieces ("January 5 , 202 2", the 130th Senate's 2022 files) reads the same
+    expect(meRecRead(ME_RH, meRecTamper(ME_RH, ['beginning June 19, 2018', 'beginning June 19 , 201 8'])).groups.Yea).toHaveLength(76);
+  });
+
+  it('reads a 130th Senate vote to accept the Majority report, each senator named from the member list', () => {
+    const v = meRecRead(ME_RS);
+    expect([v.question, v.groups.Yea.length, v.groups.Nay.length, v.groups.Absent.length, v.groups.Excused.length, v.unnamed]).toEqual(['ACCEPT the Majority OUGHT NOT TO PASS Report', 25, 10, 0, 0, []]);
+    expect(v.groups.Yea).toContain('Troy D. Jackson');
+    expect(readStateRollCallDocs(meRecDocs(ME_RS), ME_RS)!.split('\n')[0]).toBe('Maine Senate roll call 338 (130th Legislature, First Special Session), LD 805, 2021-06-14.');
+  });
+
+  it('reads the Senate\'s other closing sentences: an act, a veto, an emergency measure and a report accepted', () => {
+    expect(meRecRead(ME_RS, meRsClose('25 Senators having voted in the affirmative and 10 Senators', 'having voted in the negative, this Bill was PASSED TO BE ENACTED.')).question).toBe('Enactment');
+    expect(meRecRead(ME_RS, meRsClose('25 Senators having voted in the affirmative and 10 Senators', 'having voted in the negative, was FINALLY PASSED.')).question).toBe('Final Passage');
+    expect(meRecRead(ME_RS, meRsClose('25 Senators having voted in the affirmative and 10 Senators',
+      'having voted in the negative, and 25 being more than two-thirds of the members present and voting, it was the vote of the Senate that the veto of the Governor be OVERRIDDEN.')).question)
+      .toBe('Shall this Bill become law notwithstanding the objections of the Governor');
+    expect(meRecRead(ME_RS, meRsClose('25 Senators having voted in the affirmative and 10 Senators', 'having voted in the negative, the Majority OUGHT NOT TO PASS Report ACCEPTED.')).question)
+      .toBe('ACCEPT the Majority OUGHT NOT TO PASS Report');
+    // an emergency measure's sentence counts no one absent or excused: the seats close the vote instead
+    const emer = meRecRead(ME_RS, meRsClose('This being an Emergency Measure and having received the affirmative vote of 25 Members of the Senate, with 10 Senators',
+      'having voted in the negative, and 25 being more than two-thirds of the entire elected Membership of the Senate, was PASSED TO BE ENACTED.'));
+    expect([emer.question, emer.groups.Yea.length]).toEqual(['Emergency Enactment', 25]);
+  });
+
+  it('refuses a Record whose cover, title page, session, day, header, footer or columns do not fit', () => {
+    const why = (docs: string[], url = ME_RH): string => { const v = explainMaineVote(docs, url); return 'refused' in v ? v.refused : 'read'; };
+    expect(why(meRecTamper(ME_RH, ['MAINE STATE LEGISLATURE', 'MAINE STATE ARCHIVES']))).toMatch(/not the library's cover/);
+    expect(why(meRecTamper(ME_RH, ['One Hundred and Twenty-Eighth Legislature', 'One Hundred and Twenty-Ninth Legislature']))).toMatch(/title page is not the House's Record of the 128th/);
+    expect(why(meRecDocs(ME_RS), ME_RS.replace('/Senate/', '/House/').replace('_SD_', '_HD_'))).toMatch(/title page is not the House's Record/);
+    expect(why(meRecTamper(ME_RH, ['beginning June 19, 2018', 'beginning July 19, 2018']))).toMatch(/began 2018-07-19, not before 2018-07-09/);
+    expect(why(meRecTamper(ME_RH, ['39\t176.7\t747.7\tJOURNAL AND LEGISLATIVE RECORD - HOUSE, July 9, 2018', '39\t176.7\t747.7\tJOURNAL AND LEGISLATIVE RECORD - HOUSE, July 10, 2018']))).toMatch(/page 39 is of 2018-07-10, not 2018-07-09/);
+    expect(why(meRecTamper(ME_RH, ['39\t176.7\t747.7\tJOURNAL AND LEGISLATIVE RECORD - HOUSE, July 9, 2018', '39\t176.7\t747.7\tLEGISLATIVE RECORD - HOUSE, July 9, 2018']))).toMatch(/page 39 prints at its top something/);
+    expect(why(meRecTamper(ME_RH, ['39\t291.2\t38\tH-1826', '39\t291.2\t38\tS-1826']))).toMatch(/page 39 prints at its foot something/);
+    expect(why(meRecTamper(ME_RH, ['39\t338.4\t726.1\tThe SPEAKER:', '39\t300\t726.1\tThe SPEAKER:']))).toMatch(/page 39 prints text between the columns/);
+    expect(why([meFix(meRec[ME_RH]).split('\n').filter((l) => !/^(?:39|40)\t/.test(l)).join('\n')])).toMatch(/no pages past its title page/);
+    expect(why(['%PDF-1.7 not read as runs'])).toMatch(/the Record is not a PDF/);
+  });
+
+  it('refuses a roll call printed twice or nowhere, after another bill or none, or not a vote on the bill', () => {
+    const why = (docs: string[], url = ME_RH): string => { const v = explainMaineVote(docs, url); return 'refused' in v ? v.refused : 'read'; };
+    expect(why(meRecDocs(ME_RH), ME_RH.replace('#RC729', '#RC999'))).toMatch(/prints roll call 999 nowhere/);
+    expect(why(meRecTamper(ME_RH, ['ROLL CALL NO. 730V', 'ROLL CALL NO. 729V']))).toMatch(/prints roll call 729 2 times/);
+    expect(why(meRecDocs(ME_RH), ME_RH.replace('-LD1884', '-LD1885'))).toMatch(/follows LD 1884, not LD 1885/);
+    expect(why(meRecTamper(ME_RS, ['S.P. 123 L.D. 805', 'S.P. 123']), ME_RS)).toMatch(/names no bill before the roll call/);
+    expect(why(meRecTamper(ME_RH, ['39\t407.1\t726.1\tThe pending question before the House is', '39\t407.1\t726.1\tThe question before the House is']))).toMatch(/prints no pending question/);
+    expect(why(meRecTamper(ME_RH, ["39\t324\t715.7\t'Shall this Bill become a law notwithstanding the objections of", "39\t324\t715.7\t'Shall this Bill be tabled pending the objections of"]))).toMatch(/question is not a vote on the bill/);
+    expect(why(meRecTamper(ME_RS, ['44\t99.4\t121.5\tACCEPT', '44\t99.4\t121.5\tTABLE']), ME_RS)).toMatch(/question is not a vote on the bill: TABLE/);
+  });
+
+  it('refuses a House roll call whose groups, tally, sentence, vacancies, labels or seats disagree', () => {
+    const why = (docs: string[]): string => { const v = explainMaineVote(docs, ME_RH); return 'refused' in v ? v.refused : 'read'; };
+    expect(why(meRecTamper(ME_RH, ['Yes, 76; No, 67;', 'Yes 76; No, 67;']))).toMatch(/a roll call the reader cannot read/);
+    expect(why(meRecTamper(ME_RH, ['negative, with 8 being absent, and accordingly the Veto was', 'negative, with 8 being away, and accordingly the Veto was']))).toMatch(/a closing sentence the reader cannot read: , with 8 being away/);
+    expect(why(meRecTamper(ME_RH, ['Yes, 76; No, 67;', 'Yes, 75; No, 67;']))).toMatch(/the Yea group lists 76 members, the tally prints 75 and the sentence 76/);
+    expect(why(meRecTamper(ME_RH, ['76 having voted in the affirmative and 67', '77 having voted in the affirmative and 67']))).toMatch(/the Yea group lists 76 members, the tally prints 76 and the sentence 77/);
+    expect(why(meRecTamper(ME_RH, ['Absent, 8; Excused, 0.', 'Absent, 8; Vacant, 1; Excused, 0.']))).toMatch(/the tally prints 1 vacant seats and the sentence 0/);
+    expect(why(meRecTamper(ME_RH, ['Absent, 8; Excused, 0.', 'Absent, 8; Vacant, 1; Excused, 0.'],
+      ['negative, with 8 being absent, and accordingly the Veto was', 'negative, 1 vacancy, with 8 being absent, and accordingly the Veto was']))).toMatch(/151 members and 1 vacant seats are not the House's 151/);
+    expect(why(meRecTamper(ME_RH, ['YEA - Austin B, Babbidge,', 'YEA - Austin B, 8abbidge,']))).toMatch(/a label the reader cannot read: 8abbidge/);
+    expect(why(meRecTamper(ME_RH, ['YEA - Austin B, Babbidge, Bates,', 'YEA - Austin B, Babbidge, Babbidge,']))).toMatch(/a label is printed twice/);
+    // the roster is asked for by meNameHouse, as for the House's own PDFs
+    meWith(ME_HOUSE_ROSTERS, 128, null, () => expect(why(meRecDocs(ME_RH))).toMatch(/no House roster of the 128th Legislature is saved/));
+  });
+
+  it('refuses a Senate roll call whose lists, sentence, counts, labels or seats disagree', () => {
+    const why = (docs: string[]): string => { const v = explainMaineVote(docs, ME_RS); return 'refused' in v ? v.refused : 'read'; };
+    expect(why(meRecTamper(ME_RS, ['44\t34.2\t183.7\tNAYS:', '44\t34.2\t183.7\tNOES:']))).toMatch(/a roll call the reader cannot read/);
+    expect(why(meRecTamper(ME_RS, ['44\t34.2\t121.5\tof Penobscot to', '44\t34.2\t121.5\tof Penobscot, to']))).toMatch(/a closing sentence the reader cannot read: the motion by Senator/);
+    expect(why(meRsClose('This being an Emergency Measure and having received the affirmative vote of 25 Members of the Senate, with 10 Senators', 'having voted in the negative, with no luck.'))).toMatch(/a closing sentence the reader cannot read: This being/);
+    expect(why(meRsClose('This being an Emergency Measure and having received the affirmative vote of 25 Members of the Senate, with 10 Senators',
+      'having voted in the negative, and 25 being less than two-thirds of the entire elected Membership of the Senate, was PASSED TO BE ENACTED.'))).toMatch(/emergency sentence's two-thirds clause does not fit/);
+    expect(why(meRsClose('25 Senators having voted in the affirmative and 10 Senators',
+      'having voted in the negative, and 25 being more than two-thirds of the members present and voting, it was the vote of the Senate that the veto of the Governor be SUSTAINED.'))).toMatch(/veto sentence's two-thirds clause does not fit/);
+    expect(why(meRsClose('24 Senators having voted in the affirmative and 10 Senators', 'having voted in the negative, the motion by Senator'))).toMatch(/the Yea group lists 25 members and the sentence 24/);
+    expect(why(meRsClose('25 Senators having voted in the affirmative and 10 Senators', 'having voted in the negative, with 0 Senators being excused and 0 Senators being excused, the motion by Senator'))).toMatch(/counts one group twice/);
+    expect(why(meRecTamper(ME_RS, ['Senators: BALDACCI, BENNETT, BLACK,', 'Senators: BALDACCI, Bennett, BLACK,']))).toMatch(/a label the reader cannot read: Bennett/);
+    expect(why(meRecTamper(ME_RS, ['Senators: BALDACCI, BENNETT, BLACK,', 'Senators: BALDACCI, BALDACCI, BLACK,']))).toMatch(/a label is printed twice/);
+    expect(why(meRecTamper(ME_RS, ['Senators: BALDACCI, BENNETT, BLACK,', 'Senators: JACKSON T., BENNETT, BLACK,']))).toMatch(/two labels name one senator/);
+    expect(why(meRecTamper(ME_RS, ['Senators: BAILEY, BREEN, CARNEY, CHIPMAN,', 'Senators: BAILEY, JACKSON T., CARNEY, CHIPMAN,']))).toMatch(/two labels name one senator/);
+    // an emergency measure with a senator dropped: nothing counts the other groups, so the seats must all be filled
+    expect(why(meRsClose('This being an Emergency Measure and having received the affirmative vote of 24 Members of the Senate, with 10 Senators',
+      'having voted in the negative, and 24 being more than two-thirds of the entire elected Membership of the Senate, was PASSED TO BE ENACTED.',
+      ['Senators: BALDACCI, BENNETT, BLACK,', 'Senators: BENNETT, BLACK,']))).toMatch(/34 members are not the Senate's 35, and the sentence does not count the Absent or Excused group/);
+    // the same senator dropped where the sentence counts every group is the 2022 vacancy: read
+    expect(meRecRead(ME_RS, meRsClose('24 Senators having voted in the affirmative and 10 Senators', 'having voted in the negative, the motion by Senator',
+      ['Senators: BALDACCI, BENNETT, BLACK,', 'Senators: BENNETT, BLACK,'])).groups.Yea).toHaveLength(24);
+    meWith(ME_SENATE_LISTS, 130, null, () => expect(why(meRecDocs(ME_RS))).toMatch(/no Senate member list of the 130th Legislature is saved/));
+  });
+});
 
 describe('state roll-call pages — Hawaii address', () => {
   it('knows a vote cited on www by bill, year, day, chamber and kind, and reads it from the data host a second apart', () => {

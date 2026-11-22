@@ -36,7 +36,7 @@ import { createNetfileAdapter, assertNetfileRunHealthy } from './adapters/netfil
 import { createOcpfAdapter, assertOcpfRunHealthy } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 import { currentFecCycle } from './fecCycle.js';
-import { FEC_STALEST_FIRST_ORDER_SQL } from './fecBurstResume.js';
+import { FEC_LEAST_RECENTLY_TRIED_ORDER_SQL } from './fecBurstResume.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -227,7 +227,7 @@ export { currentFecCycle };
 export interface FecWalkResult {
   /** Sources the walk started (each wrote, or tried to write, an ingestion_runs row). */
   attempted: number;
-  /** Sources left unstarted because the deadline passed. They are the stalest next time. */
+  /** Sources left unstarted because the deadline passed. They go first next time. */
   skipped: number;
 }
 
@@ -245,13 +245,13 @@ export async function runFecForSources(
 
     // Stop cleanly before the platform kills the process. Checked only BETWEEN sources, and a
     // source can run PER_SOURCE_TIMEOUT_MS past it, so the deadline must sit at least that far
-    // inside the 12-hour ceiling. What is left is the freshest part of the list (stalest-first
+    // inside the 12-hour ceiling. What is left is the most recently tried part of the list (least-recently-tried
     // order), and it goes first on the next run.
     if (opts.deadline !== undefined && Date.now() >= opts.deadline) {
       const skipped = sources.length - i;
       console.warn(
         `[campaignFinanceScheduler] fec: time budget reached after ${i} of ${sources.length} source(s); ` +
-        `${skipped} left for the next run (they will be the stalest)`
+        `${skipped} left for the next run (they go first next time)`
       );
       return { attempted: i, skipped };
     }
@@ -341,10 +341,10 @@ export async function runAdapterForAll(adapterName: string, opts: { deadline?: n
   const systemValues = adapterName === 'fec' ? ['fec_house', 'fec_senate'] : [adapterName];
   const placeholder = systemValues.map((_, i) => `$${i + 1}`).join(', ');
 
-  // FEC walks the stalest sources first and first-time backfills last, so a run cut short
-  // drops the freshest sources, which go first tomorrow (see FEC_STALEST_FIRST_ORDER_SQL).
+  // FEC walks the least recently tried sources first and first-time backfills last, so a run cut short
+  // drops the freshest sources, which go first tomorrow (see FEC_LEAST_RECENTLY_TRIED_ORDER_SQL).
   // Other adapters keep their order.
-  const orderBy = adapterName === 'fec' ? `ORDER BY ${FEC_STALEST_FIRST_ORDER_SQL}` : '';
+  const orderBy = adapterName === 'fec' ? `ORDER BY ${FEC_LEAST_RECENTLY_TRIED_ORDER_SQL}` : '';
 
   const sourcesResult = await pool.query<PoliticianSourceRow>(
     `SELECT id, essentials_politician_id, source_system, external_id,

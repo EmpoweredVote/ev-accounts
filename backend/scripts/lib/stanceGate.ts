@@ -154,6 +154,10 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   // Nevada's bill texts head the bill "ASSEMBLY BILL NO. 80" / "SENATE BILL NO. 143" (nv-01, 2026-11-21: a
   // sponsorship cited on the introduced text, runner's ruling). "ASSEMBLY BILL NO. 80" folds to "ab80".
   /\bASSEMBLY BILL NO\.\s?\d{1,4}\b/,
+  // Washington's bill texts head the bill "SENATE BILL 6476" / "HOUSE BILL 1240" in capitals with no "NO."
+  // (wa-04-rr5h, 2026-11-22: a 2017 co-sponsorship cited on the official text, the only page that prints the
+  // sponsors). Folds to "sb6476" / "hb1240" through SPELLED_OUT.
+  /\b(?:HOUSE|SENATE) BILL \d{1,4}\b/,
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
   // The U.S. House Clerk prints "H. R. 22" (a space after each period) and "H. J. RES. 44" (2026-10-07).
   /\bH\.?\s?R\.?\s?\d+\b/,

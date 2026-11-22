@@ -36,6 +36,7 @@ import {
   getRecalibrationFlags,
   getAllRecalibrationFlags,
   isLensKeyConflictError,
+  isUnacknowledgedLensDeletionError,
 } from '../lib/compassUserLensService.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { Request, Response } from 'express';
@@ -108,6 +109,13 @@ const putMyLensesSchema = z.object({
   // request (and, for guests, in the shared ev-context payload), so an unbounded
   // array here is an unbounded payload there.
   lenses: z.array(userLensSchema).min(0).max(20),
+  // The lenses this caller is deliberately destroying. Optional for one release
+  // only: an old client build never sends it, and absent means "delete nothing",
+  // so such a build can still save and rename — it just cannot delete, and gets
+  // a 409 naming what it would have destroyed instead of silently destroying it.
+  delete_keys: z.array(z.string().regex(userLensKeyRegex, 'Lens key must look like u_7f3a91'))
+    .max(20)
+    .optional(),
 });
 
 const compareSchema = z.object({
@@ -258,10 +266,18 @@ router.get('/my-lenses', optionalAuth, async (req: Request, res: Response): Prom
 // ---------------------------------------------------------------------------
 // PUT /api/compass/my-lenses
 // Auth: optional — unauthenticated returns 200 []
-// Replaces the caller's entire lens set. Body: { lenses: [...] }.
+// Upserts the caller's lenses. Body: { lenses: [...], delete_keys: [...] }.
 //
-// Whole-set replace so a guest's local collection promotes in one atomic request
-// on sign-in. Lenses absent from the body are deleted.
+// Whole-set upsert so a guest's local collection promotes in one atomic request
+// on sign-in.
+//
+// 🔴 A LENS ABSENT FROM THE BODY IS KEPT. IT USED TO BE DELETED, AND THAT WAS
+// THE BUG. Measured against production 2026-11-22: three lenses stored, a
+// one-lens PUT, two destroyed, HTTP 200, no history table. No user asked for
+// that — a client whose GET had failed simply did not know the other two
+// existed. A deletion is now something the caller NAMES in delete_keys, and a
+// body that would destroy an unnamed lens is refused whole with 409
+// LENS_DELETE_NOT_ACKNOWLEDGED listing what it would have taken.
 //
 // 🔴 THIS DOES NOT VALIDATE AGAINST THE OPEN SEASON, AND THE DIFFERENCE FROM
 // PUT /selected-topics IS DELIBERATE. That route 422s any topic outside the
@@ -286,7 +302,7 @@ router.put('/my-lenses', optionalAuth, async (req: Request, res: Response): Prom
     return;
   }
 
-  const { lenses } = parsed.data;
+  const { lenses, delete_keys: deleteKeys = [] } = parsed.data;
 
   // Zod validates each lens in isolation and cannot see a key repeated across
   // two of them. Left unchecked the upsert loop would silently collapse them
@@ -303,6 +319,20 @@ router.put('/my-lenses', optionalAuth, async (req: Request, res: Response): Prom
     return;
   }
 
+  // A key cannot be both kept and destroyed. Left unchecked the write would
+  // delete the row and the upsert would put it straight back, so the request
+  // would succeed while meaning two opposite things — and the caller would never
+  // learn which one the server believed.
+  const contradictory = deleteKeys.filter(k => keys.includes(k));
+  if (contradictory.length > 0) {
+    res.status(422).json({
+      code: 'CONTRADICTORY_LENS_KEYS',
+      message: `A lens cannot be saved and deleted in the same request: ${contradictory.join(', ')}`,
+      contradictory_keys: contradictory,
+    });
+    return;
+  }
+
   try {
     const unknownIds = await findUnknownTopicIds(lenses.flatMap(l => l.topic_ids));
     if (unknownIds.length > 0) {
@@ -314,9 +344,25 @@ router.put('/my-lenses', optionalAuth, async (req: Request, res: Response): Prom
       return;
     }
 
-    const saved = await replaceUserLenses(authReq.userId, lenses);
+    const saved = await replaceUserLenses(authReq.userId, lenses, deleteKeys);
     res.status(200).json(saved);
   } catch (err) {
+    // The caller's body would have destroyed a lens it never mentioned. 409 and
+    // not 422: the body is well-formed and may even be what the user asked for —
+    // what is wrong is that the caller's picture of this account is out of date.
+    // Its move is to re-read GET /my-lenses and decide again with the real set in
+    // front of it, which is a conflict's meaning exactly.
+    if (isUnacknowledgedLensDeletionError(err)) {
+      res.status(409).json({
+        code: err.code,
+        message:
+          'This would delete lenses that were not listed for deletion. ' +
+          'Re-read your lenses and retry, naming every lens you mean to remove.',
+        unacknowledged_keys: err.keys,
+      });
+      return;
+    }
+
     // Someone else already holds one of these keys. 409, not 422: the body is
     // well-formed and the caller did nothing wrong — the key is simply taken,
     // and the client's move is to regenerate it and retry, which is a conflict's
