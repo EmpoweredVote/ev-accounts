@@ -94,6 +94,8 @@ something that looks like success.**
 | `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
 | `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
 | `nmonesource.com` | **403, 239 bytes — AND THE FULL BROWSER HEADER SET DOES NOT HELP** | 🔴 the first true TLS-fingerprint block in this pass. Playwright — and then click: it is a JS tree whose page state does not survive an expand |
+| `advance.lexis.com` (the OFFICIAL Georgia code) | search-result **snippets render**; **opening a full document redirects to `/RobotValidation`** | read the snippet; a section longer than its teaser is not reachable. 🟢 It IS the state's publisher — `legis.ga.gov` links to it and the site says so — unlike justia/findlaw |
+| `www.legis.ga.gov` | Angular SPA, 1,492 bytes to `curl`, every path ends at `/error/404` | browser — and it holds no law, it links out. 🟢 `sos.ga.gov` serves the constitution PDF to plain `curl` |
 
 ▶ **Assert on content, never on status or on "it returned bytes".** A near-identical byte count
 across two different requests is the tell in three of these.
@@ -233,6 +235,23 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- 🔴🔴 **WHAT A ONE-ROW CONTROL IS WORTH DEPENDS ON WHAT THE LAW SAYS, NOT ON WHETHER THE NUMBER
+  MATCHED.** Three states in a row offered exactly one dated prior term as their only control, and
+  the same agreement meant three different things. Nebraska's Governor 2023-01-05 and New Mexico's
+  2019-01-01 each confirmed a **calendar formula the instrument already stated**, so the point was
+  worth having. Georgia's Governor **2019-01-14 is the second Monday in January and that is a
+  coincidence**: `O.C.G.A. § 45-12-2` lets the General Assembly appoint **any day of the session's
+  first week** by joint resolution, so landing on day one is one draw from six. A reader with only
+  that row would have written 2027-01-11 and been wrong by up to five days.
+  ▶ **Ask what the instrument names before scoring the control: a FORMULA, or a CHOICE.** A point
+  can confirm a formula. Nothing confirms a choice except the document that made it.
+- 🔴 **A TERM THAT BEGINS AT A CEREMONY IS A REFUSAL EVEN WHEN THE WEEK IS KNOWN — AND THE WEEK
+  IS STILL WORTH SOURCING.** Georgia is the third of these (after Oregon's Governor and Nevada's
+  six executives) and the first where the law bounds it on BOTH sides: the session opens on the
+  second Monday in January and the ceremony must fall in that first week, with a noon-Saturday
+  fallback if no resolution passes. That is a sourced `window_end_date` and an unsourced
+  `swearing_in_date`, which is exactly the shape the column exists for. ▶ **Record the window,
+  refuse the date, and put the resolution on the calendar.**
 - ⚠ **A STATE WHOSE LEGISLATURE WE DO NOT HOLD LOOKS LIKE A SMALL, EASY STATE AND SORTS TO THE
   BOTTOM OF THIS QUEUE.** The queue is ordered by offices, and offices measure **what we hold, not
   what the state elects**. Nebraska contributes 13 because its 49-seat unicameral is absent
@@ -240,6 +259,14 @@ in January 2027.
   entirely — two states in a row, each found only by reading that state's own sources. ▶ **Worth
   measuring across the whole pass in one query rather than noticing it a state at a time**, and
   worth knowing before anyone reads "41 states, 1,162 offices" as coverage.
+  - 🔴🔴 **AND THERE ARE THREE DIFFERENT REASONS A STATE LOOKS SMALL, WHICH ARE INDISTINGUISHABLE
+    FROM THE QUEUE.** Measured across three consecutive states: Nebraska and New Mexico are missing
+    the **offices** (49 and 112 legislative seats that do not exist in our data); **Georgia is
+    missing the RESULTS** — we hold all **180 House and 56 Senate** offices and **not one of the
+    236 has a 2026 race row**, in a state that elects its whole General Assembly every two years.
+    All three present as "a small executive-only state" in this queue, because the queue counts
+    pending winners. ▶ **One query across all 41 states — offices held vs races recorded vs each
+    chamber's real size — separates them. It has not been run.**
 - 🔴 **`district_type` IS NOT A BODY — COUNT BODIES BY `chamber_id` BEFORE DECIDING HOW MANY
   CITATIONS A STATE NEEDS.** The queue called Nebraska three bodies because it has three district
   types. It has four: `STATE_BOARD` holds **both** the University of Nebraska Board of Regents
@@ -312,7 +339,7 @@ in January 2027.
 | 12 | AL | EXEC+BOARD_EDUCATION | 13 | 1023 | ✅ done — the rule row **verified**; all 13 on 2027-01-18 |
 | 13 | NE | EXEC+**2 BOARDS**+BOARD_EDUCATION | 13 | 1036 | ✅ done — all 13 on **2027-01-07**; the rule rows **verified**. 🔴 FOUR bodies, not three: `STATE_BOARD` holds the Regents AND the PSC |
 | 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ✅ done — all 11 on **2027-01-01**; the PEC rule row **verified**. 🔴 **PEC District 7 was on the ballot and we hold NO race for it** |
-| 15 | GA | EXEC | 10 | 1057 | |
+| 15 | GA | EXEC | 10 | 1057 | 🔴 **ALL TEN REFUSED** — the inauguration day is appointed by joint resolution inside a statutory week. `window_end_date` **2027-01-16** is sourced |
 | 16 | AR | EXEC | 7 | 1064 | |
 | 17 | ID | EXEC | 7 | 1071 | |
 | 18 | SD | EXEC | 6 | 1077 | |
@@ -359,7 +386,12 @@ migration** — `CLAUDE.md`'s existing rule: *attach the race to the office of t
 actually leaving*. Until that is done, seat the rest of their state and leave these out, saying so
 in the header. They are 7 offices of the 1,162.
 
-## 🔴 Ten more cannot be DATED at all, which is a different refusal
+## 🔴 26 OFFICES ACROSS 6 STATES CANNOT BE DATED AT ALL, which is a different refusal
+
+⚠ **This heading used to read "Ten more" over a table of sixteen, and closed by calling them
+"3 offices of the 1,162". Both numbers were stale** — corrected 2026-11-22 when Georgia took the
+total to 26. ▶ **A count written in prose beside a table it does not match is the cheapest kind
+of wrong there is: add the row, then re-add the column.**
 
 Ruling A refuses the four above because **which seat** a winner takes is not in our data. These
 are refused because **no day exists to write yet** — and the running pattern is that it is a
@@ -373,10 +405,19 @@ state's **executive**, never its legislature, that fails this way:
 | AZ State Mine Inspector | Art. XIX gives a term length and no day — and the constitution publishes **two competing 1992 versions** of that article that disagree on whether the term is two years or four. No statute supplies a commencement |
 | UT State Board of Education (6) | `20A-14-103` fixes the four-year term and the cycle and names no commencement. 🔴 Its only dates are transitional and land on the **first Monday** in January (2023-01-02, 2025-01-06), which is NOT the legislature's "first day of January" — so the House clause must not be borrowed |
 | NV Governor, Lt. Governor, Secretary of State, Attorney General, Treasurer, Controller (6) | Art. 5 §§ 2, 17, 19 run the term "from the time of his installation"; `NRS 282.010(4)` makes that **qualification**. 🟢 But `NRS 282.010(2)` bounds it: qualification must happen **prior to 2027-01-05**, so `window_end_date = 2027-01-04` is sourced even though `swearing_in_date` is not |
+| GA Governor, Lt. Governor, Secretary of State, Attorney General, State School Superintendent, Commissioner of Insurance, Commissioner of Agriculture, Commissioner of Labor (8) | `Ga. Const. Art. V, Sec. I, Para. II` installs the Governor-elect "at the next session of the General Assembly" and the other seven hold "the same term"; `O.C.G.A. § 45-12-2` puts the ceremony in **the first week of that session, on a day a joint resolution appoints**, and the Governor's duties begin "from the time of his inauguration". 🟢 Bounded on both sides: session opens 2027-01-11, fallback is noon Saturday, so `window_end_date = 2027-01-16` is sourced |
+| GA Public Service Commissioner, Districts 3 and 5 (2) | `§ 46-2-1` defers to **`§ 46-2-1.1`**, a remedial statute (HB 1312, 2024) covering the three districts whose elections were enjoined in *Rose v. Raffensperger*. 🔴 Its subsection (b) onward **could not be read** — the publisher's bot check cut the text off. Do NOT borrow the Governor's window: § 46-2-1 borrows his ELECTION rules, not his term |
 
 Each needs a **`published` date recorded when it happens**. See [`DATES.md`](./DATES.md) for the
-confirming document named per office. They are 3 offices of the 1,162, and their states' other
-190 proceed without them.
+confirming document named per office.
+
+**26 offices of the 1,162**, across six states: MD 2 · OR 1 · AZ 1 · UT 6 · NV 6 · **GA 10**.
+🔴 **Georgia is the first state in the pass where EVERY office is refused**, so it has no
+remainder to proceed without them. The other five states' remaining offices do.
+
+🟢 **Three of these now carry a SOURCED `window_end_date`** — NV's six (2027-01-04), GA's
+eight (2027-01-16) — which is the column doing the job it exists for. ▶ **A refusal is not a
+dead end; it is a window plus a dated follow-up.**
 
 ## What to record per body, before writing any migration
 
@@ -395,11 +436,14 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**14 of 41 states sourced · 1,047 of 1,162 offices (90%) · 0 seated.** The first twelve are the
-twelve largest; the 27 that remain are **115 offices**, almost all single-body executive states.
+**15 of 41 states sourced · 1,057 of 1,162 offices (91%) · 0 seated.** The first twelve are the
+twelve largest; the 26 that remain are **105 offices**, almost all single-body executive states.
+🔴 **"Sourced" is not "dated": Georgia's ten are all REFUSED**, so the pass now carries **26
+refused offices** across six states — GA 10, NV 6, UT 6, MD 2, OR 1, AZ 1. See the refusal table
+below, whose own heading and tally were stale until Georgia forced a recount.
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
-term. Step 2 is done for these fourteen; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: GA (10), AR (7), ID (7).**
+term. Step 2 is done for these fifteen; steps 3 through 9 are not started for any state.
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: AR (7), ID (7), SD (6).**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
@@ -419,4 +463,5 @@ term. Step 2 is done for these fourteen; steps 3 through 9 are not started for a
 | AL | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-18**, three provisions with one formula. 🟢 Its SBOE rule row **verified correct**. 🔴 PSC expands 3 → 7 seats from that same day | ⏳ | | |
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
 | NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
+| GA | 🔴 [`DATES.md`](./DATES.md) — **0 of 10 dated.** `O.C.G.A. § 45-12-2` puts the inauguration in the first week of the session **on a day a joint resolution appoints**, with a noon-Saturday fallback — so `window_end_date` **2027-01-16** is sourced and `swearing_in_date` is not. The 2 PSC seats are governed by a remedial statute (`§ 46-2-1.1`) that could not be read in full | ⏳ | | |
 | *(nothing else yet)* | | | | |

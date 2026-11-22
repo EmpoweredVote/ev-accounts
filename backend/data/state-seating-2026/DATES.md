@@ -2071,3 +2071,209 @@ inauguration ceremony is a separate event and is not what either instrument date
 | `window_end_date` | NULL |
 | `basis` | `statute` |
 | `rule_id` | `nm-const-art5-1-first-day-of-january` (executives) · `nm-22-3b-3-january-1-next-succeeding` (PEC) |
+
+---
+
+## GA — Georgia · 10 offices · 🔴 **ALL TEN REFUSED, 2026-11-22** — the first state in this pass where no office can be dated
+
+| body | offices | start date | why |
+|---|---|---|---|
+| Governor · Lieutenant Governor · Secretary of State · Attorney General · State School Superintendent · Commissioner of Insurance · Commissioner of Agriculture · Commissioner of Labor | 8 | 🔴 **REFUSED** — but `window_end_date` = **2027-01-16** is sourced | the day is **appointed by joint resolution** within a statutory week, and the resolution does not exist yet |
+| Public Service Commissioner, Districts 3 and 5 | 2 | 🔴 **REFUSED** | `O.C.G.A. § 46-2-1.1` governs and **could not be read in full** — see "What stopped this" |
+
+🔴🔴 **GEORGIA'S GOVERNOR DOES NOT TAKE OFFICE ON A DATE. HE TAKES OFFICE AT A CEREMONY, ON A DAY
+THE LEGISLATURE PICKS AFTERWARDS.** This is Colorado's shape — a default that a joint resolution
+may move — except that in Colorado the resolution had already passed and could be read, and here it
+cannot exist until the General Assembly convenes on **2027-01-11**.
+
+### The authority — the eight executives
+
+**Ga. Const. Art. V, Sec. I, Para. I** gives the Governor a term LENGTH and no day:
+
+> There shall be a Governor who shall hold office for **a term of four years and until a successor
+> shall be chosen and qualified**.
+
+**Ga. Const. Art. V, Sec. I, Para. II** names the event instead of a date:
+
+> An election for Governor shall be held on Tuesday after the first Monday in November of 1986, and
+> **the Governor-elect shall be installed in office at the next session of the General Assembly**.
+
+⚠ **That is the "anchor year plus a formula" shape again** (Arizona's, Nebraska's) — "of 1986 …
+quadrennially thereafter" — **and it still names no day**, because the operative words are "at the
+next session".
+
+**`O.C.G.A. § 45-12-2` (Inauguration)** is what fills that in, and it is the whole finding:
+
+> The ceremony of inauguration shall take place **during the first week of the first session of the
+> General Assembly after the election** and **on such day of that week as the General Assembly, by
+> joint resolution, shall appoint**. If the General Assembly fails to appoint the day, the
+> inauguration ceremony shall take place at **12:00 Noon on Saturday of that week** unless prevented
+> by providential cause. **The Governor shall begin the discharge of his duties from the time of his
+> inauguration.**
+
+The other seven ride on the Governor's term, each by its own clause:
+
+- **Lieutenant Governor** — `Art. V, Sec. I, Para. III`: "elected at the same time, **for the same
+  term**, and in the same manner as the Governor."
+- **Secretary of State, Attorney General, State School Superintendent, Commissioner of Insurance,
+  Commissioner of Agriculture, Commissioner of Labor** — `Art. V, Sec. III, Para. I`: "Such
+  executive officers shall be elected at the same time and **hold their offices for the same term as
+  the Governor**."
+
+🔴 **So all eight hang on one ceremony whose day is not yet appointed.** Georgia is on the
+**qualification** side of the pass's line, like Nevada's six executives — the last sentence of
+§ 45-12-2 says so outright: the Governor's duties begin "from the time of his inauguration". **The
+term start IS the ceremony**, not a calendar date the ceremony happens to follow.
+
+### 🟢 The window IS sourced, and that is what this block delivers
+
+`office_swearing_in` has `window_end_date` for exactly this. Both ends come from law:
+
+| bound | value | from |
+|---|---|---|
+| earliest | 2027-01-11 | `Ga. Const. Art. III, Sec. IV, Para. I` — the General Assembly "shall meet in regular session on the **second Monday in January** of each year". Second Monday of January 2027 = 2027-01-11. |
+| latest | **2027-01-16** | `O.C.G.A. § 45-12-2` — the ceremony is within "the first week" of that session, and absent a joint resolution it falls at **noon on Saturday of that week** = 2027-01-16. |
+
+▶ **`window_end_date = 2027-01-16` is a statutory backstop, not an estimate**, and it is the second
+use this pass has found for the column (Nevada's `2027-01-04` was the first). 🔴 **`swearing_in_date`
+stays NULL and `basis` stays unwritten until the joint resolution names the day** — then it is
+`published`, recorded when it happens.
+
+⚠ **Both bounds carry an escape clause and neither is absolute.** `Art. III, Sec. IV, Para. I` says
+"second Monday in January **or otherwise as provided by law**", so a statute could move the session
+and the whole window with it; and § 45-12-2's Saturday fallback yields to "providential cause".
+▶ **Re-read both before writing the window into a migration**, and check whether the 2027 session
+was moved.
+
+### 🔴🔴 THE CONTROL LOOKS LIKE IT WORKS AND IT IS A COINCIDENCE — THIS IS THE ONE-POINT TRAP
+
+`essentials.office_terms` holds exactly one dated Georgia executive term: **Governor,
+`term_start` = 2019-01-14, a Monday** — and 2019-01-14 **is** the second Monday in January 2019. A
+reader with only that row would conclude Georgia inaugurates on the session's opening day and write
+**2027-01-11**.
+
+🔴 **The statute says that is not a rule.** § 45-12-2 permits **any day of that week**, Monday
+through Saturday, chosen afresh each cycle by joint resolution. 2019 landing on day one of the week
+is one draw from six, not a formula — and a single agreeing data point cannot tell those apart.
+
+▶ **This is why a one-row control is reported as a point and never as a cluster.** Nebraska and New
+Mexico each had one row too, and in both of those the *instrument* named a calendar formula, so the
+point confirmed a rule that already existed on paper. Here the instrument names **a choice**, so the
+point confirms nothing at all. **What a control is worth depends on what the law says, not on
+whether the number matched.**
+
+⚠ **Not checked, and it would settle it:** the day appointed for the **2023** inauguration, and the
+joint resolution that appointed it. The 2023 session convened 2023-01-09, so its first week ran to
+2023-01-14. If 2023's day is not 2023-01-09, the coincidence above is demonstrated outright rather
+than argued from the statute. ▶ **Worth one look at the General Assembly's own resolution before
+anyone trusts a Georgia date.**
+
+### 🔴 What stopped the Public Service Commission, stated exactly
+
+`O.C.G.A. § 46-2-1(a)` puts five commissioners on the ballot under "the same rules and regulations
+as apply to the election of Governor", and then defers: members "**shall serve the terms provided
+for in Code Section 46-2-1.1**".
+
+**`O.C.G.A. § 46-2-1.1` — "Elections for Georgia Public Service Commission Districts 2, 3, and 5"**,
+enacted by **Ga. L. 2024, p. 36, § 2 / HB 1312, effective April 18, 2024** — subsection (a) read in
+full:
+
+> The provisions of this Code section are intended to address the situation created as a result of
+> elections for Public Service Commission Districts 2, 3, and 5 **not being conducted in 2022 or
+> 2024 pursuant to an injunction issued in *Rose v. Raffensperger*, 619 F. Supp. 3d 1241 (N.D. Ga.,
+> 2022)**, and is further intended to preserve the state's interest in ensuring that members of the
+> commission are elected in staggered elections and serve staggered terms.
+
+🔴 **Our two pending seats are Districts 3 and 5 — two of the three this section is about.** Their
+terms are therefore set by a bespoke remedial statute, not by the general rule, and **subsection (b)
+onward is where the dates are.** It begins "Those members of the commission in office on January 1,
+2024, as well as any person appointed to fill …" and **the text was cut off at that point by the
+publisher's bot check.**
+
+▶ **Do not reach for the Governor's window for these two.** § 46-2-1(a) borrows the Governor's
+*election* rules, not his *term*, and § 46-2-1.1 exists precisely because these seats are off the
+normal cycle. Dating them from § 45-12-2 would be the Washington error — taking the nearest
+provision that mentions a date and applying it to an office it does not govern.
+
+### The source
+
+- `https://sos.ga.gov/sites/default/files/forms/Georgia%20Constitution.pdf` — **Constitution of the
+  State of Georgia, Revised July 2025**, the Secretary of State's own electronic edition
+  (1,780,352 bytes). Read 2026-11-22. Art. III Sec. IV Para. I; Art. V Sec. I Paras. I–III;
+  Art. V Sec. III Para. I.
+- `https://advance.lexis.com/container?config=00JAAzZDgzNzU2ZC05MDA0LTRmMDItYjkzMS0xOGY3MjE3OWNlODIKAFBvZENhdGFsb2fcIFfJnJ2IC8XZi1AYM4Ne`
+  — the **Official Code of Georgia Annotated**. §§ 45-12-2, 46-2-1, 46-2-1.1. Read 2026-11-22.
+
+🟢 **LexisNexis IS the state's own publisher here, and that is worth knowing before anyone rejects
+it as an aggregator.** `www.legis.ga.gov` links out to it for both "Georgia Code" and "Georgia
+Constitution", and the site itself states: *"These online legal resources are made available for
+public use by the Georgia Code Revision Commission on behalf of the Georgia General Assembly through
+a contractual arrangement with LexisNexis, which prepares and maintains this website."* ▶ **That is
+a different thing from `law.justia.com` or `codes.findlaw.com`**, which this pass refuses because
+they are not the state. Georgia has no other official code.
+
+### ⚠ Georgia's sources, and how each one fails
+
+| host | what happens | what to do |
+|---|---|---|
+| `www.legis.ga.gov` | an **Angular SPA** serving a 1,492-byte loader to `curl`; every path renders, then redirects to `/error/404` | browser; and it holds no law anyway — it links out |
+| `sos.ga.gov` | 🟢 **serves the constitution PDF to plain `curl`** | the best Georgia source in this block |
+| `advance.lexis.com` | search-result **snippets render and are readable**; **opening a full document redirects to `/RobotValidation` — "Captcha Validation"** | read what the snippet gives; a section longer than its teaser is not reachable this way |
+| `ga.elaws.us` | **hung with no response** until the 120-second command timeout | not retried |
+
+🔴 **A SOFT 404 ON TWO DIFFERENT HOSTS, BOTH HTTP 200.**
+`www.legis.ga.gov/api/document/docs/default-source/reference-documents/constitution_2020.pdf`
+answers **200 with 1,946 bytes of HTML** whose title is *"The resource cannot be found."*, and
+`sos.ga.gov` answers **404 with a 21 KB HTML page** for a missing PDF. ▶ **Neither status code told
+the truth about whether a PDF was there; the `Content-Type` did.** `application/pdf` or it is not a
+PDF.
+
+### Basis
+
+**None written.** All ten are refused. 🔴 `estimated` is not available — the seating migration's P4
+refuses it — and that is the correct outcome here rather than an obstacle to work around.
+
+### Term start or oath? — **they are THE SAME EVENT, which is why this is a refusal**
+
+`O.C.G.A. § 45-12-2`: "The Governor shall begin the discharge of his duties **from the time of his
+inauguration**." `O.C.G.A. § 45-12-4` puts the oath in that same ceremony, before the General
+Assembly in joint session. So Georgia is Nevada's case, not Alabama's: there is no calendar date
+that the oath merely follows. **Whoever records these eight must record an inauguration date and say
+that is what it is.**
+
+### Carried into the row
+
+| field | the 8 executives | the 2 PSC seats |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | *unknown — a ceremony on a day not yet appointed* | *unknown* |
+| `window_end_date` | **2027-01-16** (sourced: `O.C.G.A. § 45-12-2`) | — |
+| `basis` | `published`, when the joint resolution names the day | — |
+| `rule_id` | `ga-45-12-2-inauguration-week-by-joint-resolution` | — |
+
+▶ **Dated follow-up, on or just after 2027-01-11:** the General Assembly convenes; read the joint
+resolution it passes and record the appointed day as `published` for all eight. If none passes, the
+day is noon on 2027-01-16 by operation of the statute.
+
+### 🔴🔴 236 GEORGIA LEGISLATIVE SEATS HAVE NO 2026 RACE — THE LARGEST GAP FOUND IN THIS PASS
+
+Measured 2026-11-22: we hold **180 Georgia House** and **56 Georgia Senate** offices, and **not one
+of them has a 2026 race row** — `has_2026_race = 0` across all 236. Georgia elects its **entire**
+General Assembly every two years, so every one of those seats was on the 2026 ballot.
+
+🔴 **This is the third shape of the same defect in three consecutive states, and it is the worst
+one:**
+
+| state | shape | seats |
+|---|---|---|
+| NV | race exists, `result` NULL on every candidate | 1 (AD22) |
+| NM | no race row for a seat the Act puts on the ballot | 1 (PEC District 7) |
+| **GA** | **offices exist, no race rows at all, for two entire chambers** | **236** |
+
+⚠ **And it is invisible to this queue by construction.** The register counts *pending winners*, so
+Georgia shows as "STATE_EXEC 10" and sorts near the bottom as a small executive-only state —
+exactly the way Nebraska and New Mexico do, except that those two are missing the **offices** and
+Georgia is missing the **results**. 🔴 **A state can be absent from this pass for three different
+reasons and all three look identical from the queue.** ▶ **One query across all 41 states, comparing
+offices held against races recorded against each chamber's real size, would separate them.** It has
+not been run.
