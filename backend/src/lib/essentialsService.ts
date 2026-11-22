@@ -66,6 +66,12 @@ import {
   buildDistrictQuery,
   buildStatewideQuery,
 } from './districtQueries.js';
+import {
+  mapTransitionFields,
+  BLANK_TRANSITION_FIELDS,
+  type PendingWinner,
+  type SeatGroup,
+} from './transitionDisplay.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { PHOTO_CREDIT_SELECT_SQL, type PhotoCredit } from './photoCredit.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
@@ -158,6 +164,26 @@ export interface PoliticianFlatRecord {
   incoming_holder_id: string | null;
   incoming_holder_name: string | null;
   incoming_on: string | null;
+  /**
+   * Who WON this seat's last election, for the 1,334 seats that have no dated term at all
+   * (CC_0458). Null whenever `incoming_on` is set: the two views are disjoint, a dated term is
+   * the stronger fact, and an office never offers both.
+   *
+   * 🔴 A RESULT IS NOT A TERM. `incoming_on` says when someone takes office; this says only that
+   * they won a count. The renderer must label it as an election result and must never render it
+   * as a term or imply a date we do not have. `certainty` carries how settled the count is —
+   * 'called' is a projection that a canvass can still reverse.
+   */
+  pending_winner: PendingWinner | null;
+  /**
+   * The three counts for this seat's (district, chamber), so a multi-seat body can be shown as a
+   * group rather than as siblings that each know part of the story (CC_0458).
+   *
+   * ⚠ Null on every PERSON-rooted read — the `?q=` list, the browse paths, `/politicians`. Those
+   * fan out one row per office a person holds, which is the wrong direction to carry a fact about
+   * a body. Only the office-rooted address and coordinate paths populate it.
+   */
+  seat_group: SeatGroup | null;
   external_id: number | null;
   first_name: string;
   middle_initial: string;
