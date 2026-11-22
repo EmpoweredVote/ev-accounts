@@ -29,6 +29,9 @@ export const SummaryCheckSchema = z.object({
   verdict: z.enum(['pass', 'fail']),
   /** ISO timestamp with a zone; compared as a time, never as text. */
   at: z.string().datetime({ offset: true }),
+}).refine((c) => c.verdict !== 'pass' || c.sentences.every((x) => x.verdict !== 'fail'), {
+  message: 'verdict pass is invalid when any sentence fails',
+  path: ['verdict'],
 });
 export type SummaryCheck = z.infer<typeof SummaryCheckSchema>;
 
@@ -77,6 +80,19 @@ export function buildSummary(draft: SummaryDraft, findings: Finding[]): { text: 
   return { text, sources, sha256: shownSha256(text) };
 }
 
+const ABBREVIATIONS = new Set(['u.s.', 'sen.', 'rep.', 'gov.', 'mr.', 'mrs.', 'ms.', 'dr.', 'st.', 'jr.', 'no.', 'e.g.', 'i.e.']);
+
+/** True when the text holds a sentence break inside it: [.!?] then whitespace then a capital, not after an abbreviation. */
+function holdsMoreThanOneSentence(text: string): boolean {
+  const re = /[.!?]+(?=\s+[A-Z])/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text))) {
+    const word = /(\S+)$/.exec(text.slice(0, m.index + m[0].length))?.[1].toLowerCase() ?? '';
+    if (!ABBREVIATIONS.has(word)) return true;
+  }
+  return false;
+}
+
 const LADDER_WORDS = /\b(rungs?|ladder)\b/i;
 const RUNG_NUMBER = /\b(?:option|position|level|step|chair)\s+[1-5]\b/i;
 const REPEAT_WORDS: { re: RegExp; label: string; min: number }[] = [
@@ -96,6 +112,7 @@ export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; cod
     const at = `sentence ${i + 1}`;
     const text = s.text.trim();
     if (!text) problems.push(`${at}: empty`);
+    if (holdsMoreThanOneSentence(text)) problems.push(`${at}: holds more than one sentence; make each sentence its own entry`);
     if (/\[\d[\d,\s]*\]/.test(text)) problems.push(`${at}: write no citation markers in the text; list finding ids in cites`);
     if (s.cites.length === 0) problems.push(`${at}: no citation`);
     for (const id of s.cites) if (!ids.has(id)) problems.push(`${at}: cites ${id}, which is not one of this person's findings`);
@@ -113,21 +130,16 @@ export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; cod
 }
 
 /**
- * Combine checks for one text. Only checks on `sha256` count. A required family with no check holds; any fail holds;
- * a failed `claude` check fails outright. When a family has several checks, the latest one counts.
+ * Combine checks for one text. Only checks on `sha256` count, and every one of them counts: a check fails when its
+ * verdict or any sentence verdict is 'fail'; a re-run never clears an earlier fail (a rewrite has a new sha). Any fail
+ * holds, a claude fail fails outright, and a required family with no check holds.
  */
 export function summaryVerdict(checks: SummaryCheck[], sha256: string, required: SummaryCheck['family'][]): 'passed' | 'held' | 'failed' {
-  const latest = new Map<SummaryCheck['family'], SummaryCheck>();
-  for (const c of checks) {
-    if (c.text_sha256 !== sha256) continue;
-    const prev = latest.get(c.family);
-    if (!prev || Date.parse(c.at) >= Date.parse(prev.at)) latest.set(c.family, c);
-  }
-  if (latest.get('claude')?.verdict === 'fail' && required.includes('claude')) return 'failed';
-  for (const fam of required) {
-    const c = latest.get(fam);
-    if (!c || c.verdict !== 'pass') return 'held';
-  }
+  const mine = checks.filter((c) => c.text_sha256 === sha256);
+  const failed = (c: SummaryCheck) => c.verdict === 'fail' || c.sentences.some((x) => x.verdict === 'fail');
+  if (mine.some((c) => c.family === 'claude' && failed(c))) return 'failed';
+  if (mine.some(failed)) return 'held';
+  for (const fam of required) if (!mine.some((c) => c.family === fam)) return 'held';
   return 'passed';
 }
 

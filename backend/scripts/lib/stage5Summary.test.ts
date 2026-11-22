@@ -58,6 +58,11 @@ describe('lintSummary', () => {
     expect(lintSummary(draft(Array(6).fill(s)), ctx(fs)).join(' ')).toMatch(/2.5 sentences/);
     expect(lintSummary(draft(Array(5).fill(s)), ctx(fs))).toEqual([]);
   });
+  it('refuses an entry holding two sentences, accepts abbreviations', () => {
+    expect(lintSummary(two('A. B.'), ctx(fs)).join(' ')).toMatch(/more than one sentence/);
+    expect(lintSummary(two('The U.S. Senate passed it.'), ctx(fs))).toEqual([]);
+    expect(lintSummary(two('Sen. Smith spoke, e.g. Dr. Jones agreed.'), ctx(fs))).toEqual([]);
+  });
   it('refuses the word rung and a rung number', () => {
     expect(lintSummary(two('Holds rung 3.'), ctx(fs)).join(' ')).toMatch(/rung/i);
     expect(lintSummary(two('Sits on the ladder.'), ctx(fs)).join(' ')).toMatch(/ladder/i);
@@ -100,6 +105,21 @@ describe('summaryVerdict', () => {
   it('holds on any fail', () => { expect(summaryVerdict([mk('claude', 'pass'), mk('gpt', 'fail')], 'S', req)).toBe('held'); });
   it('ignores another sha, so a missing family holds', () => {
     expect(summaryVerdict([mk('claude', 'pass'), mk('gpt', 'pass', 'OTHER')], 'S', req)).toBe('held');
+  });
+  it('treats a failing sentence as a fail even when the top verdict passes', () => {
+    const bad = { ...mk('gpt', 'pass'), sentences: [{ index: 0, verdict: 'fail' as const, reason: 'x' }] };
+    expect(summaryVerdict([mk('claude', 'pass'), bad], 'S', req)).toBe('held');
+    const badClaude = { ...mk('claude', 'pass'), sentences: [{ index: 1, verdict: 'fail' as const, reason: 'x' }] };
+    expect(summaryVerdict([badClaude, mk('gpt', 'pass')], 'S', req)).toBe('failed');
+  });
+  it('does not let a re-run on the same text clear an earlier fail', () => {
+    const g1 = { ...mk('gpt', 'fail'), at: '2026-11-22T10:00:00Z' };
+    const g2 = { ...mk('gpt', 'pass'), at: '2026-11-22T11:00:00Z' };
+    expect(summaryVerdict([mk('claude', 'pass'), g1, g2], 'S', req)).toBe('held');
+  });
+  it('schema refuses pass with a failing sentence', () => {
+    const c = { ...mk('gpt', 'pass'), sentences: [{ index: 0, verdict: 'fail', reason: 'x' }] };
+    expect(() => SummaryCheckSchema.parse(c)).toThrow();
   });
   it('fails when claude fails', () => { expect(summaryVerdict([mk('claude', 'fail'), mk('gpt', 'pass')], 'S', req)).toBe('failed'); });
 });
