@@ -1,8 +1,9 @@
-import { readFileSync } from 'node:fs';
+import { chmodSync, existsSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { homedir, tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { LOCKDOWN_CONFIG, cleanEnv, dropUnusable, extractAssistantText, failCheck, familyOf, parseModelReply, toCheck } from './summary-second-opinion.js';
+import { LOCKDOWN_CONFIG, cleanEnv, dropUnusable, extractAssistantText, failCheck, familyOf, parseModelReply, prepareOutsidePrompt, runOpencode, toCheck } from './summary-second-opinion.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const fixture = (n: string) => readFileSync(join(here, 'fixtures', n), 'utf8');
@@ -109,5 +110,48 @@ describe('lockdown and retry', () => {
     const { kept, removed } = dropUnusable([unusable, judged, passed, '']);
     expect(kept).toEqual([judged, passed]);
     expect([...removed]).toEqual(['S1|m1']);
+  });
+});
+
+describe('nothing local reaches an outside model', () => {
+  const BATCH = '/Users/someone/work/summaries/b1';
+  const claudeFile = [
+    'Intro.', '', '## Output', '',
+    'Write your JSON to the path given below and write nothing else (if you cannot write files, reply with the JSON only), exactly this shape.',
+    '', '```json', '{}', '```', '', `Path to write your JSON to: ${BATCH}/claude-checks/1.json`, '',
+  ].join('\n');
+
+  it('strips the write instruction and the path', () => {
+    const r = prepareOutsidePrompt(claudeFile, [BATCH, homedir()]);
+    expect('text' in r).toBe(true);
+    const t = (r as { text: string }).text;
+    expect(t).not.toContain(BATCH);
+    expect(t).not.toMatch(/write your json|path to write|claude-checks/i);
+    expect(t).toContain('Reply with JSON only');
+  });
+
+  it('refuses a prompt that still holds the home or batch path', () => {
+    const home = `Note: see ${homedir()}/x for context.`;
+    expect(prepareOutsidePrompt(home, [homedir()])).toEqual({ why: 'local path in prompt' });
+    expect(prepareOutsidePrompt(`See ${BATCH}/y`, [BATCH])).toEqual({ why: 'local path in prompt' });
+  });
+
+  it('runOpencode sends the stripped text, and sends nothing for a prompt with a local path', () => {
+    const d = mkdtempSync(join(tmpdir(), 'fake-oc-'));
+    const cap = join(d, 'captured.md');
+    writeFileSync(join(d, 'opencode'), `#!/bin/sh\nwhile [ $# -gt 0 ]; do if [ "$1" = "-f" ]; then cp "$2" "${cap}"; fi; shift; done\n`);
+    chmodSync(join(d, 'opencode'), 0o755);
+    const env = { PATH: `${d}:${process.env.PATH}` };
+    const f = join(d, 'c.md'); writeFileSync(f, claudeFile);
+    runOpencode(f, 'opencode-go/gpt-6-luna', 20, env, [BATCH, homedir()]);
+    const sent = readFileSync(cap, 'utf8');
+    expect(sent).not.toMatch(/\/Users\/someone|write your json|path to write/i);
+    const g = join(d, 'g.md'); writeFileSync(g, `${claudeFile}\nhome ${homedir()}/secret`);
+    const before = existsSync(cap) ? readFileSync(cap, 'utf8') : '';
+    writeFileSync(cap, '');
+    const r = runOpencode(g, 'opencode-go/gpt-6-luna', 20, env, [BATCH, homedir()]);
+    expect(r).toMatchObject({ text: '', why: 'local path in prompt' });
+    expect(readFileSync(cap, 'utf8')).toBe('');
+    expect(before).not.toContain(homedir());
   });
 });

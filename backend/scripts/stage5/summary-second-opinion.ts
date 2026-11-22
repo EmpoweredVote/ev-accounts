@@ -16,9 +16,9 @@
  * Exit 2: no models, an unknown model family, or bad arguments.
  */
 import { spawnSync } from 'node:child_process';
-import { appendFileSync, copyFileSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { appendFileSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { homedir, tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SummaryCheckSchema, type SummaryCheck } from '../lib/stage5Summary.js';
 import { parseArgs } from './coder-io.js';
@@ -160,15 +160,32 @@ export function dropUnusable(lines: string[]): { kept: string[]; removed: Set<st
   return { kept, removed };
 }
 
+/**
+ * The checker file is written for a Claude subagent and names a local path to write to. Outside models get a copy
+ * with that instruction and path removed. Nothing is sent if a forbidden string (the batch's absolute directory, the
+ * home directory) is still in the text, or if a write instruction survives.
+ */
+export function prepareOutsidePrompt(text: string, forbidden: string[]): { text: string } | { why: string } {
+  const out = text
+    .replace(/^Path to write your JSON to:.*\n?/gm, '')
+    .replace(/Write your JSON to the path given below and write nothing else \(if you cannot write files, reply with the JSON only\)/g, 'Reply with JSON only')
+    .replace(/\n{3,}/g, '\n\n');
+  if (forbidden.filter(Boolean).some((f) => out.includes(f))) return { why: 'local path in prompt' };
+  if (/write your json|path to write|claude-checks/i.test(out)) return { why: 'write instruction in prompt' };
+  return { text: out };
+}
+
 export interface RunResult { text: string; why?: string; seconds: number }
 
 /** One opencode call in a fresh empty dir holding only a copy of the checker file. */
-export function runOpencode(file: string, model: string, timeoutS: number, env = process.env): RunResult {
+export function runOpencode(file: string, model: string, timeoutS: number, env = process.env, forbidden: string[] = [homedir()]): RunResult {
   const dir = mkdtempSync(join(tmpdir(), 'second-opinion-'));
   const t0 = Date.now();
   try {
     const copy = join(dir, 'checker.md');
-    copyFileSync(file, copy);
+    const prepared = prepareOutsidePrompt(readFileSync(file, 'utf8'), forbidden);
+    if ('why' in prepared) return { text: '', why: prepared.why, seconds: 0 };
+    writeFileSync(copy, prepared.text);
     writeFileSync(join(dir, 'opencode.json'), JSON.stringify(LOCKDOWN_CONFIG));
     const r = spawnSync('opencode', ['run', '-m', model, '--format', 'json', '--archived', '-f', copy, INSTRUCTION], {
       cwd: dir, env: cleanEnv(env), encoding: 'utf8', timeout: timeoutS * 1000, maxBuffer: 32 * 1024 * 1024,
@@ -226,7 +243,7 @@ export function main(argv: string[]): void {
       let note = '';
       if (!existsSync(file)) check = failCheck(s, model, family, `checker file ${i + 1}.md is missing`);
       else {
-        const r = runOpencode(file, model, timeout);
+        const r = runOpencode(file, model, timeout, process.env, [resolve(dir), homedir()]);
         check = r.why ? failCheck(s, model, family, r.why) : toCheck(s, r.text, model, family);
         note = ` ${r.seconds.toFixed(1)}s`;
       }
