@@ -130,3 +130,46 @@ describe('agreementRate', () => {
     expect(agreementRate([])).toBe(0);
   });
 });
+
+// Ruling 2026-11-22 (runner): a summary reads as one paragraph about the person — an opening line in plain words
+// with no marker, then acts grouped by what they did, each part carrying its own markers.
+describe('lead line and parts', () => {
+  const fs = [f1, f2, f4];
+  const lead = (text: string) => ({ text, lead: true as const });
+  const parts = (...p: [string, string[]][]) => ({ parts: p.map(([text, cites]) => ({ text, cites })) });
+  const d = (...sentences: unknown[]) => ({ politician_id: PID, topic_key: 'gun-policy', sentences }) as SummaryDraft;
+
+  it('renders a marker after each part, moving a trailing comma after the marker', () => {
+    const r = buildSummary(d(parts(['He voted to end the license requirement,', ['f1']], ['to honor more licenses', ['f2']], ['and to repeal the silencer ban.', ['f4']])), fs);
+    expect(r.text).toBe('He voted to end the license requirement [1], to honor more licenses [2] and to repeal the silencer ban [3].');
+    expect(r.sentences).toEqual([r.text]);
+    expect(r.cites).toEqual([['f1', 'f2', 'f4']]);
+  });
+  it('renders the lead with no marker and gives it every cite in the summary', () => {
+    const r = buildSummary(d(lead('He has voted to loosen limits on guns.'), { text: 'He voted for A.', cites: ['f2'] }, parts(['He backed B', ['f1']], ['and C.', ['f4']])), fs);
+    expect(r.text).toBe('He has voted to loosen limits on guns. He voted for A [1]. He backed B [2] and C [3].');
+    expect(r.sentences).toEqual(['He has voted to loosen limits on guns.', 'He voted for A [1].', 'He backed B [2] and C [3].']);
+    expect(r.cites).toEqual([['f2', 'f1', 'f4'], ['f2'], ['f1', 'f4']]);
+    expect(r.sources).toEqual([f2.url, f1.url, f4.url]);
+  });
+  it('lints a good lead-and-parts draft clean', () => {
+    expect(lintSummary(d(lead('He has often voted to loosen limits on guns.'), parts(['He voted for A,', ['f1']], ['B', ['f2']], ['and C.', ['f4']])), ctx(fs))).toEqual([]);
+  });
+  it('refuses a lead that is not first, a lead alone, a lead with cites, and a part with no cite', () => {
+    expect(lintSummary(d({ text: 'A.', cites: ['f1'] }, lead('Lead.')), ctx(fs)).join()).toMatch(/opening line must be the first/);
+    expect(lintSummary(d(lead('Lead.')), ctx(fs)).join()).toMatch(/opening line needs at least one cited sentence after it/);
+    expect(lintSummary(d({ text: 'Lead.', lead: true, cites: ['f1'] }, { text: 'A.', cites: ['f1'] }), ctx(fs)).join()).toMatch(/opening line carries no cites/);
+    expect(lintSummary(d(parts(['A', ['f1']], ['and B.', []])), ctx(fs)).join()).toMatch(/part 2: no citation/);
+  });
+  it('refuses a sentence with both text and parts, and markers inside a part', () => {
+    expect(lintSummary(d({ text: 'A.', cites: ['f1'], parts: [{ text: 'A.', cites: ['f1'] }] }), ctx(fs)).join()).toMatch(/either text or parts/);
+    expect(lintSummary(d(parts(['A [1]', ['f1']], ['and B.', ['f2']])), ctx(fs)).join()).toMatch(/citation markers/);
+  });
+  it('counts a quantity word in the lead against every cite in the summary', () => {
+    expect(lintSummary(d(lead('He often voted for gun bills.'), { text: 'A.', cites: ['f1'] }, { text: 'B.', cites: ['f2'] }), ctx(fs)).join()).toMatch(/"often" with 2/);
+  });
+  it('counts sentences in a lead-plus-parts summary, lead included, 1-5', () => {
+    const s = { text: 'A.', cites: ['f1'] };
+    expect(lintSummary(d(lead('L.'), s, s, s, s, s), ctx(fs)).join()).toMatch(/1-5 sentences; this has 6/);
+  });
+});

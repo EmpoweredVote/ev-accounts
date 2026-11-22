@@ -8,7 +8,7 @@
  * A draft in a file named `drafts/rewrite-*.json` is a marked rewrite: it is read after every other draft and, when
  * clean, replaces that person's earlier draft (once per person; a second rewrite is refused). Every replacement is
  * printed. Writes, beside them:
- *   summaries.jsonl     { politician_id, topic_key, text, sha256, sources, cites, code_outcome, code_value,
+ *   summaries.jsonl     { politician_id, topic_key, text, sha256, sources, cites, sentences, code_outcome, code_value,
  *                       code_sha256 } per clean draft (cites: one id list per sentence; code_*: the code file the
  *                       summary is checked against, which summary-write re-reads before a write)
  *   lint-refused.jsonl  { politician_id, topic_key, file, problems } per draft that is bad, unknown, or unreadable
@@ -63,7 +63,7 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
   const refuse = (file: string, d: { politician_id?: unknown; topic_key?: unknown } | null, problems: string[]) =>
     refused.push({ politician_id: typeof d?.politician_id === 'string' ? d.politician_id : null, topic_key: typeof d?.topic_key === 'string' ? d.topic_key : null, file, problems });
 
-  const clean = new Map<string, { draft: SummaryDraft; text: string; sources: string[]; sha256: string; cites: string[][]; findings: Finding[]; code: CodeRecord }>();
+  const clean = new Map<string, { draft: SummaryDraft; text: string; sources: string[]; sha256: string; cites: string[][]; sentences: string[]; findings: Finding[]; code: CodeRecord }>();
   const rewritten = new Set<string>();
   const replaced: string[] = [];
   let drafted = 0;
@@ -101,7 +101,7 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
       if (problems.length) { refuse(file, draft, problems); continue; }
       const built = buildSummary(draft, findings);
       if (rewrite && clean.has(draft.politician_id)) replaced.push(draft.politician_id);
-      clean.set(draft.politician_id, { draft, ...built, cites: draft.sentences.map((s) => [...new Set(s.cites)]), findings, code: codeRecord });
+      clean.set(draft.politician_id, { draft, ...built, findings, code: codeRecord });
     }
   }
 
@@ -114,7 +114,7 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
   for (const id of ids) {
     const c = clean.get(id)!;
     const person = people.get(id)!;
-    const summary = { politician_id: id, topic_key: profile.topic_key, text: c.text, sha256: c.sha256, sources: c.sources, cites: c.cites };
+    const summary = { politician_id: id, topic_key: profile.topic_key, text: c.text, sha256: c.sha256, sources: c.sources, cites: c.cites, sentences: c.sentences };
     const titles = new Map([...instrumentTexts(store, index, c.findings.map((f) => f.instrument_id).filter((x): x is string => !!x))].map(([k, v]) => [k, v.title]));
     try {
       prompts.push({ id, text: checkerPrompt(summary, c.findings, { outcome: person.outcome, ...(person.value != null ? { value: person.value } : {}) }, profile.sides, { personName: person.name, topicName: profile.topic_name, outFile: join(resolve(dir), 'claude-checks', `${id}.json`), titles }) });
