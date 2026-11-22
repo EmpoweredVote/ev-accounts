@@ -456,6 +456,13 @@ describe('instrument-not-cited: Nevada text headings (2026-11-21)', () => {
     expect(ids({ ...good, reasoning: 'Sponsored AB 80 (2021).' }, { evidence: snip('ASSEMBLY BILL NO. 80') })).not.toContain('instrument-not-cited'));
   it('still tells AB 8 from "ASSEMBLY BILL NO. 80"', () =>
     expect(ids({ ...good, reasoning: 'Sponsored AB 8 (2021).' }, { evidence: snip('ASSEMBLY BILL NO. 80') })).toContain('instrument-not-cited'));
+  // Washington's bill texts head the bill "SENATE BILL 6476" in capitals with no "NO." (wa-04-rr5h, 2026-11-22).
+  it('reads "SENATE BILL 6476" / "HOUSE BILL 1240" as SB 6476 / HB 1240', () => {
+    expect(ids({ ...good, reasoning: 'Co-sponsored SB 6476 (2017).' }, { evidence: snip('SENATE BILL 6476 State of Washington By Senators Wagoner, Short') })).not.toContain('instrument-not-cited');
+    expect(ids({ ...good, reasoning: 'Sponsored HB 1240 (2023).' }, { evidence: snip('HOUSE BILL 1240 State of Washington') })).not.toContain('instrument-not-cited');
+  });
+  it('still tells SB 647 from "SENATE BILL 6476"', () =>
+    expect(ids({ ...good, reasoning: 'Co-sponsored SB 647 (2017).' }, { evidence: snip('SENATE BILL 6476 State of Washington') })).toContain('instrument-not-cited'));
 });
 
 describe('instrument-not-cited: Ohio bill headings (2026-11-06)', () => {
