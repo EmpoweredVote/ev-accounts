@@ -79,9 +79,14 @@ export function loadBatch(dir: string): Batch {
 }
 
 /** One verdict per summary. A row whose stored sha256 is not the hash of its text is refused (held, with the reason). */
-export function evaluate(summaries: SummaryRow[], checks: SummaryCheck[], required: Family[]): Evaluated[] {
+export function evaluate(summaries: SummaryRow[], checks: SummaryCheck[], required: Family[], topicKey?: string): Evaluated[] {
+  const count = new Map<string, number>();
+  for (const s of summaries) count.set(`${s.politician_id}|${s.topic_key}`, (count.get(`${s.politician_id}|${s.topic_key}`) ?? 0) + 1);
   return summaries.map((s) => {
     const problems: string[] = [];
+    if (topicKey !== undefined && s.topic_key !== topicKey) problems.push(`topic_key ${s.topic_key} is not ${topicKey}; row refused`);
+    const n = count.get(`${s.politician_id}|${s.topic_key}`) ?? 1;
+    if (n > 1) problems.push(`duplicate: ${n} rows for this person and topic; every one refused`);
     const real = shownSha256(s.text);
     if (real !== s.sha256) problems.push(`stored sha256 ${s.sha256} is not the hash of the text (${real}); row refused`);
     const mine = checks.filter((c) => c.politician_id === s.politician_id && c.topic_key === s.topic_key && c.text_sha256 === real);
@@ -189,7 +194,7 @@ export async function run(o: { profile: string; batch: string; q?: Query; apply?
   if (o.apply && !(o.yes ?? '').trim()) throw new Error('--apply needs --yes "<the runner\'s words>"; nothing written');
   const dir = join(profile.stage5, 'summaries', o.batch);
   const b = loadBatch(dir);
-  const ev = evaluate(b.summaries, b.checks, REQUIRED);
+  const ev = evaluate(b.summaries, b.checks, REQUIRED, profile.topic_key);
   const rep = writeReports(dir, b, ev, profile.topic_key);
   let result: WriteResult = { written: [], refused: [] };
   if (o.apply) {

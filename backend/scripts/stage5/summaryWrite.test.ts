@@ -179,4 +179,27 @@ describe('summary-write', () => {
     const out = writeReports(dir, b, ev, 'gun-policy');
     expect(out.agreement).toBeCloseTo(2 / 3);
   });
+
+  it('refuses a row whose topic_key is not the profile topic, and lists it in held.md', async () => {
+    const { profile, dir } = setup();
+    const lines = readFileSync(join(dir, 'summaries.jsonl'), 'utf8').trim().split('\n').map((l) => JSON.parse(l));
+    lines[0].topic_key = 'other-topic';
+    writeFileSync(join(dir, 'summaries.jsonl'), lines.map((l) => JSON.stringify(l)).join('\n') + '\n');
+    const db = fakeDb();
+    const r = await run({ profile, batch: 'b1', q: db.q, apply: true, yes: 'go' });
+    expect(r.written).toEqual(['p2', 'p3']);
+    expect(db.updates().map((u) => u.params![0])).not.toContain('p1');
+    expect(readFileSync(join(dir, 'held.md'), 'utf8')).toMatch(/other-topic.*not gun-policy|topic_key/);
+  });
+
+  it('refuses every row of a duplicated (politician, topic) pair', async () => {
+    const { profile, dir } = setup();
+    const raw = readFileSync(join(dir, 'summaries.jsonl'), 'utf8').trim().split('\n');
+    writeFileSync(join(dir, 'summaries.jsonl'), [...raw, raw[0]].join('\n') + '\n');
+    const db = fakeDb();
+    const r = await run({ profile, batch: 'b1', q: db.q, apply: true, yes: 'go' });
+    expect(r.written).toEqual(['p2', 'p3']);
+    expect(db.updates().map((u) => u.params![0])).not.toContain('p1');
+    expect(readFileSync(join(dir, 'held.md'), 'utf8')).toMatch(/duplicate/i);
+  });
 });
