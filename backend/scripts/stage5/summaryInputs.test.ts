@@ -116,6 +116,19 @@ describe('checker prompt', () => {
     expect(prompt).not.toMatch(/\{\{/);
   });
 
+  it("shows the checker each cited instrument's title, as the writer saw it", () => {
+    const f = finding(1);
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'She voted for a bill on suppressors.', cites: [f.id] }] };
+    const b = buildSummary(draft, [f]);
+    const titles = new Map([['PA-HB-1-2024', 'HB1: Removing the prohibition on firearm suppressors']]);
+    const summary = { politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: [[f.id]] };
+    expect(checkerPrompt(summary, [f], { outcome: 'seated', value: 4 }, null, { titles }))
+      .toContain('instrument: PA-HB-1-2024 (HB1: Removing the prohibition on firearm suppressors)');
+    // Same words as the writer's line, so neither side sees a bill the other cannot.
+    expect(writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
+      capFindings([f], [f.id], 25), null, titles)).toContain('instrument: PA-HB-1-2024 (HB1: Removing the prohibition on firearm suppressors)');
+  });
+
   it('refuses cites that do not match the sentences', () => {
     const f = finding(1);
     const b = buildSummary({ politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'One.', cites: [f.id] }, { text: 'Two.', cites: [f.id] }] }, [f]);
