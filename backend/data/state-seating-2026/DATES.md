@@ -996,3 +996,130 @@ which is the trap the transition tracker already records: *a ticket LG row names
   and Oregon's.
 - ⚠ **No Arizona chamber carries an `inauguration_rules` row**, so there was no lead to check and
   nothing to re-source.
+
+---
+
+## NV — Nevada · 58 offices · ⚠️ 52 dated, **6 REFUSED**, 2026-11-22
+
+🔴🔴 **NEVADA'S 52 LEGISLATORS HAVE HELD THEIR SEATS SINCE 2026-11-04. THE DATE IS NOT IN THE
+FUTURE — IT IS EIGHTEEN DAYS PAST.** Every other state sourced so far starts in December 2026 or
+January 2027. Nevada's legislature started the day after the election, which means our pages have
+been naming the *predecessors* as current for eighteen days and nothing has said so.
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| Assembly | 41 | 🔴 **2026-11-04** (past) | Nev. Const. Art. 4, Sec. 3(1) |
+| Senate | 11 | 🔴 **2026-11-04** (past) | Nev. Const. Art. 4, Sec. 4(1) |
+| Governor · Lt. Governor · Secretary of State · Attorney General · Treasurer · Controller | 6 | 🔴 **REFUSED** | term begins at **qualification** |
+
+### The authority — the legislature
+
+**Nev. Const. Art. 4, Sec. 3(1)** (Assembly):
+
+> The members of the Assembly shall be chosen biennially by the qualified electors of their
+> respective districts, on the Tuesday next after the first Monday in November and **their term of
+> Office shall be two years from the day next after their election**.
+
+**Nev. Const. Art. 4, Sec. 4(1)** (Senate):
+
+> Senators shall be chosen at the same time and places as members of the Assembly by the qualified
+> electors of their respective districts, and **their term of Office shall be four years from the
+> day next after their election**.
+
+Election 2026-11-03 → the day next after = **2026-11-04**.
+
+🟢 **This is Indiana's clause in different words, and this repo has already ruled on it.**
+`CC_0463` read `Ind. Const. art. 4 § 3` — *"elected for a term of … two years respectively, from
+the day next after their general election"* — as 2026-11-04 and `CC_0464` seated three members on
+it. **Same construction, same reading, and the two states now agree.**
+
+⚠ **Contrast Maine, which uses the opposite preposition for the opposite effect**: *"two years
+from the day next **preceding** the first Wednesday in December"*. Nevada and Indiana count
+forward from the election; Maine counts back from the meeting. 🔴 **Three states in this pass
+hinge on "the day next X" and X is not the same word. Read it.**
+
+### 🔴 The six executives are refused: Nevada starts their terms at QUALIFICATION
+
+**Nev. Const. Art. 5, Sec. 2** (Governor):
+
+> The Governor shall be elected by the qualified electors at the time and places of voting for
+> members of the Legislature, and shall hold his office for Four Years **from the time of his
+> installation**, and until his successor shall be qualified.
+
+**Nev. Const. Art. 5, Sec. 19(1)**: *"A Secretary of State, a Treasurer, a Controller, and an
+Attorney General, shall be elected at the same time and places, and in the same manner as the
+Governor. **The term of office of each shall be the same as is prescribed for the Governor**."*
+Art. 5, Sec. 17 does the same for the Lieutenant Governor.
+
+**NRS 223.020(2)** repeats it — the Governor "shall hold office for the term of 4 years **from the
+time of his or her installment**" — and **NRS 282.010** says what that means:
+
+> **4.** The term of office of all officers, elected or appointed, shall **begin from the time of
+> their qualification**, unless some other express provision is made by law.
+>
+> **2.** All officers elected, **except Senators and members of the Assembly**, shall qualify, and
+> execute and deliver their official bonds when required, as provided in this section, **prior to
+> the Tuesday after the first Monday in January ensuing their election**.
+
+So the six executives' terms begin on the day each one qualifies — an event, like Oregon's
+Governor — and that day is **not yet knowable**.
+
+🟢 **But Nevada bounds it, and `office_swearing_in` has the column for that.** Subsection 2 makes
+qualification a deadline: **prior to the Tuesday after the first Monday in January 2027**, which is
+**prior to 2027-01-05**. ▶ **When these six are dated, `window_end_date = 2027-01-04` is a sourced
+value even though `swearing_in_date` is not.** That is the first use this pass has found for the
+column.
+
+⚠ **Subsection 2's carve-out is itself the control on the legislative reading.** It excludes
+"Senators and members of the Assembly" from the January qualification deadline — which only makes
+sense because their terms already began in November under Art. 4. **The statute and the
+constitution agree, from opposite directions.**
+
+🟢 **Practice control:** `essentials.office_terms` holds one dated Nevada executive at
+**2023-01-02** — the first Monday of January 2023, comfortably prior to that cycle's Tuesday
+deadline of 2023-01-03. It is a qualification date, not a rule, and is recorded as such.
+
+### The source
+
+`https://www.leg.state.nv.us/Const/NvConst.html` (HTTP 200, 431,607 bytes) and
+`https://www.leg.state.nv.us/NRS/NRS-223.html`, `…/NRS-282.html`, `…/NRS-281.html` — the
+Legislative Counsel Bureau's own publications, fetched and read 2026-11-22.
+
+### Basis
+
+`statute` for the 52 legislative rows. The six executives have no row.
+
+### Term start or oath? — **term start for the legislature; for the executives they are the SAME EVENT**
+
+The legislative clause names a calendar day computed from the election and says nothing about an
+oath. ⚠ NRS 282.010(1) still requires members to take the oath "before entering upon the duties"
+— the familiar split, and it does not move the term start.
+
+🔴 **For the six executives the term start IS the oath**, which is why they are refused rather than
+estimated: NRS 282.010(4) attaches the term to qualification and NRS 282.020 makes the oath part of
+qualifying. **Whoever records those six must record a qualification date and say so.** This is the
+case the register's step 2 warns about — *"others begin the term on qualification, which IS the
+oath"* — and Nevada is the first state in the pass to be on that side of the line.
+
+### Carried into the row
+
+| field | Assembly + Senate | the six executives |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | 🔴 **2026-11-04** | *unknown — qualification* |
+| `window_end_date` | NULL | **2027-01-04** (sourced: NRS 282.010(2)) |
+| `basis` | `statute` | `published`, when it happens |
+| `rule_id` | `nv-const-art4-day-next-after-election` | `nv-nrs-282-010-on-qualification` |
+
+### Four things the next step inherits
+
+- 🔴🔴 **Nevada's wave is the `CC_0464` shape, not the `CC_0462` shape** — a term that has already
+  started. That is the one worked example in the register for this case, and it exists because of
+  Indiana. **Use it.**
+- 🔴 **The predecessors' terms must close on 2026-11-03**, the day before. `seat_officeholder`
+  does that automatically at `term_start - 1`, and the register's step 6 correction applies: the
+  closures are **not** recoverable from any file, so capture `(office_id, term_id, term_end,
+  how_ended)` for all 52 predecessors in the pre-image and assert `term_end IS NULL` across them.
+- ⚠ **13 winners have no `politicians` row** — 12 Assembly, 1 Senate.
+- ⚠ **11 of Nevada's 21 Senate seats are pending**, the chamber being staggered on four-year
+  terms. One winner per office, so **not** a Ruling A case.

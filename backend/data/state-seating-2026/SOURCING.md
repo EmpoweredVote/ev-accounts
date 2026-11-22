@@ -26,19 +26,23 @@ end and count the groups it names before deciding how many rows the state needs.
 Order below is by offices, because that is value per citation. **The nine largest states are 978 of
 the 1,162 offices.**
 
-🔴🔴 **THE ORDERING CONDITION HAS NOW FIRED TWICE, AND 275 OFFICES ARE DUE BEFORE 2027.** This
+🔴🔴 **THE ORDERING CONDITION HAS FIRED THREE TIMES, AND ONE OF THEM IS ALREADY OVERDUE.** This
 line used to read *"nothing here is dated yet, so nothing is overdue, and that ordering stands
-until a citation turns up a date sooner than 2027-01-01"*. Two citations turned one up:
+until a citation turns up a date sooner than 2027-01-01"*. Three citations turned one up:
 
-| state | bodies | offices | start date | days from 2026-11-22 |
+| state | bodies | offices | start date | status on 2026-11-22 |
 |---|---|---|---|---|
-| **ME** | House + Senate | **183** | **2026-12-01** | **9** |
-| **CA** | Assembly + Senate | **92** | **2026-12-07** | **15** |
+| **NV** | Assembly + Senate | **52** | 🔴 **2026-11-04** | **18 DAYS PAST** |
+| **ME** | House + Senate | **183** | **2026-12-01** | 9 days away |
+| **CA** | Assembly + Senate | **92** | **2026-12-07** | 15 days away |
 
-▶ **Work these two before the rest of the by-size order.** Everything else sourced so far starts
-in January 2027. ⚠ **Maine's critical path is not its date** — it is 77 missing `politicians`
-rows; California's 92 are all re-elections or recorded winners with records. See
-[`DATES.md`](./DATES.md).
+▶ **Work these three before the rest of the by-size order.** Everything else sourced so far starts
+in January 2027.
+- 🔴 **Nevada is overdue**: 52 seats whose winners took office on 2026-11-04, so our pages are
+  naming the predecessors as current right now. It is also the smallest of the three and uses the
+  `CC_0464` already-started shape.
+- ⚠ **Maine's critical path is not its date** — it is 77 missing `politicians` rows.
+- 🟢 **California's 92 need no new people at all**, so it is the cheapest of the three.
 
 ## The rules that will bite in this particular task
 
@@ -48,6 +52,11 @@ rows; California's 92 are all re-elections or recorded winners with records. See
   afterwards; others begin the term **on qualification**, which IS the oath. Wisconsin's two events
   fall on one day; Indiana's constitution names only the term. Decide per body, in writing, in the
   migration header.
+  - 🔴🔴 **THREE STATES IN THIS PASS TURN ON THE PHRASE "THE DAY NEXT ___" AND THE BLANK IS NOT
+    THE SAME WORD.** Nevada and Indiana say *"from the day next **after** their election"* — the
+    term began **2026-11-04**. Maine says *"from the day next **preceding** the first Wednesday in
+    December"* — **2026-12-01**, counting back from the meeting instead of forward from the poll.
+    One preposition, five weeks apart.
 - 🔴 **`chambers.inauguration_rules` is a lead, not a source** — 15 chambers carry it and the
   quality is uneven. The ones that already compute a 2026 date are marked ▶ below; the ones that
   name no authority are marked ⚠ and must be re-sourced.
@@ -183,6 +192,7 @@ state's **executive**, never its legislature, that fails this way:
 | MD Comptroller | Art. VI § 1 gives a length only; falls to Art. XVII § 4, "from the time of their Election", which overlaps the predecessor |
 | OR Governor | Art. V § 7 defers to statute; `ORS 176.010` commences the term "upon the publication of the returns by the Speaker of the House" — an **event**, which has not happened |
 | AZ State Mine Inspector | Art. XIX gives a term length and no day — and the constitution publishes **two competing 1992 versions** of that article that disagree on whether the term is two years or four. No statute supplies a commencement |
+| NV Governor, Lt. Governor, Secretary of State, Attorney General, Treasurer, Controller (6) | Art. 5 §§ 2, 17, 19 run the term "from the time of his installation"; `NRS 282.010(4)` makes that **qualification**. 🟢 But `NRS 282.010(2)` bounds it: qualification must happen **prior to 2027-01-05**, so `window_end_date = 2027-01-04` is sourced even though `swearing_in_date` is not |
 
 Each needs a **`published` date recorded when it happens**. See [`DATES.md`](./DATES.md) for the
 confirming document named per office. They are 3 offices of the 1,162, and their states' other
@@ -216,4 +226,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |
 | OR | ⚠️ [`DATES.md`](./DATES.md) — **75 of 76**: 2027-01-11 legislature. 🔴 **Governor REFUSED** — `ORS 176.010` starts the term at an event, not a day | ⏳ | | |
 | AZ | ⚠️ [`DATES.md`](./DATES.md) — **65 of 66** on **2027-01-04**. 🔴 **Mine Inspector REFUSED**; Corporation Commission dated but not seatable; 🔴🔴 **no Lieutenant Governor office exists** | ⏳ | | |
+| NV | ⚠️ [`DATES.md`](./DATES.md) — **52 of 58** on 🔴 **2026-11-04, ALREADY PAST**. 🔴 **6 executives REFUSED** — term begins at qualification, bounded before 2027-01-05 | ⏳ | | |
 | *(nothing else yet)* | | | | |
