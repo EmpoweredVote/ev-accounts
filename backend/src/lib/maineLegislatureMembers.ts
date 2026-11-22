@@ -5,7 +5,10 @@
 // and for the 128th /senate/128th-senators/9332), read live for the current Legislature and from the Internet Archive's
 // copies of the same page for earlier ones; each copy names the Legislature it is filed under.
 // House (128th to 130th): our Open States extract's House memberships (dump 2026-11-public.pgdump), each with its dates
-// (null: not given); one person Open States holds twice is kept once, with the other name under also.
+// (null: not given); one person Open States holds twice is kept once, with the other name under also. A name the House's
+// PDFs print that the extract does not hold is added under also from the House's own member profile:
+//   Tiffany Roberts-Lovell (Tiffany Roberts): https://web.archive.org/web/20190611092455id_/http://legislature.maine.gov:80/house/house/MemberProfiles/Details/1385
+//   H. Sawin Millett Jr. (Sawin Millett): https://web.archive.org/web/20190523070522id_/http://legislature.maine.gov:80/house/house/MemberProfiles/Details/1357
 
 export interface MeSenateList { sources: string[]; names: string[] }
 export interface MeHouseMember { name: string; family: string; also: string[]; from: string | null; to: string | null }
@@ -423,8 +426,8 @@ export const ME_HOUSE_ROSTERS: Record<number, MeHouseMember[]> = {
       "to": "2020-12-02"
     },
     {
-      "name": "Owen D. CasÃ¡s",
-      "family": "CasÃ¡s",
+      "name": "Owen D. Casás",
+      "family": "Casás",
       "also": [],
       "from": null,
       "to": "2018-12-31"
@@ -2025,8 +2028,8 @@ export const ME_HOUSE_ROSTERS: Record<number, MeHouseMember[]> = {
       "to": "2020-12-02"
     },
     {
-      "name": "Owen D. CasÃ¡s",
-      "family": "CasÃ¡s",
+      "name": "Owen D. Casás",
+      "family": "Casás",
       "also": [],
       "from": null,
       "to": "2018-12-31"
@@ -2832,7 +2835,9 @@ export const ME_HOUSE_ROSTERS: Record<number, MeHouseMember[]> = {
     {
       "name": "Sawin Millett",
       "family": "Millett",
-      "also": [],
+      "also": [
+        "H. Sawin Millett Jr."
+      ],
       "from": null,
       "to": "2022-12-07"
     },
@@ -3037,7 +3042,9 @@ export const ME_HOUSE_ROSTERS: Record<number, MeHouseMember[]> = {
     {
       "name": "Tiffany Roberts",
       "family": "Roberts",
-      "also": [],
+      "also": [
+        "Tiffany Roberts-Lovell"
+      ],
       "from": "2018-12-05",
       "to": "2022-12-06"
     },
@@ -4207,7 +4214,9 @@ export const ME_HOUSE_ROSTERS: Record<number, MeHouseMember[]> = {
     {
       "name": "Sawin Millett",
       "family": "Millett",
-      "also": [],
+      "also": [
+        "H. Sawin Millett Jr."
+      ],
       "from": null,
       "to": "2022-12-07"
     },
@@ -4412,7 +4421,9 @@ export const ME_HOUSE_ROSTERS: Record<number, MeHouseMember[]> = {
     {
       "name": "Tiffany Roberts",
       "family": "Roberts",
-      "also": [],
+      "also": [
+        "Tiffany Roberts-Lovell"
+      ],
       "from": "2018-12-05",
       "to": "2022-12-06"
     },

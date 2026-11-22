@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateRows, hiReadBillPage, hiYear } from './fetch-legislature-rollcalls.js';
+import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateBlockedRows, meSenateRows, hiReadBillPage, hiYear } from './fetch-legislature-rollcalls.js';
 import { ME_SENATE_LISTS } from '../../../src/lib/maineLegislatureMembers.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
@@ -849,7 +849,7 @@ describe('the legislature\'s own vote list — Maine', () => {
   const H = 'https://legislature.maine.gov/house/Repository/Documents/132/RollCalls/';
   const S = 'https://legislature.maine.gov/uploads/visual_edit/';
 
-  it('starts from the House\'s list of the Legislature, then its PDF list and, from the 130th, the Senate\'s list', () => {
+  it('starts from the House\'s list of the Legislature, then its PDF list and the Senate\'s list', () => {
     expect(meHouseListUrl('132')).toBe('https://legislature.maine.gov/house/Documents/RollCalls?Legislature=132');
     expect(meHouseListUrl('128')).toBe('https://legislature.maine.gov/house/Documents/RollCalls?Legislature=128');
     for (const s of ['2025', '127', '12']) expect([s, meHouseListUrl(s)]).toEqual([s, null]);
@@ -857,9 +857,11 @@ describe('the legislature\'s own vote list — Maine', () => {
       'https://legislature.maine.gov/132nd-roll-calls']);
     expect(meFollow(LIST, '130')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=130',
       'https://legislature.maine.gov/130th-roll-calls']);
-    // the 128th's and 129th's Senate lists are laid out otherwise: only the House is read
-    expect(meFollow(LIST, '129')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=129']);
-    expect(meFollow(LIST, '128')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=128']);
+    // the 129th's list has its own address; the 128th's rows link only /LawMakerWeb pages, counted as not read
+    expect(meFollow(LIST, '129')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=129',
+      'https://legislature.maine.gov/129th-senate-roll-calls']);
+    expect(meFollow(LIST, '128')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=128',
+      'https://legislature.maine.gov/128th-roll-calls']);
     for (const s of ['128', '129', '130', '131', '132']) for (const u of meFollow(LIST, s)) expect([u, /LawMakerWeb|\/senators\//i.test(u)]).toEqual([u, false]);
     expect(INDEX.ME.minGapMs).toBe(1_000);
   });
@@ -911,6 +913,22 @@ describe('the legislature\'s own vote list — Maine', () => {
     expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, swap(SEN, p634, p634 + p634)]).floor).toHaveLength(5);
   });
 
+  it('counts a Senate row that links only a /LawMakerWeb page as not read, relative or absolute, two to a paragraph', () => {
+    // most of the 130th's rows: robots.txt closes /LawMakerWeb, so the row is reported, never opened
+    const lmw = (n: number, abs = false) => `<a href="${abs ? 'http://legislature.maine.gov' : ''}/LawMakerWeb/rollcall.asp?ID=1&amp;chamber=S&amp;serialnumber=${n}"># ${n}</a>`;
+    const blocked = swap(SEN, '<a href="/uploads/visual_edit/roll-call-634-ld-1971.pdf"># 634 </a>', lmw(634, true))
+      .replace('<p><a href="/uploads/visual_edit/roll-call-39-', `<p>${lmw(900)}&nbsp;(6-18-25) LD 1971 - "An Act" (Motion: ENACTMENT) ${lmw(901)} (6-18-25) LD 1971 - "An Act" (Motion: ADOPTION)</p>\n<p><a href="/uploads/visual_edit/roll-call-39-`);
+    expect(meSenateBlockedRows(blocked).map((r) => [r.rc, r.papers, r.motion])).toEqual([[900, ['LD 1971'], 'ENACTMENT'], [901, ['LD 1971'], 'ADOPTION'], [634, ['LD 1971'], 'ENACTMENT']]);
+    const bi = meReadVotes(LIST, '132', 'LD 1971', [PDFS, blocked]);
+    expect(bi.floor).toHaveLength(4);
+    expect(bi.unread).toEqual(['Senate 900 ENACTMENT: the list links no PDF, only a /LawMakerWeb page, which robots.txt closes',
+      'Senate 634 ENACTMENT: the list links no PDF, only a /LawMakerWeb page, which robots.txt closes']);
+    expect(bi.motions).toContain('Senate 901 ADOPTION');
+    expect(meSenateBlockedRows(SEN)).toEqual([]);
+    // a row it cannot read is an error, not a row left out
+    expect(() => meSenateBlockedRows(`<p>${lmw(5)} no date here</p>`)).toThrow(/a \/LawMakerWeb row the reader cannot read/);
+  });
+
   it('reads no Senate vote of a Legislature with no saved member list, and says so', () => {
     const was = ME_SENATE_LISTS[132];
     delete ME_SENATE_LISTS[132];
@@ -923,7 +941,7 @@ describe('the legislature\'s own vote list — Maine', () => {
     expect(meReadVotes(LIST, '132', 'LD 1971', [PDFS, SEN]).floor).toHaveLength(5);
   });
 
-  it('reads the 128th\'s and 129th\'s PDF lists by their own file names, and no Senate list for them', () => {
+  it('reads the 128th\'s and 129th\'s PDF lists by their own file names, and their Senate lists', () => {
     const as = (leg: string, files: [string, string][]): string => files.reduce((t, [a, b]) => swap(t, `Documents/132/RollCalls/${a}`, `Documents/${leg}/RollCalls/${b}`),
       swap(PDFS, '132nd Legislature', leg === '128' ? '128th Legislature' : '129th Legislature'));
     const p128 = as('128', [['002.001.132R1.pdf', '00001.pdf'], ['004.067.132S1.pdf', '00067.pdf'], ['033.541.132S1.pdf', '00541.pdf'], ['034.574.132S1.pdf', '00574.pdf']]);
@@ -939,11 +957,21 @@ describe('the legislature\'s own vote list — Maine', () => {
     expect(() => meHousePdfs(swap(p128, '00067.pdf', '004.067.pdf'), '128')).toThrow(/the PDF list prints 4 files, links 4 and 3 read/);
     expect(() => meHousePdfs(swap(p129, '004.067.pdf', '004.067.129R1.pdf'), '129')).toThrow(/the PDF list prints 4 files, links 4 and 3 read/);
     const L128 = swap(LIST.replace(/Legislature=132/g, 'Legislature=128'), '<option value="132" selected', '<option value="128" selected');
-    const bi = meReadVotes(L128, '128', 'LD 1971', [p128]);
-    expect(bi.floor.map((v) => v.url)).toEqual([`https://legislature.maine.gov/house/Repository/Documents/128/RollCalls/00541.pdf#LD1971`,
+    // the 128th's Senate list, typed by hand: "Roll Call Number 299", a vote linked twice, a broken link, "number #300"
+    const S128 = '<h1>128th Senate Roll Calls</h1>\n<p><a href="/LawMakerWeb/rollcall.asp?ID=1&amp;chamber=Senate&amp;serialnumber=299">Roll Call Number 299</a> (06/13/17) '
+      + '<a href="/LawMakerWeb/summary.asp?ID=1">LD 1971</a> - An Act (Motion: ENACTMENT)</p>\n<p><a href="rhttp://legislature.maine.gov/LawMakerWeb/rollcall.asp?ID=2&amp;chamber=S&amp;serialnumber=300">'
+      + 'Roll Call number #300</a>&nbsp;(06/14/17) <a href="/LawMakerWeb/rollcall.asp?ID=2&amp;chamber=S&amp;serialnumber=300">LD 1971</a> - An Act (Motion: ACCEPT MIN ONTP RPT)</p>\n';
+    expect(meSenateRows(S128, '128')).toEqual([]);
+    const b128 = meReadVotes(L128, '128', 'LD 1971', [p128, S128]);
+    expect(b128.floor.map((v) => v.url)).toEqual([`https://legislature.maine.gov/house/Repository/Documents/128/RollCalls/00541.pdf#LD1971`,
       `https://legislature.maine.gov/house/Repository/Documents/128/RollCalls/00574.pdf#LD1971`]);
-    expect(bi.unread).toEqual(['Senate: the 128th Senate\'s roll-call list and PDFs are laid out differently and are not read']);
-    expect(() => meReadVotes(L128, '128', 'LD 1971', [p128, SEN])).toThrow(/needed/);
+    expect(b128.unread).toEqual(['Senate 299 ENACTMENT: the list links no PDF, only a /LawMakerWeb page, which robots.txt closes']);
+    expect(b128.motions).toContain('Senate 300 ACCEPT MIN ONTP RPT');
+    expect(() => meSenateRows(S128, '129')).toThrow(/not the Senate's roll-call list of the 129th/);
+    expect(() => meReadVotes(L128, '128', 'LD 1971', [p128])).toThrow(/needed/);
+    // the 129th's: "129th Senate Roll Calls", and its first files "rc-N.pdf"
+    const S129 = '<h1>129th Senate Roll Calls</h1>\n<p><a href="/uploads/visual_edit/rc-5.pdf">#5</a>&nbsp;(1-31-2019) LD 12 -&nbsp;"An Act" (Motion: ENACTMENT)&nbsp;</p>\n';
+    expect(meSenateRows(S129, '129')).toEqual([{ rc: 5, files: ['https://legislature.maine.gov/uploads/visual_edit/rc-5.pdf'], papers: ['LD 12'], motion: 'ENACTMENT' }]);
   });
 
   it('refuses a list whose printed count is not the rows it read, a row it cannot read, and another Legislature\'s list', () => {
