@@ -126,8 +126,9 @@ function holdsMoreThanOneSentence(text: string): boolean {
   const re = /[.!?]+(?=\s+[A-Z])/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text))) {
-    const word = /(\S+)$/.exec(text.slice(0, m.index + m[0].length))?.[1].toLowerCase() ?? '';
-    if (!ABBREVIATIONS.has(word)) return true;
+    const raw = /(\S+)$/.exec(text.slice(0, m.index + m[0].length))?.[1] ?? '';
+    if (/^[A-Z]\.$/.test(raw)) continue; // a middle initial ("Danica A. Roem"), not a sentence end
+    if (!ABBREVIATIONS.has(raw.toLowerCase())) return true;
   }
   return false;
 }

@@ -59,9 +59,13 @@ describe('lintSummary', () => {
     expect(lintSummary(draft(Array(5).fill(s)), ctx(fs))).toEqual([]);
   });
   it('refuses an entry holding two sentences, accepts abbreviations', () => {
-    expect(lintSummary(two('A. B.'), ctx(fs)).join(' ')).toMatch(/more than one sentence/);
+    expect(lintSummary(two('It passed. Then it failed.'), ctx(fs)).join(' ')).toMatch(/more than one sentence/);
     expect(lintSummary(two('The U.S. Senate passed it.'), ctx(fs))).toEqual([]);
     expect(lintSummary(two('Sen. Smith spoke, e.g. Dr. Jones agreed.'), ctx(fs))).toEqual([]);
+  });
+  it('reads a middle initial as part of a name, not a sentence end', () => {
+    expect(lintSummary(two('Danica A. Roem voted for A.', 'Richard H. Stuart voted for B.'), ctx(fs))).toEqual([]);
+    expect(lintSummary(two('He voted for it. She voted for B.'), ctx(fs)).join()).toMatch(/more than one sentence/);
   });
   it('refuses the word rung and a rung number', () => {
     expect(lintSummary(two('Holds rung 3.'), ctx(fs)).join(' ')).toMatch(/rung/i);
