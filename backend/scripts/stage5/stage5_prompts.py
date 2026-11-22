@@ -15,6 +15,7 @@ Everything about the topic comes from its profile (templates/stage5-topic-profil
 search-briefs  one brief per id in --ids (a file of ids, or a TSV with a politician_id column) that has no search file
                yet, from templates/BRIEF-stage5-find.md. Each agent writes <stage5>/<xx>/find/<id>.json, so an import
                reads one state only. Briefs go to <stage5>/<xx>/briefs/, jobs to <stage5>/waves/<xx>-search/jobs.tsv
+               A level-'local' person is searched with the profile's search.local_subjects when it has them (spec 2026-11-22 §8).
                Without --note-file the note is the legislature profile's `search_note` (legislature.py), if any.
                (--round 2: <xx>-search-2, agents named find2-<id>, files in <xx>/find-2/ so the second import reads only them). --note-file adds the state's own note under what
                is on file (for example "sponsorships come from the bulk bill data: skip the legislature's lists").
@@ -97,6 +98,9 @@ def role(r):
     if r['level'] == 'federal':
         return {'sitting': f'sitting member of Congress from {name}', 'both': f'sitting member of Congress from {name}, and a candidate',
                 'candidate': f'candidate for Congress (or another federal office) in {name}'}.get(sc, sc)
+    if r['level'] == 'local':
+        return {'sitting': f'sitting local elected official (city or county) in {name}', 'both': f'sitting local elected official (city or county) in {name}, and a candidate',
+                'candidate': f'candidate for a local office (city or county) in {name}'}.get(sc, sc)
     return {'sitting': f'sitting {name} state official (legislator or statewide office)',
             'both': f'sitting {name} state official (legislator or statewide office), and a candidate',
             'candidate': f'candidate for a {name} state office'}.get(sc, sc)
@@ -110,6 +114,9 @@ def search_briefs():
         if not isinstance(srch.get(k), list) or not srch[k]:
             raise SystemExit(f'the profile needs "search": {{"subjects": […], "words": […], "subject_examples": […]}} ("{k}" is missing)')
     cfg = config(prof)
+    local = srch.get('local_subjects')  # level 'local' people are searched for local acts; absent or empty: the general subjects
+    if local is not None and (not isinstance(local, list) or not all(isinstance(x, str) and x.strip() for x in local)):
+        raise SystemExit('the profile\'s "search": {"local_subjects": […]} must be a list of non-empty strings')
     roster = {r['politician_id']: r for r in csv.DictReader(open(opt('--roster', required=True, usage=USAGE)), delimiter='\t')}
     ids = read_ids(opt('--ids', required=True, usage=USAGE))
     unknown = [p for p in ids if p not in roster]
@@ -132,7 +139,8 @@ def search_briefs():
         text = fill(T, {
             'TOPIC_KEY': topic, 'DATE': today(), 'FORBIDDEN_FOLDERS': f'any folder under {os.path.dirname(prof["research"].rstrip("/"))} (and any other research folder)',
             'PERSON_LINE': f'{r["full_name"]} — {role(r)}, {r["state"].upper()} (politician_id {p}). Make sure every source is about this person, not someone with the same name.',
-            'TOPIC_QUESTION': cfg['question'], 'SUBJECT_LIST': '\n'.join(f'- {x}' for x in srch['subjects']),
+            'TOPIC_QUESTION': cfg['question'],
+            'SUBJECT_LIST': '\n'.join(f'- {x}' for x in (local if r['level'] == 'local' and local else srch['subjects'])),
             'ON_FILE': ('\n'.join(sorted(on)) or '- nothing on file yet') + ('\n\n' + note if note else ''),
             'POLITICIAN_ID': p, 'FULL_NAME': r['full_name'].replace('"', '\\"'), 'WORKTREE': wt,
             'SEARCH_WORDS': ', '.join(f'"{w}"' for w in srch['words']), 'SUBJECT_EXAMPLES': ', '.join(f'"{w}"' for w in srch['subject_examples']),
