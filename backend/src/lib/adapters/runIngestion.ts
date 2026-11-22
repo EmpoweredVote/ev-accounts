@@ -87,6 +87,21 @@ export async function runIngestion(
       }, signal);
       totalFetched = fetchResult.totalFetched;
       totalExpected = fetchResult.totalExpected;
+
+      // 🔴 A fetch that stopped because its time limit fired is NOT a success, however many rows
+      // it read. The FEC adapter stops cooperatively at a page boundary and returns normally, so
+      // without this check the run fell through to 'completed' / 'completed_with_warning' — and
+      // a success moves the FEC load-date cursor, so every row the cut-off run never reached was
+      // skipped by every later run. Measured 2026-11-22: 37 runs since 2026-11-15 (31 sources),
+      // ~100 since the 10-minute limit arrived on 2026-08-18. FEC returns the largest gifts first,
+      // so what was lost was the small ones. The rows already streamed stay (upserts are
+      // idempotent); the FEC adapter saves its place so the next run continues from it.
+      if (signal?.aborted) {
+        throw new Error(
+          `cut off by the time limit after ${totalFetched} of ${totalExpected} row(s); ` +
+          'the rows read are saved, but the run is not a success'
+        );
+      }
     } else {
       // Buffered path (all other adapters): fetch everything, then normalize, then
       // upsert once — unchanged behavior.
