@@ -257,3 +257,12 @@ states) and session B's (0.67M when nothing goes wrong). What changed, each with
   `second_opinion_models`; use `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon`. 🔴 The `opencode/…` models are
   pay-as-you-go and answered "Insufficient balance" (HTTP 402, as an error event with exit 0) on 2026-11-22; only
   `opencode-go/…` models run on the plan.
+- **The rest of the position-summary tools** (recipe: STAGE5.md section 7b; all take `--profile <topic-profile.json> --batch <name>`):
+  - `summary-inputs.ts [--state xx|federal] [--people id,id] [--max-findings 25]` builds `summaries/<batch>/writer/<n>.md`
+    (about 10 people each), `people.json` and an empty `drafts/` for people coded `seated` or `doesnt-fit` with a saved finding.
+  - `summary-assemble.ts` turns the writers' `drafts/*.json` into `summaries.jsonl`, `lint-refused.jsonl` and `checker/<n>.md`.
+    A bad draft goes to the refused file; it never stops the run.
+  - `summary-write.ts [--apply --yes "<the runner's words>"]` is a dry run by default (`PREVIEW.md`, `held.md`, the
+    batch agreement rate). With `--apply --yes` it writes the draft season only and records the old text in
+    `old-context.jsonl` and the run in `write-log.jsonl`. It refuses off-topic and duplicated rows, and it needs the
+    `summary_sha256` column (its migration is applied separately).

@@ -396,6 +396,24 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   snippets that tagged people with a party were deleted (backup in that folder, `party-snippets-backup.json`).
 - **Scope:** every topic.
 
+### Position summaries (three rulings, all topics)
+- **Ruling 1, our own words with numbered citations:** everyone with saved evidence on a topic gets a short summary
+  written in our own words, as part of the placement process: "everyone should get a summary as part of our placement
+  process". Every sentence ends in numbered citations, and the tool builds the reference list from the findings' own
+  URLs. A summary needs a passing check on its exact text (sha256) before it is written.
+- **Ruling 2, no direction marker, no compass effect:** no label, badge or half-filled spoke shows a direction; the
+  summary's words carry it: "We haven't built a way to show a direction and I don't think we want to right now."
+  A person with no rung keeps an empty spoke, and a summary never counts in a voter's match.
+- **Ruling 3, a second opinion until the runner retires it:** no blind check and no human review ("No time to do a
+  blind check"). Instead every summary the Claude check passes is also checked by one GPT and one Gemini model
+  through OpenCode, and any failed sentence holds the summary. The runner retires the second opinion: "Just until we
+  feel confident with the level of quality and accuracy we're getting." The batch's agreement rate is how the runner
+  judges that.
+- **Date and source:** 2026-11-22, Chris Andrews
+  (`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md` §2, §5, §6).
+- **Scope:** every topic; gun-policy is first. The recipe is STAGE5.md section 7b.
+- **Contrast:** the Stage 5 coder and its blind check are unchanged; a summary describes, it never seats.
+
 ## Topic-scoped readings
 
 These change how a general rule reads for **one topic only**. They are not general. Do not apply them to another
