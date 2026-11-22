@@ -14,21 +14,26 @@
 -- failure. NULL = never checked (every row that exists today) and means "do not show".
 --
 -- Nothing is backfilled: no existing row has been checked, and guessing a mark is the
--- defect this column exists to prevent. Purely additive. Idempotent (IF NOT EXISTS).
+-- defect this column exists to prevent. Purely additive. The ALTER uses IF NOT EXISTS, but the migration is not
+-- re-runnable once any row is marked: its all-NULL gate fails by design.
 --
--- NO GRANT OR RLS CHANGE, and why. No migration in this directory grants on or enables
--- RLS for inform.politician_context specifically: 026_inform_schema_repair_and_candidates.sql
--- creates it, and CA_0109_default_deny_rls_essentials_inform_tm_meetings_trivia.sql lists
--- only inform.seasons for the inform schema. A table-level privilege in Postgres covers
--- every column, including one added later, and RLS is per-row, so neither needs a change
--- for a new column. (Same shape as CA_0300 evidence_tier, also added to this table with no
--- grant.) Not measured against prod here: this file was written without a database
--- connection, so the controller's dry run is the place to read the live grants.
+-- NO GRANT OR RLS CHANGE, and why. Measured by the controller on 2026-11-22: RLS is
+-- enabled on inform.politician_context; ACL anon=r, authenticated=r, ev_api=arwd,
+-- service_role full; about 36,306 rows (pg_class.reltuples). A table-level grant covers
+-- every column, including one added later, and RLS is per-row, so a new column needs
+-- neither. (Same shape as CA_0300 evidence_tier on this table.)
 --
--- SIZE NOTE for the post-verify: the "every row is NULL" read is written as
+-- Dry run 2026-11-22: DRY RUN OK. Tamper controls, each watched failing on its own gate
+-- (the first two were first shadowed by CLOSED_SEASON_IMMUTABLE and retargeted to a
+-- non-closed season row): the hex CHECK, the all-NULL gate, the column gate and the
+-- constraint gate.
+--
+-- SIZE NOTE for the post-verify (about 36,306 rows): the "every row is NULL" read is written as
 -- NOT EXISTS (... WHERE summary_sha256 IS NOT NULL), never count(*). politician_context
 -- is not on the "never aggregate" list in CLAUDE.md, but it carries a reasoning text per
--- (politician, topic, season), so an unfiltered count would read every row's heap pages.
+-- (politician, topic, season)
+-- (primary key (politician_id, topic_id, season_id) since CC_0002), so an unfiltered
+-- count would read every row's heap pages.
 -- =============================================================================
 
 BEGIN;
