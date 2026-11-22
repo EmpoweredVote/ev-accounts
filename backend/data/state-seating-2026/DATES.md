@@ -584,3 +584,148 @@ operative event, which is why those two are refused above rather than guessed.
 - ⚠ **The Lieutenant Governor and the State Treasurer are correctly NOT pending.** The Lieutenant
   Governor runs on the Governor's ticket, and the Treasurer is chosen "on joint ballot by the two
   Houses of the Legislature" (Art. VI, § 1) rather than by voters. Neither is a gap.
+
+---
+
+## CA — California · 99 offices · ✅ sourced 2026-11-22
+
+🔴🔴 **THE SECOND DECEMBER DEADLINE. CALIFORNIA'S LEGISLATURE STARTS 2026-12-07 — FIFTEEN DAYS
+OUT, 92 OFFICES.** With Maine's 2026-12-01 that is **275 of the pass's 1,162 offices due before
+2027**, and the by-size queue had both of them in the top five by accident rather than by deadline.
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| State Assembly | 75 | **2026-12-07** (Mon) | Art. IV, § 2(a)(3) |
+| State Senate | 17 | **2026-12-07** (Mon) | Art. IV, § 2(a)(3) |
+| Governor · Lt. Governor · Attorney General · Controller · Secretary of State · Treasurer | 6 | **2027-01-04** (Mon) | Art. II, § 20 |
+| Board of Equalization, District 3 | 1 | **2027-01-04** (Mon) | Art. II, § 20 |
+
+### The authority — two clauses, and the second one names the first as its exception
+
+**Cal. Const. Art. IV, § 2(a)(3)** — the legislature:
+
+> The terms of a Senator or a Member of the Assembly **shall commence on the first Monday in
+> December next following her or his election**.
+
+First Monday in December 2026 = **2026-12-07**. ⚠ Art. IV, § 3(a) puts the organising session on
+the same day — *"The Legislature shall convene in regular session at noon on the first Monday in
+December of each even-numbered year and each house shall immediately organize"* — so California is
+a **same-day** state. 🔴 **Cite § 2(a)(3), not § 3(a).**
+
+**Cal. Const. Art. II, § 20** — everything else the constitution makes elective:
+
+> **Terms of elective offices provided for by this Constitution, other than Members of the
+> Legislature, commence on the Monday after January 1 following election.** The election shall be
+> held in the last even-numbered year before the term expires.
+
+Monday after January 1, 2027 = **2027-01-04**.
+
+🟢 **This single clause dates all seven non-legislative offices, and it is the one a per-office
+search does not find.** Art. V, § 2 gives the Governor office "from the Monday after January 1
+following the election"; Art. V, § 11 puts the Lieutenant Governor, Attorney General, Controller,
+Secretary of State and Treasurer on "the same term as the Governor"; and Art. XIII, § 17 gives
+Board of Equalization members "4-year terms at gubernatorial elections" and **names no
+commencement at all**. Without Art. II, § 20 the Board of Equalization would have had to be
+refused the way Maryland's Comptroller was. With it, the Board is covered by the same words as
+everything else.
+
+▶ **Look for a constitution's GENERAL term-commencement clause before concluding an office has
+none.** Art. II, § 20 lives in the *voting* article, not in the executive one, which is why
+reading Articles IV, V and XIII in order never reaches it. It was found by a full-text search of
+the California codes, and then opened and read on its own page.
+
+### The source
+
+`https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CONS&article=IV`
+(184,845 B) and `…&article=V` (148,650 B), fetched and read 2026-11-22; Art. II, § 20 and
+Art. XIII, § 17 read at
+`…/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%2020.&article=II` and
+`…&sectionNum=SEC.%2017.&article=XIII`. All are the Legislative Counsel's own publication of
+California law.
+
+⚠ **`leginfo` 403s a third `codes_displayText` fetch from `curl` in quick succession** — the first
+two succeeded and Article XIII returned HTTP 403 at 5,643 bytes. A browser session got it
+immediately. Not a WAF block on the host; it is rate limiting, and the fix is to slow down or
+switch transport rather than to conclude the page is gone.
+
+### Basis
+
+`statute` for both rows — constitutional provisions.
+
+### Term start or oath? — **term start, both rows**
+
+Art. IV, § 2(a)(3) says "shall commence on"; Art. II, § 20 says "commence on". Both name calendar
+dates and neither conditions the start on qualification. ⚠ Art. V, § 2 adds that the Governor
+holds office "from the Monday after January 1 following the election **until a successor
+qualifies**" — that is the *end* of the predecessor's tenure, the same holdover shape as
+Massachusetts, and it does not move this term's start.
+
+### Controls — two clusters in our own data, six biennia and two cycles, computed independently
+
+🟢 **The legislature, six for six.** `essentials.office_terms` groups CA legislative term starts
+exactly on first Mondays in December:
+
+| cycle | first Monday in December | rows in our data |
+|---|---|---|
+| 2014 | 2014-12-01 | 2 |
+| 2016 | 2016-12-05 | 5 |
+| 2018 | 2018-12-03 | 3 |
+| 2020 | 2020-12-07 | 4 |
+| 2022 | 2022-12-05 | **59** |
+| 2024 | 2024-12-02 | **37** |
+
+No biennial cluster sits anywhere else. The remaining rows are `start_precision = 'year'`
+placeholders and mid-term appointments.
+
+🟢 **The executives, two for two.** Five `STATE_EXEC` rows start **2019-01-07** and one starts
+**2023-01-02** — the Monday after January 1 in each of those years.
+
+⚠ **The Board of Equalization control is PARTLY CIRCULAR and is recorded as such.** Its four rows
+(`2019-01-07` ×3, `2023-01-02` ×1) were written by `CA_0205`, whose own `source` says the day came
+"from the Wikipedia BOE membership table, the first Monday after January 1" — the Board's own
+`Board-Members-Listing.pdf` gives **years only**. So those rows do not independently confirm
+Art. II, § 20; what has changed is the direction of support. **`CA_0205` guessed a day from an
+aggregator and the guess is now backed by a clause.** The clause is the authority; the rows are
+corroboration that the state behaves as it reads.
+
+### ⚠ The `chambers.inauguration_rules` lead was wrong in general and right this cycle
+
+`SOURCING.md` flagged that three California executive rules say *"1st Monday in the new year
+following election"* and cite nothing. The constitution says **"the Monday after January 1"**.
+🔴 **Those are different rules, and they diverge whenever January 1 is itself a Monday** — in 2024
+the first Monday of January was the 1st and the Monday after January 1 was the **8th**, a week
+apart. For 2027 January 1 is a Friday and both give 2027-01-04. ▶ **A rule row that happens to
+agree this cycle is still not a citation**, which is exactly why the register says a rule row
+earns its way in by its own citation or not at all.
+
+### Carried into the row
+
+| field | Assembly + Senate | the 6 executives + BOE D3 |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2026-12-07** | **2027-01-04** |
+| `window_end_date` | NULL | NULL |
+| `basis` | `statute` | `statute` |
+| `rule_id` | `ca-const-art4-s2a3-first-monday-december` | `ca-const-art2-s20-monday-after-january-1` |
+
+### Five things the next step inherits
+
+- 🔴 **15 days.** 92 California legislative seats and 183 Maine ones both start before this pass's
+  next January date. Nothing else in the queue is close.
+- ⚠ **The Board of Equalization office is `STATE_BOARD` and has `chamber_id = NULL`.** 🔴 **An
+  INNER JOIN to `essentials.chambers` silently drops it** — that happened while measuring this
+  state and made California read as 98 offices instead of 99. The register's own
+  `WAVE_SELECTION_SQL` does not join chambers, which is why it had the right number.
+  ▶ **Join chambers LEFT, or not at all, when counting offices.**
+- ⚠ **Only District 3 of the four Board of Equalization seats is up** (Mike Gipson). Districts 1, 2
+  and 4 are mid-term. All four carry proper `06-sboe-dN` geo_ids.
+- ⚠ **Two statewide executives on the 2026 ballot are NOT in the pending set** — Superintendent of
+  Public Instruction and Insurance Commissioner. Result gaps, the same class as Massachusetts'
+  Secretary of the Commonwealth. 🔴 **Their dates would not be identical if they were added**: the
+  Superintendent is constitutional (Art. IX, § 2, *"first Monday after the first day of January"*)
+  and the **Insurance Commissioner is statutory**, so Art. II, § 20 — "provided for by this
+  Constitution" — does not reach it and it would need its own citation.
+- ⚠ **California's `STATE_EXEC` tier holds 18 office rows, most of them appointed** — Auditor,
+  Director of Industrial Relations, five Public Utilities Commissioners, Secretary for Natural
+  Resources, Secretary of Agriculture. None is elective and none is pending. **Do not date them**;
+  Art. II, § 20 reaches elective offices only.

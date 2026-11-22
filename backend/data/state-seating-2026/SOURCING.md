@@ -26,13 +26,19 @@ end and count the groups it names before deciding how many rows the state needs.
 Order below is by offices, because that is value per citation. **The nine largest states are 978 of
 the 1,162 offices.**
 
-🔴🔴 **THE ORDERING CONDITION HAS NOW FIRED. MAINE IS OVERDUE-SOON AND GOES FIRST.** This line
-used to read *"nothing here is dated yet, so nothing is overdue, and that ordering stands until a
-citation turns up a date sooner than 2027-01-01"*. Maine's citation turned up **2026-12-01** —
-the day next preceding the first Wednesday of December, nine days after it was sourced, and the
-only date in the whole pass that is not in January 2027. ▶ **Work ME before the rest of the
-by-size order, and note that its 77 missing `politicians` rows, not its date, are its critical
-path.** See [`DATES.md`](./DATES.md) § ME.
+🔴🔴 **THE ORDERING CONDITION HAS NOW FIRED TWICE, AND 275 OFFICES ARE DUE BEFORE 2027.** This
+line used to read *"nothing here is dated yet, so nothing is overdue, and that ordering stands
+until a citation turns up a date sooner than 2027-01-01"*. Two citations turned one up:
+
+| state | bodies | offices | start date | days from 2026-11-22 |
+|---|---|---|---|---|
+| **ME** | House + Senate | **183** | **2026-12-01** | **9** |
+| **CA** | Assembly + Senate | **92** | **2026-12-07** | **15** |
+
+▶ **Work these two before the rest of the by-size order.** Everything else sourced so far starts
+in January 2027. ⚠ **Maine's critical path is not its date** — it is 77 missing `politicians`
+rows; California's 92 are all re-elections or recorded winners with records. See
+[`DATES.md`](./DATES.md).
 
 ## The rules that will bite in this particular task
 
@@ -63,7 +69,21 @@ path.** See [`DATES.md`](./DATES.md) § ME.
   ▶ **When a state names no day, say so and refuse the office.** The honest row is a `published`
   qualification date recorded when it happens. 🔴 Never borrow a sibling officer's date, and never
   `estimated` — the seating migration's P4 refuses it.
+- 🟢🟢 **LOOK FOR THE CONSTITUTION'S GENERAL TERM-COMMENCEMENT CLAUSE BEFORE DECIDING AN OFFICE
+  HAS NONE.** California's `art. II § 20` — *"Terms of elective offices provided for by this
+  Constitution, other than Members of the Legislature, commence on the Monday after January 1
+  following election"* — dates the Governor, the five other executives **and** the Board of
+  Equalization, whose own article (XIII § 17) names no commencement at all. It sits in the
+  **voting** article, so reading Articles IV, V and XIII in order never reaches it. ▶ A full-text
+  search of the state's codes finds this class of clause; then open the section and read it.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
+- ⚠ **COUNT OFFICES WITHOUT AN INNER JOIN TO `essentials.chambers`.** `offices.chamber_id` is
+  nullable and California's Board of Equalization seats carry NULL, so an inner join silently drops
+  them — it made California read as 98 offices instead of 99 mid-measurement. `WAVE_SELECTION_SQL`
+  does not join chambers at all, which is why the register had the right number.
+- ⚠ **`leginfo.legislature.ca.gov` RATE-LIMITS `curl` AT ABOUT THREE FETCHES**, answering HTTP 403
+  with a 5,643-byte body. A browser session gets the same page immediately. Slow down or switch
+  transport; do not conclude the page is gone.
 - 🔴 **`mgaleg.maryland.gov` RETURNS HTTP 200 WITH A "NotFound" PAGE FOR ANY UNKNOWN PATH**, body
   always **57,164 bytes**. Three different URLs "succeeded" that way before a browser showed the
   redirect to `/mgawebsite/Error/NotFound?error=404`. Assert on content, not status.
@@ -174,4 +194,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor | ⏳ | | |
 | WA | ✅ [`DATES.md`](./DATES.md) — **2027-01-11**, one date; the authority is `RCW 44.04.021`, not the constitution | ⏳ | | |
 | MD | ⚠️ [`DATES.md`](./DATES.md) — **115 of 117**: 2027-01-13 legislature, 2027-01-20 Governor. 🔴 **AG and Comptroller REFUSED** — the constitution fixes no day for them | ⏳ | | |
+| CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |
 | *(nothing else yet)* | | | | |
