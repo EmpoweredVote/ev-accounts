@@ -311,3 +311,122 @@ the oath (2026-12-02), because the next reader will meet the convening date firs
   anything citable.
 - ⚠ **The Governor's 2027-01-06 is the same day as Massachusetts' legislature.** Two different
   clauses in two states; the coincidence means nothing and the rows must not be shared.
+
+---
+
+## WA — Washington · 118 offices · ✅ sourced 2026-11-22
+
+**One date, one citation, and it is a STATUTE rather than the constitution.**
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| House of Representatives | 95 pending (of 98) | **2027-01-11** (Mon) | RCW 44.04.021 |
+| Senate | 23 pending (of 49) | **2027-01-11** (Mon) | RCW 44.04.021 |
+
+### 🔴 The constitution does not answer this, and reading only the constitution would leave Washington undatable
+
+Wash. Const. Art. II fixes the **length** of a legislative term and never its start:
+
+> **SECTION 5 ELECTIONS, WHEN TO BE HELD.** … members of the house of representatives shall be
+> elected biennially and their term of office shall be two years …
+>
+> **SECTION 6 ELECTION AND TERM OF OFFICE OF SENATORS.** … They shall be elected for the term of
+> four years, one-half of their number retiring every two years.
+
+⚠ **Art. III, § 4 DOES name a commencement date — for the executives, not the legislature**: *"The
+terms of all officers named in section one of this article shall commence on the second Monday in
+January after their election until otherwise provided by law."* It is the same day, which is
+exactly what makes it dangerous: **citing Art. III § 4 for a legislator gives the right answer from
+the wrong provision**, and the provision is about offices this wave does not touch.
+
+### The authority
+
+**RCW 44.04.021 — Commencement of terms of office**, quoted in full:
+
+> The regular term of office of each senator and representative shall commence on the second Monday
+> in January following the date of election.
+>
+> [ 1987 c 13 § 1; 1981 c 288 § 68. Formerly RCW 44.07B.870. ]
+
+Second Monday in January 2027 = **2027-01-11**.
+
+⚠ **The word "regular" is load-bearing and is why the existing data has outliers** — see the
+control below. A term filled by appointment is not a regular term and does not start on this day.
+
+### The source
+
+`https://app.leg.wa.gov/RCW/default.aspx?cite=44.04.021` — the Code Reviser's own publication of
+the Revised Code of Washington, fetched and read 2026-11-22 (HTTP 200, 107,820 bytes). The chapter
+listing that led to it is `?cite=44.04`. The constitutional sections above were read from
+`https://leg.wa.gov/media/o3fg0ey1/washington-state-constitution.pdf` (HTTP 200,
+`application/pdf`, 1,939,842 bytes, the Code Reviser's current arrangement, footer-dated
+2025-12-11).
+
+### Basis
+
+`statute`.
+
+### Term start or oath? — **term start, a calendar date, and the oath falls on the same day**
+
+RCW 44.04.021 names a day of the calendar and attaches no condition to it. The oath is separate
+(Wash. Const. Art. I, § 6 governs only the *mode* of administering one).
+
+⚠ **Washington's session convenes on the SAME day** — RCW 44.04.010: *"Regular sessions of the
+legislature shall be held annually, commencing on the second Monday of January."* So for
+Washington the two events coincide, as they did for Wisconsin in `CC_0462`. 🔴 **That coincidence
+is not a reason to cite the session statute.** It is 44.04.021 that says when the term starts;
+44.04.010 would still be true if the term began elsewhere, and Maine is the proof that the two can
+be different days.
+
+### Control — seven biennia of the Legislature's own member service agree, and nobody consulted this statute to write them
+
+`essentials.office_terms` holds Washington legislative terms sourced from
+`wslwebservices.leg.wa.gov SponsorService`, the Legislature's own member web service. Grouping them
+by `term_start` puts every biennial cluster **exactly** on the second Monday in January, computed
+independently:
+
+| cycle | second Monday in January | rows in our data on that date |
+|---|---|---|
+| 2013 | 2013-01-14 | 5 |
+| 2015 | 2015-01-12 | 6 |
+| 2017 | 2017-01-09 | 7 |
+| 2019 | 2019-01-14 | 12 |
+| 2021 | 2021-01-11 | 16 |
+| 2023 | 2023-01-09 | 23 |
+| 2025 | 2025-01-13 | 25 |
+
+🟢 **Seven for seven, across 94 rows, with no biennial cluster anywhere else.**
+
+⚠ **The off-dates in that table are not counter-evidence, and checking why matters.** Rows at
+2024-12-11, 2025-01-07, 2025-01-21, 2023-08-28, 2022-12-09, 2021-11-02, 2020-05-13 and so on are
+**appointments to vacancies**, which in Washington are made by county legislative authorities at
+any time of year. RCW 44.04.021 governs the **regular** term only, so these are outside it by the
+statute's own words rather than in conflict with it. A run of dates scattered through the calendar
+beside a hard biennial spine is the signature of exactly that.
+
+### Carried into the row
+
+| field | House + Senate |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-11** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `wa-rcw-44-04-021-second-monday-january` |
+
+### Three things the next step inherits
+
+- ⚠ **23 of Washington's 49 Senate seats are pending, and that is correct.** The Senate is
+  staggered — "one-half of their number retiring every two years" (Art. II § 6) — so the other 26
+  are mid-term and must not be swept in. 🔴 **This is NOT a Ruling A situation**: each pending
+  Senate office carries exactly one winner. Ruling A's refusal is about a multi-seat *race*
+  attaching several winners to one office row; a staggered chamber with one winner per office is
+  ordinary.
+- ⚠ **95 of 98 House offices are pending.** Three carry no recorded winner. No Washington state
+  office of any tier is flagged vacant.
+- ⚠ **Washington's 9 STATE_EXEC offices are not in this pass** — none was on the 2026 ballot. ⚠ But
+  our existing data for them disagrees with Art. III § 4 by two days: two rows read `2025-01-15`
+  (backfilled by migration 1459 as "first day in office") where the second Monday of January 2025
+  was `2025-01-13`, and one row already reads `2025-01-13`. **Known, out of scope here, and worth
+  re-sourcing when Washington's executives next come up** — do not "fix" one of them without
+  re-sourcing it, which is the standing rule for the `vacant_since` inconsistencies in `CLAUDE.md`.

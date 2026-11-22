@@ -45,6 +45,12 @@ path.** See [`DATES.md`](./DATES.md) § ME.
 - 🔴 **`chambers.inauguration_rules` is a lead, not a source** — 15 chambers carry it and the
   quality is uneven. The ones that already compute a 2026 date are marked ▶ below; the ones that
   name no authority are marked ⚠ and must be re-sourced.
+- 🔴 **THE CONSTITUTION MAY NOT CARRY THE ANSWER AT ALL — AND THE NEAREST PROVISION THAT DOES CAN
+  BE THE WRONG ONE.** Washington's constitution fixes only the *length* of a legislative term
+  (Art. II §§ 5–6). The start is `RCW 44.04.021`. ⚠ Art. III § 4 *does* name "the second Monday in
+  January" — **for the executives** — and it is the same day, so citing it for a legislator gives
+  the right date from a provision about other offices. ▶ **When a constitution names a term length
+  and no start, go looking for the statute; do not reach for the nearest date in the document.**
 - 🔴 **The chamber's own roster and the legislature's own publication outrank every aggregator.**
   `api.iga.in.gov` is what `CA_0396` used for Indiana. Prefer the state's own site for its
   constitution over any mirror.
@@ -140,4 +146,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | IN — House | ✅ | ✅ `CC_0463` | — | ✅ `CC_0464` (3) |
 | MA | ✅ [`DATES.md`](./DATES.md) — **three dates**, 2027-01-06 / -01-07 / -01-20 | ⏳ | | |
 | ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor | ⏳ | | |
+| WA | ✅ [`DATES.md`](./DATES.md) — **2027-01-11**, one date; the authority is `RCW 44.04.021`, not the constitution | ⏳ | | |
 | *(nothing else yet)* | | | | |
