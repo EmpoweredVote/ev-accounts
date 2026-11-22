@@ -174,7 +174,7 @@ export function checkerPrompt(
   findings: Finding[],
   outcome: Outcome,
   sides: string | null,
-  opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string } = {},
+  opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string; outFile?: string } = {},
 ): string {
   const sentences = splitRendered(summary.text);
   if (sentences.length !== summary.cites.length) {
@@ -213,6 +213,7 @@ export function checkerPrompt(
     POLITICIAN_ID: summary.politician_id,
     TEXT_SHA256: summary.sha256,
     FAMILY: opts.family ?? 'claude',
+    OUT_FILE: opts.outFile ?? '(none given: reply with the JSON only)',
   });
 }
 

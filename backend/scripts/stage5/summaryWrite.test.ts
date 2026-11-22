@@ -172,6 +172,30 @@ describe('summary-write', () => {
     expect(b.problems.filter((p) => /bad\.json|wrongfam\.json/.test(p))).toHaveLength(2);
   });
 
+  it('accepts a template-shaped Claude reply with no checker or at, filling both', () => {
+    const { dir } = setup({ skipClaude: ['p1'] });
+    const { checker: _c, at: _a, ...bare } = check('p1', shownSha256(mkText('p1')), 'claude');
+    writeFileSync(join(dir, 'claude-checks', '1.json'), JSON.stringify(bare));
+    const b = loadBatch(dir);
+    expect(b.problems).toEqual([]);
+    const c = b.checks.find((x) => x.family === 'claude' && x.politician_id === 'p1')!;
+    expect(c.checker).toBe('claude-subagent');
+    expect(Number.isNaN(Date.parse(c.at))).toBe(false);
+  });
+
+  it('still rejects a bare reply with family gpt or a bad sentence verdict', () => {
+    const { dir } = setup({ skipClaude: ['p1', 'p2'] });
+    const sha = shownSha256(mkText('p1'));
+    const strip = (o: any) => { const { checker: _c, at: _a, ...r } = o; return r; };
+    writeFileSync(join(dir, 'claude-checks', 'a.json'), JSON.stringify(strip(check('p1', sha, 'gpt'))));
+    const badV = strip(check('p2', shownSha256(mkText('p2')), 'claude'));
+    badV.sentences[0].verdict = 'maybe';
+    writeFileSync(join(dir, 'claude-checks', 'b.json'), JSON.stringify(badV));
+    const b = loadBatch(dir);
+    expect(b.problems.filter((p) => /a\.json|b\.json/.test(p))).toHaveLength(2);
+    expect(b.checks.some((x) => x.family === 'claude' && ['p1', 'p2'].includes(x.politician_id))).toBe(false);
+  });
+
   it('writes the batch agreement rate', () => {
     const { dir } = setup({ fails: { p2: 'gpt' } });
     const b = loadBatch(dir);

@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import type { Finding } from '../lib/sourceStore.js';
 import { assemble } from './summary-assemble.js';
@@ -61,6 +61,14 @@ describe('assemble', () => {
     const checkers = readdirSync(join(batchDir, 'checker'));
     expect(checkers).toEqual(['1.md']);
     expect(readFileSync(join(batchDir, 'checker', '1.md'), 'utf8')).toContain(s[0].sha256);
+  });
+
+  it('each checker file names the absolute path its Claude checker writes to', () => {
+    const { batchDir, run } = world({ '1.json': [draft(1)] });
+    run();
+    const md = readFileSync(join(batchDir, 'checker', '1.md'), 'utf8');
+    expect(md).toContain(join(resolve(batchDir), 'claude-checks', '1.json'));
+    expect(md).not.toMatch(/\{\{/);
   });
 
   it('refuses an unknown person and invalid JSON without crashing, and accepts a single-object file', () => {

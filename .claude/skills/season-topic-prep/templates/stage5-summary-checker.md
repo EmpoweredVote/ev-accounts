@@ -45,7 +45,7 @@ finding or the words at fault; for a pass, say what supports it.
 
 ## Output
 
-Reply with JSON only, exactly this shape. `index` counts sentences from 0, in the order shown. `verdict` is `pass`
+Write your JSON to the path given below and write nothing else (if you cannot write files, reply with the JSON only), exactly this shape. `index` counts sentences from 0, in the order shown. `verdict` is `pass`
 only when every sentence passes.
 
 ```json
@@ -58,3 +58,5 @@ only when every sentence passes.
   "verdict": "pass"
 }
 ```
+
+Path to write your JSON to: {{OUT_FILE}}

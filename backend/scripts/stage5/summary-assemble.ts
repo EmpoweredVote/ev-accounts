@@ -12,7 +12,7 @@
  * Exit 0 always; it prints the counts. A bad draft never stops the run.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Finding } from '../lib/sourceStore.js';
 import { Stage5CodeSchema } from '../lib/stage5Code.js';
@@ -78,7 +78,7 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
     const person = people.get(id)!;
     const summary = { politician_id: id, topic_key: profile.topic_key, text: c.text, sha256: c.sha256, sources: c.sources, cites: c.cites };
     try {
-      prompts.push(checkerPrompt(summary, c.findings, { outcome: person.outcome, ...(person.value != null ? { value: person.value } : {}) }, profile.sides, { personName: person.name, topicName: profile.topic_name }));
+      prompts.push(checkerPrompt(summary, c.findings, { outcome: person.outcome, ...(person.value != null ? { value: person.value } : {}) }, profile.sides, { personName: person.name, topicName: profile.topic_name, outFile: join(resolve(dir), 'claude-checks', `${prompts.length + 1}.json`) }));
     } catch (e) { refuse('(assembly)', c.draft, [`could not build the checker prompt: ${(e as Error).message}`]); continue; }
     lines.push(JSON.stringify(summary));
   }

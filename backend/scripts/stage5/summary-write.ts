@@ -6,7 +6,7 @@
  *   npx tsx scripts/stage5/summary-write.ts --profile <stage5>/topic-profile.json --batch <name> [--apply --yes "<runner's words>"]
  *
  * The check set for each summary is `<batch>/checks.jsonl` (the GPT and Gemini checks) plus one JSON file per Claude
- * checker in `<batch>/claude-checks/` (an object or an array; each must pass SummaryCheckSchema and be family
+ * checker in `<batch>/claude-checks/` (an object or an array; a missing `checker` is filled with "claude-subagent" and a missing `at` with the file's mtime; each must pass SummaryCheckSchema and be family
  * 'claude'). Required families: claude, gpt, gemini (`summaryVerdict`). Before a summary is trusted, its text is
  * re-hashed with `shownSha256`; a stored sha256 that differs refuses the row.
  *
@@ -18,7 +18,7 @@
  * refused, never inserted (a summary never creates a seat or a blank).
  * Exit 2: bad arguments. Exit 1: refused.
  */
-import { appendFileSync, existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { appendFileSync, existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDraftSeason } from '../lib/stage5Write.js';
@@ -68,7 +68,12 @@ export function loadBatch(dir: string): Batch {
     for (const f of readdirSync(cdir).filter((n) => n.endsWith('.json')).sort()) {
       let v: unknown;
       try { v = JSON.parse(readFileSync(join(cdir, f), 'utf8')); } catch { problems.push(`claude-checks/${f}: not JSON`); continue; }
-      for (const item of Array.isArray(v) ? v : [v]) {
+      // The checker template gives no `checker` or `at`; fill those two (never `family`) before validating.
+      const mtime = statSync(join(cdir, f)).mtime.toISOString();
+      for (const raw of Array.isArray(v) ? v : [v]) {
+        const item = raw && typeof raw === 'object' && !Array.isArray(raw)
+          ? { ...(raw as Record<string, unknown>), checker: (raw as any).checker ?? 'claude-subagent', at: (raw as any).at ?? mtime }
+          : raw;
         const before = checks.length;
         const c = take(item, `claude-checks/${f}`);
         if (c && c.family !== 'claude') { checks.length = before; problems.push(`claude-checks/${f}: family is ${c.family}, not claude`); }
