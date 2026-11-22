@@ -187,7 +187,8 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 Maine: **no dump vote is placed** either (`record_is_the_floor`). The dump labels members "FAIRCLOTH of
   Bangor" and links some to the wrong person (MILLETT of Waterford, 1,162 votes, to the Cape Elizabeth member), and its
   bill and vote pages are under `/LawMakerWeb/`, which robots.txt disallows. The fetch reads each LD's roll-call list on
-  legislature.maine.gov (House: `/house/Documents/RollCalls`; Senate: `/<132nd>-roll-calls`) and each floor vote's PDF,
+  legislature.maine.gov (House: `/house/Documents/RollCalls`; Senate: `/<132nd>-roll-calls`, the 129th's
+  `/129th-senate-roll-calls`) and each floor vote's PDF,
   pairing each Y/N/X mark with its member by position (`meQuestionIsRead`: enactment, passage to be engrossed,
   final passage, a veto vote, and the vote to accept the **Majority** report, Ought to Pass or Ought Not to Pass,
   `meMajorityReport`; a Minority, lettered or unanimous report, a referral, tabling or indefinite postponement is a
@@ -200,7 +201,10 @@ the bills under `rollcalls_from_legislature`.
   until it is added) reads no Senate vote. The 128th to 130th House PDFs print surnames only: each is named from our
   Open States roster of that Legislature (the same file) as the one member of that family seated on the day, and a
   surname two seated members share, or one the roster lacks, is kept as printed with no line (the fetch prints how
-  many). The 128th's and 129th's Senate lists are laid out otherwise and are not read.
+  many); a name the PDF prints that Open States lacks is added from the House's own member profile (`HOUSE_ALSO`).
+  The 128th's Senate list links every row only to a /LawMakerWeb page, and the 130th's most rows: each such vote is
+  reported as not read (`meSenateBlockedRows`), never opened. The Legislative Record on lldc.mainelegislature.org
+  prints those votes, and the 128th House past roll call 476, but has no reader yet.
 - 🔴 Oregon: **no dump vote is placed** either (`record_is_the_floor`). The dump's floor votes agree with the record
   (0 of 1,320 member votes differ), but each points at the bill's Overview page, which holds every vote of the bill, so
   none can be cited as one vote. The Legislature publishes an Open Data Service (OData, no key, no robots.txt) whose
@@ -309,7 +313,7 @@ roll-call pages.
 | Nevada | 79th to 83rd session (2017-2025, regular sessions; the scan found no special-session bill) | 76 floor roll calls of a 78-bill dry batch, 0 refused; 39 (2019, 2021) have no dump copy; of 37 with one, 1 settled by the tally; 0 tally and 0 of 1,134 member-vote differences (13 dump labels read only after repairing "OâNeill"); see `backend/data/legislatures/nv.json` (2026-11-19) |
 | Oregon | 2017R1 to 2026R1 (regular sessions; the scan found no special-session bill); 2015 SB 941 read live only | 33 floor roll calls of a 184-bill dry batch, 0 refused, 15 votes on a motion skipped; 3 have no dump copy; of 30 with one, 6 settled by the question or the tally; 0 tally and 0 of 1,320 member-vote differences (5 members the dump names otherwise: a short given name or a former name); see `backend/data/legislatures/or.json` (2026-11-20) |
 | California | 2015-2016 to 2025-2026 (regular sessions; the scan found no special-session bill) | 890 floor roll calls of a 577-bill dry batch, read from the PUBINFO copy on this machine, 0 refused, 0 network requests; 21 (all 2017-2018) have no dump copy; of 869 with one, 7 settled among same-moment votes by the exact member votes; 0 tally and 0 of 53,359 member-vote differences; "No vote recorded" counted from the member rows (the summary's abstain figure differs on 357 of 43,971 floor votes); see `backend/data/legislatures/ca.json` (2026-11-20) |
-| Maine | House 128th to 132nd, Senate 130th to 132nd Legislature (2017-2026); 128th-129th Senate not read (another layout) | 95 floor roll calls of a 130-bill dry batch (House 5, 6, 10, 14, 22 for the 128th to 132nd; Senate 17 and 21 for the 131st and 132nd; the batch held no 130th Senate floor vote), Majority report votes counted as on the bill; 5 refused by the PDF (4 motions, 1 with no tally); 3 House votes of the 128th have no PDF; 42 of 3,169 member votes of the 128th-130th House kept as printed (21 a surname two seated members share); 93 with a dump copy; 6 of 9,603 member votes differ, all paired senators (the dump counts a pair as the way each would have voted), and 2 tallies differ by those pairs; see `backend/data/legislatures/me.json` (2026-11-21) |
+| Maine | House 128th to 132nd, Senate 129th to 132nd Legislature (2017-2026); 128th Senate and most of the 130th's not read (their list links only /LawMakerWeb pages; each vote reported) | 101 floor roll calls of a 130-bill dry batch (House 5, 6, 10, 14, 22 for the 128th to 132nd; Senate 6, 17 and 21 for the 129th, 131st and 132nd), Majority report votes counted as on the bill; 5 refused by the PDF (4 motions, 1 with no tally); 3 House votes of the 128th have no PDF, 14 Senate votes (128th 3, 130th 11) link no PDF; 21 of 3,169 member votes of the 128th-130th House kept as printed (a surname two seated members share); 99 with a dump copy; 6 of 9,819 member votes differ, all paired senators (the dump counts a pair as the way each would have voted), and 2 tallies differ by those pairs; a separate 130th sample read 5 Senate roll calls; see `backend/data/legislatures/me.json` (2026-11-21) |
 | Mississippi | 2018 to 2026 (2017 holds no bills; 20171E only resolutions) | 67 floor roll calls of a 289-bill dry batch, all with a dump copy: 2 dump tallies short by one vote (the name before a total that runs over a line), 8 member votes missing from the dump, 0 of 5,975 member-vote differences; 5,919 of 5,983 record votes linked to a person (four members Open States does not hold); see `backend/data/legislatures/ms.json` (2026-11-17) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its

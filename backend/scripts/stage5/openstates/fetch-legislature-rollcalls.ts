@@ -89,14 +89,15 @@ export function meHouseListUrl(session: string): string | null {
 }
 
 /**
- * The House's PDF list and, from the 130th on, the Senate's roll-call list. The Senate's members are named from the saved
- * list of the Legislature (maineLegislatureMembers.ts), never the live page. The 128th's and 129th's Senate lists
- * (/128th-roll-calls, /129th-senate-roll-calls) and PDFs are laid out differently and are not read.
+ * The House's PDF list and the Senate's roll-call list. The Senate's members are named from the saved list of the
+ * Legislature (maineLegislatureMembers.ts), never the live page. The 129th's list is /129th-senate-roll-calls, the others
+ * /Nth-roll-calls. The 128th's rows link only /LawMakerWeb pages, which robots.txt closes: each is counted as not read.
  */
-export const ME_SENATE_FROM = 130;
+export const ME_SENATE_FROM = 128;
 export function meFollow(_list: string, session: string): string[] {
   const pdfs = `${ME_SITE}/house/Documents/RollCallPDF?Legislature=${session}`;
-  return Number(session) >= ME_SENATE_FROM ? [pdfs, `${ME_SITE}/${meOrdinal(Number(session))}-roll-calls`] : [pdfs];
+  const n = Number(session);
+  return n >= ME_SENATE_FROM ? [pdfs, `${ME_SITE}/${meOrdinal(n)}${n === 129 ? '-senate' : ''}-roll-calls`] : [pdfs];
 }
 
 /** The House list's rows: roll call, paper ("LD 1349", "HO 1") and motion. Throws when the list is not this Legislature's. */
@@ -146,9 +147,10 @@ export function meHousePdfs(html: string, session: string): Map<number, string |
  * look: the PDF's own bill and question decide.
  */
 export function meSenateRows(html: string, session: string): { rc: number; files: string[]; papers: string[]; motion: string }[] {
-  if (!new RegExp(`<h1>${meOrdinal(Number(session))} Roll Calls</h1>`).test(html)) throw new Error(`Maine: not the Senate's roll-call list of the ${meOrdinal(Number(session))}`);
+  if (!new RegExp(`<h1>${meOrdinal(Number(session))} (?:Senate )?Roll Calls</h1>`).test(html)) throw new Error(`Maine: not the Senate's roll-call list of the ${meOrdinal(Number(session))}`);
   const flat = html.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
-  const FILE = /href="(\/uploads\/visual_edit\/roll-call-([1-9]\d*)[^"]*\.pdf)"/g;
+  // the 129th's first files are "rc-1.pdf"
+  const FILE = /href="(\/uploads\/visual_edit\/(?:roll-call|rc)-([1-9]\d*)[^"]*\.pdf)"/g;
   const everywhere = new Set([...flat.matchAll(FILE)].map((m) => m[1]));
   const out: { rc: number; files: string[]; papers: string[]; motion: string }[] = [];
   const seen = new Set<string>();
@@ -171,7 +173,7 @@ export function meSenateRows(html: string, session: string): { rc: number; files
       out.push({ rc: Number(links.find((m) => m.index === at)![2]), files: files.map((f) => `${ME_SITE}${f}`), papers: [...papers], motion });
     });
   }
-  if (!out.length) throw new Error('Maine: the Senate list holds no roll call');
+  if (!out.length && !meSenateBlockedRows(html).length) throw new Error('Maine: the Senate list holds no roll call');
   if (seen.size !== everywhere.size) throw new Error(`Maine Senate: the list links ${everywhere.size} roll-call files and ${seen.size} are in a row`);
   return out;
 }
@@ -188,6 +190,32 @@ export function meListMotionIsOnTheBill(motion: string): boolean {
   return meQuestionIsRead(m) || majority || /^PTBE(?:-A)?$|^Emergency[- ]Enactment$|^Enact-Emer\b|^Veto Override$|^Final Enactment$/i.test(m);
 }
 
+/**
+ * The Senate list's rows that link no PDF, only a /LawMakerWeb/rollcall.asp page (most of the 130th's rows: robots.txt
+ * closes /LawMakerWeb to us, so they are never opened). Kept so the bill's report counts them as not read, not as absent.
+ */
+export function meSenateBlockedRows(html: string): { rc: number; papers: string[]; motion: string }[] {
+  const flat = html.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
+  const out: { rc: number; papers: string[]; motion: string }[] = [];
+  for (const para of flat.split(/<(?:p\b[^>]*|div class="bill-title")>/).slice(1).map((x) => x.split(/<\/(?:p|div)>/)[0])) {
+    if (/\/uploads\/visual_edit\/(?:roll-call|rc)-/.test(para)) continue;
+    // several rows may share one <p>: a row runs from its link to the next row's link
+    // (a row may link its vote twice, number and paper: the 128th's #10). Any prefix: the page's links are typed by hand,
+    // relative, absolute or broken ("rhttp://legislature...", 128th #37), and these rows are counted, never opened
+    const links = [...para.matchAll(/<a [^>]*href="[^"]*\/LawMakerWeb\/rollcall\.asp[^"]*serialnumber=(\d+)[^"]*"/gi)];
+    const starts = links.filter((m, i) => i === 0 || m[1] !== links[i - 1][1]).map((m) => m.index!);
+    starts.forEach((at, i) => {
+      const rest = meText(para.slice(at, starts[i + 1] ?? para.length));
+      // "# 430 (6-17-2021) LD 498"; the 128th's "Roll Call Number 299 (06/13/17) LD 1418", typed by hand ("number 322", "Number #676")
+      const m = /^(?:Roll Call [Nn]umber\s*)?#?\s*(\d+)\s*\([\d/-]+\)\s*((?:LD|SP|HP|SC|SO|HO|HC|SA) ?\d+)\b/.exec(rest);
+      if (!m) throw new Error(`Maine Senate: a /LawMakerWeb row the reader cannot read: ${rest.slice(0, 80)}`);
+      const motion = /\(Motion:\s*([^)]*)\)\s*$/.exec(rest)?.[1].trim() ?? '';
+      out.push({ rc: Number(m[1]), papers: [m[2].replace(/^([A-Z]+) ?/, '$1 ')], motion });
+    });
+  }
+  return out;
+}
+
 /** Every floor roll call on the bill, House and Senate, from the three lists; motions are counted. */
 export function meReadVotes(houseList: string, session: string, bill: string, more: string[] = []): BillIndex {
   const b = ME_BILL.exec(bill.replace(/\s+/g, ' ').trim());
@@ -200,7 +228,7 @@ export function meReadVotes(houseList: string, session: string, bill: string, mo
   const floor: IndexedVote[] = [];
   const motions: string[] = [];
   const unread: string[] = [];
-  if (!withSenate) unread.push(`Senate: the ${meOrdinal(Number(session))} Senate's roll-call list and PDFs are laid out differently and are not read`);
+  if (!withSenate) unread.push(`Senate: the ${meOrdinal(Number(session))} Senate's roll-call list is not read`);
   for (const row of meHouseRows(houseList, session).filter((x) => x.paper === `LD ${ld}`)) {
     if (row.motion && !meListMotionIsOnTheBill(row.motion)) { motions.push(`House ${row.rc} ${row.motion}`); continue; }
     const f = pdfs.get(row.rc);
@@ -217,6 +245,10 @@ export function meReadVotes(houseList: string, session: string, bill: string, mo
     sent.add(row.files[0]);
     if (!ME_SENATE_LISTS[Number(session)]) { unread.push(`Senate ${row.rc} ${row.motion}: no Senate member list of the ${meOrdinal(Number(session))} Legislature is saved, so its surnames name no one`); continue; }
     floor.push({ url: `${row.files[0]}#LD${ld}`, motion: row.motion, tally: null });
+  }
+  for (const row of withSenate ? meSenateBlockedRows(more[1]).filter((x) => x.papers.includes(`LD ${ld}`)) : []) {
+    if (row.motion && !meListMotionIsOnTheBill(row.motion)) { motions.push(`Senate ${row.rc} ${row.motion}`); continue; }
+    unread.push(`Senate ${row.rc} ${row.motion}: the list links no PDF, only a /LawMakerWeb page, which robots.txt closes`);
   }
   return { floor, committee: 0, voice: 0, motion: motions.length, motions, unread };
 }

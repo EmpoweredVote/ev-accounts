@@ -2297,7 +2297,9 @@ describe('state roll-call pages — California lines', () => {
 // Saved 2026-11-19 and 2026-11-20 from legislature.maine.gov (allowed paths; robots.txt disallows /LawMakerWeb only):
 // House and Senate roll-call PDFs, kept as the positioned runs the adapter hands on (pdfItemsBody), and one House PDF as
 // the file itself; 2026-11-21, the 128th and 129th House PDFs and four 131st Senate PDFs (a pair, a pair marked P and P*,
-// a veto vote, a question stored in pieces). No fixture prints a party. Senators are named from the saved member lists
+// a veto vote, a question stored in pieces), and two 130th Senate PDFs (capital headings, a starred pair explained in a
+// footnote, "Mr. President", "Sanborn H.") and a 130th House veto vote ("ROLL CALL NO. 448V"); two 129th Senate PDFs (the
+// session spelled out, curled quotes, "Sanborn L. excused.", "Excused."). No fixture prints a party. Senators are named from the saved member lists
 // and the 128th-130th House from the saved rosters (maineLegislatureMembers.ts), which a test may change and restore.
 const meFix = (name: string): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${name}`, import.meta.url)), 'utf8').replace(/\n$/, '');
 const ME_H131 = 'https://legislature.maine.gov/house/Repository/Documents/131/RollCalls/020.012.131R1.pdf#LD32';
@@ -2315,10 +2317,16 @@ const ME_S634 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-634
 const ME_S454 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-454-ld-1138.pdf#LD1138';
 const ME_S184 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-184-ld-16.pdf#LD16';
 const ME_HMIN = 'https://legislature.maine.gov/house/Repository/Documents/131/RollCalls/012.051.131S1.pdf#LD541';
+const ME_S807 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-807-ld-1919.pdf#LD1919';
+const ME_S055 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-55-ld-102-1.pdf#LD102';
+const ME_H448 = 'https://legislature.maine.gov/house/Repository/Documents/130/RollCalls/002.448.130R2.pdf#LD151';
+const ME_S345 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-345-ld-1811.pdf#LD1811';
+const ME_S154 = 'https://legislature.maine.gov/uploads/visual_edit/roll-call-154-ld-121.pdf#LD121';
 const meBody: Record<string, string> = { [ME_H131]: 'me-131-house-012', [ME_H132]: 'me-132-house-574', [ME_H130]: 'me-130-house-118', [ME_H130M]: 'me-130-house-002', [ME_HMOT]: 'me-132-house-127',
   [ME_S634]: 'me-132-senate-634', [ME_S454]: 'me-132-senate-454', [ME_S184]: 'me-132-senate-184', [ME_HMIN]: 'me-131-house-051',
   [ME_H129]: 'me-129-house-204', [ME_H128]: 'me-128-house-245', [ME_S760]: 'me-131-senate-760', [ME_S759]: 'me-131-senate-759',
-  [ME_S797]: 'me-131-senate-797', [ME_S783]: 'me-131-senate-783' };
+  [ME_S797]: 'me-131-senate-797', [ME_S783]: 'me-131-senate-783', [ME_S807]: 'me-130-senate-807', [ME_S055]: 'me-130-senate-055',
+  [ME_H448]: 'me-130-house-448', [ME_S345]: 'me-129-senate-345', [ME_S154]: 'me-129-senate-154' };
 const meDocs = (url: string, body = meFix(`${meBody[url]}.txt`)): string[] => [body];
 /** Run with one saved Senate list or House roster changed (or removed, with null), restoring it after. */
 const meWith = <T,>(saved: Record<number, T>, legislature: number, value: T | null, fn: () => void): void => {
@@ -2525,6 +2533,65 @@ describe('state roll-call pages — reading Maine', () => {
     }
   });
 
+  it('reads a 130th Senate vote: capital headings, a starred pair with its footnote, the President by office, a surname with an initial', () => {
+    const t = meRender(ME_S807);
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maine Senate roll call 807 (130th Legislature, Second Regular Session), LD 1919, 2022-04-25.',
+      'Question: ENACTMENT', 'Yea 15; Nay 13; Absent 0; Excused 4.']);
+    expect(t).toMatch(/^Paired \(2\): Stacy Brenner; Heather B\. Sanborn$/m);
+    expect(t).toMatch(/^Yea \(15\):.*; Mr\. President(;|$)/m);
+    // the President is printed by office: kept as printed, so no line names him
+    expect(meUnnamed(ME_S807)).toEqual(['Mr. President: the vote names the President by office, not by name']);
+    // "Sanborn H.": the surname and the initial must both fit (the 130th's list holds one Sanborn, Heather)
+    expect(meRender(ME_S055)).toMatch(/Heather B\. Sanborn/);
+    expect(meUnnamed(ME_S055)).toEqual(['Mr. President: the vote names the President by office, not by name']);
+    expect(meUnnamed(ME_S055, meTamper(ME_S055, 'Sanborn H.', 'Sanborn Q.'))).toContain('Sanborn Q.: no senator of the list has it');
+    // a House veto vote prints its number with a V
+    expect(meRender(ME_H448).split('\n')[0]).toMatch(/^Maine House roll call 448 \(130th Legislature, Second Regular Session\), LD 151, 2022-01-26\.$/);
+  });
+
+  it('reads a 129th Senate vote: the session spelled out, a Majority report in curled quotes, an initial in the footer', () => {
+    const t = meRender(ME_S345);
+    expect(t.split('\n')[0]).toBe('Maine Senate roll call 345 (129th Legislature, First Regular Session), LD 1811, 2019-06-19.');
+    expect(t.split('\n')[1]).toMatch(/^Question: Accept the Majority Ought to Pass as Amended by Committee Amendment “A” Report from the Committee on Judiciary$/);
+    // "Sanborn H." and "Sanborn L.": the 129th's list holds both, and the initial names each
+    expect(t).toMatch(/^Excused \(3\): Catherine Breen; Bradlee Farrin; Linda Sanborn$/m);
+    expect(t).toMatch(/; Heather Sanborn;/);
+    expect(meUnnamed(ME_S345)).toEqual(['Mr. President: the vote names the President by office, not by name']);
+    expect(meRender(ME_S154)).toMatch(/^Excused \(2\): /m);
+    // a rc-N address is a Senate address
+    expect(meWhy('https://legislature.maine.gov/uploads/visual_edit/rc-5.pdf#LD12', ['not a pdf'])).toBe('the vote is not a PDF');
+  });
+
+  it('refuses a 129th vote whose question, footer, session or Legislature does not fit', () => {
+    for (const [url, from, to, why] of [
+      [ME_S345, 'Accept the Majority', 'Accept the Minority', /^the question is not a vote on the bill: Accept the Minority/],
+      [ME_S345, 'Amendment “A” (S-357)', 'Amendment «A» (S-357)', /^the question is not a vote on the bill: /],
+      [ME_S345, 'Senator Sanborn L. excused.', 'Senator Sanborn Q. excused.', /^the members the footer names excused or abstaining are not the members marked Exc$/],
+      [ME_S154, 'Senator Moore Excused.', 'Senator Moore Exempted.', /^a footer sentence the reader cannot read: Senator Keim, Senator Moore Exempted\.$/],
+      [ME_S154, 'First Regular Session', 'Third Regular Session', /^the vote prints no session$/],
+      [ME_S154, '129th LEGISLATURE', '130th LEGISLATURE', /^the vote's date 2019-\d\d-\d\d is not in the 130th Legislature$/],
+    ] as const) {
+      expect([to, meWhy(url, meTamper(url, from, to))]).toEqual([to, expect.stringMatching(why)]);
+    }
+    expect(meUnnamed(ME_S154, meTamper(ME_S154, 'Sanborn L.', 'Sanborn Q.'))).toContain('Sanborn Q.: no senator of the list has it');
+  });
+
+  it('refuses a 130th vote whose pair footnote, Legislature or roll-call number does not fit', () => {
+    const P = '1\t202.6\t448.8\tP\n1\t209.9\t448.8\t*';
+    const NOTE = '* Senator Brenner of Cumberland would have voted Yea, requested and received leave of the Senate, to pair her vote with Senator Sanborn of Cumberland who would have voted Nay.';
+    for (const [url, docs, why] of [
+      [ME_S807, meTamper(ME_S807, '* Senator Brenner of', '* Senator Bailey of'), /^the pair footnote names Bailey and Sanborn, not Brenner and Sanborn$/],
+      [ME_S807, meTamper(ME_S807, 'who would have voted Nay.', 'who would have voted Yea.'), /^the pair footnote and the pair marks disagree on how they would have voted$/],
+      [ME_S807, meTamper(ME_S807, '1\t75.6\t26.9\tROLL CALL', `1\t76.6\t60\t${NOTE}\n1\t75.6\t26.9\tROLL CALL`), /^the vote explains more than one pair$/],
+      [ME_S807, [tamper(tamper(meFix('me-130-senate-807.txt'), P, '1\t202.6\t448.8\tX'), '1\t462.5\t317.3\tP', '1\t464.7\t317.3\tX')], /^the vote explains a pair it does not mark$/],
+      [ME_S807, meTamper(ME_S807, '130th LEGISLATURE', '131st LEGISLATURE'), /^the vote's date 2022-04-25 is not in the 131st Legislature$/],
+      [ME_H448, meTamper(ME_H448, 'ROLL CALL NO. 448V', 'ROLL CALL NO. 448X'), /^the vote prints no roll-call number$/],
+      [ME_H448, meTamper(ME_H448, 'ROLL CALL NO. 448V', 'ROLL CALL NO. 449V'), /^the vote is roll call 449$/],
+    ] as const) {
+      expect(meWhy(url, [...docs])).toMatch(why);
+    }
+  });
+
   it('refuses a vote that is not on the bill, a Legislature that prints surnames only, and a vote with no LD', () => {
     expect(meWhy(ME_HMIN, meDocs(ME_HMIN))).toBe('the question is not a vote on the bill: ACC MIN OUGHT NOT TO PASS REP');
     expect(meWhy(ME_HMOT, meTamper(ME_HMOT, 'MOTION: ACC MAJ OUGHT NOT TO PASS REP', 'MOTION: ACC MIN OUGHT NOT TO PASS REP'))).toBe('the question is not a vote on the bill: ACC MIN OUGHT NOT TO PASS REP');
@@ -2596,17 +2663,24 @@ describe('state roll-call pages — Maine House 128th to 130th, printed by surna
       'Question: ACC MAJ OUGHT NOT TO PASS REP', 'Yea 79; Nay 62; Not voting 10; Excused 0; Restricted 0.']);
     // "MartinJ", "MartinR", "MartinT": an initial glued on where members share a surname
     expect(pick(t, 'Yea')).toEqual(expect.arrayContaining(['Roland Danny Martin', 'Reb Millett', 'Teresa Pierce', 'Bruce White']));
-    expect(pick(t, 'Nay')).toEqual(expect.arrayContaining(['John L. Martin', 'MillettH', 'Dustin Michael White']));
+    expect(pick(t, 'Nay')).toEqual(expect.arrayContaining(['John L. Martin', 'Sawin Millett', 'Dustin Michael White']));
     expect(pick(t, 'Not voting')).toContain('Thomas H. Martin');
-    // Open States names the member printed MillettH "Sawin Millett": no H, so kept as printed
-    expect(meUnnamed(ME_H130)).toEqual(['MillettH: no seated Reb Millett or Sawin Millett has the initial H']);
+    // "MillettH": Open States names him "Sawin Millett", with no H; the House's profile name, "H. Sawin Millett Jr.", is under also
+    expect(meUnnamed(ME_H130)).toEqual([]);
+    meWith(ME_HOUSE_ROSTERS, 130, meRoster(130, (r) => r.map((m) => (m.name === 'Sawin Millett' ? { ...m, also: [] } : m))),
+      () => expect(meUnnamed(ME_H130)).toEqual(['MillettH: no seated Reb Millett or Sawin Millett has the initial H']));
     expect(stateRollCallLinesFor(ME_H130, t, 'Martin', 'John L. Martin')).toEqual([
       'Maine House roll call 118 (130th Legislature, First Special Session), LD 1138 - ACC MAJ OUGHT NOT TO PASS REP (2021-06-03): John L. Martin voted Nay.']);
-    expect(stateRollCallLinesFor(ME_H130, t, 'Millett', 'Sawin Millett')).toEqual([]);
+    expect(stateRollCallLinesFor(ME_H130, t, 'Millett', 'Sawin Millett')).toEqual([
+      'Maine House roll call 118 (130th Legislature, First Special Session), LD 1138 - ACC MAJ OUGHT NOT TO PASS REP (2021-06-03): Sawin Millett voted Nay.']);
 
     const t129 = meRender(ME_H129);
     expect(t129.split('\n')[2]).toBe('Yea 67; Nay 64; Not voting 17; Excused 2; Restricted 0.');
-    expect(meUnnamed(ME_H129)).toEqual(['Foley: 2 seated members share it (Bob Foley, Victoria Foley)', 'Roberts-Lovell: no seated member of the roster has it']);
+    // "Roberts-Lovell": the family of a name under also ("Tiffany Roberts-Lovell", the House's profile in 2019)
+    expect(meUnnamed(ME_H129)).toEqual(['Foley: 2 seated members share it (Bob Foley, Victoria Foley)']);
+    expect(t129).toMatch(/Tiffany Roberts(;|$)/m);
+    meWith(ME_HOUSE_ROSTERS, 129, meRoster(129, (r) => r.map((m) => (m.name === 'Tiffany Roberts' ? { ...m, also: [] } : m))),
+      () => expect(meUnnamed(ME_H129)).toContain('Roberts-Lovell: no seated member of the roster has it'));
     expect(pick(t129, 'Nay')).toEqual(expect.arrayContaining(['Foley', 'Madam Speaker', 'Teresa Pierce']));
     expect(stateRollCallLinesFor(ME_H129, t129, 'Foley', 'Victoria Foley')).toEqual([]);
   });
@@ -2619,7 +2693,9 @@ describe('state roll-call pages — Maine House 128th to 130th, printed by surna
     // "X Lockman", a close mark stored with its label; "Austin, B." and "Austin, S."
     expect(pick(t, 'Not voting')).toContain('Lawrence E. Lockman');
     expect(pick(t, 'Yea')).toEqual(expect.arrayContaining(['Betty A. Austin', 'Susan M. W. Austin', 'Robert W. Alley']));
-    expect(meUnnamed(ME_H128)).toEqual(['Casas: no seated member of the roster has it', 'Fecteau: 2 seated members share it (Justin Fecteau, Ryan Fecteau)',
+    // "Casas": Open States' extract spells him "CasÃ¡s"; the roster puts back "Casás", which folds to the label
+    expect(pick(t, 'Yea').concat(pick(t, 'Nay'), pick(t, 'Not voting'))).toContain('Owen D. Casás');
+    expect(meUnnamed(ME_H128)).toEqual(['Fecteau: 2 seated members share it (Justin Fecteau, Ryan Fecteau)',
       'Foley: 2 seated members share it (Bob Foley, Victoria Foley)', 'White: 2 seated members share it (Bruce White, Dustin Michael White)']);
     expect(stateRollCallLinesFor(ME_H128, t, 'Alley', 'Robert W. Alley')).toEqual([
       'Maine House roll call 245 (128th Legislature, First Regular Session), LD 9 - ACC MAJ OTP AS AMENDED REP (2017-06-06): Robert W. Alley voted Yea.']);
@@ -2630,11 +2706,11 @@ describe('state roll-call pages — Maine House 128th to 130th, printed by surna
     const pierce = was.find((m) => m.name === 'Teresa Pierce')!;
     const cases: [MeHouseMember[] | null, string[] | string][] = [
       [meRoster(130, (r) => [...r, { name: 'Jeffrey K. Pierce', family: 'Pierce', also: [], from: null, to: null }]),
-        ['MillettH: no seated Reb Millett or Sawin Millett has the initial H', 'Pierce: 2 seated members share it (Teresa Pierce, Jeffrey K. Pierce)']],
-      [meRoster(130, (r) => r.filter((m) => m.name !== 'Teresa Pierce')), ['MillettH: no seated Reb Millett or Sawin Millett has the initial H', 'Pierce: no seated member of the roster has it']],
-      [meRoster(130, (r) => r.map((m) => (m.name === pierce.name ? { ...m, to: '2021-06-02' } : m))), ['MillettH: no seated Reb Millett or Sawin Millett has the initial H', 'Pierce: no seated member of the roster has it']],
+        ['Pierce: 2 seated members share it (Teresa Pierce, Jeffrey K. Pierce)']],
+      [meRoster(130, (r) => r.filter((m) => m.name !== 'Teresa Pierce')), ['Pierce: no seated member of the roster has it']],
+      [meRoster(130, (r) => r.map((m) => (m.name === pierce.name ? { ...m, to: '2021-06-02' } : m))), ['Pierce: no seated member of the roster has it']],
       [meRoster(130, (r) => r.filter((m) => m.name !== 'Roland Danny Martin').map((m) => (m.name === 'John L. Martin' ? { ...m, also: ['Roland L. Martin'] } : m))),
-        ['MartinJ: another label fits John L. Martin too', 'MartinR: another label fits John L. Martin too', 'MillettH: no seated Reb Millett or Sawin Millett has the initial H']],
+        ['MartinJ: another label fits John L. Martin too', 'MartinR: another label fits John L. Martin too']],
       [meRoster(130, (r) => r.map((m) => (m.name === 'Reb Millett' ? { ...m, name: 'Roland Danny Martin' } : m))), 'two members render as one name'],
       [null, 'no House roster of the 130th Legislature is saved'],
     ];

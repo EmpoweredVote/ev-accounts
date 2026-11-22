@@ -52,6 +52,24 @@ const HOUSE_LEGISLATURES: Record<number, [string, string]> = {
   130: ['2020-12-02', '2022-12-06'],
 };
 
+/**
+ * Names the House's roll-call PDFs print that our Open States extract does not hold, each from the House's own member
+ * profile of the time (an Internet Archive copy; the profile prints the name as its heading). Kept under also, so a label
+ * fits by the name's family ("Roberts-Lovell") or initial ("MillettH": H. Sawin Millett Jr.).
+ */
+export const HOUSE_ALSO: { legislatures: number[]; name: string; also: string; source: string }[] = [
+  { legislatures: [129, 130], name: 'Tiffany Roberts', also: 'Tiffany Roberts-Lovell', source: wb('20190611092455', 'http://legislature.maine.gov:80/house/house/MemberProfiles/Details/1385') },
+  { legislatures: [129, 130], name: 'Sawin Millett', also: 'H. Sawin Millett Jr.', source: wb('20190523070522', 'http://legislature.maine.gov:80/house/house/MemberProfiles/Details/1357') },
+];
+
+/** UTF-8 that was read as Latin-1 and written again ("CasÃ¡s" for "Casás", Open States' 2026-11 extract), put back. */
+export function unMojibake(s: string): string {
+  if (!/[ÃÂ][\u0080-\u00bf]/.test(s)) return s;
+  const back = Buffer.from(s, 'latin1').toString('utf8');
+  if (back.includes('\ufffd')) throw new Error(`${s}: looks double-encoded but does not decode`);
+  return back;
+}
+
 const ent = (s: string): string => s.replace(/&nbsp;?/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&rsquo;/g, "'").replace(/&quot;/g, '"')
   .replace(/&#(\d+);/g, (_m, n: string) => String.fromCodePoint(Number(n)));
 const squash = (s: string): string => s.replace(/\s+/g, ' ').trim();
@@ -149,8 +167,8 @@ export function houseRosters(extract: string): Record<number, Member[]> {
     const members: Member[] = [];
     for (const m of ms.filter((x) => (!x.start_date || x.start_date <= b) && (!x.end_date || x.end_date >= a))) {
       const p = person.get(m.person_id)!;
-      const name = squash(p.name);
-      const family = squash(p.family_name || name.split(' ').slice(-1)[0]);
+      const name = unMojibake(squash(p.name));
+      const family = unMojibake(squash(p.family_name || name.split(' ').slice(-1)[0]));
       if (!fold(bare(name)).endsWith(fold(family))) throw new Error(`${name}: the family name ${family} is not the end of the name`);
       const from = m.start_date || null;
       const to = m.end_date || null;
@@ -162,6 +180,11 @@ export function houseRosters(extract: string): Record<number, Member[]> {
       }
       x.from = x.from === null || from === null ? null : (from < x.from ? from : x.from);
       x.to = x.to === null || to === null ? null : (to > x.to ? to : x.to);
+    }
+    for (const a of HOUSE_ALSO.filter((x) => x.legislatures.includes(Number(leg)))) {
+      const hit = members.filter((m) => m.name === a.name);
+      if (hit.length !== 1) throw new Error(`House ${leg}: ${hit.length} members named ${a.name}, for the alternate name ${a.also}`);
+      if (!hit[0].also.includes(a.also)) hit[0].also.push(a.also);
     }
     out[Number(leg)] = members.sort((p, q) => p.family.localeCompare(q.family) || p.name.localeCompare(q.name));
   }
@@ -205,7 +228,9 @@ async function main(): Promise<void> {
     '// and for the 128th /senate/128th-senators/9332), read live for the current Legislature and from the Internet Archive\'s',
     '// copies of the same page for earlier ones; each copy names the Legislature it is filed under.',
     `// House (128th to 130th): our Open States extract's House memberships (dump ${meta.dump ?? 'unknown'}), each with its dates`,
-    '// (null: not given); one person Open States holds twice is kept once, with the other name under also.',
+    '// (null: not given); one person Open States holds twice is kept once, with the other name under also. A name the House\'s',
+    '// PDFs print that the extract does not hold is added under also from the House\'s own member profile:',
+    ...HOUSE_ALSO.map((a) => `//   ${a.also} (${a.name}): ${a.source}`),
     '',
     'export interface MeSenateList { sources: string[]; names: string[] }',
     'export interface MeHouseMember { name: string; family: string; also: string[]; from: string | null; to: string | null }',

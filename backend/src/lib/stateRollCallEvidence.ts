@@ -3397,7 +3397,7 @@ const ME_HOUSE_SEATS = 151;
 const ME_SENATE_SEATS = 35;
 // 130th on: <day>.<roll call>.<legislature><session>.pdf; 129th: <day>.<roll call>.pdf; 128th: the roll call alone, 00245.pdf
 const ME_HOUSE_URL = /^https:\/\/legislature\.maine\.gov\/house\/Repository\/Documents\/(12[89]|1[3-9]\d)\/RollCalls\/(?:(\d{3})\.(\d{3,4})(?:\.(1[3-9]\d)(R[12]|S[1-9]))?|(\d{5}))\.pdf#LD([1-9]\d{0,3})$/;
-const ME_SENATE_URL = /^https:\/\/legislature\.maine\.gov\/uploads\/visual_edit\/roll-call-([1-9]\d{0,3})(?:-[a-z0-9]+)*\.pdf#LD([1-9]\d{0,3})$/;
+const ME_SENATE_URL = /^https:\/\/legislature\.maine\.gov\/uploads\/visual_edit\/(?:roll-call|rc)-([1-9]\d{0,3})(?:-[a-z0-9]+)*\.pdf#LD([1-9]\d{0,3})$/;
 const ME_ORDINAL = ['First', 'Second', 'Third', 'Fourth'];
 const ME_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 /** The House's presiding officer, printed by office: kept as printed, so it gives no line. */
@@ -3409,7 +3409,8 @@ const ME_HOUSE_LABEL = /^[\p{L}][\p{L}'’ -]*[\p{L}], (?:[\p{L}]\. ?){0,3}[\p{L
 /** A House label of the 128th to 130th: a surname of one or more words; the 128th adds an initial ("Austin, B."), the 129th and 130th run it on ("MartinJ"). */
 const ME_HOUSE_SURNAME = /^[\p{L}][\p{L}'’ -]*[\p{L}](?:, \p{Lu}\.)?$/u;
 /** A Senate label: a surname of one or two words, with the office some members are printed under. */
-const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\p{L}][\p{L}'’-]*)?)$/u;
+// a surname with the senator's initial after it where two share the surname ("Sanborn H.", 130th roll call 55)
+const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\p{L}][\p{L}'’-]*)?(?: \p{Lu}\.)?)$/u;
 
 /**
  * Is a Maine question a vote on the bill? Its parenthesised papers dropped ("Enactment (L.D. 1971) ( H.P. 1315)"). Enactment,
@@ -3435,9 +3436,10 @@ export function meQuestionIsOnTheBill(q: string): boolean {
  */
 export function meMajorityReport(q: string): 'for' | 'against' | null {
   // read with every space dropped: the PDFs split words ("Accept M ajority", "Committee o n Judiciary")
-  const t = q.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, '').replace(/[.?]$/, '').toLowerCase();
+  // the 129th Senate's pages curl the amendment's quotes (“A”, roll call 280) and may say "Accept the Majority" (345)
+  const t = q.replace(/\([^)]*\)/g, ' ').replace(/[“”]/g, '"').replace(/\s+/g, '').replace(/[.?]$/, '').toLowerCase();
   const house = /^acc(?:ept)?maj(otp|oughttopass|ontp|otnp|oughtnottopass)(?:-a|-am|asamended)?(?:byca(?:-[a-z]|"[a-z]"))?(?:rep|rpt|report)?$/.exec(t);
-  const senate = /^accept(?:ance)?majority(oughttopass|oughtnot(?:to)?pass)(?:asamended(?:bycommitteeamendment"[a-z]")?)?(?:report)?(?:fromthecommitteeon[a-z,&'’-]+)?$/.exec(t);
+  const senate = /^accept(?:ance)?(?:the)?majority(oughttopass|oughtnot(?:to)?pass)(?:asamended(?:bycommitteeamendment"[a-z]")?)?(?:report)?(?:fromthecommitteeon[a-z,&'’-]+)?$/.exec(t);
   const way = (house ?? senate)?.[1];
   if (!way) return null;
   return /not|ontp|otnp/.test(way) ? 'against' : 'for';
@@ -3497,7 +3499,7 @@ function readMaineHouse(body: string, r: MeVoteRef): MeVoteRecord {
   if (Number(leg.m[1]) !== r.legislature) throw new Error(`the vote is of the ${leg.m[1]} Legislature`);
   const sess = meOne(items, /^(First|Second) (Regular|Special) Session$/, 'session');
   if (r.session && `${sess.m[2][0]}${ME_ORDINAL.indexOf(sess.m[1]) + 1}` !== r.session) throw new Error(`the vote is of the ${sess.m[0]}, not ${r.session}`);
-  const no = meOne(items, /^ROLL CALL NO\. (\d+)$/, 'roll-call number');
+  const no = meOne(items, /^ROLL CALL NO\. (\d+)V?$/, 'roll-call number');
   if (Number(no.m[1]) !== r.rollNum) throw new Error(`the vote is roll call ${no.m[1]}`);
   const ld = meOne(items, /^LD (\d+)$/, 'LD');
   if (Number(ld.m[1]) !== r.ld) throw new Error(`the vote is on LD ${ld.m[1]}`);
@@ -3622,8 +3624,9 @@ function meNameHouse(v: MeVoteRecord, legislature: number): MeVoteRecord {
     const m = /^(.+), (\p{Lu})\.$/u.exec(label) ?? /^(.*\p{Ll})(\p{Lu})$/u.exec(label);
     const sur = m ? m[1] : label;
     const ini = m ? fold(m[2]) : '';
-    const family = seated.filter((x) => meFamily(x.family) === meFamily(sur));
-    const fits = family.filter((x) => !ini || [x.name, ...x.also].some((n) => initialOf(n, x.family) === ini));
+    // the family name, or the last word of a name the member is also known by ("Roberts-Lovell", 129th)
+    const family = seated.filter((x) => meFamily(x.family) === meFamily(sur) || x.also.some((n) => meFamily(dropSuffix(n).split(' ').slice(-1)[0]) === meFamily(sur)));
+    const fits = family.filter((x) => !ini || [x.name, ...x.also].some((n) => initialOf(n, dropSuffix(n).split(' ').slice(-1)[0]) === ini));
     if (fits.length === 1) return fits[0];
     if (fits.length) return `${fits.length} seated members share it (${fits.map((x) => x.name).join(', ')})`;
     return family.length ? `no seated ${family.map((x) => x.name).join(' or ')} has the initial ${ini.toUpperCase()}` : 'no seated member of the roster has it';
@@ -3756,7 +3759,9 @@ function meRows(items: Item[], pieces = false): { y: number; items: Item[]; text
         const prev = joined[joined.length - 1];
         const digits = prev && /\d$/.test(prev.s) && /^\d+$/.test(i.s) && i.x - prev.x <= prev.s.length * 6.5 + 2;
         const word = prev && (/^:/.test(i.s) || (/(?:^|[\s:])\p{L}$/u.test(prev.s) && /^\p{Ll}/u.test(i.s)));
-        if (digits || word) joined[joined.length - 1] = { ...prev, s: prev.s + i.s }; else joined.push(i);
+        // the 130th's pair mark is a P and a star stored apart ("P" "*", roll call 494)
+        const star = prev && prev.s === 'P' && i.s === '*' && i.x - prev.x <= 10;
+        if (digits || word || star) joined[joined.length - 1] = { ...prev, s: prev.s + i.s }; else joined.push(i);
       }
       r.items = joined;
     }
@@ -3778,9 +3783,11 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
     return hits[0];
   };
   meOne(items, /^MAINE STATE SENATE$/, 'Senate heading');
-  const leg = meOne(items, /^(\d{3})(?:st|nd|rd|th) Legislature$/, 'Legislature');
+  // the 130th prints "130th LEGISLATURE" (roll call 494), the 131st on "131st Legislature"
+  const leg = meOne(items, /^(\d{3})(?:st|nd|rd|th) (?:Legislature|LEGISLATURE)$/, 'Legislature');
   const legislature = Number(leg.m[1]);
-  const sess = meOne(items, /^(1st|2nd) (Regular|Special) Session$/, 'session');
+  // the 129th spells it out, "First Regular Session" (roll call 162)
+  const sess = meOne(items, /^(1st|2nd|First|Second) (Regular|Special) Session$/, 'session');
   const no = at(/^ROLL CALL #(\d+)$/, 'roll-call number');
   if (Number(no.m[1]) !== r.rollNum) throw new Error(`the vote is roll call ${no.m[1]}`);
   // the bill and its paper print at the right of the first two rows ("LD 1971", "HP 1315")
@@ -3792,11 +3799,15 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
   const dt = at(new RegExp(`^DATE: (${ME_MONTHS.join('|')}) (\\d{1,2}), (\\d{4})$`), 'date');
   const date = meDay(Number(dt.m[3]), ME_MONTHS.indexOf(dt.m[1]) + 1, Number(dt.m[2]));
   if (!date) throw new Error('the date is not a real day');
+  // the Legislature is read from the page alone (the address names none), so it must fit the date: the Nth sits from its
+  // swearing-in in December of an even year to the end of the second year after (the 130th, December 2020 to 2022)
+  if (date < `${2 * legislature + 1760}-12-01` || date > `${2 * legislature + 1762}-12-31`) throw new Error(`the vote's date ${date} is not in the ${ordinal(legislature)} Legislature`);
   const tally = at(/^YEA: (\d+) NAY: (\d+) ABSENT: (\d+) EXCUSED: (\d+) MOTION: (?:PREVAILS|FAILS)$/, 'tally');
   const printed = { Yea: Number(tally.m[1]), Nay: Number(tally.m[2]), Absent: Number(tally.m[3]), Excused: Number(tally.m[4]) };
   // the question, and the rows it runs onto, down to the tally
   // "Question: Enactment"; a vote on a veto prints "Motion: Reconsideration - Veto" (131st roll call 797)
-  const q = at(/^(?:Question|Motion): (.+)$/, 'question');
+  // the 130th prints it in capitals, "MOTION: ENACTMENT" (roll call 494); read that form only where neither of the others is
+  const q = rows.some((row) => /^(?:Question|Motion): /.test(row.text)) ? at(/^(?:Question|Motion): (.+)$/, 'question') : at(/^MOTION: (.+)$/, 'question');
   const question = squash([q.m[1], ...rows.filter((row) => row.y < q.row.y - 2 && row.y > tally.row.y + 2).map((row) => row.text)].join(' ')
     .replace(/\([^)]*\)/g, ' ')).replace(/[.?]$/, '');
   // the header: the headings read above, the bill's title, and who moved the question
@@ -3822,7 +3833,7 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
   const pairs: { label: string; col: number; no: string; star: boolean }[] = [];
   // the rows below the heads: members down to the footer (the first row that opens with "Senator "), then the footer
   const below = rows.filter((row) => row.y < headRow.y - 2 && row.y > no.row.y + 2);
-  const footAt = below.findIndex((row) => /^Senator /.test(row.text));
+  const footAt = below.findIndex((row) => /^\*? ?Senator /.test(row.text));
   const grid = footAt < 0 ? below : below.slice(0, footAt);
   const foot = footAt < 0 ? [] : below.slice(footAt);
   const all: string[] = [];
@@ -3851,11 +3862,14 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
       if (!nameItems.length && !markItems.length) continue;
       const label = squash(nameItems.map((i) => i.s).join(' '));
       if (!label) throw new Error(`a mark with no member beside it (${row.text})`);
+      // the 130th names the presiding officer by office alone ("Mr. President", roll call 494): kept as printed, and
+      // recorded as unnamed below
+      const office = label === 'Mr. President';
       const isMark = (i: Item) => i.s === 'X' || i.s === 'P' || i.s === 'P*';
       if (markItems.length !== 1 || !isMark(markItems[0])) throw new Error(`${label} has ${markItems.filter(isMark).length} marks`);
       const col = heads.slice(h * 4, h * 4 + 4).findIndex((c) => markItems[0].x - c.x >= 2 && markItems[0].x - c.x <= 10);
       if (col < 0) throw new Error(`the mark of ${label} is under no column head`);
-      const l = ME_SENATE_LABEL.exec(label);
+      const l = office ? [label, label] : ME_SENATE_LABEL.exec(label);
       if (!l) throw new Error(`a label the reader cannot read: ${label}`);
       if (markItems[0].s !== 'X') {
         if (col > 1) throw new Error(`the pair mark of ${label} is under ${KIND[col]}`);
@@ -3870,9 +3884,16 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
   }
   // the footer: "Senator A, Senator B excused." and "Senator C abstain.", each a sentence that may run onto a second row
   const said: string[] = [];
+  // the 130th explains a starred pair (roll call 494): "* Senator Lawrence of York would have voted Yea, requested and
+  // received leave of the Senate, to pair his vote with Senator Deschambault of York who would have voted Nay."
+  const starNotes: { star: string; starVote: string; other: string; otherVote: string }[] = [];
   const footText = squash(foot.map((row) => row.text).join(' '));
-  for (const sentence of footText ? footText.split(/(?<=\.)\s+/) : []) {
-    const m = /^(Senator [\p{L}'’ -]+?(?:, Senator [\p{L}'’ -]+?)*) (?:excused|abstain)\.$/u.exec(sentence);
+  // a sentence ends at a period before the next "Senator" (not at an initial's: "Senator Sanborn L. excused.", 129th #345)
+  for (const sentence of footText ? footText.split(/(?<=\.)\s+(?=\*? ?Senator )/) : []) {
+    const pn = /^\* ?Senator ([\p{L}'’ -]+?) of [\p{L} ]+? would have voted (Yea|Nay), requested and received leave of the Senate, to pair (?:his|her|their) vote with Senator ([\p{L}'’ -]+?) of [\p{L} ]+? who would have voted (Yea|Nay)\.$/u.exec(sentence);
+    if (pn) { starNotes.push({ star: pn[1], starVote: pn[2], other: pn[3], otherVote: pn[4] }); continue; }
+    // "excused." ("Excused.", 129th roll call 154)
+    const m = /^(Senator [\p{L}'’ .-]+?(?:, Senator [\p{L}'’ .-]+?)*) (?:[Ee]xcused|abstain)\.$/u.exec(sentence);
     if (!m) throw new Error(`a footer sentence the reader cannot read: ${sentence}`);
     said.push(...m[1].split(/,\s*/).map((x) => squash(x.replace(/^Senator /, ''))));
   }
@@ -3881,6 +3902,16 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
   // with no numbers printed, the one pair is a P and a P*; with numbers, every paired member has one and no P* is used
   if (pairs.length && !numbersPrinted && (pairs.length !== 2 || pairs.filter((p) => p.star).length !== 1)) throw new Error(`${pairs.length} paired members and no pair numbers`);
   if (numbersPrinted && pairs.some((p) => !p.no || p.star)) throw new Error('a pair mark with no pair number');
+  // a footnote explaining the pair must name the P* member and the P member, each with the column of their mark
+  if (starNotes.length > 1) throw new Error('the vote explains more than one pair');
+  if (starNotes.length) {
+    const n = starNotes[0];
+    const star = pairs.find((p) => p.star);
+    const other = pairs.find((p) => !p.star);
+    if (!star || !other || pairs.length !== 2) throw new Error('the vote explains a pair it does not mark');
+    if (fold(star.label) !== fold(n.star) || fold(other.label) !== fold(n.other)) throw new Error(`the pair footnote names ${n.star} and ${n.other}, not ${star.label} and ${other.label}`);
+    if (KIND[star.col] !== n.starVote || KIND[other.col] !== n.otherVote || n.starVote === n.otherVote) throw new Error('the pair footnote and the pair marks disagree on how they would have voted');
+  }
   for (const no of new Set(pairs.map((p) => p.no))) {
     const two = pairs.filter((p) => p.no === no);
     if (two.length !== 2 || two[0].col === two[1].col) throw new Error(`pair ${no} is not one Yea and one Nay`);
@@ -3900,14 +3931,17 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
   if (!list) throw new Error(`no Senate member list of the ${ordinal(legislature)} Legislature is saved`);
   const unnamed: { label: string; why: string }[] = [];
   const full = (label: string): string => {
-    const fits = list.names.filter((n) => fold(dropSuffix(n)) === fold(label) || fold(dropSuffix(n)).endsWith(` ${fold(label)}`));
+    if (label === 'Mr. President') { unnamed.push({ label, why: 'the vote names the President by office, not by name' }); return label; }
+    const ini = / (\p{Lu})\.$/u.exec(label);
+    const sur = ini ? label.slice(0, -3) : label;
+    const fits = list.names.filter((n) => (fold(dropSuffix(n)) === fold(sur) || fold(dropSuffix(n)).endsWith(` ${fold(sur)}`)) && (!ini || n.startsWith(ini[1])));
     if (fits.length === 1) return fits[0];
     unnamed.push({ label, why: fits.length ? `${fits.length} senators of the list share it (${fits.join(', ')})` : 'no senator of the list has it' });
     return label;
   };
   groups.Paired.sort((a, b) => a.localeCompare(b));
   for (const v of [...ME_SENATE_VOTES, 'Paired' as const]) groups[v] = groups[v].map(full);
-  const ord = sess.m[1] === '1st' ? 'First' : 'Second';
+  const ord = sess.m[1] === '1st' || sess.m[1] === 'First' ? 'First' : 'Second';
   return { state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: r.rollNum, session: meSession(legislature, ord, sess.m[2]), bill: `LD ${r.ld}`, question, date, groups, unnamed };
 }
 
