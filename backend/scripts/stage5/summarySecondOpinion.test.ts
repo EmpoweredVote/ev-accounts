@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { cleanEnv, extractAssistantText, failCheck, familyOf, parseModelReply, toCheck } from './summary-second-opinion.js';
+import { LOCKDOWN_CONFIG, cleanEnv, dropUnusable, extractAssistantText, failCheck, familyOf, parseModelReply, toCheck } from './summary-second-opinion.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const fixture = (n: string) => readFileSync(join(here, 'fixtures', n), 'utf8');
@@ -90,5 +90,20 @@ describe('environment and family', () => {
     expect(familyOf('opencode-go/gpt-6-luna')).toBe('gpt');
     expect(familyOf('opencode-go/gemini-4-argon')).toBe('gemini');
     expect(familyOf('opencode/claude-x')).toBeNull();
+  });
+});
+
+describe('lockdown and retry', () => {
+  it('denies every tool permission', () => {
+    expect(LOCKDOWN_CONFIG.permission).toEqual({ '*': 'deny' });
+  });
+  it('--retry-unusable removes only no-usable-reply lines and names their (sha, checker)', () => {
+    const s = { politician_id: 'p', topic_key: 't', sha256: 'S1', cites: [['f']] };
+    const unusable = JSON.stringify(failCheck(s, 'm1', 'gpt', 'timed out'));
+    const judged = JSON.stringify({ ...failCheck(s, 'm2', 'gemini', 'x'), sentences: [{ index: 0, verdict: 'fail', reason: 'Finding f does not support it.' }] });
+    const passed = JSON.stringify(toCheck(s, JSON.stringify(reply), 'm3', 'gpt'));
+    const { kept, removed } = dropUnusable([unusable, judged, passed, '']);
+    expect(kept).toEqual([judged, passed]);
+    expect([...removed]).toEqual(['S1|m1']);
   });
 });

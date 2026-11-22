@@ -3,7 +3,7 @@
  * `opencode` CLI (plan 2026-11-22-position-summaries, task 7).
  *
  *   npx tsx scripts/stage5/summary-second-opinion.ts --profile <stage5>/topic-profile.json --batch <name>
- *     [--models opencode-go/gpt-6-luna,opencode-go/gemini-4-argon] [--timeout 180]
+ *     [--models opencode-go/gpt-6-luna,opencode-go/gemini-4-argon] [--timeout 180] [--retry-unusable]
  *
  * For each `<stage5>/summaries/<batch>/checker/<n>.md` (line n of summaries.jsonl) and each model: copies the file
  * alone into a fresh empty temp dir, runs `opencode run -m <model> --format json --archived -f <copy> "<instruction>"`
@@ -11,10 +11,12 @@
  * validates the JSON with SummaryCheckSchema, stamps `checker`, `family`, `at` and the summary's own sha256, and
  * appends one line per (summary, model) to `checks.jsonl`. A timeout, a non-zero exit, an error event, an empty or
  * unusable reply is recorded as a FAIL check ("no usable reply: <why>") — never a pass, never a crash.
+ * `--retry-unusable` first removes from checks.jsonl the "no usable reply" lines (never a judgement fail) and re-runs
+ * only those (summary, model) calls.
  * Exit 2: no models, an unknown model family, or bad arguments.
  */
 import { spawnSync } from 'node:child_process';
-import { appendFileSync, copyFileSync, existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { appendFileSync, copyFileSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -132,6 +134,29 @@ export function toCheck(s: SummaryRow, replyText: string, checker: string, famil
   return { ...c, politician_id: s.politician_id, topic_key: s.topic_key, text_sha256: s.sha256 };
 }
 
+/**
+ * Written into each call's temp dir as opencode.json: every tool permission denied, so the model can only read the
+ * attached file. A temp cwd alone does not stop its read/glob/grep/bash/webfetch tools on absolute paths (measured
+ * 2026-11-22 with a canary file outside the dir: both models read it back without this config, neither does with it).
+ */
+export const LOCKDOWN_CONFIG = { $schema: 'https://opencode.ai/config.json', permission: { '*': 'deny' } };
+
+/** A recorded check that stands for an unusable reply (an infrastructure failure, not a judgement). */
+export const isUnusable = (c: { verdict?: string; sentences?: { reason?: string }[] }) =>
+  c.verdict === 'fail' && (c.sentences?.[0]?.reason ?? '').startsWith('no usable reply');
+
+/** Split checks.jsonl lines: judgement lines are kept, "no usable reply" lines are removed and returned as keys. */
+export function dropUnusable(lines: string[]): { kept: string[]; removed: Set<string> } {
+  const kept: string[] = []; const removed = new Set<string>();
+  for (const l of lines) {
+    if (!l.trim()) continue;
+    let c: { text_sha256?: string; checker?: string; verdict?: string; sentences?: { reason?: string }[] };
+    try { c = JSON.parse(l); } catch { kept.push(l); continue; }
+    if (isUnusable(c)) removed.add(`${c.text_sha256}|${c.checker}`); else kept.push(l);
+  }
+  return { kept, removed };
+}
+
 export interface RunResult { text: string; why?: string; seconds: number }
 
 /** One opencode call in a fresh empty dir holding only a copy of the checker file. */
@@ -141,6 +166,7 @@ export function runOpencode(file: string, model: string, timeoutS: number, env =
   try {
     const copy = join(dir, 'checker.md');
     copyFileSync(file, copy);
+    writeFileSync(join(dir, 'opencode.json'), JSON.stringify(LOCKDOWN_CONFIG));
     const r = spawnSync('opencode', ['run', '-m', model, '--format', 'json', '--archived', '-f', copy, INSTRUCTION], {
       cwd: dir, env: cleanEnv(env), encoding: 'utf8', timeout: timeoutS * 1000, maxBuffer: 32 * 1024 * 1024,
     });
@@ -177,11 +203,19 @@ export function main(argv: string[]): void {
   const dir = join(profile.stage5, 'summaries', batch);
   const rows = readFileSync(join(dir, 'summaries.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l) as SummaryRow);
   const out = join(dir, 'checks.jsonl');
+  let only: Set<string> | null = null;
+  if (last('retry-unusable')) {
+    const { kept, removed } = dropUnusable(existsSync(out) ? readFileSync(out, 'utf8').split('\n') : []);
+    writeFileSync(out, kept.map((l) => `${l}\n`).join(''));
+    only = removed;
+    console.log(`retrying ${removed.size} unusable call(s)`);
+  }
   const tally = { pass: 0, fail: 0, noReply: 0 };
   rows.forEach((s, i) => {
     const file = join(dir, 'checker', `${i + 1}.md`);
     models.forEach((model, mi) => {
       const family = families[mi]!;
+      if (only && !only.has(`${s.sha256}|${model}`)) return;
       let check: SummaryCheck;
       let note = '';
       if (!existsSync(file)) check = failCheck(s, model, family, `checker file ${i + 1}.md is missing`);
@@ -196,7 +230,7 @@ export function main(argv: string[]): void {
       console.log(`${s.politician_id} ${model}: ${check.verdict}${note}`);
     });
   });
-  console.log(`checks written ${rows.length * models.length}: pass ${tally.pass}, fail ${tally.fail}, no usable reply ${tally.noReply} -> ${out}`);
+  console.log(`checks written ${tally.pass + tally.fail + tally.noReply}: pass ${tally.pass}, fail ${tally.fail}, no usable reply ${tally.noReply} -> ${out}`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
