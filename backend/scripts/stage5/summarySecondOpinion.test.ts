@@ -86,6 +86,10 @@ describe('environment and family', () => {
     const e = cleanEnv({ HOME: '/h', PATH: '/p', OPENAI_API_KEY: 'x', GH_TOKEN: 'x', DATABASE_URL: 'x', SUPABASE_URL: 'x', MY_SECRET: 'x', DB_PASSWORD: 'x', LANG: 'C' });
     expect(Object.keys(e).sort()).toEqual(['HOME', 'LANG', 'PATH']);
   });
+  it('drops every OPENCODE_ variable so an inherited setting cannot override the deny', () => {
+    const e = cleanEnv({ HOME: '/h', OPENCODE_CONFIG_CONTENT: '{}', OPENCODE_PERMISSION: '{}', OPENCODE_CONFIG: '/x', opencode_config_dir: '/y', PATH: '/p' });
+    expect(Object.keys(e).sort()).toEqual(['HOME', 'PATH']);
+  });
   it('family comes from the model id', () => {
     expect(familyOf('opencode-go/gpt-6-luna')).toBe('gpt');
     expect(familyOf('opencode-go/gemini-4-argon')).toBe('gemini');

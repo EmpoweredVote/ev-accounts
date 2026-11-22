@@ -38,12 +38,15 @@ export function familyOf(model: string): Family | null {
   return null;
 }
 
-/** The environment opencode runs with: every variable whose name looks like a secret or a database is dropped. */
+/**
+ * The environment opencode runs with: every variable whose name looks like a secret or a database is dropped, and so
+ * is every OPENCODE_* variable (OPENCODE_CONFIG_CONTENT, OPENCODE_PERMISSION… must not override the project deny).
+ */
 export function cleanEnv(env: Record<string, string | undefined>): Record<string, string> {
   const out: Record<string, string> = {};
   for (const [k, v] of Object.entries(env)) {
     if (v === undefined) continue;
-    if (/KEY|TOKEN|SECRET|PASSWORD|DATABASE|SUPABASE/i.test(k)) continue;
+    if (/KEY|TOKEN|SECRET|PASSWORD|DATABASE|SUPABASE/i.test(k) || /^OPENCODE_/i.test(k)) continue;
     out[k] = v;
   }
   return out;
@@ -204,9 +207,12 @@ export function main(argv: string[]): void {
   const rows = readFileSync(join(dir, 'summaries.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l) as SummaryRow);
   const out = join(dir, 'checks.jsonl');
   let only: Set<string> | null = null;
+  // Retry mode: the old lines stay on disk until every re-run is in; then ONE write replaces the file.
+  let keptLines: string[] = [];
+  const fresh: string[] = [];
   if (last('retry-unusable')) {
     const { kept, removed } = dropUnusable(existsSync(out) ? readFileSync(out, 'utf8').split('\n') : []);
-    writeFileSync(out, kept.map((l) => `${l}\n`).join(''));
+    keptLines = kept;
     only = removed;
     console.log(`retrying ${removed.size} unusable call(s)`);
   }
@@ -224,12 +230,13 @@ export function main(argv: string[]): void {
         check = r.why ? failCheck(s, model, family, r.why) : toCheck(s, r.text, model, family);
         note = ` ${r.seconds.toFixed(1)}s`;
       }
-      appendFileSync(out, `${JSON.stringify(check)}\n`);
+      if (only) fresh.push(JSON.stringify(check)); else appendFileSync(out, `${JSON.stringify(check)}\n`);
       if (check.sentences[0]?.reason.startsWith('no usable reply')) tally.noReply++;
       else if (check.verdict === 'pass') tally.pass++; else tally.fail++;
       console.log(`${s.politician_id} ${model}: ${check.verdict}${note}`);
     });
   });
+  if (only) writeFileSync(out, [...keptLines, ...fresh].map((l) => `${l}\n`).join(''));
   console.log(`checks written ${tally.pass + tally.fail + tally.noReply}: pass ${tally.pass}, fail ${tally.fail}, no usable reply ${tally.noReply} -> ${out}`);
 }
 
