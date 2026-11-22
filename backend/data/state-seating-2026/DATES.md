@@ -1123,3 +1123,121 @@ oath"* — and Nevada is the first state in the pass to be on that side of the l
 - ⚠ **13 winners have no `politicians` row** — 12 Assembly, 1 Senate.
 - ⚠ **11 of Nevada's 21 Senate seats are pending**, the chamber being staggered on four-year
   terms. One winner per office, so **not** a Ruling A case.
+
+---
+
+## UT — Utah · 56 offices · ⚠️ 50 sourced, **6 REFUSED**, 2026-11-22
+
+**Utah is the first state in this pass whose date is the first day of January itself** — not a
+Monday, not a Wednesday, not counted from the election.
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| House of Representatives | 42 | **2027-01-01** (Fri) | Utah Const. Art. VI, Sec. 3(2) |
+| Senate | 8 | **2027-01-01** (Fri) | Utah Const. Art. VI, Sec. 4(2) |
+| State Board of Education | 6 | 🔴 **REFUSED** | `20A-14-103` names no commencement |
+
+### The authority — the legislature
+
+**Utah Const. Art. VI, Sec. 3** — *Election of House members – Terms*:
+
+> (1) The members of the House of Representatives shall be chosen biennially on even-numbered
+> years by the qualified voters of the respective representative districts, on the first Tuesday
+> after the first Monday in November. (2) **Their term of office shall be two years from the first
+> day of January next after their election.**
+
+**Utah Const. Art. VI, Sec. 4** — *Election of Senators – Terms*:
+
+> (2) **Their term of office shall be four years from the first day of January next after their
+> election.** (3) As nearly one-half as may be practicable shall be elected in each biennium …
+
+The first day of January next after the 2026-11-03 election = **2027-01-01**.
+
+⚠ **2027-01-01 is a Friday and a public holiday, and the clause does not care.** It names a day of
+the calendar, not a sitting day. 🔴 **Do not "round" it to the following Monday** — that would be
+the same class of error as reaching for a convening date, and Utah's general session does not
+begin until the third Tuesday in January in any case.
+
+⚠ **No control is available.** All 119 Utah legislative rows in `essentials.office_terms` carry
+`term_start NULL`, so nothing in our data corroborates or contradicts this. The clause is
+unusually plain — *"from the first day of January next after their election"* has no inclusive /
+exclusive ambiguity of the kind Maine's "from the day next preceding" had — but the reading rests
+on the text alone and that is recorded here rather than implied.
+
+### 🔴 The six State Board of Education seats are refused
+
+**Utah Code § 20A-14-103** — *State Board of Education members – Term – Requirements* — fixes the
+length and the cycle and **names no start**:
+
+> (1)(a) … voters in the following districts … shall elect a State Board of Education member for a
+> term of four years: (i) at the **2022 General Election**, State Board of Education Districts 1,
+> 2, 4, 5, 8, 11, and 14; and (ii) at the 2024 General Election, Districts 3, 6, 7, 9, 10, 12, 13,
+> and 15 …
+
+🟢 **That subsection does confirm which seats are up.** Our six pending Board offices are Districts
+**1, 2, 4, 5, 11 and 14** — six of the seven the statute places on the 2022 cycle, which is the
+cycle that renews in 2026. ⚠ **District 8 is the seventh and is NOT in our pending set.** That is
+a result gap, not a dating one.
+
+🔴 **The only dates in the section are transitional and they point at a DIFFERENT boundary from
+the legislature's.** Subsection (1)(b) gives a realigned member "a term of office that **ends
+January 6, 2025**", and (2)(b)(i) lets an incumbent "serve until **January 2, 2023**". Both are
+**first Mondays in January** — 2025-01-06 and 2023-01-02 — where the legislature's boundary is the
+**first day** of January. ▶ **So the two bodies in this state do not share a boundary, and the
+Board's cannot be borrowed from the House's.** If the Board's rule is the first Monday, its 2027
+date is **2027-01-04**, three days later than the legislature's.
+
+⚠ **Those two dates sit inside transitional provisions about a 2021 redistricting, not in a general
+rule**, so neither can be cited as the Board's recurring commencement. `53E-3-201` sends the
+question back to Title 20A, Chapter 14, and Chapter 14 does not answer it. **No control is
+available either** — all 15 Utah Board rows in `office_terms` are undated.
+
+▶ **What would settle it:** the Board's own published member roster with term dates, or the
+lieutenant governor's certification. Record with `basis = 'published'`. 🔴 **Do not write
+2027-01-01 for these six on the strength of the legislature's clause** — the section's own
+transitional dates are evidence against it.
+
+### The source
+
+`https://le.utah.gov/xcode/ArticleVI/Article_VI,_Section_3.html` and `…,_Section_4.html` for the
+constitution; `https://le.utah.gov/xcode/Title20A/Chapter14/20A-14-S103.html`,
+`…/20A-14-S102.html` and `https://le.utah.gov/xcode/Title53E/Chapter3/53E-3-S201.html` for the
+statutes — the Legislature's own publication, read 2026-11-22.
+
+⚠ **`le.utah.gov` serves every section as a JavaScript shell.** `curl` returns ~26.6 KB of
+navigation and **no section text at all**, and the byte counts are nearly identical across
+different sections (26,677 / 26,654 / 26,682), which is the tell. All of the above were read in a
+browser. ⚠ **A rendered page can also come back as the shell if it is read too early** —
+`20A-14-S104` did exactly that and looked like an empty section rather than a slow one. **Assert
+the section number is present in the text before concluding a section is empty or missing.**
+
+### Basis
+
+`statute` for the 50 legislative rows. The six Board seats have no row.
+
+### Term start or oath? — **term start**
+
+Both clauses say "term of office shall be … from the first day of January next after their
+election", with no mention of an oath and no condition of qualification. Utah's general session
+convenes on the third Tuesday in January, well after, so the two events are plainly distinct here.
+
+### Carried into the row
+
+| field | House + Senate |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-01** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `ut-const-art6-first-day-january` |
+
+### Two things the next step inherits
+
+- ⚠ **Only 42 of Utah's 75 House offices are pending**, although Utah elects its whole House every
+  two years. 33 carry no recorded winner. Likewise **8 of 29 Senate seats**, where a staggered
+  half would be about 14. 🔴 **These are result gaps of a size worth investigating before the wave
+  runs** — Utah is the largest such gap found so far in this pass.
+- ⚠ **Utah's `STATE_BOARD_EDUCATION` districts are the `X0003` mtfcc case** `CLAUDE.md` names: they
+  reach a voter only through the geofence join, never through `buildStatewideQuery`. Nothing in
+  this dating pass changes that, but a wave that creates or moves one of these offices must not
+  re-type it.

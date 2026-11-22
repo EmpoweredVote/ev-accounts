@@ -180,7 +180,7 @@ migration** — `CLAUDE.md`'s existing rule: *attach the race to the office of t
 actually leaving*. Until that is done, seat the rest of their state and leave these out, saying so
 in the header. They are 7 offices of the 1,162.
 
-## 🔴 Three more cannot be DATED at all, which is a different refusal
+## 🔴 Ten more cannot be DATED at all, which is a different refusal
 
 Ruling A refuses the four above because **which seat** a winner takes is not in our data. These
 are refused because **no day exists to write yet** — and the running pattern is that it is a
@@ -192,6 +192,7 @@ state's **executive**, never its legislature, that fails this way:
 | MD Comptroller | Art. VI § 1 gives a length only; falls to Art. XVII § 4, "from the time of their Election", which overlaps the predecessor |
 | OR Governor | Art. V § 7 defers to statute; `ORS 176.010` commences the term "upon the publication of the returns by the Speaker of the House" — an **event**, which has not happened |
 | AZ State Mine Inspector | Art. XIX gives a term length and no day — and the constitution publishes **two competing 1992 versions** of that article that disagree on whether the term is two years or four. No statute supplies a commencement |
+| UT State Board of Education (6) | `20A-14-103` fixes the four-year term and the cycle and names no commencement. 🔴 Its only dates are transitional and land on the **first Monday** in January (2023-01-02, 2025-01-06), which is NOT the legislature's "first day of January" — so the House clause must not be borrowed |
 | NV Governor, Lt. Governor, Secretary of State, Attorney General, Treasurer, Controller (6) | Art. 5 §§ 2, 17, 19 run the term "from the time of his installation"; `NRS 282.010(4)` makes that **qualification**. 🟢 But `NRS 282.010(2)` bounds it: qualification must happen **prior to 2027-01-05**, so `window_end_date = 2027-01-04` is sourced even though `swearing_in_date` is not |
 
 Each needs a **`published` date recorded when it happens**. See [`DATES.md`](./DATES.md) for the
@@ -227,4 +228,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | OR | ⚠️ [`DATES.md`](./DATES.md) — **75 of 76**: 2027-01-11 legislature. 🔴 **Governor REFUSED** — `ORS 176.010` starts the term at an event, not a day | ⏳ | | |
 | AZ | ⚠️ [`DATES.md`](./DATES.md) — **65 of 66** on **2027-01-04**. 🔴 **Mine Inspector REFUSED**; Corporation Commission dated but not seatable; 🔴🔴 **no Lieutenant Governor office exists** | ⏳ | | |
 | NV | ⚠️ [`DATES.md`](./DATES.md) — **52 of 58** on 🔴 **2026-11-04, ALREADY PAST**. 🔴 **6 executives REFUSED** — term begins at qualification, bounded before 2027-01-05 | ⏳ | | |
+| UT | ⚠️ [`DATES.md`](./DATES.md) — **50 of 56** on **2027-01-01**, the first day of January itself. 🔴 **6 State Board of Education seats REFUSED** | ⏳ | | |
 | *(nothing else yet)* | | | | |
