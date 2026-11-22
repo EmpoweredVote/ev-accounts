@@ -58,8 +58,10 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
       const offered = new Set(person.finding_ids);
       const findings = (pf?.findings ?? []).filter((f) => offered.has(f.id));
       const codePath = join(profile.stage5, 'codes', `${draft.politician_id}.json`);
-      const code = existsSync(codePath) ? Stage5CodeSchema.safeParse(JSON.parse(readFileSync(codePath, 'utf8'))) : null;
-      if (!code?.success) { refuse(file, draft, ['no readable code file for this person']); continue; }
+      let code: ReturnType<typeof Stage5CodeSchema.safeParse>;
+      if (!existsSync(codePath)) { refuse(file, draft, ['code file unreadable: missing']); continue; }
+      try { code = Stage5CodeSchema.safeParse(JSON.parse(readFileSync(codePath, 'utf8'))); } catch (e) { refuse(file, draft, [`code file unreadable: ${(e as Error).message.slice(0, 120)}`]); continue; }
+      if (!code.success) { refuse(file, draft, ['code file unreadable: does not match the code schema']); continue; }
       const problems = lintSummary(draft, { findings, code: code.data, sides: profile.sides ?? '' });
       if (problems.length) { refuse(file, draft, problems); continue; }
       const built = buildSummary(draft, findings);
@@ -102,5 +104,5 @@ export function main(argv: string[]): void {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  try { main(process.argv.slice(2)); } catch (e) { console.error((e as Error).message); process.exit(0); }
+  try { main(process.argv.slice(2)); } catch (e) { console.error((e as Error).message); process.exit(1); }
 }

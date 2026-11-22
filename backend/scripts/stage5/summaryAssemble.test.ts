@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -80,5 +80,28 @@ describe('assemble', () => {
     const refused = lines(join(batchDir, 'lint-refused.jsonl'));
     expect(refused.find((x) => x.politician_id === pid(1)).problems.join(' ')).toMatch(/not one of this person's findings/);
     expect(refused.find((x) => x.politician_id === pid(2)).problems.join(' ')).toMatch(/more than one draft/);
+  });
+
+  it('a corrupt or missing code file refuses that person and still writes the others', () => {
+    const { batchDir, run } = world({ '1.json': [draft(1), draft(2)] });
+    const stage5 = join(batchDir, '..', '..');
+    writeFileSync(join(stage5, 'codes', `${pid(1)}.json`), '{corrupt');
+    rmSync(join(stage5, 'codes', `${pid(2)}.json`));
+    // a third person with a good code file
+    writeFileSync(join(batchDir, 'people.json'), JSON.stringify([
+      ...JSON.parse(readFileSync(join(batchDir, 'people.json'), 'utf8')),
+      { politician_id: pid(3), name: 'Person 3', outcome: 'seated', value: 3, finding_ids: [fid(1), fid(2)], left_out: 0 },
+    ]));
+    writeFileSync(join(stage5, 'codes', `${pid(3)}.json`), JSON.stringify({
+      politician_id: pid(3), topic_key: TOPIC, season: 3, season_id: 's', revision_id: 'r', outcome: 'seated', value: 3,
+      reasoning: 'x', tags: [], finding_ids: [fid(1)], codebook: '0.6', coded_by: 'c', coded_at: '2026-10-31T00:00:00Z',
+    }));
+    writeFileSync(join(stage5, '..', 'store', 'findings', `${pid(3)}.json`), JSON.stringify({ politician_id: pid(3), findings: [finding(1), finding(2)], searches: [] }));
+    writeFileSync(join(batchDir, 'drafts', '2.json'), JSON.stringify(draft(3)));
+    const r = run();
+    expect(r).toMatchObject({ lintedOut: 2, toCheck: 1 });
+    expect(lines(join(batchDir, 'summaries.jsonl')).map((x) => x.politician_id)).toEqual([pid(3)]);
+    const refused = lines(join(batchDir, 'lint-refused.jsonl'));
+    expect(refused.every((x) => /code file unreadable/.test(x.problems.join(' ')))).toBe(true);
   });
 });
