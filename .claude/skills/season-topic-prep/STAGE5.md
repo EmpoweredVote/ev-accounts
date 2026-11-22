@@ -701,7 +701,7 @@ passed, unless the runner rules otherwise. Rows with no verified source cannot b
 ### 7b. Position summaries (after section 7 has written a batch, per topic)
 
 Everyone Stage 5 coded `seated` or `doesnt-fit` who has at least one saved finding gets a short, cited summary of
-where they stand: two to five sentences, each ending in citations like `[1, 4]`, with a numbered reference list
+where they stand: one to five sentences, each ending in citations like `[1, 4]`, with a numbered reference list
 built by code from the findings' own URLs. The summary is the profile's paragraph (`politician_context.reasoning`)
 and the reference list is its `sources`. It has **no direction marker and no effect on the compass**: a person with
 no rung keeps an empty spoke. Design, the seven writing rules (§5), the check (§6) and storage (§7):

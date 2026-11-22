@@ -409,6 +409,9 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   through OpenCode, and any failed sentence holds the summary. The runner retires the second opinion: "Just until we
   feel confident with the level of quality and accuracy we're getting." The batch's agreement rate is how the runner
   judges that.
+- **Ruling 4, one sentence is enough:** a summary is one to five sentences (the lint floor was two). The runner said
+  one piece of evidence is often enough, so a person with one supported finding gets a one-sentence summary rather
+  than none.
 - **Date and source:** 2026-11-22, Chris Andrews
   (`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md` §2, §5, §6).
 - **Scope:** every topic; gun-policy is first. The recipe is STAGE5.md section 7b.

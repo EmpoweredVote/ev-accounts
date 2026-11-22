@@ -8,7 +8,7 @@ You write a short, cited summary of what each person below has said or done on o
 The saved findings in this file are the only evidence. Do not read any other file. Do not search. Do not use
 anything you remember about a person.
 
-A summary is two to five sentences of plain prose. Each sentence is its own entry in the output, with the ids of
+A summary is one to five sentences of plain prose. Each sentence is its own entry in the output, with the ids of
 the findings it rests on. **Do not write citation numbers or brackets in the text.** The tool numbers the sources
 and writes the reference list from the findings' own URLs.
 
@@ -27,7 +27,7 @@ and writes the reference list from the findings' own URLs.
 Also: one sentence per entry (no sentence may hold a second sentence). Name a bill or act in the sentence when it
 helps ("voted for SB 243"); that is allowed, never required. A finding marked `act: yea` with
 `against_bill: true` is a vote AGAINST the bill. Use only `cites` ids that appear in that person's findings below.
-When the findings give you fewer than two sentences you can support, write the sentences you can; do not pad.
+When the findings support only one sentence, write one sentence; do not pad.
 
 ## People
 

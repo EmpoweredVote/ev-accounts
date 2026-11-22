@@ -1,7 +1,7 @@
 /**
  * stage5Summary.ts — checked, cited position summaries (plan 2026-11-22-position-summaries, task 3).
  *
- * A summary is 2-5 sentences, each ending in one or more citations `[n]` / `[n, m]` placed before the closing
+ * A summary is 1-5 sentences (ruling 2026-11-22: one piece of evidence is often enough), each ending in one or more citations `[n]` / `[n, m]` placed before the closing
  * punctuation. A writer produces a `SummaryDraft` (sentences with finding ids); `buildSummary` renders the text,
  * numbers the sources by first use, and hashes the exact text; `lintSummary` applies the mechanical rules only
  * (whether a sentence describes the right side needs judgement and is left to the checkers). Outside-model
@@ -107,7 +107,7 @@ export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; cod
   const problems: string[] = [];
   const ids = new Set(ctx.findings.map((f) => f.id));
   const n = draft.sentences.length;
-  if (n < 2 || n > 5) problems.push(`a summary has 2-5 sentences; this has ${n}`);
+  if (n < 1 || n > 5) problems.push(`a summary has 1-5 sentences; this has ${n}`);
   draft.sentences.forEach((s, i) => {
     const at = `sentence ${i + 1}`;
     const text = s.text.trim();

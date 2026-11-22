@@ -100,7 +100,9 @@ only findings are gated votes (near-unanimous) still gets a summary if the vote 
 seating, not describing. The checker decides whether a gated vote supports a sentence.
 
 **Shape:**
-- Two to five sentences of plain prose **(builder's call on the cap)**, followed by a numbered reference list.
+- One to five sentences of plain prose **(builder's call on the cap)**, followed by a numbered reference list.
+  The floor was two until the runner's ruling of 2026-11-22: one piece of evidence is often enough, so one
+  supported sentence is a summary.
 - Every sentence ends with one or more citations: `[1]`, `[2, 3]`. The runner's example: *"Senator Smith has often
   voted to restrict gun sales for X, Y, Z [1, 4, 5]."*
 - Naming the evidence in the sentence ("voted for SB 243") is allowed and often useful, never required. The

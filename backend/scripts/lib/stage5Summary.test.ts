@@ -51,11 +51,11 @@ describe('lintSummary', () => {
   it('refuses a sentence with no cites', () => {
     expect(lintSummary(two('A.', 'B.', ['f1'], []), ctx(fs)).join(' ')).toMatch(/no citation/i);
   });
-  it('refuses 0, 1 or 6 sentences', () => {
+  it('refuses 0 or 6 sentences and accepts 1 (ruling 2026-11-22: one finding is often enough)', () => {
     const s = { text: 'A.', cites: ['f1'] };
-    expect(lintSummary(draft([]), ctx(fs)).join(' ')).toMatch(/2.5 sentences/);
-    expect(lintSummary(draft([s]), ctx(fs)).join(' ')).toMatch(/2.5 sentences/);
-    expect(lintSummary(draft(Array(6).fill(s)), ctx(fs)).join(' ')).toMatch(/2.5 sentences/);
+    expect(lintSummary(draft([]), ctx(fs)).join(' ')).toMatch(/1.5 sentences/);
+    expect(lintSummary(draft([s]), ctx(fs))).toEqual([]);
+    expect(lintSummary(draft(Array(6).fill(s)), ctx(fs)).join(' ')).toMatch(/1.5 sentences/);
     expect(lintSummary(draft(Array(5).fill(s)), ctx(fs))).toEqual([]);
   });
   it('refuses an entry holding two sentences, accepts abbreviations', () => {
