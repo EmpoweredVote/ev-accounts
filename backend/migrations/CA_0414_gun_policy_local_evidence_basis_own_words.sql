@@ -18,8 +18,14 @@
 --
 -- The gun-policy federal and state rows stay 'record' and are not touched.
 -- No answer, context or evidence row is touched. One row changes.
--- Idempotent in effect: the precondition refuses a second run (the row would
--- already read 'own-words'), which is the intended signal that it already applied.
+-- Not re-runnable, by design: a second run fails the precondition (the row already
+-- reads 'own-words'), which is the signal that it already applied.
+-- Federal and state rows are proven untouched by the delta gate in the post-verify
+-- (row count and 'record' count compared with the snapshot).
+--
+-- Dry run 2026-11-22: DRY RUN OK (local -> own-words; federal and state still record).
+-- Tamper controls, each watched failing on its own gate: the precondition, the
+-- own-words post-check, and the delta gate ("other gun-policy rows moved").
 -- No grant or RLS change: no table or column is created.
 -- =============================================================================
 
@@ -29,6 +35,7 @@ BEGIN;
 -- (Plain TEMP table, dropped at the end: ON COMMIT DROP would vanish at once if a runner strips BEGIN.)
 -- Also captures how many gun-policy rows read 'record' before the update, so the
 -- post-verify can prove the federal and state rows were not touched.
+DROP TABLE IF EXISTS _ca0414_before;
 CREATE TEMP TABLE _ca0414_before AS
 SELECT r.role_scope, r.evidence_basis
   FROM inform.compass_topic_roles r
@@ -92,16 +99,6 @@ BEGIN
       n_other_before, n_other_after, n_other_record_before, n_other_record_after;
   END IF;
 
-  -- The ruling names federal and state as 'record'; assert they still are.
-  IF EXISTS (
-    SELECT 1
-      FROM inform.compass_topic_roles r
-      JOIN inform.compass_topics t ON t.id = r.topic_id
-     WHERE t.topic_key = 'gun-policy' AND r.role_scope IN ('federal', 'state')
-       AND r.evidence_basis <> 'record'
-  ) THEN
-    RAISE EXCEPTION 'CA_0414: a gun-policy federal or state row no longer reads ''record''';
-  END IF;
 END $$;
 
 DROP TABLE _ca0414_before;
