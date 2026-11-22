@@ -430,3 +430,157 @@ beside a hard biennial spine is the signature of exactly that.
   was `2025-01-13`, and one row already reads `2025-01-13`. **Known, out of scope here, and worth
   re-sourcing when Washington's executives next come up** — do not "fix" one of them without
   re-sourcing it, which is the standing rule for the `vacant_since` inconsistencies in `CLAUDE.md`.
+
+---
+
+## MD — Maryland · 117 offices · ⚠️ 115 sourced, **2 REFUSED**, 2026-11-22
+
+🔴🔴 **MARYLAND'S DEFAULT RULE IS THAT A TERM BEGINS ON ELECTION DAY, AND TWO OF ITS THREE
+EXECUTIVES FALL UNDER IT.** Art. XVII, § 4 — which Art. XVII, § 9 makes override every other
+provision it conflicts with — says the term of an elected officer *"shall, except in cases
+otherwise expressly provided herein, **commence from the time of their Election**"*. The General
+Assembly and the Governor are expressly provided for elsewhere and are clean. The **Attorney
+General and the Comptroller are not**, and neither is datable from the constitution at all.
+
+| body | offices | winners | start date | authority |
+|---|---|---|---|---|
+| Senate | 47 | 47 | **2027-01-13** | Art. III, § 6 |
+| House of Delegates | 67 | **131** | **2027-01-13** | Art. III, § 6 |
+| Governor | 1 | 1 | **2027-01-20** | Art. II, § 1 |
+| Attorney General | 1 | 1 | 🔴 **REFUSED** | Art. V, § 1 names no date |
+| Comptroller | 1 | 1 | 🔴 **REFUSED** | Art. VI, § 1 names none; falls to Art. XVII, § 4 |
+
+### The authority — the two that are clean
+
+**Md. Const. Art. III, § 6** (both chambers, one sentence):
+
+> A member of the General Assembly shall be elected by the registered voters of the legislative or
+> delegate district from which he seeks election, **to serve for a term of four years beginning on
+> the second Wednesday of January following his election**.
+
+Second Wednesday of January 2027 = **2027-01-13**. ⚠ Art. III, § 14 puts the General Assembly's
+own meeting on the same day — *"The General Assembly shall meet on the second Wednesday of
+January, nineteen hundred and seventy-one, and on the same day in every year thereafter"* — so
+Maryland is a **same-day** state like Wisconsin and Washington. 🔴 **Cite § 6, not § 14**: § 6 is
+the term, § 14 is the meeting, and Maine is the proof they can diverge.
+
+**Md. Const. Art. II, § 1** (Governor):
+
+> The executive power of the State shall be vested in a Governor, **whose term of office shall
+> commence on the third Wednesday of January next ensuing his election**, and continue for four
+> years, and until his successor shall have qualified.
+
+Third Wednesday of January 2027 = **2027-01-20**. Art. II, § 3 adds that the Governor and
+Lieutenant Governor *"shall qualify … on the third Wednesday of January next ensuing his election,
+**or as soon thereafter as may be practicable**"* — the term commences on the calendar date; the
+qualification is allowed to lag it. **The date is a term start.**
+
+🟢 **Control:** `essentials.office_terms` carries Wes Moore's term starting **2023-01-18**,
+backfilled by migration 1459 from `msa.maryland.gov` and never derived from this clause. The third
+Wednesday of January 2023 was the 18th.
+
+### 🔴 The two that are refused, and why `estimated` is not an option
+
+**Attorney General — Art. V, § 1:**
+
+> … who shall hold his office **for four years from the time of his election and qualification**,
+> and until his successor is elected and qualified …
+
+**Comptroller — Art. VI, § 1:**
+
+> The terms of office of the Comptroller and Treasurer shall be **for four years, and until their
+> successors shall qualify** …
+
+Neither names a day. So the residual rule applies — **Art. XVII, § 4**:
+
+> The term of office of all Judges and other officers, for whose election provision is made by this
+> Constitution, shall, except in cases otherwise expressly provided herein, **commence from the
+> time of their Election**. All such officers shall qualify as soon after their election as
+> practicable, and shall **enter upon the duties** of their respective offices immediately upon
+> their qualification.
+
+— and **Art. XVII, § 9** makes Article XVII prevail over any provision inconsistent with it.
+
+⚠ **Read literally, both terms began on 2026-11-03 and are already running.** That is not
+obviously wrong — Indiana's `CC_0464` was exactly that case. **But it cannot be written here, and
+the reason is structural rather than interpretive:**
+
+🔴 **THE LITERAL READING PUTS TWO PEOPLE IN ONE OFFICE AND `office_terms` WOULD REFUSE IT.** The
+predecessor holds "until their successor shall qualify" (Art. VI, § 1) or "until his successor is
+elected and qualified" (Art. V, § 1). The successor's term "commences from the time of their
+Election". Those two spans **overlap** from election day until the oath — by design, so that the
+office is never empty. Our model cannot express that: `office_terms` carries an exclusion
+constraint that forbids two holders of one office over overlapping ranges, which is the whole
+basis of `office_current_holder` being exactly one row per office. So the constitution's own
+answer is a date we cannot write, and the date we *can* write — the qualification — is the one the
+constitution declines to fix.
+
+▶ **What these two need is a `published` date: the day each officer actually qualifies**, from the
+officer's own or the Governor's announcement, recorded when it happens. 🔴 **Not `estimated` —
+the register's step 3 says an `estimated` basis may not seat anybody, and the seating migration's
+P4 refuses it.** Until then the AG and Comptroller stay out of Maryland's wave, named in its
+header, exactly as the four staggered bodies are in Ruling A.
+
+⚠ **Do not reach for "the third Wednesday, like the Governor".** The Maryland Manual's own list of
+Attorneys General gives years and no days — *"2007-2015 Douglas F. Gansler · 2015-2023 Brian E.
+Frosh · 2023- Anthony G. Brown"* — which is what a state publishes when there is no fixed day to
+publish. A single calendar date borrowed from a different officer's article would be a fabrication
+dressed as a citation.
+
+### The source
+
+`https://msa.maryland.gov/msa/mdmanual/43const/html/` — the **Maryland Manual On-Line**, the
+Maryland State Archives' official publication of the Constitution of Maryland. Articles read in
+full 2026-11-22: `02art2.html` (33,410 B), `03art3.html` (70,428 B), `05art5.html` (12,589 B),
+`06art6.html` (11,309 B), `17art17.html` (9,931 B), all HTTP 200. Each clause above carries the
+Manual's own amendment history, which is how the current text was distinguished from superseded
+wording.
+
+🔴🔴 **`mgaleg.maryland.gov` SERVES ITS "NotFound" PAGE WITH HTTP 200, AND THE BODY IS ALWAYS
+57,164 BYTES.** `…/Laws/Constitution`, `…/Laws/Constitution?article=gml` and
+`…/Session/Index/2026rs` all returned HTTP 200 at exactly that size; opened in a browser, the
+first redirects to `/mgawebsite/Error/NotFound?error=404`. **A second official copy of the
+Maryland constitution was sought and does not exist at that host.** ▶ Any probe of
+mgaleg.maryland.gov must assert on content; `57164` is the tell. This is `CLAUDE.md`'s soft-404,
+met in the wild.
+
+### Basis
+
+`statute` for the General Assembly and the Governor. The other two have no row yet.
+
+### Term start or oath? — **term start for all three dated rows**
+
+Art. III, § 6 says "beginning on"; Art. II, § 1 says "shall commence on". Both are calendar dates
+and neither is conditioned on qualification — Art. II, § 3 explicitly lets the Governor's
+qualification fall *after* the commencement date. For the AG and Comptroller the question is
+inverted and is the whole problem: the constitution fixes **no** date and makes qualification the
+operative event, which is why those two are refused above rather than guessed.
+
+### Carried into the row
+
+| field | Senate + House of Delegates | Governor |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2027-01-13** | **2027-01-20** |
+| `window_end_date` | NULL | NULL |
+| `basis` | `statute` | `statute` |
+| `rule_id` | `md-const-art3-s6-second-wed-january` | `md-const-art2-s1-third-wed-january` |
+
+### Four things the next step inherits
+
+- 🔴 **Maryland is the Ruling A state.** 38 of the 67 pending House of Delegates offices carry more
+  than one winner — 131 winners across 67 offices. The register's step 6 warning applies in full:
+  `WAVE_SELECTION_SQL` keys winners on the **race-carrying** office, Ruling A writes the second and
+  third winners to **different** offices, and post-verify 1 joins `office_terms` back on
+  `office_id`. **Build Maryland's selection with the ASSIGNED office before copying `CC_0462`**, or
+  the file aborts after writing.
+- 🔴 **Ruling A's equality clause must be asserted per race, and Maryland is why.** Lettered
+  subdistricts (19A, 19B) elect separately. If they arrive as distinct office rows, "fill a
+  remaining eligible office" would claim a subdistrict nobody sourced.
+- 🔴 **85 winners have no `politicians` row** — the second-largest seeding job after Maine's 77.
+- ⚠ **All 117 pending rows carry `certainty = 'called'`, none certified.** Ruling B applies
+  unchanged: record the split in the pin block and the header, and carry the slot in every term's
+  `source`.
+- ⚠ **The Lieutenant Governor and the State Treasurer are correctly NOT pending.** The Lieutenant
+  Governor runs on the Governor's ticket, and the Treasurer is chosen "on joint ballot by the two
+  Houses of the Legislature" (Art. VI, § 1) rather than by voters. Neither is a gap.

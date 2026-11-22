@@ -54,7 +54,19 @@ path.** See [`DATES.md`](./DATES.md) § ME.
 - 🔴 **The chamber's own roster and the legislature's own publication outrank every aggregator.**
   `api.iga.in.gov` is what `CA_0396` used for Indiana. Prefer the state's own site for its
   constitution over any mirror.
+- 🔴🔴 **A STATE CAN HAVE A RESIDUAL RULE THAT STARTS A TERM ON ELECTION DAY, AND AN OFFICE WITH NO
+  DATE AT ALL.** Maryland's Art. XVII § 4 commences every elected term *"from the time of their
+  Election"* unless expressly provided otherwise, and § 9 makes Article XVII prevail over anything
+  inconsistent. Its Attorney General and Comptroller have no express date, so the constitution's
+  own answer is election day — which **overlaps the predecessor**, who holds "until their successor
+  shall qualify", and `office_terms`' exclusion constraint refuses two holders of one office.
+  ▶ **When a state names no day, say so and refuse the office.** The honest row is a `published`
+  qualification date recorded when it happens. 🔴 Never borrow a sibling officer's date, and never
+  `estimated` — the seating migration's P4 refuses it.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
+- 🔴 **`mgaleg.maryland.gov` RETURNS HTTP 200 WITH A "NotFound" PAGE FOR ANY UNKNOWN PATH**, body
+  always **57,164 bytes**. Three different URLs "succeeded" that way before a browser showed the
+  redirect to `/mgawebsite/Error/NotFound?error=404`. Assert on content, not status.
 - Take the lease before working a state:
   `npm run steward --prefix backend -- claim state:<usps> --label "<state> seating dates"`.
 
@@ -123,6 +135,20 @@ migration** — `CLAUDE.md`'s existing rule: *attach the race to the office of t
 actually leaving*. Until that is done, seat the rest of their state and leave these out, saying so
 in the header. They are 7 offices of the 1,162.
 
+## 🔴 Two more cannot be DATED at all, which is a different refusal
+
+Ruling A refuses the four above because **which seat** a winner takes is not in our data. These two
+are refused because **the state fixes no day**:
+
+| office | why |
+|---|---|
+| MD Attorney General | Art. V § 1 gives "four years from the time of his election and qualification" — no calendar date |
+| MD Comptroller | Art. VI § 1 gives a length only; falls to Art. XVII § 4, "from the time of their Election", which overlaps the predecessor |
+
+Each needs a **`published` qualification date recorded when it happens**. See
+[`DATES.md`](./DATES.md) § MD. They are 2 offices of the 1,162, and Maryland's other 115 proceed
+without them.
+
 ## What to record per body, before writing any migration
 
 For each body, a line carrying all of:
@@ -147,4 +173,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | MA | ✅ [`DATES.md`](./DATES.md) — **three dates**, 2027-01-06 / -01-07 / -01-20 | ⏳ | | |
 | ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor | ⏳ | | |
 | WA | ✅ [`DATES.md`](./DATES.md) — **2027-01-11**, one date; the authority is `RCW 44.04.021`, not the constitution | ⏳ | | |
+| MD | ⚠️ [`DATES.md`](./DATES.md) — **115 of 117**: 2027-01-13 legislature, 2027-01-20 Governor. 🔴 **AG and Comptroller REFUSED** — the constitution fixes no day for them | ⏳ | | |
 | *(nothing else yet)* | | | | |
