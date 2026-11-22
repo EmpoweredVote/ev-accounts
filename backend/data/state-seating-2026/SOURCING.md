@@ -240,6 +240,21 @@ in January 2027.
   day, so it cost nothing here — ▶ **in a state where one of the two has its own commencement, a
   queue row read as one body dates the other from the wrong clause, and the count still looks
   right.** The measurement query already groups by chamber; read that column.
+- 🔴🔴 **"NO `politicians` ROW" FROM A WAVE DERIVATION MEANS "NOT LINKED TO THIS RACE", NEVER
+  "NOT IN THE DATABASE" — AND SEEDING ON IT DUPLICATES SITTING OFFICIALS.** `derive-seating-wave.mjs`
+  reads `winners -> id`, which comes from `race_candidates.politician_id`; a NULL there is a missing
+  LINK and looks identical to a missing PERSON. Measured on Nevada: 13 blockers, of which **one was
+  Danielle Gallant, the sitting Assembly District 23 member who had just won State Senate District
+  20**. Creating her would have put a second row on the board for a serving legislator. ▶ **Sweep
+  the whole `politicians` table by name before creating anybody**, and expect the hits to be people
+  moving between chambers — which is precisely the population a transition wave is made of.
+- 🔴 **AN OFFICE WITH A RACE BUT NO RESULT IS AS INVISIBLE AS AN OFFICE WITH NO RACE, AND THE
+  SHORTFALL READS AS A STAGGERED BODY.** Nevada's Assembly has 42 seats and the wave selects 41.
+  That looks like an ordinary off-cycle seat; it is not. **Assembly District 22's 2026 race exists
+  with both candidates and `result` NULL on both**, so `office_pending_winner` cannot see it, and
+  our page names the losing incumbent as the current member. ▶ **Check a chamber's pending count
+  against its REAL size and account for every seat that is missing** — "staggered" is a claim, not
+  a default. The body's own roster is what settles it.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
 - 🔴 **`statutes.capitol.texas.gov` RETURNS THE SAME 250,874-BYTE NAVIGATION PAGE FOR EVERY
   `Docs/.../*.htm` URL** under `curl` — whatever article is asked for, with 1,356 characters of
@@ -380,7 +395,7 @@ term. Step 2 is done for these thirteen; steps 3 through 9 are not started for a
 | CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |
 | OR | ⚠️ [`DATES.md`](./DATES.md) — **75 of 76**: 2027-01-11 legislature. 🔴 **Governor REFUSED** — `ORS 176.010` starts the term at an event, not a day | ⏳ | | |
 | AZ | ⚠️ [`DATES.md`](./DATES.md) — **65 of 66** on **2027-01-04**. 🔴 **Mine Inspector REFUSED**; Corporation Commission dated but not seatable; 🔴🔴 **no Lieutenant Governor office exists** | ⏳ | | |
-| NV | ⚠️ [`DATES.md`](./DATES.md) — **52 of 58** on 🔴 **2026-11-04, ALREADY PAST**. 🔴 **6 executives REFUSED** — term begins at qualification, bounded before 2027-01-05 | ⏳ | | |
+| NV | ⚠️ [`DATES.md`](./DATES.md) — **52 of 58** on 🔴 **2026-11-04, ALREADY PAST**; all 52 confirmed against the Legislature's own 84th-Session roster. 🔴 **6 executives REFUSED** — term begins at qualification, bounded before 2027-01-05. 🔴 **12 people to seed, not 13** (Danielle Gallant already exists), and **2 seats are wrong and unreachable** (AD22, SD6) | ⏳ | | |
 | UT | ⚠️ [`DATES.md`](./DATES.md) — **50 of 56** on **2027-01-01**, the first day of January itself. 🔴 **6 State Board of Education seats REFUSED** | ⏳ | | |
 | CO | ✅ [`DATES.md`](./DATES.md) — all 18: legislature **2027-01-11** (`basis = published`, HJR26-1031 — the statutory default would be 2 days wrong), everything else **2027-01-12** | ⏳ | | |
 | TX | ✅ [`DATES.md`](./DATES.md) — all 14: **2027-01-01** for 12 (`Gov't Code § 601.003`), **2027-01-19** for Governor + Lt. Governor, whom § 601.003(c) excludes by name | ⏳ | | |

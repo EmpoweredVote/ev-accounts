@@ -1120,7 +1120,43 @@ oath"* — and Nevada is the first state in the pass to be on that side of the l
   does that automatically at `term_start - 1`, and the register's step 6 correction applies: the
   closures are **not** recoverable from any file, so capture `(office_id, term_id, term_end,
   how_ended)` for all 52 predecessors in the pre-image and assert `term_end IS NULL` across them.
-- ⚠ **13 winners have no `politicians` row** — 12 Assembly, 1 Senate.
+- 🔴🔴 **12 WINNERS NEED A `politicians` ROW, NOT 13 — ONE OF THEM IS A SITTING MEMBER.**
+  `derive-seating-wave.mjs` reports 13 `winner_no_record` blockers, and **Danielle Gallant,
+  State Senate District 20, already exists** as `6cffc86c-7d40-4fd9-8690-51d6d33ff1e4`: she is the
+  sitting **Assembly District 23** member moving up to the Senate, and her `race_candidates` row
+  simply has a NULL `politician_id`. Seeding her would have put a second row on the board for a
+  serving official. ▶ **The blocker says "no record in this race", never "no record anywhere"**
+  — sweep the whole `politicians` table before creating anybody. Her row needs LINKING; the other
+  twelve need creating.
+  - ⚠ Her Assembly seat is in the same wave: AD23's winner is **Denise Daniels Fanning**, so the
+    one file both closes Gallant's Assembly term and opens her Senate one. The two writes touch
+    different offices, so the `office_terms` exclusion constraint is not engaged either way round.
+- 🟢🟢 **THE LEGISLATURE'S OWN ROSTER CONFIRMS ALL 52, AND IT HAS ALREADY ROLLED TO THE 84th
+  SESSION.** `leg.state.nv.us/App/Legislator/A/{Assembly,Senate}/Current/` serves
+  `Session/84th2027` and names the 2026 winners as the CURRENT membership with "Term Ends: 2028",
+  read 2026-11-22. All 42 Assembly and all 21 Senate districts are published; **every one of the
+  52 seats in this wave names the same person our winner rows do.** The body itself treating these
+  seats as already changed hands is the strongest control the 2026-11-04 date has.
+  - ⚠ **Two of the 52 differ from the roster in the GIVEN NAME ONLY, and both are benign**: AD26
+    "Richard DeLong" is the roster's "DeLong, Rich", SD13 "Richard Daly" is "Daly, Skip". Both
+    already hold `politicians` rows, so neither spelling is written by this pass.
+  - 🔴 **AD15 IS SPELLED `Dávila` BY THE LEGISLATURE AND `Davila` BY AP.** The chamber's own
+    publication outranks the aggregator on how a member's name is spelled, so the new row should
+    carry **Miguel Dávila** with AP's spelling noted in its `source`. ⚠ The page writes accents as
+    numeric entities (`D&#225;vila`), so a reader that does not decode them manufactures a
+    disagreement — and so does writing the decoded name out in the wrong encoding, which is how
+    this cross-check first reported 5 mismatches instead of 2.
+- 🔴🔴 **TWO NEVADA SEATS ARE WRONG ON OUR PAGES AND NO 2026 WAVE CAN REACH EITHER.** Both were
+  found by the roster read, both sit outside `office_pending_winner`, and each needs its own file:
+  - **ASSEMBLY DISTRICT 22** — we show **Melissa R. Hardy**; the Legislature shows **Shenea
+    Booth**. The 2026 race EXISTS in our data with both candidates present and `result` NULL on
+    both, so no winner was ever recorded. ▶ **An office with a race but no RESULT is exactly as
+    invisible as an office with no race** — the pending-winner view cannot tell the two apart, and
+    the seat count looks complete either way. This is the only one of Nevada's 42 Assembly seats
+    missing from the wave, which is why it reads as "41 of 42 were up" rather than as a defect.
+  - **STATE SENATE DISTRICT 6** — we show **Nicole J. Cannizzaro**; the Legislature shows the seat
+    **VACANT**. SD6 carried no 2026 race at all, so it is correctly outside the wave and
+    separately wrong.
 - ⚠ **11 of Nevada's 21 Senate seats are pending**, the chamber being staggered on four-year
   terms. One winner per office, so **not** a Ruling A case.
 
