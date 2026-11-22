@@ -22,6 +22,9 @@ const code = { politician_id: PID, topic_key: 'gun-policy' } as Stage5Code;
 const ctx = (findings: Finding[]) => ({ findings, code, sides: '1,2,3/4,5' });
 const draft = (sentences: { text: string; cites: string[] }[]): SummaryDraft => ({ politician_id: PID, topic_key: 'gun-policy', sentences });
 const two = (a = 'A.', b = 'B.', ca = ['f1'], cb = ['f2']) => draft([{ text: a, cites: ca }, { text: b, cites: cb }]);
+/** two() behind an opening line, the shape the lint requires of a summary of two or more sentences. */
+const led = (a = 'A.', b = 'B.', ca = ['f1'], cb = ['f2']): SummaryDraft =>
+  ({ ...two(a, b, ca, cb), sentences: [{ text: 'He leans one way.', lead: true }, ...two(a, b, ca, cb).sentences] });
 
 describe('buildSummary', () => {
   it('numbers by first use and places markers before closing punctuation', () => {
@@ -44,50 +47,54 @@ describe('buildSummary', () => {
 
 describe('lintSummary', () => {
   const fs = [f1, f2, f3, f4];
-  it('is clean for a good draft', () => { expect(lintSummary(two(), ctx(fs))).toEqual([]); });
+  it('requires an opening line once a summary has two or more sentences (ruling 6)', () => {
+    expect(lintSummary(two(), ctx(fs)).join(' ')).toMatch(/opens with a plain-direction line/);
+    expect(lintSummary(draft([{ text: 'A.', cites: ['f1'] }]), ctx(fs))).toEqual([]);
+  });
+  it('is clean for a good draft', () => { expect(lintSummary(led(), ctx(fs))).toEqual([]); });
   it('refuses a cite not in the person\'s findings', () => {
-    expect(lintSummary(two('A.', 'B.', ['f1'], ['zzz']), ctx(fs)).join(' ')).toMatch(/zzz/);
+    expect(lintSummary(led('A.', 'B.', ['f1'], ['zzz']), ctx(fs)).join(' ')).toMatch(/zzz/);
   });
   it('refuses a sentence with no cites', () => {
-    expect(lintSummary(two('A.', 'B.', ['f1'], []), ctx(fs)).join(' ')).toMatch(/no citation/i);
+    expect(lintSummary(led('A.', 'B.', ['f1'], []), ctx(fs)).join(' ')).toMatch(/no citation/i);
   });
   it('refuses 0 or 6 sentences and accepts 1 (ruling 2026-11-22: one finding is often enough)', () => {
     const s = { text: 'A.', cites: ['f1'] };
     expect(lintSummary(draft([]), ctx(fs)).join(' ')).toMatch(/1.5 sentences/);
     expect(lintSummary(draft([s]), ctx(fs))).toEqual([]);
     expect(lintSummary(draft(Array(6).fill(s)), ctx(fs)).join(' ')).toMatch(/1.5 sentences/);
-    expect(lintSummary(draft(Array(5).fill(s)), ctx(fs))).toEqual([]);
+    expect(lintSummary(draft([{ text: 'Lead.', lead: true } as never, ...Array(4).fill(s)]), ctx(fs))).toEqual([]);
   });
   it('refuses an entry holding two sentences, accepts abbreviations', () => {
-    expect(lintSummary(two('It passed. Then it failed.'), ctx(fs)).join(' ')).toMatch(/more than one sentence/);
-    expect(lintSummary(two('The U.S. Senate passed it.'), ctx(fs))).toEqual([]);
-    expect(lintSummary(two('Sen. Smith spoke, e.g. Dr. Jones agreed.'), ctx(fs))).toEqual([]);
+    expect(lintSummary(led('It passed. Then it failed.'), ctx(fs)).join(' ')).toMatch(/more than one sentence/);
+    expect(lintSummary(led('The U.S. Senate passed it.'), ctx(fs))).toEqual([]);
+    expect(lintSummary(led('Sen. Smith spoke, e.g. Dr. Jones agreed.'), ctx(fs))).toEqual([]);
   });
   it('reads a middle initial as part of a name, not a sentence end', () => {
-    expect(lintSummary(two('Danica A. Roem voted for A.', 'Richard H. Stuart voted for B.'), ctx(fs))).toEqual([]);
-    expect(lintSummary(two('He voted for it. She voted for B.'), ctx(fs)).join()).toMatch(/more than one sentence/);
+    expect(lintSummary(led('Danica A. Roem voted for A.', 'Richard H. Stuart voted for B.'), ctx(fs))).toEqual([]);
+    expect(lintSummary(led('He voted for it. She voted for B.'), ctx(fs)).join()).toMatch(/more than one sentence/);
   });
   it('refuses the word rung and a rung number', () => {
-    expect(lintSummary(two('Holds rung 3.'), ctx(fs)).join(' ')).toMatch(/rung/i);
-    expect(lintSummary(two('Sits on the ladder.'), ctx(fs)).join(' ')).toMatch(/ladder/i);
+    expect(lintSummary(led('Holds rung 3.'), ctx(fs)).join(' ')).toMatch(/rung/i);
+    expect(lintSummary(led('Sits on the ladder.'), ctx(fs)).join(' ')).toMatch(/ladder/i);
   });
   it('refuses a party name', () => {
-    expect(lintSummary(two('Joined the Republican caucus.'), ctx(fs)).join(' ')).toMatch(/party/i);
+    expect(lintSummary(led('Joined the Republican caucus.'), ctx(fs)).join(' ')).toMatch(/party/i);
   });
   it('refuses "often" with 2 distinct cites and passes with 3', () => {
-    expect(lintSummary(two('He often votes yes.', 'B.', ['f1', 'f2']), ctx(fs)).join(' ')).toMatch(/often/);
-    expect(lintSummary(two('He often votes yes.', 'B.', ['f1', 'f2', 'f4']), ctx(fs))).toEqual([]);
+    expect(lintSummary(led('He often votes yes.', 'B.', ['f1', 'f2']), ctx(fs)).join(' ')).toMatch(/often/);
+    expect(lintSummary(led('He often votes yes.', 'B.', ['f1', 'f2', 'f4']), ctx(fs))).toEqual([]);
   });
   it('refuses "more than once" with 1 cite', () => {
-    expect(lintSummary(two('She said so more than once.', 'B.', ['f1']), ctx(fs)).join(' ')).toMatch(/more than once/);
-    expect(lintSummary(two('She said so more than once.', 'B.', ['f1', 'f2']), ctx(fs))).toEqual([]);
+    expect(lintSummary(led('She said so more than once.', 'B.', ['f1']), ctx(fs)).join(' ')).toMatch(/more than once/);
+    expect(lintSummary(led('She said so more than once.', 'B.', ['f1', 'f2']), ctx(fs))).toEqual([]);
   });
   it('accepts only this person\'s findings when 40+ are supplied', () => {
     const many = Array.from({ length: 45 }, (_, i) => finding(`g${i}`, `https://x.example/${i}`));
     const mine = [...many, f1, f2];
-    expect(lintSummary(two(), ctx(mine))).toEqual([]);
-    expect(lintSummary(two('A.', 'B.', ['g44'], ['g0']), ctx(many)).join(' ')).toBe('');
-    expect(lintSummary(two('A.', 'B.', ['f1'], ['f2']), ctx(many)).join(' ')).toMatch(/f1/);
+    expect(lintSummary(led(), ctx(mine))).toEqual([]);
+    expect(lintSummary(led('A.', 'B.', ['g44'], ['g0']), ctx(many)).join(' ')).toBe('');
+    expect(lintSummary(led('A.', 'B.', ['f1'], ['f2']), ctx(many)).join(' ')).toMatch(/f1/);
   });
 });
 

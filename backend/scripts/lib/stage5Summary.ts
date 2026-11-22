@@ -148,6 +148,9 @@ export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; cod
   const ids = new Set(ctx.findings.map((f) => f.id));
   const n = draft.sentences.length;
   if (n < 1 || n > 5) problems.push(`a summary has 1-5 sentences; this has ${n}`);
+  if (n >= 2 && !draft.sentences[0].lead) {
+    problems.push('a summary of two or more sentences opens with a plain-direction line ("lead": true): which way the person leans, or that the record is mixed');
+  }
   const everyCite = new Set(draft.sentences.filter((x) => !x.lead).flatMap(citesOf));
   draft.sentences.forEach((s, i) => {
     const at = `sentence ${i + 1}`;

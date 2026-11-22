@@ -424,6 +424,16 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   conversation after sample batch `sample-01`).
 - **Scope:** every topic; gun-policy is first. The recipe is STAGE5.md section 7b.
 - **Contrast:** the Stage 5 coder and its blind check are unchanged; a summary describes, it never seats.
+- **Ruling 6, the opening line says which way they lean, or that the record is mixed:** after sample batch
+  `sample-02` (19 of 36 passed; 4 of Claude's 9 fails were opening lines that overstated the record) the runner
+  asked that a citizen could "understand quickly how that person would feel about gun policy based on the evidence
+  that we have". So every summary of two or more sentences opens with that line (the lint now refuses one without
+  it). It names a lean only when the findings that show a position point that way, never counting a gated vote; a
+  record that runs both ways is called mixed, with both sides named. A summary does not explain why someone has no
+  compass position ("I think that will probably get more confusing"). On bills: "voted for a bill to raise
+  penalties" is right whether or not it became law, and needs no note that it did not; only "which raised penalties"
+  claims a law. Each bill is described exactly as its finding's title and text show.
+- **Date and source:** 2026-11-22, Chris Andrews, in conversation after `sample-02`.
 
 ## Topic-scoped readings
 

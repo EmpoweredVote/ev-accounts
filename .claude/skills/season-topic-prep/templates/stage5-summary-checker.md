@@ -43,9 +43,11 @@ summary cites, taken together. A sentence **fails** if any of these is true:
 7. The tone is not neutral: adjectives of judgement, or words a news wire would not use.
 8. A gated vote (one nearly everyone cast the same way) is described as showing a position it does not show.
 9. A sentence says a bill did something as law ("which repealed", "which created") when no cited finding shows it
-   became law. "Voted for a bill to repeal …" is fine.
-10. The opening line states a direction the cited findings, taken together, do not show; or, for a doesnt-fit
-    person, it states one direction for a record that runs more than one way.
+   became law. "Voted for a bill to repeal …" is fine, and needs no note that the bill did not become law.
+10. A bill is described more widely or narrowly than its finding's title and text show (whom it covers, what it does).
+11. The opening line names a lean the findings that show a position do not share; counts a gated vote toward the
+    lean; says "mostly" without a clear majority; claims more than the findings cover; or, for a record that runs
+    both ways (as a doesnt-fit record almost always does), names one direction instead of saying it is mixed.
 
 Be strict and literal. When unsure, fail the sentence and say why. Each `reason` is one plain sentence naming the
 finding or the words at fault; for a pass, say what supports it.

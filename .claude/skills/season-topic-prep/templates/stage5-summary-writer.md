@@ -14,20 +14,31 @@ text.** The tool numbers the sources and writes the reference list from the find
 
 ## The shape
 
-1. **Opening line (when the findings support one).** One sentence in plain words on the direction of the person's
-   record or words: for example "Rick Williams has voted to loosen limits on guns in both chambers of the Georgia
-   legislature." It carries no cites (`"lead": true`); it rests on every finding the rest of the summary cites, so it
-   may say no more than those findings show together. For a **doesnt-fit** person it says the record runs more than
-   one way and names both: "Her votes mostly widened where people may carry a gun, but she also voted for tougher
-   penalties for juveniles with weapons." Leave it out when the findings are too thin to say a direction honestly.
+1. **Opening line (always, unless the summary is one sentence).** One sentence in plain words that tells a voter
+   which way the person leans on the topic, so they understand it at a glance: for example "Rick Williams has voted
+   to loosen limits on guns in both chambers of the Georgia legislature." It carries no cites (`"lead": true`); it
+   rests on every finding the rest of the summary cites, so it may say no more than those findings show together.
+   - **Name a lean only when the findings that show a position point that way.** A gated vote (nearly everyone voted
+     the same way) shows no position, so it never counts toward the lean. "Mostly" needs a clear majority of the
+     findings that do show a position.
+   - **When they point both ways, say the record is mixed** and name the two sides in plain words: "Her record on
+     guns is mixed: she voted to widen where people may carry a gun, and for tougher penalties for juveniles with
+     weapons." A **doesnt-fit** person almost always has this shape.
+   - **When the evidence is only words, say so:** "He has said he supports gun rights."
+   - Say no more than the findings cover: "limits on carrying guns" only when the findings are about carrying.
+   - Do not explain why someone has or has no compass position.
 2. **Then what they did, grouped by what it does.** Put acts of the same kind in one sentence, each as its own
    part with its own cites: "In the House, he voted to end the license requirement to carry a handgun, to honor carry
    licenses from more states and to allow license holders to carry on public college campuses." Say what each act
    does in plain words. **Do not name bill numbers in the text**; the references carry them. Name a bill only when a
    voter would know it by name (a named act such as the "Constitutional Carry Act" is fine).
-3. **A vote is a vote, not a law.** Write "voted for a bill to repeal the silencer ban", never "voted for HB 1, which
-   repealed the silencer ban", unless a finding shows the bill became law. A sponsor "sponsored a bill to …"; a bill
-   that failed "would have …".
+3. **A vote is a vote, not a law.** Write "voted for a bill to repeal the silencer ban", never "voted for a bill,
+   which repealed the silencer ban", unless a finding shows the bill became law. There is no need to add that a bill
+   did not become law. A sponsor "sponsored a bill to …"; a bill that failed "would have …".
+4. **Describe each bill exactly as its finding does.** Its title and text set what it does and whom it covers: a bill
+   on state agencies is not a bill on "governments"; a bill titled "Enhanced Background Checks" is not a bill to check
+   more sales unless a finding says so. When the finding says little, say little ("voted for a bill on background
+   checks").
 
 ## Writing rules
 
@@ -44,7 +55,8 @@ text.** The tool numbers the sources and writes the reference list from the find
 Also: one sentence per entry (no sentence may hold a second sentence). A finding marked `act: yea` with
 `against_bill: true` is a vote AGAINST the bill. A vote marked as gated (nearly everyone voted the same way) says
 little about a position; do not lean on it. Use only `cites` ids that appear in that person's findings below. When
-the findings support only one sentence, write one sentence and no opening line; do not pad.
+the findings support only one sentence, write one sentence and no opening line; do not pad. Otherwise the first
+entry is the opening line.
 
 ## People
 
