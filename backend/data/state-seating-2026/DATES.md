@@ -1385,3 +1385,121 @@ while the question "is it an oath?" still answers no.
 | `window_end_date` | NULL (the date is fixed, not a window) | NULL |
 | `basis` | **`published`** | `statute` |
 | `rule_id` | `co-hjr26-1031-convening` | `co-second-tuesday-january` |
+
+---
+
+## TX — Texas · 14 offices · ✅ sourced 2026-11-22 (2 dates, and the split is statutory)
+
+🔴 **Texas has a single statute that dates almost every elected state officer — and it names, in
+its own words, the four it does not reach.** That exclusion list is the whole of Texas's
+complexity.
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| Attorney General · Comptroller · Land Commissioner · Agriculture Commissioner · Railroad Commissioner | 5 | **2027-01-01** (Fri) | Tex. Gov't Code § 601.003(a) |
+| State Board of Education (Districts 2, 5, 6, 7, 9, 13, 14) | 7 | **2027-01-01** (Fri) | § 601.003(a), corroborated by Tex. Educ. Code § 7.103 |
+| **Governor · Lieutenant Governor** | 2 | **2027-01-19** (Tue) | Tex. Const. Art. IV, § 4 + Gov't Code § 301.001 |
+
+### The general rule, and the exclusion that creates the second date
+
+**Tex. Gov't Code § 601.003 — REGULAR TERM OF STATE, DISTRICT, COUNTY, OR PRECINCT OFFICE:**
+
+> (a) The regular term of an elective state, district, county, or precinct office **begins on
+> January 1 of the year following the general election** for state and county officers.
+> (b) A person elected to a regular term of office shall qualify and assume the duties of the
+> office on, or as soon as possible after, January 1 …
+> **(c) This section does not apply to the office of governor, lieutenant governor, state senator,
+> or state representative.**
+
+So eleven of Texas's fourteen pending offices are dated **2027-01-01** by one sentence, and the
+exclusion in (c) is exactly what sends the Governor and Lieutenant Governor somewhere else.
+
+⚠ **Tex. Const. Art. IV, § 23 is the clause a per-office search finds, and it does not answer the
+question**: *"The Comptroller of Public Accounts, the Commissioner of the General Land Office, the
+Attorney General, and any statutory State officer who is elected by the electorate of Texas at
+large … shall each hold office for the term of four years."* Length, not commencement. The statute
+supplies the day.
+
+🟢 **The State Board of Education's own statute uses the same boundary**, which is why it is dated
+with the five executives rather than separately: **Tex. Educ. Code § 7.103** — *"members of the
+board serve staggered terms of four years with the terms of eight members **expiring on January 1**
+of one odd-numbered year and the terms of seven members expiring on January 1 of the next
+odd-numbered year."* ⚠ That is an *expiry*, so it corroborates § 601.003 rather than replacing it.
+
+### 🔴 The Governor and Lieutenant Governor are INSTALLED, and the date is derived from two documents
+
+**Tex. Const. Art. IV, § 4 — INSTALLATION OF GOVERNOR; TERM; ELIGIBILITY:**
+
+> The Governor elected at the general election in 1974, and thereafter, **shall be installed on the
+> first Tuesday after the organization of the Legislature, or as soon thereafter as practicable**,
+> and shall hold his office for the term of four years, or until his successor shall be duly
+> installed.
+
+**Tex. Const. Art. III, § 5(a)** leaves the convening to statute — *"The Legislature shall meet
+every two years at such time as may be provided by law"* — and **Tex. Gov't Code § 301.001**
+supplies it:
+
+> The legislature shall convene at the seat of government in regular session at **12 noon on the
+> second Tuesday in January of each odd-numbered year**.
+
+Second Tuesday in January 2027 = 2027-01-12; the first Tuesday after it = **2027-01-19**.
+
+🟢🟢 **Control, and it is exact.** `essentials.office_terms` carries the Texas Governor's term
+starting **2015-01-20**, written by a pass that never read Art. IV, § 4. The 84th Legislature
+convened on 2015-01-13 (the second Tuesday), and the first Tuesday after that is **2015-01-20**.
+The same arithmetic gives 2023-01-17, which is when Texas last inaugurated a governor.
+
+⚠ **"or as soon thereafter as practicable" is a softener, not a second rule.** It has not been
+needed in the cycles checked. If the 2027 installation slips, the published inauguration date
+supersedes this and `basis` becomes `published`. ▶ **Re-check the two against the inauguration
+before seating them**; the other twelve need no such check.
+
+### The source
+
+`https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm` and `…/CN.3.htm` for the constitution,
+`…/Docs/GV/htm/GV.601.htm` and `…/GV.301.htm` for the Government Code, `…/Docs/ED/htm/ED.7.htm`
+for the Education Code — the Legislative Council's own publication, read 2026-11-22.
+
+⚠ **`statutes.capitol.texas.gov` is a JavaScript application and `curl` is useless on it**: every
+`Docs/.../*.htm` URL returns **the same 250,874-byte page** containing only the site's navigation
+(1,356 characters of text), whatever article is requested. 🔴 **The identical byte count across
+different articles is the tell** — it looked like a successful fetch twice. Read in a browser; the
+rendered Article IV is 26,357 characters.
+
+### Basis
+
+`statute` for all fourteen. ⚠ The Governor and Lieutenant Governor's date is **derived from two
+provisions** rather than read off one, and the `authority` must quote both.
+
+### Term start or oath? — **term start for twelve; INSTALLATION for two**
+
+§ 601.003(a) says the term "begins on January 1" and (b) separately says the officer shall qualify
+"on, or as soon as possible after" that day — 🔴 **the statute itself puts the term start before
+the qualification, so the oath is plainly not the date for those twelve.**
+
+For the Governor and Lieutenant Governor the term is attached to **installation**, which is the
+ceremony. That is the Oregon/Nevada shape — term start and oath are the same event — but unlike
+those two, Texas makes the event's date *computable in advance*, because the Legislature's
+convening is fixed by statute rather than designated. **That is why these two are dated and
+Oregon's Governor is not.**
+
+### Carried into the row
+
+| field | the twelve | Governor + Lt. Governor |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2027-01-01** | **2027-01-19** |
+| `window_end_date` | NULL | NULL |
+| `basis` | `statute` | `statute` |
+| `rule_id` | `tx-govt-code-601-003-january-1` | `tx-const-art4-s4-installation` |
+
+### 🔴🔴 Texas elected its entire House and half its Senate and we hold no result for any of it
+
+Measured 2026-11-22: Texas has **150 `STATE_LOWER` and 31 `STATE_UPPER` office rows**, every one of
+them with `term_start NULL`, and **not one appears in `essentials.office_pending_winner` for
+2026-11-03**. Texas elects all 150 House seats every two years.
+
+▶ **This is the largest result gap found anywhere in this pass** — larger than Utah's 33 House
+seats, and it is a different kind, because here the offices exist and the *races* are what is
+missing. It is seeding work, not dating work, and it is why Texas contributes 14 offices to this
+queue instead of about 180. **Do not read "TX: 14 offices" as Texas being nearly done.**

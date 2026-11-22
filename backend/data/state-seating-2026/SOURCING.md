@@ -106,7 +106,17 @@ in January 2027.
   it. ▶ **When a constitution's list of executives has a name your pending set does not, stop and
   check.** Creating the office is an occupancy act — create and seat together, or the drift
   baseline rises.
+- 🟢 **A GENERAL TERM STATUTE OFTEN NAMES ITS OWN EXCEPTIONS, AND THAT LIST IS THE STATE'S WHOLE
+  COMPLEXITY.** `Tex. Gov't Code § 601.003(a)` begins every elective state office on January 1 —
+  and (c) says it "does not apply to the office of governor, lieutenant governor, state senator, or
+  state representative". ▶ **Read the exclusion subsection before assuming a general rule covers a
+  body**, and then go and find what covers the excluded ones.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
+- 🔴 **`statutes.capitol.texas.gov` RETURNS THE SAME 250,874-BYTE NAVIGATION PAGE FOR EVERY
+  `Docs/.../*.htm` URL** under `curl` — whatever article is asked for, with 1,356 characters of
+  text and no law in it. **The identical byte count across different articles is the tell.** Read
+  it in a browser (Article IV renders as 26,357 characters). `le.utah.gov` fails the same way at
+  ~26.6 KB.
 - ⚠ **A DATE AND A SEAT ARE SEPARATE QUESTIONS.** Arizona's Corporation Commission has an explicit
   date (`art. XV § 1(B)`) and is still refused for *seating* by Ruling A. It gets an
   `office_swearing_in` row and no term.
@@ -238,4 +248,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | NV | ⚠️ [`DATES.md`](./DATES.md) — **52 of 58** on 🔴 **2026-11-04, ALREADY PAST**. 🔴 **6 executives REFUSED** — term begins at qualification, bounded before 2027-01-05 | ⏳ | | |
 | UT | ⚠️ [`DATES.md`](./DATES.md) — **50 of 56** on **2027-01-01**, the first day of January itself. 🔴 **6 State Board of Education seats REFUSED** | ⏳ | | |
 | CO | ✅ [`DATES.md`](./DATES.md) — all 18: legislature **2027-01-11** (`basis = published`, HJR26-1031 — the statutory default would be 2 days wrong), everything else **2027-01-12** | ⏳ | | |
+| TX | ✅ [`DATES.md`](./DATES.md) — all 14: **2027-01-01** for 12 (`Gov't Code § 601.003`), **2027-01-19** for Governor + Lt. Governor, whom § 601.003(c) excludes by name | ⏳ | | |
 | *(nothing else yet)* | | | | |
