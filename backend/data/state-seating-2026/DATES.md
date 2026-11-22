@@ -844,3 +844,155 @@ date must record which of the two events it is**, or the next pass cannot tell.
   offices (two of them multi-winner), 3 mayors and a city auditor. **They are not part of this
   pass** and are dated by their own rules; the `state:or` claim covers them, so do not let a
   state-tier wave select on state alone.
+
+---
+
+## AZ — Arizona · 66 offices · ⚠️ 65 dated, **1 REFUSED**, 2026-11-22 — and 1 of the 65 is not seatable
+
+**One day, 2027-01-04, reached by three separate provisions that each anchor on a past cycle.**
+
+| body | offices | winners | start date | authority |
+|---|---|---|---|---|
+| Senate | 30 | 30 | **2027-01-04** | Art. IV, Pt. 2, § 21 |
+| House of Representatives | 29 | **58** | **2027-01-04** | Art. IV, Pt. 2, § 21 |
+| Governor · Secretary of State · Attorney General · Treasurer · Superintendent of Public Instruction | 5 | 5 | **2027-01-04** | Art. V, § 1(A) |
+| Corporation Commission | 1 | 2 | **2027-01-04** — ⚠️ **dated but NOT seatable** | Art. XV, § 1(B) |
+| State Mine Inspector | 1 | 1 | 🔴 **REFUSED** | Art. XIX names no day |
+
+### 🔴 Arizona states its rule as an ANCHOR YEAR, not as a recurring formula
+
+None of the three provisions says "the first Monday in January following the election". Each names
+a **specific past date** and a term length, and the recurrence is implied:
+
+**Art. IV, Pt. 2, § 21** (legislature) — the section is titled *Term limits*, which is why a search
+for a term-start clause does not find it:
+
+> The members of the first legislature shall hold office **until the first Monday in January,
+> 1913**. The terms of office of the members of succeeding legislatures shall be two years.
+
+**Art. V, § 1(A)** (the executive department):
+
+> The executive department shall consist of the governor, **lieutenant governor**, secretary of
+> state, attorney general, state treasurer and superintendent of public instruction, each of whom
+> shall hold office for four years **beginning on the first Monday of January, 1971 next after the
+> regular general election in 1970**.
+
+**Art. XV, § 1(B)** (Corporation Commission):
+
+> A corporation commission is hereby created to be composed of five persons who shall be elected at
+> the general election, and whose term of office shall be four years … The two additional
+> commission members shall be elected at the 2002 general election for initial two-year terms
+> **beginning on the first Monday in January, 2003**. Thereafter, all terms shall be four-year
+> terms.
+
+▶ **An anchor-plus-length rule is still a citation, but it is the shape most likely to be misread
+as "no rule".** All three anchors are a first Monday in January, all three lengths are whole
+numbers of years, and the cycle lands on 2027. First Monday of January 2027 = **2027-01-04**.
+
+### The source
+
+`https://www.azleg.gov/constitution?article=4`, `…?article=19`, `…?article=22` for the section
+indexes, and the section texts at `https://www.azleg.gov/const/4/21.p2.htm`,
+`…/const/5/1.htm`, `…/const/15/1.htm`, `…/const/19/0.htm` and `…/const/19/0.1.htm` — the
+Legislature's own publication, all fetched and read 2026-11-22. Statutes checked at
+`https://www.azleg.gov/ars/…`: `38-295`, `38-291`, `38-321`, `27-101`, `27-121`, `27-122`,
+`27-123`.
+
+⚠ **The section URL is `/const/<article>/<section>.htm`, except in Article 4, where Part 2 is
+`/const/4/<section>.p2.htm`.** Five plausible spellings of "Article 4, Part 2, Section 21" return
+HTTP 404 (correctly, at 79,330 bytes — azleg does **not** soft-404). The working form was taken
+from the article index's own links rather than guessed.
+
+### Basis
+
+`statute` for all five rows.
+
+### Term start or oath? — **term start, and Arizona convenes a WEEK LATER**
+
+All three provisions attach the term to a calendar day. ⚠ **Art. IV, Pt. 2, § 3 puts the session
+on a different day**: *"The sessions of the legislature shall be held annually at the capitol of
+the state, and shall commence on the **second** Monday of January of each year"* — **2027-01-11**.
+🔴 **Arizona is the second state in this pass where term start and convening differ** (Oregon is
+the other, by eight days). Reaching for the session date would be a week wrong on 59 seats.
+
+### Control — three cycles in our own data, all on first Mondays
+
+`essentials.office_terms`, from the ADR 0002 phase-2 backfill:
+
+| cycle | first Monday in January | rows on that date |
+|---|---|---|
+| 2021 | 2021-01-04 | 1 |
+| 2023 | 2023-01-02 | **52** (33 House + 19 Senate) |
+| 2025 | 2025-01-06 | **26** (18 House + 8 Senate) |
+
+🟢 **Three for three, 79 rows, computed independently of the clause.** The one dated `STATE_EXEC`
+row is also **2023-01-02**. The remaining rows are `start_precision = 'year'` placeholders.
+
+### 🔴 The State Mine Inspector is refused, and its article is published TWICE
+
+**Art. XIX** establishes the office and gives a term length with **no commencement at all**. Worse,
+the constitution carries **two competing versions of the same article**, both from 1992:
+
+- `const/19/0.htm`, *"Version amended by 1992 Proposition 101"*: incumbents *"shall be elected at
+  general elections, and shall serve for **four years**. The initial four year term shall be served
+  by the mine inspector elected in the general election held in November, 1994."*
+- `const/19/0.1.htm`, *"Version amended by 1992 Proposition 107"*: *"shall serve for a term of
+  **two years**"*, plus a four-consecutive-term limit.
+
+Neither names a day. ⚠ **They also disagree on the term length**, which means the office's cycle
+is not settled by this text either — and the office is on the 2026 ballot, which only the
+four-year version explains. `A.R.S.` was searched for a commencement rule and none was found
+(`38-295` is the holdover provision: *"Every officer shall continue to discharge the duties of the
+office, although the term has expired, until a successor has qualified"*).
+
+▶ **The inference, written down and not written in:** every other Arizona state office starts on
+the first Monday in January, so 2027-01-04 is the expected day. **It is not cited and is not
+written.** The confirming document is the Secretary of State's canvass or the inspector's own
+oath record.
+
+### ⚠ The Corporation Commission is dated here and still cannot be seated
+
+Art. XV, § 1(B) gives it a day, so **it gets an `office_swearing_in` row**. Ruling A refuses the
+*seating* for a different reason entirely: the race attaches **2 winners** to one office row while
+**5 eligible offices** exist, the body is staggered, and which two seats are up is not in our data.
+🔴 **A date and a seat are separate questions, and this office answers one and not the other.**
+Measured here: all five `Commissioner` rows exist, all five are `Arizona Corporation Commission`,
+and exactly one of them carries the pending winners.
+
+### Carried into the row
+
+| field | all five dated groups |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-04** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `az-const-first-monday-january` (cite the per-body article in `authority`) |
+
+### 🔴🔴 Arizona elected a Lieutenant Governor and we hold no office for it
+
+Art. V, § 1(A) names the **lieutenant governor** as part of the executive department, and
+§ 1(C) makes it a joint-ticket office: *"each nominee for the office of governor shall name a
+lieutenant governor nominee and shall run on a ticket as a joint candidate … a single vote for a
+nominee for governor shall constitute a vote for that nominee's ticket, including the nominee for
+lieutenant governor."*
+
+**Measured 2026-11-22: Arizona's eleven `STATE_EXEC` office rows are Attorney General, five
+Corporation Commissioners, Governor, Secretary of State, State Mine Inspector, Superintendent of
+Public Instruction and Treasurer. There is no Lieutenant Governor.**
+
+▶ This is `CLAUDE.md`'s *an office with no term is invisible and nothing errors*, reached from the
+seeding side: Arizona's first Lieutenant Governor takes office on **2027-01-04** and no Arizona
+address will return them. **Creating that office is an occupancy act** — it must be created and
+seated together, or the drift baseline rises. ⚠ **The winner's name is on the Governor's ticket**,
+which is the trap the transition tracker already records: *a ticket LG row names the governor*.
+
+### Three things the next step inherits
+
+- 🔴 **Arizona is a Ruling A state alongside Maryland.** All 29 pending House offices carry two
+  winners — 58 winners across 29 offices, every pending office multi-winner. The register's step 6
+  correction applies: build the selection with the **assigned** office, not the race-carrying one.
+- ⚠ **30 of 30 Senate seats are pending** — Arizona's Senate is not staggered, unlike Washington's
+  and Oregon's.
+- ⚠ **No Arizona chamber carries an `inauguration_rules` row**, so there was no lead to check and
+  nothing to re-source.

@@ -76,7 +76,23 @@ rows; California's 92 are all re-elections or recorded winners with records. See
   Equalization, whose own article (XIII § 17) names no commencement at all. It sits in the
   **voting** article, so reading Articles IV, V and XIII in order never reaches it. ▶ A full-text
   search of the state's codes finds this class of clause; then open the section and read it.
+- 🔴 **A STATE MAY STATE ITS RULE AS AN ANCHOR YEAR PLUS A TERM LENGTH, NOT AS A RECURRING
+  FORMULA** — and that shape reads like "no rule". All three of Arizona's are: *"until the first
+  Monday in January, **1913**"* (legislature), *"four years beginning on the first Monday of
+  January, **1971**"* (executives), *"initial two-year terms beginning on the first Monday in
+  January, **2003**"* (Corporation Commission). ⚠ Arizona's legislative clause is titled **Term
+  limits of members of state legislature**, so a search for a term-*start* provision never reaches
+  it. ▶ **Read a body's whole article, not the section whose title matches.**
+- 🔴🔴 **AN OFFICE THE STATE CREATED SINCE THE LAST CYCLE MAY NOT EXIST IN OUR DATA AT ALL, AND
+  NOTHING ERRORS.** Arizona elected its first **Lieutenant Governor** on 2026-11-03 under
+  `Ariz. Const. art. V § 1(C)` (joint ticket with the Governor) and we hold **no office row** for
+  it. ▶ **When a constitution's list of executives has a name your pending set does not, stop and
+  check.** Creating the office is an occupancy act — create and seat together, or the drift
+  baseline rises.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
+- ⚠ **A DATE AND A SEAT ARE SEPARATE QUESTIONS.** Arizona's Corporation Commission has an explicit
+  date (`art. XV § 1(B)`) and is still refused for *seating* by Ruling A. It gets an
+  `office_swearing_in` row and no term.
 - ⚠ **COUNT OFFICES WITHOUT AN INNER JOIN TO `essentials.chambers`.** `offices.chamber_id` is
   nullable and California's Board of Equalization seats carry NULL, so an inner join silently drops
   them — it made California read as 98 offices instead of 99 mid-measurement. `WAVE_SELECTION_SQL`
@@ -166,6 +182,7 @@ state's **executive**, never its legislature, that fails this way:
 | MD Attorney General | Art. V § 1 gives "four years from the time of his election and qualification" — no calendar date |
 | MD Comptroller | Art. VI § 1 gives a length only; falls to Art. XVII § 4, "from the time of their Election", which overlaps the predecessor |
 | OR Governor | Art. V § 7 defers to statute; `ORS 176.010` commences the term "upon the publication of the returns by the Speaker of the House" — an **event**, which has not happened |
+| AZ State Mine Inspector | Art. XIX gives a term length and no day — and the constitution publishes **two competing 1992 versions** of that article that disagree on whether the term is two years or four. No statute supplies a commencement |
 
 Each needs a **`published` date recorded when it happens**. See [`DATES.md`](./DATES.md) for the
 confirming document named per office. They are 3 offices of the 1,162, and their states' other
@@ -198,4 +215,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | MD | ⚠️ [`DATES.md`](./DATES.md) — **115 of 117**: 2027-01-13 legislature, 2027-01-20 Governor. 🔴 **AG and Comptroller REFUSED** — the constitution fixes no day for them | ⏳ | | |
 | CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |
 | OR | ⚠️ [`DATES.md`](./DATES.md) — **75 of 76**: 2027-01-11 legislature. 🔴 **Governor REFUSED** — `ORS 176.010` starts the term at an event, not a day | ⏳ | | |
+| AZ | ⚠️ [`DATES.md`](./DATES.md) — **65 of 66** on **2027-01-04**. 🔴 **Mine Inspector REFUSED**; Corporation Commission dated but not seatable; 🔴🔴 **no Lieutenant Governor office exists** | ⏳ | | |
 | *(nothing else yet)* | | | | |
