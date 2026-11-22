@@ -1866,3 +1866,208 @@ dated it from the other's clause.
   ticket case the transition programme already knows: a ticket LG row names the governor.
 - **THE LEGISLATURE — 49 seats, absent entirely.** Not a gap this pass created and not one it can
   close; recorded because the January 8 carve-out above becomes live the moment it is.
+
+---
+
+## NM — New Mexico · 11 offices · ✅ sourced 2026-11-22 — **two instruments, nearly the same words, one day**
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| Governor · Lieutenant Governor · Secretary of State · State Auditor · Treasurer · Attorney General · Commissioner of Public Lands | 7 | **2027-01-01** (Fri) | N.M. Const. Art. V, § 1 |
+| Public Education Commissioner, Districts 2, 3, 5, 6 | 4 | **2027-01-01** (Fri) | Laws 2021 (2nd S.S.), ch. 3 (HB 9), § 3(B), codified NMSA 1978 § 22-3B-3 |
+
+🟢 **The constitution and the statute were written sixty years apart and say the same thing in
+nearly the same words** — "beginning on the first day of January next after their election" and
+"for terms commencing on January 1 next succeeding their election". Both give **2027-01-01**.
+
+### The authority — the seven executives
+
+**N.M. Const. Art. V, § 1** — *[Composition of department; terms of office of members; residing and
+maintaining records at seat of government.]*:
+
+> The executive department shall consist of a governor, lieutenant governor, secretary of state,
+> state auditor, state treasurer, attorney general and commissioner of public lands, who shall,
+> unless otherwise provided in the constitution of New Mexico, **be elected for terms of four years
+> beginning on the first day of January next after their election**. The governor and lieutenant
+> governor shall be elected jointly by the casting by each voter of a single vote applicable to
+> both offices.
+
+🟢🟢 **That sentence names our seven `STATE_EXEC` offices one by one, and there are exactly seven of
+them.** No reading-across, no inference from a sibling officer, no body left to account for. This is
+the cleanest executive provision in the pass so far.
+
+⚠ **"Unless otherwise provided in the constitution of New Mexico" is a carve-out and it was read as
+one.** It is narrower than Nebraska's `Art. XVII-5` — it yields only to **the constitution**, not to
+"or by law", so no statute can displace it. The section's own amendment note explains where the
+clause came from: the 1958 amendment "omitted 'superintendent of public instruction' from list of
+officers and added 'unless otherwise provided in the constitution of New Mexico' following 'who
+shall'". ▶ So the clause exists to cover an office the constitution handles elsewhere, and **all
+seven of ours are named in the list that survives**. 🔴 **This is reasoning, not a sweep** — the
+constitution was not read end to end looking for an overriding provision. The reasoning is recorded
+so the next reader can test it rather than inherit it.
+
+### The authority — the Public Education Commission
+
+**Laws 2021 (2nd Special Session), Chapter 3 (House Bill 9), the "2021 Educational Redistricting
+Act", § 3**:
+
+> **A.** Members of the public education commission shall be elected for staggered terms of four
+> years.
+> **B.** Members shall be elected at the general election **for terms commencing on January 1 next
+> succeeding their election**.
+
+🟢 **The `chambers.inauguration_rules` lead was CORRECT, and it is the second verified one in this
+pass.** The row read: *"HB 9 (Laws 2021 2nd S.S. Ch. 3) Section 3B: members are elected at the
+general election 'for terms commencing on January 1 next succeeding their election', so the 2026
+winners take office on 2027-01-01."* **Opened and checked against the enrolled bill: the citation is
+right, the quotation is exact, and the computed date is right.** Alabama's board rule was the first.
+⚠ The test remains "does the row carry a citation that checks out", not "has a rule row ever been
+right" — California's three executives still cite nothing.
+
+### 🔴 The act is from 2021, so the question is whether it is still the law — and it is
+
+A date read out of a five-year-old enrolled bill is a date read out of a **snapshot**. The risk is
+not that the bill was misread; it is that something amended or repealed it since. Checked:
+
+- HB 9 § 17 repealed `NMSA 1978 §§ 22-3A-1 through 22-3A-16` — the **2011** act it replaced.
+- The current NMSA confirms that: **Chapter 22, ARTICLE 3A "2011 Educational Redistricting
+  (Repealed.)"**, with all sixteen sections reading "Repealed."
+- And it carries **ARTICLE 3B "2021 Educational Redistricting"**, *not* marked repealed, whose
+  sections map one-to-one onto HB 9's: `22-3B-1. Short title.` · **`22-3B-3. Election for staggered
+  terms.`** · `22-3B-16. Continuing terms; vacancies.` — the same titles in the same order as the
+  bill's §§ 1, 3 and 16.
+
+🔴 **What that establishes and what it does not.** It establishes that the act is **in force and
+codified**, which was the actual risk. It does **not** re-read the current text of `22-3B-3` —
+nmonesource serves section bodies only on a further click and the page state proved unstable across
+calls. ▶ **The wording above is the enrolled bill's; the section's continued existence is the
+codification's.** If a date ever turns on a word in `22-3B-3`, read the codified text.
+
+### The control
+
+🟢 **Our own data, written by a pass that never read Art. V § 1.** `essentials.office_terms` holds
+exactly one dated New Mexico term for these tiers: **Governor, `term_start` = 2019-01-01.** "The
+first day of January next after their election" for the 2018 cycle is 2019-01-01. **It agrees
+exactly.**
+
+⚠ **One row is a point, not the biennial cluster this pass usually gets** — the same shape as
+Nebraska, and reported the same way. New Mexico holds no other dated term at these tiers.
+⚠ **And there is no canvass-book control here.** New Mexico's Secretary of State publishes results,
+not the per-office "Term Start" metadata block Nebraska's canvass book carries.
+
+### 🔴🔴 PUBLIC EDUCATION COMMISSION DISTRICT 7 WAS ON THE 2026 BALLOT AND WE HAVE NO RECORD OF IT
+
+Found while reading the Act, because the Act says which seats are up — and the number did not match.
+
+**HB 9 § 3(C)**: *"Members from districts **two, three, five, six and seven** shall be elected …
+at the 2022 and subsequent general elections."* **§ 16(D)** repeats the same five-district grouping
+for vacancy appointments. So **five** PEC seats were due in 2026. **We hold four.**
+
+**Confirmed against the state's own results**, not inferred: the New Mexico Secretary of State's
+2026 general election results publish **five** Public Education Commissioner contests — Districts 2,
+3, 5, 6 **and 7**. District 7, 178 of 178 precincts fully reported:
+
+| candidate | party | share | votes |
+|---|---|---|---|
+| **Frederick Walton Parker** | Democrat | 65% | 38,596 |
+| John Foreman | Republican | 35% | 20,355 |
+
+**We hold a `Public Education Commissioner, District 7` office whose current holder is Patricia
+Gipson, and no 2026 race for it at all** — not a race with a null result, as Nevada's Assembly
+District 22 has, but no race row whatsoever. The seat changes hands and nothing in our data says so.
+
+▶ **This is the Nevada AD22 rule firing again, one state later and in its harsher form.** There the
+race existed with `result` NULL; here the race is absent entirely. Both are invisible to
+`office_pending_winner`, and both make a chamber's pending count look like ordinary staggering.
+🔴 **The Act is what caught it** — the same document that dates the body also says how many of it
+were up. **Read that sentence and count against it.**
+
+⚠ **AP cannot catch this one.** AP's New Mexico ballot carries no Public Education Commission
+contest at all (checked: 89 distinct office/seat pairs, none of them PEC), so a wave derived from
+AP would never know the body exists. The Secretary of State is the only source that has it.
+
+### ⚠ New Mexico's whole legislature is absent too — 112 seats
+
+Measured 2026-11-22: New Mexico has **no `STATE_UPPER` and no `STATE_LOWER` offices**. AP's own 2026
+ballot for the state lists **70 State House districts** and a **State Senate District 33 unexpired
+term**; the Senate is 42 seats. None of them exist in our data.
+
+🔴 **That is the second state in a row with its entire legislature missing** — Nebraska's 49-seat
+unicameral is absent in exactly the same way. ▶ **Worth measuring across the whole pass rather than
+noticing one state at a time**: a state whose legislature is absent contributes only executives to
+the queue, so it looks like a small, easy state and sorts to the bottom. **The queue's office counts
+measure what we hold, not what the state elects.**
+
+### ⚠ The Lieutenant Governor — a joint ticket that DOES carry its own winner
+
+`Art. V § 1`: *"The governor and lieutenant governor shall be elected jointly by the casting by each
+voter of a single vote applicable to both offices."* AP lists only "Governor" for New Mexico, with
+no separate Lieutenant Governor contest.
+
+🟢 **And yet our `Lieutenant Governor` office carries a pending winner of its own**, so it is seated
+by the ordinary wave. 🔴 **That is the opposite of Nebraska**, where the identical joint-ticket rule
+left the Lieutenant Governor office with **zero** pending winners and unreachable by any wave.
+▶ **The ticket rule does not determine whether we hold a winner row — the ingestion does.** Check
+per state; do not infer from the constitution which way it went.
+
+### The source
+
+- `https://nmonesource.com/nmos/c/en/item/5916/index.do` — **Constitution of New Mexico**, Article V
+  § 1, on NMOneSource, which describes itself as *"the official legal research tool of the New
+  Mexico courts and legislature"* and states that *"New Mexico statutes and court rules are updated
+  on their effective dates"*. Read 2026-11-22.
+- `https://nmonesource.com/nmos/nmsa/en/item/4368/index.do` — NMSA 1978 Chapter 22, for the
+  Article 3A/3B repeal-and-replacement check. Read 2026-11-22.
+- `https://www.nmlegis.gov/Sessions/21%20Special2/final/HB0009.pdf` — the enrolled **House Bill 9**,
+  2021 2nd Special Session (37,233 bytes), the Legislature's own copy. Read 2026-11-22.
+- `https://electionresults.sos.nm.gov/resultsSW.aspx?type=ECX&map=CTY` — Secretary of State,
+  **GENERAL 2026** Public Education Commission results, marked *Unofficial Results*, "last updated:
+  11/20/2026 4:02 PM MT". Read 2026-11-22.
+
+### 🔴 `nmonesource.com` IS THE FIRST HOST IN THIS PASS THAT A COMPLETE HEADER SET DOES NOT OPEN
+
+It answers **HTTP 403 with a 239-byte body** to plain `curl`, **and to `curl` carrying the whole
+browser header set** — `Accept`, `Accept-Language`, `sec-ch-ua`, `sec-ch-ua-mobile`,
+`sec-ch-ua-platform`, all four `Sec-Fetch-*` and `Upgrade-Insecure-Requests`. 🟢 **That is what the
+header rule is for: it told us to stop escalating by guesswork.** `SOURCING.md` says Playwright is
+the answer to a TLS-fingerprint or JS challenge and not to a thin request — **this is the
+TLS-fingerprint case, and Playwright opened it immediately.**
+
+⚠ **And then NMOneSource is a JS tree that needs clicking.** The constitution is at
+`/nmos/c/en/item/5916/index.do`, articles expand one at a time, and a section's text loads only
+after its own click. 🔴 **Its page state does not survive**: a DOM scan that had just read
+"ARTICLE 3A … Repealed" returned **zero matches for the same string** on the next call, after an
+expand had re-rendered the tree. ▶ **Re-navigate before each scan, and run a positive control on a
+scan that returns nothing** — the first "none found" here was the detector being blind, not the
+article being absent.
+
+🟢 **`www.nmlegis.gov` serves enrolled bill PDFs to plain `curl`** at
+`/Sessions/<YY>%20<Session>/final/HB####.pdf`, and 🟢 **`electionresults.sos.nm.gov` is readable**
+(a `.aspx` app; the per-contest numbers come out of the rendered page).
+⚠ **`www.nmlegis.gov/Legislation/Constitution` is a 404** — the Legislature does not host the
+constitution; it links out to NMOneSource for "New Mexico Law (Statutes)".
+
+### Basis
+
+`statute` for all eleven.
+
+### Term start or oath? — **term start**
+
+Both instruments date the **term** and neither mentions an oath: `Art. V § 1` says the officers are
+"elected for terms of four years **beginning on** the first day of January next after their
+election", and HB 9 § 3(B) says "for terms **commencing on** January 1 next succeeding their
+election". ⚠ New Mexico's oath requirement lives elsewhere and does not move either date.
+
+⚠ **2027-01-01 is a Friday and a public holiday.** The term begins on it regardless — the provisions
+name a calendar date, not a working day, and neither carries a "next business day" clause. Any
+inauguration ceremony is a separate event and is not what either instrument dates.
+
+### Carried into the row
+
+| field | all eleven |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-01** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `nm-const-art5-1-first-day-of-january` (executives) · `nm-22-3b-3-january-1-next-succeeding` (PEC) |

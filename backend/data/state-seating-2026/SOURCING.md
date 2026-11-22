@@ -93,6 +93,7 @@ something that looks like success.**
 | `mgaleg.maryland.gov` | **HTTP 200 with a "NotFound" page, always 57,164 bytes** | the Maryland Manual at `msa.maryland.gov` instead |
 | `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
 | `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
+| `nmonesource.com` | **403, 239 bytes — AND THE FULL BROWSER HEADER SET DOES NOT HELP** | 🔴 the first true TLS-fingerprint block in this pass. Playwright — and then click: it is a JS tree whose page state does not survive an expand |
 
 ▶ **Assert on content, never on status or on "it returned bytes".** A near-identical byte count
 across two different requests is the tell in three of these.
@@ -232,6 +233,13 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- ⚠ **A STATE WHOSE LEGISLATURE WE DO NOT HOLD LOOKS LIKE A SMALL, EASY STATE AND SORTS TO THE
+  BOTTOM OF THIS QUEUE.** The queue is ordered by offices, and offices measure **what we hold, not
+  what the state elects**. Nebraska contributes 13 because its 49-seat unicameral is absent
+  entirely; New Mexico contributes 11 because its **70 House and 42 Senate seats** are absent
+  entirely — two states in a row, each found only by reading that state's own sources. ▶ **Worth
+  measuring across the whole pass in one query rather than noticing it a state at a time**, and
+  worth knowing before anyone reads "41 states, 1,162 offices" as coverage.
 - 🔴 **`district_type` IS NOT A BODY — COUNT BODIES BY `chamber_id` BEFORE DECIDING HOW MANY
   CITATIONS A STATE NEEDS.** The queue called Nebraska three bodies because it has three district
   types. It has four: `STATE_BOARD` holds **both** the University of Nebraska Board of Regents
@@ -255,6 +263,15 @@ in January 2027.
   our page names the losing incumbent as the current member. ▶ **Check a chamber's pending count
   against its REAL size and account for every seat that is missing** — "staggered" is a claim, not
   a default. The body's own roster is what settles it.
+  - 🔴🔴 **AND THE INSTRUMENT THAT DATES A BODY USUALLY SAYS HOW MANY OF IT WERE UP — COUNT
+    AGAINST THAT SENTENCE WHILE YOU HAVE IT OPEN.** A staggered body's term provision has to name
+    its own cycle, so the document you are already reading for the DATE answers "how many seats"
+    for free. New Mexico's HB 9 § 3(C) puts PEC districts **two, three, five, six and seven** in
+    the 2022-and-subsequent group — five seats — and **we hold four**. District 7's seat changed
+    hands on 2026-11-03 and we have **no race row for it at all**, which is worse than Nevada's
+    AD22 (a race with a NULL result) because there is nothing to notice. ⚠ **AP cannot catch this
+    class**: AP's New Mexico ballot carries no Public Education Commission contest whatsoever, so
+    a wave derived from it would never learn the body exists. The Secretary of State had it.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
 - 🔴 **`statutes.capitol.texas.gov` RETURNS THE SAME 250,874-BYTE NAVIGATION PAGE FOR EVERY
   `Docs/.../*.htm` URL** under `curl` — whatever article is asked for, with 1,356 characters of
@@ -294,7 +311,7 @@ in January 2027.
 | 11 | TX | BOARD_EDUCATION+EXEC | 14 | 1010 | |
 | 12 | AL | EXEC+BOARD_EDUCATION | 13 | 1023 | ✅ done — the rule row **verified**; all 13 on 2027-01-18 |
 | 13 | NE | EXEC+**2 BOARDS**+BOARD_EDUCATION | 13 | 1036 | ✅ done — all 13 on **2027-01-07**; the rule rows **verified**. 🔴 FOUR bodies, not three: `STATE_BOARD` holds the Regents AND the PSC |
-| 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ▶ PEC rule cites HB 9 (2021 2nd S.S. Ch. 3) §3B → **2027-01-01** |
+| 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ✅ done — all 11 on **2027-01-01**; the PEC rule row **verified**. 🔴 **PEC District 7 was on the ballot and we hold NO race for it** |
 | 15 | GA | EXEC | 10 | 1057 | |
 | 16 | AR | EXEC | 7 | 1064 | |
 | 17 | ID | EXEC | 7 | 1071 | |
@@ -378,11 +395,11 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**13 of 41 states sourced · 1,036 of 1,162 offices (89%) · 0 seated.** The first twelve are the
-twelve largest; the 28 that remain are **126 offices**, almost all single-body executive states.
+**14 of 41 states sourced · 1,047 of 1,162 offices (90%) · 0 seated.** The first twelve are the
+twelve largest; the 27 that remain are **115 offices**, almost all single-body executive states.
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
-term. Step 2 is done for these thirteen; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: NM (11), GA (10), AR (7).**
+term. Step 2 is done for these fourteen; steps 3 through 9 are not started for any state.
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: GA (10), AR (7), ID (7).**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
@@ -401,4 +418,5 @@ term. Step 2 is done for these thirteen; steps 3 through 9 are not started for a
 | TX | ✅ [`DATES.md`](./DATES.md) — all 14: **2027-01-01** for 12 (`Gov't Code § 601.003`), **2027-01-19** for Governor + Lt. Governor, whom § 601.003(c) excludes by name | ⏳ | | |
 | AL | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-18**, three provisions with one formula. 🟢 Its SBOE rule row **verified correct**. 🔴 PSC expands 3 → 7 seats from that same day | ⏳ | | |
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
+| NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
 | *(nothing else yet)* | | | | |
