@@ -214,6 +214,33 @@ export function isLensKeyConflictError(e: unknown): e is LensKeyConflictError {
   return e instanceof LensKeyConflictError;
 }
 
+/**
+ * Raised when a write would destroy a stored lens the caller never mentioned.
+ *
+ * 🔴 THIS IS THE GUARD THE 2026-11-22 MEASUREMENT BOUGHT. Three lenses stored, a
+ * one-lens PUT, two gone, HTTP 200, and no history table to get them back. The
+ * caller did not ask for a deletion — it simply sent a short list, which this
+ * endpoint used to read as one. A client that has lost its copy of the set (a
+ * failed GET rendered as an empty list) sends exactly that payload, and it reaches here
+ * with no user having touched anything.
+ *
+ * So a deletion is now something a caller SAYS, in deleteKeys, and silence
+ * means keep. An omission can no longer destroy anything.
+ */
+export class UnacknowledgedLensDeletionError extends Error {
+  readonly code = 'LENS_DELETE_NOT_ACKNOWLEDGED';
+  constructor(readonly keys: string[]) {
+    super(`Refusing to delete lenses the caller did not name: ${keys.join(', ')}`);
+    this.name = 'UnacknowledgedLensDeletionError';
+  }
+}
+
+export function isUnacknowledgedLensDeletionError(
+  e: unknown
+): e is UnacknowledgedLensDeletionError {
+  return e instanceof UnacknowledgedLensDeletionError;
+}
+
 /** Which of these keys exist and belong to somebody other than `ownerId`. */
 async function findKeysOwnedByOthers(ownerId: string, keys: string[]): Promise<string[]> {
   if (keys.length === 0) return [];
@@ -228,12 +255,28 @@ async function findKeysOwnedByOthers(ownerId: string, keys: string[]): Promise<s
 }
 
 /**
- * Replace the owner's entire lens set.
+ * Write the owner's lens set: upsert everything in `lenses`, delete exactly the
+ * keys in `deleteKeys`, and leave everything else alone.
  *
- * Whole-set replace, not per-lens CRUD, because that is how the client holds them:
+ * Whole-set upsert, not per-lens CRUD, because that is how the client holds them:
  * a guest builds lenses in local storage with no server round-trip, and sign-in
  * promotes the whole collection at once. Per-lens endpoints would make that
  * promotion an N-request loop that can half-fail.
+ *
+ * 🔴 AN OMISSION IS NOT A DELETION. THAT IS THE WHOLE POINT OF `deleteKeys`.
+ * This function used to delete the complement of the payload —
+ * `DELETE ... WHERE NOT (key = ANY($2))` — so a caller that sent a short list
+ * destroyed the rest, permanently, at HTTP 200, with no history table. Measured
+ * against production on 2026-11-22: three lenses in, a one-lens PUT, one left.
+ *
+ * It took one transient failure to produce that payload. `apiFetch` returns null
+ * on a blip, the client rendered that as an empty set, and the next ordinary save
+ * posted a list missing everything the client had forgotten. Nobody deleted
+ * anything. See the CompassV2 half of this fix for the client's share of it.
+ *
+ * Now a deletion must be named, and the DELETE statement itself can only ever
+ * touch named keys — the guard below explains the refusal, but the `key = ANY`
+ * is what makes an unnamed lens unreachable even if the guard were wrong.
  *
  * Runs in one transaction so a failed promotion leaves the previous set intact
  * rather than a partially-written one. `created_at` is preserved across a rewrite
@@ -242,7 +285,8 @@ async function findKeysOwnedByOthers(ownerId: string, keys: string[]): Promise<s
  */
 export async function replaceUserLenses(
   ownerId: string,
-  lenses: UserLensInput[]
+  lenses: UserLensInput[],
+  deleteKeys: string[] = []
 ): Promise<UserLens[]> {
   // 🔴 CHECKED BEFORE THE UPSERT, BECAUSE THE UPSERT CANNOT COMPLAIN. Keys are
   // globally unique, so a key can already belong to somebody else. The conflict
@@ -261,12 +305,39 @@ export async function replaceUserLenses(
   try {
     await client.query('BEGIN');
 
-    const keys = lenses.map(l => l.key);
-    await client.query(
-      `DELETE FROM inform.compass_user_lenses
-        WHERE owner_id = $1 AND NOT (key = ANY($2::text[]))`,
-      [ownerId, keys]
+    // What the owner actually holds, locked for the life of the transaction.
+    // FOR UPDATE and not a plain read: without the lock a concurrent PUT can
+    // insert a lens between this check and the delete, and that lens would be
+    // one nobody ever had the chance to name.
+    const { rows: storedRows } = await client.query<{ key: string }>(
+      `SELECT key FROM inform.compass_user_lenses
+        WHERE owner_id = $1
+        FOR UPDATE`,
+      [ownerId]
     );
+
+    const keeping = new Set(lenses.map(l => l.key));
+    const named = new Set(deleteKeys);
+    const unacknowledged = storedRows
+      .map(r => r.key)
+      .filter(key => !keeping.has(key) && !named.has(key));
+
+    if (unacknowledged.length > 0) {
+      // Nothing is written. The caller is holding a view of this account's
+      // lenses that disagrees with the account, and the right move is to go and
+      // re-read it — not to let the disagreement decide what survives.
+      throw new UnacknowledgedLensDeletionError(unacknowledged);
+    }
+
+    // Only what was named. An empty deleteKeys asks nothing of the database
+    // rather than issuing a no-op ANY for a guaranteed zero rows.
+    if (deleteKeys.length > 0) {
+      await client.query(
+        `DELETE FROM inform.compass_user_lenses
+          WHERE owner_id = $1 AND key = ANY($2::text[])`,
+        [ownerId, deleteKeys]
+      );
+    }
 
     for (const lens of lenses) {
       await client.query(
