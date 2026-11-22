@@ -1503,3 +1503,124 @@ them with `term_start NULL`, and **not one appears in `essentials.office_pending
 seats, and it is a different kind, because here the offices exist and the *races* are what is
 missing. It is seeding work, not dating work, and it is why Texas contributes 14 offices to this
 queue instead of about 180. **Do not read "TX: 14 offices" as Texas being nearly done.**
+
+---
+
+## AL — Alabama · 13 offices · ✅ sourced 2026-11-22 — **one date, three provisions, and the statute writes it out in words**
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| Governor · Lt. Governor · Attorney General · Auditor · Secretary of State · Treasurer · Commissioner of Agriculture and Industries | 7 | **2027-01-18** (Mon) | Ala. Const. 2022, § 116 |
+| Public Service Commissioner, Places 1 and 2 | 2 | **2027-01-18** (Mon) | Code of Ala. § 37-1-3(c)(1) |
+| State Board of Education, Districts 2, 4, 6, 8 | 4 | **2027-01-18** (Mon) | Code of Ala. § 16-3-1 |
+
+All three say the same thing in nearly the same words: **the first Monday after the second Tuesday
+in January** next after the election. Second Tuesday in January 2027 = 2027-01-12; the first Monday
+after it = **2027-01-18**.
+
+### The authorities, each quoted
+
+**Ala. Const. 2022, § 116** — *Term of Office; Officers May Succeed Selves for One Additional Term*:
+
+> The governor, lieutenant governor, attorney general, state auditor, secretary of state, state
+> treasurer, and commissioner of agriculture and industries, shall hold their respective offices
+> for the term of four years **from the first Monday after the second Tuesday in January next
+> succeeding their election** and until their successors shall be elected and qualified.
+
+**Code of Alabama § 16-3-1** — *Composition; Election; Term of Office*:
+
+> Each member shall hold office **from the first Monday after the second Tuesday in January next
+> after his or her election** and until his or her successor is elected and qualified.
+
+**Code of Alabama § 37-1-3(c)(1)**:
+
+> All commissioners who are elected after June 1, 2026, shall serve terms of six years that **begin
+> on the first Monday after the second Tuesday in January following the general election**.
+
+### 🟢🟢 The control is the statute's own arithmetic, written as a date
+
+`§ 37-1-3(b)(2)`, describing the appointments that expand the commission, says the Governor shall
+appoint four commissioners **"to serve initial terms beginning January 18, 2027"**.
+
+🔴 **Alabama's legislature computed this cycle's date itself, in words, and it is 2027-01-18** —
+the same answer the formula gives. That is a stronger control than any aggregator or any row in
+our own data, because it is the same body that wrote the formula applying it to this exact cycle.
+
+### 🟢 The `chambers.inauguration_rules` lead was CORRECT — the first one in this pass that was
+
+`SOURCING.md` flagged Alabama's State Board of Education rule row as a lead to verify: *"Code of
+Alabama § 16-3-1: a member holds office from the first Monday after the second Tuesday in January
+next after their election. For the 2026 winners that is 2027-01-18."* **Opened and checked against
+§ 16-3-1: the citation is right, the paraphrase is right, and the computed date is right.**
+
+⚠ **That does not retire the rule.** California's three executive rules said "1st Monday in the new
+year" and cited nothing, and would have been right this cycle for the wrong reason. Alabama's
+earns its way in **because it names a section that says what the row says it says**. ▶ The test
+stays "does the row carry a citation that checks out", not "has a rule row ever been right".
+
+### The source
+
+`https://alison.legislature.state.al.us/constitution?section=116` and `…?section=114`;
+`https://alison.legislature.state.al.us/code-of-alabama?section=16-3-1`, `…?section=37-1-3` —
+ALISON, the Alabama Legislature's own system, read 2026-11-22.
+
+⚠ **ALISON is a JavaScript application with no server-rendered law**, and `curl` returns a
+59,580-byte navigation page. ⚠ **It is also not addressable by a naive URL until you have been
+through the tree once** — the `?section=` parameter only appears in the address bar *after*
+clicking Title → Chapter → Section, and a direct `?section=16-3-1` then works. **Click through
+once, read the resulting URL, and reuse the pattern.**
+⚠ `law.justia.com` returns **HTTP 403** to `curl` for Alabama, and `codes.findlaw.com` answers with
+a Cloudflare interstitial (*"Just a moment… Enable JavaScript and cookies to continue"*, 60
+characters of text) — **neither would have been usable as a source and neither is the state.**
+
+### Basis
+
+`statute` for all thirteen.
+
+### Term start or oath? — **term start**
+
+All three provisions say the officer "shall hold office from" / "shall serve terms … that begin on"
+a computed calendar day. Alabama's oath is a separate requirement (`§ 16-3-6` is the Board's own
+oath section, listed beside § 16-3-1 in the chapter). ⚠ § 116 and § 16-3-1 both add "**and until
+his or her successor is elected and qualified**", which is the familiar holdover clause attaching
+to the *end* of the predecessor's term, not to this one's start.
+
+### Carried into the row
+
+| field | all thirteen |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-18** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `al-first-monday-after-second-tuesday-january` (cite the per-body provision in `authority`) |
+
+### 🔴🔴 Alabama's Public Service Commission is mid-restructure, and our model has three seats where it will shortly have seven
+
+`§ 37-1-3(b)(1)`: *"Beginning after June 1, 2026 … **the membership of the commission shall be
+expanded so that each commissioner shall represent and serve, and be elected by the qualified
+voters of, a geographical district that shall be identical to a corresponding congressional
+district**"*, phased so that all seven congressional districts are represented "by the terms
+beginning in January 2033".
+
+The schedule, from `(b)(2)` and `(b)(3)`:
+
+| when | what happens |
+|---|---|
+| by 2026-07-15 | the Governor **appoints four** commissioners, terms beginning **2027-01-18** (two for two years, two for four) |
+| Nov 2026 | **two** commissioners elected **in the old statewide manner** — this is our Place 1 and Place 2, and our data is correct for this cycle |
+| Nov 2028 | three elected **by congressional district**, including the Seventh |
+| Nov 2030 | two elected by district, including the Second |
+| Nov 2032 | the remaining unrepresented districts |
+
+**Measured 2026-11-22: we hold three Alabama PSC offices** — `Public Service Commission President`
+(not pending; elected 2024, replaced in 2028 per (b)(3)(b)) and `Places 1` and `2` (both pending).
+🔴 **On 2027-01-18 the commission will have seven members and we will model three.** The four
+appointees are not election winners, so no 2026 wave reaches them — **this is a seeding job with a
+dated trigger, exactly like Arizona's missing Lieutenant Governor**, and it has a published start
+date in the statute itself.
+
+▶ **Dated follow-up, 2027-01-18:** create the four appointed seats, and plan for `Place 1`/`Place
+2` to become district seats across 2028–2032. ⚠ **Do not rename or re-district the two Place
+offices now** — (b)(3)(a) says the 2026 pair was elected "in the same manner as commissioners were
+elected before June 1, 2026", so for this cycle the at-large shape is the correct one.

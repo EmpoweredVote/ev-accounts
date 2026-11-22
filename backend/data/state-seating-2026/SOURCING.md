@@ -148,7 +148,7 @@ in January 2027.
 | 9 | UT | LOWER+UPPER+BOARD_EDUCATION | 56 | 978 | clean |
 | 10 | CO | 5 bodies | 18 | 996 | five separate bodies for 18 seats — expect several citations |
 | 11 | TX | BOARD_EDUCATION+EXEC | 14 | 1010 | |
-| 12 | AL | EXEC+BOARD_EDUCATION | 13 | 1023 | ▶ SBOE rule cites `Code of Alabama § 16-3-1` and computes **2027-01-18** |
+| 12 | AL | EXEC+BOARD_EDUCATION | 13 | 1023 | ✅ done — the rule row **verified**; all 13 on 2027-01-18 |
 | 13 | NE | EXEC+BOARD+BOARD_EDUCATION | 13 | 1036 | ▶ rules cite `Neb. Const. Art. XVII-5` and compute **2027-01-07** |
 | 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ▶ PEC rule cites HB 9 (2021 2nd S.S. Ch. 3) §3B → **2027-01-01** |
 | 15 | GA | EXEC | 10 | 1057 | |
@@ -249,4 +249,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | UT | ⚠️ [`DATES.md`](./DATES.md) — **50 of 56** on **2027-01-01**, the first day of January itself. 🔴 **6 State Board of Education seats REFUSED** | ⏳ | | |
 | CO | ✅ [`DATES.md`](./DATES.md) — all 18: legislature **2027-01-11** (`basis = published`, HJR26-1031 — the statutory default would be 2 days wrong), everything else **2027-01-12** | ⏳ | | |
 | TX | ✅ [`DATES.md`](./DATES.md) — all 14: **2027-01-01** for 12 (`Gov't Code § 601.003`), **2027-01-19** for Governor + Lt. Governor, whom § 601.003(c) excludes by name | ⏳ | | |
+| AL | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-18**, three provisions with one formula. 🟢 Its SBOE rule row **verified correct**. 🔴 PSC expands 3 → 7 seats from that same day | ⏳ | | |
 | *(nothing else yet)* | | | | |
