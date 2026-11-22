@@ -35,8 +35,9 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { isPubinfoDoc, readPubinfoDoc } from '../../../src/lib/adapters/caPubinfo.js';
+import { ME_SENATE_LISTS } from '../../../src/lib/maineLegislatureMembers.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsRead, meSenators, ME_SENATORS, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, statePostbackOf, hawaiiBillPageUrl, hawaiiStatusRows, hawaiiPageBill, hawaiiFloorLine, hawaiiRowHasVote, hawaiiVoteUrl, explainHawaiiVote, parseHawaiiVoteUrl, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { caBillDoc, californiaBillDoc, californiaBillId, californiaVoteUrl, caQuestionIsOnTheBill, explainCaliforniaVote, parseCaliforniaVoteUrl, explainMaineVote, meQuestionIsRead, parseMaineVoteUrl, oregonBillActionsUrl, oregonVoteUrl, orQuestionIsOnTheBill, orTally, OR_SESSIONS, nevadaVoteListUrl, nevadaVoteUrl, NV_SESSIONS, nvVoteList, explainNevadaVote, parseNevadaVoteUrl, explainOregonVote, parseOregonVoteUrl, coBillTag, explainColoradoVote, explainNorthDakotaVote, parseNorthDakotaVoteUrl, explainMinnesotaVote, parseMinnesotaVoteUrl, explainKansasVote, parseColoradoVoteUrl, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, statePostbackOf, hawaiiBillPageUrl, hawaiiStatusRows, hawaiiPageBill, hawaiiFloorLine, hawaiiRowHasVote, hawaiiVoteUrl, explainHawaiiVote, parseHawaiiVoteUrl, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -84,12 +85,18 @@ const meText = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;
 
 /** The House's list of the Legislature's roll calls: number, day, paper and motion. Its links go to /LawMakerWeb and are never followed. */
 export function meHouseListUrl(session: string): string | null {
-  return /^1[3-9]\d$/.test(session) ? `${ME_SITE}/house/Documents/RollCalls?Legislature=${session}` : null;
+  return /^(?:12[89]|1[3-9]\d)$/.test(session) ? `${ME_SITE}/house/Documents/RollCalls?Legislature=${session}` : null;
 }
 
-/** The House's PDF list, the Senate's roll-call list, and the Senate's member list (whose Legislature says whether its votes can be read). */
+/**
+ * The House's PDF list and, from the 130th on, the Senate's roll-call list. The Senate's members are named from the saved
+ * list of the Legislature (maineLegislatureMembers.ts), never the live page. The 128th's and 129th's Senate lists
+ * (/128th-roll-calls, /129th-senate-roll-calls) and PDFs are laid out differently and are not read.
+ */
+export const ME_SENATE_FROM = 130;
 export function meFollow(_list: string, session: string): string[] {
-  return [`${ME_SITE}/house/Documents/RollCallPDF?Legislature=${session}`, `${ME_SITE}/${meOrdinal(Number(session))}-roll-calls`, ME_SENATORS];
+  const pdfs = `${ME_SITE}/house/Documents/RollCallPDF?Legislature=${session}`;
+  return Number(session) >= ME_SENATE_FROM ? [pdfs, `${ME_SITE}/${meOrdinal(Number(session))}-roll-calls`] : [pdfs];
 }
 
 /** The House list's rows: roll call, paper ("LD 1349", "HO 1") and motion. Throws when the list is not this Legislature's. */
@@ -108,20 +115,25 @@ export function meHouseRows(html: string, session: string): { rc: number; paper:
   return out;
 }
 
-/** The House PDF list: roll call -> its file. Throws on a roll call listed twice. */
-export function meHousePdfs(html: string, session: string): Map<number, string> {
+/**
+ * The House PDF list: roll call -> its file, or null when two files are listed for it (the 129th lists 038.089.pdf and
+ * 038.089V.pdf): that roll call is not read. Each Legislature's one file form: 130th on <day>.<roll call>.<legislature><session>.pdf,
+ * 129th <day>.<roll call>.pdf, 128th the roll call alone (00245.pdf).
+ */
+export function meHousePdfs(html: string, session: string): Map<number, string | null> {
   if (!new RegExp(`Roll Call PDF documents for the ${meOrdinal(Number(session))} Legislature`).test(html)) throw new Error(`Maine: not the House's PDF list of the ${meOrdinal(Number(session))}`);
-  const out = new Map<number, string>();
+  const out = new Map<number, string | null>();
   // the list prints its own count ("<strong>835</strong> PDF file(s)"), and every file of it must be of the address form
   const printed = /<strong>(\d+)<\/strong> PDF file\(s\)/.exec(html);
-  const files = [...html.matchAll(new RegExp(`href="(/house/Repository/Documents/${session}/RollCalls/\\d{3}\\.(\\d{3,4})\\.${session}(?:R[12]|S[1-9])\\.pdf)"`, 'g'))];
+  const name = session === '128' ? '()(\\d{5})' : session === '129' ? '(\\d{3})\\.(\\d{3,4})V?' : `(\\d{3})\\.(\\d{3,4})\\.${session}(?:R[12]|S[1-9])`;
+  const files = [...html.matchAll(new RegExp(`href="(/house/Repository/Documents/${session}/RollCalls/${name}\\.pdf)"`, 'g'))].map((m) => [m[1], m[1], m[3]]);
   const any = (html.match(/href="\/house\/Repository\/Documents\/[^"]*\/RollCalls\//g) ?? []).length;
   if (!printed || Number(printed[1]) !== files.length || any !== files.length) throw new Error(`Maine House: the PDF list prints ${printed ? printed[1] : 'no'} files, links ${any} and ${files.length} read`);
   for (const m of files) {
     const rc = Number(m[2]);
     if (rc === 0) continue;
-    if (out.has(rc)) throw new Error(`Maine House: roll call ${rc} has two PDFs`);
-    out.set(rc, `${ME_SITE}${m[1]}`);
+    // two files for one roll call: which one is the vote is not known, so neither is read
+    out.set(rc, out.has(rc) ? null : `${ME_SITE}${m[1]}`);
   }
   return out;
 }
@@ -180,18 +192,20 @@ export function meListMotionIsOnTheBill(motion: string): boolean {
 export function meReadVotes(houseList: string, session: string, bill: string, more: string[] = []): BillIndex {
   const b = ME_BILL.exec(bill.replace(/\s+/g, ' ').trim());
   if (!b) throw new Error(`Maine: not an LD: ${bill}`);
-  if (more.length !== 3) throw new Error('Maine: the House PDF list, the Senate list and the Senate member list are needed');
+  const withSenate = Number(session) >= ME_SENATE_FROM;
+  if (more.length !== (withSenate ? 2 : 1)) throw new Error(`Maine: the House PDF list${withSenate ? ' and the Senate list are' : ' is'} needed`);
   const ld = Number(b[1]);
   const pdfs = meHousePdfs(more[0], session);
-  const senate = meSenateRows(more[1], session);
-  const senators = meSenators(more[2]);
+  const senate = withSenate ? meSenateRows(more[1], session) : [];
   const floor: IndexedVote[] = [];
   const motions: string[] = [];
   const unread: string[] = [];
+  if (!withSenate) unread.push(`Senate: the ${meOrdinal(Number(session))} Senate's roll-call list and PDFs are laid out differently and are not read`);
   for (const row of meHouseRows(houseList, session).filter((x) => x.paper === `LD ${ld}`)) {
     if (row.motion && !meListMotionIsOnTheBill(row.motion)) { motions.push(`House ${row.rc} ${row.motion}`); continue; }
     const f = pdfs.get(row.rc);
-    if (!f) { unread.push(`House ${row.rc} ${row.motion}: no PDF on the House's list`); continue; }
+    if (f === undefined) { unread.push(`House ${row.rc} ${row.motion}: no PDF on the House's list`); continue; }
+    if (f === null) { unread.push(`House ${row.rc} ${row.motion}: the House's list holds two PDFs for it`); continue; }
     floor.push({ url: `${f}#LD${ld}`, motion: row.motion, tally: null });
   }
   const sent = new Set<string>();
@@ -201,7 +215,7 @@ export function meReadVotes(houseList: string, session: string, bill: string, mo
     if (row.files.length !== 1) { unread.push(`Senate ${row.rc} ${row.motion}: the list links ${row.files.length} files for it (${row.files.join(', ')})`); continue; }
     if (sent.has(row.files[0])) continue;
     sent.add(row.files[0]);
-    if (!senators || senators.legislature !== Number(session)) { unread.push(`Senate ${row.rc} ${row.motion}: the Senate's member list is of the ${senators ? meOrdinal(senators.legislature) : 'no'} Legislature, so its surnames name no one`); continue; }
+    if (!ME_SENATE_LISTS[Number(session)]) { unread.push(`Senate ${row.rc} ${row.motion}: no Senate member list of the ${meOrdinal(Number(session))} Legislature is saved, so its surnames name no one`); continue; }
     floor.push({ url: `${row.files[0]}#LD${ld}`, motion: row.motion, tally: null });
   }
   return { floor, committee: 0, voice: 0, motion: motions.length, motions, unread };
@@ -1237,6 +1251,8 @@ export function sdSponsorsOnText(
 export interface SupplementRollCall {
   url: string; date: string; motion: string; question: string; chamber: 'H' | 'S';
   yea: number; nay: number; absent: number; passed: 0 | 1; groups: StateRollCall['groups'];
+  /** Maine: members printed by surname whom the member list or roster did not name, kept as printed (they give no line). */
+  unnamed?: { label: string; why: string }[];
 }
 
 const norm = (b: string): string => b.replace(/[\s.]+/g, '').replace(/^([A-Z]+)0+(?=\d)/i, '$1').toUpperCase();
@@ -1281,9 +1297,11 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   if (v.tally && got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;
+  const me = r.state === 'ME' ? explainMaineVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+  const unnamed = me && !('refused' in me) && me.unnamed?.length ? { unnamed: me.unnamed } : {};
   return {
     url: v.url, date: r.date, motion: v.motion, question: r.question, chamber: r.chamber === 'House' ? 'H' : 'S',
-    yea: got[0], nay: got[1], absent: got[2], passed, groups: r.groups,
+    yea: got[0], nay: got[1], absent: got[2], passed, groups: r.groups, ...unnamed,
   };
 }
 
@@ -1409,6 +1427,7 @@ async function main(): Promise<void> {
   const sponsorsOut = ((out as { sponsors?: Record<string, SdSponsorship> }).sponsors ??= {});
   let floor = 0;
   const refusedNow: string[] = [];
+  let unnamedNow = 0;
   for (const bill of bills) {
     let url = idx.billUrl(session, bill);
     if (!url && idx.listUrl && idx.billUrlFromList) {
@@ -1446,6 +1465,7 @@ async function main(): Promise<void> {
       if ('refused' in rc && isExtra) { alsoRefused.push({ url: v.url, why: rc.refused }); continue; }
       if ('refused' in rc) { refused.push({ url: v.url, why: rc.refused }); refusedNow.push(`${bill} ${v.url}: ${rc.refused}`); } else {
         rcs.push(rc);
+        if (rc.unnamed?.length) { unnamedNow += rc.unnamed.length; console.log(`  ${v.url}: ${rc.unnamed.length} members not named: ${rc.unnamed.map((u) => `${u.label} (${u.why})`).join('; ')}`); }
         if (v.tally && v.tally[2] >= 0 && rc.absent !== v.tally[2]) absentDiffers.push(`${v.url} (vote list ${v.tally[2]}, record ${rc.absent})`);
       }
     }
@@ -1479,6 +1499,7 @@ async function main(): Promise<void> {
     fetched_at: new Date().toISOString(), bills: out.bills, checked: out.checked, refused: out.refused, ...(Object.keys(sponsorsOut).length ? { sponsors: sponsorsOut } : {}),
   }, null, 1));
   console.log(`${bills.length} bills, ${floor} floor roll calls read, ${refusedNow.length} refused, ${asked} requests -> ${outFile}`);
+  if (unnamedNow) console.log(`${unnamedNow} member votes kept as printed: a surname the member list or roster does not name (no line)`);
   for (const r of refusedNow) console.log(`REFUSED ${r}`);
   if (refusedNow.length) process.exit(1);
 }
