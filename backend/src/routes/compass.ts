@@ -23,6 +23,7 @@ import {
   saveSelectedTopics,
   getSelectedTopics,
   resetCompassAnswers,
+  clearCompassAnswer,
   compareWithPoliticians,
   getUserVerdicts,
   getBatchPoliticianAnswers,
@@ -1053,6 +1054,52 @@ router.post('/answers', optionalAuth, async (req: Request, res: Response): Promi
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
+
+// ---------------------------------------------------------------------------
+// DELETE /api/compass/answers/:topicId
+// Auth: required — a guest has no server copy to clear.
+// Soft-deletes the caller's answer to one topic. Idempotent: 200 with
+// { cleared: 0 } when there was nothing there.
+//
+// 🔴 WHAT THIS IS FOR, AND WHY POST COULD NOT DO IT. Every other write here
+// carries a value, because every other write is an answer. Abandoning a
+// write-in is not one: the user discards what they typed and the question goes
+// back to unanswered. `postAnswerSchema` requires a value in 0.5..5.5 and
+// answers a null with a 422, correctly — there is no value that means "no
+// answer". So the client cleared its own state, the row survived, and the next
+// hydration handed the cancelled write-in back. This is the missing verb.
+//
+// ⚠ REGISTERED AFTER `DELETE /answers/me`, AND THE ORDER IS LOAD-BEARING.
+// Express matches in registration order, so `/answers/me` must be declared
+// first or this route swallows it — `me` is not a UUID, so a reset would come
+// back 422 and quietly stop working. The UUID check below is the second line
+// of defence, not the first; do not move this above that route.
+// ---------------------------------------------------------------------------
+
+router.delete(
+  '/answers/:topicId',
+  requireAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const authReq = req as AuthenticatedRequest;
+
+    const parsed = z.string().uuid().safeParse(req.params.topicId);
+    if (!parsed.success) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: 'topicId must be a UUID',
+      });
+      return;
+    }
+
+    try {
+      const cleared = await clearCompassAnswer(authReq.userId, parsed.data);
+      res.status(200).json({ cleared });
+    } catch (err) {
+      console.error('[DELETE /compass/answers/:topicId] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
 
 // ---------------------------------------------------------------------------
 // PUT /api/compass/selected-topics

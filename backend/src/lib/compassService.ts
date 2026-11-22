@@ -1095,6 +1095,59 @@ export async function resetCompassAnswers(
 }
 
 /**
+ * clearCompassAnswer
+ *
+ * Soft-deletes ONE user's answer to ONE topic. Idempotent: returns 0 when
+ * there was nothing to clear.
+ *
+ * 🔴 THE GAP THIS FILLS. Every other write to compass_responses carries a
+ * value, because every other write IS an answer. Abandoning a write-in is not:
+ * the user discards what they typed and the question goes back to unanswered,
+ * so there is no value to post. Until this existed the client cleared its own
+ * state and the server kept the row, and the next hydration handed the
+ * abandoned write-in straight back — a question the user had explicitly
+ * cancelled, answered in their own words, returning on the next page load.
+ *
+ * Picking a PRE-WRITTEN stance after a write-in was never affected: that is a
+ * real answer, so the value-only POST that records it also drops the row's
+ * write_in_text. Only the abandon path had nowhere to go.
+ *
+ * 🔴 THE OPEN SEASON ONLY. Written first without the season join, which
+ * check-answer-season-consumers caught and was right to: unconstrained, this
+ * clears the user's answer to that topic in EVERY season, destroying a closed
+ * season's record — the one thing seasons exist to make impossible.
+ * DELETE_ANSWER_OPEN_SEASON_SQL says the same for the politician side, and this
+ * is its user-side twin.
+ *
+ * It is also the better behaviour, not merely the safer one. Cancelling undoes
+ * the answer the user just gave, not their history. If a closed season's answer
+ * then resurfaces through the newest-season collapse, that IS their standing
+ * answer — the one the card was covering — and showing it back is what "cancel"
+ * should mean. Today the `compass_responses_legacy_pair_scaffold` unique index
+ * still holds a user to one row per topic, so this clears exactly one either
+ * way; the distinction becomes real when CC_0045 stage 2 drops it.
+ *
+ * Soft, not hard, matching reset_compass_answers: deleted rows are kept for
+ * recovery and audit, and every read already filters `deleted_at IS NULL`.
+ */
+export async function clearCompassAnswer(
+  userId: string,
+  topicId: string
+): Promise<number> {
+  const { rowCount } = await pool.query(
+    `UPDATE inform.compass_responses r
+        SET deleted_at = now()
+       FROM inform.seasons s
+      WHERE s.id = r.season_id AND s.status = 'open'
+        AND r.user_id = $1
+        AND r.topic_id = $2
+        AND r.deleted_at IS NULL`,
+    [userId, topicId]
+  );
+  return rowCount ?? 0;
+}
+
+/**
  * saveSelectedTopics
  * Saves validated topic IDs into inform.inform_profiles.selected_topic_ids.
  *
