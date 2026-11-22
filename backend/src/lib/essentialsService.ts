@@ -493,6 +493,19 @@ export async function getPoliticiansFlatList(
            ont.politician_id AS incoming_holder_id,
            inc.full_name AS incoming_holder_name,
            to_char(ont.term_start, 'YYYY-MM-DD') AS incoming_on,
+           -- CC_0458: the election result, for the 1,334 seats with no dated term. Different
+           -- claim, different fields: incoming_on is when somebody TAKES OFFICE, these say only
+           -- that they won a count, and 1,943 of the 1,945 November winners are merely 'called'.
+           -- This endpoint and the address paths must agree -- that is the whole lesson of the
+           -- CC_0341 incident above, where /politicians carried the successor and an address
+           -- returned null for the same seat.
+           -- ⚠ NO district_seat_group join here. This query is DISTINCT ON (p.id), and a seat
+           -- group is a fact about a BODY; attaching one to a row de-duplicated by PERSON would
+           -- give one of that person's offices' groups to all of them.
+           to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+           opw.certainty AS pending_certainty,
+           opw.seats AS pending_seats,
+           opw.winners AS pending_winners,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -530,6 +543,9 @@ export async function getPoliticiansFlatList(
     -- list to the offices in transition. The view is one row per office, so this cannot fan out.
     LEFT JOIN essentials.office_next_term ont ON ont.office_id = o.id
     LEFT JOIN essentials.politicians inc ON inc.id = ont.politician_id
+    -- LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner, so an
+    -- inner join would empty the list. One row per office, so it cannot fan out.
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
@@ -1454,6 +1470,18 @@ export interface PoliticianDetail {
   next_primary_date: string;
   next_general_date: string;
   finance_summary: FinanceSummary | null;
+  /**
+   * The seat this person is ARRIVING into, and when (CC_0458). Both null for almost everyone.
+   *
+   * 🔴 THIS IS THE OPPOSITE QUESTION TO EVERY OTHER OFFICE FIELD ON THIS RECORD. The rest answer
+   * "what does this person hold now"; these answer "what are they about to hold". 136 people
+   * carry a future term and no current seat, so without these their profile is a page with no
+   * office on it at all -- and it is the page a voter lands on from the incoming name on an
+   * address result. A renderer must not present them as a current office.
+   */
+  arriving_office_title: string | null;
+  /** 'YYYY-MM-DD'. Formatted in SQL; see the query. */
+  arriving_on: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -1527,7 +1555,14 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
            COALESCE(ch.website_url, '') AS chamber_url,
-           upcoming.next_primary_date, upcoming.next_general_date
+           upcoming.next_primary_date, upcoming.next_general_date,
+           -- 🔴 CC_0458: THE SEAT THIS PERSON IS ARRIVING INTO, WHICH IS THE OPPOSITE QUESTION
+           -- TO THE ONE EVERY OTHER OFFICE FIELD HERE ANSWERS. 136 people in office_next_term
+           -- hold no current seat, so och resolves NOTHING for them and every office column
+           -- above comes back NULL -- their profile renders as though they are nobody. That is
+           -- exactly the page a voter reaches by clicking the incoming name on an address result.
+           arriving.title AS arriving_office_title,
+           arriving.arriving_on
     FROM essentials.politicians p
     -- ADR 0002 phase 3: which office this person holds NOW, via
     -- essentials.office_current_holder (office_terms + dual-read fallback), so a future-dated
@@ -1555,6 +1590,20 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     ${UPCOMING_ELECTIONS_LATERAL}
+    -- 🔴 A LATERAL WITH ITS OWN LIMIT 1, BECAUSE THIS JOIN DIRECTION FANS OUT.
+    -- office_next_term is one row per OFFICE, so joining FROM offices cannot duplicate; joining
+    -- FROM a politician returns one row per FUTURE TERM that person holds, and a person can hold
+    -- two. The outer LIMIT 1 below would HIDE that duplication rather than prevent it, and would
+    -- then let a multiplied row decide which office the profile reports -- the same shape as the
+    -- two Aaron Freemans. The nearest future term is the one a voter is being told about.
+    LEFT JOIN LATERAL (
+      SELECT ao.title, to_char(ont.term_start, 'YYYY-MM-DD') AS arriving_on
+        FROM essentials.office_next_term ont
+        JOIN essentials.offices ao ON ao.id = ont.office_id
+       WHERE ont.politician_id = p.id
+       ORDER BY ont.term_start ASC, ao.id
+       LIMIT 1
+    ) arriving ON true
     WHERE p.id = $1
     -- 🔴 DETERMINISTIC PICK. A person may hold more than one office, so this can return several
     -- rows and the caller reads rows[0]. Without an ORDER BY that was whichever row Postgres
@@ -1767,6 +1816,8 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     finance_summary: row.finance_summary ?? null,
+    arriving_office_title: row.arriving_office_title ?? null,
+    arriving_on: row.arriving_on ?? null,
   };
 }
 
