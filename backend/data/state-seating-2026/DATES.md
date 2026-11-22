@@ -1624,3 +1624,209 @@ date in the statute itself.
 2` to become district seats across 2028–2032. ⚠ **Do not rename or re-district the two Place
 offices now** — (b)(3)(a) says the 2026 pair was elected "in the same manner as commissioners were
 elected before June 1, 2026", so for this cycle the at-large shape is the correct one.
+
+---
+
+## NE — Nebraska · 13 offices · ✅ sourced 2026-11-22 — **one residual clause, and the job was proving nothing displaced it**
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| Governor · Secretary of State · Attorney General · Auditor of Public Accounts · Treasurer | 5 | **2027-01-07** (Thu) | Neb. Const. Art. XVII-5 |
+| University of Nebraska Regent, Districts 1, 2, 4 | 3 | **2027-01-07** (Thu) | Neb. Const. Art. XVII-5, restated for this body by `§ 32-573` |
+| Public Service Commissioner, District 2 | 1 | **2027-01-07** (Thu) | Neb. Const. Art. XVII-5 |
+| State Board of Education, Districts 5, 6, 7, 8 | 4 | **2027-01-07** (Thu) | Neb. Const. Art. XVII-5 |
+
+**All thirteen on one day, from one clause.** First Tuesday in January 2027 = 2027-01-05; the first
+Thursday after it = **2027-01-07**.
+
+### 🔴🔴 THE CLAUSE IS A RESIDUAL, SO READING IT IS THE EASY HALF — THE WORK IS PROVING NOTHING OVERRODE IT
+
+**Neb. Const. Art. XVII-5** — *Terms of office of all elected officers*:
+
+> **Unless otherwise provided by this Constitution or by law** the terms of all elected officers
+> shall begin on the first Thursday after the first Tuesday in January next succeeding their
+> election.
+
+That opening clause is the whole task. A residual rule is only the answer for a body that nothing
+else answers for, so **each of the four bodies had to be checked twice** — once in the constitution
+and once in the statutes — before this date could be written against it.
+
+**Every one of them gives a term LENGTH and names no day.** In the constitution:
+
+| provision | what it says | names a day? |
+|---|---|---|
+| `Art. IV-1` (executives) | "shall be chosen at the general election held in November 1974, and in each alternate even-numbered year thereafter, **for a term of four years** and until their successors shall be elected and qualified" | no |
+| `Art. IV-20` (PSC) | "**whose term of office shall be six years**" | no |
+| `Art. VII-3` (State Board of Education) | "**Their term of office shall be for four years each**" | no |
+| `Art. VII-10` (Regents) | "**The terms of office of elected members shall be for six years each**" | no |
+
+And in the statutes — **Chapter 32, Article 5 carries one section per body**, which is how they were
+found; the chapter's own index was read rather than a keyword guessed:
+
+| section | what it says | names a day? |
+|---|---|---|
+| `§ 32-506` Governor and Lieutenant Governor | "elected at the statewide general election in 1994 and each four years thereafter … terms of four years or until their successors are elected and qualified" | no |
+| `§ 32-507` Treasurer, Auditor, Secretary of State, Attorney General | same shape, same words | no |
+| `§ 32-509` Public service commissioners | "elected for a term of six years", plus which district is up in which year | no |
+| `§ 32-510` Board of Regents | "shall serve for terms of six years or until their successors are elected and qualified" | no |
+| `§ 32-511` State Board of Education | "shall serve for terms of four years or until their successors are elected and qualified" | no |
+
+🟢 **`§ 32-572(1)` is the lock, because it says out loud that the day lives somewhere else:**
+
+> Every officer elected or appointed for a fixed term shall hold office until his or her successor
+> is elected or appointed and is qualified. The fixed term shall end and the successor, whether
+> elected or appointed, shall qualify **on the day for taking office as provided by law**.
+
+The Legislature wrote "the day for taking office as provided by law" and provided it nowhere in
+these five sections. `Art. XVII-5` is what it is pointing at.
+
+⚠ **`Art. XVII-5`'s own annotation narrows it usefully:** *"This section has reference only to
+officers who have a fixed term."* (`Baker v. Moorhead`, 103 Neb. 811 (1919)). All thirteen have a
+fixed term — four years for the executives and the Board of Education, six for the PSC and the
+Regents — so all thirteen are inside it.
+
+### 🔴🔴 THE ESCAPE HATCH IS NOT THEORETICAL. IT FIRES IN THIS STATE, ONE DAY AWAY, FOR A BODY WE DO NOT HOLD
+
+The Secretary of State's own canvass book dates **Member of the Legislature** to **January 8,
+2025** — *not* the January 9 it gives every other state body in the same document — and cites
+`Neb. Const. Art. III-10`, `Art. III-8` and `Art. III-9` for it. Nebraska's unicameral has its own
+constitutional commencement, and `Art. XVII-5` steps aside for it exactly as its first clause says.
+
+🔴 **So "Nebraska takes office on the first Thursday after the first Tuesday" is FALSE as a
+statement about Nebraska**, and true only of the bodies checked above. It is one day wrong for the
+Legislature. ▶ **A residual clause must be quoted with its own first six words attached**, or the
+next reader will apply it to a body that is carved out of it.
+
+🟢 This wave is not exposed to that, for a reason that is itself worth writing down: **we hold no
+Nebraska Legislature offices at all.** Measured 2026-11-22 — Nebraska has no `STATE_UPPER` and no
+`STATE_LOWER` district rows, so all 49 seats of the unicameral are absent from our data. The trap
+is dormant here rather than avoided, and it arms itself the day those seats are seeded.
+
+### The controls — two cycles, two sources, neither written from this clause
+
+**1. 🟢 The Secretary of State states the result per office, for the previous cycle, in her own
+canvass book.** The 2024 General Canvass Book prints a metadata block above each contest, and for
+three of this wave's four bodies it names them:
+
+| office, as the book names it | Term Length | Term Start |
+|---|---|---|
+| Public Service Commissioner | Six years | **January 9, 2025** |
+| Member of the State Board of Education | Four years | **January 9, 2025** |
+| Member of the Board of Regents of the University of Nebraska | *(not printed)* | **January 9, 2025** |
+
+The formula's answer for that cycle is 2025-01-09 (first Tuesday 2025-01-07, first Thursday after
+it 2025-01-09). **It agrees exactly.**
+
+⚠ **The pairing of each date to its office was checked, not assumed.** A canvass book is a PDF and
+PDF text has no rows, so each `Term Start:` line was read with the lines above it rather than taken
+in stream order — and the printed **Term Length beside it independently corroborates the pairing**:
+six years against the PSC matches `Art. IV-20`, four years against the Board of Education matches
+`Art. VII-3`. A mis-paired block would have had to agree with the constitution by accident.
+
+⚠ **The four Term Starts in that book that are NOT January 9 are all explained**, which is what
+makes the agreement meaningful rather than uniform: President 2025-01-20 (U.S. Const. amend. XX),
+U.S. Senate and U.S. House 2025-01-03 (federal), Member of the Legislature 2025-01-08 (above), and
+the Metropolitan Utilities District of Omaha 2025-01-07 (a local district with its own rule).
+
+**2. 🟢 Our own data, written by a pass that never read Art. XVII-5.** `essentials.office_terms`
+holds exactly one dated Nebraska term for these tiers: **Governor, `term_start` = 2023-01-05, a
+Thursday.** The formula's answer for the 2022 cycle is 2023-01-05 (first Tuesday 2023-01-03). It
+agrees exactly, and the day of the week is the formula's own signature.
+
+**3. 🟢 The Nebraska Supreme Court said it, about the Governor specifically.** Annotated to
+`Art. XVII-5`: *"Governor takes office on first Thursday after first Tuesday in January in
+odd-numbered years."* `State ex rel. Johnson v. Hagemeister`, 161 Neb. 475, 73 N.W.2d 625 (1955).
+This is the only one of the three controls that reaches the **executives**, and it reaches them
+directly — the canvass-book control cannot, because 2024 was not a Nebraska gubernatorial year.
+
+**4. 🟢 `§ 32-573` restates the formula in statute, for the Regents.** The Board of Regents vacancy
+section describes the term boundary three times as *"the first Thursday following the first Tuesday
+in January following such general election"*. It does not displace `Art. XVII-5` — **it is the
+Legislature writing the same day into statute for one of these four bodies**, which is the
+strongest possible answer to "did a law provide otherwise".
+
+⚠ **The usual control for this pass — a biennial cluster of prior `term_start`s — is NOT available
+for Nebraska.** One dated row is a point, not a cluster. It is reported as a point.
+
+### The source
+
+- `https://nebraskalegislature.gov/laws/articles.php?article=XVII-5` — and `IV-1`, `IV-20`, `VII-3`,
+  `VII-10`, the Legislature's own publication of the Constitution, read 2026-11-22.
+- `https://nebraskalegislature.gov/laws/statutes.php?statute=32-506` — and `32-507`, `32-509`,
+  `32-510`, `32-511`, `32-572`, `32-573`, read 2026-11-22.
+- `https://sos.nebraska.gov/sites/default/files/doc/elections/2024/2024%20General%20Canvass%20Book.pdf`
+  — Secretary of State, 2024 General Canvass Book (3,223,182 bytes), read 2026-11-22.
+
+🟢 **All of these answer plain `curl` with a browser User-Agent.** Nebraska is on the easy list.
+
+⚠ **The constitution is NOT at `articles.php?article=XVII`** — the article and section are joined
+with a hyphen, `article=XVII-5`, and the bare article number returns `Invalid statute number
+format: 'XVII'` with **HTTP 200**. 🟢 It says so in words, which is better than most: the body of
+the response names the fault instead of serving a navigation page. The per-section URLs are
+discoverable from `/laws/browse-constitution.php`.
+
+⚠ **The statute keyword search at `/laws/search_keyword.php` is token-OR and needs a CSRF token**
+from `/laws/laws.php` plus the session cookie. It returned interstate licensure compacts for
+"Public Service Commission term of office six years" and found none of the five sections that
+actually govern. ▶ **The chapter index is what found them** — `browse-chapters.php?chapter=32`,
+read as a list of section titles. Bounded by the document's own structure, not by a guessed phrase.
+
+⚠ **The 2022 General Canvass Book carries no `Term Start` block at all** (41 occurrences of "Term",
+none of them a label). The per-office metadata block is a 2024 format. So there is no canvass-book
+control for the executives, and control 3 above is what covers them instead.
+
+### Basis
+
+`statute` for all thirteen.
+
+### Term start or oath? — **term start**
+
+`Art. XVII-5` says the **terms** "shall begin" on the computed day; it does not mention an oath.
+⚠ `§ 32-572(1)` does use the word *qualify* — "the successor … shall qualify on the day for taking
+office as provided by law" — but it fixes qualification **to** that day rather than making the term
+begin whenever qualification happens. 🔴 **That is the opposite of Nevada**, where
+`NRS 282.010(4)` starts the term *at* qualification and the day is therefore unknowable in advance.
+Nebraska names the day and requires qualification on it. Read the direction of the sentence.
+
+🟢 `§ 32-572(2)` bounds the slippage if someone fails to qualify: the incumbent holds over and the
+swearing in "shall not be more than one calendar month from the day for taking office". That is a
+`window_end_date` of 2027-02-07 if it is ever needed; **it is not needed here**, because the term
+start is fixed and known.
+
+### Carried into the row
+
+| field | all thirteen |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-07** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `ne-const-art17-5-first-thursday-after-first-tuesday-january` |
+
+### 🔴 The queue says three bodies. Nebraska has FOUR, and the fourth is hiding inside a district type
+
+`SOURCING.md` lists Nebraska as `EXEC+BOARD+BOARD_EDUCATION`, and the register's generated table
+gives it one `NE | STATE_BOARD | 4` row. **`STATE_BOARD` holds two different bodies**: the
+University of Nebraska **Board of Regents** (3 of its 8 seats pending) and the **Public Service
+Commission** (1 of its 5). They are separate chambers with separate constitutional articles — one
+six-year board under `Art. VII-10`, one six-year commission under `Art. IV-20` — and they happened
+to land on the same date.
+
+▶ **`district_type` is not a body.** Count bodies by `chamber_id`, and do it before deciding how
+many citations a state needs. Here it cost nothing because both fall to the same residual; in a
+state where one of the two had its own commencement, reading the queue row as one body would have
+dated it from the other's clause.
+
+### ⚠ Two Nebraska gaps this block records and does not touch
+
+- **LIEUTENANT GOVERNOR — the office exists and carries no winner.** `Art. IV-1`: *"Each candidate
+  for Governor shall select a person to be the candidate for Lieutenant Governor on the general
+  election ballot. In the general election one vote shall be cast jointly for the candidates for
+  Governor and Lieutenant Governor."* The 2022 canvass book shows the ticket form directly — "Jim
+  Pillen & Joe Kelly (Republican)". We hold one `Lieutenant Governor` office for Nebraska and
+  **zero pending winners for it**, because the winner is recorded against the Governor's race.
+  🔴 The date above governs the Lieutenant Governor too — `§ 32-506` covers both officers in one
+  sentence — but **no wave reaches the seat until a winner row names its holder.** This is the
+  ticket case the transition programme already knows: a ticket LG row names the governor.
+- **THE LEGISLATURE — 49 seats, absent entirely.** Not a gap this pass created and not one it can
+  close; recorded because the January 8 carve-out above becomes live the moment it is.

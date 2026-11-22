@@ -99,7 +99,9 @@ across two different requests is the tell in three of these.
 
 🟢 **These work under plain `curl` with a browser User-Agent:** `malegislature.gov` (including its
 journal PDFs), `app.leg.wa.gov` + `leg.wa.gov`, `msa.maryland.gov`, `oregonlegislature.gov`,
-`leg.state.nv.us`, `azleg.gov`, `leg.colorado.gov`, `lldc.mainelegislature.org`.
+`leg.state.nv.us`, `azleg.gov`, `leg.colorado.gov`, `lldc.mainelegislature.org`,
+`nebraskalegislature.gov` (constitution, statutes AND the chapter indexes), `sos.nebraska.gov`
+(the canvass-book PDFs).
 
 ### Two tools worth knowing are here
 
@@ -212,6 +214,32 @@ in January 2027.
   and (c) says it "does not apply to the office of governor, lieutenant governor, state senator, or
   state representative". ▶ **Read the exclusion subsection before assuming a general rule covers a
   body**, and then go and find what covers the excluded ones.
+- 🔴🔴 **A RESIDUAL CLAUSE IS ONLY THE ANSWER FOR A BODY THAT NOTHING ELSE ANSWERS FOR, AND
+  PROVING THAT IS THE WHOLE JOB.** This is the Texas rule above turned inside out: there, a general
+  statute named its own exceptions and you read the list. Here the general rule names NO
+  exceptions and simply yields — `Neb. Const. Art. XVII-5` begins **"Unless otherwise provided by
+  this Constitution or by law"** — so the exceptions are wherever they happen to be, and the only
+  way to know a body is inside the residual is to go and read that body's own provision AND its own
+  statute and find no day in either. Nebraska needed four constitutional sections and five statutes
+  checked before one date could be written for thirteen offices.
+  - 🔴 **AND THE ESCAPE HATCH FIRES, ONE DAY AWAY, IN THE SAME STATE.** Nebraska's Legislature
+    takes office on a different day from every other state body — **2025-01-08 against 2025-01-09**
+    in the Secretary of State's own canvass book, under `Art. III-8/9/10`. A one-day error is the
+    hardest kind to notice and it is exactly what copying the residual onto a carved-out body
+    produces. ▶ **Quote a residual clause WITH its opening words attached**, every time, or the
+    next reader will apply it to the body it excludes.
+  - 🟢 **The best possible answer to "did a law provide otherwise" is a law that provides the
+    SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
+    constitutional formula three times. A statute that repeats the clause settles the question for
+    that body far more firmly than failing to find one.
+- 🔴 **`district_type` IS NOT A BODY — COUNT BODIES BY `chamber_id` BEFORE DECIDING HOW MANY
+  CITATIONS A STATE NEEDS.** The queue called Nebraska three bodies because it has three district
+  types. It has four: `STATE_BOARD` holds **both** the University of Nebraska Board of Regents
+  (`Art. VII-10`, six-year terms) **and** the Public Service Commission (`Art. IV-20`, six-year
+  terms), which are separate chambers under separate articles. They happened to land on the same
+  day, so it cost nothing here — ▶ **in a state where one of the two has its own commencement, a
+  queue row read as one body dates the other from the wrong clause, and the count still looks
+  right.** The measurement query already groups by chamber; read that column.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
 - 🔴 **`statutes.capitol.texas.gov` RETURNS THE SAME 250,874-BYTE NAVIGATION PAGE FOR EVERY
   `Docs/.../*.htm` URL** under `curl` — whatever article is asked for, with 1,356 characters of
@@ -250,7 +278,7 @@ in January 2027.
 | 10 | CO | 5 bodies | 18 | 996 | five separate bodies for 18 seats — expect several citations |
 | 11 | TX | BOARD_EDUCATION+EXEC | 14 | 1010 | |
 | 12 | AL | EXEC+BOARD_EDUCATION | 13 | 1023 | ✅ done — the rule row **verified**; all 13 on 2027-01-18 |
-| 13 | NE | EXEC+BOARD+BOARD_EDUCATION | 13 | 1036 | ▶ rules cite `Neb. Const. Art. XVII-5` and compute **2027-01-07** |
+| 13 | NE | EXEC+**2 BOARDS**+BOARD_EDUCATION | 13 | 1036 | ✅ done — all 13 on **2027-01-07**; the rule rows **verified**. 🔴 FOUR bodies, not three: `STATE_BOARD` holds the Regents AND the PSC |
 | 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ▶ PEC rule cites HB 9 (2021 2nd S.S. Ch. 3) §3B → **2027-01-01** |
 | 15 | GA | EXEC | 10 | 1057 | |
 | 16 | AR | EXEC | 7 | 1064 | |
@@ -335,11 +363,11 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**12 of 41 states sourced · 1,023 of 1,162 offices (88%) · 0 seated.** The twelve are the twelve
-largest, so the 29 that remain are **139 offices**, almost all single-body executive states.
+**13 of 41 states sourced · 1,036 of 1,162 offices (89%) · 0 seated.** The first twelve are the
+twelve largest; the 28 that remain are **126 offices**, almost all single-body executive states.
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
-term. Step 2 is done for these twelve; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: NE (13), NM (11), GA (10).**
+term. Step 2 is done for these thirteen; steps 3 through 9 are not started for any state.
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: NM (11), GA (10), AR (7).**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
@@ -357,4 +385,5 @@ term. Step 2 is done for these twelve; steps 3 through 9 are not started for any
 | CO | ✅ [`DATES.md`](./DATES.md) — all 18: legislature **2027-01-11** (`basis = published`, HJR26-1031 — the statutory default would be 2 days wrong), everything else **2027-01-12** | ⏳ | | |
 | TX | ✅ [`DATES.md`](./DATES.md) — all 14: **2027-01-01** for 12 (`Gov't Code § 601.003`), **2027-01-19** for Governor + Lt. Governor, whom § 601.003(c) excludes by name | ⏳ | | |
 | AL | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-18**, three provisions with one formula. 🟢 Its SBOE rule row **verified correct**. 🔴 PSC expands 3 → 7 seats from that same day | ⏳ | | |
+| NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
 | *(nothing else yet)* | | | | |
