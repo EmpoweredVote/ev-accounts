@@ -42,6 +42,7 @@ function makeRep(overrides: Partial<PoliticianFlatRecord>): PoliticianFlatRecord
     id: 'p-default',
     office_id: 'o-default',
     seat_status: 'held', incoming_holder_id: null, incoming_holder_name: null, incoming_on: null,
+    pending_winner: null, seat_group: null,
     external_id: null,
     first_name: '',
     middle_initial: '',

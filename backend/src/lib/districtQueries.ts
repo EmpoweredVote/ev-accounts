@@ -135,6 +135,32 @@ export const DISTRICT_SELECT_FIELDS = `
     -- ▶ A FIELD CAN BE POPULATED, NON-NULL AND STILL NONSENSE. Nothing was null, nothing errored,
     -- CI was green, and the value was unusable.
     to_char(ont.term_start, 'YYYY-MM-DD') AS incoming_on,
+    -- 🔴 CC_0458: WHO WON, FOR THE SEATS THAT HAVE NO TERM ROW AT ALL. 1,334 offices carry a
+    -- recorded election winner and no office_terms row for the new term, so the three fields
+    -- above are NULL for every one of them and a voter sees only the person who is leaving.
+    -- This is a DIFFERENT CLAIM and it stays in different fields: incoming_on says when somebody
+    -- TAKES OFFICE, pending_* says only that they won a count. A certified result is not a fact
+    -- about who holds the seat, and 1,943 of the 1,945 November winners are not even certified —
+    -- they are 'called', which a canvass can reverse. pending_certainty is what the renderer
+    -- hedges the sentence on; it is not decoration.
+    -- The two views are disjoint by construction (office_pending_winner excludes anything in
+    -- office_next_term), so no office ever populates both sets of fields.
+    -- Same to_char rule as above, for the same reason.
+    to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+    opw.certainty AS pending_certainty,
+    opw.seats AS pending_seats,
+    opw.winners AS pending_winners,
+    -- 🔴 THE GROUP PAYLOAD RIDES ON EVERY SIBLING OFFICE ROW, BECAUSE THIS RESPONSE IS FLAT AND
+    -- ONE ROW PER OFFICE. A multi-seat race attaches ALL its winners to ONE office row — Maryland
+    -- House District 13 elects three delegates from one race — so the sibling seats carry no
+    -- result of their own and would read as "nobody is coming". AN OFFICE WITH NO RACE IS
+    -- INVISIBLE, NOT INCOMPLETE. These three counts are district-level and no single office
+    -- record holds them, so the renderer groups rows by group_id and draws the group-to-group
+    -- arrow only when offices = winners = seated.
+    dsg.group_id,
+    dsg.offices AS group_offices,
+    dsg.winners AS group_winners,
+    dsg.seated AS group_seated,
     o.title AS office_title, o.representing_state, o.representing_city,
     -- 🔴 WITHOUT THIS THE ADDRESS PATH DROPPED EVERY OFFICE DESCRIPTION ON THE FLOOR. The mapper
     -- has always read row.office_description, and this select never produced it, so the field
@@ -179,6 +205,22 @@ export const DISTRICT_JOINS = `
     -- result. One row per office, so no fan-out, and no condition on it may constrain the match.
     LEFT JOIN essentials.office_next_term ont ON ont.office_id = o.id
     LEFT JOIN essentials.politicians inc ON inc.id = ont.politician_id
+    -- CC_0458: the election result, for seats with no dated term. Both of these are LEFT JOINs
+    -- and must stay LEFT JOINs — 1,334 offices of 11,155 have a pending winner, so an inner join
+    -- would empty almost every address result, which is the same hazard the office_next_term
+    -- join above carries.
+    -- 🔴 NEITHER MAY FAN THE RESULT SET OUT. office_pending_winner is exactly one row per office
+    -- (DISTINCT ON (o.id) inside the view) and district_seat_group is exactly one row per
+    -- (district_id, chamber_id), both gated at zero in CC_0458's post-verify. The DISTINCT ON
+    -- below must remain the thing that GUARANTEES one row per office, never a thing papering
+    -- over a duplicate these joins introduced.
+    -- 🔴 IS NOT DISTINCT FROM, never a plain equality. A seat whose chamber_id is NULL never
+    -- matches an = comparison, so equality silently drops the group for those rows and the body
+    -- reads to a voter as having nothing coming.
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
+    LEFT JOIN essentials.district_seat_group dsg
+      ON dsg.district_id = o.district_id
+      AND dsg.chamber_id IS NOT DISTINCT FROM o.chamber_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb

@@ -161,3 +161,50 @@ describe('every politician row carries its office id', () => {
     expect(buildStatewideQuery()).toContain('o.description AS office_description');
   });
 });
+
+describe('CC_0458 pending winner and seat group', () => {
+  const base = { spatialPredicate: 'ST_Covers(gb.geometry, $1)' };
+
+  it('selects the pending-winner columns on both builders', () => {
+    for (const sql of [buildDistrictQuery(base), buildStatewideQuery()]) {
+      // 🔴 to_char, NOT the raw date column. node-postgres parses OID 1082 into a JS Date at
+      // LOCAL midnight, and String(that).slice(0, 10) is "Tue Nov 3" — a weekday and no year.
+      // That is what incoming_on served live before CC_0391. Same rule, same reason.
+      expect(sql).toContain("to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date");
+      expect(sql).toContain('opw.winners AS pending_winners');
+      expect(sql).toContain('dsg.group_id');
+    }
+  });
+
+  // 🔴 An inner join here would EMPTY EVERY ADDRESS RESULT: 1,334 offices of 11,155 have a
+  // pending winner, and far fewer have one at any given address.
+  it('joins both new views as LEFT JOINs', () => {
+    const sql = buildDistrictQuery(base);
+    expect(sql).toContain('LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id');
+    expect(sql).toMatch(/LEFT JOIN essentials\.district_seat_group dsg/);
+  });
+
+  // Review Focus 1. A plain `=` on chamber_id drops the group for every seat whose chamber is
+  // NULL, because NULL = NULL is not a match — the multi-seat cases would silently vanish for
+  // them, which looks exactly like "this body has nothing coming".
+  it('matches the seat group on a null chamber_id', () => {
+    expect(buildDistrictQuery(base)).toContain(
+      'dsg.chamber_id IS NOT DISTINCT FROM o.chamber_id'
+    );
+  });
+
+  // Review Focus 1. Neither new join may multiply rows: office_pending_winner is one row per
+  // office and district_seat_group is one row per group, so the DISTINCT ON must still be the
+  // thing that guarantees one row per office rather than a thing papering over a fan-out.
+  it('still de-duplicates on the office', () => {
+    expect(buildDistrictQuery(base)).toContain('DISTINCT ON (o.id)');
+    expect(buildDistrictQuery(base)).toContain('ORDER BY o.id');
+  });
+
+  it('selects all four group columns, so the render can apply the three-numbers rule', () => {
+    const sql = buildDistrictQuery(base);
+    for (const col of ['group_id', 'group_offices', 'group_winners', 'group_seated']) {
+      expect(sql).toContain(col);
+    }
+  });
+});
