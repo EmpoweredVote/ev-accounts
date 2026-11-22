@@ -174,7 +174,7 @@ export function checkerPrompt(
   findings: Finding[],
   outcome: Outcome,
   sides: string | null,
-  opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string; outFile?: string } = {},
+  opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string; outFile?: string; titles?: Map<string, string> } = {},
 ): string {
   const sentences = splitRendered(summary.text);
   if (sentences.length !== summary.cites.length) {
@@ -189,7 +189,7 @@ export function checkerPrompt(
     const lines = [
       `finding ${id}`, `  kind: ${f.kind}`, `  date: ${f.date} (${f.date_precision})`,
       f.act ? `  act: ${f.act}` : '', f.against_bill ? '  against_bill: true (a Yea here is a vote AGAINST the bill)' : '',
-      f.local_record ? '  local_record: true' : '', f.instrument_id ? `  instrument: ${f.instrument_id}` : '',
+      f.local_record ? '  local_record: true' : '', f.instrument_id ? `  instrument: ${f.instrument_id}${opts.titles?.get(f.instrument_id) ? ` (${opts.titles.get(f.instrument_id)})` : ''}` : '',
       f.motion ? `  motion: ${f.motion}` : '',
       f.gate_by_topic ? `  gate: ${JSON.stringify(f.gate_by_topic)}` : '',
       `  url: ${f.url}`, `  note: ${f.note}`,
