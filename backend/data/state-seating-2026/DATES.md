@@ -134,3 +134,180 @@ that Ch. VI Art. I's oath is a separate event.
 - ⚠ **159 of the House's 160 offices are pending, and 2 House seats are flagged vacant.** The
   register's `no record` column puts 18 House winners and 3 Senate winners with no `politicians`
   row — step 4 work, against the chamber's own roster.
+
+---
+
+## ME — Maine · 184 offices · ✅ sourced 2026-11-22
+
+🔴🔴 **MAINE IS THE DEADLINE. THE LEGISLATIVE TERM BEGINS 2026-12-01 — NINE DAYS FROM THE DAY
+THIS WAS SOURCED.** Every other body in the pass starts in January 2027. The register sorts dated
+bodies soonest-first and undated ones below them, so dating Maine moves 183 of its 184 offices
+from the bottom of the queue to the top of it. ▶ **Re-sort the register.**
+
+| body | offices | start date | the clause |
+|---|---|---|---|
+| House of Representatives | 149 pending (of 154) | **2026-12-01** (Tue) | Art. IV, Pt. First, § 2 |
+| Senate | 34 pending (of 35) | **2026-12-01** (Tue) | Art. IV, Pt. Second, § 1 |
+| Governor | 1 | **2027-01-06** (Wed) | Art. V, Pt. First, § 2 |
+
+### 🔴🔴 The term start is the day BEFORE the Legislature convenes, and every published account gives the convening date
+
+The Legislature convenes **2026-12-02**, the first Wednesday of December (Art. IV, Pt. Third, § 1).
+That is the date in `CLAUDE.md`, in `seed-me-municipal-2026/ROSTERS.md`, in the Legislators'
+Handbook, and in every news report of a swearing-in. **It is not the term start.** The term start
+is `2026-12-01`, and a pass that reached for the number everyone publishes would be one day wrong
+on 183 seats.
+
+### The authority
+
+**Me. Const. Art. IV, Pt. First, § 2** (House):
+
+> The House of Representatives shall consist of 151 members, to be elected by the qualified
+> electors, and **hold their office 2 years from the day next preceding the first Wednesday in
+> December following the general election**.
+
+**Me. Const. Art. IV, Pt. Second, § 1** (Senate) — the Senate has no date of its own and takes the
+House's:
+
+> The Senate shall consist of an odd number of Senators, not less than 31 nor more than 35,
+> **elected at the same time and for the same term as Representatives** by the qualified electors
+> of the districts into which the State shall be from time to time divided.
+
+**Me. Const. Art. V, Pt. First, § 2** (Governor):
+
+> The Governor shall be elected by the qualified electors, and shall **hold the office for 4 years
+> from the first Wednesday after the first Tuesday of January next following the election** and
+> until the successor to the Governor has been duly elected and qualified.
+
+### The source
+
+`https://legislature.maine.gov/const/` → the Revisor of Statutes' application at
+`https://legislature.maine.gov/ros/LawsOfMaine/#Const`, read 2026-11-22. ⚠ **That page is a
+JavaScript application: `curl` returns a 5,654-byte "enable JavaScript" stub with no constitution
+in it.** It was opened in a browser and the article texts read from the rendered document. Header:
+*"CONSTITUTION OF THE STATE OF MAINE (Arranged by the Chief Justice … approved by the Maine State
+Legislature, Resolve 2023, chapter 86 …) (Includes CR 2023, c. 1 and CR 2023, c. 2)"* — the
+current official arrangement. A PDF of the same text is at `https://legislature.maine.gov/doc/10674`.
+
+### Basis
+
+`statute` for all three rows.
+
+### Term start or oath? — **term start, and here the two are DIFFERENT DAYS**
+
+Maine is the first state in this pass where the answer changes the date.
+
+- **The oath** is Art. IX, § 1: every person elected "shall, **before entering on the discharge of
+  the duties** of that place or office, take and subscribe the following oath or affirmation",
+  administered to Senators and Representatives **before the Governor**.
+- **The House's own record says what the oath is for.** `JOURNAL AND LEGISLATIVE RECORD – HOUSE,
+  December 4, 2024` (the equivalent day of the last cycle), opened and read: a committee waits
+  upon the Governor "to administer to them the oaths required by the Constitution **to qualify
+  them to enter upon the discharge of their official duties**", and then "The Governor, the
+  Honorable JANET T. MILLS, entered and administered to the members-elect and they subscribed the
+  oaths". The oath qualifies them to act. It does not start the term.
+  Source: `https://legislature.maine.gov/house/Repository/Documents/132/LegislativeRecords/63b12a60-3275-4662-a4b0-47bc70c89dff_20241204.pdf`
+  (HTTP 200, `application/pdf`, 456,263 bytes, read 2026-11-22).
+
+So the term runs from a calendar date and the oath falls the next morning.
+
+### 🔴 The one-day question, and what settled it
+
+"**hold their office 2 years FROM the day next preceding the first Wednesday in December**" has two
+readings, and they differ by exactly one day:
+
+1. **inclusive** — the term begins ON the day next preceding, Tuesday **2026-12-01**;
+2. **exclusive** — "2 years from" Tuesday means the term begins the next day, Wednesday
+   **2026-12-02**, which is also the convening day and the oath day.
+
+⚠ **Reading 2 is not a straw man.** Art. IX, § 1 contains the phrase "the senior Associate Justice
+… present at the State Capitol **on the first day of the term** for which said Senators and
+Representatives shall have been elected" — in a fallback about who administers the oath when the
+Governor cannot. Read literally beside the oath being administered at the Capitol on the Wednesday,
+it says the Wednesday is the first day of the term. And Art. IV, Pt. First, § 5 has the House
+"finally determine who are elected" **on** that Wednesday, which makes a Tuesday start read oddly.
+
+**Two independent controls settle it for reading 1.**
+
+🟢 **1. The pre-1975 text of the very same sentence, which names the meeting explicitly.** The
+Constitution as amended through 1973 — `https://lldc.mainelegislature.org/Open/Const/Versions/MeConst_1973_Amd.pdf`
+(the Law and Legislative Reference Library's own digital collection; HTTP 200, `application/pdf`,
+2,652,185 bytes, opened and read 2026-11-22) — gives Art. IV, Pt. First, § 2 as:
+
+> …and **hold their office two years from the day next preceding the biennial meeting of the
+> Legislature**.
+
+The 1975 amendment that moved convening to December replaced *"the biennial meeting of the
+Legislature"* with *"the first Wednesday in December following the general election"* and **changed
+nothing else**. 🔴 **So "the day next preceding" was always measured against the day the
+Legislature MEETS, and it exists to put the term start one day EARLIER than the meeting.** Under
+reading 2 the phrase would do nothing at all — "two years from the day next preceding the
+meeting", exclusive, is just "from the meeting", and the drafters would have written that. A
+clause is not read to be surplusage.
+
+🟢 **2. The same construction elsewhere in the same constitution, with a known answer.** Art. V,
+Pt. First, § 2 gives the Governor the office "for 4 years **from** the first Wednesday after the
+first Tuesday of January" — no "day next preceding". The first Wednesday after the first Tuesday
+of January 2019 was **2019-01-02**, and `essentials.office_terms` carries Janet Mills' term
+starting exactly `2019-01-02`, sourced by `CA_0352` to `maine.gov/governor/mills/about` and
+`nga.org/governors/maine` and read 2026-11-03 — a date written by a pass that never saw this
+clause. **So "from X" in this constitution INCLUDES X.** Applied to Art. IV, Pt. First, § 2, "from
+the day next preceding" includes the day next preceding: the Tuesday.
+
+Both controls point the same way and neither was derived from the other.
+
+⚠ **Ballotpedia agrees** — Maine legislators "assume office the day before the first Wednesday of
+December". Recorded as the aggregator it is. It is not why this is written 2026-12-01.
+
+⚠ **A search of the Maine Revised Statutes returned nothing and PROVED NOTHING.** The Revisor's
+full-text search at `legislature.maine.gov/legis/statutes/search.asp` returns an identical,
+result-free page for a phrase that certainly exists in Title 3 § 2 ("first Wednesday of December")
+and for deliberate nonsense. **The positive control failed, so the tool is blind and its silence
+is not evidence.** 3 M.R.S. § 2 was read directly instead: it sets the legislative *salary*
+biennium from the first Wednesday of December "until the day before the first Wednesday of
+December" two years later — a pay period, not a term, and it is **not** a counter-authority.
+
+### Arithmetic, checked in code rather than counted
+
+| year | first Wed of Dec | day next preceding | first Tue of Jan | first Wed after it |
+|---|---|---|---|---|
+| 2022 | 2022-12-07 | 2022-12-06 | — | — |
+| 2024 | 2024-12-04 | 2024-12-03 | — | — |
+| **2026** | **2026-12-02** | **2026-12-01** | — | — |
+| 2019 | — | — | 2019-01-01 | **2019-01-02** ← Mills, confirmed |
+| 2023 | — | — | 2023-01-03 | 2023-01-04 |
+| **2027** | — | — | **2027-01-05** | **2027-01-06** |
+
+### Carried into the row
+
+| field | House + Senate | Governor |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2026-12-01** | **2027-01-06** |
+| `window_end_date` | NULL | NULL |
+| `basis` | `statute` | `statute` |
+| `rule_id` | `me-const-art4-day-before-first-wed-december` | `me-const-art5-pt1-s2-first-wed-after-first-tue-january` |
+
+`notes` must record that the term start is **one day before** the Legislature convenes and takes
+the oath (2026-12-02), because the next reader will meet the convening date first everywhere else.
+
+### Five things the next step inherits
+
+- 🔴 **77 winners have no `politicians` row** — 61 House, 16 Senate, the largest seeding job in the
+  pass — and the term starts in nine days. Step 4 against the chamber's own roster is the critical
+  path for Maine, not the date.
+- ⚠ **Three House offices are tribal and are correctly NOT in the pending set.** Penobscot,
+  Passamaquoddy and Houlton Band of Maliseet Indians are `representation_basis = 'membership'`,
+  seated by their nations rather than at a general election. The Penobscot seat is flagged vacant
+  since 2015-05-27. **A wave must not sweep them in.** See `seed-me-municipal-2026/ROSTERS.md`.
+- ⚠ **Three ordinary seats have no recorded winner**: State House District 86, State House
+  District 96 and State Senate District 18. None is flagged vacant. That is a result gap, not a
+  dating one, and it is why the counts read 149 of 154 and 34 of 35.
+- ▶ **2026-12-02 — the Mi'kmaq Nation's fourth tribal seat is created, not before.** The dated
+  follow-up already written up in `ROSTERS.md`, with both exits recorded. ⚠ **The citation there
+  reads "PL 2026 c. 705"; the Revisor prints it as `PL 2025, c. 705, Pt. A, §1 (AMD)`** on
+  `legislature.maine.gov/statutes/3/title3sec1.html` — Maine numbers a public law by the
+  legislature's first year, and the law was signed 2026-04-15. Same law; use the Revisor's form in
+  anything citable.
+- ⚠ **The Governor's 2027-01-06 is the same day as Massachusetts' legislature.** Two different
+  clauses in two states; the coincidence means nothing and the rows must not be shared.
