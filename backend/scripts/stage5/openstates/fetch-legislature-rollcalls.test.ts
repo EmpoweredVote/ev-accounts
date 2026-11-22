@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateBlockedRows, meSenateRows, hiReadBillPage, hiYear } from './fetch-legislature-rollcalls.js';
+import { californiaBillIdOf, pubinfoBody, nvBillUrlFromList, nvFollow, nvListUrl, nvReadVotes, alsoVotes, buildRollCall, CO_FLOOR_ACTION, CO_MOTION_ACTION, INDEX, ndAssembly, mnLegislature, mnResolverUrl, mnVoteFromResolver, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote, meFollow, meHouseListUrl, meListDay, meRecordFiles, meHousePdfs, meHouseRows, meListMotionIsOnTheBill, meReadVotes, meSenateBlockedRows, meSenateRows, hiReadBillPage, hiYear } from './fetch-legislature-rollcalls.js';
 import { ME_SENATE_LISTS } from '../../../src/lib/maineLegislatureMembers.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
@@ -853,15 +853,17 @@ describe('the legislature\'s own vote list — Maine', () => {
     expect(meHouseListUrl('132')).toBe('https://legislature.maine.gov/house/Documents/RollCalls?Legislature=132');
     expect(meHouseListUrl('128')).toBe('https://legislature.maine.gov/house/Documents/RollCalls?Legislature=128');
     for (const s of ['2025', '127', '12']) expect([s, meHouseListUrl(s)]).toEqual([s, null]);
+    // then the Legislative Record's two listings, for the votes neither list gives a file for
+    const rec = (n: string) => [`https://lldc.mainelegislature.org/Open/LegRec/${n}/House/`, `https://lldc.mainelegislature.org/Open/LegRec/${n}/Senate/`];
     expect(meFollow(LIST, '132')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=132',
-      'https://legislature.maine.gov/132nd-roll-calls']);
+      'https://legislature.maine.gov/132nd-roll-calls', ...rec('132')]);
     expect(meFollow(LIST, '130')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=130',
-      'https://legislature.maine.gov/130th-roll-calls']);
-    // the 129th's list has its own address; the 128th's rows link only /LawMakerWeb pages, counted as not read
+      'https://legislature.maine.gov/130th-roll-calls', ...rec('130')]);
+    // the 129th's list has its own address; the 128th's rows link only /LawMakerWeb pages, read from the Record
     expect(meFollow(LIST, '129')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=129',
-      'https://legislature.maine.gov/129th-senate-roll-calls']);
+      'https://legislature.maine.gov/129th-senate-roll-calls', ...rec('129')]);
     expect(meFollow(LIST, '128')).toEqual(['https://legislature.maine.gov/house/Documents/RollCallPDF?Legislature=128',
-      'https://legislature.maine.gov/128th-roll-calls']);
+      'https://legislature.maine.gov/128th-roll-calls', ...rec('128')]);
     for (const s of ['128', '129', '130', '131', '132']) for (const u of meFollow(LIST, s)) expect([u, /LawMakerWeb|\/senators\//i.test(u)]).toEqual([u, false]);
     expect(INDEX.ME.minGapMs).toBe(1_000);
   });
@@ -989,6 +991,56 @@ describe('the legislature\'s own vote list — Maine', () => {
     // a House vote on the bill with no PDF is not read, and is reported
     const noPdf = swap(swap(PDFS, '<strong>4</strong> PDF', '<strong>3</strong> PDF'), /<tr>(?:(?!<tr>).)*?034\.574\.132S1\.pdf.*?<\/tr>/s.exec(PDFS)![0], '');
     expect(meReadVotes(LIST, '132', 'LD 1971', [noPdf, SEN]).unread).toEqual(['House 574 Enactment: no PDF on the House\'s list']);
+  });
+
+  // The Legislative Record's listings, in the form lldc.mainelegislature.org serves them (read 2026-11-22), cut to a few files.
+  const LR = 'https://lldc.mainelegislature.org/Open/LegRec/132/';
+  const recList = (chamber: 'House' | 'Senate', ...names: string[]): string => `<html><head><title>lldc.mainelegislature.org - /Open/LegRec/132/${chamber}/</title></head><body>`
+    + `<pre><A HREF="/Open/LegRec/132/">[To Parent Directory]</A><br><br>`
+    + [`LegRec132v${chamber === 'House' ? 'HD' : 'SD'}_p2041-2052_RollCallNumberIndex.pdf`, ...names]
+      .map((n) => `    Friday, November 19, 2021  8:45 AM       166525 <A HREF="/Open/LegRec/132/${chamber}/${n}">${n}</A><br>`).join('') + '</pre><hr></body></html>';
+  const RH = recList('House', 'LegRec_2025-06-17_HD_pH0901-0950.pdf', 'LegRec_2025-06-18_HD_pH0951-0999.pdf');
+  const RS = recList('Senate', 'LegRec_2025-06-18_SD_pS724-0764.pdf', 'LegRec_2025-06-19_SD_p0765-0800.pdf');
+
+  it('reads the Legislative Record\'s listing: each sitting day\'s file, the volume\'s indexes passed over', () => {
+    expect([...meRecordFiles(RH, '132', 'House')]).toEqual([['2025-06-17', `${LR}House/LegRec_2025-06-17_HD_pH0901-0950.pdf`], ['2025-06-18', `${LR}House/LegRec_2025-06-18_HD_pH0951-0999.pdf`]]);
+    expect(meRecordFiles(RS, '132', 'Senate').get('2025-06-18')).toBe(`${LR}Senate/LegRec_2025-06-18_SD_pS724-0764.pdf`);
+    // two files of one day: which holds the vote is not known, so neither is read
+    expect(meRecordFiles(recList('House', 'LegRec_2025-06-18_HD_pH0951-0970.pdf', 'LegRec_2025-06-18_HD_pH0971-0999.pdf'), '132', 'House').get('2025-06-18')).toBeNull();
+    expect(() => meRecordFiles(RH, '132', 'Senate')).toThrow(/not the Legislative Record's Senate listing of the 132nd/);
+    expect(() => meRecordFiles(RH, '131', 'House')).toThrow(/not the Legislative Record's House listing of the 131st/);
+    expect(() => meRecordFiles(swap(RH, 'HREF="/Open/LegRec/132/House/LegRec_2025-06-17', 'HREF="/Open/LegRec/131/House/LegRec_2025-06-17'), '132', 'House')).toThrow(/links outside itself/);
+    expect(() => meRecordFiles(recList('House', 'LegRec_2025-06-18_SD_pS0951-0999.pdf'), '132', 'House')).toThrow(/a file of the Record's House listing the fetch cannot read: LegRec_2025-06-18_SD/);
+    expect(() => meRecordFiles(recList('House'), '132', 'House')).toThrow(/holds no day/);
+  });
+
+  it('reads a list\'s typed day in each of its forms, and no day that is not one', () => {
+    for (const [s, d] of [['06/20/2018', '2018-06-20'], ['6-14-2021', '2021-06-14'], ['06/21/18', '2018-06-21'], ['6-18-25', '2025-06-18']]) expect([s, meListDay(s)]).toEqual([s, d]);
+    for (const s of ['02/30/2021', '13/01/2021', '2021-06-14', 'June 14', '']) expect([s, meListDay(s)]).toEqual([s, null]);
+  });
+
+  it('reads from the Legislative Record the House vote with no PDF and the Senate rows that link only /LawMakerWeb', () => {
+    const noPdf = swap(swap(PDFS, '<strong>4</strong> PDF', '<strong>3</strong> PDF'), /<tr>(?:(?!<tr>).)*?034\.574\.132S1\.pdf.*?<\/tr>/s.exec(PDFS)![0], '');
+    const lmw = (n: number) => `<a href="/LawMakerWeb/rollcall.asp?ID=1&amp;chamber=S&amp;serialnumber=${n}"># ${n}</a>`;
+    const blocked = swap(SEN, '<a href="/uploads/visual_edit/roll-call-634-ld-1971.pdf"># 634 </a>', lmw(634))
+      .replace('<p><a href="/uploads/visual_edit/roll-call-39-', `<p>${lmw(900)}&nbsp;(6-19-25) LD 1971 - "An Act" (Motion: ENACTMENT) ${lmw(901)} (6-20-25) LD 1971 - "An Act" (Motion: ENACTMENT)</p>\n<p><a href="/uploads/visual_edit/roll-call-39-`);
+    const bi = meReadVotes(LIST, '132', 'LD 1971', [noPdf, blocked, RH, RS]);
+    expect(bi.floor.map((v) => v.url)).toEqual(expect.arrayContaining([`${LR}House/LegRec_2025-06-18_HD_pH0951-0999.pdf#RC574-LD1971`,
+      `${LR}Senate/LegRec_2025-06-19_SD_p0765-0800.pdf#RC900-LD1971`, `${LR}Senate/LegRec_2025-06-18_SD_pS724-0764.pdf#RC634-LD1971`]));
+    // a day the listing holds no file of is reported with both reasons
+    expect(bi.unread).toEqual(['Senate 901 ENACTMENT: the list links no PDF, only a /LawMakerWeb page, which robots.txt closes, and the Legislative Record\'s Senate listing holds no file of 2025-06-20']);
+    // a typed day that is not one chooses no file
+    expect(meReadVotes(LIST, '132', 'LD 1971', [noPdf, swap(blocked, '(6-19-25)', '(6-31-25)'), RH, RS]).unread).toContain('Senate 900 ENACTMENT: the list links no PDF, only a /LawMakerWeb page, which robots.txt closes, and the list types no day for it, so no file of the Legislative Record is chosen');
+    // two files of the day: reported, not read
+    const two = recList('House', 'LegRec_2025-06-18_HD_pH0951-0970.pdf', 'LegRec_2025-06-18_HD_pH0971-0999.pdf');
+    expect(meReadVotes(LIST, '132', 'LD 1971', [noPdf, SEN, two, RS]).unread).toEqual(['House 574 Enactment: no PDF on the House\'s list, and the Legislative Record\'s House listing holds two files of 2025-06-18']);
+    // with no member list saved, a Senate vote read from the Record names no one either
+    const was = ME_SENATE_LISTS[132];
+    delete ME_SENATE_LISTS[132];
+    try {
+      expect(meReadVotes(LIST, '132', 'LD 1971', [noPdf, blocked, RH, RS]).unread).toContain('Senate 900 ENACTMENT: no Senate member list of the 132nd Legislature is saved, so its surnames name no one');
+    } finally { ME_SENATE_LISTS[132] = was; }
+    expect(() => meReadVotes(LIST, '132', 'LD 1971', [noPdf, blocked, RH])).toThrow(/needed/);
   });
 });
 
