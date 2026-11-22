@@ -250,3 +250,10 @@ states) and session B's (0.67M when nothing goes wrong). What changed, each with
 - Not built: mapping a blank to its reason without a hand step. All 31 such rows of four states were blanks the
   record script wrote with no `shows_side`; whether a vote on a no-position bill shows a side is in the bill table's
   free text. It needs a `side` key on a no-position row, which is a ruling.
+- **`summary-second-opinion.ts`** (position summaries, step 3). `--profile <topic-profile.json> --batch <name> [--models a,b] [--timeout 180]`
+  sends each `checker/<n>.md` to one GPT and one Gemini model through `opencode run`, in an empty temp dir with secrets
+  stripped from the environment, and appends one check per (summary, model) to `checks.jsonl`. A timeout, error or
+  unusable reply is recorded as a fail ("no usable reply: …"), never a pass. Models come from `--models` or the profile's
+  `second_opinion_models`; use `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon`. 🔴 The `opencode/…` models are
+  pay-as-you-go and answered "Insufficient balance" (HTTP 402, as an error event with exit 0) on 2026-11-22; only
+  `opencode-go/…` models run on the plan.
