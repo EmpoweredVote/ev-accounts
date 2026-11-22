@@ -1241,3 +1241,147 @@ convenes on the third Tuesday in January, well after, so the two events are plai
   reach a voter only through the geofence join, never through `buildStatewideQuery`. Nothing in
   this dating pass changes that, but a wave that creates or moves one of these offices must not
   re-type it.
+
+---
+
+## CO — Colorado · 18 offices · ✅ sourced 2026-11-22 (5 bodies, 2 dates)
+
+🔴🔴 **COLORADO'S LEGISLATURE IS THE FIRST BODY IN THIS PASS WHOSE DATE COMES FROM A `published`
+SOURCE RATHER THAN A STATUTE — AND THE STATUTORY DEFAULT WOULD HAVE BEEN TWO DAYS WRONG.**
+
+| body | offices | start date | authority | basis |
+|---|---|---|---|---|
+| House of Representatives | 6 | **2027-01-11** (Mon) | Art. V, § 7 + **HJR26-1031** | `published` |
+| Senate | 3 | **2027-01-11** (Mon) | Art. V, § 7 + **HJR26-1031** | `published` |
+| Governor · Secretary of State · Treasurer · Attorney General | 4 | **2027-01-12** (Tue) | Art. IV, § 1(1) | `statute` |
+| State Board of Education | 2 | **2027-01-12** (Tue) | C.R.S. § 22-2-104(1) | `statute` |
+| Board of Regents, University of Colorado | 3 | **2027-01-12** (Tue) | C.R.S. § 23-20-105(2) — ⚠ weaker, see below | `statute` |
+
+### 🔴 The legislature: the term begins on CONVENING, and the convening date is designated
+
+**Colo. Const. Art. V, § 7** — *General assembly – shall meet when – term of members*:
+
+> The general assembly shall meet in regular session at 10 a.m. **no later than the second
+> Wednesday of January** of each year. … **The term of service of the members of the general
+> assembly shall begin on the convening of the first regular session of the general assembly next
+> after their election.**
+
+So the term start is an event — and **"no later than" is a deadline, not a date**.
+
+**C.R.S. § 2-2-303.5** supplies the machinery:
+
+> (2) **Unless a different date is established** in accordance with subsection (3) or (4) …, the
+> general assembly shall meet in regular session at 10 a.m. on the second Wednesday of January of
+> each year.
+> (3) The general assembly, acting by joint resolution, may designate the date of convening the
+> next regular session … **on or after January 1 but prior to** the date specified in subsection (2).
+> (4) … the executive committee of the legislative council, after the regular session but **no
+> later than November 1**, may designate the date …
+
+**Colorado designated one.** `HOUSE JOINT RESOLUTION 26-1031`, signed 2026-06-03, read in full:
+
+> That, pursuant to section 2-2-303.5 (3), Colorado Revised Statutes, the General Assembly
+> designates **Monday, January 11, 2027**, as the convening date for the First Regular Session of
+> the Seventy-sixth General Assembly.
+
+Its own deadline schedule confirms it: *"1ST DAY (MONDAY 01/11/27)"*.
+
+🔴 **Citing the statutory default would have produced 2027-01-13 and been two days wrong.** Both
+windows for moving the date have now closed — subsection (3) requires action during a regular
+session, and subsection (4)'s deadline was **2026-11-01**, three weeks ago — so **2027-01-11 is
+now fixed**.
+
+🟢🟢 **The control is in our own data and it is decisive, because it shows the default being
+departed from.** Colorado legislative term starts in `essentials.office_terms`, sourced from
+`leg.colorado.gov/legislators`:
+
+| cycle | our rows | the day | second Wednesday of January | agrees with |
+|---|---|---|---|---|
+| 2019 | 6 | **2019-01-04** (Fri) | 2019-01-09 | **designated, earlier** |
+| 2021 | 7 | **2021-01-13** (Wed) | 2021-01-13 | the default |
+| 2023 | **37** | **2023-01-09** (Mon) | 2023-01-11 | **designated, earlier** |
+| 2025 | **30** | **2025-01-08** (Wed) | 2025-01-08 | the default |
+
+🔴 **Two of the last four cycles did NOT use the default, and both of those were years a
+governor's term began** — which is the reason given for moving it: the General Assembly must
+certify the gubernatorial result first. **2027 is a gubernatorial year**, and HJR26-1031 moved it
+exactly as 2019 and 2023 were moved. ▶ **A "second Wednesday" rule row for Colorado would have
+been right half the time and wrong this time.**
+
+### The executives
+
+**Colo. Const. Art. IV, § 1(1)**:
+
+> The executive department shall include the governor, lieutenant governor, secretary of state,
+> state treasurer, and attorney general, each of whom shall hold his office for the term of four
+> years, **commencing on the second Tuesday of January in the year 1967, and each fourth year
+> thereafter**.
+
+Anchor-plus-cycle, the Arizona shape: 1967 + 4n reaches 2027. Second Tuesday of January 2027 =
+**2027-01-12**. 🟢 **Control:** our one dated Colorado executive row starts **2019-01-08**, the
+second Tuesday of January 2019.
+
+⚠ **Only four executives are pending and that is correct** — Colorado's Lieutenant Governor runs
+on the Governor's ticket (Art. IV, § 3), so it is the ticket case, not a gap.
+
+### The two boards
+
+**State Board of Education** — Art. IX, § 1 leaves the terms to be "by law prescribed", and
+**C.R.S. § 22-2-104(1)** prescribes them, anchoring every cohort on the same day:
+
+> … all such terms **commencing on the second Tuesday in January 1983** … **the second Tuesday in
+> January 1985** … **the second Tuesday in January 1987** … a six-year term **commencing on the
+> second Tuesday in January 2003** … both terms **commencing on the second Tuesday in January
+> 2023**. … (3) Except as provided in subsection (1), members shall be elected for terms of six
+> years.
+
+Five independent anchors, the most recent from 2023, all on the second Tuesday in January.
+
+**Board of Regents** — ⚠ **this one is the weakest citation in Colorado and is flagged rather than
+smoothed over.** Art. IX, § 12 gives "terms of six years each" "in the manner prescribed by law";
+**C.R.S. § 23-20-102** prescribes the manner and the cycle and **names no commencement at all**.
+The only commencement evidence is **C.R.S. § 23-20-105(2)**, a 1973 transitional provision filling
+vacancies, which fixes terms "**expiring on the second Tuesday in January, 1975** … **1977** …
+**1979**" and sends their successors to § 23-20-102.
+
+🔴 **That is transitional text, which is exactly what made Utah's Board of Education a refusal.
+The difference, stated so the inconsistency is not silent:** in Utah the transitional dates pointed
+at a boundary **different** from the legislature's, so they were evidence *against* borrowing. In
+Colorado they point at the **same** boundary as the executives and the State Board of Education,
+so they corroborate rather than contradict. The Regents are therefore dated, not refused — but
+▶ **re-check the three against the Regents' own roster** (`regents.cu.edu/meet-the-regents`, which
+`CC_0366` already used for identity) **before the wave runs.** No control exists: all 8 Regent rows
+and all 8 State Board rows in `office_terms` carry `term_start NULL`.
+
+### The source
+
+The constitution from `https://leg.colorado.gov/sites/default/files/images/olls/crs2024-title-00.pdf`
+(HTTP 200, `application/pdf`, 1,727,714 B — Title 00 of the Colorado Revised Statutes *is* the
+constitution), the statutes from `…crs2024-title-02.pdf` (1,609,505 B), `…-title-22.pdf`
+(7,499,629 B) and `…-title-23.pdf` (4,425,919 B), and the resolution from
+`https://leg.colorado.gov/bill_files/117079/download` (265,766 B, the signed act). All fetched and
+read 2026-11-22. ⚠ `crs2025-` and `crs2026-title-00.pdf` do not exist; 2024 is the current
+printout and is marked "Uncertified Printout".
+
+### Basis
+
+`published` for the 9 legislative rows — the date comes from a designating resolution, not from
+the statutory default. `statute` for the other 9.
+
+### Term start or oath? — **term start for all five bodies**
+
+Art. V, § 7 attaches the legislative term to convening, which is an event but an *organisational*
+one, not an oath: members are sworn after the body convenes. Art. IV, § 1(1) and both statutes name
+calendar days. 🔴 **Colorado's legislative date is therefore a convening date that IS the term
+start** — the one combination this pass has not met before, and the reason `basis` is `published`
+while the question "is it an oath?" still answers no.
+
+### Carried into the row
+
+| field | legislature | executives + both boards |
+|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2027-01-11** | **2027-01-12** |
+| `window_end_date` | NULL (the date is fixed, not a window) | NULL |
+| `basis` | **`published`** | `statute` |
+| `rule_id` | `co-hjr26-1031-convening` | `co-second-tuesday-january` |

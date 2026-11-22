@@ -60,6 +60,14 @@ in January 2027.
 - 🔴 **`chambers.inauguration_rules` is a lead, not a source** — 15 chambers carry it and the
   quality is uneven. The ones that already compute a 2026 date are marked ▶ below; the ones that
   name no authority are marked ⚠ and must be re-sourced.
+- 🔴🔴 **A STATUTORY DEFAULT IS NOT THE DATE IF THE STATE IS ALLOWED TO MOVE IT — ASK WHETHER IT
+  DID.** Colorado's General Assembly convenes "no later than the second Wednesday of January"
+  (`Colo. Const. art. V § 7`), its members' terms begin **on the convening**, and
+  `C.R.S. § 2-2-303.5(3)` lets a joint resolution name an earlier day. It did: `HJR26-1031`
+  designates **Monday, January 11, 2027**, where the default would be the 13th. Our own data shows
+  the default being departed from in **two of the last four cycles**, both of them years a
+  governor's term began. ▶ **A "no later than" clause is a deadline. Go and find what was
+  actually set, and record `basis = 'published'` when a designating document is what answers.**
 - 🔴 **THE CONSTITUTION MAY NOT CARRY THE ANSWER AT ALL — AND THE NEAREST PROVISION THAT DOES CAN
   BE THE WRONG ONE.** Washington's constitution fixes only the *length* of a legislative term
   (Art. II §§ 5–6). The start is `RCW 44.04.021`. ⚠ Art. III § 4 *does* name "the second Monday in
@@ -229,4 +237,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | AZ | ⚠️ [`DATES.md`](./DATES.md) — **65 of 66** on **2027-01-04**. 🔴 **Mine Inspector REFUSED**; Corporation Commission dated but not seatable; 🔴🔴 **no Lieutenant Governor office exists** | ⏳ | | |
 | NV | ⚠️ [`DATES.md`](./DATES.md) — **52 of 58** on 🔴 **2026-11-04, ALREADY PAST**. 🔴 **6 executives REFUSED** — term begins at qualification, bounded before 2027-01-05 | ⏳ | | |
 | UT | ⚠️ [`DATES.md`](./DATES.md) — **50 of 56** on **2027-01-01**, the first day of January itself. 🔴 **6 State Board of Education seats REFUSED** | ⏳ | | |
+| CO | ✅ [`DATES.md`](./DATES.md) — all 18: legislature **2027-01-11** (`basis = published`, HJR26-1031 — the statutory default would be 2 days wrong), everything else **2027-01-12** | ⏳ | | |
 | *(nothing else yet)* | | | | |
