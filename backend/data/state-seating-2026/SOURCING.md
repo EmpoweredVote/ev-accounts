@@ -7,6 +7,107 @@ shipped waves did. This file is only the queue and the running state of it.
 **Sourced dates go in [`DATES.md`](./DATES.md)**, one block per state, in the shape
 `office_swearing_in` takes. A state's date migration is written from its block there.
 
+---
+
+## ▶ Running this pass — read before the first command
+
+Written 2026-11-22, after twelve states. These are the things that are not in the recipe and that
+cost time to rediscover.
+
+### 🔴🔴 THE STEWARD IS UNREACHABLE FROM THIS WORKTREE AND FAILS OPEN, SO IT LOOKS LIKE IT WORKED
+
+`npm run steward --prefix backend -- claim …` prints
+
+```
+steward claim: unreachable (DATABASE_URL is not set). Continuing WITHOUT coordination —
+nobody else can see what you are about to work on.
+```
+
+and **exits 0**. The claim is never taken. ⚠ **`CLAUDE.md` says the steward hooks borrow the main
+checkout's `node_modules` and `.env` through `main-checkout-fallback.mjs` — that applies to the
+hooks, not to `steward.mjs` run directly.** `scripts/steward.mjs` does
+`dotenv.config({ path: path.join(backendDir, ".env") })` against **its own** backend, and a linked
+worktree has no `.env`. Load the main checkout's first, in the same command:
+
+```bash
+cd /c/ev-accounts-seating/backend \
+  && set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a \
+  && npm run steward --silent -- claim state:<usps> --label "<State> seating dates"
+```
+
+🔴 **Do not print `$DATABASE_URL` to check it** — test with `[ -n "$DATABASE_URL" ] && echo ok`.
+▶ **A successful claim says `steward: claimed state:xx … until <timestamp>`. If you do not see
+that line, you have no claim.**
+
+### The claims this pass already holds
+
+Twelve, taken 2026-11-22 on 24-hour leases by one account on one machine — run `steward who` to
+see whose: **MA · ME · WA · MD · CA · OR · AZ · NV · UT · CO · TX · AL**. ⚠ **MA, ME and WA expire
+first** (2026-11-23, 13:16–13:34Z). They are *sourced* but not *seated*, so extend rather than
+release if the waves have not run: `extend` **renews from now**, it does not add to the old expiry.
+🔴 **A lease belongs to (email, machine)**, so a different machine cannot extend these without
+`--force`. Confirm the board before assuming any of them is still yours.
+
+### The per-state loop, as actually run
+
+1. **Claim it** (above).
+2. **Measure what is pending**, before reading any law — it tells you which bodies the state
+   actually contributes and catches missing offices:
+
+   ```sql
+   SELECT d.district_type, c.name AS chamber,
+          count(DISTINCT o.id) AS offices, count(*) AS winners
+     FROM essentials.office_pending_winner w
+     JOIN essentials.offices   o ON o.id = w.office_id
+     JOIN essentials.districts d ON d.id = o.district_id
+     LEFT JOIN essentials.chambers c ON c.id = o.chamber_id   -- 🔴 LEFT, see below
+     CROSS JOIN LATERAL jsonb_array_elements(w.winners) AS win(value)
+    WHERE lower(d.state) = '<usps>' AND w.election_date = DATE '2026-11-03'
+    GROUP BY 1, 2 ORDER BY 1, 2;
+   ```
+
+   🔴 **`offices.chamber_id` IS NULLABLE.** An INNER join to `chambers` silently drops those rows —
+   it hid California's Board of Equalization seat and made the state read 98 offices instead of 99.
+   🔴 **`office_pending_winner` is one row per (office, race) with a `winners` jsonb**, so
+   `count(*)` without the lateral counts **offices, not winners**. Maryland is 67 offices and 131
+   winners.
+3. **Find the clause and open it.** Then build the control below *before* writing the date down.
+4. **Check the state's own data as a control** — `office_terms` grouped by `term_start` for that
+   state's tier. A biennial cluster landing on the computed day, across several cycles, is the
+   cheapest independent confirmation there is, and it was written by passes that never read the
+   clause. It has confirmed eight states and exposed Colorado's exception.
+5. **Write the `DATES.md` block**, update this file's queue row and any new rule, **commit**.
+6. One state per commit, with the finding in the subject line.
+
+### Which hosts need a browser, and how each one lies
+
+🔴 **Five of the twelve states' sources defeat `curl`, and three of them do it by returning
+something that looks like success.**
+
+| host | what `curl` gets | how to read it |
+|---|---|---|
+| `le.utah.gov` | ~26.6 KB of navigation, **no section text**; byte counts near-identical across different sections | browser |
+| `statutes.capitol.texas.gov` | **the same 250,874-byte page for every `Docs/.../*.htm` URL**, 1,356 chars of text | browser (Article IV renders as 26,357 chars) |
+| `alison.legislature.state.al.us` | 59,580-byte navigation page | browser — and **click Title → Chapter → Section once**, then reuse the `?section=16-3-1` URL that appears |
+| `legislature.maine.gov/ros/LawsOfMaine/#Const` | 5,654-byte "enable JavaScript" stub | browser |
+| `mgaleg.maryland.gov` | **HTTP 200 with a "NotFound" page, always 57,164 bytes** | the Maryland Manual at `msa.maryland.gov` instead |
+| `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
+| `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
+
+▶ **Assert on content, never on status or on "it returned bytes".** A near-identical byte count
+across two different requests is the tell in three of these.
+
+🟢 **These work under plain `curl` with a browser User-Agent:** `malegislature.gov` (including its
+journal PDFs), `app.leg.wa.gov` + `leg.wa.gov`, `msa.maryland.gov`, `oregonlegislature.gov`,
+`leg.state.nv.us`, `azleg.gov`, `leg.colorado.gov`, `lldc.mainelegislature.org`.
+
+### Two tools worth knowing are here
+
+`pdftotext` (use `-raw` for multi-column, `-layout` otherwise) and **Python 3.14 via `py -3`** —
+bare `python` is the Microsoft Store stub and fails.
+
+---
+
 ## 🔴 The research unit is the STATE, not the body
 
 69 bodies collapse to **41 states**, because one constitutional clause usually dates a state's
@@ -233,6 +334,12 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 (Indiana) are the two worked shapes.
 
 ## Progress
+
+**12 of 41 states sourced · 1,023 of 1,162 offices (88%) · 0 seated.** The twelve are the twelve
+largest, so the 29 that remain are **139 offices**, almost all single-body executive states.
+🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
+term. Step 2 is done for these twelve; steps 3 through 9 are not started for any state.
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: NE (13), NM (11), GA (10).**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
