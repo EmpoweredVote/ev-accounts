@@ -179,7 +179,14 @@ export function classifyWave(rows) {
     }
   }
 
+  // 🔴 A TERM START IS NAMED ONLY WHEN **EVERY** OFFICE IN THE BODY CARRIES A DATE, NOT WHEN THE
+  // DATES THAT EXIST HAPPEN TO AGREE. Taking the distinct non-null dates alone means a body where
+  // one office of sixty has been dated reports that date as the wave's, raises no disagreement,
+  // prints a ready-to-paste pin block, and sorts ahead of every undated body in the register as
+  // though it had a deadline. CC_0463 dated 3 of Indiana's 100 House offices, so the part-dated
+  // body is a shape this work has already created once.
   const dates = [...new Set(rows.map((r) => r.swearing_in_date).filter(Boolean))].sort();
+  const everyRowDated = rows.length > 0 && rows.every((r) => Boolean(r.swearing_in_date));
   if (dates.length > 1) {
     for (const r of rows) {
       if (r.swearing_in_date && r.swearing_in_date !== dates[0]) {
@@ -191,9 +198,14 @@ export function classifyWave(rows) {
   const reelections = rows.filter((r) => r.is_reelection).length;
   return {
     rows: rows.length,
+    // 🔴 WINNERS AND OFFICES ARE DIFFERENT NUMBERS AND THE PIN NEEDS BOTH. They are equal only
+    // while every office has one winner; 71 state offices carry two or three, because a
+    // multi-seat race attaches all its winners to one office row. A pin stating one count is
+    // read as winners by P1 and as offices by the post-verify, and is wrong in one of them.
+    offices: new Set(rows.map((r) => r.office_id)).size,
     reelections,
     newHolders: rows.length - reelections,
-    termStart: dates.length === 1 ? dates[0] : null,
+    termStart: dates.length === 1 && everyRowDated ? dates[0] : null,
     called: rows.filter((r) => r.certainty === 'called').length,
     certified: rows.filter((r) => r.certainty === 'certified').length,
     digest: selectionDigest(rows),
@@ -211,18 +223,24 @@ export function pinBlockSql(slot, s) {
   const prefix = slot.toLowerCase().replace(/[^a-z0-9]/g, '');
   if (!s.termStart) {
     throw new Error(
-      `${slot}: this wave has no single term start, so it cannot be pinned. Resolve the ` +
-        `date_disagrees or no_date blockers first — a migration pinned to one of two dates ` +
-        `would seat half its rows at the wrong one.`,
+      `${slot}: this wave has no single term start, so it cannot be pinned. Every office must ` +
+        `carry a date and they must agree — resolve the no_date or date_disagrees blockers ` +
+        `first. A migration pinned to one of two dates would seat half its rows at the wrong ` +
+        `one, and a body part of which is dated is not a body with a deadline.`,
     );
   }
   return [
     `CREATE TEMP TABLE ${prefix}_pin ON COMMIT DROP AS`,
-    `SELECT ${s.rows} AS expect_rows,`,
+    `SELECT ${s.rows} AS expect_winners,`,
+    `       ${s.offices} AS expect_offices,`,
     `       ${s.reelections} AS expect_reelections,`,
     `       ${s.newHolders} AS expect_new,`,
     `       '${s.digest}' AS expect_digest,`,
     `       DATE '${s.termStart}' AS expect_term_start;`,
     `-- called ${s.called} · certified ${s.certified} at the time this was captured (Ruling B).`,
+    s.offices === s.rows
+      ? `-- winners = offices here, so the two pins are equal. They are NOT in general.`
+      : `-- ⚠ ${s.rows} winners across ${s.offices} offices. P1 counts WINNERS; the post-verify `
+        + `counts OFFICES. Read REGISTER.md Ruling A before writing this wave.`,
   ].join('\n');
 }

@@ -121,7 +121,7 @@ if (invokedDirectly) {
 
     const cols = [
       'rank', 'state', 'district_type', 'offices', 'winners', 'reelections',
-      'winners_without_record', 'multi_winner_offices', 'flagged_vacant_offices',
+      'winners_without_record', 'multi_winner_offices', 'flagged_vacant_offices', 'offices_without_date',
       'start_date', 'status',
     ];
     const esc = (v) => {

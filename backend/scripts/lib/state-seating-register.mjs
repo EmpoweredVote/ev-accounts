@@ -58,6 +58,11 @@ export function buildRegister(rows) {
       winners_without_record: s.blockers.filter((b) => b.kind === 'winner_no_record').length,
       multi_winner_offices: kinds('multi_winner'),
       flagged_vacant_offices: kinds('flagged_vacant'),
+      // 🔴 CARRIED INTO THE RENDERED TABLE, not just the CSV. A body can be PART dated — CC_0463
+      // dated 3 of Indiana's 100 House offices — and `start_date` is null for such a body, which
+      // correctly sinks it in the queue but tells a reader nothing about why. The count is what
+      // says how much sourcing is left.
+      offices_without_date: kinds('no_date'),
       // `termStart` is null unless every office in the pair agrees on one date — a body holding
       // two answers is two bodies, and the wave that seats it would pin the wrong one.
       start_date: s.termStart,
@@ -83,12 +88,15 @@ function compareQueue(a, b) {
 
 /** The register as a markdown table, for `backend/data/state-seating-2026/REGISTER.md`. */
 export function registerTable(reg) {
+  // ⚠ EVERY COLUMN A WAVE CAN BE REFUSED ON IS SHOWN. `flagged_vacant` and `no date` were in the
+  // CSV and not in this table, and a migration's P4 and P6 refuse on exactly those — so the queue
+  // was hiding two of the blockers that stop the work it was ordering.
   const head =
-    '| # | state | body | offices | winners | re-elected | no record | multi-seat | start date | status |\n' +
-    '|---|---|---|---|---|---|---|---|---|---|';
+    '| # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |\n' +
+    '|---|---|---|---|---|---|---|---|---|---|---|';
   const lines = reg.map((r, i) =>
     `| ${i + 1} | ${r.state.toUpperCase()} | ${r.district_type} | ${r.offices} | ${r.winners} | ` +
     `${r.reelections} | ${r.winners_without_record || '—'} | ${r.multi_winner_offices || '—'} | ` +
-    `${r.start_date ?? '—'} | ${r.status === 'done' ? '✅ done' : `${r.remaining} left`} |`);
+    `${r.flagged_vacant_offices || '—'} | ${r.offices_without_date || '—'} | ${r.start_date ?? '—'} |`);
   return [head, ...lines].join('\n');
 }

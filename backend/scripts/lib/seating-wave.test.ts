@@ -21,7 +21,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { createHash } from 'node:crypto';
-import { selectionDigest, classifyWave } from './seating-wave.mjs';
+import { selectionDigest, classifyWave, pinBlockSql } from './seating-wave.mjs';
 
 const md5 = (s: string) => createHash('md5').update(s).digest('hex');
 
@@ -181,5 +181,61 @@ describe('classifyWave blockers', () => {
     const got = classifyWave([row({ office_id: 'b', winner_count: 2 })]);
     expect(got.blockers[0].office_id).toBe('b');
     expect(got.blockers[0].detail).toBeTruthy();
+  });
+});
+
+describe('a body only part of which carries a date', () => {
+  // 🔴 FOUND BY THE WHOLE-BRANCH REVIEW. `termStart` was set whenever the DISTINCT NON-NULL dates
+  // numbered one — so a body where 1 of 60 offices had been dated reported that date as the
+  // wave's term start, raised no date_disagrees, printed a ready-to-paste pin block, and sorted
+  // AHEAD of every undated body in the register as though it had a deadline.
+  //
+  // Not hypothetical: CC_0463 dated 3 of Indiana's 100 House offices and nothing else. The next
+  // body somebody part-dates would have jumped the queue on one office's authority.
+  it('refuses to name a term start when any office in it has no date', () => {
+    const got = classifyWave([
+      row({ office_id: 'a', swearing_in_date: '2027-01-11' }),
+      row({ office_id: 'b', swearing_in_date: null, basis: null }),
+    ]);
+    expect(got.termStart).toBeNull();
+    expect(got.blockers.map((b) => b.kind)).toContain('no_date');
+  });
+
+  it('still names it when every office agrees', () => {
+    const got = classifyWave([
+      row({ office_id: 'a', swearing_in_date: '2027-01-11' }),
+      row({ office_id: 'b', swearing_in_date: '2027-01-11' }),
+    ]);
+    expect(got.termStart).toBe('2027-01-11');
+  });
+});
+
+describe('pinBlockSql', () => {
+  const dated = (over = {}) => row({ swearing_in_date: '2027-01-11', basis: 'statute', ...over });
+
+  // 🔴 FOUND BY THE WHOLE-BRANCH REVIEW. The pin carried ONE count called expect_rows, and the
+  // migration template read it as winner rows in P1 and as OFFICES in post-verify 1, 2, 3 and 10.
+  // Those agree only while every office has exactly one winner, which every shipped wave had and
+  // which 71 state offices do not. A Ruling-A wave copying the template would have pinned a
+  // number that is right in one assertion and wrong in four.
+  it('states the winner count and the office count separately', () => {
+    const sql = pinBlockSql('CC_0999', classifyWave([
+      dated({ office_id: 'a', politician_id: 'p1' }),
+      dated({ office_id: 'a', politician_id: 'p2', winner_count: 2 }),
+      dated({ office_id: 'b', politician_id: 'p3' }),
+    ]));
+    expect(sql).toMatch(/3 AS expect_winners/);
+    expect(sql).toMatch(/2 AS expect_offices/);
+  });
+
+  it('refuses to produce a pin for a wave with no single term start', () => {
+    expect(() => pinBlockSql('CC_0999', classifyWave([
+      dated({ office_id: 'a' }),
+      row({ office_id: 'b', swearing_in_date: null }),
+    ]))).toThrow(/cannot be pinned/);
+  });
+
+  it('names the slot in the temp table it creates', () => {
+    expect(pinBlockSql('CC_0999', classifyWave([dated()]))).toMatch(/cc0999_pin/);
   });
 });

@@ -117,6 +117,20 @@ describe('buildRegister', () => {
     expect(reg[0].start_date).toBeNull();
   });
 
+  // 🔴 FOUND BY THE WHOLE-BRANCH REVIEW. A body with one dated office out of sixty was reporting
+  // that date as the body's, which sorted it ahead of every undated body as though it had a
+  // deadline. The queue is the thing this file exists to get right.
+  it('does not treat a part-dated body as dated, or let it jump the queue', () => {
+    const reg = buildRegister([
+      row({ state: 'tx', district_type: 'STATE_LOWER', office_id: 't1', swearing_in_date: '2027-01-12', basis: 'statute' }),
+      row({ state: 'tx', district_type: 'STATE_LOWER', office_id: 't2' }),
+      row({ state: 'la', district_type: 'STATE_BOARD', office_id: 'l1', swearing_in_date: '2027-02-01', basis: 'statute' }),
+    ]);
+    expect(reg[0].state).toBe('la');
+    expect(reg[1].start_date).toBeNull();
+    expect(reg[1].offices_without_date).toBe(1);
+  });
+
   it('totals the whole pass so a re-cut cannot silently lose a seat', () => {
     const reg = buildRegister([
       row({ state: 'wi', office_id: 'a' }),
