@@ -143,8 +143,8 @@ describe('summary-write', () => {
     await run({ profile, batch: 'b1', q, apply: true, yes: 'go' });
     expect(savedBeforeFirstUpdate).toBe(true);
     const old = readFileSync(join(dir, 'old-context.jsonl'), 'utf8').trim().split('\n').map((l) => JSON.parse(l));
-    expect(old.map((o) => o.politician_id).sort()).toEqual(['p1', 'p2', 'p3']);
-    expect(old.find((o) => o.politician_id === 'p1')).toMatchObject({ reasoning: 'old p1', sources: ['https://old/p1'] });
+    expect(old.map((row) => row.politician_id).sort()).toEqual(['p1', 'p2', 'p3']);
+    expect(old.find((row) => row.politician_id === 'p1')).toMatchObject({ reasoning: 'old p1', sources: ['https://old/p1'] });
   });
 
   it('the UPDATE carries the sha and is an update, never an insert', async () => {
