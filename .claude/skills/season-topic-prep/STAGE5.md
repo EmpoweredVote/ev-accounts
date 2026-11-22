@@ -716,34 +716,47 @@ leaves files in `<stage5>/summaries/<batch>/`.
 |---|---|---|---|
 | 1 | Inputs | `summary-inputs.ts --profile … --batch <name> [--state xx\|federal] [--people id,id] [--max-findings 25]` | `writer/<n>.md` (about 10 people each), `people.json`, an empty `drafts/` |
 | 2 | Writers | one fresh subagent per `writer/<n>.md`, most capable model, reads that file only (template `templates/stage5-summary-writer.md`) | `drafts/<n>.json` |
-| 3 | Assemble | `summary-assemble.ts --profile … --batch <name>` | `summaries.jsonl`, `lint-refused.jsonl`, `checker/<n>.md` |
-| 4 | Claude checkers | one fresh subagent per `checker/<n>.md` (template `templates/stage5-summary-checker.md`), never the writer; each file names the absolute path the subagent writes its JSON to | `claude-checks/<n>.json` (a missing `checker` and `at` are filled by `summary-write.ts`) |
+| 3 | Assemble | `summary-assemble.ts --profile … --batch <name>` | `summaries.jsonl` (with the code each summary is checked against), `lint-refused.jsonl`, `checker/<politician_id>.md` |
+| 4 | Claude checkers | one fresh subagent per `checker/<politician_id>.md` (template `templates/stage5-summary-checker.md`), never the writer; each file names the absolute path the subagent writes its JSON to | `claude-checks/<politician_id>.json` (a missing `checker` and `at` are filled by `summary-write.ts`) |
 | 5 | Second opinion | `summary-second-opinion.ts --profile … --batch <name> [--models a,b] [--timeout 180] [--retry-unusable]` | lines appended to `checks.jsonl` |
-| 6 | Write, dry run | `summary-write.ts --profile … --batch <name>` | `PREVIEW.md`, `held.md`; prints the agreement rate |
+| 6 | Write, dry run | `summary-write.ts --profile … --batch <name>` | `PREVIEW.md`, `held.md`; prints the all-pass rate and each outside model's agreement with Claude |
 | 7 | 🛑 The runner's yes for this batch (the batch stop) | show `PREVIEW.md` and `held.md` | nothing |
 | 8 | Write | `summary-write.ts --profile … --batch <name> --apply --yes "<the runner's words>"` | `old-context.jsonl`, `write-log.jsonl` |
 
 - **Step 3** sends a draft that fails the lint (a missing citation, an unknown finding id, a rung word, a party
-  word) to `lint-refused.jsonl`. It never reaches a checker. A refused person may be rewritten once: put a new draft
-  in `drafts/` and run step 3 again. A second failure leaves the person with today's display.
+  word) to `lint-refused.jsonl`. It never reaches a checker. A refused person, or one a checker failed, may be
+  rewritten once: put the new draft in `drafts/rewrite-<anything>.json` and run step 3 again. A clean rewrite
+  replaces that person's earlier draft (step 3 prints each replacement); a second rewrite for one person is refused.
+  A second failure leaves the person with today's display. Files are named by `politician_id`, so a rewrite changes
+  only that person's `checker/` file and sha256; run the step 4 checker for that person alone (it overwrites only
+  their own `claude-checks/` file) and step 5 again for the batch, which checks only the new text.
 - **Step 4**: run the Claude checkers before step 5. Step 5 checks every summary in `summaries.jsonl`, including ones a Claude checker failed.
 - **Step 5** uses `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon` (the profile key
   `second_opinion_models`). It runs locked down: a deny-all OpenCode config in an empty temp folder, and an
-  environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl`, so **do not re-run it for
-  the whole batch** (a second set of lines could later hold a summary that passed once). To redo failed calls, run it
-  only with `--retry-unusable`: it re-runs just the calls that got no usable reply, never a judgement.
+  environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl` and **skips every
+  (person, sha256, model) already there**, so re-running it for the whole batch is safe: it sends only text that has no
+  check yet (a rewrite has a new sha256), and never a second check on the same text. It refuses to send a
+  `checker/<politician_id>.md` whose embedded sha256 or person is not that person's row in `summaries.jsonl`: it
+  prints `REFUSED` and records nothing (re-run step 3). To redo failed calls, run it with `--retry-unusable`: it
+  re-runs just the calls that got no usable reply, never a judgement.
 - **The verdict** (`summary-write.ts`): the Claude check, the GPT check and the Gemini check must all be present.
   **Any failed sentence from any checker holds the summary.** A Claude fail makes it `failed`; a checker error
-  counts as a fail. Held and failed summaries are not shown, and `held.md` names every failing sentence and each
-  checker's reason.
+  counts as a fail, and so does a check that skips a sentence (every check must give a verdict on every sentence;
+  "claude check skipped sentence k"). Held and failed summaries are not shown, and `held.md` names every failing
+  sentence and each checker's reason.
+- **The seat it was checked against.** Step 3 records each summary's code (outcome, seat value, and a sha256 of the
+  code file). The write re-reads `codes/<politician_id>.json` and holds the row ("code changed since check") if any of
+  the three differs. After a re-code, run steps 3-6 again for that person.
 - **The dry run is the default.** Without `--apply` it writes no row. With `--apply --yes` it writes the draft season
   only, in one transaction, as an `UPDATE` of an existing `politician_context` row (it never creates a seat or a
   blank). The old reasoning and sources go to `old-context.jsonl` first. It refuses a summary whose text no longer
   matches its sha256, an off-topic row, and a duplicated row.
 - 🔴 **Apply needs the `summary_sha256` column.** Its migration is applied on its own, with the runner's yes, before
   any `--apply`. Without it the write fails; do not work around it.
-- **Agreement rate.** Each batch prints how many summaries all three checkers agreed on. The runner decides when to
-  retire the second opinion (RULINGS.md).
+- **Agreement.** Each batch prints, and `PREVIEW.md` shows, two things. The **all-pass rate**: summaries with all three
+  checks present and passing. And, **per outside model (GPT, Gemini), its verdict agreement with Claude**: of the
+  summaries both checked, how many got the same summary-level pass or fail. The second is what the runner reads to
+  decide when to retire the second opinion (RULINGS.md): it shows how often an outside model disagrees with Claude.
 
 🛑 **First-run stop, once per topic (gun-policy first).** Before the first write for a topic, show the runner **20
 passed summaries with their references**. Draw them so anyone can repeat the draw: write a seed (any short text) to

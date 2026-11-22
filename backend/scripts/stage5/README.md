@@ -252,8 +252,10 @@ states) and session B's (0.67M when nothing goes wrong). What changed, each with
   record script wrote with no `shows_side`; whether a vote on a no-position bill shows a side is in the bill table's
   free text. It needs a `side` key on a no-position row, which is a ruling.
 - **`summary-second-opinion.ts`** (position summaries, step 3). `--profile <topic-profile.json> --batch <name> [--models a,b] [--timeout 180]`
-  sends each `checker/<n>.md` to one GPT and one Gemini model through `opencode run`, in an empty temp dir with secrets
-  stripped from the environment, and appends one check per (summary, model) to `checks.jsonl`. A timeout, error or
+  sends each `checker/<politician_id>.md` to one GPT and one Gemini model through `opencode run`, in an empty temp dir
+  with secrets stripped from the environment, and appends one check per (summary, model) to `checks.jsonl`. It skips a
+  (person, sha256, model) already in `checks.jsonl`, so a whole-batch re-run sends only new text, and it refuses
+  (records nothing) a checker file whose embedded sha256 or person is not that row's. A timeout, error or
   unusable reply is recorded as a fail ("no usable reply: …"), never a pass. Models come from `--models` or the profile's
   `second_opinion_models`; use `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon`. 🔴 The `opencode/…` models are
   pay-as-you-go and answered "Insufficient balance" (HTTP 402, as an error event with exit 0) on 2026-11-22; only
@@ -261,9 +263,12 @@ states) and session B's (0.67M when nothing goes wrong). What changed, each with
 - **The rest of the position-summary tools** (recipe: STAGE5.md section 7b; all take `--profile <topic-profile.json> --batch <name>`):
   - `summary-inputs.ts [--state xx|federal] [--people id,id] [--max-findings 25]` builds `summaries/<batch>/writer/<n>.md`
     (about 10 people each), `people.json` and an empty `drafts/` for people coded `seated` or `doesnt-fit` with a saved finding.
-  - `summary-assemble.ts` turns the writers' `drafts/*.json` into `summaries.jsonl`, `lint-refused.jsonl` and `checker/<n>.md`.
-    A bad draft goes to the refused file; it never stops the run.
+  - `summary-assemble.ts` turns the writers' `drafts/*.json` into `summaries.jsonl` (each row carries the code's
+    outcome, seat value and file sha256), `lint-refused.jsonl` and `checker/<politician_id>.md` (whose Claude checker
+    writes `claude-checks/<politician_id>.json`). A bad draft goes to the refused file; it never stops the run. A
+    `drafts/rewrite-*.json` draft replaces that person's earlier one, once per person.
   - `summary-write.ts [--apply --yes "<the runner's words>"]` is a dry run by default (`PREVIEW.md`, `held.md`, the
-    batch agreement rate). With `--apply --yes` it writes the draft season only and records the old text in
+    all-pass rate and each outside model's verdict agreement with Claude). It fails a check that skips a sentence and
+    holds a row whose code file changed since step 3. With `--apply --yes` it writes the draft season only and records the old text in
     `old-context.jsonl` and the run in `write-log.jsonl`. It refuses off-topic and duplicated rows, and it needs the
     `summary_sha256` column (its migration is applied separately).
