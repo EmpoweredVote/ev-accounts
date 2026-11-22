@@ -15,7 +15,7 @@ def roster_rows():
     rows, n = [], 0
     titles = {'council-and-mayor': ['Council Member, District 3', 'Mayor', 'Alder', 'Selectman'],
               'county': ['County Commissioner', 'Board of Supervisors', 'Judge/Executive'],
-              'sheriff': ['Sheriff'], 'other': ['Coroner', '', 'Tax Collector']}
+              'sheriff': ['Sheriff'], 'other': ['Coroner', 'Tax Collector', 'Constable']}
     pools = {'council-and-mayor': 140, 'county': 90, 'sheriff': 25, 'other': 120}
     states = list(SHARE)
     for st, total in pools.items():
@@ -127,3 +127,99 @@ def test_strata_md_has_pool_and_sample_counts(setup):
     r, out = setup; run(r, out); md = open(out / 'strata.md').read()
     for st in lps.STRATA: assert st in md
     assert 'CA' in md and 'pool' in md.lower() and 'sample' in md.lower()
+
+
+def run_flags(roster, out, *extra): return run(roster, out, extra)
+
+
+def blank_roster(tmp_path, blank_n, total_other=120):
+    rows = roster_rows(); k = 0
+    for x in rows:
+        if x['stratum_hint' if False else 'level'] == 'local' and x['office'] in ('Coroner', 'Tax Collector', 'Constable') and k < blank_n:
+            x['office'] = ''; k += 1
+    r = tmp_path / 'blank.tsv'; write_roster(r, rows); return r, rows
+
+
+def mkout(tmp_path, name='o'):
+    out = tmp_path / name; out.mkdir(); (out / 'seed.txt').write_text('s'); return out
+
+
+def test_blank_titles_over_10_percent_exit_3(tmp_path):
+    r, _ = blank_roster(tmp_path, 60); out = mkout(tmp_path)
+    p = run(r, out)
+    assert p.returncode == 3 and 'blank' in p.stderr.lower() and '--offices' in p.stderr
+    assert not (out / 'sample.tsv').exists()
+
+
+def test_allow_blank_titles_overrides_and_strata_md_says_so(tmp_path):
+    r, _ = blank_roster(tmp_path, 60); out = mkout(tmp_path)
+    assert run(r, out, ['--allow-blank-titles']).returncode == 0
+    md = open(out / 'strata.md').read()
+    assert 'Blank titles' in md and '60' in md and '--allow-blank-titles' in md
+
+
+def test_blank_count_and_share_printed_when_under_threshold(setup):
+    r, out = setup; run(r, out); md = open(out / 'strata.md').read()
+    assert 'Blank titles after merge: 0 of' in md and '0.0%' in md
+
+
+def test_offices_file_fills_blank_and_wins_over_roster(tmp_path):
+    r, rows = blank_roster(tmp_path, 60)
+    blanks = [x['politician_id'] for x in rows if x['office'] == '']
+    off = tmp_path / 'offices.tsv'
+    with open(off, 'w') as f:
+        f.write('politician_id\toffice\n')
+        for p in blanks: f.write(f'{p}\tCity Council Member\n')
+        f.write(f"{rows[0]['politician_id']}\tSheriff\n")  # overrides a titled roster row
+    out = mkout(tmp_path)
+    assert run(r, out, ['--offices', str(off)]).returncode == 0
+    md = open(out / 'strata.md').read()
+    assert 'Blank titles after merge: 0 of' in md
+    pool, _ = lps.read_pool(str(r), str(off))
+    got = {p['politician_id']: p for p in pool}
+    assert all(got[b]['stratum'] == 'council-and-mayor' for b in blanks)
+    assert got[rows[0]['politician_id']]['office'] == 'Sheriff' and got[rows[0]['politician_id']]['stratum'] == 'sheriff'
+
+
+def test_blank_offices_row_does_not_erase_roster_title(tmp_path):
+    rows = roster_rows(); off = tmp_path / 'o.tsv'
+    off.write_text(f"politician_id\toffice\n{rows[0]['politician_id']}\t\n")
+    r = tmp_path / 'r.tsv'; write_roster(r, rows)
+    pool, _ = lps.read_pool(str(r), str(off))
+    assert pool[0]['office'] == rows[0]['office']
+
+
+def test_duplicate_prefers_first_non_blank_office(tmp_path):
+    rows = roster_rows(); first = rows[0]
+    blank = dict(first, office_id='b', office=''); titled = dict(first, office_id='t', office='Sheriff')
+    r = tmp_path / 'r.tsv'; write_roster(r, [blank, titled, dict(first, office_id='z', office='Mayor')] + rows[1:])
+    pool, dups = lps.read_pool(str(r))
+    me = [p for p in pool if p['politician_id'] == first['politician_id']]
+    assert len(me) == 1 and me[0]['office'] == 'Sheriff' and dups == 2
+
+
+@pytest.mark.parametrize('title,want', [
+    ('Fiscal Court Magistrate', 'county'), ('County Judge', 'county'), ('County Judge/Executive', 'county'), ('Commissioners Court', 'county'),
+    ('Freeholder', 'county'), ('Police Jury', 'county'), ('Village President', 'council-and-mayor'),
+    ('Parkville City Council', 'council-and-mayor'), ('Park District Commissioner', 'other'), ('Clerk of Court', 'other'),
+    ('Magistrate, District 1', 'other')])
+def test_keyword_gaps(title, want): assert lps.stratum(title) == want
+
+
+def test_california_cap_binds(tmp_path):
+    rows, n = [], 0
+    def add(count, office, ca):
+        nonlocal n
+        for i in range(count):
+            n += 1; rows.append({'politician_id': f'c{n:04d}', 'full_name': f'P{n}', 'office_id': 'o', 'level': 'local',
+                                 'state': 'CA' if i < ca else 'UT', 'scope': 'sitting', 'leaving': '', 'race_ids': '', 'office': office})
+    add(30, 'Sheriff', 30); add(30, 'County Commissioner', 30); add(130, 'Mayor', 30); add(130, 'Coroner', 30)
+    cap = math.ceil(120 / 320 * 100)
+    pool, _ = lps.read_pool(str(_write(tmp_path, rows)))
+    for seed in ('a', 'b', 'c', 'd'):
+        chosen, *_ = lps.draw(pool, 100, seed)
+        assert sum(p['state'] == 'CA' for p in chosen) == cap  # binds: CA fills exactly to the cap
+
+
+def _write(tmp_path, rows):
+    r = tmp_path / 'ca.tsv'; write_roster(r, rows); return r

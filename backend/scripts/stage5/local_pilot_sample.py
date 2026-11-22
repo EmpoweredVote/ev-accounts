@@ -2,15 +2,19 @@
 office group and spread across states, with California capped at its share. No database: office titles come from the
 roster's `office` column.
 
-usage: python3 -I scripts/stage5/local_pilot_sample.py --roster <roster.tsv> --out <dir> [--n 100]
+usage: python3 -I scripts/stage5/local_pilot_sample.py --roster <roster.tsv> --out <dir> [--n 100] [--offices <tsv>] [--allow-blank-titles]
 
 The seed is read from <out>/seed.txt. The runner writes it BEFORE the draw, so the seed is on record first. Exit 2, with
 nothing written, when it is missing. Same seed and same roster give an identical sample.tsv.
 Writes <out>/sample.tsv (politician_id, full_name, state, office, stratum) and <out>/strata.md (pool and sample counts per
 stratum and per state, duplicates dropped, and any state cap that had to give way).
 
-Pool: roster rows with level 'local'. The roster may list one person more than once (several offices); the FIRST row
-for each politician_id is kept and the count of dropped rows is reported in strata.md.
+Pool: roster rows with level 'local'. The roster may list one person more than once (several offices); one person is kept
+(first row's fields) and the count of dropped rows is reported in strata.md. The person's office is, in order: a
+non-blank title in --offices (a TSV with politician_id, office, exported separately; it fills AND overrides the roster),
+else the first non-blank office among their roster rows, else blank (stratum `other`).
+Blank titles: strata.md prints how many remain after the merge. When more than 10% of the pool is blank the tool exits 3
+before writing anything (the strata would mean little); --allow-blank-titles overrides and strata.md says so.
 
 Strata, matched on the office title, case-insensitive, first match wins, in this order (STRATA is the output order):
   sheriff            title has "sheriff"
@@ -36,19 +40,18 @@ import csv, math, os, random, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt
 
-USAGE = 'local_pilot_sample.py --roster <roster.tsv> --out <dir> [--n 100]'
+USAGE = 'local_pilot_sample.py --roster <roster.tsv> --out <dir> [--n 100] [--offices <tsv>] [--allow-blank-titles]'
 STRATA = ['council-and-mayor', 'county', 'sheriff', 'other']
 MIN_PER_STRATUM = 10
 
 SHERIFF_WORDS = r'sheriff'
-OTHER_FIRST = (r'soil|water|conservation|school|education|superintendent|park|fire|utility|utilities|port\b|hospital|library|drain|cemetery|'
-               r'levee|irrigation|sanitary|transit|supervisor of elections|assessor|appraiser|clerk|coroner|treasurer|auditor|collector|'
-               r'recorder|surveyor|constable|magistrate|probate|prosecut|attorney|judge(?!.?exec)|court(?! ?commission)|comptroller|register of deeds|'
-               r'state (senate|house)|commonwealth')
-COUNTY_WORDS = (r'county (commission|board|council|legislat|court|judge|executive|supervisor)|board of (county )?(commissioners|supervisors)|'
-                r'\bsupervisor\b|judge.?executive|fiscal court|county executive|^commissioner|\bcommissioner\b(?!.*(city|town|village))|'
-                r'^county\b')
-COUNCIL_WORDS = (r'council|alder|selectman|selectmen|selectboard|select board|mayor|(town|village|city|borough) (board|commission|trustee)|'
+COUNTY_FIRST = (r'fiscal court|commissioners.? court|county (judge|commission|board|council|legislat|court|executive|supervisor)|'
+                r'board of (county )?(commissioners|supervisors)|freeholder|police jury|judge.?executive')
+OTHER_FIRST = (r'\b(soil|water|conservation|school|schools|education|superintendent|park|parks|fire|utility|utilities|port|hospital|library|drain|'
+               r'cemetery|levee|irrigation|sanitary|transit|assessor|appraiser|clerk|coroner|treasurer|auditor|collector|recorder|surveyor|'
+               r'constable|magistrate|probate|prosecutor|attorney|judge|court|comptroller|commonwealth)\b|supervisor of elections|register of deeds|state (senate|house)')
+COUNTY_WORDS = (r'\bsupervisor\b|^commissioner|\bcommissioner\b(?!.*(city|town|village))|^county\b')
+COUNCIL_WORDS = (r'council|alder|selectman|selectmen|selectboard|select board|mayor|village president|(town|village|city|borough) (board|commission|trustee)|'
                  r'city commission|township (trustee|board)|board of trustees|trustee|town supervisor|township supervisor|commission(er)? .*(city|town|village)|'
                  r'(city|town|village) commission')
 
@@ -57,21 +60,32 @@ def stratum(title):
     t = (title or '').strip().lower()
     if not t: return 'other'
     if re.search(SHERIFF_WORDS, t): return 'sheriff'
-    if re.search(OTHER_FIRST, t) and not re.search(r'county (commission|board|council)|board of (county )?commissioners', t): return 'other'
+    if re.search(COUNTY_FIRST, t): return 'county'
+    if re.search(OTHER_FIRST, t): return 'other'
     if re.search(r'town supervisor|township supervisor', t): return 'council-and-mayor'
     if re.search(COUNTY_WORDS, t) and not re.search(r'city commission|town commission', t): return 'county'
     if re.search(COUNCIL_WORDS, t): return 'council-and-mayor'
     return 'other'
 
 
-def read_pool(path):
-    seen, pool, dups = set(), [], 0
+def read_pool(path, offices=None):
+    """Local people, one per politician_id. Office: a non-blank title in the `offices` file wins; otherwise the first
+    non-blank office among that person's roster rows; otherwise blank. Other fields come from the first roster row."""
+    over = {}
+    if offices:
+        for r in csv.DictReader(open(offices, newline=''), delimiter='\t'):
+            t = (r.get('office') or '').strip()
+            if t: over[r['politician_id']] = t
+    first, title, dups = {}, {}, 0
     for r in csv.DictReader(open(path, newline=''), delimiter='\t'):
         if (r.get('level') or '').strip() != 'local': continue
         pid = r['politician_id']
-        if pid in seen: dups += 1; continue
-        seen.add(pid)
-        office = (r.get('office') or '').strip()
+        if pid in first: dups += 1
+        else: first[pid] = r
+        if pid not in title and (r.get('office') or '').strip(): title[pid] = r['office'].strip()
+    pool = []
+    for pid, r in first.items():
+        office = over.get(pid) or title.get(pid) or ''
         pool.append({'politician_id': pid, 'full_name': r.get('full_name') or '', 'state': (r.get('state') or '').strip().upper(),
                      'office': office, 'stratum': stratum(office)})
     return pool, dups
@@ -129,7 +143,11 @@ def main():
         print(f'{seed_path} is missing. Record the seed there before drawing the sample. Nothing written.', file=sys.stderr); return 2
     seed = open(seed_path).read().strip()
     if not seed: print(f'{seed_path} is empty. Nothing written.', file=sys.stderr); return 2
-    pool, dups = read_pool(roster)
+    pool, dups = read_pool(roster, opt('--offices'))
+    blank = sum(not p['office'] for p in pool); allow = '--allow-blank-titles' in sys.argv
+    if blank / max(1, len(pool)) > 0.10 and not allow:
+        print(f'{blank} of {len(pool)} local people ({blank / len(pool):.1%}) have a blank office title, so the strata would mean little. '
+              'Pass --offices <tsv> (politician_id, office) to fill them, or --allow-blank-titles to draw anyway. Nothing written.', file=sys.stderr); return 3
     chosen, q, cap, over, by_state = draw(pool, n, seed)
     chosen.sort(key=lambda p: p['politician_id'])
     with open(os.path.join(out, 'sample.tsv'), 'w', newline='') as f:
@@ -138,12 +156,17 @@ def main():
     pool_by = {s: sum(p['stratum'] == s for p in pool) for s in STRATA}
     samp_by = {s: sum(p['stratum'] == s for p in chosen) for s in STRATA}
     lines = [f'# Local pilot sample', '', f'Seed: `{seed}`. Roster: `{os.path.basename(roster)}`. n = {len(chosen)}.', '',
-             f'Pool: {len(pool)} local people. Duplicate rows dropped (first row per politician_id kept): {dups}.', '',
+             f'Pool: {len(pool)} local people. Duplicate rows dropped (one person kept, preferring the first non-blank office): {dups}.', '',
+             f'Blank titles after merge: {blank} of {len(pool)} ({blank / len(pool):.1%}).' + (' Drawn with --allow-blank-titles; blank titles are in `other`.' if allow and blank / len(pool) > 0.10 else ''), '',
              '## By stratum', '', '| stratum | pool | sample |', '|---|---|---|']
     lines += [f'| {s} | {pool_by[s]} | {samp_by[s]} |' for s in STRATA] + [f'| total | {len(pool)} | {len(chosen)} |', '',
              '## By state', '', '| state | pool | pool share | cap | sample |', '|---|---|---|---|---|']
     for st in sorted(by_state, key=lambda s: (-by_state[s], s)):
         lines.append(f'| {st or "(blank)"} | {by_state[st]} | {by_state[st] / len(pool):.1%} | {cap[st]} | {sum(p["state"] == st for p in chosen)} |')
+    oth = {}
+    for p in pool:
+        if p['stratum'] == 'other' and p['office']: oth[p['office']] = oth.get(p['office'], 0) + 1
+    lines += ['', '## Titles landing in other', ''] + [f'- {t}: {c}' for t, c in sorted(oth.items(), key=lambda x: (-x[1], x[0]))[:60]]
     lines += ['', '## Caps', '', 'A state holds at most ceil(pool share x n) + 1 people; California at most ceil(pool share x n).']
     lines.append('Stratum minimums forced these places over a cap: ' + (', '.join(f'{s} / {st}' for s, st in over) if over else 'none') + '.')
     open(os.path.join(out, 'strata.md'), 'w').write('\n'.join(lines) + '\n')
