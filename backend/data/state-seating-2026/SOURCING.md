@@ -155,19 +155,21 @@ migration** — `CLAUDE.md`'s existing rule: *attach the race to the office of t
 actually leaving*. Until that is done, seat the rest of their state and leave these out, saying so
 in the header. They are 7 offices of the 1,162.
 
-## 🔴 Two more cannot be DATED at all, which is a different refusal
+## 🔴 Three more cannot be DATED at all, which is a different refusal
 
-Ruling A refuses the four above because **which seat** a winner takes is not in our data. These two
-are refused because **the state fixes no day**:
+Ruling A refuses the four above because **which seat** a winner takes is not in our data. These
+are refused because **no day exists to write yet** — and the running pattern is that it is a
+state's **executive**, never its legislature, that fails this way:
 
 | office | why |
 |---|---|
 | MD Attorney General | Art. V § 1 gives "four years from the time of his election and qualification" — no calendar date |
 | MD Comptroller | Art. VI § 1 gives a length only; falls to Art. XVII § 4, "from the time of their Election", which overlaps the predecessor |
+| OR Governor | Art. V § 7 defers to statute; `ORS 176.010` commences the term "upon the publication of the returns by the Speaker of the House" — an **event**, which has not happened |
 
-Each needs a **`published` qualification date recorded when it happens**. See
-[`DATES.md`](./DATES.md) § MD. They are 2 offices of the 1,162, and Maryland's other 115 proceed
-without them.
+Each needs a **`published` date recorded when it happens**. See [`DATES.md`](./DATES.md) for the
+confirming document named per office. They are 3 offices of the 1,162, and their states' other
+190 proceed without them.
 
 ## What to record per body, before writing any migration
 
@@ -195,4 +197,5 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 | WA | ✅ [`DATES.md`](./DATES.md) — **2027-01-11**, one date; the authority is `RCW 44.04.021`, not the constitution | ⏳ | | |
 | MD | ⚠️ [`DATES.md`](./DATES.md) — **115 of 117**: 2027-01-13 legislature, 2027-01-20 Governor. 🔴 **AG and Comptroller REFUSED** — the constitution fixes no day for them | ⏳ | | |
 | CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |
+| OR | ⚠️ [`DATES.md`](./DATES.md) — **75 of 76**: 2027-01-11 legislature. 🔴 **Governor REFUSED** — `ORS 176.010` starts the term at an event, not a day | ⏳ | | |
 | *(nothing else yet)* | | | | |

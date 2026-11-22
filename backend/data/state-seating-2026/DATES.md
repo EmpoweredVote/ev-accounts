@@ -729,3 +729,118 @@ earns its way in by its own citation or not at all.
   Director of Industrial Relations, five Public Utilities Commissioners, Secretary for Natural
   Resources, Secretary of Agriculture. None is elective and none is pending. **Do not date them**;
   Art. II, § 20 reaches elective offices only.
+
+---
+
+## OR — Oregon · 76 offices · ⚠️ 75 sourced, **1 REFUSED**, 2026-11-22
+
+🔴 **THE PATTERN FROM MARYLAND REPEATS: THE LEGISLATURE IS DATED BY A CALENDAR RULE AND THE
+EXECUTIVE IS NOT.** Oregon's constitution hands the Governor's commencement to the Legislature
+("at such times as may be prescribed by … law"), and the statute that answers names an **event**,
+not a day.
+
+| body | offices | start date | authority |
+|---|---|---|---|
+| House of Representatives | 60 | **2027-01-11** (Mon) | Or. Const. Art. IV, § 4(1) |
+| Senate | 15 | **2027-01-11** (Mon) | Or. Const. Art. IV, § 4(1) |
+| Governor | 1 | 🔴 **REFUSED** | ORS 176.010 names an event |
+
+### The authority — the legislature
+
+**Or. Const. Art. IV, § 4(1)** — *Term of office of legislators; classification of Senators*:
+
+> The Senators shall be elected for the term of four years, and Representatives for the term of two
+> years. **The term of each Senator and Representative shall commence on the second Monday in
+> January following his election**, and shall continue for the full period of four years or two
+> years, as the case may be …
+
+Second Monday in January 2027 = **2027-01-11**.
+
+🟢 **Control — a statute written for a different purpose repeats the same day.** **ORS 171.051(6)**,
+on filling the back half of a Senate term: *"The remaining two years of the term of office of a
+state Senator under subsection (4) of this section will commence on **the second Monday in January
+following the general election**."* That is an independent draftsman, in a different code, reaching
+for the same boundary. ⚠ Our own `office_terms` offers **no** control here — all 90 Oregon
+legislative rows are `term_start NULL`.
+
+⚠ **Oregon's session does NOT convene on that day**, unlike Washington, Wisconsin, Maryland and
+California. **ORS 171.010(1)**: the odd-year regular session commences *"on the Tuesday after the
+holiday for Martin Luther King, Jr.'s Birthday"* — **2027-01-19**, eight days after the terms
+begin. 🔴 **So Oregon is a state where term start and convening genuinely differ**, and reaching
+for the session date would be wrong by more than a week.
+
+### 🔴 The Governor is refused, and the reason is an event rather than a silence
+
+**Or. Const. Art. V, § 7** — *Term of office*:
+
+> The official term of the Governor shall be four years; and shall **commence at such times as may
+> be prescribed by this constitution, or prescribed by law**.
+
+The law it defers to is **ORS 176.010 — Commencement of term; inauguration**:
+
+> The official term of the Governor shall **commence upon the publication of the returns by the
+> Speaker of the House of Representatives**, as provided in section 4, Article V, Oregon
+> Constitution; or in case of an election of the Governor by the Legislative Assembly … the
+> official term of the Governor shall commence immediately upon such election; and the Governor
+> shall be inaugurated by taking the oath of office.
+
+⚠ **This is a different refusal from Maryland's.** Maryland's Comptroller has *no rule*; Oregon's
+Governor has a **precise rule about an event that has not happened yet**. The returns are published
+by the Speaker, in the presence of both houses (Art. V, § 4) — and there is no Speaker until the
+new House has organised, which cannot precede its own members' terms. **ORS 176.110(1)** confirms
+the drafters thought of it as a date-bearing event: it lets a Governor-elect act "prior to **the
+date the official term of office commences**".
+
+▶ **The prediction, written down so the next pass can confirm it in one read rather than re-derive
+it:** the publication has fallen on **the second Monday in January** — the day the legislators'
+terms begin — in every recent cycle. `essentials.office_terms` carries Tina Kotek's term starting
+**2023-01-09**, which was the second Monday of January 2023. So 2027-01-11 is the expected day.
+🔴 **It is expected, not sourced, and it is not written.** The confirming document is the Oregon
+House Journal for the organisational day of the 2027 session, which records the Speaker publishing
+the returns. Record it then with `basis = 'published'`.
+
+### The source
+
+`https://www.oregonlegislature.gov/bills_laws/Pages/OrConst.aspx` (HTTP 200, 648,772 bytes) for the
+constitution, and `https://www.oregonlegislature.gov/bills_laws/ors/ors176.html` (113,138 B),
+`…/ors171.html` (487,315 B) for the statutes — the Legislative Assembly's own publications, all
+fetched and read 2026-11-22. ⚠ `…/bills_laws/Documents/OrConst.pdf` is a 404; the `.aspx` page
+carries the full text.
+
+### Basis
+
+`statute` for the two legislative rows. The Governor has no row.
+
+### Term start or oath? — **term start for the legislature; for the Governor the two are fused**
+
+Art. IV, § 4(1) says "shall commence on" a calendar day, with no mention of an oath, and Oregon's
+session convenes eight days later — so for legislators the term start is plainly not a swearing-in.
+
+🔴 **For the Governor the question has no clean answer, which is part of why the office is
+refused.** ORS 176.010 commences the term at the publication of the returns and then says the
+Governor "shall be inaugurated by taking the oath" — two events on one day, with the term attached
+to the first. ⚠ **ORS 176.020 attaches the predecessor's exit to the SECOND**: *"The term of office
+of the Governor ceases when the successor … is inaugurated by taking the oath of office."* Read
+together they are consistent only because both happen the same morning. **Whoever records this
+date must record which of the two events it is**, or the next pass cannot tell.
+
+### Carried into the row
+
+| field | House + Senate |
+|---|---|
+| `election_date` | 2026-11-03 |
+| `swearing_in_date` | **2027-01-11** |
+| `window_end_date` | NULL |
+| `basis` | `statute` |
+| `rule_id` | `or-const-art4-s4-second-monday-january` |
+
+### Three things the next step inherits
+
+- ⚠ **15 of Oregon's 30 Senate seats are pending**, the chamber being staggered (Art. IV, § 4(2),
+  "Senators shall be elected biennially"). As in Washington, this is **not** a Ruling A case —
+  every pending office carries exactly one winner.
+- ⚠ **15 winners have no `politicians` row** — 9 House, 6 Senate.
+- ⚠ **Oregon also has non-state-tier pending seats this cycle** — 2 county offices, 7 local council
+  offices (two of them multi-winner), 3 mayors and a city auditor. **They are not part of this
+  pass** and are dated by their own rules; the `state:or` claim covers them, so do not let a
+  state-tier wave select on state alone.
