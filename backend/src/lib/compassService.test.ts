@@ -237,6 +237,77 @@ describe('getPoliticianContext — the newest season, never two rows', () => {
   });
 });
 
+// Position summaries (plan 2026-11-22, Task 4). A blank (value 0) is shown ONLY when its checked summary
+// is intact: politician_context.summary_sha256 equals the sha256 of the stored reasoning. The pool is mocked
+// here, so these pin the SQL text and the fallback; the semantics were also run against a scratch Postgres
+// (see the task report).
+describe('getPoliticianContext — a blank shows its checked summary only', () => {
+  const sqlOf = (i = 0) => mockQuery.mock.calls[i][0] as string;
+  const SHA_MATCH = /x\.summary_sha256 = encode\(sha256\(convert_to\(x\.reasoning, 'UTF8'\)\), 'hex'\)/;
+
+  it('serves a value-0 context whose summary_sha256 matches sha256(reasoning)', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'summary', sources: ['u'], evidence: [] }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'summary', sources: ['u'], evidence: [] });
+    // the outer guard lets a matching sha through, OR-ed with the old no-blank test
+    expect(sqlOf()).toMatch(/\) x\s*WHERE x\.summary_sha256 = encode\([^]*?\) OR NOT EXISTS \(/);
+    expect(sqlOf()).toMatch(SHA_MATCH);
+  });
+
+  it('hides a value-0 context whose reasoning changed after the check', async () => {
+    // The hash is recomputed from the stored reasoning inside SQL, so an edit changes the left side only.
+    mockQuery.mockResolvedValue({ rows: [] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toBeNull();
+    expect(sqlOf()).toMatch(/sha256\(convert_to\(x\.reasoning, 'UTF8'\)\)/);
+    expect(sqlOf()).not.toMatch(/x\.summary_sha256 IS NOT NULL/);
+  });
+
+  it('hides a value-0 context with NULL summary_sha256 (NULL = hash is not true, so the blank guard still fires)', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toBeNull();
+    expect(sqlOf()).toMatch(/OR NOT EXISTS \([^]*?a\.season_id = x\.season_id AND a\.value = 0\)/);
+  });
+
+  it('never serves a draft-season row, even with a valid summary_sha256', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContext('p1', 't1');
+    // the sha test sits OUTSIDE the newest-season collapse, which only ever joins published seasons
+    const sql = sqlOf();
+    expect(sql).toContain(`JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}`);
+    expect(sql.indexOf('x.summary_sha256 = encode')).toBeGreaterThan(sql.indexOf(') x'));
+  });
+
+  it('leaves a seated (value > 0) row unchanged: the old NOT EXISTS test still decides it', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: [], evidence: [] }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: [], evidence: [] });
+    expect(sqlOf()).toMatch(/a\.season_id = x\.season_id AND a\.value = 0\)/);
+  });
+
+  it('does not expose summary_sha256 to callers', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContext('p1', 't1');
+    expect(sqlOf()).toMatch(/SELECT x\.reasoning, x\.sources, x\.evidence FROM/);
+  });
+
+  it('falls back to the legacy query when summary_sha256 is missing (42703), so a deploy before the migration works', async () => {
+    mockQuery
+      .mockRejectedValueOnce({ code: '42703', message: 'column c.summary_sha256 does not exist' })
+      .mockResolvedValueOnce({ rows: [{ reasoning: 'r', sources: ['u'], evidence: [] }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'], evidence: [] });
+    expect(mockQuery).toHaveBeenCalledTimes(2);
+    expect(sqlOf(1)).not.toContain('summary_sha256');
+    expect(sqlOf(1)).toMatch(/LIMIT 1\s*\) x\s*WHERE NOT EXISTS/);
+  });
+
+  it('rethrows a 42703 about some other column, and any other error', async () => {
+    mockQuery.mockRejectedValueOnce({ code: '42703', message: 'column c.nope does not exist' });
+    await expect(getPoliticianContext('p1', 't1')).rejects.toMatchObject({ code: '42703' });
+    mockQuery.mockReset();
+    mockQuery.mockRejectedValueOnce({ code: '57014', message: 'timeout' });
+    await expect(getPoliticianContext('p1', 't1')).rejects.toMatchObject({ code: '57014' });
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+});
+
 describe('getPoliticianContextAll — one row per topic', () => {
   it('collapses per topic to the newest season', async () => {
     mockQuery.mockResolvedValue({ rows: [] });
@@ -361,7 +432,7 @@ describe('a blank (value 0) is hidden from every public context read (ruling Q2)
     mockQuery.mockResolvedValue({ rows: [] });
     expect(await getPoliticianContext('p1', 't1')).toBeNull();
     const sql = mockQuery.mock.calls[0][0] as string;
-    expect(sql).toMatch(/LIMIT 1\s*\) x\s*WHERE NOT EXISTS/);
+    expect(sql).toMatch(/LIMIT 1\s*\) x\s*WHERE (x\.summary_sha256 = [^]*? OR )?NOT EXISTS/);
     expect(sql).toMatch(/a\.season_id = x\.season_id AND a\.value = 0/);
   });
   it('getPoliticianContextAll collapses per topic first, then drops blanked topics', async () => {
