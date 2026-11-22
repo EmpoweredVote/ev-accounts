@@ -4,6 +4,9 @@
 (multi-member seats) and Ruling B (called results), the citation standard, and what the four
 shipped waves did. This file is only the queue and the running state of it.
 
+**Sourced dates go in [`DATES.md`](./DATES.md)**, one block per state, in the shape
+`office_swearing_in` takes. A state's date migration is written from its block there.
+
 ## 🔴 The research unit is the STATE, not the body
 
 69 bodies collapse to **41 states**, because one constitutional clause usually dates a state's
@@ -11,6 +14,14 @@ House, Senate and executives together. Wisconsin was three bodies and one citati
 clause covers its whole General Assembly. **Source per state, then write one date migration per
 state covering every body that clause answers** — and where a body turns out to have its own rule
 (a board, a commission), give it its own row and its own citation.
+
+🔴🔴 **ONE CLAUSE IS NOT ONE DATE, AND MASSACHUSETTS — THE FIRST STATE WORKED — IS THE
+COUNTER-EXAMPLE.** A single sentence-group of `Mass. Const. Amend. Art. LXIV § 1` gives
+legislators the **first** Wednesday in January, the Governor and Lieutenant Governor **noon on the
+Thursday next following** it, and the Attorney General, Treasurer and Auditor the **third**
+Wednesday — three days spanning a fortnight. Copying a state's House date onto its executives
+would have put four Massachusetts officers in office 14 days early. ▶ **Read the clause to its
+end and count the groups it names before deciding how many rows the state needs.**
 
 Order below is by offices, because that is value per citation. **The nine largest states are 978 of
 the 1,162 offices.** Nothing here is dated yet, so nothing is overdue, and that ordering stands
@@ -116,8 +127,9 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-| state | dated | migration | seated |
-|---|---|---|---|
-| WI | ✅ `CC_0445` | — | ✅ `CC_0462` (121) |
-| IN — House | ✅ `CC_0463` | — | ✅ `CC_0464` (3) |
-| *(nothing else yet)* | | | |
+| state | sourced | dated | migration | seated |
+|---|---|---|---|---|
+| WI | ✅ | ✅ `CC_0445` | — | ✅ `CC_0462` (121) |
+| IN — House | ✅ | ✅ `CC_0463` | — | ✅ `CC_0464` (3) |
+| MA | ✅ [`DATES.md`](./DATES.md) — **three dates**, 2027-01-06 / -01-07 / -01-20 | ⏳ | | |
+| *(nothing else yet)* | | | | |
