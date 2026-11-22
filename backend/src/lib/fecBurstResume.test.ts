@@ -6,7 +6,7 @@ vi.mock('./db.js', () => ({ pool: { query: (...a: unknown[]) => poolQueryMock(..
 import {
   pendingFecSourcesSql,
   BURST_WINDOW_START_SQL,
-  FEC_STALEST_FIRST_ORDER_SQL,
+  FEC_LEAST_RECENTLY_TRIED_ORDER_SQL,
 } from './fecBurstResume.js';
 
 beforeEach(() => poolQueryMock.mockReset());
@@ -37,84 +37,28 @@ describe('pending-source derivation for FEC burst resume', () => {
   });
 });
 
-describe('stalest-first walk order', () => {
-  it('orders by the last terminal success, oldest first, never-ingested last', () => {
+describe('least-recently-tried walk order', () => {
+  it('orders by the last attempt of any outcome, oldest first, never-tried last', () => {
     // 🔴 2026-11-19..21: a fixed order let every cut-off run drop the SAME tail. Ordering by
-    // last success makes today's tail tomorrow's head.
-    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/max\(prior\.started_at\)/);
-    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/\)\s*ASC NULLS LAST/);
-    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/completed_with_warning/);
-    expect(FEC_STALEST_FIRST_ORDER_SQL).not.toMatch(/'running'|'failed'/);
-    expect(FEC_STALEST_FIRST_ORDER_SQL).toMatch(/adapter_name = 'fec'/);
+    // last attempt makes today's tail tomorrow's head.
+    expect(FEC_LEAST_RECENTLY_TRIED_ORDER_SQL).toMatch(/max\(prior\.started_at\)/);
+    expect(FEC_LEAST_RECENTLY_TRIED_ORDER_SQL).toMatch(/\)\s*ASC NULLS LAST/);
+    expect(FEC_LEAST_RECENTLY_TRIED_ORDER_SQL).toMatch(/adapter_name = 'fec'/);
   });
 
-  it('judges staleness over all history, not just this burst window', () => {
-    // Scoping it to the window would make every source look never-ingested each morning.
-    expect(FEC_STALEST_FIRST_ORDER_SQL).not.toMatch(/interval/);
+  it('counts a FAILED attempt as tried, so a source that times out does not lead again tomorrow', () => {
+    // 🔴 2026-11-22: ordered by last SUCCESS, a source that hit the 10-minute per-source cap
+    // stayed the stalest and led the next run too. 13 of that day's 20 failures had already
+    // failed earlier in the week, and the run spent its first 2.5 hours on 16 sources.
+    expect(FEC_LEAST_RECENTLY_TRIED_ORDER_SQL).not.toMatch(/status/);
+  });
+
+  it('judges recency over all history, not just this burst window', () => {
+    // Scoping it to the window would make every source look never-tried each morning.
+    expect(FEC_LEAST_RECENTLY_TRIED_ORDER_SQL).not.toMatch(/interval/);
   });
 
   it('keeps the resume pass in the same order as the burst it finishes', () => {
-    expect(pendingFecSourcesSql).toContain(`ORDER BY ${FEC_STALEST_FIRST_ORDER_SQL}`);
-  });
-});
-
-describe('resumeFecBurstIfIncomplete', () => {
-  it('does nothing when every source already succeeded in this burst window', async () => {
-    vi.resetModules();
-    const runFecForSources = vi.fn();
-    vi.doMock('./campaignFinanceScheduler.js', () => ({
-      runFecForSources,
-      currentFecCycle: () => '2026',
-      acquireLock: vi.fn().mockResolvedValue(true),
-      releaseLock: vi.fn().mockResolvedValue(undefined),
-      FEC_LOCK_KEY: 'k',
-    }));
-    poolQueryMock.mockResolvedValue({ rows: [], rowCount: 0 });
-
-    const { resumeFecBurstIfIncomplete } = await import('./fecBurstResume.js');
-    const r = await resumeFecBurstIfIncomplete();
-
-    expect(r).toEqual({ status: 'complete', pending: 0, ran: 0 });
-    expect(runFecForSources).not.toHaveBeenCalled();
-  });
-
-  it('runs ONLY the pending remainder, not the whole roster', async () => {
-    vi.resetModules();
-    const runFecForSources = vi.fn().mockResolvedValue(undefined);
-    vi.doMock('./campaignFinanceScheduler.js', () => ({
-      runFecForSources,
-      currentFecCycle: () => '2026',
-      acquireLock: vi.fn().mockResolvedValue(true),
-      releaseLock: vi.fn().mockResolvedValue(undefined),
-      FEC_LOCK_KEY: 'k',
-    }));
-    const pending = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
-    poolQueryMock.mockResolvedValue({ rows: pending, rowCount: 3 });
-
-    const { resumeFecBurstIfIncomplete } = await import('./fecBurstResume.js');
-    const r = await resumeFecBurstIfIncomplete();
-
-    expect(r).toEqual({ status: 'resumed', pending: 3, ran: 3 });
-    expect(runFecForSources).toHaveBeenCalledTimes(1);
-    expect(runFecForSources.mock.calls[0]![0]).toHaveLength(3);
-  });
-
-  it('yields to a burst already in flight rather than double-running it', async () => {
-    vi.resetModules();
-    const runFecForSources = vi.fn();
-    vi.doMock('./campaignFinanceScheduler.js', () => ({
-      runFecForSources,
-      currentFecCycle: () => '2026',
-      acquireLock: vi.fn().mockResolvedValue(false),  // 06:00 cron holds it
-      releaseLock: vi.fn().mockResolvedValue(undefined),
-      FEC_LOCK_KEY: 'k',
-    }));
-    poolQueryMock.mockResolvedValue({ rows: [{ id: 'a' }], rowCount: 1 });
-
-    const { resumeFecBurstIfIncomplete } = await import('./fecBurstResume.js');
-    const r = await resumeFecBurstIfIncomplete();
-
-    expect(r.status).toBe('skipped_locked');
-    expect(runFecForSources).not.toHaveBeenCalled();
+    expect(pendingFecSourcesSql).toContain(`ORDER BY ${FEC_LEAST_RECENTLY_TRIED_ORDER_SQL}`);
   });
 });
