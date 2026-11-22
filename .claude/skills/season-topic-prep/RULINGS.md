@@ -412,8 +412,16 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Ruling 4, one sentence is enough:** a summary is one to five sentences (the lint floor was two). The runner said
   one piece of evidence is often enough, so a person with one supported finding gets a one-sentence summary rather
   than none.
+- **Ruling 5, a summary of the person, not a list of bills:** after reading the first 20 samples the runner said each
+  sentence "feels like a summary sentence of a single bill. And it should feel like a summary of the person's stance
+  on that topic." So a summary opens, when the findings support one, with a line in **plain direction** (the
+  runner's choice over naming the compass position, which would put rung wording back in): no marker, resting on
+  every finding the summary cites. Acts follow grouped by what they do, each part with its own markers ("he voted to
+  end the license requirement [1, 2] and to honor more licenses [3]"). Bill numbers stay out of the text and live in
+  the references. A vote is described as a vote, never as a law, unless a finding shows the bill became law.
 - **Date and source:** 2026-11-22, Chris Andrews
-  (`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md` §2, §5, §6).
+  (`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md` §2, §5, §6; ruling 5 in
+  conversation after sample batch `sample-01`).
 - **Scope:** every topic; gun-policy is first. The recipe is STAGE5.md section 7b.
 - **Contrast:** the Stage 5 coder and its blind check are unchanged; a summary describes, it never seats.
 

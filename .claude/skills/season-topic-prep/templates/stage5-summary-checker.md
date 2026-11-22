@@ -26,7 +26,10 @@ References (the number in brackets is the position in this list):
 
 ## What to check, per sentence
 
-Judge each sentence on its own. A sentence **fails** if any of these is true:
+Judge each sentence on its own. A sentence may have a marker after each of its parts: each part must be supported
+by the findings its own marker names (the number in a marker is the reference number; `cites findings` maps each
+number to its finding). The **opening line**, if there is one, has no marker: judge it against every finding the
+summary cites, taken together. A sentence **fails** if any of these is true:
 
 1. A cited finding does not support what the sentence says, or the sentence says more than its findings show.
 2. The sentence names a rung, a rung number or the ladder's wording.
@@ -39,6 +42,10 @@ Judge each sentence on its own. A sentence **fails** if any of these is true:
 6. A date or office is wrong, or a statement made in another office or as a candidate is not said to be.
 7. The tone is not neutral: adjectives of judgement, or words a news wire would not use.
 8. A gated vote (one nearly everyone cast the same way) is described as showing a position it does not show.
+9. A sentence says a bill did something as law ("which repealed", "which created") when no cited finding shows it
+   became law. "Voted for a bill to repeal …" is fine.
+10. The opening line states a direction the cited findings, taken together, do not show; or, for a doesnt-fit
+    person, it states one direction for a record that runs more than one way.
 
 Be strict and literal. When unsure, fail the sentence and say why. Each `reason` is one plain sentence naming the
 finding or the words at fault; for a pass, say what supports it.

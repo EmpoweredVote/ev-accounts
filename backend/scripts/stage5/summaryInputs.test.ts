@@ -82,8 +82,11 @@ describe('writer prompt', () => {
     const block = writerPersonBlock(p, capFindings(p.findings, p.code.finding_ids, 25), '1,2,3/4,5', new Map([['PA-HB-1-2024', 'Extreme risk orders']]));
     const prompt = writerPrompt([block], { topicKey: TOPIC, topicName: 'gun policy', date: '2026-11-22', sides: '1,2,3/4,5', outFile: '/abs/drafts/1.json' });
     for (let i = 1; i <= 7; i++) expect(prompt).toContain(`\n${i}. `);
-    expect(prompt).toContain('Every sentence carries at least one citation, and each cited finding supports what the sentence says.');
-    expect(prompt).toContain('Neutral tone: the words a news wire would use, no adjectives of judgement.');
+    expect(prompt).toContain('Every part after the opening line carries at least one citation, and each cited finding supports that part.');
+    expect(prompt).toContain('**Do not name bill numbers in the text**');
+    expect(prompt).toContain('**A vote is a vote, not a law.**');
+    expect(prompt).toContain('"lead": true');
+    expect(prompt).toContain('Neutral tone: the words a news wire would use ("loosen", "tighten", "expand", "limit"), no adjectives of judgement.');
     expect(prompt).toContain('seat: seated, value 3');
     expect(prompt).toContain('(Extreme risk orders)');
     expect(prompt).toContain(p.findings[0].id);
@@ -127,6 +130,18 @@ describe('checker prompt', () => {
     // Same words as the writer's line, so neither side sees a bill the other cannot.
     expect(writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
       capFindings([f], [f.id], 25), null, titles)).toContain('instrument: PA-HB-1-2024 (HB1: Removing the prohibition on firearm suppressors)');
+  });
+
+  it('shows the lead line and the number of each cited finding', () => {
+    const fs = [finding(1), finding(2)];
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [
+      { text: 'She has voted for limits on guns.', lead: true },
+      { parts: [{ text: 'She voted for a red flag bill', cites: [fs[0].id] }, { text: 'and a storage bill.', cites: [fs[1].id] }] }] };
+    const b = buildSummary(draft, fs);
+    const prompt = checkerPrompt({ politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: b.cites, sentences: b.sentences },
+      fs, { outcome: 'seated', value: 2 }, '1,2,3/4,5');
+    expect(prompt).toContain('0. She has voted for limits on guns.\n   opening line, no marker: judge it against every finding the summary cites');
+    expect(prompt).toContain('1. She voted for a red flag bill [1] and a storage bill [2].\n   cites findings: [1] ' + fs[0].id + ', [2] ' + fs[1].id);
   });
 
   it('refuses cites that do not match the sentences', () => {

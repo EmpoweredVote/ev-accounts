@@ -162,9 +162,16 @@ export interface SummaryForCheck {
   sha256: string;
   sources: string[];
   cites: string[][];
+  /** Each rendered sentence, from buildSummary. Required once a summary has an opening line with no marker. */
+  sentences?: string[];
 }
 
 /** Sentences of a rendered summary: each ends in `[n, m]` then closing punctuation (the writer writes no brackets). */
+/** Same key buildSummary numbers by: no #fragment, no trailing slash. */
+function urlKeyOf(url: string): string {
+  return url.replace(/#.*$/, '').replace(/\/+$/, '');
+}
+
 export function splitRendered(text: string): string[] {
   return text.split(/(?<=\[\d[\d, ]*\][.!?]+)\s+/).filter((s) => s.trim());
 }
@@ -176,7 +183,7 @@ export function checkerPrompt(
   sides: string | null,
   opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string; outFile?: string; titles?: Map<string, string> } = {},
 ): string {
-  const sentences = splitRendered(summary.text);
+  const sentences = summary.sentences ?? splitRendered(summary.text);
   if (sentences.length !== summary.cites.length) {
     throw new Error(`checkerPrompt: ${sentences.length} sentences in the text but cites for ${summary.cites.length}`);
   }
@@ -197,7 +204,11 @@ export function checkerPrompt(
     ].filter(Boolean);
     return lines.join('\n');
   });
-  const shown = `${summary.text}\n\nBy sentence (index from 0):\n${sentences.map((s, i) => `${i}. ${s}\n   cites findings: ${summary.cites[i].join(', ')}`).join('\n')}`;
+  const numberOfId = (id: string) => { const u = byId.get(id)?.url ?? ''; const k = urlKeyOf(u); return summary.sources.findIndex((x) => urlKeyOf(x) === k) + 1; };
+  const citeLine = (s: string, ids: string[]) => (/\[\d[\d, ]*\]/.test(s)
+    ? `cites findings: ${ids.map((id) => `[${numberOfId(id)}] ${id}`).join(', ')}`
+    : 'opening line, no marker: judge it against every finding the summary cites');
+  const shown = `${summary.text}\n\nBy sentence (index from 0):\n${sentences.map((s, i) => `${i}. ${s}\n   ${citeLine(s, summary.cites[i])}`).join('\n')}`;
   const outcomeText = outcome.outcome === 'seated'
     ? `seated, value ${outcome.value}${sideOf(outcome.value, sides) ? `; the person's side is ${sideOf(outcome.value, sides)}` : ''}`
     : 'doesnt-fit: on-topic evidence that fits no single position; no seat';
