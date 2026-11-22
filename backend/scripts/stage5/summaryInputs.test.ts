@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { Finding } from '../lib/sourceStore.js';
 import { buildSummary } from '../lib/stage5Summary.js';
 import { readFileSync } from 'node:fs';
-import { capFindings, checkerPrompt, main, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
+import { BILL_TEXT_CAP, billTextBlock, capFindings, checkerPrompt, main, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
 
 const TOPIC = 'gun-policy';
 const RUNG_TEXT = 'Limit who may have a gun, such as by court orders that take guns from a person found dangerous';
@@ -130,6 +130,25 @@ describe('checker prompt', () => {
     // Same words as the writer's line, so neither side sees a bill the other cannot.
     expect(writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
       capFindings([f], [f.id], 25), null, titles)).toContain('instrument: PA-HB-1-2024 (HB1: Removing the prohibition on firearm suppressors)');
+  });
+
+  it("shows writer and checker each cited bill's text once, capped, so a bill is described by what it does", () => {
+    const f = finding(1);
+    const long = `Prohibits the manufacture of undetectable firearms. ${'x'.repeat(2000)}`;
+    const texts = new Map([['PA-HB-1-2024', long]]);
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'She voted for a ban on undetectable guns.', cites: [f.id] }] };
+    const b = buildSummary(draft, [f]);
+    const summary = { politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: [[f.id]] };
+    const checker = checkerPrompt(summary, [f], { outcome: 'seated', value: 4 }, null, { texts });
+    const writer = writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
+      capFindings([f], [f.id], 25), null, new Map(), texts);
+    for (const out of [checker, writer]) {
+      expect(out).toContain('- PA-HB-1-2024: Prohibits the manufacture of undetectable firearms.');
+      expect(out).toContain(`[cut at ${BILL_TEXT_CAP} of ${long.length} characters]`);
+      expect(out).not.toContain('x'.repeat(BILL_TEXT_CAP));
+    }
+    expect(billTextBlock(['A', 'A'], new Map([['A', 'Does a thing.']])).match(/- A:/g)).toHaveLength(1);
+    expect(billTextBlock(['A'], new Map([['A', '  ']]))).toBe('');
   });
 
   it('shows the lead line and the number of each cited finding', () => {

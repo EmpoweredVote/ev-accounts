@@ -434,6 +434,14 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   penalties" is right whether or not it became law, and needs no note that it did not; only "which raised penalties"
   claims a law. Each bill is described exactly as its finding's title and text show.
 - **Date and source:** 2026-11-22, Chris Andrews, in conversation after `sample-02`.
+- **Amended the same day after `sample-03`** (Claude passed 20 of 36; 8 of its fails came from two rules written
+  too strictly): (a) a doesnt-fit person is not always mixed; whether a record is mixed depends on its findings, not
+  the seat. (b) The opening line may sum up in general words ("if it's still accurate that he did vote to loosen
+  limits on guns in both chambers, then we should keep that line"); a finding that shows no direction does not block
+  it. (c) A bill is never described only by its subject ("We should never say relating to firearms without giving a
+  little bit more detail"): say what it does from its text, or leave it out. The writer and checker now see each
+  cited bill's stored text, capped, as the coder did. (d) Of a bill with several parts, name the parts about guns;
+  the background check system (NICS) counts.
 
 ## Topic-scoped readings
 

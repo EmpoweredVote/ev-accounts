@@ -19,7 +19,7 @@ import type { Finding } from '../lib/sourceStore.js';
 import { fillTemplate } from '../lib/stage5Template.js';
 import { Stage5CodeSchema, type Stage5Code } from '../lib/stage5Code.js';
 import type { SummaryCheck } from '../lib/stage5Summary.js';
-import { REPO, STORE, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings, readRosters } from './coder-io.js';
+import { REPO, STORE, displayName, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings, readRosters } from './coder-io.js';
 
 const TEMPLATES = join(REPO, '.claude/skills/season-topic-prep/templates');
 export const WRITER_TEMPLATE = join(TEMPLATES, 'stage5-summary-writer.md');
@@ -95,7 +95,7 @@ export function selectPeople(o: SelectOpts): { selected: Selected[]; skipped: { 
     const findings = (pf?.findings ?? []).filter((f) => f.topic_keys.includes(o.topicKey));
     if (findings.length === 0) { skipped.push({ id, why: 'no finding on the topic' }); continue; }
     selected.push({
-      politician_id: id, name: row?.full_name ?? '(name not on roster)', office: row?.office ?? '',
+      politician_id: id, name: row?.full_name ? displayName(row.full_name) : '(name not on roster)', office: row?.office ?? '',
       level: row?.level ?? '', state: row?.state ?? '', code, findings,
     });
   }
@@ -130,11 +130,29 @@ export function sideOf(value: number | undefined, sides: string | null): string 
   return sides.split('/').find((g) => g.split(',').some((n) => Number(n) === value || Number(n) === Math.round(value))) ?? null;
 }
 
-export function writerPersonBlock(p: Selected, o: Offered, sides: string | null, titles: Map<string, string>): string {
+/** How much of a bill's stored text the writer and checker see. Median stored text is ~1,300 characters. */
+export const BILL_TEXT_CAP = 1500;
+
+/**
+ * Each cited bill's text, once, capped: the same words the coder read, so a summary can say what the bill does instead
+ * of only what its title is about. Empty when no bill has stored text.
+ */
+export function billTextBlock(ids: string[], texts: Map<string, string> | undefined, cap = BILL_TEXT_CAP): string {
+  const seen = [...new Set(ids)].filter((id) => texts?.get(id)?.trim());
+  if (!seen.length) return '';
+  const one = (id: string) => {
+    const t = texts!.get(id)!.replace(/\s+/g, ' ').trim();
+    return `- ${id}: ${t.length > cap ? `${t.slice(0, cap)} … [cut at ${cap} of ${t.length} characters]` : t}`;
+  };
+  return `bill text (what each bill does; describe a bill from this, not from its title alone):\n${seen.map(one).join('\n')}`;
+}
+
+export function writerPersonBlock(p: Selected, o: Offered, sides: string | null, titles: Map<string, string>, texts?: Map<string, string>): string {
   const cited = new Set(p.code.finding_ids);
   const head = `### ${p.name} — politician_id ${p.politician_id}\n${[p.office, p.level, p.state].filter(Boolean).join(', ')}\n${seatLine(p.code, sides)}`;
   const note = o.left_out ? `\n(${o.left_out} older or lesser finding${o.left_out === 1 ? '' : 's'} not shown; cite only what is listed.)` : '';
-  return `${head}\nfindings (${o.offered.length}):\n${o.offered.map((f) => findingLine(f, titles, cited.has(f.id))).join('\n')}${note}`;
+  const bills = billTextBlock(o.offered.map((f) => f.instrument_id).filter((x): x is string => !!x), texts);
+  return `${head}\nfindings (${o.offered.length}):\n${o.offered.map((f) => findingLine(f, titles, cited.has(f.id))).join('\n')}${note}${bills ? `\n${bills}` : ''}`;
 }
 
 export interface WriterOpts {
@@ -181,7 +199,7 @@ export function checkerPrompt(
   findings: Finding[],
   outcome: Outcome,
   sides: string | null,
-  opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string; outFile?: string; titles?: Map<string, string> } = {},
+  opts: { personName?: string; topicName?: string; family?: SummaryCheck['family']; template?: string; outFile?: string; titles?: Map<string, string>; texts?: Map<string, string> } = {},
 ): string {
   const sentences = summary.sentences ?? splitRendered(summary.text);
   if (sentences.length !== summary.cites.length) {
@@ -219,7 +237,7 @@ export function checkerPrompt(
     SUMMARY: shown,
     REFERENCES: summary.sources.map((u, i) => `[${i + 1}] ${u}`).join('\n'),
     OUTCOME: outcomeText,
-    FINDINGS: full.join('\n\n'),
+    FINDINGS: [full.join('\n\n'), billTextBlock(order.map((id) => byId.get(id)?.instrument_id).filter((x): x is string => !!x), opts.texts)].filter(Boolean).join('\n\n'),
     SIDES: sides ?? 'none ruled for this topic',
     POLITICIAN_ID: summary.politician_id,
     TEXT_SHA256: summary.sha256,
@@ -257,12 +275,14 @@ export function main(argv: string[]): void {
     const group = selected.slice(i, i + perFile);
     const blocks = group.map((p) => {
       const o = capFindings(p.findings, p.code.finding_ids, max);
-      const titles = new Map([...instrumentTexts(store, index, o.offered.map((f) => f.instrument_id).filter((x): x is string => !!x))].map(([k, v]) => [k, v.title]));
+      const got = instrumentTexts(store, index, o.offered.map((f) => f.instrument_id).filter((x): x is string => !!x));
+      const titles = new Map([...got].map(([k, v]) => [k, v.title]));
+      const texts = new Map([...got].map(([k, v]) => [k, v.operative_text ?? '']));
       manifest.push({
         politician_id: p.politician_id, name: p.name, outcome: p.code.outcome, value: p.code.value ?? null,
         finding_ids: o.offered.map((f) => f.id), left_out: o.left_out, writer_file: `writer/${n}.md`, draft_file: `drafts/${n}.json`,
       });
-      return writerPersonBlock(p, o, profile.sides, titles);
+      return writerPersonBlock(p, o, profile.sides, titles, texts);
     });
     const prompt = writerPrompt(blocks, {
       topicKey: profile.topic_key, topicName: profile.topic_name ?? profile.topic_key, date, sides: profile.sides,

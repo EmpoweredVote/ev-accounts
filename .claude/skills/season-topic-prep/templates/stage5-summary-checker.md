@@ -44,10 +44,14 @@ summary cites, taken together. A sentence **fails** if any of these is true:
 8. A gated vote (one nearly everyone cast the same way) is described as showing a position it does not show.
 9. A sentence says a bill did something as law ("which repealed", "which created") when no cited finding shows it
    became law. "Voted for a bill to repeal …" is fine, and needs no note that the bill did not become law.
-10. A bill is described more widely or narrowly than its finding's title and text show (whom it covers, what it does).
-11. The opening line names a lean the findings that show a position do not share; counts a gated vote toward the
-    lean; says "mostly" without a clear majority; claims more than the findings cover; or, for a record that runs
-    both ways (as a doesnt-fit record almost always does), names one direction instead of saying it is mixed.
+10. A bill is described more widely or narrowly than its title and bill text show (whom it covers, what it does); or
+    only by its subject ("a bill relating to firearms", "a bill on guns") without saying what it does; or by a part
+    that is not about guns.
+11. The opening line names a lean that a finding showing a direction contradicts; counts a gated vote toward the
+    lean; says "mostly" without a clear majority of the findings that show a direction; or names one direction when
+    those findings point both ways. A lean may be stated in general words ("voted to loosen limits on guns") without
+    covering every act, and a finding that shows no direction neither supports nor blocks it. Whether a record is
+    mixed depends on the findings, not on the seat: a doesnt-fit person whose findings point one way may lean that way.
 
 Be strict and literal. When unsure, fail the sentence and say why. Each `reason` is one plain sentence naming the
 finding or the words at fault; for a pass, say what supports it.

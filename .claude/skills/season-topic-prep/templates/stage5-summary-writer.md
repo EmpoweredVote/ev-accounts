@@ -18,12 +18,15 @@ text.** The tool numbers the sources and writes the reference list from the find
    which way the person leans on the topic, so they understand it at a glance: for example "Rick Williams has voted
    to loosen limits on guns in both chambers of the Georgia legislature." It carries no cites (`"lead": true`); it
    rests on every finding the rest of the summary cites, so it may say no more than those findings show together.
-   - **Name a lean only when the findings that show a position point that way.** A gated vote (nearly everyone voted
-     the same way) shows no position, so it never counts toward the lean. "Mostly" needs a clear majority of the
-     findings that do show a position.
+   - **Name a lean when the findings that show a direction point that way and none points the other way.** The line
+     may sum them up in general words ("voted to loosen limits on guns"); it need not cover every act. A finding
+     that shows no direction (a gated vote, where nearly everyone voted the same way, or a bill that neither widens
+     nor narrows gun rights) neither supports nor blocks the lean. "Mostly" needs a clear majority of the findings
+     that show a direction.
    - **When they point both ways, say the record is mixed** and name the two sides in plain words: "Her record on
      guns is mixed: she voted to widen where people may carry a gun, and for tougher penalties for juveniles with
-     weapons." A **doesnt-fit** person almost always has this shape.
+     weapons." This depends on the findings, not on the seat: a **doesnt-fit** person whose findings all point one
+     way leans that way.
    - **When the evidence is only words, say so:** "He has said he supports gun rights."
    - Say no more than the findings cover: "limits on carrying guns" only when the findings are about carrying.
    - Do not explain why someone has or has no compass position.
@@ -35,10 +38,14 @@ text.** The tool numbers the sources and writes the reference list from the find
 3. **A vote is a vote, not a law.** Write "voted for a bill to repeal the silencer ban", never "voted for a bill,
    which repealed the silencer ban", unless a finding shows the bill became law. There is no need to add that a bill
    did not become law. A sponsor "sponsored a bill to …"; a bill that failed "would have …".
-4. **Describe each bill exactly as its finding does.** Its title and text set what it does and whom it covers: a bill
-   on state agencies is not a bill on "governments"; a bill titled "Enhanced Background Checks" is not a bill to check
-   more sales unless a finding says so. When the finding says little, say little ("voted for a bill on background
-   checks").
+4. **Describe each bill exactly as its title and text show.** The bill text is listed under each person's findings.
+   It sets what the bill does and whom it covers: a bill on state agencies is not a bill on "governments"; a bill
+   titled "Enhanced Background Checks" is not a bill to check more sales unless its text says so.
+   - **Never describe a bill only by its subject**, such as "a bill relating to firearms" or "a bill on guns". Say in
+     a few words what it does: "a bill to ban guns that metal detectors cannot find". If neither the title nor the
+     text says what the bill does, leave that bill out of the summary.
+   - **A bill with several parts:** name the parts about guns and leave out the rest. The federal background check
+     system (NICS) is about guns.
 
 ## Writing rules
 
