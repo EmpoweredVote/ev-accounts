@@ -2277,3 +2277,128 @@ Georgia is missing the **results**. 🔴 **A state can be absent from this pass 
 reasons and all three look identical from the queue.** ▶ **One query across all 41 states, comparing
 offices held against races recorded against each chamber's real size, would separate them.** It has
 not been run.
+
+---
+
+## AR — Arkansas · 7 offices · ⏳ **PARTIALLY SOURCED, 2026-11-22 — NOT DONE.** Four provisions read, no date established
+
+🔴 **This block is deliberately unfinished and the queue row says so.** It exists so the next
+session does not re-read the four provisions below. **No Arkansas office may be dated from it.**
+
+| body | offices | start date | state of play |
+|---|---|---|---|
+| Governor · Secretary of State · Treasurer of State · Auditor of State · Attorney General | 5 | ⏳ **not established** | the returns are published by the Speaker **during the first week of the session** — an event, like Oregon's and Georgia's |
+| Commissioner of State Lands | 1 | ⏳ **not established** | ⚠ excluded from the Schedule's general rule but **absent from `Art. 6 § 3`'s list** — covered by neither provision read so far |
+| Lieutenant Governor | 1 | ⏳ **not established** | ⚠ **in neither list.** May fall under the Schedule's general rule, which would give it a different start from the Governor's |
+
+### What IS established — four provisions, read in full or in substance
+
+**1. The term length, for all seven. `Ark. Const. Amendment 63, § 1` — *Executive Department — Term
+of office*:**
+
+> The Executive Department of this State shall consist of a Governor, Lieutenant Governor, Secretary
+> of State, Treasurer of State, Auditor of State, Attorney General and Commissioner of State Lands,
+> all of whom shall keep their offices at the seat of government, and **hold their offices for the
+> term of four (4) years, and until their successors are elected and qualified**.
+
+🟢 It names **exactly our seven offices**, so the body list is settled. 🔴 **And it names no
+commencement day** — the same shape as Nebraska's `Art. IV-1` and New Mexico's `§ 32-506`. In those
+two states a residual supplied the day. Arkansas's equivalent **expressly excludes most of these
+officers**, which is why this state is harder.
+
+**2. The residual, and its exclusion. `Ark. Const. Schedule, § 20` — *When officers to enter upon
+duties*:**
+
+> All officers elected under this Constitution, **except the Governor, Secretary of State, Auditor
+> of State, Treasurer, Attorney-General and Commissioner of State Lands** shall enter upon the
+> duties of their several offices when they shall have been declared duly elected by said State
+> Board of Supervisors, and shall have duly qualified. All such officers shall qualify and enter
+> upon the duties of their offices **within fifteen days after they have been duly notified of
+> their election**.
+
+🔴🔴 **This is the Texas exclusion rule firing in the hardest possible direction.** Texas's
+`§ 601.003(c)` excluded four offices from a general rule and the job was to go and find what covered
+them. Here the exclusion covers **six of our seven**, and the thing that covers them is not in this
+section.
+
+**3. What covers five of the six. `Ark. Const. Art. 6, § 3` — *Election of executive officers*:**
+
+> The Governor, Secretary of State, Treasurer of State, Auditor of State, and Attorney General shall
+> be elected by the qualified electors of the State at large, at the time and places of voting for
+> members of the General Assembly; the returns of each election therefor shall be sealed up
+> separately and transmitted to the seat of government by the returning officers, and directed to
+> the Speaker of the House of Representatives; **who shall, during the first week of the session,
+> open and publish the votes cast and given for each of the respective officers hereinbefore
+> mentioned, in the presence** …
+
+⚠ **The text is truncated there** — see "What stopped this". What is already visible is the
+mechanism: **the Speaker publishes the returns during the first week of the session**, which is
+`ORS 176.010`'s Oregon pattern and `O.C.G.A. § 45-12-2`'s Georgia pattern in constitutional form.
+▶ **Arkansas is very likely a third event-based refusal with a session-week window.** It is not
+recorded as one, because the sentence that would say so has not been read to its end.
+
+**4. 🟢 There is NO Arkansas inauguration statute.** A quoted-AND search of the Arkansas Code for
+`"inauguration" "Governor"` returned **"No documents found"** — a clean negative, and a meaningful
+one, because Georgia's answer to exactly this question was a statute of that name. ⚠ It does not
+rule out a differently-worded statute.
+
+### 🔴 Three lists, three different memberships — this is the finding to carry forward
+
+| provision | who it names |
+|---|---|
+| `Amendment 63 § 1` (term length) | Governor · **Lt. Governor** · SoS · Treasurer · Auditor · AG · **Commissioner of State Lands** — all 7 |
+| `Schedule § 20` (exclusions) | Governor · SoS · Auditor · Treasurer · AG · **Commissioner of State Lands** — 6, **no Lt. Governor** |
+| `Art. 6 § 3` (returns to the Speaker) | Governor · SoS · Treasurer · Auditor · AG — **5, neither the Lt. Governor nor the Commissioner of State Lands** |
+
+▶ **Two offices fall through the gaps, in opposite directions:**
+
+- **Commissioner of State Lands** is *excluded* from the Schedule's rule and *not named* in
+  `Art. 6 § 3`. Something else must date it, and that something has not been found.
+- **Lieutenant Governor** is named in neither the exclusion nor the returns clause. On the plain
+  text it would fall under `Schedule § 20`'s general rule — entering on declaration and
+  qualification, **within fifteen days of notification** — which is a *different* start from the
+  Governor's. 🔴 **That reading is plausible and unverified.** The office was created by a later
+  amendment, which may carry its own provision, and the 1874 Schedule could not have contemplated
+  it. **Do not act on this without reading the amendment that created the office.**
+
+⚠ **The lists were built by reading the three provisions side by side. That is the only reason the
+gaps are visible at all** — each provision on its own reads as complete.
+
+### ⏳ What is still open
+
+1. **The rest of `Art. 6 § 3`** — the sentence continues past "in the presence" and is where a
+   declaration, and possibly a day, would be.
+2. **The Lieutenant Governor's own amendment**, and whether it dates the office.
+3. **The Commissioner of State Lands' commencement**, which neither provision read supplies.
+4. **When the General Assembly convenes**, which bounds the window if the event reading holds.
+   ⚠ A search for `"second Monday in January"` in the Arkansas Constitution returned nothing, so
+   **Arkansas words it differently** — find the wording rather than assuming the date.
+5. **The control**: `office_terms` was not queried for Arkansas. It should be, and read against the
+   Georgia lesson — if Arkansas's start is a choice within a week, one agreeing row proves nothing.
+
+### What stopped this
+
+`advance.lexis.com` is the official publisher for both the Arkansas Code (`Arkansas Code Annotated
+PAW`) and the constitution (`AR - Arkansas Constitution PAW ETTOC`, served under the banner
+**"AR Bureau of Legislative Services"**), reached from `arkleg.state.ar.us` via
+`www.lexisnexis.com/hottopics/arcode/`. 🔴 **Its search returns a TEASER, not the section**, and
+opening the full document redirects to a captcha — the same `/RobotValidation` wall Georgia hit.
+`Art. 6 § 3` is longer than its teaser, so its ending is unreachable by this route.
+
+▶ **Next session: find Arkansas's constitution as a PDF**, the way Georgia's was solved —
+`sos.arkansas.gov` is the obvious candidate and was **not** tried (its
+`/publications/historical/arkansas-constitution` path 404s, which is not the same as the site having
+nothing). 🟢 `arkleg.state.ar.us` itself answers plain `curl` and is worth a second look for a
+constitution download.
+
+🟢 **Two useful facts about the Lexis search, learned here and worth reusing:**
+- **It honours quoted phrases.** `"shall be installed in office"` returned *No documents* while the
+  unquoted `installed in office` returned Amendment 73's preamble and much else — so the quoting
+  works and a quoted negative is a real negative.
+- **Unquoted terms are OR'd and rank by relevance**, which is why `Amendment 63 terms of office
+  constitutional officers four years` returned a statute about **restrictions on other employment**
+  as its top hit. ▶ **Quote the phrase or the search is noise.**
+
+### Basis
+
+**None written. No Arkansas office is dated.**

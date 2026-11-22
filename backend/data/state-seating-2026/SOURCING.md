@@ -94,7 +94,7 @@ something that looks like success.**
 | `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
 | `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
 | `nmonesource.com` | **403, 239 bytes — AND THE FULL BROWSER HEADER SET DOES NOT HELP** | 🔴 the first true TLS-fingerprint block in this pass. Playwright — and then click: it is a JS tree whose page state does not survive an expand |
-| `advance.lexis.com` (the OFFICIAL Georgia code) | search-result **snippets render**; **opening a full document redirects to `/RobotValidation`** | read the snippet; a section longer than its teaser is not reachable. 🟢 It IS the state's publisher — `legis.ga.gov` links to it and the site says so — unlike justia/findlaw |
+| `advance.lexis.com` (the OFFICIAL code for **GA and AR**) | search-result **snippets render**; **opening a full document redirects to `/RobotValidation`** | read the snippet; a section longer than its teaser is not reachable. 🟢 It IS the state's publisher — `legis.ga.gov` and `arkleg.state.ar.us` both link to it and the sites say so — unlike justia/findlaw. 🔴 **QUOTE YOUR PHRASE**: unquoted terms are OR'd and rank by relevance, so `Amendment 63 terms of office …` returned a statute about restrictions on other employment as its top hit. A **quoted** phrase that returns "No documents" is a real negative |
 | `www.legis.ga.gov` | Angular SPA, 1,492 bytes to `curl`, every path ends at `/error/404` | browser — and it holds no law, it links out. 🟢 `sos.ga.gov` serves the constitution PDF to plain `curl` |
 
 ▶ **Assert on content, never on status or on "it returned bytes".** A near-identical byte count
@@ -235,6 +235,16 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- 🔴🔴 **WHEN SEVERAL PROVISIONS LIST THE SAME BODY'S OFFICERS, LIST THEM SIDE BY SIDE — THE
+  MEMBERSHIPS DIFFER AND EACH ONE READS AS COMPLETE ON ITS OWN.** Arkansas names its executive
+  officers three times and no two lists match: `Amend. 63 § 1` has all seven; `Schedule § 20`
+  excludes six from the general entry-on-qualification rule and **omits the Lieutenant Governor**;
+  `Art. 6 § 3` sends five to the Speaker's publication of returns and **omits both the Lieutenant
+  Governor and the Commissioner of State Lands**. Two offices therefore fall through every
+  provision read, in opposite directions — one excluded from the residual and named nowhere else,
+  one never excluded at all and so arguably still inside it, with a different start from the
+  Governor's. ▶ **Neither gap is visible from any single section.** Build the table before
+  deciding a state has one rule.
 - 🔴🔴 **WHAT A ONE-ROW CONTROL IS WORTH DEPENDS ON WHAT THE LAW SAYS, NOT ON WHETHER THE NUMBER
   MATCHED.** Three states in a row offered exactly one dated prior term as their only control, and
   the same agreement meant three different things. Nebraska's Governor 2023-01-05 and New Mexico's
@@ -340,7 +350,7 @@ in January 2027.
 | 13 | NE | EXEC+**2 BOARDS**+BOARD_EDUCATION | 13 | 1036 | ✅ done — all 13 on **2027-01-07**; the rule rows **verified**. 🔴 FOUR bodies, not three: `STATE_BOARD` holds the Regents AND the PSC |
 | 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ✅ done — all 11 on **2027-01-01**; the PEC rule row **verified**. 🔴 **PEC District 7 was on the ballot and we hold NO race for it** |
 | 15 | GA | EXEC | 10 | 1057 | 🔴 **ALL TEN REFUSED** — the inauguration day is appointed by joint resolution inside a statutory week. `window_end_date` **2027-01-16** is sourced |
-| 16 | AR | EXEC | 7 | 1064 | |
+| 16 | AR | EXEC | 7 | 1064 | ⏳ **PARTIAL — NOT DONE.** 4 provisions read, no date. `Amend. 63 §1` gives the length; `Schedule §20` **excludes 6 of the 7**; `Art. 6 §3` sends 5 of them to the Speaker's publication of returns. 🔴 Lt. Governor and Commissioner of State Lands fall through every list |
 | 17 | ID | EXEC | 7 | 1071 | |
 | 18 | SD | EXEC | 6 | 1077 | |
 | 19 | NH | BOARD+EXEC | 6 | 1083 | ▶ Executive Council rule quotes `N.H. Const. pt. 2, art. 60` |
@@ -436,14 +446,15 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**15 of 41 states sourced · 1,057 of 1,162 offices (91%) · 0 seated.** The first twelve are the
+**15 of 41 states sourced · 1,057 of 1,162 offices (91%) · 0 seated**, plus **Arkansas partially
+sourced (7 offices, no date established)**. The first twelve are the
 twelve largest; the 26 that remain are **105 offices**, almost all single-body executive states.
 🔴 **"Sourced" is not "dated": Georgia's ten are all REFUSED**, so the pass now carries **26
 refused offices** across six states — GA 10, NV 6, UT 6, MD 2, OR 1, AZ 1. See the refusal table
 below, whose own heading and tally were stale until Georgia forced a recount.
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
 term. Step 2 is done for these fifteen; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: AR (7), ID (7), SD (6).**
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: finish AR (7), then ID (7), SD (6).**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
@@ -464,4 +475,5 @@ term. Step 2 is done for these fifteen; steps 3 through 9 are not started for an
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
 | NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
 | GA | 🔴 [`DATES.md`](./DATES.md) — **0 of 10 dated.** `O.C.G.A. § 45-12-2` puts the inauguration in the first week of the session **on a day a joint resolution appoints**, with a noon-Saturday fallback — so `window_end_date` **2027-01-16** is sourced and `swearing_in_date` is not. The 2 PSC seats are governed by a remedial statute (`§ 46-2-1.1`) that could not be read in full | ⏳ | | |
+| AR | ⏳ [`DATES.md`](./DATES.md) — **PARTIAL.** Term length settled (`Amend. 63 § 1`, all 7 named); commencement NOT settled. 🔴 Three provisions name **three different memberships**, and the Lt. Governor and the Commissioner of State Lands are covered by none of them | — | | |
 | *(nothing else yet)* | | | | |
