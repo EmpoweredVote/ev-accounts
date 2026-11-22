@@ -207,6 +207,16 @@ lease, the desk card) and `desk.py close` the close-out (`close_state.py`, then 
 final report needs). It never takes a held lease, never picks a 🛑 row, and writes nothing to the database.
 
 
+**Maine's record, older Legislatures (2026-11-21).** The Maine reader read 57 floor roll calls of its 130-bill dry
+batch and now reads 95: the 128th to 130th House (21) and the 131st Senate (17, up from 0). Senators are named from
+member lists of the 128th to 132nd saved in the repo (`backend/src/lib/maineLegislatureMembers.ts`, rebuilt with
+`openstates/me-member-lists.ts`), so the live senators page is no longer fetched and the 132nd keeps reading after the
+133rd is seated; add the 133rd's list when it is. The older House PDFs print surnames only, and each is named from our
+Open States roster of that Legislature: 42 of 3,169 member votes stay as printed with no line (21 a surname two seated
+members share), and the fetch prints the count. Against the dump, 6 of 9,603 member votes differ, all six paired
+senators. Each new refusal was watched failing on a planted fault (46 in the reader, 7 in the fetch). Maine leaves 🛑
+in `STATE-QUEUE-gun-policy.md`. Details and gaps: `backend/data/legislatures/me.json`.
+
 **After Oregon and Hawaii (2026-11-21).** Measured over eight states: a state costs 8M to 13M units whatever its
 size (Nevada, 55 people: 143,115 a person; Minnesota, 203: 65,389), because about 3.6M of it is fixed: the desk
 (1.4M to 1.9M over its whole session), session A's own steps (132 to 151 steps, 1.36M to 1.77M, in seven of eight
