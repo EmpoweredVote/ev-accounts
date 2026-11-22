@@ -1,4 +1,11 @@
-# gun-policy — Season 3 draft, revision 5 `41349e39-394a-47b9-81c6-a79f8ec60425` (v3 r5, CA_0356; replaces revision 4)
+# gun-policy — Season 3 draft, revision 6 `af752af5-ccd9-4225-acdf-f904faa088e2` (v3 r6, CA_0412; replaces revision 5)
+
+**Revision 6 applied:** 2026-11-22 by CA_0412, which rejected revision 5 (`41349e39`, CA_0356), proposed and approved
+revision 6 (approved and parked), pinned it in the draft Season 3 and carried the 3,337 draft-season answer and
+context rows to it unchanged. Revision 6 rewords rung 4 (from "Make carrying a gun easier, such as honoring carry
+permits from other states.") and says "permit" where rung 1 said "licence"; rungs 2, 3 and 5 are revision 5's.
+The lines that changed with it are under "Revision 6 lines" below; where an older line in this file disagrees, that
+section wins.
 
 **Revision 5 applied:** 2026-11-03 by CA_0356, which rejected revision 4 (`76a098af`, Draft B, CA_0338, applied
 2026-10-30), proposed and approved revision 5 (approved and parked) and pinned it in the draft Season 3. Revision 5
@@ -32,11 +39,12 @@ checks", "private sale", "gun-show loophole", "transfer", "red flag" / "extreme 
 "reciprocity", "must-issue" / "shall-issue", "National Firearms Act" (NFA), "registration", "ghost gun".
 
 **Rungs:**
-1. Ban civilian gun ownership, except with a licence for hunting or sport.
+1. Ban civilian gun ownership, except with a permit for hunting or sport.
 2. Ban a type of firearm or magazine, such as assault-style weapons.
 3. Add limits on buying, having or carrying a gun, such as checking every buyer, red-flag orders, waiting periods or
    bans on guns in hospitals.
-4. Make carrying a gun easier, such as honoring carry permits from other states.
+4. Make buying, having or carrying a gun easier, such as honoring carry permits from other states, ending a waiting
+   period or ending a red-flag law.
 5. Repeal laws that require a permit or registration for a gun, such as the permit to carry.
 
 **Rung map from revision 3:** identity (1→1 … 5→5). Revision 4 was never served, so no answer was given on it.
@@ -137,20 +145,61 @@ since no rung is about which level decides (see Q5 for the one exception).
   permit-removal law sets on its own permit-free carry is part of the rung 5 act, not a rung 3 act (closure C3).
   - **Q5 (ruled 2026-10-29; topic-scoped).** A federal bill that bars states from requiring a carry permit → 5. It
     states the carry rule, so it is on-question despite codebook V2 / H12 (preemption). For this topic only.
-  - **Q4 (ruled 2026-10-29).** Repeal of a type ban, a waiting period or a minimum age matches no rung →
-    `direction-only` (loosening side).
+  - **Q4 (ruled 2026-10-29; REPLACED by revision 6, 2026-11-22).** Under revision 5, repeal of a type ban, a waiting
+    period or a minimum age matched no rung → `direction-only` (loosening side). Under revision 6 it is a rung 4
+    act ("Revision 6 lines", R6-1).
   - **R5-L (ruled 2026-11-10; wording kept).** A law that forbids a government list of gun owners, or a gun registry,
     where no registration requirement exists (WI SB 466, 2023) repeals nothing → not a rung 5 act; `direction-only`
     (loosening side), like Q2 and Q4. Its card-payment merchant-code part is a dealer business rule (`adjacent`); a
     bar on enforcing federal gun rules (WI AB 293, 2021) stays under closure C2. A law that repeals an existing
     registration requirement is still rung 5 (S8).
-  - **R5-AZ (ruled 2026-11-11).** A ban whose only exception is federal registration is a registration law. Taking an
+  - **R5-AZ (ruled 2026-11-11; REVERSED 2026-11-21, see "Revision 6 lines", R6-3 and R6-4).** A ban whose only exception is federal registration is a registration law. Taking an
     accessory off it is "removing a type of firearm or accessory from a registration law" → 5: AZ SB 1109 (2023),
     SB 1014 (2025) and SB 1069 (2026) strike suppressors from A.R.S. 13-3101's prohibited-weapons list, whose only
     exception is items held "in compliance with federal law" (NFA registration); TX SB 1596 (2025) has the same
     shape. A ban on a rate-of-fire accessory (bump-fire device) still has no rung; it is `direction-only`
     (S3). A person with a rung 1-3 act who
     also voted for such a bill has a two-sided record (Arizona: Fernandez).
+
+## Revision 6 lines (rulings by Chris Andrews, 2026-11-21 and 2026-11-22)
+
+Source: rung review 2 (research folder `stage5/RUNG-REVIEW-2-2026-11-21.md`), after Stage 5 had coded 4,523 people.
+
+- **R6-1 — what rung 4 now holds.** Besides every carrying act that was rung 4 before, a bill that removes or cuts
+  back a general limit on buying or having a gun, for the public or for a broad class such as carry-permit holders,
+  is a rung 4 act: a buyer check, a waiting period, a buying age, a permit to buy (eased or exempted from, while it
+  stays), a red-flag law, a type ban. The person's own in-term words that name such a limit and call for its repeal
+  or cut-back meet rung 4 the same way.
+- **R6-2 — what does not count** (`direction-only`, loosening side): gun rights given back to people barred for a
+  record or an order (felony, juvenile, cannabis); an exemption for one named group or one narrow kind of transfer
+  (museums, curios, raffles, a short hand-over, replacing a lost gun); a change to who runs a check; a bar on a law
+  that does not exist; a drafting-error fix; a county opt-out that itself repeals nothing; a State selling machine
+  guns under a federal exemption.
+- **R6-3 — suppressors show a side only** ("Shows a side only", 2026-11-21; "Yes, side only", 2026-11-22). A bill
+  that only takes suppressors off a state ban, or ends the state crime of having one, is `direction-only`, loosening
+  side, like the accessory line S3. It is not rung 5, even where the ban's only exception was federal registration,
+  and it does not make a record two-sided. This reverses R5-AZ.
+- **R6-4 — short-barrel guns are rung 4** ("I do think ending a state ban on short-barrel guns counts as rung 4",
+  2026-11-22). A bill that takes short-barrel rifles or shotguns off a state ban is a cut-back of a type ban, whether
+  or not it also covers suppressors: KS HB 2501 (2025), OH SB 214 (2025), TN HB 2509 (2021) / SB 2628 (2022),
+  TX SB 1596 (2025), MN HF 1089 (2023). KS HB 2501 is single-subject: its sentence enhancement applies only when a
+  gun with a suppressor or a short barrel is used ("One subject", 2026-11-22; S5).
+- **R6-5 — licence-holder sales.** An exemption from the private-sale buyer check for a sale between two
+  carry-licence holders (WA SB 6476, 2017; HB 1649, 2019; HB 1725, 2017) cuts back the check for a broad class →
+  rung 4 ("Rung 4", 2026-11-22).
+- **R6-6 — conflicts.** A rung 4 act of the buying-or-having kind beside a counted rung 1, 2 or 3 act makes the
+  record two-sided. The licence rule (S4) and R6-9 were written for carry acts and are not widened to it.
+- **R6-7 — a local option to ban guns in named places is rung 3** ("yes to all three rulings", 2026-11-21). A bill
+  that lets a named local body switch on a state-defined ban on carrying in named places (OR SB 243, 2025) is a
+  rung 3 act. A repeal of pre-emption that names no rule, or a bill under which the city writes its own rule
+  (WA HB 1319, 2019; SB 5568, 2021: "Keep: side only"), stays `direction-only`.
+- **R6-8 — a lower carry-permit age for adults in general is rung 4** (same answer). KY HB 312 (2026) and bills
+  like it. A lower age for one named group (military only) stays `direction-only`. This narrows Q4.
+- **R6-9 — a fee cut or a court-forced permit rewrite does not conflict with a type ban** (same answer). The record
+  sits at rung 2. Carry in more places and honoring other states' permits still conflict with a type ban.
+- **R6-10 — kept as they were** (2026-11-21): a rung 5 record plus one Yes on a ban on guns in a named place stays
+  blank ("Keep the blank"); storage duties stay out of scope ("No, out of scope").
+- **Rung 5 is unchanged:** an outright repeal of a permit or registration a gun owner must hold.
 
 ## Hard cases
 

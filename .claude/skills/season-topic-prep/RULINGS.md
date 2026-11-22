@@ -476,6 +476,8 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Scope:** the Season 3 revision 5 of `gun-policy` only.
 
 ### gun-policy — R5-AZ (taking an accessory off a ban that excepts only federal registration is rung 5)
+- **REVERSED 2026-11-21 and 2026-11-22** by the next entry (suppressors show a side only; short-barrel guns are rung 4
+  under revision 6). Kept for the record.
 - **Reading:** a state ban whose only exception is federal registration (NFA) works as a registration law. A bill
   that takes an accessory off it — AZ SB 1109 (2023), SB 1014 (2025), SB 1069 (2026), suppressors off A.R.S.
   13-3101's prohibited-weapons list — is "removing a type of firearm or accessory from a registration law", rung 5,
@@ -484,6 +486,24 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
   written in `write/az-01` rest on these bills alone; one person with a rung 3 act stays two-sided (Fernandez).
   Recorded in the Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R5-AZ).
 - **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
+### gun-policy — revision 6: rung 4 covers buying and having; suppressors show a side only
+- **Reading:** rung 4 is reworded to "Make buying, having or carrying a gun easier, such as honoring carry permits
+  from other states, ending a waiting period or ending a red-flag law." A bill that removes or cuts back a general
+  limit on buying or having a gun (a buyer check, a waiting period, a buying age, a permit to buy, a red-flag law,
+  a type ban, a short-barrel gun taken off a state ban) is a rung 4 act. A suppressor-only bill shows the loosening
+  side only and seats no one, which reverses R5-AZ. The count / do-not-count list is in the Season 3 annex
+  ("Revision 6 lines", R6-1 to R6-10), with the three pattern rulings of 2026-11-21 (local-option place ban = rung 3;
+  carry-permit age lowered for adults in general = rung 4; a fee cut or court-forced rewrite does not conflict with
+  a type ban).
+- **Date and source:** 2026-11-21 and 2026-11-22, Chris Andrews, rung review 2 after Stage 5
+  (`.planning/research/s3-prep-gun-policy/stage5/RUNG-REVIEW-2-2026-11-21.md`). Wording: "Make … easier", then
+  "C: both examples". Suppressors: "Shows a side only (Recommended)", "Yes, side only". Short-barrel guns: "I do
+  think ending a state ban on short-barrel guns counts as rung 4". Applied by CA_0412 (revision 6), which carried
+  the 3,337 draft-season rows from revision 5 under "Stage 4: a draft that replaces an approved, unpublished
+  revision". Seat check by script in 19 states and a voter-placement check (30/30) before the apply; adversarial
+  check of the 72 new rung 4 seats after the re-code (86 attacks, none left open).
+- **Scope:** the Season 3 revision 6 of `gun-policy` only.
 
 ### education-equity-programs — R1 (single-subject scope)
 - **Reading:** a separate operative part makes a bill multi-subject only when it acts **outside K-12 schools**
