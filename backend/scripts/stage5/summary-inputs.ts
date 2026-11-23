@@ -149,14 +149,17 @@ export const BILL_TEXT_CAP = 1500;
  * Each cited bill's text, once, capped: the same words the coder read, so a summary can say what the bill does instead
  * of only what its title is about. Empty when no bill has stored text.
  */
+/** One bill's stored text on one line, capped; '' when there is none. */
+export function cappedBillText(id: string, texts: Map<string, string> | undefined, cap = BILL_TEXT_CAP): string {
+  const t = texts?.get(id)?.replace(/\s+/g, ' ').trim();
+  if (!t) return '';
+  return t.length > cap ? `${t.slice(0, cap)} … [cut at ${cap} of ${t.length} characters]` : t;
+}
+
 export function billTextBlock(ids: string[], texts: Map<string, string> | undefined, cap = BILL_TEXT_CAP): string {
   const seen = [...new Set(ids)].filter((id) => texts?.get(id)?.trim());
   if (!seen.length) return '';
-  const one = (id: string) => {
-    const t = texts!.get(id)!.replace(/\s+/g, ' ').trim();
-    return `- ${id}: ${t.length > cap ? `${t.slice(0, cap)} … [cut at ${cap} of ${t.length} characters]` : t}`;
-  };
-  return `bill text (what each bill does; describe a bill from this, not from its title alone):\n${seen.map(one).join('\n')}`;
+  return `bill text (what each bill does; describe a bill from this, not from its title alone):\n${seen.map((id) => `- ${id}: ${cappedBillText(id, texts, cap)}`).join('\n')}`;
 }
 
 export function writerPersonBlock(p: Selected, o: Offered, sides: string | null, titles: Map<string, string>, texts?: Map<string, string>): string {
@@ -206,6 +209,55 @@ export function splitRendered(text: string): string[] {
   return text.split(/(?<=\[\d[\d, ]*\][.!?]+)\s+/).filter((s) => s.trim());
 }
 
+/** What one marker of one sentence rests on, read from the findings by code (never by the checker). */
+export interface MarkerFacts { ref: number; findings: Finding[]; line: string; gatedOnly: boolean }
+
+const SPONSOR_ACTS = new Set(['sponsor', 'author']);
+const VOTE_ACTS = new Set(['yea', 'nay', 'abstain']);
+const gatesOf = (f: Finding) => [...new Set(Object.values(f.gate_by_topic ?? {}).filter((g) => g && g !== 'none'))];
+
+/**
+ * The cited findings of one sentence, grouped by marker number, with the facts a script can read exactly: whether each
+ * is a vote or a sponsorship, and whether it is gated. A checker left to find these itself caught a gated vote in 2 to
+ * 5 of 5 runs on the same text (consistency test, 2026-11-22).
+ */
+export function markersOf(findings: Finding[], numberOf: (id: string) => number): MarkerFacts[] {
+  const by = new Map<number, Finding[]>();
+  for (const f of findings) { const n = numberOf(f.id); by.set(n, [...(by.get(n) ?? []), f]); }
+  return [...by.entries()].map(([ref, fs]) => {
+    const records = fs.filter((f) => f.kind === 'record');
+    if (!records.length) return { ref, findings: fs, line: `[${ref}] statement: own words (a statement, not a vote or sponsorship).`, gatedOnly: false };
+    const what = (f: Finding) => {
+      const gate = gatesOf(f).length ? `, GATED: ${gatesOf(f).join(', ')}` : '';
+      if (SPONSOR_ACTS.has(f.act ?? '')) return `sponsorship (${f.motion ?? f.act})${gate}`;
+      if (VOTE_ACTS.has(f.act ?? '')) return `vote (${f.act}${f.against_bill ? ', against_bill: a vote AGAINST the bill' : ''})${gate}`;
+      return `act (${f.act ?? 'not stated'})${gate}`;
+    };
+    const bills = [...new Set(records.map((f) => f.instrument_id).filter(Boolean))].sort().join(', ') || 'record';
+    const gated = records.some((f) => gatesOf(f).length > 0);
+    const gatedOnly = gated && records.every((f) => gatesOf(f).length > 0);
+    const notes = [
+      records.some((f) => SPONSOR_ACTS.has(f.act ?? '')) ? '' : 'No sponsorship finding.',
+      records.some((f) => VOTE_ACTS.has(f.act ?? '')) ? '' : 'No vote finding.',
+      !gated ? '' : gatedOnly ? 'Every finding cited for this marker is gated.' : 'A non-gated finding on the same bill is also cited.',
+    ].filter(Boolean);
+    return { ref, findings: fs, line: `[${ref}] ${bills}: ${[...new Set(records.map(what))].join('; ')}.${notes.length ? ` ${notes.join(' ')}` : ''}`, gatedOnly };
+  });
+}
+
+/** The facts block of the checker prompt: one line per marker per sentence, then what the opening line may rest on. */
+export function checkerFacts(markers: MarkerFacts[][]): string {
+  const out: string[] = [];
+  markers.forEach((ms, i) => { if (ms.length) out.push(`Sentence ${i}:`, ...ms.map((m) => `  ${m.line}`)); });
+  const all = markers.flat();
+  const gated = [...new Set(all.filter((m) => m.gatedOnly).map((m) => m.ref))].sort((a, b) => a - b);
+  if (gated.length) {
+    const free = [...new Set(all.map((m) => m.ref))].filter((r) => !gated.includes(r)).sort((a, b) => a - b);
+    out.push(`Opening line: the lean may not rest on these markers, whose every finding is gated: ${gated.map((r) => `[${r}]`).join(', ')}. Markers that may count: ${free.map((r) => `[${r}]`).join(', ') || 'none'}.`);
+  }
+  return out.join('\n');
+}
+
 export function checkerPrompt(
   summary: SummaryForCheck,
   findings: Finding[],
@@ -218,26 +270,37 @@ export function checkerPrompt(
     throw new Error(`checkerPrompt: ${sentences.length} sentences in the text but cites for ${summary.cites.length}`);
   }
   const byId = new Map(findings.map((f) => [f.id, f]));
-  const order: string[] = [];
-  for (const ids of summary.cites) for (const id of ids) if (!order.includes(id)) order.push(id);
-  const full = order.map((id) => {
-    const f = byId.get(id);
-    if (!f) throw new Error(`checkerPrompt: cited finding ${id} is not among the findings supplied`);
-    const lines = [
-      `finding ${id}`, `  kind: ${f.kind}`, `  date: ${f.date} (${f.date_precision})`,
-      f.act ? `  act: ${f.act}` : '', f.against_bill ? '  against_bill: true (a Yea here is a vote AGAINST the bill)' : '',
-      f.local_record ? '  local_record: true' : '', f.instrument_id ? `  instrument: ${f.instrument_id}${opts.titles?.get(f.instrument_id) ? ` (${opts.titles.get(f.instrument_id)})` : ''}` : '',
-      f.motion ? `  motion: ${f.motion}` : '',
-      f.gate_by_topic ? `  gate: ${JSON.stringify(f.gate_by_topic)}` : '',
-      `  url: ${f.url}`, `  note: ${f.note}`,
-      f.passage ? `  passage: ${JSON.stringify(f.passage)}` : '',
-    ].filter(Boolean);
-    return lines.join('\n');
-  });
+  for (const ids of summary.cites) for (const id of ids) {
+    if (!byId.has(id)) throw new Error(`checkerPrompt: cited finding ${id} is not among the findings supplied`);
+  }
+  const fullFinding = (f: Finding) => [
+    `  kind: ${f.kind}`, `  date: ${f.date} (${f.date_precision})`,
+    f.act ? `  act: ${f.act}` : '', f.against_bill ? '  against_bill: true (a Yea here is a vote AGAINST the bill)' : '',
+    f.local_record ? '  local_record: true' : '', f.instrument_id ? `  instrument: ${f.instrument_id}${opts.titles?.get(f.instrument_id) ? ` (${opts.titles.get(f.instrument_id)})` : ''}` : '',
+    f.motion ? `  motion: ${f.motion}` : '',
+    f.gate_by_topic ? `  gate: ${JSON.stringify(f.gate_by_topic)}` : '',
+    `  url: ${f.url}`, `  note: ${f.note}`,
+    f.passage ? `  passage: ${JSON.stringify(f.passage)}` : '',
+  ].filter(Boolean).join('\n');
   const numberOfId = (id: string) => { const u = byId.get(id)?.url ?? ''; const k = urlKeyOf(u); return summary.sources.findIndex((x) => urlKeyOf(x) === k) + 1; };
   const citeLine = (s: string, ids: string[]) => (/\[\d[\d, ]*\]/.test(s)
     ? `cites findings: ${ids.map((id) => `[${numberOfId(id)}] ${id}`).join(', ')}`
     : 'opening line, no marker: judge it against every finding the summary cites');
+  // A sentence with no marker is the opening line: it rests on every finding, so it gets no facts and no evidence of its own.
+  const hasMarker = (sn: string) => /\[\d[\d, ]*\]/.test(sn);
+  const markers = summary.cites.map((ids, i) => (hasMarker(sentences[i]) ? markersOf(ids.map((id) => byId.get(id)!), numberOfId) : []));
+  // The evidence under the sentence it supports: the checker no longer matches three lists by a 64-character id.
+  const evidence = sentences.map((sn, i) => {
+    if (!markers[i].length) return `### Sentence ${i}\n\n> ${sn}\n\nThe opening line: judge it against every finding under the other sentences.`;
+    const printed = new Set<string>();
+    const blocks = markers[i].flatMap((m) => m.findings.map((f) => {
+      const inst = f.instrument_id; const text = inst ? cappedBillText(inst, opts.texts) : '';
+      const bill = !inst || !text ? '' : printed.has(inst) ? `\n  bill text of ${inst}: printed above` : `\n  bill text of ${inst}: ${text}`;
+      if (inst) printed.add(inst);
+      return `[${m.ref}] finding ${f.id}\n${fullFinding(f)}${bill}`;
+    }));
+    return `### Sentence ${i}\n\n> ${sn}\n\n${blocks.join('\n\n')}`;
+  }).join('\n\n');
   const shown = `${summary.text}\n\nBy sentence (index from 0):\n${sentences.map((s, i) => `${i}. ${s}\n   ${citeLine(s, summary.cites[i])}`).join('\n')}`;
   const outcomeText = outcome.outcome === 'seated'
     ? `seated, value ${outcome.value}${sideOf(outcome.value, sides) ? `; the person's side is ${sideOf(outcome.value, sides)}` : ''}`
@@ -249,7 +312,8 @@ export function checkerPrompt(
     SUMMARY: shown,
     REFERENCES: summary.sources.map((u, i) => `[${i + 1}] ${u}`).join('\n'),
     OUTCOME: outcomeText,
-    FINDINGS: [full.join('\n\n'), billTextBlock(order.map((id) => byId.get(id)?.instrument_id).filter((x): x is string => !!x), opts.texts)].filter(Boolean).join('\n\n'),
+    FACTS: checkerFacts(markers),
+    FINDINGS: evidence,
     SIDES: sides ?? 'none ruled for this topic',
     POLITICIAN_ID: summary.politician_id,
     TEXT_SHA256: summary.sha256,

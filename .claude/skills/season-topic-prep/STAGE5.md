@@ -731,6 +731,15 @@ leaves files in `<stage5>/summaries/<batch>/`.
   only that person's `checker/` file and sha256; run the step 4 checker for that person alone (it overwrites only
   their own `claude-checks/` file) and step 5 again for the batch, which checks only the new text.
 - **Step 4**: run the Claude checkers before step 5. Step 5 checks every summary in `summaries.jsonl`, including ones a Claude checker failed.
+- **What the checker prompt holds** (`checkerPrompt()` in `summary-inputs.ts`). Each sentence is followed by the findings
+  its markers cite and each bill's stored text, so the checker does not match lists by finding id. Above them is a block
+  of facts read by code: per marker, whether the findings are votes or sponsorships and whether every one is gated; and
+  which markers the opening line's lean may not rest on. The checker lists each bill description piece by piece
+  (`support` in its JSON, which `SummaryCheckSchema` drops) before it gives a verdict. Measured 2026-11-22 on 21
+  gun-policy summaries with an agreed answer key, same text each run: the old prompt caught 9.2 of 14 real errors a
+  run and let 3.2 of 11 flawed summaries pass; this one caught 12.2 and let 0.5 pass, and holds about 2.5 of 10 sound
+  but borderline summaries (old: 1.8). One check still misses some near-miss wording, so a pass is not proof.
+  Notes and every run: `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/`.
 - **Step 5** uses `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon` (the profile key
   `second_opinion_models`). It runs locked down: a deny-all OpenCode config in an empty temp folder, and an
   environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl` and **skips every
