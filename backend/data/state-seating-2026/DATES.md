@@ -2570,3 +2570,191 @@ own citation — an absent row is cleaner than a bad one.
 `authority = 'Idaho Const. Art. IV, § 1'`.
 `source = 'https://legislature.idaho.gov/statutesrules/idconst/ArtIV/Sect1/ (read 2026-11-23)'`.
 `window_end_date` is **NULL** — the day is fixed, so there is no window.
+
+---
+
+## SD — South Dakota · 6 offices · ⚠️ **1 DATED, 5 REFUSED WITH A WINDOW**, 2026-11-23 — and the state splits into two waves
+
+🔴 **One `(state, district_type)` row in the register, two different legal rules, two different
+days.** `classifyWave` would raise `date_disagrees` on this body and it would be right. **South
+Dakota must ship as two waves.**
+
+| body | offices | start date | basis | authority |
+|---|---|---|---|---|
+| **Public Utilities Commissioner** (1 of 3 seats) | 1 | ✅ **2027-01-05** | `statute` | `SDCL § 49-1-2` — six years "from the first Tuesday after the first Monday in January following his election" |
+| Governor · Secretary of State · Attorney General · Treasurer · Commissioner of School and Public Lands | 5 | 🔴 **REFUSED — window 2027-01-04 → 2027-01-24** | — | `SDCL § 3-1-2` — qualify "on the first Monday of January … **or within twenty days thereafter**" |
+
+### 🔴 The constitution gives a term LENGTH and no day — the fourth state in this pass to do it
+
+**`S.D. Const. Art. IV, § 2` — *Qualification, election, and term*** (Governor and Lieutenant
+Governor):
+
+> … They shall be **jointly elected for a term of four years** at a general election held in a
+> nonpresidential election year. The candidates having the highest number of votes cast jointly for
+> them shall be elected. … **The election procedure shall be as prescribed by law.**
+
+**`S.D. Const. Art. IV, § 7` — *Other executive officers — Powers and duties*:**
+
+> There shall be chosen by the qualified electors of the state at the general election of the
+> Governor and every four years thereafter the following constitutional officers: **attorney
+> general, secretary of state, auditor, treasurer, and commissioner of school and public lands**,
+> who shall severally **hold their offices for a term of four years**. …
+
+🟢 **A full-text sweep of all 30 articles confirms the constitution names no commencement day
+for anybody.** Every one of the six occurrences of `commenc*` was read in context and **all six are
+term-LIMIT clauses** ("Commencing with the 1992 general election, no person may be elected to more
+than two consecutive terms …") or unrelated. `begin on`, `beginning on` and `term of office of`
+return **zero**. The one `enter upon` is the oath clause.
+
+🟢 **And the oath clause does not reach these officers.** `Art. III § 8` binds "**Members of the
+Legislature and officers thereof**" — officers *of the Legislature*. ⚠ Its own catchline says
+"Oath required of legislators **and officers**", which reads broader than the text is; the text
+governs. Same finding as Idaho one state earlier, reached the same way.
+
+### 🔴 THE MEMBERSHIP CHECK FIRES: WE DO NOT HOLD THE STATE AUDITOR
+
+`Art. IV § 7` names **five** constitutional officers. We hold **four** of them. There is no South
+Dakota `Auditor` office anywhere in `essentials.offices`, and `SDCL` Title 1 **Chapter 1-9 is
+"State Auditor"**, so the office is real and current. It is elected "at the general election of the
+Governor and every four years thereafter" — the same cycle as the four we do hold — so **it was on
+the 2026 ballot and is invisible to this pass**.
+
+▶ This is Shape 3 from the cross-state gap query, inside a state the queue calls complete: the
+queue counts winners, an office we do not hold has no winner, and nothing anywhere says so.
+**Arkansas taught the habit** — list the officers the instrument names before trusting the row
+count — and it earned its keep one state later.
+
+⚠ **Our nine SD `STATE_EXEC` rows vs. what the law says:**
+
+| our rows | 2026 winner? | the law |
+|---|---|---|
+| Governor | ✅ Larry Rhoden | `Art. IV § 2` |
+| **Lieutenant Governor** | 🔴 **none** | `Art. IV § 2` — **jointly elected** with the Governor. A ticket, so the result sits on the Governor's race |
+| Secretary of State · Attorney General · Treasurer · Commissioner of School and Public Lands | ✅ × 4 | `Art. IV § 7` |
+| *(absent)* **Auditor** | — | 🔴 `Art. IV § 7` names it; we have no such office |
+| Public Utilities Commissioner × 3 | ✅ 1 of 3 (Don Haggar) | 🟢 `SDCL § 49-1-2`: "**At each general election there shall be elected one** Public Utilities Commissioner" — so 1 of 3 is CORRECT, not a gap |
+
+🟢 **That last row is the instrument confirming the register's count**, which is the check this
+file asks for: the statute that dates the body also says how many seats were up.
+
+### ✅ The one office that can be dated — and it is the one nobody would have looked at
+
+**`SDCL § 49-1-2` — *Election of public utilities commissioners — Qualifications and term of office
+— Vacancies*:**
+
+> The Public Utilities Commission shall be comprised of three commissioners. … At each general
+> election there shall be elected one Public Utilities Commissioner having the qualifications
+> prescribed by law. Each commissioner shall hold office for a term of six years **from the first
+> Tuesday after the first Monday in January following his election**, until his successor is elected
+> and qualified.
+
+First Monday in January 2027 is the 4th, so **the first Tuesday after it is 2027-01-05**.
+🟢 A **formula**, fully determined, with no choice in it — so `basis = 'statute'`.
+
+🔴🔴 **THE PUC IS THE "EXCEPT AS OTHERWISE EXPRESSLY PROVIDED" THAT § 3-1-2 WARNS ABOUT, AND IT
+IS ONE DAY OFF.** 2027-01-05 against a window that opens 2027-01-04. A single-date wave covering all
+six South Dakota offices would be wrong by one day on one seat, and nothing in the register's row
+hints that two rules are in play.
+
+### 🔴 The other five: a 21-day window, because the statute offers a CHOICE
+
+**`SDCL § 3-1-2` — *Time of commencement of term of office*:**
+
+> **Except as otherwise expressly provided**, all state, district, and county officers shall
+> **qualify and enter upon the duties of their office on the first Monday of January succeeding
+> their election or within twenty days thereafter.** However, a state officer **may** qualify and
+> enter upon the duties of office **on the Saturday immediately preceding the second Tuesday of
+> January** that succeeds the state officer's election.
+>
+> *Source: CL 1887, § 1380; … SL 2018 (SS), ch 1, § 1, eff. Dec. 12, 2018.*
+
+| the dates this names, for 2027 | |
+|---|---|
+| first Monday of January | **2027-01-04** ← window opens |
+| … or within twenty days thereafter | **2027-01-24** ← `window_end_date` |
+| the Saturday immediately preceding the second Tuesday (2027-01-12) | **2027-01-09** — expressly permitted, and inside the window |
+
+🔴 **Two things make this a refusal rather than a date.** First, the statute names **a range and
+an alternative**, not a day — Georgia's problem, with a wider window. Second, it dates
+**qualification**, not the term: "shall qualify and enter upon the duties of their office". That is
+Nevada's shape, where `NRS 282.010(4)` makes installation mean qualification. ▶ **So the start is
+an event inside a window, and the event has not happened.**
+
+⚠ **`SL 2018 (SS), ch 1` is a SPECIAL SESSION act effective 2018-12-12** — weeks before the
+January 2019 inauguration, and it is what added the Saturday alternative. **A state that amended
+this statute once to move an inauguration can do it again.** Read the current text before the
+follow-up, not this block.
+
+### ✅ Discharging "except as otherwise expressly provided" — what was actually read
+
+Each officer's own SDCL chapter was fetched and scanned for `commenc`, `term of office`, `enter
+upon`, `qualify`, `inaugurat`, `first Monday`, `first Tuesday` and `four years`:
+
+| chapter | | result |
+|---|---|---|
+| `1-7` | Governor | 2 hits on `qualify`, **both about succession and bond subsidies** — no term rule |
+| `1-8` | Secretary of State | **nothing** |
+| `1-9` | State Auditor | **nothing** — and note the chapter exists |
+| `1-10` | State Treasurer | **nothing** |
+| `1-11` | Attorney General | 3 hits on `commenc`, **all "commences an investigation" / "commence legal action"** — no term rule |
+| `5-1` | Department of School and Public Lands | **nothing** |
+| `3-5` | Official bonds (cross-referenced by `§ 3-1-1`) | **nothing**, 0 occurrences of `commenc` |
+
+🟢 **Every non-zero hit was read rather than counted.** That is the whole point — "2 hits on
+qualify" in the Governor's chapter is exactly what a real exception would look like.
+
+### 🔴 There is no usable control row in South Dakota — and one that looks like one
+
+| row | what it actually is |
+|---|---|
+| Governor — `term_start = 2025-01-25` (a **Saturday**) | 🔴 **Larry Rhoden's mid-term succession**, when Kristi Noem resigned. It is not a January-formula date and not evidence of one. **Idaho's State Controller trap, two states later.** |
+| Secretary of State, Treasurer, Attorney General, Lieutenant Governor, all three PUC seats, Commissioner of School and Public Lands | no `office_terms` row at all |
+
+🟢 **The LEGISLATURE supplies the control instead, and it is a NEGATIVE one.** Roughly a hundred
+South Dakota legislator rows carry `term_start = 2025-01-14` — and **2025-01-14 is the second
+Tuesday of January 2025**, which is `S.D. Const. Art. III § 7`: *"The Legislature shall meet at the
+seat of government on the second Tuesday of January at 12 o'clock m."* 🔴 **That is a THIRD distinct
+January date**, and it must not be borrowed for an executive — the Washington error this file
+already records, in a state that offers three ways to make it:
+
+| 2027 | who |
+|---|---|
+| **01-04** → 01-24 | the five constitutional executives (`SDCL § 3-1-2`) |
+| **01-05** | Public Utilities Commissioner (`SDCL § 49-1-2`) |
+| **01-12** | the Legislature convenes (`Art. III § 7`) — **not an executive date** |
+
+### Sourcing notes
+
+- 🔴🔴 **`sdlegislature.gov` IS AN SPA THAT ANSWERS EVERY UNKNOWN PATH WITH HTTP 200 AND A
+  2,253-BYTE SHELL — INCLUDING UNDER `/api/`.** Five guessed endpoint shapes
+  (`/api/Statutes/3-1`, `/api/Statutes/Codified_Laws/3-1`, `/api/Statutes/Title/3`,
+  `/api/Statutes/Constitution/0N-4`, `/api/Statutes/2030111`) each returned **200**, and every one
+  was the same HTML page. ⚠ **`Content-Type` is the only discriminator**: `text/html` = miss,
+  `application/json` = hit. This is `CLAUDE.md`'s five-ways-a-200-lies list, on a JSON API.
+- 🟢 **The way to learn the API is to drive the page once and read the network log.**
+  `browser_navigate` to the real page, then `browser_network_requests` — two calls, and the answer
+  was `/api/Statutes/Constitution/**4**`, the bare article number. **Guessing had cost five
+  requests and would never have got there**, because the two identifiers the payload itself
+  advertises (`StatuteId` 2030111 and `Statute` "0N-4") are both wrong for the URL.
+  - `/api/Statutes/Constitution/<article number>` — whole article, every section, in `Html`
+  - `/api/Statutes/Statute/<chapter>` (e.g. `3-1`, `49-1`, `1-7`) — whole chapter
+  - `/api/Statutes/Constitution` — the 31-article index
+  - The whole constitution is **30 fetches and 279 KB of text**.
+- 🔴 **South Dakota has NO full-text statute search of its own** — the box on `/Statutes` is
+  labelled *"Go To:(1-1-1) or Google Search"*. ▶ That is why the exception sweep was done by
+  **reading each officer's chapter** rather than searching for "inauguration": there is nothing to
+  search.
+- 🔴🔴 **A `grep -oE '.{100}pattern.{180}'` CONTEXT WINDOW SILENTLY DROPS MATCHES, AND IT
+  NEARLY MANUFACTURED A FINDING.** `grep -o` returns **non-overlapping** matches per line, and this
+  file is one enormous line — so a pattern counted **6 times** printed **1 context**, and
+  `enter upon`, counted once, printed **nothing at all**. The conclusion on offer was "the South
+  Dakota Constitution contains no commencement provision", which happens to be true and was
+  **not yet evidenced**. ▶ **Re-extracted with Python `finditer`, which overlaps freely, and read
+  all six.** Count and context must come from the same mechanism, or one of them is lying.
+
+### Basis
+
+**PUC (1 office):** `basis = 'statute'`, `swearing_in_date = 2027-01-05`,
+`authority = 'SDCL § 49-1-2'`, `window_end_date` NULL.
+**The other five:** nothing written. `window_end_date = 2027-01-24`, authority `SDCL § 3-1-2`,
+and a dated follow-up when the inauguration is announced.
