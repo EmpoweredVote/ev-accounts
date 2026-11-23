@@ -167,6 +167,16 @@ before Maryland's 38.
 3. **seating** — 🔴 **copy neither `CC_0493` nor `CC_0488` as-is**: both are one-winner-per-office
    waves. Build the selection on the **assigned** office first (Ruling A), then bring across their
    digest gate, coverage gate, predecessor pre-image and kept-outside-terms gate.
+4. **controls** — 🟢 **DO NOT HAND-ROLL THE DRIVER AGAIN; IT IS A TOOL NOW.**
+   `node scripts/run-migration-controls.mjs <spec.mjs>` refuses a tamper whose needle is not
+   unique, proves each replacement landed, **runs the untampered chain first as a negative
+   control**, and records the gate each tamper ACTUALLY fired on. Copy
+   `backend/data/state-seating-2026/controls/or-2026.controls.mjs` — 18 controls, with the two
+   that fired on an earlier gate recorded as backstops rather than contrived around.
+   `--check` validates the needles without touching the database; `--self-test` checks the tool.
+   🔴 **Maryland needs a Ruling A control the earlier states had no use for**: give the second
+   winner on a multi-winner office to the WRONG office and watch post-verify 1 catch it — that is
+   the failure mode which otherwise aborts *after* writing.
 
 ---
 

@@ -244,7 +244,17 @@ Every one of these was done once already, by the waves that shipped with this re
      lot**, so *which* half is up is not derivable, and we hold **no Oregon races before 2026**, so
      the complementary check is structurally unavailable. ▶ **An unavailable check is a finding.
      Record it beside the ones that passed.**
-7. **Watch one control fail.** Not optional and not ceremony — a gate nobody has seen go red is not
+7. **Watch one control fail — with `backend/scripts/run-migration-controls.mjs`.** 🟢 **THE DRIVER
+   IS A TOOL NOW, AFTER BEING HAND-ROLLED THREE TIMES** (Washington, Utah, Oregon). It takes a spec
+   naming the chain and the tampers, **refuses a needle that is not unique**, re-reads each file to
+   prove the replacement landed, **runs the untampered chain FIRST as a negative control**, and
+   records the gate each tamper ACTUALLY fired on — flagging a mismatch as a **backstop** rather
+   than a pass. `--check` validates a spec against the migrations and touches no database;
+   `--self-test` proves the tool itself refuses a bad tamper and goes red on a planted fault. The
+   worked example is `backend/data/state-seating-2026/controls/or-2026.controls.mjs`, 18 controls.
+   ⚠ **A SUITE CANNOT BE RE-RUN ONCE ITS CHAIN IS APPLIED** — the negative control fails and the
+   harness refuses to report, which is correct. Keep the spec as the record, not as a regression
+   test. Not optional and not ceremony — a gate nobody has seen go red is not
    a gate. `CC_0461`'s control found that `CC_0453`'s P2 was dead code; `CC_0462`'s moved the
    nationwide holder digest; `CC_0464`'s seated the wrong person into a seat. 🔴 **Assert the
    tamper is PRESENT before trusting the verdict** — a tamper that did not apply looks exactly like
