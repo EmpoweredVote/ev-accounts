@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest';
 import {
   findMultiDeleteOwners,
   findOrphanHardDeletes,
+  parseAckArgs,
 } from './check-lens-durability.mjs';
 
 /**
@@ -33,7 +34,14 @@ import {
  * red on every ordinary use and would be ignored by the end of the week.
  */
 
-/** Shorthand so each case reads as its claim and not as object literals. */
+/**
+ * Shorthand so each case reads as its claim and not as object literals.
+ *
+ * 🔴 `acked` DEFAULTS TO FALSE AND IS THE SEVENTH ARGUMENT FOR A REASON. The
+ * finders see EVERY removal in the window, acknowledged or not, because
+ * acknowledgement governs what ALERTS and never what is COUNTED. See the block
+ * above `findMultiDeleteOwners` in the script.
+ */
 const row = (
   id: string,
   owner_id: string,
@@ -41,7 +49,8 @@ const row = (
   op: 'soft_delete' | 'hard_delete',
   created_at: string,
   owner_exists: boolean,
-) => ({ id, owner_id, lens_key, op, created_at, owner_exists });
+  acked = false,
+) => ({ id, owner_id, lens_key, op, created_at, owner_exists, acked });
 
 describe('findMultiDeleteOwners', () => {
   it('is silent when an owner removed exactly one lens', () => {
@@ -65,6 +74,43 @@ describe('findMultiDeleteOwners', () => {
     expect(found[0].ids).toEqual(['h1', 'h2']);
     expect(found[0].firstAt).toBe('2026-11-20T10:00:00Z');
     expect(found[0].lastAt).toBe('2026-11-20T10:00:01Z');
+    // Nothing is acked yet, so everything still needs acking.
+    expect(found[0].unackedIds).toEqual(['h1', 'h2']);
+  });
+
+  it('still fires when one of the two removals is already acknowledged', () => {
+    // 🔴 THE CASE THAT MADE THE ACK A FLAG RATHER THAN A WHERE CLAUSE. An owner
+    // holds two lenses and deletes one on Monday; an operator acks it as
+    // ordinary tidying. On Thursday a bug soft-deletes the second. If the ack
+    // removed Monday's row from the GROUPING set, Thursday's run would see one
+    // row, one distinct key, and report green — while that owner lost both
+    // lenses inside the same window. That is the exact shape this condition
+    // exists to catch, and nothing else in the script could tell it apart from
+    // the benign case.
+    const rows = [
+      row('mon', 'owner-a', 'lens-one', 'soft_delete', '2026-11-16T10:00:00Z', true, true),
+      row('thu', 'owner-a', 'lens-two', 'soft_delete', '2026-11-19T10:00:00Z', true, false),
+    ];
+    const found = findMultiDeleteOwners(rows);
+    expect(found).toHaveLength(1);
+    // The WHOLE group is reported, acked row included. Monday is the context
+    // that makes Thursday alarming, so hiding it would be hiding the finding.
+    expect(found[0].keys).toEqual(['lens-one', 'lens-two']);
+    expect(found[0].ids).toEqual(['mon', 'thu']);
+    expect(found[0].firstAt).toBe('2026-11-16T10:00:00Z');
+    // ...but only the unacked row is offered to the ack command, because acking
+    // an already-acked id is refused and would make the printed line fail.
+    expect(found[0].unackedIds).toEqual(['thu']);
+  });
+
+  it('is silent when every removal in the group is acknowledged', () => {
+    // A human has looked at both and said so. This is what stops one reviewed
+    // incident holding the nightly red for seven consecutive mornings.
+    const rows = [
+      row('h1', 'owner-a', 'lens-one', 'soft_delete', '2026-11-16T10:00:00Z', true, true),
+      row('h2', 'owner-a', 'lens-two', 'soft_delete', '2026-11-19T10:00:00Z', true, true),
+    ];
+    expect(findMultiDeleteOwners(rows)).toEqual([]);
   });
 
   it('counts a soft_delete and the cascade hard_delete of the SAME key once', () => {
@@ -121,5 +167,51 @@ describe('findOrphanHardDeletes', () => {
     // point of having made deletion reversible.
     const rows = [row('h1', 'owner-a', 'lens-one', 'soft_delete', '2026-11-20T10:00:00Z', true)];
     expect(findOrphanHardDeletes(rows)).toEqual([]);
+  });
+
+  it('is silent on a hard_delete that has been acknowledged', () => {
+    // Unlike condition 1, there is no group here and so no context to preserve:
+    // one row, one judgement, and a human has made it.
+    const rows = [row('h1', 'owner-a', 'lens-one', 'hard_delete', '2026-11-20T10:00:00Z', true, true)];
+    expect(findOrphanHardDeletes(rows)).toEqual([]);
+  });
+});
+
+describe('parseAckArgs', () => {
+  it('takes the space-separated note', () => {
+    expect(parseAckArgs(['h1', '--note', 'a bug ate it'])).toEqual({
+      ids: ['h1'], note: 'a bug ate it', error: null,
+    });
+  });
+
+  it('takes the equals-separated note too', () => {
+    // 🔴 THE REGRESSION. This spelling used to fall through the generic
+    // "skip anything starting with --" branch: the ack was still written, the
+    // operator was told "acked 1", and the reason they typed was gone. The
+    // entire value of an acknowledgement is the name and the reason on it.
+    expect(parseAckArgs(['h1', '--note=a bug ate it'])).toEqual({
+      ids: ['h1'], note: 'a bug ate it', error: null,
+    });
+  });
+
+  it('takes several ids with the note in any position', () => {
+    expect(parseAckArgs(['--note=why', 'h1', 'h2', 'h3'])).toEqual({
+      ids: ['h1', 'h2', 'h3'], note: 'why', error: null,
+    });
+  });
+
+  it('allows no note at all', () => {
+    expect(parseAckArgs(['h1'])).toEqual({ ids: ['h1'], note: null, error: null });
+  });
+
+  it('refuses a flag it does not understand rather than ignoring it', () => {
+    // Ignoring it is how the --note= bug happened in the first place.
+    const r = parseAckArgs(['h1', '--force']);
+    expect(r.ids).toEqual([]);
+    expect(r.error).toContain('--force');
+  });
+
+  it('refuses an empty note', () => {
+    expect(parseAckArgs(['h1', '--note=']).error).toContain('no text');
   });
 });

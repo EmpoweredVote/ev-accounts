@@ -17,9 +17,25 @@
  *
  * ⚠ IT WATCHES THE OUTCOME, NOT THE ROUTE, AND THAT IS THE WHOLE DESIGN. A guard
  * on the PUT handler can only defend against the destruction we already found.
- * A nightly that reads the history table sees lenses disappearing however they
- * disappear — a new endpoint, a hand-run UPDATE, a migration with a bad WHERE,
- * an ORM doing something clever. It does not need to know what the next hole is.
+ * A nightly that reads the history table sees lenses disappearing by routes
+ * nobody has written yet — a new endpoint, a hand-run UPDATE, a migration with a
+ * bad WHERE, an ORM doing something clever. It does not need to know what the
+ * next hole is.
+ *
+ * 🔴 BUT ITS REACH IS EXACTLY THE TRIGGER'S REACH, AND GREEN IS NOT A PROOF OF
+ * INTEGRITY. Every row this reads was written by CC_0468's trigger on
+ * inform.compass_user_lenses. Anything that removes lenses WITHOUT firing that
+ * trigger is invisible here and leaves the check green:
+ *
+ *   - ALTER TABLE ... DISABLE TRIGGER, or a session with session_replication_role
+ *     set to replica;
+ *   - dropping and recreating the table, which takes the trigger with it;
+ *   - a restore from backup, which rewrites the table underneath the history.
+ *
+ * TRUNCATE is NOT on that list: CC_0468 installs a TRUNCATE refusal trigger on
+ * the table, so that path is closed rather than merely unwatched. The three above
+ * are open, are all operator actions rather than application paths, and are
+ * written down here because this header is what the next reader sees.
  *
  * WHAT IS CHECKED — two conditions, both failures, no baseline:
  *
@@ -90,24 +106,38 @@ const ACK = argv.includes('--ack');
 const ALERT_WINDOW_DAYS = 7;
 
 /**
- * One row per removal event in the window that nobody has acknowledged.
+ * EVERY removal event in the window, acknowledged or not, each carrying whether
+ * it has been acknowledged.
  *
- * ⚠ The ack is a NOT EXISTS and not a LEFT JOIN with an IS NULL: same answer,
- * and it cannot be accidentally weakened later by a join that fans rows out and
- * turns one deletion into two.
+ * 🔴 THE ACK IS A FLAG ON THE ROW, NOT A `WHERE` CLAUSE, AND THAT DISTINCTION IS
+ * A REAL DEFECT THIS QUERY ONCE HAD. Filtering acked rows out here shrinks the
+ * GROUPING set and not just the ALERTING set, and condition 1 is a grouping
+ * condition. The case it loses: an owner holds two lenses and deletes one on
+ * Monday; an operator acks it as ordinary tidying. On Thursday a bug soft-deletes
+ * the second. With acked rows filtered out, Thursday's run sees ONE row with ONE
+ * distinct key and reports GREEN — while that owner lost both lenses inside the
+ * same seven days. That is precisely the shape condition 1 exists to catch.
+ *
+ * The design doc is unambiguous once you read the two sentences together:
+ * condition 1 fires when "any single owner had more than one lens removed", and
+ * the check "ignores acknowledged ones and fails on the rest". Acknowledgement
+ * governs what FAILS. It never governs what is COUNTED.
+ *
+ * ⚠ The LEFT JOIN to the acks table cannot fan rows out: `history_id` is its
+ * PRIMARY KEY, so there is at most one ack per history row by construction.
  *
  * ⚠ The interval is built from a parameter rather than interpolated, so the
  * window constant above is the only place the number lives.
  */
 const REMOVALS_SQL = `
   SELECT h.id::text, h.owner_id::text, h.lens_key, h.op, h.created_at,
-         (u.id IS NOT NULL) AS owner_exists
+         (u.id IS NOT NULL) AS owner_exists,
+         (a.history_id IS NOT NULL) AS acked
     FROM inform.compass_user_lens_history h
     LEFT JOIN public.users u ON u.id = h.owner_id
+    LEFT JOIN inform.compass_lens_alert_acks a ON a.history_id = h.id
    WHERE h.op IN ('soft_delete', 'hard_delete')
      AND h.created_at >= now() - ($1 || ' days')::interval
-     AND NOT EXISTS (
-       SELECT 1 FROM inform.compass_lens_alert_acks a WHERE a.history_id = h.id)
    ORDER BY h.owner_id, h.created_at`;
 
 /* ------------------------------------------------------------- the judgement ---- */
@@ -127,9 +157,21 @@ const REMOVALS_SQL = `
  * deletion removes every lens the account held, all at once, by design — that is
  * condition 2's territory, and only when the account is still there.
  *
- * `ids` carries EVERY removal row for the owner, including the purge half of a
- * soft-then-hard pair, because those are the ids an operator has to ack to clear
- * the alert. Acking only the distinct keys would leave the check red.
+ * 🔴 ACKNOWLEDGED ROWS ARE GROUPED, NOT DROPPED. The group is built from every
+ * removal in the window and is then discarded only if EVERY row in it has been
+ * acknowledged. The obvious reading of "acked" is "gone from the report", and
+ * that reading is wrong here on purpose — see the block above REMOVALS_SQL for
+ * the Monday/Thursday case it would lose.
+ *
+ * `ids` carries EVERY removal row for the owner — the already-acked ones, and the
+ * purge half of a soft-then-hard pair. When this fires, the operator wants the
+ * Monday deletion in front of them too, because that is the context that makes
+ * Thursday alarming.
+ *
+ * `unackedIds` is what the printed ack command uses, and it is a SUBSET of `ids`
+ * rather than the same list. `--ack` refuses an id that is already acked, so a
+ * command line built from `ids` would be rejected the moment the group contains
+ * one — a failure that would look like the ack path being broken.
  */
 export function findMultiDeleteOwners(rows) {
   const byOwner = new Map();
@@ -137,17 +179,25 @@ export function findMultiDeleteOwners(rows) {
     if (!r.owner_exists) continue;
     let g = byOwner.get(r.owner_id);
     if (!g) {
-      g = { ownerId: r.owner_id, keys: [], ids: [], firstAt: r.created_at, lastAt: r.created_at };
+      g = {
+        ownerId: r.owner_id,
+        keys: [],
+        ids: [],
+        unackedIds: [],
+        firstAt: r.created_at,
+        lastAt: r.created_at,
+      };
       byOwner.set(r.owner_id, g);
     }
     if (!g.keys.includes(r.lens_key)) g.keys.push(r.lens_key);
     g.ids.push(r.id);
+    if (!r.acked) g.unackedIds.push(r.id);
     // The query orders by created_at, but the finder must not depend on it: a
     // caller feeding it rows from anywhere else still gets a true span.
     if (r.created_at < g.firstAt) g.firstAt = r.created_at;
     if (r.created_at > g.lastAt) g.lastAt = r.created_at;
   }
-  return [...byOwner.values()].filter((g) => g.keys.length > 1);
+  return [...byOwner.values()].filter((g) => g.keys.length > 1 && g.unackedIds.length > 0);
 }
 
 /**
@@ -157,9 +207,13 @@ export function findMultiDeleteOwners(rows) {
  * the application does is a soft delete, which is recoverable. A row that left
  * the table while its owner is still here left it some other way, and "some
  * other way" is the entire subject of this script.
+ *
+ * ⚠ Unlike condition 1, an acked row is simply gone from this one, and that is
+ * correct rather than inconsistent: there is no GROUP here, so there is no
+ * context to preserve. One row, one judgement, and a human has made it.
  */
 export function findOrphanHardDeletes(rows) {
-  return rows.filter((r) => r.op === 'hard_delete' && r.owner_exists);
+  return rows.filter((r) => r.op === 'hard_delete' && r.owner_exists && !r.acked);
 }
 
 /* ------------------------------------------------------------------ the live half ---- */
@@ -179,16 +233,35 @@ async function readRemovals(client) {
     op: r.op,
     created_at: r.created_at instanceof Date ? r.created_at.toISOString() : String(r.created_at),
     owner_exists: r.owner_exists === true,
+    acked: r.acked === true,
   }));
 }
 
-/** Read the window and apply both conditions. `red` is the whole verdict. */
+/**
+ * Read the window and apply both conditions. `red` is the whole verdict.
+ *
+ * `unacked` is kept separate from `rows` because they answer different questions:
+ * `rows` is what the conditions are computed over, `unacked` is what `--ack` is
+ * allowed to act on and what the summary line counts.
+ */
 async function evaluate(client) {
   const rows = await readRemovals(client);
+  const unacked = rows.filter((r) => !r.acked);
   const multi = findMultiDeleteOwners(rows);
   const orphans = findOrphanHardDeletes(rows);
-  return { rows, multi, orphans, red: multi.length > 0 || orphans.length > 0 };
+  return { rows, unacked, multi, orphans, red: multi.length > 0 || orphans.length > 0 };
 }
+
+/**
+ * ⚠ A uuid PREFIX, for anything the selftest prints. Borrowing a real owner id is
+ * correct and necessary (see selftest step 2), but echoing it whole to stdout is
+ * avoidable — and selftest output gets pasted into commit messages, which is
+ * forever. Eight hex characters prove the id was real and concrete without
+ * putting a production user id in git.
+ *
+ * Real findings print the id in full, deliberately: the operator has to act on it.
+ */
+const shortId = (id) => String(id).slice(0, 8) + '…';
 
 /** The verbatim line an operator runs to clear a finding. Printed, never guessed at. */
 function ackLine(ids) {
@@ -204,26 +277,31 @@ function ackLine(ids) {
  * their own query first is how a day gets lost.
  */
 function report(found) {
-  const { rows, multi, orphans } = found;
+  const { rows, unacked, multi, orphans } = found;
 
   console.log(
-    'lens durability — ' + rows.length + ' unacknowledged removal event(s) in the last ' +
-      ALERT_WINDOW_DAYS + ' days',
+    'lens durability — ' + rows.length + ' removal event(s) in the last ' + ALERT_WINDOW_DAYS +
+      ' days, ' + unacked.length + ' unacknowledged',
   );
 
   if (multi.length) {
     console.error('\n🔴 FAIL ' + multi.length + ' owner(s) lost MORE THAN ONE lens inside the window:');
     for (const g of multi) {
+      const alreadyAcked = g.ids.length - g.unackedIds.length;
       console.error('     owner ' + g.ownerId);
       console.error('       lenses: ' + g.keys.join(', '));
       console.error('       between ' + g.firstAt + ' and ' + g.lastAt);
-      console.error('       history ids: ' + g.ids.join(' '));
+      console.error('       history ids: ' + g.ids.join(' ') +
+        (alreadyAcked ? '   (' + alreadyAcked + ' already acknowledged, shown as context)' : ''));
       console.error('       recover from: SELECT before FROM inform.compass_user_lens_history WHERE id IN (' +
         g.ids.map((i) => "'" + i + "'").join(', ') + ');');
-      console.error('       ack when reviewed: ' + ackLine(g.ids));
+      console.error('       ack when reviewed: ' + ackLine(g.unackedIds));
     }
     console.error('     One person deleting one lens is tidying up. One person losing two is the');
     console.error('     2026-11-22 shape. Check the `before` snapshots BEFORE the backup ages out.');
+    console.error('     An already-acknowledged removal still COUNTS toward the group and is listed');
+    console.error('     above: a deletion somebody waved through last week is the context that makes');
+    console.error('     this week\'s look alarming. Only the unacked ids are on the ack line.');
   } else {
     console.log('✅ no owner lost more than one lens in the window');
   }
@@ -245,6 +323,41 @@ function report(found) {
 /* ----------------------------------------------------------------------- --ack ---- */
 
 /**
+ * Split the argv tail after `--ack` into ids and a note. Pure and exported so the
+ * unit tests can prove the note SURVIVES, which is the one thing that matters.
+ *
+ * 🔴 BOTH SPELLINGS OF --note, AND AN UNRECOGNISED FLAG STOPS THE COMMAND. An
+ * earlier version matched only the space-separated form. `--note=why` fell
+ * through a generic "skip anything starting with --" branch, the ack was still
+ * written, and the operator was told "acked 1" with no hint that the reason they
+ * had typed was gone. The entire value of an acknowledgement is the name and the
+ * reason attached to it, so losing the reason silently is not a cosmetic bug —
+ * and a flag this does not understand now refuses the whole command rather than
+ * being quietly dropped the same way.
+ */
+export function parseAckArgs(tail) {
+  const ids = [];
+  let note = null;
+  for (let k = 0; k < tail.length; k++) {
+    const a = tail[k];
+    if (a === '--note') { note = tail[++k] ?? null; continue; }
+    if (a.startsWith('--note=')) { note = a.slice('--note='.length); continue; }
+    if (a.startsWith('--')) {
+      return {
+        ids: [],
+        note: null,
+        error: 'unrecognised flag ' + a + '. The only flag --ack takes is --note "<why>" (or --note=<why>).',
+      };
+    }
+    ids.push(a);
+  }
+  if (note !== null && note.trim() === '') {
+    return { ids: [], note: null, error: '--note was given with no text.' };
+  }
+  return { ids, note, error: null };
+}
+
+/**
  * Acknowledge removal rows so they stop holding the check red.
  *
  * ⚠ AN ALERT THAT CANNOT BE ACKNOWLEDGED BECOMES AN ALERT THAT IS IGNORED, which
@@ -257,18 +370,12 @@ function report(found) {
  * satisfied and the check stays red for reasons they now believe they handled.
  */
 async function ack(client) {
-  const i = argv.indexOf('--ack');
-  const noteIdx = argv.indexOf('--note');
-  const tail = argv.slice(i + 1);
-  const ids = [];
-  for (let k = 0; k < tail.length; k++) {
-    const a = tail[k];
-    if (a === '--note') { k++; continue; }
-    if (a.startsWith('--')) continue;
-    ids.push(a);
+  const { ids, note, error } = parseAckArgs(argv.slice(argv.indexOf('--ack') + 1));
+  if (error) {
+    console.error('🔴 refusing to ack: ' + error);
+    console.error('   Nothing was written. No ids were acked.');
+    return 1;
   }
-  const note = noteIdx >= 0 ? argv[noteIdx + 1] ?? null : null;
-
   if (!ids.length) {
     console.error('🔴 --ack needs at least one history id. ' + ackLine(['<history-id>']));
     return 1;
@@ -289,8 +396,11 @@ async function ack(client) {
     return 1;
   }
 
+  // ⚠ `unacked`, not `rows`. Since the query started returning acked rows too,
+  // validating against `rows` would quietly accept a re-ack of something already
+  // acknowledged — an ON CONFLICT no-op reported as a successful ack.
   const found = await evaluate(client);
-  const live = new Set(found.rows.map((r) => r.id));
+  const live = new Set(found.unacked.map((r) => r.id));
   const bogus = ids.filter((id) => !live.has(id));
   if (bogus.length) {
     console.error('🔴 refusing to ack ' + bogus.length + ' id(s) that are not unacknowledged removals in the window:');
@@ -311,7 +421,7 @@ async function ack(client) {
   console.log('acked ' + rowCount + ' of ' + ids.length + ' removal event(s) as ' + who +
     (note ? ' — ' + note : ''));
   for (const id of ids) {
-    const r = found.rows.find((x) => x.id === id);
+    const r = found.unacked.find((x) => x.id === id);
     console.log('     ' + id + '  ' + r.op + '  owner ' + r.owner_id + '  lens ' + r.lens_key +
       '  ' + r.created_at);
   }
@@ -346,6 +456,21 @@ async function ack(client) {
  * ⚠ The live-lens count is read before and after as a belt-and-braces: if this
  * ever starts touching real lenses, that number moves and the selftest says so.
  */
+/**
+ * The selftest's own ack writer: a direct INSERT, deliberately NOT a call into
+ * the `--ack` CLI path. Routing the selftest through argv parsing couples two
+ * things that fail independently, and then neither failure is legible.
+ */
+async function ackRows(client, ids) {
+  const { rowCount } = await client.query(
+    'INSERT INTO inform.compass_lens_alert_acks (history_id, acked_by, note) ' +
+      "SELECT id, 'selftest', 'planted by --selftest, rolled back' FROM unnest($1::uuid[]) AS t(id) " +
+      'ON CONFLICT (history_id) DO NOTHING',
+    [ids],
+  );
+  return rowCount;
+}
+
 async function selftest(pool) {
   const client = await pool.connect();
   const results = [];
@@ -362,7 +487,8 @@ async function selftest(pool) {
       report(baseline);
       return 1;
     }
-    console.log('baseline: GREEN (' + baseline.rows.length + ' unacked removal(s) in the window)');
+    console.log('baseline: GREEN (' + baseline.rows.length + ' removal(s) in the window, ' +
+      baseline.unacked.length + ' unacknowledged)');
 
     const lensesBefore = Number(
       (await client.query('SELECT count(*)::int AS n FROM inform.compass_user_lenses')).rows[0].n,
@@ -393,7 +519,7 @@ async function selftest(pool) {
     const multiHit = afterSoft.multi.find((g) => g.ownerId === owner.id);
     results.push({
       condition: 'MULTI_DELETE',
-      tamper: 'two soft_delete rows, two keys, owner ' + owner.id,
+      tamper: 'two soft_delete rows, two keys, owner ' + shortId(owner.id),
       red: Boolean(multiHit && multiHit.keys.length === 2),
     });
 
@@ -410,7 +536,7 @@ async function selftest(pool) {
     const afterHard = await evaluate(client);
     results.push({
       condition: 'ORPHAN_HARD_DELETE',
-      tamper: 'one hard_delete row under a live account, owner ' + owner.id,
+      tamper: 'one hard_delete row under a live account, owner ' + shortId(owner.id),
       red: afterHard.orphans.some((r) => r.id === hard.rows[0].id),
     });
 
@@ -421,18 +547,50 @@ async function selftest(pool) {
       red: afterHard.red,
     });
 
-    // ── 6. The ack path. This is its ONLY proof. ────────────────────────────
+    // ── 6a. PARTIAL ack: condition 1 must STILL fire. ──────────────────────
+    // 🔴 THIS IS THE INTERESTING CASE, NOT AN INCIDENTAL ONE, AND IT IS BUILT TO
+    // BE THE MONDAY/THURSDAY SHAPE EXACTLY. Acknowledgement governs what ALERTS,
+    // never what is COUNTED. Every planted row but ONE is acknowledged here, so
+    // under the earlier version of the query — which filtered acked rows out —
+    // the finder would have been handed a single row with a single distinct key
+    // and would have reported GREEN, while this owner lost three lenses inside
+    // the window. It must stay RED on one unacked row out of three.
+    //
+    // It also demonstrates the deliberate asymmetry between the two conditions:
+    // the acked hard_delete DOES drop out of condition 2, because a lone row
+    // carries no group and so no context worth preserving.
+    const plantedSoftIds = soft.rows.map((r) => r.id);
+    const leftUnacked = plantedSoftIds[1];
+    const ackedEarly = plantedIds.filter((id) => id !== leftUnacked);
+    if (ackedEarly.length !== 2) throw new Error('SELFTEST: expected 2 ids to pre-ack.');
+    await ackRows(client, ackedEarly);
+
+    const afterPartial = await evaluate(client);
+    const partialHit = afterPartial.multi.find((g) => g.ownerId === owner.id);
+    results.push({
+      condition: 'MULTI_DELETE survives a PARTIAL ack',
+      tamper: '2 of the 3 planted removals acknowledged, 1 left unacked',
+      red: Boolean(
+        partialHit &&
+          // All three keys still named, all three ids still listed as context...
+          partialHit.keys.length === 3 &&
+          partialHit.ids.length === 3 &&
+          // ...but only the one unacked id is offered to the ack command.
+          partialHit.unackedIds.length === 1 &&
+          partialHit.unackedIds[0] === leftUnacked &&
+          // And the acked hard_delete is gone from condition 2.
+          afterPartial.orphans.length === 0,
+      ),
+    });
+
+    // ── 6b. FULL ack: now, and only now, it goes green. ────────────────────
     // A direct INSERT, deliberately NOT a call into the --ack CLI path: routing
     // the selftest through argv parsing couples two things that fail
     // independently, and then neither failure is legible.
-    const acked = await client.query(
-      'INSERT INTO inform.compass_lens_alert_acks (history_id, acked_by, note) ' +
-        "SELECT id, 'selftest', 'planted by --selftest, rolled back' FROM unnest($1::uuid[]) AS t(id) " +
-        'ON CONFLICT (history_id) DO NOTHING',
-      [plantedIds],
-    );
-    if (acked.rowCount !== plantedIds.length) {
-      throw new Error('SELFTEST: expected to ack ' + plantedIds.length + ' rows, acked ' + acked.rowCount + '.');
+    const stillUnacked = [leftUnacked];
+    const acked = await ackRows(client, stillUnacked);
+    if (acked !== stillUnacked.length) {
+      throw new Error('SELFTEST: expected to ack ' + stillUnacked.length + ' rows, acked ' + acked + '.');
     }
     const afterAck = await evaluate(client);
     const ackWorked = !afterAck.red;
@@ -472,7 +630,7 @@ async function selftest(pool) {
       console.log('  ' + (r.red ? 'RED (correct)   ' : 'GREEN (BROKEN)  ') + r.condition + ': ' + r.tamper);
     }
     console.log('  ' + (ackWorked ? 'GREEN (correct) ' : 'RED (BROKEN)    ') +
-      'ACK: all three planted ids acknowledged');
+      'ACK: green only once EVERY planted id is acknowledged');
     console.log('\n  ROLLBACK verified: 0 of ' + plantedIds.length +
       ' planted history rows and 0 ack rows survived.');
     console.log('  inform.compass_user_lenses untouched: ' + lensesBefore + ' row(s) before and after.');
