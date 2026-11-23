@@ -22,63 +22,61 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**53 bodies still to do · 451 offices · 1 of the 53 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**51 bodies still to do · 376 offices · 1 of the 51 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
-| 3 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
-| 4 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
-| 5 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
-| 6 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
-| 7 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
-| 8 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 9 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 10 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 11 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 12 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 13 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 14 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 15 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 16 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 17 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 18 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 19 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 20 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 21 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 22 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 23 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 24 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 25 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 26 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 27 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 28 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 29 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 30 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 31 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 32 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 33 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 34 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 35 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 36 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 37 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 38 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 39 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 40 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 41 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 42 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 43 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 44 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 45 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 46 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 47 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 48 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 49 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 50 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 51 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 52 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 53 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 3 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
+| 4 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
+| 5 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
+| 6 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 7 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 8 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 9 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
+| 10 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 11 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 12 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 13 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 14 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 15 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 16 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 17 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 18 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 19 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 20 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 21 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 22 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 23 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 24 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 25 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 26 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 27 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 28 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 29 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 30 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 31 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 32 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 33 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 34 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 35 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 36 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 37 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 38 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 39 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 40 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 41 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 42 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 43 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 44 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 45 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 46 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 47 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 48 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 49 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 50 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 51 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -118,7 +116,7 @@ Every one of these was done once already, by the waves that shipped with this re
    `CC_0464` (a term that has already started). Reserve the slot first:
    `npm run steward --prefix backend -- slot CC --purpose "..."`. 🔴 **One migration per file.**
 
-   🔴 **Ten corrections to those two templates. The applied files still carry the old shapes —
+   🔴 **Fifteen corrections to those two templates. The applied files still carry the old shapes —
    migrations here run once and are never edited — so the fixes live in your copy, not in theirs.**
 
    - 🔴🔴 **CLOSE THE NULL IN `is_reelection` BEFORE YOU PIN ANYTHING.** The library's expression
@@ -211,6 +209,41 @@ Every one of these was done once already, by the waves that shipped with this re
      route before reaching for Playwright twice**: that site's own "Download Options" link gives
      an XML file plain `curl` fetches (565 and 709 bytes against the shell's 26,677) — but its
      name is **not** derivable from the page URL, so take it from the rendered page once.
+   - 🔴🔴 **READ A TERM CLAUSE TO ITS FULL STOP — THE ESCAPE HATCH IS USUALLY AT THE END.** Oregon's
+     Art. IV § 4(1) ends *"unless a different commencing day for such terms shall have been
+     appointed by law"*, and `DATES.md` quoted it one clause short. Those words turn a fixed rule
+     into a **default a statute may displace**, which is a different claim and a checkable one.
+     ▶ **Then go and check it, and write down how far you looked.** Five ORS chapters were read in
+     full here, not all of ORS — and the scan's positive control is that its pattern fired twice in
+     one chapter while returning zero in the other four. ⚠ "Nothing found" across several
+     documents is a uniform answer until something makes it go non-zero.
+   - 🔴🔴 **TWO STATES CAN SHARE ONE CALENDAR DAY UNDER UNRELATED RULES, SO EVERY COUNT ABOUT THAT
+     DAY IS A DELTA AND MUST NAME THE OTHER STATE'S `rule_id`.** Washington's 118 legislative seats
+     start on **2027-01-11** under RCW 44.04.021, a statute; Oregon's 75 start the same day under
+     its constitution; Idaho's Ada County is scheduled for it too. A gate counting rows on that day
+     would have read **193** and called it success. ▶ Pin the before-image, pin the delta, and
+     assert every row on the day belongs to a **named** rule — so a third state is caught rather
+     than absorbed. Worked in `CC_0491` P5/assertion 6 and `CC_0493` P10/assertion 3, each with a
+     control that makes the gate blind to Washington and watches it report 118 strangers.
+   - ⚠ **A GATE THAT RESTATES ITS OWN EXPECTATION AS A SECOND LITERAL CAN PRINT A
+     SELF-CONTRADICTION, AND ONLY A CONTROL SHOWS IT.** Two Oregon controls fired correctly and
+     printed nonsense — *"starts 2023-01-09, expected 2023-01-09"*, and *"comprises House districts
+     51 and 52"* while testing against 53 and 54 — because the condition and its message each held
+     their own copy of the expectation. In the shipped file the copies agree, so the defect is
+     invisible until something makes them disagree. ▶ **Read the expectation into one variable and
+     let the condition and the message share it.**
+   - 🟢🟢 **A CONTROL SUITE NEEDS A CONTROL.** "Eighteen of eighteen went red" is a uniform answer,
+     and a harness that fails everything — a bad path, a dead connection, a stray argument —
+     produces exactly that. ▶ **Run the UNTAMPERED chain through the same driver and require it to
+     pass**, in the same run, before reporting any of the reds.
+   - 🔴 **COUNT SEATS WITH A RACE SEPARATELY FROM SEATS THAT ARE PENDING, AND SAY WHICH CHECKS WERE
+     IMPOSSIBLE.** Oregon is the first state in this pass with **no** results gap, and proving that
+     took three different things: the constitution ("one-half, as nearly as possible" — proved
+     arithmetically, 15 of 30), the state's own results export (**exactly 75 legislative contests,
+     not 90**), and an honest blank where neither could answer — the classes are assigned **by
+     lot**, so *which* half is up is not derivable, and we hold **no Oregon races before 2026**, so
+     the complementary check is structurally unavailable. ▶ **An unavailable check is a finding.
+     Record it beside the ones that passed.**
 7. **Watch one control fail.** Not optional and not ceremony — a gate nobody has seen go red is not
    a gate. `CC_0461`'s control found that `CC_0453`'s P2 was dead code; `CC_0462`'s moved the
    nationwide holder digest; `CC_0464`'s seated the wrong person into a seat. 🔴 **Assert the
@@ -319,6 +352,277 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-23 — Oregon, 75 offices, a shared calendar day and a clean results set
+
+**75 offices left the queue** (451 → 376) and both Oregon legislative bodies left the table.
+`OR STATE_EXEC` **stays in it on purpose** — the Governor, whose term commences on an event rather
+than a day.
+
+| order | slot | what it does | state |
+|---|---|---|---|
+| 1 | `CC_0491` | 75 date rows, all **2027-01-11** — 60 House, 15 of 30 Senate | ✅ applied |
+| 2 | `CC_0492` | create **13** winners, link **2** sitting Oregon officials | ✅ applied |
+| 3 | `CC_0493` | seat 75 winners for **2027-01-11** (60 re-elections, 15 handovers) | ✅ applied |
+
+### 🔴🔴 A CITATION THAT STOPS ONE CLAUSE EARLY READS AS A FIXED RULE AND IS NOT ONE
+
+`DATES.md` § OR quotes Or. Const. Art. IV § 4(1) and ends at *"as the case may be …"*. The clause
+does not end there. It ends:
+
+> … and shall continue for the full period of four years or two years, as the case may be,
+> **unless a different commencing day for such terms shall have been appointed by law**.
+
+🔴 **The constitutional date is a DEFAULT the Legislative Assembly may displace by statute.** The
+elided words turn "the rule is the second Monday" into "the rule is the second Monday unless
+somebody legislated otherwise", which is a different claim and a checkable one.
+▶ **READ A TERM CLAUSE TO ITS FULL STOP. THE ESCAPE HATCH IS USUALLY AT THE END.**
+
+🟢 **The hatch has not been exercised, and the one statute on point reaffirms the day.** ORS
+171.051(6), on filling the back half of a Senate term, says the remaining two years *"will commence
+on the second Monday in January following the general election"* — a different draftsman, in a
+different code, for a different purpose, reaching for the same boundary.
+⚠ **The search was BOUNDED and the bound is written down**: ORS chapters 171, 236, 249, 254 and 260
+were read in full, not all of ORS. 🔴 **Its own positive control is that the same pattern fired
+twice inside 171 while returning zero in the other four**, so the scan was alive on real input —
+"nothing found" across four chapters is otherwise a uniform answer.
+
+### 🔴🔴 FOUR CANDIDATE DAYS IN ONE MONTH, AND THE WRONG ONE IS A SUPERSEDED RULE
+
+| day | what it is |
+|---|---|
+| **2027-01-04** | the first Monday — 🔴 **OREGON'S OWN PRE-1961 RULE** |
+| **2027-01-11** | ✅ the second Monday, Art. IV § 4(1) |
+| **2027-01-18** | the third Monday, the holiday for Martin Luther King, Jr.'s Birthday |
+| **2027-01-19** | the Tuesday after it — **WHEN THE ASSEMBLY ACTUALLY CONVENES**, ORS 171.010(1) |
+
+🔴 **The near miss here is not hypothetical and not borrowed from another body — it is this body's
+own history.** Art. IV § 4(3) *is* the transition: a member "whose term, under the former
+provisions of this section, would have expired on the **first** Monday in January 1961, shall
+continue in office until the **second** Monday in January 1961."
+
+⚠ **AND OREGON IS A STATE WHERE THE TERM START AND THE CONVENING GENUINELY DIFFER** — by eight
+days — unlike Washington, Wisconsin, Maryland and California, where they fall together. Reaching
+for a session date here is wrong by more than a week. `CC_0491`'s assertion 3c **measures that gap
+at 8** rather than asserting it, so the separation is a number and not an argument.
+
+### 🔴🔴 TWO STATES, ONE CALENDAR DAY, TWO UNRELATED RULES — EVERY COUNT IS A DELTA
+
+`CC_0487`/`CC_0488` put **118 Washington seats** on **2027-01-11** under **RCW 44.04.021**, a
+statute. Oregon's day comes from its **constitution**. A gate counting "rows on 2027-01-11" would
+have read **193** and called it success.
+
+▶ **Both Oregon files pin the DELTA and NAME Washington's `rule_id`**, so a third state landing on
+this day is caught rather than absorbed. ⚠ Idaho's Ada County is scheduled for it too.
+🟢 Two controls prove those gates read Washington's real rows rather than passing vacuously: making
+each blind to `wa` reported **118 strangers**, not zero.
+
+### 🔴 THE GOVERNOR IS REFUSED, AND A SECOND STATUTE SAYS WHY
+
+Or. Const. Art. V § 7 hands the commencement to the Legislature, and **ORS 176.010** commences the
+term *"upon the publication of the returns by the Speaker of the House of Representatives"* — an
+event, and one that **cannot precede 2027-01-11**, because there is no Speaker until the new House
+has organised and its members take office that day.
+
+🔴🔴 **ORS 254.545(1) IS THE SAME REFUSAL IN STATUTE FORM.** The Secretary of State canvasses every
+office *"except the office of Governor after the general election"*. Art. V § 4 says why: the
+returns for Governor are "sealed up, and transmitted to the Secretary of State; **directed to the
+Speaker of the House of Representatives**, who shall open, and publish them in the presence of both
+houses". ▶ **Oregon's Governor is not merely undated here — the state does not canvass that race
+through the same channel as the other 75.**
+
+⚠ **And the two events are split across two sections.** ORS 176.010 attaches the successor's term
+to the **publication**; **ORS 176.020** attaches the predecessor's exit to the **oath**. They agree
+only because both happen the same morning. ▶ Whoever records this date must record **which event**.
+
+### 🔴🔴 THE ONE OREGON DATE IN OUR OWN DATA LOOKS LIKE CORROBORATION AND IS NOT
+
+`DATES.md` predicts the Governor's day from **Tina Kotek's term starting 2023-01-09**, "which was
+the second Monday of January 2023". It was. 🔴 **It is still not evidence for Art. IV § 4(1), on two
+counts.** It belongs to the office this pass refuses, governed by a different rule; and **its own
+`source` line says what it is a date of — *"first day in office, elected"***, from a Blue Book
+biography and an NGA page (`CA_0352`), not the publication of the returns and not the oath.
+
+⚠ **So the row our own ledger reached for is itself an unlabelled date of exactly the kind
+ORS 176.010/176.020 make dangerous.** ▶ **A DATE THAT AGREES IS NOT A RULE THAT AGREES.**
+`CC_0491`'s assertion 5 pins that row and 3d pins the legislature's zero: **all 90 Oregon
+legislative terms carry `term_start = NULL`**, so this date rests on the text alone.
+
+### 🟢🟢 OREGON HAS NO RESULTS GAP — THE FIRST STATE IN THIS PASS — AND IT IS MEASURED, NOT INFERRED
+
+| body | offices | with a 2026 race | with a winner | no race row |
+|---|---|---|---|---|
+| House | 60 | 60 | 60 | **0** |
+| Senate | 30 | 15 | 15 | 15 |
+
+⚠ **THOSE 15 ARE NOT A GAP.** Art. IV § 4(2) elects "one-half, as nearly as possible" of the Senate
+biennially — 15 of 30, which `CC_0491`'s P2 proves **arithmetically** rather than asserting.
+🔴🔴 **AND THE COUNT IS CONFIRMED FROM OUTSIDE OUR DATA: the Secretary of State's own results export
+for this election holds exactly 75 legislative contests, not 90.** This is the inverse of Utah,
+where the constitution turned "probably missing" into "certainly missing"; here it turns "possibly
+missing" into **certainly complete**.
+
+🔴 **Which half is up cannot be derived, and nothing in our data can check it.** § 4(2) assigns the
+classes by the original division **BY LOT** — the 15 pending districts are 3, 4, 6, 7, 8, 10, 11,
+13, 15, 16, 17, 19, 20, 24, 26: **7 odd and 8 even, not a parity class.** And our database holds
+**no Oregon races at all before 2026**, so the complementary check ("were the other 15 elected in
+2024?") is structurally unavailable. ▶ **Say which checks were impossible, not only which passed.**
+
+### 🟢🟢 ALL 75 WINNERS WERE CONFIRMED AGAINST THE STATE'S OWN RESULTS, AND THE ROUTE IS REUSABLE
+
+Our winners come from the AP race calls. Every one was compared, candidate by candidate, against
+the **Oregon Secretary of State's own legislative results export**: **75 contests parsed, 75 agree,
+0 disagree, 0 missing** — with one name deliberately corrupted first and the comparison watched
+going red.
+
+🟢 **AND IT IS REACHABLE WITHOUT A BROWSER.** `results.oregonvotes.gov/ResultsExport.aspx` is an
+ASP.NET page whose export links are `__doPostBack` JavaScript, so **there is no GET URL for the
+file**. A plain HTTP **POST** carrying the page's own `__VIEWSTATE`, `__VIEWSTATEGENERATOR` and
+`__EVENTVALIDATION`, with `__EVENTTARGET = ctl00$MainContent$Legislative` and the CSV radio,
+returns `Content-Disposition: attachment; filename=House and Senate.csv` — 36,024 bytes, HTTP 200,
+no browser. ▶ **READ THE FORM BEFORE REACHING FOR PLAYWRIGHT.** Same lesson as Utah's XML download
+in a different disguise: the machine-readable route exists and is not linked as a URL.
+⚠ The export reports **"0 out of 47 Precincts Reported"** beside real vote totals. Oregon votes by
+mail and does not report by precinct; that zero is not a count of anything.
+
+### 🔴 TWO WINNERS ALREADY HAD A PERSON RECORD, AND NEITHER WAS LINKED ON A NAME
+
+`derive-seating-wave.mjs` reported all 15 as `winner_no_record`, which is a fact about
+`race_candidates.politician_id` and **not about the person**. Nevada 1 of 13; Maine 18 of 77;
+Massachusetts 3 of 21; **Oregon 2 of 15**.
+
+- **Jeff Helfrich** holds **House District 52** and wins **Senate District 26**. 🟢🟢 **Art. IV
+  § 6(5) speaks of "the two representative districts comprising the senatorial district", and the
+  Chief Clerk's own pairing is 2N-1 and 2N — so SD 26 = HD 51 + HD 52 and the seat he holds is
+  *inside* the seat he won.** `CC_0492`'s P6 computes it. The Legislature's own member page names
+  him ("Representative - Jeff Helfrich, Republican - District 52").
+  - ⚠ **AND THE MASSACHUSETTS GUARD — "the surname is unique in the table" — IS FALSE HERE.** Two
+    rows carry it: Jeff (Oregon HD 52) and **Beth Helfrich (North Carolina House District 98)**, an
+    unrelated person. ▶ **Carry the reasoning, not the predicate. A guard that held in one state is
+    not a guard.**
+- **Tammy Carpenter** holds **Director, Zone 7, Beaverton School District 48J** and wins **House
+  District 27**. 🔴 **Nothing structural connects a school board seat to a House seat, so this one
+  is linked on a DOCUMENT**: the Secretary of State's official **Voters' Pamphlet**, Washington
+  County book, prints her own filed statement — **"Prior Governmental Experience: Beaverton School
+  Board Member"**.
+  - ⚠ **THE PAMPHLET PRINTS TWO CANDIDATES SIDE BY SIDE AND A LINE-ORDER READ MIXES THEM.**
+    `pdftotext -layout` interleaves the columns, so that line sits among her opponent's sentences.
+    The columns were separated by **the document's own terminators** — each ends with "(This
+    information furnished by …)" naming its own candidate. ▶ **Bound a PDF column by the document's
+    structure, not by reading order.**
+
+🔴 **The sweep that found them was given a positive control.** All 15 were checked against the
+**300 sitting Oregon officeholders** this database holds, with the two known matches planted in the
+same query: the scan returned exactly those two and nothing else. A sweep that returns "nothing
+found" and has never been seen finding anything is not a sweep.
+
+### 🟢 ONE WINNER VACATES A SEAT IN THIS WAVE AND IT RESOLVES ITSELF — THE UTAH CASE, FIXED
+
+Helfrich's House District 52 has a **recorded successor**: Hank Sanders wins it in the same wave.
+`seat_officeholder` closes the predecessor on the seat it is **filling**, so seating Sanders closes
+Helfrich's House term at 2027-01-10 and seating Helfrich closes Christine Drazan's Senate term the
+same day. **Both closures happen because a seat was filled, which is the only way these files close
+anything.**
+
+⚠ **CONTRAST WITH UTAH.** Doug Fiefia kept Utah House District 48 open after taking a Senate seat
+because that seat's own 2026 **result is missing** and there was nobody to seat. ▶ **The difference
+is a result, not a rule.** Oregon has no results gap, so the vacated seat closes itself.
+
+🟢 **And one winner keeps a seat this pass does not touch, which is also correct.** Tammy Carpenter
+stays a Beaverton school director — a SCHOOL seat, outside this wave, whose term has not ended. She
+holds **two seats from 2027-01-11**. `CC_0493` gates on finding exactly one such term, names her,
+and asserts it is still open afterwards. ▶ **Do not tidy it.**
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+| check | result |
+|---|---|
+| Oregon legislative seats still pending | **0** |
+| Oregon Governor still pending | **1, as intended** |
+| terms citing `CC_0493` | **75** |
+| predecessors closed at 2027-01-10 | **75** |
+| offices answering `office_next_term` | **75** |
+| terms starting 2027-01-11, repo-wide | **193 = 118 WA + 75 OR** |
+| `office_swearing_in` rows on 2027-01-11, repo-wide | **193**, the same split |
+| Oregon state-executive terms on that day | **0** |
+| politicians | 91,988 → **92,001** (+13) |
+| flagged-vacant offices, repo-wide | **66**, unmoved |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API.** Three real addresses through `api.empowered.vote`:
+
+- **Hood River** → **both halves of the chamber switch render on ONE page**: House District 52
+  shows Jeff Helfrich held, **incoming Hank Sanders on 2027-01-11**, and Senate District 26 shows
+  Christine Drazan held, **incoming Jeff Helfrich on 2027-01-11**. A voter at that address sees the
+  seat he leaves and the seat he takes side by side.
+- **Beaverton** → House District 27 shows Ken Helm held, **incoming Tammy Carpenter**; her
+  Beaverton school directorship shows **no incoming**, because that seat was not up.
+- **Portland** → House District 42 renders a re-election as **incoming-same-person** (Rob Nosse).
+- ⚠ **The Governor shows NO INCOMING at all three addresses** — the refusal, visible to a voter —
+  and so do Senate Districts 14 and 21, which are the staggered half not up this cycle.
+
+🔴 **The first version of that probe reported "no incoming" for every row** and would have been
+written up as a failure. The fields are `incoming_holder_name` / `incoming_on`, not an `incoming`
+object. ▶ **A uniform answer is a broken detector**; the probe now refuses to report at all if it
+finds no incoming holder anywhere.
+
+### Controls, each watched going red (step 7)
+
+🔴 Recorded by the gate each one FIRED ON, not the gate it was aimed at. **18 of 18 went red.**
+
+🟢🟢 **AND A NEGATIVE CONTROL RAN FIRST, THROUGH THE SAME CODE PATH.** "Eighteen of eighteen went
+red" is a uniform answer, and a harness failing everything — a bad path, a dead connection, a stray
+argument — produces exactly that. The untampered chain was run by the same driver and came back
+**green**. ▶ **A control suite needs a control.**
+
+| # | what was broken | fired on |
+|---|---|---|
+| C0 | *nothing* — the untampered chain | 🟢 **passed, as required** |
+| C1 | the first Monday written instead of the second | assertion **1** |
+| C2 | the convening day computed as the third Monday + 2 | assertion **3b** |
+| C3 | the second Monday computed as the first + 14 | assertion **3a** |
+| C4 | `CC_0491` P5 made blind to Washington | **P5** — *"118 rows … are not Washington legislative rows"* |
+| C5 | the federal exclusion narrowed to `NATIONAL_LOWER` | assertion **7** |
+| C6 | the expected Kotek date changed to the first Monday 2023 | assertion **5** |
+| C7 | House District 27 linked to Beth Helfrich (North Carolina) | **P4** |
+| C8 | the Senate↔House pairing changed to 2N+1, 2N+2 | **P6** |
+| C9 | Hank Sanders created under Bernie Sanders's name | **P3** |
+| C10 | a winner row re-pointed at another person | **P1 digest** |
+| C11 | a seat falls vacant **and** the library's published selection is used | **P1 coverage** |
+| C11b | the same vacancy, with the `IS NOT NULL` fix in place | **P1 digest** |
+| C12 | `CC_0493` assertion 3 made blind to Washington | assertion **3** |
+| C13 | Tammy Carpenter's school term closed beforehand | **P8** |
+| C14 | assertion 11 pointed at the wrong Helfrich | assertion **11** |
+| C15 | one result becomes `certified` | **P11** |
+| C16 | the term source stops saying "called, not certified" | assertion **15** |
+| C17 | the Governor seated on the legislature's day | **P10** |
+
+🟢🟢 **C11 AND C11b ARE THE COMPLEMENTARY-GATES PROOF, RUN ON ONE INPUT.** The same vacancy, two
+selections. With the library's published selection the digest expression goes **NULL** and
+`string_agg` drops the row — the **coverage** gate fires: *"the digest expression evaluated to NULL
+on 1 of 75 rows"*. With `AND och.politician_id IS NOT NULL` the value becomes `false` instead and
+the **digest** gate fires on a changed hash. 🔴 **Neither gate can be made to see the other's
+fault. Keep both, even where neither can fire today.**
+
+🔴 **TWO CONTROLS FIRED EARLIER THAN AIMED, AND BOTH ARE RECORDED RATHER THAN CONTRIVED AROUND.**
+- **C1 fired on assertion 1**, a strict equality on the right date, so *any* wrong date trips it
+  first — assertion 3b's "no seat carries a wrong day" arm is an **unreachable backstop**. Its
+  *arithmetic* arms are reachable and were tested by C2 and C3.
+- **C17 fired on P10**, not assertion 10. Seating the Governor beforehand makes **119** terms on
+  2027-01-11, and the Washington pre-image gate catches that first. 🟢 **That is a finding, not a
+  nuisance: the gate written to measure one state's rows also catches an unexpected term on that
+  day from any source, including Oregon's own Governor.**
+
+### ⚠ A GATE THAT RESTATES ITS OWN EXPECTATION AS A SECOND LITERAL CAN PRINT A SELF-CONTRADICTION
+
+Two controls fired correctly and printed nonsense: assertion 5 said *"starts 2023-01-09, expected
+2023-01-09"*, and P6 said *"comprises House districts 51 and 52"* while testing against 53 and 54.
+Both messages recomputed the expectation independently of the condition, so a tamper of one left
+the other saying the opposite.
+
+▶ **Read one expression into a variable and let the condition AND the message share it.** Fixed in
+both files before the apply. 🔴 **Only a control reveals this** — in the shipped file the two copies
+agree, so the defect is invisible until something makes them disagree.
 
 ## ✅✅ APPLIED 2026-11-23 — Utah, 50 offices, a fixed calendar day, and a body left refused
 

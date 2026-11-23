@@ -1003,7 +1003,7 @@ earns its way in by its own citation or not at all.
 
 ---
 
-## OR — Oregon · 76 offices · ⚠️ 75 sourced, **1 REFUSED**, 2026-11-22
+## OR — Oregon · 76 offices · ⚠️ 75 sourced, **1 REFUSED**, 2026-11-22 — ✅✅ **ALL 75 DATED AND SEATED 2026-11-23** (`CC_0491`, `CC_0492`, `CC_0493`); the Governor REMAINS REFUSED
 
 🔴 **THE PATTERN FROM MARYLAND REPEATS: THE LEGISLATURE IS DATED BY A CALENDAR RULE AND THE
 EXECUTIVE IS NOT.** Oregon's constitution hands the Governor's commencement to the Legislature
@@ -1104,6 +1104,46 @@ date must record which of the two events it is**, or the next pass cannot tell.
 | `window_end_date` | NULL |
 | `basis` | `statute` |
 | `rule_id` | `or-const-art4-s4-second-monday-january` |
+
+
+### 🔴🔴 TWO CORRECTIONS TO THIS SECTION, RECORDED 2026-11-23 WHILE WRITING `CC_0491`
+
+**1. The Art. IV § 4(1) quotation above stops one clause early, and the missing words change the
+claim.** The clause does not end at *"as the case may be"*. It ends:
+
+> … and shall continue for the full period of four years or two years, as the case may be,
+> **unless a different commencing day for such terms shall have been appointed by law**.
+
+🔴 **The constitutional day is a DEFAULT the Legislative Assembly may displace by statute**, not a
+fixed rule. ▶ **Read a term clause to its full stop; the escape hatch is usually at the end.**
+🟢 The hatch has not been exercised and the one statute on point — **ORS 171.051(6)**, already
+cited above — names the same second Monday. ⚠ The search was **bounded**: ORS chapters 171, 236,
+249, 254 and 260 were read in full, not all of ORS, and the scan's own positive control is that
+its pattern fired twice inside 171 while returning zero in the other four.
+
+**2. Tina Kotek's 2023-01-09 term start is NOT corroboration for this clause, and this section
+treats it as a prediction basis without saying what it is a date OF.** The row's own `source` line
+says: *"term_start 2023-01-09 (**first day in office, elected**)"*, from a Blue Book biography and
+an NGA page (`CA_0352`). 🔴 **That is neither the publication of the returns (ORS 176.010) nor the
+oath (ORS 176.020)** — it is exactly the unlabelled date this section's own "Term start or oath?"
+paragraph warns about, already present in our data. It belongs to the refused office and is
+governed by a different rule. ▶ **A date that agrees is not a rule that agrees.** The prediction
+for 2027-01-11 may well be right; it rests on one unlabelled row, and `CC_0491`'s assertion 5 pins
+that row rather than reasoning from it.
+
+### 🟢🟢 AND ONE THING THIS SECTION GOT EXACTLY RIGHT, CONFIRMED FROM OUTSIDE
+
+**Oregon has no results gap** — the first state in this pass. 60 of 60 House seats and 15 of 30
+Senate seats carry a 2026 race and a winner. 🔴 **The 15 Senate seats with no race row are the
+staggered half, and the Secretary of State's own results export for this election holds exactly
+75 legislative contests, not 90.** ⚠ Which half is up is assigned **by lot** (§ 4(2)) and is not
+derivable — the pending districts are 7 odd and 8 even — and our database holds **no Oregon races
+before 2026**, so the complementary check is structurally unavailable. Both limits are recorded in
+`CC_0491`'s header rather than left for a future reader to rediscover.
+
+🟢 **ORS 254.545(1) is the Governor's refusal in statute form**, and is worth adding to this
+section's case: the Secretary of State canvasses every office *"except the office of Governor after
+the general election"*, because Art. V § 4 sends those returns to the **Speaker** instead.
 
 ### Three things the next step inherits
 

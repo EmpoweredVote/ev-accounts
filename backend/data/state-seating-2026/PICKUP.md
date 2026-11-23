@@ -1,14 +1,14 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-23, after California, Massachusetts, Washington and Utah. **Read `REGISTER.md` first**
-(the queue, the recipe, the **ten** template corrections, Rulings A and B), then this.
+Rewritten 2026-11-23, after California, Massachusetts, Washington, Utah and Oregon. **Read `REGISTER.md`
+first** (the queue, the recipe, the **fifteen** template corrections, Rulings A and B), then this.
 `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
 ---
 
 ## Where the pass stands
 
-**53 bodies · 451 offices still to do.** Nothing is overdue. Nine states are fully written:
+**51 bodies · 376 offices still to do.** Nothing is overdue. Ten states are fully written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -20,14 +20,15 @@ Rewritten 2026-11-23, after California, Massachusetts, Washington and Utah. **Re
 | CA | `CC_0477` (99) | — none needed | `CC_0478` (92, **2026-12-07**) · `CC_0479` (7, **2027-01-04**) |
 | MA | `CC_0481` (204) | `CC_0482` (18 created, 3 linked) | `CC_0483` (199, **2027-01-06**) · `CC_0484` (2, **2027-01-07**) · `CC_0485` (3, **2027-01-20**) |
 | WA | `CC_0487` (118) | — none needed | `CC_0488` (118, **2027-01-11**) |
-| **UT** | `CC_0489` (50) | — none needed | `CC_0490` (50, **2027-01-01**) · ⚠ 6 Board of Education seats REFUSED, still undated |
+| UT | `CC_0489` (50) | — none needed | `CC_0490` (50, **2027-01-01**) · ⚠ 6 Board of Education seats REFUSED, still undated |
+| **OR** | `CC_0491` (75) | `CC_0492` (13 created, 2 linked) | `CC_0493` (75, **2027-01-11**) · ⚠ the Governor REFUSED — ORS 176.010 names an event |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0490`.** Always ask the allocator
+**Next slot to reserve: after `CC_0493`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
 ---
@@ -104,46 +105,68 @@ time it matters.
 
 ---
 
-## 🔴 NEXT: OREGON — 75 legislative offices, already sourced, ONE date, 15 people to create
+## 🔴 NEXT: MARYLAND — 114 legislative offices, already sourced, ONE date, 85 people to create
 
-`DATES.md` § OR has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
+`DATES.md` § MD has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
 not "dated" — the register's `no date` column counts *rows in the database*, not research done.)
 
-| body | offices | start date | authority |
-|---|---|---|---|
-| House of Representatives | 60 | **2027-01-11** (Mon) | Or. Const. Art. IV, § 4(1) |
-| Senate | 15 | **2027-01-11** (Mon) | Or. Const. Art. IV, § 4(1) |
-| Governor | 1 | 🔴 **REFUSED** — ORS 176.010 names an **event**, not a day | — |
+| body | offices | winners | start date | authority |
+|---|---|---|---|---|
+| House of Delegates | 67 | **131** | **2027-01-13** (Wed) | Md. Const. Art. III, § 6 |
+| Senate | 47 | 47 | **2027-01-13** (Wed) | Md. Const. Art. III, § 6 |
+| Governor | 1 | 1 | **2027-01-20** (Wed) | Art. II, § 1 — *a separate wave* |
+| Attorney General | 1 | 1 | 🔴 **REFUSED** | Art. V, § 1 names no date |
+| Comptroller | 1 | 1 | 🔴 **REFUSED** | Art. VI, § 1 names none |
 
-🔴🔴 **OREGON SHARES WASHINGTON'S DAY, AND THAT CHANGES WHAT ITS ASSERTIONS MAY SAY.** 118
-Washington seats already start on **2027-01-11**, and Idaho's Ada County is scheduled for it too.
-▶ **An Oregon file's "terms starting 2027-01-11" assertion must be a DELTA against what is already
-there, never a total**, and its `before` snapshot will read 118 rather than 0. A date shared by
-several states is a coincidence of calendars, never a shared rule.
+🔴🔴 **THIS IS THE HARDEST THING LEFT IN THE QUEUE, AND BOTH REASONS ARE ON THE SAME BODY.**
 
-🔴 **IT NEEDS A PEOPLE FILE** — 15 winners have no person record (9 House, 6 Senate). That is the
-critical path, and the `is_reelection` NULL can appear *only after* that file runs, so capture the
-pin by rehearsing `dates + people + a probe` in one rolled-back transaction.
+1. **38 of the 67 Delegate offices carry MORE THAN ONE WINNER** — 131 winners across 67 offices.
+   ▶ **This is the first real Ruling A wave.** Read Ruling A in `REGISTER.md` *before* writing a
+   line of SQL: the selection must be built on the **ASSIGNED** office, not the race-carrying one,
+   or post-verify 1 joins `office_terms` back to a seat that was never written and the file aborts
+   **after** writing. `WAVE_SELECTION_SQL` keys every winner on the race-carrying office and is
+   wrong here as published.
+2. **85 winners have no `politicians` row** — the largest people file in the pass by a factor of
+   four. 🔴 **The `is_reelection` NULL can appear only AFTER that file runs** (Massachusetts), so
+   capture the pin by rehearsing `dates + people + a probe` in one rolled-back transaction, never
+   from `derive-seating-wave.mjs` alone.
 
-⚠ **THE GOVERNOR IS REFUSED AND STAYS REFUSED.** Oregon's constitution hands the commencement to
-the Legislature ("at such times as may be prescribed by … law") and the statute that answers names
-an event. Assert the exclusion, the way `CC_0489` asserted Utah's six Board of Education seats.
+⚠ **MARYLAND IS A SAME-DAY STATE.** Art. III § 14 puts the General Assembly's own meeting on the
+second Wednesday of January too. 🔴 **Cite § 6 (the term), never § 14 (the meeting)** — Maine is
+the proof the two can diverge, and Oregon is the proof they often do (eight days apart there).
+
+🟢 **A CONTROL EXISTS IN OUR OWN DATA, UNLIKE OREGON'S AND UTAH'S.** `office_terms` carries Wes
+Moore's term starting **2023-01-18**, backfilled from `msa.maryland.gov` and never derived from
+this clause — and the third Wednesday of January 2023 was the 18th. ⚠ **That is the GOVERNOR's
+clause (Art. II § 1), not the legislature's**, so it corroborates the *second* wave. Oregon's
+lesson applies: a date that agrees is not a rule that agrees — check what the row's own `source`
+says it is a date **of** before leaning on it.
+
+🔴 **THE NEAR MISSES.** Second Wednesday 2027-01-13; **first** Wednesday 2027-01-06; **third**
+Wednesday 2027-01-20 — which is the **Governor's real date**, so in Maryland the near miss is a
+live date in the same state, as Utah's first Monday was. Compute all three and refuse two.
+
+⚠ **THE TWO REFUSALS ARE A DIFFERENT KIND FROM OREGON'S.** Oregon's Governor has a precise rule
+about an event. Maryland's Attorney General and Comptroller have **no rule at all** — they fall to
+Art. XVII § 4, whose default is that a term "shall commence from the time of their Election". 🔴
+Read the whole of § 4 and § 9 before deciding what that means; `estimated` may not seat anybody.
 
 ### The alternatives
 
-⚠ **Maryland (114 offices) is the hardest thing in the queue**: 85 winners with no person record,
-and 38 multi-winner Delegate offices that need Ruling A's equality gate per race.
-
-⚠ **Arizona (65 of 66 dated) needs Ruling A too** — 29 multi-winner House offices.
+⚠ **Arizona (65 of 66 dated, 1 refused) also needs Ruling A** — 29 multi-winner House offices,
+every pending one. It is the smaller Ruling A wave and may be the better place to prove the shape
+before Maryland's 38.
 
 ### The shape of the work
 
-1. **dates** — copy `CC_0489` (Utah) for the single-date shape with a refused body and named
-   exclusions, or `CC_0487` (Washington) for the wrong-rule control.
-2. **people** — copy `CC_0482` (Massachusetts): explicit UUIDs, structural gates on each link,
-   never a name match.
-3. **seating** — copy `CC_0490` or `CC_0488`. Both carry the fixed selection and the digest
-   coverage gate; `CC_0483` is the one to copy if the state has flagged-vacant seats.
+1. **dates** — copy `CC_0491` (Oregon) for the single-date shape with a refused body, named
+   exclusions and the delta-against-another-state gate, or `CC_0487` (Washington) for the
+   wrong-rule control.
+2. **people** — copy `CC_0492` (Oregon): explicit UUIDs, a structural gate on each link, the
+   full-name sweep run a second way, and **never a name match**.
+3. **seating** — 🔴 **copy neither `CC_0493` nor `CC_0488` as-is**: both are one-winner-per-office
+   waves. Build the selection on the **assigned** office first (Ruling A), then bring across their
+   digest gate, coverage gate, predecessor pre-image and kept-outside-terms gate.
 
 ---
 
@@ -174,6 +197,27 @@ and 38 multi-winner Delegate offices that need Ruling A's equality gate per race
   executives, uncited, and agrees this cycle. **A rule row earns its way in by its own citation.**
 - 🔴 **WHERE THE LAW SAYS QUALIFICATION, THE TERM START IS THE OATH** and there may be no date at
   all — Nevada's six executives are refused with a sourced `window_end_date` of 2027-01-04.
+- 🔴🔴 **READ A TERM CLAUSE TO ITS FULL STOP — THE ESCAPE HATCH IS USUALLY AT THE END.** Oregon's
+  Art. IV § 4(1) ends *"unless a different commencing day for such terms shall have been appointed
+  by law"*, and this ledger quoted it one clause short. Those words turn a fixed rule into a
+  **default a statute may displace**. ▶ Then go and check, and **write down how far you looked** —
+  five ORS chapters, not all of ORS. ⚠ "Nothing found" across several documents is a uniform
+  answer until something makes it go non-zero; the scan's control was its own pattern firing twice
+  in the chapter that does answer.
+- 🔴🔴 **TWO STATES CAN SHARE ONE CALENDAR DAY UNDER UNRELATED RULES.** 118 Washington seats and
+  75 Oregon seats both begin **2027-01-11** — Washington by statute (RCW 44.04.021), Oregon by
+  constitution — and Idaho's Ada County is scheduled for it too. ▶ **Every count about a shared
+  day is a DELTA and must NAME the other state's `rule_id`**, or a gate reads 193 and calls it
+  success.
+- 🔴 **THE NEAR MISS CAN BE THE STATE'S OWN SUPERSEDED RULE.** Oregon used the **first** Monday
+  until 1961, and Art. IV § 4(3) is the transition clause itself. ⚠ **And its session convenes
+  EIGHT DAYS after the terms begin** (ORS 171.010(1), the Tuesday after the MLK holiday) — so
+  four candidate days sit in that one month and three of them are wrong.
+- 🔴 **A DATE THAT AGREES IS NOT A RULE THAT AGREES.** Oregon's only state-level `term_start` is
+  Tina Kotek's 2023-01-09, which *is* a second Monday — and its own `source` line calls it "first
+  day in office", belongs to the one office Oregon refuses, and is governed by a different rule
+  (ORS 176.010's publication of the returns). ▶ **Read what a corroborating row says it is a date
+  OF before leaning on it.**
 - 🔴🔴 **THE ANSWER CAN BE IN A STATUTE WHILE THE CONSTITUTION NAMES THE SAME DAY FOR SOMEBODY
   ELSE — AND NOTHING MECHANICAL CAN TELL THEM APART.** Washington's Art. II fixes only a
   legislative term's *length*; `RCW 44.04.021` is the answer; Art. III § 4 gives **the state
