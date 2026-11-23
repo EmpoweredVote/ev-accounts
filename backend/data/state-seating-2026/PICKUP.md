@@ -1,14 +1,14 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-23, after California, Massachusetts and Washington. **Read `REGISTER.md` first**
-(the queue, the recipe, the **eight** template corrections, Rulings A and B), then this.
+Rewritten 2026-11-23, after California, Massachusetts, Washington and Utah. **Read `REGISTER.md` first**
+(the queue, the recipe, the **ten** template corrections, Rulings A and B), then this.
 `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
 ---
 
 ## Where the pass stands
 
-**55 bodies · 501 offices still to do.** Nothing is overdue. Eight states are fully written:
+**53 bodies · 451 offices still to do.** Nothing is overdue. Nine states are fully written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -19,14 +19,15 @@ Rewritten 2026-11-23, after California, Massachusetts and Washington. **Read `RE
 | ME | `CC_0473` (184) | `CC_0474` (59 created, 18 linked) | `CC_0475` (183, **2026-12-01**) · `CC_0476` (Governor, **2027-01-06**) |
 | CA | `CC_0477` (99) | — none needed | `CC_0478` (92, **2026-12-07**) · `CC_0479` (7, **2027-01-04**) |
 | MA | `CC_0481` (204) | `CC_0482` (18 created, 3 linked) | `CC_0483` (199, **2027-01-06**) · `CC_0484` (2, **2027-01-07**) · `CC_0485` (3, **2027-01-20**) |
-| **WA** | `CC_0487` (118) | — none needed | `CC_0488` (118, **2027-01-11**) |
+| WA | `CC_0487` (118) | — none needed | `CC_0488` (118, **2027-01-11**) |
+| **UT** | `CC_0489` (50) | — none needed | `CC_0490` (50, **2027-01-01**) · ⚠ 6 Board of Education seats REFUSED, still undated |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0488`.** Always ask the allocator
+**Next slot to reserve: after `CC_0490`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
 ---
@@ -103,50 +104,46 @@ time it matters.
 
 ---
 
-## 🔴 NEXT: UTAH — 50 offices, already sourced, ONE date, NOBODY to create
+## 🔴 NEXT: OREGON — 75 legislative offices, already sourced, ONE date, 15 people to create
 
-`DATES.md` § UT has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
+`DATES.md` § OR has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
 not "dated" — the register's `no date` column counts *rows in the database*, not research done.)
 
 | body | offices | start date | authority |
 |---|---|---|---|
-| House of Representatives | 42 | **2027-01-01** (Fri) | Utah Const. Art. VI, Sec. 3(2) |
-| Senate | 8 | **2027-01-01** (Fri) | Utah Const. Art. VI, Sec. 4(2) |
-| State Board of Education | 6 | 🔴 **REFUSED** — `20A-14-103` names no commencement | — |
+| House of Representatives | 60 | **2027-01-11** (Mon) | Or. Const. Art. IV, § 4(1) |
+| Senate | 15 | **2027-01-11** (Mon) | Or. Const. Art. IV, § 4(1) |
+| Governor | 1 | 🔴 **REFUSED** — ORS 176.010 names an **event**, not a day | — |
 
-🟢 **UTAH IS THE EASIEST STATE LEFT NOW THAT WASHINGTON IS DONE.** One date, no people to create,
-no flagged-vacant seat, no multi-member race. A two-file state: dates, then seating.
+🔴🔴 **OREGON SHARES WASHINGTON'S DAY, AND THAT CHANGES WHAT ITS ASSERTIONS MAY SAY.** 118
+Washington seats already start on **2027-01-11**, and Idaho's Ada County is scheduled for it too.
+▶ **An Oregon file's "terms starting 2027-01-11" assertion must be a DELTA against what is already
+there, never a total**, and its `before` snapshot will read 118 rather than 0. A date shared by
+several states is a coincidence of calendars, never a shared rule.
 
-🔴 **ITS DATE IS JANUARY 1ST ITSELF** — not a Monday, not counted from the election. ⚠ That is the
-one shape where `CLAUDE.md`'s standing warning bites from the other side: **"a real start CAN land
-on the 1st"**, and Utah is where it does. A reader who had learned from the undated-tenures
-backlog that January 1 means "we only knew the year" would read a correct Utah date as an
-artifact. Say so in the file's header.
+🔴 **IT NEEDS A PEOPLE FILE** — 15 winners have no person record (9 House, 6 Senate). That is the
+critical path, and the `is_reelection` NULL can appear *only after* that file runs, so capture the
+pin by rehearsing `dates + people + a probe` in one rolled-back transaction.
 
-⚠ **THE SIX BOARD OF EDUCATION SEATS ARE REFUSED AND STAY REFUSED.** They are in the queue and
-must not be dated by borrowing the legislature's day. Assert the exclusion, the way `CC_0487`
-asserted Washington's nine executives.
+⚠ **THE GOVERNOR IS REFUSED AND STAYS REFUSED.** Oregon's constitution hands the commencement to
+the Legislature ("at such times as may be prescribed by … law") and the statute that answers names
+an event. Assert the exclusion, the way `CC_0489` asserted Utah's six Board of Education seats.
 
-### The alternative, and the trap it shares with Washington
-
-**Oregon — 75 legislative offices, dated 2027-01-11.** 🔴🔴 **THAT IS THE SAME DAY WASHINGTON'S
-118 SEATS NOW START ON.** An Oregon seating file's "terms starting 2027-01-11" assertion must be
-a **delta**, never a total, and its `before` snapshot will read 118 rather than 0. The same is
-true of Idaho's Ada County, which is also scheduled for 2027-01-11.
-
-Oregon also needs a people file — **15 winners have no person record** (9 House, 6 Senate) — and
-its Governor is refused (ORS 176.010 names an event, not a day).
+### The alternatives
 
 ⚠ **Maryland (114 offices) is the hardest thing in the queue**: 85 winners with no person record,
 and 38 multi-winner Delegate offices that need Ruling A's equality gate per race.
 
-### The shape of the work, either way
+⚠ **Arizona (65 of 66 dated) needs Ruling A too** — 29 multi-winner House offices.
 
-1. **dates** — copy `CC_0487` (Washington) for the single-date, single-clause shape. It carries
-   the wrong-rule control and the named-exclusion gates.
-2. **seating** — copy `CC_0488` (Washington) or `CC_0483` (Massachusetts). Both carry the fixed
-   selection and the digest-coverage gate; `CC_0488` also carries the pre-image shape for a state
-   where every seat is held.
+### The shape of the work
+
+1. **dates** — copy `CC_0489` (Utah) for the single-date shape with a refused body and named
+   exclusions, or `CC_0487` (Washington) for the wrong-rule control.
+2. **people** — copy `CC_0482` (Massachusetts): explicit UUIDs, structural gates on each link,
+   never a name match.
+3. **seating** — copy `CC_0490` or `CC_0488`. Both carry the fixed selection and the digest
+   coverage gate; `CC_0483` is the one to copy if the state has flagged-vacant seats.
 
 ---
 
@@ -194,7 +191,22 @@ and 38 multi-winner Delegate offices that need Ruling A's equality gate per race
   Washington's existing legislative rows read `01-01` because the Ballotpedia half of their source
   knew only the year — and `DATES.md` had filed all the off-dates as "appointments". **Two fall in
   EVEN years, where no regular term can begin**, which is what proved them imprecise. 🔴 And the
-  converse is live: **Utah's real date IS January 1st.** Neither reading is safe by default.
+  converse is live: **Utah's real date IS January 1st** — a Friday and a public holiday, and the
+  clause names a day of the calendar, not a sitting day. Neither reading is safe by default.
+- 🔴🔴 **TWO ELECTED BODIES IN ONE STATE NEED NOT SHARE A BOUNDARY, AND THE REFUSED BODY'S OWN
+  STATUTE MAY BE THE ONLY EVIDENCE.** Utah's legislature begins on the first **day** of January;
+  its Board of Education has no commencement in law, and the two dates `20A-14-103` does name —
+  a term that "ends January 6, 2025", an incumbent serving until "January 2, 2023" — are both
+  first **Mondays**. ▶ **Refuse the body and PIN the evidence**: `CC_0489` computes both Mondays
+  and fails if they stop agreeing, so the refusal is a measurement, not an argument. ⚠ The near
+  miss is then live in that state, so compute it and refuse it too.
+- 🔴🔴 **A "THE SECTION NUMBER IS PRESENT" GUARD PASSES ON A JAVASCRIPT SHELL.** `le.utah.gov`
+  answers `curl` with HTTP 200, ~26.6 KB of navigation, no section text — and the section number
+  **in the page title and in a JS variable**. ⚠ Two different sections at an *identical byte
+  count* is the tell. ▶ Assert on a phrase from the section BODY. 🟢 **And look for the
+  non-browser route before reaching for Playwright twice** — that site's own Download Options
+  link gives XML plain `curl` fetches (565 bytes against 26,677), though its name is **not**
+  derivable from the page URL.
 
 **On people**
 
@@ -252,6 +264,19 @@ and 38 multi-winner Delegate offices that need Ruling A's equality gate per race
     filed all 26 non-pending Washington Senate seats as mid-term. 25 are; Senate LD 35 was on the
     ballot. ▶ **Count the seats with a 2026 race separately from the seats that are pending** —
     the difference is the results gap, and "the chamber is staggered" explains only the rest.
+  - 🔴🔴 **AND "NO RACE ROW AT ALL" IS A THIRD, BIGGER CLASS.** Utah: 2 House seats carry a race
+    with a blank result and **31 carry no race row**. 🔴 Art. VI Sec. 3(1) elects the **whole**
+    75-seat House biennially, so all 75 were on the ballot as a matter of law and those 31 are
+    *certainly* missing data. ▶ **Read the body's own term clause to learn how many should have
+    been up** — the constitution often turns "probably missing" into "certainly missing", which
+    is what makes a gap actionable. ⚠ Utah's Senate is the opposite: Sec. 4(3) leaves **which**
+    half is up to statute, so 9 of 29 cannot be sized from the constitution alone.
+  - 🔴 **A MISSING RESULT CAN LEAVE ONE PERSON HOLDING TWO SEATS, AND TIDYING IT IS THE MISTAKE.**
+    Doug Fiefia holds Utah House District 48 — a blank-result seat — and wins Senate District 18,
+    so from 2027-01-01 our data shows both. `seat_officeholder` closes the predecessor on the
+    seat it SEATS and nothing else. ▶ Closing his House term would mean inventing a successor or
+    applying a clause that ends **all 75** House terms to one seat and not the other 74. **The
+    fix is the result, not an edit in the seating file.**
 - 🔴 **A CHAMBER CAN HOLD SEATS ITS CONSTITUTION'S MEMBERSHIP NUMBER DOES NOT COUNT.** Maine: 154
   House offices against a constitutional 151, because three are tribal seats filled by their
   nations. Read as a defect that is Connecticut's *fabricated* missing-office finding; the

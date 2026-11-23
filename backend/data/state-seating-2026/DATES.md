@@ -1437,7 +1437,7 @@ oath"* — and Nevada is the first state in the pass to be on that side of the l
 
 ---
 
-## UT — Utah · 56 offices · ⚠️ 50 sourced, **6 REFUSED**, 2026-11-22
+## UT — Utah · 56 offices · ⚠️ 50 sourced, **6 REFUSED**, 2026-11-22 — ✅✅ **ALL 50 DATED AND SEATED 2026-11-23** (`CC_0489`, `CC_0490`); the 6 Board seats REMAIN REFUSED
 
 **Utah is the first state in this pass whose date is the first day of January itself** — not a
 Monday, not a Wednesday, not counted from the election.
@@ -1522,6 +1522,24 @@ browser. ⚠ **A rendered page can also come back as the shell if it is read too
 `20A-14-S104` did exactly that and looked like an empty section rather than a slow one. **Assert
 the section number is present in the text before concluding a section is empty or missing.**
 
+🔴🔴 **CORRECTED 2026-11-23: THAT LAST GUARD PASSES ON THE SHELL, SO IT IS NOT THE GUARD TO USE.**
+The shell carries the section number in its `<title>` ("Utah Constitution Section Article VI,
+Section 3") **and again in a JavaScript variable**. Re-measured for `CC_0489`: Art. VI Secs. 3 and
+4 both returned HTTP 200 at **exactly 26,677 bytes** with the phrase "first day of January"
+absent, while the section number was present in both. ▶ **Assert on a distinctive phrase from the
+section's BODY.**
+
+🟢🟢 **AND THERE IS A NON-BROWSER ROUTE, WHICH BEATS "IT WAS READ IN A BROWSER".** Each section's
+own "Download Options" link offers an XML file that plain `curl` fetches, with text identical to
+the rendered page:
+
+    https://le.utah.gov/xcode/ArticleVI/UC_AVI_S3_1800010118000101.xml   HTTP 200, 565 bytes
+    https://le.utah.gov/xcode/ArticleVI/UC_AVI_S4_1800010118000101.xml   HTTP 200, 709 bytes
+
+🔴 **The XML name is NOT derivable from the section URL** — swapping `.html` for `.xml` returns
+404. Take it from the rendered page's link once; after that the text is fetchable without a
+browser forever. ▶ **Use this route for every remaining Utah section.**
+
 ### Basis
 
 `statute` for the 50 legislative rows. The six Board seats have no row.
@@ -1548,6 +1566,27 @@ convenes on the third Tuesday in January, well after, so the two events are plai
   two years. 33 carry no recorded winner. Likewise **8 of 29 Senate seats**, where a staggered
   half would be about 14. 🔴 **These are result gaps of a size worth investigating before the wave
   runs** — Utah is the largest such gap found so far in this pass.
+  - 🔴🔴 **INVESTIGATED AND CORRECTED 2026-11-23, WHILE WRITING `CC_0489`: IT IS MOSTLY A MISSING
+    **RACE** GAP, NOT A MISSING RESULT GAP, AND THE TWO NEED OPPOSITE WORK.**
+
+    | body | offices | pending | race with a blank result | **no race row at all** |
+    |---|---|---|---|---|
+    | House | 75 | 42 | 2 | **31** |
+    | Senate | 29 | 8 | 1 | **20** |
+    | Board | 15 | 6 | 2 | 7 |
+
+    🔴 **Art. VI Sec. 3(1) elects the WHOLE House "biennially on even-numbered years", so all 75
+    House seats were on the 2026 ballot as a matter of law** — the 31 with no race row are
+    *certainly* missing data rather than seats that were not up. ⚠ The Senate shortfall is real
+    but cannot be sized from the constitution: Sec. 4(3) requires "as nearly one-half as may be
+    practicable" (14 or 15 of 29) while leaving **which** half to statute, and that statute is not
+    in this database.
+    ⚠ **The three blank-result legislative seats are BLANK, not provisional** — House District 48,
+    House District 61 and Senate District 11 carry candidate rows whose `result` is NULL with **no
+    `result_source` at all**, unlike Washington's four, which carried the August primary result.
+    🔴 **House District 48 matters twice over**: Doug Fiefia holds it and wins Senate District 18
+    in this wave, so it is the one handover in the pass whose vacated seat gets no successor. From
+    2027-01-01 he holds two seats in our data, and `CC_0490` deliberately leaves it that way.
 - ⚠ **Utah's `STATE_BOARD_EDUCATION` districts are the `X0003` mtfcc case** `CLAUDE.md` names: they
   reach a voter only through the geofence join, never through `buildStatewideQuery`. Nothing in
   this dating pass changes that, but a wave that creates or moves one of these offices must not

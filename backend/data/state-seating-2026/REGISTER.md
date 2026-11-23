@@ -22,7 +22,7 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**55 bodies still to do · 501 offices · 1 of the 55 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**53 bodies still to do · 451 offices · 1 of the 53 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -30,57 +30,55 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 | 2 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
 | 3 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
 | 4 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
-| 5 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
-| 6 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
-| 7 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
-| 8 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
-| 9 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 10 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 11 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
-| 12 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 13 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 14 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 15 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 16 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 17 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 18 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 19 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 20 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 21 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 22 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 23 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 24 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 25 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 26 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 27 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 28 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 29 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 30 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 31 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 32 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 33 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 34 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 35 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 36 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 37 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 38 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 39 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 40 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 41 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 42 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 43 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 44 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 45 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 46 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 47 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 48 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 49 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 50 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 51 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 52 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 53 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 54 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 55 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 5 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
+| 6 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
+| 7 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
+| 8 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 9 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 10 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 11 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
+| 12 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 13 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 14 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 15 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 16 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 17 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 18 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 19 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 20 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 21 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 22 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 23 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 24 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 25 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 26 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 27 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 28 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 29 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 30 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 31 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 32 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 33 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 34 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 35 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 36 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 37 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 38 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 39 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 40 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 41 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 42 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 43 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 44 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 45 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 46 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 47 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 48 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 49 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 50 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 51 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 52 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 53 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -120,7 +118,7 @@ Every one of these was done once already, by the waves that shipped with this re
    `CC_0464` (a term that has already started). Reserve the slot first:
    `npm run steward --prefix backend -- slot CC --purpose "..."`. 🔴 **One migration per file.**
 
-   🔴 **Eight corrections to those two templates. The applied files still carry the old shapes —
+   🔴 **Ten corrections to those two templates. The applied files still carry the old shapes —
    migrations here run once and are never edited — so the fixes live in your copy, not in theirs.**
 
    - 🔴🔴 **CLOSE THE NULL IN `is_reelection` BEFORE YOU PIN ANYTHING.** The library's expression
@@ -190,6 +188,29 @@ Every one of these was done once already, by the waves that shipped with this re
      counted. ▶ **Read the `result` and `result_source` before calling a seat undecided**, name
      the seats in the file, and gate on them *staying* unrecorded: if one gains a winner the wave
      is larger and the pin is stale. Worked in `CC_0487`'s P2.
+     - 🔴🔴 **AND "NO RACE ROW AT ALL" IS A THIRD, BIGGER CLASS THAT LOOKS LIKE THE OTHER TWO.**
+       Utah: 2 House seats carry a race with a blank result and **31 carry no race row** — and
+       Art. VI Sec. 3(1) elects the **whole** 75-seat House biennially, so all 75 were on the
+       ballot as a matter of law and those 31 are *certainly* missing data. ▶ **Count seats with
+       a 2026 race separately from seats that are pending, and read the body's own term clause
+       to learn how many should have been up.** The constitution often turns "probably missing"
+       into "certainly missing", which is what makes the gap actionable.
+   - 🔴🔴 **TWO ELECTED BODIES IN ONE STATE NEED NOT SHARE A BOUNDARY, AND BORROWING IS THE
+     MISTAKE.** Utah's legislature begins on "the first day of January" (Art. VI Secs. 3(2),
+     4(2)); its Board of Education has no commencement in law at all, and the only dates in
+     `20A-14-103` — a term that "ends January 6, 2025" and an incumbent serving until "January 2,
+     2023" — are both **first Mondays**. ▶ **Refuse the body, and pin the evidence for refusing
+     it**: `CC_0489`'s assertion 3c computes those two Mondays and fails if they stop agreeing,
+     so the refusal is a measurement rather than an argument. ⚠ The near-miss is then live in
+     that state — the first Monday is three days off in 2027 — so compute it and refuse it too.
+   - 🔴🔴 **A "THE SECTION NUMBER IS PRESENT" GUARD PASSES ON A JAVASCRIPT SHELL.** `le.utah.gov`
+     answers `curl` with HTTP 200 and ~26.6 KB of navigation and no section text — and carries
+     the section number in the page `<title>` and in a JS variable, so the obvious guard clears
+     it. ▶ **Assert on a distinctive phrase from the section's BODY.** ⚠ Two different sections
+     coming back at an **identical byte count** is the tell. 🟢 **And look for the non-browser
+     route before reaching for Playwright twice**: that site's own "Download Options" link gives
+     an XML file plain `curl` fetches (565 and 709 bytes against the shell's 26,677) — but its
+     name is **not** derivable from the page URL, so take it from the rendered page once.
 7. **Watch one control fail.** Not optional and not ceremony — a gate nobody has seen go red is not
    a gate. `CC_0461`'s control found that `CC_0453`'s P2 was dead code; `CC_0462`'s moved the
    nationwide holder digest; `CC_0464`'s seated the wrong person into a seat. 🔴 **Assert the
@@ -298,6 +319,188 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-23 — Utah, 50 offices, a fixed calendar day, and a body left refused
+
+**50 offices left the queue** (501 → 451) and both Utah legislative bodies left the table.
+`UT STATE_BOARD_EDUCATION` **stays in it on purpose** — six seats with a recorded winner, no
+commencement in law, and a refusal this wave did not overturn.
+
+| order | slot | what it does | state |
+|---|---|---|---|
+| 1 | `CC_0489` | 50 date rows, all **2027-01-01** — 42 House, 8 Senate | ✅ applied |
+| 2 | `CC_0490` | seat 50 House + Senate winners for **2027-01-01** (35 re-elections, 15 handovers) | ✅ applied |
+
+### 🔴 THE DATE IS A FIXED DAY OF THE CALENDAR, AND THE NEAR MISS IS LIVE IN THIS STATE
+
+Utah Const. Art. VI, Sec. 3(2) and Sec. 4(2) both read *"Their term of office shall be
+[two / four] years from **the first day of January** next after their election."* No ordinal
+weekday, no counting from the election.
+
+⚠ **2027-01-01 is a Friday and a public holiday, and the clause does not care.** It names a day of
+the calendar, not a sitting day; Utah's general session does not convene until the third Tuesday
+in January. 🔴 Rounding it to the following Monday would be the same class of error as reaching
+for a convening date.
+
+🔴🔴 **AND THE FIRST MONDAY IS NOT A HYPOTHETICAL WRONG ANSWER HERE — THE STATE'S OTHER ELECTED
+BODY APPEARS TO USE IT.** See the Board block below. For 2027 the two rules are **three days
+apart**, 2027-01-01 against 2027-01-04. `CC_0489` computes both and refuses the Monday; `CC_0490`
+refuses any seat on it.
+
+### 🔴 THE BOARD OF EDUCATION IS REFUSED, AND THE STATUTE'S OWN DATES ARE THE EVIDENCE
+
+`Utah Code § 20A-14-103` fixes the Board's term length and cycle and **names no commencement**.
+Its only dates are transitional: a realigned member's term *"ends January 6, 2025"*, and an
+incumbent may serve until *"January 2, 2023"*.
+
+🔴 **BOTH ARE FIRST MONDAYS IN JANUARY**, where the legislature's boundary is the first *day*.
+2023-01-02 and 2025-01-06 are exactly the computed first Mondays of those years. ▶ So **Utah's two
+elected state bodies do not share a boundary**, and the Board's cannot be borrowed from the
+House's. `CC_0489`'s assertion 3c computes both and refuses unless they still agree — it is the
+only hard evidence available for the refusal, so it is pinned rather than argued.
+
+🟢 **The refusal renders honestly to a voter.** Board of Education District 5 has a recorded 2026
+winner and shows **no incoming**, because the seat was deliberately left undated.
+
+### 🔴🔴 A CORRECTION TO DATES.md § UT: THE GAP IS MOSTLY MISSING **RACES**, NOT MISSING RESULTS
+
+The ledger reads the shortfall as a result gap — "33 carry no recorded winner" of the House.
+Measured against production, it is two different things and the larger one is not what the ledger
+describes:
+
+| body | offices | seated here | race, blank result | **no race row at all** |
+|---|---|---|---|---|
+| House | 75 | 42 | 2 | **31** |
+| Senate | 29 | 8 | 1 | **20** |
+| Board | 15 | 0 (refused) | 2 | 7 |
+
+🔴🔴 **UTAH'S CONSTITUTION TURNS THE HOUSE NUMBER FROM A GUESS INTO A CERTAINTY.** Art. VI
+Sec. 3(1) elects the **whole** House "biennially on even-numbered years", so all 75 seats were on
+the 2026 ballot as a matter of law — and we hold a race row for 44. **The 31 are certainly missing
+data**, not seats that were not up. That is a stronger statement than this pass can usually make,
+and it belongs to the results programme.
+
+⚠ **THE SENATE SHORTFALL IS REAL AND CANNOT BE SIZED FROM THE CONSTITUTION ALONE.** Sec. 4(3)
+requires "as nearly one-half as may be practicable" — 14 or 15 of 29 — but adds "as the
+Legislature shall determine by law with each apportionment", so **which** half is statutory and is
+not in this database. We hold 9. ▶ Read that statute before asserting a number.
+
+⚠ **THE THREE BLANK-RESULT LEGISLATIVE SEATS ARE BLANK, NOT PROVISIONAL.** House District 48,
+House District 61 and Senate District 11 carry candidate rows whose `result` is **NULL** with no
+`result_source` at all. Unlike Washington's four — which carried the August top-two primary result
+and could be misread as a call — there is nothing here to misread. `CC_0489`'s P2 names all three
+and refuses if one acquires a winner.
+
+### 🔴🔴 ONE WINNER WILL HOLD TWO SEATS FROM 2027-01-01, AND THE MISSING RESULT IS WHY
+
+**Doug Fiefia** holds **State House District 48** and wins **State Senate District 18**. House
+District 48 is one of the three blank-result seats — he is vacating it, two newcomers contested
+it, and our data records no winner. So unlike every other handover in this pass, **the seat he
+leaves is not in this wave and gets no successor.**
+
+⚠ **That is a visible consequence of a results gap, not a defect this file introduces, and it must
+not be "tidied".** `seat_officeholder` closes the predecessor on the office being *seated* and
+nothing else. Closing his House term would mean inventing a successor, or asserting an end date
+from a clause that ends **all 75** House terms on the same day — doing it for one and not the
+other 74 would be arbitrary. ▶ **The fix is the House District 48 result, not an edit here.**
+
+Two further winners keep a seat this file does not touch: **Julie Jackson** (Granite School
+District, wins House 34) and **Silvia Catten** (Millcreek City Council District 1, wins Senate 13).
+`CC_0490` gates on finding exactly three and asserts all three are still open afterwards.
+
+### 🔴 THE SOURCE SERVES A JAVASCRIPT SHELL, AND THE GUARD THE LEDGER RECOMMENDS DOES NOT CATCH IT
+
+`le.utah.gov` returns HTTP 200 and ~26.6 KB of navigation with no section text. Both Art. VI
+sections came back at **exactly 26,677 bytes** with "first day of January" absent.
+
+🔴 **DATES.md says to "assert the section number is present before concluding a section is empty",
+and that guard passes on the shell** — the shell carries the section number in its `<title>` and
+again in a JavaScript variable. ▶ **Assert on a distinctive phrase from the section's body.**
+
+🟢 **AND THERE IS A NON-BROWSER ROUTE, WHICH IS AN IMPROVEMENT ON "IT WAS READ IN A BROWSER".**
+The section's own "Download Options" link gives an XML file that plain `curl` fetches — HTTP 200,
+565 and 709 bytes, text identical to the rendered page:
+
+    https://le.utah.gov/xcode/ArticleVI/UC_AVI_S3_1800010118000101.xml
+    https://le.utah.gov/xcode/ArticleVI/UC_AVI_S4_1800010118000101.xml
+
+🔴 **The XML name is not derivable from the section URL** — swapping `.html` for `.xml` 404s. Take
+it from the rendered page once; after that the text is fetchable without a browser forever.
+
+### ⚠ NO CONTROL EXISTS IN OUR OWN DATA, AND THE ABSENCE IS ASSERTED
+
+**All 119 Utah legislative and Board terms carry `term_start = NULL`.** Nothing here corroborates
+or contradicts 2027-01-01. `CC_0489`'s assertion 3d pins that zero so a future reader cannot
+believe a check was made that could not be made, and `CC_0490`'s P7 refuses if a predecessor has
+acquired a start date since.
+
+▶ **A consequence worth stating:** `CC_0490` writes 50 term *ends* onto rows with no beginning.
+That is the state Utah is in, not damage this file did, and assertion 6b asserts it.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+| check | result |
+|---|---|
+| Utah legislative seats still pending | **0** |
+| Board of Education seats still pending | **6**, as intended — refused, undated, unseated |
+| terms on 2027-01-01 citing `CC_0490` | **50** |
+| predecessors closed at 2026-12-31 | **50** |
+| offices answering `office_next_term` | **50** |
+| Board terms carrying any start date | **0** |
+| politicians | **91,988**, unmoved — Utah needed no people file |
+| flagged-vacant offices, repo-wide | **66**, unmoved |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API.** Three real addresses through `api.empowered.vote`:
+
+- **13011 S Pioneer St, Herriman** → **House District 48 shows Doug Fiefia `held` with no
+  incoming.** That is the blank-result seat rendering honestly. Senate District 17 and Board
+  District 9 likewise show no incoming — both are seats with no 2026 race row at all.
+- **12830 S 1700 W, Riverton** → **Senate District 18 shows Daniel McCay `held`, incoming Doug
+  Fiefia on 2027-01-01.** Put beside the Herriman page, the double-seat case renders exactly as
+  `CC_0490` documents it. ⚠ **Board of Education District 9 shows no incoming** although six Board
+  seats have recorded winners — the refusal, visible to a voter.
+- **451 S State St, Salt Lake City** → re-elections render as incoming-same-person on 2027-01-01
+  (House District 24, Senate District 9), and **Board District 5 — which HAS a recorded 2026
+  winner — shows no incoming**, because `CC_0489` deliberately left it undated.
+
+### Controls, each watched going red (step 7)
+
+🔴 Recorded by the gate each one FIRED ON, not the gate it was aimed at.
+
+| # | file | the tamper | fired on |
+|---|---|---|---|
+| 1 | `CC_0489` | the first MONDAY written where the clause says first DAY | **1**, not 3b — see the note below |
+| 2 | `CC_0489` | "next after their election" read as the same year | **3a**, computing 2026-01-01 |
+| 3 | `CC_0489` | the near-miss formula itself broken | **3b**, naming 2027-01-11 as a wrong wrong-rule |
+| 4 | `CC_0489` | the Board's 2025 transitional date read as a first DAY | **3c**, the boundary evidence |
+| 5 | `CC_0489` | a Board of Education seat given the legislature's date | **4**, the refusal |
+| 6 | `CC_0489` | a blank-result seat dated | **5** |
+| 7 | `CC_0489` | the no-corroboration gate pointed at Washington | **3d**, reading 265 real rows |
+| 8 | `CC_0489` | *(free, real)* applied, then dry-run again | **P0**, 50 of 50 already dated |
+| 9 | `CC_0490` | a winner swapped for another real person | **P1 digest** — every count above it passed |
+| 10 | `CC_0490` | a seat made holderless **and** the `IS NOT NULL` fix removed | **P1 coverage**, 1 of 50 rows NULL |
+| 11 | `CC_0490` | a predecessor acquires a `term_start` | **P7**, the undated-tenure gate |
+| 12 | `CC_0490` | a kept outside term closed early | **P8**, 2 where 3 are required |
+| 13 | `CC_0490` | House District 48's result lands, pin re-derived | **P4** — see the chain below |
+| 14 | `CC_0490` | Fiefia's vacated House seat "tidied away" after the write | **11**, 2 of 3 still open |
+| 15 | `CC_0490` | a Board member seated on the legislature's day, deltas moved to match | **10** |
+| 16 | `CC_0490` | *(free, real)* applied, then dry-run again | **P2**, 50 rows already cite CC_0490 |
+
+🔴 **CONTROL 1 FIRED ON ASSERTION 1, NOT ON THE GATE IT WAS AIMED AT, AND THAT IS WORTH RECORDING
+RATHER THAN RETRYING.** Assertion 1 is a strict equality on the right date, so *any* seat carrying
+the wrong one trips it first. **3b's "no seat carries the first Monday" arm is therefore an
+unreachable backstop** while assertion 1 stands; its two *arithmetic* arms are reachable and
+controls 2 and 3 tested them. The same is true of `CC_0490`'s assertion 9.
+
+🟢🟢 **CONTROL 13 FOUND SOMETHING BETTER THAN THE GATE IT WAS AIMED AT: A REFUSED DATE IS ITSELF AN
+INTERLOCK.** The tamper recorded a winner for House District 48 and re-pinned the digest, as a
+real re-derivation would. It did not reach P9 — it stopped at **P4**, because `CC_0489`
+deliberately wrote no `office_swearing_in` row for that seat. ▶ **A seat refused a date cannot be
+silently seated by a later file**, and the chain is three deep: the digest gate, then P4, then P9.
+P9 is a named backstop whose value is its *message*, not its reachability.
+
+---
 
 ## ✅✅ APPLIED 2026-11-23 — Washington, 118 offices, two files and no companion
 
