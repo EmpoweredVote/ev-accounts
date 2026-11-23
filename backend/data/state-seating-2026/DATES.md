@@ -554,7 +554,7 @@ popular race.
 
 ---
 
-## WA — Washington · 118 offices · ✅ sourced 2026-11-22
+## WA — Washington · 118 offices · ✅ sourced 2026-11-22 — ✅✅ **ALL 118 DATED AND SEATED 2026-11-23** (`CC_0487`, `CC_0488`)
 
 **One date, one citation, and it is a STATUTE rather than the constitution.**
 
@@ -644,6 +644,18 @@ any time of year. RCW 44.04.021 governs the **regular** term only, so these are 
 statute's own words rather than in conflict with it. A run of dates scattered through the calendar
 beside a hard biennial spine is the signature of exactly that.
 
+🔴 **CORRECTED 2026-11-23, WHILE WRITING `CC_0487`: THAT PARAGRAPH IS TRUE OF 26 OF THE 53
+OFF-DATES AND FALSE OF THE OTHER 27.** Twenty-seven Washington legislative terms start on
+**January 1st**, spread over 1999–2019, and they come from the **Ballotpedia** half of the source
+string — which writes the first of the year when it knows only the year. **Two of the 27 fall in
+EVEN years (2014-01-01 and 2016-01-01), where no regular legislative term can begin at all**, and
+that is the evidence they are imprecise rather than real. They are a year-precision artifact, not
+appointments and not term starts.
+▶ It does **not** weaken the control: 27 rows at one to seven a year across twenty years, in odd
+and even years alike, are not a biennial spine, and the seven clusters of 5 to 25 are. `CC_0487`'s
+assertion 3d pins both the count and the even-year pair so the next reader cannot mistake 27
+rounded dates for corroboration.
+
 ### Carried into the row
 
 | field | House + Senate |
@@ -662,8 +674,21 @@ beside a hard biennial spine is the signature of exactly that.
   Senate office carries exactly one winner. Ruling A's refusal is about a multi-seat *race*
   attaching several winners to one office row; a staggered chamber with one winner per office is
   ordinary.
+  - 🔴 **CORRECTED 2026-11-23: TWENTY-FIVE OF THOSE 26 ARE MID-TERM, NOT ALL 26.**
+    **Legislative (Senate) District 35 WAS on the 2026 ballot** — Drew C MacEwen against Carolina
+    Mejia — and has no recorded result, so it falls out of `office_pending_winner` for the same
+    reason the three House seats below do. Counting it as staggered hid a results gap behind a
+    constitutional rule.
 - ⚠ **95 of 98 House offices are pending.** Three carry no recorded winner. No Washington state
   office of any tier is flagged vacant.
+  - 🔴 **CORRECTED 2026-11-23: THE TOTAL IS FOUR SEATS, NOT THREE** — House LD 12 (Pos. 1), LD 23
+    (Pos. 1), LD 25 (Pos. 2) and **Senate LD 35**. ⚠ **ALL FOUR ARE UNRECORDED, NOT UNDECIDED,
+    AND THE TWO LOOK IDENTICAL FROM THE SEAT.** Every candidate row on all four carries
+    `result = 'advanced'`, which is the **August top-two primary** result; the November result was
+    never written, while the other 114 seats in the two chambers do carry a `won` row. 🔴 Nothing
+    licenses inferring a winner from `advanced`, from incumbency, or from the primary margin —
+    two of the four had primaries inside 600 votes. Results-programme work, named and gated in
+    `CC_0487`'s P2.
 - ⚠ **Washington's 9 STATE_EXEC offices are not in this pass** — none was on the 2026 ballot. ⚠ But
   our existing data for them disagrees with Art. III § 4 by two days: two rows read `2025-01-15`
   (backfilled by migration 1459 as "first day in office") where the second Monday of January 2025

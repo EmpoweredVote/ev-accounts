@@ -1,14 +1,14 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-23, after California and Massachusetts. **Read `REGISTER.md` first** (the queue, the recipe, the
-five template corrections, Rulings A and B), then this. `SOURCING.md` is the handbook and the
-host table; `DATES.md` is the per-state ledger.
+Rewritten 2026-11-23, after California, Massachusetts and Washington. **Read `REGISTER.md` first**
+(the queue, the recipe, the **eight** template corrections, Rulings A and B), then this.
+`SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
 ---
 
 ## Where the pass stands
 
-**57 bodies · 619 offices still to do.** Nothing is overdue. Seven states are fully written:
+**55 bodies · 501 offices still to do.** Nothing is overdue. Eight states are fully written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -18,14 +18,15 @@ host table; `DATES.md` is the per-state ledger.
 | HI | `CC_0469` (5) | — | `CC_0470` (2 OHA, **2026-11-03**) · `CC_0471` (Gov + Lt Gov, **2026-12-07**) |
 | ME | `CC_0473` (184) | `CC_0474` (59 created, 18 linked) | `CC_0475` (183, **2026-12-01**) · `CC_0476` (Governor, **2027-01-06**) |
 | CA | `CC_0477` (99) | — none needed | `CC_0478` (92, **2026-12-07**) · `CC_0479` (7, **2027-01-04**) |
-| **MA** | `CC_0481` (204) | `CC_0482` (18 created, 3 linked) | `CC_0483` (199, **2027-01-06**) · `CC_0484` (2, **2027-01-07**) · `CC_0485` (3, **2027-01-20**) |
+| MA | `CC_0481` (204) | `CC_0482` (18 created, 3 linked) | `CC_0483` (199, **2027-01-06**) · `CC_0484` (2, **2027-01-07**) · `CC_0485` (3, **2027-01-20**) |
+| **WA** | `CC_0487` (118) | — none needed | `CC_0488` (118, **2027-01-11**) |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0486`.** Always ask the allocator
+**Next slot to reserve: after `CC_0488`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
 ---
@@ -84,45 +85,68 @@ rolled-back transaction, and pin what the probe prints.
 'false'. **The script and the migration disagree for exactly this row shape** — that disagreement
 is how California found it.
 
-▶ **Copy `CC_0483`, not `CC_0475`.** It carries the fixed selection and a P1 gate that counts how
-many rows the digest expression actually evaluated.
+▶ **Copy `CC_0483` or `CC_0488`, not `CC_0475`.** Both carry the fixed selection and a P1 gate
+that counts how many rows the digest expression actually evaluated.
+
+🔴🔴 **AND KEEP THAT GATE EVEN WHERE THE DEFECT CANNOT OCCUR.** Washington has no holderless seat
+and no winner without a person record, so both digests are the same string over the same 118 rows
+— and `CC_0488` carries the gate anyway, because "it cannot happen here" expires the moment a seat
+falls vacant. A control proved **the two gates are complementary, not redundant**: making one seat
+holderless and running the file twice,
+
+    with the fix     is_reelection true -> FALSE  → the digest changes  → the DIGEST gate catches it
+    without the fix  is_reelection true -> NULL   → the row vanishes    → only the COVERAGE gate does
+
+Neither gate can see the other's fault. The coverage gate is unreachable *because* of the fix, and
+a gate added only where the defect is already known is the gate that will be missing the first
+time it matters.
 
 ---
 
-## 🔴 NEXT: WASHINGTON — 118 offices, already sourced, ONE date, NOBODY to create
+## 🔴 NEXT: UTAH — 50 offices, already sourced, ONE date, NOBODY to create
 
-`DATES.md` § WA has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
+`DATES.md` § UT has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
 not "dated" — the register's `no date` column counts *rows in the database*, not research done.)
 
 | body | offices | start date | authority |
 |---|---|---|---|
-| House of Representatives | 95 pending (of 98) | **2027-01-11** (Mon) | `RCW 44.04.021` |
-| Senate | 23 pending (of 49) | **2027-01-11** (Mon) | `RCW 44.04.021` |
+| House of Representatives | 42 | **2027-01-01** (Fri) | Utah Const. Art. VI, Sec. 3(2) |
+| Senate | 8 | **2027-01-01** (Fri) | Utah Const. Art. VI, Sec. 4(2) |
+| State Board of Education | 6 | 🔴 **REFUSED** — `20A-14-103` names no commencement | — |
 
-🟢 **WASHINGTON IS THE EASIEST STATE LEFT.** One date, one citation, no people to create, no
-flagged-vacant seat, no multi-member race. After Maryland's 85 missing people and Massachusetts'
-three dates, this is a two-file state: dates, then seating.
+🟢 **UTAH IS THE EASIEST STATE LEFT NOW THAT WASHINGTON IS DONE.** One date, no people to create,
+no flagged-vacant seat, no multi-member race. A two-file state: dates, then seating.
 
-🔴 **THE CITATION IS A STATUTE, NOT THE CONSTITUTION, AND THAT IS THE TRAP.** Wash. Const. Art. II
-§§ 5 and 6 fix the **length** of a legislative term and never its start. ⚠ Art. III, § 4 DOES name
-a commencement — *"the second Monday in January after their election"* — **for the executives, not
-the legislature**. It is the same day, which is exactly what makes it dangerous: citing Art. III
-§ 4 for a legislator gives the right answer from the wrong provision. Read `DATES.md` § WA before
-writing the `authority` text.
+🔴 **ITS DATE IS JANUARY 1ST ITSELF** — not a Monday, not counted from the election. ⚠ That is the
+one shape where `CLAUDE.md`'s standing warning bites from the other side: **"a real start CAN land
+on the 1st"**, and Utah is where it does. A reader who had learned from the undated-tenures
+backlog that January 1 means "we only knew the year" would read a correct Utah date as an
+artifact. Say so in the file's header.
 
-⚠ **95 of 98 House seats and 23 of 49 Senate seats are pending.** The Senate is staggered, so 23
-of 49 is correct; the 3 missing House seats are the results-programme class — a race with no
-recorded result is as invisible as no race. Assert both exclusions, the way `CC_0481` asserted
-2nd Plymouth District.
+⚠ **THE SIX BOARD OF EDUCATION SEATS ARE REFUSED AND STAY REFUSED.** They are in the queue and
+must not be dated by borrowing the legislature's day. Assert the exclusion, the way `CC_0487`
+asserted Washington's nine executives.
 
-### The shape of the work
+### The alternative, and the trap it shares with Washington
 
-1. **dates** — 118 `office_swearing_in` rows, one date. Copy `CC_0477` (California) for the
-   single-clause shape, or `CC_0481` if you want the anchor-and-offset pattern.
-2. **seating, 2027-01-11** — 118 seats. Copy `CC_0483`.
+**Oregon — 75 legislative offices, dated 2027-01-11.** 🔴🔴 **THAT IS THE SAME DAY WASHINGTON'S
+118 SEATS NOW START ON.** An Oregon seating file's "terms starting 2027-01-11" assertion must be
+a **delta**, never a total, and its `before` snapshot will read 118 rather than 0. The same is
+true of Idaho's Ada County, which is also scheduled for 2027-01-11.
 
-⚠ **Maryland (114 offices) is the alternative and it is much harder**: 85 winners with no person
-record, and 38 multi-winner Delegate offices that need Ruling A's equality gate per race.
+Oregon also needs a people file — **15 winners have no person record** (9 House, 6 Senate) — and
+its Governor is refused (ORS 176.010 names an event, not a day).
+
+⚠ **Maryland (114 offices) is the hardest thing in the queue**: 85 winners with no person record,
+and 38 multi-winner Delegate offices that need Ruling A's equality gate per race.
+
+### The shape of the work, either way
+
+1. **dates** — copy `CC_0487` (Washington) for the single-date, single-clause shape. It carries
+   the wrong-rule control and the named-exclusion gates.
+2. **seating** — copy `CC_0488` (Washington) or `CC_0483` (Massachusetts). Both carry the fixed
+   selection and the digest-coverage gate; `CC_0488` also carries the pre-image shape for a state
+   where every seat is held.
 
 ---
 
@@ -153,6 +177,24 @@ record, and 38 multi-winner Delegate offices that need Ruling A's equality gate 
   executives, uncited, and agrees this cycle. **A rule row earns its way in by its own citation.**
 - 🔴 **WHERE THE LAW SAYS QUALIFICATION, THE TERM START IS THE OATH** and there may be no date at
   all — Nevada's six executives are refused with a sourced `window_end_date` of 2027-01-04.
+- 🔴🔴 **THE ANSWER CAN BE IN A STATUTE WHILE THE CONSTITUTION NAMES THE SAME DAY FOR SOMEBODY
+  ELSE — AND NOTHING MECHANICAL CAN TELL THEM APART.** Washington's Art. II fixes only a
+  legislative term's *length*; `RCW 44.04.021` is the answer; Art. III § 4 gives **the state
+  executives** the same second Monday in January, and `RCW 44.04.010` convenes the session on it
+  too. Three citations, one date, one correct. 🔴 A wrong citation here is right about every
+  number and wrong only in prose, so it surfaces when a person reads it, which may be never.
+  ▶ **Name the other body in a gate** — both Washington files refuse to date or seat a state
+  executive, which is the only trace the distinction leaves in the data.
+- 🔴🔴 **RUN THE WRONG RULE BESIDE THE RIGHT ONE, OR THE CONTROL PASSES FOR BOTH.** Every
+  near-miss in this pass is one small offset away: *first* Monday for second, *second* Wednesday
+  for third, *the Thursday* for the Wednesday. Washington's seven biennia agree with the second
+  Monday 5/6/7/12/16/23/25 times **and with the first Monday zero times in all seven** — that is
+  what makes a control discriminate rather than merely agree. `CC_0487` assertion 3.
+- ⚠ **A DATE ROUNDED TO JANUARY 1 LOOKS EXACTLY LIKE A TERM THAT BEGAN ON JANUARY 1.** 27 of
+  Washington's existing legislative rows read `01-01` because the Ballotpedia half of their source
+  knew only the year — and `DATES.md` had filed all the off-dates as "appointments". **Two fall in
+  EVEN years, where no regular term can begin**, which is what proved them imprecise. 🔴 And the
+  converse is live: **Utah's real date IS January 1st.** Neither reading is safe by default.
 
 **On people**
 
@@ -199,6 +241,17 @@ record, and 38 multi-winner Delegate offices that need Ruling A's equality gate 
   Insurance**. 🔴 Those last two would NOT take California's statewide date if they were added —
   the Superintendent has its own clause and the Insurance Commissioner is **statutory**, so
   "provided for by this Constitution" does not reach it. **These belong to the results programme.**
+  - 🔴🔴 **AND "UNRECORDED" LOOKS EXACTLY LIKE "UNDECIDED" FROM THE SEAT.** Four Washington seats
+    sit in this class — House LD 12 (Pos. 1), LD 23 (Pos. 1), LD 25 (Pos. 2) and **Senate LD 35**
+    — and every candidate on all four carries `result = 'advanced'`, which is the **August
+    top-two primary** result, not a November one still being counted. The other 114 seats in
+    those chambers do carry a `won` row, so the feed ran. 🔴 **Read `result` and `result_source`
+    before calling a seat undecided**, and never infer a winner from `advanced`, from incumbency
+    or from the primary margin — two of those four had primaries inside 600 votes.
+  - ⚠ **A STAGGERED CHAMBER CAN HIDE ONE OF THESE BEHIND A CONSTITUTIONAL RULE.** `DATES.md`
+    filed all 26 non-pending Washington Senate seats as mid-term. 25 are; Senate LD 35 was on the
+    ballot. ▶ **Count the seats with a 2026 race separately from the seats that are pending** —
+    the difference is the results gap, and "the chamber is staggered" explains only the rest.
 - 🔴 **A CHAMBER CAN HOLD SEATS ITS CONSTITUTION'S MEMBERSHIP NUMBER DOES NOT COUNT.** Maine: 154
   House offices against a constitutional 151, because three are tribal seats filled by their
   nations. Read as a defect that is Connecticut's *fabricated* missing-office finding; the

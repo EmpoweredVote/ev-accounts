@@ -22,67 +22,65 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**57 bodies still to do · 619 offices · 1 of the 57 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**55 bodies still to do · 501 offices · 1 of the 55 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
-| 2 | WA | STATE_LOWER | 95 | 95 | 71 | — | — | — | 95 | — |
-| 3 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
-| 4 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
-| 5 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
-| 6 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
-| 7 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
-| 8 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
-| 9 | WA | STATE_UPPER | 23 | 23 | 16 | — | — | — | 23 | — |
-| 10 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
-| 11 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 12 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 13 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
-| 14 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 15 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 16 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 17 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 18 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 19 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 20 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 21 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 22 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 23 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 24 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 25 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 26 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 27 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 28 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 29 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 30 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 31 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 32 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 33 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 34 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 35 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 36 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 37 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 38 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 39 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 40 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 41 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 42 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 43 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 44 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 45 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 46 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 47 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 48 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 49 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 50 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 51 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 52 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 53 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 54 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 55 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 56 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 57 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 2 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
+| 3 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
+| 4 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
+| 5 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
+| 6 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
+| 7 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
+| 8 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
+| 9 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 10 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 11 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
+| 12 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 13 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
+| 14 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 15 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 16 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 17 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 18 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 19 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 20 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 21 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 22 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 23 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 24 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 25 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 26 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 27 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 28 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 29 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 30 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 31 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 32 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 33 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 34 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 35 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 36 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 37 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 38 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 39 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 40 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 41 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 42 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 43 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 44 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 45 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 46 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 47 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 48 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 49 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 50 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 51 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 52 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 53 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 54 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 55 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -122,7 +120,7 @@ Every one of these was done once already, by the waves that shipped with this re
    `CC_0464` (a term that has already started). Reserve the slot first:
    `npm run steward --prefix backend -- slot CC --purpose "..."`. 🔴 **One migration per file.**
 
-   🔴 **Five corrections to those two templates. The applied files still carry the old shapes —
+   🔴 **Eight corrections to those two templates. The applied files still carry the old shapes —
    migrations here run once and are never edited — so the fixes live in your copy, not in theirs.**
 
    - 🔴🔴 **CLOSE THE NULL IN `is_reelection` BEFORE YOU PIN ANYTHING.** The library's expression
@@ -171,6 +169,27 @@ Every one of these was done once already, by the waves that shipped with this re
      overwriting a value records the value it overwrote — `CA_0335` cost a production clone for
      this. Capture `(office_id, term_id, term_end, how_ended)` for every predecessor, assert
      `term_end IS NULL` across all of them, and state the count in the header.
+   - 🔴🔴 **RUN THE WRONG RULE BESIDE THE RIGHT ONE, OR THE CONTROL PASSES FOR BOTH.** A date
+     control that only asks "does the computed day carry the recorded cluster?" is satisfied by
+     any rule that happens to land there, and the near-miss rules in this pass are all one small
+     offset away — *first* Monday where the law says second, *second* Wednesday where it says
+     third, *the Thursday* where it says the Wednesday. ▶ **Compute the near-miss too, and assert
+     it carries NOTHING.** Washington's seven biennia agree with the second Monday 5/6/7/12/16/23/
+     25 times and with the first Monday **zero times in all seven**, which separates the two rules
+     instead of merely agreeing with one. Worked in `CC_0487`'s assertion 3.
+   - 🔴🔴 **A CITATION CAN BE RIGHT ABOUT THE DATE AND WRONG ABOUT THE LAW, AND NOTHING MEASURES
+     IT.** Washington's constitution cannot date its legislature at all (Art. II fixes only the
+     term's *length*) while Art. III § 4 names **the same day** for the state executives; the
+     session statute names it a third time. Three citations, one date, one of them correct. 🔴 No
+     count, digest or view can tell them apart — the defect surfaces only when a person reads the
+     `authority` text. ▶ **Name the other body in a gate.** Both Washington files refuse to date
+     or seat a state executive, which is the only mechanical trace the distinction leaves.
+   - ⚠ **AN UNRECORDED RESULT AND AN UNDECIDED RACE ARE INDISTINGUISHABLE FROM THE SEAT.** Four
+     Washington seats were on the ballot with no `won` row, and every candidate on them carried
+     `result = 'advanced'` — the **August top-two primary** result, not a November one still being
+     counted. ▶ **Read the `result` and `result_source` before calling a seat undecided**, name
+     the seats in the file, and gate on them *staying* unrecorded: if one gains a winner the wave
+     is larger and the pin is stale. Worked in `CC_0487`'s P2.
 7. **Watch one control fail.** Not optional and not ceremony — a gate nobody has seen go red is not
    a gate. `CC_0461`'s control found that `CC_0453`'s P2 was dead code; `CC_0462`'s moved the
    nationwide holder digest; `CC_0464`'s seated the wrong person into a seat. 🔴 **Assert the
@@ -279,6 +298,202 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-23 — Washington, 118 offices, two files and no companion
+
+**118 offices left the queue** (619 → 501) and both Washington bodies left the table. Two files,
+both applied; **no third file waits on a date**, because no Washington state office is flagged
+`is_vacant` — the first state in this pass to need no companion of the `CC_0480` / `CC_0486` kind.
+
+| order | slot | what it does | state |
+|---|---|---|---|
+| 1 | `CC_0487` | 118 date rows, all on **2027-01-11** — 95 House, 23 Senate | ✅ applied |
+| 2 | `CC_0488` | seat 118 House + Senate winners for **2027-01-11** (87 re-elections, 31 handovers) | ✅ applied |
+
+### 🔴🔴 THE AUTHORITY IS A STATUTE, AND THE CONSTITUTION NAMES THE SAME DAY FOR SOMEBODY ELSE
+
+Every state before this one in the pass was dated from its constitution. **Washington's
+constitution cannot date its legislature at all**: Art. II §§ 5–6 fix the *length* of a
+legislative term and never its start. The answer is **RCW 44.04.021** — *"The regular term of
+office of each senator and representative shall commence on the second Monday in January following
+the date of election."*
+
+🔴 **AND THE PROVISION THAT LOOKS LIKE THE ANSWER GIVES THE RIGHT DATE FROM THE WRONG LAW.** Art.
+III § 4 says *"The terms of all officers named in section one of this article shall commence on the
+second Monday in January after their election"* — the executives, on the same day. A file that
+cited it for a legislator would be correct about 2027-01-11 and wrong about why, and **no count,
+digest or view could tell**. That is the shape of a citation defect: it fails only when somebody
+reads it. Both files carry a gate refusing to date or seat a Washington executive, and both were
+watched firing.
+
+⚠ **The session convenes the same day too** (RCW 44.04.010), which is a third plausible-looking
+citation for the same date. 44.04.021 is the one that says when the *term* begins; Maine is this
+pass's proof the two can be different days.
+
+### 🔴 A CORRECTION TO DATES.md § WA: THE OFF-DATES ARE NOT ALL APPOINTMENTS, AND THE LEDGER MISSED A SEAT
+
+Two things in the sourcing write-up did not survive re-measurement. Neither changes the date;
+both change what a later reader would believe.
+
+1. **The ledger explains all 53 non-second-Monday rows as "appointments to vacancies". 26 are.
+   The other 27 start on January 1st** and come from the Ballotpedia half of the source, which
+   writes the first of the year when it knows only the year. 🔴 **Two of the 27 fall in EVEN
+   years (2014 and 2016), where no regular Washington legislative term can begin at all** — which
+   is the evidence that they are imprecise rather than real. Filed as a precision artifact, not a
+   second rule, and asserted in `CC_0487` so the next reader cannot take 27 rounded dates for
+   corroboration.
+
+2. **The ledger says three House seats carry no recorded winner. There are four, and the fourth
+   is in the Senate.** DATES.md framed all 26 non-pending Senate seats as mid-term. 25 are;
+   **Legislative (Senate) District 35 was on the 2026 ballot** (Drew C MacEwen against Carolina
+   Mejia) and has no recorded result.
+
+### ⚠ FOUR SEATS ARE UNRECORDED, NOT UNDECIDED — AND THE TWO LOOK IDENTICAL
+
+    Legislative (House) District 12   State Representative (Position 1)
+    Legislative (House) District 23   State Representative (Position 1)
+    Legislative (House) District 25   State Representative (Position 2)
+    Legislative (Senate) District 35  State Senator
+
+Every candidate row on all four carries `result = 'advanced'` — the **August top-two primary**
+result. The November result was never written, while the other 114 seats in the two chambers do
+carry a `won` row, so the general-election feed did run. 🔴 **Nothing here licenses inferring a
+winner**: not `advanced`, not incumbency, not the primary margin — and two of the four had
+primaries inside 600 votes. This is the results programme's work. `CC_0487`'s P2 names all four
+and **refuses if one has since acquired a winner**, because the wave would then be larger than 118
+and `CC_0488`'s pin stale. That gate was watched firing, naming Senate District 35.
+
+### 🟢 THE CONTROL DISCRIMINATES BETWEEN THE TWO RULES INSTEAD OF AGREEING WITH ONE
+
+94 Washington legislative terms already in `office_terms`, from the Legislature's own member web
+service, retrieved by a pass that never read this statute. For seven biennia the computed second
+Monday carries a cluster and the computed **first** Monday — one `+ 7` away, a real Monday in the
+right month — carries **nothing**:
+
+| cycle | second Monday | rows there | first Monday | rows there |
+|---|---|---|---|---|
+| 2013 | 2013-01-14 | 5 | 2013-01-07 | **0** |
+| 2015 | 2015-01-12 | 6 | 2015-01-05 | **0** |
+| 2017 | 2017-01-09 | 7 | 2017-01-02 | **0** |
+| 2019 | 2019-01-14 | 12 | 2019-01-07 | **0** |
+| 2021 | 2021-01-11 | 16 | 2021-01-04 | **0** |
+| 2023 | 2023-01-09 | 23 | 2023-01-02 | **0** |
+| 2025 | 2025-01-13 | 25 | 2025-01-06 | **0** |
+
+▶ **A control that only confirmed the right rule would have passed for both rules.** `CC_0487`
+runs both columns in a loop and refuses on either.
+
+### 🟢 THE `is_reelection` NULL CANNOT OCCUR HERE, AND THE GATE IS IN THE FILE ANYWAY
+
+All 147 Washington legislative seats are held and every winner already had a `politicians` row, so
+the defect California and Massachusetts paid for has nothing to bite on: both digests were
+computed side by side against production and are the same string over the same 118 rows. **The fix
+and the coverage gate are carried regardless**, because "it cannot happen here" is a measurement
+that expires the moment a seat falls vacant.
+
+🔴 **AND THE TWO GATES TURN OUT TO BE COMPLEMENTARY, NOT REDUNDANT.** One control made a seat
+holderless and ran the file twice:
+
+- **with the fix** — `is_reelection` goes true → **false**, the digest changes, and the *digest*
+  gate catches it.
+- **without the fix** — `is_reelection` goes **NULL**, the row vanishes from `string_agg`, the
+  digest would have covered **117 of 118 rows**, and only the *coverage* gate catches it.
+
+Neither gate can see the other's fault. That is why the coverage gate stays in a file where it is
+unreachable: it is unreachable *because* of the fix, and a gate added only where the defect is
+already known is the gate that will be missing the first time it matters.
+
+### 🔴 EIGHT WINNERS ALREADY HOLD A SEAT, SIX MOVE, AND TWO KEEP WHAT THEY HAVE
+
+Six move inside the legislature, and **every seat they vacate is itself in this wave**:
+
+    Alex Ybarra        House LD 13  → Senate LD 13
+    Chipalo Street     House LD 37  → Senate LD 37
+    Cindy Ryu          House LD 32  → Senate LD 32
+    Jeremie Dufault    House LD 15  → Senate LD 15
+    Sharlett Mena      House LD 29  → Senate LD 29
+    Nikki Torres       Senate LD 15 → Senate LD 8   ⚠ SENATE TO SENATE
+
+⚠ **Nikki Torres is a sitting senator winning a different Senate district, and the seat she leaves
+is the one Jeremie Dufault wins.** A reader who assumed a mover is always a House member moving up
+would mis-read that row. The incumbency guard's scope is a UNION of winners and predecessors for
+exactly this reason — 118 + 118 people resolve to **143**, and the six are what the UNION removes.
+
+🔴 **TWO WINNERS COME FROM CITY OFFICE AND KEEP IT.** Jessica Forsythe and Vanessa Kritzer each
+hold a Redmond Citywide (At-large) council seat and won a House seat. `seat_officeholder` closes
+the predecessor on the office being *seated* and nothing else, so **both council terms stay open —
+and that is correct**. Whether either resigns is a fact nobody in this pass has read, and ending a
+term with no evidence it ended would be a claim about a real person. `CC_0488` names both, gates
+on finding exactly two, and asserts both are still open afterwards.
+
+### ⚠ WASHINGTON'S EXISTING TERM ROWS ARE TENURES, NOT TERMS
+
+All 147 seats carry exactly one open `office_terms` row whose `term_start` is when that member
+first took the seat — 1999 for the longest. So closing a predecessor at 2027-01-10 writes an end
+onto a tenure that may span a quarter of a century, and for the 87 re-elected members it closes
+their own tenure the day before their new term opens. Same shape as every state in this pass, and
+not this file's to change.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+| check | result |
+|---|---|
+| Washington state seats still pending | **0** |
+| terms on 2027-01-11 citing `CC_0488` | **118** |
+| predecessors closed at 2027-01-10 | **118** |
+| offices answering `office_next_term` | **118** |
+| offices carrying the date | **118** |
+| politicians | **91,988**, unmoved — Washington needed no people file |
+| flagged-vacant offices, repo-wide | **66**, unmoved |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API.** Three real addresses through `api.empowered.vote`:
+
+- **501 N Anderson St, Ellensburg** → the whole chamber move on one page: Senate LD 13 shows Judy
+  Warnick `held` with **incoming Alex Ybarra on 2027-01-11**, and House LD 13 Position 2 shows
+  **Ybarra himself `held`, with incoming Joshua Thompson the same day** — the seat he vacates,
+  filled on the day he leaves it. Position 1, Tom Dent, re-elected.
+- **15670 NE 85th St, Redmond** → **Jessica Forsythe appears twice on one page**: sitting
+  Councilmember Position 3 with no incoming, and the **incoming State Representative for House
+  LD 48 Position 2 on 2027-01-11**, replacing Amy Walen. The two-seats case rendering exactly as
+  the file intends.
+- **200 Madison Ave N, Bainbridge Island** → House LD 23 Position 1 shows **Tarra Simmons `held`
+  with no incoming**. That is an unrecorded November result rendering honestly rather than as a
+  gap in this work. Position 2, Greg Nance, re-elected 2027-01-11.
+
+### Controls, each watched going red (step 7)
+
+🔴 Recorded by the gate each one FIRED ON, not the gate it was aimed at.
+
+| # | file | the tamper | fired on |
+|---|---|---|---|
+| 1 | `CC_0487` | `second_mon := first_mon + 0` — the first-Monday mistake | **3a**, printing anchor *and* computed day |
+| 2 | `CC_0487` | the wrong-rule gate pointed at the right-rule day | **3c**, reading 5 real rows on 2013-01-07 |
+| 3 | `CC_0487` | the January-1 finding pointed at January 2nd | **3d**, reading 0 where it expects 27 |
+| 4 | `CC_0487` | a date row written for House LD 12 Position 1 | **4**, the unrecorded-seats gate |
+| 5 | `CC_0487` | a date row written for a WA state executive | **5**, the Art. III § 4 gate — *not* 4 or 6 |
+| 6 | `CC_0487` | Senate LD 35 gains a `won` row, P1's counts moved with it | **P2**, naming Senate District 35 |
+| 7 | `CC_0487` | *(free, real)* applied, then dry-run again | **P0**, 118 of 118 already dated |
+| 8 | `CC_0488` | Senate LD 13's winner swapped for another real person | **P1 digest** — every count above it passed |
+| 9 | `CC_0488` | a seat made holderless **and** the `IS NOT NULL` fix removed | **P1 coverage**, 1 of 118 rows NULL |
+| 10 | `CC_0488` | the same seat holderless, fix retained | **P1 digest** — the complementary half |
+| 11 | `CC_0488` | the pin names 2027-01-04 | **P4**, all 118 dates disagree |
+| 12 | `CC_0488` | Senate LD 48 flagged `is_vacant` | **P6**, naming the missing companion file |
+| 13 | `CC_0488` | a predecessor given `how_ended = 'resigned'` | **P7**, the COALESCE trap |
+| 14 | `CC_0488` | a Redmond council term closed early | **P8**, 1 kept term where 2 are required |
+| 15 | `CC_0488` | a WA executive seated on 2027-01-11, deltas moved to match | **10**, the Art. III § 4 gate |
+| 16 | `CC_0488` | *(free, real)* applied, then dry-run again | **P2**, 118 rows already cite CC_0488 |
+
+⚠ **Control 15 moved two delta counts with the tamper**, because assertions 3 and 14 count terms
+repo-wide and would have fired two gates earlier. An author who seated an executive here would
+have written those deltas as 119. One coherent mistake, not three — but it is recorded, because a
+tamper that needed help to reach its gate says something about the gate.
+
+🔴 **Control 2's tamper builder refused once**, on `IF n <> 118 THEN`, because that string occurs
+twice in `CC_0487`. The builder exits non-zero when its needle is not unique, so the run that
+would have "passed" on an unmodified file never happened.
+
+---
 
 ## ✅✅ APPLIED 2026-11-23 — Massachusetts, 204 offices, ONE CLAUSE AND THREE DATES
 
