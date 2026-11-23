@@ -41,12 +41,19 @@ that line, you have no claim.**
 
 ### The claims this pass already holds
 
-Twelve, taken 2026-11-22 on 24-hour leases by one account on one machine — run `steward who` to
-see whose: **MA · ME · WA · MD · CA · OR · AZ · NV · UT · CO · TX · AL**. ⚠ **MA, ME and WA expire
-first** (2026-11-23, 13:16–13:34Z). They are *sourced* but not *seated*, so extend rather than
-release if the waves have not run: `extend` **renews from now**, it does not add to the old expiry.
-🔴 **A lease belongs to (email, machine)**, so a different machine cannot extend these without
-`--force`. Confirm the board before assuming any of them is still yours.
+**Sixteen**, all taken 2026-11-22 on 24-hour leases by one account on one machine — run
+`steward who` to see whose, and **believe the board over this list**:
+**MA · ME · WA · MD · CA · OR · AZ · NV · UT · CO · TX · AL · NE · NM · GA · AR**.
+
+⚠ **They expire through 2026-11-23, in the order taken** — MA, ME and WA first (13:16–13:34Z),
+AR last (20:57Z). All sixteen are *sourced* (AR only partly) and **none is seated**, so extend
+rather than release if the waves have not run: `extend` **renews from now**, it does not add to
+the old expiry. 🔴 **A lease belongs to (email, machine)**, so a different machine cannot extend
+these without `--force`.
+
+⚠ **A LEASE EXPIRING IS NOT WORK BEING LOST.** Everything these sixteen claims produced is in
+[`DATES.md`](./DATES.md) and committed. The lease stops **somebody else** working the state; it
+does not hold your findings. Let them lapse rather than extending sixteen leases out of habit.
 
 ### The per-state loop, as actually run
 
@@ -105,6 +112,23 @@ journal PDFs), `app.leg.wa.gov` + `leg.wa.gov`, `msa.maryland.gov`, `oregonlegis
 `leg.state.nv.us`, `azleg.gov`, `leg.colorado.gov`, `lldc.mainelegislature.org`,
 `nebraskalegislature.gov` (constitution, statutes AND the chapter indexes), `sos.nebraska.gov`
 (the canvass-book PDFs).
+
+### 🔴 THREE MIGRATION SLOTS ARE ALREADY RESERVED FOR NEVADA — USE THEM, DO NOT TAKE NEW ONES
+
+Reserved 2026-11-22 against production, with these purposes:
+
+| slot | purpose |
+|---|---|
+| **CC_0465** | NV legislature 2026: `office_swearing_in` dates for 52 Assembly+Senate seats (`Nev. Const. art. 4 §§ 3, 4`) |
+| **CC_0466** | NV legislature 2026: create 12 missing politicians and link 13 winner `race_candidates` rows |
+| **CC_0467** | NV legislature 2026: seat 52 winners whose terms began 2026-11-04 |
+
+⚠ **`steward release` ends a jurisdiction LEASE; there is no command to release a SLOT.** An
+unused reservation is a gap in the numbering, not a hazard — `steward sync` eventually reports it
+as "reserved … with no file anywhere" and asks a human whether it is dead (two such rows, CC_0355
+and 1951, have sat there 17 days). ▶ **So the cheapest thing to do with these three is use them**,
+and the purposes above are already accurate for Nevada's three files. 🔴 **Do not reserve fresh
+numbers for that work.**
 
 ### Two tools worth knowing are here
 
