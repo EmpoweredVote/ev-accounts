@@ -2280,125 +2280,172 @@ not been run.
 
 ---
 
-## AR — Arkansas · 7 offices · ⏳ **PARTIALLY SOURCED, 2026-11-22 — NOT DONE.** Four provisions read, no date established
+## AR — Arkansas · 7 offices · 🔴 **FIVE REFUSED WITH A CITED WINDOW · TWO STILL OPEN**, 2026-11-23
 
-🔴 **This block is deliberately unfinished and the queue row says so.** It exists so the next
-session does not re-read the four provisions below. **No Arkansas office may be dated from it.**
+🔴 **Supersedes the "four provisions read, no date" block committed on 2026-11-22.** That block
+was right about what it had read and wrong about one thing it inferred — the correction is marked
+below. Nothing here dates an Arkansas office; five of the seven now refuse **with a window**, which
+is a result, and two remain genuinely open.
 
 | body | offices | start date | state of play |
 |---|---|---|---|
-| Governor · Secretary of State · Treasurer of State · Auditor of State · Attorney General | 5 | ⏳ **not established** | the returns are published by the Speaker **during the first week of the session** — an event, like Oregon's and Georgia's |
-| Commissioner of State Lands | 1 | ⏳ **not established** | ⚠ excluded from the Schedule's general rule but **absent from `Art. 6 § 3`'s list** — covered by neither provision read so far |
-| Lieutenant Governor | 1 | ⏳ **not established** | ⚠ **in neither list.** May fall under the Schedule's general rule, which would give it a different start from the Governor's |
+| Governor · Secretary of State · Treasurer of State · Auditor of State · Attorney General | 5 | 🔴 **REFUSED — window 2027-01-11 → 2027-01-17** | `Art. 6 § 3`: the Speaker opens and publishes the returns **during the first week of the session** and the winner "shall be declared duly elected thereto". The day is not fixed by any instrument |
+| Commissioner of State Lands | 1 | ⏳ **open** | 🟢 **It is a STATUTORY office**, not a constitutional one — `Art. 6 § 1` lets the General Assembly create it. That is why it is excluded from the Schedule and absent from `Art. 6 § 3`. Its commencement is a question for the Code |
+| Lieutenant Governor | 1 | ⏳ **open** | 🟢 **The word "Lieutenant" does not occur anywhere in the 1874 Constitution or in Amendments 1–10.** A later amendment created it and that amendment has not been read |
 
-### What IS established — four provisions, read in full or in substance
+### 🔴 THE CORRECTION: `Schedule § 20` IS TRANSITIONAL, AND IT CANNOT DATE A 2026 OFFICER
 
-**1. The term length, for all seven. `Ark. Const. Amendment 63, § 1` — *Executive Department — Term
-of office*:**
+The previous block read `Schedule § 20` as a live residual and reasoned that the Lieutenant
+Governor, never being excluded from it, would fall inside it and start **within fifteen days of
+notification** — a different day from the Governor's. 🔴 **Do not act on that.** Reading the
+sections on either side of it, which the teaser never showed, settles it:
 
-> The Executive Department of this State shall consist of a Governor, Lieutenant Governor, Secretary
-> of State, Treasurer of State, Auditor of State, Attorney General and Commissioner of State Lands,
-> all of whom shall keep their offices at the seat of government, and **hold their offices for the
-> term of four (4) years, and until their successors are elected and qualified**.
+> **Sec. 19.** **At said election** the qualified voters of each county and senatorial district …
+>
+> **Sec. 20.** All officers elected under this Constitution, except the Governor, Secretary of
+> State, Auditor of State, Treasurer, Attorney General and Commissioner of State Lands, shall enter
+> upon the duties of their several offices when they shall have been declared duly elected **by said
+> State Board of Supervisors** and shall have duly qualified …
+>
+> **Sec. 22.** **The first session of the General Assembly under this Constitution shall commence on
+> the first Tuesday after the second Monday in November, 1874.**
 
-🟢 It names **exactly our seven offices**, so the body list is settled. 🔴 **And it names no
-commencement day** — the same shape as Nebraska's `Art. IV-1` and New Mexico's `§ 32-506`. In those
-two states a residual supplied the day. Arkansas's equivalent **expressly excludes most of these
-officers**, which is why this state is harder.
+⚠ **§ 20's declaring body is "said State Board of Supervisors"**, an 1874 body defined by § 19 and
+long gone, and § 22 names the year outright. The Schedule is the instrument's own commissioning
+clause. ▶ **This is `CLAUDE.md`'s bound-a-parse rule in a legal document**: a provision read out of
+its own structure gave a plausible fifteen-day answer for an office that did not exist when it was
+written. **Read the sections around the one you were given.**
 
-**2. The residual, and its exclusion. `Ark. Const. Schedule, § 20` — *When officers to enter upon
-duties*:**
+### 🟢 `Art. 6 § 3` IN FULL — the sentence the publisher's teaser cut off
 
-> All officers elected under this Constitution, **except the Governor, Secretary of State, Auditor
-> of State, Treasurer, Attorney-General and Commissioner of State Lands** shall enter upon the
-> duties of their several offices when they shall have been declared duly elected by said State
-> Board of Supervisors, and shall have duly qualified. All such officers shall qualify and enter
-> upon the duties of their offices **within fifteen days after they have been duly notified of
-> their election**.
-
-🔴🔴 **This is the Texas exclusion rule firing in the hardest possible direction.** Texas's
-`§ 601.003(c)` excluded four offices from a general rule and the job was to go and find what covered
-them. Here the exclusion covers **six of our seven**, and the thing that covers them is not in this
-section.
-
-**3. What covers five of the six. `Ark. Const. Art. 6, § 3` — *Election of executive officers*:**
-
-> The Governor, Secretary of State, Treasurer of State, Auditor of State, and Attorney General shall
-> be elected by the qualified electors of the State at large, at the time and places of voting for
+> The Governor, Secretary of State, Treasurer of State, Auditor of State and Attorney General shall
+> be elected by the qualified electors of the State at large at the time and places of voting for
 > members of the General Assembly; the returns of each election therefor shall be sealed up
 > separately and transmitted to the seat of government by the returning officers, and directed to
-> the Speaker of the House of Representatives; **who shall, during the first week of the session,
+> the Speaker of the House of Representatives, who shall, **during the first week of the session**,
 > open and publish the votes cast and given for each of the respective officers hereinbefore
-> mentioned, in the presence** …
+> mentioned, in the presence of both houses of the General Assembly. **The person having the highest
+> number of votes for each of the respective offices shall be declared duly elected thereto**; but
+> if two or more shall be equal, and highest in votes for the same office, one of them shall be
+> chosen by the joint vote of both houses of the General Assembly, and a majority of all the members
+> elected shall be necessary to a choice.
 
-⚠ **The text is truncated there** — see "What stopped this". What is already visible is the
-mechanism: **the Speaker publishes the returns during the first week of the session**, which is
-`ORS 176.010`'s Oregon pattern and `O.C.G.A. § 45-12-2`'s Georgia pattern in constitutional form.
-▶ **Arkansas is very likely a third event-based refusal with a session-week window.** It is not
-recorded as one, because the sentence that would say so has not been read to its end.
+🟢 **THE CONTROL, AND IT IS A STRONG ONE.** The text above comes from a scan, not from the
+state's publisher. The official publisher's teaser — read on `advance.lexis.com`, the AR Bureau of
+Legislative Services source — ends mid-clause at "in the presence". **The two agree word for word
+across the whole 90-word overlap**, down to "hereinbefore mentioned". A transcription that matches
+the official text for ninety words and then diverges in the ninety-first is not a failure mode worth
+positing; and the agreement also says `Art. 6 § 3` **has not been amended since 1874**, because the
+current official text still reads as the adopted text does. ⚠ Comma placement differs in two
+places, which is what a 1915 printing versus a modern reset looks like, and changes no meaning.
 
-**4. 🟢 There is NO Arkansas inauguration statute.** A quoted-AND search of the Arkansas Code for
-`"inauguration" "Governor"` returned **"No documents found"** — a clean negative, and a meaningful
-one, because Georgia's answer to exactly this question was a statute of that name. ⚠ It does not
-rule out a differently-worded statute.
+### The window, from both sides
 
-### 🔴 Three lists, three different memberships — this is the finding to carry forward
+| | date | authority |
+|---|---|---|
+| session convenes | **2027-01-11**, 12:00 noon | `Ark. Code § 10-2-101(a)` — second Monday in January of each odd-numbered year |
+| latest the Speaker may publish | **2027-01-17** (outer bound) | `Art. 6 § 3` — "during the first week of the session". ⚠ **Inferred, not stated** |
 
-| provision | who it names |
-|---|---|
-| `Amendment 63 § 1` (term length) | Governor · **Lt. Governor** · SoS · Treasurer · Auditor · AG · **Commissioner of State Lands** — all 7 |
-| `Schedule § 20` (exclusions) | Governor · SoS · Auditor · Treasurer · AG · **Commissioner of State Lands** — 6, **no Lt. Governor** |
-| `Art. 6 § 3` (returns to the Speaker) | Governor · SoS · Treasurer · Auditor · AG — **5, neither the Lt. Governor nor the Commissioner of State Lands** |
+🟢 **Why the convening date was not in the Constitution, and why the earlier search failed.**
+`Art. 5 § 5` (1874) reads: *"The General Assembly shall meet at the seat of government every two
+years on the first Tuesday after the second Monday in **November** until said time be altered by
+law."* 🔴 **The Constitution delegates its own convening date to statute, and the date it names is
+in November.** The previous session searched the Constitution for `"second Monday in January"`,
+found nothing, and concluded Arkansas "words it differently" — the real answer is that the
+Constitution does not contain the date at all. ▶ **When a clause ends "until altered by law", stop
+searching the instrument and go to the Code.**
 
-▶ **Two offices fall through the gaps, in opposite directions:**
+The Code's answer is stated by the **Arkansas Bureau of Legislative Research**, the General
+Assembly's own agency, in `2027 REGULAR SESSION IMPORTANT DATES AND DEADLINES`:
 
-- **Commissioner of State Lands** is *excluded* from the Schedule's rule and *not named* in
-  `Art. 6 § 3`. Something else must date it, and that something has not been found.
-- **Lieutenant Governor** is named in neither the exclusion nor the returns clause. On the plain
-  text it would fall under `Schedule § 20`'s general rule — entering on declaration and
-  qualification, **within fifteen days of notification** — which is a *different* start from the
-  Governor's. 🔴 **That reading is plausible and unverified.** The office was created by a later
-  amendment, which may carry its own provision, and the 1874 Schedule could not have contemplated
-  it. **Do not act on this without reading the amendment that created the office.**
+> **Convening regular session: January 11, 2027.** Arkansas Code § 10-2-101(a) sets 12:00 noon on
+> the second Monday in January of each odd-numbered year for the convening of the General Assembly
+> in regular session. This rule is derived from Arkansas Constitution, Article 5, § 5, **which
+> permits the General Assembly to establish the date**.
 
-⚠ **The lists were built by reading the three provisions side by side. That is the only reason the
-gaps are visible at all** — each provision on its own reads as complete.
+🟢 That document does three jobs at once: it gives the date, it names the statute, and it
+**confirms that `Art. 5 § 5`'s delegation is still the live mechanism** — which is the part a bare
+statute citation would not have proved.
+
+⚠ **`window_end_date` here is weaker than Georgia's.** `O.C.G.A. § 45-12-2` names an explicit
+fallback — noon on Saturday of that week — so Georgia's **2027-01-16** is statutory. Arkansas
+names no fallback at all, so **2027-01-17** is the seventh day of a session that begins on a Monday
+and nothing more. Record it as a bound; do not cite it as a rule.
+
+### 🔴 Arkansas refuses for a DIFFERENT reason from Georgia, and the difference matters
+
+Georgia's term **is** the ceremony: `O.C.G.A. § 45-12-2` says "the Governor shall begin the
+discharge of his duties from the time of his inauguration", so the event is the start and only the
+day is unknown. **Arkansas says no such thing.** `Art. 6 § 3` says only that the person *is declared
+duly elected*; `Amendment 63 § 1` says they *hold their offices for the term of four (4) years, and
+until their successors are elected and qualified*. ▶ **So two things are unknown in Arkansas, not
+one**: which day in that week, **and whether the start is the declaration or the qualification that
+follows it.** The window is sound either way, because both events fall inside it — but a future
+session must not write `basis = 'statute'` against a declaration date without settling that.
 
 ### ⏳ What is still open
 
-1. **The rest of `Art. 6 § 3`** — the sentence continues past "in the presence" and is where a
-   declaration, and possibly a day, would be.
-2. **The Lieutenant Governor's own amendment**, and whether it dates the office.
-3. **The Commissioner of State Lands' commencement**, which neither provision read supplies.
-4. **When the General Assembly convenes**, which bounds the window if the event reading holds.
-   ⚠ A search for `"second Monday in January"` in the Arkansas Constitution returned nothing, so
-   **Arkansas words it differently** — find the wording rather than assuming the date.
-5. **The control**: `office_terms` was not queried for Arkansas. It should be, and read against the
-   Georgia lesson — if Arkansas's start is a choice within a week, one agreeing row proves nothing.
+1. **Whether the term begins at the declaration or at qualification.** `Ark. Code` Title 21 (Public
+   Officers and Employees) and Title 7 (Elections) are the places to look.
+2. **The amendment that created the Lieutenant Governor**, and whether it carries its own
+   commencement. ⚠ **It is not Amendment 6** — that one is about sureties on official bonds,
+   proclaimed by Governor Jefferson Davis on 1902-02-20. Recorded because 6 is the number a reader
+   guesses.
+3. **The Commissioner of State Lands' commencement**, now known to be a statutory question.
+4. **The `office_terms` control**, still not run — and per the Georgia lesson it proves nothing
+   here, because the start is a choice within a week rather than a calendar formula.
 
-### What stopped this
+### What was read, and from where
 
-`advance.lexis.com` is the official publisher for both the Arkansas Code (`Arkansas Code Annotated
-PAW`) and the constitution (`AR - Arkansas Constitution PAW ETTOC`, served under the banner
-**"AR Bureau of Legislative Services"**), reached from `arkleg.state.ar.us` via
-`www.lexisnexis.com/hottopics/arcode/`. 🔴 **Its search returns a TEASER, not the section**, and
-opening the full document redirects to a captcha — the same `/RobotValidation` wall Georgia hit.
-`Art. 6 § 3` is longer than its teaser, so its ending is unreachable by this route.
+| instrument | read in full? | source |
+|---|---|---|
+| `Art. 6 § 1` (1874 original: five officers, two-year terms, and the Commissioner authorised) | ✅ | archive.org scan |
+| `Art. 6 § 3` | ✅ | archive.org scan, controlled against the Lexis teaser |
+| `Art. 5 § 5` | ✅ | archive.org scan, confirmed live by the BLR document |
+| `Schedule §§ 19–24` | ✅ | archive.org scan |
+| `Amendment 63 § 1` | ✅ (§ 1 only) | Lexis teaser, 2026-11-22 |
+| `Amendments 1–10` | ✅ | archive.org scan — **no Lieutenant Governor in any of them** |
+| `Ark. Code § 10-2-101(a)` | ❌ quoted by the BLR, not read directly | arkleg.state.ar.us |
 
-▶ **Next session: find Arkansas's constitution as a PDF**, the way Georgia's was solved —
-`sos.arkansas.gov` is the obvious candidate and was **not** tried (its
-`/publications/historical/arkansas-constitution` path 404s, which is not the same as the site having
-nothing). 🟢 `arkleg.state.ar.us` itself answers plain `curl` and is worth a second look for a
-constitution download.
+**The document.** `archive.org/download/constitutionofst00arka/` — *Constitution of the State of
+Arkansas, adopted in convention September 7, 1874*, scanned from the **Secretary of State's Biennial
+Report** (the running head prints "Biennial Report of Secretary of State" on each page), with
+Amendments 1–10 appended. Served as a PDF (3.9 MB) and, more usefully, as `_djvu.txt` (167 KB) to
+plain `curl`. ⚠ **It is OCR**: `River` reads `Eiver`, `qualified` reads `quaKfied`. That is exactly
+why the overlap control with the official publisher was run before any of it was quoted.
 
-🟢 **Two useful facts about the Lexis search, learned here and worth reusing:**
-- **It honours quoted phrases.** `"shall be installed in office"` returned *No documents* while the
-  unquoted `installed in office` returned Amendment 73's preamble and much else — so the quoting
-  works and a quoted negative is a real negative.
-- **Unquoted terms are OR'd and rank by relevance**, which is why `Amendment 63 terms of office
-  constitutional officers four years` returned a statute about **restrictions on other employment**
-  as its top hit. ▶ **Quote the phrase or the search is noise.**
+### 🟢 Sourcing notes — what answered, what lied, and one new file route
+
+- 🔴 **A web-search summary named two official-looking Arkansas hosts and NEITHER EXISTS**:
+  `ssl-sos-site.ark.org` (offered as "the Secretary of State's PDF of the 1874 Constitution") and
+  `digitalheritage.arkansas.gov` (offered as "the Arkansas State Archives, all five constitutions
+  transcribed"). Both fail DNS with **Non-existent domain**, while `sos.arkansas.gov` and
+  `arkleg.state.ar.us` resolve from the same shell seconds apart. ⚠ The first of the two is even
+  cited inside `sos.arkansas.gov`'s own HTML, so it is a stale internal name the search engine
+  repeated, not an invention. ▶ **`CLAUDE.md`'s rule — a search summary is a lead, not evidence —
+  applies to the HOSTNAME as much as to the fact.**
+- 🔴 **`www.sos.arkansas.gov` does not publish the Constitution, and its 404 is a 404.** Its
+  `/publications/` page carries **222 links and 15 PDFs** — a notary handbook, capitol tour guides,
+  an apostille brochure — and no law. Every missing path returns a stable **57,106-byte** HTML error
+  body, which is a usable fingerprint.
+- 🔴 **Two more ways a 200 lies, both on that host**: `/search?q=constitution` answers **HTTP 200
+  with 0 bytes**, and `/?s=constitution` answers **HTTP 200 with the homepage, byte for byte
+  (66,824)** — the query is simply dropped. Neither is a search result and both look like one.
+- **`arkleg.state.ar.us` answers plain `curl`**, and its only route to the Constitution is an
+  external-link modal whose target is `lexisnexis.com/hottopics/arcode/` — read out of the page, so
+  the arkleg route is closed by its own design, not by a block.
+- 🟢 **arkleg has an unauthenticated FILE route: `/Home/FTPDocument?path=<url-encoded path>`.**
+  That is how the BLR session-dates PDF was obtained. ⚠ There is no listing: `FTPDirectory` and
+  `FTPFolder` answer **500**, and `FTPDocument?path=/` answers **200 with a 42-byte `image/gif`** —
+  a placeholder, which is a 200 that lies in a sixth way. You must already know the path.
+- 🔴 **Lexis's search cannot be driven in Playwright either.** Submitting — by Enter or by
+  clicking the Search button, from both the Code and the Constitution entry points — fires an XHR
+  that redirects to `signin.lexisnexis.com` and is **blocked by CORS**; the page then silently does
+  not navigate and looks unchanged. ▶ **A browser was the right escalation for the Georgia PDF and
+  is the wrong one here**: the wall is an unauthenticated API, not a bot check. Reaching the
+  Constitution source works (`AR Bureau of Legislative Services | PAW Constitution Main Page`
+  loads); only searching it does not.
 
 ### Basis
 
-**None written. No Arkansas office is dated.**
+**None written. No Arkansas office is dated.** Five carry a window; two are open.

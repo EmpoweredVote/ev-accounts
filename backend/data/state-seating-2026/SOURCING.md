@@ -101,7 +101,10 @@ something that looks like success.**
 | `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
 | `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
 | `nmonesource.com` | **403, 239 bytes — AND THE FULL BROWSER HEADER SET DOES NOT HELP** | 🔴 the first true TLS-fingerprint block in this pass. Playwright — and then click: it is a JS tree whose page state does not survive an expand |
-| `advance.lexis.com` (the OFFICIAL code for **GA and AR**) | search-result **snippets render**; **opening a full document redirects to `/RobotValidation`** | read the snippet; a section longer than its teaser is not reachable. 🟢 It IS the state's publisher — `legis.ga.gov` and `arkleg.state.ar.us` both link to it and the sites say so — unlike justia/findlaw. 🔴 **QUOTE YOUR PHRASE**: unquoted terms are OR'd and rank by relevance, so `Amendment 63 terms of office …` returned a statute about restrictions on other employment as its top hit. A **quoted** phrase that returns "No documents" is a real negative |
+| `arkleg.state.ar.us` (the AR General Assembly) | 🟢 answers **plain `curl`**. 🔴 Holds **no law** — its only Constitution link is an external-link modal to `lexisnexis.com/hottopics/arcode/` | 🟢 **It has an unauthenticated FILE route: `/Home/FTPDocument?path=<url-encoded>`** — that is where the Bureau of Legislative Research's session-dates PDF lives. ⚠ **No listing**: `FTPDirectory`/`FTPFolder` answer 500 and `FTPDocument?path=/` answers **200 with a 42-byte `image/gif`**. You must know the path |
+| `www.sos.arkansas.gov` | answers a full header set; **does NOT publish the Constitution** (222 links, 15 PDFs, all tourism and handbooks) | 🔴 **Two 200s that lie, on one host**: `/search?q=…` returns **200 with 0 bytes**, and `/?s=…` returns **the homepage byte for byte (66,824)** — the query is dropped. 🟢 Its 404 body is a stable **57,106 bytes**, so it is a usable fingerprint |
+| `archive.org` | 🟢 serves scanned statute and constitution volumes to plain `curl`, as `.pdf` **and as `_djvu.txt`** | ⚠ **OCR, not a transcription** (`River`→`Eiver`). It is not the state's publisher, so **control it against the publisher's own text over the longest overlap you can get** — AR's was 90 words, word for word |
+| `advance.lexis.com` (the OFFICIAL code for **GA and AR**) | search-result **snippets render**; **opening a full document redirects to `/RobotValidation`** | read the snippet; a section longer than its teaser is not reachable. 🔴 **AND A BROWSER DOES NOT FIX THIS.** Submitting a search in Playwright — Enter or the button, from either entry point — fires an XHR that redirects to `signin.lexisnexis.com` and is **blocked by CORS**, after which the page **silently does not navigate and looks unchanged**. The wall is an unauthenticated API, not a bot check, so Playwright is the wrong escalation here. 🟢 It IS the state's publisher — `legis.ga.gov` and `arkleg.state.ar.us` both link to it and the sites say so — unlike justia/findlaw. 🔴 **QUOTE YOUR PHRASE**: unquoted terms are OR'd and rank by relevance, so `Amendment 63 terms of office …` returned a statute about restrictions on other employment as its top hit. A **quoted** phrase that returns "No documents" is a real negative |
 | `www.legis.ga.gov` | Angular SPA, 1,492 bytes to `curl`, every path ends at `/error/404` | browser — and it holds no law, it links out. 🟢 `sos.ga.gov` serves the constitution PDF to plain `curl` |
 
 ▶ **Assert on content, never on status or on "it returned bytes".** A near-identical byte count
@@ -259,6 +262,28 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- 🔴🔴 **A CLAUSE THAT ENDS "UNTIL ALTERED BY LAW" IS AN INSTRUCTION TO STOP READING THE
+  INSTRUMENT — AND SEARCHING THE INSTRUMENT FOR THE ANSWER RETURNS A CLEAN, MEANINGLESS
+  NEGATIVE.** `Ark. Const. Art. 5 § 5` says the General Assembly meets *"on the first Tuesday
+  after the second Monday in **November** until said time be altered by law"*. A search of the
+  Arkansas Constitution for `"second Monday in January"` therefore returns nothing, correctly,
+  and reads as "Arkansas words it differently". It does not: the date is in `Ark. Code
+  § 10-2-101(a)`. ▶ **Read the end of the sentence before trusting a negative search of it.**
+- 🔴🔴 **A PROVISION'S NEIGHBOURS DECIDE WHETHER IT IS LIVE, AND A SEARCH RESULT NEVER SHOWS
+  YOU ITS NEIGHBOURS.** `Ark. Const. Schedule § 20` reads as a standing residual and was recorded
+  as one. § 19 begins "**At said election**", § 20's declaring body is "**said State Board of
+  Supervisors**", and § 22 says "The first session of the General Assembly under this
+  Constitution shall commence … **in November, 1874**". The whole Schedule is the instrument's
+  commissioning clause. 🔴 Read alone it produced a plausible fifteen-day commencement for an
+  office that did not exist when it was written. ▶ **This is `CLAUDE.md`'s bound-a-parse rule in
+  a legal document: ask what the document says its own parts are.**
+- 🔴🔴 **A SEARCH SUMMARY'S HOSTNAMES ARE LEADS TOO, AND TWO OF THEM DID NOT EXIST.**
+  `ssl-sos-site.ark.org` and `digitalheritage.arkansas.gov` were offered as the Arkansas SoS's
+  constitution PDF and the State Archives' transcriptions. Both fail DNS with **Non-existent
+  domain**, seconds after `sos.arkansas.gov` resolves from the same shell. ⚠ The first is quoted
+  inside `sos.arkansas.gov`'s own HTML, so it is a **stale internal name**, not an invention —
+  which is worse, because it looks authoritative. ▶ **Resolve the host before planning around
+  the document.**
 - 🔴🔴 **WHEN SEVERAL PROVISIONS LIST THE SAME BODY'S OFFICERS, LIST THEM SIDE BY SIDE — THE
   MEMBERSHIPS DIFFER AND EACH ONE READS AS COMPLETE ON ITS OWN.** Arkansas names its executive
   officers three times and no two lists match: `Amend. 63 § 1` has all seven; `Schedule § 20`
@@ -374,7 +399,7 @@ in January 2027.
 | 13 | NE | EXEC+**2 BOARDS**+BOARD_EDUCATION | 13 | 1036 | ✅ done — all 13 on **2027-01-07**; the rule rows **verified**. 🔴 FOUR bodies, not three: `STATE_BOARD` holds the Regents AND the PSC |
 | 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ✅ done — all 11 on **2027-01-01**; the PEC rule row **verified**. 🔴 **PEC District 7 was on the ballot and we hold NO race for it** |
 | 15 | GA | EXEC | 10 | 1057 | 🔴 **ALL TEN REFUSED** — the inauguration day is appointed by joint resolution inside a statutory week. `window_end_date` **2027-01-16** is sourced |
-| 16 | AR | EXEC | 7 | 1064 | ⏳ **PARTIAL — NOT DONE.** 4 provisions read, no date. `Amend. 63 §1` gives the length; `Schedule §20` **excludes 6 of the 7**; `Art. 6 §3` sends 5 of them to the Speaker's publication of returns. 🔴 Lt. Governor and Commissioner of State Lands fall through every list |
+| 16 | AR | EXEC | 7 | 1064 | 🔴 **5 REFUSED with a window (2027-01-11 → 2027-01-17), 2 OPEN.** `Art. 6 §3` read in full: the Speaker publishes the returns **during the first week of the session** and the winner is "declared duly elected". 🔴 `Schedule §20` is **TRANSITIONAL** and cannot date anyone. Lt. Governor + Commissioner of State Lands still open |
 | 17 | ID | EXEC | 7 | 1071 | |
 | 18 | SD | EXEC | 6 | 1077 | |
 | 19 | NH | BOARD+EXEC | 6 | 1083 | ▶ Executive Council rule quotes `N.H. Const. pt. 2, art. 60` |
@@ -543,7 +568,7 @@ migration** — `CLAUDE.md`'s existing rule: *attach the race to the office of t
 actually leaving*. Until that is done, seat the rest of their state and leave these out, saying so
 in the header. They are 7 offices of the 1,162.
 
-## 🔴 26 OFFICES ACROSS 6 STATES CANNOT BE DATED AT ALL, which is a different refusal
+## 🔴 31 OFFICES ACROSS 7 STATES CANNOT BE DATED AT ALL, which is a different refusal
 
 ⚠ **This heading used to read "Ten more" over a table of sixteen, and closed by calling them
 "3 offices of the 1,162". Both numbers were stale** — corrected 2026-11-22 when Georgia took the
@@ -563,18 +588,22 @@ state's **executive**, never its legislature, that fails this way:
 | UT State Board of Education (6) | `20A-14-103` fixes the four-year term and the cycle and names no commencement. 🔴 Its only dates are transitional and land on the **first Monday** in January (2023-01-02, 2025-01-06), which is NOT the legislature's "first day of January" — so the House clause must not be borrowed |
 | NV Governor, Lt. Governor, Secretary of State, Attorney General, Treasurer, Controller (6) | Art. 5 §§ 2, 17, 19 run the term "from the time of his installation"; `NRS 282.010(4)` makes that **qualification**. 🟢 But `NRS 282.010(2)` bounds it: qualification must happen **prior to 2027-01-05**, so `window_end_date = 2027-01-04` is sourced even though `swearing_in_date` is not |
 | GA Governor, Lt. Governor, Secretary of State, Attorney General, State School Superintendent, Commissioner of Insurance, Commissioner of Agriculture, Commissioner of Labor (8) | `Ga. Const. Art. V, Sec. I, Para. II` installs the Governor-elect "at the next session of the General Assembly" and the other seven hold "the same term"; `O.C.G.A. § 45-12-2` puts the ceremony in **the first week of that session, on a day a joint resolution appoints**, and the Governor's duties begin "from the time of his inauguration". 🟢 Bounded on both sides: session opens 2027-01-11, fallback is noon Saturday, so `window_end_date = 2027-01-16` is sourced |
+| AR Governor, Secretary of State, Treasurer of State, Auditor of State, Attorney General (5) | `Amendment 63 § 1` gives a four-year length and no day; `Art. 6 § 3` has the Speaker open and publish the returns **during the first week of the session**, and the winner "shall be declared duly elected thereto". 🟢 Bounded: `Ark. Code § 10-2-101(a)` convenes the session **2027-01-11**, so `window_end_date = 2027-01-17`. ⚠ **That end is INFERRED** — Arkansas names no fallback, unlike Georgia. 🔴 Two things are unknown here, not one: which day, **and whether the start is the declaration or the qualification after it** |
 | GA Public Service Commissioner, Districts 3 and 5 (2) | `§ 46-2-1` defers to **`§ 46-2-1.1`**, a remedial statute (HB 1312, 2024) covering the three districts whose elections were enjoined in *Rose v. Raffensperger*. 🔴 Its subsection (b) onward **could not be read** — the publisher's bot check cut the text off. Do NOT borrow the Governor's window: § 46-2-1 borrows his ELECTION rules, not his term |
 
 Each needs a **`published` date recorded when it happens**. See [`DATES.md`](./DATES.md) for the
 confirming document named per office.
 
-**26 offices of the 1,162**, across six states: MD 2 · OR 1 · AZ 1 · UT 6 · NV 6 · **GA 10**.
+**31 offices of the 1,162**, across seven states: MD 2 · OR 1 · AZ 1 · UT 6 · NV 6 · **GA 10** · AR 5.
 🔴 **Georgia is the first state in the pass where EVERY office is refused**, so it has no
 remainder to proceed without them. The other five states' remaining offices do.
 
-🟢 **Three of these now carry a SOURCED `window_end_date`** — NV's six (2027-01-04), GA's
-eight (2027-01-16) — which is the column doing the job it exists for. ▶ **A refusal is not a
-dead end; it is a window plus a dated follow-up.**
+🟢 **19 of these 31 now carry a `window_end_date`** — NV's six (2027-01-04), GA's eight
+(2027-01-16) and AR's five (2027-01-17) — which is the column doing the job it exists for.
+⚠ **The three windows are not equally strong, and the file must not flatten them**: NV's and GA's
+are **statutory** (`NRS 282.010(2)`; `O.C.G.A. § 45-12-2`'s noon-Saturday fallback), while AR's is
+the seventh day of a session that begins on a Monday and **nothing in Arkansas law says so**.
+▶ **A refusal is not a dead end; it is a window plus a dated follow-up.**
 
 ## What to record per body, before writing any migration
 
@@ -593,15 +622,16 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**15 of 41 states sourced · 1,057 of 1,162 offices (91%) · 0 seated**, plus **Arkansas partially
-sourced (7 offices, no date established)**. The first twelve are the
+**16 of 41 states sourced · 1,057 of 1,162 offices (91%) · 0 seated.** ⚠ Arkansas is counted as
+sourced because five of its seven offices now carry a **cited window**; **two remain open** (Lt.
+Governor, Commissioner of State Lands). The first twelve are the
 twelve largest; the 26 that remain are **105 offices**, almost all single-body executive states.
 🔴 **"Sourced" is not "dated": Georgia's ten are all REFUSED**, so the pass now carries **26
 refused offices** across six states — GA 10, NV 6, UT 6, MD 2, OR 1, AZ 1. See the refusal table
 below, whose own heading and tally were stale until Georgia forced a recount.
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
 term. Step 2 is done for these fifteen; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: finish AR (7), then ID (7), SD (6).**
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: ID (7), SD (6), NH (6).**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
@@ -622,5 +652,5 @@ term. Step 2 is done for these fifteen; steps 3 through 9 are not started for an
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
 | NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
 | GA | 🔴 [`DATES.md`](./DATES.md) — **0 of 10 dated.** `O.C.G.A. § 45-12-2` puts the inauguration in the first week of the session **on a day a joint resolution appoints**, with a noon-Saturday fallback — so `window_end_date` **2027-01-16** is sourced and `swearing_in_date` is not. The 2 PSC seats are governed by a remedial statute (`§ 46-2-1.1`) that could not be read in full | ⏳ | | |
-| AR | ⏳ [`DATES.md`](./DATES.md) — **PARTIAL.** Term length settled (`Amend. 63 § 1`, all 7 named); commencement NOT settled. 🔴 Three provisions name **three different memberships**, and the Lt. Governor and the Commissioner of State Lands are covered by none of them | — | | |
+| AR | 🔴 [`DATES.md`](./DATES.md) — **5 of 7 REFUSED with a window; 2 open.** `Art. 6 § 3` read in full from a scan of the SoS Biennial Report and controlled against the official teaser across a 90-word overlap. `Ark. Code § 10-2-101(a)` convenes the session 2027-01-11 | — | **window 2027-01-11 → 2027-01-17** | ⚠ the end is **inferred**, not statutory — unlike Georgia's |
 | *(nothing else yet)* | | | | |
