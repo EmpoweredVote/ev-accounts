@@ -2449,3 +2449,124 @@ why the overlap control with the official publisher was run before any of it was
 ### Basis
 
 **None written. No Arkansas office is dated.** Five carry a window; two are open.
+
+---
+
+## ID — Idaho · 7 offices · ✅ sourced 2026-11-23 — **one provision says it outright, and the work was proving nothing displaced it**
+
+**All seven start 2027-01-04**, the first Monday in January 2027.
+
+| body | offices | start date | basis |
+|---|---|---|---|
+| Governor · Lieutenant Governor · Secretary of State · State Controller · Treasurer · Attorney General · Superintendent of Public Instruction | 7 | **2027-01-04** | `statute` — `Idaho Const. Art. IV, § 1` |
+
+### The provision
+
+**`Idaho Const. Art. IV, § 1` — *Executive officers listed — Term of office — Place of residence
+— Duties*:**
+
+> The executive department shall consist of a governor, lieutenant governor, secretary of state,
+> state controller, state treasurer, attorney general and superintendent of public instruction,
+> **each of whom shall hold his office for four years beginning on the first Monday in January next
+> after his election, commencing with those elected in the year 1946, except as otherwise provided
+> in this Constitution.** The officers of the executive department shall, during their terms of
+> office, reside within the state. …
+
+🟢 **It does three jobs in one sentence**, which is why Idaho is the shortest state in this pass:
+
+1. **It names exactly our seven offices**, in our order, with no eighth and no omission. Our
+   `Treasurer` is its `state treasurer`; everything else matches on the word. After Arkansas —
+   where three provisions named three different memberships — this was checked before anything else.
+2. **It fixes the day by formula, not by choice.** "The first Monday in January next after his
+   election" is a calendar rule with one answer per cycle. 🔴 **That is the distinction Georgia
+   turned on**: `O.C.G.A. § 45-12-2` lets the legislature *appoint* a day within a week, so an
+   agreeing row there proves nothing. Idaho leaves nothing to appoint, so its agreeing rows count.
+3. **It states the cycle, and the cycle checks out.** "Commencing with those elected in the year
+   1946" — and 2026 − 1946 = 80, which is divisible by four. 🟢 So the instrument that dates the
+   body also confirms **all seven were up in 2026**, which is the register's count of 7 winners.
+
+**First Monday in January 2027 = 2027-01-04.** 2027-01-01 falls on a Friday, so the 4th is the first
+Monday. Computed, not counted by hand.
+
+### 🔴 "EXCEPT AS OTHERWISE PROVIDED IN THIS CONSTITUTION" — discharging that clause WAS the work
+
+A residual that excepts itself is the Texas `§ 601.003(c)` shape and the Arkansas `Schedule § 20`
+shape, and in both of those the exception was where the state got hard. ▶ **So the whole
+constitution was listed by section title** — 21 articles, **227 sections** — and read for anything
+that could give one of these seven a different start. **Two candidates existed. Both are dead.**
+
+| candidate | why it is not an exception |
+|---|---|
+| `Art. III § 25` — **Oath of office** | 🟢 It binds **"the members of the legislature"** and nobody else, and the oath it prescribes swears the taker to "the duties of senator (or representative)". 🔴 **The Idaho Constitution contains no oath provision for executive officers at all.** |
+| `Art. XXI § 13` — **Tenure of office** | "All officers elected **at said election** shall hold their offices until the legislature shall provide by law … for the election of their successors". 🔴 `Art. XXI` is Idaho's **Schedule**: § 5 continues the officers "now holding their offices … **in this territory**", § 7 is "when Constitution takes effect", § 14 is "convention of first legislature". Transitional, 1890. |
+
+🟢 **The second one is the Arkansas lesson firing one state later, and it fired correctly.**
+Arkansas's `Schedule § 20` reads as a standing residual and is not one; Idaho's `Art. XXI § 13` reads
+the same way and is not one either. **Both were caught by reading the sections around them rather
+than the section alone.** ▶ A state's "Schedule" is its commissioning clause until its own
+neighbours say otherwise.
+
+### ✅ The oath question, answered in writing
+
+**The date is a date OF THE TERM, and the oath is not it.** `Art. IV § 1` says the officer "shall
+hold his office for four years **beginning on** the first Monday in January" — a calendar date
+attaching to the office, with no qualification condition anywhere in the sentence. And there is no
+executive oath clause in the constitution to compete with it. 🔴 **So Idaho is the opposite of
+Nevada**, where `Art. 5 § 2` runs the term "from the time of his installation" and `NRS 282.010(4)`
+makes installation mean qualification — there the oath IS the term start. Here it is a separate
+event and **must not be rendered as one**.
+
+### 🟢 The controls — two that count, and one that looks like a third and is a trap
+
+| office | `office_terms.term_start` | first Monday that January? | counts? |
+|---|---|---|---|
+| Governor (Little) | **2019-01-07** | ✅ 2019-01-01 was a Tuesday | ✅ sourced to `gov.idaho.gov/past-governors/` and NGA |
+| Superintendent (Critchfield) | **2023-01-02** | ✅ 2023-01-01 was a Sunday | ✅ and its own source note already cites `Art. IV § 1` |
+| State Controller (Woolf) | **2012-10-15** | — | 🔴 **NO** |
+
+🔴🔴 **2012-10-15 IS ALSO A MONDAY.** A check shaped "are Idaho's executive term starts
+Mondays?" passes on all three rows and proves nothing — and worse, it quietly admits a **mid-term
+appointment** as evidence for the elected-term formula. The row is honest about itself: its own
+source note says *"a mid-term arrival rather than a first-Monday-in-January one, so how_started is
+appointed"*. ▶ **The discriminating field is the MONTH, not the weekday**, and the only reason this
+did not become a third agreeing control is that the row was read instead of counted. This is
+`CLAUDE.md`'s *a predicate reads the shape of a value, never what the value is*, on a date.
+
+⚠ **Two controls is not many**, and four of the seven offices carry no `office_terms` row at all
+(Secretary of State, Treasurer, Attorney General, Lieutenant Governor — all `backfill from
+essentials.offices.politician_id`). The two that exist were written by different migrations from
+different sources, which is the part that makes them independent of each other.
+
+### The register's own numbers
+
+All seven winners are **returning incumbents** — Little, Bedke, McGrane, Woolf, Ellsworth, Labrador,
+Critchfield — and all seven results are `called`, none `certified`. ⚠ Ruling B governs whether that
+is enough to seat; it is not a sourcing question and nothing here depends on it.
+
+🟢 **`chambers.inauguration_rules` is NULL for all seven Idaho offices**, so there was no lead to
+check and nothing to contradict. Recorded because the recipe says a rule row earns its way in by its
+own citation — an absent row is cleaner than a bad one.
+
+### Sourcing notes
+
+- 🟢 **`legislature.idaho.gov` serves the whole constitution to plain `curl`** — no browser, no
+  headers beyond the ordinary set, one page per section at
+  `/statutesrules/idconst/Art<ROMAN>/Sect<N>/` and an index per article at `/Art<ROMAN>` (**no
+  trailing slash on the index links**). After Georgia and Arkansas this is the first state in six
+  where the law was simply readable.
+- ⚠ **The article index pages carry the section TITLES**, which is what made the 227-section sweep
+  cheap. ▶ **Take a document's parts from its own table of contents**, per `CLAUDE.md` — the
+  alternative here would have been 227 page fetches.
+- 🔴 **The title extractor was off by one line, and a positive control caught it.** The first
+  pass printed `Art.I SECTION 1 :: SECTION 2` for every row and a search for `TERM` across all 227
+  returned **nothing**. The control was fixed in advance: *`Art.IV SECTION 1`'s title must contain
+  "TERM OF OFFICE"*, because that one had already been read by hand. It did not, so the sweep was
+  rebuilt rather than believed. ⚠ **A clean "no competing provision found" is exactly what a broken
+  scanner returns**, and on this state that answer was the whole deliverable.
+
+### Basis
+
+`basis = 'statute'` — constitutional, not statutory-by-delegation.
+`authority = 'Idaho Const. Art. IV, § 1'`.
+`source = 'https://legislature.idaho.gov/statutesrules/idconst/ArtIV/Sect1/ (read 2026-11-23)'`.
+`window_end_date` is **NULL** — the day is fixed, so there is no window.
