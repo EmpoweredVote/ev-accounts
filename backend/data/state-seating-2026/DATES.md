@@ -445,10 +445,14 @@ explained: its sitting holder **Rick Bennett** appears in the 2026 Governor's ra
 
 #### ⚠ What `CC_0474` deliberately did not do
 
-- 🔴 **`party` IS NULL ON ALL 59.** The orientation roster gives no party and the Secretary of
-  State's `Party` column is empty for every legislative filing in that sheet. A party is a
-  claim about a person and a guessed one is a **wrong claim about a real person**. ▶ Owed,
-  from the chamber's published roster once the 133rd convenes on **2026-12-02**.
+- ✅ **`party` IS NULL ON ALL 59, AND THAT IS FINISHED WORK.** The orientation roster gives no
+  party and the Secretary of State's `Party` column is empty for every legislative filing in
+  that sheet. 🔴🔴 **THIS ENTRY ORIGINALLY SAID "▶ Owed, from the chamber's published roster
+  once the 133rd convenes". THAT WAS WRONG AND IS WITHDRAWN.** Ruling by Chris Cantrell,
+  2026-11-23: *"I don't think we should need party outside of places that do one party
+  primaries. Parties are not something we celebrate anywhere on our platform."* ▶ **A NULL
+  party is not a gap**; record one only where a **one-party primary** makes it load-bearing for
+  the election itself. `CC_0474`'s header carries the same correction, comment-only.
 - **Nobody was seated and no term was written.**
 
 #### The three controls, each watched going red

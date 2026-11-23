@@ -270,6 +270,17 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- 🔴🔴 **`party` IS NOT A GAP TO FILL, AND A NULL ONE IS FINISHED WORK.** Ruling by Chris
+  Cantrell, 2026-11-23, on `CC_0474`: *"I don't think we should need party outside of places
+  that do one party primaries. Parties are not something we celebrate anywhere on our
+  platform."* The platform does not present a politician as a member of a team, so a party
+  value is **decoration everywhere except where a one-party primary makes it load-bearing for
+  the mechanics of the election** — where the nomination IS the contest and the party decides
+  who may vote or who can win. ▶ **DO NOT LOG IT AS A FOLLOW-UP, DO NOT WRITE "owed" BESIDE IT,
+  AND DO NOT GO BACK TO A ROSTER FOR IT.** ⚠ This withdrew a claim already written into
+  `CC_0474` and `DATES.md` § ME; both now carry the correction. 🟢 It also removes the pressure
+  that made guessing a party tempting — the standing rule against inferring one is unchanged
+  and now costs nothing to keep.
 - 🔴🔴 **A TERM CAN BEGIN ON ELECTION DAY, BEFORE THE RESULT IS CERTIFIED — SO "THE DATE IS IN
   THE FUTURE" IS AN ASSUMPTION, NOT A FACT.** `HRS § 13D-5` starts an OHA trustee's four-year
   term *"beginning on the day of the general election at which they are elected"*. Hawaii's

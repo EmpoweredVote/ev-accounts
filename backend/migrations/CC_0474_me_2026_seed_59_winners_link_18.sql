@@ -95,6 +95,13 @@
 --   about a person and a guessed one is a wrong claim about a real person. Many Maine rows
 --   already in this table carry NULL here. ▶ Owed, from the chamber's published roster once the
 --   133rd convenes on 2026-12-02.
+--   🔴 **CORRECTION, 2026-11-23, COMMENT ONLY — THE SQL THAT RAN IS UNTOUCHED. THAT LAST
+--   SENTENCE IS SUPERSEDED AND NOTHING IS OWED.** Ruling by Chris Cantrell the same day:
+--   *"I don't think we should need party outside of places that do one party primaries. Parties
+--   are not something we celebrate anywhere on our platform."* A NULL party is **finished
+--   work**, not a follow-up. Party is recorded only where a one-party primary makes it
+--   load-bearing for the election itself — where the nomination IS the contest. The row text
+--   this file wrote says only that no source gave one, which remains true and claims nothing.
 -- • NOBODY IS SEATED AND NO TERM IS WRITTEN. A winner who has not taken office is not an
 --   officeholder, and essentials.politicians no longer carries is_incumbent at all (CA_0378).
 -- • 🔴 THREE MAINE SEATS ARE STILL INVISIBLE AND THIS FILE CANNOT REACH THEM. State House 86,

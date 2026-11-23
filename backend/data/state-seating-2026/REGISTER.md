@@ -3,6 +3,9 @@
 **Open this before any state seating work.** It is the queue, the recipe, and the two rulings that
 would otherwise be made 70 times, differently.
 
+▶▶ **AFTER A CONTEXT CLEAR, READ [`PICKUP.md`](./PICKUP.md) NEXT** — where the pass stands, what
+California needs, and the traps this pass has already paid for, on one screen.
+
 Design: `docs/superpowers/specs/2026-11-21-transition-display-and-state-seating-design.md` §8.
 Plan: `docs/superpowers/plans/2026-11-21-state-seating.md`.
 
