@@ -2892,3 +2892,138 @@ a rule.
 **None written. No New Hampshire office is dated.**
 Window opens **2027-01-06** (`N.H. Const. pt. 2, arts. 3, 42, 60`); `window_end_date` is **NULL and
 genuinely unbounded**. Observed practice, two cycles: **the following day**.
+
+---
+
+## CT — Connecticut · 5 offices in the register, **6 in law** · ✅ sourced 2026-11-23 — **2027-01-06**, and one clause covers the whole state
+
+| body | offices | start date | basis |
+|---|---|---|---|
+| Governor · Lieutenant Governor · Secretary of the State · Treasurer · Comptroller · Attorney General | 6 | **2027-01-06** | `statute` — `Conn. Const. art. IV, § 2` (codified) |
+
+⚠ **The register counts five** because the Secretary of the State has no 2026 winner. The date
+below is the law for all six; only five can be seated. See the gap note at the end.
+
+### The provision
+
+**`Conn. Const. art. IV, § 2` — *Terms of officers*, as codified:**
+
+> Such officers shall hold their respective offices **from the Wednesday following the first Monday
+> of the January next succeeding their election** until the Wednesday following the first Monday of
+> the fifth January succeeding their election and until their successors are duly qualified.
+
+**`art. IV, § 1` — *State officers, election date*, as codified**, supplies "such officers":
+
+> A general election for **governor, lieutenant-governor, secretary of the state, treasurer,
+> comptroller and attorney general** shall be held on the Tuesday after the first Monday of
+> November, **1974**, and quadrennially thereafter.
+
+🟢 **Exactly our six offices, and the cycle checks**: 2026 − 1974 = 52, divisible by four, so all
+six were on the 2026 ballot. First Monday of January 2027 is the 4th, so **the Wednesday following
+it is 2027-01-06**.
+
+🟢 **The start is a calendar date; qualification bounds only the END** ("until … and until their
+successors are duly qualified"). So this is Idaho's shape, not Nevada's, and the oath is a separate
+event that must not be rendered as the term start.
+
+### 🔴🔴 THE PDF CONTAINS ARTICLE FOURTH TWICE, AND THE SUPERSEDED VERSION COMES FIRST
+
+This is the trap of the state and it would have manufactured a finding.
+
+| where | `art. IV, § 1` names | |
+|---|---|---|
+| **line 2006** — the 1965 constitution as adopted | governor, lieutenant-governor, secretary of the state, treasurer **and comptroller** — **five** | 🔴 **no attorney general**, and a footnote reading only *"1 Amended by Article I., of the Amendments"* |
+| **line 7478** — *CODIFIED CONSTITUTION … INCORPORATING ALL EXTANT AMENDMENTS* | the same five **and attorney general** — **six** | 🟢 *"Said Article I., was adopted on November 25, 1970, and required election of an attorney general at the November 1974 election and quadrennially thereafter."* |
+
+🔴 **Stopping at the first `ARTICLE FOURTH` heading gives a five-officer list and an Attorney
+General covered by nothing** — which is precisely the shape of South Dakota's *real* missing-office
+finding two states ago. ▶ **The same reading that was correct in South Dakota would have been a
+fabrication here**, and the only thing separating them is which copy of the article you landed on.
+**Search for the LAST occurrence of an article heading in a document that carries amendments, or
+better, for the word CODIFIED.**
+
+🟢 **The two-version structure also pays for itself**: `§ 2` is **byte-identical** in both copies,
+which is direct evidence that the term clause itself has never been amended. That is a stronger
+check than a missing footnote.
+
+### 🟢 Connecticut is the first state in this pass where the legislature's date CAN be borrowed
+
+Three separate clauses, one day:
+
+| clause | what it dates | 2027 |
+|---|---|---|
+| `art. III, § 2` | the General Assembly's regular session convenes | **2027-01-06** |
+| `art. III, § 10` | **legislators'** terms begin | **2027-01-06** |
+| `art. IV, § 2` | **executives'** terms begin | **2027-01-06** |
+
+⚠ **The END dates differ** — legislators run to "the Wednesday after the first Monday of the
+**third** January", executives to "the **fifth**" — so the clauses are genuinely distinct and
+merely agree on the commencement. 🔴 **This is safe only because three instruments say the same
+words, not because three numbers matched.** Washington, Utah and South Dakota each punished the
+opposite assumption; Connecticut is the state where the assumption happens to hold, and the file
+records *why*.
+
+### 🟢 The control
+
+| office | `office_terms.term_start` | the formula |
+|---|---|---|
+| Governor (Lamont) | **2019-01-09** | first Monday of January 2019 was the 7th → Wednesday following = **the 9th** ✅ |
+
+⚠ **One control, and the other five offices carry no `office_terms` row at all.** It counts for
+more than Georgia's did, because `art. IV § 2` names a **formula** with one answer per cycle rather
+than a choice — the Idaho distinction. But one row is one row.
+
+🟢 Forward check: the clause's own end date for this term is "the Wednesday following the first
+Monday of the fifth January", which computes to **2031-01-08** — consistent with a four-year term
+beginning 2027-01-06.
+
+### 🔴 THE GAP: the Secretary of the State has NO RACE ROW, EVER
+
+| office | 2026 race rows | candidate rows | latest race ever |
+|---|---|---|---|
+| Governor, Lt. Governor, Treasurer, Comptroller, Attorney General | 1 each | 2–3 each | 2026-11-03 |
+| **Secretary of the State** | **0** | **0** | **NULL** |
+
+`art. IV § 1` puts it on the same quadrennial ballot as the other five, and it is a seat we hold.
+🔴 **This is Shape 2 from the cross-state gap query, inside a state the queue calls complete** —
+and it is the second such find in four states, after South Dakota's State Auditor. The difference
+is instructive: **South Dakota is missing the OFFICE, Connecticut is missing the RACE.** Both
+present identically in the queue, as a state with one fewer office than the law describes.
+
+▶ The date above covers it the moment a result exists. Nothing else here is blocked.
+
+### Sourcing notes
+
+- 🔴🔴 **`www.cga.ct.gov` SERVES A VALID CERTIFICATE WITH A MISSING INTERMEDIATE — `curl` REFUSES
+  AND A BROWSER DOES NOT.** `curl` exits **60**, *"unable to get local issuer certificate"*;
+  `openssl s_client` says **"Verify return code: 21 (unable to verify the first certificate)"** and
+  shows the leaf is `CN=*.cga.ct.gov` issued by `Go Daddy Secure Certificate Authority - G2`, which
+  the server never sends. Browsers repair this silently by fetching the issuer named in the
+  certificate; `curl` does not.
+  - 🟢 **The fix, and it is reusable**: fetch the named intermediate
+    (`http://certs.godaddy.com/repository/gdig2.crt` — **follow the redirect**, it 301s to https
+    and is **DER**, not PEM), convert it, concatenate it onto the system bundle
+    (`/mingw64/etc/ssl/certs/ca-bundle.crt`) and pass the result as `--cacert`.
+  - 🟢 **Controlled**: the *unpatched* bundle was re-run against the same URL and **still failed**,
+    then the patched one returned **200, `application/pdf`, 572,979 bytes**. Watching the control
+    fail first is what distinguishes "my fix worked" from "the server recovered".
+  - ▶ **This is a host-failure mode the escalation ladder did not have.** It is **not** a WAF, not a
+    TLS-fingerprint block and not a thin request — sending more headers does nothing. A browser is
+    the right escalation **for a reason unrelated to request shape**, and the better answer is to
+    repair trust and keep using `curl`.
+- 🔴 **`portal.ct.gov` returns HTTP 200 with a page titled "404 Error Page"** for a path that does
+  not exist — a textbook soft 404, and the sixth distinct way a 200 has lied in this pass.
+- ⚠ **The General Assembly's own path is `constitutions.asp`, PLURAL.** `constitution.asp`
+  (singular) is a real IIS 404. The page offers *Constitution of the State of Connecticut —
+  **Revised to January 1, 2025*** at
+  `/asp/Content/constitutions/Constitution_State_CT.pdf`, 573 KB, 8,325 lines of extracted text.
+- 🟢 **Connecticut has a real statute search** (`search.cga.state.ct.us`), unlike South Dakota.
+  It was not needed: the constitution answers the question outright.
+
+### Basis
+
+`basis = 'statute'` — constitutional.
+`authority = 'Conn. Const. art. IV, § 2 (codified, incorporating Amendment Art. I)'`.
+`source = 'https://www.cga.ct.gov/asp/Content/constitutions/Constitution_State_CT.pdf (Revised to January 1, 2025), read 2026-11-23'`.
+`window_end_date` **NULL** — the day is fixed.
+⚠ **Five of the six are seatable**; the Secretary of the State has no result to seat.

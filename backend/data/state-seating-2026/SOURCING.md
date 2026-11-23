@@ -101,6 +101,8 @@ something that looks like success.**
 | `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
 | `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
 | `nmonesource.com` | **403, 239 bytes — AND THE FULL BROWSER HEADER SET DOES NOT HELP** | 🔴 the first true TLS-fingerprint block in this pass. Playwright — and then click: it is a JS tree whose page state does not survive an expand |
+| `www.cga.ct.gov` (the CT General Assembly) | 🔴 **valid cert, MISSING INTERMEDIATE** — `curl` exits **60** ("unable to get local issuer certificate"), `openssl s_client` says **code 21**. A browser loads it fine, because browsers fetch the issuer the certificate names and `curl` does not | 🟢 **Repair trust instead of escalating**: fetch `http://certs.godaddy.com/repository/gdig2.crt` (**follow the 301; it is DER, not PEM**), convert, concatenate onto `/mingw64/etc/ssl/certs/ca-bundle.crt`, pass as `--cacert`. ⚠ **Re-run the UNPATCHED bundle first and watch it still fail.** ▶ This is NOT a WAF and not a thin request — **more headers do nothing**. The constitution is at `/asp/Content/constitutions/Constitution_State_CT.pdf`; note `constitutions.asp` is **plural** |
+| `portal.ct.gov` | 🔴 **HTTP 200 with a page titled "404 Error Page"** | the sixth distinct way a 200 has lied in this pass. ⚠ Title-check, not status-check |
 | `gc.nh.gov` (the NH General Court) | 🟢 answers a plain header set; RSAs as flat HTML, **a whole chapter in one `-mrg.htm` file** | 🔴 **`gencourt.state.nh.us` is DEAD** (404, 1,245-byte body) and the journals' own masthead still prints it. RSA paths: `/rsa/html/NHTOC/NHTOC-<TITLE>.htm`, then `/rsa/html/<TITLE>/<CH>/<CH>-mrg.htm`. Journals: `/house/calendars_journals/Journals/<yyyy>/HJ%20<nn>%20<Month>%20<d>,%20<yyyy>.PDF`. ⚠ **The journals DIRECTORY 403s while the FILES are open** — a listing refusal is not a file refusal |
 | `www.nh.gov/glance/state-constitution` | 🟢 the NH constitution, in **12 part-pages**, plain `curl` | `gc.nh.gov` links to it, which is the Georgia test for "is this the publisher" |
 | `sdlegislature.gov` | 🔴 **an SPA that answers EVERY unknown path — including under `/api/` — with HTTP 200 and the same 2,253-byte shell.** Five guessed endpoints all "succeeded" | ⚠ **`Content-Type` is the only discriminator**: `text/html` = miss, `application/json` = hit. 🟢 Learn the real API by navigating once and reading `browser_network_requests`: `/api/Statutes/Constitution/<ARTICLE NUMBER>` (not the `StatuteId`, not the `0N-4` code the payload itself advertises) and `/api/Statutes/Statute/<chapter>`. Whole constitution = 30 fetches. 🔴 **No native statute search** — the box says "or Google Search" |
@@ -266,6 +268,16 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- 🔴🔴 **A CONSTITUTION PDF CAN CONTAIN THE SAME ARTICLE TWICE, SUPERSEDED COPY FIRST — AND THE
+  STALE COPY FABRICATES A MISSING-OFFICE FINDING.** Connecticut's official PDF prints the 1965
+  text and then a *CODIFIED CONSTITUTION … INCORPORATING ALL EXTANT AMENDMENTS*. The first
+  `art. IV § 1` names **five** officers and no attorney general; the codified one names **six**,
+  because Amendment Article I added the attorney general in 1970. 🔴 **Stopping at the first
+  heading yields "we hold an office the constitution does not cover" — which is exactly South
+  Dakota's REAL finding two states earlier.** The same reading is a discovery in one state and a
+  fabrication in the next. ▶ **Take the LAST occurrence of an article heading, or search for
+  `CODIFIED`.** 🟢 And use the duplication: a clause that is **identical in both copies** is
+  demonstrably unamended, which beats trusting the absence of a footnote.
 - 🔴🔴 **A DATE IN THE INSTRUMENT CAN BE A FILING DEADLINE FOR THE SECRETARY OF STATE, NOT A
   TERM START — AND IT READS EXACTLY LIKE ONE.** `N.H. Const. pt. 2, art. 42` names "the first
   Wednesday following the first Tuesday of January", which is the only date in the whole
@@ -443,7 +455,7 @@ in January 2027.
 | 17 | ID | EXEC | 7 | 1071 | ✅ **all 7 on 2027-01-04.** `Idaho Const. Art. IV § 1` names the seven and fixes the day: four years "beginning on the first Monday in January next after his election". 🟢 A **formula**, not a choice, so the two agreeing `office_terms` rows count |
 | 18 | SD | EXEC | 6 | 1077 | ⚠️ **1 dated, 5 refused — AND THIS ROW IS TWO WAVES.** PUC → **2027-01-05** (`SDCL § 49-1-2`, a formula). The 5 constitutional executives → **window 2027-01-04 → 2027-01-24** (`SDCL § 3-1-2` gives a 21-day choice and dates QUALIFICATION). 🔴 We do not hold the **State Auditor**, which `Art. IV § 7` names and 2026 elected |
 | 19 | NH | BOARD+EXEC | 6 | 1083 | 🔴 **ALL 6 REFUSED — window opens 2027-01-06 and DOES NOT CLOSE.** The constitution fixes **no term length and no commencement**; `arts. 3, 42, 60` date only the **laying of the votes before the General Court**. The term starts at the **inauguration**, which both prior cycles held the **day after** (2023-01-05, 2025-01-09) — custom, not law |
-| 20 | CT | EXEC | 5 | 1088 | |
+| 20 | CT | EXEC | 5 | 1088 | ✅ **all on 2027-01-06** — `Conn. Const. art. IV § 2` (codified): offices held "from the Wednesday following the first Monday of the January next succeeding their election". 🔴 **6 offices in law, 5 in the register** — the **Secretary of the State has NO race row, ever** |
 | 21 | HI | EXEC | 5 | 1093 | **OHA At-large is staggered — see below** |
 | 22 | IL | EXEC | 5 | 1098 | |
 | 23 | MI | EXEC | 5 | 1103 | **MSU Trustees and State Board of Education are staggered — see below** |
@@ -666,9 +678,9 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**19 of 41 states sourced · 1,081 of 1,162 offices (93%) · 0 seated.** The queue's cumulative
-column reaches **1,083** at row 19 (NH); **two Arkansas offices remain open** (Lt. Governor,
-Commissioner of State Lands), so 1,083 − 2 = 1,081. The 22 states that remain are **79 offices**,
+**20 of 41 states sourced · 1,086 of 1,162 offices (93%) · 0 seated.** The queue's cumulative
+column reaches **1,088** at row 20 (CT); **two Arkansas offices remain open** (Lt. Governor,
+Commissioner of State Lands), so 1,088 − 2 = 1,086. The 21 states that remain are **74 offices**,
 almost all single-body executive states.
 
 🔴 **"SOURCED" IS NOT "DATED", AND THE GAP IS NOW A THIRD OF THE WORK.** A refused office is
@@ -680,7 +692,11 @@ recount and have been re-added programmatically after every state since.
 said fifteen states, 26 refusals and six states. ▶ **Re-read it against the table every time.**
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
 term. Step 2 is done for these nineteen; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: NV EXEC (6), UT BOARD (6), CT (5).**
+▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: HI (5), IL (5), MI (5).**
+⚠ **Queue rows 1–19 are ALL sourced**, and that includes every body of the first twelve states —
+so **NV EXEC and UT BOARD are DONE, not pending**; they are rows 8 and 9, and their refusals are in
+the table below. 🔴 A refused body still appears in the refusal table forever, which makes it easy
+to mistake for outstanding work. **The queue is the only list of what is left.**
 
 | state | sourced | dated | migration | seated |
 |---|---|---|---|---|
@@ -701,6 +717,7 @@ term. Step 2 is done for these nineteen; steps 3 through 9 are not started for a
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
 | NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
 | GA | 🔴 [`DATES.md`](./DATES.md) — **0 of 10 dated.** `O.C.G.A. § 45-12-2` puts the inauguration in the first week of the session **on a day a joint resolution appoints**, with a noon-Saturday fallback — so `window_end_date` **2027-01-16** is sourced and `swearing_in_date` is not. The 2 PSC seats are governed by a remedial statute (`§ 46-2-1.1`) that could not be read in full | ⏳ | | |
+| CT | ✅ [`DATES.md`](./DATES.md) — **all on one clause.** `art. IV § 2` (codified) covers all six executives, and `art. III §§ 2, 10` give the session and the legislature the **same day**. 🔴 The PDF prints `ARTICLE FOURTH` **twice** and the superseded copy comes first | **2027-01-06** | — | 🔴 the **Secretary of the State** has no race row, ever |
 | NH | 🔴 [`DATES.md`](./DATES.md) — **all 6 REFUSED.** The constitution fixes **no length and no day**; `arts. 3, 42, 60` date only when the votes are **laid before** the General Court. `RSA 4-A:2` makes "governor-elect" run *"until the day of his inauguration"* and never names it | — | **opens 2027-01-06, no close** | 🟢 2 cycles from the General Court's own journals: **2023-01-05, 2025-01-09**, both the day after |
 | SD | ⚠️ [`DATES.md`](./DATES.md) — **1 dated, 5 refused, and the body SPLITS.** The constitution gives a four-year length and no day; `SDCL § 3-1-2` gives the five executives a **21-day choice**, while `SDCL § 49-1-2` gives the PUC a fixed formula **one day earlier** | **2027-01-05** (PUC only) | **2027-01-04 → 2027-01-24** (the five) | 🔴 the **State Auditor** is named by `Art. IV § 7` and absent from our offices |
 | ID | ✅ [`DATES.md`](./DATES.md) — **all 7 dated.** `Art. IV § 1` says it outright; the work was discharging its "except as otherwise provided" clause across **227 sections**, which left **two candidates and killed both** | **2027-01-04** | — | 🟢 2 controls agree; 🔴 a 3rd row is a Monday too and is an **appointment** |
