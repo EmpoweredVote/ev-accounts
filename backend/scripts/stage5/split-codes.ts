@@ -3,6 +3,7 @@
  *
  *   npx tsx scripts/stage5/split-codes.ts <coded>/<batch>.json --config <stage5>/coder-config.json \
  *     --codes <stage5>/codes [--ids <code-briefs>/<batch>.ids.txt] [--store <source-store dir>] [--replace]
+ *     [--summaries <stage5>/coded-summaries]
  *
  * The coder writes `{ "batch": "...", "codes": [ ... ] }`. Each entry is finished (lib/stage5Ingest.ts
  * `finalizeCode`: season fields from the config, `coded_at` now, `evidence_basis` from the cited findings) and
@@ -11,13 +12,17 @@
  * `<batch>.sendback.md` beside the coder's file, ready to hand back to a coder. `--ids` also reports anyone in
  * the batch the file leaves out, or anyone it adds. An existing code file is never overwritten without
  * `--replace` (a re-code after a ruling).
+ * `--summaries`: a coder run with `coder-inputs.ts --with-summary` puts a `summary` on each seated or doesnt-fit
+ * entry. It is never written into the code file. With this flag each passing code's summary is saved as
+ * `<dir>/<politician_id>.json` for `summary-inputs.ts --coder-summaries`; without it the summaries are dropped.
  *
  * Exit 0: every code written. Exit 3: some sent back (the rest written). Exit 1: the file cannot be read.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { checkAtIngest, finalizeCode, rungTextsFromLadder } from '../lib/stage5Ingest.js';
-import { STORE, instrumentIndex, instrumentTexts, parseArgs, readConfig, readPersonFindings } from './coder-io.js';
+import { coderSummary, takeSummary } from '../lib/stage5CoderSummary.js';
+import { STORE, coderSummariesDir, instrumentIndex, instrumentTexts, parseArgs, readConfig, readPersonFindings } from './coder-io.js';
 
 function main(): number {
   const { pos, flags } = parseArgs(process.argv.slice(2));
@@ -47,7 +52,11 @@ function main(): number {
   const sendback: string[] = [];
   const seen = new Set<string>();
   let written = 0;
+  let summaries = 0;
+  // `coder_summaries: true` in the config saves them beside the config; --summaries names another folder for one run.
+  const summariesDir = flags.get('summaries')?.[0] ?? (config.coder_summaries === true ? coderSummariesDir(dirname(configPath)) : undefined);
   mkdirSync(codesDir, { recursive: true });
+  if (summariesDir) mkdirSync(summariesDir, { recursive: true });
   for (const raw of entries as Record<string, unknown>[]) {
     const pid = String(raw?.politician_id ?? '');
     const label = `${pid || '(no politician_id)'}`;
@@ -55,7 +64,8 @@ function main(): number {
     seen.add(pid);
     const pf = /^[0-9a-f-]{36}$/.test(pid) ? readPersonFindings(store, pid) : undefined;
     if (!pf) { sendback.push(`### ${label}\n- no findings file in the store for this id: check the id against the batch list`); continue; }
-    const code = finalizeCode(raw, config, pf, now);
+    const taken = takeSummary(raw);
+    const code = finalizeCode(taken.entry, config, pf, now);
     ctx.instruments = instrumentTexts(store, index, pf.findings.flatMap((f) => (f.instrument_id ? [f.instrument_id] : [])));
     const problems = checkAtIngest(code, pf, ctx);
     const target = join(codesDir, `${pid}.json`);
@@ -63,6 +73,9 @@ function main(): number {
     if (problems.length) { sendback.push(`### ${label}\n${problems.map((p) => `- ${p}`).join('\n')}`); continue; }
     writeFileSync(target, JSON.stringify(code, null, 2) + '\n');
     written++;
+    if (taken.problem) console.log(`  ${pid}: ${taken.problem}`);
+    const kept = summariesDir && taken.sentences ? coderSummary(code, taken.sentences, String(body.batch ?? '')) : null;
+    if (kept) { writeFileSync(join(summariesDir!, `${pid}.json`), JSON.stringify(kept, null, 2) + '\n'); summaries++; }
   }
   const idsPath = flags.get('ids')?.[0];
   if (idsPath) {
@@ -77,7 +90,7 @@ function main(): number {
     writeFileSync(sbPath, `# Sent back: ${body.batch ?? file}\n\nFix each code below and write them again, in the same one-file shape, `
       + `with only these people. Everything else in the batch was written.\n\n${sendback.join('\n\n')}\n`);
   }
-  console.log(`${body.batch ?? file}: ${written} written, ${sendback.length} sent back${sendback.length ? ` (${sbPath})` : ''}`);
+  console.log(`${body.batch ?? file}: ${written} written, ${sendback.length} sent back${sendback.length ? ` (${sbPath})` : ''}${summariesDir ? `, ${summaries} coder summaries saved` : ''}`);
   return sendback.length ? 3 : 0;
 }
 

@@ -412,10 +412,66 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Ruling 4, one sentence is enough:** a summary is one to five sentences (the lint floor was two). The runner said
   one piece of evidence is often enough, so a person with one supported finding gets a one-sentence summary rather
   than none.
+- **Ruling 5, a summary of the person, not a list of bills:** after reading the first 20 samples the runner said each
+  sentence "feels like a summary sentence of a single bill. And it should feel like a summary of the person's stance
+  on that topic." So a summary opens, when the findings support one, with a line in **plain direction** (the
+  runner's choice over naming the compass position, which would put rung wording back in): no marker, resting on
+  every finding the summary cites. Acts follow grouped by what they do, each part with its own markers ("he voted to
+  end the license requirement [1, 2] and to honor more licenses [3]"). Bill numbers stay out of the text and live in
+  the references. A vote is described as a vote, never as a law, unless a finding shows the bill became law.
 - **Date and source:** 2026-11-22, Chris Andrews
-  (`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md` §2, §5, §6).
+  (`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md` §2, §5, §6; ruling 5 in
+  conversation after sample batch `sample-01`).
 - **Scope:** every topic; gun-policy is first. The recipe is STAGE5.md section 7b.
 - **Contrast:** the Stage 5 coder and its blind check are unchanged; a summary describes, it never seats.
+- **Ruling 6, the opening line says which way they lean, or that the record is mixed:** after sample batch
+  `sample-02` (19 of 36 passed; 4 of Claude's 9 fails were opening lines that overstated the record) the runner
+  asked that a citizen could "understand quickly how that person would feel about gun policy based on the evidence
+  that we have". So every summary of two or more sentences opens with that line (the lint now refuses one without
+  it). It names a lean only when the findings that show a position point that way, never counting a gated vote; a
+  record that runs both ways is called mixed, with both sides named. A summary does not explain why someone has no
+  compass position ("I think that will probably get more confusing"). On bills: "voted for a bill to raise
+  penalties" is right whether or not it became law, and needs no note that it did not; only "which raised penalties"
+  claims a law. Each bill is described exactly as its finding's title and text show.
+- **Date and source:** 2026-11-22, Chris Andrews, in conversation after `sample-02`.
+- **Amended the same day after `sample-03`** (Claude passed 20 of 36; 8 of its fails came from two rules written
+  too strictly): (a) a doesnt-fit person is not always mixed; whether a record is mixed depends on its findings, not
+  the seat. (b) The opening line may sum up in general words ("if it's still accurate that he did vote to loosen
+  limits on guns in both chambers, then we should keep that line"); a finding that shows no direction does not block
+  it. (c) A bill is never described only by its subject ("We should never say relating to firearms without giving a
+  little bit more detail"): say what it does from its text, or leave it out. The writer and checker now see each
+  cited bill's stored text, capped, as the coder did. (d) Of a bill with several parts, name the parts about guns;
+  the background check system (NICS) counts.
+- **Ruling 7, a short bill description may leave things out, if what it says is true:** after `sample-04` (Claude
+  passed 21 of 36), 4 fails were descriptions that were true but left out exceptions or other groups the bill also
+  covers ("a background check before any firearm sale", when the bill exempts sales to buy-back programs). The runner
+  chose "Yes, if still true". A description still fails when it says something the text does not, adds a condition,
+  or narrows whom the bill covers in a way that changes its meaning ("government lists" for a bill that bars lists
+  kept by anyone).
+- **Date and source:** 2026-11-22, Chris Andrews, in conversation after `sample-04`.
+- **Ruling 8, readings settled from two answer keys:** the checker gave different verdicts on the same text, so the
+  runner was shown every disputed claim with its finding and bill text, twice: 21 claims from `sample-04` and 11 kinds
+  of fail from a Nevada trial. Claude proposed a reading for each and the runner accepted them ("Labels are fine";
+  "Readings are fine"). The ones that change how a rule is read:
+  - **A gated vote beside a sponsorship.** "Co-sponsored and voted for a bill to …" is fine when the vote is gated and
+    the sponsorship of the same bill is cited with it: the sponsorship shows the position. A gated vote cited alone is
+    still never described by the bill's gun part.
+  - **"Sponsored" and "voted" are claims.** "Co-sponsored and voted for bills to …" says both of every bill that
+    follows; a bill with only one of the two findings makes it a fail. The lint now refuses the clear cases.
+  - **A technical limit on the kind of gun may be left out.** "Semiautomatic rifles" for a bill on semiautomatic
+    centerfire rifles, or a rifle described without its caliber limit, is a detail left out under Ruling 7. Who the
+    bill covers, what it does, and when or where it applies must still match.
+  - **A plain name is not a new fact.** "Concealed-carry permit" for "a permit" under the concealed firearm permit
+    section is the everyday name of the same thing.
+  - **A claim the evidence does not show is held, even when it is probably true.** The checker uses no outside
+    knowledge. The evidence for what a bill does is its stored excerpt and the bill reading's subject lines
+    (`subjects.json`), which writer and checker both see; where they differ, the excerpt decides.
+  - **Still real errors:** a condition the bill does not have ("during an emergency" when the text adds "or at any
+    other time"); a different act ("funding their own" for "accepting a grant"); a bill said to set standards it
+    only requires others to meet; a qualifier dropped from a person's own words; an added word of size or degree
+    ("large").
+- **Date and source:** 2026-11-22, Chris Andrews, in conversation, on the answer keys in
+  `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/key/` and `…/trial-nv/key.html`.
 
 ## Topic-scoped readings
 

@@ -731,6 +731,52 @@ leaves files in `<stage5>/summaries/<batch>/`.
   only that person's `checker/` file and sha256; run the step 4 checker for that person alone (it overwrites only
   their own `claude-checks/` file) and step 5 again for the batch, which checks only the new text.
 - **Step 4**: run the Claude checkers before step 5. Step 5 checks every summary in `summaries.jsonl`, including ones a Claude checker failed.
+- **What the checker prompt holds** (`checkerPrompt()` in `summary-inputs.ts`). Each sentence is followed by the findings
+  its markers cite and each bill's stored text, so the checker does not match lists by finding id. Above them is a block
+  of facts read by code: per marker, whether the findings are votes or sponsorships and whether every one is gated; and
+  which markers the opening line's lean may not rest on. The checker lists each bill description piece by piece
+  (`support` in its JSON, which `SummaryCheckSchema` drops) before it gives a verdict. Measured 2026-11-22 on 21
+  gun-policy summaries with an agreed answer key, same text each run: the old prompt caught 9.2 of 14 real errors a
+  run and let 3.2 of 11 flawed summaries pass; this one caught 12.2 and let 0.5 pass, and holds about 2.5 of 10 sound
+  but borderline summaries (old: 1.8). One check still misses some near-miss wording, so a pass is not proof.
+  Notes and every run: `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/`.
+- **Written by the coder (one switch; off unless the runner turns it on).** Set `"coder_summaries": true` in
+  `<stage5>/coder-config.json`. Then, with no other flag: `coder-inputs.ts` adds a second job to each coder brief
+  (after coding a person seated or doesnt-fit, write that person's summary, by the writer template's own rules,
+  which `lib/stage5CoderSummary.ts` cuts from that template so there is one copy); `split-codes.ts` saves each
+  passing code's summary in `<stage5>/coded-summaries/` (never in the code file); and `summary-inputs.ts` uses it as
+  that person's draft (`drafts/coder.json`) and leaves them out of the writer prompts. For a single run without the
+  switch, each script has its own flag: `--with-summary`, `--summaries <dir>`, `--coder-summaries <dir>`.
+  A coder summary is used only
+  while the person's code is the one the coder gave; after a review or re-code the writer writes it. Lint, checker
+  and rewrites are unchanged. Trial on gun policy, 2026-11-22/23: Nevada placements were the same in two plain and
+  two merged coder runs (17 of 17 each); the blind check on the 24 own-words seats agreed with today's codes on 23
+  with the merged brief and 22 with the plain one; Opus cost for coding plus writing 17 people fell from $3.10 to
+  $1.79; the checker passed the coder's summaries at about the writer's rate, and they are shorter (about 600
+  characters and 6 to 8 findings cited, against 880 and 10). Not measured: any topic but gun policy, and the
+  `stage5-coder` subagent (the trial ran the brief through the command-line tool, read-only).
+- **Two bills in one part** (writer template, 2026-11-23). A part that cites two bills must be true of each. Without the
+  rule the Nevada writer described a 2023 bill on unserialized frames and receivers together with a 2021 bill on
+  unserialized guns, for 6 of 14 people, and 7 of 14 summaries passed every checker run; with it, 13 of 14 (one
+  writer run each).
+- **Sponsored or voted is checked by the lint** (`actClaimProblems` in `stage5Summary.ts`), so step 3 refuses a draft that
+  says "co-sponsored" of a bill whose cited findings show only a vote, or "voted" of one with only a sponsorship. It
+  refuses only clear cases; a part that makes two separate claims is left to the checker. Over the 163 distinct drafts
+  of the first gun-policy batches it refused 2 people's drafts, both real errors, and no sound one.
+- **Bill text is shown up to 6,000 characters** (`BILL_TEXT_CAP`). The earlier 1,500 cut 100 of the 163 cited bills,
+  and a true claim could then not be shown from the text. With the full text the checker caught four errors it had
+  been missing some of the time, in every one of 3 runs.
+- **Writer and checker also see the bill reading** (`readBillSubjects`, `billTextWithReading`): each bill's subject lines
+  from `<stage5>/subjects.json`, printed before the stored excerpt as "Our reading of the full bill:". The excerpt was
+  chosen to place people on the ladder and is often too short to describe the bill (some are under 700 characters).
+  A subject line that names a rung is dropped. Where reading and excerpt differ, the excerpt decides.
+- **Two readings the checker applies** (runner, 2026-11-22): leaving out a technical limit on the kind of gun
+  ("semiautomatic rifles" for "semiautomatic centerfire rifles") is a detail left out, not a fault; and the plain name
+  of a thing the text names in legal terms ("concealed-carry permit" for a permit under the concealed firearm permit
+  section) is shown. Measured on three sets of Nevada summaries, 3 runs each: passes per run went from 3.3, 4.0 and
+  4.3 to 8.0, 4.7 and 11.3 (of 13, 14 and 14); what still fails is what the runner ruled a real error, chiefly one bill
+  described as banning unserialized guns when it covers frames and receivers. On the 34 earlier summaries passes went
+  from 17.0 to 22.7 a run, and every error in the agreed key that was caught before is still caught.
 - **Step 5** uses `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon` (the profile key
   `second_opinion_models`). It runs locked down: a deny-all OpenCode config in an empty temp folder, and an
   environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl` and **skips every

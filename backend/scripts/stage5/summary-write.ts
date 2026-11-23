@@ -38,7 +38,7 @@ type Family = SummaryCheck['family'];
 export const REQUIRED: Family[] = ['claude', 'gpt', 'gemini'];
 
 export interface SummaryRow {
-  politician_id: string; topic_key: string; text: string; sha256: string; sources: string[]; cites: string[][];
+  politician_id: string; topic_key: string; text: string; sha256: string; sources: string[]; cites: string[][]; sentences?: string[];
   /** Written by summary-assemble: the code the summary was checked against. A row without them is held. */
   code_outcome?: string; code_value?: number | null; code_sha256?: string;
 }
@@ -214,7 +214,7 @@ export function writeReports(dir: string, b: Batch, ev: Evaluated[], topicKey: s
 
   const heldMd = [`# Held and failed summaries: ${topicKey}`, '', `${notPassed.length} of ${ev.length}.`, '',
     ...notPassed.flatMap((e) => {
-      const sents = splitSentences(e.summary.text);
+      const sents = e.summary.sentences ?? splitSentences(e.summary.text);
       const lines = [`## ${name(e.summary.politician_id)} (${e.summary.politician_id}) — ${e.verdict}`, '', e.summary.text, ''];
       for (const p of e.problems) lines.push(`- PROBLEM: ${p}`);
       for (const f of REQUIRED) if (!e.checks.some((c) => c.family === f)) lines.push(`- no ${f} check on this text`);

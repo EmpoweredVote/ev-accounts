@@ -48,10 +48,30 @@
  * to the version the answer was stamped against and can never raise a flag
  * without anything testing `change_class` at all.
  *
- * All reads go through `pool` (lib/db.ts). inform.compass_user_lenses is RLS-on
- * with no policies and no grants, exactly like inform.compass_lenses — PostgREST
- * cannot see it, and `WHERE owner_id = $1` is the enforcement, matching
- * saveSelectedTopics().
+ * HOW THIS TABLE IS ACTUALLY PROTECTED (measured 2026-11-22).
+ * ⚠ THIS PARAGRAPH USED TO SAY "no policies and no grants". THE SECOND HALF WAS
+ * WRONG, and wrong in the direction that invites a bad conclusion. The truth:
+ * `inform.compass_user_lenses` has RLS ON with NO POLICIES, and `ev_api` holds
+ * `arwd` on it — and `ev_api` BYPASSES RLS, which is the only reason the backend
+ * pool can read the table at all. RLS is therefore not what is protecting
+ * anything here. What protects it is that PostgREST's roles (`anon`,
+ * `authenticated`) have no grant on the table and so cannot see it, and that
+ * every statement in this file carries `WHERE owner_id = $1`. That predicate is
+ * the enforcement, exactly as in saveSelectedTopics(). Remove it from a query
+ * and nothing else stops that query returning another user's lenses.
+ *
+ * All reads go through `pool` (lib/db.ts).
+ *
+ * A DELETED LENS IS NOT A GONE LENS (CC_0468).
+ * `deleted_at` makes a deletion reversible, and an AFTER-ROW trigger writes
+ * every insert, update, restore, soft_delete and hard_delete to
+ * `inform.compass_user_lens_history` with before- and after-images. So the reads
+ * here filter on `deleted_at IS NULL` — with ONE deliberate exception,
+ * `findKeysOwnedByOthers`, which is marked in full at its definition because
+ * dropping the filter out of it is not an omission but a decision. The unique
+ * index on `key` still covers soft-deleted rows; that is load-bearing, and the
+ * exception exists because of it. See
+ * docs/superpowers/plans/2026-11-22-lens-durability.md.
  */
 
 import { pool } from './db.js';
@@ -158,14 +178,20 @@ export interface RecalibrationFlag {
 // ---------------------------------------------------------------------------
 
 /**
- * A user's lenses, newest last (creation order — the order they built them in,
- * which is the order the management UI lists them in).
+ * A user's LIVE lenses, newest last (creation order — the order they built them
+ * in, which is the order the management UI lists them in).
+ *
+ * `deleted_at IS NULL` is the whole of what "live" means here. A soft-deleted
+ * lens is still a row — that is the point of CC_0468 — but it is gone from every
+ * ordinary read, so deleting one still looks and feels like deleting one. The
+ * row exists so that a mistaken deletion can be undone, not so that the owner
+ * has to keep seeing it.
  */
 export async function getUserLenses(ownerId: string): Promise<UserLens[]> {
   const { rows } = await pool.query(
     `SELECT key, name, topic_ids, visibility, created_at, updated_at
        FROM inform.compass_user_lenses
-      WHERE owner_id = $1
+      WHERE owner_id = $1 AND deleted_at IS NULL
       ORDER BY created_at, key`,
     [ownerId]
   );
@@ -241,7 +267,30 @@ export function isUnacknowledgedLensDeletionError(
   return e instanceof UnacknowledgedLensDeletionError;
 }
 
-/** Which of these keys exist and belong to somebody other than `ownerId`. */
+/**
+ * Which of these keys exist and belong to somebody other than `ownerId`.
+ *
+ * 🔴 NO `deleted_at IS NULL` HERE, AND THAT IS THE ONE DELIBERATE EXCEPTION IN
+ * THIS FILE. Every other read of this table filters soft-deleted rows out.
+ * This one must not, because the unique index on `key` is GLOBAL and does NOT
+ * exclude soft-deleted rows — CC_0468 left it alone on purpose. So another
+ * owner's soft-deleted row still occupies the key.
+ *
+ * Drop the filter in here "for consistency" and this is what happens: the key
+ * looks free, the upsert runs, it conflicts on the index against that other
+ * owner's dead row, its `WHERE inform.compass_user_lenses.owner_id = $1`
+ * predicate is false, and ON CONFLICT DO UPDATE with a false predicate updates
+ * nothing AND inserts nothing AND raises nothing. The caller gets HTTP 200 and a
+ * lens list quietly short one lens — which is exactly the shape of the data-loss
+ * bug this whole branch exists to close, arriving through a different door.
+ *
+ * Guarded by: "still sees ANOTHER owner's soft-deleted key as taken", which
+ * asserts this query does not mention `deleted_at` at all.
+ *
+ * The owner's OWN soft-deleted key is a different question and is not asked
+ * here: re-creating a key you deleted is a resurrection, handled by
+ * `deleted_at = NULL` in the upsert's SET.
+ */
 async function findKeysOwnedByOthers(ownerId: string, keys: string[]): Promise<string[]> {
   if (keys.length === 0) return [];
 
@@ -255,8 +304,9 @@ async function findKeysOwnedByOthers(ownerId: string, keys: string[]): Promise<s
 }
 
 /**
- * Write the owner's lens set: upsert everything in `lenses`, delete exactly the
- * keys in `deleteKeys`, and leave everything else alone.
+ * Write the owner's lens set: upsert everything in `lenses`, soft-delete exactly
+ * the keys in `deleteKeys`, and leave everything else alone — including, now,
+ * leaving an unchanged lens genuinely untouched.
  *
  * Whole-set upsert, not per-lens CRUD, because that is how the client holds them:
  * a guest builds lenses in local storage with no server round-trip, and sign-in
@@ -274,9 +324,15 @@ async function findKeysOwnedByOthers(ownerId: string, keys: string[]): Promise<s
  * posted a list missing everything the client had forgotten. Nobody deleted
  * anything. See the CompassV2 half of this fix for the client's share of it.
  *
- * Now a deletion must be named, and the DELETE statement itself can only ever
+ * Now a deletion must be named, and the deleting statement itself can only ever
  * touch named keys — the guard below explains the refusal, but the `key = ANY`
  * is what makes an unnamed lens unreachable even if the guard were wrong.
+ *
+ * ⚠ AND SINCE CC_0468, A NAMED DELETION IS REVERSIBLE TOO. The guard answers
+ * "the caller never asked for this"; it cannot answer "the caller asked for the
+ * wrong key". So the delete stamps `deleted_at` instead of removing the row, the
+ * history trigger keeps the before-image, and re-saving the key resurrects it
+ * with its `created_at` intact. Two different failures, two different answers.
  *
  * Runs in one transaction so a failed promotion leaves the previous set intact
  * rather than a partially-written one. `created_at` is preserved across a rewrite
@@ -296,6 +352,13 @@ export async function replaceUserLenses(
   // to that, the caller gets 200 and a lens list quietly missing a lens, which
   // reads as data loss. Collisions are vanishingly unlikely by construction and
   // that is exactly why this must be explicit rather than swallowed.
+  //
+  // ⚠ AND SINCE CC_0468, `row_count = 0` MEANS TWO THINGS, SO IT IS WORTH EVEN
+  // LESS AS A SIGNAL THAN IT WAS. The upsert's conflict predicate now also
+  // carries an IS DISTINCT FROM conjunct, so an unchanged lens is skipped on
+  // purpose and reports zero rows too. "Not yours" and "nothing to change" are
+  // now indistinguishable from the row count. Do not reintroduce a check on it
+  // as a substitute for this pre-flight read: it would reject every no-op save.
   const takenKeys = await findKeysOwnedByOthers(ownerId, lenses.map(l => l.key));
   if (takenKeys.length > 0) {
     throw new LensKeyConflictError(takenKeys);
@@ -305,13 +368,32 @@ export async function replaceUserLenses(
   try {
     await client.query('BEGIN');
 
-    // What the owner actually holds, locked for the life of the transaction.
-    // FOR UPDATE and not a plain read: without the lock a concurrent PUT can
-    // insert a lens between this check and the delete, and that lens would be
-    // one nobody ever had the chance to name.
+    // What the owner actually holds RIGHT NOW — live rows only — locked for the
+    // life of the transaction.
+    //
+    // `deleted_at IS NULL` is required, not cosmetic. This set is what the
+    // unacknowledged-deletion guard below compares the payload against, so
+    // without the filter a lens the owner deleted last week would come back as
+    // "stored but neither kept nor named" and every subsequent save would be
+    // refused — a 409 the user cannot clear, because naming a key in
+    // `delete_keys` that is already soft-deleted changes nothing. They would be
+    // locked out of their own lens list by a deletion that worked.
+    //
+    // ⚠ WHAT THE LOCK NOW COVERS, AND WHAT IT DOES NOT. FOR UPDATE still holds
+    // the owner's live rows for the whole transaction, so a concurrent PUT
+    // cannot modify or delete one between this read and the writes below. It no
+    // longer touches the owner's soft-deleted rows, so a concurrent
+    // RESURRECTION of a soft-deleted key — a second PUT re-creating it, which
+    // the upsert does with `deleted_at = NULL` — is NOT serialised against this
+    // read. Nor was a fresh INSERT of a brand-new key ever serialised by it;
+    // row locks cannot lock rows that do not exist yet. In both cases the newly
+    // live lens simply is not in `storedRows`, so the guard does not see it and
+    // does not refuse the save. That is the benign direction: the concurrent
+    // write's own lens survives, and nothing of the caller's is destroyed —
+    // every destructive statement below is restricted to keys the caller named.
     const { rows: storedRows } = await client.query<{ key: string }>(
       `SELECT key FROM inform.compass_user_lenses
-        WHERE owner_id = $1
+        WHERE owner_id = $1 AND deleted_at IS NULL
         FOR UPDATE`,
       [ownerId]
     );
@@ -329,12 +411,26 @@ export async function replaceUserLenses(
       throw new UnacknowledgedLensDeletionError(unacknowledged);
     }
 
+    // 🔴 A DELETION IS A STAMP, NOT A DESTRUCTION. This was `DELETE FROM` until
+    // CC_0468. The guard above already made an omission harmless, but a NAMED
+    // deletion was still final: a user who meant to remove one lens and named
+    // the wrong key had no way back, and neither did we. Now the row stays, the
+    // trigger records a `soft_delete` with the full before-image, and
+    // `restoreUserLens` is a possible thing to build on top of it.
+    //
+    // `AND deleted_at IS NULL` keeps the statement idempotent: naming a key that
+    // is already deleted matches nothing, so it does not re-stamp `deleted_at`
+    // to a later time and — because the trigger's WHEN clause watches
+    // `deleted_at` — it writes no second history row either. A retried PUT does
+    // not move the deletion's timestamp.
+    //
     // Only what was named. An empty deleteKeys asks nothing of the database
     // rather than issuing a no-op ANY for a guaranteed zero rows.
     if (deleteKeys.length > 0) {
       await client.query(
-        `DELETE FROM inform.compass_user_lenses
-          WHERE owner_id = $1 AND key = ANY($2::text[])`,
+        `UPDATE inform.compass_user_lenses
+            SET deleted_at = now()
+          WHERE owner_id = $1 AND key = ANY($2::text[]) AND deleted_at IS NULL`,
         [ownerId, deleteKeys]
       );
     }
@@ -348,11 +444,49 @@ export async function replaceUserLenses(
            SET name       = EXCLUDED.name,
                topic_ids  = EXCLUDED.topic_ids,
                visibility = EXCLUDED.visibility,
+               -- Saving a key the owner previously deleted RESURRECTS it rather
+               -- than failing on the unique index, and keeps its original
+               -- created_at: it is the same lens, and its age should not reset
+               -- because it spent a week deleted. The trigger reads this
+               -- NOT NULL -> NULL transition as a 'restore'.
+               deleted_at = NULL,
                updated_at = now()
            -- Ownership is re-asserted in the conflict target, not assumed. Keys are
            -- globally unique so another user's key CAN collide here; without this
            -- predicate the upsert would hand them someone else's row.
-           WHERE inform.compass_user_lenses.owner_id = $1`,
+           WHERE inform.compass_user_lenses.owner_id = $1
+             -- ⚠ AND NOTHING IS WRITTEN WHEN NOTHING CHANGED. The client PUTs
+             -- the WHOLE set on every save, so renaming one lens used to issue a
+             -- real row update for every other lens the user owns — each one a
+             -- new row version, index churn, and (since CC_0468) a history row
+             -- carrying two full copies of an untouched lens.
+             --
+             -- 🔴 TWO GUARDS AT TWO LAYERS, DELIBERATELY, AND NEITHER MAKES THE
+             -- OTHER REDUNDANT. The trigger's WHEN clause stops a no-op from
+             -- being RECORDED, whatever write path produced it — it watches the
+             -- material columns (owner_id, key, name, topic_ids, visibility,
+             -- deleted_at) and not the whole row, precisely so that
+             -- an updated_at = now() cannot defeat it. This predicate stops a
+             -- no-op from being WRITTEN AT ALL: no row version, no index churn,
+             -- no updated_at movement that would make an untouched lens look
+             -- edited.
+             --
+             -- ⚠ SO updated_at NO LONGER MOVES ON A SAVE THAT CHANGED NOTHING.
+             -- That is the point, and it is the more honest reading of the
+             -- field: it now means "when this lens last actually changed".
+             -- Anything that wants "when the user last pressed save" must not
+             -- read it.
+             --
+             -- deleted_at is in the tuple so that a resurrection still counts
+             -- as a change when every other column is identical — otherwise
+             -- re-creating a deleted lens unchanged would be skipped and the
+             -- lens would stay deleted at HTTP 200.
+             AND (inform.compass_user_lenses.name,
+                  inform.compass_user_lenses.topic_ids,
+                  inform.compass_user_lenses.visibility,
+                  inform.compass_user_lenses.deleted_at)
+                 IS DISTINCT FROM
+                 (EXCLUDED.name, EXCLUDED.topic_ids, EXCLUDED.visibility, NULL::timestamptz)`,
         [ownerId, lens.key, lens.name.trim(), lens.topic_ids, lens.visibility ?? 'private']
       );
     }

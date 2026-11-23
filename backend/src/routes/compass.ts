@@ -104,6 +104,19 @@ const userLensSchema = z.object({
   visibility: z.enum(['private', 'unlisted']).optional(),
 });
 
+/**
+ * How many lenses one PUT may delete.
+ *
+ * 🔴 ONE, AND RAISING IT IS A DECISION. `deleteActiveLens` is the only caller in
+ * the product that deletes and it names exactly one key; guest promotion never
+ * deletes. So a two-deletion request cannot be produced by the application as it
+ * exists, which makes 1 the honest blast radius and "delete everything in one
+ * shot" structurally impossible rather than merely guarded. If bulk delete ever
+ * becomes a feature, this line changes — and changing it IS the decision, not an
+ * implementation detail of that feature.
+ */
+export const MAX_LENS_DELETIONS_PER_REQUEST = 1;
+
 const putMyLensesSchema = z.object({
   // 20 is a payload guard, not a product ceiling. The whole set rides in one
   // request (and, for guests, in the shared ev-context payload), so an unbounded
@@ -279,6 +292,14 @@ router.get('/my-lenses', optionalAuth, async (req: Request, res: Response): Prom
 // body that would destroy an unnamed lens is refused whole with 409
 // LENS_DELETE_NOT_ACKNOWLEDGED listing what it would have taken.
 //
+// 🔴 AND A NAMED DELETION IS CAPPED AT ONE PER REQUEST (MAX_LENS_DELETIONS_PER_REQUEST).
+// Naming a key made a deletion deliberate; it did not make a bulk one safe. The
+// only deleting caller in the product names a single key, so a request naming two
+// is not something the application produces — it is a stale client, a bug or a
+// hand-built call, and it is refused whole with 422 TOO_MANY_LENS_DELETIONS before
+// anything is written. Distinct keys are counted, not array entries: the same key
+// named twice is one lens.
+//
 // 🔴 THIS DOES NOT VALIDATE AGAINST THE OPEN SEASON, AND THE DIFFERENCE FROM
 // PUT /selected-topics IS DELIBERATE. That route 422s any topic outside the
 // season's question set, which is right for the live compass. Applying it here
@@ -329,6 +350,23 @@ router.put('/my-lenses', optionalAuth, async (req: Request, res: Response): Prom
       code: 'CONTRADICTORY_LENS_KEYS',
       message: `A lens cannot be saved and deleted in the same request: ${contradictory.join(', ')}`,
       contradictory_keys: contradictory,
+    });
+    return;
+  }
+
+  // ⚠ Count DISTINCT keys, not deleteKeys.length: ['u_a', 'u_a'] is two entries
+  // naming one lens, and a length-based cap would refuse a single legitimate
+  // deletion with a 422 the client cannot act on. 422 and not 409, matching the
+  // two checks above: the body is refused on its own terms, with no reference to
+  // what the server holds (only LENS_DELETE_NOT_ACKNOWLEDGED is about that).
+  const distinctDeleteKeys = [...new Set(deleteKeys)];
+  if (distinctDeleteKeys.length > MAX_LENS_DELETIONS_PER_REQUEST) {
+    res.status(422).json({
+      code: 'TOO_MANY_LENS_DELETIONS',
+      message:
+        `A request may delete at most ${MAX_LENS_DELETIONS_PER_REQUEST} lens; ` +
+        `this one names ${distinctDeleteKeys.length}. Nothing was deleted.`,
+      delete_keys: distinctDeleteKeys,
     });
     return;
   }

@@ -1292,6 +1292,58 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  lens-durability:
+    name: lens durability
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job (a masked tripwire is exactly the 2026-08-14 defect). It watches for a user's custom
+    # lenses being DESTROYED. On 2026-11-22 that was measured in production: three lenses stored, a
+    # one-lens PUT, one survivor, HTTP 200, no record of the other two. Nothing else would have said so.
+    # The script and what a drop means live in scripts/check-lens-durability.mjs.
+    #
+    # 🔴 WHY NIGHTLY IS THE RIGHT CADENCE: the recovery floor is daily backups with 7-day retention
+    # (PITR is OFF), so a nightly run leaves about six days of margin to act before the last good
+    # backup ages out.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # This is the 26th job in the file. It costs ~30 billed minutes a month (one nightly run at the
+    # one-minute minimum). What it measures is the lens rows in PROD, which change on the CALENDAR, by
+    # what users and write paths do in production — not by our commits. A push cannot remove a user's
+    # lens, so charging it per push would bill ~494 minutes a month to watch for something pushes never
+    # cause. Same reasoning as `spatial-ref-baseline`, `child-county` and `season-corpus-floor`.
+    #
+    # ⚠ DELIBERATELY NOT IN `ci-ok`'s `needs`. A red nightly must block no merges; the design's
+    # explicit non-goal is "no pager". (Had it joined, the job id is hyphenated, so it would need
+    # bracket syntax: `needs['lens-durability'].result` — `needs.lens-durability.result` parses as
+    # subtraction and reads as failure forever.)
+    #
+    # ⚠ IT FAILS WITHOUT DATABASE_URL INSTEAD OF SKIPPING, deliberately, same as `season-corpus-floor`:
+    # with no connection it measures nothing, and a green "skip" from a tripwire is indistinguishable
+    # from a green "no lens was lost". Use the script's --allow-skip locally.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it. CI on 22 while backend/.node-version
+          # said 20 is what hid the @supabase/supabase-js WebSocket break until production
+          # boot (2026-08-28). The two must not be able to drift again.
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check no user's custom lenses have gone missing
+        run: npm run check:lens-durability
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   headshot-faces:
     name: headshot faces
     runs-on: ubuntu-latest

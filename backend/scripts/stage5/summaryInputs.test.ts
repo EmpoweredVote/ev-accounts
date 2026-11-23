@@ -1,11 +1,11 @@
-import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import type { Finding } from '../lib/sourceStore.js';
 import { buildSummary } from '../lib/stage5Summary.js';
 import { readFileSync } from 'node:fs';
-import { capFindings, checkerPrompt, main, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
+import { BILL_TEXT_CAP, billTextBlock, billTextWithReading, readBillSubjects, capFindings, checkerFacts, gateLabel, checkerPrompt, main, markersOf, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
 
 const TOPIC = 'gun-policy';
 const RUNG_TEXT = 'Limit who may have a gun, such as by court orders that take guns from a person found dangerous';
@@ -82,8 +82,11 @@ describe('writer prompt', () => {
     const block = writerPersonBlock(p, capFindings(p.findings, p.code.finding_ids, 25), '1,2,3/4,5', new Map([['PA-HB-1-2024', 'Extreme risk orders']]));
     const prompt = writerPrompt([block], { topicKey: TOPIC, topicName: 'gun policy', date: '2026-11-22', sides: '1,2,3/4,5', outFile: '/abs/drafts/1.json' });
     for (let i = 1; i <= 7; i++) expect(prompt).toContain(`\n${i}. `);
-    expect(prompt).toContain('Every sentence carries at least one citation, and each cited finding supports what the sentence says.');
-    expect(prompt).toContain('Neutral tone: the words a news wire would use, no adjectives of judgement.');
+    expect(prompt).toContain('Every part after the opening line carries at least one citation, and each cited finding supports that part.');
+    expect(prompt).toContain('**Do not name bill numbers in the text**');
+    expect(prompt).toContain('**A vote is a vote, not a law.**');
+    expect(prompt).toContain('"lead": true');
+    expect(prompt).toContain('Neutral tone: the words a news wire would use ("loosen", "tighten", "expand", "limit"), no adjectives of judgement.');
     expect(prompt).toContain('seat: seated, value 3');
     expect(prompt).toContain('(Extreme risk orders)');
     expect(prompt).toContain(p.findings[0].id);
@@ -116,10 +119,152 @@ describe('checker prompt', () => {
     expect(prompt).not.toMatch(/\{\{/);
   });
 
+  it("shows the checker each cited instrument's title, as the writer saw it", () => {
+    const f = finding(1);
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'She voted for a bill on suppressors.', cites: [f.id] }] };
+    const b = buildSummary(draft, [f]);
+    const titles = new Map([['PA-HB-1-2024', 'HB1: Removing the prohibition on firearm suppressors']]);
+    const summary = { politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: [[f.id]] };
+    expect(checkerPrompt(summary, [f], { outcome: 'seated', value: 4 }, null, { titles }))
+      .toContain('instrument: PA-HB-1-2024 (HB1: Removing the prohibition on firearm suppressors)');
+    // Same words as the writer's line, so neither side sees a bill the other cannot.
+    expect(writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
+      capFindings([f], [f.id], 25), null, titles)).toContain('instrument: PA-HB-1-2024 (HB1: Removing the prohibition on firearm suppressors)');
+  });
+
+  it("shows writer and checker each cited bill's text once, capped, so a bill is described by what it does", () => {
+    const f = finding(1);
+    const long = `Prohibits the manufacture of undetectable firearms. ${'x'.repeat(BILL_TEXT_CAP + 500)}`;
+    const texts = new Map([['PA-HB-1-2024', long]]);
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'She voted for a ban on undetectable guns.', cites: [f.id] }] };
+    const b = buildSummary(draft, [f]);
+    const summary = { politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: [[f.id]] };
+    const checker = checkerPrompt(summary, [f], { outcome: 'seated', value: 4 }, null, { texts });
+    const writer = writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
+      capFindings([f], [f.id], 25), null, new Map(), texts);
+    expect(writer).toContain('- PA-HB-1-2024: Prohibits the manufacture of undetectable firearms.');
+    expect(checker).toContain('bill text of PA-HB-1-2024: Prohibits the manufacture of undetectable firearms.');
+    for (const out of [checker, writer]) {
+      expect(out).toContain(`[cut at ${BILL_TEXT_CAP} of ${long.length} characters]`);
+      expect(out).not.toContain('x'.repeat(BILL_TEXT_CAP));
+    }
+    expect(billTextBlock(['A', 'A'], new Map([['A', 'Does a thing.']])).match(/- A:/g)).toHaveLength(1);
+    expect(billTextBlock(['A'], new Map([['A', '  ']]))).toBe('');
+  });
+
+  it('tells the writer when a vote is gated, and why it shows no position', () => {
+    const f = finding(1, { gate_by_topic: { [TOPIC]: 'multi-subject' } } as never);
+    const block = writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
+      capFindings([f], [f.id], 25), null, new Map());
+    expect(block).toContain('gated: multi-subject (the bill covers several subjects, so this vote shows no position on guns)');
+    expect(gateLabel({ gate_by_topic: { [TOPIC]: 'none' } })).toBe('');
+    expect(gateLabel({})).toBe('');
+  });
+
+  it('shows the lead line and the number of each cited finding', () => {
+    const fs = [finding(1), finding(2)];
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [
+      { text: 'She has voted for limits on guns.', lead: true },
+      { parts: [{ text: 'She voted for a red flag bill', cites: [fs[0].id] }, { text: 'and a storage bill.', cites: [fs[1].id] }] }] };
+    const b = buildSummary(draft, fs);
+    const prompt = checkerPrompt({ politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: b.cites, sentences: b.sentences },
+      fs, { outcome: 'seated', value: 2 }, '1,2,3/4,5');
+    expect(prompt).toContain('0. She has voted for limits on guns.\n   opening line, no marker: judge it against every finding the summary cites');
+    expect(prompt).toContain('1. She voted for a red flag bill [1] and a storage bill [2].\n   cites findings: [1] ' + fs[0].id + ', [2] ' + fs[1].id);
+  });
+
+  it('prints each finding and its bill text under the sentence that cites it, the bill text once per sentence', () => {
+    const vote = finding(1); const sponsor = finding(2, { act: 'sponsor', motion: 'co sponsor', instrument_id: 'PA-HB-1-2024', url: vote.url });
+    const other = finding(3);
+    const texts = new Map([['PA-HB-1-2024', 'Bars the sale of a thing.'], ['PA-HB-3-2024', 'Requires a lock.']]);
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [
+      { text: 'She has voted for limits on guns.', lead: true },
+      { text: 'She co-sponsored and voted for a bill to bar the sale of a thing.', cites: [vote.id, sponsor.id] },
+      { text: 'She voted for a bill to require a lock.', cites: [other.id] }] };
+    const b = buildSummary(draft, [vote, sponsor, other]);
+    const prompt = checkerPrompt({ politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: b.cites, sentences: b.sentences },
+      [vote, sponsor, other], { outcome: 'seated', value: 2 }, '1,2,3/4,5', { texts });
+    const s1 = prompt.slice(prompt.indexOf('### Sentence 1'), prompt.indexOf('### Sentence 2'));
+    const s2 = prompt.slice(prompt.indexOf('### Sentence 2'), prompt.indexOf('## What to check'));
+    expect(s1).toContain(`[1] finding ${vote.id}`); expect(s1).toContain(`[1] finding ${sponsor.id}`);
+    expect(s1.match(/bill text of PA-HB-1-2024: Bars the sale of a thing\./g)).toHaveLength(1);
+    expect(s1).toContain('bill text of PA-HB-1-2024: printed above');
+    expect(s1).not.toContain(other.id);
+    expect(s2).toContain(`[2] finding ${other.id}`); expect(s2).toContain('bill text of PA-HB-3-2024: Requires a lock.');
+    expect(prompt).toContain('### Sentence 0\n\n> She has voted for limits on guns.\n\nThe opening line: judge it against every finding under the other sentences.');
+    expect(prompt).not.toMatch(/\{\{/);
+  });
+
+  it('states, per marker, what a script can read: vote or sponsorship, and whether every finding is gated', () => {
+    const gate = (g: string) => ({ gate_by_topic: { [TOPIC]: g } }) as never;
+    const gatedVote = finding(1, gate('multi-subject'));
+    const sponsorOfSame = finding(2, { act: 'sponsor', motion: 'co sponsor', instrument_id: 'PA-HB-1-2024', url: gatedVote.url });
+    const loneGated = finding(3, gate('near-unanimous'));
+    const plainVote = finding(4, gate('none'));
+    const words = finding(5, { kind: 'own-words', act: undefined, instrument_id: undefined, motion: undefined, passage: 'I back it.', url: 'https://example.com/s' });
+    const num = (id: string) => ({ [gatedVote.id]: 1, [sponsorOfSame.id]: 1, [loneGated.id]: 2, [plainVote.id]: 3, [words.id]: 4 })[id]!;
+    const ms = markersOf([gatedVote, sponsorOfSame, loneGated, plainVote, words], num);
+    expect(ms.map((m) => m.line)).toEqual([
+      '[1] PA-HB-1-2024: vote (yea), GATED: multi-subject; sponsorship (co sponsor). A non-gated finding on the same bill is also cited.',
+      '[2] PA-HB-3-2024: vote (yea), GATED: near-unanimous. No sponsorship finding. Every finding cited for this marker is gated.',
+      '[3] PA-HB-4-2024: vote (yea). No sponsorship finding.',
+      '[4] statement: own words (a statement, not a vote or sponsorship).',
+    ]);
+    expect(ms.map((m) => m.gatedOnly)).toEqual([false, true, false, false]);
+    // The opening line is told which markers the lean may not rest on, and only when there is one.
+    expect(checkerFacts([[], ms])).toContain('Opening line: the lean may not rest on these markers, whose every finding is gated: [2]. Markers that may count: [1], [3], [4].');
+    expect(checkerFacts([[], ms.filter((m) => !m.gatedOnly)])).not.toContain('Opening line:');
+    expect(markersOf([finding(6, { act: 'sponsor', motion: 'prime sponsor' })], () => 1)[0].line).toBe('[1] PA-HB-6-2024: sponsorship (prime sponsor). No vote finding.');
+    expect(markersOf([finding(7, { against_bill: true } as never)], () => 1)[0].line).toContain('vote (yea, against_bill: a vote AGAINST the bill)');
+  });
+
+  it("puts the bill reading's subject lines before the stored excerpt, and drops a line that names a rung", () => {
+    const dir = mkdtempSync(join(tmpdir(), 'subjects-'));
+    writeFileSync(join(dir, 'subjects.json'), JSON.stringify({ 'XX-HB-1-2024': ['ends the permit to carry', 'rung 5 repeal'], 'XX-HB-2-2024': ['on the ladder'], 'XX-HB-3-2024': 'not a list' }));
+    const subjects = readBillSubjects(dir);
+    expect(subjects.get('XX-HB-1-2024')).toEqual(['ends the permit to carry']);
+    expect(subjects.has('XX-HB-2-2024')).toBe(false); expect(subjects.has('XX-HB-3-2024')).toBe(false);
+    expect(readBillSubjects(join(dir, 'missing')).size).toBe(0);
+    expect(billTextWithReading('Section 9: four sections are repealed.', subjects.get('XX-HB-1-2024')))
+      .toBe('Our reading of the full bill: ends the permit to carry. Stored excerpt of the bill: Section 9: four sections are repealed.');
+    expect(billTextWithReading('Only the excerpt.', undefined)).toBe('Only the excerpt.');
+    expect(billTextWithReading('', ['bars a thing'])).toBe('Our reading of the full bill: bars a thing.');
+  });
+
   it('refuses cites that do not match the sentences', () => {
     const f = finding(1);
     const b = buildSummary({ politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'One.', cites: [f.id] }, { text: 'Two.', cites: [f.id] }] }, [f]);
     expect(() => checkerPrompt({ politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: [[f.id]] }, [f], { outcome: 'doesnt-fit' }, null)).toThrow(/sentences/);
+  });
+});
+
+describe('coder-written summaries, switched on in coder-config.json', () => {
+  it('uses the saved summary as the draft and gives the writer only the people without one', () => {
+    const a = finding(1); const b = finding(2);
+    const { stage5, store } = world([{ n: 1, outcome: 'seated', value: 3, findings: [a] }, { n: 2, outcome: 'seated', value: 3, findings: [b] },
+      { n: 3, outcome: 'doesnt-fit', findings: [finding(3)] }]);
+    const profile = join(stage5, 'topic-profile.json');
+    writeFileSync(profile, JSON.stringify({ topic_key: TOPIC, topic_name: 'gun policy', stage5, sides: '1,2,3/4,5' }));
+    const sentences = [{ text: 'She voted for a red flag bill.', cites: [a.id] }];
+    mkdirSync(join(stage5, 'coded-summaries'));
+    writeFileSync(join(stage5, 'coded-summaries', `${pid(1)}.json`), JSON.stringify({ politician_id: pid(1), topic_key: TOPIC, outcome: 'seated', value: 3, batch: 'pa-01', sentences }));
+    // Person 2's summary was written for another seat: stale, so the writer writes it.
+    writeFileSync(join(stage5, 'coded-summaries', `${pid(2)}.json`), JSON.stringify({ politician_id: pid(2), topic_key: TOPIC, outcome: 'seated', value: 4, batch: 'pa-01', sentences }));
+
+    // Off: no coder-config.json, so everyone goes to the writer and no coder draft is written.
+    main(['--profile', profile, '--batch', 'off', '--store', store]);
+    expect(existsSync(join(stage5, 'summaries', 'off', 'drafts', 'coder.json'))).toBe(false);
+    expect(readFileSync(join(stage5, 'summaries', 'off', 'writer', '1.md'), 'utf8')).toContain(pid(1));
+
+    writeFileSync(join(stage5, 'coder-config.json'), JSON.stringify({ coder_summaries: true }));
+    main(['--profile', profile, '--batch', 'on', '--store', store]);
+    const drafts = JSON.parse(readFileSync(join(stage5, 'summaries', 'on', 'drafts', 'coder.json'), 'utf8'));
+    expect(drafts).toEqual([{ politician_id: pid(1), topic_key: TOPIC, sentences }]);
+    const writer = readFileSync(join(stage5, 'summaries', 'on', 'writer', '1.md'), 'utf8');
+    expect(writer).not.toContain(`politician_id ${pid(1)}`); expect(writer).toContain(pid(2)); expect(writer).toContain(pid(3));
+    const people = JSON.parse(readFileSync(join(stage5, 'summaries', 'on', 'people.json'), 'utf8')) as { politician_id: string; draft_file: string }[];
+    expect(people).toHaveLength(3);
+    expect(people.find((p) => p.politician_id === pid(1))?.draft_file).toBe('drafts/coder.json');
   });
 });
 

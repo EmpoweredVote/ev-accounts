@@ -1,8 +1,9 @@
 /**
  * stage5Summary.ts — checked, cited position summaries (plan 2026-11-22-position-summaries, task 3).
  *
- * A summary is 1-5 sentences (ruling 2026-11-22: one piece of evidence is often enough), each ending in one or more citations `[n]` / `[n, m]` placed before the closing
- * punctuation. A writer produces a `SummaryDraft` (sentences with finding ids); `buildSummary` renders the text,
+ * A summary is 1-5 sentences (ruling 2026-11-22: one piece of evidence is often enough): an optional opening line in
+ * plain words with no marker, then sentences whose parts each carry citations `[n]` / `[n, m]` (ruling 2026-11-22,
+ * runner: one paragraph about the person, acts grouped by what they did, not one bill per sentence). A writer produces a `SummaryDraft` (sentences with finding ids); `buildSummary` renders the text,
  * numbers the sources by first use, and hashes the exact text; `lintSummary` applies the mechanical rules only
  * (whether a sentence describes the right side needs judgement and is left to the checkers). Outside-model
  * checks are `SummaryCheck`s; `summaryVerdict` combines them for one text hash. Pure.
@@ -15,7 +16,17 @@ import { namesParty, shownSha256 } from './stage5QuoteCheck.js';
 export const SummaryDraftSchema = z.object({
   politician_id: z.string().min(1),
   topic_key: z.string().min(1),
-  sentences: z.array(z.object({ text: z.string(), cites: z.array(z.string()) })),
+  /**
+   * A sentence is either `{text, cites}` (one marker set at the end), `{parts: [{text, cites}]}` (a marker set after
+   * each part, so one sentence can group several acts), or the opening line `{text, lead: true}` (no marker; it rests
+   * on every finding the summary cites). Which shape is legal where is lintSummary's job, not the schema's.
+   */
+  sentences: z.array(z.object({
+    text: z.string().optional(),
+    cites: z.array(z.string()).optional(),
+    parts: z.array(z.object({ text: z.string(), cites: z.array(z.string()) })).optional(),
+    lead: z.boolean().optional(),
+  })),
 });
 export type SummaryDraft = z.infer<typeof SummaryDraftSchema>;
 
@@ -49,35 +60,63 @@ function splitClosing(text: string): { body: string; close: string } {
   return m ? { body: t.slice(0, m.index).trimEnd(), close: m[1] } : { body: t, close: '.' };
 }
 
+type DraftSentence = SummaryDraft['sentences'][number];
+
+/** The sentence's parts, whatever shape it was written in. The lead is one part with no cites. */
+function partsOf(sn: DraftSentence): { text: string; cites: string[] }[] {
+  if (sn.parts) return sn.parts;
+  return [{ text: sn.text ?? '', cites: sn.lead ? [] : (sn.cites ?? []) }];
+}
+
+/** Every finding id a sentence cites, in order, duplicates removed. */
+function citesOf(sn: DraftSentence): string[] {
+  return [...new Set(partsOf(sn).flatMap((p) => p.cites))];
+}
+
 /**
- * Render the draft: numbers by first use of a URL across the sentences in order; within a sentence, numbers in the
- * order the sentence cites them, duplicates removed. `sha256` is of the exact UTF-8 text, no normalisation.
- * Throws on a cite that is not among `findings`.
+ * Render the draft: numbers by first use of a URL across the sentences in order; within a part, numbers in the
+ * order it cites them, duplicates removed. A part's marker goes before its closing punctuation (the last part) or
+ * before a trailing comma, semicolon or colon (any other part). The lead line carries no marker. `sentences` is
+ * each rendered sentence; `cites` is each sentence's finding ids, the lead's being every id the summary cites.
+ * `sha256` is of the exact UTF-8 text, no normalisation. Throws on a cite that is not among `findings`.
  */
-export function buildSummary(draft: SummaryDraft, findings: Finding[]): { text: string; sources: string[]; sha256: string } {
+export function buildSummary(draft: SummaryDraft, findings: Finding[]): { text: string; sources: string[]; sha256: string; sentences: string[]; cites: string[][] } {
   const byId = new Map(findings.map((f) => [f.id, f]));
   const numberOf = new Map<string, number>(); // urlKey → n
   const sources: string[] = [];
-  const parts: string[] = [];
-  for (const s of draft.sentences) {
-    const nums: number[] = [];
-    for (const id of s.cites) {
-      const f = byId.get(id);
-      if (!f) throw new Error(`buildSummary: cite ${id} is not among the findings supplied`);
-      const k = urlKey(f.url);
-      let n = numberOf.get(k);
-      if (n === undefined) {
-        n = sources.length + 1;
-        numberOf.set(k, n);
-        sources.push(f.url);
-      }
-      if (!nums.includes(n)) nums.push(n);
-    }
-    const { body, close } = splitClosing(s.text);
-    parts.push(`${body} [${nums.join(', ')}]${close}`);
+  const number = (id: string): number => {
+    const f = byId.get(id);
+    if (!f) throw new Error(`buildSummary: cite ${id} is not among the findings supplied`);
+    const k = urlKey(f.url);
+    let n = numberOf.get(k);
+    if (n === undefined) { n = sources.length + 1; numberOf.set(k, n); sources.push(f.url); }
+    return n;
+  };
+  const sentences: string[] = [];
+  for (const sn of draft.sentences) {
+    if (sn.lead) { const { body, close } = splitClosing(sn.text ?? ''); sentences.push(`${body}${close}`); continue; }
+    const ps = partsOf(sn);
+    const out: string[] = [];
+    ps.forEach((p, i) => {
+      const nums: number[] = [];
+      for (const id of p.cites) { const n = number(id); if (!nums.includes(n)) nums.push(n); }
+      const last = i === ps.length - 1;
+      const { body, close } = last ? splitClosing(p.text) : splitJoin(p.text);
+      out.push(`${body} [${nums.join(', ')}]${close}`);
+    });
+    sentences.push(out.join(' ').replace(/ ([,;:])/g, '$1'));
   }
-  const text = parts.join(' ');
-  return { text, sources, sha256: shownSha256(text) };
+  const all = [...new Set(draft.sentences.filter((x) => !x.lead).flatMap(citesOf))];
+  const cites = draft.sentences.map((x) => (x.lead ? all : citesOf(x)));
+  const text = sentences.join(' ');
+  return { text, sources, sha256: shownSha256(text), sentences, cites };
+}
+
+/** Split a non-final part into its words and a trailing `,` `;` or `:` ('' when it has none). */
+function splitJoin(text: string): { body: string; close: string } {
+  const t = text.trim();
+  const m = /([,;:])$/.exec(t);
+  return m ? { body: t.slice(0, m.index).trimEnd(), close: m[1] } : { body: t, close: '' };
 }
 
 const ABBREVIATIONS = new Set(['u.s.', 'sen.', 'rep.', 'gov.', 'mr.', 'mrs.', 'ms.', 'dr.', 'st.', 'jr.', 'no.', 'e.g.', 'i.e.']);
@@ -87,8 +126,9 @@ function holdsMoreThanOneSentence(text: string): boolean {
   const re = /[.!?]+(?=\s+[A-Z])/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text))) {
-    const word = /(\S+)$/.exec(text.slice(0, m.index + m[0].length))?.[1].toLowerCase() ?? '';
-    if (!ABBREVIATIONS.has(word)) return true;
+    const raw = /(\S+)$/.exec(text.slice(0, m.index + m[0].length))?.[1] ?? '';
+    if (/^[A-Z]\.$/.test(raw)) continue; // a middle initial ("Danica A. Roem"), not a sentence end
+    if (!ABBREVIATIONS.has(raw.toLowerCase())) return true;
   }
   return false;
 }
@@ -102,30 +142,114 @@ const REPEAT_WORDS: { re: RegExp; label: string; min: number }[] = [
   { re: /\bmore than once\b/i, label: 'more than once', min: 2 },
 ];
 
+const SPONSOR_VERB = String.raw`(?:co-?sponsor(?:ed|s)?|sponsor(?:ed|s)?|author(?:ed|s)?|introduced|(?:an?|the) (?:chief |prime |primary |lead |co-?)?(?:author|sponsor|patron) of)`;
+const VOTE_VERB = String.raw`vot(?:ed|es)`;
+/** "co-sponsored and voted for", "was an author of, and in the Senate voted for": one claim of both acts. */
+const BOTH_ACTS = new RegExp(String.raw`\b${SPONSOR_VERB},? and (?:[\w'-]+,? ){0,5}?${VOTE_VERB}\b|\b${VOTE_VERB} for,? and (?:[\w'-]+,? ){0,3}?${SPONSOR_VERB}`, 'gi');
+const ONE_ACT = new RegExp(String.raw`\b(?:(${SPONSOR_VERB})|(${VOTE_VERB}))\b`, 'gi');
+/** ", which he co-sponsored" / "a bill she co-sponsored to": says it of that part's bill only, not of the parts after. */
+const ASIDE = /\b(?:which|that|bills?|measures?|one)\s+(?:(?:he|she|they|[A-Z][\w.'-]+)\s+)?(?:also\s+)?$/;
+const SPONSOR_ACTS = new Set(['sponsor', 'author']);
+const VOTE_ACTS = new Set(['yea', 'nay', 'abstain']);
+type ActClaim = { sponsor: boolean; vote: boolean; aside: boolean };
+
+/** The one act claim a part makes; null when it makes none, or more than one (which bill each is about is not code's to say). */
+function actClaimOf(text: string): ActClaim | null | 'unclear' {
+  const both = [...text.matchAll(BOTH_ACTS)];
+  const rest = both.reduce((t, m) => t.replace(m[0], ' '.repeat(m[0].length)), text);
+  const single = [...rest.matchAll(ONE_ACT)];
+  if (both.length + single.length === 0) return null;
+  if (both.length + single.length > 1) return 'unclear';
+  if (both.length) return { sponsor: true, vote: true, aside: false };
+  const m = single[0];
+  return { sponsor: !!m[1], vote: !!m[2], aside: ASIDE.test(text.slice(0, m.index)) };
+}
+
+/**
+ * "Sponsored" or "voted" said of a bill whose cited findings show no such act. Code can decide this, so no checker
+ * should have to: in the 2026-11-22 consistency test a summary saying "co-sponsored and voted for" of a bill with a
+ * vote only had passed every earlier check, and the tuned checker still missed it in one run of five.
+ *
+ * Only the clear cases are refused. A part that makes exactly one claim ("voted for", "co-sponsored", or the joined
+ * "co-sponsored and voted for") claims it of every bill that part cites; a part with no such word inherits the claim
+ * of the last part that made one outright ("... bills to A [1] and to B [2]"), but not an aside ("a bill he
+ * co-sponsored"). A part with two separate claims ("voted for one in 2022 and co-sponsored one in 2024") is left to
+ * the checker, as is a part that cites no record, and a bill with an act that is neither (signed, vetoed, other).
+ * Tried on the 163 distinct drafts of the first five gun-policy summary batches before it was switched on.
+ */
+export function actClaimProblems(draft: SummaryDraft, findings: Finding[]): string[] {
+  const byId = new Map(findings.map((f) => [f.id, f]));
+  const problems: string[] = [];
+  draft.sentences.forEach((s, i) => {
+    if (s.lead) return;
+    const ps = partsOf(s);
+    let inherited: ActClaim | null = null;
+    ps.forEach((p, j) => {
+      const own = actClaimOf(p.text);
+      if (own === 'unclear') { inherited = null; return; }
+      if (own && !own.aside) inherited = own;
+      const claimed = own ?? inherited;
+      if (!claimed) return;
+      const bills = new Map<string, Finding[]>();
+      for (const id of p.cites) {
+        const f = byId.get(id);
+        if (f?.kind === 'record' && f.instrument_id) bills.set(f.instrument_id, [...(bills.get(f.instrument_id) ?? []), f]);
+      }
+      const where = ps.length > 1 ? `sentence ${i + 1}, part ${j + 1}` : `sentence ${i + 1}`;
+      for (const [bill, fs] of bills) {
+        const acts = fs.map((f) => f.act ?? '');
+        if (!acts.every((a) => SPONSOR_ACTS.has(a) || VOTE_ACTS.has(a))) continue;
+        const sponsored = acts.some((a) => SPONSOR_ACTS.has(a)); const voted = acts.some((a) => VOTE_ACTS.has(a));
+        if (claimed.sponsor && !sponsored) problems.push(`${where}: says the person sponsored ${bill}, but its cited findings show only a vote; cite the sponsorship finding or say only "voted"`);
+        if (claimed.vote && !voted) problems.push(`${where}: says the person voted on ${bill}, but its cited findings show only a sponsorship; cite the vote finding or say only "sponsored"`);
+      }
+    });
+  });
+  return problems;
+}
+
 /** Mechanical problems with a draft, in plain words; empty = clean. */
 export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; code: Stage5Code; sides: string }): string[] {
   const problems: string[] = [];
   const ids = new Set(ctx.findings.map((f) => f.id));
   const n = draft.sentences.length;
   if (n < 1 || n > 5) problems.push(`a summary has 1-5 sentences; this has ${n}`);
+  if (n >= 2 && !draft.sentences[0].lead) {
+    problems.push('a summary of two or more sentences opens with a plain-direction line ("lead": true): which way the person leans, or that the record is mixed');
+  }
+  const everyCite = new Set(draft.sentences.filter((x) => !x.lead).flatMap(citesOf));
   draft.sentences.forEach((s, i) => {
     const at = `sentence ${i + 1}`;
-    const text = s.text.trim();
+    if (s.parts && (s.text !== undefined || s.cites !== undefined)) problems.push(`${at}: give either text or parts, not both`);
+    if (s.lead) {
+      if (i !== 0) problems.push(`${at}: the opening line must be the first sentence`);
+      if (n < 2) problems.push(`${at}: the opening line needs at least one cited sentence after it`);
+      if (s.cites?.length || s.parts) problems.push(`${at}: the opening line carries no cites and no parts; it rests on every sentence after it`);
+    }
+    const ps = partsOf(s);
+    const text = ps.map((p) => p.text.trim()).join(' ');
     if (!text) problems.push(`${at}: empty`);
     if (holdsMoreThanOneSentence(text)) problems.push(`${at}: holds more than one sentence; make each sentence its own entry`);
     if (/\[\d[\d,\s]*\]/.test(text)) problems.push(`${at}: write no citation markers in the text; list finding ids in cites`);
-    if (s.cites.length === 0) problems.push(`${at}: no citation`);
-    for (const id of s.cites) if (!ids.has(id)) problems.push(`${at}: cites ${id}, which is not one of this person's findings`);
+    if (!s.lead) {
+      ps.forEach((p, j) => {
+        const where = ps.length > 1 ? `${at}, part ${j + 1}` : at;
+        if (!p.text.trim() && ps.length > 1) problems.push(`${where}: empty`);
+        if (p.cites.length === 0) problems.push(`${where}: no citation`);
+        for (const id of p.cites) if (!ids.has(id)) problems.push(`${where}: cites ${id}, which is not one of this person's findings`);
+      });
+    }
     const m = LADDER_WORDS.exec(text) ?? RUNG_NUMBER.exec(text);
     if (m) problems.push(`${at}: uses ladder wording ("${m[0]}")`);
     if (namesParty(text)) problems.push(`${at}: names a party`);
-    const distinct = new Set(s.cites).size;
+    const distinct = s.lead ? everyCite.size : new Set(citesOf(s)).size;
     for (const r of REPEAT_WORDS) {
       if (r.re.test(text) && distinct < r.min) {
         problems.push(`${at}: says "${r.label}" with ${distinct} distinct cited finding${distinct === 1 ? '' : 's'}; needs ${r.min}`);
       }
     }
   });
+  problems.push(...actClaimProblems(draft, ctx.findings));
   return problems;
 }
 
