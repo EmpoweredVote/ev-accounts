@@ -41,7 +41,8 @@ summary cites, taken together. A sentence **fails** if any of these is true:
    once" needs two.
 6. A date or office is wrong, or a statement made in another office or as a candidate is not said to be.
 7. The tone is not neutral: adjectives of judgement, or words a news wire would not use.
-8. A gated vote (one nearly everyone cast the same way) is described as showing a position it does not show.
+8. A gated vote (one nearly everyone cast the same way, or on a bill that covers several subjects) is described as
+   showing a position it does not show, such as support for the bill's gun part.
 9. A sentence says a bill did something as law ("which repealed", "which created") when no cited finding shows it
    became law. "Voted for a bill to repeal …" is fine, and needs no note that the bill did not become law.
 10. A bill is described more widely or narrowly than its title and bill text show (whom it covers, what it does); or

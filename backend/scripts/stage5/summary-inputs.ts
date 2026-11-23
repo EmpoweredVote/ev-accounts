@@ -102,6 +102,17 @@ export function selectPeople(o: SelectOpts): { selected: Selected[]; skipped: { 
   return { selected, skipped };
 }
 
+const GATE_MEANING: Record<string, string> = {
+  'multi-subject': 'the bill covers several subjects, so this vote shows no position on guns',
+  'near-unanimous': 'nearly everyone voted the same way, so this vote shows no position',
+};
+
+/** A gated vote, in words the writer can act on; '' when the finding is not gated. */
+export function gateLabel(f: Pick<Finding, 'gate_by_topic'>): string {
+  const kinds = [...new Set(Object.values(f.gate_by_topic ?? {}).filter((g) => g && g !== 'none'))];
+  return kinds.length ? `gated: ${kinds.map((k) => `${k} (${GATE_MEANING[k] ?? 'this vote shows no position'})`).join('; ')}` : '';
+}
+
 /** One finding as the writer sees it. */
 function findingLine(f: Finding, titles: Map<string, string>, citedByCoder: boolean): string {
   const bits = [
@@ -111,6 +122,7 @@ function findingLine(f: Finding, titles: Map<string, string>, citedByCoder: bool
     f.local_record ? 'local_record: true' : '',
     f.instrument_id ? `instrument: ${f.instrument_id}${titles.get(f.instrument_id) ? ` (${titles.get(f.instrument_id)})` : ''}` : '',
     f.motion ? `motion: ${f.motion}` : '',
+    gateLabel(f),
     citedByCoder ? 'coder-cited' : '',
   ].filter(Boolean);
   const passage = f.passage ? `\n    passage: ${JSON.stringify(f.passage)}` : '';

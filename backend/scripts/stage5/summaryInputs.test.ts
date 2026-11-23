@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { Finding } from '../lib/sourceStore.js';
 import { buildSummary } from '../lib/stage5Summary.js';
 import { readFileSync } from 'node:fs';
-import { BILL_TEXT_CAP, billTextBlock, capFindings, checkerPrompt, main, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
+import { BILL_TEXT_CAP, billTextBlock, capFindings, gateLabel, checkerPrompt, main, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
 
 const TOPIC = 'gun-policy';
 const RUNG_TEXT = 'Limit who may have a gun, such as by court orders that take guns from a person found dangerous';
@@ -149,6 +149,15 @@ describe('checker prompt', () => {
     }
     expect(billTextBlock(['A', 'A'], new Map([['A', 'Does a thing.']])).match(/- A:/g)).toHaveLength(1);
     expect(billTextBlock(['A'], new Map([['A', '  ']]))).toBe('');
+  });
+
+  it('tells the writer when a vote is gated, and why it shows no position', () => {
+    const f = finding(1, { gate_by_topic: { [TOPIC]: 'multi-subject' } } as never);
+    const block = writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
+      capFindings([f], [f.id], 25), null, new Map());
+    expect(block).toContain('gated: multi-subject (the bill covers several subjects, so this vote shows no position on guns)');
+    expect(gateLabel({ gate_by_topic: { [TOPIC]: 'none' } })).toBe('');
+    expect(gateLabel({})).toBe('');
   });
 
   it('shows the lead line and the number of each cited finding', () => {
