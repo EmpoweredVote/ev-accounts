@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  buildSummary, lintSummary, summaryVerdict, agreementRate, SummaryDraftSchema, SummaryCheckSchema,
+  actClaimProblems, buildSummary, lintSummary, summaryVerdict, agreementRate, SummaryDraftSchema, SummaryCheckSchema,
   type SummaryDraft, type SummaryCheck,
 } from './stage5Summary.js';
 import { shownSha256 } from './stage5QuoteCheck.js';
@@ -182,5 +182,56 @@ describe('lead line and parts', () => {
   it('counts sentences in a lead-plus-parts summary, lead included, 1-5', () => {
     const s = { text: 'A.', cites: ['f1'] };
     expect(lintSummary(d(lead('L.'), s, s, s, s, s), ctx(fs)).join()).toMatch(/1-5 sentences; this has 6/);
+  });
+});
+
+describe('actClaimProblems: "sponsored" or "voted" must match the cited findings', () => {
+  const rec = (id: string, bill: string, act: string): Finding => ({
+    id, kind: 'record', url: `https://example.gov/${bill}`, date: '2024-01-01', date_precision: 'day', act, instrument_id: bill,
+    note: 'n', subjects: ['s'], topic_keys: ['gun-policy'], provenance: {} as Finding['provenance'],
+  } as Finding);
+  const fs = [rec('v1', 'XX-HB-1-2024', 'yea'), rec('s1', 'XX-HB-1-2024', 'sponsor'), rec('v2', 'XX-HB-2-2024', 'yea'),
+    rec('s3', 'XX-HB-3-2024', 'sponsor'), rec('o4', 'XX-HB-4-2024', 'signed'), finding('w5', 'https://example.com/s')];
+  const one = (parts: { text: string; cites: string[] }[]) => actClaimProblems({ politician_id: 'p', topic_key: 'gun-policy', sentences: [{ parts }] }, fs);
+
+  it('refuses "co-sponsored and voted for" of a bill with a vote only, and of a later part that inherits it', () => {
+    expect(one([{ text: 'He co-sponsored and voted for bills to do A', cites: ['v1', 's1', 'v2'] }, { text: 'and to do B.', cites: ['s3'] }])).toEqual([
+      'sentence 1, part 1: says the person sponsored XX-HB-2-2024, but its cited findings show only a vote; cite the sponsorship finding or say only "voted"',
+      'sentence 1, part 2: says the person voted on XX-HB-3-2024, but its cited findings show only a sponsorship; cite the vote finding or say only "sponsored"',
+    ]);
+    expect(one([{ text: 'He was an author of, and in the Senate voted for, a bill to do A.', cites: ['v2'] }])).toHaveLength(1);
+  });
+
+  it('passes it when every bill has both findings, and passes a single claim that matches', () => {
+    expect(one([{ text: 'He co-sponsored and voted for a bill to do A', cites: ['v1', 's1'] }, { text: 'and co-sponsored a bill to do C.', cites: ['s3'] }])).toEqual([]);
+    expect(one([{ text: 'He voted for bills to do A', cites: ['v1'] }, { text: 'and to do B.', cites: ['v2'] }])).toEqual([]);
+  });
+
+  it('refuses a single claim the findings do not show', () => {
+    expect(one([{ text: 'He co-sponsored a bill to do B.', cites: ['v2'] }])).toHaveLength(1);
+    expect(one([{ text: 'He voted against a bill to do C.', cites: ['s3'] }])).toHaveLength(1);
+  });
+
+  it('keeps an aside to its own part: the parts after still inherit the sentence verb', () => {
+    expect(one([{ text: 'He voted for a bill to do B,', cites: ['v2'] }, { text: 'for a bill he co-sponsored to do A,', cites: ['v1', 's1'] },
+      { text: 'and for a bill to do B again.', cites: ['v2'] }])).toEqual([]);
+    expect(one([{ text: 'He voted for a bill to do A,', cites: ['v1'] }, { text: 'and for a bill to do B, which he co-sponsored.', cites: ['v2'] }])).toHaveLength(1);
+  });
+
+  it('leaves to the checker what code cannot decide', () => {
+    // Two separate claims in one part: which bill each is about is not in the draft.
+    expect(one([{ text: 'He voted for one in 2022 and co-sponsored one in 2024.', cites: ['v2', 's3'] }])).toEqual([]);
+    expect(one([{ text: 'He co-sponsored and voted for A, and voted for a similar bill.', cites: ['v1', 's1', 'v2'] }])).toEqual([]);
+    // After an unclear part nothing is inherited.
+    expect(one([{ text: 'He voted for one and co-sponsored one', cites: ['v2', 's3'] }, { text: 'and to do C.', cites: ['s3'] }])).toEqual([]);
+    // An act that is neither, a statement, and a part with no act word.
+    expect(one([{ text: 'He voted for a bill to do D.', cites: ['o4'] }])).toEqual([]);
+    expect(one([{ text: 'He said he voted for gun rights.', cites: ['w5'] }])).toEqual([]);
+    expect(one([{ text: 'A bill to do C.', cites: ['s3'] }])).toEqual([]);
+  });
+
+  it('is part of lintSummary', () => {
+    const draft: SummaryDraft = { politician_id: 'p', topic_key: 'gun-policy', sentences: [{ text: 'He co-sponsored a bill to do B.', cites: ['v2'] }] };
+    expect(lintSummary(draft, { findings: fs, code: { outcome: 'doesnt-fit' } as Stage5Code, sides: '1,2,3/4,5' }).join(' ')).toContain('says the person sponsored XX-HB-2-2024');
   });
 });
