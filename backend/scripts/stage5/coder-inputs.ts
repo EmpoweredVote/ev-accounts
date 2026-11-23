@@ -4,7 +4,7 @@
  *   npx tsx scripts/stage5/coder-inputs.ts --config <stage5>/coder-config.json --rulings <stage5>/coder-rulings.md \
  *     --roster <stage5>/roster.tsv [--roster <more.tsv>] --ids <ids file> --unit state:mo --name mo \
  *     --out <stage5>/code-briefs --coded-dir <stage5>/coded [--size 20] [--store <source-store dir>] [--record-only]
- *     [--bill-table <stage5>/bill-table-xx.json]
+ *     [--bill-table <stage5>/bill-table-xx.json] [--with-summary [--sides "1,2,3/4,5"]]
  *
  * For each batch of `--size` people it writes, in `--out`:
  *   <name>-NN.findings.json  this topic's findings for the batch, compacted (lib/stage5CoderInputs.ts)
@@ -21,12 +21,14 @@
  * pre-fill's fixed sentence is never collapsed: it stays word for word. The same refusal applies: the collapsed
  * file must rebuild every finding, note included, exactly as the store holds it.
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { summaryJobSection, withSummaryJob } from '../lib/stage5CoderSummary.js';
 import { batchLine, collapseBatch, collapsedRoundTripProblems, compactBatch, filterRulings, onTopic, roundTripProblems, type BillTableRow, type CollapsedBatch, type CompactBatch } from '../lib/stage5CoderInputs.js';
 import { REPO, STORE, findingsFileSize, instrumentIndex, parseArgs, readConfig, readPersonFindings, readRosters } from './coder-io.js';
 
 const TEMPLATE = join(REPO, '.claude/skills/season-topic-prep/templates/stage5-coder-prompt.md');
+const WRITER_TEMPLATE = join(REPO, '.claude/skills/season-topic-prep/templates/stage5-summary-writer.md');
 
 /** Put first in a record-first brief (`--record-only`): what the pass is, and why no-stance never fits it. */
 export const RECORD_ONLY_NOTE = `**This is the record-first pass.** Your file holds each person's records only (votes and
@@ -122,6 +124,16 @@ function main() {
   if (table) rulings.text = BILL_TABLE_NOTE + rulings.text;
   const index = instrumentIndex(store);
   const template = readFileSync(one('template', TEMPLATE), 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '');
+  // `coder_summaries: true` in the config (or --with-summary for one run): the coder also writes each seated or
+  // doesnt-fit person's summary (lib/stage5CoderSummary.ts).
+  // The sides come from --sides, or from topic-profile.json beside the config.
+  let summaryJob = '';
+  if (flags.has('with-summary') || config0.coder_summaries === true) {
+    const profilePath = join(dirname(one('config')), 'topic-profile.json');
+    const sides = flags.get('sides')?.[0] ?? (existsSync(profilePath) ? (JSON.parse(readFileSync(profilePath, 'utf8')) as { sides?: string | null }).sides ?? null : null);
+    summaryJob = summaryJobSection(readFileSync(WRITER_TEMPLATE, 'utf8').replace(/<!--[\s\S]*?-->\n?/g, ''), sides);
+    console.log(`with-summary: the coder also writes summaries (sides: ${sides ?? 'none'})`);
+  }
   mkdirSync(out, { recursive: true });
 
   console.log(`rulings for ${unit}: ${rulings.kept} kept, ${rulings.dropped.length} dropped`);
@@ -149,7 +161,7 @@ function main() {
     }
     const findingsPath = join(out, `${batch}.findings.json`);
     const lines = people.map(({ row }) => batchLine(row));
-    const brief = template
+    const filled = template
       .replaceAll('{{REPO}}', REPO).replaceAll('{{TOPIC_KEY}}', config.topic_key).replaceAll('{{DATE}}', config.date)
       .replaceAll('{{CODEBOOK_VERSION}}', config.codebook).replaceAll('{{SEASON_NUMBER}}', String(config.season))
       .replaceAll('{{REVISION_ID}}', config.revision_id).replaceAll('{{SEASON_ID}}', config.season_id)
@@ -157,6 +169,7 @@ function main() {
       .replaceAll('{{BATCH_LINES}}', lines.join('\n')).replaceAll('{{FINDINGS_FILE}}', findingsPath)
       .replaceAll('{{INSTRUMENTS_DIR}}', join(store, 'instruments')).replaceAll('{{BATCH}}', batch)
       .replaceAll('{{CODED_FILE}}', join(codedDir, `${batch}.json`)).replaceAll('{{RULINGS}}', rulings.text.trim());
+    const brief = summaryJob ? withSummaryJob(filled, summaryJob) : filled;
     const left = brief.match(/\{\{\w+\}\}/g);
     if (left) throw new Error(`template slots left unfilled: ${[...new Set(left)].join(', ')}`);
     writeFileSync(findingsPath, text);

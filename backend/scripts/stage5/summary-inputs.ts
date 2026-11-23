@@ -17,9 +17,10 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Finding } from '../lib/sourceStore.js';
 import { fillTemplate } from '../lib/stage5Template.js';
+import { usableCoderDraft, type CoderSummary } from '../lib/stage5CoderSummary.js';
 import { Stage5CodeSchema, type Stage5Code } from '../lib/stage5Code.js';
 import type { SummaryCheck } from '../lib/stage5Summary.js';
-import { REPO, STORE, displayName, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings, readRosters } from './coder-io.js';
+import { REPO, STORE, coderSummariesDir, coderSummariesOn, displayName, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings, readRosters } from './coder-io.js';
 
 const TEMPLATES = join(REPO, '.claude/skills/season-topic-prep/templates');
 export const WRITER_TEMPLATE = join(TEMPLATES, 'stage5-summary-writer.md');
@@ -360,7 +361,7 @@ export function main(argv: string[]): void {
   const { flags } = parseArgs(argv);
   const profilePath = flag(flags, 'profile');
   const batch = flag(flags, 'batch');
-  if (!profilePath || !batch) { console.error('usage: summary-inputs.ts --profile <topic-profile.json> --batch <name> [--state xx] [--people a,b] [--max-findings 25]'); process.exit(2); }
+  if (!profilePath || !batch) { console.error('usage: summary-inputs.ts --profile <topic-profile.json> --batch <name> [--state xx] [--people a,b] [--max-findings 25] [--coder-summaries <dir>]'); process.exit(2); }
   const profile = JSON.parse(readFileSync(profilePath, 'utf8')) as { topic_key: string; topic_name?: string; stage5: string; sides: string | null };
   const subjects = readBillSubjects(profile.stage5);
   const max = Number(flag(flags, 'max-findings') ?? 25);
@@ -373,11 +374,29 @@ export function main(argv: string[]): void {
   const out = join(profile.stage5, 'summaries', batch);
   mkdirSync(join(out, 'writer'), { recursive: true });
   mkdirSync(join(out, 'drafts'), { recursive: true });
+  // --coder-summaries: people whose summary the coder wrote, for the code they still hold, need no writer.
+  const coderDir = flag(flags, 'coder-summaries') ?? (coderSummariesOn(profile.stage5) ? coderSummariesDir(profile.stage5) : undefined);
+  const coderDrafts: unknown[] = [];
+  const fromCoder = new Set<string>();
+  if (coderDir) {
+    for (const p of selected) {
+      const file = join(coderDir, `${p.politician_id}.json`);
+      const got = usableCoderDraft(existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as CoderSummary) : undefined, p.code);
+      if (got.draft) { coderDrafts.push(got.draft); fromCoder.add(p.politician_id); }
+      else if (existsSync(file)) console.log(`  ${p.politician_id}: coder summary not used (${got.why}); the writer writes this one`);
+    }
+    if (coderDrafts.length) writeFileSync(join(out, 'drafts', 'coder.json'), JSON.stringify(coderDrafts, null, 2) + '\n');
+  }
+  const forWriter = selected.filter((p) => !fromCoder.has(p.politician_id));
   const index = existsSync(join(store, 'instruments')) ? instrumentIndex(store) : new Map<string, string>();
   const date = new Date().toISOString().slice(0, 10);
   const manifest: unknown[] = [];
-  for (let i = 0, n = 1; i < selected.length; i += perFile, n++) {
-    const group = selected.slice(i, i + perFile);
+  for (const p of selected.filter((x) => fromCoder.has(x.politician_id))) {
+    manifest.push({ politician_id: p.politician_id, name: p.name, outcome: p.code.outcome, value: p.code.value ?? null,
+      finding_ids: p.findings.map((f) => f.id), left_out: 0, writer_file: null, draft_file: 'drafts/coder.json' });
+  }
+  for (let i = 0, n = 1; i < forWriter.length; i += perFile, n++) {
+    const group = forWriter.slice(i, i + perFile);
     const blocks = group.map((p) => {
       const o = capFindings(p.findings, p.code.finding_ids, max);
       const got = instrumentTexts(store, index, o.offered.map((f) => f.instrument_id).filter((x): x is string => !!x));
@@ -396,7 +415,7 @@ export function main(argv: string[]): void {
     writeFileSync(join(out, 'writer', `${n}.md`), prompt);
   }
   writeFileSync(join(out, 'people.json'), JSON.stringify(manifest, null, 2) + '\n');
-  console.log(`${selected.length} people, ${Math.ceil(selected.length / perFile)} writer prompts in ${out}; skipped ${skipped.length}`);
+  console.log(`${selected.length} people, ${Math.ceil(forWriter.length / perFile)} writer prompts in ${out}; skipped ${skipped.length}${coderDir ? `; ${fromCoder.size} summaries taken from the coder` : ''}`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

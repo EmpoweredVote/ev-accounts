@@ -449,6 +449,29 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   or narrows whom the bill covers in a way that changes its meaning ("government lists" for a bill that bars lists
   kept by anyone).
 - **Date and source:** 2026-11-22, Chris Andrews, in conversation after `sample-04`.
+- **Ruling 8, readings settled from two answer keys:** the checker gave different verdicts on the same text, so the
+  runner was shown every disputed claim with its finding and bill text, twice: 21 claims from `sample-04` and 11 kinds
+  of fail from a Nevada trial. Claude proposed a reading for each and the runner accepted them ("Labels are fine";
+  "Readings are fine"). The ones that change how a rule is read:
+  - **A gated vote beside a sponsorship.** "Co-sponsored and voted for a bill to …" is fine when the vote is gated and
+    the sponsorship of the same bill is cited with it: the sponsorship shows the position. A gated vote cited alone is
+    still never described by the bill's gun part.
+  - **"Sponsored" and "voted" are claims.** "Co-sponsored and voted for bills to …" says both of every bill that
+    follows; a bill with only one of the two findings makes it a fail. The lint now refuses the clear cases.
+  - **A technical limit on the kind of gun may be left out.** "Semiautomatic rifles" for a bill on semiautomatic
+    centerfire rifles, or a rifle described without its caliber limit, is a detail left out under Ruling 7. Who the
+    bill covers, what it does, and when or where it applies must still match.
+  - **A plain name is not a new fact.** "Concealed-carry permit" for "a permit" under the concealed firearm permit
+    section is the everyday name of the same thing.
+  - **A claim the evidence does not show is held, even when it is probably true.** The checker uses no outside
+    knowledge. The evidence for what a bill does is its stored excerpt and the bill reading's subject lines
+    (`subjects.json`), which writer and checker both see; where they differ, the excerpt decides.
+  - **Still real errors:** a condition the bill does not have ("during an emergency" when the text adds "or at any
+    other time"); a different act ("funding their own" for "accepting a grant"); a bill said to set standards it
+    only requires others to meet; a qualifier dropped from a person's own words; an added word of size or degree
+    ("large").
+- **Date and source:** 2026-11-22, Chris Andrews, in conversation, on the answer keys in
+  `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/key/` and `…/trial-nv/key.html`.
 
 ## Topic-scoped readings
 
