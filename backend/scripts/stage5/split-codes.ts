@@ -19,10 +19,10 @@
  * Exit 0: every code written. Exit 3: some sent back (the rest written). Exit 1: the file cannot be read.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { checkAtIngest, finalizeCode, rungTextsFromLadder } from '../lib/stage5Ingest.js';
 import { coderSummary, takeSummary } from '../lib/stage5CoderSummary.js';
-import { STORE, instrumentIndex, instrumentTexts, parseArgs, readConfig, readPersonFindings } from './coder-io.js';
+import { STORE, coderSummariesDir, instrumentIndex, instrumentTexts, parseArgs, readConfig, readPersonFindings } from './coder-io.js';
 
 function main(): number {
   const { pos, flags } = parseArgs(process.argv.slice(2));
@@ -53,7 +53,8 @@ function main(): number {
   const seen = new Set<string>();
   let written = 0;
   let summaries = 0;
-  const summariesDir = flags.get('summaries')?.[0];
+  // `coder_summaries: true` in the config saves them beside the config; --summaries names another folder for one run.
+  const summariesDir = flags.get('summaries')?.[0] ?? (config.coder_summaries === true ? coderSummariesDir(dirname(configPath)) : undefined);
   mkdirSync(codesDir, { recursive: true });
   if (summariesDir) mkdirSync(summariesDir, { recursive: true });
   for (const raw of entries as Record<string, unknown>[]) {

@@ -124,10 +124,11 @@ function main() {
   if (table) rulings.text = BILL_TABLE_NOTE + rulings.text;
   const index = instrumentIndex(store);
   const template = readFileSync(one('template', TEMPLATE), 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '');
-  // --with-summary: the coder also writes each seated or doesnt-fit person's summary (lib/stage5CoderSummary.ts).
+  // `coder_summaries: true` in the config (or --with-summary for one run): the coder also writes each seated or
+  // doesnt-fit person's summary (lib/stage5CoderSummary.ts).
   // The sides come from --sides, or from topic-profile.json beside the config.
   let summaryJob = '';
-  if (flags.has('with-summary')) {
+  if (flags.has('with-summary') || config0.coder_summaries === true) {
     const profilePath = join(dirname(one('config')), 'topic-profile.json');
     const sides = flags.get('sides')?.[0] ?? (existsSync(profilePath) ? (JSON.parse(readFileSync(profilePath, 'utf8')) as { sides?: string | null }).sides ?? null : null);
     summaryJob = summaryJobSection(readFileSync(WRITER_TEMPLATE, 'utf8').replace(/<!--[\s\S]*?-->\n?/g, ''), sides);

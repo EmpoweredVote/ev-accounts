@@ -20,7 +20,7 @@ import { fillTemplate } from '../lib/stage5Template.js';
 import { usableCoderDraft, type CoderSummary } from '../lib/stage5CoderSummary.js';
 import { Stage5CodeSchema, type Stage5Code } from '../lib/stage5Code.js';
 import type { SummaryCheck } from '../lib/stage5Summary.js';
-import { REPO, STORE, displayName, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings, readRosters } from './coder-io.js';
+import { REPO, STORE, coderSummariesDir, coderSummariesOn, displayName, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings, readRosters } from './coder-io.js';
 
 const TEMPLATES = join(REPO, '.claude/skills/season-topic-prep/templates');
 export const WRITER_TEMPLATE = join(TEMPLATES, 'stage5-summary-writer.md');
@@ -375,7 +375,7 @@ export function main(argv: string[]): void {
   mkdirSync(join(out, 'writer'), { recursive: true });
   mkdirSync(join(out, 'drafts'), { recursive: true });
   // --coder-summaries: people whose summary the coder wrote, for the code they still hold, need no writer.
-  const coderDir = flag(flags, 'coder-summaries');
+  const coderDir = flag(flags, 'coder-summaries') ?? (coderSummariesOn(profile.stage5) ? coderSummariesDir(profile.stage5) : undefined);
   const coderDrafts: unknown[] = [];
   const fromCoder = new Set<string>();
   if (coderDir) {

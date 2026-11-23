@@ -740,12 +740,14 @@ leaves files in `<stage5>/summaries/<batch>/`.
   run and let 3.2 of 11 flawed summaries pass; this one caught 12.2 and let 0.5 pass, and holds about 2.5 of 10 sound
   but borderline summaries (old: 1.8). One check still misses some near-miss wording, so a pass is not proof.
   Notes and every run: `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/`.
-- **Written by the coder (opt-in; off unless the runner turns it on).** `coder-inputs.ts --with-summary` adds a second
-  job to each coder brief: after coding a person seated or doesnt-fit, write that person's summary, by the writer
-  template's own rules (`lib/stage5CoderSummary.ts` cuts them from that template, so there is one copy). Then
-  `split-codes.ts --summaries <stage5>/coded-summaries` saves each passing code's summary beside the codes (it is
-  never written into the code file), and `summary-inputs.ts --coder-summaries <stage5>/coded-summaries` uses it as
-  that person's draft (`drafts/coder.json`) and leaves them out of the writer prompts. A coder summary is used only
+- **Written by the coder (one switch; off unless the runner turns it on).** Set `"coder_summaries": true` in
+  `<stage5>/coder-config.json`. Then, with no other flag: `coder-inputs.ts` adds a second job to each coder brief
+  (after coding a person seated or doesnt-fit, write that person's summary, by the writer template's own rules,
+  which `lib/stage5CoderSummary.ts` cuts from that template so there is one copy); `split-codes.ts` saves each
+  passing code's summary in `<stage5>/coded-summaries/` (never in the code file); and `summary-inputs.ts` uses it as
+  that person's draft (`drafts/coder.json`) and leaves them out of the writer prompts. For a single run without the
+  switch, each script has its own flag: `--with-summary`, `--summaries <dir>`, `--coder-summaries <dir>`.
+  A coder summary is used only
   while the person's code is the one the coder gave; after a review or re-code the writer writes it. Lint, checker
   and rewrites are unchanged. Trial on gun policy, 2026-11-22/23: Nevada placements were the same in two plain and
   two merged coder runs (17 of 17 each); the blind check on the 24 own-words seats agreed with today's codes on 23

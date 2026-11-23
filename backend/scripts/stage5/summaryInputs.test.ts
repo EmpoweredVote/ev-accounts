@@ -1,4 +1,4 @@
-import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -235,6 +235,36 @@ describe('checker prompt', () => {
     const f = finding(1);
     const b = buildSummary({ politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'One.', cites: [f.id] }, { text: 'Two.', cites: [f.id] }] }, [f]);
     expect(() => checkerPrompt({ politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: [[f.id]] }, [f], { outcome: 'doesnt-fit' }, null)).toThrow(/sentences/);
+  });
+});
+
+describe('coder-written summaries, switched on in coder-config.json', () => {
+  it('uses the saved summary as the draft and gives the writer only the people without one', () => {
+    const a = finding(1); const b = finding(2);
+    const { stage5, store } = world([{ n: 1, outcome: 'seated', value: 3, findings: [a] }, { n: 2, outcome: 'seated', value: 3, findings: [b] },
+      { n: 3, outcome: 'doesnt-fit', findings: [finding(3)] }]);
+    const profile = join(stage5, 'topic-profile.json');
+    writeFileSync(profile, JSON.stringify({ topic_key: TOPIC, topic_name: 'gun policy', stage5, sides: '1,2,3/4,5' }));
+    const sentences = [{ text: 'She voted for a red flag bill.', cites: [a.id] }];
+    mkdirSync(join(stage5, 'coded-summaries'));
+    writeFileSync(join(stage5, 'coded-summaries', `${pid(1)}.json`), JSON.stringify({ politician_id: pid(1), topic_key: TOPIC, outcome: 'seated', value: 3, batch: 'pa-01', sentences }));
+    // Person 2's summary was written for another seat: stale, so the writer writes it.
+    writeFileSync(join(stage5, 'coded-summaries', `${pid(2)}.json`), JSON.stringify({ politician_id: pid(2), topic_key: TOPIC, outcome: 'seated', value: 4, batch: 'pa-01', sentences }));
+
+    // Off: no coder-config.json, so everyone goes to the writer and no coder draft is written.
+    main(['--profile', profile, '--batch', 'off', '--store', store]);
+    expect(existsSync(join(stage5, 'summaries', 'off', 'drafts', 'coder.json'))).toBe(false);
+    expect(readFileSync(join(stage5, 'summaries', 'off', 'writer', '1.md'), 'utf8')).toContain(pid(1));
+
+    writeFileSync(join(stage5, 'coder-config.json'), JSON.stringify({ coder_summaries: true }));
+    main(['--profile', profile, '--batch', 'on', '--store', store]);
+    const drafts = JSON.parse(readFileSync(join(stage5, 'summaries', 'on', 'drafts', 'coder.json'), 'utf8'));
+    expect(drafts).toEqual([{ politician_id: pid(1), topic_key: TOPIC, sentences }]);
+    const writer = readFileSync(join(stage5, 'summaries', 'on', 'writer', '1.md'), 'utf8');
+    expect(writer).not.toContain(`politician_id ${pid(1)}`); expect(writer).toContain(pid(2)); expect(writer).toContain(pid(3));
+    const people = JSON.parse(readFileSync(join(stage5, 'summaries', 'on', 'people.json'), 'utf8')) as { politician_id: string; draft_file: string }[];
+    expect(people).toHaveLength(3);
+    expect(people.find((p) => p.politician_id === pid(1))?.draft_file).toBe('drafts/coder.json');
   });
 });
 

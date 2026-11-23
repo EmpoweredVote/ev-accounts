@@ -24,6 +24,22 @@ export interface CoderConfig {
   /** From `topic:ladder-lint --season draft`: a `Question: "…"` line and `N. text` rung lines. */
   ladder_text: string;
   evidence_basis_by_level: string;
+  /**
+   * The one switch for coder-written summaries (STAGE5.md 7b). When true: `coder-inputs.ts` adds the summary job to
+   * every brief, `split-codes.ts` saves the summaries in `coded-summaries/` beside this file, and
+   * `summary-inputs.ts` uses them as drafts. Each script's own flag still works for a single run.
+   */
+  coder_summaries?: boolean;
+}
+
+/** Where coder-written summaries are kept for a Stage 5 folder. */
+export const coderSummariesDir = (stage5: string) => join(stage5, 'coded-summaries');
+
+/** True when `<stage5>/coder-config.json` turns coder-written summaries on. A missing or unreadable file is "off". */
+export function coderSummariesOn(stage5: string): boolean {
+  const file = join(stage5, 'coder-config.json');
+  if (!existsSync(file)) return false;
+  try { return (JSON.parse(readFileSync(file, 'utf8')) as { coder_summaries?: unknown }).coder_summaries === true; } catch { return false; }
 }
 
 export function readConfig(path: string): CoderConfig {
