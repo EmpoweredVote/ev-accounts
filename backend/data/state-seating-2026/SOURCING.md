@@ -101,6 +101,8 @@ something that looks like success.**
 | `leginfo.legislature.ca.gov` | works, then **403s at about three fetches** (5,643-byte body) | slow down, or switch to the browser |
 | `law.justia.com` · `codes.findlaw.com` | 403 / Cloudflare interstitial | not the state anyway — do not use |
 | `nmonesource.com` | **403, 239 bytes — AND THE FULL BROWSER HEADER SET DOES NOT HELP** | 🔴 the first true TLS-fingerprint block in this pass. Playwright — and then click: it is a JS tree whose page state does not survive an expand |
+| `lrb.hawaii.gov` (HI Legislative Reference Bureau) | 🟢 **the WHOLE constitution on one page**, 152,682 chars, plain header set | ⚠ its article links are **in-page anchors** (`#articlev`), not URLs — a link-following crawler finds nothing while the text is already in hand |
+| `capitol.hawaii.gov` (the HI Legislature) | 🟢 HRS as flat HTML, **one file per section**, with a chapter directory listing | `/hrscurrent/Vol01_Ch0001-0042F/HRS00<CH>/HRS_00<CH>-<NNNN>.htm`. 🔴 **UTF-8 WITH A BOM** — read `encoding='utf-8-sig'` and set `PYTHONIOENCODING=utf-8`, or the `\ufeff` kills `print` on a cp1252 console and looks like missing content. ⚠ `/docs/HawaiiStateConstitution.pdf` **404s** |
 | `www.cga.ct.gov` (the CT General Assembly) | 🔴 **valid cert, MISSING INTERMEDIATE** — `curl` exits **60** ("unable to get local issuer certificate"), `openssl s_client` says **code 21**. A browser loads it fine, because browsers fetch the issuer the certificate names and `curl` does not | 🟢 **Repair trust instead of escalating**: fetch `http://certs.godaddy.com/repository/gdig2.crt` (**follow the 301; it is DER, not PEM**), convert, concatenate onto `/mingw64/etc/ssl/certs/ca-bundle.crt`, pass as `--cacert`. ⚠ **Re-run the UNPATCHED bundle first and watch it still fail.** ▶ This is NOT a WAF and not a thin request — **more headers do nothing**. The constitution is at `/asp/Content/constitutions/Constitution_State_CT.pdf`; note `constitutions.asp` is **plural** |
 | `portal.ct.gov` | 🔴 **HTTP 200 with a page titled "404 Error Page"** | the sixth distinct way a 200 has lied in this pass. ⚠ Title-check, not status-check |
 | `gc.nh.gov` (the NH General Court) | 🟢 answers a plain header set; RSAs as flat HTML, **a whole chapter in one `-mrg.htm` file** | 🔴 **`gencourt.state.nh.us` is DEAD** (404, 1,245-byte body) and the journals' own masthead still prints it. RSA paths: `/rsa/html/NHTOC/NHTOC-<TITLE>.htm`, then `/rsa/html/<TITLE>/<CH>/<CH>-mrg.htm`. Journals: `/house/calendars_journals/Journals/<yyyy>/HJ%20<nn>%20<Month>%20<d>,%20<yyyy>.PDF`. ⚠ **The journals DIRECTORY 403s while the FILES are open** — a listing refusal is not a file refusal |
@@ -268,6 +270,13 @@ in January 2027.
     SAME.** `Neb. Rev. Stat. § 32-573`, a Board of Regents *vacancy* section, restates the
     constitutional formula three times. A statute that repeats the clause settles the question for
     that body far more firmly than failing to find one.
+- 🔴🔴 **A TERM CAN BEGIN ON ELECTION DAY, BEFORE THE RESULT IS CERTIFIED — SO "THE DATE IS IN
+  THE FUTURE" IS AN ASSUMPTION, NOT A FACT.** `HRS § 13D-5` starts an OHA trustee's four-year
+  term *"beginning on the day of the general election at which they are elected"*. Hawaii's
+  trustees have been in their new terms since **2026-11-03**, and this pass did not know it
+  until the statute was read on 2026-11-23. ▶ **Source the near-term bodies first and check
+  every sourced date against today**, because a queue sorted by "soonest first" cannot sort a
+  date it has not yet read.
 - 🔴🔴 **A CONSTITUTION PDF CAN CONTAIN THE SAME ARTICLE TWICE, SUPERSEDED COPY FIRST — AND THE
   STALE COPY FABRICATES A MISSING-OFFICE FINDING.** Connecticut's official PDF prints the 1965
   text and then a *CODIFIED CONSTITUTION … INCORPORATING ALL EXTANT AMENDMENTS*. The first
@@ -456,7 +465,7 @@ in January 2027.
 | 18 | SD | EXEC | 6 | 1077 | ⚠️ **1 dated, 5 refused — AND THIS ROW IS TWO WAVES.** PUC → **2027-01-05** (`SDCL § 49-1-2`, a formula). The 5 constitutional executives → **window 2027-01-04 → 2027-01-24** (`SDCL § 3-1-2` gives a 21-day choice and dates QUALIFICATION). 🔴 We do not hold the **State Auditor**, which `Art. IV § 7` names and 2026 elected |
 | 19 | NH | BOARD+EXEC | 6 | 1083 | 🔴 **ALL 6 REFUSED — window opens 2027-01-06 and DOES NOT CLOSE.** The constitution fixes **no term length and no commencement**; `arts. 3, 42, 60` date only the **laying of the votes before the General Court**. The term starts at the **inauguration**, which both prior cycles held the **day after** (2023-01-05, 2025-01-09) — custom, not law |
 | 20 | CT | EXEC | 5 | 1088 | ✅ **all on 2027-01-06** — `Conn. Const. art. IV § 2` (codified): offices held "from the Wednesday following the first Monday of the January next succeeding their election". 🔴 **6 offices in law, 5 in the register** — the **Secretary of the State has NO race row, ever** |
-| 21 | HI | EXEC | 5 | 1093 | **OHA At-large is staggered — see below** |
+| 21 | HI | EXEC | 5 | 1093 | 🔴🔴 **TWO DATES AND BOTH ARE URGENT.** OHA trustees began **2026-11-03** — **election day itself** (`HRS § 13D-5`), already past. Governor + Lt. Governor begin **2026-12-07** at noon (`Haw. Const. art. V §§ 1, 2`). ⚠ **OHA At-large is staggered — 3 winners, 4 offices, Ruling A** |
 | 22 | IL | EXEC | 5 | 1098 | |
 | 23 | MI | EXEC | 5 | 1103 | **MSU Trustees and State Board of Education are staggered — see below** |
 | 24 | ND | EXEC | 5 | 1108 | |
@@ -678,10 +687,22 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**20 of 41 states sourced · 1,086 of 1,162 offices (93%) · 0 seated.** The queue's cumulative
-column reaches **1,088** at row 20 (CT); **two Arkansas offices remain open** (Lt. Governor,
-Commissioner of State Lands), so 1,088 − 2 = 1,086. The 21 states that remain are **74 offices**,
+**21 of 41 states sourced · 1,091 of 1,162 offices (94%) · 0 seated.** The queue's cumulative
+column reaches **1,093** at row 21 (HI); **two Arkansas offices remain open** (Lt. Governor,
+Commissioner of State Lands), so 1,093 − 2 = 1,091. The 20 states that remain are **69 offices**,
 almost all single-body executive states.
+
+🔴🔴 **THE DEADLINE PICTURE CHANGED WITH HAWAII, AND IT IS NOW THE MOST URGENT THING IN THIS
+FILE.** Two dates have **already passed** and a third is **days away**, and nothing has been
+written for any of them:
+
+| date | state / body | status |
+|---|---|---|
+| **2026-11-03** | **HI — OHA trustees** (`HRS § 13D-5`: the term begins **on election day**) | 🔴 **PAST.** 2 of 5 winners seatable now; the 3 at-large are Ruling A |
+| **2026-11-04** | **NV — legislature** (52 seats) | 🔴 **PAST** |
+| **2026-12-01** | **ME — legislature** | ⏰ days away |
+| **2026-12-07** | **HI — Governor + Lt. Governor** · **CA — legislature** | ⏰ **days away** |
+
 
 🔴 **"SOURCED" IS NOT "DATED", AND THE GAP IS NOW A THIRD OF THE WORK.** A refused office is
 sourced — its legal position is settled and the answer is "no day exists yet". The pass carries
@@ -692,7 +713,8 @@ recount and have been re-added programmatically after every state since.
 said fifteen states, 26 refusals and six states. ▶ **Re-read it against the table every time.**
 🔴 **Nothing in this pass has been WRITTEN yet** — no `office_swearing_in` row, no migration, no
 term. Step 2 is done for these nineteen; steps 3 through 9 are not started for any state.
-▶ **Next by deadline: NV (already past), ME, CA. Next by queue order: HI (5), IL (5), MI (5).**
+▶ **Next by deadline: HI OHA and NV (both PAST), then ME 12-01, then HI Gov and CA 12-07.**
+▶ **Next by queue order: IL (5), MI (5), ND (5).**
 ⚠ **Queue rows 1–19 are ALL sourced**, and that includes every body of the first twelve states —
 so **NV EXEC and UT BOARD are DONE, not pending**; they are rows 8 and 9, and their refusals are in
 the table below. 🔴 A refused body still appears in the refusal table forever, which makes it easy
@@ -717,6 +739,7 @@ to mistake for outstanding work. **The queue is the only list of what is left.**
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
 | NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
 | GA | 🔴 [`DATES.md`](./DATES.md) — **0 of 10 dated.** `O.C.G.A. § 45-12-2` puts the inauguration in the first week of the session **on a day a joint resolution appoints**, with a noon-Saturday fallback — so `window_end_date` **2027-01-16** is sourced and `swearing_in_date` is not. The 2 PSC seats are governed by a remedial statute (`§ 46-2-1.1`) that could not be read in full | ⏳ | | |
+| HI | ✅ [`DATES.md`](./DATES.md) — 🔴🔴 **TWO DATES, BOTH URGENT.** OHA trustees' terms begin **on election day** (`HRS § 13D-5`); Governor and Lt. Governor at **noon on the first Monday in December** (`art. V §§ 1, 2`) | **2026-11-03** (OHA) / **2026-12-07** (Gov) | — | 🔴 one date is **past**, the other is **14 days out**; At-large is Ruling A |
 | CT | ✅ [`DATES.md`](./DATES.md) — **all on one clause.** `art. IV § 2` (codified) covers all six executives, and `art. III §§ 2, 10` give the session and the legislature the **same day**. 🔴 The PDF prints `ARTICLE FOURTH` **twice** and the superseded copy comes first | **2027-01-06** | — | 🔴 the **Secretary of the State** has no race row, ever |
 | NH | 🔴 [`DATES.md`](./DATES.md) — **all 6 REFUSED.** The constitution fixes **no length and no day**; `arts. 3, 42, 60` date only when the votes are **laid before** the General Court. `RSA 4-A:2` makes "governor-elect" run *"until the day of his inauguration"* and never names it | — | **opens 2027-01-06, no close** | 🟢 2 cycles from the General Court's own journals: **2023-01-05, 2025-01-09**, both the day after |
 | SD | ⚠️ [`DATES.md`](./DATES.md) — **1 dated, 5 refused, and the body SPLITS.** The constitution gives a four-year length and no day; `SDCL § 3-1-2` gives the five executives a **21-day choice**, while `SDCL § 49-1-2` gives the PUC a fixed formula **one day earlier** | **2027-01-05** (PUC only) | **2027-01-04 → 2027-01-24** (the five) | 🔴 the **State Auditor** is named by `Art. IV § 7` and absent from our offices |

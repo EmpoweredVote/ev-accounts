@@ -3027,3 +3027,133 @@ present identically in the queue, as a state with one fewer office than the law 
 `source = 'https://www.cga.ct.gov/asp/Content/constitutions/Constitution_State_CT.pdf (Revised to January 1, 2025), read 2026-11-23'`.
 `window_end_date` **NULL** — the day is fixed.
 ⚠ **Five of the six are seatable**; the Secretary of the State has no result to seat.
+
+---
+
+## HI — Hawaii · 5 offices · ✅ sourced 2026-11-23 — 🔴🔴 **TWO DATES, AND ONE OF THEM IS ALREADY 20 DAYS PAST**
+
+🔴🔴 **READ THIS BEFORE ANY OTHER STATE IN THE QUEUE. Hawaii holds both the nearest future
+deadline in the pass and a second deadline that has already gone by.**
+
+| body | offices | winners | start date | basis | authority |
+|---|---|---|---|---|---|
+| **Office of Hawaiian Affairs** — Maui Resident Trustee, Oahu Resident Trustee | 2 | 2 | 🔴 **2026-11-03** — **20 DAYS PAST** | `statute` | `HRS § 13D-5` |
+| **Office of Hawaiian Affairs** — At-large Trustee | 1 row, **4 offices** | **3** | 🔴 **2026-11-03** — past, **but Ruling A blocks seating** | `statute` | `HRS § 13D-5` |
+| **Governor · Lieutenant Governor** | 2 | 2 | ⏰ **2026-12-07** — **14 days away** | `statute` | `Haw. Const. art. V, §§ 1, 2` |
+
+### ⏰ The Governor and Lieutenant Governor — 2026-12-07
+
+**`Haw. Const. art. V, § 1` — *Establishment of the Executive*:**
+
+> The executive power of the State shall be vested in a governor. … **The term of office of the
+> governor shall begin at noon on the first Monday in December next following the governor's
+> election** and end at noon on the first Monday in December, four years thereafter.
+
+**`art. V, § 2` — *Lieutenant Governor*:**
+
+> There shall be a lieutenant governor … The lieutenant governor shall be elected at the same time,
+> **for the same term** and in the same manner as the governor; provided that the votes cast in the
+> general election for the nominee for governor shall be deemed cast for the nominee for lieutenant
+> governor of the same political party.
+
+The first Monday in December 2026 is **2026-12-07**. 🟢 **"For the same term" carries the
+Lieutenant Governor without a second clause** — the Georgia pattern, where the subordinate officers
+ride on the Governor's own provision.
+
+⚠ **The constitution says "at noon" and `office_swearing_in.swearing_in_date` is a DATE.** The hour
+is not representable and does not need to be: the column records the day a term begins. Say so in
+the migration header rather than silently dropping half a sentence.
+
+🟢 **Control, and it is exact.** Governor Green's `office_terms.term_start` is **2022-12-05** —
+the first Monday in December 2022. One row, but `art. V § 1` names a **formula**, not a choice, so
+it counts (the Idaho distinction).
+
+### 🔴🔴 THE OHA TRUSTEES' TERMS BEGAN ON ELECTION DAY ITSELF
+
+**`HRS § 13D-5` — *Term of office; vacancies*:**
+
+> The term of office of members of the board shall be four years **beginning on the day of the
+> general election at which they are elected**, or if elected at a primary election, on the day of
+> the general election immediately following the primary election at which they are elected, and
+> **ending on the day of the second general election after their election**.
+
+🔴 **So the start date is 2026-11-03 — the election itself.** Not a January date, not a swearing
+in, not a canvass. This is the first body in the pass whose term begins **before the result is even
+certified**, and the only one so far whose date is in the past at the moment of sourcing.
+
+⚠ **The second limb matters too.** `HRS § 13D-4(e)(3)` lets a primary candidate who takes more
+than fifty per cent be "declared … duly and legally elected" without appearing on the general
+ballot — and § 13D-5 still starts that person's term **on the day of the following general
+election**. ▶ **Both routes land on 2026-11-03 for this cycle**, so the distinction changes nothing
+here, but it would in a state where the two dates differ.
+
+🟢 **"Ending on the day of the second general election after their election"** is a four-year term
+expressed in elections rather than years, and it closes the arithmetic: 2026-11-03 → the 2030
+general election.
+
+### 🟢 The board's composition checks out, and the statute says how many were up
+
+**`HRS § 13D-1`:** *"The board of trustees shall be composed of **nine members** elected at-large by
+qualified voters in the State. Of the nine members to be elected one shall reside on the island of
+Hawaii; one … Maui; and one … Molokai; one … Kauai; and one … Oahu."*
+
+| | |
+|---|---|
+| nine seats = **5 island-residency + 4 at-large** | ✅ we hold exactly **9 OHA office rows**, 4 at-large and 5 island |
+| `§ 13D-4(f)`: *"Any election with **three available seats without a residency requirement**"* | 🟢 **the statute itself says three at-large seats were up** — and our data has **3 at-large winners**. The instrument that dates the body confirms the count. |
+
+### 🔴 Ruling A blocks the at-large block, and the statute explains why
+
+Our four at-large office rows carry **3 winners on one row** — Brickwood Galuteria, Ikaika Anderson
+and Keoni Souza — and nothing in the data says **which three of the four seats** they take. That is
+the equality gate failing exactly as `REGISTER.md` describes, and this body is already named in
+`SOURCING.md`'s *"Four bodies cannot be seated from our data at all"* table.
+
+🟢 **Sourcing has now made that refusal sharper rather than leaving it vague**: the gap is one
+seat, the fourth at-large trustee whose term runs to the 2028 general election. ▶ **The fix is
+`CLAUDE.md`'s existing rule** — attach the race to the office of the member actually leaving — and
+the document that settles it is OHA's own published roster of trustees and term expirations.
+**That is step-3 work; the date is not in doubt.**
+
+| OHA seat | 2026 winner | seatable once dated? |
+|---|---|---|
+| Maui Resident Trustee | Carmen Hulu Lindsey | ✅ yes |
+| Oahu Resident Trustee | Kalei Akaka | ✅ yes |
+| At-large × 4 | 3 winners on one row | 🔴 **no — Ruling A** |
+| Hawaii Island, Kauai and Niihau, Molokai and Lanai | none | ✅ correct — not up this cycle |
+
+### 🔴 What this means for the programme
+
+| | |
+|---|---|
+| **2026-11-03** | OHA — **20 days past**. Two trustees are seatable the moment a row is written |
+| **2026-12-07** | Governor and Lieutenant Governor — **14 days away**, the nearest FUTURE deadline anywhere in this pass |
+
+⚠ Hawaii joins **Nevada** as a state whose date has already arrived, and unlike Nevada its
+executive pair is about to. 🔴 **Nothing in this pass has been written**, so both are currently
+late or about to be.
+
+### Sourcing notes
+
+- 🟢 **`lrb.hawaii.gov/constitution/` serves the ENTIRE constitution on one page** — 152,682
+  characters of text to a plain header set. The Legislative Reference Bureau is the state's own
+  publisher. ⚠ The article links are **in-page anchors** (`#articlev`), not separate URLs, so a
+  link-following crawler finds nothing while the text is already in hand.
+- 🟢 **The HRS are flat HTML, one file per section**, at
+  `capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS00<CH>/HRS_00<CH>-<NNNN>.htm`, and the
+  chapter directory lists its sections. `13D` has exactly five.
+- 🔴 **Those files are UTF-8 **with a BOM**, and Python read them as `utf-8` keeps the `\ufeff`,
+  which then kills `print` on a cp1252 console.** Read with `encoding='utf-8-sig'` and set
+  `PYTHONIOENCODING=utf-8`. ⚠ This is a cousin of the Nevada roster bug already recorded here —
+  **an encoding fault on the way IN or the way OUT can masquerade as missing content**.
+- ⚠ `capitol.hawaii.gov/docs/HawaiiStateConstitution.pdf` **404s** with a 12 KB HTML body; the
+  constitution is not there. Use the LRB.
+
+### Basis
+
+**OHA (5 winners across 3 office rows):** `basis = 'statute'`, `swearing_in_date = 2026-11-03`,
+`authority = 'HRS § 13D-5'`, `window_end_date` NULL.
+**Governor and Lieutenant Governor:** `basis = 'statute'`, `swearing_in_date = 2026-12-07`,
+`authority = 'Haw. Const. art. V, §§ 1, 2'`, `window_end_date` NULL.
+🔴 **Two dates in one `(state, district_type)` row — `classifyWave` will raise `date_disagrees`.
+Hawaii ships as two waves, like South Dakota.**
