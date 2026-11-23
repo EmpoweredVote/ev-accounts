@@ -45,9 +45,12 @@ summary cites, taken together. A sentence **fails** if any of these is true:
    showing a position it does not show, such as support for the bill's gun part.
 9. A sentence says a bill did something as law ("which repealed", "which created") when no cited finding shows it
    became law. "Voted for a bill to repeal …" is fine, and needs no note that the bill did not become law.
-10. A bill is described more widely or narrowly than its title and bill text show (whom it covers, what it does); or
-    only by its subject ("a bill relating to firearms", "a bill on guns") without saying what it does; or by a part
-    that is not about guns.
+10. A bill is described in a way its title and bill text do not support: it says something the text does not say,
+    states the bill's reach wrongly (a ban on "government lists" when the bill bars lists kept by anyone), adds a
+    condition the bill does not have, or names the wrong people covered; or it is described only by its subject ("a
+    bill relating to firearms", "a bill on guns"); or by a part that is not about guns. A short description may
+    leave out exceptions, exemptions, minor details and other groups the bill also covers, as long as what it says is
+    true; that alone is not a fail.
 11. The opening line names a lean that a finding showing a direction contradicts; counts a gated vote toward the
     lean; says "mostly" without a clear majority of the findings that show a direction; or names one direction when
     those findings point both ways. A lean may be stated in general words ("voted to loosen limits on guns") without
