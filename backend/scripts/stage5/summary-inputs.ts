@@ -153,6 +153,30 @@ export const BILL_TEXT_CAP = 6000;
  * Each cited bill's text, once, capped: the same words the coder read, so a summary can say what the bill does instead
  * of only what its title is about. Empty when no bill has stored text.
  */
+/** A bill's plain subject lines, as the bill reading wrote them from the whole bill: `<stage5>/subjects.json`. */
+export function readBillSubjects(stage5: string): Map<string, string[]> {
+  const file = join(stage5, 'subjects.json');
+  if (!existsSync(file)) return new Map();
+  const raw = JSON.parse(readFileSync(file, 'utf8')) as Record<string, unknown>;
+  const clean = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string' && !!x.trim() && !/\b(rungs?|ladder)\b/i.test(x)) : []);
+  return new Map(Object.entries(raw).map(([k, v]) => [k, clean(v)] as [string, string[]]).filter(([, v]) => v.length > 0));
+}
+
+export const READING_LABEL = 'Our reading of the full bill:';
+export const EXCERPT_LABEL = 'Stored excerpt of the bill:';
+
+/**
+ * What writer and checker are shown for one bill: the bill reading's subject lines, then the stored excerpt. The
+ * excerpt was chosen to place people on the ladder, so it is often too short to describe the bill: in the 2026-11-22
+ * Nevada trial 21 of 45 failed sentences made a claim the reading states and the excerpt (297 to 1,919 characters)
+ * does not show. A subject line that names a rung is dropped by readBillSubjects.
+ */
+export function billTextWithReading(operativeText: string | undefined, subjects: string[] | undefined): string {
+  const text = (operativeText ?? '').trim();
+  if (!subjects?.length) return text;
+  return `${READING_LABEL} ${subjects.join('; ')}.${text ? ` ${EXCERPT_LABEL} ${text}` : ''}`;
+}
+
 /** One bill's stored text on one line, capped; '' when there is none. */
 export function cappedBillText(id: string, texts: Map<string, string> | undefined, cap = BILL_TEXT_CAP): string {
   const t = texts?.get(id)?.replace(/\s+/g, ' ').trim();
@@ -338,6 +362,7 @@ export function main(argv: string[]): void {
   const batch = flag(flags, 'batch');
   if (!profilePath || !batch) { console.error('usage: summary-inputs.ts --profile <topic-profile.json> --batch <name> [--state xx] [--people a,b] [--max-findings 25]'); process.exit(2); }
   const profile = JSON.parse(readFileSync(profilePath, 'utf8')) as { topic_key: string; topic_name?: string; stage5: string; sides: string | null };
+  const subjects = readBillSubjects(profile.stage5);
   const max = Number(flag(flags, 'max-findings') ?? 25);
   const perFile = Number(flag(flags, 'per-file') ?? 10);
   const store = flag(flags, 'store') ?? STORE;
@@ -357,7 +382,7 @@ export function main(argv: string[]): void {
       const o = capFindings(p.findings, p.code.finding_ids, max);
       const got = instrumentTexts(store, index, o.offered.map((f) => f.instrument_id).filter((x): x is string => !!x));
       const titles = new Map([...got].map(([k, v]) => [k, v.title]));
-      const texts = new Map([...got].map(([k, v]) => [k, v.operative_text ?? '']));
+      const texts = new Map([...got].map(([k, v]) => [k, billTextWithReading(v.operative_text, subjects.get(k))]));
       manifest.push({
         politician_id: p.politician_id, name: p.name, outcome: p.code.outcome, value: p.code.value ?? null,
         finding_ids: o.offered.map((f) => f.id), left_out: o.left_out, writer_file: `writer/${n}.md`, draft_file: `drafts/${n}.json`,

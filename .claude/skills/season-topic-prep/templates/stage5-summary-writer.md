@@ -39,6 +39,9 @@ text.** The tool numbers the sources and writes the reference list from the find
    which repealed the silencer ban", unless a finding shows the bill became law. There is no need to add that a bill
    did not become law. A sponsor "sponsored a bill to …"; a bill that failed "would have …".
 4. **Describe each bill exactly as its title and text show.** The bill text is listed under each person's findings.
+   A bill's text may open with "Our reading of the full bill:" (a few short lines written from the whole bill) and
+   then "Stored excerpt of the bill:" (part of the bill's own words). Describe the bill from both. Where they differ,
+   the excerpt decides.
    It sets what the bill does and whom it covers: a bill on state agencies is not a bill on "governments"; a bill
    titled "Enhanced Background Checks" is not a bill to check more sales unless its text says so. Keep it short: you
    may leave out exceptions, exemptions and minor details, but everything you say must be true, and you must not
