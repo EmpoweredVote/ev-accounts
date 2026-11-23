@@ -309,11 +309,39 @@ COMMENT ON FUNCTION inform.refuse_compass_user_lens_truncate() IS
 -- They are AFTER triggers: the row change has already succeeded, so the history
 -- row records something that actually happened rather than something attempted.
 --
--- ⚠ THE WHEN CLAUSE ON THE UPDATE TRIGGER IS DEFENCE IN DEPTH, NOT DUPLICATION.
--- The service's ON CONFLICT ... WHERE (IS DISTINCT FROM) guards the app write
--- path; this guards ANY write path. A no-op UPDATE — the same lens written back
--- unchanged, which an idempotent client PUT does constantly — would otherwise
--- write a history row per request and bury the real changes in noise.
+-- -----------------------------------------------------------------------------
+-- 🔴 THE UPDATE TRIGGER'S WHEN CLAUSE LISTS COLUMNS. `OLD.* IS DISTINCT FROM
+-- NEW.*` IS WRONG HERE, AND IT IS WRONG IN A WAY THAT LOOKS RIGHT.
+-- -----------------------------------------------------------------------------
+-- The requirement is: a no-op save writes nothing. The whole-row form does not
+-- deliver it, because `updated_at` is on the row.
+--
+-- Measured on this branch, 2026-11-22. backend/src/lib/compassUserLensService.ts
+-- upserts each lens with `ON CONFLICT (key) DO UPDATE SET ... updated_at = now()
+-- WHERE inform.compass_user_lenses.owner_id = $1`. That WHERE is an OWNERSHIP
+-- re-assertion — keys are globally unique, so another user's key can collide and
+-- without it the upsert would hand them someone else's row. It is NOT a no-op
+-- guard, and `updated_at = now()` is set unconditionally. So on a genuine no-op
+-- save `NEW.updated_at <> OLD.updated_at`, the whole-row comparison is TRUE, and
+-- the trigger fires anyway: one `op='update'` row per lens per idempotent client
+-- PUT, whose before/after differ in nothing but a timestamp. Unbounded growth in
+-- a database that is already over its size limit, and the real changes buried in
+-- it — the exact outcome the clause exists to prevent.
+--
+-- ⚠ AS OF THIS MIGRATION THE SERVICE CARRIES NO NO-OP GUARD AT ALL. Task 2 of
+-- this branch adds one to the upsert's `DO UPDATE ... WHERE`. That has not
+-- landed yet, and this clause is deliberately not written as if it had: it is
+-- the INDEPENDENT guard, it covers every write path including psql and anything
+-- nobody has written yet, and it is what makes the trigger correct on its own
+-- before Task 2 exists. Two guards at two layers, on purpose.
+--
+-- The list is every MATERIAL column — everything except created_at/updated_at.
+-- owner_id and key are in it deliberately: neither should ever change, and if
+-- one does, that is precisely an event worth a history row.
+--
+-- 🔴 A COLUMN ADDED TO compass_user_lenses LATER MUST BE ADDED HERE TOO, or
+-- changes to it are invisible to the history. That is the cost of the column
+-- list, paid knowingly in exchange for a clause that actually suppresses no-ops.
 
 CREATE OR REPLACE TRIGGER compass_user_lenses_history_ins
   AFTER INSERT ON inform.compass_user_lenses
@@ -321,7 +349,9 @@ CREATE OR REPLACE TRIGGER compass_user_lenses_history_ins
 
 CREATE OR REPLACE TRIGGER compass_user_lenses_history_upd
   AFTER UPDATE ON inform.compass_user_lenses
-  FOR EACH ROW WHEN (OLD.* IS DISTINCT FROM NEW.*)
+  FOR EACH ROW WHEN ((OLD.owner_id, OLD.key, OLD.name, OLD.topic_ids, OLD.visibility, OLD.deleted_at)
+                  IS DISTINCT FROM
+                     (NEW.owner_id, NEW.key, NEW.name, NEW.topic_ids, NEW.visibility, NEW.deleted_at))
   EXECUTE FUNCTION inform.log_compass_user_lens_change();
 
 CREATE OR REPLACE TRIGGER compass_user_lenses_history_del
@@ -395,6 +425,17 @@ BEGIN
   IF v_when NOT ILIKE '%IS DISTINCT FROM%' THEN
     RAISE EXCEPTION
       'CC_0468: the UPDATE trigger has no WHEN clause — every no-op write would log a row';
+  END IF;
+
+  -- 🔴 AND IT IS THE COLUMN-LIST FORM, NOT THE WHOLE-ROW ONE. `old.* IS DISTINCT
+  -- FROM new.*` passes the check above and still logs every no-op save, because
+  -- updated_at is on the row and the service sets it unconditionally. Asserting
+  -- "has a WHEN clause" without asserting WHICH one is how this regresses.
+  IF v_when ILIKE '%old.* IS DISTINCT FROM%' OR v_when NOT ILIKE '%deleted_at%' THEN
+    RAISE EXCEPTION
+      'CC_0468: the UPDATE trigger uses the whole-row WHEN clause, not the material-column '
+      'list — a no-op save differs in updated_at, so every idempotent PUT would log a row. '
+      'Trigger definition: %', v_when;
   END IF;
 
   -- (c) ev_api reached the new tables through ALTER DEFAULT PRIVILEGES, with no

@@ -7,8 +7,10 @@
 -- Design:    docs/superpowers/specs/2026-11-22-lens-durability-design.md
 --
 -- ⚠ SECTIONS 1-3 ARE READ-ONLY. SECTION 4 IS NOT, AND IT IS THE IMPORTANT ONE.
--- Section 4 writes a lens, deletes a real user as `supabase_auth_admin`, asserts,
--- and then ROLLS THE WHOLE THING BACK. It is one explicitly rolled-back
+-- Section 4 writes a lens, deletes a real `auth.users` row as `supabase_auth_admin`
+-- and follows the cascade down, asserts, and then ROLLS THE WHOLE THING BACK —
+-- see its own 🔴 block for why auth.users and not public.users. It is one
+-- explicitly rolled-back
 -- transaction and it is written to be pasted and run as-is. Nothing it does
 -- survives. Run it against the database you actually care about — proving the
 -- cascade on a copy proves nothing about the cascade in production, because the
@@ -17,6 +19,16 @@
 -- 🔴 RUN THIS AFTER THE MIGRATION IS APPLIED, NOT BEFORE. Section 4 in particular
 -- is the one failure that would otherwise surface as "nobody can delete their
 -- account any more", discovered by a user.
+--
+-- 🔴 A CLEAN MIGRATION APPLY IS NOT A PASS ON THE ev_api GRANT. SECTION 3 IS THE
+-- AUTHORITATIVE ANSWER, AND IT HAS TO BE RUN.
+-- CC_0468's verification block checks the same thing, but it reports it with
+-- RAISE WARNING rather than RAISE EXCEPTION (deliberately: the only remedy an
+-- abort would pressure anyone toward is a hand-written GRANT, which is forbidden
+-- here and would hide a broken default). A WARNING travels on a channel the MCP
+-- apply path does not surface. So the migration can apply, report success, and
+-- have warned that `ev_api` cannot read its own history table — with nobody told.
+-- Section 3 is how that gets seen. Do not skip it because the apply was green.
 
 
 \echo ''
@@ -76,25 +88,46 @@ SELECT relname, relacl, relrowsecurity FROM pg_class
 \echo ''
 \echo '=== 4. THE CASCADE PROOF — writes, then ROLLS BACK. Read the notice output. ==='
 \echo '--- This is the failure that would otherwise surface in production as "account'
-\echo '--- deletion is broken". It deletes a REAL user row as supabase_auth_admin inside a'
-\echo '--- transaction that is explicitly rolled back, and asserts that the cascade reached'
-\echo '--- inform.compass_user_lenses and that the trigger wrote a hard_delete row.'
+\echo '--- deletion is broken". It deletes a REAL auth.users row as supabase_auth_admin'
+\echo '--- inside a transaction that is explicitly rolled back, and asserts that the two'
+\echo '--- cascade hops reached inform.compass_user_lenses and that the trigger wrote a'
+\echo '--- hard_delete row.'
 \echo '---'
-\echo '--- PASS: NOTICE "CC_0468 cascade probe PASS", then ROLLBACK, then users_after equal'
-\echo '---       to users_before and probe_rows_left = 0.'
+\echo '--- 🔴 IT DELETES FROM auth.users, NOT public.users, AND THAT IS NOT A DETAIL.'
+\echo '--- Measured read-only against production, 2026-11-22:'
+\echo '---     has_table_privilege(supabase_auth_admin, public.users, DELETE) = FALSE'
+\echo '---     has_table_privilege(supabase_auth_admin, auth.users,   DELETE) = TRUE'
+\echo '---     has_schema_privilege(supabase_auth_admin, inform, USAGE)       = FALSE'
+\echo '---     FK chain: auth.users -cascade-> public.users -cascade-> compass_user_lenses'
+\echo '--- An earlier draft of this probe deleted from public.users, following the task'
+\echo '--- brief. It could never pass: it raised "permission denied for table users"'
+\echo '--- before ever reaching the trigger, so it proved nothing about the property it'
+\echo '--- exists to prove. auth.users is the real path. The delete is permitted there,'
+\echo '--- BOTH FK cascades bypass permission checks — and our user-defined AFTER DELETE'
+\echo '--- trigger is the one link in the chain that does NOT. That is the risk under test:'
+\echo '--- supabase_auth_admin has no USAGE on inform, so an INVOKER trigger would abort'
+\echo '--- every account deletion in the product.'
+\echo '---'
+\echo '--- PASS: NOTICE "CC_0468 cascade probe PASS", then ROLLBACK, then probe_rows_left = 0.'
 \echo '--- STOP: ERROR "permission denied for schema inform" — the trigger is NOT running as'
 \echo '---       postgres. Every account deletion in the product would abort. Fix the'
 \echo '---       function owner / SECURITY DEFINER before going any further; do not ship.'
 \echo '--- STOP: ERROR "...no hard_delete row" — the cascade deleted lenses and left no'
 \echo '---       record, which is exactly the hole CC_0468 claims to close.'
-\echo '--- NOTE: ERROR "permission denied for table users" is a DIFFERENT finding — it says'
-\echo '---       supabase_auth_admin cannot reach public.users directly in this database, so'
-\echo '---       this probe could not exercise the cascade at all. It is not a pass.'
-\echo '---       Re-aim the probe at whatever the real deletion path deletes from.'
-\echo '--- STOP: no "lens-free user" could be found — do not relax the probe by borrowing a'
-\echo '---       user who already holds lenses; the insert below would collide on key.'
-
-SELECT count(*) AS users_before FROM public.users;
+\echo '--- STOP: ERROR "permission denied for table users" — the grant measured above has'
+\echo '---       changed. The probe did not exercise the cascade at all. Not a pass.'
+\echo '--- STOP: ERROR mentioning a closed season — the chosen account had compass answers'
+\echo '---       in a closed season and CC_0046 closed_season_is_immutable() aborted the'
+\echo '---       cascade before it reached lenses. The query below already excludes those'
+\echo '---       accounts; if this appears, that exclusion no longer matches the trigger.'
+\echo '--- STOP: no borrowable account could be found — do not relax the filters to make it'
+\echo '---       run. An account that already holds lenses collides on key; one with'
+\echo '---       closed-season answers fails for an unrelated reason.'
+\echo '---'
+\echo '--- ⚠ UNDER -v ON_ERROR_STOP=1 ANY STOP ABOVE EXITS psql IMMEDIATELY, so section 4b'
+\echo '---   never prints. That is expected and it is safe: the transaction was never'
+\echo '---   committed, so disconnecting rolls it back. Absence of the 4b output after an'
+\echo '---   ERROR is not a second problem to chase.'
 
 BEGIN;
 
@@ -103,36 +136,62 @@ DECLARE
   v_user uuid;
   v_hist int;
 BEGIN
-  -- 1. A real user who holds no lenses. Read-only; chosen rather than invented so
-  --    the FK and the cascade are the real ones.
+  -- 1. A real account to borrow, read-only. Three conditions, each load bearing:
+  --
+  --      * it exists in BOTH auth.users and public.users under the same id — the
+  --        probe deletes by id from auth.users and then asserts the public.users
+  --        row went with it, which is the first cascade hop;
+  --      * it holds no lenses, because step 2 inserts one under a fixed key and
+  --        would otherwise collide on the globally-unique index;
+  --      * it has no compass answers outside the open season. CC_0046 attached
+  --        inform.closed_season_is_immutable() to compass_responses as a BEFORE
+  --        DELETE trigger, and auth.users cascades through that table too. An
+  --        account with closed-season answers makes the DELETE raise there — long
+  --        before the lens trigger runs — and the probe would report a failure
+  --        that has nothing to do with what it is testing.
   SELECT u.id INTO v_user
     FROM public.users u
-   WHERE NOT EXISTS (SELECT 1 FROM inform.compass_user_lenses l WHERE l.owner_id = u.id)
+   WHERE EXISTS (SELECT 1 FROM auth.users a WHERE a.id = u.id)
+     AND NOT EXISTS (SELECT 1 FROM inform.compass_user_lenses l WHERE l.owner_id = u.id)
+     AND NOT EXISTS (
+           SELECT 1 FROM inform.compass_responses cr
+             JOIN inform.seasons s ON s.id = cr.season_id
+            WHERE cr.user_id = u.id AND s.status <> 'open')
    LIMIT 1;
 
   IF v_user IS NULL THEN
-    RAISE EXCEPTION 'CC_0468 cascade probe: no lens-free user to borrow — see the STOP note above';
+    RAISE EXCEPTION 'CC_0468 cascade probe: no borrowable account found — see the STOP note above';
   END IF;
 
-  -- 2. Give them a lens to lose. Zero lenses would cascade to zero history rows and
-  --    the probe would pass vacuously, which is the shape of a check that has quietly
-  --    stopped working.
+  -- 2. Give them a lens to lose. Zero lenses would cascade to zero history rows
+  --    and the probe would pass vacuously, which is the shape of a check that has
+  --    quietly stopped working.
   INSERT INTO inform.compass_user_lenses (owner_id, key, name)
   VALUES (v_user, 'u_cc0468probe', 'CC_0468 cascade probe');
 
-  -- 3. Delete as the role the product's account deletion actually runs as. This role
-  --    is not superuser, does not bypass RLS, and has no USAGE on inform — which is
-  --    the whole reason the trigger is SECURITY DEFINER.
+  -- 3. Delete as the role the product's account deletion actually runs as, from
+  --    the table it actually deletes from. This role is not superuser, does not
+  --    bypass RLS, and has no USAGE on inform — which is the whole reason the
+  --    history trigger is SECURITY DEFINER.
   EXECUTE 'SET LOCAL ROLE supabase_auth_admin';
-  DELETE FROM public.users WHERE id = v_user;
+  DELETE FROM auth.users WHERE id = v_user;
   EXECUTE 'RESET ROLE';
 
-  -- 4. The cascade took the lens AND the trigger recorded it.
-  IF EXISTS (SELECT 1 FROM inform.compass_user_lenses WHERE key = 'u_cc0468probe') THEN
-    RAISE EXCEPTION 'CC_0468 cascade probe: the lens survived the account deletion — '
-                    'the ON DELETE CASCADE on owner_id is not what this assumed';
+  -- 4a. Hop one: auth.users -> public.users.
+  IF EXISTS (SELECT 1 FROM public.users WHERE id = v_user) THEN
+    RAISE EXCEPTION 'CC_0468 cascade probe: the public.users row survived the auth.users '
+                    'delete — the FK chain this probe assumes is not the one in place';
   END IF;
 
+  -- 4b. Hop two: public.users -> inform.compass_user_lenses.
+  IF EXISTS (SELECT 1 FROM inform.compass_user_lenses WHERE key = 'u_cc0468probe') THEN
+    RAISE EXCEPTION 'CC_0468 cascade probe: the lens survived the account deletion — the '
+                    'ON DELETE CASCADE on owner_id is not what this assumed';
+  END IF;
+
+  -- 4c. And the trigger recorded it. THIS is the assertion the probe exists for:
+  --     reaching this line at all means the SECURITY DEFINER trigger ran inside a
+  --     statement issued by a role with no rights in the inform schema.
   SELECT count(*) INTO v_hist
     FROM inform.compass_user_lens_history
    WHERE lens_key = 'u_cc0468probe' AND op = 'hard_delete';
@@ -142,20 +201,28 @@ BEGIN
                     'the cascade destroyed lenses and left no record', v_hist;
   END IF;
 
-  RAISE NOTICE 'CC_0468 cascade probe PASS: user % deleted as supabase_auth_admin, cascade '
-               'removed the lens, trigger wrote 1 hard_delete row. Rolling back.', v_user;
+  RAISE NOTICE 'CC_0468 cascade probe PASS: account % deleted from auth.users as '
+               'supabase_auth_admin, both cascade hops fired, trigger wrote 1 hard_delete '
+               'row. Rolling back.', v_user;
 END
 $probe$;
 
 ROLLBACK;
 
 \echo ''
-\echo '--- 4b. Nothing survived the probe. PASS: users_after = users_before (printed above),'
-\echo '---     probe_rows_left = 0. STOP on any other result: the ROLLBACK did not take and'
-\echo '---     a real user row is gone — restore it before doing anything else.'
-
-SELECT count(*) AS users_after FROM public.users;
+\echo '--- 4b. Nothing survived the probe.'
+\echo '--- PASS: probe_rows_left = 0. 🔴 THAT IS THE ONE THAT SETTLES IT — it is read after'
+\echo '---       the ROLLBACK, and a surviving history row is the only durable trace the'
+\echo '---       probe could have left.'
+\echo '--- The users_after count below is a SANITY CHECK ONLY, and comparing it across runs'
+\echo '--- is racy: a signup or a real account deletion moves it legitimately. A number you'
+\echo '--- did not expect is NOT on its own evidence that this probe destroyed a user —'
+\echo '--- check probe_rows_left first, and only then go looking.'
+\echo '--- STOP: probe_rows_left <> 0 — the ROLLBACK did not take. Investigate before'
+\echo '---       running anything else against this database.'
 
 SELECT count(*) AS probe_rows_left
   FROM inform.compass_user_lens_history
  WHERE lens_key = 'u_cc0468probe';
+
+SELECT count(*) AS users_after FROM public.users;
