@@ -21,6 +21,23 @@
  * --verify with a read-back query to see the end state from inside the transaction, before it
  * is thrown away. That is the whole value of rehearsing against real data.
  *
+ * ── 🔴 THE ONE WAY THIS DIFFERS FROM AN APPLY, STATED OUT LOUD ──────────────────────────────
+ *
+ * Every migration here builds `CREATE TEMP TABLE … ON COMMIT DROP` scratch tables, and two
+ * seating files in a row both build one called `incumbency_before` — the name is not a choice,
+ * `check-office-terms-incumbency-guards.mjs` REQUIRES that literal name in any migration that
+ * writes `office_terms`. Applied normally each file commits, the temp tables vanish, and the
+ * next file starts clean. Here there is no commit between files, so the second one dies with
+ * `relation "incumbency_before" already exists` — a collision that exists only because of this
+ * tool.
+ *
+ * So between files this drops every temp table, which is what the COMMIT would have done, and
+ * PRINTS what it dropped. 🔴 IT IS FAITHFUL ONLY BECAUSE EVERY TEMP TABLE IN THESE MIGRATIONS IS
+ * `ON COMMIT DROP`, and Postgres does not record that choice anywhere a query can read — the
+ * table is simply gone after a commit. A migration that deliberately left a temp table standing
+ * for a later file would be silently broken here, so the drop list is printed rather than done
+ * quietly.
+ *
  * Usage (from backend/):
  *   node scripts/rehearse-migration-chain.mjs migrations/CC_0465_*.sql migrations/CC_0466_*.sql \
  *                                             migrations/CC_0467_*.sql
@@ -72,7 +89,23 @@ client.on('notice', (n) => console.log(`  NOTICE: ${String(n.message).trim()}`))
 let failed = null;
 try {
   await client.query('BEGIN');
-  for (const { file, sql } of prepared) {
+  for (const [i, { file, sql }] of prepared.entries()) {
+    if (i > 0) {
+      // Stand in for the COMMIT that would have dropped these. See the header.
+      const { rows } = await client.query(
+        `SELECT c.relname FROM pg_class c
+           JOIN pg_namespace n ON n.oid = c.relnamespace
+          WHERE c.relpersistence = 't' AND c.relkind = 'r'
+            AND n.nspname = pg_my_temp_schema()::regnamespace::text
+          ORDER BY c.relname`,
+      );
+      for (const r of rows) {
+        await client.query(`DROP TABLE IF EXISTS pg_temp.${JSON.stringify(r.relname)} CASCADE`);
+      }
+      if (rows.length) {
+        console.log(`   (dropped ${rows.length} temp table(s) the COMMIT would have: ${rows.map((r) => r.relname).join(', ')})`);
+      }
+    }
     console.log(`\n── ${file}`);
     await client.query(sql);
     console.log('   OK — every assertion in this file passed, against the state its predecessors left');

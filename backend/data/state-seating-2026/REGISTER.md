@@ -275,13 +275,13 @@ future deadline in the pass.
 
 | order | slot | what it does | rehearsed |
 |---|---|---|---|
-| 1 | `CC_0472` | 🔴 **DDL.** Widen `office_swearing_in_after_election` from `>` to `>=` | ⚠ **owner only** — see below |
+| 1 | `CC_0472` | 🔴 **DDL.** Widen `office_swearing_in_after_election` from `>` to `>=` | ✅✅ **APPLIED 2026-11-23** |
 | 2 | `CC_0465` | NV · 52 date rows, 2026-11-04 (`Nev. Const. art. 4 §§ 3(1), 4(1)`) | ✅ |
 | 3 | `CC_0466` | NV · create 12 winners, **link** a 13th who already exists | ✅ |
 | 4 | `CC_0467` | NV · seat 52 (39 re-elections, **13 handovers**) | ✅ |
-| 5 | `CC_0469` | HI · 5 date rows — 3 on **2026-11-03**, 2 on **2026-12-07** | ⏳ needs `CC_0472` |
-| 6 | `CC_0470` | HI · seat the Maui and Oahu OHA trustees (At-large refused, Ruling A) | ⏳ needs `CC_0472` |
-| 7 | `CC_0471` | HI · schedule Governor + Lieutenant Governor for 2026-12-07 | ⏳ needs `CC_0472` |
+| 5 | `CC_0469` | HI · 5 date rows — 3 on **2026-11-03**, 2 on **2026-12-07** | ✅ |
+| 6 | `CC_0470` | HI · seat the Maui and Oahu OHA trustees (At-large refused, Ruling A) | ✅ |
+| 7 | `CC_0471` | HI · schedule Governor + Lieutenant Governor for 2026-12-07 | ✅ |
 
 🔴🔴 **`CC_0472` IS APPLIED FIRST, THOUGH ITS SLOT NUMBER IS LAST.**
 `essentials.office_swearing_in` carried `CHECK (swearing_in_date > election_date)` — STRICTLY
@@ -291,6 +291,14 @@ constraint forbade recording a date the statute states in words. The alternative
 that date as a literal in the seating file, which is the one thing this pass refuses. `CC_0469`'s
 **P0** reads the constraint definition and refuses to start until it finds the widened form, so
 the order is enforced by the data rather than by this table.
+
+🟢 **`CC_0472` WAS APPLIED 2026-11-23** through the owner connection, after being rehearsed
+the same way inside `BEGIN; … ROLLBACK;` and re-read afterwards to confirm the rollback had put
+`>` back. Read back after the apply: the constraint reads `CHECK ((swearing_in_date >=
+election_date))` and **all five of the table's other constraints are intact** — a `DROP`/`ADD` on
+one constraint is the shape of change that quietly loses a neighbour, and `office_swearing_in_basis_check`
+is the one enforcing *an estimate may not seat anybody* two files downstream. **No row was
+written.** The six remaining files seat nobody until they are applied.
 
 ⚠ **`ev_api` CANNOT RUN DDL**, so `apply-migration-file.mjs` and `rehearse-migration-chain.mjs`
 both fail `CC_0472` with *"must be owner of table office_swearing_in"*. Apply and rehearse it
@@ -304,18 +312,28 @@ and fails in the direction that reads as success** — `CC_0467`'s P4 reads date
 and its selection digest is taken over the politician ids `CC_0466` creates, so on its own it
 measures the digest of a world that will not exist when it runs.
 
-### The three controls, each watched going red (step 7)
+### Five controls, each watched going red (step 7)
 
 | tamper | gate it fired on | what it proves |
 |---|---|---|
 | `CC_0465` writes 2026-11-**05** | `CC_0465` assertion **3** | Nevada and Indiana must read *"from the day next after their election"* the same way — the cross-state agreement is measured, not asserted in a comment |
 | `CC_0467` pinned to 2026-11-**05** | `CC_0467` **P4** | 🟢 **the seating file READS the recorded date and does not carry a literal.** Had it carried one, this tamper would have changed what it WROTE instead of stopping it |
 | `CC_0467` says **12** new holders | `CC_0467` assertion **4** | the rewritten delta assertion is live and names all 13 moving seats, Danielle Gallant's double move among them |
+| HI executives given the **trustees'** date (2026-11-03) | `CC_0471` **incumbency guard** | 🟢 **it named the right person for the right reason**: *"Derek Kawakami … says is_incumbent=f, office_terms now say t"*. He was not an incumbent on election day, and a term backdated to it would have made him one |
+| HI executives given **2026-11-10**, a day already past | `CC_0471` assertion **2** | a future handover must answer `office_next_term`; a past one cannot, and the file stops before the voter's page is touched |
 
-⚠ **A fourth tamper fired on the WRONG gate and is recorded because of it.** Changing `CC_0465`'s
-date was meant to reach `CC_0467`'s P4; `CC_0465`'s own assertion 3 stopped it two files earlier.
-That is the register's own warning — *a tamper stopped by an earlier gate says nothing about a
-later one* — so P4 needed its own tamper, which is the second row above.
+⚠ **TWO TAMPERS FIRED ON THE WRONG GATE, AND BOTH ARE RECORDED BECAUSE OF IT.** Changing
+`CC_0465`'s date was meant to reach `CC_0467`'s P4; `CC_0465`'s own assertion 3 stopped it two
+files earlier. Both Hawaii tampers were aimed at `CC_0471`'s assertion **4** — *nobody was
+unseated today* — and neither reached it. That is the register's own warning working: *a tamper
+stopped by an earlier gate says nothing about a later one.*
+
+🔴 **SO SAY IT PLAINLY: `CC_0471`'s ASSERTION 4 HAS NO CONTROL OF ITS OWN, AND IT MAY NOT BE
+REACHABLE BY ONE.** The assertion says a future-dated seating must not move today's holder map.
+Any tamper that moves the map must give the term a date in the past — and a past date trips the
+incumbency guard or assertion 2 first, because a past term cannot be a *next* term. The gate is
+defence in depth behind two gates that do have controls; it is **not** a gate this wave has
+tested. ▶ Do not read the five green rows above as five tested assertions per file.
 
 🔴 **`CC_0467` IS NOT `CC_0464` WITH BIGGER NUMBERS.** `CC_0464` could assert the nationwide
 current-holder map **unchanged**, because all three of its rows were re-elections. 13 of
