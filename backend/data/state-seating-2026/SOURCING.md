@@ -707,14 +707,22 @@ remaining ones are days away and **nothing has been written for either**:
 |---|---|---|
 | **2026-11-03** | **HI — OHA resident trustees** (`HRS § 13D-5`: the term begins **on election day**) | ✅ **SEATED** `CC_0470`. ⚠ the **At-large** block is still refused under Ruling A — 3 winners, 4 offices |
 | **2026-11-04** | **NV — legislature** (52 seats) | ✅ **SEATED** `CC_0467` — 39 re-elections, 13 handovers |
-| **2026-12-01** | **ME — legislature** | 🔴 **8 DAYS. NOT SOURCED.** 183 offices, the largest undated body in the pass |
+| **2026-12-01** | **ME — legislature** | 🔴 **8 DAYS. DATED 2026-11-23 (`CC_0473`, 183 rows).** 🔴🔴 **Seating is blocked on 77 winners with no `politicians` row** — 61 House, 16 Senate, the largest seeding job in the pass |
 | **2026-12-07** | **HI — Governor + Lt. Governor** | ✅ **SCHEDULED** `CC_0471`; Sylvia Luke holds the seat until that morning |
-| **2026-12-07** | **CA — legislature** (92 offices) | 🔴 **14 DAYS. NOT SOURCED.** |
+| **2026-12-07** | **CA — legislature** (92 offices) | 🔴 **14 DAYS.** Sourced — `art. II § 20` — and **still undated** |
 
-▶ **MAINE IS NOW THE DEADLINE**, and it is the one body in the pass whose date is a week away
-and whose clause nobody has read. ⚠ Maine is also the state whose preposition runs the OTHER
-WAY — *"two years from the day next **preceding** the first Wednesday in December"* — so
-Nevada's and Indiana's reading must NOT be carried across to it.
+▶ **MAINE IS NOW THE DEADLINE.** ⚠ It is also the state whose preposition runs the OTHER WAY —
+*"two years from the day next **preceding** the first Wednesday in December"* — so Nevada's and
+Indiana's reading must NOT be carried across to it.
+
+🔴🔴 **CORRECTION, 2026-11-23: THE TWO ROWS ABOVE SAID "NOT SOURCED" FOR MAINE AND CALIFORNIA
+AND BOTH WERE WRONG.** Both states were sourced on 2026-11-22 and both have a full
+[`DATES.md`](./DATES.md) block. What they lack is an `office_swearing_in` ROW — they are
+**sourced and undated**, which is the distinction this file states in bold three paragraphs
+below and which I read straight past. ▶ **THE REGISTER'S `no date` COLUMN COUNTS ROWS IN THE
+DATABASE, NOT RESEARCH DONE**, so a fully sourced state reads identically to one nobody has
+opened. The queue table and the state table are the two lists; a body's absence from
+`office_swearing_in` says nothing about whether its clause has been read.
 
 
 🔴 **"SOURCED" IS NOT "DATED", AND THE GAP IS NOW A THIRD OF THE WORK.** A refused office is
@@ -738,7 +746,7 @@ to mistake for outstanding work. **The queue is the only list of what is left.**
 | WI | ✅ | ✅ `CC_0445` | — | ✅ `CC_0462` (121) |
 | IN — House | ✅ | ✅ `CC_0463` | — | ✅ `CC_0464` (3) |
 | MA | ✅ [`DATES.md`](./DATES.md) — **three dates**, 2027-01-06 / -01-07 / -01-20 | ⏳ | | |
-| ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor | ⏳ | | |
+| ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor. Re-derived independently 2026-11-23 and it agrees | ✅ `CC_0473` (184) | 🔴 **blocked: 77 winners have no `politicians` row** | |
 | WA | ✅ [`DATES.md`](./DATES.md) — **2027-01-11**, one date; the authority is `RCW 44.04.021`, not the constitution | ⏳ | | |
 | MD | ⚠️ [`DATES.md`](./DATES.md) — **115 of 117**: 2027-01-13 legislature, 2027-01-20 Governor. 🔴 **AG and Comptroller REFUSED** — the constitution fixes no day for them | ⏳ | | |
 | CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |

@@ -137,7 +137,13 @@ that Ch. VI Art. I's oath is a separate event.
 
 ---
 
-## ME — Maine · 184 offices · ✅ sourced 2026-11-22
+## ME — Maine · 184 offices · ✅ sourced 2026-11-22 · ✅✅ **RE-DERIVED INDEPENDENTLY 2026-11-23 AND IT AGREES**
+
+🟢🟢 **BOTH DATES WERE RE-SOURCED FROM SCRATCH ON 2026-11-23, BY A READER WHO HAD NOT SEEN THIS
+BLOCK, AND LANDED ON THE SAME TWO ANSWERS — 2026-12-01 AND 2027-01-06.** That is a control
+this entry could not give itself. It also turned up **three things this block did not have**,
+and one of them closes a question the first pass left open. They are at the end, under
+*What the 2026-11-23 re-derivation added*.
 
 🔴🔴 **MAINE IS THE DEADLINE. THE LEGISLATIVE TERM BEGINS 2026-12-01 — NINE DAYS FROM THE DAY
 THIS WAS SOURCED.** Every other body in the pass starts in January 2027. The register sorts dated
@@ -267,6 +273,24 @@ is not evidence.** 3 M.R.S. § 2 was read directly instead: it sets the legislat
 biennium from the first Wednesday of December "until the day before the first Wednesday of
 December" two years later — a pay period, not a term, and it is **not** a counter-authority.
 
+🟢🟢 **AND ON 2026-11-23 THE STATUTE THAT SEARCH SHOULD HAVE FOUND WAS READ DIRECTLY, WHICH
+CLOSES THE QUESTION THE BLIND TOOL LEFT OPEN.** `21-A M.R.S. § 725`, titled **Commencement of
+term of office**, is the statute book's whole answer on the subject:
+
+> County officials elected at the general election take office on January 1st directly
+> following election day. **The terms of other officials commence on the day provided in the
+> Constitution of the State of Maine** or the Constitution of the United States.
+
+🔴 **THE LEGISLATURE DECLINED TO RESTATE THE DATE AND NAMED THE CONSTITUTION AS THE ONLY
+SOURCE.** So there is no statutory override to go looking for, and the failed full-text search
+was not merely uninformative — it was hiding a provision that *expressly defers*. ▶ **A STATUTE
+CAN BE AUTHORITY BY DEFERRING**, and a deferral is the strongest possible evidence that the
+instrument you are reading is the right one. Found by walking the chapter's own table of
+contents (`title21-Ach9sec0.html`) instead of searching — the document's own structure again.
+⚠ It also names a **different** rule for COUNTY officials, 1 January. That matters for the
+local waves and not for this one.
+Source: `https://legislature.maine.gov/statutes/21-A/title21-Asec725.html`, read 2026-11-23.
+
 ### Arithmetic, checked in code rather than counted
 
 | year | first Wed of Dec | day next preceding | first Tue of Jan | first Wed after it |
@@ -311,6 +335,79 @@ the oath (2026-12-02), because the next reader will meet the convening date firs
   anything citable.
 - ⚠ **The Governor's 2027-01-06 is the same day as Massachusetts' legislature.** Two different
   clauses in two states; the coincidence means nothing and the rows must not be shared.
+
+### ✅✅ What the 2026-11-23 re-derivation added
+
+🟢🟢 **1. THE LEGISLATURE'S OWN AGENDA FOR *THIS* CYCLE, WHICH NAMES BOTH DAYS.** The first
+pass proved the term-start/oath split from the **2024** House journal. The 133rd Legislature's
+**Pre-Legislative Conference & Convening Day Agenda**, published by the Legislative Council of
+the 132nd, does it for **2026** and in advance:
+
+> 133rd MAINE LEGISLATURE — Pre-Legislative Conference & Convening of the Legislature,
+> **November 30 – December 3, 2026**, Maine State House …
+> **Tuesday, December 1st** — Pre-Legislative Conference for All Members …
+> **Wednesday, December 2nd** — **Convening of the 133rd Maine Legislature, 10:00 AM**,
+> Senate Chamber
+
+🔴 **SO THE MEMBERS-ELECT ARE IN AUGUSTA ON TUESDAY 1 DECEMBER — THE DAY THEIR TERMS BEGIN —
+AND THE CHAMBER CONVENES AND SWEARS THEM THE NEXT MORNING.** One document shows both days,
+for the cycle being seated, from the body itself. It is the strongest corroboration available
+for 2026-12-01 and it did not exist in this block.
+Source: `https://legislature.maine.gov/doc/12791` (HTTP 200, `application/pdf`, 347,908 bytes,
+read 2026-11-23), linked from *Member Resources*, `https://legislature.maine.gov/9686`.
+
+🟢 **2. `21-A M.R.S. § 725` — see above.** The statute defers to the constitution by name.
+
+🟢🟢 **3. THE CONSTITUTION IS REACHABLE WITHOUT A BROWSER AFTER ALL, AND THIS BLOCK SAID IT WAS
+NOT.** The correction matters because "open it in Playwright" is the most expensive rung on
+the ladder and this host does not need it. `legislature.maine.gov/const/` really does return a
+5,654-byte enable-JavaScript stub — but the application it loads fetches **one static file**,
+and that file is the whole constitution:
+
+> `https://legislature.maine.gov/ros/LawsOfMaine/App/views/constitution.html`
+> — HTTP 200, 59,063 bytes compressed, **125,817 characters of plain text** to a bare `curl`.
+
+▶ **THE SPA'S OWN VIEW FILE IS STATIC.** It was found by navigating once in Playwright and
+reading `browser_network_requests` — the South Dakota method — and the answer was four
+requests long: `shell.html`, `nav.html`, **`constitution.html`**, `footer.html`. ⚠ **The
+`grep -o` context trap bites here**: the plain text is one enormous line, so
+`grep -oE '.{N}pattern.{N}'` counts a hit and prints nothing. Use Python `re.finditer`.
+
+### ⚠ What the re-derivation did NOT add, and the near-miss that could have manufactured a finding
+
+🔴🔴 **THE CONSTITUTION SAYS 151 MEMBERS AND WE HOLD 154 HOUSE OFFICES. THAT IS NOT A DEFECT
+AND READING IT AS ONE WOULD HAVE BEEN SOUTH DAKOTA IN REVERSE.** Art. IV, Pt. First, § 2 fixes
+the House at **151 members**; three further seats — Penobscot Nation, Passamaquoddy Tribe and
+the Houlton Band of Maliseet Indians — are seated under the Legislature's **Joint Rules 206(3)
+and 316**, not under the membership clause, and are chosen by their nations rather than at a
+general election. The Law and Legislative Reference Library's own history records the practice
+from 1823 (Penobscot), 1842 (Passamaquoddy) and the 125th Legislature's adoption of S.P. 13 on
+2010-12-17 for the Maliseet seat, first filled 2012-01-04.
+Source: `https://legislature.maine.gov/lawlibrary/history-of-tribal-representation-in-maine/9261`,
+read 2026-11-23.
+▶ **A CHAMBER CAN HOLD SEATS ITS CONSTITUTION'S MEMBERSHIP NUMBER DOES NOT COUNT.** 154 = 151
++ 3, and both numbers are right about different things. This block already had the tribal
+seats; what it did not have was the trap — that 154 ≠ 151 reads exactly like Connecticut's
+"we hold an office the constitution does not cover", which in Connecticut was a **fabrication**
+and in South Dakota was a **real missing office**.
+
+🟢 **The three unrecorded races were re-confirmed as a RESULTS gap and not an RCV one.** State
+House 86, State House 96 and State Senate 18 each carry two AP-sourced candidates with
+`result` NULL on both. ⚠ Maine runs ranked-choice voting, so "the rounds are not finished" is
+the obvious explanation and it is the wrong one: `Me. Const. art. IV, Pt. First, § 5` and
+Pt. Second, § 5 decide these seats **by plurality**, which is why RCV does not reach a state
+general election here. 🟢 And Senate 18 is explained from our own rows rather than assumed:
+its sitting holder **Rick Bennett** appears in the 2026 GOVERNOR'S race with `result = 'lost'`,
+so he was never on the Senate 18 ballot and the seat is open. Neither candidate is flagged
+incumbent, which agrees.
+
+🟢 **The three executives with no 2026 race are correctly absent, and the clauses say why.**
+Secretary of State (`art. V, Pt. Second, § 1`), Treasurer (`art. V, Pt. Third, § 1`) and
+Attorney General (`art. IX, § 11`) are each *"chosen biennially … by joint ballot of the
+Senators and Representatives in convention"* — by the incoming Legislature, not by the voters.
+⚠ **They therefore DO have a term start, and this pass will never see it**, because it is keyed
+to a legislative election that is not the 2026-11-03 general. Four `STATE_EXEC` offices, one
+popular race.
 
 ---
 
