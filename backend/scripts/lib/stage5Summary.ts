@@ -142,6 +142,72 @@ const REPEAT_WORDS: { re: RegExp; label: string; min: number }[] = [
   { re: /\bmore than once\b/i, label: 'more than once', min: 2 },
 ];
 
+const SPONSOR_VERB = String.raw`(?:co-?sponsor(?:ed|s)?|sponsor(?:ed|s)?|author(?:ed|s)?|introduced|(?:an?|the) (?:chief |prime |primary |lead |co-?)?(?:author|sponsor|patron) of)`;
+const VOTE_VERB = String.raw`vot(?:ed|es)`;
+/** "co-sponsored and voted for", "was an author of, and in the Senate voted for": one claim of both acts. */
+const BOTH_ACTS = new RegExp(String.raw`\b${SPONSOR_VERB},? and (?:[\w'-]+,? ){0,5}?${VOTE_VERB}\b|\b${VOTE_VERB} for,? and (?:[\w'-]+,? ){0,3}?${SPONSOR_VERB}`, 'gi');
+const ONE_ACT = new RegExp(String.raw`\b(?:(${SPONSOR_VERB})|(${VOTE_VERB}))\b`, 'gi');
+/** ", which he co-sponsored" / "a bill she co-sponsored to": says it of that part's bill only, not of the parts after. */
+const ASIDE = /\b(?:which|that|bills?|measures?|one)\s+(?:(?:he|she|they|[A-Z][\w.'-]+)\s+)?(?:also\s+)?$/;
+const SPONSOR_ACTS = new Set(['sponsor', 'author']);
+const VOTE_ACTS = new Set(['yea', 'nay', 'abstain']);
+type ActClaim = { sponsor: boolean; vote: boolean; aside: boolean };
+
+/** The one act claim a part makes; null when it makes none, or more than one (which bill each is about is not code's to say). */
+function actClaimOf(text: string): ActClaim | null | 'unclear' {
+  const both = [...text.matchAll(BOTH_ACTS)];
+  const rest = both.reduce((t, m) => t.replace(m[0], ' '.repeat(m[0].length)), text);
+  const single = [...rest.matchAll(ONE_ACT)];
+  if (both.length + single.length === 0) return null;
+  if (both.length + single.length > 1) return 'unclear';
+  if (both.length) return { sponsor: true, vote: true, aside: false };
+  const m = single[0];
+  return { sponsor: !!m[1], vote: !!m[2], aside: ASIDE.test(text.slice(0, m.index)) };
+}
+
+/**
+ * "Sponsored" or "voted" said of a bill whose cited findings show no such act. Code can decide this, so no checker
+ * should have to: in the 2026-11-22 consistency test a summary saying "co-sponsored and voted for" of a bill with a
+ * vote only had passed every earlier check, and the tuned checker still missed it in one run of five.
+ *
+ * Only the clear cases are refused. A part that makes exactly one claim ("voted for", "co-sponsored", or the joined
+ * "co-sponsored and voted for") claims it of every bill that part cites; a part with no such word inherits the claim
+ * of the last part that made one outright ("... bills to A [1] and to B [2]"), but not an aside ("a bill he
+ * co-sponsored"). A part with two separate claims ("voted for one in 2022 and co-sponsored one in 2024") is left to
+ * the checker, as is a part that cites no record, and a bill with an act that is neither (signed, vetoed, other).
+ * Tried on the 163 distinct drafts of the first five gun-policy summary batches before it was switched on.
+ */
+export function actClaimProblems(draft: SummaryDraft, findings: Finding[]): string[] {
+  const byId = new Map(findings.map((f) => [f.id, f]));
+  const problems: string[] = [];
+  draft.sentences.forEach((s, i) => {
+    if (s.lead) return;
+    const ps = partsOf(s);
+    let inherited: ActClaim | null = null;
+    ps.forEach((p, j) => {
+      const own = actClaimOf(p.text);
+      if (own === 'unclear') { inherited = null; return; }
+      if (own && !own.aside) inherited = own;
+      const claimed = own ?? inherited;
+      if (!claimed) return;
+      const bills = new Map<string, Finding[]>();
+      for (const id of p.cites) {
+        const f = byId.get(id);
+        if (f?.kind === 'record' && f.instrument_id) bills.set(f.instrument_id, [...(bills.get(f.instrument_id) ?? []), f]);
+      }
+      const where = ps.length > 1 ? `sentence ${i + 1}, part ${j + 1}` : `sentence ${i + 1}`;
+      for (const [bill, fs] of bills) {
+        const acts = fs.map((f) => f.act ?? '');
+        if (!acts.every((a) => SPONSOR_ACTS.has(a) || VOTE_ACTS.has(a))) continue;
+        const sponsored = acts.some((a) => SPONSOR_ACTS.has(a)); const voted = acts.some((a) => VOTE_ACTS.has(a));
+        if (claimed.sponsor && !sponsored) problems.push(`${where}: says the person sponsored ${bill}, but its cited findings show only a vote; cite the sponsorship finding or say only "voted"`);
+        if (claimed.vote && !voted) problems.push(`${where}: says the person voted on ${bill}, but its cited findings show only a sponsorship; cite the vote finding or say only "sponsored"`);
+      }
+    });
+  });
+  return problems;
+}
+
 /** Mechanical problems with a draft, in plain words; empty = clean. */
 export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; code: Stage5Code; sides: string }): string[] {
   const problems: string[] = [];
@@ -183,6 +249,7 @@ export function lintSummary(draft: SummaryDraft, ctx: { findings: Finding[]; cod
       }
     }
   });
+  problems.push(...actClaimProblems(draft, ctx.findings));
   return problems;
 }
 

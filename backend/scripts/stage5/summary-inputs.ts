@@ -142,8 +142,12 @@ export function sideOf(value: number | undefined, sides: string | null): string 
   return sides.split('/').find((g) => g.split(',').some((n) => Number(n) === value || Number(n) === Math.round(value))) ?? null;
 }
 
-/** How much of a bill's stored text the writer and checker see. Median stored text is ~1,300 characters. */
-export const BILL_TEXT_CAP = 1500;
+/**
+ * How much of a bill's stored text the writer and checker see. Measured 2026-11-22 over the 163 bills cited in the first
+ * gun-policy summary batches: median 1,732 characters, longest 5,809, and a 1,500 cap cut 100 of them (61%), which left
+ * true claims unprovable from the text shown. 6,000 cuts none of those and adds about 550 characters a bill.
+ */
+export const BILL_TEXT_CAP = 6000;
 
 /**
  * Each cited bill's text, once, capped: the same words the coder read, so a summary can say what the bill does instead

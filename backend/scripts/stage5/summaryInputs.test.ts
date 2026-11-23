@@ -134,7 +134,7 @@ describe('checker prompt', () => {
 
   it("shows writer and checker each cited bill's text once, capped, so a bill is described by what it does", () => {
     const f = finding(1);
-    const long = `Prohibits the manufacture of undetectable firearms. ${'x'.repeat(2000)}`;
+    const long = `Prohibits the manufacture of undetectable firearms. ${'x'.repeat(BILL_TEXT_CAP + 500)}`;
     const texts = new Map([['PA-HB-1-2024', long]]);
     const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [{ text: 'She voted for a ban on undetectable guns.', cites: [f.id] }] };
     const b = buildSummary(draft, [f]);

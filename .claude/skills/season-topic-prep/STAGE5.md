@@ -740,6 +740,13 @@ leaves files in `<stage5>/summaries/<batch>/`.
   run and let 3.2 of 11 flawed summaries pass; this one caught 12.2 and let 0.5 pass, and holds about 2.5 of 10 sound
   but borderline summaries (old: 1.8). One check still misses some near-miss wording, so a pass is not proof.
   Notes and every run: `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/`.
+- **Sponsored or voted is checked by the lint** (`actClaimProblems` in `stage5Summary.ts`), so step 3 refuses a draft that
+  says "co-sponsored" of a bill whose cited findings show only a vote, or "voted" of one with only a sponsorship. It
+  refuses only clear cases; a part that makes two separate claims is left to the checker. Over the 163 distinct drafts
+  of the first gun-policy batches it refused 2 people's drafts, both real errors, and no sound one.
+- **Bill text is shown up to 6,000 characters** (`BILL_TEXT_CAP`). The earlier 1,500 cut 100 of the 163 cited bills,
+  and a true claim could then not be shown from the text. With the full text the checker caught four errors it had
+  been missing some of the time, in every one of 3 runs.
 - **Step 5** uses `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon` (the profile key
   `second_opinion_models`). It runs locked down: a deny-all OpenCode config in an empty temp folder, and an
   environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl` and **skips every

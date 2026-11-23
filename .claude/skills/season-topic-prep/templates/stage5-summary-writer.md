@@ -66,7 +66,16 @@ Also: one sentence per entry (no sentence may hold a second sentence). A finding
 it gives: nearly everyone voted the same way, or the bill covers several subjects. Never present a gated vote as
 support for, or opposition to, its gun part ("voted for permitless carry"), and never count it toward the lean.
 Leave it out when other findings cover the person; if it is all there is, describe the whole bill ("voted for a
-public-safety bill that covered permitless carry, school safety and spending"). Use only `cites` ids that appear in that person's findings below. When
+public-safety bill that covered permitless carry, school safety and spending"). A gated vote on a bill the person
+also sponsored may be cited beside the sponsorship, which is what shows the position.
+
+Say what each finding's `act` says, bill by bill: "sponsored", "co-sponsored" or "authored" only of a bill with a
+`sponsor` or `author` finding you cite in that part; "voted" only of a bill with a `yea` or `nay` finding you cite
+there. "Co-sponsored and voted for bills to …" claims both acts of every bill that follows, so use it only when each
+has both findings; otherwise split it ("co-sponsored and voted for a bill to A [1], and voted for a bill to B [2]").
+The lint refuses a draft that gets this wrong.
+
+Use only `cites` ids that appear in that person's findings below. When
 the findings support only one sentence, write one sentence and no opening line; do not pad. Otherwise the first
 entry is the opening line.
 
