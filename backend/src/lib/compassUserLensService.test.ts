@@ -17,6 +17,7 @@ vi.mock('./db.js', () => ({
 import {
   getRecalibrationFlags,
   getAllRecalibrationFlags,
+  getUserLenses,
   replaceUserLenses,
   findUnknownTopicIds,
   isUnacknowledgedLensDeletionError,
@@ -366,13 +367,20 @@ describe('replaceUserLenses — a deletion must be named', () => {
     });
   });
 
+  // ⚠ REPOINTED AT THE SOFT DELETE, NOT RETIRED. The statement changed shape in
+  // CC_0468 (a `deleted_at = now()` UPDATE, not a DELETE); the behaviour it
+  // guards did not. A guard that passes because the thing it watched no longer
+  // exists is not a guard, so it now watches the statement that actually does
+  // the deleting.
   it('deletes exactly the keys the caller named, and no others', async () => {
     storedKeys(['u_7f3a91', 'u_aaa001']);
     poolQueryMock.mockResolvedValue({ rows: [] });
 
     await replaceUserLenses(USER, [LENS], ['u_aaa001']);
 
-    const deleteCall = clientQueryMock.mock.calls.find(c => String(c[0]).includes('DELETE'));
+    const deleteCall = clientQueryMock.mock.calls.find(c =>
+      String(c[0]).includes('deleted_at = now()')
+    );
     expect(String(deleteCall?.[0])).toContain('owner_id = $1');
     // 🔴 THE NAMED KEYS, NOT THE SURVIVORS. This parameter used to be the
     // complement of the payload — `NOT (key = ANY(...))` — which is what made a
@@ -391,12 +399,19 @@ describe('replaceUserLenses — a deletion must be named', () => {
     expect(issued).toContain('COMMIT');
   });
 
-  it('issues no DELETE at all when nothing was named', async () => {
+  // ⚠ RENAMED AND REPOINTED. As written against the old code this asserted that
+  // no `DELETE` was issued — which, after CC_0468, would pass no matter what the
+  // function did, because there is no DELETE in it any more. It now asserts what
+  // it always meant: an unnamed key is not deleted, by any statement.
+  it('issues no soft delete at all when nothing was named', async () => {
     storedKeys(['u_7f3a91']);
     poolQueryMock.mockResolvedValue({ rows: [] });
 
     await replaceUserLenses(USER, [LENS]);
 
+    expect(
+      clientQueryMock.mock.calls.some(c => String(c[0]).includes('deleted_at = now()'))
+    ).toBe(false);
     expect(clientQueryMock.mock.calls.some(c => String(c[0]).includes('DELETE'))).toBe(false);
   });
 
@@ -458,6 +473,78 @@ describe('replaceUserLenses — a deletion must be named', () => {
 
     const insert = clientQueryMock.mock.calls.find(c => String(c[0]).includes('INSERT'));
     expect(insert?.[1]?.[2]).toBe('My lens');
+  });
+
+  it('soft-deletes a named lens instead of destroying the row', async () => {
+    storedKeys(['u_7f3a91', 'u_aaa001']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await replaceUserLenses(USER, [LENS], ['u_aaa001']);
+
+    const issued = clientQueryMock.mock.calls.map(c => String(c[0]));
+    // 🔴 The row must survive. A DELETE here is the thing this task removed.
+    expect(issued.some(q => /DELETE\s+FROM\s+inform\.compass_user_lenses/i.test(q))).toBe(false);
+    const soft = clientQueryMock.mock.calls.find(c => String(c[0]).includes('deleted_at = now()'));
+    expect(String(soft?.[0])).toContain('owner_id = $1');
+    expect(String(soft?.[0])).toContain('key = ANY($2::text[])');
+    expect(soft?.[1]).toEqual([USER, ['u_aaa001']]);
+  });
+
+  it('does not count the owner\'s own soft-deleted lenses as stored', async () => {
+    // Without the filter, every later PUT 409s forever on a lens they deleted.
+    storedKeys(['u_7f3a91']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await replaceUserLenses(USER, [LENS]);
+
+    const select = clientQueryMock.mock.calls.find(c => String(c[0]).includes('FOR UPDATE'));
+    expect(String(select?.[0])).toContain('deleted_at IS NULL');
+  });
+
+  it('still sees ANOTHER owner\'s soft-deleted key as taken', async () => {
+    // 🔴 THE LOAD-BEARING EXCEPTION. Soft-deleted rows stay under the global
+    // unique index, so the upsert's `WHERE owner_id = $1` predicate fails against
+    // them — updating nothing, inserting nothing, 200, and a lens quietly missing.
+    poolQueryMock.mockResolvedValue({ rows: [{ key: 'u_7f3a91' }] });
+
+    await expect(replaceUserLenses(USER, [LENS])).rejects.toMatchObject({
+      code: 'LENS_KEY_TAKEN',
+      keys: ['u_7f3a91'],
+    });
+
+    const probe = poolQueryMock.mock.calls.find(c => String(c[0]).includes('owner_id <> $1'));
+    expect(String(probe?.[0])).not.toContain('deleted_at');
+  });
+
+  it('resurrects a key its own owner re-creates, keeping created_at', async () => {
+    storedKeys([]);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await replaceUserLenses(USER, [LENS]);
+
+    const upsert = clientQueryMock.mock.calls.find(c => String(c[0]).includes('ON CONFLICT'));
+    expect(String(upsert?.[0])).toContain('deleted_at = NULL');
+    expect(String(upsert?.[0])).not.toContain('created_at = ');
+  });
+
+  it('writes nothing at all when the saved lens is unchanged', async () => {
+    // Review Focus 4. The client PUTs the whole set on every save; without this
+    // one rename writes a history row per lens, each with two full row copies.
+    storedKeys(['u_7f3a91']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await replaceUserLenses(USER, [LENS]);
+
+    const upsert = clientQueryMock.mock.calls.find(c => String(c[0]).includes('ON CONFLICT'));
+    expect(String(upsert?.[0])).toContain('IS DISTINCT FROM');
+  });
+});
+
+describe('getUserLenses — a deleted lens is gone from the read', () => {
+  it('asks only for live lenses', async () => {
+    mockRows([]);
+    await getUserLenses(USER);
+    expect(String(poolQueryMock.mock.calls[0]?.[0])).toContain('deleted_at IS NULL');
   });
 });
 
