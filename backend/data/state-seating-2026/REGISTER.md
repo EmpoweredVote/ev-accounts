@@ -19,19 +19,19 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**69 bodies still to do · 1162 offices · 0 of the 69 carry a cited start date.** Measured 2026-11-22. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**67 bodies still to do · 1106 offices · 1 of the 67 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | MA | STATE_LOWER | 159 | 159 | 141 | 18 | — | 2 | 159 | — |
-| 2 | ME | STATE_LOWER | 149 | 149 | 88 | 61 | — | — | 149 | — |
-| 3 | WA | STATE_LOWER | 95 | 95 | 71 | — | — | — | 95 | — |
-| 4 | CA | STATE_LOWER | 75 | 75 | 60 | — | — | 1 | 75 | — |
-| 5 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
-| 6 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
-| 7 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
-| 8 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
-| 9 | NV | STATE_LOWER | 41 | 41 | 29 | 12 | — | — | 41 | — |
+| 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
+| 2 | MA | STATE_LOWER | 159 | 159 | 141 | 18 | — | 2 | 159 | — |
+| 3 | ME | STATE_LOWER | 149 | 149 | 88 | 61 | — | — | 149 | — |
+| 4 | WA | STATE_LOWER | 95 | 95 | 71 | — | — | — | 95 | — |
+| 5 | CA | STATE_LOWER | 75 | 75 | 60 | — | — | 1 | 75 | — |
+| 6 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
+| 7 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
+| 8 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
+| 9 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
 | 10 | MA | STATE_UPPER | 40 | 40 | 37 | 3 | — | — | 40 | — |
 | 11 | ME | STATE_UPPER | 34 | 34 | 18 | 16 | — | — | 34 | — |
 | 12 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
@@ -39,59 +39,57 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 | 14 | WA | STATE_UPPER | 23 | 23 | 16 | — | — | — | 23 | — |
 | 15 | CA | STATE_UPPER | 17 | 17 | 8 | — | — | 1 | 17 | — |
 | 16 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
-| 17 | NV | STATE_UPPER | 11 | 11 | 10 | 1 | — | — | 11 | — |
-| 18 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 19 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 20 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
-| 21 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 22 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 23 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 24 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 25 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 26 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 27 | CA | STATE_EXEC | 6 | 6 | 3 | — | — | — | 6 | — |
-| 28 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 29 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 30 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 31 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 32 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 33 | HI | STATE_EXEC | 5 | 7 | 4 | — | 1 | — | 5 | — |
-| 34 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 35 | MA | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 36 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 37 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 38 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 39 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 40 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 41 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 42 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 43 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 44 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 45 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 46 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 47 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 48 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 49 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 50 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 51 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 52 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 53 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 54 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 55 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 56 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 57 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 58 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 59 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 60 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 61 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 62 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 63 | CA | STATE_BOARD | 1 | 1 | 0 | — | — | — | 1 | — |
-| 64 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 65 | ME | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
-| 66 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 67 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 68 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 69 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 17 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 18 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 19 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
+| 20 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 21 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
+| 22 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 23 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 24 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 25 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 26 | CA | STATE_EXEC | 6 | 6 | 3 | — | — | — | 6 | — |
+| 27 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 28 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 29 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 30 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 31 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 32 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 33 | MA | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 34 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 35 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 36 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 37 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 38 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 39 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 40 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 41 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 42 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 43 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 44 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 45 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 46 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 47 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 48 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 49 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 50 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 51 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 52 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 53 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 54 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 55 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 56 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 57 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 58 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 59 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 60 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 61 | CA | STATE_BOARD | 1 | 1 | 0 | — | — | — | 1 | — |
+| 62 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 63 | ME | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 64 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 65 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 66 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 67 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -266,22 +264,58 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
 
-## 🔴 WRITTEN AND REHEARSED, NOT YET APPLIED — the two states whose dates have passed
+## ✅✅ APPLIED 2026-11-23 — the two states whose dates had already passed
 
-**Seven files, 2026-11-23.** Nevada's legislature has held its seats since **2026-11-04** and
-Hawaii's OHA trustees since **2026-11-03**, so these are not future waves — our pages name the
-predecessors today. Hawaii's Governor and Lieutenant Governor are **2026-12-07**, the nearest
-future deadline in the pass.
+**Seven files, all applied 2026-11-23.** Nevada's legislature had held its seats since
+**2026-11-04** and Hawaii's OHA trustees since **2026-11-03**, so these were not future waves —
+our pages were naming the predecessors. **56 offices left the queue** (1,162 → 1,106) and the
+two Nevada legislative bodies left the table entirely.
 
 | order | slot | what it does | rehearsed |
 |---|---|---|---|
 | 1 | `CC_0472` | 🔴 **DDL.** Widen `office_swearing_in_after_election` from `>` to `>=` | ✅✅ **APPLIED 2026-11-23** |
-| 2 | `CC_0465` | NV · 52 date rows, 2026-11-04 (`Nev. Const. art. 4 §§ 3(1), 4(1)`) | ✅ |
-| 3 | `CC_0466` | NV · create 12 winners, **link** a 13th who already exists | ✅ |
-| 4 | `CC_0467` | NV · seat 52 (39 re-elections, **13 handovers**) | ✅ |
-| 5 | `CC_0469` | HI · 5 date rows — 3 on **2026-11-03**, 2 on **2026-12-07** | ✅ |
-| 6 | `CC_0470` | HI · seat the Maui and Oahu OHA trustees (At-large refused, Ruling A) | ✅ |
-| 7 | `CC_0471` | HI · schedule Governor + Lieutenant Governor for 2026-12-07 | ✅ |
+| 2 | `CC_0465` | NV · 52 date rows, 2026-11-04 (`Nev. Const. art. 4 §§ 3(1), 4(1)`) | ✅ applied |
+| 3 | `CC_0466` | NV · create 12 winners, **link** a 13th who already exists | ✅ applied |
+| 4 | `CC_0467` | NV · seat 52 (39 re-elections, **13 handovers**) | ✅ applied |
+| 5 | `CC_0469` | HI · 5 date rows — 3 on **2026-11-03**, 2 on **2026-12-07** | ✅ applied |
+| 6 | `CC_0470` | HI · seat the Maui and Oahu OHA trustees (At-large refused, Ruling A) | ✅ applied |
+| 7 | `CC_0471` | HI · schedule Governor + Lieutenant Governor for 2026-12-07 | ✅ applied |
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+🔴 **A migration's own `RAISE NOTICE` is the migration marking its own homework.** Every number
+below was re-measured in a separate session once all six had committed.
+
+| measurement | result |
+|---|---|
+| NV legislature in `office_pending_winner` | **0** (was 52) |
+| NV terms starting 2026-11-04 · predecessors closed 2026-11-03 · citing `CC_0467` | **52 · 52 · 52** |
+| HI `STATE_EXEC` still pending | **1**, and it is the **At-large Trustee** — the Ruling A refusal, exactly where it was |
+| HI OHA resident trustee terms from 2026-11-03 | **2** |
+| HI executives in `office_next_term` for 2026-12-07 | **2** |
+| HI Lieutenant Governor **today** / **next** | **Sylvia Luke** / **Derek Kawakami** |
+| `AD15` name round-trip | **Miguel Dávila** — the accent survived |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API, NOT THE DATABASE.** *Reasoning about a read path is not
+measuring it*, so two real addresses were put through `api.empowered.vote`:
+
+- **500 S Grand Central Pkwy, Las Vegas NV** → *Assembly District 11, Cinthia Zermeño Moore,
+  `seat_status=held`, `term_start=2026-11-04`* and *State Senate District 2, Edgar Flores,
+  same date*. The voter's page now names the member who actually holds the seat.
+- **415 S Beretania St, Honolulu HI** → *Lieutenant Governor, **Sylvia Luke**, `seat_status=held`,
+  `incoming=Derek Kawakami`, `on=2026-12-07`*. 🟢 **That one line is the whole future-dated
+  claim**: the sitting officer still holds the seat, and the handover is dated rather than
+  guessed. Kalei Akaka and Carmen Hulu Lindsey read `term_start=2026-11-03`.
+- ⚠ The four **At-large** trustees return their current holders with **no incoming**, which is
+  the Ruling A refusal rendering correctly rather than a gap. The page names Keliʻi Akina,
+  Brickwood Galuteria, Keoni Souza and John Waihee IV; two of those four are also 2026
+  winners, and Ikaika Anderson holds none of them — so the seat that changes hands is Akina's
+  or Waihee's and our data does not say which.
+
+🔴 **THE QUEUE NOW SORTS THE AT-LARGE BLOCK FIRST**, because it is the only dated body left and
+its date is already past. That is the register behaving correctly and it is **not** work that
+can be done by sourcing: it needs OHA's own roster of term expirations.
 
 🔴🔴 **`CC_0472` IS APPLIED FIRST, THOUGH ITS SLOT NUMBER IS LAST.**
 `essentials.office_swearing_in` carried `CHECK (swearing_in_date > election_date)` — STRICTLY

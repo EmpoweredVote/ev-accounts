@@ -999,10 +999,14 @@ which is the trap the transition tracker already records: *a ticket LG row names
 
 ---
 
-## NV — Nevada · 58 offices · ⚠️ 52 dated, **6 REFUSED**, 2026-11-22
+## NV — Nevada · 58 offices · ⚠️ 52 dated, **6 REFUSED**, 2026-11-22 — ✅✅ **ALL 52 SEATED 2026-11-23**
 
-🔴🔴 **NEVADA'S 52 LEGISLATORS HAVE HELD THEIR SEATS SINCE 2026-11-04. THE DATE IS NOT IN THE
-FUTURE — IT IS EIGHTEEN DAYS PAST.** Every other state sourced so far starts in December 2026 or
+✅✅ **SEATED 2026-11-23 BY `CC_0465` → `CC_0466` → `CC_0467`** — 52 terms from 2026-11-04, 39
+re-elections and 13 handovers, 52 predecessors closed at 2026-11-03, 12 politicians created and
+Danielle Gallant linked. Verified through the deployed API. The six executives remain refused.
+
+🔴🔴 **NEVADA'S 52 LEGISLATORS HAVE HELD THEIR SEATS SINCE 2026-11-04. THE DATE WAS NOT IN THE
+FUTURE — IT WAS NINETEEN DAYS PAST WHEN THIS WAS WRITTEN.** Every other state sourced so far starts in December 2026 or
 January 2027. Nevada's legislature started the day after the election, which means our pages have
 been naming the *predecessors* as current for eighteen days and nothing has said so.
 
@@ -3030,10 +3034,17 @@ present identically in the queue, as a state with one fewer office than the law 
 
 ---
 
-## HI — Hawaii · 5 offices · ✅ sourced 2026-11-23 — 🔴🔴 **TWO DATES, AND ONE OF THEM IS ALREADY 20 DAYS PAST**
+## HI — Hawaii · 5 offices · ✅ sourced 2026-11-23 — ✅✅ **4 OF 5 WRITTEN 2026-11-23; THE AT-LARGE BLOCK IS STILL RULING A**
 
-🔴🔴 **READ THIS BEFORE ANY OTHER STATE IN THE QUEUE. Hawaii holds both the nearest future
-deadline in the pass and a second deadline that has already gone by.**
+✅✅ **WRITTEN 2026-11-23 BY `CC_0469` → `CC_0470` → `CC_0471`** (after `CC_0472` widened a check
+constraint that forbade a term beginning on election day). The Maui and Oahu trustees are seated
+from 2026-11-03; the Governor and Lieutenant Governor are scheduled for 2026-12-07 and **Sylvia
+Luke still holds the seat until that morning**, confirmed through the deployed API.
+🔴 **THE AT-LARGE BLOCK IS STILL REFUSED** — 3 winners, 4 offices, Ruling A. It is now the
+**first row of the queue**, because it is the only dated body left and its date is past.
+
+🔴🔴 **Hawaii held both the nearest future deadline in the pass and a second deadline that had
+already gone by.**
 
 | body | offices | winners | start date | basis | authority |
 |---|---|---|---|---|---|

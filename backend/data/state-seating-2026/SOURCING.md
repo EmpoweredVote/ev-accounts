@@ -687,21 +687,34 @@ That is exactly the row `office_swearing_in` takes, and `CC_0445` (Wisconsin) an
 
 ## Progress
 
-**21 of 41 states sourced · 1,091 of 1,162 offices (94%) · 0 seated.** The queue's cumulative
-column reaches **1,093** at row 21 (HI); **two Arkansas offices remain open** (Lt. Governor,
-Commissioner of State Lands), so 1,093 − 2 = 1,091. The 20 states that remain are **69 offices**,
-almost all single-body executive states.
+**21 of 41 states sourced · 1,091 of 1,162 offices (94%) · ✅✅ 56 SEATED, 2026-11-23.** The
+queue's cumulative column reaches **1,093** at row 21 (HI); **two Arkansas offices remain open**
+(Lt. Governor, Commissioner of State Lands), so 1,093 − 2 = 1,091. The 20 states that remain
+are **69 offices**, almost all single-body executive states.
 
-🔴🔴 **THE DEADLINE PICTURE CHANGED WITH HAWAII, AND IT IS NOW THE MOST URGENT THING IN THIS
-FILE.** Two dates have **already passed** and a third is **days away**, and nothing has been
-written for any of them:
+✅✅ **THE PASS HAS STOPPED BEING A PAPER EXERCISE. NEVADA AND HAWAII ARE WRITTEN.**
+`CC_0465`–`CC_0467` and `CC_0469`–`CC_0471`, with `CC_0472` ahead of them, applied 2026-11-23.
+**52 Nevada legislators** and **2 OHA trustees** now hold terms that had already begun, and
+**Hawaii's Governor and Lieutenant Governor** are scheduled for 2026-12-07. The register is
+**1,162 → 1,106 offices**, and Nevada's two legislative bodies have left the queue.
+▶ Details, the five controls and the step-9 verification are in
+[`REGISTER.md`](./REGISTER.md) § *Applied 2026-11-23*.
+
+**THE DEADLINE PICTURE, AS AT 2026-11-23.** Both overdue dates are now **discharged**; the two
+remaining ones are days away and **nothing has been written for either**:
 
 | date | state / body | status |
 |---|---|---|
-| **2026-11-03** | **HI — OHA trustees** (`HRS § 13D-5`: the term begins **on election day**) | 🔴 **PAST.** 2 of 5 winners seatable now; the 3 at-large are Ruling A |
-| **2026-11-04** | **NV — legislature** (52 seats) | 🔴 **PAST** |
-| **2026-12-01** | **ME — legislature** | ⏰ days away |
-| **2026-12-07** | **HI — Governor + Lt. Governor** · **CA — legislature** | ⏰ **days away** |
+| **2026-11-03** | **HI — OHA resident trustees** (`HRS § 13D-5`: the term begins **on election day**) | ✅ **SEATED** `CC_0470`. ⚠ the **At-large** block is still refused under Ruling A — 3 winners, 4 offices |
+| **2026-11-04** | **NV — legislature** (52 seats) | ✅ **SEATED** `CC_0467` — 39 re-elections, 13 handovers |
+| **2026-12-01** | **ME — legislature** | 🔴 **8 DAYS. NOT SOURCED.** 183 offices, the largest undated body in the pass |
+| **2026-12-07** | **HI — Governor + Lt. Governor** | ✅ **SCHEDULED** `CC_0471`; Sylvia Luke holds the seat until that morning |
+| **2026-12-07** | **CA — legislature** (92 offices) | 🔴 **14 DAYS. NOT SOURCED.** |
+
+▶ **MAINE IS NOW THE DEADLINE**, and it is the one body in the pass whose date is a week away
+and whose clause nobody has read. ⚠ Maine is also the state whose preposition runs the OTHER
+WAY — *"two years from the day next **preceding** the first Wednesday in December"* — so
+Nevada's and Indiana's reading must NOT be carried across to it.
 
 
 🔴 **"SOURCED" IS NOT "DATED", AND THE GAP IS NOW A THIRD OF THE WORK.** A refused office is
