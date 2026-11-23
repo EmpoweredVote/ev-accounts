@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { Finding } from '../lib/sourceStore.js';
 import { buildSummary } from '../lib/stage5Summary.js';
 import { readFileSync } from 'node:fs';
-import { BILL_TEXT_CAP, billTextBlock, capFindings, gateLabel, checkerPrompt, main, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
+import { BILL_TEXT_CAP, billTextBlock, capFindings, checkerFacts, gateLabel, checkerPrompt, main, markersOf, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
 
 const TOPIC = 'gun-policy';
 const RUNG_TEXT = 'Limit who may have a gun, such as by court orders that take guns from a person found dangerous';
@@ -142,8 +142,9 @@ describe('checker prompt', () => {
     const checker = checkerPrompt(summary, [f], { outcome: 'seated', value: 4 }, null, { texts });
     const writer = writerPersonBlock({ politician_id: pid(1), name: 'P', office: '', level: '', state: 'pa', code: code(pid(1), 'seated', [f.id], 4), findings: [f] } as never,
       capFindings([f], [f.id], 25), null, new Map(), texts);
+    expect(writer).toContain('- PA-HB-1-2024: Prohibits the manufacture of undetectable firearms.');
+    expect(checker).toContain('bill text of PA-HB-1-2024: Prohibits the manufacture of undetectable firearms.');
     for (const out of [checker, writer]) {
-      expect(out).toContain('- PA-HB-1-2024: Prohibits the manufacture of undetectable firearms.');
       expect(out).toContain(`[cut at ${BILL_TEXT_CAP} of ${long.length} characters]`);
       expect(out).not.toContain('x'.repeat(BILL_TEXT_CAP));
     }
@@ -170,6 +171,51 @@ describe('checker prompt', () => {
       fs, { outcome: 'seated', value: 2 }, '1,2,3/4,5');
     expect(prompt).toContain('0. She has voted for limits on guns.\n   opening line, no marker: judge it against every finding the summary cites');
     expect(prompt).toContain('1. She voted for a red flag bill [1] and a storage bill [2].\n   cites findings: [1] ' + fs[0].id + ', [2] ' + fs[1].id);
+  });
+
+  it('prints each finding and its bill text under the sentence that cites it, the bill text once per sentence', () => {
+    const vote = finding(1); const sponsor = finding(2, { act: 'sponsor', motion: 'co sponsor', instrument_id: 'PA-HB-1-2024', url: vote.url });
+    const other = finding(3);
+    const texts = new Map([['PA-HB-1-2024', 'Bars the sale of a thing.'], ['PA-HB-3-2024', 'Requires a lock.']]);
+    const draft = { politician_id: pid(1), topic_key: TOPIC, sentences: [
+      { text: 'She has voted for limits on guns.', lead: true },
+      { text: 'She co-sponsored and voted for a bill to bar the sale of a thing.', cites: [vote.id, sponsor.id] },
+      { text: 'She voted for a bill to require a lock.', cites: [other.id] }] };
+    const b = buildSummary(draft, [vote, sponsor, other]);
+    const prompt = checkerPrompt({ politician_id: pid(1), topic_key: TOPIC, text: b.text, sha256: b.sha256, sources: b.sources, cites: b.cites, sentences: b.sentences },
+      [vote, sponsor, other], { outcome: 'seated', value: 2 }, '1,2,3/4,5', { texts });
+    const s1 = prompt.slice(prompt.indexOf('### Sentence 1'), prompt.indexOf('### Sentence 2'));
+    const s2 = prompt.slice(prompt.indexOf('### Sentence 2'), prompt.indexOf('## What to check'));
+    expect(s1).toContain(`[1] finding ${vote.id}`); expect(s1).toContain(`[1] finding ${sponsor.id}`);
+    expect(s1.match(/bill text of PA-HB-1-2024: Bars the sale of a thing\./g)).toHaveLength(1);
+    expect(s1).toContain('bill text of PA-HB-1-2024: printed above');
+    expect(s1).not.toContain(other.id);
+    expect(s2).toContain(`[2] finding ${other.id}`); expect(s2).toContain('bill text of PA-HB-3-2024: Requires a lock.');
+    expect(prompt).toContain('### Sentence 0\n\n> She has voted for limits on guns.\n\nThe opening line: judge it against every finding under the other sentences.');
+    expect(prompt).not.toMatch(/\{\{/);
+  });
+
+  it('states, per marker, what a script can read: vote or sponsorship, and whether every finding is gated', () => {
+    const gate = (g: string) => ({ gate_by_topic: { [TOPIC]: g } }) as never;
+    const gatedVote = finding(1, gate('multi-subject'));
+    const sponsorOfSame = finding(2, { act: 'sponsor', motion: 'co sponsor', instrument_id: 'PA-HB-1-2024', url: gatedVote.url });
+    const loneGated = finding(3, gate('near-unanimous'));
+    const plainVote = finding(4, gate('none'));
+    const words = finding(5, { kind: 'own-words', act: undefined, instrument_id: undefined, motion: undefined, passage: 'I back it.', url: 'https://example.com/s' });
+    const num = (id: string) => ({ [gatedVote.id]: 1, [sponsorOfSame.id]: 1, [loneGated.id]: 2, [plainVote.id]: 3, [words.id]: 4 })[id]!;
+    const ms = markersOf([gatedVote, sponsorOfSame, loneGated, plainVote, words], num);
+    expect(ms.map((m) => m.line)).toEqual([
+      '[1] PA-HB-1-2024: vote (yea), GATED: multi-subject; sponsorship (co sponsor). A non-gated finding on the same bill is also cited.',
+      '[2] PA-HB-3-2024: vote (yea), GATED: near-unanimous. No sponsorship finding. Every finding cited for this marker is gated.',
+      '[3] PA-HB-4-2024: vote (yea). No sponsorship finding.',
+      '[4] statement: own words (a statement, not a vote or sponsorship).',
+    ]);
+    expect(ms.map((m) => m.gatedOnly)).toEqual([false, true, false, false]);
+    // The opening line is told which markers the lean may not rest on, and only when there is one.
+    expect(checkerFacts([[], ms])).toContain('Opening line: the lean may not rest on these markers, whose every finding is gated: [2]. Markers that may count: [1], [3], [4].');
+    expect(checkerFacts([[], ms.filter((m) => !m.gatedOnly)])).not.toContain('Opening line:');
+    expect(markersOf([finding(6, { act: 'sponsor', motion: 'prime sponsor' })], () => 1)[0].line).toBe('[1] PA-HB-6-2024: sponsorship (prime sponsor). No vote finding.');
+    expect(markersOf([finding(7, { against_bill: true } as never)], () => 1)[0].line).toContain('vote (yea, against_bill: a vote AGAINST the bill)');
   });
 
   it('refuses cites that do not match the sentences', () => {

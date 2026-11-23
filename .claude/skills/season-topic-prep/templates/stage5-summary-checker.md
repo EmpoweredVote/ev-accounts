@@ -5,8 +5,8 @@
      models (GPT, Gemini) get the same file and the same output format; no database, no `.env`, no other files. -->
 
 You check one summary of what a person has said or done on **{{TOPIC_NAME}}**. You see the summary as it will be
-shown, the full text of every finding it cites, and the person's outcome. Nothing else is evidence. Do not search.
-Do not use anything you remember about the person.
+shown, the full text of every finding it cites (placed under the sentence that cites it), and the person's outcome.
+Nothing else is evidence. Do not search. Do not use anything you remember about the person.
 
 ## The summary, as shown
 
@@ -20,7 +20,16 @@ References (the number in brackets is the position in this list):
 
 {{OUTCOME}}
 
-## The cited findings, in full
+## Facts a script read from the findings
+
+Code read these from the findings below. They are exact: use them, do not work them out again.
+
+{{FACTS}}
+
+## The evidence, sentence by sentence
+
+Under each sentence are the findings its markers name, and under each finding the stored text of its bill (what the
+bill does; describe a bill from this, not from its title alone). A bill's text is printed once per sentence.
 
 {{FINDINGS}}
 
@@ -57,6 +66,34 @@ summary cites, taken together. A sentence **fails** if any of these is true:
     covering every act, and a finding that shows no direction neither supports nor blocks it. Whether a record is
     mixed depends on the findings, not on the seat: a doesnt-fit person whose findings point one way may lean that way.
 
+Use the script's facts for two checks, and apply them the same way every time:
+- **Gated votes.** A gated vote shows no position on guns. For each marker whose facts say "Every finding cited for
+  this marker is gated":
+  - `multi-subject`: the sentence fails unless it describes the whole bill, naming its other subjects as well as its
+    gun part ("a public-safety bill that covered permitless carry, school safety and spending"). Describing it by
+    its gun part alone fails.
+  - `near-unanimous`: saying the person voted for the bill, described from its text, is fine. It fails only if the
+    sentence calls the vote support, backing or a position.
+  - Either kind never counts toward the lean in the opening line (rule 11): the facts list the markers the lean may
+    not rest on.
+  A marker with "A non-gated finding on the same bill is also cited" (for example a sponsorship) does not fail for
+  being gated, and may count toward the lean.
+- **Sponsored or voted.** If the sentence says the person sponsored, co-sponsored, authored or introduced the bill
+  behind a marker, that marker's facts must show a sponsorship; if it says the person voted, they must show a vote.
+  "Co-sponsored and voted for" needs both, for every marker the words cover.
+
+Check each bill description piece by piece, and show the pieces before you judge. For each marker that cites a bill,
+add one entry to the sentence's `support` list: `ref` (the marker number) and `pieces`. Split what the sentence says
+the bill does into its pieces: the action (bar, require, let, repeal ...), who it applies to, what it covers, and
+every condition or limit the sentence states (when, where, which kind, unless). For each piece give `words` (the
+sentence's words), `quote` (the exact words of that finding's title or bill text that show this piece, copied, not
+paraphrased) and `shown` (true or false). If the text does not show a piece, or shows something different (the
+sentence says "in schools" and the text says "in schools and on any other public property"; the sentence says the
+bill "bans" a thing and the text "requires a permit for" it), set `quote` to the nearest words or null and
+`shown` to false. A piece with `shown` false fails the sentence. Do not fill a gap from what you know about the
+bill or the law it amends. When a marker cites two bills, each bill must show every piece. This is only about what
+the sentence says: pieces of the bill that the sentence leaves out are judged by rule 10 and are usually fine.
+
 Be strict and literal. When unsure, fail the sentence and say why. Each `reason` is one plain sentence naming the
 finding or the words at fault; for a pass, say what supports it.
 
@@ -71,7 +108,7 @@ only when every sentence passes.
   "topic_key": "{{TOPIC_KEY}}",
   "text_sha256": "{{TEXT_SHA256}}",
   "family": "{{FAMILY}}",
-  "sentences": [ { "index": 0, "verdict": "pass", "reason": "..." } ],
+  "sentences": [ { "index": 0, "support": [ { "ref": 1, "pieces": [ { "words": "...", "quote": "...", "shown": true } ] } ], "verdict": "pass", "reason": "..." } ],
   "verdict": "pass"
 }
 ```
