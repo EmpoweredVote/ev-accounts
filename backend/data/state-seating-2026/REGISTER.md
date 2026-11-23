@@ -266,6 +266,63 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
 
+## 🔴 WRITTEN AND REHEARSED, NOT YET APPLIED — the two states whose dates have passed
+
+**Seven files, 2026-11-23.** Nevada's legislature has held its seats since **2026-11-04** and
+Hawaii's OHA trustees since **2026-11-03**, so these are not future waves — our pages name the
+predecessors today. Hawaii's Governor and Lieutenant Governor are **2026-12-07**, the nearest
+future deadline in the pass.
+
+| order | slot | what it does | rehearsed |
+|---|---|---|---|
+| 1 | `CC_0472` | 🔴 **DDL.** Widen `office_swearing_in_after_election` from `>` to `>=` | ⚠ **owner only** — see below |
+| 2 | `CC_0465` | NV · 52 date rows, 2026-11-04 (`Nev. Const. art. 4 §§ 3(1), 4(1)`) | ✅ |
+| 3 | `CC_0466` | NV · create 12 winners, **link** a 13th who already exists | ✅ |
+| 4 | `CC_0467` | NV · seat 52 (39 re-elections, **13 handovers**) | ✅ |
+| 5 | `CC_0469` | HI · 5 date rows — 3 on **2026-11-03**, 2 on **2026-12-07** | ⏳ needs `CC_0472` |
+| 6 | `CC_0470` | HI · seat the Maui and Oahu OHA trustees (At-large refused, Ruling A) | ⏳ needs `CC_0472` |
+| 7 | `CC_0471` | HI · schedule Governor + Lieutenant Governor for 2026-12-07 | ⏳ needs `CC_0472` |
+
+🔴🔴 **`CC_0472` IS APPLIED FIRST, THOUGH ITS SLOT NUMBER IS LAST.**
+`essentials.office_swearing_in` carried `CHECK (swearing_in_date > election_date)` — STRICTLY
+after. Twenty states never touched it, so it read as a sound invariant for 1,086 offices. It is
+not one: **`HRS § 13D-5` begins an OHA trustee's term ON the day of the election**, and the
+constraint forbade recording a date the statute states in words. The alternative was to carry
+that date as a literal in the seating file, which is the one thing this pass refuses. `CC_0469`'s
+**P0** reads the constraint definition and refuses to start until it finds the widened form, so
+the order is enforced by the data rather than by this table.
+
+⚠ **`ev_api` CANNOT RUN DDL**, so `apply-migration-file.mjs` and `rehearse-migration-chain.mjs`
+both fail `CC_0472` with *"must be owner of table office_swearing_in"*. Apply and rehearse it
+through the owner connection (the Supabase MCP), inside `BEGIN; … ROLLBACK;` to rehearse. That is
+why it is its own file rather than folded into `CC_0469`: folding it in would have made `CC_0469`
+impossible to rehearse at all.
+
+🟢 **A chain is rehearsed as a chain now**: `scripts/rehearse-migration-chain.mjs` runs several
+files in ONE transaction and always rolls back. 🔴 **Rehearsing them separately proves nothing
+and fails in the direction that reads as success** — `CC_0467`'s P4 reads dates `CC_0465` writes,
+and its selection digest is taken over the politician ids `CC_0466` creates, so on its own it
+measures the digest of a world that will not exist when it runs.
+
+### The three controls, each watched going red (step 7)
+
+| tamper | gate it fired on | what it proves |
+|---|---|---|
+| `CC_0465` writes 2026-11-**05** | `CC_0465` assertion **3** | Nevada and Indiana must read *"from the day next after their election"* the same way — the cross-state agreement is measured, not asserted in a comment |
+| `CC_0467` pinned to 2026-11-**05** | `CC_0467` **P4** | 🟢 **the seating file READS the recorded date and does not carry a literal.** Had it carried one, this tamper would have changed what it WROTE instead of stopping it |
+| `CC_0467` says **12** new holders | `CC_0467` assertion **4** | the rewritten delta assertion is live and names all 13 moving seats, Danielle Gallant's double move among them |
+
+⚠ **A fourth tamper fired on the WRONG gate and is recorded because of it.** Changing `CC_0465`'s
+date was meant to reach `CC_0467`'s P4; `CC_0465`'s own assertion 3 stopped it two files earlier.
+That is the register's own warning — *a tamper stopped by an earlier gate says nothing about a
+later one* — so P4 needed its own tamper, which is the second row above.
+
+🔴 **`CC_0467` IS NOT `CC_0464` WITH BIGGER NUMBERS.** `CC_0464` could assert the nationwide
+current-holder map **unchanged**, because all three of its rows were re-elections. 13 of
+Nevada's 52 are handovers, so the map MUST move, by exactly thirteen seats. Copying that
+assertion would have been the defect; `CC_0467` pins the map **outside** its 52 seats and counts
+the delta **inside** them.
+
 ## What is already done
 
 | slot | body | offices | start date | notes |
