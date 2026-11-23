@@ -70,7 +70,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,IN,Representative,"State Representative, District 061",5,In office,Matt Pierce,Matt Pierce,called,0,0,0,0,,2026-11-04,statute,07f385a9-5fe1-4d2e-b5b2-869dfad4f1fc
 1,Wave 1 — Senate,federal,OR,U.S. Senate - Oregon,U.S. Senate Oregon,4,"Won, term not yet begun",Jeff Merkley,Jeff Merkley,called,0,0,0,0,2027-01-02,2027-01-03,statute,08051b89-7c0d-4609-9543-e685f44f6821
 3,Wave 3 — December locals,local,CA,City Clerk,Monterey Park City Clerk,1,Not looked at,Maychelle Yee,,,0,0,0,0,,2026-12-01,estimated,082f92d3-4be5-48c7-ad71-62efdd19480e
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 32,2,Called,Stan Ellis,David Couch,called,0,0,0,1,,,,083efa67-40ea-402e-a4e5-224156d1f465
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 32,4,"Won, term not yet begun",Stan Ellis,David Couch,called,0,0,0,1,2026-12-06,2026-12-07,statute,083efa67-40ea-402e-a4e5-224156d1f465
 4,Wave 4 — State,state,CO,"University of Colorado Regent, District 6",University of Colorado Board of Regents District 6,2,Called,Ilana Spiegel,Ilana Spiegel,called,0,0,1,1,,,,084c71ca-d61c-4280-a53a-90b2b3f28295
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 1,2,Called,Mike McKay,Mike McKay,called,0,0,0,0,,,,085dfd9b-d48f-4575-9477-fdf2b13a12e6
 2,Wave 2 — House,federal,IN,U.S. House of Representatives - Indiana 4th Congressional District,U.S. Representative District 4,4,"Won, term not yet begun",Jim Baird,Jim Baird,called,0,0,0,0,2027-01-02,2027-01-03,statute,0863684e-c7df-4b7b-8ea2-4989b66accd1
@@ -80,11 +80,11 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Eastside Union School Board - Trustee Area 1,4,"Won, term not yet begun",Wayne Kalliomaa,Oscar Mejia,called,0,0,1,1,2026-12-10,2026-12-11,statute,08f6ae5d-714e-4d23-8bb1-8f2fd8d7130f
 4,Wave 4 — State,state,MA,"Representative, 21st Middlesex District",MA House 21st Middlesex District,2,Called,Kenneth I. Gordon,Kenneth Ira Gordon,called,0,0,0,0,,,,08fa0826-cbb3-4e6c-842a-28bb7aa14ee3
 4,Wave 4 — State,state,NE,Auditor of Public Accounts,Auditor of Public Accounts,2,Called,Mike Foley,Mike Foley,called,0,0,1,1,,,,09083670-d9c1-436c-bfdf-eab1d35956dc
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 64,2,Called,Blanca Pacheco,Blanca Pacheco,called,0,0,0,0,,,,09563040-ed85-48e1-ad60-8719e50c85f8
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 64,4,"Won, term not yet begun",Blanca Pacheco,Blanca Pacheco,called,0,0,0,0,2026-12-06,2026-12-07,statute,09563040-ed85-48e1-ad60-8719e50c85f8
 5,Wave 5 — Remaining locals,local,OR,Councilor,Cornelius City Council Seat A,1,Not looked at,Edgar Baker,,,0,0,0,0,,,,09be51ba-01eb-43fc-9528-c87689569da1
 4,Wave 4 — State,state,HI,Office of Hawaiian Affairs Oahu Resident Trustee,Office of Hawaiian Affairs Oahu Resident Trustee,5,In office,Kalei Akaka,Kalei Akaka,called,0,0,1,1,,2026-11-03,statute,09d4e0f1-ca5a-4057-89d6-3a13c9a2856d
 4,Wave 4 — State,state,NM,"Public Education Commissioner, District 2",New Mexico Public Education Commission District 2,2,Called,Timothy Beck,Ken Pascoe,called,0,0,1,1,,,,09fbde3b-3ba3-47d1-bb0d-86d6fde7f3bb
-4,Wave 4 — State,state,CA,Senator,State Senate District 14,2,Called,Anna Caballero,Esmeralda Soria,called,0,0,0,0,,,,0a04f3ae-83b0-4865-8294-873e68dccc89
+4,Wave 4 — State,state,CA,Senator,State Senate District 14,4,"Won, term not yet begun",Anna Caballero,Esmeralda Soria,called,0,0,0,0,2026-12-06,2026-12-07,statute,0a04f3ae-83b0-4865-8294-873e68dccc89
 2,Wave 2 — House,federal,GA,U.S. Representative,U.S. Representative District 6,4,"Won, term not yet begun",Lucy McBath,Lucy McBath,called,0,0,0,0,2027-01-02,2027-01-03,statute,0a2d5641-a3bd-4321-8fa6-820b49b28209
 3,Wave 3 — December locals,local,CA,City Clerk,West Covina City Clerk,1,Not looked at,Nickolas Lewis,,,0,0,0,0,,2026-12-01,estimated,0a6636fa-65f5-4e91-9b47-e34db8f112f9
 3,Wave 3 — December locals,local,CA,Mayor,Inglewood Mayor,1,Not looked at,James T. Butts Jr.,,,0,0,0,0,,2026-12-01,estimated,0a7c3b18-b584-45fd-8d17-e578342e61f9
@@ -97,7 +97,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,AZ,U.S. Representative,U.S. Representative District 4,4,"Won, term not yet begun",Greg Stanton,Greg Stanton,called,0,0,0,0,2027-01-02,2027-01-03,statute,0bb81a0b-0386-48e3-b91f-e43f7382b68d
 4,Wave 4 — State,state,WI,Secretary of State,Secretary of State,4,"Won, term not yet begun",Sarah Godlewski,JoCasta Zamarripa,called,0,0,0,1,2027-01-03,2027-01-04,statute,0bd931f4-01a4-43d0-aa15-58d6f48ff502
 4,Wave 4 — State,state,IL,Treasurer,Treasurer,2,Called,Mike Frerichs,Mike Frerichs,called,0,0,0,0,,,,0c0e79e5-ba8d-4d4a-9cf7-fecbec1ecf6e
-4,Wave 4 — State,state,CA,Senator,State Senate District 34,2,Called,Thomas Umberg,Avelino Valencia,called,0,0,0,0,,,,0c2cc1f7-c7cd-42ac-a133-1cdf27f50669
+4,Wave 4 — State,state,CA,Senator,State Senate District 34,4,"Won, term not yet begun",Thomas Umberg,Avelino Valencia,called,0,0,0,0,2026-12-06,2026-12-07,statute,0c2cc1f7-c7cd-42ac-a133-1cdf27f50669
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 12,4,"Won, term not yet begun",Alma S. Adams,Alma S. Adams,called,0,0,0,0,2027-01-02,2027-01-03,statute,0c3b0325-9ac5-40f2-aad9-17deb34a8ebe
 2,Wave 2 — House,federal,NV,U.S. Representative,U.S. Representative District 2,4,"Won, term not yet begun",Mark E. Amodei,Teresa Benitez-Thompson,called,0,0,0,1,2027-01-02,2027-01-03,statute,0c470cc0-5250-43f1-b7f7-57778cadacc6
 4,Wave 4 — State,state,MA,"Representative, 2nd Suffolk District",MA House 2nd Suffolk District,2,Called,Daniel J. Ryan,Daniel J. Ryan,called,0,0,0,0,,,,0c513f65-471b-4744-9258-55c1352db9bf
@@ -128,7 +128,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,IN,Comptroller,Comptroller (Auditor of State),2,Called,Elise M. Nieshalla,Jessica Bailey,called,0,0,0,1,,,,0f1bd30c-1cce-4a23-8ecd-a79c087171c6
 4,Wave 4 — State,state,MA,"Representative, 3rd Berkshire District",MA House 3rd Berkshire District,2,Called,Leigh S. Davis,Leigh Susan Davis,called,0,0,0,0,,,,0f1fc645-d423-4b29-9bd4-416486e23927
 4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 33,1,Not looked at,Alexandra M. Macedo,,,0,0,0,0,,,,0f2ef982-883f-4214-b3b5-f5384e3b957d
-4,Wave 4 — State,state,CA,Senator,State Senate District 22,2,Called,Susan Rubio,Susan Rubio,called,0,0,0,0,,,,0f31ac42-65ed-4108-ae3c-afd9fc74d3fd
+4,Wave 4 — State,state,CA,Senator,State Senate District 22,4,"Won, term not yet begun",Susan Rubio,Susan Rubio,called,0,0,0,0,2026-12-06,2026-12-07,statute,0f31ac42-65ed-4108-ae3c-afd9fc74d3fd
 5,Wave 5 — Remaining locals,local,OR,"Councilor, Position 6",Bend City Council Position 6,1,Not looked at,Mike Riley,,,0,0,0,0,,,,0f4fb489-2655-479a-a1b3-d592017b87c0
 2,Wave 2 — House,federal,SC,U.S. Representative,U.S. Representative District 7,4,"Won, term not yet begun",Russell Fry,Russell Fry,called,0,0,0,0,2027-01-02,2027-01-03,statute,0f7f8a08-e63a-4045-9a13-a901ca2e779c
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 12,4,"Won, term not yet begun",Lateefah Simon,Lateefah Simon,called,0,0,0,0,2027-01-02,2027-01-03,statute,0f99903c-9862-4ef9-b607-d760e8a87cf1
@@ -192,7 +192,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,TX,"Judge, 485th District Court",Texas 485th District Court,1,Not looked at,Steven Jumes,,,0,0,0,0,,,,16960fc8-ed2b-40c3-9922-0d4bce4afe1f
 4,Wave 4 — State,state,OR,Senator,OR State Senate District 10,2,Called,Deb Patterson,Deb Patterson,called,0,0,0,0,,,,16c2ab80-dbff-41ff-b6f3-4c8e2b38d7fd
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Saugus Union School Board - Trustee Area 2,4,"Won, term not yet begun",Anna Griese,Anna Griese,called,0,0,1,1,2026-12-10,2026-12-11,statute,16d3f5db-00e7-49ce-a2a9-7b8e1c1862ea
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 36,2,Called,Jeff Gonzalez,Ida S. Obeso-Martinez,called,0,0,1,1,,,,16e6376e-1813-4f7a-9a97-037e861fb1f9
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 36,4,"Won, term not yet begun",Jeff Gonzalez,Ida S. Obeso-Martinez,called,0,0,1,1,2026-12-06,2026-12-07,statute,16e6376e-1813-4f7a-9a97-037e861fb1f9
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 9,2,Called,Kiana Sears,Kiana Sears,called,0,0,0,0,,,,16e6b5c6-1707-4434-998d-4dfd9482b8b3
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Azusa Unified School Board - Trustee Area 5,4,"Won, term not yet begun",Gabriela Arellanes,Gabriela Arellanes,called,0,0,1,1,2026-12-10,2026-12-11,statute,16f4d35c-f0f9-48f5-8363-ab75eb1c85f2
 4,Wave 4 — State,state,OR,Senator,OR State Senate District 13,2,Called,Courtney Neron Misslin,Courtney Neron Misslin,called,0,0,0,0,,,,16f7642d-23cc-44b4-b918-cd9efca8b619
@@ -210,7 +210,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,OR,Representative,OR State House District 38,2,Called,Daniel Nguyễn,Daniel Loc Nguyen,called,0,0,0,0,,,,1836afa4-9989-47d1-99a1-03864c61174d
 4,Wave 4 — State,state,MA,"Representative, 26th Middlesex District",MA House 26th Middlesex District,2,Called,Mike Connolly,Mike Connolly,called,0,0,0,0,,,,18a1887b-6335-4bb0-ad8b-e0e51d7b5ea3
 4,Wave 4 — State,state,CO,State Senator,State Senator District 35,2,Called,Rod Pelton,Rod Pelton,called,0,0,0,0,,,,18c850c8-85ba-4a3b-a713-5a5221d34a81
-4,Wave 4 — State,state,CA,Attorney General,Attorney General,2,Called,Rob Bonta,Rob Bonta,called,0,0,0,0,,,,18c9dcc2-9e1c-4c4f-ad86-81b0bf93f1d9
+4,Wave 4 — State,state,CA,Attorney General,Attorney General,4,"Won, term not yet begun",Rob Bonta,Rob Bonta,called,0,0,0,0,2027-01-03,2027-01-04,statute,18c9dcc2-9e1c-4c4f-ad86-81b0bf93f1d9
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Hughes-Elizabeth Lakes Union School Board - Trustee Area 2,1,Not looked at,Raelyn Marshall,,,0,0,0,0,2026-12-10,2026-12-11,statute,18f0f3fe-3099-4b0c-8e92-2dbc336a2e07
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 7,4,"Won, term not yet begun",Karen Kirsch,Karen Kirsch,called,0,0,0,0,2027-01-03,2027-01-04,statute,19150f34-66e0-406d-aeac-898e76bbc492
 5,Wave 5 — Remaining locals,local,OR,Council Member (Position 5),Tualatin City Council Position 5,1,Not looked at,Octavio Gonzalez,,,0,0,0,0,,,,1934bfe9-e438-44f5-8e64-5f49540bf267
@@ -221,7 +221,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Pasadena Area Community College Board - Trustee Area 3,4,"Won, term not yet begun",Steve Gibson,Steve Gibson,called,0,0,1,1,2026-12-10,2026-12-11,statute,19f2a006-7564-5615-8267-31f68b2da2ee
 4,Wave 4 — State,state,WA,State Senator,WA State Senate Legislative District 8,2,Called,Matt Boehnke,Nikki Torres,called,0,0,0,1,,,,1a3f1458-3c73-4aaa-8b98-1920f946793c
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 18,4,"Won, term not yet begun",Patrick Ryan,Patrick Ryan,called,0,0,0,0,2027-01-02,2027-01-03,statute,1a49995f-8de3-434f-968b-ac9ef8168752
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 10,2,Called,Stephanie Nguyen,Stephanie Nguyen,called,0,0,0,0,,,,1a913cf6-e442-4695-8ac5-bbf9d15974a4
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 10,4,"Won, term not yet begun",Stephanie Nguyen,Stephanie Nguyen,called,0,0,0,0,2026-12-06,2026-12-07,statute,1a913cf6-e442-4695-8ac5-bbf9d15974a4
 4,Wave 4 — State,state,UT,State Senator District 11,Utah State Senate District 11,1,Not looked at,Emily Buss,,,0,0,0,0,,,,1a96ba45-2d4b-49ba-aac5-3d8c10fe9318
 4,Wave 4 — State,state,SD,Treasurer,Treasurer,2,Called,Josh Haeder,Melissa Hull,called,0,0,1,1,,,,1a993eb5-673a-49a0-85e2-154eb59cc3f9
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 30,4,"Won, term not yet begun",Shannon Zimmerman,Kevin Knoke,called,0,0,0,1,2027-01-03,2027-01-04,statute,1a9a44df-f09b-40a9-80d7-9f9c6d93fbc4
@@ -270,7 +270,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 13,2,Called,J.D. Mesnard,Kristie O'Brien,called,0,0,0,1,,,,1efb9ea1-7bbf-4bbc-a7ac-ea9676579e80
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 18,4,"Won, term not yet begun",Margaret Arney,Margaret Arney,called,0,0,0,0,2027-01-03,2027-01-04,statute,1f0c1837-0d46-41e2-afbe-72069cdd4c33
 4,Wave 4 — State,state,UT,State Representative District 44,Utah State House District 44,2,Called,Jordan D. Teuscher,Jess Birtcher,called,0,0,0,1,,,,1f105654-c0cd-418f-8ac1-7b9eef9dfbe0
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 62,2,Called,Jose Luis Solache Jr.,José Luis Solache,called,0,0,0,0,,,,1f11cd82-9f78-4f4f-b2de-43d67bbe62c6
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 62,4,"Won, term not yet begun",Jose Luis Solache Jr.,José Luis Solache,called,0,0,0,0,2026-12-06,2026-12-07,statute,1f11cd82-9f78-4f4f-b2de-43d67bbe62c6
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 22 Position 1,2,Called,Beth Doglio,Beth Doglio,called,0,0,0,0,,,,1f3d9385-9c60-4b49-8f53-779c0fee5b9e
 4,Wave 4 — State,state,IN,Secretary of State,Secretary of State,2,Called,Diego Morales,Beau Bayh,called,0,0,0,0,,,,1f66018e-0fa9-4719-8527-568e471c6369
 4,Wave 4 — State,state,TX,Texas Comptroller,Texas Comptroller,2,Called,Glenn Hegar,Sarah Eckhardt,called,0,0,0,0,,,,1f813b24-236b-4784-a29d-95d9e380b0a6
@@ -281,7 +281,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 19,4,"Won, term not yet begun",Ryan Clancy,Ryan Clancy,called,0,0,0,0,2027-01-03,2027-01-04,statute,200b7391-ffc0-4539-90c7-3751b0d648f8
 4,Wave 4 — State,state,ME,Representative,ME State House District 62,4,"Won, term not yet begun",Katrina Smith,Katrina J. Smith,called,0,0,0,0,2026-11-30,2026-12-01,statute,204b6e9f-86a5-467d-a71f-37aae9a4fb67
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 15,2,Called,Linda Foley,"David V. Fraser-Hidalgo, Lily Qi, Linda Foley",called,0,0,1,1,,,,207e12f2-f0f8-421c-ac00-80c7aaa3b066
-4,Wave 4 — State,state,CA,Senator,State Senate District 10,2,Called,,Scott Sakakihara,called,0,0,0,1,,,,208eb787-f641-4fca-8410-265620a5cb4b
+4,Wave 4 — State,state,CA,Senator,State Senate District 10,4,"Won, term not yet begun",,Scott Sakakihara,called,0,0,0,1,,2026-12-07,statute,208eb787-f641-4fca-8410-265620a5cb4b
 4,Wave 4 — State,state,MA,"Representative, 11th Bristol District",MA House 11th Bristol District,2,Called,Christopher Hendricks,Christopher M. Hendricks,called,0,0,0,0,,,,20b2c211-19b0-4a5d-b4d0-dc78ff266ac4
 2,Wave 2 — House,federal,MS,U.S. Representative,U.S. Representative District 2,4,"Won, term not yet begun",Bennie G. Thompson,Bennie G. Thompson,called,0,0,0,0,2027-01-02,2027-01-03,statute,20c05b26-f25d-43e1-a154-68727bcf3cfb
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Glendora Unified School Board - Trustee Area 2,1,Not looked at,Monica García,,,0,0,0,0,,2026-12-11,statute,20cd8a2c-367c-4ba8-bcce-6163c364f0b5
@@ -289,7 +289,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 32 Position 2,2,Called,Lauren Davis,Lauren Davis,called,0,0,0,0,,,,2145a9d0-cf90-437e-95ae-68e2fac200b6
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 7B,2,Called,Lauren Arikan,Lauren Arikan,called,0,0,0,0,,,,2151f879-d739-4300-87f1-3dadcdad40ee
 4,Wave 4 — State,state,UT,State Representative District 64,Utah State House District 64,2,Called,Jackie Larson,Jackie Larson,called,0,0,0,1,,,,215327aa-67a0-4f0f-8e4d-79746bbe8a77
-4,Wave 4 — State,state,CA,Senator,State Senate District 36,2,Called,Tony Strickland,Chris Duncan,called,0,0,1,1,,,,215dcce6-87e7-4fe8-af5f-8ef901d3d817
+4,Wave 4 — State,state,CA,Senator,State Senate District 36,4,"Won, term not yet begun",Tony Strickland,Chris Duncan,called,0,0,1,1,2026-12-06,2026-12-07,statute,215dcce6-87e7-4fe8-af5f-8ef901d3d817
 1,Wave 1 — Senate,federal,TX,U.S. Senate - Texas,U.S. Senate Texas,4,"Won, term not yet begun",John Cornyn,James Talarico,called,0,0,0,0,2027-01-02,2027-01-03,statute,216ead27-9e86-49f2-b21c-af659d114faf
 5,Wave 5 — Remaining locals,local,IN,Polk Township Board,Polk Township Board,1,Not looked at,,,,0,0,0,0,,,,2170793e-6056-42a5-8807-5be50de266d9
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Burbank Unified School Board - Trustee Area 3,4,"Won, term not yet begun",Kelsey Olson,Rosemary T. Morrison,called,0,0,1,1,2026-12-10,2026-12-11,statute,219875d8-4b41-434d-a118-40b6cfca3663
@@ -306,7 +306,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Director (Division 4),Foothill Municipal Water District Board - Division 4,4,"Won, term not yet begun",Laura Olhasso,Amy I. Chen,called,0,0,1,1,2026-12-03,2026-12-04,statute,2266398e-0740-54dc-a75f-ecc082437603
 4,Wave 4 — State,state,CO,Lieutenant Governor,Colorado Lieutenant Governor,1,Not looked at,Dianne Primavera,,,0,0,0,0,,,,227f9c28-41e0-4e4d-a5af-88635d315814
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Mt. San Antonio Community College Board - Trustee Area 3,1,Not looked at,Laura Santos,,,0,0,0,0,,2026-12-11,statute,22873b8b-fcfb-5adf-851b-6526bc7aa687
-4,Wave 4 — State,state,CA,Senator,State Senate District 16,2,Called,Melissa Hurtado,Melissa Hurtado,called,0,0,0,0,,,,229bc27f-466d-496e-ab1d-c484b21c0430
+4,Wave 4 — State,state,CA,Senator,State Senate District 16,4,"Won, term not yet begun",Melissa Hurtado,Melissa Hurtado,called,0,0,0,0,2026-12-06,2026-12-07,statute,229bc27f-466d-496e-ab1d-c484b21c0430
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 27B,2,Called,"Jeffrie E. Long, Jr.",Jeffrie E. Long Jr.,called,0,0,0,0,,,,22bbc17b-110d-42a7-9bab-cb28d9f31a27
 4,Wave 4 — State,state,SC,Attorney General,Attorney General,2,Called,Alan Wilson,David Stumbo,called,0,0,1,1,,,,22c19160-484c-4c9b-856d-c9d8a26d7335
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 05,5,In office,Brittney M. Miller,Brittney M. Miller,called,0,0,0,0,,2026-11-04,statute,231267ba-2e57-4e9e-a133-af49bfbc0ea7
@@ -321,7 +321,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 24,2,Called,Analise Ortiz,Analise Ortiz,called,0,0,0,0,,,,23b4aab4-d906-4e7e-a2e6-c5ceee4bc24a
 2,Wave 2 — House,federal,OK,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun",Frank D. Lucas,Frank D. Lucas,called,0,0,0,0,2027-01-02,2027-01-03,statute,23bbee96-fa0b-4aba-94fd-9246c4728a7c
 4,Wave 4 — State,state,MA,"Representative, 19th Worcester District",MA House 19th Worcester District,2,Called,Kate Donaghue,Kate Donaghue,called,0,0,0,0,,,,23e7a30c-000f-424c-a620-02b30a7c11e0
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 37,2,Called,Gregg Hart,Gregg Hart,called,0,0,0,0,,,,24058445-77bc-4565-a6a9-4365c1382e83
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 37,4,"Won, term not yet begun",Gregg Hart,Gregg Hart,called,0,0,0,0,2026-12-06,2026-12-07,statute,24058445-77bc-4565-a6a9-4365c1382e83
 4,Wave 4 — State,state,ME,Representative,ME State House District 31,4,"Won, term not yet begun",Chad Perkins,Andrew R. Torbett,called,0,0,1,1,2026-11-30,2026-12-01,statute,24132b9c-f927-483d-9e9f-abea802a2cab
 4,Wave 4 — State,state,IL,Comptroller,Comptroller,2,Called,Susana A. Mendoza,Margaret Croke,called,0,0,1,1,,,,242a4580-4ee0-447d-ac90-6d6359e198b9
 2,Wave 2 — House,federal,UT,Representative,U.S. Representative District 3,4,"Won, term not yet begun",Mike Kennedy,Celeste Maloy,called,0,0,0,0,2027-01-02,2027-01-03,statute,24356264-2663-42a5-8362-0810abe29613
@@ -359,7 +359,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 7,2,Called,J.B. Jennings,J.B. Jennings,called,0,0,0,0,,,,27b4d399-85f9-4c97-9659-16c250ef9b77
 3,Wave 3 — December locals,local,CA,Director,Crescenta Valley Water District Board,2,Called,James D. Bodnar,"Carla D. Dillon, James Bodnar, Jeffery W. Johnson",called,0,0,1,1,2026-12-03,2026-12-04,statute,27d5eab3-f128-5eee-b2a7-62a1732448d1
 4,Wave 4 — State,state,UT,State Representative District 48,Utah State House District 48,1,Not looked at,Doug Fiefia,,,0,0,0,0,,,,27fcfd7d-727d-413f-ab44-201a2461b282
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 17,2,Called,Matt Haney,Matt Haney,called,0,0,0,0,,,,28008ded-d3c3-453e-9ae0-650bbfa30943
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 17,4,"Won, term not yet begun",Matt Haney,Matt Haney,called,0,0,0,0,2026-12-06,2026-12-07,statute,28008ded-d3c3-453e-9ae0-650bbfa30943
 4,Wave 4 — State,state,AL,"State Board of Education Member, District 2",Alabama State Board of Education District 2,2,Called,Tracie West,Tracie West,called,0,0,1,1,,,,285991cc-6e0b-49be-8b73-380b92f599b1
 2,Wave 2 — House,federal,LA,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun",Clay Higgins,Clay Higgins,called,0,0,0,0,2027-01-02,2027-01-03,statute,287d2bbd-1655-401d-8519-9f91750eaeb1
 3,Wave 3 — December locals,local,CA,Board Member,West Covina Unified School Board,1,Not looked at,Rose Lopez,,,0,0,0,0,2026-12-10,2026-12-11,statute,28c94845-9c71-449f-9423-cab41f552803
@@ -425,7 +425,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 32,4,"Won, term not yet begun",Julie Johnson,Jace Yarbrough,called,0,0,0,0,2027-01-02,2027-01-03,statute,2f07eaa0-2f9e-4386-906a-7c40dc2c25c4
 4,Wave 4 — State,state,MA,"Representative, 17th Essex District",MA House 17th Essex District,2,Called,Frank A. Moran,Frank A. Moran,called,0,0,0,0,,,,2f090d3f-e520-4a70-b11a-0614afed9bd4
 5,Wave 5 — Remaining locals,local,OR,City Councilor,Wood Village City Council Position 4,2,Called,John Miner,Christine Bierman,called,0,0,1,1,,,,2f0f5ed0-b654-47eb-8a43-9074847bb097
-4,Wave 4 — State,state,CA,Senator,State Senate District 30,2,Called,Bob Archuleta,Bob J. Archuleta,called,0,0,0,0,,,,2f43b527-8ea0-474c-8dd7-5ff95c7a9a6f
+4,Wave 4 — State,state,CA,Senator,State Senate District 30,4,"Won, term not yet begun",Bob Archuleta,Bob J. Archuleta,called,0,0,0,0,2026-12-06,2026-12-07,statute,2f43b527-8ea0-474c-8dd7-5ff95c7a9a6f
 5,Wave 5 — Remaining locals,local,OR,Mayor,Gresham Mayor,1,Not looked at,Travis Stovall,,,0,0,0,0,,,,2fa94afa-14c7-4eca-a6ab-42c4fa979f0f
 5,Wave 5 — Remaining locals,local,TX,"Judge, County Criminal Court No. 10",Tarrant County Criminal Court No. 10,1,Not looked at,Trent Loftin,,,0,0,0,0,,,,2fb3fee4-d6ba-4227-b546-b139a4a92075
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),El Camino Community College Board - Trustee Area 2,1,Not looked at,Nilo Vega Michelin,,,0,0,0,0,2026-12-10,2026-12-11,statute,2fc3816e-735f-5d0c-8b17-2e93cc7d55ab
@@ -440,9 +440,9 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Keppel Union School Board - Trustee Area 1,4,"Won, term not yet begun",,Blanca Nava,called,0,0,1,1,,2026-12-11,statute,30a5efc5-bd50-427d-95ba-776f95a2ce52
 4,Wave 4 — State,state,CO,State Senator,State Senator District 11,2,Called,Tony Exum,Tony Exum Sr,called,0,0,0,0,,,,30c8ab8f-df2f-450c-b4a2-da83bfc0e23d
 4,Wave 4 — State,state,MA,"Representative, 11th Middlesex District",MA House 11th Middlesex District,2,Called,Amy M. Sangiolo,Amy Mah Sangiolo,called,0,0,0,0,,,,30d5e49b-84cc-45f9-a09b-9a8b315f57a1
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 66,2,Called,Al Muratsuchi,Paul Seo,called,0,0,0,1,,,,30f71151-34bb-48a7-bf70-255e9f511235
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 66,4,"Won, term not yet begun",Al Muratsuchi,Paul Seo,called,0,0,0,1,2026-12-06,2026-12-07,statute,30f71151-34bb-48a7-bf70-255e9f511235
 4,Wave 4 — State,state,WA,State Senator,WA State Senate Legislative District 37,2,Called,Rebecca Saldaña,Chipalo Street,called,0,0,0,0,,,,30f8e55f-d1c5-4a33-ab21-28385fff4d2d
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 30,2,Called,Dawn Addis,Dawn Addis,called,0,0,0,0,,,,310f2c99-8c9b-4e0b-a4fa-111b7e5e932d
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 30,4,"Won, term not yet begun",Dawn Addis,Dawn Addis,called,0,0,0,0,2026-12-06,2026-12-07,statute,310f2c99-8c9b-4e0b-a4fa-111b7e5e932d
 4,Wave 4 — State,state,AL,Auditor,Auditor,2,Called,Andrew Sorrell,Andrew Sorrell,called,0,0,1,1,,,,312d9221-70d3-44b4-8977-ddb9287a241c
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 5 Position 2,2,Called,Lisa Callan,Lisa Callan,called,0,0,0,0,,,,31402a43-30b8-4c11-b48e-8185150281bc
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Arcadia City Council District 2,1,Not looked at,Sharon Kwan,,,0,0,0,0,,2026-12-01,estimated,31518619-759e-4e98-af7d-92afbd8b463d
@@ -494,10 +494,10 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 18 Position 2,2,Called,John Ley,Deken Letinich,called,0,0,0,1,,,,35739a8a-4ee2-4c30-a6ba-b430b0477dc3
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area B),Castaic Union School Board - Trustee Area B,1,Not looked at,Laura Pearson,,,0,0,0,0,2026-12-10,2026-12-11,statute,3580c85a-39b9-4dce-adc1-76639fd286f6
 4,Wave 4 — State,state,DE,State Auditor,State Auditor,2,Called,Lydia York,Lydia York,called,0,0,1,1,,,,358d2dc5-d2ad-415d-8473-cdd58fc4433e
-4,Wave 4 — State,state,CA,Senator,State Senate District 2,2,Called,Mike McGuire,Damon Connolly,called,0,0,0,0,,,,359bb63e-3db8-40bc-9931-49a0a3e4a378
+4,Wave 4 — State,state,CA,Senator,State Senate District 2,4,"Won, term not yet begun",Mike McGuire,Damon Connolly,called,0,0,0,0,2026-12-06,2026-12-07,statute,359bb63e-3db8-40bc-9931-49a0a3e4a378
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 30 Position 2,2,Called,Kristine Reeves,Kristine Reeves,called,0,0,0,0,,,,35d81af1-f148-4d5c-8c47-03013687911e
 5,Wave 5 — Remaining locals,local,OR,County Sheriff,Deschutes County Sheriff,1,Not looked at,Ty Rupert,,,0,0,0,0,,,,35df59a4-15fb-42cf-8ba4-e5c3591e1f5a
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 44,2,Called,Nick Schultz,"Nicholas ""Nick"" Schultz",called,0,0,0,0,,,,35fb0877-1c23-424b-9320-ab7ee331facc
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 44,4,"Won, term not yet begun",Nick Schultz,"Nicholas ""Nick"" Schultz",called,0,0,0,0,2026-12-06,2026-12-07,statute,35fb0877-1c23-424b-9320-ab7ee331facc
 4,Wave 4 — State,state,MA,"Representative, 16th Essex District",MA House 16th Essex District,2,Called,Francisco E. Paulino,Celina A. Reyes,called,0,0,1,1,,,,361072ec-18dc-4e4a-b81f-64b4a0d626ba
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 12,2,Called,"Denise ""Mitzi"" Epstein",Patty Contreras,called,0,0,0,0,,,,361b1367-4925-4b97-a737-6877690cb697
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Cerritos Community College Board - Trustee Area 3,1,Not looked at,James Cody Birkey,,,0,0,0,0,,2026-12-11,statute,364ccad8-46bc-5378-8460-a3e341bbd953
@@ -508,13 +508,13 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 15 Position 1,2,Called,Chris Corry,Chris Corry,called,0,0,0,0,,,,3708e7ec-43a6-43b8-875b-7f10e3f0a4b7
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Montebello Unified School Board - Trustee Area 3,1,Not looked at,,,,0,0,0,0,,2026-12-11,statute,370ca427-353b-4896-b7c3-fd361119cd7b
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 8,4,"Won, term not yet begun",John Garamendi,John Garamendi,called,0,0,0,0,2027-01-02,2027-01-03,statute,3714f671-f75b-4f3f-981c-53df319f886c
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 31,2,Called,Dr. Joaquin Arambula,Annalisa Perea,called,0,0,0,1,,,,3718ac15-dc92-441d-8998-5b67fa3e5a01
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 31,4,"Won, term not yet begun",Dr. Joaquin Arambula,Annalisa Perea,called,0,0,0,1,2026-12-06,2026-12-07,statute,3718ac15-dc92-441d-8998-5b67fa3e5a01
 2,Wave 2 — House,federal,NJ,U.S. Representative,U.S. Representative District 10,4,"Won, term not yet begun",LaMonica McIver,LaMonica McIver,called,0,0,0,0,2027-01-02,2027-01-03,statute,371cbe0b-f54a-4338-b608-2a167a282ef1
 4,Wave 4 — State,state,ME,Representative,ME State House District 105,4,"Won, term not yet begun",Anne Graham,Anne Palmer Graham,called,0,0,0,0,2026-11-30,2026-12-01,statute,37453f0c-8531-4994-b3be-46fbd39f36b8
 4,Wave 4 — State,state,AZ,Superintendent of Public Instruction,Superintendent of Public Instruction,2,Called,Tom Horne,Teresa Ruiz,called,0,0,1,1,,,,376d3c10-cbee-4f56-b534-e10ff508e6cc
 2,Wave 2 — House,federal,OH,U.S. Representative,U.S. Representative District 6,4,"Won, term not yet begun",Michael A. Rulli,Michael A. Rulli,called,0,0,0,0,2027-01-02,2027-01-03,statute,3773d04c-bc0b-416f-97e8-f8478185ce0f
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 02,5,In office,Kamilah Bywaters,Kamilah Bywaters,called,0,0,1,1,,2026-11-04,statute,378b59db-23b6-46d7-ab10-fd53f0355a90
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 75,2,Called,Carl DeMaio,Carl DeMaio,called,0,0,0,0,,,,379babf2-e341-4872-873d-b43a31a355d0
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 75,4,"Won, term not yet begun",Carl DeMaio,Carl DeMaio,called,0,0,0,0,2026-12-06,2026-12-07,statute,379babf2-e341-4872-873d-b43a31a355d0
 4,Wave 4 — State,state,SD,Governor,Governor,2,Called,Larry Rhoden,Larry Rhoden,called,0,0,0,0,,,,379d476e-c77a-4fb7-9e69-d375bdb294ce
 5,Wave 5 — Remaining locals,local,IN,Commission - District 1,Monroe County Commissioner District 1,1,Not looked at,Elizabeth L Jones,,,0,0,0,0,,,,379f5c99-8fe1-44f9-a2d1-92d30926dc4a
 4,Wave 4 — State,state,ME,Representative,ME State House District 126,4,"Won, term not yet begun",Drew Gattine,Andrew Gattine,called,0,0,0,0,2026-11-30,2026-12-01,statute,37c4dbd9-6d11-4623-ad3e-097bd30db9ea
@@ -609,7 +609,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 39,2,Called,Nancy J. King,Amar Mukunda,called,0,0,1,1,,,,42e2f012-4e4d-4e43-a917-d95ec308a12b
 4,Wave 4 — State,state,MA,"Representative, 6th Plymouth District",MA House 6th Plymouth District,2,Called,Kenneth P. Sweezey,Kenneth Peter Sweezey,called,0,0,0,0,,,,43043ecf-8b5b-4f16-b70b-d7a3ee2c3e33
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 22,4,"Won, term not yet begun",David Valadao,Randy Villegas,called,0,0,0,0,2027-01-02,2027-01-03,statute,43105b49-ecdf-41ce-9309-38a0aef1b81d
-4,Wave 4 — State,state,CA,Senator,State Senate District 38,2,Called,Catherine S. Blakespear,Catherine S. Blakespear,called,0,0,0,0,,,,43172f9d-8ce9-4825-86f5-392ceddbabf3
+4,Wave 4 — State,state,CA,Senator,State Senate District 38,4,"Won, term not yet begun",Catherine S. Blakespear,Catherine S. Blakespear,called,0,0,0,0,2026-12-06,2026-12-07,statute,43172f9d-8ce9-4825-86f5-392ceddbabf3
 4,Wave 4 — State,state,CO,State Representative,State Representative District 16,2,Called,Rebecca Keltie,Steph Vigil,called,0,0,0,0,,,,435039c5-0cee-46bd-91f5-9eb51a17f814
 5,Wave 5 — Remaining locals,local,OR,Council Member (Position 6),Fairview City Council Position 6,1,Not looked at,Paul Copeland,,,0,0,0,0,,,,439d4367-b45e-42bd-b289-270c942d34ea
 4,Wave 4 — State,state,MA,"Representative, 20th Middlesex District",MA House 20th Middlesex District,2,Called,Bradley H. Jones,Joseph Markey,called,0,0,1,1,,,,43a09386-34a7-4b62-87b2-584502472947
@@ -621,7 +621,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 41 Position 2,2,Called,My-Linh Thai,My-Linh T Thai,called,0,0,0,0,,,,445a8db7-2e5b-4aeb-8c9b-d4b22ab47bbe
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 4),Whittier Union High School Board - Trustee Area 4,1,Not looked at,Irma Rodríguez Moisa,,,0,0,0,0,2026-12-10,2026-12-11,statute,446e5fcb-4d4a-496d-b3d2-4a0880938b00
 5,Wave 5 — Remaining locals,local,IN,Monroe County Sheriff,Monroe County Sheriff,1,Not looked at,,,,0,0,0,0,,,,4486d4a4-204f-4428-a290-a4fa4afab49f
-4,Wave 4 — State,state,CA,Senator,State Senate District 18,2,Called,Steve Padilla,Steve Padilla,called,0,0,0,0,,,,44939236-aded-4db2-ae5a-a10231ac0fab
+4,Wave 4 — State,state,CA,Senator,State Senate District 18,4,"Won, term not yet begun",Steve Padilla,Steve Padilla,called,0,0,0,0,2026-12-06,2026-12-07,statute,44939236-aded-4db2-ae5a-a10231ac0fab
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Claremont Unified School Board - Trustee Area 3,1,Not looked at,Richard W. O'Neill,,,0,0,0,0,2026-12-10,2026-12-11,statute,44e64bb2-a163-452b-86af-7cfc3c22190a
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 37,4,"Won, term not yet begun",Mark Born,Mark Born,called,0,0,0,0,2027-01-03,2027-01-04,statute,44ec3a8c-1919-462f-90bb-0ab0ddaffb33
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 12A,2,Called,Jessica Feldmark,"Jessica Feldmark, Terri Hill",called,0,0,1,1,,,,451d87fd-802c-49e5-8e0c-7875ec0102af
@@ -630,7 +630,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 7,4,"Won, term not yet begun",Lizzie Fletcher,Lizzie Fletcher,called,0,0,0,0,2027-01-02,2027-01-03,statute,4547a4e0-bed6-4be0-a866-0f6b56259cfc
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 29B,2,Called,Brian M. Crosby,Adrianne M. Mathis,called,0,0,1,1,,,,454f9950-60fe-475e-a60b-8e23cd98670e
 4,Wave 4 — State,state,MA,"Representative, 17th Worcester District",MA House 17th Worcester District,2,Called,David A. LeBoeuf,David Henry Argosky LeBoeuf,called,0,0,0,0,,,,4550977e-0f28-4b3f-b873-e2e3ad28ec3c
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 6,2,Called,Maggy Krell,Maggy Krell,called,0,0,0,0,,,,4552a002-4257-44f9-a217-2217b3bba366
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 6,4,"Won, term not yet begun",Maggy Krell,Maggy Krell,called,0,0,0,0,2026-12-06,2026-12-07,statute,4552a002-4257-44f9-a217-2217b3bba366
 4,Wave 4 — State,state,OK,Governor,Governor,2,Called,Kevin Stitt,Mike Mazzei,called,0,0,1,1,,,,45a18331-175f-49dc-8c77-60ea6202a798
 2,Wave 2 — House,federal,NH,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Chris Pappas,Stefany Shaheen,called,0,0,0,0,2027-01-02,2027-01-03,statute,45b66e2a-3d0e-4efb-9c17-dfd261ce2385
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 8,4,"Won, term not yet begun",Mark Harris,Mark Harris,called,0,0,0,0,2027-01-02,2027-01-03,statute,45f2b223-e5ac-44ef-a50f-7234d682462e
@@ -643,8 +643,8 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Treasurer,State Treasurer,4,"Won, term not yet begun",John Leiber,Yee Leng Xiong,called,0,0,1,1,2027-01-03,2027-01-04,statute,464a0947-7961-4e00-a5f6-0c3abc5d34a7
 4,Wave 4 — State,state,GA,Attorney General,Attorney General,2,Called,Chris Carr,Tanya F. Miller,called,0,0,0,0,,,,464ab8bc-f418-4e15-a680-b4eaff2b5471
 2,Wave 2 — House,federal,GA,U.S. Representative,U.S. Representative District 5,4,"Won, term not yet begun",Nikema Williams,Nikema Williams,called,0,0,0,0,2027-01-02,2027-01-03,statute,4688afb8-4f46-4849-8255-ff96d174d7ba
-4,Wave 4 — State,state,CA,Senator,State Senate District 8,2,Called,Angelique Ashby,Angelique Ashby,called,0,0,0,0,,,,46a07702-d7dc-43f6-b3e1-27a92c5bacae
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 56,2,Called,Lisa Calderon,Lisa Calderon,called,0,0,0,0,,,,46fb26d3-fe15-4525-9d1e-008651577b46
+4,Wave 4 — State,state,CA,Senator,State Senate District 8,4,"Won, term not yet begun",Angelique Ashby,Angelique Ashby,called,0,0,0,0,2026-12-06,2026-12-07,statute,46a07702-d7dc-43f6-b3e1-27a92c5bacae
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 56,4,"Won, term not yet begun",Lisa Calderon,Lisa Calderon,called,0,0,0,0,2026-12-06,2026-12-07,statute,46fb26d3-fe15-4525-9d1e-008651577b46
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 10,4,"Won, term not yet begun",Darrin Madison,Darrin Madison,called,0,0,0,0,2027-01-03,2027-01-04,statute,47120f05-eccb-4765-820f-dff44850c7b7
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 16,2,Called,Sara Love,Sara N. Love,called,0,0,0,0,,,,4760ad80-119e-4a85-acee-bab2f41d8947
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 22,1,Not looked at,Melissa R. Hardy,,,0,0,0,0,,,,477dfa52-e65c-4d77-b63a-0bda52b4e122
@@ -729,7 +729,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 1,Wave 1 — Senate,federal,IA,Senator,U.S. Senate Iowa,4,"Won, term not yet begun",Joni Ernst,Josh Turek,called,0,0,0,0,2027-01-02,2027-01-03,statute,4fc0ebfd-789b-4589-984a-4fb61f5ae732
 2,Wave 2 — House,federal,DE,U.S. Representative,U.S. Representative At-Large,4,"Won, term not yet begun",Sarah McBride,Sarah McBride,called,0,0,0,0,2027-01-02,2027-01-03,statute,4fce398a-bd1b-47bc-8809-372a9dd1d0f1
 4,Wave 4 — State,state,MA,"Representative, 30th Middlesex District",MA House 30th Middlesex District,2,Called,Richard M. Haggerty,Richard M. Haggerty,called,0,0,0,0,,,,4fe4b294-6d7f-44a3-a7f2-10854879029f
-4,Wave 4 — State,state,CA,Board of Equalization District 3,"State Board of Equalization, 3rd District",2,Called,Antonio Vazquez,Mike Gipson,called,0,0,0,0,,,,500eea68-be08-4b90-b603-f5b102507f94
+4,Wave 4 — State,state,CA,Board of Equalization District 3,"State Board of Equalization, 3rd District",4,"Won, term not yet begun",Antonio Vazquez,Mike Gipson,called,0,0,0,0,2027-01-03,2027-01-04,statute,500eea68-be08-4b90-b603-f5b102507f94
 4,Wave 4 — State,state,MA,"Senator, Norfolk-Plymouth-Bristol District",MA State Senate Norfolk-Plymouth-Bristol District,2,Called,William J. Driscoll,William J. Driscoll Jr.,called,0,0,0,0,,,,50127a58-065b-4cba-bc51-b5a9da6d51e1
 4,Wave 4 — State,state,CA,Board of Equalization District 1,"State Board of Equalization, 1st District",1,Not looked at,Ted Gaines,,,0,0,0,0,,,,50225a6f-1623-4433-894c-b5aa62cad458
 4,Wave 4 — State,state,TX,"State Board of Education Member, District 13",Texas State Board of Education District 13,2,Called,Tiffany Clark,Tiffany Clark,called,0,0,1,1,,,,50434afa-2b4b-4a11-a130-14e57f17ca2c
@@ -743,7 +743,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Council Member (District 1),Diamond Bar City Council District 1,1,Not looked at,Steve Tye,,,0,0,0,0,,2026-12-01,estimated,5118b909-fca3-4cf5-9075-0cf3d0180248
 4,Wave 4 — State,state,OK,Corporation Commissioner,Oklahoma Corporation Commissioner,2,Called,Todd Hiett,Brad Boles,called,0,0,1,1,,,,5132ce0a-0081-469c-8c96-34ba9f40a30d
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 3,4,"Won, term not yet begun",Keith Self,Keith Self,called,0,0,0,0,2027-01-02,2027-01-03,statute,516d9125-674f-472e-8f41-dcbca7d74d16
-4,Wave 4 — State,state,CA,Secretary of State,Secretary of State,2,Called,Shirley N. Weber,Shirley N. Weber,called,0,0,0,0,,,,5173cd38-b193-4bcc-bb30-7ef3a1303d91
+4,Wave 4 — State,state,CA,Secretary of State,Secretary of State,4,"Won, term not yet begun",Shirley N. Weber,Shirley N. Weber,called,0,0,0,0,2027-01-03,2027-01-04,statute,5173cd38-b193-4bcc-bb30-7ef3a1303d91
 4,Wave 4 — State,state,ME,Representative,ME State House District 58,4,"Won, term not yet begun",Sharon Frost,Sharon C. Frost,called,0,0,0,0,2026-11-30,2026-12-01,statute,5175e8f6-2907-49b7-bf79-0d595fd8adac
 4,Wave 4 — State,state,FL,Chief Financial Officer,Chief Financial Officer,2,Called,Blaise Ingoglia,Blaise Ingoglia,called,0,0,0,0,,,,51bd5e04-6917-4802-9c40-bbf06fdf9900
 4,Wave 4 — State,state,AZ,State Mine Inspector,State Mine Inspector,2,Called,Les Presmyk,Brian Matlock,called,0,0,1,1,,,,51bfc726-b90a-4ac2-b0a6-c9305f01685b
@@ -782,7 +782,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,GA,Secretary of State,Secretary of State,2,Called,Brad Raffensperger,Penny Brown Reynolds,called,0,0,1,1,,,,55ac0034-3d6f-468d-a8bd-4ffba3264d7f
 4,Wave 4 — State,state,ME,Representative,ME State House District 121,4,"Won, term not yet begun",Christopher Kessler,Lucy Louisa Perkins,called,0,0,1,1,2026-11-30,2026-12-01,statute,55c311c1-8ccd-46b1-bb65-8558d9b052da
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 8,4,"Won, term not yet begun",Sylvia Ortiz-Velez,Ismael Luna,called,0,0,0,1,2027-01-03,2027-01-04,statute,5601529a-6100-4067-99e2-35bb92d816b1
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 43,2,Called,Celeste Rodriguez,Celeste Rodriguez,called,0,0,0,0,,,,5653a4d7-cc64-4d3f-8b66-46e2a940449b
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 43,4,"Won, term not yet begun",Celeste Rodriguez,Celeste Rodriguez,called,0,0,0,0,2026-12-06,2026-12-07,statute,5653a4d7-cc64-4d3f-8b66-46e2a940449b
 4,Wave 4 — State,state,MA,"Representative, 15th Middlesex District",MA House 15th Middlesex District,2,Called,Michelle Ciccolo,Michelle Ciccolo,called,0,0,0,0,,,,56545025-7bbe-4932-a2bc-2237089d7204
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 20 Position 1,2,Called,Peter Abbarno,Peter Abbarno,called,0,0,0,0,,,,5654b11b-0334-4b80-8632-1757bdc298ad
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 4,4,"Won, term not yet begun",David Steffen,David Steffen,called,0,0,0,0,2027-01-03,2027-01-04,statute,566b96e2-d01f-468b-94fd-ee1757d07d8c
@@ -792,7 +792,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 67,4,"Won, term not yet begun",Shelley Rudnicki,Shawn M. Dixon,called,0,0,1,1,2026-11-30,2026-12-01,statute,56e252fe-fe4b-463a-bc08-e81521510aab
 3,Wave 3 — December locals,local,CA,Council Member (District 4),Downey City Council District 4,1,Not looked at,Claudia M. Frometa,,,0,0,0,0,,2026-12-01,estimated,56f76e33-2629-4460-a606-3f0e0394d72e
 2,Wave 2 — House,federal,WA,U.S. Representative,U.S. Representative District 2,4,"Won, term not yet begun",Rick Larsen,Rick Larsen,called,0,0,0,0,2027-01-02,2027-01-03,statute,570f1521-9120-44cc-9fc7-a95a96405ed7
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 25,2,Called,Ash Kalra,Ash Kalra,called,0,0,0,0,,,,57496e6b-7c0a-4b52-83db-6ab127d9cae8
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 25,4,"Won, term not yet begun",Ash Kalra,Ash Kalra,called,0,0,0,0,2026-12-06,2026-12-07,statute,57496e6b-7c0a-4b52-83db-6ab127d9cae8
 5,Wave 5 — Remaining locals,local,CA,"Judge of the Superior Court, Office No. 65","Judge of the Superior Court of Los Angeles County, Office No. 65",1,Not looked at,,,,0,0,0,0,,2027-01-04,statute,57539e2c-8676-40df-b890-7817ae251fd0
 3,Wave 3 — December locals,local,CA,Council Member (District 3),Diamond Bar City Council District 3,1,Not looked at,Andrew Chou,,,0,0,0,0,,2026-12-01,estimated,5790b359-b026-4cb7-8fa1-3d5c9edc345e
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 49 Position 2,2,Called,Monica Jurado Stonier,Monica Jurado Stonier,called,0,0,0,0,,,,57b04b5a-2d39-443e-914e-f5afeaec70df
@@ -800,13 +800,13 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 15,4,"Won, term not yet begun",Mary E. Miller,Mary E. Miller,called,0,0,0,0,2027-01-02,2027-01-03,statute,57d0565f-4793-4e42-90d5-e9c1d69bb5a8
 4,Wave 4 — State,state,MI,Governor,Governor,2,Called,Gretchen Whitmer,Jocelyn Benson,called,0,0,0,0,,,,57e00e18-c36c-475d-9489-8a56793d21c4
 5,Wave 5 — Remaining locals,local,TX,"Judge, 324th District Court",Texas 324th District Court,1,Not looked at,,,,0,0,0,0,,,,583510e2-c675-4447-94fa-f0d1082dc8e3
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 52,2,Called,Jessica M. Caloza,Jessica Caloza,called,0,0,0,0,,,,585f765e-98e0-4801-bd40-c7918ee33367
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 52,4,"Won, term not yet begun",Jessica M. Caloza,Jessica Caloza,called,0,0,0,0,2026-12-06,2026-12-07,statute,585f765e-98e0-4801-bd40-c7918ee33367
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 11,4,"Won, term not yet begun",Nancy Pelosi,Scott Wiener,called,0,0,0,0,2027-01-02,2027-01-03,statute,586d8394-217f-4321-ad9e-4da4634202d4
 4,Wave 4 — State,state,MA,"Senator, Hampden and Hampshire District",MA State Senate Hampden and Hampshire District,2,Called,John C. Velis,John Christopher Velis,called,0,0,0,0,,,,58a0d781-7e9d-4658-8e39-8e4f1993aea1
 4,Wave 4 — State,state,ID,Lieutenant Governor,Lieutenant Governor,2,Called,Scott Bedke,Scott Bedke,called,0,0,0,0,,,,58fa8025-81ff-45a5-ab3e-b2f8d37a4e02
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 23 Position 2,2,Called,Greg Nance,Greg Nance,called,0,0,0,0,,,,5903deaf-db34-4636-877e-a391d4f316c8
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 77,4,"Won, term not yet begun",Renuka Mayadev,Renuka Mayadev,called,0,0,0,0,2027-01-03,2027-01-04,statute,590b94f5-54eb-4b71-9be9-a8d6f0483bc8
-4,Wave 4 — State,state,CA,Senator,State Senate District 24,2,Called,Benjamin Allen,Brian Goldsmith,called,0,0,1,0,,,,5919881b-f2b0-47f7-8e72-83ca1cd78c06
+4,Wave 4 — State,state,CA,Senator,State Senate District 24,4,"Won, term not yet begun",Benjamin Allen,Brian Goldsmith,called,0,0,1,0,2026-12-06,2026-12-07,statute,5919881b-f2b0-47f7-8e72-83ca1cd78c06
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 44B,2,Called,Aletheia McCaskill,"Aletheia McCaskill, Sheila Ruth",called,0,0,1,1,,,,59531d14-0c66-49cb-b5ba-a4ceca994d40
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 14,4,"Won, term not yet begun",Craig V. Hickman,Craig V. Hickman,called,0,0,0,0,2026-11-30,2026-12-01,statute,5953e0cc-6588-4d41-8f40-7b8027092ac4
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Compton City Council District 2,1,Not looked at,Andre Spicer,,,0,0,0,0,,2026-12-01,estimated,595688b7-e659-4576-a9f5-9769a3d705d2
@@ -834,7 +834,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,VT,U.S. Representative,U.S. Representative At-Large,4,"Won, term not yet begun",Becca Balint,Becca Balint,called,0,0,0,0,2027-01-02,2027-01-03,statute,5c1b3a06-b350-4def-a6e0-770c6a592656
 3,Wave 3 — December locals,local,CA,City Treasurer,Hawthorne City Treasurer,1,Not looked at,Marie Poindexter-Hornback,,,0,0,0,0,,2026-12-01,estimated,5c1dddea-f9df-46b2-9a15-65d723069fe2
 4,Wave 4 — State,state,AZ,State Representative,State House District 30,2,Called,Leo Biasiucci,"David Rose, Mike Gannuscio",called,0,0,0,1,,,,5c45af1a-3bc3-4089-8e2b-0b9751a34a9e
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 55,2,Called,Isaac G. Bryan,Isaac G. Bryan,called,0,0,0,0,,,,5c7875d1-0013-4c01-be06-da98bb42d3aa
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 55,4,"Won, term not yet begun",Isaac G. Bryan,Isaac G. Bryan,called,0,0,0,0,2026-12-06,2026-12-07,statute,5c7875d1-0013-4c01-be06-da98bb42d3aa
 3,Wave 3 — December locals,local,CA,Director,Wrightwood Community Services District Board,1,Not looked at,Alexis Claiborne,,,0,0,0,0,,2026-12-04,statute,5c81536d-9f07-5401-a11b-2c3e2d482df3
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 26,4,"Won, term not yet begun",Timothy M. Kennedy,Timothy M. Kennedy,called,0,0,0,0,2027-01-02,2027-01-03,statute,5cbfc002-fbe7-44cb-a295-4498f1681b4f
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 9,4,"Won, term not yet begun",Joseph M. Baldacci,Amy J. Roeder,called,0,0,0,0,2026-11-30,2026-12-01,statute,5cf4a385-29fa-4f05-b36d-da3616701479
@@ -846,13 +846,13 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 10th Middlesex District",MA House 10th Middlesex District,2,Called,John J. Lawn,John J. Lawn,called,0,0,0,0,,,,5dcfaf18-d07f-424d-88ec-a611f31f6ba4
 3,Wave 3 — December locals,local,CA,Board Member,Hawthorne School Board,1,Not looked at,Cristina Chiappe,,,0,0,0,0,,2026-12-11,statute,5dd97c63-799e-42a7-aacf-2fdab0962f58
 3,Wave 3 — December locals,local,CA,City Clerk,Baldwin Park City Clerk,1,Not looked at,Christopher Saenz,,,0,0,0,0,,2026-12-01,estimated,5de7ae67-565d-45e5-9b14-4b7130f3ec4a
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 70,2,Called,Tri Ta,Paula Swift,called,0,0,0,1,,,,5e00a153-651b-4a6b-8ffe-e5ef35aea0e6
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 70,4,"Won, term not yet begun",Tri Ta,Paula Swift,called,0,0,0,1,2026-12-06,2026-12-07,statute,5e00a153-651b-4a6b-8ffe-e5ef35aea0e6
 2,Wave 2 — House,federal,WV,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Carol D. Miller,Carol D. Miller,called,0,0,0,0,2027-01-02,2027-01-03,statute,5e2fe982-7d3a-4759-ba14-1c33a395dc86
 4,Wave 4 — State,state,MA,"Senator, Middlesex and Suffolk District",MA State Senate Middlesex and Suffolk District,2,Called,Sal N. DiDomenico,Sal DiDomenico,called,0,0,0,0,,,,5e916ef4-fed5-4e6e-a104-8e586a261135
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 80,4,"Won, term not yet begun",Mike Bare,Mike Bare,called,0,0,0,0,2027-01-03,2027-01-04,statute,5eb7d21c-5341-4a41-a127-331b45dc23f0
 4,Wave 4 — State,state,ME,Representative,ME State House District 72,4,"Won, term not yet begun",Elizabeth Caruso,Douglas Andrew Thomas,called,0,0,1,1,2026-11-30,2026-12-01,statute,5f5cd230-3b9d-4cb8-a936-99c045e0e0f2
 4,Wave 4 — State,state,MA,"Representative, 9th Norfolk District",MA House 9th Norfolk District,2,Called,Marcus S. Vaughn,Marcus S. Vaughn,called,0,0,0,0,,,,5f854446-d196-4009-ac18-894b5861af98
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 51,2,Called,Rick Chavez Zbur,Rick Chavez Zbur,called,0,0,0,0,,,,5f8bafa9-76f8-42a8-8eba-dcb27cd09e9e
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 51,4,"Won, term not yet begun",Rick Chavez Zbur,Rick Chavez Zbur,called,0,0,0,0,2026-12-06,2026-12-07,statute,5f8bafa9-76f8-42a8-8eba-dcb27cd09e9e
 3,Wave 3 — December locals,local,CA,City Clerk,South Gate City Clerk,1,Not looked at,Yodit Glaze,,,0,0,0,0,,2026-12-01,estimated,5f8be6eb-54f7-491c-bfd9-26f0525d9eed
 5,Wave 5 — Remaining locals,local,IN,Clear Creek Township Board,Clear Creek Township Board,1,Not looked at,,,,0,0,0,0,,,,5fb24478-7ef7-4a0b-8531-6acfbdc5710a
 3,Wave 3 — December locals,local,CA,Board Member,Las Virgenes Unified School Board,1,Not looked at,Angela Cutbill,,,0,0,0,0,,2026-12-11,statute,5fd9a005-3769-406a-954f-d934c4ed3546
@@ -908,17 +908,17 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,CO,U.S. Representative,U.S. Representative District 6,4,"Won, term not yet begun",Jason Crow,Jason Crow,called,0,0,0,0,2027-01-02,2027-01-03,statute,66014b5d-488a-4952-802d-64d863e6b5f5
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 1 Position 2,2,Called,Shelley Kloba,Shelley Kloba,called,0,0,0,0,,,,661b2365-fdea-47db-aa63-6c06ca71bf32
 4,Wave 4 — State,state,NH,"Executive Councilor, District 2",New Hampshire Executive Council District 2,2,Called,Karen Liot Hill,Karen Liot Hill,called,0,0,1,1,,,,6625a391-3c4f-4b29-b094-f77e46ba207b
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 53,2,Called,Michelle Rodriguez,Michelle Rodriguez,called,0,0,0,0,,,,66336d29-8f57-40cc-8033-a521389b00da
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 53,4,"Won, term not yet begun",Michelle Rodriguez,Michelle Rodriguez,called,0,0,0,0,2026-12-06,2026-12-07,statute,66336d29-8f57-40cc-8033-a521389b00da
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 10 Position 1,2,Called,Clyde Shavers,Clyde Shavers,called,0,0,0,0,,,,666374f4-a111-4beb-8ef8-383c1481a93a
 3,Wave 3 — December locals,local,CA,Board Member,Culver City Unified School Board,2,Called,Triston Ezidore,"Brian Guerrero, Stephanie Loredo, Triston Ezidore",called,0,0,0,1,2026-12-10,2026-12-11,statute,66659918-b0a8-401c-aa5d-9e654d16f3ba
 3,Wave 3 — December locals,local,CA,City Treasurer,West Covina City Treasurer,1,Not looked at,Colleen B. Rozatti,,,0,0,0,0,,2026-12-01,estimated,66733451-d580-464d-8646-d49fcc719efc
 4,Wave 4 — State,state,UT,State Representative District 30,Utah State House District 30,2,Called,Jake Fitisemanu,Jake Fitisemanu,called,0,0,0,1,,,,667d81fb-18c0-45ac-9c0a-0d37ba687f76
 4,Wave 4 — State,state,MA,"Senator, First Bristol and Plymouth District",MA State Senate First Bristol and Plymouth District,2,Called,Michael J. Rodrigues,Michael J. Rodrigues,called,0,0,0,0,,,,66a44d0e-7f4d-4ed6-b150-c875511e8156
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 28,2,Called,Gail Pellerin,Gail Pellerin,called,0,0,0,0,,,,66f3c162-2739-4931-9fb2-887021f156f8
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 28,4,"Won, term not yet begun",Gail Pellerin,Gail Pellerin,called,0,0,0,0,2026-12-06,2026-12-07,statute,66f3c162-2739-4931-9fb2-887021f156f8
 4,Wave 4 — State,state,ME,Representative,ME State House District 90,4,"Won, term not yet begun",Laurel Libby,Pamela B. Hart,called,0,0,1,1,2026-11-30,2026-12-01,statute,6706eba2-3038-40cf-a95c-8918447cf10d
 4,Wave 4 — State,state,NM,"Public Education Commissioner, District 3",New Mexico Public Education Commission District 3,2,Called,Jacob Trujillo,Jacob Trujillo,called,0,0,1,1,,,,671e03a4-b08b-49d9-99c3-1f58aebffdd1
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 12,4,"Won, term not yet begun",Mike Bost,Mike Bost,called,0,0,0,0,2027-01-02,2027-01-03,statute,672a3ae9-3a65-440f-b9b2-79b7aae43995
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 21,2,Called,Diane Papan,Diane Papan,called,0,0,0,0,,,,672c5e3c-a680-4437-83d1-50964a89e224
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 21,4,"Won, term not yet begun",Diane Papan,Diane Papan,called,0,0,0,0,2026-12-06,2026-12-07,statute,672c5e3c-a680-4437-83d1-50964a89e224
 4,Wave 4 — State,state,MD,Comptroller,Comptroller,2,Called,Brooke Lierman,Brooke Lierman,called,0,0,0,0,,,,674bc8be-03b1-4f9a-b461-99a149761666
 5,Wave 5 — Remaining locals,local,OR,Council Member (Position 3),Tualatin City Council Position 3,2,Called,Bridget Brooks,Bridget Brooks,called,0,0,1,1,,,,676f746b-b01a-41b1-9224-78aea0b2df20
 5,Wave 5 — Remaining locals,local,OR,Council Member (Position 4),Gresham City Council Position 4,1,Not looked at,Jerry Hinton,,,0,0,0,0,,,,6776e801-e2fa-48f6-820a-7e018dd46857
@@ -927,7 +927,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,MI,U.S. Representative,U.S. Representative District 11,4,"Won, term not yet begun",Haley M. Stevens,Jeremy Moss,called,0,0,0,0,2027-01-02,2027-01-03,statute,680f5ce9-eefc-4073-bd41-7a4853f9f325
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Lawndale Elementary School Board - Trustee Area 1,1,Not looked at,Bonnie J. Coronado,,,0,0,0,0,,2026-12-11,statute,68203d97-a66a-4293-a40d-0becc53ec709
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 33 Position 1,2,Called,Edwin Obras,Edwin Obras,called,0,0,0,0,,,,68215d1f-24fd-44d1-ae1e-115af7e495e5
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 35,2,Called,Jasmeet Kaur Bains,Andrae Gonzales,called,0,0,0,1,,,,68221497-7a12-4bdb-84de-44760e38e237
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 35,4,"Won, term not yet begun",Jasmeet Kaur Bains,Andrae Gonzales,called,0,0,0,1,2026-12-06,2026-12-07,statute,68221497-7a12-4bdb-84de-44760e38e237
 2,Wave 2 — House,federal,MI,U.S. Representative,U.S. Representative District 9,4,"Won, term not yet begun",Lisa C. McClain,Lisa C. McClain,called,0,0,0,0,2027-01-02,2027-01-03,statute,6827a6c1-3276-413a-85ef-fffed85bc0e8
 4,Wave 4 — State,state,MI,Attorney General,Attorney General,2,Called,Dana Nessel,Eli Savit,called,0,0,1,1,,,,6834df00-1589-4c4b-b18f-d6544b479070
 3,Wave 3 — December locals,local,CA,Board Member,Palos Verdes Peninsula Unified School Board,1,Not looked at,Sara Deen,,,0,0,0,0,,2026-12-11,statute,683ae5ab-f176-4e5b-9442-e63b0590dd49
@@ -937,7 +937,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 1st Middlesex District",MA House 1st Middlesex District,2,Called,Margaret R. Scarsdale,Margaret R. Scarsdale,called,0,0,0,0,,,,68be3cf5-2b16-4c5d-9395-1fe1bc8d121a
 5,Wave 5 — Remaining locals,local,TX,"Judge, County Criminal Court No. 8",Tarrant County Criminal Court No. 8,1,Not looked at,Charles Vanover,,,0,0,0,0,,,,68c0d0c2-c2c6-471b-9080-6903e63e0302
 2,Wave 2 — House,federal,OK,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Kevin Hern,Mark Tedford,called,0,0,0,0,2027-01-02,2027-01-03,statute,68f2cc44-7fb4-4fd7-a1e9-db56b147e46f
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 13,2,Called,Rhodesia Ransom,Rhodesia Ransom,called,0,0,0,0,,,,691a42a1-e254-4043-93c9-fd2fdcf0d9a3
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 13,4,"Won, term not yet begun",Rhodesia Ransom,Rhodesia Ransom,called,0,0,0,0,2026-12-06,2026-12-07,statute,691a42a1-e254-4043-93c9-fd2fdcf0d9a3
 4,Wave 4 — State,state,NV,State Senator,Nevada State Senate District 13,5,In office,Skip Daly,Richard Daly,called,0,0,0,0,,2026-11-04,statute,692f9c77-f273-4083-8875-b578f4691985
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 11,4,"Won, term not yet begun",Bill Foster,Bill Foster,called,0,0,0,0,2027-01-02,2027-01-03,statute,6931062e-5e90-42ae-a076-db6c36550b72
 2,Wave 2 — House,federal,AL,U.S. Representative,U.S. Representative District 2,4,"Won, term not yet begun",Shomari Figures,Shomari Figures,called,0,0,0,0,2027-01-02,2027-01-03,statute,6932e73c-e535-469c-ad42-77354d92b151
@@ -978,12 +978,12 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 10,2,Called,Adrienne A. Jones,"Jennifer White Holland, N. Scott Phillips, Robin Harvey",called,0,0,1,1,,,,6bfc5ee3-63b3-4fae-9733-f846994643d3
 4,Wave 4 — State,state,ME,Representative,ME State House District 138,4,"Won, term not yet begun",Mark Blier,Jonathan Lee Kinney,called,0,0,1,1,2026-11-30,2026-12-01,statute,6c03873c-19d9-4fdb-97ea-4e90fdeb246b
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 41,4,"Won, term not yet begun",Tony Kurtz,Tony Kurtz,called,0,0,0,0,2027-01-03,2027-01-04,statute,6c10960e-2475-4f7d-896e-19857c1d67a8
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 38,2,Called,Steve Bennett,Steve Bennett,called,0,0,0,0,,,,6c3c01a5-6396-4145-a8eb-e1dc3e841b6e
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 38,4,"Won, term not yet begun",Steve Bennett,Steve Bennett,called,0,0,0,0,2026-12-06,2026-12-07,statute,6c3c01a5-6396-4145-a8eb-e1dc3e841b6e
 3,Wave 3 — December locals,local,CA,Council Member,Manhattan Beach City Council,1,Not looked at,Steve S. Charelian,,,0,0,0,0,,2026-12-01,estimated,6c697dca-297f-4eb2-a013-e073fbf72508
 5,Wave 5 — Remaining locals,local,TX,"Judge, 233rd District Court",Texas 233rd District Court,1,Not looked at,Kenneth Newell,,,0,0,0,0,,,,6cb34a5f-1571-4da2-b03d-f8270c1f222f
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 21,4,"Won, term not yet begun",Elise M. Stefanik,Anthony Constantino,called,0,0,0,0,2027-01-02,2027-01-03,statute,6cd0af96-9d2f-4990-9a78-036d60fc2f40
 2,Wave 2 — House,federal,PA,U.S. Representative,U.S. Representative District 10,4,"Won, term not yet begun",Scott Perry,Janelle Stelson,called,0,0,0,0,2027-01-02,2027-01-03,statute,6cd9bb32-ee8b-45c7-b319-0a4abe9fcbe8
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 4,2,Called,Cecilia M. Aguiar-Curry,Cecilia M. Aguiar-Curry,called,0,0,0,0,,,,6cdc2254-71ee-4b2b-8549-0adf9a42509f
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 4,4,"Won, term not yet begun",Cecilia M. Aguiar-Curry,Cecilia M. Aguiar-Curry,called,0,0,0,0,2026-12-06,2026-12-07,statute,6cdc2254-71ee-4b2b-8549-0adf9a42509f
 4,Wave 4 — State,state,MA,"Representative, 6th Essex District",MA House 6th Essex District,2,Called,Hannah L. Bowen,Hannah Louise Bowen,called,0,0,0,0,,,,6d0de6a6-ff35-4f83-88e8-7253181ab457
 4,Wave 4 — State,state,MA,"Senator, Fifth Middlesex District",MA State Senate Fifth Middlesex District,2,Called,Jason M. Lewis,Kate Lipper-Garabedian,called,0,0,1,1,,,,6d107e0e-24c3-4f67-9fbf-684c36910afc
 4,Wave 4 — State,state,MA,"Representative, 3rd Worcester District",MA House 3rd Worcester District,2,Called,Michael P. Kushmerek,Michael P. Kushmerek,called,0,0,0,0,,,,6d18fff9-3f9a-454f-8ffb-1da38e1ece86
@@ -995,11 +995,11 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,AL,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun",Mike Rogers,Mike Rogers,called,0,0,0,0,2027-01-02,2027-01-03,statute,6d5bb988-945b-46b6-8929-d9b869f8e002
 2,Wave 2 — House,federal,TN,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun","Charles J. ""Chuck"" Fleischmann","Charles J. ""Chuck"" Fleischmann",called,0,0,0,0,2027-01-02,2027-01-03,statute,6d927772-9797-4984-9fb7-2aeaaf9e08ce
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 2,4,"Won, term not yet begun",Trey L. Stewart,Harold L. Stewart III,called,0,0,0,0,2026-11-30,2026-12-01,statute,6d945d47-c83d-4368-908b-d9f7b62cbf66
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 63,2,Called,Natasha Johnson,Natasha Johnson,called,0,0,0,0,,,,6da96a35-f5f2-4fe1-a3c2-ad2afa294870
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 63,4,"Won, term not yet begun",Natasha Johnson,Natasha Johnson,called,0,0,0,0,2026-12-06,2026-12-07,statute,6da96a35-f5f2-4fe1-a3c2-ad2afa294870
 4,Wave 4 — State,state,WY,Secretary of State,Secretary of State,2,Called,Chuck Gray,Robert Short,called,0,0,1,1,,,,6deb1b2c-1883-486c-a5f8-64c6768b19e4
 4,Wave 4 — State,state,OR,Representative,OR State House District 23,2,Called,Anna Scharf,Anna M. Scharf,called,0,0,0,0,,,,6df1eab8-6589-4a7d-a625-1a05530896d5
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Monrovia Unified School Board - Trustee Area 5,4,"Won, term not yet begun",Maritza Travanti,Abby Veltman,called,0,0,1,1,2026-12-10,2026-12-11,statute,6dfd8569-bde8-43c3-8187-48063cb73607
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 14,2,Called,Buffy Wicks,Buffy Wicks,called,0,0,0,0,,,,6e14a9c1-5af1-421a-92cf-86f911def910
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 14,4,"Won, term not yet begun",Buffy Wicks,Buffy Wicks,called,0,0,0,0,2026-12-06,2026-12-07,statute,6e14a9c1-5af1-421a-92cf-86f911def910
 4,Wave 4 — State,state,ME,Representative,ME State House District 118,4,"Won, term not yet begun",Yusuf Yusuf,Yusuf M. Yusuf,called,0,0,0,0,2026-11-30,2026-12-01,statute,6e1a4b15-9217-47bd-a083-86ca1a680a20
 4,Wave 4 — State,state,MA,"Representative, 8th Norfolk District",MA House 8th Norfolk District,2,Called,Edward R. Philips,Ted Philips,called,0,0,0,0,,,,6e1abb0f-2574-44e7-9420-4b11b919522d
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Santa Clarita Community College Board - Trustee Area 5,1,Not looked at,Carlos Guerrero,,,0,0,0,0,2026-12-10,2026-12-11,statute,6e32cc42-b20a-5732-9241-bbaf37a687b7
@@ -1053,7 +1053,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,TX,"Judge, County Criminal Court No. 7",Tarrant County Criminal Court No. 7,1,Not looked at,Eric Starnes,,,0,0,0,0,,,,7332637c-fd5f-4ff0-b9bc-c34b36288c77
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 2),Montebello Unified School Board - Trustee Area 2,1,Not looked at,,,,0,0,0,0,,2026-12-11,statute,7333ebe5-138c-4cc9-94a7-2462dbc6d11c
 4,Wave 4 — State,state,ME,Representative,ME State House District 48,4,"Won, term not yet begun",Holly Stover,Charlotte Nutt,called,0,0,1,1,2026-11-30,2026-12-01,statute,7343d8b7-b212-4be1-abda-ca4c97f1e7e7
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 73,2,Called,Cottie Petrie-Norris,Cottie Petrie-Norris,called,0,0,0,0,,,,7359263e-c1d9-4450-b9c9-709dc04f1ff9
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 73,4,"Won, term not yet begun",Cottie Petrie-Norris,Cottie Petrie-Norris,called,0,0,0,0,2026-12-06,2026-12-07,statute,7359263e-c1d9-4450-b9c9-709dc04f1ff9
 3,Wave 3 — December locals,local,CA,City Clerk,Monrovia City Clerk,1,Not looked at,Alice D. Atkins,,,0,0,0,0,,2026-12-01,estimated,73722556-cd8c-4ec0-bbcd-0f3c0391e0ed
 2,Wave 2 — House,federal,VA,U.S. Representative,U.S. House VA-02,4,"Won, term not yet begun",Jen Kiggans,Elaine Luria,called,0,0,0,0,2027-01-02,2027-01-03,statute,73a46730-61f8-4e35-90d7-20c11016865e
 4,Wave 4 — State,state,MA,"Representative, 2nd Hampshire District",MA House 2nd Hampshire District,2,Called,Homar Gómez,Homar Gomez,called,0,0,0,0,,,,73b8a1d7-72a1-4d3b-b191-f326397e94e1
@@ -1061,7 +1061,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 43,4,"Won, term not yet begun",Maxine Waters,Maxine Waters,called,0,0,0,0,2027-01-02,2027-01-03,statute,740e83a7-aba3-4c2c-8137-33502453503e
 5,Wave 5 — Remaining locals,local,TX,"Judge, 323rd District Court",Texas 323rd District Court,1,Not looked at,Alex Kim,,,0,0,0,0,,,,7418720a-aa43-456a-9620-2d2b47297235
 5,Wave 5 — Remaining locals,local,TX,"Judge, 297th District Court",Texas 297th District Court,1,Not looked at,Amy Allin,,,0,0,0,0,,,,743b0afa-5482-4f8d-9558-802eab92efb3
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 20,2,Called,Liz Ortega,Liz Ortega,called,0,0,0,0,,,,74547824-91d0-4979-a45d-f33158aa138a
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 20,4,"Won, term not yet begun",Liz Ortega,Liz Ortega,called,0,0,0,0,2026-12-06,2026-12-07,statute,74547824-91d0-4979-a45d-f33158aa138a
 4,Wave 4 — State,state,MA,"Representative, 8th Bristol District",MA House 8th Bristol District,2,Called,Steven J. Ouellette,Jesse W. St. Gelais,called,0,0,1,1,,,,7493b8d7-b426-4a63-97c2-f9a00d4a1a37
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",James Gallagher,Mike McGuire,called,0,0,0,0,2027-01-02,2027-01-03,statute,74a5b509-8904-430a-9630-e48d2889db62
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 11,4,"Won, term not yet begun",Chuck Edwards,Jamie Ager,called,0,0,0,1,2027-01-02,2027-01-03,statute,74af01ff-3f67-4a7c-915c-3a8e85830c0e
@@ -1134,7 +1134,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,City Attorney,Los Angeles City Attorney,4,"Won, term not yet begun",Hydee Feldstein Soto,Marissa Roy,called,0,0,0,0,2026-12-13,2026-12-14,statute,7caf9b67-6529-471c-9d8d-3ab29aa1908a
 4,Wave 4 — State,state,ME,Representative,ME State House District 14,4,"Won, term not yet begun",Gary Friedmann,Gary R. Friedmann,called,0,0,0,0,2026-11-30,2026-12-01,statute,7cc92668-6245-44e8-b525-aa0cc0905050
 4,Wave 4 — State,state,MA,"Representative, 5th Essex District",MA House 5th Essex District,2,Called,Andrew F. Tarr,Andrew Francis Robert Tarr,called,0,0,0,1,,,,7ce2f5e9-61c0-4064-b4f7-50dc5e4c3b3a
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 22,2,Called,Juan Alanis,Juan Alanis,called,0,0,0,0,,,,7d01b274-142d-47a8-a735-83e7f45cdcd0
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 22,4,"Won, term not yet begun",Juan Alanis,Juan Alanis,called,0,0,0,0,2026-12-06,2026-12-07,statute,7d01b274-142d-47a8-a735-83e7f45cdcd0
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 20,2,Called,"William C. Smith, Jr.",Will Smith,called,0,0,0,0,,,,7d151389-ae1d-47f3-a983-c1d7e1aa8176
 4,Wave 4 — State,state,AR,Lieutenant Governor,Lieutenant Governor,2,Called,Leslie Rutledge,Leslie Rutledge,called,0,0,0,0,,,,7d2ed6a7-4009-47c3-91b0-f7b466810505
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Claremont Unified School Board - Trustee Area 1,1,Not looked at,Kathryn Dunn,,,0,0,0,0,,2026-12-11,statute,7d665443-8875-4c4e-9e5e-bf5dbc2210ac
@@ -1156,7 +1156,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,UT,Commissioner,Utah County Commission Seat A,1,Not looked at,Amelia Powers Gardner,,,0,0,0,0,,,,7f5c91ae-6c52-4dec-995c-814ecfcf87b1
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 19,5,In office,Jason Patchett,Jason Patchett,called,0,0,0,1,,2026-11-04,statute,7f6054f5-aac5-465e-be52-d33717de9aeb
 4,Wave 4 — State,state,MA,"Representative, 15th Worcester District",MA House 15th Worcester District,2,Called,Mary S. Keefe,Mary S. Keefe,called,0,0,0,0,,,,7f606c6e-1d72-45d7-9277-d7aea91a6db0
-4,Wave 4 — State,state,CA,Controller,Controller,2,Called,Malia M. Cohen,Malia M. Cohen,called,0,0,0,0,,,,7f8b26b6-4349-4c50-930c-48083aa564fd
+4,Wave 4 — State,state,CA,Controller,Controller,4,"Won, term not yet begun",Malia M. Cohen,Malia M. Cohen,called,0,0,0,0,2027-01-03,2027-01-04,statute,7f8b26b6-4349-4c50-930c-48083aa564fd
 2,Wave 2 — House,federal,PA,U.S. Representative,U.S. Representative District 15,4,"Won, term not yet begun",Glenn Thompson,Glenn Thompson,called,0,0,0,0,2027-01-02,2027-01-03,statute,7fa6fcae-daa1-4a36-a717-66896ef18ca6
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 8,2,Called,Lauren Kuby,Lauren Kuby,called,0,0,0,0,,,,7fc67b59-358b-46fc-beac-52ae95735659
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 38,4,"Won, term not yet begun",Wesley Hunt,Jon Bonck,called,0,0,0,0,2027-01-02,2027-01-03,statute,7ff2347a-c959-4da8-bfd1-af816ad2e5d5
@@ -1170,14 +1170,14 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 36,4,"Won, term not yet begun",Kimberly Haggan,Kimberly M. Haggan,called,0,0,0,0,2026-11-30,2026-12-01,statute,8084e6b5-28c0-479e-8d04-b0bdf4f43a2b
 5,Wave 5 — Remaining locals,local,OR,"Councilor, Position 5",Bend City Council Position 5,1,Not looked at,Ariel Méndez,,,0,0,0,0,,,,80e1709c-dfcf-4f26-af79-be38e8c7a9ae
 4,Wave 4 — State,state,VT,Attorney General,Attorney General,2,Called,Charity Clark,Charity Clark,called,0,0,0,0,,,,80ff2a3e-b4e9-4ad9-8eab-550aec91a093
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 65,2,Called,Mike A. Gipson,Ayanna Davis,called,0,0,0,1,,,,8121cdb6-95b4-424d-aa71-d092881d1e5b
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 65,4,"Won, term not yet begun",Mike A. Gipson,Ayanna Davis,called,0,0,0,1,2026-12-06,2026-12-07,statute,8121cdb6-95b4-424d-aa71-d092881d1e5b
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 16,4,"Won, term not yet begun",Veronica Escobar,Veronica Escobar,called,0,0,0,0,2027-01-02,2027-01-03,statute,8124ea17-ccb4-4b76-a4dd-3c31a493f35a
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 44,4,"Won, term not yet begun",Nanette Diaz Barragán,Nanette Barragán,called,0,0,0,0,2027-01-02,2027-01-03,statute,81365b4a-d1c9-4a4a-ad85-49d9e2640987
 2,Wave 2 — House,federal,WA,U.S. Representative,U.S. Representative District 9,4,"Won, term not yet begun",Adam Smith,Adam Smith,called,0,0,0,0,2027-01-02,2027-01-03,statute,8159004e-5a46-47f2-b3c2-aca8d178e7b0
 4,Wave 4 — State,state,OR,Senator,OR State Senate District 11,2,Called,Kim Thatcher,Virginia Stapleton,called,0,0,1,1,,,,81ce0dac-6f32-44fb-ba79-895a55fa32ad
 4,Wave 4 — State,state,ME,Representative,ME State House District 69,4,"Won, term not yet begun",Dean Cray,Dean A. Cray,called,0,0,0,0,2026-11-30,2026-12-01,statute,81d204f6-b2fc-4c58-a054-833ae17985a6
 4,Wave 4 — State,state,MA,"Senator, First Suffolk District",MA State Senate First Suffolk District,2,Called,Nick Collins,Nicholas P. Collins,called,0,0,0,0,,,,81d28ab5-dcce-4692-ac5b-8872f6673351
-4,Wave 4 — State,state,CA,Lieutenant Governor,Lieutenant Governor,2,Called,Eleni Kounalakis,Fiona Ma,called,0,0,0,0,,,,81e2139a-0d56-4280-8a44-8cbeebeb9c7b
+4,Wave 4 — State,state,CA,Lieutenant Governor,Lieutenant Governor,4,"Won, term not yet begun",Eleni Kounalakis,Fiona Ma,called,0,0,0,0,2027-01-03,2027-01-04,statute,81e2139a-0d56-4280-8a44-8cbeebeb9c7b
 2,Wave 2 — House,federal,NV,U.S. Representative,U.S. Representative District 4,4,"Won, term not yet begun",Steven Horsford,Steven Horsford,called,0,0,0,0,2027-01-02,2027-01-03,statute,81eb1a27-b710-42c3-a27c-a2c0153c2820
 4,Wave 4 — State,state,MA,"Senator, Hampden-Hampshire-Worcester District",MA State Senate Hampden-Hampshire-Worcester District,2,Called,Jacob R. Oliveira,Jacob R. Oliveira,called,0,0,0,0,,,,81f69e70-6a22-4fb3-8b31-68c31f2a9975
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 11,4,"Won, term not yet begun",August Pfluger,August Pfluger,called,0,0,0,0,2027-01-02,2027-01-03,statute,820f6a52-f5d0-4a62-9838-a2d776a4e9d7
@@ -1200,7 +1200,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 39,4,"Won, term not yet begun",Mark Takano,Mark Takano,called,0,0,0,0,2027-01-02,2027-01-03,statute,83f9b284-404b-4869-bb33-a61a27f073ba
 5,Wave 5 — Remaining locals,local,OR,"Commissioner, Position 5",Deschutes County Commissioner Position 5,1,Not looked at,,,,0,0,0,0,,,,8424f1c3-25ad-41b9-ad59-c582efa1a0af
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Keppel Union School Board - Trustee Area 3,1,Not looked at,,,,0,0,0,0,,2026-12-11,statute,84428e4c-55bc-4540-baba-ee1928d03fbd
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 12,2,Called,Damon Connolly,Jackie Elward,called,0,0,0,1,,,,8448ebd6-4c91-40ef-a621-15c68aa822f7
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 12,4,"Won, term not yet begun",Damon Connolly,Jackie Elward,called,0,0,0,1,2026-12-06,2026-12-07,statute,8448ebd6-4c91-40ef-a621-15c68aa822f7
 4,Wave 4 — State,state,AZ,State Representative,State House District 28,2,Called,Beverly Pingerelli,"Beverly Pingerelli, David Livingston",called,0,0,0,0,,,,846693fc-e7ed-4034-8a4f-40a656133484
 2,Wave 2 — House,federal,AL,U.S. Representative,U.S. Representative District 6,4,"Won, term not yet begun",Gary J. Palmer,Gary Palmer,called,0,0,0,0,2027-01-02,2027-01-03,statute,849444a8-00aa-4bb5-bd1e-414417e32c1a
 2,Wave 2 — House,federal,AZ,U.S. Representative,U.S. Representative District 5,4,"Won, term not yet begun",Andy Biggs,Mark Lamb,called,0,0,0,0,2027-01-02,2027-01-03,statute,84abf18f-2d9f-411f-8fe6-bbbcd1486acd
@@ -1211,7 +1211,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 4th Middlesex District",MA House 4th Middlesex District,2,Called,Danielle W. Gregoire,Danielle W. Gregoire,called,0,0,0,0,,,,84f5407d-78e7-4f01-a317-ddacdc529985
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 11,2,Called,Shelly Hettleman,Shelly L. Hettleman,called,0,0,0,0,,,,85284d6c-a542-4d6b-bdb6-9c7ef7164eef
 4,Wave 4 — State,state,ME,Representative,ME State House District 71,4,"Won, term not yet begun",John Ducharme,John E. Ducharme III,called,0,0,0,0,2026-11-30,2026-12-01,statute,852ab52e-744b-4a92-a52f-a0289d3f0d18
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 5,2,Called,Joe Patterson,Joe Patterson,called,0,0,0,0,,,,8550a27b-f1c3-4bee-88f5-93bfda72a5fc
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 5,4,"Won, term not yet begun",Joe Patterson,Joe Patterson,called,0,0,0,0,2026-12-06,2026-12-07,statute,8550a27b-f1c3-4bee-88f5-93bfda72a5fc
 4,Wave 4 — State,state,ME,Representative,ME State House District 103,4,"Won, term not yet begun",Arthur Bell,Karin Orenstein,called,0,0,1,1,2026-11-30,2026-12-01,statute,856415ae-740d-415a-9b74-259e8088f92c
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 31,4,"Won, term not yet begun",Tyler August,Tyler August,called,0,0,0,0,2027-01-03,2027-01-04,statute,85680474-5ee2-4e47-be87-17b24580610c
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 8,4,"Won, term not yet begun",Morgan Luttrell,Jessica Steinmann,called,0,0,0,0,2027-01-02,2027-01-03,statute,857ff454-abb5-4a03-873b-4f0ada1e5477
@@ -1245,7 +1245,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 115,4,"Won, term not yet begun",Michael Brennan,Andrew J. Zarro,called,0,0,1,1,2026-11-30,2026-12-01,statute,89337f6c-8ffa-4bf3-9c54-9f11740bbc08
 4,Wave 4 — State,state,ME,Representative,ME State House District 89,4,"Won, term not yet begun",Adam Lee,Adam R. Lee,called,0,0,0,0,2026-11-30,2026-12-01,statute,8945f114-256a-4d0b-bb34-787a65e7d1de
 4,Wave 4 — State,state,AZ,State Representative,State House District 5,2,Called,Sarah Liguori,"Aaron Márquez, Sarah Liguori",called,0,0,0,0,,,,8968663d-d7ca-446d-9d41-4f809048ba62
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 42,2,Called,Jacqui Irwin,Deborah Klein Lopez,called,0,0,0,1,,,,89e56ea0-980a-41bf-a125-0482537db7aa
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 42,4,"Won, term not yet begun",Jacqui Irwin,Deborah Klein Lopez,called,0,0,0,1,2026-12-06,2026-12-07,statute,89e56ea0-980a-41bf-a125-0482537db7aa
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 27,2,Called,Kevin M. Harris,Kevin M. Harris,called,0,0,0,0,,,,89f3b6da-cc85-4044-a8c5-5eed755b8c44
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 2,4,"Won, term not yet begun",Robin L. Kelly,Donna Miller,called,0,0,0,0,2027-01-02,2027-01-03,statute,8a01f2aa-3cc7-4a2c-90dc-fdd6499c1783
 3,Wave 3 — December locals,local,CA,Council Member,Lynwood City Council,1,Not looked at,Luis Gerardo Cuellar,,,0,0,0,0,,2026-12-01,estimated,8a20a9d1-259a-495a-a0de-aa19914941a4
@@ -1276,7 +1276,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,TX,"Judge, Criminal District Court No. 1",Tarrant County Criminal District Court No. 1,1,Not looked at,,,,0,0,0,0,,,,8c5d980f-aac8-49ba-9bcf-bc4a95a4bfdc
 4,Wave 4 — State,state,ME,Representative,ME State House District 32,4,"Won, term not yet begun",Steven Foster,Shawn L. Lancaster,called,0,0,1,1,2026-11-30,2026-12-01,statute,8c6b6045-9900-416a-9521-9b7967495edb
 4,Wave 4 — State,state,UT,State Representative District 29,Utah State House District 29,2,Called,Bridger Bolinder,Sheldon Birch,called,0,0,0,1,,,,8c7ea424-c158-41a2-add0-c8f760cad098
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 78,2,Called,Christopher M. Ward,Chris Ward,called,0,0,0,0,,,,8ca318f3-e146-440a-bc1c-fbe43468c99e
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 78,4,"Won, term not yet begun",Christopher M. Ward,Chris Ward,called,0,0,0,0,2026-12-06,2026-12-07,statute,8ca318f3-e146-440a-bc1c-fbe43468c99e
 5,Wave 5 — Remaining locals,local,WA,"Councilmember, District 6",King County Council District 6,1,Not looked at,Claudia Balducci,,,0,0,0,0,,,,8cd0b873-f0c8-4c54-9027-c8c621e2d6a9
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 68,4,"Won, term not yet begun",Rob Summerfield,Rob Summerfield,called,0,0,0,0,2027-01-03,2027-01-04,statute,8d05041d-8121-486e-bbe7-ce140ec4b54f
 2,Wave 2 — House,federal,MS,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun",Michael Guest,Michael Guest,called,0,0,0,0,2027-01-02,2027-01-03,statute,8d2c0ae6-f921-4c47-b97b-b70bc8cfa573
@@ -1336,13 +1336,13 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 4),Antelope Valley Joint Union High School Board - Trustee Area 4,1,Not looked at,Carla Corona,,,0,0,0,0,2026-12-10,2026-12-11,statute,9239ee2f-6b63-430f-a560-817ab4142c79
 2,Wave 2 — House,federal,SC,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Nancy Mace,Nancy Lacore,certified,0,0,0,0,2027-01-02,2027-01-03,statute,928bdc00-0fed-47e9-b3bb-0d8463257635
 4,Wave 4 — State,state,TX,"State Board of Education Member, District 9",Texas State Board of Education District 9,2,Called,Keven Ellis,Kason Huddleston,called,0,0,1,1,,,,92b0bee4-5159-4526-bf45-abe3d73f1346
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 61,2,Called,Tina S. McKinnor,Tina Simone McKinnor,called,0,0,0,0,,,,92ca9fd5-11ce-4f18-9e57-aa3d5e89c7ce
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 61,4,"Won, term not yet begun",Tina S. McKinnor,Tina Simone McKinnor,called,0,0,0,0,2026-12-06,2026-12-07,statute,92ca9fd5-11ce-4f18-9e57-aa3d5e89c7ce
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 49,4,"Won, term not yet begun",Mike Levin,Mike Levin,called,0,0,0,0,2027-01-02,2027-01-03,statute,92e327ec-a49e-4e85-8516-6778e6712efb
 4,Wave 4 — State,state,ID,Treasurer,Treasurer,2,Called,Julie Ellsworth,Julie Ellsworth,called,0,0,0,0,,,,9309800d-620d-42e1-bdec-406ea42d7417
 4,Wave 4 — State,state,MA,"Senator, Worcester and Hampden District",MA State Senate Worcester and Hampden District,2,Called,Ryan C. Fattman,Ryan C. Fattman,called,0,0,0,0,,,,93879f19-8e57-4f55-a5e4-2292393827a6
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Temple City Unified School Board - Trustee Area 5,1,Not looked at,Donna Georgino,,,0,0,0,0,2026-12-10,2026-12-11,statute,9393aad4-ef14-485d-bda0-9e51708edfd2
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 48,4,"Won, term not yet begun",Andrew Hysell,Andrew Hysell,called,0,0,0,0,2027-01-03,2027-01-04,statute,93aa2d97-3799-4b18-8446-7c5540962540
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 27,2,Called,Esmeralda Z. Soria,Brian Pacheco,called,0,0,0,1,,,,93fa450e-3f05-4211-aca9-29b1d254b38d
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 27,4,"Won, term not yet begun",Esmeralda Z. Soria,Brian Pacheco,called,0,0,0,1,2026-12-06,2026-12-07,statute,93fa450e-3f05-4211-aca9-29b1d254b38d
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 42A,2,Called,Alexander M. Harlan,Charles Edward Murphy III,called,0,0,1,1,,,,93fd5845-11f8-491f-86e0-d6cad160390d
 4,Wave 4 — State,state,WI,State Senator,State Senate District 21,4,"Won, term not yet begun",Van Wanggaard,Trevor Jung,called,0,0,1,1,2027-01-03,2027-01-04,statute,9425fd1e-4444-4f2b-88d3-57d663e7d86d
 5,Wave 5 — Remaining locals,local,UT,Council District 1,Salt Lake County Council District 1,1,Not looked at,Jiro Johnson,,,0,0,0,0,,,,942d0e8f-9554-458f-b0ad-d9f972d3cb36
@@ -1375,7 +1375,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ND,Public Service Commissioner,North Dakota Public Service Commission,2,Called,Sheri Haugen-Hoffart,Sheri Haugen-Hoffart,called,0,0,1,1,,,,9737abe7-d821-4a8f-bcff-09bd6e6da1ec
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 66,4,"Won, term not yet begun",Greta Neubauer,Greta Neubauer,called,0,0,0,0,2027-01-03,2027-01-04,statute,9746e211-4732-4899-8a38-02e913aba0eb
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 94,4,"Won, term not yet begun",Steve Doyle,Steve Doyle,called,0,0,0,0,2027-01-03,2027-01-04,statute,974b4c85-112d-4d36-b8ae-a25c9661f69e
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 9,2,Called,Heath Flora,Heath Flora,called,0,0,0,0,,,,97630297-215d-4c34-bea1-2cc2b4238971
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 9,4,"Won, term not yet begun",Heath Flora,Heath Flora,called,0,0,0,0,2026-12-06,2026-12-07,statute,97630297-215d-4c34-bea1-2cc2b4238971
 4,Wave 4 — State,state,ME,Representative,ME State House District 136,4,"Won, term not yet begun",John Eder,John Eder,called,0,0,0,0,2026-11-30,2026-12-01,statute,97653378-54c3-4ffe-b488-d2f55027c9dd
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 48,4,"Won, term not yet begun",Darrell Issa,Marni von Wilpert,called,0,0,0,0,2027-01-02,2027-01-03,statute,9770ac95-8777-41a2-9006-937ba5e14ba3
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Garvey School Board - Trustee Area 1,1,Not looked at,Andrew J. Yam,,,0,0,0,0,2026-12-10,2026-12-11,statute,97b7f2fd-4798-4be4-940b-cbe5248961d8
@@ -1403,7 +1403,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 43,2,Called,Mary Washington,Mary Washington,called,0,0,0,0,,,,9a9b840d-c339-43f2-aedb-c9899b63a3ab
 2,Wave 2 — House,federal,IA,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Mariannette Miller-Meeks,Christina Bohannan,called,0,0,0,0,2027-01-02,2027-01-03,statute,9aa818ab-5f03-4ca1-b990-532e6ee4a77c
 5,Wave 5 — Remaining locals,local,OR,City Councilor,Wood Village City Council Position 1,2,Called,Charlene Gothard,Charlene Gothard,called,0,0,1,1,,,,9ab007a0-2f9a-4247-a8bf-9fcc8705eb15
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 46,2,Called,Jesse Gabriel,Jesse Gabriel,called,0,0,0,0,,,,9ac36332-1972-47eb-9d14-77059d924666
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 46,4,"Won, term not yet begun",Jesse Gabriel,Jesse Gabriel,called,0,0,0,0,2026-12-06,2026-12-07,statute,9ac36332-1972-47eb-9d14-77059d924666
 4,Wave 4 — State,state,UT,State Senator District 18,Utah State Senate District 18,2,Called,Daniel McCay,Doug Fiefia,called,0,0,0,0,,,,9b0808eb-25ab-4dbe-86c7-5bd12fb6b542
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Alhambra City Council District 2,1,Not looked at,Ross J. Maza,,,0,0,0,0,,2026-12-01,estimated,9b36c421-1d9e-48dc-b79e-0806fd2f3335
 4,Wave 4 — State,state,NE,"University of Nebraska Regent, District 1",University of Nebraska Board of Regents District 1,2,Called,Timothy Clare,Brent Comstock,called,0,0,1,1,,,,9b4832a5-b790-487f-a814-c401567ce4e6
@@ -1422,7 +1422,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,TX,Texas Agriculture Commissioner,Texas Agriculture Commissioner,2,Called,Sid Miller,Clayton Tucker,called,0,0,1,1,,,,9d043ebc-13a9-450e-a33b-c62bbf98088a
 4,Wave 4 — State,state,WI,State Senator,State Senate District 19,4,"Won, term not yet begun",Rachael Cabral-Guevara,Rachael Ann Cabral-Guevara,called,0,0,0,0,2027-01-03,2027-01-04,statute,9d4c0397-6ae4-44bf-85ed-788772635b15
 2,Wave 2 — House,federal,OH,U.S. Representative,U.S. Representative District 4,4,"Won, term not yet begun",Jim Jordan,Jim Jordan,called,0,0,0,0,2027-01-02,2027-01-03,statute,9d550df5-6527-43db-a191-551ed79d5280
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 57,2,Called,Sade Elhawary,Sade Elhawary,called,0,0,0,0,,,,9d7e22cc-34fc-4878-add1-78d5f620af97
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 57,4,"Won, term not yet begun",Sade Elhawary,Sade Elhawary,called,0,0,0,0,2026-12-06,2026-12-07,statute,9d7e22cc-34fc-4878-add1-78d5f620af97
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Eastside Union School Board - Trustee Area 5,4,"Won, term not yet begun",Julie A. Bookman,Anouk Harvey,called,0,0,1,1,2026-12-10,2026-12-11,statute,9d890511-f75d-4149-b80a-f8b8ea6a54c2
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Inglewood Unified School Board - Trustee Area 1,4,"Won, term not yet begun",Joyce L. Randall,Joyce Randall,called,0,0,1,1,2026-12-10,2026-12-11,statute,9db52f31-e7c0-4167-81a8-a3a48c1405bf
 4,Wave 4 — State,state,WA,State Senator,WA State Senate Legislative District 15,2,Called,Nikki Torres,Jeremie Dufault,called,0,0,0,0,,,,9de6843f-3b9a-48d6-ac04-209983c2e2d8
@@ -1450,9 +1450,9 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 10,4,"Won, term not yet begun",Daniel S. Goldman,Brad Lander,called,0,0,0,0,2027-01-02,2027-01-03,statute,a11fd498-9cf0-4319-8742-e73ef941c738
 2,Wave 2 — House,federal,CT,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",John B. Larson,Luke Bronin,called,0,0,0,0,2027-01-02,2027-01-03,statute,a12b38fe-35cd-413f-b133-de4ef0eeb6f3
 4,Wave 4 — State,state,UT,State Representative District 54,Utah State House District 54,2,Called,Kristen Chevrier,Kristen S. Chevrier,called,0,0,0,0,,,,a148cb50-d396-46df-ba6b-35bccd9836fd
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 19,2,Called,Catherine Stefani,Catherine Stefani,called,0,0,0,0,,,,a14a0093-9efb-407b-b37d-7f154899147f
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 19,4,"Won, term not yet begun",Catherine Stefani,Catherine Stefani,called,0,0,0,0,2026-12-06,2026-12-07,statute,a14a0093-9efb-407b-b37d-7f154899147f
 4,Wave 4 — State,state,UT,State Representative District 32,Utah State House District 32,2,Called,Sahara Hayes,Sahara Hayes,called,0,0,0,1,,,,a150a8a9-5a92-4679-8bde-0f0368319633
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 41,2,Called,John Harabedian,John Harabedian,called,0,0,0,0,,,,a15a1f80-856b-42cd-aad7-752fbf5bc73b
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 41,4,"Won, term not yet begun",John Harabedian,John Harabedian,called,0,0,0,0,2026-12-06,2026-12-07,statute,a15a1f80-856b-42cd-aad7-752fbf5bc73b
 5,Wave 5 — Remaining locals,local,IN,Benton Township Trustee,Benton Township Trustee,1,Not looked at,,,,0,0,0,0,,,,a1723a7d-2f04-49fa-974b-efb086a6f28a
 4,Wave 4 — State,state,MA,"Representative, 4th Norfolk District",MA House 4th Norfolk District,2,Called,James M. Murphy,James Michael Murphy,called,0,0,0,0,,,,a174ef37-8e18-4355-b8d0-f1d567e59a8d
 5,Wave 5 — Remaining locals,local,IN,Richland Township Trustee,Richland Township Trustee,1,Not looked at,,,,0,0,0,0,,,,a195b132-a1c0-4f3b-8e74-ecc26bd74a46
@@ -1467,7 +1467,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 14,5,In office,Erica Mosca,Erica Mosca,called,0,0,0,0,,2026-11-04,statute,a21c3749-3b0e-45d6-9ec0-7ca99064413f
 4,Wave 4 — State,state,WA,State Senator,WA State Senate Legislative District 6,2,Called,Jeff Holy,Jeff Holy,called,0,0,0,0,,,,a2409cc1-3954-44c2-aaa1-60b83d715351
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 13,4,"Won, term not yet begun",Ronny Jackson,Ronny Jackson,called,0,0,0,0,2027-01-02,2027-01-03,statute,a2492843-6c86-4209-9278-a235f5bbf533
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 79,2,Called,Dr. LaShae Sharp-Collins,LaShae Sharp-Collins,called,0,0,0,0,,,,a2504332-477f-4cf8-878c-ddbacf40528f
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 79,4,"Won, term not yet begun",Dr. LaShae Sharp-Collins,LaShae Sharp-Collins,called,0,0,0,0,2026-12-06,2026-12-07,statute,a2504332-477f-4cf8-878c-ddbacf40528f
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 1,4,"Won, term not yet begun",Nathaniel Moran,Nathaniel Moran,called,0,0,0,0,2027-01-02,2027-01-03,statute,a282204e-d645-4496-9ecc-c1d7a5e1a842
 2,Wave 2 — House,federal,PA,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun",Dwight Evans,Chris Rabb,called,0,0,0,0,2027-01-02,2027-01-03,statute,a287fef6-1971-4fb3-b7e2-6b6de98840c9
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 5,4,"Won, term not yet begun",Mike Quigley,Mike Quigley,called,0,0,0,0,2027-01-02,2027-01-03,statute,a2bad632-ae35-43db-a37f-2bb2ef282f4a
@@ -1477,7 +1477,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Council Member (District 4),Glendora City Council District 4,1,Not looked at,Karen Davis,,,0,0,0,0,,2026-12-01,estimated,a3440ac6-da39-40d2-8f49-d0e1a77c66c7
 4,Wave 4 — State,state,NV,State Senator,Nevada State Senate District 09,5,In office,Melanie Scheible,Melanie Scheible,called,0,0,0,0,,2026-11-04,statute,a36aeec3-e7bc-4bd4-b25f-5d1905d1c0d9
 2,Wave 2 — House,federal,OK,U.S. Representative,U.S. Representative District 2,4,"Won, term not yet begun",Josh Brecheen,Josh Brecheen,called,0,0,0,0,2027-01-02,2027-01-03,statute,a3708318-be48-4167-acab-163d6d4a7b6b
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 49,2,Called,Mike Fong,Mike Fong,called,0,0,0,0,,,,a3c459e9-45a7-4545-978f-553ca2702122
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 49,4,"Won, term not yet begun",Mike Fong,Mike Fong,called,0,0,0,0,2026-12-06,2026-12-07,statute,a3c459e9-45a7-4545-978f-553ca2702122
 4,Wave 4 — State,state,MA,"Representative, 37th Middlesex District",MA House 37th Middlesex District,2,Called,Danillo Sena,Danillo A. Sena,called,0,0,0,0,,,,a4184720-3140-4507-a19f-0f14c12dea2a
 4,Wave 4 — State,state,OR,Representative,OR State House District 1,2,Called,Court Boice,Court Boice,called,0,0,0,0,,,,a4228611-62e1-4b9d-92f4-58558280fdd9
 5,Wave 5 — Remaining locals,local,TX,"Judge, County Criminal Court No. 9",Tarrant County Criminal Court No. 9,1,Not looked at,Brian Bolton,,,0,0,0,0,,,,a44771f6-76e1-4502-9a75-ea818c3af68f
@@ -1502,8 +1502,8 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 5,2,Called,Lela Alston,Christine Marsh,called,0,0,0,1,,,,a6b11902-7d2d-4774-a059-df8315688692
 2,Wave 2 — House,federal,MD,U.S. Representative,U.S. House MD-07,4,"Won, term not yet begun",Kweisi Mfume,Kweisi Mfume,called,0,0,0,0,2027-01-02,2027-01-03,statute,a6b83f0d-bc99-4f29-9d39-a87025d55a01
 4,Wave 4 — State,state,NV,State Senator,Nevada State Senate District 14,5,In office,Ira Hansen,Ira D. Hansen,called,0,0,0,0,,2026-11-04,statute,a6cb105a-dc4a-4c21-8f79-9e0c7022363f
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 80,2,Called,David A. Alvarez,David A. Alvarez,called,0,0,0,0,,,,a6eda11c-51b3-4510-8ce6-7ec1332b7f63
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 40,2,Called,Pilar Schiavo,Pilar Schiavo,called,0,0,0,0,,,,a7426e3d-302c-4610-8504-d2c100822fc4
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 80,4,"Won, term not yet begun",David A. Alvarez,David A. Alvarez,called,0,0,0,0,2026-12-06,2026-12-07,statute,a6eda11c-51b3-4510-8ce6-7ec1332b7f63
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 40,4,"Won, term not yet begun",Pilar Schiavo,Pilar Schiavo,called,0,0,0,0,2026-12-06,2026-12-07,statute,a7426e3d-302c-4610-8504-d2c100822fc4
 2,Wave 2 — House,federal,ND,U.S. Representative,U.S. Representative At-Large,4,"Won, term not yet begun",Julie Fedorchak,Julie Fedorchak,called,0,0,0,0,2027-01-02,2027-01-03,statute,a757de4e-f405-4453-86b9-3748e6ddab62
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),"Little Lake City School Board - Trustee Area 5 (Unexpired Term Ending December 12, 2028)",4,"Won, term not yet begun",,Dora D. Sandoval,called,0,0,1,1,,2026-12-11,statute,a763810d-48c5-40a6-bc41-355025325ddf
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 37,5,In office,Shea M. Backus,Shea M. Backus,called,0,0,0,0,,2026-11-04,statute,a763b662-cec6-478d-8ad1-4c0b73beedc3
@@ -1534,7 +1534,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,AR,Treasurer,Treasurer,2,Called,John Thurston,John Thurston,called,0,0,0,0,,,,aaf10c40-7214-44bf-ae07-c7c6aef7239e
 4,Wave 4 — State,state,ME,Representative,ME State House District 145,4,"Won, term not yet begun",Robert Foley,Kristin T. Davis,called,0,0,1,1,2026-11-30,2026-12-01,statute,ab5ab89f-78ef-4eb5-9c0f-0ec0669059c6
 4,Wave 4 — State,state,MA,"Representative, 35th Middlesex District",MA House 35th Middlesex District,2,Called,Paul J. Donato,Paul J. Donato,called,0,0,0,0,,,,ab751007-01f6-48ed-bc3f-acb9eacd17ad
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 29,2,Called,Robert Rivas,Robert Rivas,called,0,0,0,0,,,,ab7ded18-0294-4d85-8353-66916f710161
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 29,4,"Won, term not yet begun",Robert Rivas,Robert Rivas,called,0,0,0,0,2026-12-06,2026-12-07,statute,ab7ded18-0294-4d85-8353-66916f710161
 3,Wave 3 — December locals,local,CA,Council Member (District 3),Montebello City Council District 3,1,Not looked at,Salvador Melendez,,,0,0,0,0,,2026-12-01,estimated,abf1aef1-4bfe-4a50-ac9b-7ab6edbca8f5
 4,Wave 4 — State,state,DE,Attorney General,Attorney General,2,Called,Kathy Jennings,Kathy Jennings,called,0,0,0,0,,,,ac216315-2527-4caa-97f8-f37e1f38ce8a
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 11,4,"Won, term not yet begun",Nicole Malliotakis,Nicole Malliotakis,called,0,0,0,0,2027-01-02,2027-01-03,statute,ac2e8d2e-186b-4570-86a5-a02a1bad3f67
@@ -1542,7 +1542,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Council Member (District 4),Palmdale City Council District 4,1,Not looked at,Eric Ohlsen,,,0,0,0,0,,2026-12-01,estimated,ac763614-1754-413f-8681-0064de860c84
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 26,2,Called,Veronica Turner,"Jamila J. Woods, Kriselda Valderrama, Veronica Turner",called,0,0,1,1,,,,ac9cd01c-0a93-48e8-8ec1-9f6f695dda2b
 4,Wave 4 — State,state,ME,Representative,ME State House District 91,4,"Won, term not yet begun",Joshua Morris,Jeffrey L. Timberlake,called,0,0,0,0,2026-11-30,2026-12-01,statute,ad25c711-1654-4c7a-baf5-6dfe4d0e8425
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 15,2,Called,Anamarie Avila Farias,Anamarie Avila Farias,called,0,0,0,0,,,,ad428fdc-44f6-48f7-9b03-dd3d40e7549e
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 15,4,"Won, term not yet begun",Anamarie Avila Farias,Anamarie Avila Farias,called,0,0,0,0,2026-12-06,2026-12-07,statute,ad428fdc-44f6-48f7-9b03-dd3d40e7549e
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 20,4,"Won, term not yet begun",Paul Tonko,Paul Tonko,called,0,0,0,0,2027-01-02,2027-01-03,statute,ad4f7917-d49e-47e3-b60b-e0f73e95d3b1
 5,Wave 5 — Remaining locals,local,UT,Clerk,Davis County Clerk,1,Not looked at,Brian McKenzie,,,0,0,0,0,,,,ad740cde-eca9-4b5f-95f1-574533023cb7
 5,Wave 5 — Remaining locals,local,OR,Council Member (Position 2),Gresham City Council Position 2,1,Not looked at,Eddy Morales,,,0,0,0,0,,,,ad814d48-ec19-471a-801f-6e36c40641f6
@@ -1574,14 +1574,14 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 39 Position 1,2,Called,Sam Low,Sam Low,called,0,0,0,0,,,,b16dcc11-f6f1-4847-873e-206f9d383d4e
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area E),Castaic Union School Board - Trustee Area E,1,Not looked at,Mayreen Burk,,,0,0,0,0,2026-12-10,2026-12-11,statute,b1d3ead6-1c0d-47b8-a598-314f558dba16
 4,Wave 4 — State,state,AZ,State Representative,State House District 25,2,Called,Nick Kupper,"Michael Carbone, Nick Kupper",called,0,0,0,0,,,,b1f476f9-c8b7-4c14-8e6d-e01d4679b95b
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 50,2,Called,Robert Garcia,Robert Garcia,called,0,0,0,0,,,,b1fc465d-5637-427e-ba37-3678009cb949
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 50,4,"Won, term not yet begun",Robert Garcia,Robert Garcia,called,0,0,0,0,2026-12-06,2026-12-07,statute,b1fc465d-5637-427e-ba37-3678009cb949
 3,Wave 3 — December locals,local,CA,Vice Mayor,South Gate City Council,1,Not looked at,Al Rios,,,0,0,0,0,,2026-12-01,estimated,b213f0f7-ae62-41ef-871d-04884e683f58
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 15,2,Called,Brian J. Feldman,Brian J. Feldman,called,0,0,0,0,,,,b2397923-dc3d-4cbf-b389-8a9d2eb21afa
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 4),Mt. San Antonio Community College Board - Trustee Area 4,1,Not looked at,Robert F. Hidalgo,,,0,0,0,0,2026-12-10,2026-12-11,statute,b25fec31-a220-5b21-b46e-3f04b10b44f7
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 4),Claremont Unified School Board - Trustee Area 4,1,Not looked at,Alex McDonald,,,0,0,0,0,2026-12-10,2026-12-11,statute,b28d10cb-6eeb-448f-b9f3-5ac4a12641ba
 3,Wave 3 — December locals,local,CA,Council Member,Palos Verdes Estates City Council,1,Not looked at,Derek Lazzaro,,,0,0,0,0,,2026-12-01,estimated,b28e7a59-de1b-4455-96d4-45e8db6e50c5
 2,Wave 2 — House,federal,AR,U.S. Representative,U.S. Representative District 4,4,"Won, term not yet begun",Bruce Westerman,Bruce Westerman,called,0,0,0,0,2027-01-02,2027-01-03,statute,b2c0a192-3c50-4e31-b7da-0ebd119bd301
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 77,2,Called,Tasha Boerner,Tasha Boerner,called,0,0,0,0,,,,b2ceb669-8d2b-4d7c-85b4-7996731d01b8
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 77,4,"Won, term not yet begun",Tasha Boerner,Tasha Boerner,called,0,0,0,0,2026-12-06,2026-12-07,statute,b2ceb669-8d2b-4d7c-85b4-7996731d01b8
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 11 Position 1,2,Called,David Hackney,David Hackney,called,0,0,0,0,,,,b2da8aae-e8c9-419c-a1aa-85f1df1c78a1
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Santa Clarita City Council District 2,1,Not looked at,,,,0,0,0,0,,2026-12-01,estimated,b2e1ae51-fb21-4636-a462-5fd33e619676
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 5,1,Not looked at,Virginia Foxx,,,0,0,0,0,,2027-01-03,statute,b2e81abc-07b2-4280-b059-74655b4201c2
@@ -1600,9 +1600,9 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,City Clerk,El Monte City Clerk,1,Not looked at,Gabriel Ramirez,,,0,0,0,0,,2026-12-01,estimated,b3e64239-cdfc-470b-aa7e-a241730d698a
 4,Wave 4 — State,state,MI,Michigan State University Trustee,Michigan State University Board of Trustees,2,Called,Brianna Scott,"Brianna Scott, Kelly Tebay",called,0,0,1,1,,,,b433c891-6a30-4453-91a1-fa022b6fe99b
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 47 Position 1,2,Called,Debra Entenman,Debra Jean Entenman,called,0,0,0,0,,,,b4643ff9-4889-4d88-a139-38c17d5198b4
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 47,2,Called,Greg Wallis,Leila Namvar,called,0,0,1,1,,,,b4c8ebef-7910-4b3e-8aec-17476105b0ec
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 47,4,"Won, term not yet begun",Greg Wallis,Leila Namvar,called,0,0,1,1,2026-12-06,2026-12-07,statute,b4c8ebef-7910-4b3e-8aec-17476105b0ec
 2,Wave 2 — House,federal,NJ,U.S. Representative,U.S. Representative District 9,4,"Won, term not yet begun",Nellie Pou,Nellie Pou,called,0,0,0,0,2027-01-02,2027-01-03,statute,b4f42a0f-0599-4d57-9776-d1375e69bfd3
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 8,2,Called,David J. Tangipa,David Jariustokaeutulelei Tangipa,called,0,0,0,0,,,,b4f5c6f2-108c-48e8-9fd2-84a17075c0e5
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 8,4,"Won, term not yet begun",David J. Tangipa,David Jariustokaeutulelei Tangipa,called,0,0,0,0,2026-12-06,2026-12-07,statute,b4f5c6f2-108c-48e8-9fd2-84a17075c0e5
 4,Wave 4 — State,state,ME,Representative,ME State House District 65,4,"Won, term not yet begun",Cassie Julia,Cassie Lynn Julia,called,0,0,0,0,2026-11-30,2026-12-01,statute,b5381f7f-784d-49ce-a0b9-60e1c924fee5
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Monrovia Unified School Board - Trustee Area 3,1,Not looked at,Selene Lockerbie,,,0,0,0,0,2026-12-10,2026-12-11,statute,b54ef11c-bdfe-440a-b530-434bcaff1cb7
 2,Wave 2 — House,federal,IN,U.S. Representative,U.S. Representative District 3,4,"Won, term not yet begun",Marlin A. Stutzman,Marlin Stutzman,called,0,0,0,0,2027-01-02,2027-01-03,statute,b55b18e3-5d88-4453-9850-a54649eda5ed
@@ -1632,7 +1632,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,TX,"Judge, 141st District Court",Texas 141st District Court,1,Not looked at,John P. Chupp,,,0,0,0,0,,,,b6dbc9f0-1f9e-4e41-a20f-8bdad76f8724
 4,Wave 4 — State,state,AZ,State Representative,State House District 15,2,Called,Neal Carter,"Michael Way, Neal Carter",called,0,0,0,0,,,,b6f2851e-cb17-4361-8d3a-04db32cbf919
 4,Wave 4 — State,state,MA,"Representative, 25th Middlesex District",MA House 25th Middlesex District,2,Called,Marjorie C. Decker,Marjorie Decker,called,0,0,0,0,,,,b6f796e2-e363-450c-b5ae-a34df3c5184e
-4,Wave 4 — State,state,CA,Senator,State Senate District 40,2,Called,Brian W. Jones,Mara Elliott,called,0,0,0,0,,,,b6fb8bc6-a065-4a94-8e47-7aed5512b901
+4,Wave 4 — State,state,CA,Senator,State Senate District 40,4,"Won, term not yet begun",Brian W. Jones,Mara Elliott,called,0,0,0,0,2026-12-06,2026-12-07,statute,b6fb8bc6-a065-4a94-8e47-7aed5512b901
 2,Wave 2 — House,federal,MS,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Trent Kelly,Trent Kelly,called,0,0,0,0,2027-01-02,2027-01-03,statute,b74193b3-7f42-4dba-87f3-1dcd7b5a139c
 5,Wave 5 — Remaining locals,local,CA,Director (Division 1),Santa Clarita Valley Water Agency Board - Division 1,1,Not looked at,Bill Cooper,,,0,0,0,0,,2027-01-04,published,b771c0d8-412a-558c-9341-7ba227eabee3
 4,Wave 4 — State,state,OR,Representative,OR State House District 20,2,Called,Paul Evans,Paul Evans,called,0,0,0,0,,,,b79e5df3-ee4e-4d9a-9099-039245f4f331
@@ -1645,7 +1645,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 28,4,"Won, term not yet begun",Irene Gifford,Irene A. Gifford,called,0,0,0,0,2026-11-30,2026-12-01,statute,b8458214-8367-429f-a64d-0d3d3c46f88c
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 33,4,"Won, term not yet begun",Pete Aguilar,Pete Aguilar,called,0,0,0,0,2027-01-02,2027-01-03,statute,b88178d8-23ac-4ab9-a73c-0687534da38a
 5,Wave 5 — Remaining locals,unknown,IN,"Judge of the Monroe Circuit Court, 10th Judicial Circuit, No. 9","Judge of the Monroe Circuit Court, 10th Judicial Circuit, No. 9",1,Not looked at,,,,0,0,0,0,,,,b884a5a7-750a-48bb-a42a-a71469b5b1ba
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 18,2,Called,Mia Bonta,Mia Bonta,called,0,0,0,0,,,,b8bcbed5-7c10-436d-890b-a6ed8bdfbf73
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 18,4,"Won, term not yet begun",Mia Bonta,Mia Bonta,called,0,0,0,0,2026-12-06,2026-12-07,statute,b8bcbed5-7c10-436d-890b-a6ed8bdfbf73
 4,Wave 4 — State,state,ME,Representative,ME State House District 88,4,"Won, term not yet begun",Quentin Chapman,Dana N. Staples,called,0,0,1,1,2026-11-30,2026-12-01,statute,b8c65d02-d1fc-421b-983a-9afa9d7bd0a2
 4,Wave 4 — State,state,MA,"Representative, 5th Bristol District",MA House 5th Bristol District,2,Called,Justin Thurber,Justin E. Thurber,called,0,0,0,0,,,,b8d1a093-137e-49b9-9399-f03b3076ab3e
 4,Wave 4 — State,state,LA,"Public Service Commissioner, District 1",Louisiana Public Service Commission District 1,2,Called,Eric Skrmetta,Stephanie Hilferty,called,0,0,1,1,,,,b8d6f575-fad0-431c-9382-a0bfadb50a50
@@ -1675,7 +1675,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Council Member (District 1),Bellflower City Council District 1,1,Not looked at,Wendi Morse,,,0,0,0,0,,2026-12-01,estimated,baeb644e-c128-4712-a2ee-732d62a0b034
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 14 Position 2,2,Called,Deb Manjarrez,Ezequiel Morfin,called,0,0,0,1,,,,bb00f65a-8c98-49f6-a8e0-306f543bf51f
 4,Wave 4 — State,state,ME,Representative,ME State House District 113,4,"Won, term not yet begun",Grayson Lookner,Grayson Benjamin Lookner,called,0,0,0,0,2026-11-30,2026-12-01,statute,bb1842cf-a7c0-444e-ad89-c1021763042a
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 3,2,Called,,Dom Belza,called,0,0,1,1,,,,bb1fb812-4881-4483-a1d9-7076df63f8e4
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 3,4,"Won, term not yet begun",,Dom Belza,called,0,0,1,1,,2026-12-07,statute,bb1fb812-4881-4483-a1d9-7076df63f8e4
 3,Wave 3 — December locals,local,CA,Council Member (District 5),Montebello City Council District 5,1,Not looked at,Ricardo Alonzo,,,0,0,0,0,,2026-12-01,estimated,bb83d8df-ba6c-43f3-ae41-89527d3b5de6
 2,Wave 2 — House,federal,VA,U.S. Representative,U.S. House VA-11,4,"Won, term not yet begun",James Walkinshaw,James Walkinshaw,called,0,0,0,0,2027-01-02,2027-01-03,statute,bb9b6411-ef5f-4c1a-bab0-046adf472d4e
 4,Wave 4 — State,state,RI,Governor,Governor,2,Called,Dan McKee,Helena Foulkes,called,0,0,1,1,,,,bbbb10f1-9a50-489e-b62a-41b672b23a48
@@ -1686,14 +1686,14 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,UT,State Representative District 63,Utah State House District 63,2,Called,Stephen L. Whyte,Stephen L. Whyte,called,0,0,0,0,,,,bc3f751b-2a62-4c03-8752-b7ffd0195c91
 4,Wave 4 — State,state,CT,Treasurer,Treasurer,2,Called,Erick Russell,Erick Russell,called,0,0,0,0,,,,bc744eb6-27f5-4295-986f-4111c630d3bd
 4,Wave 4 — State,state,NV,Assemblymember,Nevada State Assembly District 16,5,In office,Cecelia González,Cecelia González,called,0,0,0,0,,2026-11-04,statute,bc9b026a-fb04-4254-9e3a-8a548c108860
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 26,2,Called,Patrick J. Ahrens,Patrick Ahrens,called,0,0,0,0,,,,bcc806d5-9512-4754-a261-3e725a6419c3
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 26,4,"Won, term not yet begun",Patrick J. Ahrens,Patrick Ahrens,called,0,0,0,0,2026-12-06,2026-12-07,statute,bcc806d5-9512-4754-a261-3e725a6419c3
 5,Wave 5 — Remaining locals,local,TX,"Judge, County Criminal Court No. 1",Tarrant County Criminal Court No. 1,1,Not looked at,David Cook,,,0,0,0,0,,,,bd0c17ba-0d84-45ca-9bb3-fddee0352026
 4,Wave 4 — State,state,OR,Representative,OR State House District 35,2,Called,Farrah Chaichi,Farrah Chaichi,called,0,0,0,0,,,,bd0f6910-0729-4b9e-b5f0-d5e3229b1150
 4,Wave 4 — State,state,CO,State Representative,State Representative District 21,1,Not looked at,Mary Bradfield,,,0,0,0,0,,,,bd273235-ab70-4d13-8be5-d29773e8abd9
 4,Wave 4 — State,state,ME,Representative,ME State House District 22,4,"Won, term not yet begun",Laura Supica,Laura D. Supica,called,0,0,0,0,2026-11-30,2026-12-01,statute,bd50c35f-a9c9-4003-ad06-54b7b0813df6
 4,Wave 4 — State,state,MA,"Representative, 10th Hampden District",MA House 10th Hampden District,2,Called,Carlos González,Carlos Gonzalez,called,0,0,0,0,,,,bd88ea4f-4da7-4602-9dc1-f378acbbeec0
 2,Wave 2 — House,federal,FL,U.S. Representative,U.S. Representative District 17,4,"Won, term not yet begun",W. Gregory Steube,Greg Steube,called,0,0,0,0,2027-01-02,2027-01-03,statute,bd97bf95-c5ec-463c-ae9d-16fe5c730a19
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 16,2,Called,Rebecca Bauer-Kahan,Rebecca Bauer-Kahan,called,0,0,0,0,,,,bdcf6c6c-c430-48b6-82a7-874f5b3ff9c6
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 16,4,"Won, term not yet begun",Rebecca Bauer-Kahan,Rebecca Bauer-Kahan,called,0,0,0,0,2026-12-06,2026-12-07,statute,bdcf6c6c-c430-48b6-82a7-874f5b3ff9c6
 5,Wave 5 — Remaining locals,local,OR,Mayor,Forest Grove Mayor,2,Called,Malynda Wenzl,Malynda Wenzl,called,0,0,1,1,,,,bde1e616-a61e-46e2-94ce-3b87b1ab34f1
 5,Wave 5 — Remaining locals,local,WI,Sheriff,Racine County Sheriff,2,Called,Christopher Schmaling,Donald E. Vandervest,called,0,0,1,1,,2027-01-04,statute,bdfd77cd-a7ec-46a0-b914-40e8f52ee2c6
 4,Wave 4 — State,state,AZ,State Representative,State House District 3,2,Called,Cody Reim,"Cody Reim, George Khalaf",called,0,0,0,0,,,,be11c585-4552-4e7e-8acb-3bb1d4a090f8
@@ -1701,9 +1701,9 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MA,"Representative, 19th Suffolk District",MA House 19th Suffolk District,2,Called,Jeffrey R. Turco,Jeffrey Rosario Turco,called,0,0,0,0,,,,be56563a-9b07-4040-bf10-e1827b570def
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 70,4,"Won, term not yet begun",Nancy VanderMeer,Nancy VanderMeer,called,0,0,0,0,2027-01-03,2027-01-04,statute,be9fd6fc-d24e-4914-83f4-cdc4cc67d0b9
 4,Wave 4 — State,state,ME,Representative,ME State House District 73,4,"Won, term not yet begun",Michael Soboleski,Michael Soboleski,called,0,0,0,0,2026-11-30,2026-12-01,statute,bebb30db-384a-4fac-b127-4c87e56570f4
-4,Wave 4 — State,state,CA,Governor,Governor,2,Called,Gavin Newsom,Xavier Becerra,called,0,0,0,0,,,,bec5ef3b-095b-4d7d-9117-db81e407cb5e
+4,Wave 4 — State,state,CA,Governor,Governor,4,"Won, term not yet begun",Gavin Newsom,Xavier Becerra,called,0,0,0,0,2027-01-03,2027-01-04,statute,bec5ef3b-095b-4d7d-9117-db81e407cb5e
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 34,4,"Won, term not yet begun",Jimmy Gomez,Angela Gonzales-Torres,called,0,0,0,1,2027-01-02,2027-01-03,statute,bed3e589-1f6d-4693-93af-5b05c9abc842
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 39,2,Called,Juan Carrillo,Juan Carrillo,called,0,0,0,0,,,,bf1837da-9208-4caa-81e2-a4b0d96a395d
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 39,4,"Won, term not yet begun",Juan Carrillo,Juan Carrillo,called,0,0,0,0,2026-12-06,2026-12-07,statute,bf1837da-9208-4caa-81e2-a4b0d96a395d
 4,Wave 4 — State,state,ME,Representative,ME State House District 101,4,"Won, term not yet begun",Poppy Arford,Poppy T. Arford,called,0,0,0,0,2026-11-30,2026-12-01,statute,bf1d6800-3a6d-40b1-99ba-410026763657
 3,Wave 3 — December locals,local,CA,Council Member (District 1),Azusa City Council District 1,1,Not looked at,,,,0,0,0,0,,2026-12-01,estimated,bf490523-76b9-4fbd-a6a2-10fa00239aa8
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 18,2,Called,Jeff Waldstreicher,Jeff Waldstreicher,called,0,0,0,0,,,,bf65549c-3315-40ab-808d-2775673c5f0f
@@ -1712,7 +1712,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 41,2,Called,Samuel I. Rosenberg,"Ryan Turner, S. I. Rosenberg, Sean A. Stinnett",called,0,0,1,1,,,,bfe7b0a0-7922-46b6-9d92-d0422c2dbc2d
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 5,4,"Won, term not yet begun",Lance Gooden,Lance Gooden,called,0,0,0,0,2027-01-02,2027-01-03,statute,c09ed536-07e5-4dca-a77d-e3b636a724c4
 2,Wave 2 — House,federal,MN,U.S. Representative,U.S. Representative District 6,4,"Won, term not yet begun",Tom Emmer,Tom Emmer,called,0,0,0,0,2027-01-02,2027-01-03,statute,c0f27cbe-026d-4cc6-b3f4-d714b1e5c2b8
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 58,2,Called,Leticia Castillo,Clarissa Cervantes,called,0,0,1,1,,,,c109fb26-2578-4125-af50-6b57e23e53ae
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 58,4,"Won, term not yet begun",Leticia Castillo,Clarissa Cervantes,called,0,0,1,1,2026-12-06,2026-12-07,statute,c109fb26-2578-4125-af50-6b57e23e53ae
 2,Wave 2 — House,federal,CA,Representative,U.S. Representative District 26,4,"Won, term not yet begun",Julia Brownley,Jacqui Irwin,called,0,0,0,0,2027-01-02,2027-01-03,statute,c116e2e6-9512-4462-8633-d2a1373161cb
 1,Wave 1 — Senate,federal,GA,Senator,U.S. Senate Georgia,4,"Won, term not yet begun",Jon Ossoff,Jon Ossoff,called,0,0,0,0,2027-01-02,2027-01-03,statute,c13606c7-dd50-4fd9-9caf-44f773b480c5
 2,Wave 2 — House,federal,MN,U.S. Representative,U.S. Representative District 4,4,"Won, term not yet begun",Betty McCollum,Betty McCollum,called,0,0,0,0,2027-01-02,2027-01-03,statute,c1363bbb-a6f8-4e15-b8a9-812f28cb6426
@@ -1748,7 +1748,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 9 Position 1,2,Called,Mary Dye,Mary Dye,called,0,0,0,0,,,,c47e1e3a-9e4f-44ff-8122-3b5891e83e41
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 29 Position 1,2,Called,Melanie Morgan,Krista Perez,called,0,0,0,1,,,,c4b57c70-4d6f-44c7-a139-f2f4bfc8265b
 4,Wave 4 — State,state,OR,Senator,OR State Senate District 3,2,Called,Jeff Golden,Denise D. Krause,called,0,0,1,1,,,,c4c887b3-a705-4f39-808f-4595cfba3f4f
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 24,2,Called,Alex Lee,Alex Lee,called,0,0,0,0,,,,c4d211f8-33b1-4d37-ac2f-fe0f91732b71
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 24,4,"Won, term not yet begun",Alex Lee,Alex Lee,called,0,0,0,0,2026-12-06,2026-12-07,statute,c4d211f8-33b1-4d37-ac2f-fe0f91732b71
 2,Wave 2 — House,federal,OR,Representative,U.S. House OR-04,4,"Won, term not yet begun",Val Hoyle,Val Hoyle,called,0,0,0,0,2027-01-02,2027-01-03,statute,c5023da0-985e-4e1c-817c-a843849ef6e9
 4,Wave 4 — State,state,MI,State Board of Education Member,Michigan State Board of Education,2,Called,Judith Pritchett,"Judith Pritchett, Tiffany Tilley",called,0,0,1,1,,,,c50d5e24-913d-48b0-ad52-ca32df0bcbf5
 4,Wave 4 — State,state,ME,Representative,ME State House District 9,4,"Won, term not yet begun",Arthur Mingo,Arthur K. Mingo,called,0,0,0,0,2026-11-30,2026-12-01,statute,c50f0d13-78bc-48e3-9564-931e84bf020d
@@ -1807,7 +1807,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 108,4,"Won, term not yet begun",Parnell Terry,Parnell W. Terry,called,0,0,0,0,2026-11-30,2026-12-01,statute,cb2c4896-72f4-4fff-abaa-def5ca7d29b9
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 43 Position 1,2,Called,Nicole Macri,Nicole Macri,called,0,0,0,0,,,,cb31f956-eee2-4121-a373-bae5d45adabf
 4,Wave 4 — State,state,MA,"Senator, First Middlesex District",MA State Senate First Middlesex District,2,Called,Vanna Howard,Vanna Howard,called,0,0,0,0,,,,cb4b7080-624c-48d7-bf3e-da09a1675637
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 2,2,Called,Chris Rogers,Chris Rogers,called,0,0,0,0,,,,cb534b9a-0ade-4930-84a6-7b334e38d9fc
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 2,4,"Won, term not yet begun",Chris Rogers,Chris Rogers,called,0,0,0,0,2026-12-06,2026-12-07,statute,cb534b9a-0ade-4930-84a6-7b334e38d9fc
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 45,2,Called,Jackie Addison,"Caylin Young, Chanel A. Branch, Jackie Addison",called,0,0,1,1,,,,cb5d7f70-3adb-4e60-9caa-6d6f70331828
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 16 Position 2,2,Called,Skyler Rude,Skyler Rude,called,0,0,0,0,,,,cb91b985-c4d3-4cc3-8242-7db229d34c44
 2,Wave 2 — House,federal,MD,U.S. Representative,U.S. House MD-01,4,"Won, term not yet begun",Andy Harris,Andy Harris,called,0,0,0,0,2027-01-02,2027-01-03,statute,cb9a70c8-626b-43ed-9267-9531d2403535
@@ -1876,7 +1876,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 17,4,"Won, term not yet begun",Ro Khanna,Ro Khanna,called,0,0,0,0,2027-01-02,2027-01-03,statute,d306c5b6-5203-4955-9657-edcc886320a3
 3,Wave 3 — December locals,local,CA,Board Member (Seat 6),Los Angeles Community College Board - Seat 6,1,Not looked at,Gabriel Buelna,,,0,0,0,0,,2026-12-11,statute,d30e1870-c953-5049-b629-a0e0d38fac51
 3,Wave 3 — December locals,local,CA,Board Member,La Cañada Unified School Board,1,Not looked at,Dan Jeffries,,,0,0,0,0,,2026-12-11,statute,d32bdf55-bb37-4597-8271-76641aa72ce6
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 48,2,Called,Blanca E. Rubio,Blanca Rubio,called,0,0,0,0,,,,d338f36d-ba35-41e6-b569-73473a66e746
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 48,4,"Won, term not yet begun",Blanca E. Rubio,Blanca Rubio,called,0,0,0,0,2026-12-06,2026-12-07,statute,d338f36d-ba35-41e6-b569-73473a66e746
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Inglewood City Council District 2,1,Not looked at,Alex Padilla,,,0,0,0,0,,2026-12-01,estimated,d346f0ad-c674-439a-8e00-263b2cbc4d00
 4,Wave 4 — State,state,AZ,State Representative,State House District 12,2,Called,Patty Contreras,"Armando Montero, Stacey Travers",called,0,0,0,1,,,,d34eaf89-5852-44c6-b238-77c8d638335b
 4,Wave 4 — State,state,ME,Representative,ME State House District 82,4,"Won, term not yet begun",Nathan Wadsworth,Christopher Alfred Lewey,called,0,0,1,1,2026-11-30,2026-12-01,statute,d36ed4ee-f6b9-4f1f-b4ad-2a64e8c96784
@@ -1973,8 +1973,8 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,OR,City Councilor (District 4),Portland City Council District 4,2,Called,Eric Zimmerman,"Mitch Green, Olivia Clark",called,0,0,1,1,,,,df1d7c03-3ee0-46c2-9e03-1a5b04629fe0
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 38,4,"Won, term not yet begun",Will Penterman,William Penterman,called,0,0,0,0,2027-01-03,2027-01-04,statute,df40847c-c179-4ac4-b4d1-7aabc258552d
 2,Wave 2 — House,federal,VA,U.S. Representative,U.S. House VA-08,4,"Won, term not yet begun",Don Beyer,Don Beyer,called,0,0,0,0,2027-01-02,2027-01-03,statute,df4895e9-81e6-4392-ab40-18105ddacf7c
-4,Wave 4 — State,state,CA,Senator,State Senate District 26,2,Called,Maria Elena Durazo,Sara Hernandez,called,0,0,0,1,,,,df4e7eb5-144f-4616-978d-33ca222f571e
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 45,2,Called,James C. Ramos,James C. Ramos,called,0,0,0,0,,,,df935966-5eb4-49f7-970a-d84cfaac6516
+4,Wave 4 — State,state,CA,Senator,State Senate District 26,4,"Won, term not yet begun",Maria Elena Durazo,Sara Hernandez,called,0,0,0,1,2026-12-06,2026-12-07,statute,df4e7eb5-144f-4616-978d-33ca222f571e
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 45,4,"Won, term not yet begun",James C. Ramos,James C. Ramos,called,0,0,0,0,2026-12-06,2026-12-07,statute,df935966-5eb4-49f7-970a-d84cfaac6516
 5,Wave 5 — Remaining locals,local,UT,Council District 3,Salt Lake County Council District 3,1,Not looked at,Aimee Winder Newton,,,0,0,0,0,,,,df96a372-c185-4dd4-be51-82e276217a75
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 4,2,Called,Carine Werner,Aaron Lieberman,called,0,0,0,1,,,,dfa6802f-5b5b-4897-ac8c-12ed2878c6f8
 4,Wave 4 — State,state,CO,State Representative,State Representative District 17,2,Called,Regina English,Regina English,called,0,0,0,0,,,,dfe7bad7-cbf6-44c4-bc8f-3f82f15c5d4d
@@ -2004,14 +2004,14 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 6,2,Called,Theresa Hatathlie,Jamescita Peshlakai,called,0,0,0,1,,,,e1f54a77-53a9-40df-bcc6-b4883d51c9ef
 3,Wave 3 — December locals,local,CA,Council Member (District 6),El Monte City Council District 6,1,Not looked at,Marisol Cortez,,,0,0,0,0,,2026-12-01,estimated,e206901c-a4b5-4a31-854c-87e29cb26f5f
 4,Wave 4 — State,state,ME,Representative,ME State House District 63,4,"Won, term not yet begun",Paul Flynn,Paul R. Flynn,called,0,0,0,0,2026-11-30,2026-12-01,statute,e22124ad-7f51-4b02-844e-35491f63f2e5
-4,Wave 4 — State,state,CA,Treasurer,Treasurer,2,Called,Fiona Ma,Eleni Kounalakis,called,0,0,0,0,,,,e226b3af-31ba-4304-9a86-f0c741165ce9
+4,Wave 4 — State,state,CA,Treasurer,Treasurer,4,"Won, term not yet begun",Fiona Ma,Eleni Kounalakis,called,0,0,0,0,2027-01-03,2027-01-04,statute,e226b3af-31ba-4304-9a86-f0c741165ce9
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 20,4,"Won, term not yet begun",Christine Sinicki,Christine M. Sinicki,called,0,0,0,0,2027-01-03,2027-01-04,statute,e2409546-f569-4eaf-840a-dff8c8a650e4
 5,Wave 5 — Remaining locals,local,TX,District Clerk,Tarrant County District Clerk,1,Not looked at,Thomas Wilder,,,0,0,0,0,,,,e2436a91-acd8-4b0f-8c31-b2501281b1bc
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 72,4,"Won, term not yet begun",Scott Krug,Scott Krug,called,0,0,0,0,2027-01-03,2027-01-04,statute,e2c515a4-d01b-452a-9db2-cc72fe6fc652
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 76,2,Called,Dr. Darshana R. Patel,Darshana Patel,called,0,0,0,0,,,,e2d8c0f8-ac90-443b-8321-1f94d9e0e705
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 76,4,"Won, term not yet begun",Dr. Darshana R. Patel,Darshana Patel,called,0,0,0,0,2026-12-06,2026-12-07,statute,e2d8c0f8-ac90-443b-8321-1f94d9e0e705
 4,Wave 4 — State,state,ME,Representative,ME State House District 68,4,"Won, term not yet begun",Amanda Collamore,Amanda Noelle Collamore,called,0,0,0,0,2026-11-30,2026-12-01,statute,e2dc6e0b-d9f3-46a6-93e5-af417685ffb4
 2,Wave 2 — House,federal,MI,U.S. Representative,U.S. Representative District 8,4,"Won, term not yet begun",Kristen McDonald Rivet,Kristen McDonald Rivet,called,0,0,0,0,2027-01-02,2027-01-03,statute,e2e9e0c8-c1fb-4d13-95a0-7ea194d191c4
-4,Wave 4 — State,state,CA,Senator,State Senate District 20,2,Called,Caroline Menjivar,Caroline Menjivar,called,0,0,0,0,,,,e2f375ed-5f55-48b8-a2fa-30ae5abfd571
+4,Wave 4 — State,state,CA,Senator,State Senate District 20,4,"Won, term not yet begun",Caroline Menjivar,Caroline Menjivar,called,0,0,0,0,2026-12-06,2026-12-07,statute,e2f375ed-5f55-48b8-a2fa-30ae5abfd571
 5,Wave 5 — Remaining locals,local,UT,Clerk,Salt Lake County Clerk,1,Not looked at,Lannie Chapman,,,0,0,0,0,,,,e30db1a3-5e48-4ea5-bd6c-86c5420f223e
 4,Wave 4 — State,state,ME,Representative,ME State House District 139,4,"Won, term not yet begun",David Woodsome,Jamie K. Newton,called,0,0,1,1,2026-11-30,2026-12-01,statute,e337f64c-8664-4feb-b289-a0ab4547f04b
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 34B,1,Not looked at,Susan K. McComas,,,0,0,0,0,,,,e3532266-a824-449e-bb16-bb1bf81c31bc
@@ -2028,18 +2028,18 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,MA,Representative,U.S. House MA-08,4,"Won, term not yet begun",Stephen Lynch,Stephen Lynch,called,0,0,0,0,2027-01-02,2027-01-03,statute,e466ea3a-3b67-4fe5-8db4-688825793214
 4,Wave 4 — State,state,UT,State Representative District 43,Utah State House District 43,2,Called,Steve Eliason,Ofa Matagi,called,0,0,0,1,,,,e48bff4e-15a7-42c7-9e9b-aa6c05cff36e
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 44,4,"Won, term not yet begun",Ann Roe,Ann Roe,called,0,0,0,0,2027-01-03,2027-01-04,statute,e48c5f27-3df6-4b25-9000-4f9f7292c3be
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 34,2,Called,Tom Lackey,Charles Frederick Hughes,called,0,0,1,1,,,,e498dcbe-1426-4eb6-b43a-4ab6635cf974
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 34,4,"Won, term not yet begun",Tom Lackey,Charles Frederick Hughes,called,0,0,1,1,2026-12-06,2026-12-07,statute,e498dcbe-1426-4eb6-b43a-4ab6635cf974
 2,Wave 2 — House,federal,PA,U.S. Representative,U.S. Representative District 8,4,"Won, term not yet begun","Robert P. Bresnahan, Jr.",Paige Cognetti,called,0,0,0,0,2027-01-02,2027-01-03,statute,e50986de-5238-4289-b629-e9f790aca537
 4,Wave 4 — State,state,ME,Representative,ME State House District 74,4,"Won, term not yet begun",Randall Hall,Russell J. Black,called,0,0,0,0,2026-11-30,2026-12-01,statute,e509dbe1-cdad-4985-b3e8-c81e5a3ec666
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 21,2,Called,Jim Rosapepe,Jim Rosapepe,called,0,0,0,0,,,,e50cd410-cd63-46e1-b698-46058e1d5917
 4,Wave 4 — State,state,AZ,State Representative,State House District 11,2,Called,Junelle Cavero,"Junelle Cavero, Oscar De Los Santos",called,0,0,0,0,,,,e518bdda-1f2b-4dbc-a6d0-0647f04b58be
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 12 Position 2,2,Called,Mike Steele,Mike Steele,called,0,0,0,0,,,,e5318891-19cc-4642-b799-e5d29f811256
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 60,2,Called,Dr. Corey A. Jackson,Corey A Jackson,called,0,0,0,0,,,,e54b2582-6a42-4b7a-b27e-7a6a3da6e310
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 60,4,"Won, term not yet begun",Dr. Corey A. Jackson,Corey A Jackson,called,0,0,0,0,2026-12-06,2026-12-07,statute,e54b2582-6a42-4b7a-b27e-7a6a3da6e310
 5,Wave 5 — Remaining locals,local,UT,Sheriff,Utah County Sheriff,1,Not looked at,Mike Smith,,,0,0,0,0,,,,e56f8c0a-2989-4fb4-842f-bbe8619c1a6d
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 22 Position 2,2,Called,Lisa Parshley,Lisa Parshley,called,0,0,0,0,,,,e573ee83-7a82-4f6a-b7ec-7065a3e12ccc
 2,Wave 2 — House,federal,PA,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Brian K. Fitzpatrick,Bob Harvie,called,0,0,0,0,2027-01-02,2027-01-03,statute,e58302b2-f366-4721-82a5-c722165da604
 4,Wave 4 — State,state,NE,"Nebraska State Board of Education Member, District 8",Nebraska State Board of Education District 8,2,Called,Deborah Neary,Lou Ann Goding,called,0,0,1,1,,,,e5e2280e-9e43-4799-a4a5-94c8472622ff
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 54,2,Called,Mark Gonzalez,Mark Gonzalez,called,0,0,0,0,,,,e5f08332-ce4a-4aa2-95cf-4102d4e6e11e
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 54,4,"Won, term not yet begun",Mark Gonzalez,Mark Gonzalez,called,0,0,0,0,2026-12-06,2026-12-07,statute,e5f08332-ce4a-4aa2-95cf-4102d4e6e11e
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 20,2,Called,Lorig Charkoudian,"David Moon, Jheanelle K. Wilkins, Lorig Charkoudian",called,0,0,1,1,,,,e5fd9bff-1db9-4e37-81a9-dd5bbc6fd733
 4,Wave 4 — State,state,ME,Representative,ME State House District 137,4,"Won, term not yet begun",Nathan Carlow,Charles Tilburg,called,0,0,1,1,2026-11-30,2026-12-01,statute,e60f1ec2-91a3-46fc-ad5d-757182ab2561
 4,Wave 4 — State,state,WI,State Senator,State Senate District 17,4,"Won, term not yet begun",Howard Marklein,Jenna Jacobson,called,0,0,0,0,2027-01-03,2027-01-04,statute,e6145680-ea83-4359-adc5-2357d59bb592
@@ -2073,7 +2073,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ME,Representative,ME State House District 24,4,"Won, term not yet begun",Sean Faircloth,Sean F. Faircloth,called,0,0,0,0,2026-11-30,2026-12-01,statute,e95669c9-bfaf-4409-b2bf-3a03d620194e
 4,Wave 4 — State,state,MA,"Representative, 3rd Suffolk District",MA House 3rd Suffolk District,2,Called,Aaron Michlewitz,Aaron Michlewitz,called,0,0,0,0,,,,e95a282b-dfdf-4cbe-8903-a090f805116f
 3,Wave 3 — December locals,local,CA,Board Member,Wiseburn Unified School Board,1,Not looked at,Roger Bañuelos,,,0,0,0,0,,2026-12-11,statute,e95c9e92-7a83-468c-bb5c-2375e74e214e
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 71,2,Called,Kate Sanchez,Kate Sanchez,called,0,0,0,0,,,,e97ae0ed-5898-46f1-8054-16658a518c02
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 71,4,"Won, term not yet begun",Kate Sanchez,Kate Sanchez,called,0,0,0,0,2026-12-06,2026-12-07,statute,e97ae0ed-5898-46f1-8054-16658a518c02
 2,Wave 2 — House,federal,CA,U.S. Representative,U.S. Representative District 19,4,"Won, term not yet begun",Jimmy Panetta,Jimmy Panetta,called,0,0,0,0,2027-01-02,2027-01-03,statute,e98beacf-6a5b-4039-b977-eb1c30d53c8d
 2,Wave 2 — House,federal,MA,Representative,U.S. House MA-09,4,"Won, term not yet begun",Bill Keating,Bill Keating,called,0,0,0,0,2027-01-02,2027-01-03,statute,e9b035af-0037-45f5-95bf-6d4940b014b7
 4,Wave 4 — State,state,OR,Representative,OR State House District 2,2,Called,Virgle Osborne,Virgle J. Osborne,called,0,0,0,0,,,,e9b56946-5b02-4c2f-aec1-cac2dc262854
@@ -2095,7 +2095,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,UT,State Representative District 47,Utah State House District 47,2,Called,Mark A. Strong,Mark A. Strong,called,0,0,0,0,,,,eb925693-0b36-4f7f-82ce-01c77b233e3c
 2,Wave 2 — House,federal,NC,U.S. Representative,U.S. Representative District 6,4,"Won, term not yet begun",Addison P. McDowell,Cyril Jefferson,called,0,0,0,1,2027-01-02,2027-01-03,statute,ebc2c793-6292-4724-be13-a5d09858ea61
 5,Wave 5 — Remaining locals,local,OR,Mayor,Fairview Mayor,2,Called,Keith Kudrna,Keith A Kudrna,called,0,0,1,1,,,,ebcee8b9-4ff2-48c7-afcd-f035e1c9031c
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 1,2,Called,Heather Hadwick,Heather Hadwick,called,0,0,0,0,,,,ebd0885c-de28-4327-8664-2a1ac88acd67
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 1,4,"Won, term not yet begun",Heather Hadwick,Heather Hadwick,called,0,0,0,0,2026-12-06,2026-12-07,statute,ebd0885c-de28-4327-8664-2a1ac88acd67
 4,Wave 4 — State,state,UT,State Representative District 42,Utah State House District 42,2,Called,Clinton Okerlund,Iva Williams,called,0,0,0,1,,,,ebdf314c-dde3-466f-a07e-05da23ab8250
 4,Wave 4 — State,state,NM,Commissioner of Public Lands,Commissioner of Public Lands,2,Called,Stephanie Garcia Richard,Juan Sanchez III,called,0,0,1,1,,,,ebe71a8c-1db6-446c-a818-dff93fb7e14e
 4,Wave 4 — State,state,ME,Representative,ME State House District 119,4,"Won, term not yet begun",Charles Skold,Michael P. Dixon,called,0,0,1,1,2026-11-30,2026-12-01,statute,ebf4f141-a10a-465c-bde6-bc3d7e73d72d
@@ -2108,7 +2108,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 5),Pomona Unified School Board - Trustee Area 5,1,Not looked at,Patricia Tye,,,0,0,0,0,2026-12-10,2026-12-11,statute,ecaf996a-4d2c-4017-82e1-b331caeb5a39
 4,Wave 4 — State,state,OR,Representative,OR State House District 39,2,Called,April Dobson,April Dobson,called,0,0,0,0,,,,ecba61f8-4a3b-424e-a540-396392e09bb7
 3,Wave 3 — December locals,local,CA,Council Member,South El Monte City Council,1,Not looked at,Larry Rodriguez,,,0,0,0,0,,2026-12-01,estimated,eccfd16c-b4f5-4c57-b6d6-63ad783ca5fc
-4,Wave 4 — State,state,CA,Senator,State Senate District 28,2,Called,Lola Smallwood-Cuevas,Lola Smallwood-Cuevas,called,0,0,0,0,,,,ecf6bc29-6e4b-42fa-970a-0867322f236d
+4,Wave 4 — State,state,CA,Senator,State Senate District 28,4,"Won, term not yet begun",Lola Smallwood-Cuevas,Lola Smallwood-Cuevas,called,0,0,0,0,2026-12-06,2026-12-07,statute,ecf6bc29-6e4b-42fa-970a-0867322f236d
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 8,4,"Won, term not yet begun",Hakeem S. Jeffries,Hakeem S. Jeffries,called,0,0,0,0,2027-01-02,2027-01-03,statute,ed0a4ce0-ff59-40b4-8a81-501f72a197c6
 4,Wave 4 — State,state,MA,"Senator, First Plymouth and Norfolk District",MA State Senate First Plymouth and Norfolk District,2,Called,Patrick M. O'Connor,Patrick M. O'Connor,called,0,0,0,0,,,,ed220fd1-6a95-43ba-a1c9-fa8bbf63905e
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 4,1,Not looked at,Barrie S. Ciliberti,,,0,0,0,0,,,,ed25b262-4f2e-48c0-98ca-d6a910f18d26
@@ -2136,7 +2136,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate District 21,2,Called,Ben Barnes,"Ben Barnes, Joseline A. Peña-Melnyk, Mary A. Lehman",called,0,0,1,1,,,,efe65f80-d0c4-4815-beb6-b4cad176cfe6
 4,Wave 4 — State,state,ME,Representative,ME State House District 124,4,"Won, term not yet begun",Sophia Warren,Eric James Nathanson,called,0,0,1,1,2026-11-30,2026-12-01,statute,f05456c3-3ba8-4470-b564-f015f23c32d0
 4,Wave 4 — State,state,MA,"Representative, 7th Hampden District",MA House 7th Hampden District,2,Called,Aaron L. Saunders,Aaron L. Saunders,called,0,0,0,0,,,,f06f0d9b-8861-47b7-8975-a2a3794db91f
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 69,2,Called,Josh Lowenthal,Josh Lowenthal,called,0,0,0,0,,,,f08701d1-b43e-410a-b318-70443f869784
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 69,4,"Won, term not yet begun",Josh Lowenthal,Josh Lowenthal,called,0,0,0,0,2026-12-06,2026-12-07,statute,f08701d1-b43e-410a-b318-70443f869784
 4,Wave 4 — State,state,ME,Representative,ME State House District 2,4,"Won, term not yet begun",Roger Albert,Roger C. Albert,called,0,0,0,0,2026-11-30,2026-12-01,statute,f09b1591-de5e-49dd-a80d-a60e75b4475d
 3,Wave 3 — December locals,local,CA,City Treasurer,Burbank City Treasurer,1,Not looked at,Krystle Ang Palmer,,,0,0,0,0,,2026-12-01,estimated,f0a04347-8e6f-4300-95fe-4da3f02a6441
 4,Wave 4 — State,state,GA,"Public Service Commissioner, District 5",Georgia Public Service Commission District 5,2,Called,Stan Wise,Shelia Edwards,called,0,0,1,1,,,,f0a7d455-85e9-4d51-9942-3f99c6785219
@@ -2144,7 +2144,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,NE,Secretary of State,Secretary of State,2,Called,Bob Evnen,Scott Petersen,called,0,0,1,1,,,,f0d4ba5f-cade-4bcb-99c4-f707feadc681
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 46 Position 1,2,Called,Gerry Pollet,Gerry Pollet,called,0,0,0,0,,,,f11814cf-5809-480b-be29-bcb6acec332f
 2,Wave 2 — House,federal,NY,U.S. Representative,U.S. Representative District 1,4,"Won, term not yet begun",Nick LaLota,Nick LaLota,called,0,0,0,0,2027-01-02,2027-01-03,statute,f1415ce1-250b-49d5-afc1-b0f0f624b044
-4,Wave 4 — State,state,CA,Senator,State Senate District 12,2,Called,Shannon Grove,Nathan Magsig,called,0,0,0,1,,,,f1438d50-63af-4a45-a1a6-136c7d85a793
+4,Wave 4 — State,state,CA,Senator,State Senate District 12,4,"Won, term not yet begun",Shannon Grove,Nathan Magsig,called,0,0,0,1,2026-12-06,2026-12-07,statute,f1438d50-63af-4a45-a1a6-136c7d85a793
 4,Wave 4 — State,state,IA,Secretary of Agriculture,Secretary of Agriculture,2,Called,Mike Naig,Mike Naig,called,0,0,1,1,,,,f190a90a-1e31-43fe-a348-28c8111aca2f
 2,Wave 2 — House,federal,TX,Representative,U.S. Representative District 20,4,"Won, term not yet begun",Joaquin Castro,Joaquin Castro,called,0,0,0,0,2027-01-02,2027-01-03,statute,f1a24132-f288-4716-8995-08896825674d
 4,Wave 4 — State,state,MA,"Representative, 4th Essex District",MA House 4th Essex District,2,Called,Estela A. Reyes,Estela Reyes,called,0,0,0,0,,,,f1cd645c-2b8b-4fde-8fe3-622266695bc1
@@ -2161,7 +2161,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,VT,Lieutenant Governor,Lieutenant Governor,2,Called,John S. Rodgers,Molly Gray,called,0,0,1,1,,,,f2f6bcc4-0834-4864-97d9-690180013ea7
 4,Wave 4 — State,state,NE,"Nebraska State Board of Education Member, District 5",Nebraska State Board of Education District 5,2,Called,Kirk Penner,Angie Eberspacher,called,0,0,1,1,,,,f313b89a-3e22-4158-ace8-c3cafe244ece
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 47,2,Called,Malcolm Augustine,Malcolm Augustine,called,0,0,0,0,,,,f320bd09-ac45-42d6-b283-c6b80f71d668
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 23,2,Called,Marc Berman,Marc Berman,called,0,0,0,0,,,,f326a539-7066-4303-9e25-cbc52ac9a06f
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 23,4,"Won, term not yet begun",Marc Berman,Marc Berman,called,0,0,0,0,2026-12-06,2026-12-07,statute,f326a539-7066-4303-9e25-cbc52ac9a06f
 4,Wave 4 — State,state,OR,Senator,OR State Senate District 24,2,Called,Kayse Jama,Kayse Jama,called,0,0,0,0,,,,f34f46fd-2f14-4dfc-9290-a1937f096d5f
 4,Wave 4 — State,state,MD,Attorney General,Attorney General,2,Called,Anthony G. Brown,Anthony G. Brown,called,0,0,0,0,,,,f355f3a6-8327-4c98-a553-f0953a1c81c5
 4,Wave 4 — State,state,AZ,State Senator,State Senate District 3,2,Called,John Kavanagh,John Kavanagh,called,0,0,0,0,,,,f3896bdb-a36f-41fa-996f-e5b52422e124
@@ -2169,7 +2169,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 69,4,"Won, term not yet begun",Karen Hurd,Karen Hurd,called,0,0,0,0,2027-01-03,2027-01-04,statute,f3cf7e1b-d470-489e-8938-7718aed7ccad
 4,Wave 4 — State,state,MA,"Representative, 15th Suffolk District",MA House 15th Suffolk District,2,Called,Samantha Montaño,Samantha Montaño,called,0,0,0,0,,,,f3eb2042-ecf7-4748-9474-54d0901bfcc5
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 1),Downey Unified School Board - Trustee Area 1,1,Not looked at,Tyrone Conde,,,0,0,0,0,2026-12-10,2026-12-11,statute,f4046ef6-1a68-4523-97c0-e520c6ce76fd
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 59,2,Called,Phillip Chen,Phillip Chen,called,0,0,0,0,,,,f40d007a-4a3d-4ad1-b2df-40a2fcdd1041
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 59,4,"Won, term not yet begun",Phillip Chen,Phillip Chen,called,0,0,0,0,2026-12-06,2026-12-07,statute,f40d007a-4a3d-4ad1-b2df-40a2fcdd1041
 4,Wave 4 — State,state,WA,State Senator,WA State Senate Legislative District 29,2,Called,Steve Conway,Sharlett Mena,called,0,0,0,0,,,,f40d83eb-8295-45b6-9d32-ef586d4ff0d1
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 29,4,"Won, term not yet begun",Anne M. Carney,Anne M. Carney,called,0,0,0,0,2026-11-30,2026-12-01,statute,f437c7c1-06e8-4815-8d1a-6e9ebb4825cc
 4,Wave 4 — State,state,NV,Lieutenant Governor,Lieutenant Governor of Nevada,2,Called,Stavros Anthony,Sandra Jauregui,called,0,0,0,0,,,,f45501be-ba2f-4e0e-b7d2-b55c187e32a9
@@ -2231,7 +2231,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 2,Wave 2 — House,federal,GA,U.S. Representative,U.S. Representative District 11,4,"Won, term not yet begun",Barry Loudermilk,John Cowan,called,0,0,0,0,2027-01-02,2027-01-03,statute,f9d81306-025c-42b3-8262-c7a8460624ac
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 33,2,Called,Dawn Gile,Dawn D. Gile,called,0,0,0,0,,,,fa0de4f2-4d7f-47e0-a5ff-3c0837f673e7
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 3),Citrus Community College Board - Trustee Area 3,1,Not looked at,Cheryl Alexander,,,0,0,0,0,2026-12-10,2026-12-11,statute,fa23e494-4eb9-5635-9247-383f19ef0716
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 11,2,Called,Lori D. Wilson,Lori D Wilson,called,0,0,0,0,,,,fa2ab229-2e8f-4fc6-8934-ad17b82be962
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 11,4,"Won, term not yet begun",Lori D. Wilson,Lori D Wilson,called,0,0,0,0,2026-12-06,2026-12-07,statute,fa2ab229-2e8f-4fc6-8934-ad17b82be962
 4,Wave 4 — State,state,WI,State Senator,State Senate District 15,4,"Won, term not yet begun",Mark Spreitzer,Mark Spreitzer,called,0,0,0,0,2027-01-03,2027-01-04,statute,fa6f5af4-5105-430c-8128-927f006a52e1
 4,Wave 4 — State,state,MA,"Representative, 2nd Berkshire District",MA House 2nd Berkshire District,2,Called,Tricia Farley-Bouvier,Tricia Farley-Bouvier,called,0,0,0,0,,,,fa9ec805-becb-4f51-b301-c15ba1b588cc
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 44 Position 2,2,Called,April Berg,April Berg,called,0,0,0,0,,,,faa1ad05-4b54-47c7-88a4-c18e1fb10935
@@ -2298,7 +2298,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 65,4,"Won, term not yet begun",Ben DeSmidt,Ben DeSmidt,called,0,0,0,0,2027-01-03,2027-01-04,statute,ff5279c8-6565-40e5-88ce-883ddde5f86e
 4,Wave 4 — State,state,ME,Representative,ME State House District 52,4,"Won, term not yet begun",Sally Cluchey,Sally Jeane Cluchey,called,0,0,0,0,2026-11-30,2026-12-01,statute,ff53c174-008c-4d28-a432-a423416e7e20
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 33A,2,Called,Andrew C. Pruski,Andrew C. Pruski,called,0,0,0,0,,,,ff54c638-c2bb-4b1f-8973-b71974c50d1a
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 67,2,Called,Sharon Quirk-Silva,Mark Pulido,called,0,0,0,1,,,,ff79f39b-3b55-4ded-b62b-578ac3162af5
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 67,4,"Won, term not yet begun",Sharon Quirk-Silva,Mark Pulido,called,0,0,0,1,2026-12-06,2026-12-07,statute,ff79f39b-3b55-4ded-b62b-578ac3162af5
 4,Wave 4 — State,state,OK,Lieutenant Governor,Lieutenant Governor,2,Called,Matt Pinnell,T. W. Shannon,called,0,0,1,1,,,,ffc6ba76-b8a3-4029-a4fd-6f5fb30e82c8
 4,Wave 4 — State,state,UT,State Board of Education District 5,Utah State Board of Education District 5,2,Called,Sarah Reale,Sarah Reale,called,0,0,0,1,,,,ffe28647-1f5e-41fe-aaf1-ddbbd6533845
 2,Wave 2 — House,federal,IL,U.S. Representative,U.S. Representative District 10,4,"Won, term not yet begun",Bradley Scott Schneider,Bradley Scott Schneider,called,0,0,0,0,2027-01-02,2027-01-03,statute,ffef2601-403f-42fb-a257-2a9303d5d737

@@ -254,9 +254,14 @@ large for one run. Neither has a deadline before 2027.
   2026-11-24 15:36Z for this work. Claim `state:ma` before starting Massachusetts.
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
-  CSVs, update the three `datasets/*` docs **in place**). 🔴 **Its owners file is stale in four of
-  its five rows and the status word is the operator's to change** — waves 4 and 5 say "Blocked"
-  and blocked is 0, so the page paints two healthy waves red.
+  CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
+  file against them). ✅ **Refreshed for California 2026-11-23**, all four dataset docs.
+  🟢 **THE "waves 4 and 5 SAY Blocked" WARNING IS STALE AND IS RETIRED HERE.** It was true on
+  2026-11-16 and fixed before the 11-19 refresh. Re-read 2026-11-23: the five status words are
+  `In progress` ×4 and `Barely started`, none matches the page's `/block/i` regex, and `blocked`
+  is 0 in every wave. ⚠ **Re-read it anyway at every refresh** — it is the only dataset the
+  builder does not compute, so it goes stale on its own, and the status word is the operator's
+  to change. ⚠ Wave 4's `next_action` text still predates California.
 - **Step 9 is not done until a real address goes through `api.empowered.vote`.** Reasoning about a
   read path is not measuring it. Pick an address in a seat that CHANGES HANDS, and one in a seat
   that is vacant if the state has one — a re-election renders the same whether the file worked or
