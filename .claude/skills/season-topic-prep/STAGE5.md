@@ -740,6 +740,23 @@ leaves files in `<stage5>/summaries/<batch>/`.
   run and let 3.2 of 11 flawed summaries pass; this one caught 12.2 and let 0.5 pass, and holds about 2.5 of 10 sound
   but borderline summaries (old: 1.8). One check still misses some near-miss wording, so a pass is not proof.
   Notes and every run: `.planning/research/s3-prep-gun-policy/stage5/summaries/consistency-test/`.
+- **Written by the coder (opt-in; off unless the runner turns it on).** `coder-inputs.ts --with-summary` adds a second
+  job to each coder brief: after coding a person seated or doesnt-fit, write that person's summary, by the writer
+  template's own rules (`lib/stage5CoderSummary.ts` cuts them from that template, so there is one copy). Then
+  `split-codes.ts --summaries <stage5>/coded-summaries` saves each passing code's summary beside the codes (it is
+  never written into the code file), and `summary-inputs.ts --coder-summaries <stage5>/coded-summaries` uses it as
+  that person's draft (`drafts/coder.json`) and leaves them out of the writer prompts. A coder summary is used only
+  while the person's code is the one the coder gave; after a review or re-code the writer writes it. Lint, checker
+  and rewrites are unchanged. Trial on gun policy, 2026-11-22/23: Nevada placements were the same in two plain and
+  two merged coder runs (17 of 17 each); the blind check on the 24 own-words seats agreed with today's codes on 23
+  with the merged brief and 22 with the plain one; Opus cost for coding plus writing 17 people fell from $3.10 to
+  $1.79; the checker passed the coder's summaries at about the writer's rate, and they are shorter (about 600
+  characters and 6 to 8 findings cited, against 880 and 10). Not measured: any topic but gun policy, and the
+  `stage5-coder` subagent (the trial ran the brief through the command-line tool, read-only).
+- **Two bills in one part** (writer template, 2026-11-23). A part that cites two bills must be true of each. Without the
+  rule the Nevada writer described a 2023 bill on unserialized frames and receivers together with a 2021 bill on
+  unserialized guns, for 6 of 14 people, and 7 of 14 summaries passed every checker run; with it, 13 of 14 (one
+  writer run each).
 - **Sponsored or voted is checked by the lint** (`actClaimProblems` in `stage5Summary.ts`), so step 3 refuses a draft that
   says "co-sponsored" of a bill whose cited findings show only a vote, or "voted" of one with only a sponsorship. It
   refuses only clear cases; a part that makes two separate claims is left to the checker. Over the 163 distinct drafts

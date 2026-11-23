@@ -51,6 +51,10 @@ text.** The tool numbers the sources and writes the reference list from the find
      text says what the bill does, leave that bill out of the summary.
    - **A bill with several parts:** name the parts about guns and leave out the rest. The federal background check
      system (NICS) is about guns.
+   - **Two bills in one part:** when a part cites more than one bill, every word of it must be true of each bill
+     it cites. Bills on the same subject often differ in what they cover (one bans a kind of gun, the next only its
+     parts; one covers every sale, the next only some). Read each bill's reading and excerpt before you group them.
+     If they differ, give each bill its own part with its own words, or use words that are true of both.
 
 ## Writing rules
 
