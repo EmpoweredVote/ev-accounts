@@ -11,6 +11,7 @@
 import { pool } from './db.js';
 import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
+import { mapTransitionFields } from './transitionDisplay.js';
 import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
@@ -452,6 +453,14 @@ export async function getPoliticiansByArea(
            COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
+           -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+           -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+           -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+           -- would be reported for all of them.
+           to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+           opw.certainty AS pending_certainty,
+           opw.seats AS pending_seats,
+           opw.winners AS pending_winners,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -471,6 +480,9 @@ export async function getPoliticiansByArea(
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -507,6 +519,14 @@ export async function getPoliticiansByArea(
            COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
              o.id AS office_id,
+             -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+             -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+             -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+             -- would be reported for all of them.
+             to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+             opw.certainty AS pending_certainty,
+             opw.seats AS pending_seats,
+             opw.winners AS pending_winners,
              o.title AS office_title, o.representing_state, o.representing_city,
              o.voting_powers, o.representation_note,
              o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -524,6 +544,9 @@ export async function getPoliticiansByArea(
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
       LEFT JOIN essentials.government_bodies gvb
@@ -557,13 +580,15 @@ export async function getPoliticiansByArea(
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
-    // 🔴 NOT SOURCED ON THIS PATH YET (CC_0341). These are null here because the browse
-    // queries do not join essentials.office_next_term, NOT because the seat has no successor:
-    // the two are indistinguishable to a caller, so do not render a transition from this path
-    // until the join is added and measured. getPoliticiansFlatList does source them.
-    incoming_holder_id: null,
-    incoming_holder_name: null,
-    incoming_on: null,
+    // CC_0458 sourced the election result on this path, so these are no longer blanked. The
+    // three incoming_* fields stay null here on purpose: these queries INNER JOIN
+    // office_current_holder, so a row only exists when somebody sits in the seat, and
+    // office_next_term is joined only by the office-rooted address paths.
+    // 🔴 seat_group IS DELIBERATELY NULL ON EVERY PERSON-ROOTED READ. A seat group is a fact
+    // about a BODY and this query is DISTINCT ON (p.id); a group belonging to one of a person's
+    // offices would be reported for all of them. The browse pages therefore show the per-person
+    // result only, never the group-to-group arrow.
+    ...mapTransitionFields(row),
 
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
@@ -688,6 +713,14 @@ const DISTRICT_POLITICIAN_SELECT = `
   COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
   COALESCE(p.appointment_date::text, '') AS appointment_date,
   o.id AS office_id,
+  -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+  -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+  -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+  -- would be reported for all of them.
+  to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+  opw.certainty AS pending_certainty,
+  opw.seats AS pending_seats,
+  opw.winners AS pending_winners,
   o.title AS office_title, o.representing_state, o.representing_city,
   o.voting_powers, o.representation_note,
   o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -717,6 +750,9 @@ async function fetchDistrictPoliticianRows(geoPairs: GeoPair[]): Promise<Record<
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
       LEFT JOIN essentials.government_bodies gvb
@@ -768,6 +804,14 @@ export async function getPoliticiansByGovernmentList(
            COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
+           -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+           -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+           -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+           -- would be reported for all of them.
+           to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+           opw.certainty AS pending_certainty,
+           opw.seats AS pending_seats,
+           opw.winners AS pending_winners,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -801,6 +845,9 @@ export async function getPoliticiansByGovernmentList(
     JOIN essentials.offices o ON o.chamber_id = ch.id
     JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     WHERE g.geo_id = ANY($1)
       AND p.is_active = true
@@ -830,6 +877,14 @@ export async function getPoliticiansByGovernmentList(
              COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
              COALESCE(p.appointment_date::text, '') AS appointment_date,
              o.id AS office_id,
+             -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+             -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+             -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+             -- would be reported for all of them.
+             to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+             opw.certainty AS pending_certainty,
+             opw.seats AS pending_seats,
+             opw.winners AS pending_winners,
              o.title AS office_title, o.representing_state, o.representing_city,
              o.voting_powers, o.representation_note,
              o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -845,6 +900,9 @@ export async function getPoliticiansByGovernmentList(
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
       LEFT JOIN essentials.government_bodies gvb
@@ -893,13 +951,15 @@ export async function getPoliticiansByGovernmentList(
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
-    // 🔴 NOT SOURCED ON THIS PATH YET (CC_0341). These are null here because the browse
-    // queries do not join essentials.office_next_term, NOT because the seat has no successor:
-    // the two are indistinguishable to a caller, so do not render a transition from this path
-    // until the join is added and measured. getPoliticiansFlatList does source them.
-    incoming_holder_id: null,
-    incoming_holder_name: null,
-    incoming_on: null,
+    // CC_0458 sourced the election result on this path, so these are no longer blanked. The
+    // three incoming_* fields stay null here on purpose: these queries INNER JOIN
+    // office_current_holder, so a row only exists when somebody sits in the seat, and
+    // office_next_term is joined only by the office-rooted address paths.
+    // 🔴 seat_group IS DELIBERATELY NULL ON EVERY PERSON-ROOTED READ. A seat group is a fact
+    // about a BODY and this query is DISTINCT ON (p.id); a group belonging to one of a person's
+    // offices would be reported for all of them. The browse pages therefore show the per-person
+    // result only, never the group-to-group arrow.
+    ...mapTransitionFields(row),
 
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name as string ?? '',
@@ -988,13 +1048,15 @@ function mapBrowseRow(row: Record<string, unknown>): PoliticianFlatRecord {
     id: (row.id as string | null) ?? null,
     office_id: (row.office_id as string | null) ?? '',
     seat_status: row.id ? 'held' : 'vacant',
-    // 🔴 NOT SOURCED ON THIS PATH YET (CC_0341). These are null here because the browse
-    // queries do not join essentials.office_next_term, NOT because the seat has no successor:
-    // the two are indistinguishable to a caller, so do not render a transition from this path
-    // until the join is added and measured. getPoliticiansFlatList does source them.
-    incoming_holder_id: null,
-    incoming_holder_name: null,
-    incoming_on: null,
+    // CC_0458 sourced the election result on this path, so these are no longer blanked. The
+    // three incoming_* fields stay null here on purpose: these queries INNER JOIN
+    // office_current_holder, so a row only exists when somebody sits in the seat, and
+    // office_next_term is joined only by the office-rooted address paths.
+    // 🔴 seat_group IS DELIBERATELY NULL ON EVERY PERSON-ROOTED READ. A seat group is a fact
+    // about a BODY and this query is DISTINCT ON (p.id); a group belonging to one of a person's
+    // offices would be reported for all of them. The browse pages therefore show the per-person
+    // result only, never the group-to-group arrow.
+    ...mapTransitionFields(row),
 
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
@@ -1087,6 +1149,14 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
            COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
+           -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+           -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+           -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+           -- would be reported for all of them.
+           to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+           opw.certainty AS pending_certainty,
+           opw.seats AS pending_seats,
+           opw.winners AS pending_winners,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -1102,6 +1172,9 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -1163,6 +1236,14 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
            COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
+           -- CC_0458: the election result, for seats with no dated term. Person-rooted read, so the
+           -- per-person fields only: NO district_seat_group here. A seat group is a fact about a BODY
+           -- and this query is DISTINCT ON (p.id), so a group attached to one of a person's offices
+           -- would be reported for all of them.
+           to_char(opw.election_date, 'YYYY-MM-DD') AS pending_election_date,
+           opw.certainty AS pending_certainty,
+           opw.seats AS pending_seats,
+           opw.winners AS pending_winners,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -1178,6 +1259,9 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.office_current_holder och ON och.office_id = o.id
     JOIN essentials.politicians p ON p.id = och.politician_id
+    -- CC_0458. LEFT, and it must stay LEFT: 1,334 offices of 11,155 have a pending winner.
+    -- One row per office, so it cannot fan out a read that is already DISTINCT ON (p.id).
+    LEFT JOIN essentials.office_pending_winner opw ON opw.office_id = o.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb

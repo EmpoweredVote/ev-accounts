@@ -10,6 +10,7 @@ import {
   pickCountyFromDistrictRows,
   pickJurisdictionFromDistrictRows,
   countyFromProbeRow,
+  getPoliticianById,
   buildLocality,
   resolveOfficialsAtPoint,
 } from './essentialsService.js';
@@ -223,6 +224,67 @@ describe('getPoliticiansFlatList incoming holder', () => {
     const sql = await sqlFor(false);
     expect(sql).toContain('och.office_id IS NOT NULL');
     expect(sql).not.toContain('ont.office_id IS NOT NULL');
+  });
+
+  // CC_0458. This endpoint and the address paths must agree, which is the whole lesson of the
+  // CC_0341 incident recorded above: the data was correct and one read path was not.
+  it('selects the pending-winner columns too', async () => {
+    const sql = await sqlFor(false);
+    expect(sql).toContain('essentials.office_pending_winner');
+    expect(sql).toContain('pending_election_date');
+    expect(sql).toContain('pending_winners');
+  });
+
+  it('joins the pending-winner view with LEFT JOIN as well', async () => {
+    expect(await sqlFor(false)).toMatch(/LEFT JOIN\s+essentials\.office_pending_winner/i);
+  });
+
+  // ⚠ DELIBERATELY ABSENT. This query is DISTINCT ON (p.id) — person-rooted — and a seat group
+  // is a fact about a BODY. Carrying it on a row that was de-duplicated by person would attach
+  // one of the person's offices' groups to all of them. Only the office-rooted address and
+  // coordinate paths populate seat_group.
+  it('does NOT join the seat-group view, because this read is person-rooted', async () => {
+    // Pin the absence of the JOIN, not of the word: the query carries a comment explaining why
+    // the view is deliberately absent, and that comment is part of the SQL text.
+    expect(await sqlFor(false)).not.toMatch(/JOIN\s+essentials\.district_seat_group/i);
+  });
+});
+
+describe('getPoliticianById arriving seat', () => {
+  // 🔴 136 people in essentials.office_next_term hold no current seat. office_current_holder
+  // resolves nothing for them, so their profile renders as though they are nobody — and that is
+  // exactly the page a voter reaches by clicking the incoming name on an address result.
+  async function sqlForDetail(): Promise<string> {
+    const query = vi.mocked(pool.query);
+    query.mockReset();
+    query.mockResolvedValue({ rows: [] } as never);
+    await getPoliticianById('00000000-0000-0000-0000-000000000000');
+    return String(query.mock.calls[0][0]);
+  }
+
+  it('resolves the seat a person is arriving into', async () => {
+    const sql = await sqlForDetail();
+    expect(sql).toContain('essentials.office_next_term');
+    expect(sql).toContain('AS arriving_office_title');
+    expect(sql).toContain('AS arriving_on');
+  });
+
+  // 🔴 THIS JOIN DIRECTION FANS OUT AND THE OTHER ONE DOES NOT. office_next_term is one row per
+  // OFFICE, so joining from offices is safe; joining FROM a politician returns one row per
+  // future term that person holds, and people do hold two. Same trap that once returned two
+  // Aaron Freemans.
+  it('takes exactly one arriving seat per person', async () => {
+    // ⚠ The outer query already ends in LIMIT 1, so a loose /arriving[\s\S]*LIMIT 1/ would pass
+    // on a lateral that has no limit of its own and fans the row out before that point. Pin the
+    // LATERAL's own ORDER BY + LIMIT 1, which is the thing that actually prevents it.
+    expect(await sqlForDetail()).toMatch(
+      /LEFT JOIN LATERAL \([\s\S]{0,900}?ORDER BY[\s\S]{0,200}?LIMIT 1\s*\)\s*arriving/
+    );
+  });
+
+  it('formats the arriving date in SQL, never as a raw date column', async () => {
+    // String(new Date('2027-01-03')).slice(0, 10) is "Sun Jan 03". See districtQueries.ts.
+    expect(await sqlForDetail()).toMatch(/to_char\(\s*ont\.term_start,\s*'YYYY-MM-DD'\s*\)/);
   });
 });
 
