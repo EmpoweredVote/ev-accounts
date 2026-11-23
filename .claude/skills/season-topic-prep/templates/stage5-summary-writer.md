@@ -60,8 +60,11 @@ text.** The tool numbers the sources and writes the reference list from the find
 7. Neutral tone: the words a news wire would use ("loosen", "tighten", "expand", "limit"), no adjectives of judgement.
 
 Also: one sentence per entry (no sentence may hold a second sentence). A finding marked `act: yea` with
-`against_bill: true` is a vote AGAINST the bill. A vote marked as gated (nearly everyone voted the same way) says
-little about a position; do not lean on it. Use only `cites` ids that appear in that person's findings below. When
+`against_bill: true` is a vote AGAINST the bill. A finding marked `gated:` shows no position on guns, for the reason
+it gives: nearly everyone voted the same way, or the bill covers several subjects. Never present a gated vote as
+support for, or opposition to, its gun part ("voted for permitless carry"), and never count it toward the lean.
+Leave it out when other findings cover the person; if it is all there is, describe the whole bill ("voted for a
+public-safety bill that covered permitless carry, school safety and spending"). Use only `cites` ids that appear in that person's findings below. When
 the findings support only one sentence, write one sentence and no opening line; do not pad. Otherwise the first
 entry is the opening line.
 
