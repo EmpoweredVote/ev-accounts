@@ -166,6 +166,14 @@ CREATE INDEX IF NOT EXISTS compass_user_lens_history_created_idx
 -- history_id IS the primary key, so an ack is idempotent and one history row
 -- cannot be acknowledged twice. This FK IS present and SHOULD cascade-by-absence:
 -- history rows are never deleted, so the reference can never dangle.
+--
+-- ⚠ THIS FK HAS NO ON DELETE ACTION, AND THAT WILL BITE THE DEFERRED RETENTION
+-- WORK. It is correct today precisely because nothing deletes history. The plan
+-- defers retention, and the first purge of an old history row that was ever
+-- acknowledged will fail with a foreign-key violation. Retention must either
+-- delete the matching ack rows first or move this to ON DELETE CASCADE in a NEW
+-- migration. 🔴 It is NOT edited here: CC_0468 is already applied to production,
+-- and changing this file would make the committed text disagree with the live schema.
 
 CREATE TABLE IF NOT EXISTS inform.compass_lens_alert_acks (
   history_id  uuid primary key references inform.compass_user_lens_history(id),

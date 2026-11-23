@@ -487,6 +487,9 @@ describe('replaceUserLenses — a deletion must be named', () => {
     const soft = clientQueryMock.mock.calls.find(c => String(c[0]).includes('deleted_at = now()'));
     expect(String(soft?.[0])).toContain('owner_id = $1');
     expect(String(soft?.[0])).toContain('key = ANY($2::text[])');
+    // 🔴 Load-bearing for retry idempotency: a repeated PUT naming an already
+    // deleted key must match nothing and write no second history row.
+    expect(String(soft?.[0])).toContain('AND deleted_at IS NULL');
     expect(soft?.[1]).toEqual([USER, ['u_aaa001']]);
   });
 
@@ -513,6 +516,9 @@ describe('replaceUserLenses — a deletion must be named', () => {
     });
 
     const probe = poolQueryMock.mock.calls.find(c => String(c[0]).includes('owner_id <> $1'));
+    // ⚠ Without this, an undefined probe passes the next line forever
+    // (String(undefined) contains no deleted_at).
+    expect(probe).toBeDefined();
     expect(String(probe?.[0])).not.toContain('deleted_at');
   });
 

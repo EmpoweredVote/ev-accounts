@@ -211,6 +211,21 @@ describe('parseAckArgs', () => {
     expect(r.error).toContain('--force');
   });
 
+  it('refuses a trailing --note with no value', () => {
+    // 🔴 A further spelling of the same defect: note stayed null and the ack was
+    // written with no reason at all.
+    const r = parseAckArgs(['h1', '--note']);
+    expect(r.ids).toEqual([]);
+    expect(r.error).toContain('no text');
+  });
+
+  it('refuses --note followed by another flag rather than eating it as the note', () => {
+    const r = parseAckArgs(['h1', '--note', '--force']);
+    expect(r.ids).toEqual([]);
+    expect(r.note).toBeNull();
+    expect(r.error).toContain('no text');
+  });
+
   it('refuses an empty note', () => {
     expect(parseAckArgs(['h1', '--note=']).error).toContain('no text');
   });

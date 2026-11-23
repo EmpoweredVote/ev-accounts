@@ -77,6 +77,25 @@
  * morning it matters is the morning nobody looks. `--allow-skip` exists for
  * local work and says in so many words that nothing was measured.
  *
+ * 🔴 THE DEPLOY WINDOW: EXPECT CONDITION 2 TO FIRE, AND DO NOT "FIX" THE CHECK.
+ * CC_0468 went live in production BEFORE the backend that uses soft delete was
+ * deployed. Between those two moments the OLD service is still running and still
+ * issues a plain DELETE FROM inform.compass_user_lenses. The trigger now records
+ * every such DELETE as op='hard_delete' under a LIVE owner, which is condition 2's
+ * exact alarm ("Something reached the table outside the application"). CompassV2's
+ * smoke suite calls clearServerLenses against production on every PR run, so
+ * ordinary CI traffic will produce these rows. (Measured when this was written:
+ * history was still empty, so the window was open but nothing had landed in it.)
+ *
+ * The condition is correct and is deliberately NOT weakened: during the window a
+ * hard_delete under a live owner genuinely IS the sanctioned path being bypassed,
+ * because the sanctioned path has not shipped yet. The right response is to ACK
+ * those rows with a note naming the window, not to edit the check.
+ *
+ * ⚠ THE PART THAT WILL ACTUALLY BITE: --selftest ABORTS AGAINST A RED BASELINE.
+ * The operator's first instinct, running the selftest to see whether the check is
+ * healthy, will not work until those rows are acked. Ack first, then selftest.
+ *
  * RUN:
  *   npm run check:lens-durability                 # the nightly
  *   npm run check:lens-durability:selftest        # plant removals, watch it go red, ROLLBACK
@@ -145,6 +164,24 @@ const REMOVALS_SQL = `
  * is exercised by --selftest. Keeping the decision out of the query is what makes
  * "does this fire on the 2026-11-22 shape" answerable without a database.        */
 
+/*
+ * ⚠ TWO KNOWN LIMITS OF CONDITION 1, WRITTEN DOWN SO THEY ARE NOT DISCOVERED.
+ *
+ * (a) A RESTORED KEY STILL COUNTS. Only soft_delete and hard_delete rows are
+ * selected, so an owner who deletes lens A, re-creates it (a restore row, which
+ * is not selected), then deletes lens B reads as having lost two lenses. That is
+ * a deliberate choice, not an oversight: both lenses DID leave, the case is rare,
+ * and the alternative is netting restores out of the grouping, which is a second
+ * change to grouping semantics, made late, whose own bugs would be silent in
+ * exactly the way this check exists to prevent. Rare noise is acked with a note.
+ *
+ * (b) A BUG PLUS AN ACCOUNT DELETION IS INVISIBLE. If something soft-deletes three
+ * lenses on Monday and the user deletes their account on Tuesday, owner_exists is
+ * false: condition 1 drops the whole group and condition 2 treats the cascade as
+ * sanctioned. That is correct per the rules, since an account deletion legitimately
+ * removes everything, but it means Monday's damage is unreportable once the
+ * account is gone. A limit of the check, stated here rather than discovered.
+ */
 /**
  * Condition 1. Owners who removed MORE THAN ONE DISTINCT lens in the window.
  *
@@ -340,7 +377,19 @@ export function parseAckArgs(tail) {
   let note = null;
   for (let k = 0; k < tail.length; k++) {
     const a = tail[k];
-    if (a === '--note') { note = tail[++k] ?? null; continue; }
+    if (a === '--note') {
+      // 🔴 A TRAILING --note, OR --note FOLLOWED BY ANOTHER FLAG, IS THE --note=
+      // BUG IN FURTHER SPELLINGS. A bare trailing --note left note null and the
+      // ack was written with no reason; `--note --force` swallowed the next flag
+      // as the note text. Both lose the reason silently.
+      const v = tail[k + 1];
+      if (v === undefined || v.startsWith('--')) {
+        return { ids: [], note: null, error: '--note was given with no text.' };
+      }
+      note = v;
+      k++;
+      continue;
+    }
     if (a.startsWith('--note=')) { note = a.slice('--note='.length); continue; }
     if (a.startsWith('--')) {
       return {
@@ -370,7 +419,11 @@ export function parseAckArgs(tail) {
  * satisfied and the check stays red for reasons they now believe they handled.
  */
 async function ack(client) {
-  const { ids, note, error } = parseAckArgs(argv.slice(argv.indexOf('--ack') + 1));
+  const parsed = parseAckArgs(argv.slice(argv.indexOf('--ack') + 1));
+  const { note, error } = parsed;
+  // De-duplicated: ON CONFLICT DO NOTHING absorbs a repeated id, so counting the
+  // raw list reported "acked 1 of 2" and printed the same row twice.
+  const ids = [...new Set(parsed.ids)];
   if (error) {
     console.error('🔴 refusing to ack: ' + error);
     console.error('   Nothing was written. No ids were acked.');

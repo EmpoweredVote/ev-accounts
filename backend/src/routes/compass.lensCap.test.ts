@@ -59,6 +59,9 @@ vi.mock('../lib/compassUserLensService.js', () => ({
   getRecalibrationFlags: vi.fn(),
   getAllRecalibrationFlags: vi.fn(),
   isLensKeyConflictError: vi.fn(),
+  // compass.ts calls this FIRST in its catch; omitting it makes the next rejecting
+  // test die on a "no export defined" throw that masks the real failure.
+  isUnacknowledgedLensDeletionError: vi.fn(),
 }));
 
 vi.mock('../middleware/auth.js', () => ({
