@@ -24,8 +24,8 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
-| 2 | ME | STATE_LOWER | 149 | 149 | 88 | 61 | — | — | — | 2026-12-01 |
-| 3 | ME | STATE_UPPER | 34 | 34 | 18 | 16 | — | — | — | 2026-12-01 |
+| 2 | ME | STATE_LOWER | 149 | 149 | 88 | — | — | — | — | 2026-12-01 |
+| 3 | ME | STATE_UPPER | 34 | 34 | 18 | — | — | — | — | 2026-12-01 |
 | 4 | ME | STATE_EXEC | 1 | 1 | 0 | — | — | — | — | 2027-01-06 |
 | 5 | MA | STATE_LOWER | 159 | 159 | 141 | 18 | — | 2 | 159 | — |
 | 6 | WA | STATE_LOWER | 95 | 95 | 71 | — | — | — | 95 | — |

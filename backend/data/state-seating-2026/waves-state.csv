@@ -1,7 +1,7 @@
 rank,state,district_type,offices,winners,reelections,winners_without_record,multi_winner_offices,flagged_vacant_offices,offices_without_date,start_date,status
 1,hi,STATE_EXEC,1,3,1,0,1,0,0,2026-11-03,queued
-2,me,STATE_LOWER,149,149,88,61,0,0,0,2026-12-01,queued
-3,me,STATE_UPPER,34,34,18,16,0,0,0,2026-12-01,queued
+2,me,STATE_LOWER,149,149,88,0,0,0,0,2026-12-01,queued
+3,me,STATE_UPPER,34,34,18,0,0,0,0,2026-12-01,queued
 4,me,STATE_EXEC,1,1,0,0,0,0,0,2027-01-06,queued
 5,ma,STATE_LOWER,159,159,141,18,0,2,159,,queued
 6,wa,STATE_LOWER,95,95,71,0,0,0,95,,queued

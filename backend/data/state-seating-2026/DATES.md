@@ -336,6 +336,122 @@ the oath (2026-12-02), because the next reader will meet the convening date firs
 - ⚠ **The Governor's 2027-01-06 is the same day as Massachusetts' legislature.** Two different
   clauses in two states; the coincidence means nothing and the rows must not be shared.
 
+### ✅✅ DATED AND SEEDED 2026-11-23 — **MAINE IS READY TO SEAT**
+
+| step | file | result |
+|---|---|---|
+| 3 · dates | `CC_0473` | **184 rows** — 183 legislative on **2026-12-01**, Governor on **2027-01-06** |
+| 4 · people | `CC_0474` | **59 created, 18 LINKED**, 77 `race_candidates` rows moved from NULL to a person |
+
+🟢🟢 **`derive-seating-wave.mjs` NOW REPORTS "blockers none — this body is ready to seat"**:
+183 winners · 183 offices · 106 re-elections · 77 new holders · term start **2026-12-01** ·
+called 183 / certified 0 · digest `1d8cfe00b3000568de9bd211babf310b`.
+
+#### 🔴🔴 77 BLOCKERS, 59 PEOPLE — AND TERM LIMITS ARE WHY
+
+The blocker is computed from the winner's own race row and **never says "no record
+anywhere"**. Nevada taught this once, with Danielle Gallant. Maine does it **eighteen**
+times, because the state caps a member at four consecutive terms in one chamber — so members
+at the cap do not retire, **they change chambers**:
+
+| Senate → House | House → Senate |
+|---|---|
+| Susan Bernard `SD1→HD3` · Stacey K. Guerin `SD4→HD34` · Russell J. Black `SD5→HD74` · Jeffrey L. Timberlake `SD17→HD91` | Lucien J.B. Daigle `HD1→SD1` · Chad Richard Perkins `HD31→SD4` · Elizabeth M. Caruso `HD72→SD5` · Billy Bob Faulkingham `HD12→SD6` · Amy J. Roeder `HD23→SD9` · Ann H. Matlack `HD43→SD12` · Richard G. Mason `HD97→SD17` · Kimberly J. Pomerleau `HD85→SD22` · Sophia Bailey Warren `HD124→SD30` · Daniel R. Sayre `HD135→SD34` · Michele Meyer `HD150→SD35` |
+
+The other four already held a **local** office we had seeded: April D. Fournier (Portland),
+Ayn M. Hanselmann (Sanford), Mallory A. Cook (Bangor School Department).
+▶ **A STATE WITH TERM LIMITS WILL HAVE THIS SHAPE EVERY CYCLE**, and the number is not one or
+two. Sweep before seeding, always.
+
+#### 🔴🔴 THE NEAR-MISS: A NAME THAT MATCHES IS NOT A PERSON THAT MATCHES
+
+The sweep for **Chad Perkins** returns **two active rows**. One holds **MISSOURI** State House
+District 40; the other holds **MAINE** State House District 31.
+
+⚠ **THE FIRST VERSION OF THE SWEEP PRINTED THE SEAT WITHOUT ITS STATE** — *"Chad Perkins,
+State House District 40"* beside *"Chad Perkins, State House District 31"* — which is exactly
+what one person's two terms under two maps look like, **and Maine really did redistrict in
+2021**. The reading on offer was "a duplicate to merge". ▶ **PRINT THE FIELD THAT
+DISCRIMINATES, NOT THE ONE THAT IDENTIFIES.** Adding `state` to one column settled it.
+
+#### 🟢🟢 TWO SOURCES, TWO PARTITIONS, AND THEY AGREE WITHOUT EITHER BEING DERIVED FROM THE OTHER
+
+**Not one of the 77 rests on AP alone:**
+
+| source | covers | key |
+|---|---|---|
+| **The Legislature's own "133rd Maine Legislature, Orientation for Newly Elected Members"** — `legislature.maine.gov/doc/12790`, Groups A and B, each person listed *Representative-elect* or *Senator-elect* | **60** | name + chamber |
+| **The Secretary of State's 2026 candidate filing list** — `maine.gov/sos` | **72** | 🟢 **SURNAME + DISTRICT**, a far stronger key than a name, with **zero first-name disagreements** |
+| **neither** | **0** | — |
+
+🟢🟢 **THE CONTROL CAME FREE FROM READING THE SECOND DOCUMENT.** The fifteen winners absent from
+the orientation roster are **exactly** the sitting members — the roster is of people who are
+*newly* elected, so its silence about them is informative rather than missing. That set is
+**identical** to the set that already has a `politicians` row, and neither partition was
+computed from the other. The five absent from the filing list (HD44, HD45, HD121, HD144,
+HD148) filed after the primary and are all on the orientation roster.
+
+#### 🔴 A DOCUMENT CAN BE AUTHORITATIVE ABOUT **WHO** AND UNRELIABLE ABOUT **HOW THEY SPELL IT**
+
+The orientation list is a **staff scheduling agenda**, not a published roster, and it
+disagrees with the Secretary of State's filing record four times — every time in AP's favour:
+
+| seat | agenda | SoS filing record | written |
+|---|---|---|---|
+| HD43 | Riannon Hampson | `Hampson, Rhiannon Corey` | **Rhiannon Corey Hampson** |
+| HD112 | Shean M. Mahoney | `Mahoney, Sean M` | **Sean M. Mahoney** |
+| HD55 | Maureen Aucoin | `AuCoin, Maureen` | **Maureen AuCoin** |
+| HD75 | Scott H. Landry | `Landry, H. Scott` | **H. Scott Landry** |
+
+🔴🔴 **THIS IS THE OPPOSITE CALL FROM NEVADA, AND THE DIFFERENCE IS WHAT THE DOCUMENT IS FOR.**
+`CC_0466` spelt Assembly District 15 **Miguel Dávila** because the Nevada Legislature's own
+**published member page** outranked AP on a member's name. An internal agenda is not that.
+▶ **ASK WHAT A DOCUMENT IS FOR BEFORE LETTING IT OVERRULE A NAME.** The state's own filing
+record — what the candidate wrote on the form — is the better authority here, and it agrees
+with the rows we already held.
+
+#### 🟢🟢 THE ORIENTATION ROSTER NAMES ALL THREE MISSING WINNERS
+
+State House 86, State House 96 and State Senate 18 carry a 2026 race with **no recorded
+result**, so they are invisible to `office_pending_winner` and were outside the 77. The
+Legislature names their winners:
+
+| seat | the Legislature says | and our `race_candidates` already holds them, with `result` NULL |
+|---|---|---|
+| State House District 86 | **Abigail Geer**, Representative-elect | ✅ Abigail N. Geer |
+| State House District 96 | **Kerryl Clement**, Representative-elect | ✅ Kerryl Lee Clement |
+| State Senate District 18 | **Elizabeth Bosworth**, Senator-elect | ✅ Elizabeth D. Bosworth |
+
+▶ **THAT IS A FINDING FOR THE RESULTS PROGRAMME, NOT A LICENCE FOR THIS PASS TO WRITE A
+RESULT.** `CC_0474`'s assertion 7 asserts all three are still unrecorded when it finishes, so
+the day somebody writes them the seating counts change and a file says so. 🟢 And Senate 18 is
+explained: its sitting holder **Rick Bennett** appears in the 2026 Governor's race with
+`result = 'lost'`, so the seat was open.
+
+#### ⚠ What `CC_0474` deliberately did not do
+
+- 🔴 **`party` IS NULL ON ALL 59.** The orientation roster gives no party and the Secretary of
+  State's `Party` column is empty for every legislative filing in that sheet. A party is a
+  claim about a person and a guessed one is a **wrong claim about a real person**. ▶ Owed,
+  from the chamber's published roster once the 133rd convenes on **2026-12-02**.
+- **Nobody was seated and no term was written.**
+
+#### The three controls, each watched going red
+
+| tamper | gate it fired on |
+|---|---|
+| Senate District 4 linked to the **Missouri** Chad Perkins | **P4** — *"only 17 of the 18 link targets are an active politician holding a Maine seat"* |
+| Susan Bernard seeded as a new person though she sits in Senate District 1 | **P1** — *"60 rows are marked for creation, expected 59"* |
+| a transcription slip gives House District 1 the name of sitting member Nancy J. Theriault | **P3** — *"1 existing politician row(s) already carry one of the 59 names. ONE ROW PER PERSON"* |
+
+⚠ **THE FIRST TWO FIRED ON AN EARLIER GATE THAN THEY WERE AIMED AT, AND THAT IS RECORDED
+RATHER THAN TIDIED AWAY.** The Missouri tamper was aimed at **P5**, which names that row's id
+outright; **P4** reaches it first by the structural property — *holds a Maine seat* — which is
+the better gate. 🔴 **SO P5 HAS NO CONTROL OF ITS OWN AND MAY NOT BE REACHABLE BY ONE**: it is
+a named backstop behind a gate that does the work. The same is true of `CC_0473`'s assertions
+4–6. ▶ **A FILE THAT PINS ITS SELECTION BY COUNT AND BY STRUCTURE MAKES ITS LATER NAMED GATES
+UNREACHABLE BY ANY REALISTIC TAMPER.** Count them as backstops, never as tested gates.
+
 ### ✅✅ What the 2026-11-23 re-derivation added
 
 🟢🟢 **1. THE LEGISLATURE'S OWN AGENDA FOR *THIS* CYCLE, WHICH NAMES BOTH DAYS.** The first
