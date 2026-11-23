@@ -1,6 +1,6 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-23, after California. **Read `REGISTER.md` first** (the queue, the recipe, the
+Rewritten 2026-11-23, after California and Massachusetts. **Read `REGISTER.md` first** (the queue, the recipe, the
 five template corrections, Rulings A and B), then this. `SOURCING.md` is the handbook and the
 host table; `DATES.md` is the per-state ledger.
 
@@ -8,7 +8,7 @@ host table; `DATES.md` is the per-state ledger.
 
 ## Where the pass stands
 
-**60 bodies · 823 offices still to do.** Nothing is overdue. Six states are fully written:
+**57 bodies · 619 offices still to do.** Nothing is overdue. Seven states are fully written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -17,119 +17,112 @@ host table; `DATES.md` is the per-state ledger.
 | NV | `CC_0465` (52) | `CC_0466` (12 created, 1 linked) | `CC_0467` (52, **2026-11-04**) |
 | HI | `CC_0469` (5) | — | `CC_0470` (2 OHA, **2026-11-03**) · `CC_0471` (Gov + Lt Gov, **2026-12-07**) |
 | ME | `CC_0473` (184) | `CC_0474` (59 created, 18 linked) | `CC_0475` (183, **2026-12-01**) · `CC_0476` (Governor, **2027-01-06**) |
-| **CA** | `CC_0477` (99) | — none needed | `CC_0478` (92, **2026-12-07**) · `CC_0479` (7, **2027-01-04**) |
+| CA | `CC_0477` (99) | — none needed | `CC_0478` (92, **2026-12-07**) · `CC_0479` (7, **2027-01-04**) |
+| **MA** | `CC_0481` (204) | `CC_0482` (18 created, 3 linked) | `CC_0483` (199, **2027-01-06**) · `CC_0484` (2, **2027-01-07**) · `CC_0485` (3, **2027-01-20**) |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0480`.** Always ask the allocator
+**Next slot to reserve: after `CC_0486`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
 ---
 
-## 🔴🔴 ONE FILE IS WRITTEN AND NOT APPLIED. IT COMES DUE ON 2026-12-07.
+## 🔴🔴 TWO FILES ARE WRITTEN AND NOT APPLIED. EACH COMES DUE ON ITS OWN DAY.
 
-**`CC_0480` clears `is_vacant` on California's Assembly District 3 and State Senate District 10.**
-It is written, committed and rehearsed; it is NOT applied, and it refuses to run today.
+Both are committed and rehearsed; **neither is applied, and each refuses to run early.**
 
-- **Why it waits:** both seats are genuinely empty (Gallagher and Wahab resigned mid-term), and
-  each is the only office in its district. Clearing the flag before the winners are seated makes
-  the district read `offices > 0 AND active_holders = 0 AND vacant_offices = 0` — verbatim
-  `DEAD_GEOGRAPHY` in a **master-only** gate, which would then fail on somebody else's pull
-  request. `CC_0478` therefore seated both while leaving the flag alone.
-- **It cannot be applied early.** P3 refuses unless each office already has a term covering
-  *today*, which becomes true on 2026-12-07 by itself. It is an interlock, not a reminder.
-- ▶ **ON 2026-12-07: rehearse it, then apply it.** Its body was rehearsed with `CURRENT_DATE` read
-  as the 7th and passed assertions 1–5; **assertion 6 reads `office_current_holder`, whose own
-  clock is out of reach, so it runs for the first time on the day.**
+| file | what it does | due |
+|---|---|---|
+| `CC_0480` | clear `is_vacant` on CA Assembly District 3 and State Senate District 10 | **2026-12-07** |
+| `CC_0486` | clear `is_vacant` on MA 1st Franklin District and 17th Middlesex District | **2027-01-06** |
 
-      cd backend && node scripts/rehearse-migration-chain.mjs \
-        migrations/CC_0480_ca_2026_clear_vacancy_flags_ad3_sd10.sql
-      node scripts/apply-migration-file.mjs \
-        migrations/CC_0480_ca_2026_clear_vacancy_flags_ad3_sd10.sql
+- **Why they wait:** each of those four seats is genuinely empty, and each is the only office in
+  its district. Clearing the flag before the winner is seated makes the district read
+  `offices > 0 AND active_holders = 0 AND vacant_offices = 0` — verbatim `DEAD_GEOGRAPHY` in a
+  **master-only** gate, which would then fail on somebody else's pull request. The seating files
+  therefore seat the winners and leave the flag alone.
+- **They cannot be applied early.** Each one's P3 refuses unless the office already has a term
+  covering *today*, which becomes true on the handover day by itself. It is an interlock, not a
+  reminder.
+- ▶ **ON THE DAY: rehearse, then apply.**
 
-- The federal pair (TX-23, FL-20) has the same shape and `CC_0455` clears them on 2027-01-03.
+      cd backend && node scripts/rehearse-migration-chain.mjs migrations/<the file>
+      node scripts/apply-migration-file.mjs migrations/<the file>
+
+- ⚠ **The positive path of each is unrehearsable before its day by construction** — P3 wants a
+  term covering today and P4 wants that term to start on the handover date, and only on the day
+  are both true. Each body was rehearsed with `CURRENT_DATE` read as the handover date and passed
+  assertions 1–5; **assertion 6 reads `office_current_holder`, whose own clock is out of reach, so
+  it runs for the first time on the day.**
+- The federal pair (TX-23, FL-20) is the same shape and `CC_0455` clears them on 2027-01-03.
 
 ---
 
 ## 🔴🔴 READ THIS BEFORE PINNING ANY SELECTION: THE DIGEST CAN COVER FEWER ROWS THAN IT CLAIMS
 
-California found a defect in the template every file in this pass has copied, and **the next
-state in the queue hits it too.**
+Two states have now paid for this, and **the second one showed it can appear late.**
 
 `is_reelection` as `scripts/lib/seating-wave.mjs` publishes it is **NULL**, not false, on a seat
 with no current holder — `och` is LEFT JOINed and `true AND NULL` is NULL. Then `'…' || NULL` is
 NULL and **`string_agg` skips it**, so the in-SQL digest covers only the rows that had a holder,
 while every count still reads the full number.
 
-    as published                              md5 8f11f4f3…   90 of 92 rows
-    with AND och.politician_id IS NOT NULL    md5 3c5becfe…   92 of 92 rows
+    California, 92 seats    as published 8f11f4f3… (90 rows)   fixed 3c5becfe… (92 rows)
+    Massachusetts, 199      as published 2169c36f… (197 rows)  fixed ae5a2429… (199 rows)
 
-⚠ **`derive-seating-wave.mjs` prints the second**, because its JS renders a NULL boolean as
-'false'. **The script and the migration disagree for exactly this shape of row** — that
-disagreement is how it was found, and on every earlier state they agreed only because no earlier
-state had a holderless seat.
+🔴🔴 **IN MASSACHUSETTS THE DEFECT DID NOT EXIST UNTIL THE PEOPLE FILE RAN.** Both flagged seats
+were won by people `CC_0482` creates. Before that file the WINNER id is NULL too, the first
+conjunct is FALSE, and `false AND NULL` is **FALSE** — no NULL. After it, `true AND NULL` is NULL.
+▶ **A digest captured before the people file would have been right and would have silently become
+wrong.** Capture the pin by rehearsing `dates + people + a probe that prints the digest` in one
+rolled-back transaction, and pin what the probe prints.
 
-▶ **Copy `CC_0478`, not `CC_0475`.** It carries the fixed selection and a P1 gate that counts how
-many rows the digest expression actually evaluated. **Massachusetts' House has 2 flagged-vacant
-seats.**
+⚠ `derive-seating-wave.mjs` prints the FIXED digest, because its JS renders a NULL boolean as
+'false'. **The script and the migration disagree for exactly this row shape** — that disagreement
+is how California found it.
+
+▶ **Copy `CC_0483`, not `CC_0475`.** It carries the fixed selection and a P1 gate that counts how
+many rows the digest expression actually evaluated.
 
 ---
 
-## 🔴 NEXT: MASSACHUSETTS — 204 offices, already sourced, THREE dates
+## 🔴 NEXT: WASHINGTON — 118 offices, already sourced, ONE date, NOBODY to create
 
-`DATES.md` § MA has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
-not "dated" — the register's `no date` column counts *rows in the database*, not research done,
-and `SOURCING.md` says so in bold. A run was already wasted re-deriving Maine that way.)
+`DATES.md` § WA has the full write-up, sourced 2026-11-22. **Do not re-source it.** ("Sourced" is
+not "dated" — the register's `no date` column counts *rows in the database*, not research done.)
 
-| body | offices | start date | group in the clause |
+| body | offices | start date | authority |
 |---|---|---|---|
-| House of Representatives | 159 | **2027-01-06** | senators and representatives |
-| Senate | 40 | **2027-01-06** | senators and representatives |
-| Governor · Lieutenant Governor | 2 | **2027-01-07, noon** | governor and lieutenant-governor |
-| Attorney General · Treasurer and Receiver-General · Auditor | 3 | **2027-01-20** | secretary, treasurer, attorney general, auditor |
+| House of Representatives | 95 pending (of 98) | **2027-01-11** (Mon) | `RCW 44.04.021` |
+| Senate | 23 pending (of 49) | **2027-01-11** (Mon) | `RCW 44.04.021` |
 
-Authority: **Mass. Const. Amend. Art. LXIV § 1, as appearing in Amend. Art. LXXXII**.
+🟢 **WASHINGTON IS THE EASIEST STATE LEFT.** One date, one citation, no people to create, no
+flagged-vacant seat, no multi-member race. After Maryland's 85 missing people and Massachusetts'
+three dates, this is a two-file state: dates, then seating.
 
-🔴🔴 **ONE CLAUSE, THREE DATES, A FORTNIGHT APART.** Copying the House's date onto the Attorney
-General would put her in office **14 days early**. California shipped as two waves; Massachusetts
-is **three**. `classifyWave` raises `date_disagrees` on two dates in one `(state, district_type)`
-row, and the three MA executives split *within* `STATE_EXEC` — the Governor and Lieutenant
-Governor on the 7th, the other three on the 20th.
+🔴 **THE CITATION IS A STATUTE, NOT THE CONSTITUTION, AND THAT IS THE TRAP.** Wash. Const. Art. II
+§§ 5 and 6 fix the **length** of a legislative term and never its start. ⚠ Art. III, § 4 DOES name
+a commencement — *"the second Monday in January after their election"* — **for the executives, not
+the legislature**. It is the same day, which is exactly what makes it dangerous: citing Art. III
+§ 4 for a legislator gives the right answer from the wrong provision. Read `DATES.md` § WA before
+writing the `authority` text.
 
-⚠ **Two superseded versions of that article are printed on the same page and both read
-plausibly**, and all three carry the same three-way split — so a reader who stops at the first
-gets the right days for the wrong reason. Art. LXXX still has the governor on a **two-year** term.
-**2026 is a Massachusetts gubernatorial year only under Art. LXXXII.**
-
-### What Massachusetts needs that California did not
-
-- 🔴 **A PEOPLE FILE. 21 winners have no `politicians` row** — 18 in the House, 3 in the Senate.
-  Follow `CC_0474` (Maine: 59 created, 18 linked). ▶ **`winner_no_record` means "no record in THIS
-  RACE", never "no record anywhere"** — 18 of Maine's 77 already existed. **Sweep the whole
-  `politicians` table before creating anybody**, and print the state beside the name: two active
-  "Chad Perkins" rows exist, one in Missouri and one in Maine.
-- 🔴 **TWO FLAGGED-VACANT HOUSE SEATS.** Read them the way California's were read: a correct flag
-  is not a blocker. Decide, in writing, whether each is correctly flagged today, name them in P6,
-  and clear them in their own file on the handover day — not in the seating migration.
-- The digest fix above, because of those two.
+⚠ **95 of 98 House seats and 23 of 49 Senate seats are pending.** The Senate is staggered, so 23
+of 49 is correct; the 3 missing House seats are the results-programme class — a race with no
+recorded result is as invisible as no race. Assert both exclusions, the way `CC_0481` asserted
+2nd Plymouth District.
 
 ### The shape of the work
 
-Five files. Nothing here needs a browser or new sourcing.
+1. **dates** — 118 `office_swearing_in` rows, one date. Copy `CC_0477` (California) for the
+   single-clause shape, or `CC_0481` if you want the anchor-and-offset pattern.
+2. **seating, 2027-01-11** — 118 seats. Copy `CC_0483`.
 
-1. **dates** — 204 `office_swearing_in` rows, three dates. Copy `CC_0477` (California, two dates,
-   with the clause evaluated in SQL for a year the file does not write).
-2. **people** — create the missing 21, after sweeping the whole table. Copy `CC_0474`.
-3. **seating, 2027-01-06** — 199 legislative seats. Copy `CC_0478`.
-4. **seating, 2027-01-07** — Governor and Lieutenant Governor.
-5. **seating, 2027-01-20** — Attorney General, Treasurer and Receiver-General, Auditor.
-6. **vacancy** — settle the two flagged House seats, dated for 2027-01-06. Copy `CC_0480`.
-
-⚠ Washington (118, no people needed) is the cheaper state if Massachusetts' people file is too
-large for one run. Neither has a deadline before 2027.
+⚠ **Maryland (114 offices) is the alternative and it is much harder**: 85 winners with no person
+record, and 38 multi-winner Delegate offices that need Ruling A's equality gate per race.
 
 ---
 
@@ -250,12 +243,13 @@ large for one run. Neither has a deadline before 2027.
   explicit pathspec.
 - **Env:** the worktree has no `.env`. Prefix commands with
   `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
-- **Steward:** jurisdiction leases are 24h and expire on their own; `state:ca` was held through
-  2026-11-24 15:36Z for this work. Claim `state:ma` before starting Massachusetts.
+- **Steward:** jurisdiction leases are 24h and expire on their own; `state:ca` and `state:ma`
+  were held for this work and lapse on 2026-11-24. **Claim `state:wa` before starting
+  Washington.**
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
   CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
-  file against them). ✅ **Refreshed for California 2026-11-23**, all four dataset docs.
+  file against them). ✅ **Refreshed for California and Massachusetts, 2026-11-23**, all four dataset docs.
   🟢 **THE "waves 4 and 5 SAY Blocked" WARNING IS STALE AND IS RETIRED HERE.** It was true on
   2026-11-16 and fixed before the 11-19 refresh. Re-read 2026-11-23: the five status words are
   `In progress` ×4 and `Barely started`, none matches the page's `/block/i` regex, and `blocked`

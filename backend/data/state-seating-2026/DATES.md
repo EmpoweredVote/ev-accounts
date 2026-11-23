@@ -15,7 +15,15 @@ qualification**, which IS the oath.
 
 ---
 
-## MA — Massachusetts · 204 offices · ✅ sourced 2026-11-22
+## MA — Massachusetts · 204 offices · ✅ sourced 2026-11-22 — ✅✅ **ALL 204 DATED AND SEATED 2026-11-23**
+
+> `CC_0481` wrote the 204 date rows; `CC_0482` created 18 winners and linked 3; `CC_0483`
+> seated 199 legislators for 2027-01-06, `CC_0484` the Governor and Lieutenant Governor for
+> 2027-01-07 and `CC_0485` the Attorney General, Treasurer and Auditor for 2027-01-20.
+> ⏳ `CC_0486` clears `is_vacant` on the 1st Franklin and 17th Middlesex Districts and **waits
+> for 2027-01-06** — it refuses to run before then, by interlock. The write-up, the controls, the
+> "Will Mbah" duplicate decision and the `is_reelection` NULL that only appears after the people
+> file are in [`REGISTER.md`](./REGISTER.md) § "APPLIED 2026-11-23 — Massachusetts".
 
 🔴🔴 **ONE CLAUSE, THREE DATES. MASSACHUSETTS DOES NOT DATE ITS STATE TIER TOGETHER.** The queue
 in `SOURCING.md` is built on "one constitutional clause usually dates a state's House, Senate and
