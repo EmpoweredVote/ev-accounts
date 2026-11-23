@@ -68,6 +68,19 @@ export function instrumentTexts(store: string, index: Map<string, string>, ids: 
   return out;
 }
 
+/** A spreadsheet-quoted cell (`"Daniel ""Danny"" Alvarez"`) read back as its text (`Daniel "Danny" Alvarez`). */
+export function unquoteCell(v: string): string {
+  return /^".*"$/s.test(v) ? v.slice(1, -1).replace(/""/g, '"') : v;
+}
+
+/** A name for a reader: a quoted nickname moves to just after the first name ("Daniel "Danny" Antonio Alvarez"). */
+export function displayName(name: string): string {
+  const n = unquoteCell(name.trim());
+  const m = /^(\S+)\s+(.*?)\s*("[^"]+")\s*(.*)$/.exec(n);
+  if (!m || !m[2]) return n;
+  return [m[1], m[3], m[2], m[4]].filter(Boolean).join(' ');
+}
+
 /** Roster rows by politician id; the first file that lists a person wins (as the Georgia scripts did). */
 export function readRosters(paths: string[]): Map<string, RosterRow> {
   const out = new Map<string, RosterRow>();
@@ -75,7 +88,7 @@ export function readRosters(paths: string[]): Map<string, RosterRow> {
     const [head, ...lines] = readFileSync(p, 'utf8').split('\n').filter((l) => l.trim());
     const cols = head.split('\t');
     for (const l of lines) {
-      const v = l.split('\t');
+      const v = l.split('\t').map(unquoteCell);
       const r = Object.fromEntries(cols.map((c, i) => [c, v[i] ?? ''])) as unknown as RosterRow;
       if (r.politician_id && !out.has(r.politician_id)) out.set(r.politician_id, r);
     }

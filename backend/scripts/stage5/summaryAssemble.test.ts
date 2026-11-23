@@ -19,7 +19,9 @@ function finding(n: number): Finding {
 }
 
 const draft = (n: number, texts = ['Voted for a bill on risk orders.', 'Voted for a second bill.'], cites = [[fid(1)], [fid(2)]]) => ({
-  politician_id: pid(n), topic_key: TOPIC, sentences: texts.map((text, i) => ({ text, cites: cites[i] })),
+  politician_id: pid(n), topic_key: TOPIC,
+  // A summary of two or more sentences opens with a plain-direction line (ruling 6).
+  sentences: [...(texts.length > 1 ? [{ text: 'They have voted for risk orders.', lead: true }] : []), ...texts.map((text, i) => ({ text, cites: cites[i] }))],
 });
 
 function world(draftFiles: Record<string, unknown>) {
@@ -52,7 +54,7 @@ describe('assemble', () => {
     expect(r).toMatchObject({ drafted: 2, lintedOut: 1, toCheck: 1 });
     const s = lines(join(batchDir, 'summaries.jsonl'));
     expect(s).toHaveLength(1);
-    expect(s[0]).toMatchObject({ politician_id: pid(1), topic_key: TOPIC, cites: [[fid(1)], [fid(2)]] });
+    expect(s[0]).toMatchObject({ politician_id: pid(1), topic_key: TOPIC, cites: [[fid(1), fid(2)], [fid(1)], [fid(2)]] });
     expect(s[0].text).toContain('[1]');
     expect(s[0].sources).toEqual(['https://example.gov/bill/1', 'https://example.gov/bill/2']);
     const refused = lines(join(batchDir, 'lint-refused.jsonl'));
