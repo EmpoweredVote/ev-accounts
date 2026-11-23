@@ -30,6 +30,10 @@ Code read these from the findings below. They are exact: use them, do not work t
 
 Under each sentence are the findings its markers name, and under each finding the stored text of its bill (what the
 bill does; describe a bill from this, not from its title alone). A bill's text is printed once per sentence.
+A bill's text may open with "Our reading of the full bill:", a few short lines written from the whole bill, followed
+by "Stored excerpt of the bill:", which is only part of the bill. Both are evidence of what the bill does. A piece
+the reading states is `shown` (quote the reading) even when the excerpt is too short to show it. Where the excerpt
+says something different from the reading, the excerpt decides.
 
 {{FINDINGS}}
 
@@ -93,6 +97,17 @@ bill "bans" a thing and the text "requires a permit for" it), set `quote` to the
 `shown` to false. A piece with `shown` false fails the sentence. Do not fill a gap from what you know about the
 bill or the law it amends. When a marker cites two bills, each bill must show every piece. This is only about what
 the sentence says: pieces of the bill that the sentence leaves out are judged by rule 10 and are usually fine.
+
+Two readings are settled and are not faults (runner, 2026-11-22). Apply them the same way every time:
+- **A technical limit on which kind of gun is left out.** "Semiautomatic rifles" for a bill on "semiautomatic
+  centerfire rifles", or a rifle described without its caliber limit, leaves out a detail (rule 10). The piece is
+  `shown`. This covers only the kind of gun or part. Who the bill applies to, what it does, and when or where it
+  applies must still match the text.
+- **The plain name of what the text names in legal terms.** A summary is written for voters. When the text names a
+  thing by a legal term or only by its section of law, the everyday name for that same thing is `shown`:
+  "concealed-carry permit" for "a permit" issued under the concealed firearm permit section, "silencer" for
+  "firearm suppressor". This is a name for the same thing, never a new fact: what the bill does to it must still be
+  in the text.
 
 Be strict and literal. When unsure, fail the sentence and say why. Each `reason` is one plain sentence naming the
 finding or the words at fault; for a pass, say what supports it.

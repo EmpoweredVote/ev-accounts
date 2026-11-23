@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { Finding } from '../lib/sourceStore.js';
 import { buildSummary } from '../lib/stage5Summary.js';
 import { readFileSync } from 'node:fs';
-import { BILL_TEXT_CAP, billTextBlock, capFindings, checkerFacts, gateLabel, checkerPrompt, main, markersOf, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
+import { BILL_TEXT_CAP, billTextBlock, billTextWithReading, readBillSubjects, capFindings, checkerFacts, gateLabel, checkerPrompt, main, markersOf, selectPeople, writerPersonBlock, writerPrompt } from './summary-inputs.js';
 
 const TOPIC = 'gun-policy';
 const RUNG_TEXT = 'Limit who may have a gun, such as by court orders that take guns from a person found dangerous';
@@ -216,6 +216,19 @@ describe('checker prompt', () => {
     expect(checkerFacts([[], ms.filter((m) => !m.gatedOnly)])).not.toContain('Opening line:');
     expect(markersOf([finding(6, { act: 'sponsor', motion: 'prime sponsor' })], () => 1)[0].line).toBe('[1] PA-HB-6-2024: sponsorship (prime sponsor). No vote finding.');
     expect(markersOf([finding(7, { against_bill: true } as never)], () => 1)[0].line).toContain('vote (yea, against_bill: a vote AGAINST the bill)');
+  });
+
+  it("puts the bill reading's subject lines before the stored excerpt, and drops a line that names a rung", () => {
+    const dir = mkdtempSync(join(tmpdir(), 'subjects-'));
+    writeFileSync(join(dir, 'subjects.json'), JSON.stringify({ 'XX-HB-1-2024': ['ends the permit to carry', 'rung 5 repeal'], 'XX-HB-2-2024': ['on the ladder'], 'XX-HB-3-2024': 'not a list' }));
+    const subjects = readBillSubjects(dir);
+    expect(subjects.get('XX-HB-1-2024')).toEqual(['ends the permit to carry']);
+    expect(subjects.has('XX-HB-2-2024')).toBe(false); expect(subjects.has('XX-HB-3-2024')).toBe(false);
+    expect(readBillSubjects(join(dir, 'missing')).size).toBe(0);
+    expect(billTextWithReading('Section 9: four sections are repealed.', subjects.get('XX-HB-1-2024')))
+      .toBe('Our reading of the full bill: ends the permit to carry. Stored excerpt of the bill: Section 9: four sections are repealed.');
+    expect(billTextWithReading('Only the excerpt.', undefined)).toBe('Only the excerpt.');
+    expect(billTextWithReading('', ['bars a thing'])).toBe('Our reading of the full bill: bars a thing.');
   });
 
   it('refuses cites that do not match the sentences', () => {

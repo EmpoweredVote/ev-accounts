@@ -25,7 +25,7 @@ import type { Finding } from '../lib/sourceStore.js';
 import { Stage5CodeSchema } from '../lib/stage5Code.js';
 import { SummaryDraftSchema, buildSummary, lintSummary, type SummaryDraft } from '../lib/stage5Summary.js';
 import { STORE, instrumentIndex, instrumentTexts, parseArgs, readPersonFindings } from './coder-io.js';
-import { checkerPrompt } from './summary-inputs.js';
+import { billTextWithReading, checkerPrompt, readBillSubjects } from './summary-inputs.js';
 
 interface PersonRow { politician_id: string; name: string; outcome: 'seated' | 'doesnt-fit'; value: number | null; finding_ids: string[] }
 export interface Profile { topic_key: string; topic_name?: string; stage5: string; sides: string | null }
@@ -109,6 +109,7 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
   const ids = [...clean.keys()].sort();
   // The checker sees each bill's title and capped text, as the writer did; without them every bill description reads as unsupported.
   const index = existsSync(join(store, 'instruments')) ? instrumentIndex(store) : new Map<string, string>();
+  const subjects = readBillSubjects(profile.stage5);
   const lines: string[] = [];
   const prompts: { id: string; text: string }[] = [];
   for (const id of ids) {
@@ -117,7 +118,7 @@ export function assemble(o: { profile: Profile; batch: string; store?: string })
     const summary = { politician_id: id, topic_key: profile.topic_key, text: c.text, sha256: c.sha256, sources: c.sources, cites: c.cites, sentences: c.sentences };
     const got = instrumentTexts(store, index, c.findings.map((f) => f.instrument_id).filter((x): x is string => !!x));
     const titles = new Map([...got].map(([k, v]) => [k, v.title]));
-    const texts = new Map([...got].map(([k, v]) => [k, v.operative_text ?? '']));
+    const texts = new Map([...got].map(([k, v]) => [k, billTextWithReading(v.operative_text, subjects.get(k))]));
     try {
       prompts.push({ id, text: checkerPrompt(summary, c.findings, { outcome: person.outcome, ...(person.value != null ? { value: person.value } : {}) }, profile.sides, { personName: person.name, topicName: profile.topic_name, outFile: join(resolve(dir), 'claude-checks', `${id}.json`), titles, texts }) });
     } catch (e) { refuse('(assembly)', c.draft, [`could not build the checker prompt: ${(e as Error).message}`]); continue; }

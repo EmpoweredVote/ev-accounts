@@ -747,6 +747,17 @@ leaves files in `<stage5>/summaries/<batch>/`.
 - **Bill text is shown up to 6,000 characters** (`BILL_TEXT_CAP`). The earlier 1,500 cut 100 of the 163 cited bills,
   and a true claim could then not be shown from the text. With the full text the checker caught four errors it had
   been missing some of the time, in every one of 3 runs.
+- **Writer and checker also see the bill reading** (`readBillSubjects`, `billTextWithReading`): each bill's subject lines
+  from `<stage5>/subjects.json`, printed before the stored excerpt as "Our reading of the full bill:". The excerpt was
+  chosen to place people on the ladder and is often too short to describe the bill (some are under 700 characters).
+  A subject line that names a rung is dropped. Where reading and excerpt differ, the excerpt decides.
+- **Two readings the checker applies** (runner, 2026-11-22): leaving out a technical limit on the kind of gun
+  ("semiautomatic rifles" for "semiautomatic centerfire rifles") is a detail left out, not a fault; and the plain name
+  of a thing the text names in legal terms ("concealed-carry permit" for a permit under the concealed firearm permit
+  section) is shown. Measured on three sets of Nevada summaries, 3 runs each: passes per run went from 3.3, 4.0 and
+  4.3 to 8.0, 4.7 and 11.3 (of 13, 14 and 14); what still fails is what the runner ruled a real error, chiefly one bill
+  described as banning unserialized guns when it covers frames and receivers. On the 34 earlier summaries passes went
+  from 17.0 to 22.7 a run, and every error in the agreed key that was caught before is still caught.
 - **Step 5** uses `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon` (the profile key
   `second_opinion_models`). It runs locked down: a deny-all OpenCode config in an empty temp folder, and an
   environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl` and **skips every
