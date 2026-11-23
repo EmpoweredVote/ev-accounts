@@ -442,6 +442,13 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   little bit more detail"): say what it does from its text, or leave it out. The writer and checker now see each
   cited bill's stored text, capped, as the coder did. (d) Of a bill with several parts, name the parts about guns;
   the background check system (NICS) counts.
+- **Ruling 7, a short bill description may leave things out, if what it says is true:** after `sample-04` (Claude
+  passed 21 of 36), 4 fails were descriptions that were true but left out exceptions or other groups the bill also
+  covers ("a background check before any firearm sale", when the bill exempts sales to buy-back programs). The runner
+  chose "Yes, if still true". A description still fails when it says something the text does not, adds a condition,
+  or narrows whom the bill covers in a way that changes its meaning ("government lists" for a bill that bars lists
+  kept by anyone).
+- **Date and source:** 2026-11-22, Chris Andrews, in conversation after `sample-04`.
 
 ## Topic-scoped readings
 

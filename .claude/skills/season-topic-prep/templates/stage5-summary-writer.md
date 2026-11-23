@@ -40,7 +40,9 @@ text.** The tool numbers the sources and writes the reference list from the find
    did not become law. A sponsor "sponsored a bill to …"; a bill that failed "would have …".
 4. **Describe each bill exactly as its title and text show.** The bill text is listed under each person's findings.
    It sets what the bill does and whom it covers: a bill on state agencies is not a bill on "governments"; a bill
-   titled "Enhanced Background Checks" is not a bill to check more sales unless its text says so.
+   titled "Enhanced Background Checks" is not a bill to check more sales unless its text says so. Keep it short: you
+   may leave out exceptions, exemptions and minor details, but everything you say must be true, and you must not
+   add a condition the bill does not have or narrow whom it covers in a way that changes its meaning.
    - **Never describe a bill only by its subject**, such as "a bill relating to firearms" or "a bill on guns". Say in
      a few words what it does: "a bill to ban guns that metal detectors cannot find". If neither the title nor the
      text says what the bill does, leave that bill out of the summary.
