@@ -403,6 +403,129 @@ in January 2027.
 
 **41 states · 69 bodies · 1,162 offices.**
 
+## 🔴🔴 THE QUEUE COUNTS WINNERS, SO EVERY GAP UPSTREAM OF A WINNER IS INVISIBLE TO IT
+
+Measured 2026-11-22 against production, **across all 52 jurisdictions at once and with no state
+filter** — because three consecutive states (NV, NM, GA) hid three *different* defects behind
+queue rows that looked identical, and no per-state read can tell those apart.
+
+```sql
+-- offices held  vs  2026 races recorded  vs  winners recorded  vs  what the register sees
+WITH d AS (SELECT id, lower(state) st, district_type dt
+             FROM essentials.districts WHERE district_type LIKE 'STATE%'),
+     o AS (SELECT o.id, d.st, d.dt FROM essentials.offices o JOIN d ON d.id = o.district_id),
+   gen AS (SELECT id FROM essentials.elections WHERE election_date = DATE '2026-11-03'),
+   r26 AS (SELECT DISTINCT r.office_id FROM essentials.races r JOIN gen e ON e.id = r.election_id),
+   w26 AS (SELECT DISTINCT r.office_id FROM essentials.races r JOIN gen e ON e.id = r.election_id
+             JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.result = 'won'),
+  pend AS (SELECT DISTINCT office_id FROM essentials.office_pending_winner
+             WHERE election_date = DATE '2026-11-03')
+SELECT o.st, o.dt, count(*) AS offices,
+       count(*) FILTER (WHERE r26.office_id  IS NOT NULL) AS with_race_2026,
+       count(*) FILTER (WHERE w26.office_id  IS NOT NULL) AS with_winner_2026,
+       count(*) FILTER (WHERE pend.office_id IS NOT NULL) AS in_register
+  FROM o LEFT JOIN r26 ON r26.office_id = o.id
+         LEFT JOIN w26 ON w26.office_id = o.id
+         LEFT JOIN pend ON pend.office_id = o.id
+ GROUP BY 1,2 ORDER BY 1,2;
+```
+
+| | offices | what it is |
+|---|---|---|
+| state-level offices we hold | **5,174** | across 52 jurisdictions, `district_type LIKE 'STATE%'` |
+| … with a 2026-11-03 race row | 1,326 | |
+| … with a winner recorded | 1,290 | |
+| … already seated, so correctly out of the queue | 128 | **WI 121 · IN 7**, every one carrying a term that starts on or after election day |
+| … **the register's 1,162** | **1,162** | 1,290 − 128 = 1,162 — 🟢 the queue total reconciles exactly, with no residue |
+
+🟢 **That reconciliation is the control**: every office with a recorded winner is either in
+the queue or demonstrably seated already. The queue is not losing rows it can see. **What it
+cannot see is everything before the winner**, and that splits into three shapes.
+
+### Shape 1 — 🔴 36 OFFICES HAVE A 2026 RACE ON FILE, WITH CANDIDATES, AND NO WINNER
+
+These are the sharpest: the race is recorded, the candidates are recorded, and the result is not.
+`office_pending_winner` requires a `race_candidates.result = 'won'` row, so each of these **is
+absent from the register entirely** — not listed as blocked, not counted in any state's total.
+NV's Assembly District 22 is one of them; it was found by reading Nevada and the other 35 were not
+found by reading anything.
+
+| state | body | offices | state | body | offices |
+|---|---|---|---|---|---|
+| CA | STATE_LOWER | 5 | ME | STATE_LOWER | 2 |
+| MD | STATE_LOWER | 4 | UT | STATE_BOARD_EDUCATION | 2 |
+| CA | STATE_BOARD | 3 | UT | STATE_LOWER | 2 |
+| CA | STATE_UPPER | 3 | AZ | STATE_LOWER | 1 |
+| CO | STATE_LOWER | 3 | CO | STATE_EXEC | 1 |
+| WA | STATE_LOWER | 3 | MA | STATE_LOWER | 1 |
+| CA | STATE_EXEC | 2 | ME | STATE_UPPER | 1 |
+| | | | NV | STATE_LOWER | 1 |
+| | | | UT | STATE_UPPER | 1 |
+| | | | WA | STATE_UPPER | 1 |
+
+⚠ **They are not all the same defect, and the discriminator is `race_candidates.result`:**
+- **31 carry no result at all** — every candidate row is NULL. The contest was never scored.
+- **5 carry a PRIMARY's result on a GENERAL race row** — `advanced`, and in two cases
+  `withdrew` / `not_nominated` beside it: **AZ State House District 27**, **WA Legislative (House)
+  District 12 Position 1**, **District 23 Position 1**, **District 25 Position 2**, and
+  **WA Legislative (Senate) District 35**. Both are top-two states. 🔴 **A row that says
+  `advanced` is not a row that says nobody won** — it is a general-election race still holding
+  what the primary wrote, and reading it as "no winner" is how it stayed invisible.
+
+🟢 **Cross-checked two ways**: the per-body aggregate (`with_race_2026 - with_winner_2026`,
+summed) and a `count(DISTINCT office_id)` over the detail list both give **36**. The two counts
+share no grouping, so a label collapsing several offices into one row — which Maryland's
+three-delegate districts would do — cannot inflate or hide the figure.
+
+### Shape 2 — 3,545 of our 4,811 state districts have no 2026 race row of any kind
+
+Whole chambers, not stray seats: **GA 180 House + 56 Senate · PA 203 + 50 · MO 163 + 34 ·
+TX 150 + 31 · MN 134 + 67 · KS 125 + 40 · SC 124 + 46 · FL 120 + 40 · NC 120 + 50 · MI 110 + 38 ·
+OH 99 + 33 · TN 99 + 33 · KY 100 + 38 · ND 94 + 47 · HI 51 + 25 · ID 70 + 35 · SD 70 + 35 ·
+AK 40 + 20**, and more.
+
+⚠ **Two things this measurement does NOT establish, and neither may be assumed:**
+1. **Whether each of those chambers was actually on the 2026 ballot.** MS, VA and NJ elect in odd
+   years; a staggered four-year senate puts up half its seats. A zero is only a defect where the
+   law says the seats were up. **That is a per-state legal fact and it has not been sourced.**
+2. **The office count is an upper bound in multi-member states**, because one race row attaches to
+   one office: AZ's 30 second seats, MD's 70 extra delegates, ID's 35, SD's 33 and ND's 46 all read
+   as "no race" by construction. Count **districts**, as the figure above does, not offices.
+
+🟢 **Control on the "never had a race" column:** `essentials.races` holds 2,344 general
+races for 2026 and **only 65 rows before it** (42 in 2025, 16 in 2024, 7 special). So
+`latest_race_ever IS NULL` for these offices is a property of what has been seeded, not evidence
+about the office. A detector answering NULL everywhere would have looked identical.
+
+### Shape 3 — 18 states and DC have no state legislature in our data at all
+
+No `STATE_LOWER` and no `STATE_UPPER` district, so no office, so nothing to be missing a race:
+**AL · AR · CT · DE · IA · IL · LA · MT · NE · NH · NJ · NM · NY · OK · RI · VT · WV · WY**, plus
+DC. 🔴 **Nebraska's 49-seat Legislature and New Mexico's 70 + 42 are in this list** — both
+states were sourced this pass as five- and seven-office executive states, and the queue was right
+that that is all we hold. **An office that does not exist cannot appear as a gap anywhere.**
+
+### 🟢 What the size leg of the query says: the sizes are right
+
+`essentials.chambers.official_count` is populated for **46 of the 66 legislative chambers** we hold and
+**agrees with our office count in every one — 0 disagreements** — GA 180/56, PA 203/50, MI 110/38, and so on. ⚠ It
+is **not** an independent control: it was almost certainly seeded from the same source as the
+districts. It is recorded here because it gives **zero disagreements**, which means the defect
+found by this query is nowhere in the seat counts — it is entirely in race and result coverage.
+
+### ▶ What this changes for the pass
+
+**Nothing about steps 1–2.** Sourcing a start date is a legal question about a body, and it is
+answered the same whether the body has 7 seats recorded or 236 missing ones. 🔴 **It changes
+step 3**: a migration's P1 pins itself to a selection, and **a selection cannot contain a seat the
+data does not hold**. So a state's header must say which of the three shapes it carries, and
+Georgia's must say that its ten executives are the whole of what we hold for a state that elects
+236 legislators.
+
+▶ **The 36 of Shape 1 are the only ones that are both ours to fix and bounded.** They belong to the
+results programme, not to this pass — see `project_transition_tracker_2026` — and the five
+`advanced` rows should be read first, because they are a misreading rather than an absence.
+
 ## 🔴 Four bodies cannot be seated from our data at all
 
 Ruling A's equality clause refuses them, correctly: each is **staggered**, electing part of itself
