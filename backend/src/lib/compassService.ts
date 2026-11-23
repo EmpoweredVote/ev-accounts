@@ -954,18 +954,21 @@ export async function getPoliticianContext(politicianId: string, topicId: string
   //   - source_date is cast to text: a pg `date` would become a JS Date and shift a
   //     day with the time zone. Year and month dates keep their precision so the
   //     caller never renders them as a full day.
-  const { rows } = await pool.query<{
-    reasoning: string;
-    sources: string[];
-    evidence: ContextEvidenceDate[];
-  }>(
+  type ContextRow = { reasoning: string; sources: string[]; evidence: ContextEvidenceDate[] };
+  // `summaryColumn` / `blankGuard` are the only parts that differ between the checked-summary query and the
+  // legacy one. Until the migration adding politician_context.summary_sha256 is applied the column is missing
+  // (42703), so the legacy guard (every blank hidden) runs instead, exactly as before.
+  const read = (summaryColumn: string, blankGuard: string) => pool.query<ContextRow>(
     // Q2 (ruling 2026-10-07): a blank's reasoning is never shown to voters — they see an empty
     // spoke only. The newest-season row is chosen FIRST (inner LIMIT 1) and dropped afterwards
     // when that same season's answer is 0; a filter inside the collapse would fall back to an older
     // season's reasoning, arguing a position the person no longer holds.
-    // @zero-scope: excludes-blanks — voter-facing "why this position?" text.
+    // The one exception is a blank's CHECKED position summary: the row stays when summary_sha256 equals the
+    // sha256 of the stored reasoning, so any edit to the text after the check hides it again. The inner
+    // query only sees published seasons, so a draft-season row never reaches this guard.
+    // @zero-scope: shows a blank's checked position summary, never a position
     `SELECT x.reasoning, x.sources, x.evidence FROM (
-     SELECT c.reasoning, c.sources, c.season_id,
+     SELECT c.reasoning, c.sources, c.season_id${summaryColumn},
             COALESCE((
               SELECT jsonb_agg(jsonb_build_object(
                        'source_url', d.source_url,
@@ -992,11 +995,18 @@ export async function getPoliticianContext(politicianId: string, topicId: string
       ORDER BY s.number DESC
       LIMIT 1
      ) x
-     WHERE NOT EXISTS (
+     WHERE ${blankGuard}NOT EXISTS (
        SELECT 1 FROM inform.politician_answers a
         WHERE a.politician_id = $1 AND a.topic_id = $2 AND a.season_id = x.season_id AND a.value = 0)`,
     [politicianId, topicId]
   );
+  const { rows } = await read(
+    ', c.summary_sha256',
+    `x.summary_sha256 = encode(sha256(convert_to(x.reasoning, 'UTF8')), 'hex') OR `
+  ).catch((err: { code?: string; message?: string }) => {
+    if (err?.code === '42703' && /summary_sha256/.test(err.message ?? '')) return read('', '');
+    throw err;
+  });
   // The route turns null into a 404 — the documented contract for "no context on
   // this topic". rows[0] is undefined when empty, so the coalesce is load-bearing.
   return rows[0] ?? null;
@@ -1092,6 +1102,59 @@ export async function resetCompassAnswers(
   });
 
   if (error) throw new Error(error.message);
+}
+
+/**
+ * clearCompassAnswer
+ *
+ * Soft-deletes ONE user's answer to ONE topic. Idempotent: returns 0 when
+ * there was nothing to clear.
+ *
+ * 🔴 THE GAP THIS FILLS. Every other write to compass_responses carries a
+ * value, because every other write IS an answer. Abandoning a write-in is not:
+ * the user discards what they typed and the question goes back to unanswered,
+ * so there is no value to post. Until this existed the client cleared its own
+ * state and the server kept the row, and the next hydration handed the
+ * abandoned write-in straight back — a question the user had explicitly
+ * cancelled, answered in their own words, returning on the next page load.
+ *
+ * Picking a PRE-WRITTEN stance after a write-in was never affected: that is a
+ * real answer, so the value-only POST that records it also drops the row's
+ * write_in_text. Only the abandon path had nowhere to go.
+ *
+ * 🔴 THE OPEN SEASON ONLY. Written first without the season join, which
+ * check-answer-season-consumers caught and was right to: unconstrained, this
+ * clears the user's answer to that topic in EVERY season, destroying a closed
+ * season's record — the one thing seasons exist to make impossible.
+ * DELETE_ANSWER_OPEN_SEASON_SQL says the same for the politician side, and this
+ * is its user-side twin.
+ *
+ * It is also the better behaviour, not merely the safer one. Cancelling undoes
+ * the answer the user just gave, not their history. If a closed season's answer
+ * then resurfaces through the newest-season collapse, that IS their standing
+ * answer — the one the card was covering — and showing it back is what "cancel"
+ * should mean. Today the `compass_responses_legacy_pair_scaffold` unique index
+ * still holds a user to one row per topic, so this clears exactly one either
+ * way; the distinction becomes real when CC_0045 stage 2 drops it.
+ *
+ * Soft, not hard, matching reset_compass_answers: deleted rows are kept for
+ * recovery and audit, and every read already filters `deleted_at IS NULL`.
+ */
+export async function clearCompassAnswer(
+  userId: string,
+  topicId: string
+): Promise<number> {
+  const { rowCount } = await pool.query(
+    `UPDATE inform.compass_responses r
+        SET deleted_at = now()
+       FROM inform.seasons s
+      WHERE s.id = r.season_id AND s.status = 'open'
+        AND r.user_id = $1
+        AND r.topic_id = $2
+        AND r.deleted_at IS NULL`,
+    [userId, topicId]
+  );
+  return rowCount ?? 0;
 }
 
 /**

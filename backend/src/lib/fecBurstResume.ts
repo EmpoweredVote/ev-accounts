@@ -46,37 +46,43 @@ export const BURST_WINDOW_START_SQL = `
 `;
 
 /**
- * Order a FEC walk STALEST FIRST: the source whose last terminal success is oldest runs first,
- * and sources never ingested run LAST.
+ * Order a FEC walk LEAST RECENTLY TRIED FIRST: the source whose last attempt (of any outcome) is
+ * oldest runs first, and sources never tried run LAST.
  *
- * WHY STALEST FIRST (2026-11-21, ev-cto watchlist #102). From 2026-11-19 the burst was cut at
- * Render's 12-hour ceiling three days running (808, 1,099 and 1,165 of 1,656 sources). The
- * walk order was fixed (known sources, then ps.id), so a cut-off run dropped the SAME tail
- * every day and those campaigns went stale indefinitely. Ordered by last success, the sources a
- * cut-off run misses are the stalest tomorrow and go first, so every known source is covered
- * at least once in two days even if each run only gets through half the list. The burst also
- * stops itself before the ceiling now (FEC_BURST_BUDGET_MINUTES in campaignFinanceScheduler.ts),
- * so the tail is skipped cleanly instead of killed.
+ * WHY AN ORDER THAT ROTATES (2026-11-21, ev-cto watchlist #102). From 2026-11-19 the burst was
+ * cut at Render's 12-hour ceiling three days running (808, 1,099 and 1,165 of 1,656 sources).
+ * The walk order was fixed (known sources, then ps.id), so a cut-off run dropped the SAME tail
+ * every day and those campaigns went stale indefinitely. Ordered by last attempt, the sources a
+ * cut-off run misses go first tomorrow, so every known source is tried at least once in two
+ * days even if each run only gets through half the list. The burst also stops itself before the
+ * ceiling now (FEC_BURST_BUDGET_MINUTES in campaignFinanceScheduler.ts), so the tail is skipped
+ * cleanly instead of killed.
  *
- * WHY NEVER-INGESTED LAST. An incremental source takes ~1.6s; a source that has never been
+ * WHY LAST ATTEMPT, NOT LAST SUCCESS (2026-11-22). The first version ordered by last SUCCESS.
+ * A source that hits the 10-minute per-source cap (FEC_PER_SOURCE_TIMEOUT_MS) records no
+ * success, so it stayed the stalest and led the next run again: on 2026-11-22 the run spent its
+ * first 2.5 hours on 16 sources, most of them timing out, and 13 of that day's 20 failures had
+ * already failed earlier in the week. Counting a failed or killed ('running') attempt as tried
+ * sends it to the back of tomorrow's queue. It is still retried every day or two; it just no
+ * longer blocks everyone behind it.
+ *
+ * WHY NEVER-TRIED LAST. An incremental source takes ~1.6s; a source that has never been
  * ingested pulls its whole contribution history (~45s on 2026-09-25, all of it waiting on the
  * shared ~1,000 req/hr FEC key). On 2026-09-25, 959 of 1,631 sources were new and an
  * interleaved walk ran past 12:00 UTC. A backfill has no stored data to go stale yet, so it
  * waits until the daily refresh of what voters can already see is done.
  *
- * "Last success" means a terminal success at ANY time, not just in this burst window, so the
- * resume pass keeps the same order as the burst it is finishing. 'running' and 'failed' rows do
- * not count: a source that keeps failing stays stalest and is retried first.
+ * "Last attempt" is over ALL history, not just this burst window, so the resume pass keeps the
+ * same order as the burst it is finishing.
  *
  * Expects the politician_sources table aliased as `ps`. Reads ingestion_runs through its
  * politician_source_id index (~270k rows, 68 MB on 2026-11-21).
  */
-export const FEC_STALEST_FIRST_ORDER_SQL = `
+export const FEC_LEAST_RECENTLY_TRIED_ORDER_SQL = `
   (SELECT max(prior.started_at)
      FROM transparent_motivations.ingestion_runs prior
     WHERE prior.politician_source_id = ps.id
       AND prior.adapter_name = 'fec'
-      AND prior.status IN ('completed', 'completed_with_warning')
   ) ASC NULLS LAST,
   ps.id
 `;
@@ -102,7 +108,7 @@ export const pendingFecSourcesSql = `
               AND r.status IN ('completed', 'completed_with_warning')
               AND r.started_at >= ${BURST_WINDOW_START_SQL}
          )
-   ORDER BY ${FEC_STALEST_FIRST_ORDER_SQL}
+   ORDER BY ${FEC_LEAST_RECENTLY_TRIED_ORDER_SQL}
 `;
 
 export interface ResumeResult {

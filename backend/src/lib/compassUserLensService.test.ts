@@ -19,6 +19,7 @@ import {
   getAllRecalibrationFlags,
   replaceUserLenses,
   findUnknownTopicIds,
+  isUnacknowledgedLensDeletionError,
 } from './compassUserLensService.js';
 
 // ---------------------------------------------------------------------------
@@ -322,20 +323,102 @@ describe('findUnknownTopicIds — existence, not season membership', () => {
 // replaceUserLenses
 // ---------------------------------------------------------------------------
 
-describe('replaceUserLenses — whole-set replace, atomically', () => {
+/**
+ * Stand in for the owner's stored set. The service reads it inside the
+ * transaction (FOR UPDATE) to work out what the caller is about to destroy.
+ */
+function storedKeys(keys: string[]) {
+  clientQueryMock.mockImplementation(async (sql: string) =>
+    String(sql).includes('SELECT key') ? { rows: keys.map(key => ({ key })) } : { rows: [] }
+  );
+}
+
+describe('replaceUserLenses — a deletion must be named', () => {
   const LENS = { key: 'u_7f3a91', name: 'My lens', topic_ids: [TOPIC] };
 
-  it('deletes the lenses the caller no longer sends', async () => {
-    clientQueryMock.mockResolvedValue({ rows: [] });
+  // 🔴 THE REGRESSION THIS FILE EXISTS FOR. Measured against prod 2026-11-22:
+  // three lenses stored, a one-lens PUT, two gone, HTTP 200, no history table.
+  // One transient GET failure is enough to make the client send that payload.
+  it('refuses to destroy a stored lens the caller neither kept nor named', async () => {
+    storedKeys(['u_7f3a91', 'u_aaa001', 'u_bbb002']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await expect(replaceUserLenses(USER, [LENS])).rejects.toMatchObject({
+      code: 'LENS_DELETE_NOT_ACKNOWLEDGED',
+      keys: ['u_aaa001', 'u_bbb002'],
+    });
+
+    const issued = clientQueryMock.mock.calls.map(c => String(c[0]));
+    expect(issued).toContain('ROLLBACK');
+    expect(issued).not.toContain('COMMIT');
+    expect(issued.some(q => q.includes('DELETE'))).toBe(false);
+    expect(issued.some(q => q.includes('INSERT'))).toBe(false);
+  });
+
+  // The degenerate case, also measured: lenses:[] wiped the account at HTTP 200.
+  it('refuses an empty payload against a non-empty stored set', async () => {
+    storedKeys(['u_7f3a91']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await expect(replaceUserLenses(USER, [])).rejects.toMatchObject({
+      code: 'LENS_DELETE_NOT_ACKNOWLEDGED',
+      keys: ['u_7f3a91'],
+    });
+  });
+
+  it('deletes exactly the keys the caller named, and no others', async () => {
+    storedKeys(['u_7f3a91', 'u_aaa001']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await replaceUserLenses(USER, [LENS], ['u_aaa001']);
+
+    const deleteCall = clientQueryMock.mock.calls.find(c => String(c[0]).includes('DELETE'));
+    expect(String(deleteCall?.[0])).toContain('owner_id = $1');
+    // 🔴 THE NAMED KEYS, NOT THE SURVIVORS. This parameter used to be the
+    // complement of the payload — `NOT (key = ANY(...))` — which is what made a
+    // short payload a delete-the-rest.
+    expect(deleteCall?.[1]).toEqual([USER, ['u_aaa001']]);
+    expect(String(deleteCall?.[0])).not.toContain('NOT (key');
+  });
+
+  it('lets a user clear every lens when they say so', async () => {
+    storedKeys(['u_7f3a91']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await expect(replaceUserLenses(USER, [], ['u_7f3a91'])).resolves.toEqual([]);
+
+    const issued = clientQueryMock.mock.calls.map(c => String(c[0]));
+    expect(issued).toContain('COMMIT');
+  });
+
+  it('issues no DELETE at all when nothing was named', async () => {
+    storedKeys(['u_7f3a91']);
     poolQueryMock.mockResolvedValue({ rows: [] });
 
     await replaceUserLenses(USER, [LENS]);
 
-    const deleteCall = clientQueryMock.mock.calls.find(c => String(c[0]).includes('DELETE'));
-    expect(deleteCall).toBeDefined();
-    // Scoped to the owner AND to the keys that survived — never a blanket delete.
-    expect(String(deleteCall?.[0])).toContain('owner_id = $1');
-    expect(deleteCall?.[1]).toEqual([USER, ['u_7f3a91']]);
+    expect(clientQueryMock.mock.calls.some(c => String(c[0]).includes('DELETE'))).toBe(false);
+  });
+
+  // The read that decides has to hold the rows it read, or a concurrent PUT can
+  // slip a new lens in between the check and the delete.
+  it("locks the owner's rows while it decides", async () => {
+    storedKeys([]);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    await replaceUserLenses(USER, [LENS]);
+
+    const select = clientQueryMock.mock.calls.find(c => String(c[0]).includes('SELECT key'));
+    expect(String(select?.[0])).toContain('FOR UPDATE');
+    expect(select?.[1]).toEqual([USER]);
+  });
+
+  it('exposes the error through a type guard', async () => {
+    storedKeys(['u_aaa001']);
+    poolQueryMock.mockResolvedValue({ rows: [] });
+
+    const err = await replaceUserLenses(USER, []).catch(e => e);
+    expect(isUnacknowledgedLensDeletionError(err)).toBe(true);
   });
 
   it('rolls back and releases the client when a write fails', async () => {
@@ -368,7 +451,7 @@ describe('replaceUserLenses — whole-set replace, atomically', () => {
   });
 
   it('trims the name so a lens cannot be saved as whitespace', async () => {
-    clientQueryMock.mockResolvedValue({ rows: [] });
+    storedKeys([]);
     poolQueryMock.mockResolvedValue({ rows: [] });
 
     await replaceUserLenses(USER, [{ ...LENS, name: '  My lens  ' }]);

@@ -16,6 +16,14 @@
  */
 
 import { pool } from '../db.js';
+import {
+  planFecFetch,
+  freshMinLoadDate,
+  loadFecCheckpoints,
+  clearFecCheckpoints,
+  saveFecCheckpoints,
+  type FecCheckpointRow,
+} from './fecFetchCheckpoint.js';
 import type { SourceAdapter, StreamingAdapter, BatchSink, FetchResult, NormalizeResult, UpsertResult, ContributionInsert, SupersededFiling } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import { normalizeDonorName } from './normalizeDonorName.js';
@@ -104,6 +112,13 @@ const PER_PAGE_SLEEP_MS = parseInt(process.env.FEC_PER_PAGE_SLEEP_MS ?? '5000', 
 // last_index + last_contribution_receipt_amount for amount sort). Keep it generic
 // and forward every key back as a query param on the next page.
 type FecLastIndexes = Record<string, string | number | null>;
+
+/**
+ * Where a fast-path (whole-query) pull of one committee stands, so a cut-off pull can be resumed
+ * (see fecFetchCheckpoint.ts). `start` is the cursor to continue from (null = top); `last` is the
+ * cursor after the last page whose rows were SAVED; `rows` counts rows read this attempt.
+ */
+interface FastPathCursor { start: FecLastIndexes | null; last: FecLastIndexes | null; rows: number }
 
 interface FecPagination {
   per_page: number;
@@ -405,7 +420,8 @@ async function streamPagesForWindow(
   minLoadDate: string | null,
   progress: WindowProgress | null,
   signal?: AbortSignal,
-  pass: FecPass = MAIN_PASS
+  pass: FecPass = MAIN_PASS,
+  cursor?: FastPathCursor
 ): Promise<number> {
   // Resume fast-exit: this exact committee+window was already fully fetched before.
   if (minDate && maxDate && progress) {
@@ -420,7 +436,8 @@ async function streamPagesForWindow(
   const baseUrl = `https://api.open.fec.gov/v1/schedules/schedule_${pass.schedule}/`;
   let totalExpected = 0;
   let firstPage = true;
-  let lastIndexes: FecLastIndexes | null = null;
+  // A resumed fast-path pull starts from its saved keyset cursor instead of the top.
+  let lastIndexes: FecLastIndexes | null = cursor?.start ?? null;
   let cappedOut = false;
   let aborted = false;
 
@@ -439,7 +456,7 @@ async function streamPagesForWindow(
 
     // Forward every cursor key FEC handed back (keys match the active sort), so
     // pagination is correct regardless of FEC_SORT.
-    if (!firstPage && lastIndexes) {
+    if (lastIndexes) {
       for (const [k, v] of Object.entries(lastIndexes)) {
         if (v != null) params.set(k, String(v));
       }
@@ -459,6 +476,11 @@ async function streamPagesForWindow(
         : page.results;
       if (rows.length > 0) await onBatch(rows);
       counter.fetched += page.results.length;
+    }
+    // This page's rows are saved, so its cursor is a safe place to resume from.
+    if (cursor) {
+      cursor.rows += page.results.length;
+      if (page.pagination.last_indexes) cursor.last = page.pagination.last_indexes;
     }
 
     if (pass.capped && counter.fetched >= MAX_RECORDS_PER_POLITICIAN) {
@@ -561,7 +583,8 @@ async function streamAllPagesForCommittee(
   minLoadDate: string | null,
   progress: WindowProgress | null,
   signal?: AbortSignal,
-  pass: FecPass = MAIN_PASS
+  pass: FecPass = MAIN_PASS,
+  cursor?: FastPathCursor
 ): Promise<number> {
   // Window progress is keyed by committee and window only, so it belongs to the main pull alone.
   if (pass !== MAIN_PASS) progress = null;
@@ -569,9 +592,11 @@ async function streamAllPagesForCommittee(
   // no window progress tracking (a whole-cycle window that completes means the pair
   // is done anyway).
   try {
-    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, minLoadDate, null, signal, pass);
+    return await streamPagesForWindow(committeeId, cycle, apiKey, onBatch, counter, null, null, minLoadDate, null, signal, pass, cursor);
   } catch (err) {
     if (!isTooLarge(err)) throw err;
+    // The windowed fallback keeps its own per-window progress; a fast-path cursor means nothing there.
+    if (cursor) { cursor.start = null; cursor.last = null; }
     console.warn(
       `[fecAdapter] whole-cycle query too large for ${committeeId} cycle ${cycle} — falling back to date windows`
     );
@@ -617,27 +642,99 @@ async function streamAllPages(
   // FEC-02: compute the incremental cursor once per (candidate, cycle) — a single
   // watermark shared across every committee in this pair, not re-derived per committee.
   // null (no prior successful run) leaves the whole-cycle initial-backfill path unchanged.
-  const minLoadDate = await getFecLoadCursor(psId, cycle);
-  if (minLoadDate) {
-    console.log(`[fecAdapter] incremental refresh for candidate ${candidateId} cycle ${cycle}: min_load_date=${minLoadDate}`);
+  //
+  // A previous attempt that was cut off by its time limit left checkpoints
+  // (fecFetchCheckpoint.ts): this attempt then continues that chain with the chain's own
+  // min_load_date, skipping committees it finished and resuming the rest from their cursors.
+  const attemptStartedAt = new Date().toISOString();
+  const plan = planFecFetch(await loadFecCheckpoints(psId, cycle));
+  let minLoadDate: string | null;
+  let chainStartedAt: string;
+  if (plan.kind === 'resume') {
+    minLoadDate = plan.minLoadDate;
+    chainStartedAt = plan.chainStartedAt;
+    console.log(
+      `[fecAdapter] resuming cut-off fetch for candidate ${candidateId} cycle ${cycle}: ` +
+      `min_load_date=${minLoadDate ?? 'none (first load)'}, chain started ${chainStartedAt}`
+    );
+  } else {
+    minLoadDate = freshMinLoadDate(await getFecLoadCursor(psId, cycle), plan);
+    chainStartedAt = attemptStartedAt;
+    // The rows of a chain that finished by resuming have done their job once they set the floor.
+    if (plan.clearFirst) await clearFecCheckpoints(psId, cycle);
+    if (minLoadDate) {
+      console.log(`[fecAdapter] incremental refresh for candidate ${candidateId} cycle ${cycle}: min_load_date=${minLoadDate}`);
+    }
   }
+  const resumed = plan.kind === 'resume' ? plan.rows : new Map<string, FecCheckpointRow>();
 
   const counter: StreamCounter = { fetched: 0 };
+  for (const r of resumed.values()) counter.fetched += r.rows_saved;  // keeps the per-politician cap honest
   let totalExpected = 0;
-
+  // Per committee: where its main pull stands in THIS chain.
+  const state = new Map<string, { done: boolean; cursor: FastPathCursor; prior: number }>();
   for (const committeeId of committeeIds) {
-    if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
-    console.log(`[fecAdapter] Fetching committee ${committeeId} for candidate ${candidateId} cycle ${cycle}`);
-    // Load prior completed windows for this committee so a resumed run skips them.
-    const progress: WindowProgress = { psId, completed: await getCompletedWindows(psId, cycle, committeeId) };
-    const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, minLoadDate, progress, signal);
-    totalExpected += count;
+    const r = resumed.get(committeeId);
+    state.set(committeeId, {
+      done: r?.done ?? false,
+      cursor: { start: r && !r.done ? r.last_indexes : null, last: r && !r.done ? r.last_indexes : null, rows: 0 },
+      prior: r?.rows_saved ?? 0,
+    });
+  }
+
+  // On a cut, record where every committee stands so the next attempt continues the chain.
+  // Any other error leaves the checkpoints as they were: it is not a time limit, and the rows
+  // a resumed chain already relies on must not be dropped by an unrelated failure.
+  const saveIfCut = async (): Promise<void> => {
+    if (!signal?.aborted) return;
+    try {
+      await saveFecCheckpoints(psId, cycle, minLoadDate, chainStartedAt, committeeIds.map((id) => {
+        const st = state.get(id)!;
+        return { committeeId: id, done: st.done, lastIndexes: st.done ? null : st.cursor.last, rowsSaved: st.prior + st.cursor.rows };
+      }));
+      console.log(`[fecAdapter] cut off: saved fetch checkpoints for candidate ${candidateId} cycle ${cycle}`);
+    } catch (err) {
+      console.warn(`[fecAdapter] checkpoint write failed: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  };
+
+  try {
+    for (const committeeId of committeeIds) {
+      if (counter.fetched >= MAX_RECORDS_PER_POLITICIAN || signal?.aborted) break;
+      const st = state.get(committeeId)!;
+      if (st.done) {
+        console.log(`[fecAdapter] resume: committee ${committeeId} already finished in this chain — skipping`);
+        continue;
+      }
+      console.log(`[fecAdapter] Fetching committee ${committeeId} for candidate ${candidateId} cycle ${cycle}`);
+      // Load prior completed windows for this committee so a resumed run skips them.
+      const progress: WindowProgress = { psId, completed: await getCompletedWindows(psId, cycle, committeeId) };
+      const count = await streamAllPagesForCommittee(committeeId, cycle, apiKey ?? '', onBatch, counter, minLoadDate, progress, signal, MAIN_PASS, st.cursor);
+      totalExpected += count;
+      if (!signal?.aborted) st.done = true;
+    }
+  } catch (err) {
+    await saveIfCut();
+    throw err;
+  }
+  if (signal?.aborted) {
+    await saveIfCut();
+    return { totalExpected, totalFetched: counter.fetched };
+  }
+
+  // The main pull is complete. A fresh chain needs no checkpoints; a resumed chain keeps its rows
+  // (all done) as the floor for the next attempt's cursor — see fecFetchCheckpoint.ts.
+  if (plan.kind === 'resume') {
+    await saveFecCheckpoints(psId, cycle, minLoadDate, chainStartedAt, committeeIds.map((id) => ({
+      committeeId: id, done: true, lastIndexes: null, rowsSaved: state.get(id)!.prior + state.get(id)!.cursor.rows,
+    })));
   }
 
   // CA_0399 line passes, kept off the nightly path unless they can find something (see FecPass): the uncapped
   // PAC pass only when the cap cut the main pull short; the refund pass only on a first load or when the main
   // pull found new rows (FEC loaded a report since the cursor). They do not change the completeness counters:
   // their rows are a re-read of lines the main pull also covers, or Schedule B rows it never counted.
+  // A resumed chain counts the rows its earlier attempts read, so "found new rows" holds for it too.
   const passes = linePassesFor({ capped: counter.fetched >= MAX_RECORDS_PER_POLITICIAN, firstLoad: minLoadDate === null, fetched: counter.fetched });
   if (passes.length > 0 && !signal?.aborted) {
     const extra = await streamLinePasses(committeeIds, cycle, apiKey ?? '', onBatch, passes, minLoadDate, signal);

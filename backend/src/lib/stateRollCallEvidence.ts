@@ -3420,7 +3420,7 @@ const ME_SENATE_LABEL = /^(?:(?:Pro Tem|President) )?([\p{L}][\p{L}'’-]*(?: [\
  */
 export function meQuestionIsOnTheBill(q: string): boolean {
   const s = squash(q.replace(/\([^)]*\)/g, ' ')).replace(/[.?]$/, '');
-  return /^(?:Final )?Enactment(?: ?- ?(?:Emer|Emergency|Bond Issue|Mandate))?$|^Emergency ?-? ?Enactment$|^Final Passage(?: ?- ?Emer)?$|^Passage$|^Passage of Emergency Measure$|^Passage to be Engrossed(?: as Amended(?: by (?:Committee|Senate|House) Amendments? "[A-Z]"(?: as Amended by (?:Senate|House) Amendment "[A-Z]")?)?)?$|^Reconsideration ?- ?Veto$|^Shall (?:this|the) (?:Bill|Resolve) become (?:a )?law notwithstanding the objections? of the Governor$/i.test(s);
+  return /^(?:Final )?Enactment(?: ?- ?(?:Emer|Emergency|Bond Issue|Mandate))?$|^Emergency ?-? ?Enactment$|^Final Passage(?: ?- ?Emer)?$|^Passage$|^Passage to be Enacted$|^Passage of Emergency Measure$|^Passage to be Engrossed(?: as Amended(?: by (?:Committee|Senate|House) Amendments? "[A-Z]"(?: as Amended by (?:Senate|House) Amendment "[A-Z]")?)?)?$|^Reconsideration ?- ?Veto$|^Shall (?:this|the) (?:Bill|Resolve) become (?:a )?law notwithstanding the objections? of the Governor$/i.test(s);
 }
 
 /**
@@ -3439,7 +3439,9 @@ export function meMajorityReport(q: string): 'for' | 'against' | null {
   // the 129th Senate's pages curl the amendment's quotes (“A”, roll call 280) and may say "Accept the Majority" (345)
   const t = q.replace(/\([^)]*\)/g, ' ').replace(/[“”]/g, '"').replace(/\s+/g, '').replace(/[.?]$/, '').toLowerCase();
   const house = /^acc(?:ept)?maj(otp|oughttopass|ontp|otnp|oughtnottopass)(?:-a|-am|asamended)?(?:byca(?:-[a-z]|"[a-z]"))?(?:rep|rpt|report)?$/.exec(t);
-  const senate = /^accept(?:ance)?(?:the)?majority(oughttopass|oughtnot(?:to)?pass)(?:asamended(?:bycommitteeamendment"[a-z]")?)?(?:report)?(?:fromthecommitteeon[a-z,&'’-]+)?$/.exec(t);
+  // the Legislative Record's House asks "Acceptance of the Majority Ought to Pass as Amended Report"; its Senate once prints
+  // "ACCEPT the Majority OUGHT TO PASS AS AMENDMENT Report" (130th roll call 344)
+  const senate = /^accept(?:ance)?(?:of)?(?:the)?majority(oughttopass|oughtnot(?:to)?pass)(?:asamend(?:ed|ment)(?:bycommitteeamendment"[a-z]")?)?(?:report)?(?:fromthecommitteeon[a-z,&'’-]+)?$/.exec(t);
   const way = (house ?? senate)?.[1];
   if (!way) return null;
   return /not|ontp|otnp/.test(way) ? 'against' : 'for';
@@ -3450,7 +3452,8 @@ export function meQuestionIsRead(q: string): boolean {
   return meQuestionIsOnTheBill(q) || meMajorityReport(q) !== null;
 }
 
-export interface MeVoteRef { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; ld: number; file: string; legislature?: number; session?: string; day?: number }
+/** recordDay: a roll call read from the day's Legislative Record (readMaineRecord), on that day. */
+export interface MeVoteRef { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; ld: number; file: string; legislature?: number; session?: string; day?: number; recordDay?: string }
 /** unnamed: members printed by surname whom the member list or roster does not name (two share it, or none has it), kept as printed. */
 export interface MeVoteRecord { state: 'ME'; stateName: 'Maine'; chamber: Chamber; rollNum: number; session: string; bill: string; question: string; date: string; groups: Record<MeVote, string[]>; unnamed?: { label: string; why: string }[] }
 export interface MeVoteLine extends Omit<MeVoteRecord, 'groups'> { name: string; vote: MeVote }
@@ -3468,6 +3471,15 @@ export function parseMaineVoteUrl(url: string): MeVoteRef | null {
   }
   const s = ME_SENATE_URL.exec(u);
   if (s) return { state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: Number(s[1]), ld: Number(s[2]), file: u.replace(/#.*$/, '') };
+  // the Legislative Record: the day's file, named by its chamber twice (directory and HD/SD), in the Legislature it names
+  const rec = ME_RECORD_URL.exec(u);
+  if (rec) {
+    const leg = Number(rec[1]);
+    const chamber = rec[2] as Chamber;
+    const day = meDay(Number(rec[3]), Number(rec[4]), Number(rec[5]));
+    if ((chamber === 'House') !== (rec[6] === 'HD') || !day || !meInLegislature(day, leg)) return null;
+    return { state: 'ME', stateName: 'Maine', chamber, rollNum: Number(rec[7]), ld: Number(rec[8]), file: u.replace(/#.*$/, ''), legislature: leg, recordDay: day };
+  }
   return null;
 }
 
@@ -3945,6 +3957,222 @@ function readMaineSenate(bodies: string[], r: MeVoteRef): MeVoteRecord {
   return { state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: r.rollNum, session: meSession(legislature, ord, sess.m[2]), bill: `LD ${r.ld}`, question, date, groups, unnamed };
 }
 
+// ── Maine: the Legislative Record, one PDF a chamber a day ─────────────────────────────────────────────────────────────
+// lldc.mainelegislature.org (the Law and Legislative Reference Library's digital library; read 2026-11-22, no robots.txt)
+// publishes the Legislative Record as a directory listing, /Open/LegRec/<legislature>/<House|Senate>/, one PDF a chamber a
+// sitting day: LegRec_2018-07-09_HD_pH1790-1837.pdf (House), LegRec_2021-06-14_SD_pS0915-0963.pdf (Senate; the 130th's
+// later files drop the S, LegRec_2022-04-07_SD_p1785-1817.pdf). It is read only for the roll calls whose own PDF the
+// legislature's site does not give on an allowed path: the 128th House past roll call 476, and the Senate rows that link
+// only a /LawMakerWeb page (every 128th row, most of the 130th's).
+//
+// Page 1 is the library's cover; page 2 the title page ("Legislative Record House of Representatives" or "Senate
+// Legislative Record", "One Hundred and Twenty-Eighth Legislature", "Second Special Session"); every later page prints the
+// day at the top ("JOURNAL AND LEGISLATIVE RECORD - HOUSE, July 9, 2018", "LEGISLATIVE RECORD - SENATE, MONDAY, JUNE 14,
+// 2021") and its page number at the foot ("H-1825"), and two text columns between. The text is read by position: each
+// page's left column top to bottom, then its right (x 300 divides them; nothing prints between 296 and 310), lines joined.
+// A roll call prints in the flow of the floor text, and may run on into the next column or page:
+//
+//   House:  ROLL CALL NO. 729V  YEA - Austin B, Babbidge, …, Madam Speaker.  NAY - Ackley, …  ABSENT - Duchesne, …
+//           Yes, 76; No, 67; Absent, 8; Excused, 0.  76 having voted in the affirmative and 67 voted in the negative,
+//           with 8 being absent, and accordingly the Veto was SUSTAINED.
+//   Senate: ROLL CALL (#338)  YEAS: Senators: BALDACCI, …, PRESIDENT JACKSON  NAYS: Senators: BAILEY, …
+//           25 Senators having voted in the affirmative and 10 Senators having voted in the negative, the motion by
+//           Senator BALDACCI of Penobscot to ACCEPT the Majority OUGHT NOT TO PASS Report PREVAILED.
+//
+// A vote is read only when: its number is printed once that day; the last bill the text names before it ("S.P. 123 L.D.
+// 805", "(H.P. 1303) (L.D. 1867)", or a veto letter's "vetoing LD 1884") is the bill the address names; each group holds
+// the count the tally line (House) and the closing sentence print; the members and the vacancies the sentence states fill
+// the chamber's seats; and its question is a vote on the bill or on its Majority report (meQuestionIsRead). The House's
+// question is the last "The pending question before the House is …" printed after the roll call before it; the Senate's is
+// the motion its closing sentence names ("to ACCEPT the Majority OUGHT NOT TO PASS Report"), or, for a bill read as an
+// enactor, the act the sentence records ("was PASSED TO BE ENACTED" is Enactment, "was FINALLY PASSED" Final Passage).
+// Members are printed by surname, a shared one with its initial ("Austin B"), the presiding officer by office: the House is
+// named from the saved roster of the Legislature (meNameHouse), the Senate from its saved member list, as the PDFs are.
+//
+// The address is the day's file, with the roll call and the bill after a #: …/LegRec_2021-06-14_SD_pS0915-0963.pdf#RC338-LD805.
+
+const ME_RECORD_URL = /^https:\/\/lldc\.mainelegislature\.org\/Open\/LegRec\/(12[89]|1[3-9]\d)\/(House|Senate)\/LegRec_(\d{4})-(\d{2})-(\d{2})_(HD|SD)_p[HS]?\d{3,4}(?:-\d{3,4})?\.pdf#RC([1-9]\d{0,3})-LD([1-9]\d{0,3})$/;
+/** The Legislature as the title page spells it. */
+const ME_LEG_WORDS: Record<number, string> = { 128: 'Twenty-Eighth', 129: 'Twenty-Ninth', 130: 'Thirtieth', 131: 'Thirty-First', 132: 'Thirty-Second' };
+/** The Nth Legislature sits from its swearing-in in December of an even year to the end of the second year after. */
+const meInLegislature = (day: string, legislature: number): boolean => day >= `${2 * legislature + 1760}-12-01` && day <= `${2 * legislature + 1762}-12-31`;
+const ME_COVER = 'MAINE STATE LEGISLATURE The following document is provided by the LAW AND LEGISLATIVE DIGITAL LIBRARY at the Maine State Law and Legislative Reference Library http://legislature.maine.gov/lawlib Reproduced from electronic originals (may include minor formatting differences from printed original)';
+const ME_WEEKDAYS = 'MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY';
+
+/** The address of a roll call in the day's Record. */
+export function maineRecordVoteUrl(file: string, rollNum: number, ld: number): string {
+  return `${file}#RC${rollNum}-LD${ld}`;
+}
+
+/**
+ * The day's Record as one text in reading order, checked page by page: the cover, the title page (its Legislature, and
+ * the session it names, returned), and on every later page the day at the top and the page number at the foot.
+ */
+function meRecordText(items: Item[], r: MeVoteRef): { text: string; nth: string; kind: string } {
+  const pages = new Map<number, Item[]>();
+  for (const i of items) { if (!pages.has(i.page)) pages.set(i.page, []); pages.get(i.page)!.push(i); }
+  const flat = (p: number): string => squash(meRows(pages.get(p) ?? []).map((row) => row.text).join(' '));
+  if (flat(1) !== ME_COVER) throw new Error('the first page is not the library\'s cover');
+  const title = new RegExp(`^(?:${r.chamber === 'House' ? 'Legislative Record House of Representatives' : 'Senate Legislative Record'}) One Hundred and ${ME_LEG_WORDS[r.legislature!] ?? '-'} Legislature State of Maine Daily Edition (First|Second) (Regular|Special) Session beginning (${ME_MONTHS.join('|')}) (\\d{1,2}), (\\d{4}) beginning at [Pp]age [HS]?-?\\d+$`).exec(flat(2).replace(/ ,/g, ',').replace(/(\d) (?=\d)/g, '$1'));
+  if (!title) throw new Error(`the title page is not the ${r.chamber}'s Record of the ${ordinal(r.legislature!)} Legislature: ${flat(2).slice(0, 300)}`);
+  const began = meDay(Number(title[5]), ME_MONTHS.indexOf(title[3]) + 1, Number(title[4]));
+  if (!began || began > r.recordDay! || !meInLegislature(began, r.legislature!)) throw new Error(`the session the title page names began ${began ?? 'on no real day'}, not before ${r.recordDay}`);
+  const head = r.chamber === 'House'
+    ? new RegExp(`^JOURNAL AND LEGISLATIVE RECORD - HOUSE, (${ME_MONTHS.join('|')}) (\\d{1,2}), (\\d{4})$`)
+    : new RegExp(`^LEGISLATIVE RECORD - SENATE, (?:${ME_WEEKDAYS}), (${ME_MONTHS.join('|').toUpperCase()}) (\\d{1,2}), (\\d{4})$`);
+  const foot = r.chamber === 'House' ? /^H-\d{1,4}$/ : /^S-\d{1,4}$/;
+  const lines: string[] = [];
+  const nums = [...pages.keys()].sort((a, b) => a - b);
+  if (nums[0] !== 1 || nums[1] !== 2 || nums.length < 3) throw new Error('the Record has no pages past its title page');
+  for (const p of nums.slice(2)) {
+    const body: Item[] = [];
+    for (const row of meRows(pages.get(p)!)) {
+      if (row.y > 740) {
+        const h = head.exec(row.text);
+        if (!h) throw new Error(`page ${p} prints at its top something the reader cannot read: ${row.text}`);
+        const day = meDay(Number(h[3]), ME_MONTHS.findIndex((m) => m.toUpperCase() === h[1].toUpperCase()) + 1, Number(h[2]));
+        if (day !== r.recordDay) throw new Error(`page ${p} is of ${day ?? h[0]}, not ${r.recordDay}`);
+      } else if (row.y < 45) {
+        if (!foot.test(row.text)) throw new Error(`page ${p} prints at its foot something the reader cannot read: ${row.text}`);
+      } else body.push(...row.items);
+    }
+    const gutter = body.find((i) => i.x >= 296 && i.x < 310);
+    if (gutter) throw new Error(`page ${p} prints text between the columns: ${gutter.s}`);
+    for (const col of [body.filter((i) => i.x < 300), body.filter((i) => i.x >= 310)]) for (const row of meRows(col)) lines.push(row.text);
+  }
+  // a word broken at a hyphen ("Beebe-" / "Center") is joined; every other line break is a space
+  let text = '';
+  for (const l of lines) text += text && !(/\p{L}-$/u.test(text) && /^\p{L}/u.test(l)) ? ` ${l}` : l;
+  return { text: squash(text).replace(/ ([,.;:])/g, '$1'), nth: title[1], kind: title[2] };
+}
+
+/** A Senate label printed in capitals, its office dropped ("PRESIDENT PRO TEMPORE MASON"), with a shared surname's initial. */
+const ME_RECORD_SENATOR = /^(?:PRESIDENT (?:PRO TEMPORE )?)?(\p{Lu}[\p{Lu}'’ -]*\p{Lu})(?:,? (\p{Lu})\.)?$/u;
+/** A House label: a surname of one or more words, a shared one with its initial after a space ("Austin B", "Talbot Ross"). */
+const ME_RECORD_HOUSE = /^(\p{Lu}[\p{L}'’ -]*\p{Ll})(?: (\p{Lu}))?$/u;
+
+/** A printed list of members; "None" is an empty one. */
+/** A count in words or figures: "No Senator", "no Senators", "none being". */
+const meCount = (s: string): number => (/^(?:no|none)$/i.test(s) ? 0 : Number(s));
+const meList = (s: string | undefined): string[] => (s === undefined || /^none$/i.test(s.trim()) ? [] : s.split(',').map(squash).filter(Boolean));
+
+function readMaineRecord(body: string, r: MeVoteRef): MeVoteRecord {
+  const items = pdfItems(body);
+  if (!items) throw new Error('the Record is not a PDF');
+  const { text, nth, kind } = meRecordText(items, r);
+  const heads = [...text.matchAll(r.chamber === 'House' ? /ROLL CALL NO\. ?(\d+)V?(?= )/g : /ROLL CALL \(#(\d+)\)/g)];
+  const mine = heads.filter((h) => Number(h[1]) === r.rollNum);
+  if (mine.length !== 1) throw new Error(`the day's Record prints roll call ${r.rollNum} ${mine.length === 0 ? 'nowhere' : `${mine.length} times`}`);
+  const at = mine[0].index!;
+  const k = heads.indexOf(mine[0]);
+  const block = text.slice(at, heads[k + 1]?.index ?? text.length);
+  // the bill: the last one the text names before the roll call
+  const papers = [...text.slice(0, at).matchAll(/\b[HS]\.P\. \d+\)? \(?L\.D\. (\d+)\b|\bvetoing LD (\d+)\b/g)];
+  if (!papers.length) throw new Error('the Record names no bill before the roll call');
+  const ld = Number(papers[papers.length - 1][1] ?? papers[papers.length - 1][2]);
+  if (ld !== r.ld) throw new Error(`the roll call follows LD ${ld}, not LD ${r.ld}`);
+  const date = r.recordDay!;
+  const session = meSession(r.legislature!, nth, kind);
+  if (r.chamber === 'House') {
+    const g = /^ROLL CALL NO\. ?\d+V? YEA - (.*?)\. NAY - (.*?)\.(?: ABSENT - (.*?)\.)?(?: EXCUSED - (.*?)\.)? Yes, (\d+); No, (\d+); Absent, (\d+);(?: Vacant, (\d+);)? Excused, (\d+)\. (\d+) having voted in the affirmative and (\d+) voted in the negative(.*?),? and accordingly (.+?)\./.exec(block);
+    if (!g) throw new Error(`a roll call the reader cannot read: ${block.slice(0, 600)}`);
+    const mid = /^(?:,? (\d+) vacanc(?:y|ies))?(?:,? with (\d+) being absent)?(?:,? and (\d+) being excused)?$/.exec(g[12]);
+    if (!mid) throw new Error(`a closing sentence the reader cannot read: ${g[12]}`);
+    const asked = [...text.slice(heads[k - 1]?.index ?? 0, at).matchAll(/The pending question before the House is ['‘’"]?(.+?)[.?]['’"]? All those in favor will vote yes/g)];
+    if (!asked.length) throw new Error('the Record prints no pending question before the roll call');
+    const question = squash(asked[asked.length - 1][1]);
+    if (!meQuestionIsRead(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
+    const groups = Object.fromEntries([...ME_HOUSE_VOTES, ...ME_SENATE_VOTES, 'Paired'].map((v) => [v, [] as string[]])) as Record<MeVote, string[]>;
+    const lists: [MeVote, string | undefined][] = [['Yea', g[1]], ['Nay', g[2]], ['Not voting', g[3]], ['Excused', g[4]]];
+    for (const [v, s] of lists) {
+      for (const l of meList(s)) {
+        const m = ME_RECORD_HOUSE.exec(l);
+        if (!m && !ME_SPEAKER.test(l)) throw new Error(`a label the reader cannot read: ${l}`);
+        groups[v].push(m && !ME_SPEAKER.test(l) && m[2] ? `${m[1]}, ${m[2]}.` : l);
+      }
+    }
+    const tally: Partial<Record<MeVote, number>> = { Yea: Number(g[5]), Nay: Number(g[6]), 'Not voting': Number(g[7]), Excused: Number(g[9]) };
+    const said: Partial<Record<MeVote, number>> = { Yea: Number(g[10]), Nay: Number(g[11]), 'Not voting': Number(mid[2] ?? 0), Excused: Number(mid[3] ?? 0) };
+    const vacant = Number(g[8] ?? 0);
+    if (Number(mid[1] ?? 0) !== vacant) throw new Error(`the tally prints ${vacant} vacant seats and the sentence ${mid[1] ?? 0}`);
+    for (const [v] of lists) {
+      if (groups[v].length !== tally[v] || groups[v].length !== said[v]) throw new Error(`the ${v} group lists ${groups[v].length} members, the tally prints ${tally[v]} and the sentence ${said[v]}`);
+      groups[v].sort((a, b) => a.localeCompare(b));
+    }
+    const all = lists.flatMap(([v]) => groups[v]);
+    if (new Set(all.map(fold)).size !== all.length) throw new Error('a label is printed twice');
+    if (all.length + vacant !== ME_HOUSE_SEATS) throw new Error(`${all.length} members and ${vacant} vacant seats are not the House's ${ME_HOUSE_SEATS}`);
+    return meNameHouse({ state: 'ME', stateName: 'Maine', chamber: 'House', rollNum: r.rollNum, session, bill: `LD ${r.ld}`, question, date, groups }, r.legislature!);
+  }
+  // the four lists ("Senators: None" for an empty one), then the closing sentence
+  const g = /^ROLL CALL \(#\d+\) YEAS: Senators?: (.*?) NAYS: Senators?: (.*?)(?: ABSENT: Senators?: (.*?))?(?: EXCUSED: Senators?: (.*?))? (?=(?:\d+|No) Senators? having voted in the affirmative|This being an Emergency Measure)/.exec(block);
+  if (!g) throw new Error(`a roll call the reader cannot read: ${block.slice(0, 600)}`);
+  const close = block.slice(g[0].length);
+  // the counts: "25 Senators having voted in the affirmative and 10 Senators having voted in the negative, with 4 Senators
+  // being excused, …", or an emergency measure's "This being an Emergency Measure and having received the affirmative vote
+  // of 32 Members of the Senate, with 2 Senators having voted in the negative, and 32 being more than two-thirds of the
+  // entire elected Membership of the Senate, was PASSED TO BE ENACTED"
+  const BEING = '(?:,? (?:with |and )?(\\d+) Senators? being (absent|excused))?(?:,? and (\\d+) Senators? being (absent|excused))?';
+  const plain = new RegExp(`^(\\d+|No) Senators? having voted in the affirmative and (\\d+|no) Senators? having voted in the negative${BEING}, (.*)$`).exec(close);
+  const emer = new RegExp(`^This being an Emergency Measure and having received the affirmative vote of (\\d+) Members? of the Senate, with (\\d+|no) Senators? having voted in the negative${BEING}, and (\\d+) being (more|less) than two-thirds of the entire elected Membership of the Senate, (was PASSED TO BE ENACTED|FAILED (?:OF )?ENACTMENT)\\b`).exec(close);
+  const c = plain ?? emer;
+  if (!c) throw new Error(`a closing sentence the reader cannot read: ${close.slice(0, 300)}`);
+  let question: string;
+  if (emer) {
+    if (Number(emer[7]) !== Number(emer[1]) || (emer[8] === 'more') !== /^was/.test(emer[9])) throw new Error(`the emergency sentence's two-thirds clause does not fit its count: ${close.slice(0, 300)}`);
+    question = 'Emergency Enactment';
+  } else {
+    const rest = plain![7];
+    // the motion it names; an act it records; a veto vote; or the Majority report it records accepted
+    const motion = /^the motion by Senator [\p{L}'’. -]+? of [\p{L}. ]+? to (.+?),? (PREVAILED|FAILED)\./u.exec(rest);
+    const act = /^(?:this Bill )?(?:was (PASSED TO BE ENACTED|FINALLY PASSED)|(FAILED) ENACTMENT)\b/.exec(rest);
+    const veto = /^and (\d+|none) being (more|less) than two-thirds of the (?:members|Membership) present and voting, it was the vote of the Senate that the veto of the Governor be (OVERRIDDEN|SUSTAINED)\b/.exec(rest);
+    const report = /^the (Majority [^.]+? Report) ACCEPTED\b/.exec(rest);
+    if (motion) question = squash(motion[1].replace(/,? (?:in )?(?:NON-)?CONCURRENCE,?$/i, ''));
+    else if (act) question = act[1] === 'FINALLY PASSED' ? 'Final Passage' : 'Enactment';
+    else if (veto) {
+      if (meCount(veto[1]) !== meCount(plain![1]) || (veto[2] === 'more') !== (veto[3] === 'OVERRIDDEN')) throw new Error(`the veto sentence's two-thirds clause does not fit its count: ${rest.slice(0, 300)}`);
+      question = 'Shall this Bill become law notwithstanding the objections of the Governor';
+    } else if (report) question = `ACCEPT the ${report[1]}`;
+    else throw new Error(`a closing sentence the reader cannot read: ${rest.slice(0, 300)}`);
+  }
+  if (!meQuestionIsRead(question)) throw new Error(`the question is not a vote on the bill: ${question}`);
+  const groups = Object.fromEntries([...ME_SENATE_VOTES, 'Paired'].map((v) => [v, [] as string[]])) as Record<MeVote, string[]>;
+  const lists: [MeVote, string | undefined][] = [['Yea', g[1]], ['Nay', g[2]], ['Absent', g[3]], ['Excused', g[4]]];
+  // a group the sentence does not count (an emergency measure's sentence counts no one excused, 130th roll call 305) is
+  // closed by the seats instead: then every seat must be filled
+  const said: Partial<Record<MeVote, number>> = { Yea: meCount(c[1]), Nay: meCount(c[2]) };
+  for (const [n, w] of [[c[3], c[4]], [c[5], c[6]]]) if (n !== undefined) said[w === 'absent' ? 'Absent' : 'Excused'] = Number(n);
+  if (plain) for (const v of ['Absent', 'Excused'] as const) said[v] ??= 0;
+  if (c[4] && c[4] === c[6]) throw new Error('the sentence counts one group twice');
+  const list = ME_SENATE_LISTS[r.legislature!];
+  if (!list) throw new Error(`no Senate member list of the ${ordinal(r.legislature!)} Legislature is saved`);
+  const unnamed: { label: string; why: string }[] = [];
+  const all: string[] = [];
+  for (const [v, s] of lists) {
+    for (const l of meList(s)) {
+      const m = ME_RECORD_SENATOR.exec(l);
+      if (!m) throw new Error(`a label the reader cannot read: ${l}`);
+      all.push(`${m[1]}${m[2] ? ` ${m[2]}.` : ''}`);
+      const fits = list.names.filter((n) => (fold(dropSuffix(n)) === fold(m[1]) || fold(dropSuffix(n)).endsWith(` ${fold(m[1])}`)) && (!m[2] || n.startsWith(m[2])));
+      if (fits.length === 1) groups[v].push(fits[0]); else {
+        unnamed.push({ label: l, why: fits.length ? `${fits.length} senators of the list share it (${fits.join(', ')})` : 'no senator of the list has it' });
+        groups[v].push(l);
+      }
+    }
+    if (said[v] !== undefined && groups[v].length !== said[v]) throw new Error(`the ${v} group lists ${groups[v].length} members and the sentence ${said[v]}`);
+    groups[v].sort((a, b) => a.localeCompare(b));
+  }
+  if (new Set(all.map(fold)).size !== all.length) throw new Error('a label is printed twice');
+  if (new Set(ME_SENATE_VOTES.flatMap((v) => groups[v]).map(fold)).size !== all.length) throw new Error('two labels name one senator');
+  // the sentence prints no vacancies: fewer members than seats is read only when the sentence counts every group (the
+  // 130th's Hancock seat was empty from Senator Luchini's resignation in 2022, so its April votes list 34)
+  const uncounted = ME_SENATE_VOTES.filter((v) => said[v] === undefined);
+  if (all.length > ME_SENATE_SEATS || (uncounted.length && all.length !== ME_SENATE_SEATS)) throw new Error(`${all.length} members are not the Senate's ${ME_SENATE_SEATS}${uncounted.length ? `, and the sentence does not count the ${uncounted.join(' or ')} group` : ''}`);
+  unnamed.sort((a, b) => a.label.localeCompare(b.label));
+  return { state: 'ME', stateName: 'Maine', chamber: 'Senate', rollNum: r.rollNum, session, bill: `LD ${r.ld}`, question, date, groups, unnamed };
+}
+
 const ME_SAID: Record<MeVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', 'Not voting': 'did not vote', Absent: 'was absent', Excused: 'was excused', Restricted: 'was restricted from voting', Paired: 'was paired' };
 
 export function renderMaineVote(v: MeVoteRecord): string {
@@ -4275,7 +4503,7 @@ export function explainMaineVote(bodies: string[], url: string): MeVoteRecord | 
   const r = parseMaineVoteUrl(url);
   if (!r) return { refused: 'not a Maine vote address' };
   if (bodies.length !== maineDocs(r).length) return { refused: 'not the vote and its documents' };
-  try { return r.chamber === 'House' ? readMaineHouse(bodies[0], r) : readMaineSenate(bodies, r); } catch (e) { return { refused: e instanceof Error ? e.message : String(e) }; }
+  try { return r.recordDay ? readMaineRecord(bodies[0], r) : r.chamber === 'House' ? readMaineHouse(bodies[0], r) : readMaineSenate(bodies, r); } catch (e) { return { refused: e instanceof Error ? e.message : String(e) }; }
 }
 
 /** The vote an address names, read from the PUBINFO bill file and member list. Null when any check fails. */
@@ -4743,7 +4971,7 @@ export function explainHawaiiVote(bodies: string[], url: string): HiVoteRecord |
 /** How a fetched PDF reaches its reader: Maryland's and Minnesota's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   // Maine's marks are paired with their members by position, so its reader gets every run with its place (pdfItemsBody)
-  if (/^https:\/\/legislature\.maine\.gov\/(?:house\/Repository\/Documents\/\d+\/RollCalls\/|uploads\/visual_edit\/roll-call-)/i.test(url.trim())) return pdfItemsBody(items);
+  if (/^https:\/\/legislature\.maine\.gov\/(?:house\/Repository\/Documents\/\d+\/RollCalls\/|uploads\/visual_edit\/roll-call-)|^https:\/\/lldc\.mainelegislature\.org\/Open\/LegRec\//i.test(url.trim())) return pdfItemsBody(items);
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\/|^https:\/\/www\.mnsenate\.gov\/journals\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
 }
 

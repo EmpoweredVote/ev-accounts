@@ -705,6 +705,24 @@ def run_setup_prints_the_set_up_in_order_and_plants_a_plain_fault(t):
 
 
 @check
+def recipe_counts_disagreements_in_the_federal_crosscheck_file(t):
+    """Federal federal-04-rr6 (2026-11-22): step 7's check read federal/crosscheck.json as a list of rows, but
+    federal-votes.ts writes {"table": {"agree": n, "disagree": [...]}, "house_xml": {...}}, so the check crashed with
+    AttributeError before it could report anything. It now counts both shapes."""
+    os.makedirs(t); sys.path.insert(0, TOOLS)
+    import importlib; rr = importlib.import_module('run_recipe'); importlib.reload(rr)
+    sys.path.remove(TOOLS)
+    put = lambda f, x: json.dump(x, open(f'{t}/{f}', 'w'))
+    put('fed-clean.json', {'table': {'agree': 3, 'disagree': []}, 'house_xml': {'agree': 3, 'disagree': []}})
+    put('fed-bad.json', {'table': {'agree': 1, 'disagree': [{'name': 'A'}, {'name': 'B'}]}, 'house_xml': {'agree': 3, 'disagree': [{'name': 'C'}]}})
+    put('list.json', [{'agree': True}, {'agree': False}])
+    assert rr.disagree(t, 'fed-clean.json') == 0
+    assert rr.disagree(t, 'fed-bad.json') == 3, 'every disagreement in every block is counted'
+    assert rr.disagree(t, 'list.json') == 1, 'the LegiScan list shape still counts'
+    assert rr.disagree(t, 'missing.json') == 0
+
+
+@check
 def recipe_keeps_an_earlier_pass_of_step_0_aside(t):
     """Colorado co-01 (2026-11-19): three codes changed in a round after the recipe had started; step 0 from the start
     stopped because the writer refuses to overwrite research-stage5-0.csv, and a session renamed files by hand. The

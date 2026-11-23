@@ -82,8 +82,14 @@ def json_len(b, f):
 
 
 def disagree(b, f):
+    """Count the disagreements in a cross-check file. LegiScan's is a list of rows with `agree`; the federal one
+    (federal-votes.ts) is {"table": {"agree": n, "disagree": [...]}, "house_xml": {...}}, a dict the list reading
+    crashed on (federal-04-rr6, 2026-11-22)."""
     p = os.path.join(b, f)
-    return 0 if not os.path.exists(p) else sum(1 for r in json.load(open(p)) if r.get('agree') is False)
+    if not os.path.exists(p): return 0
+    d = json.load(open(p))
+    if isinstance(d, dict): return sum(len(v.get('disagree') or []) for v in d.values() if isinstance(v, dict))
+    return sum(1 for r in d if r.get('agree') is False)
 
 
 def lines(b, f): return [l for l in read(b, f).splitlines() if l.strip()]

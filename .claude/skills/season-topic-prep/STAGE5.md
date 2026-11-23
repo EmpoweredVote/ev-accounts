@@ -698,6 +698,76 @@ passed, unless the runner rules otherwise. Rows with no verified source cannot b
   source and date. A local record appears in plain words.
 - **Seated:** the topic shows as today. A seat in the same or a newer season hides the research state.
 
+### 7b. Position summaries (after section 7 has written a batch, per topic)
+
+Everyone Stage 5 coded `seated` or `doesnt-fit` who has at least one saved finding gets a short, cited summary of
+where they stand: one to five sentences, each ending in citations like `[1, 4]`, with a numbered reference list
+built by code from the findings' own URLs. The summary is the profile's paragraph (`politician_context.reasoning`)
+and the reference list is its `sources`. It has **no direction marker and no effect on the compass**: a person with
+no rung keeps an empty spoke. Design, the seven writing rules (§5), the check (§6) and storage (§7):
+`docs/superpowers/specs/2026-11-22-position-summaries-and-local-officials-design.md`. Rulings: RULINGS.md, "Position
+summaries". Everything is written to the **draft** season; voters see it when the season opens, and a blank
+(`value = 0`) shows its summary only when it is a checked summary (its `summary_sha256` matches the stored text).
+
+Run from `backend/` with `--profile <stage5>/topic-profile.json`. `<batch>` is a name such as `tx-01`. Each step
+leaves files in `<stage5>/summaries/<batch>/`.
+
+| # | Step | Command or agent | Leaves |
+|---|---|---|---|
+| 1 | Inputs | `summary-inputs.ts --profile … --batch <name> [--state xx\|federal] [--people id,id] [--max-findings 25]` | `writer/<n>.md` (about 10 people each), `people.json`, an empty `drafts/` |
+| 2 | Writers | one fresh subagent per `writer/<n>.md`, most capable model, reads that file only (template `templates/stage5-summary-writer.md`) | `drafts/<n>.json` |
+| 3 | Assemble | `summary-assemble.ts --profile … --batch <name>` | `summaries.jsonl` (with the code each summary is checked against), `lint-refused.jsonl`, `checker/<politician_id>.md` |
+| 4 | Claude checkers | one fresh subagent per `checker/<politician_id>.md` (template `templates/stage5-summary-checker.md`), never the writer; each file names the absolute path the subagent writes its JSON to | `claude-checks/<politician_id>.json` (a missing `checker` and `at` are filled by `summary-write.ts`) |
+| 5 | Second opinion | `summary-second-opinion.ts --profile … --batch <name> [--models a,b] [--timeout 180] [--retry-unusable]` | lines appended to `checks.jsonl` |
+| 6 | Write, dry run | `summary-write.ts --profile … --batch <name>` | `PREVIEW.md`, `held.md`; prints the all-pass rate and each outside model's agreement with Claude |
+| 7 | 🛑 The runner's yes for this batch (the batch stop) | show `PREVIEW.md` and `held.md` | nothing |
+| 8 | Write | `summary-write.ts --profile … --batch <name> --apply --yes "<the runner's words>"` | `old-context.jsonl`, `write-log.jsonl` |
+
+- **Step 3** sends a draft that fails the lint (a missing citation, an unknown finding id, a rung word, a party
+  word) to `lint-refused.jsonl`. It never reaches a checker. A refused person, or one a checker failed, may be
+  rewritten once: put the new draft in `drafts/rewrite-<anything>.json` and run step 3 again. A clean rewrite
+  replaces that person's earlier draft (step 3 prints each replacement); a second rewrite for one person is refused.
+  A second failure leaves the person with today's display. Files are named by `politician_id`, so a rewrite changes
+  only that person's `checker/` file and sha256; run the step 4 checker for that person alone (it overwrites only
+  their own `claude-checks/` file) and step 5 again for the batch, which checks only the new text.
+- **Step 4**: run the Claude checkers before step 5. Step 5 checks every summary in `summaries.jsonl`, including ones a Claude checker failed.
+- **Step 5** uses `opencode-go/gpt-6-luna` and `opencode-go/gemini-4-argon` (the profile key
+  `second_opinion_models`). It runs locked down: a deny-all OpenCode config in an empty temp folder, and an
+  environment with secrets stripped. Never pass `--auto`. It appends to `checks.jsonl` and **skips every
+  (person, sha256, model) already there**, so re-running it for the whole batch is safe: it sends only text that has no
+  check yet (a rewrite has a new sha256), and never a second check on the same text. It refuses to send a
+  `checker/<politician_id>.md` whose embedded sha256 or person is not that person's row in `summaries.jsonl`: it
+  prints `REFUSED` and records nothing (re-run step 3). To redo failed calls, run it with `--retry-unusable`: it
+  re-runs just the calls that got no usable reply, never a judgement.
+- **The verdict** (`summary-write.ts`): the Claude check, the GPT check and the Gemini check must all be present.
+  **Any failed sentence from any checker holds the summary.** A Claude fail makes it `failed`; a checker error
+  counts as a fail, and so does a check that skips a sentence (every check must give a verdict on every sentence;
+  "claude check skipped sentence k"). Held and failed summaries are not shown, and `held.md` names every failing
+  sentence and each checker's reason.
+- **The seat it was checked against.** Step 3 records each summary's code (outcome, seat value, and a sha256 of the
+  code file). The write re-reads `codes/<politician_id>.json` and holds the row ("code changed since check") if any of
+  the three differs. After a re-code, run steps 3-6 again for that person.
+- **The dry run is the default.** Without `--apply` it writes no row. With `--apply --yes` it writes the draft season
+  only, in one transaction, as an `UPDATE` of an existing `politician_context` row (it never creates a seat or a
+  blank). The old reasoning and sources go to `old-context.jsonl` first. It refuses a summary whose text no longer
+  matches its sha256, an off-topic row, and a duplicated row.
+- 🔴 **Apply needs the `summary_sha256` column.** Its migration is applied on its own, with the runner's yes, before
+  any `--apply`. Without it the write fails; do not work around it.
+- **Agreement.** Each batch prints, and `PREVIEW.md` shows, two things. The **all-pass rate**: summaries with all three
+  checks present and passing. And, **per outside model (GPT, Gemini), its verdict agreement with Claude**: of the
+  summaries both checked, how many got the same summary-level pass or fail. The second is what the runner reads to
+  decide when to retire the second opinion (RULINGS.md): it shows how often an outside model disagrees with Claude.
+
+🛑 **First-run stop, once per topic (gun-policy first).** Before the first write for a topic, show the runner **20
+passed summaries with their references**. Draw them so anyone can repeat the draw: write a seed (any short text) to
+`summaries/sample-seed.txt` first, then shuffle the `politician_id`s of the passed summaries of the batches built so
+far with that seed and take the first 20. One line to draw them (list the passed ids in `ids.txt` first):
+`sort ids.txt | python3 -c "import random,sys;i=sys.stdin.read().split();random.Random(open('summaries/sample-seed.txt').read().strip()).shuffle(i);print(*i[:20],sep=chr(10))"`.
+If fewer than 20 passed, show all of them. Write nothing until the runner has seen them and said yes. Then every
+batch still gets its own 🛑 (the batch stop, step 7): one yes covers one batch, never the next.
+
+**Next use:** the local-officials pilot (spec §8, 100 people) is built in a later task.
+
 ### 8. Blind check for own-words seats (after coding, per topic)
 
 A seat placed on own words alone keeps the `statement-evidence` hold until a blind check on that topic agrees with
