@@ -2758,3 +2758,137 @@ already records, in a state that offers three ways to make it:
 `authority = 'SDCL § 49-1-2'`, `window_end_date` NULL.
 **The other five:** nothing written. `window_end_date = 2027-01-24`, authority `SDCL § 3-1-2`,
 and a dated follow-up when the inauguration is announced.
+
+---
+
+## NH — New Hampshire · 6 offices · 🔴 **ALL SIX REFUSED, 2026-11-23** — and this is the first refusal in the pass with **no upper bound in law**
+
+| body | offices | start date | state of play |
+|---|---|---|---|
+| Governor | 1 | 🔴 **REFUSED — window opens 2027-01-06, no end** | the term starts at the **inauguration**, and no instrument names its day |
+| Executive Councilor, Districts 1–5 | 5 | 🔴 **REFUSED — same window** | sworn in at the same joint convention, by the Governor, immediately after |
+
+### 🔴 THE NEW HAMPSHIRE CONSTITUTION FIXES NO TERM LENGTH AND NO COMMENCEMENT FOR EITHER OFFICE
+
+This is not "a length and no day", which is Nebraska's, New Mexico's, Arkansas's and South
+Dakota's shape. New Hampshire gives **neither**.
+
+**`N.H. Const. pt. 2, art. 42`** says only *"The governor shall be chosen **biennially in the month
+of November**"*, and then describes what happens to the ballots. Searching the whole Governor
+article for `two years`, `until a successor`, `until his successor` returns **zero**. The single
+occurrence of `term of` is in `art. 49`, which refers to *"the governor's term of office"* while
+defining a **vacancy** — it uses the term's boundaries without ever setting them.
+
+**`art. 60`** does the same for the Council: the county votes are *"received, sorted, counted,
+certified, and returned to the secretary's office … to be by the secretary laid before the senate
+and house of representatives"*.
+
+### The one date both articles DO name, and what it is a date OF
+
+> … the secretary shall lay the same before the senate and house of representatives, **on the first
+> Wednesday following the first Tuesday of January** to be by them examined, and in case of an
+> election by a plurality of votes through the state, **the choice shall be by them declared and
+> published**. — `art. 42`
+
+🟢 `art. 3` puts the General Court's own assembly on exactly the same day: *"shall assemble
+annually on the **first Wednesday following the first Tuesday in January**"*. The session opens and
+the ballots arrive together. **For 2027 that day is 2027-01-06.**
+
+🔴🔴 **BUT THAT IS THE DAY THE VOTES ARE LAID BEFORE THE LEGISLATURE — NOT THE DAY ANYBODY
+TAKES OFFICE**, and in New Hampshire the two have fallen on **different days in both of the last
+two cycles**. This is `REGISTER.md` step 2's *read what the source's date is a date OF* with the
+sharpest edge it has had in this pass: the date is a **filing deadline for the Secretary of State**.
+
+### 🟢 TWO INDEPENDENT CYCLES, FROM THE GENERAL COURT'S OWN JOURNALS
+
+| cycle | `art. 3` / `art. 42` Wednesday | what happened | the joint convention |
+|---|---|---|---|
+| **2023** | Wed **2023-01-04** — House Journal No. 2 | — | Thu **2023-01-05**, Journal No. 3: vote-count report, **inauguration of Gov. Sununu**, oaths of Councilors Kenney, Warmington, Stevens, Gatsas, Wheeler |
+| **2025** | Wed **2025-01-08** — Journal No. 2, which records only *"Rep. Bogert moved that the House adjourn. Motion was adopted."* | — | Thu **2025-01-09**, Journal No. 3: vote-count report, **inauguration of Gov. Ayotte**, oaths of Councilors Kenney, Liot Hill, Stevens, Stephen, Wheeler |
+
+🟢 **The convention does three constitutional acts in one sitting**, and the House's own
+resolution says so: *"ready to meet in Joint Convention for the purposes of hearing the report of
+the Joint Committee appointed to **compare and count the votes for Governor and Executive
+Council**, for the **Inauguration of the Governor** and for the **taking of the oath by the
+Executive Council**."*
+
+🟢 **So the pattern is real and it is two for two: the day AFTER the constitutional Wednesday.**
+🔴 **And it is custom, not law.** Nothing in the constitution or the RSAs requires the Thursday,
+and `art. 66` supplies the mechanism for it to slip further: *"whereas the elections, appointed to
+be made by this constitution on the first Wednesday of January biennially, by the two houses of the
+legislature, **may not be completed on that day, the said elections may be adjourned from day to
+day, until the same be completed**."* ▶ **2027-01-07 is the likely day and must not be written as
+the date.**
+
+### What the statutes add, and what they do not
+
+| | |
+|---|---|
+| `RSA 92:2` **Oath Required** | *"No person chosen or appointed to any public office … shall **exercise such office** or perform any act therein until he shall make and subscribe the oath … as prescribed by part 2, article 84."* 🔴 Gates the **exercise** of the office, not its vesting — and so does `art. 84` itself (*"before he proceeds to execute the duties of his office"*). |
+| `RSA 92:1` **Tenure** | ⚠ **Does not apply.** It fixes 5-year terms for *"officers hereafter **appointed by the governor and council**"*. The Governor and the Council are elected. A chapter titled "Tenure and Oath of Office" that does not reach the state's two elected executive bodies is exactly the kind of near-miss worth writing down. |
+| `RSA 4-A:2` **Definitions** | 🟢 **The closest thing to an answer New Hampshire has.** *"'Governor-elect' … shall apply to such candidate from the day of election certification by the secretary of state **until the day of his inauguration**."* And `4-A:1` pairs *"the **expiration** of the term of office of a governor"* with *"the **inauguration** of a governor-elect"* as one transfer. ▶ **New Hampshire's own statute treats the inauguration as the boundary — and never names its day.** |
+
+### 🔴 Why this refusal has no `window_end_date`
+
+Every earlier refusal in this pass is bounded on both sides by an instrument: Nevada by
+`NRS 282.010(2)`'s "prior to 2027-01-05", Georgia by `O.C.G.A. § 45-12-2`'s noon-Saturday fallback,
+Arkansas by a session week, South Dakota by "within twenty days thereafter". **New Hampshire has
+nothing of the kind.** `art. 66` is the only text about how long the January business may take, and
+it says *from day to day, until the same be completed*.
+
+▶ **So the honest record is a window that opens on 2027-01-06 and does not close.**
+
+🟢 **The follow-up is nevertheless the cheapest in the pass, and that matters more than a
+synthetic bound.** The answer will be published by the General Court on the day, in a document
+whose URL pattern is already confirmed working for two cycles:
+
+```
+https://gc.nh.gov/house/calendars_journals/Journals/2027/HJ%2003%20January%20<d>,%202027.PDF
+```
+
+Look for the heading **`OATHS OF OFFICE`** under the `HOUSE JOURNAL NO. 3` day-header. Both prior
+cycles put it there, in the same place, with the same wording.
+
+### 🟢 What our own data already holds, and why it is right
+
+All six offices carry `term_start = 2025-01-09`, sourced by `CC_0376` to *New Hampshire House
+Journal No. 3, 9 January 2025, "OATHS OF OFFICE"*. ✅ **Re-verified from the PDF, and it survives a
+trap the citation does not mention** — see below. The district assignments were taken from the same
+Journal, which seats the councilors-elect **by district**, and from `council.nh.gov`.
+
+⚠ **One cycle is one control.** It is the 2023 journal, fetched independently, that makes the
+day-after pattern a pattern rather than an anecdote — and even two cycles cannot turn a custom into
+a rule.
+
+### Sourcing notes
+
+- 🔴🔴 **THE JOURNAL PDF IS DATED ONE DAY AND OPENS WITH THE PREVIOUS DAY'S JOURNAL.**
+  `HJ 03 January 9, 2025.PDF` begins **`HOUSE JOURNAL NO. 2 (Cont'd)` — `Wednesday, January 8,
+  2025`**, and only at line 18 does `HOUSE JOURNAL NO. 3` — `Thursday, January 9, 2025` begin. The
+  `OATHS OF OFFICE` heading is at line 139, **inside the January 9 portion**, so the recorded date
+  is correct — but a reader who grepped for the heading and took the filename's date, or who
+  assumed the file contains one day, would have been right **by luck**. ⚠ The same file in 2023 has
+  the identical two-day structure. ▶ **Find the day-header that precedes your match**, which is
+  `CLAUDE.md`'s *bound a parse by the document's own structure*, applied to a legislative journal.
+- 🔴 **`gencourt.state.nh.us` IS DEAD FOR THESE PATHS AND THE DOCUMENTS STILL ADVERTISE IT.**
+  Every `gencourt.state.nh.us` URL tried returned **404 with a 1,245-byte body**, while the live
+  host is **`gc.nh.gov`** — and the 2025 journal's own masthead prints *"Web Site Address:
+  www.gencourt.state.nh.us"*. 🟢 **Our own `office_terms.source` note carried the working host**,
+  which is the second time this pass that a previous session's citation was the best lead
+  available.
+- 🟢 **The constitution is on `www.nh.gov/glance/state-constitution`**, split into **12
+  part-pages** (`/executive-power-governor`, `/council`, `/general-court`,
+  `/oaths-and-subscriptions-exclusion-offices-etc`, …), and `gc.nh.gov` links to it — the
+  Georgia test for "is this the publisher". Plain `curl` with the ordinary header set.
+- 🟢 **The RSAs are flat HTML on `gc.nh.gov` and a whole chapter comes in one file:**
+  `/rsa/html/NHTOC/NHTOC-<TITLE>.htm` for a title's chapter list, then
+  `/rsa/html/<TITLE>/<CH>/<CH>-mrg.htm` for the **merged** chapter. `RSA 92` is 4 KB entire.
+- ⚠ **The journals directory 403s but the files are open**: `…/Journals/2023/` returns **403**
+  while `…/Journals/2023/HJ%2003%20January%205,%202023.PDF` returns **200**. A listing refusal is
+  not a file refusal — four probes found both 2023 journals.
+
+### Basis
+
+**None written. No New Hampshire office is dated.**
+Window opens **2027-01-06** (`N.H. Const. pt. 2, arts. 3, 42, 60`); `window_end_date` is **NULL and
+genuinely unbounded**. Observed practice, two cycles: **the following day**.
