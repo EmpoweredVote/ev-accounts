@@ -819,7 +819,13 @@ operative event, which is why those two are refused above rather than guessed.
 
 ---
 
-## CA — California · 99 offices · ✅ sourced 2026-11-22
+## CA — California · 99 offices · ✅ sourced 2026-11-22 — ✅✅ **ALL 99 DATED AND SEATED 2026-11-23**
+
+> `CC_0477` wrote the 99 date rows; `CC_0478` seated 92 legislators for 2026-12-07 and `CC_0479`
+> the 7 statewide seats for 2027-01-04. ⏳ `CC_0480` clears `is_vacant` on Assembly District 3 and
+> State Senate District 10 and **waits for 2026-12-07** — it refuses to run before then, by
+> interlock. The write-up, the controls and the `is_reelection` NULL defect this state found are
+> in [`REGISTER.md`](./REGISTER.md) § "APPLIED 2026-11-23 — California".
 
 🔴🔴 **THE SECOND DECEMBER DEADLINE. CALIFORNIA'S LEGISLATURE STARTS 2026-12-07 — FIFTEEN DAYS
 OUT, 92 OFFICES.** With Maine's 2026-12-01 that is **275 of the pass's 1,162 offices due before

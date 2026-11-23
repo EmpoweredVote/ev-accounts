@@ -22,74 +22,70 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**64 bodies still to do · 922 offices · 1 of the 64 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**60 bodies still to do · 823 offices · 1 of the 60 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | MA | STATE_LOWER | 159 | 159 | 141 | 18 | — | 2 | 159 | — |
 | 3 | WA | STATE_LOWER | 95 | 95 | 71 | — | — | — | 95 | — |
-| 4 | CA | STATE_LOWER | 75 | 75 | 60 | — | — | 1 | 75 | — |
-| 5 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
-| 6 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
-| 7 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
-| 8 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
-| 9 | MA | STATE_UPPER | 40 | 40 | 37 | 3 | — | — | 40 | — |
-| 10 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
-| 11 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
-| 12 | WA | STATE_UPPER | 23 | 23 | 16 | — | — | — | 23 | — |
-| 13 | CA | STATE_UPPER | 17 | 17 | 8 | — | — | 1 | 17 | — |
-| 14 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
-| 15 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 16 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 17 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
-| 18 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 19 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 20 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 21 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 22 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 23 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 24 | CA | STATE_EXEC | 6 | 6 | 3 | — | — | — | 6 | — |
-| 25 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 26 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 27 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 28 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 29 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 30 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 31 | MA | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 32 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 33 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 34 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 35 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 36 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 37 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 38 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 39 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 40 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 41 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 42 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 43 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 44 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 45 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 46 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 47 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 48 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 49 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 50 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 51 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 52 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 53 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 54 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 55 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 56 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 57 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 58 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 59 | CA | STATE_BOARD | 1 | 1 | 0 | — | — | — | 1 | — |
-| 60 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 61 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 62 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 63 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 64 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 4 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
+| 5 | OR | STATE_LOWER | 60 | 60 | 51 | 9 | — | — | 60 | — |
+| 6 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
+| 7 | UT | STATE_LOWER | 42 | 42 | 30 | — | — | — | 42 | — |
+| 8 | MA | STATE_UPPER | 40 | 40 | 37 | 3 | — | — | 40 | — |
+| 9 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
+| 10 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
+| 11 | WA | STATE_UPPER | 23 | 23 | 16 | — | — | — | 23 | — |
+| 12 | OR | STATE_UPPER | 15 | 15 | 9 | 6 | — | — | 15 | — |
+| 13 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 14 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 15 | UT | STATE_UPPER | 8 | 8 | 5 | — | — | — | 8 | — |
+| 16 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 17 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
+| 18 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 19 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 20 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 21 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 22 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 23 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 24 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 25 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 26 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 27 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 28 | MA | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 29 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 30 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 31 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 32 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 33 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 34 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 35 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 36 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 37 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 38 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 39 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 40 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 41 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 42 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 43 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 44 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 45 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 46 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 47 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 48 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 49 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 50 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 51 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 52 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 53 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 54 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 55 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 56 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 57 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 58 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 59 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 60 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -129,9 +125,19 @@ Every one of these was done once already, by the waves that shipped with this re
    `CC_0464` (a term that has already started). Reserve the slot first:
    `npm run steward --prefix backend -- slot CC --purpose "..."`. 🔴 **One migration per file.**
 
-   🔴 **Four corrections to those two templates. The applied files still carry the old shapes —
+   🔴 **Five corrections to those two templates. The applied files still carry the old shapes —
    migrations here run once and are never edited — so the fixes live in your copy, not in theirs.**
 
+   - 🔴🔴 **CLOSE THE NULL IN `is_reelection` BEFORE YOU PIN ANYTHING.** The library's expression
+     is NULL — not false — on a seat with no current holder, because `och` is LEFT JOINed and
+     `true AND NULL` is NULL. `'…' || NULL` is NULL and `string_agg` SKIPS it, so **the digest
+     silently covers fewer rows than the counts claim**, and it is the holderless seats it drops.
+     Add `AND och.politician_id IS NOT NULL` to the selection, and add a P1 gate that counts how
+     many rows the digest expression actually evaluated — `count(<the expression>)` against
+     `expect_winners`. ⚠ **This is also why `derive-seating-wave.mjs` and a migration can print
+     different digests for the same selection**: the script's JS renders a NULL boolean as
+     'false'. California found it with 2 vacant seats of 92; Massachusetts has 2 and is next.
+     Worked in `CC_0478`.
    - **Put `P2` ABOVE `P1`'s row count.** `P2` asks whether this file has already been applied. In
      `CC_0461` and `CC_0462` it sits *after* `P1`, and on a second apply `P1` fires first: the
      selection returns 0 rows because the seats have left `office_pending_winner`, so the operator
@@ -263,6 +269,164 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-23 — California, 99 offices, three files and one that waits
+
+**California is the largest state written in this pass so far, and the first with no people file
+at all.** Every one of the 99 winners already had a `politicians` row, so step 4 of the recipe
+was skipped outright. **99 offices left the queue** (922 → 823) and all four California bodies
+left the table.
+
+| order | slot | what it does | state |
+|---|---|---|---|
+| 1 | `CC_0477` | 99 date rows — 92 on **2026-12-07** (`Cal. Const. art. IV, § 2(a)(3)`), 7 on **2027-01-04** (`art. II, § 20`) | ✅ applied |
+| 2 | `CC_0478` | seat 92 Assembly + Senate winners for **2026-12-07** (68 re-elections, 24 handovers) | ✅ applied |
+| 3 | `CC_0479` | seat 6 statewide executives + Board of Equalization District 3 for **2027-01-04** (3 re-elections, 4 handovers) | ✅ applied |
+| 4 | `CC_0480` | clear `is_vacant` on Assembly District 3 and State Senate District 10 | ⏳ **WAITS FOR 2026-12-07 — it refuses to run before then, by interlock** |
+
+### 🔴🔴 THE DEFECT THIS STATE FOUND: `is_reelection` IS **NULL** ON A SEAT WITH NO HOLDER, AND A NULL SHRINKS THE DIGEST WITHOUT CHANGING A SINGLE COUNT
+
+`scripts/lib/seating-wave.mjs` publishes `is_reelection` as
+
+    ((win.value ->> 'id') IS NOT NULL AND och.politician_id::text = (win.value ->> 'id'))
+
+`och` is LEFT JOINed, so on a seat with no current holder `och.politician_id` is NULL, the
+comparison is NULL, and `true AND NULL` is **NULL** — not false. California is the first state in
+this pass to reach that branch: Assembly District 3 and State Senate District 10 are both vacant.
+
+🔴 **Then `'…' || NULL` is NULL and `string_agg` SKIPS NULL input**, so the in-SQL digest a
+migration pastes over its own selection would have been computed over **90 of the 92 rows** —
+dropping exactly the two seats whose identity is least certain — while `count(*)`,
+`count(DISTINCT office_id)` and the re-election count all still read 92. Measured 2026-11-23:
+
+| selection | digest | rows actually in the digest |
+|---|---|---|
+| as published | `8f11f4f3c18a8026fefca528e922629d` | **90** |
+| with `AND och.politician_id IS NOT NULL` | `3c5becfefe95c6450eb4548f3cc036ec` | **92** |
+
+⚠ **`derive-seating-wave.mjs` PRINTS THE SECOND ONE**, because its JS `digestKey` renders a NULL
+boolean as `'false'`. So the script's digest and the migration's digest **disagree for exactly
+this shape of row**, and they agreed on every earlier state only because no earlier state had a
+holderless seat. That disagreement is how this was found: the counts matched and the two digests
+did not.
+
+▶ **`CC_0478` and `CC_0479` add `och.politician_id IS NOT NULL` to the selection**, and `CC_0478`
+adds a P1 gate that counts how many rows the digest expression actually evaluated to a non-NULL
+value, so a future NULL announces itself instead of shrinking the pin. 🔴 **THE NEXT STATE WITH A
+VACANT SEAT MUST DO THE SAME.** Massachusetts has 2 and is next in the queue.
+
+⚠ It is not only the digest: `p_allow_reelection => r.is_reelection` would pass NULL into
+`seat_officeholder`, whose guard reads `NOT p_allow_reelection`. NULL is not TRUE, so the
+re-election refusal would be **skipped rather than enforced**. It does not fire on these two
+seats — neither has a term covering 2026-12-07, so the guard is never reached — but it is one
+data shape away from mattering.
+
+### 🔴 A CORRECT `is_vacant` FLAG IS NOT A BLOCKER, AND CLEARING IT EARLY IS THE MISTAKE
+
+`derive-seating-wave.mjs` reports both seats as `flagged_vacant` blockers, and `CC_0475`'s P6
+would have refused the wave outright. **Both flags are correct**: James Gallagher resigned
+(Assembly District 3, term closed 2026-06-09) and Aisha Wahab resigned (State Senate District 10,
+2026-09-01). The seats really are empty until 2026-12-07.
+
+- **`CC_0478`'s P6 names the two and refuses a third**, instead of refusing any flag at all. A
+  blanket refusal is the right default and the wrong rule here: it would stop a file whose data
+  is correct.
+- **The flag is cleared by `CC_0480`, on the day.** Each of these is the only office in its
+  district, so clearing it while the seat is empty makes the district read
+  `offices > 0 AND active_holders = 0 AND vacant_offices = 0` — verbatim `DEAD_GEOGRAPHY` in
+  `check-address-reachability.mjs`, a **master-only** gate that would then fail on somebody
+  else's pull request. The federal pair (TX-23, FL-20) has the same shape and `CC_0455` clears
+  them on 2027-01-03.
+- 🟢 **`CC_0480`'s GUARD IS AN INTERLOCK, NOT A DIARY ENTRY.** P3 refuses unless each office
+  already has a term covering **today**, which becomes true on 2026-12-07 on its own. The file
+  cannot be applied early and needs no reminder to be applied on time. ⚠ Its positive path is
+  **unrehearsable before the day by construction** — P3 wants a term covering today and P4 wants
+  that term to start 2026-12-07, and only on the 7th are both true. Its body was rehearsed with
+  `CURRENT_DATE` read as 2026-12-07 and passed assertions 1–5; assertion 6 reads
+  `office_current_holder`, whose own `CURRENT_DATE` is out of reach, so it runs for the first
+  time on the day. **Rehearse the chain again on 2026-12-07 before applying it.**
+
+### ⚠ Three things about California that will catch the next reader
+
+- **The Board of Equalization seat is `STATE_BOARD` and its `chamber_id` is NULL.** 🔴 An INNER
+  JOIN to `essentials.chambers` silently drops it and California reads as **98** offices instead
+  of 99 — which is how it was first mis-measured. Join chambers LEFT, or not at all.
+- **Fiona Ma and Eleni Kounalakis exchange offices**: the Treasurer wins Lieutenant Governor and
+  the Lieutenant Governor wins Treasurer, both on 2027-01-04. Each is a winner AND a predecessor
+  in the same file, which is why the incumbency guard's scope is a UNION. `CC_0479`'s assertion 6
+  measures the result **from the people's side** — one term closing, one opening, two distinct
+  offices each — because an exchange is the shape that leaves somebody holding two seats at once
+  and no per-office count can see that.
+- **Mike Gipson is out of office for 28 days, and that is correct.** His Assembly term closes
+  2026-12-06 under art. IV, § 2(a)(3); his Board of Equalization term opens 2027-01-04 under
+  art. II, § 20. Two clauses, two days, one person. ▶ Do not "fix" it by moving either date.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+🔴 **A migration's own `RAISE NOTICE` is the migration marking its own homework.** Every number
+below was re-measured once all three had committed.
+
+| measurement | result |
+|---|---|
+| California state seats still in `office_pending_winner` | **0** (was 99) |
+| terms starting 2026-12-07 citing `CC_0478` · predecessors closed 2026-12-06 | **92 · 90** |
+| terms starting 2027-01-04 citing `CC_0479` · predecessors closed 2027-01-03 | **7 · 7** |
+| California offices answering `office_next_term` | **99** |
+| Assembly District 3 / State Senate District 10 still flagged `is_vacant` | **2**, as intended |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+
+⚠ **A state-wide count of terms closed on 2027-01-03 answers 8, not 7, and the eighth is
+innocent**: Santa Cruz County's Supervisor, 4th District, closed by `CC_0405` with
+`how_ended = 'defeated'`. It is a county seat from another programme that happens to end on the
+same day. `CC_0479`'s assertion 5 counts only the rows named in its own pre-image, which is why
+it was right and the loose measurement was not.
+
+🟢🟢 **AND THROUGH THE DEPLOYED API, NOT THE DATABASE.** *Reasoning about a read path is not
+measuring it*, so three real addresses were put through `api.empowered.vote`:
+
+- **1315 10th St, Sacramento** → Assembly District 7 and State Senate District 6 both
+  `seat_status=held` with the sitting member incoming again **on 2026-12-07** (re-elections);
+  **Governor Gavin Newsom, incoming Xavier Becerra on 2027-01-04**; and 🟢 the exchange
+  rendering correctly on a voter's page — **Treasurer Fiona Ma, incoming Eleni Kounalakis** and
+  **Lieutenant Governor Eleni Kounalakis, incoming Fiona Ma**, both on 2027-01-04.
+- **411 Main St, Chico** → **Assembly District 3, `seat_status=vacant`, incoming Dom Belza on
+  2026-12-07.** 🟢 That one line is the whole vacancy decision: the seat is honestly empty today
+  AND the handover is dated rather than guessed. Had `CC_0478` cleared the flag, this would read
+  "held by nobody".
+- **701 E Carson St, Carson** → **Board of Equalization District 3, Antonio Vazquez held,
+  incoming Mike A. Gipson on 2027-01-04** — the `chamber_id = NULL` seat is reachable and
+  renders.
+- ⚠ The Sacramento lookup also returns a **federal** "Secretary of State" row (Marco Rubio)
+  beside California's. Two different offices with one title, no incoming on the federal one.
+  Not this pass's business, but it reads oddly next to the state row.
+
+### Controls, each watched going red (step 7)
+
+🔴 **Recorded by the gate each one FIRED ON, not by the gate it was aimed at.** Two were stopped
+early, and both are listed because of it.
+
+| tamper | gate it fired on | what it proves |
+|---|---|---|
+| `CC_0477` implements "the Monday after January 1" as "the first Monday of January" | `CC_0477` **3c** | 🟢 **3b stayed GREEN** — the two readings agree in 2027, so only a check against a year the file does not write can see the wrong rule. This is the `chambers.inauguration_rules` error, caught |
+| `CC_0477` writes the SECOND Monday in December to the 92 legislative rows | `CC_0477` **1** | the written value is checked, not assumed |
+| `CC_0477`'s selection loses its `district_type` filter | `CC_0477` **P0** | ⚠ aimed at P1; **P0 stopped it two gates earlier**, because the widened selection swept in 2 school seats that already carry a 2026-11-03 row. P1 was not reached by this tamper |
+| `CC_0477`'s state filter widened to `('ca','wa')` | `CC_0477` **P1** | reaches P1, which the tamper above could not: Washington's 118 seats carry no date row, so P0 stays green. "Copied it for the next state and missed a filter" |
+| `CC_0478` restores the library's published `is_reelection` | `CC_0478` **P1 NULL-count gate** | 🟢🟢 **the defect this state found, caught by the gate written for it** — "the digest expression evaluated to NULL on 2 of 92 rows" |
+| `CC_0478` clears both vacancy flags while seating | `CC_0478` **11** | the future-dated wave may not clear a flag; this is the `DEAD_GEOGRAPHY` act, stopped |
+| `CC_0477`'s date changed to 2026-12-14 throughout, then `CC_0478` run after it | `CC_0477` **3a** | ⚠ aimed at `CC_0478`'s P4; **the previous FILE's clause check stopped it**. A tamper stopped by an earlier gate — in an earlier file — says nothing about the later one |
+| `CC_0478`'s `expect_term_start` pinned to 2026-12-14 | `CC_0478` **P4** | reaches P4: the seating file READS the recorded date and compares it to its pin |
+| `CC_0479`'s `expect_term_start` pinned to 2027-01-11 | `CC_0479` **P4** | the same, for the statewide wave |
+| `CC_0479` re-seats the sitting officer into both exchanging offices (the swap never happens) | `CC_0479` **P1 digest** | ⚠ aimed at **P8** and assertion 6; the pinned digest caught it first |
+| `CC_0480` run unchanged, today | `CC_0480` **P3** | 🟢 the interlock refuses: *"Assembly District 3 has 0 term(s) covering today (2026-11-23)"* |
+
+🔴 **SO SAY IT PLAINLY: `CC_0479`'s P8 AND ASSERTION 6 HAVE NO CONTROL OF THEIR OWN, AND MAY NOT
+BE REACHABLE BY ONE.** Any tamper that breaks the exchange also changes the selection, and the
+pinned digest sits in front of both. Any tamper that leaves the selection intact leaves the
+exchange correct. They are defence in depth behind a gate that does have a control — they are
+**not** gates this wave has tested. ▶ Do not read the eleven red rows above as eleven tested
+assertions per file. This is the register's own warning about `CC_0471`'s assertion 4, arriving
+again in a different shape: **a file that pins its selection by digest makes its later named
+gates unreachable by any realistic tamper.**
 
 ## ✅✅ APPLIED 2026-11-23 — the two states whose dates had already passed
 
