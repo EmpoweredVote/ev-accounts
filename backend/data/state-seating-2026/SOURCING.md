@@ -707,7 +707,7 @@ remaining ones are days away and **nothing has been written for either**:
 |---|---|---|
 | **2026-11-03** | **HI — OHA resident trustees** (`HRS § 13D-5`: the term begins **on election day**) | ✅ **SEATED** `CC_0470`. ⚠ the **At-large** block is still refused under Ruling A — 3 winners, 4 offices |
 | **2026-11-04** | **NV — legislature** (52 seats) | ✅ **SEATED** `CC_0467` — 39 re-elections, 13 handovers |
-| **2026-12-01** | **ME — legislature** | 🟢🟢 **8 DAYS, AND READY.** Dated by `CC_0473` (183 rows) and unblocked by `CC_0474` (59 created, 18 linked). `derive-seating-wave` reports **blockers none**. ▶ **The seating file is all that is left** |
+| **2026-12-01** | **ME — legislature** | ✅✅ **DONE, 8 DAYS AHEAD.** `CC_0473` dated it, `CC_0474` unblocked it, **`CC_0475` scheduled all 183** (106 re-elections, 77 handovers). Maine's Governor follows on **2027-01-06** (`CC_0476`) |
 | **2026-12-07** | **HI — Governor + Lt. Governor** | ✅ **SCHEDULED** `CC_0471`; Sylvia Luke holds the seat until that morning |
 | **2026-12-07** | **CA — legislature** (92 offices) | 🔴 **14 DAYS.** Sourced — `art. II § 20` — and **still undated** |
 
@@ -746,7 +746,7 @@ to mistake for outstanding work. **The queue is the only list of what is left.**
 | WI | ✅ | ✅ `CC_0445` | — | ✅ `CC_0462` (121) |
 | IN — House | ✅ | ✅ `CC_0463` | — | ✅ `CC_0464` (3) |
 | MA | ✅ [`DATES.md`](./DATES.md) — **three dates**, 2027-01-06 / -01-07 / -01-20 | ⏳ | | |
-| ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor. Re-derived independently 2026-11-23 and it agrees | ✅ `CC_0473` (184) | ✅ `CC_0474` — 59 created, **18 LINKED** (term-limit chamber switchers) | 🟢🟢 **READY TO SEAT: blockers none**, 183 winners, digest `1d8cfe00…` |
+| ME | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-01** legislature (NOT the 12-02 convening), 2027-01-06 Governor. Re-derived independently 2026-11-23 and it agrees | ✅ `CC_0473` (184) | ✅ `CC_0474` — 59 created, **18 LINKED** (term-limit chamber switchers) | ✅✅ **ALL 184 SEATED 2026-11-23** — `CC_0475` (183, 2026-12-01) + `CC_0476` (Governor, 2027-01-06) |
 | WA | ✅ [`DATES.md`](./DATES.md) — **2027-01-11**, one date; the authority is `RCW 44.04.021`, not the constitution | ⏳ | | |
 | MD | ⚠️ [`DATES.md`](./DATES.md) — **115 of 117**: 2027-01-13 legislature, 2027-01-20 Governor. 🔴 **AG and Comptroller REFUSED** — the constitution fixes no day for them | ⏳ | | |
 | CA | ✅ [`DATES.md`](./DATES.md) — 🔴 **2026-12-07** legislature (15 days), 2027-01-04 for all seven others under one clause, `art. II § 20` | ⏳ | | |

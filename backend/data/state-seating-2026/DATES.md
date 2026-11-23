@@ -336,12 +336,27 @@ the oath (2026-12-02), because the next reader will meet the convening date firs
 - ⚠ **The Governor's 2027-01-06 is the same day as Massachusetts' legislature.** Two different
   clauses in two states; the coincidence means nothing and the rows must not be shared.
 
-### ✅✅ DATED AND SEEDED 2026-11-23 — **MAINE IS READY TO SEAT**
+### ✅✅ MAINE IS COMPLETE — DATED, SEEDED AND SEATED 2026-11-23, EIGHT DAYS AHEAD OF THE TERM
 
 | step | file | result |
 |---|---|---|
 | 3 · dates | `CC_0473` | **184 rows** — 183 legislative on **2026-12-01**, Governor on **2027-01-06** |
 | 4 · people | `CC_0474` | **59 created, 18 LINKED**, 77 `race_candidates` rows moved from NULL to a person |
+| 6 · seating | `CC_0475` | **183 legislators scheduled for 2026-12-01** — 106 re-elections, 77 handovers, 183 predecessors closed at 2026-11-30 |
+| 6 · seating | `CC_0476` | **Governor-elect Hannah Pingree** scheduled for 2027-01-06; Janet T. Mills closed at 2027-01-05 |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API, NOT THE DATABASE.** *210 State St, Augusta ME* returns:
+*State House District 59 — **David Rollins**, held, incoming **Katrina Couch Ray-Saulis** on
+**2026-12-01***; *State Senate District 15 — **Richard Bradstreet**, held, incoming **Amanda Ann
+Heath**, same day*; *Maine Governor — **Janet T. Mills**, held since 2019-01-02, incoming
+**Hannah Pingree** on **2027-01-06***. 🟢 Couch Ray-Saulis is one of the 59 `CC_0474` created,
+so the whole chain — person, date, term, page — is proven end to end.
+
+🔴 **THE TWO SEATING FILES' CONTROLS WERE AIMED AT THE ONE-DAY ERROR, AND BOTH FIRED ON P4:**
+pinning the legislature to **2026-12-02** (the convening day every source publishes) and
+pinning the Governor to the legislature's **2026-12-01** both abort before writing. 🟢 **That
+is the proof the seating files READ the recorded date rather than carrying a literal** — had
+they carried one, those tampers would have changed what they WROTE instead of stopping them.
 
 🟢🟢 **`derive-seating-wave.mjs` NOW REPORTS "blockers none — this body is ready to seat"**:
 183 winners · 183 offices · 106 re-elections · 77 new holders · term start **2026-12-01** ·
