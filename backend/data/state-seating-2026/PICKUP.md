@@ -11,9 +11,11 @@ then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the p
 **applied to production and verified**; the working tree is clean apart from the untracked
 `backend/_q.mjs` scratch query runner, which predates this work.
 
-🔴 **CONNECTICUT IS ON `feat/state-seating-ct` AND ITS PR IS NOT YET MERGED.** It carries
-`CC_0509`, `CC_0510`, `ct-2026.controls.mjs` and these three documents. **Check whether it has
-merged before branching** — and if it has not, do not add Texas to it.
+🟢🟢 **PR [#1604](https://github.com/EmpoweredVote/ev-accounts/pull/1604) IS MERGED** (2026-11-24,
+squashed as `ca3b07618`) and `feat/state-seating-ct` is done. It carried `CC_0509`, `CC_0510`,
+`ct-2026.controls.mjs` and these three documents, with CI green on its head before the merge
+(nine checks, zero failures, checked against the run's own `headSha`). **Master and production
+now agree.** 🔴 **Do not add to `feat/state-seating-ct`** — it is merged and its PR is closed.
 
 ▶ **Take a fresh branch off master, claim the state, and start at step 1.**
 
