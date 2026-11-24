@@ -240,6 +240,11 @@ ingest. The remaining seeds are the cheap ones (counties 0.5–1.4 s, cities ≈
 trade the design accepts: a rare, bounded, correct stampede over a permanent, silent, invisible
 wrong answer.**
 
+✅ **RATIFIED BY THE OPERATOR, 2026-11-24.** This was put to them as the one call in this document
+they might want differently, with the alternative stated plainly — let a code change *not*
+invalidate, and accept that a filter change reaches only the areas nobody has cached. They kept
+it. 🔴 **Settled. Do not re-open it in the plan.**
+
 ### 4. Warming the 53
 
 A job that, for every `G4000` polygon, computes and stores the pairs at the current version, then
