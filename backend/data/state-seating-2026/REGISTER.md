@@ -22,57 +22,55 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**47 bodies still to do · 197 offices · 1 of the 47 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**45 bodies still to do · 184 offices · 1 of the 45 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 3 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 4 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 5 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 6 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 7 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 8 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 9 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 10 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 11 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 12 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 13 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 14 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 15 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 16 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 17 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 18 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 19 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 20 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 21 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 22 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 23 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 24 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 25 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 26 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 27 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 28 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 29 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 30 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 31 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 32 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 33 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 34 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 35 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 36 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 37 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 38 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 39 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 40 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 41 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 42 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 43 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 44 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 45 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 46 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 47 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 3 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 4 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 5 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 6 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 7 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 8 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 9 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 10 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 11 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 12 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 13 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 14 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 15 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 16 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 17 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 18 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 19 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 20 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 21 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 22 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 23 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 24 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 25 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 26 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 27 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 28 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 29 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 30 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 31 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 32 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 33 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 34 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 35 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 36 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 37 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 38 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 39 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 40 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 41 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 42 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 43 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 44 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 45 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -408,6 +406,88 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — Alabama, 13 offices across BOTH its bodies, and a fourth rule already past
+
+Two files, no people file and no Ruling A. `CC_0501` dated 13 offices and `CC_0502` seated all 13
+for **2027-01-18**, the first Monday after the second Tuesday in January. Both `AL STATE_EXEC` (9)
+and `AL STATE_BOARD_EDUCATION` (4) left the queue.
+
+| file | what it did |
+|---|---|
+| `CC_0501` | dated 13 offices to **2027-01-18** from three provisions — Ala. Const. 2022 § 116 (7 executives), Code of Ala. § 37-1-3(c)(1) (2 Public Service Commissioners) and § 16-3-1 (4 State Board of Education districts) |
+| `CC_0502` | seated 13 winners — 4 re-elections and 9 handovers, all `called` |
+
+**Verified after the apply:** `office_pending_winner` 0 for Alabama · `office_next_term` 13 on
+2027-01-18, which is the whole repo's total for that day · `office_swearing_in` 1,995 → 2,008 ·
+`office_terms` 13,121 → 13,134 · 13 predecessors closed at 2027-01-17 · **drift baseline 238
+unmoved**, `offices_missing_terms` 280 unmoved, flagged-vacant 66 unmoved, `politicians` and
+`offices` unmoved. Two live addresses through `api.empowered.vote/api/essentials/address-search`
+render the handovers: Montgomery shows *Governor — Kay Ivey, incoming Tommy Tuberville on
+2027-01-18*, and Huntsville adds the districted *State Board of Education Member, District 8 —
+Wayne Reynolds, incoming Emily Jones*.
+
+**What this state taught, in five lines**
+
+- 🔴🔴 **A STATE CAN HAVE A FOURTH RULE WHOSE DAY IS ALREADY IN THE PAST, FOR A BODY WE DO NOT
+  HOLD.** Ala. Const. § 46(a) commences every senator's and representative's term **"on the day
+  after the general election"** — 2026-11-04, 75 days before this wave's day — and elects all of
+  them "in the year nineteen hundred and six, and in every fourth year thereafter" (1906 + 30×4 =
+  2026). **We hold ZERO Alabama `STATE_UPPER` and ZERO `STATE_LOWER` office rows** against 35 + 105
+  seats that were on that ballot as a matter of law. It is Utah's "two bodies need not share a
+  boundary" at the largest scale this pass has found, and it is invisible: Arizona was missing one
+  office row, Alabama is missing 140. ▶ A seeding job, with a date it must not borrow — and
+  2026-11-04 already carries 92 terms elsewhere, so a legislature dated to 2027-01-18 would be
+  absorbed into this wave's day rather than standing out.
+- 🔴🔴 **"THE Nth MONDAY" IS NOT A SHORTHAND FOR "THE FIRST MONDAY AFTER THE SECOND TUESDAY", AND
+  THE SHORTHAND IS RIGHT SEVEN CYCLES OUT OF EIGHT.** Over Alabama's quadrennial cycles 2003–2031
+  the rule coincides with the **third** Monday in seven of them — and in 2019 with the **second**,
+  because January 1st 2019 was itself a Tuesday. The rule gave 2019-01-14, which is the day Alabama
+  inaugurated; the shorthand gives 2019-01-21. ▶ Assertion 3b computes both in both years, and
+  **control C4 breaks only the 2019 arm** — without it the file would have a date control that
+  proves the rule and its look-alike agree, which is the thing they do seven times out of eight.
+- 🟢🟢 **THE STRONGEST CONTROL WAS THE LEGISLATURE'S OWN ARITHMETIC.** § 37-1-3(b)(2) writes
+  *"initial terms beginning January 18, 2027"* in words — the body that wrote the formula applying
+  it to this exact cycle. That mattered because **Alabama has no in-data date control at all**: 17
+  of its 18 state terms carry `term_start IS NULL`, and the one exception is Kay Ivey's 2017-04-10
+  **accession** on a resignation, which says nothing about § 116. Arizona had 80 terms across three
+  cycles and Washington seven biennia; Alabama had none, and that is recorded rather than papered
+  over.
+- 🔴 **A ZERO'S POSITIVE FIXTURE CAN CROSS TIERS.** "Nobody in this wave holds two seats" is a
+  zero, and Alabama's only fixture is **Tommy Tuberville, a sitting U.S. Senator who won the
+  Governorship**. His Senate term was already closed at 2027-01-02 by the federal programme, so the
+  15 days in which he holds nothing are correct — a gap between two offices is not a defect. `P9`
+  finds him by measurement and asserts both dates; **C12 reopens the Senate term and C13 removes
+  the fixture entirely**, so the zero cannot go vacuous unnoticed.
+  - 🔴🔴 **AND C12 WENT RED TWICE FOR THE WRONG REASON FIRST.** Reopening that term alone dies on
+    the database's `office_terms_no_overlap` constraint (the successor is already seated from
+    2027-01-03) and printed `(unparsed)`; **deleting** the successor's term instead fires
+    `CC_0501`'s **P2**, because the Senate seat falls back into `office_pending_winner` and Alabama
+    then has 14 pending seats. 🟢 Both reds are real gates doing real work and neither tested `P9`.
+    Moving the successor's term to 2027-02-01 was what finally reached it. **Read the message, not
+    the colour.**
+- ⚠ **A STAGGERED BODY'S SPLIT MAY BE PROVABLE FROM LAW IN ONE BODY AND NOT IN THE OTHER, IN THE
+  SAME STATE.** § 37-1-3(a)(2) and (b)(3)a each say that **two** Public Service Commissioners were
+  elected in November 2026 and that the President's next election is 2028, so "the President is not
+  pending" is a legal fact. § 16-3-1 elects each board member at the election preceding the
+  expiration of their term **"as designated by the board"** and names no district, so the 4-of-8
+  board split is **pinned as a measurement and argued in neither file**. ▶ An unavailable check is
+  a finding; it is recorded beside the ones that passed.
+
+**Controls:** `backend/data/state-seating-2026/controls/al-2026.controls.mjs`, 19 controls, **19 of
+19 red, each on the gate it was aimed at, negative control green.** Recorded as **backstops, not
+tested gates**: `CC_0502`'s `P3` re-election count and 13-name check and `P6`'s predecessor-identity
+arms (the digest catches every realistic tamper two gates earlier), `CC_0501`'s `P2`, and
+`CC_0502`'s assertions 3b and 9.
+
+**Dated follow-up, 2027-01-18:** § 37-1-3(b)(1)–(2) expands the Public Service Commission to seven
+members, one per congressional district, and has the Governor appoint **four** commissioners "to
+serve initial terms beginning January 18, 2027" — this wave's own day. They are appointees, not
+election winners, so no 2026 wave reaches them and we will model three seats where there are seven.
+⚠ **Do not rename or re-district Places 1 and 2 now**: (b)(3)a elects the 2026 pair "in the same
+manner as commissioners were elected before June 1, 2026". (b)(3)b–d move the body to districts
+across 2028–2032, and (e) replaces the elected President with one the commissioners choose from the
+term elected in November 2028.
 
 ## ✅✅ APPLIED 2026-11-24 — the Maryland Governor, 1 office, and a near miss made of live rows
 

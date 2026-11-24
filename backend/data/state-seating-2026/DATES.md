@@ -1987,7 +1987,51 @@ queue instead of about 180. **Do not read "TX: 14 offices" as Texas being nearly
 
 ---
 
-## AL — Alabama · 13 offices · ✅ sourced 2026-11-22 — **one date, three provisions, and the statute writes it out in words**
+## AL — Alabama · 13 offices · ✅ sourced 2026-11-22 — ✅✅ **ALL 13 DATED AND SEATED 2026-11-24** (`CC_0501`, `CC_0502`) — one date, three provisions, and the statute writes it out in words
+
+### 🔴🔴 FOUR CORRECTIONS AND ADDITIONS TO THIS SECTION, MADE WHEN THE WAVE WAS BUILT (2026-11-24)
+
+Every section below was re-read in a real browser on 2026-11-24 before the files were written. The
+dates and quotations all held. Four things this section did not say, and one of them is large.
+
+1. 🔴🔴 **THERE IS A FOURTH ALABAMA RULE, IT NAMES A DIFFERENT DAY, AND THAT DAY IS ALREADY PAST.**
+   **Ala. Const. 2022, § 46(a)** — *Election and Terms of Office of Senators and Representatives* —
+   commences every senator's and representative's term **"on the day after the general election at
+   which they are elected"**, which for 2026 is **2026-11-04**, seventy-five days before this
+   section's day. The same subsection elects all of them "in the year nineteen hundred and six, and
+   in every fourth year thereafter" — 1906 + 30×4 = 2026 — so **all 35 Senate and all 105 House
+   seats were on this ballot as a matter of law.** Alabama counts FORWARD from the election, like
+   Nevada and Indiana.
+   🔴 **AND WE HOLD NO ALABAMA LEGISLATURE AT ALL: zero `STATE_UPPER` and zero `STATE_LOWER` office
+   rows.** Not an unrecorded result and not an empty race — *the offices do not exist*, so nothing
+   errors and no count sees them. ▶ A seeding job, recorded in `CC_0501`'s header and gated by its
+   `P4` and `CC_0502`'s `P10`, and **it must not borrow 2027-01-18**.
+2. 🔴🔴 **"THE THIRD MONDAY" IS NOT A SHORTHAND FOR THIS RULE, AND IT IS RIGHT SEVEN CYCLES OUT OF
+   EIGHT.** Over 2003–2031 the first Monday after the second Tuesday coincides with the third
+   Monday in every Alabama cycle except **2019**, when January 1st was itself a Tuesday: the rule
+   gave **2019-01-14**, the day Alabama inaugurated, and the third Monday gives 2019-01-21. ▶
+   `CC_0501` assertion 3b computes both in both years, and control C4 breaks only the 2019 arm.
+3. 🟢🟢 **THE PUBLIC SERVICE COMMISSION'S TWO-OF-THREE SPLIT IS PROVABLE FROM LAW, WHICH THIS
+   SECTION DID NOT SAY.** § 37-1-3(a)(2) elects "two associates … **until the general election held
+   in November 2026**" and the president "**until the general election held in November 2028**", and
+   (b)(3)a repeats it: "At the general election held in November 2026, **two** commissioners shall
+   be elected in the same manner as commissioners were elected before June 1, 2026." So "the
+   President is not pending" is a legal fact rather than an assumption about our data. ⚠ § 37-1-3
+   also puts the two seats on **six-year** terms, since (a)(1) gives four years only to
+   commissioners "serving on or before June 1, 2026".
+4. ⚠ **THE BOARD OF EDUCATION'S 4-OF-8 SPLIT IS *NOT* PROVABLE — § 16-3-1 DELEGATES THE STAGGERING
+   TO THE BOARD.** The full sentence elects each member "at the general election immediately
+   preceding the expiration of the term of office of the member, **as designated by the board**,
+   representing such district", and names no district. § 16-3-1.1 is the district map and answers
+   only geography. ⚠ **And the complementary check is structurally unavailable**: we hold no Alabama
+   race before 2026, and 17 of our 18 Alabama state terms carry `term_start IS NULL` (the one
+   exception being Kay Ivey's 2017-04-10 accession, which is a succession on a resignation and says
+   nothing about any rule). ▶ So the split is **pinned as a measurement and argued in neither
+   file** — `CC_0501` assertion 3f and `CC_0502` `P11` — and the documents that would settle it are
+   the board's own designation and the Secretary of State's 2026 certified candidate list.
+   🔴 **This also means Alabama had NO in-data date control**, where Arizona had 80 terms across
+   three cycles and Washington seven biennia. The strongest control available was the Legislature's
+   own arithmetic in § 37-1-3(b)(2), below.
 
 | body | offices | start date | authority |
 |---|---|---|---|
@@ -2105,6 +2149,32 @@ date in the statute itself.
 2` to become district seats across 2028–2032. ⚠ **Do not rename or re-district the two Place
 offices now** — (b)(3)(a) says the 2026 pair was elected "in the same manner as commissioners were
 elected before June 1, 2026", so for this cycle the at-large shape is the correct one.
+
+### ✅✅ ALABAMA IS COMPLETE — DATED AND SEATED 2026-11-24, FIFTY-FIVE DAYS AHEAD OF THE TERM
+
+`CC_0501` dated 13 offices and `CC_0502` seated all 13 for **2027-01-18**. **No people file** — all
+13 winners already had an active `politicians` row with no duplicate-name collision — and **no
+Ruling A**: every race is single-seat with one winner, measured rather than assumed. 4 re-elections
+(Andrew Sorrell, Young Boozer, Tracie West, Yvette Richardson) and 9 handovers, all `called`.
+
+Verified after the apply: Alabama's `office_pending_winner` is **0**, `office_next_term` answers for
+all 13 on 2027-01-18 and that is the whole repo's total for the day, 13 predecessors closed at
+2027-01-17, **the 238 unflagged drift baseline unmoved**, and no person, office or vacancy flag
+moved. Two live addresses through `api.empowered.vote` render the handovers, including the
+districted board seat (Huntsville → *State Board of Education Member, District 8 — Wayne Reynolds,
+incoming Emily Jones on 2027-01-18*).
+
+🔴 **The one person worth naming: Tommy Tuberville holds Alabama's U.S. Senate seat and won the
+Governorship.** His Senate term was already closed at **2027-01-02** by the federal programme, so he
+holds exactly one seat on the handover day and the fifteen days in between are correct — a gap
+between two offices is not a defect. He is also the only positive fixture `CC_0502`'s "nobody holds
+two seats" zero has, which is why `P9` names both dates and two controls aim at it.
+
+Controls: `controls/al-2026.controls.mjs`, **19 of 19 red on their aimed-at gate**, negative control
+green. ⚠ C12 went red twice for the wrong reason first — once on the database's own
+`office_terms_no_overlap` constraint and once on `CC_0501`'s `P2`, because deleting the Senate
+successor's term puts that seat back into `office_pending_winner`. Both were real gates and neither
+tested `P9`.
 
 ---
 
