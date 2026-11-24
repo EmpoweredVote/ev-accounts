@@ -4,6 +4,12 @@ Rewritten 2026-11-24, after **Arizona** (the second Ruling A wave) and **the Mar
 **Read `REGISTER.md` first** (the queue, the recipe, the template corrections, Rulings A and B),
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
+🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0500`
+is applied, verified and committed; the branch is **pushed** and PR #1578 is `MERGEABLE` with its
+title and body current to `CC_0500`; the live tracker is refreshed; the working tree is clean
+apart from the untracked `backend/_q.mjs` scratch query runner, which predates this work. ▶ **Pick
+a state and start at step 1 of the recipe.**
+
 ---
 
 ## Where the pass stands
@@ -324,7 +330,13 @@ separately, each reads as a one-state oddity.**
 ## Housekeeping
 
 - **Worktree:** `/c/ev-accounts-seating`, branch `feat/state-seating`, PR #1578. Commit with an
-  explicit pathspec.
+  explicit pathspec. 🟢 **Pushed and in sync as of 2026-11-24**; the PR title and body were
+  rewritten for the full `CC_0461`-`CC_0500` scope, so **a new wave must extend them rather than
+  assume they still describe four migrations**.
+- 🟢 **`control-election-transition-status.mjs` was re-run after the last wave and PASSED**, and
+  its multi-seat fixture located itself in **Arizona** by measurement, having been a Maryland race
+  the refresh before. That is the stale-fixture repair working. ⚠ **It is still not in CI**, so it
+  runs only when somebody runs it — run it after any wave that moves a lot of rows.
 - **Env:** the worktree has no `.env`. Prefix commands with
   `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
 - **Steward:** jurisdiction leases are 24h and expire on their own. `state:az` was taken for this
@@ -343,6 +355,13 @@ separately, each reads as a one-state oddity.**
     re-uploaded words the operator had already corrected on the page. **Check the file the page
     actually serves.** It is the only dataset the builder does not compute, so it goes stale on
     its own, and the status word is the operator's to change.
+    - 🟢 **THE TWO COPIES ARE BYTE-IDENTICAL AGAIN AS OF 2026-11-24**, verified by downloading the
+      served blob and diffing it. **That closes the incident and not the rule** — it can drift
+      again the moment either side is edited alone. ▶ **Run the page's own colour regex over the
+      five status words, with a positive control first**: `/block/i` → RED, `/progress/i` →
+      AMBER, anything else grey, and *"Blocked on certification"* must paint RED before a green
+      result means anything. Last read: four `In progress`, one `Barely started`, nothing red,
+      and `blocked` 0 in all five waves.
 - **Step 9 is not done until a real address goes through `api.empowered.vote`.** Reasoning about a
   read path is not measuring it. Pick an address in a seat that CHANGES HANDS, and one in a seat
   that is vacant if the state has one — a re-election renders the same whether the file worked or
