@@ -121,6 +121,15 @@ worked Ruling A end to end, so Arizona is the same shape at half the size.
 - 🔴 **29 of 29 pending House offices are multi-winner** — a higher proportion than Maryland's 38
   of 67, and the same fix: build the selection on the **ASSIGNED** office, and date the assigned
   offices rather than the race-carrying ones. ▶ **Copy `CC_0494` / `CC_0495` / `CC_0496`.**
+- 🟢 **ARIZONA APPEARS TO NEED NO PEOPLE FILE AT ALL** — the register's `no record` column reads
+  `—` for all three Arizona bodies. ⚠ **That column counts race rows, and Maryland proved it cuts
+  the other way too** (it said 85 and sixty of them existed). A zero there means every winner row
+  is already linked, which is the easy direction — but **still sweep before assuming**, and
+  measure the ANCHOR count: a winner who is linked but does **not** hold an eligible office is a
+  chamber switch, and Ruling A's assignment turns on exactly that.
+- ▶ **The dates are already written** (`DATES.md` § AZ, 65 of 66), so the first file may be a
+  seating file alone — in which case **capture the pin by rehearsing `seating + a probe`**, and
+  re-read the Massachusetts note above before deciding the people file is unnecessary.
 - 🔴🔴 **THE ARIZONA CORPORATION COMMISSION IS THE BODY RULING A REFUSES** — 5 eligible offices,
   2 winners, neither of whom holds any of the five. It is the worked counter-example in Ruling A
   and the reason the equality clause is not "at least". It must stay refused.
@@ -362,6 +371,15 @@ worked Ruling A end to end, so Arizona is the same shape at half the size.
   2027-01-03 closures read 8, not 7; the eighth was a Santa Cruz County supervisor closed by
   `CC_0405`. The migration's own assertion counted its pre-image and was right. **Measure what the
   file touched, not what the day holds.**
+- 🔴🔴 **A CONTROL WHOSE FIXTURE THE PROGRAMME WILL MOVE PAST HAS A SHELF LIFE, AND NOBODY IS
+  WATCHING IT.** `control-election-transition-status.mjs` opened by asserting *"35 senate seats
+  examined, all at state 1"* — true when written, **false from 2026-11-18**, when the federal tier
+  was seated. Six assertions then failed at once, including a rollback check that reported
+  *"rollback did not revert: 35 seats still moved"* when the rollback had worked perfectly. It is
+  not in CI, so it had been **red for six days** and was only found by running it. ▶ **A control
+  locates its fixture by MEASUREMENT, compares a histogram rather than a literal, and refuses to
+  report when it has no fixture left.** ⚠ Note which assertions survived: the three that **planted**
+  their own state passed throughout; the three that **assumed** one did not.
 - 🔴🔴 **A TAMPER CAN DIE ON A DATABASE CHECK CONSTRAINT BEFORE IT REACHES A MIGRATION, AND THE
   HARNESS REPORTS IT AS RED.** Two Maryland tampers did: `result` without `result_source`, and
   `result_certainty` without `result`. The control proved nothing and did not even look like a
@@ -386,7 +404,21 @@ worked Ruling A end to end, so Arizona is the same shape at half the size.
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
   CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
-  file against them). ✅ **Refreshed for California and Massachusetts, 2026-11-23**, all four dataset docs.
+  file against them). ✅ **Refreshed for Maryland, 2026-11-24.** After the fix below, wave 3 reads
+  `called` **0** / `term_recorded` **60** and wave 4 `called` **262** / `term_recorded` **967**.
+  - 🟢🟢 **THE TRACKER NOW ASKS THE SEATING QUESTION OVER THE OFFICES A RACE CAN FILL**, not over
+    the single office the race hangs on. A row is a RACE and a seating is an OFFICE; a multi-seat
+    contest seats its winners across the **sibling** offices of the same district, chamber and
+    title, so the old question found at most one of them and reported a **fully seated body as
+    `called`** with `partlySeated` set. Measured old against new over all 2,303 races: **43 move,
+    none loses a winner** — 38 Maryland Delegate races and the 5 California at-large bodies whose
+    17 seatings had read `called` since 2026-11-18. ⚠ **The cancelled-election blindness stays and
+    must**: 102 seats with no winner to read is a fact about the race, not the office.
+  - 🔴 **RE-READ THE HAND-KEPT `assignments` FILE FROM THE ARTIFACT, NOT FROM THE REPO.** On
+    2026-11-24 the repo copy was three refreshes stale — wave 3 `Not started`, waves 4 and 5
+    `Blocked` — the exact words the operator had corrected **on the artifact** on 2026-11-16.
+    Refreshing from the repo would have re-uploaded them and painted two healthy waves red. The
+    repo copy is now the uploaded one; check the file the page actually serves.
   🟢 **THE "waves 4 and 5 SAY Blocked" WARNING IS STALE AND IS RETIRED HERE.** It was true on
   2026-11-16 and fixed before the 11-19 refresh. Re-read 2026-11-23: the five status words are
   `In progress` ×4 and `Barely started`, none matches the page's `/block/i` regex, and `blocked`
