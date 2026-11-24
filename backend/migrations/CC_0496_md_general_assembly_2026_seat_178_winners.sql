@@ -22,13 +22,25 @@
 --     ballot-name order — and only under the gate below.
 --   • **The gate, per race:** every eligible office must share `seats`, `voting_powers` and
 --     `representation_note`, none may carry a `description` that distinguishes it, **and the
---     count of eligible offices must EQUAL the number of winners.** P3 asserts all of it.
+--     count of eligible offices must EQUAL the number of winners.** P2 asserts all of it,
+--     and it runs BEFORE the pin — see the note below.
 --
 -- 🔴 **THE EQUALITY CLAUSE IS THE WHOLE OF IT.** "At least" would admit a staggered body — one
 --   where more seats exist than are up — and then "fill the remaining offices" would unseat
 --   sitting members with years left. Maryland is not staggered (Art. III § 7 elects the whole
 --   General Assembly every fourth year) and all 67 races pass equality exactly; the clause is
 --   here because the next Ruling A state may not.
+--
+-- 🔴🔴 **RULING A RUNS AS `P2`, ABOVE THE PIN, AND THAT ORDER WAS CHOSEN BY A CONTROL THAT
+--   COULD NOT GO RED.** It was written below the pin at first. Every tamper aimed at the
+--   equality clause was caught two gates earlier by `P3`'s digest or its row counts, so the
+--   clause that carries the real-world cost — *a named sitting official unseated in favour of
+--   somebody who did not win their seat* — had no control of its own, and a suite in which 20
+--   of 21 go red reads like a success. Ruling A asks whether this body is **assignable at all**,
+--   which is a fact about the world; the pin asks whether the answer is **the one recorded on
+--   2026-11-23**, which is a fact about this file. The first question comes first, and the
+--   operator now gets the right diagnosis instead of "the digest moved". ▶ A gate no control
+--   can reach is a gate nobody has tested, however many controls the file has.
 --
 -- 🔴 **`scripts/lib/seating-wave.mjs`'s `WAVE_SELECTION_SQL` KEYS EVERY WINNER ON THE
 --   RACE-CARRYING OFFICE AND IS WRONG FOR THIS WAVE.** Post-verify 1 joins `office_terms` back
@@ -64,7 +76,7 @@
 --   NULL — not false — on a seat with no current holder, because `office_current_holder` is LEFT
 --   JOINed; `'…' || NULL` is NULL and `string_agg` SKIPS it, so the digest silently covers fewer
 --   rows while every count still reads the full number. All 178 Maryland seats are held and all
---   178 winners have a person record, so the defect is unreachable here. P1 counts how many rows
+--   178 winners have a person record, so the defect is unreachable here. P3 counts how many rows
 --   the digest expression actually evaluated anyway: "it cannot happen here" expires the moment
 --   a seat falls vacant, and a gate added only where the defect is already known is the gate
 --   that will be missing the first time it matters.
@@ -242,87 +254,14 @@ BEGIN
   SELECT * INTO p FROM cc0496_pin;
   SELECT * INTO b FROM cc0496_before;
 
-  -- P2 — ⚠ ASKED ABOVE EVERY COUNT. On a second run the seats have left office_pending_winner,
+  -- P1 — ⚠ ASKED ABOVE EVERY COUNT. On a second run the seats have left office_pending_winner,
   -- so a count check fires first and blames the data for what is a repeat apply.
   SELECT count(*) INTO n FROM essentials.office_terms WHERE source LIKE '%CC_0496%';
   IF n <> 0 THEN
-    RAISE EXCEPTION 'P2: % office_terms row(s) already cite CC_0496. Applied before.', n;
+    RAISE EXCEPTION 'P1: % office_terms row(s) already cite CC_0496. Applied before.', n;
   END IF;
 
-  -- P1 — the pin.
-  SELECT count(*) INTO n FROM cc0496_race WHERE district_type = 'STATE_LOWER';
-  IF n <> p.expect_lower_races THEN
-    RAISE EXCEPTION 'P1: % Delegate races are pending, expected %. ⚠ Four Maryland Delegate '
-                    'contests carried no recorded winner when this file was written (Districts '
-                    '4, 6, 31 and Subdistrict 34B); if one has arrived, this wave is larger.',
-      n, p.expect_lower_races;
-  END IF;
-  SELECT count(*) INTO n FROM cc0496_race WHERE district_type = 'STATE_UPPER';
-  IF n <> p.expect_upper_races THEN
-    RAISE EXCEPTION 'P1: % Senate races are pending, expected % — the whole chamber.',
-      n, p.expect_upper_races;
-  END IF;
-  SELECT count(*) INTO n FROM cc0496_sel;
-  IF n <> p.expect_winners THEN
-    RAISE EXCEPTION 'P1: selection returned % winner rows, expected %. The data moved under '
-                    'this file.', n, p.expect_winners;
-  END IF;
-  SELECT count(DISTINCT office_id) INTO n FROM cc0496_sel;
-  IF n <> p.expect_offices THEN
-    RAISE EXCEPTION 'P1: % distinct offices, expected %. Under Ruling A the winners and the '
-                    'offices are equal only because every race''s eligible set is exactly the '
-                    'size of its winner list — if these differ, two winners have been assigned '
-                    'the same seat.', n, p.expect_offices;
-  END IF;
-  SELECT count(*) INTO n FROM cc0496_sel WHERE district_type = 'STATE_LOWER';
-  IF n <> p.expect_lower_seats THEN
-    RAISE EXCEPTION 'P1: % Delegate seats in the selection, expected % of 141.',
-      n, p.expect_lower_seats;
-  END IF;
-  SELECT count(*) INTO n FROM cc0496_sel WHERE district_type = 'STATE_UPPER';
-  IF n <> p.expect_upper_seats THEN
-    RAISE EXCEPTION 'P1: % Senate seats in the selection, expected %.', n, p.expect_upper_seats;
-  END IF;
-  -- 🔴 HOW MANY ROWS THE DIGEST EXPRESSION ACTUALLY EVALUATED. A NULL is_reelection renders the
-  -- whole concatenation NULL and string_agg skips it, so the digest can cover fewer rows than
-  -- every count claims. Unreachable in Maryland and gated anyway.
-  SELECT count(office_id::text || ':' || COALESCE(politician_id::text, '-') || ':'
-               || is_reelection::text)
-    INTO n FROM cc0496_sel;
-  IF n <> p.expect_winners THEN
-    RAISE EXCEPTION 'P1: the digest expression evaluated to NULL on % of % rows, so string_agg '
-                    'would have skipped them. is_reelection is NULL on a seat with no current '
-                    'holder — when this file was written all 178 Maryland General Assembly '
-                    'seats were held, so one has fallen vacant. Read it before seating over it.',
-      p.expect_winners - n, p.expect_winners;
-  END IF;
-  SELECT md5(string_agg(office_id::text || ':' || COALESCE(politician_id::text, '-') || ':'
-                        || is_reelection::text,
-                        '|' ORDER BY office_id::text, politician_id::text))
-    INTO d FROM cc0496_sel;
-  IF d IS DISTINCT FROM p.expect_digest THEN
-    RAISE EXCEPTION 'P1: selection digest is %, expected %. Every count above passed, so the '
-                    'membership is the same size and something inside it changed — a winner '
-                    'swapped, a seat changed hands before the handover, or RULING A ASSIGNED '
-                    'SOMEBODY DIFFERENTLY. ⚠ The last of those is the Maryland-specific one: '
-                    'this digest was captured by rehearsing CC_0494 + CC_0495 + a probe in one '
-                    'transaction, because 55 winners cannot anchor to the seat they hold until '
-                    'CC_0495 links them. If CC_0495 has not run, the assignment is a different '
-                    'one and so is this hash.', d, p.expect_digest;
-  END IF;
-  SELECT count(*) INTO n FROM cc0496_sel WHERE is_reelection;
-  IF n <> p.expect_reelections THEN
-    RAISE EXCEPTION 'P1: % re-elections, expected %.', n, p.expect_reelections;
-  END IF;
-  SELECT count(*) INTO n FROM cc0496_sel WHERE NOT is_reelection;
-  IF n <> p.expect_new THEN
-    RAISE EXCEPTION 'P1: % new holders, expected %. (Counted with NOT, which a NULL would fail '
-                    'as well — % + % = % only if every row is a real boolean.)',
-      n, p.expect_new, p.expect_reelections, p.expect_new, p.expect_winners;
-  END IF;
-
-  -- ───────────────────────────────────────────────────────────────────────────────────────────
-  -- P3 — RULING A, ASSERTED PER RACE, BEFORE ANY WRITE.
+  -- P2 — RULING A, ASSERTED PER RACE, BEFORE THE PIN AND BEFORE ANY WRITE.
   -- ───────────────────────────────────────────────────────────────────────────────────────────
   -- (a) 🔴🔴 THE EQUALITY CLAUSE. Eligible offices = winners, for every race. "At least" is what
   --     admits a staggered body, where filling "the remaining offices" would unseat sitting
@@ -339,7 +278,7 @@ BEGIN
             FROM cc0496_race r) z
    WHERE z.winners <> z.eligible;
   IF txt IS NOT NULL THEN
-    RAISE EXCEPTION 'P3a: Ruling A''s equality clause fails for: %. A body with more eligible '
+    RAISE EXCEPTION 'P2a: Ruling A''s equality clause fails for: %. A body with more eligible '
                     'seats than winners is STAGGERED, and which seats are up is not in our data '
                     'at all — such a body is seated only by naming each winner''s office from '
                     'the body''s own published term table, cited in the migration.', txt;
@@ -353,7 +292,7 @@ BEGIN
     FROM cc0496_elig e
    WHERE e.description IS NOT NULL;
   IF txt IS NOT NULL THEN
-    RAISE EXCEPTION 'P3b: eligible offices in % carry a description. A seat that describes '
+    RAISE EXCEPTION 'P2b: eligible offices in % carry a description. A seat that describes '
                     'itself differently from its siblings is not interchangeable with them, and '
                     'a fill would claim something a voter could see is wrong.', txt;
   END IF;
@@ -365,30 +304,30 @@ BEGIN
               OR count(DISTINCT COALESCE(e.voting_powers::text, '')) > 1
               OR count(DISTINCT COALESCE(e.representation_note, '')) > 1) z;
   IF txt IS NOT NULL THEN
-    RAISE EXCEPTION 'P3c: eligible offices differ in seats, voting_powers or '
+    RAISE EXCEPTION 'P2c: eligible offices differ in seats, voting_powers or '
                     'representation_note in: %.', txt;
   END IF;
   -- (c) the assignment is a bijection: every winner once, every assigned office once, and no
   --     office claimed by two races.
   SELECT count(*) INTO n FROM cc0496_assign;
   IF n <> p.expect_winners THEN
-    RAISE EXCEPTION 'P3d: the assignment produced % rows for % winners.', n, p.expect_winners;
+    RAISE EXCEPTION 'P2d: the assignment produced % rows for % winners.', n, p.expect_winners;
   END IF;
   SELECT count(*) INTO n FROM (
     SELECT office_id FROM cc0496_assign GROUP BY office_id HAVING count(*) > 1) q;
   IF n <> 0 THEN
-    RAISE EXCEPTION 'P3d: % office(s) were assigned more than one winner.', n;
+    RAISE EXCEPTION 'P2d: % office(s) were assigned more than one winner.', n;
   END IF;
   SELECT count(*) INTO n FROM (
     SELECT politician_id FROM cc0496_assign GROUP BY politician_id HAVING count(*) > 1) q;
   IF n <> 0 THEN
-    RAISE EXCEPTION 'P3d: % winner(s) were assigned more than one seat.', n;
+    RAISE EXCEPTION 'P2d: % winner(s) were assigned more than one seat.', n;
   END IF;
   SELECT count(*) INTO n FROM (
     SELECT office_id FROM cc0496_elig GROUP BY office_id HAVING count(DISTINCT race_office_id) > 1
   ) q;
   IF n <> 0 THEN
-    RAISE EXCEPTION 'P3d: % office(s) are eligible for more than one race. Maryland''s lettered '
+    RAISE EXCEPTION 'P2d: % office(s) are eligible for more than one race. Maryland''s lettered '
                     'subdistricts elect separately and must not share an eligible set.', n;
   END IF;
   -- (d) 🔴 NOBODY IS SEATED OUTSIDE THE DISTRICT THAT ELECTED THEM. This is the claim a voter
@@ -401,19 +340,10 @@ BEGIN
       OR ao.title <> ro.title
       OR ao.chamber_id IS DISTINCT FROM ro.chamber_id;
   IF n <> 0 THEN
-    RAISE EXCEPTION 'P3e: % winner(s) were assigned to an office outside the district, chamber '
+    RAISE EXCEPTION 'P2e: % winner(s) were assigned to an office outside the district, chamber '
                     'or title of the race that elected them.', n;
   END IF;
-  -- (e) 148 anchored, 30 filled. The anchored count must equal the re-election count, because
-  --     anchoring IS holding the seat you won.
-  SELECT count(*) INTO n FROM cc0496_assign WHERE anchored;
-  IF n <> p.expect_reelections THEN
-    RAISE EXCEPTION 'P3f: % winners anchored to a seat they already hold, expected % — the same '
-                    'number as the re-elections, because anchoring is holding the seat you won. '
-                    'If these two ever differ, one of them is measuring something else.',
-      n, p.expect_reelections;
-  END IF;
-  -- (f) 🔴 THE 141-SEAT STRUCTURE. Art. III § 3 gives every legislative district three Delegates;
+  -- (e) 🔴 THE 141-SEAT STRUCTURE. Art. III § 3 gives every legislative district three Delegates;
   --     a district holding four would let a fill claim a seat nobody elected.
   SELECT count(*) INTO n FROM (
     SELECT (regexp_match(d.label, '(\d+)'))[1]::int AS dnum, count(*) AS per
@@ -421,9 +351,93 @@ BEGIN
      WHERE lower(d.state) = 'md' AND d.district_type = 'STATE_LOWER'
      GROUP BY 1) z WHERE per <> 3;
   IF n <> 0 THEN
-    RAISE EXCEPTION 'P3g: % Maryland legislative district(s) do not hold exactly 3 Delegate '
+    RAISE EXCEPTION 'P2f: % Maryland legislative district(s) do not hold exactly 3 Delegate '
                     'offices (Art. III § 3). Ruling A must not run over a district whose seat '
                     'count is wrong.', n;
+  END IF;
+
+  -- P3 — the pin.
+  SELECT count(*) INTO n FROM cc0496_race WHERE district_type = 'STATE_LOWER';
+  IF n <> p.expect_lower_races THEN
+    RAISE EXCEPTION 'P3: % Delegate races are pending, expected %. ⚠ Four Maryland Delegate '
+                    'contests carried no recorded winner when this file was written (Districts '
+                    '4, 6, 31 and Subdistrict 34B); if one has arrived, this wave is larger.',
+      n, p.expect_lower_races;
+  END IF;
+  SELECT count(*) INTO n FROM cc0496_race WHERE district_type = 'STATE_UPPER';
+  IF n <> p.expect_upper_races THEN
+    RAISE EXCEPTION 'P3: % Senate races are pending, expected % — the whole chamber.',
+      n, p.expect_upper_races;
+  END IF;
+  SELECT count(*) INTO n FROM cc0496_sel;
+  IF n <> p.expect_winners THEN
+    RAISE EXCEPTION 'P3: selection returned % winner rows, expected %. The data moved under '
+                    'this file.', n, p.expect_winners;
+  END IF;
+  SELECT count(DISTINCT office_id) INTO n FROM cc0496_sel;
+  IF n <> p.expect_offices THEN
+    RAISE EXCEPTION 'P3: % distinct offices, expected %. Under Ruling A the winners and the '
+                    'offices are equal only because every race''s eligible set is exactly the '
+                    'size of its winner list — if these differ, two winners have been assigned '
+                    'the same seat.', n, p.expect_offices;
+  END IF;
+  SELECT count(*) INTO n FROM cc0496_sel WHERE district_type = 'STATE_LOWER';
+  IF n <> p.expect_lower_seats THEN
+    RAISE EXCEPTION 'P3: % Delegate seats in the selection, expected % of 141.',
+      n, p.expect_lower_seats;
+  END IF;
+  SELECT count(*) INTO n FROM cc0496_sel WHERE district_type = 'STATE_UPPER';
+  IF n <> p.expect_upper_seats THEN
+    RAISE EXCEPTION 'P3: % Senate seats in the selection, expected %.', n, p.expect_upper_seats;
+  END IF;
+  -- 🔴 HOW MANY ROWS THE DIGEST EXPRESSION ACTUALLY EVALUATED. A NULL is_reelection renders the
+  -- whole concatenation NULL and string_agg skips it, so the digest can cover fewer rows than
+  -- every count claims. Unreachable in Maryland and gated anyway.
+  SELECT count(office_id::text || ':' || COALESCE(politician_id::text, '-') || ':'
+               || is_reelection::text)
+    INTO n FROM cc0496_sel;
+  IF n <> p.expect_winners THEN
+    RAISE EXCEPTION 'P3: the digest expression evaluated to NULL on % of % rows, so string_agg '
+                    'would have skipped them. is_reelection is NULL on a seat with no current '
+                    'holder — when this file was written all 178 Maryland General Assembly '
+                    'seats were held, so one has fallen vacant. Read it before seating over it.',
+      p.expect_winners - n, p.expect_winners;
+  END IF;
+  SELECT md5(string_agg(office_id::text || ':' || COALESCE(politician_id::text, '-') || ':'
+                        || is_reelection::text,
+                        '|' ORDER BY office_id::text, politician_id::text))
+    INTO d FROM cc0496_sel;
+  IF d IS DISTINCT FROM p.expect_digest THEN
+    RAISE EXCEPTION 'P3: selection digest is %, expected %. Every count above passed, so the '
+                    'membership is the same size and something inside it changed — a winner '
+                    'swapped, a seat changed hands before the handover, or RULING A ASSIGNED '
+                    'SOMEBODY DIFFERENTLY. ⚠ The last of those is the Maryland-specific one: '
+                    'this digest was captured by rehearsing CC_0494 + CC_0495 + a probe in one '
+                    'transaction, because 55 winners cannot anchor to the seat they hold until '
+                    'CC_0495 links them. If CC_0495 has not run, the assignment is a different '
+                    'one and so is this hash.', d, p.expect_digest;
+  END IF;
+  SELECT count(*) INTO n FROM cc0496_sel WHERE is_reelection;
+  IF n <> p.expect_reelections THEN
+    RAISE EXCEPTION 'P3: % re-elections, expected %.', n, p.expect_reelections;
+  END IF;
+  SELECT count(*) INTO n FROM cc0496_sel WHERE NOT is_reelection;
+  IF n <> p.expect_new THEN
+    RAISE EXCEPTION 'P3: % new holders, expected %. (Counted with NOT, which a NULL would fail '
+                    'as well — % + % = % only if every row is a real boolean.)',
+      n, p.expect_new, p.expect_reelections, p.expect_new, p.expect_winners;
+  END IF;
+
+  -- 148 anchored, 30 filled. The anchored count must equal the re-election count, because
+  -- anchoring IS holding the seat you won. ⚠ This is a PIN check, not a structural one — it
+  -- compares Ruling A's output against a number captured on 2026-11-23 — so it sits here with
+  -- the rest of the pin rather than in P2.
+  SELECT count(*) INTO n FROM cc0496_assign WHERE anchored;
+  IF n <> p.expect_reelections THEN
+    RAISE EXCEPTION 'P3h: % winners anchored to a seat they already hold, expected % — the same '
+                    'number as the re-elections, because anchoring is holding the seat you won. '
+                    'If these two ever differ, one of them is measuring something else.',
+      n, p.expect_reelections;
   END IF;
 
   -- P4 — the date, read from office_swearing_in and never typed here.
