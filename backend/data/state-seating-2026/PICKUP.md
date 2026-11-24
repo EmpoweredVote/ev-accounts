@@ -2,7 +2,9 @@
 
 Rewritten 2026-11-24, after **New Mexico** (11 offices across both bodies, and a third instrument
 the ledger did not have).
-▶▶ **NE, CT, TX and CO ARE SOURCED AND UNWRITTEN** — see "What is next" below before step 1.
+▶▶ **NEBRASKA IS NEXT AND IS READY** — 13 offices, measured 2026-11-24. See "Nebraska is the next
+one up" below before step 1; it holds the wave's numbers, its duplicate person, its shared day and
+the two zeros that have no fixture.
 **Read `REGISTER.md` first** (the queue, the recipe, the template corrections, Rulings A and B),
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
@@ -94,18 +96,75 @@ one dated body left that ordering has stopped doing useful work: read the table 
 a state whose `DATES.md` section is already green". **`NE`, `CT`, `TX` and `CO` are sourced and
 unwritten** — those are the next waves, and none of them needs new research.
 
-### ▶▶ WHAT IS NEXT, AND THE ONE THING TO DO DIFFERENTLY
+### ▶▶ NEBRASKA IS THE NEXT ONE UP, AND IT IS READY — MEASURED 2026-11-24
 
-New Mexico is done. The next sourced state is **`NE`** (13 offices across FOUR bodies, all on
-**2027-01-07**, rule rows verified), then **`CT`**, **`TX`** (two bodies) and **`CO`** (four).
+**13 offices across THREE `district_type`s and EIGHT chambers, all on 2027-01-07** — `NE STATE_EXEC`
+5, `NE STATE_BOARD` 4 and `NE STATE_BOARD_EDUCATION` 4. `DATES.md` § NE is green and needs no new
+research; its rule rows are recorded as **verified**.
+
+`derive-seating-wave.mjs --state ne --type STATE_EXEC --type STATE_BOARD --type
+STATE_BOARD_EDUCATION`, run 2026-11-24: **13 winners · 13 offices · 6 re-elections · 7 handovers ·
+13 called**, digest `f255837483b655c569e6703bdcbae90d`, and the **only blocker is `no_date` ×13** —
+so step 2 is done and the wave starts at step 3.
+
+| chamber | offices | leaving → arriving |
+|---|---|---|
+| Governor | 1 | Jim Pillen → **Jim Pillen** (re-elected) |
+| Attorney General | 1 | Mike Hilgers → **Mike Hilgers** (re-elected) |
+| Auditor of Public Accounts | 1 | Mike Foley → **Mike Foley** (re-elected) 🔴 see the duplicate below |
+| Treasurer | 1 | Joey Spellerberg → **Joey Spellerberg** (re-elected) |
+| Secretary of State | 1 | Bob Evnen → Scott Petersen |
+| Board of Regents | 3 | Clare → Comstock · Stark → Butler · Makovicka → Solomon |
+| Public Service Commission | 1 | Christian Mirch → Wendy DeBoer |
+| State Board of Education | 4 | Penner → Eberspacher · Jones → **Jones** · Tegtmeier → **Tegtmeier** · Neary → Goding |
+
+- 🔴🔴 **NEBRASKA IS THE SECOND STATE ON 2027-01-07, AND THE LEDGER DOES NOT SAY SO.** Measured
+  2026-11-24: that day already carries **2 swearing-in rows and 2 terms**, both Massachusetts —
+  the Governor and Lieutenant Governor under `ma-const-amend-64-s1-gov-ltgov` (`CC_0481` /
+  `CC_0484`). ▶ **Every count about the day is a DELTA that names Massachusetts' rule**, exactly as
+  New Mexico's had to name Utah's. A gate reading the total would see 15 and call it success.
+- 🔴🔴 **`district_type` IS NOT A BODY AND THE REAL NUMBER IS EIGHT, NOT FOUR.** `SOURCING.md`
+  already corrects the queue's "three bodies" to four, because `STATE_BOARD` holds **both** the
+  Board of Regents and the Public Service Commission. Counted by `chamber_id` it is **eight**.
+  ▶ **Count bodies by `chamber_id` before deciding how many citations the state needs**, and check
+  each one is actually governed by the clause you are about to cite.
+- 🔴🔴 **ONE WINNER HAS A DUPLICATE PERSON ROW, AND THE WAVE POINTS AT THE RIGHT ONE.** There are
+  **two active `Mike Foley` rows**: `d36beee3…`, which holds Auditor of Public Accounts and is
+  sourced (Ballotpedia, `CC_0363`), and `38277535…`, which has **no source and no seat at all**.
+  🟢 The 2026 winner row and the current holder both point at `d36beee3…`, so it reads as a
+  re-election correctly and **no people file is needed**. ⚠ The orphan is a separate cleanup, not
+  this wave's job — but it is the only name in the state that collides on **both** (full_name) and
+  (first_name, last_name), so say so in the file rather than letting the next reader rediscover it.
+- 🟢 **NO PEOPLE FILE AND NO RULING A**: all 13 winners already have an active `politicians` row,
+  every race is single-seat with one winner, and no office in the wave is flagged `is_vacant`.
+  Nebraska would be the **fifth** state in the pass needing no people file. ▶ Sweep anyway.
+- 🔴 **THE DOUBLE-HOLDER ZERO HAS NO NATURAL FIXTURE — THIS IS IDAHO'S CASE, NOT NEW MEXICO'S.**
+  Measured: **not one of the 13 winners holds a term on any office outside the one they won.** So
+  `P8` will be true and nothing in Nebraska's data can show the gate would notice if it were
+  false. ▶ **Plant one, and say that it is planted** — and remember New Mexico's lesson that the
+  fixture must be a winner who **already holds a seat**, or `P8` passes honestly and a later gate
+  fires instead.
+- ⚠ **THE IN-DATA CONTROL IS ONE ROW, LIKE NEW MEXICO'S.** Only **one** Nebraska term at these
+  three tiers carries a `term_start`. ▶ Run the wrong rules beside the right one and require them
+  to carry **zero**, and make the control refuse to report if it loses its single fixture.
+- 🔴 **NEBRASKA'S 49-SEAT UNICAMERAL IS ABSENT** — measured again today, **0 `STATE_UPPER` office
+  rows**. ▶ **Work out which day those seats would take before writing this wave**, the way New
+  Mexico's turned out to be the wave's own day. If it is 2027-01-07 the same absorption risk
+  applies and the gate must name it.
+
+### ▶▶ AND THE ONE THING TO DO DIFFERENTLY
 
 🔴🔴 **READ THE STATE'S `DATES.md` SECTION FOR ITS OWN ADMISSIONS BEFORE TRUSTING IT.** New Mexico's
 said, in terms: *"🔴 This is reasoning, not a sweep — the constitution was not read end to end
 looking for an overriding provision."* Sweeping it found **a third instrument** that dates both
 bodies and closes the open question. ▶ **A `DATES.md` section that flags its own weakest claim is
-telling you where the finding is.** Nebraska's section makes a comparable claim (`Art. XVII-5`
-"proved undisplaced against 4 constitutional provisions and 5 statutes") — check how that was
-established before inheriting it.
+telling you where the finding is.** 🔴 **Nebraska's makes exactly such a claim**: `Art. XVII-5` is
+recorded as *"proved undisplaced against 4 constitutional provisions and 5 statutes"*. **Check how
+that bound was established and whether it is a sweep or a sample** before inheriting it — and note
+that New Mexico's equivalent residual, Art. V § 1's, yielded only to **the constitution**, while
+Nebraska's `Art. XVII-5` is on file as the wider *"or by law"* form, which a statute can displace.
+
+After Nebraska: **`CT`**, **`TX`** (two bodies) and **`CO`** (four).
 
 - 🟢 **FOUR STATES NOW PROVE THE PEOPLE FILE IS NOT AUTOMATIC.** Arizona needed none at all,
   **Alabama none, Idaho none and New Mexico none**; Maryland needed 60 links and 25 creations where
