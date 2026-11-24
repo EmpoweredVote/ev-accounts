@@ -24,6 +24,7 @@ import {
   writeStoredPairs,
   filterSeedsPresent,
   OVERLAP_STORE_ENABLED,
+  type Queryable,
 } from './geoOverlapStore.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
@@ -255,9 +256,12 @@ export const OVERLAP_QUERY_FINGERPRINT = fingerprintOf(OVERLAP_QUERY_SQL);
  * query instead, the store and the live answer would be two mechanisms kept in
  * sync by hand — the thing the design exists to avoid.
  */
-export async function computeOverlapPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
+export async function computeOverlapPairs(
+  seeds: GeoPair[],
+  db: Queryable = pool
+): Promise<GeoPair[]> {
   if (seeds.length === 0) return [];
-  const { rows } = await pool.query(OVERLAP_QUERY_SQL, [
+  const { rows } = await db.query(OVERLAP_QUERY_SQL, [
     seeds.map((s) => s.geo_id),
     seeds.map((s) => s.mtfcc),
   ]);

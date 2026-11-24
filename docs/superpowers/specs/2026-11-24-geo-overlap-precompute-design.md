@@ -311,11 +311,54 @@ calls, not the operator's**, and each is cheap to reverse.
 5. **The composition property is confirmed, not open.** The reviewer reached the same conclusion
    independently by reading the SQL, and §1 now carries the measurement.
 
-## Open, and left to the builder
+## Open, and left to the builder — ANSWERED 2026-11-24 DURING THE BUILD
 
-- Whether ZIP (`G6350`) browse reaches this resolver. It changes the seed universe but not this
-  design, because C stores on demand.
-- Sweep policy for superseded rows: the warming job deletes them, but a seed that is never asked
-  again keeps one dead row per version. At 30,000 seeds and a few ingests a year this is
-  negligible; revisit if it is not.
-- The exact warming schedule, which is an `ev-infra` PR and not a decision here.
+Each answer is a measurement taken against production while building, not an expectation.
+Kept here beside the question so the next reader gets both.
+
+- **Whether ZIP (`G6350`) browse reaches this resolver. ✅ IT DOES NOT.** ZIP lookups have their
+  own module, `backend/src/lib/zipQueries.ts`, with their own spatial predicate
+  (`ZIP_AREA_SPATIAL_PREDICATE`, which excludes `G6350` and `G4000` itself), their own
+  area-share weighting (`ZIP_SHARE_EXPR`) and their own 5% delegation floor.
+  `resolveOverlappingGeoPairs` is never called from it. So the seed universe is unchanged and a
+  ZIP lookup is unaffected by this work in either direction.
+  ▶ ⚠ **It is therefore still an uncached, per-request PostGIS path.** Nothing here speeds it up,
+  and nothing here slows it down. If ZIP browse is ever reported slow, that is a separate piece
+  of work against a different query.
+
+- **Sweep policy for superseded rows. ✅ THE FIRST SWEEP DELETED 0 ROWS, and "negligible" is now a
+  measurement.** After warming all 53 `G4000` seeds plus the harness's 7-layer sample, the store
+  holds **58 rows, 82,328 pairs, 640 kB in total**, at **1 distinct version and 1 distinct
+  fingerprint** — so nothing has ever been superseded in production yet. The largest single answer
+  is **40,899 pairs** (see `US` below). The sweep runs on every warm and costs 0.0 ms at this size.
+  ▶ The design's worry was per-seed dead rows at 30,000 seeds. At 640 kB for 58 rows, a seed's row
+  averages ~11 kB, so even 30,000 stale seeds would be a few hundred MB — revisit then, not now.
+
+- **The loader's transaction shape, and what the trigger costs.** Both geofence writers
+  (`load-state-tiger-boundaries.ts:1330`, `1642-import-core.mts:145`) insert **one row per
+  statement** and **neither opens a transaction** — zero `BEGIN` in either file. So the txid guard
+  cannot coalesce a TIGER load and the version moves once per *changed* row. Measured on prod in a
+  rolled-back transaction, 5,000 single-row inserts per arm: **0.53 ms/row of overhead, 37.2 s per
+  70,000 rows, against a 90 s budget.** Wrapping the loader's loop in one transaction would cut
+  that to **12.2 s**; that is the remedy if it is ever too dear, and it is worth about 25 seconds a
+  state. The full table is recorded in `CC_0511`'s header.
+
+- **The exact warming schedule** — still an `ev-infra` PR, and still not a decision here.
+
+### 🔴 One thing nobody asked, which the build found anyway
+
+**The `G4000` layer is not 53 states. One of its 53 rows is `US` — the whole country.** Timing all
+53 seeds on prod: 52 finish within 3.8 s and the set costs 122 s, but `US` resolves **40,899 pairs
+in 83 seconds**. `ev_api` carries `statement_timeout = 30s`, so the warming job died on that one
+seed on its first real run and warmed nothing after it.
+
+The fix is two things, both in `geoOverlapWarm.ts`: the job takes **its own connection and raises
+`statement_timeout` on it** (the same lesson, and the same 30 s wall, that
+`load-state-tiger-boundaries.ts` already records — a function-level `SET` does not work, because
+the statement's timer is armed before the function runs), and **one seed's failure no longer stops
+the rest**, because a run that aborts mid-listing leaves every seed after it cold for ever.
+
+⚠ It is also the clearest evidence for the whole design: **with the store off, browsing the `US`
+area does not merely take 83 s — it exceeds `ev_api`'s statement timeout and ERRORS.** With the
+store on it answers in 147 ms. The store does not only make that request faster; it makes it
+possible.

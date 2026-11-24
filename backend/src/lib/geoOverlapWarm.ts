@@ -66,7 +66,27 @@ export interface WarmResult {
   alreadyCurrent: number;
   /** Rows deleted because they answered a superseded question. */
   swept: number;
+  /** Seeds whose computation threw. They are skipped, never stored half-done. */
+  failed: number;
 }
+
+/**
+ * How long one seed's compute may take.
+ *
+ * 🔴 MEASURED, AND IT IS NOT A ROUND NUMBER PULLED OUT OF THE AIR. `ev_api`
+ * carries statement_timeout = 30 s. Timing all 53 G4000 seeds on prod
+ * 2026-11-24: 52 of them finish inside 3.8 s and the whole set costs 122 s —
+ * but one of those "53 states" is `US`, the WHOLE COUNTRY, which resolves
+ * 40,899 pairs in 83 SECONDS. At 30 s the job dies on that seed every run and
+ * warms nothing after it.
+ *
+ * ⚠ IT GOES ON THE CONNECTION, NOT ON A FUNCTION. The same lesson is written at
+ * load-state-tiger-boundaries.ts: a function-level `SET statement_timeout` is
+ * applied after the statement's timer is already armed and does not reschedule
+ * it. Two probe functions, one with the SET and one without, both died at
+ * exactly 30 s.
+ */
+const WARM_STATEMENT_TIMEOUT = '600s';
 
 export async function warmGeoOverlapPairs(
   opts: { seedMtfcc?: string; dryRun?: boolean } = {}
@@ -76,67 +96,92 @@ export async function warmGeoOverlapPairs(
   const fingerprint = OVERLAP_QUERY_FINGERPRINT;
   const started = Date.now();
 
-  // 1. The version, first. Everything written below is tagged with this value,
-  //    and a run that cannot read it must not guess one.
-  const version = await readGeofenceVersion();
-  if (version === null) {
-    console.log(
-      `[geo-overlap-warm] no geofence version readable — nothing warmed. ` +
-        `This is the expected shape of a deploy that landed before CC_0511 was applied.`
+  // 0. Our own connection, so the timeout above applies to every query below and
+  //    to nothing else in the process.
+  const db = await pool.connect();
+  try {
+    await db.query(`SET statement_timeout = '${WARM_STATEMENT_TIMEOUT}'`);
+
+    // 1. The version, first. Everything written below is tagged with this value,
+    //    and a run that cannot read it must not guess one.
+    const version = await readGeofenceVersion(db);
+    if (version === null) {
+      console.log(
+        `[geo-overlap-warm] no geofence version readable — nothing warmed. ` +
+          `This is the expected shape of a deploy that landed before CC_0511 was applied.`
+      );
+      return { version: null, fingerprint, computed: 0, alreadyCurrent: 0, swept: 0, failed: 0 };
+    }
+
+    // 2. The seeds.
+    const { rows } = await db.query(
+      `SELECT geo_id, mtfcc
+         FROM essentials.geofence_boundaries
+        WHERE mtfcc = $1
+        ORDER BY geo_id`,
+      [seedMtfcc]
     );
-    return { version: null, fingerprint, computed: 0, alreadyCurrent: 0, swept: 0 };
+    const seeds: GeoPair[] = rows.map((r) => ({
+      geo_id: r.geo_id as string,
+      mtfcc: r.mtfcc as string,
+    }));
+
+    // 3. What is already current. A hit here is a seed this run must not touch.
+    const stored = await readStoredPairs(seeds, version, fingerprint, db);
+    const alreadyCurrent = stored.size;
+    const missing = seeds.filter((s) => !stored.has(seedKey(s)));
+
+    // 4. Compute the rest, then write them all in ONE upsert.
+    //
+    // ⚠ No filterSeedsPresent here, deliberately: these seeds came OUT of
+    //   geofence_boundaries three queries ago, so the check that keeps the read
+    //   path's caller-supplied seeds out of the primary key has nothing to do.
+    //
+    // 🔴 ONE SEED'S FAILURE MUST NOT COST THE OTHERS THEIR WARM STATE. The
+    //   pathological seed exists and is named above; a run that aborts on it
+    //   leaves every seed after it in the listing cold, for ever, because the
+    //   next run aborts in the same place.
+    const entries: Array<{ seed: GeoPair; pairs: GeoPair[] }> = [];
+    const failures: string[] = [];
+    for (const seed of missing) {
+      try {
+        entries.push({ seed, pairs: await computeOverlapPairs([seed], db) });
+      } catch (err) {
+        failures.push(seedKey(seed));
+        console.warn(
+          `[geo-overlap-warm] ${seedKey(seed)} failed to compute — skipped, not stored:`,
+          err instanceof Error ? err.message : err
+        );
+      }
+    }
+    if (entries.length > 0 && !dryRun) {
+      await writeStoredPairs(entries, version, fingerprint, db);
+    }
+
+    // 5. The sweep, LAST. See the header.
+    const swept = dryRun ? 0 : await sweepSupersededPairs(version, fingerprint, db);
+
+    const result: WarmResult = {
+      version,
+      fingerprint,
+      computed: entries.length,
+      alreadyCurrent,
+      swept,
+      failed: failures.length,
+    };
+
+    // 6. One line, every number, and the elapsed time. A green run can be a
+    //    no-op; this is how a reader tells which it was without re-deriving it.
+    console.log(
+      `[geo-overlap-warm]${dryRun ? ' DRY RUN' : ''} mtfcc=${seedMtfcc} ` +
+        `version=${version} fingerprint=${fingerprint} seeds=${seeds.length} ` +
+        `computed=${result.computed} alreadyCurrent=${result.alreadyCurrent} ` +
+        `swept=${result.swept} failed=${result.failed}` +
+        `${failures.length > 0 ? ` (${failures.join(', ')})` : ''} in ${Date.now() - started}ms`
+    );
+
+    return result;
+  } finally {
+    db.release();
   }
-
-  // 2. The seeds.
-  const { rows } = await pool.query(
-    `SELECT geo_id, mtfcc
-       FROM essentials.geofence_boundaries
-      WHERE mtfcc = $1
-      ORDER BY geo_id`,
-    [seedMtfcc]
-  );
-  const seeds: GeoPair[] = rows.map((r) => ({
-    geo_id: r.geo_id as string,
-    mtfcc: r.mtfcc as string,
-  }));
-
-  // 3. What is already current. A hit here is a seed this run must not touch.
-  const stored = await readStoredPairs(seeds, version, fingerprint);
-  const alreadyCurrent = stored.size;
-  const missing = seeds.filter((s) => !stored.has(seedKey(s)));
-
-  // 4. Compute the rest, then write them all in ONE upsert.
-  //
-  // ⚠ No filterSeedsPresent here, deliberately: these seeds came OUT of
-  //   geofence_boundaries three queries ago, so the check that keeps the read
-  //   path's caller-supplied seeds out of the primary key has nothing to do.
-  const entries: Array<{ seed: GeoPair; pairs: GeoPair[] }> = [];
-  for (const seed of missing) {
-    entries.push({ seed, pairs: await computeOverlapPairs([seed]) });
-  }
-  if (entries.length > 0 && !dryRun) {
-    await writeStoredPairs(entries, version, fingerprint);
-  }
-
-  // 5. The sweep, LAST. See the header.
-  const swept = dryRun ? 0 : await sweepSupersededPairs(version, fingerprint);
-
-  const result: WarmResult = {
-    version,
-    fingerprint,
-    computed: entries.length,
-    alreadyCurrent,
-    swept,
-  };
-
-  // 6. One line, all five numbers, and the elapsed time. A green run can be a
-  //    no-op; this is how a reader tells which it was without re-deriving it.
-  console.log(
-    `[geo-overlap-warm]${dryRun ? ' DRY RUN' : ''} mtfcc=${seedMtfcc} ` +
-      `version=${version} fingerprint=${fingerprint} seeds=${seeds.length} ` +
-      `computed=${result.computed} alreadyCurrent=${result.alreadyCurrent} ` +
-      `swept=${result.swept} in ${Date.now() - started}ms`
-  );
-
-  return result;
 }

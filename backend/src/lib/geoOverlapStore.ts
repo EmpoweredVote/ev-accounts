@@ -18,6 +18,21 @@ import { pool } from './db.js';
 import type { GeoPair } from './geoIdGuard.js';
 
 /**
+ * Anything that can run a query: the shared pool, or ONE pooled client.
+ *
+ * 🔴 The warming job must run on a client of its own, because it raises
+ * statement_timeout on that connection. Measured on prod 2026-11-24: `ev_api`
+ * carries statement_timeout = 30 s, and the `US` row in the G4000 layer — the
+ * whole country, not a state — resolves 40,899 pairs in 83 SECONDS. A SET on
+ * the pool would land on an arbitrary connection, not necessarily the one the
+ * next query uses. Everything else passes nothing and gets the pool, exactly as
+ * before.
+ */
+export interface Queryable {
+  query(text: string, values?: unknown[]): Promise<{ rows: any[]; rowCount: number | null }>;
+}
+
+/**
  * The identity of the resolver's answer-shaping code, as a short hex digest.
  *
  * 🔴 The input is the resolver's FINISHED SQL text, not a hand-maintained list
@@ -74,9 +89,9 @@ export const OVERLAP_STORE_ENABLED = !(storeFlag === '0' || storeFlag === 'false
  * — a deploy that lands before the migration is applied, or a half-applied one.
  * The caller's job is to fall back to computing, not to 500.
  */
-export async function readGeofenceVersion(): Promise<string | null> {
+export async function readGeofenceVersion(db: Queryable = pool): Promise<string | null> {
   try {
-    const { rows } = await pool.query(
+    const { rows } = await db.query(
       `SELECT version::text AS version FROM essentials.geofence_version LIMIT 1`
     );
     return (rows[0]?.version as string | undefined) ?? null;
@@ -97,12 +112,13 @@ export async function readGeofenceVersion(): Promise<string | null> {
 export async function readStoredPairs(
   seeds: GeoPair[],
   version: string,
-  fingerprint: string
+  fingerprint: string,
+  db: Queryable = pool
 ): Promise<Map<string, GeoPair[]>> {
   const out = new Map<string, GeoPair[]>();
   if (seeds.length === 0) return out;
 
-  const { rows } = await pool.query(
+  const { rows } = await db.query(
     `SELECT p.seed_geo_id, p.seed_mtfcc, p.pairs
        FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
        JOIN essentials.geo_overlap_pairs p
@@ -135,14 +151,15 @@ export async function readStoredPairs(
 export async function writeStoredPairs(
   entries: Array<{ seed: GeoPair; pairs: GeoPair[] }>,
   version: string,
-  fingerprint: string
+  fingerprint: string,
+  db: Queryable = pool
 ): Promise<void> {
   const byKey = new Map<string, { seed: GeoPair; pairs: GeoPair[] }>();
   for (const e of entries) byKey.set(seedKey(e.seed), e);
   const rows = [...byKey.values()];
   if (rows.length === 0) return;
 
-  await pool.query(
+  await db.query(
     `INSERT INTO essentials.geo_overlap_pairs
        (seed_geo_id, seed_mtfcc, geofence_version, query_fingerprint, pairs, pair_count, computed_at)
      SELECT e.geo_id, e.mtfcc, $5::bigint, $6, e.pairs::jsonb, e.pair_count, now()
@@ -175,9 +192,9 @@ export async function writeStoredPairs(
  * Looked up by the (geo_id, mtfcc) key, so it is an index lookup per seed rather
  * than a scan.
  */
-export async function filterSeedsPresent(seeds: GeoPair[]): Promise<GeoPair[]> {
+export async function filterSeedsPresent(seeds: GeoPair[], db: Queryable = pool): Promise<GeoPair[]> {
   if (seeds.length === 0) return [];
-  const { rows } = await pool.query(
+  const { rows } = await db.query(
     `SELECT DISTINCT gb.geo_id, gb.mtfcc
        FROM unnest($1::text[], $2::text[]) AS seed(geo_id, mtfcc)
        JOIN essentials.geofence_boundaries gb
@@ -196,8 +213,12 @@ export async function filterSeedsPresent(seeds: GeoPair[]): Promise<GeoPair[]> {
  *
  * Returns the number of rows deleted.
  */
-export async function sweepSupersededPairs(version: string, fingerprint: string): Promise<number> {
-  const res = await pool.query(
+export async function sweepSupersededPairs(
+  version: string,
+  fingerprint: string,
+  db: Queryable = pool
+): Promise<number> {
+  const res = await db.query(
     `DELETE FROM essentials.geo_overlap_pairs
       WHERE geofence_version IS DISTINCT FROM $1::bigint
          OR query_fingerprint IS DISTINCT FROM $2`,
