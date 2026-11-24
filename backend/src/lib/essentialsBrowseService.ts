@@ -16,6 +16,7 @@ import {
   UNRESOLVABLE_PAIR_MTFCC_SQL_LIST,
   type GeoPair,
 } from './geoIdGuard.js';
+import { fingerprintOf } from './geoOverlapStore.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
@@ -138,50 +139,17 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
 // (G52xx) are never seeds — they are RESULTS of resolution, not browse areas.
 const AREA_SEED_MTFCCS = ['G4020', 'G4040', 'G4110', 'G4120', 'X0001'];
 
-/**
- * Resolve every geofence boundary that overlaps a set of seed area geofences,
- * using the bidirectional PostGIS logic that mirrors the address path's
- * ST_Covers stack — but for an AREA (all overlapping districts) rather than a
- * single point:
- *   1. Sub-districts whose representative point falls WITHIN a seed
- *   2. Larger non-city districts that CONTAIN a seed's center point
- *   3. County / school / legislative districts whose interiors GENUINELY overlap
- *      a seed (ST_Intersects but NOT a zero-area boundary touch)
- *
- * Branch 3 is the key to completeness: county (G4020) and school (G54xx) used to
- * be captured by center-containment only (branches 1–2), so an area straddling
- * two counties or two school districts missed the ones not centered on it. They
- * are now matched by real interior overlap, exactly like legislative districts.
- *
- * Returns the matched (geo_id, mtfcc) pairs (seeds excluded — callers prepend
- * their own seeds). Each pair carries the MTFCC of the geofence it came from so
- * downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD and avoid the
- * 5-digit GEOID collision (e.g. State House 35 vs Salt Lake County, both 49035).
- */
-export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
-  if (seeds.length === 0) return [];
-  const seedGeoIds = seeds.map((s) => s.geo_id);
-  const seedMtfccs = seeds.map((s) => s.mtfcc);
-
-  // Cache keyed by the canonical (order-independent) seed set.
-  const cacheKey = `overlap:v2:${seeds
-    .map((s) => `${s.geo_id}::${s.mtfcc}`)
-    .sort()
-    .join(',')}`;
-  const cached = await cache.get<GeoPair[]>(cacheKey);
-  if (cached !== null) return cached;
-
-  // Split what used to be a single OR of three spatial predicates into a UNION
-  // ALL of three branches, each with an explicit bounding-box pre-filter
-  // (`&&`). Postgres cannot drive a GIST index through an OR of mixed-direction
-  // spatial predicates, so the old query did a full sequential scan of every
-  // geofence polygon (~4s for a single area). With one predicate structure per
-  // branch and a `&&` pre-filter, the planner uses the GIST index on
-  // geofence_boundaries.geometry to reduce each branch to an index-driven
-  // nested-loop join. Result semantics are identical — `&&` is a necessary
-  // condition for every branch's exact predicate, and the outer DISTINCT
-  // reproduces the original SELECT DISTINCT over the OR.
-  const intersectionQuery = `
+// Split what used to be a single OR of three spatial predicates into a UNION
+// ALL of three branches, each with an explicit bounding-box pre-filter
+// (`&&`). Postgres cannot drive a GIST index through an OR of mixed-direction
+// spatial predicates, so the old query did a full sequential scan of every
+// geofence polygon (~4s for a single area). With one predicate structure per
+// branch and a `&&` pre-filter, the planner uses the GIST index on
+// geofence_boundaries.geometry to reduce each branch to an index-driven
+// nested-loop join. Result semantics are identical — `&&` is a necessary
+// condition for every branch's exact predicate, and the outer DISTINCT
+// reproduces the original SELECT DISTINCT over the OR.
+export const OVERLAP_QUERY_SQL = `
     SELECT DISTINCT t.geo_id, t.mtfcc
     FROM (
       -- Branch 1: sub-districts whose representative point falls WITHIN the area
@@ -247,7 +215,52 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
     ) t
   `;
 
-  const { rows } = await pool.query(intersectionQuery, [seedGeoIds, seedMtfccs]);
+/**
+ * The identity of this resolver's answer, as stored rows and cache keys see it.
+ *
+ * 🔴 It is a hash of OVERLAP_QUERY_SQL itself, so every TypeScript constant that
+ * changes the answer is covered the moment it is interpolated into that string:
+ * UNRESOLVABLE_PAIR_MTFCC_SQL_LIST (branches 1 and 2), branch 2's
+ * ('G4110','G4120') exclusion, branch 3's seven-MTFCC list and
+ * MIN_OVERLAP_FRACTION. Change any of them and every stored row and cache entry
+ * computed under the old rule becomes unreadable rather than wrong.
+ */
+export const OVERLAP_QUERY_FINGERPRINT = fingerprintOf(OVERLAP_QUERY_SQL);
+
+/**
+ * Resolve every geofence boundary that overlaps a set of seed area geofences,
+ * using the bidirectional PostGIS logic that mirrors the address path's
+ * ST_Covers stack — but for an AREA (all overlapping districts) rather than a
+ * single point:
+ *   1. Sub-districts whose representative point falls WITHIN a seed
+ *   2. Larger non-city districts that CONTAIN a seed's center point
+ *   3. County / school / legislative districts whose interiors GENUINELY overlap
+ *      a seed (ST_Intersects but NOT a zero-area boundary touch)
+ *
+ * Branch 3 is the key to completeness: county (G4020) and school (G54xx) used to
+ * be captured by center-containment only (branches 1–2), so an area straddling
+ * two counties or two school districts missed the ones not centered on it. They
+ * are now matched by real interior overlap, exactly like legislative districts.
+ *
+ * Returns the matched (geo_id, mtfcc) pairs (seeds excluded — callers prepend
+ * their own seeds). Each pair carries the MTFCC of the geofence it came from so
+ * downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD and avoid the
+ * 5-digit GEOID collision (e.g. State House 35 vs Salt Lake County, both 49035).
+ */
+export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
+  if (seeds.length === 0) return [];
+  const seedGeoIds = seeds.map((s) => s.geo_id);
+  const seedMtfccs = seeds.map((s) => s.mtfcc);
+
+  // Cache keyed by the canonical (order-independent) seed set.
+  const cacheKey = `overlap:v2:${seeds
+    .map((s) => `${s.geo_id}::${s.mtfcc}`)
+    .sort()
+    .join(',')}`;
+  const cached = await cache.get<GeoPair[]>(cacheKey);
+  if (cached !== null) return cached;
+
+  const { rows } = await pool.query(OVERLAP_QUERY_SQL, [seedGeoIds, seedMtfccs]);
   const result = rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
   await cache.set(cacheKey, result, OVERLAP_CACHE_TTL_SECONDS);
   return result;
