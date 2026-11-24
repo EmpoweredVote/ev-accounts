@@ -1,6 +1,7 @@
 # PICKUP — start here after a context clear
 
 Rewritten 2026-11-24, after **Idaho** (7 offices, a whole department returned).
+▶▶ **NEW MEXICO IS NEXT AND IS READY** — see "New Mexico is the next one up" below before step 1.
 **Read `REGISTER.md` first** (the queue, the recipe, the template corrections, Rulings A and B),
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
@@ -84,12 +85,42 @@ of the recipe before anything else. The three biggest are:
 |---|---|---|---|
 | 1 | `GA STATE_EXEC` | 10 | 🔴 **ALL TEN REFUSED, 2026-11-22** — the first state in the pass where no office could be dated. Re-read the section before spending a day on it. |
 | 2 | `AR STATE_EXEC` | 7 | 🔴 five refused with a cited window, two still open. |
-| 3 | `NM STATE_EXEC` | 7 | ✅ sourced. **Ready to write.** |
+| 3 | `NM STATE_EXEC` | 7 | ✅ sourced, and **`NM STATE_BOARD_EDUCATION` (4) is sourced on the same day** — see below. |
 
 ▶ **The register sorts dated bodies first and sinks undated ones below them, largest first.** With
 one dated body left that ordering has stopped doing useful work: read the table as "44 bodies, pick
 a state whose `DATES.md` section is already green". **`NM`, `NE`, `CT`, `TX` and `CO`
 are sourced and unwritten** — those are the next waves, and none of them needs new research.
+
+### ▶▶ NEW MEXICO IS THE NEXT ONE UP, AND IT IS READY — MEASURED 2026-11-24
+
+**11 offices across BOTH its bodies, all on 2027-01-01** — `NM STATE_EXEC` 7 and
+`NM STATE_BOARD_EDUCATION` 4. `DATES.md` § NM is green and needs no new research: **two
+instruments, nearly the same words, one day** — `N.M. Const. Art. V § 1` names the seven executives
+one by one, and `HB 9 § 3(B)` (`NMSA § 22-3B-3`) dates the Public Education Commission in nearly
+the same words. 🟢 **The PEC `inauguration_rules` row was verified** when the state was sourced.
+
+`derive-seating-wave.mjs --state nm --type STATE_EXEC --type STATE_BOARD_EDUCATION`, run
+2026-11-24: **11 winners · 11 offices · 6 re-elections · 5 handovers · 11 called**, digest
+`69f7470ea2e442a225dd40ac6b0f7b94`, and the **only blocker is `no_date` ×11** — so step 2 is done
+and the wave starts at step 3.
+
+- 🟢 **NO PEOPLE FILE AND NO RULING A** on the face of it: no `winner_no_record` and no
+  `multi_winner` blocker. ▶ **Sweep `politicians` anyway and size it from the sweep**, the way
+  Arizona, Alabama and Idaho were.
+- 🔴🔴 **2027-01-01 IS UTAH'S DAY AND IT ALREADY CARRIES 50 ROWS** (`ut-const-art6-first-day-january`,
+  50 date rows and 50 terms, measured 2026-11-24). **New Mexico is the SECOND state on it**, so
+  every count about that day is a **DELTA that names Utah's `rule_id`** — not a total. ⚠ And the
+  near miss is live in the other direction too: **2027-01-04**, the first Monday, now carries **241
+  date rows and 229 terms** across Arizona, Wisconsin, California and Idaho.
+- 🔴🔴 **THE RESULTS GAP IS ALREADY WRITTEN DOWN AND IT IS NOT THE REGISTER'S 4.** `SOURCING.md`
+  records: **PEC District 7 was on the ballot, we hold NO race row for it, and the seat CHANGED
+  HANDS.** New Mexico holds **10 PEC office rows** and only 4 are pending. ▶ **Read that before
+  trusting "4 of 10 were up"** — some of the other 6 are genuinely staggered and at least one is a
+  missing result, and those are different facts. It is Utah's "no race row at all" class again.
+- ⚠ **A CHANGED-HANDS SEAT WITH NO RESULT IS THE SHAPE THAT LEAVES SOMEBODY HOLDING A SEAT THEY
+  LOST** — Maryland's Kipke and Utah's Fiefia. Check whether District 7's sitting holder is in this
+  wave before seating, and **do not tidy it**: the fix is the result.
 
 - 🟢 **THREE STATES NOW PROVE THE PEOPLE FILE IS NOT AUTOMATIC.** Arizona needed none at all and
   **Alabama none either**; Maryland needed 60 links and 25 creations where the column said 85
@@ -420,7 +451,7 @@ separately, each reads as a one-state oddity.**
 - **Env:** the worktree has no `.env`. Prefix commands with
   `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
 - **Steward:** jurisdiction leases are 24h and expire on their own. `state:id` was taken for this
-  work and lapses 2026-11-25. **Claim the next state before starting it.**
+  work and lapses 2026-11-25. **Claim `state:nm` before starting New Mexico.**
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
   CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
