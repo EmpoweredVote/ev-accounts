@@ -196,13 +196,51 @@ export async function buildStatus(client, opts = {}) {
            -- matching, returned NULL, and the seat fell BACKWARDS from "seated" to "certified"
            -- on the very day it was sworn in. Anchoring on the election date makes both states
            -- reachable and lets the date comparison in seatState do its job.
+           -- 🔴🔴 ASKED OVER THE OFFICES THIS RACE CAN FILL, NOT OVER THE OFFICE IT HANGS ON.
+           -- A ROW HERE IS A RACE AND A SEATING IS AN OFFICE, and for a multi-seat contest
+           -- those are different things: the race hangs on ONE office row while its winners
+           -- are seated across the SIBLING offices of the same district, chamber and title.
+           -- Asking "t.office_id = o.id" therefore finds at most one of them and reports a
+           -- fully seated body as "called", with "partlySeated" set — which reads as
+           -- outstanding work and is not.
+           --
+           -- Measured in production 2026-11-24, old question against new, over all 2,303
+           -- races of 2026-11-03: **43 races move and NOT ONE loses a winner**, and they are
+           -- exactly the two mechanisms this file's own notes had already recorded —
+           --   • 38 Maryland Delegate races (12 with two winners, 26 with three). Maryland
+           --     elects up to three Delegates from one contest and REGISTER.md's Ruling A
+           --     seats them into sibling offices. By the old question 0 of 38 read seated;
+           --     by this one, 38 of 38.
+           --   • 5 California at-large bodies carrying 17 seatings between them — Crescenta
+           --     Valley Water (3), Culver City Unified (3), Mountain View Elementary (3),
+           --     Santa Monica Community College (4), Santa Monica-Malibu Unified (4) — which
+           --     CC_0456 seated in full on 2026-11-18 and which have read "called" since.
+           -- ⚠ The THIRD recorded blindness is NOT fixed by this and must not be: CC_0434's
+           -- and CC_0437's 102 cancelled-election seatings are invisible because a cancelled
+           -- election has no winner to read, which is a fact about the race, not the office.
+           --
+           -- 🔴 THE RISK OF WIDENING IS OVER-COUNTING, AND IT IS BOUNDED THREE WAYS: the term
+           -- must belong to one of THIS race's own winners, it must start on or after the
+           -- election, and the sibling must match on district, chamber AND title — the same
+           -- "eligible set" Ruling A assigns within. Measured: **0 races where the widened
+           -- count exceeds the race's own winner count.** "control-election-transition-status
+           -- .mjs" plants the opposite fault — it takes one winner's term off a seated
+           -- multi-winner race and requires the race to fall back to "called".
            (SELECT min(t.term_start) FROM essentials.office_terms t
-             WHERE t.office_id = o.id AND t.politician_id = ANY(w.politician_ids)
-               AND t.term_start >= e.election_date)    AS winner_term_start,
+             JOIN essentials.offices o2 ON o2.id = t.office_id
+            WHERE o2.district_id = o.district_id
+              AND o2.chamber_id IS NOT DISTINCT FROM o.chamber_id
+              AND o2.title = o.title
+              AND t.politician_id = ANY(w.politician_ids)
+              AND t.term_start >= e.election_date)      AS winner_term_start,
            -- A multi-seat race is seated only when EVERY winner has a term.
            (SELECT count(DISTINCT t.politician_id) FROM essentials.office_terms t
-             WHERE t.office_id = o.id AND t.politician_id = ANY(w.politician_ids)
-               AND t.term_start >= e.election_date)    AS winners_seated,
+             JOIN essentials.offices o2 ON o2.id = t.office_id
+            WHERE o2.district_id = o.district_id
+              AND o2.chamber_id IS NOT DISTINCT FROM o.chamber_id
+              AND o2.title = o.title
+              AND t.politician_id = ANY(w.politician_ids)
+              AND t.term_start >= e.election_date)      AS winners_seated,
            (SELECT count(*) FROM live l WHERE l.race_id = r.id)  AS candidate_rows,
            (SELECT count(*) FROM live l WHERE l.race_id = r.id
               AND (l.result IS NULL OR l.result NOT IN (${sqlNotStandingList()})))
