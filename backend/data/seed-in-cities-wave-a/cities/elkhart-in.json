@@ -1,0 +1,103 @@
+{
+  "slug": "elkhart-in",
+  "geoid": "1820728",
+  "name": "Elkhart",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.cityofelkhartin.gov/city-council/",
+    "source_file": "raw/elkhart-in/council.html",
+    "council_name": "Elkhart Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Rod Roberson",
+      "source_url": "https://www.cityofelkhartin.gov/departments/mayors-office/about-mayor-roberson/",
+      "source_file": "raw/elkhart-in/mayor.html",
+      "note": "Page headed 'About Mayor Rod Roberson'; full given name not shown on page"
+    },
+    {
+      "office": "City Clerk",
+      "name": "Debra D. Barrett",
+      "source_url": "https://www.cityofelkhartin.gov/city-clerk-city-council/office-of-the-city-clerk/",
+      "source_file": "raw/elkhart-in/clerk.html",
+      "note": "Page heading reads 'Debra D. Barrett CMC, IAMC'; clerk since 2020-01-01"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Aaron Mishler",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Chad Crabtree",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "David Henke",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": "GIS layer spells 'David E. Henke'"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Dwight Fish",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Brent Curry",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": "GIS layer spells 'H. Brent Curry'; council page spells 'Brent Curry'"
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "LaTonya King",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Arvis Dawson",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": "Council President"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Alex Holtz",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tonda Hines",
+      "source_url": "https://www.cityofelkhartin.gov/city-council/",
+      "source_file": "raw/elkhart-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://services5.arcgis.com/RhRpaq8RpEQjlpir/arcgis/rest/services/City_Council_Districts/FeatureServer/1",
+    "feature_count": 9,
+    "district_field": "district",
+    "vintage": "effectiveyears field reads '2022' for most districts and '2024-' for District 3 (post-2020-census map)",
+    "notes": "Layer found through the ArcGIS Experience 'Elkhart Council Districts' (https://experience.arcgis.com/experience/60033fe0f40c44df88904ef9d6955b6e) linked from the city council page; item data saved at raw/elkhart-in/experience-data.json. returnCountOnly -> {\"count\":9}; lifecyclestatus='Active' count also 9. Values of field district: District 1..District 6 (6 polygons) and 'At-Large' (3 rows, one per at-large member). Layer also carries councilcontact names (saved raw/elkhart-in/layer1-attrs-small.json), matching the council page. Layer 0 of the service returned 'Invalid URL'."
+  },
+  "notes": "City Clerk page says the clerk also serves as Clerk of the Elkhart City Court, so a city court exists; the judge was not looked up (unknown). Mayor name taken from the page title 'About Mayor Rod Roberson'. Elkhart is a 6+3 council per the city's roster (code 'Elkhart city code Council Districts' on amlegal is JS-rendered; not saved)."
+}

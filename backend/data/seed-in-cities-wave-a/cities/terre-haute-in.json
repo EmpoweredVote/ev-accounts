@@ -1,0 +1,103 @@
+{
+  "slug": "terre-haute-in",
+  "geoid": "1875428",
+  "name": "Terre Haute",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://www.terrehaute.in.gov/government/city_council/index.php",
+    "source_file": "raw/terre-haute-in/council-index.html",
+    "council_name": "Terre Haute City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Brandon Sakbun",
+      "source_url": "https://www.terrehaute.in.gov/government/city_council/index.php",
+      "source_file": "raw/terre-haute-in/council-index.html",
+      "note": null
+    },
+    {
+      "office": "City Clerk",
+      "name": "Michelle Edwards",
+      "source_url": "https://www.terrehaute.in.gov/departments/staff_directory/index.php",
+      "source_file": "raw/terre-haute-in/staff-directory.html",
+      "note": "Staff directory lists first name Michelle, last name Edwards under City Clerk; the clerk page tags read 'clerk,michelle,edwards'. A middle initial is not on a saved page."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Kandace Hinton",
+      "source_url": "https://terrehaute.in.gov/government/city_council/city_council_district_maps.php",
+      "source_file": "raw/terre-haute-in/city_council_district_maps.php.html",
+      "note": "Also in the staff directory and the city ArcGIS layer for the district."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Amanda Thompson",
+      "source_url": "https://terrehaute.in.gov/government/city_council/city_council_district_maps.php",
+      "source_file": "raw/terre-haute-in/city_council_district_maps.php.html",
+      "note": "Confirmed by the staff directory and the city ArcGIS layer for the district; the directory misspells Thompson as 'Thompston'."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Cheryl Loudermilk",
+      "source_url": "https://terrehaute.in.gov/government/city_council/city_council_district_maps.php",
+      "source_file": "raw/terre-haute-in/city_council_district_maps.php.html",
+      "note": "Also in the staff directory and the city ArcGIS layer for the district."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Todd Nation",
+      "source_url": "https://terrehaute.in.gov/government/city_council/city_council_district_maps.php",
+      "source_file": "raw/terre-haute-in/city_council_district_maps.php.html",
+      "note": "Also in the staff directory and the city ArcGIS layer for the district."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "James \"Jim\" Chalos",
+      "source_url": "https://terrehaute.in.gov/government/city_council/city_council_district_maps.php",
+      "source_file": "raw/terre-haute-in/city_council_district_maps.php.html",
+      "note": "Also in the staff directory and the city ArcGIS layer for the district."
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Anthony Dinkel",
+      "source_url": "https://terrehaute.in.gov/government/city_council/city_council_district_maps.php",
+      "source_file": "raw/terre-haute-in/city_council_district_maps.php.html",
+      "note": "Also in the staff directory and the city ArcGIS layer for the district."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "George J. Azar",
+      "source_url": "https://www.terrehaute.in.gov/government/city_council/index.php",
+      "source_file": "raw/terre-haute-in/council-index.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tammy Boland",
+      "source_url": "https://www.terrehaute.in.gov/government/city_council/index.php",
+      "source_file": "raw/terre-haute-in/council-index.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Curtis A. DeBaun IV",
+      "source_url": "https://www.terrehaute.in.gov/government/city_council/index.php",
+      "source_file": "raw/terre-haute-in/council-index.html",
+      "note": "Staff directory prints 'Debaun IV'."
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer",
+    "feature_count": 6,
+    "district_field": "District",
+    "vintage": "City says districts were approved by the council in 2022 redistricting; layer names end 07262022",
+    "notes": "City-run MapServer with SIX layers, one polygon per district (ids 0-5 = D1..D6; names like GIS_ENG.SDE.D1_2016_3_07262022). Each layer's returnCountOnly -> {\"count\":1}; field District is an integer 1..6; Officehold holds the member name. Union the six layers to get the map. Names in the layers match the council page. Saved: raw/terre-haute-in/ts-layer0..5-attrs.json, mapserver.json. The city's interactive web app (terrehaute.maps.arcgis.com, id e03b22885b7440fe9de839746271219c) points to this MapServer and to a separate 68-polygon grid layer (Council_Districts FeatureServer, grid cells, not districts)."
+  },
+  "notes": "Council page: 2026 President Anthony Dinkel, Vice-President Amanda Thompson; says 'three at large members'. Staff directory lists a 'City Judge' row (name not read), so a city court exists. The district seats and numbers come from the district-maps page and the staff directory. No appointments shown."
+}

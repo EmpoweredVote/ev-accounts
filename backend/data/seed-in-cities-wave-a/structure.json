@@ -1,0 +1,145 @@
+[
+ {
+  "slug": "evansville-in",
+  "name": "Evansville",
+  "geoid": "1822000",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Evansville City Council",
+  "structure_source": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16"
+ },
+ {
+  "slug": "south-bend-in",
+  "name": "South Bend",
+  "geoid": "1871000",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "South Bend Common Council",
+  "structure_source": "https://southbendin.gov/official/"
+ },
+ {
+  "slug": "carmel-in",
+  "name": "Carmel",
+  "geoid": "1810342",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Carmel City Council",
+  "structure_source": "https://web.archive.org/web/20261019082710/https://www.carmel.in.gov/government/city-council"
+ },
+ {
+  "slug": "lafayette-in",
+  "name": "Lafayette",
+  "geoid": "1840788",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Lafayette Common Council",
+  "structure_source": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council"
+ },
+ {
+  "slug": "muncie-in",
+  "name": "Muncie",
+  "geoid": "1851876",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Muncie City Council",
+  "structure_source": "https://www.muncie.in.gov/council"
+ },
+ {
+  "slug": "westfield-in",
+  "name": "Westfield",
+  "geoid": "1882700",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Westfield City Council",
+  "structure_source": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0"
+ },
+ {
+  "slug": "terre-haute-in",
+  "name": "Terre Haute",
+  "geoid": "1875428",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Terre Haute City Council",
+  "structure_source": "https://www.terrehaute.in.gov/government/city_council/index.php"
+ },
+ {
+  "slug": "elkhart-in",
+  "name": "Elkhart",
+  "geoid": "1820728",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Elkhart Common Council",
+  "structure_source": "https://www.cityofelkhartin.gov/city-council/"
+ },
+ {
+  "slug": "jeffersonville-in",
+  "name": "Jeffersonville",
+  "geoid": "1838358",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Jeffersonville City Council",
+  "structure_source": "https://cityofjeff.net/city-council/"
+ },
+ {
+  "slug": "mishawaka-in",
+  "name": "Mishawaka",
+  "geoid": "1849932",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Mishawaka Common Council",
+  "structure_source": "https://mishawaka.in.gov/government/city-directory"
+ },
+ {
+  "slug": "lawrence-in",
+  "name": "Lawrence",
+  "geoid": "1842426",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Lawrence Common Council",
+  "structure_source": "https://cityoflawrence.org/node/163?year=2023"
+ },
+ {
+  "slug": "new-albany-in",
+  "name": "New Albany",
+  "geoid": "1852326",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "New Albany City Council",
+  "structure_source": "https://cityofnewalbany.com/city-council/"
+ },
+ {
+  "slug": "goshen-in",
+  "name": "Goshen",
+  "geoid": "1828386",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Goshen Common Council",
+  "structure_source": "https://goshen.in.gov/?p=5557"
+ }
+]

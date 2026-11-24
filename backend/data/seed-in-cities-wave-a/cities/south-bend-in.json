@@ -1,0 +1,103 @@
+{
+  "slug": "south-bend-in",
+  "geoid": "1871000",
+  "name": "South Bend",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://southbendin.gov/official/",
+    "source_file": "raw/south-bend-in/official.html",
+    "council_name": "South Bend Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "James Mueller",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": null
+    },
+    {
+      "office": "City Clerk",
+      "name": "Bianca Tirado",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Canneth Lee",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": "Page also says he is President of the Common Council."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Ophelia Gooden-Rodgers",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": "City GIS layer spells it 'OPHELIA GOODEN RODGERS'."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Sharon McBride",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Heidi Beidinger",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": "Page lists 'Dr. Heidi Beidinger'. A 2024 council notice found in search named Troy Warner in District 4 (unsaved lead); the city page and GIS layer (edited 2026-06-11) now name Beidinger, so a mid-term change is likely; date not stated."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Sherry Bolden-Simpson",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Sheila Niezgodski",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Oliver Davis",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": "Page lists 'Dr. Oliver Davis'."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Karen White",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": "Page heading 'Karen White'; body text says Karen L. White."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Rachel Tomas Morgan",
+      "source_url": "https://southbendin.gov/official/",
+      "source_file": "raw/south-bend-in/official.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://gis.southbendin.gov/arcgis/rest/services/LandRecords/Council_Districts/MapServer/0",
+    "feature_count": 6,
+    "district_field": "Num",
+    "vintage": "Features created 2022-06-23 (post-2020-census redistricting); some edited later for councilor names.",
+    "notes": "MapServer layer (not FeatureServer); query endpoint works. count query returned {\"count\":6}. Num = '1'..'6' (district number); Dist = '1301'..'1306' (precinct-style code); Council_Me holds councilor name. Saved: raw/south-bend-in/arcgis-count.json, arcgis-attrs.json, arcgis-service.json."
+  },
+  "notes": "Structure counted from the city's elected-officials page (6 districts + 3 at-large, City Clerk). The page does not state the council size in prose; it lists 6 district and 3 at-large members. Page lists no city court judge; could not confirm whether South Bend has a city court (St. Joseph County has superior/probate courts); left unknown. No appointment dates stated."
+}

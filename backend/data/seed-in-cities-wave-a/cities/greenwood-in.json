@@ -1,0 +1,103 @@
+{
+  "slug": "greenwood-in",
+  "geoid": "1829898",
+  "name": "Greenwood",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://www.greenwood.in.gov/officials",
+    "source_file": "raw/greenwood-in/officials.html",
+    "council_name": "Greenwood Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Mark W. Myers",
+      "source_url": "https://www.greenwood.in.gov/department/index.php?structureid=30",
+      "source_file": "raw/greenwood-in/mayor.html",
+      "note": "Page: 'The Honorable Mark W. Myers leads the City of Greenwood.'"
+    },
+    {
+      "office": "City Clerk",
+      "name": "Jeannine Myers",
+      "source_url": "https://www.greenwood.in.gov/clerk",
+      "source_file": "raw/greenwood-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Mike Campbell",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": "President"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Erin Kasch",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Steven Moan",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Linda Gibson",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": "Vice President"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Ezra Hill",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Darin Hoggatt",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": "CONFLICT: the city's ArcGIS council layer lists 'Michael Williams' for District 3 (raw/greenwood-in/arcgis-attrs.json). The council web page is the primary source and names Hoggatt; the GIS layer looks stale."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Teri Manship",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "J. David Hopper",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Dave Lekse",
+      "source_url": "https://www.greenwood.in.gov/officials",
+      "source_file": "raw/greenwood-in/officials.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://greenwoodgis.greenwood.in.gov/arcgis/rest/services/Council/CommonCouncilGreenwood/MapServer/0",
+    "feature_count": 9,
+    "district_field": "CouncilDistrict",
+    "vintage": "not stated",
+    "notes": "Layer found via the city's District Boundary Map web app (https://greenwood.maps.arcgis.com/apps/Viewer/index.html?appid=3bfba91b3ccc4dfaa7f0236174aac84c -> webmap 042a7b8e663b40c9ac53cf3dbf2425c2). returnCountOnly -> {\"count\":9}: 6 district polygons plus 3 At-Large rows (CouncilDistrict values 'District 1'..'District 6' and 'At-Large' x3). Fields: OBJECTID, Member, CouncilDistrict, Email, Phone, Photo. Geometry type is polygon. District 3 Member in the layer is Michael Williams (stale vs the council page). Saved raw/greenwood-in/arcgis-count.json, arcgis-attrs.json, webmap.json, appdata.json. Geometry of the At-Large rows was not checked."
+  },
+  "notes": "Clerk page says the Clerk keeps records for the City Court, so a City Court exists; the judge is not named. Council page has no mid-term appointment notes. The council page is the live page fetched today."
+}

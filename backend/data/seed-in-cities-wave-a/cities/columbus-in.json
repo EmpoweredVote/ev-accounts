@@ -1,0 +1,103 @@
+{
+  "slug": "columbus-in",
+  "geoid": "1814734",
+  "name": "Columbus",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.columbus.in.gov/city-council/",
+    "source_file": "raw/columbus-in/council.html",
+    "council_name": "Columbus City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Mary K. Ferdon",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": "Read from site header 'Mayor Mary K. Ferdon'"
+    },
+    {
+      "office": "City Clerk",
+      "name": "Luann Welmer",
+      "source_url": "https://www.columbus.in.gov/city-clerk/",
+      "source_file": "raw/columbus-in/clerk.html",
+      "note": "Page: 'Luann Welmer is the City Clerk.'"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Chris Bartels",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Elaine Hilber",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": "Marked ** = Vice-President on page"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Jerone Wood",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Frank Miller",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Kent Anderson",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": "Marked * = President on page"
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Jay Foyst",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Josh Burnett",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tom Dell",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Grace Kestler",
+      "source_url": "https://www.columbus.in.gov/city-council/",
+      "source_file": "raw/columbus-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.columbus.in.gov/wp-content/uploads/2024/01/New-District-Map-Final-City-Council-2022.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Bartholomew County GIS Department, Rev Oct 13, 2022; states 'City Council Districts 7, 8 & 9 are At-Large'",
+    "notes": "Saved at raw/columbus-in/district-map-2022.pdf. No ArcGIS layer found; the Bartholomew County Surveyor page lists a downloadable 'City Council Districts' GIS map but no service URL. Note gis.columbus.gov search hits are Columbus, Ohio, not this city."
+  },
+  "notes": "Terms on page run 01/01/2024-12/31/2027. City became second class in 2024 (6+3). Search of 2026 council minutes (not saved) suggests Frank Miller presided in Jan 2026 while the page marks Kent Anderson as President; not relied on."
+}

@@ -1,0 +1,103 @@
+{
+ "slug": "richmond-in",
+ "geoid": "1864260",
+ "name": "Richmond",
+ "structure": {
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "city_court_judge": "unknown",
+  "source_url": "https://richmondindiana.gov/city-council",
+  "source_file": "raw/richmond-in/city-council.html",
+  "council_name": "Richmond Common Council"
+ },
+ "holders": [
+  {
+   "office": "Mayor",
+   "name": "Ron Oler",
+   "source_url": "https://www.richmondindiana.gov/departments/mayor",
+   "source_file": "raw/richmond-in/mayor.html",
+   "note": "Page lists 'Ronald (Ron) Oler, Ph.D.'"
+  },
+  {
+   "office": "City Clerk",
+   "name": "Karen Chasteen",
+   "source_url": "https://www.richmondindiana.gov/departments/clerk",
+   "source_file": "raw/richmond-in/clerk.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Justin Burkhardt",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Jane Bumbalough",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Jerry Purcell",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 1",
+   "name": "Doug Goss",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 2",
+   "name": "Lucinda Wright",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": "Page prints 'Dr. Lucinda Wright'. Appointed by Wayne County Democrat caucus, sworn in Jul 30 2021 (raw/richmond-in/wright-news.html)"
+  },
+  {
+   "office": "Council Member, District 3",
+   "name": "Bill Engle",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 4",
+   "name": "Larry Parker",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 5",
+   "name": "Anne Taylor",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 6",
+   "name": "Gary Turner",
+   "source_url": "https://richmondindiana.gov/city-council",
+   "source_file": "raw/richmond-in/city-council.html",
+   "note": null
+  }
+ ],
+ "council_map": {
+  "kind": "none",
+  "url": "http://wcrgis.maps.arcgis.com/apps/webappviewer/index.html?id=edb6a358b9644d758cf79e6eb68d9a01",
+  "feature_count": null,
+  "district_field": null,
+  "vintage": null,
+  "notes": "City links an interactive map (Wayne County GIS web app 'Richmond City Council District Map'). Its web map item 4f20e7bf11dc49a3a27fcd64b1367d3b (saved raw/richmond-in/webmap.json) has layer 'Richmond Council District' at https://gisweb4.co.wayne.in.us/arcgis/rest/services/GIS_Data_SDE_SDE_Richmond_Council_District/FeatureServer/3, but host gisweb4.co.wayne.in.us does not resolve from here (curl: Could not resolve host), so count and field could not be confirmed. May be reachable later or from another network. No redistricting ordinance or PDF found (one search)."
+ },
+ "notes": "Council page (undated) lists 9 members. Structure inferred from 6 numbered districts + 3 At Large on the page and 'City Clerk' title; not from city code. Mayor Oler took office Jan 2024 (2024 swearing-in news item on mayor page). Clerk title shown on clerk page. City court: nothing on city pages (unknown). No other mid-term appointments checked beyond Wright (2021)."
+}

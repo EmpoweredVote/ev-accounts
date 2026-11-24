@@ -1,0 +1,103 @@
+{
+  "slug": "mishawaka-in",
+  "geoid": "1849932",
+  "name": "Mishawaka",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://mishawaka.in.gov/government/city-directory",
+    "source_file": "raw/mishawaka-in/directory.html",
+    "council_name": "Mishawaka Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Dave Wood",
+      "source_url": "https://mishawaka.in.gov/government/elected-appointed-officials/mayor/",
+      "source_file": "raw/mishawaka-in/mayor.html",
+      "note": "Name appears only as image caption 'Mayor Dave Wood.' and 'Mayor Dave Wood Youth Advisory Council' on the city's Office of the Mayor page; the page does not print a title line next to the name."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Deborah S. (Ladyga) Block",
+      "source_url": "https://mishawaka.in.gov/government/elected-appointed-officials/office-of-the-city-clerk/",
+      "source_file": "raw/mishawaka-in/clerk-office.html",
+      "note": "Page: 'City Clerk Deborah S. (Ladyga) Block has held the position since 1992.'"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Dale Emmons",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": "Directory lists as 'Council - 1st'. GIS layer spells District 1 as Dale \"Woody\" Emmons."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Matt Carroll",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Lou Ann Hazen",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Kate Voelker",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Anthony “Tony” Violi",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Ron Banicki",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Gregg Hixenbaugh",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": "Directory lists 'Council At Large'. Council page (titled 2024 Mishawaka Common Council) shows only Hixenbaugh and Hahn; directory and GIS layer show all three."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Lacy Hahn",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": "Directory lists 'Council At Large'. Council page (titled 2024 Mishawaka Common Council) shows only Hixenbaugh and Hahn; directory and GIS layer show all three."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Matt Mammolenti",
+      "source_url": "https://mishawaka.in.gov/government/city-directory",
+      "source_file": "raw/mishawaka-in/directory.html",
+      "note": "Directory lists 'Council At Large'. Council page (titled 2024 Mishawaka Common Council) shows only Hixenbaugh and Hahn; directory and GIS layer show all three."
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://maps.mishawaka.in.gov/arcgis/rest/services/Public/Council_Districts/MapServer/0",
+    "feature_count": 9,
+    "district_field": "DISTRICT",
+    "vintage": "Service description 'Mishawaka Council Districts 2023'; city also posts 'Current Council District Boundaries (2023)' PDFs",
+    "notes": "returnCountOnly -> {\"count\":9}. Query shows one feature each for DISTRICT 1-6 (precinct field values 0901-0906, NAME = council member) and three features with DISTRICT 'At-Large' (NAMEs Gregg Hixenbaugh, Matt Mammolenti, Lacy Hahn). So count 9 = 6 districts + 3 at-large entries, not 9 geographic districts; at-large features should not be treated as district polygons. Saved: raw/mishawaka-in/layer0-query.json, layer0-count.json. Layer has NAME, PHONE, EMAIL fields. MapServer (not FeatureServer), spatial ref wkid 2244/2965."
+  },
+  "notes": "Directory source: mishawaka.in.gov city directory page, fetched 2026-11-24. Mayor Wood's name is from image captions only. City court: no evidence read; unknown."
+}

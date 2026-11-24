@@ -1,0 +1,103 @@
+{
+  "slug": "anderson-in",
+  "geoid": "1801468",
+  "name": "Anderson",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+    "source_file": "raw/anderson-in/wayback-council.html",
+    "council_name": "Anderson City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Thomas J. Broderick, Jr.",
+      "source_url": "https://cityofanderson.com/172/Mayors-Office",
+      "source_file": "raw/anderson-in/wayback-mayor.html",
+      "note": "Wayback copy of the city site (live site reset connections from this machine)"
+    },
+    {
+      "office": "City Clerk",
+      "name": "Sheila Ashley",
+      "source_url": "https://www.cityofanderson.com/149/City-Clerk",
+      "source_file": "raw/anderson-in/wayback-clerk.html",
+      "note": "Wayback copy; page lists 'Sheila Ashley, City Clerk'"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tiffany Harless",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Rachel Landers",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Mark Turner",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Jennifer Culp",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19; page lists name then ' - District N'"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Jeff Freeman",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19; page lists name then ' - District N'"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Greg Graham",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19; page lists name then ' - District N'"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Ollie Dixon",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19; page lists name then ' - District N'"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Robin Wagner",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19; page lists name then ' - District N'"
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Joe Newman",
+      "source_url": "http://web.archive.org/web/2026/https://cityofanderson.com/132/City-Council",
+      "source_file": "raw/anderson-in/wayback-council.html",
+      "note": "Wayback copy dated 2026-10-19; page lists name then ' - District N'"
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://cityofanderson.com/DocumentCenter/View/5266/District-Map",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "'Map H' approved January 2025 after federal redistricting lawsuit (Yahoo/IPR news, saved raw/anderson-in/district-map-news.html, ipr-map.html)",
+    "notes": "Council page also links per-district maps (DocumentCenter/View/3722-3727, older numbering). Saved raw/anderson-in/district-map.pdf is the Wayback copy of View/5266 (not opened as text). No ArcGIS layer found. The 2025 ordinance carries district descriptions."
+  },
+  "notes": "The live site cityofanderson.com resets connections (curl/WebFetch ECONNRESET), so every official page is an archive.org copy. Anderson City Court exists (raw/anderson-in/wayback-court.html); judge not looked up. News of Jan 2025 (raw/anderson-in/new-council-news.html) agrees: Graham District 3, Culp 1st District, Landers at-large. Mayor Culp run announced June 2026; Culp cannot run for both."
+}

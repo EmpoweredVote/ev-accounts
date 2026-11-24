@@ -1,0 +1,103 @@
+{
+  "slug": "noblesville-in",
+  "geoid": "1854180",
+  "name": "Noblesville",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+    "source_file": "raw/noblesville-in/council-wayback.html",
+    "council_name": "Noblesville Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Chris Jensen",
+      "source_url": "https://web.archive.org/web/20261015213205/https://www.noblesville.in.gov/",
+      "source_file": "raw/noblesville-in/home-wayback.html",
+      "note": "Wayback copy of the city home page dated 2026-10-15, news items name 'Noblesville Mayor Chris Jensen'. Also in council-wayback.html photo caption (Sept 2024)."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Evelyn Lees",
+      "source_url": "https://web.archive.org/web/20250215164407/https://www.noblesville.in.gov/department/index.php?structureid=2",
+      "source_file": "raw/noblesville-in/clerk-wayback.html",
+      "note": "Snapshot dated 2025-02-15: 'The City Clerk is an elected office currently held by Evelyn Lees, who began her first term in 2016.' Not re-confirmed after Feb 2025."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Mike Davis",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. Vice President. "
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Todd Thurston",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Aaron Smith",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Mark Boice",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "David Johnson",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Megan Wiles",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. President. "
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Pete Schwartz",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Evan Elliott",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Darren Peterson",
+      "source_url": "https://web.archive.org/web/20250414132726/https://www.noblesville.in.gov/council/",
+      "source_file": "raw/noblesville-in/council-wayback.html",
+      "note": "Wayback snapshot 2025-04-14. "
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://web.archive.org/web/20250118062813/https://www.noblesville.in.gov/egov/documents/1706541444_02524.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "PDF file id 1706541444 (about Jan 2024); shows 6 numbered districts with the current members' names; at-large listed separately",
+    "notes": "Saved as raw/noblesville-in/districts-map.pdf; read as an image, it matches the council page names/districts. Live page https://www.noblesville.in.gov/ is behind a Cloudflare check for curl, so Wayback copies were used. Likely GIS lead: https://gis1.hamiltoncounty.in.gov/ArcGIS/rest/services/HamCoPolitical/MapServer/7 ('Municipal Council Districts', named in a search result). INACCESSIBLE: the host resets the connection (TLS) for curl and node, so count/fields not checked and it is not known whether it holds Noblesville."
+  },
+  "notes": "Council page snapshot is April 2025 (latest usable); the current 2023-elected council would still sit through 2027 unless someone was replaced; not confirmed after April 2025. The live noblesville.in.gov/mayor and /council pages could not be saved (Cloudflare bot check); Wayback copy of /mayor (Jan 2026) returned a not-found style page without names. Clerk page says the Clerk also serves as statutory Clerk of the Noblesville City Court, so a city court exists; the judge is not named here. Noblesville is a second-class city (6+3, City Clerk plus appointed controller)."
+}

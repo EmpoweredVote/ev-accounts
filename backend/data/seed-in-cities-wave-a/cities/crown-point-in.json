@@ -1,0 +1,89 @@
+{
+ "slug": "crown-point-in",
+ "geoid": "1816138",
+ "name": "Crown Point",
+ "structure": {
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "city_court_judge": "yes",
+  "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+  "source_file": "raw/crown-point-in/City-Council.html",
+  "council_name": "Crown Point City Council"
+ },
+ "holders": [
+  {
+   "office": "Mayor",
+   "name": "Peter D. Land",
+   "source_url": "https://www.crownpoint.in.gov/195/Mayor-Peter-D-Land",
+   "source_file": "raw/crown-point-in/195.html",
+   "note": "page title 'Mayor Peter D. Land'"
+  },
+  {
+   "office": "Clerk-Treasurer",
+   "name": "Dave Benson",
+   "source_url": "https://www.crownpoint.in.gov/272/Clerk-Treasurer",
+   "source_file": "raw/crown-point-in/272.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Zack Bryan",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Scott Evorik",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 1",
+   "name": "Chad Jeffries",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": "Page spells 'Chad Jeffries' in the member label and 'Chad Jefferies' in the bio link text"
+  },
+  {
+   "office": "Council Member, District 2",
+   "name": "Robert Clemons",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 3",
+   "name": "Andrew Kyres",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 4",
+   "name": "Laura Sauerman",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 5",
+   "name": "Joe Sanders",
+   "source_url": "https://www.crownpoint.in.gov/197/City-Council",
+   "source_file": "raw/crown-point-in/City-Council.html",
+   "note": null
+  }
+ ],
+ "council_map": {
+  "kind": "pdf",
+  "url": "https://www.crownpoint.in.gov/DocumentCenter/View/1207/City-Council-District-Map_Updated-2022-PDF",
+  "feature_count": null,
+  "district_field": null,
+  "vintage": "'City Council District Map_Updated 2022' (saved raw/crown-point-in/council-district-map-2022.pdf, 1 page)",
+  "notes": "No ArcGIS layer found (arcgis.com searches empty). City GIS page links Lake County portal https://portico.mygisonline.com/portals/lakein/ (not an ArcGIS REST service; not examined). Lakeshore Public Media 2022-12-09 covers the redistricting (found by search, not fetched)."
+ },
+ "notes": "Structure 5 district + 2 at-large, Clerk-Treasurer, so third class despite pop 35,097. Council page photo caption lists the same seven names. Page undated; city site shows Nov 2026 content (calendar, 2026 road work). Mayor name also from 2023 precinct results via search (not fetched). Saved Mayor/Clerk pages: raw/crown-point-in/195.html and 272.html (copies of Mayor-Peter-D-Land.html, Clerk-Treasurer.html). City Court Judge Kent Jeffirs listed in site menu (raw/crown-point-in/City-Court.html), out of scope. Clerk-Treasurer page text says 'City Treasurer Dave Benson'; menu says 'Clerk-Treasurer Dave Benson'."
+}
