@@ -3811,7 +3811,46 @@ genuinely unbounded**. Observed practice, two cycles: **the following day**.
 
 ---
 
-## CT — Connecticut · 5 offices in the register, **6 in law** · ✅ sourced 2026-11-23 — **2027-01-06**, and one clause covers the whole state
+## CT — Connecticut · 5 offices in the register, **6 in law** · ✅✅ APPLIED 2026-11-24 (`CC_0509` / `CC_0510`) — **2027-01-06**, a clause with NO escape hatch, and a rival only a document could refuse
+
+> ✅✅ **APPLIED 2026-11-24.** `CC_0509` dated 5 offices and `CC_0510` seated 5 winners, all
+> re-elections, all `called`. **This section's answer was right and the re-read added four things
+> it did not have** — each one below, flagged where it belongs. 🟢 Nothing in it was wrong.
+>
+> 1. 🔴🔴 **§ 2 CARRIES NO RESIDUAL CLAUSE AT ALL, AND THIS SECTION NEVER SAID SO.** It is the
+>    first clause in the pass with no escape hatch to discharge — no *"unless otherwise provided
+>    by law"*, no *"except as otherwise provided in this Constitution"*. That is a **stronger**
+>    position than Nebraska's (which yields to "this Constitution or … law") or New Mexico's
+>    (the constitution alone), and it means **no statute can displace it, so no statute sweep was
+>    owed**. The constitution was swept anyway — 14 articles, 88 section headings — because
+>    another *constitutional* provision could. Nothing displaces it, and a **fourth** instrument
+>    turned up: `art. V § 4` commences probate judges on the same day.
+> 2. 🔴🔴 **THE CYCLE CHECK BELOW CANNOT TELL THE TWO COPIES OF ARTICLE FOURTH APART.** This
+>    section's "2026 − 1974 = 52, divisible by four" is correct — and the **superseded 1965 § 1
+>    anchors on 1966**, and 2026 − 1966 = 60, *also* divisible by four. So the check that looks
+>    like it validates the reading passes on the five-officer text too. **Only the officer LIST
+>    discriminates**, which is what `CC_0509` assertion 3f asserts.
+> 3. 🔴🔴 **ONE RIVAL RULE SURVIVES THE CONTROL BELOW, AND IT IS ANOTHER STATE'S LIVE DAY.**
+>    "The second Wednesday in January" reproduces Lamont's 2019-01-09 exactly and gives
+>    **2027-01-13 — the Maryland General Assembly's day, 178 rows.** This section's single
+>    control cannot refuse it. The tie-break is a **document**: the Journal of the Senate for
+>    **Wednesday, January 4, 2023**, which also records the Oath of Office administered that day
+>    to **Lieutenant Governor Susan Bysiewicz**. ▶ 2019 alone leaves 1 rival standing and 2023
+>    alone leaves 2; **together they leave none.**
+> 4. ⚠ **THE LEGISLATURE IS ABSENT FROM OUR DATA AND THIS SECTION DOES NOT MENTION IT.** The
+>    table below says the legislature's date "CAN be borrowed" — true — but Connecticut holds
+>    **0 `STATE_UPPER` and 0 `STATE_LOWER` office rows and 0 legislative race rows**, and
+>    `art. III § 10` puts them on **2027-01-06, the wave's own day**, so they would be absorbed
+>    into the square the wave created and no delta could see them. ⚠ And `art. III §§ 3–4` fix
+>    only a RANGE (senate 30–50, house 125–225), so there is no membership number here to make
+>    the gap an exact count, as there was in Utah, Arizona and Idaho.
+>
+> 🟢 The PDF was re-fetched 2026-11-24 — 572,979 bytes, sha256
+> `db796c2d539337d68d86385d9ad2614bece898517ac981bbfd6bf99e4008a581` — and the certificate repair
+> below was re-run **with its control**: the unpatched bundle failed with exit 60 first.
+> 🟢 § 2's byte-identity between the two copies is now measured rather than asserted: sha256
+> `18dbc127bad96f8fdbb0340b6c215d3d8f0c54a1d0bd733f36df1b3a5898bc87` over its four body lines on
+> each side.
 
 | body | offices | start date | basis |
 |---|---|---|---|
@@ -3841,6 +3880,16 @@ it is 2027-01-06**.
 🟢 **The start is a calendar date; qualification bounds only the END** ("until … and until their
 successors are duly qualified"). So this is Idaho's shape, not Nevada's, and the oath is a separate
 event that must not be rendered as the term start.
+
+🟢🟢 **AND THE CONSTITUTION SAYS SO ITSELF, IN THE SAME ARTICLE — added 2026-11-24.** This was an
+argument when the section was written; it is now a quotation. `art. IV § 21` opens *"If, **at the
+time fixed for the beginning of the term** of the governor, the governor-elect shall have died or
+shall have **failed to qualify** …"*, which only parses if the term's beginning is fixed
+independently of qualifying. `art. XI § 1` then makes the oath a condition of entering **on the
+duties** — *"all officers, executive and judicial, shall, before they enter on the duties of their
+respective offices, take the following oath"* — and `art. XI § 2` speaks of compensation *"set at
+the beginning of such official's term of office"*. ▶ **Three clauses, none of them the term clause,
+all presupposing a term that begins without an oath.**
 
 ### 🔴🔴 THE PDF CONTAINS ARTICLE FOURTH TWICE, AND THE SUPERSEDED VERSION COMES FIRST
 

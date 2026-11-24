@@ -1,21 +1,19 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-24, after **Nebraska** (13 offices across four bodies, and a ledger section whose
-own reasoning was wrong in three places while its answer was right).
-▶▶ **CONNECTICUT IS NEXT AND IS SOURCED** — 5 offices in the register, 6 in law, one clause,
-**2027-01-06**. See "Connecticut is the next one up" below before step 1.
+Rewritten 2026-11-24, after **Connecticut** (5 offices, a clause with no escape hatch, and a rival
+rule that only a legislative journal could refuse).
+▶▶ **TEXAS IS NEXT AND IS SOURCED** — 14 offices across two bodies, two dates, and the split is
+statutory. See "Texas is the next one up" below before step 1.
 **Read `REGISTER.md` first** (the queue, the recipe, the template corrections, Rulings A and B),
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
-🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0508` is
+🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0510` is
 **applied to production and verified**; the working tree is clean apart from the untracked
 `backend/_q.mjs` scratch query runner, which predates this work.
 
-🟢🟢 **PR [#1602](https://github.com/EmpoweredVote/ev-accounts/pull/1602) IS MERGED** (2026-11-24,
-squashed as `c05b7b078`) and `feat/state-seating-ne` is done. It carried `CC_0507`, `CC_0508`, the
-control suite and these three documents, with CI green on its head before the merge (nine checks,
-zero failures, checked against the run's own `headSha`). **Master and production now agree.**
-🔴 **Do not add to `feat/state-seating-ne`** — it is merged and its PR is closed.
+🔴 **CONNECTICUT IS ON `feat/state-seating-ct` AND ITS PR IS NOT YET MERGED.** It carries
+`CC_0509`, `CC_0510`, `ct-2026.controls.mjs` and these three documents. **Check whether it has
+merged before branching** — and if it has not, do not add Texas to it.
 
 ▶ **Take a fresh branch off master, claim the state, and start at step 1.**
 
@@ -23,7 +21,7 @@ zero failures, checked against the run's own `headSha`). **Master and production
 
 ## Where the pass stands
 
-**39 bodies · 153 offices still to do.** Nothing is overdue. Seventeen states are written:
+**38 bodies · 148 offices still to do.** Nothing is overdue. Eighteen states are written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -43,30 +41,32 @@ zero failures, checked against the run's own `headSha`). **Master and production
 | AL | `CC_0501` (13, **both bodies**) | — none needed | `CC_0502` (13, **2027-01-18**) · 🟢 nothing refused |
 | ID | `CC_0503` (7) | — none needed | `CC_0504` (7, **2027-01-04**) · 🔴 **7 of 7 are RE-ELECTIONS** |
 | NM | `CC_0505` (11, **both bodies**) | — none needed | `CC_0506` (11, **2027-01-01**) · 🟢 nothing refused |
-| **NE** | `CC_0507` (13, **FOUR bodies / EIGHT chambers**) | — **none needed, the fifth state** | `CC_0508` (13, **2027-01-07**) · 🟢 nothing refused — **three register rows left the queue at once, the most so far** |
+| NE | `CC_0507` (13, **FOUR bodies / EIGHT chambers**) | — none needed, the fifth state | `CC_0508` (13, **2027-01-07**) · 🟢 nothing refused — **three register rows left the queue at once, the most so far** |
+| **CT** | `CC_0509` (5 of **6 in law**) | — **none needed, the sixth state** | `CC_0510` (5, **2027-01-06**) · 🟢 nothing refused · ⚠ the Secretary of the State has **no race row of any year** and is deliberately undated |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0508`.** Always ask the allocator
+**Next slot to reserve: after `CC_0510`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
-### 🔴🔴 HOW MUCH IS ACTUALLY LEFT — THE REGISTER'S "39 BODIES" IS NOT 39 BODIES OF WORK
+### 🔴🔴 HOW MUCH IS ACTUALLY LEFT — THE REGISTER'S "38 BODIES" IS NOT 38 BODIES OF WORK
 
-Measured 2026-11-24. The generated table counts every body with an unscheduled seat, which mixes
-three completely different things. **Split them before planning anything:**
+Re-measured 2026-11-24 after Connecticut. The generated table counts every body with an
+unscheduled seat, which mixes three completely different things. **Split them before planning
+anything:**
 
 | | states | bodies | offices | what it needs |
 |---|---|---|---|---|
-| 🟢 **SOURCED AND READY TO WRITE** | **3** | 8 | **37** | nothing — start at step 3 |
+| 🟢 **SOURCED AND READY TO WRITE** | **2** | 7 | **32** | nothing — start at step 3 |
 | 🔴 **REFUSED** | 10 | 12 | **47** | an external event, not effort |
 | ⚠ **NOT SOURCED AT ALL** | **20** | 19 | **69** | step 2, from scratch |
-| | **33** | **39** | **153** | |
+| | **32** | **38** | **148** | |
 
-- 🟢 **READY: `CT` (5), `TX` (14, two bodies), `CO` (18, five bodies).** Their `DATES.md` sections
-  are green and need no new research. **That is the whole writable backlog** — three states.
+- 🟢 **READY: `TX` (14, two bodies), `CO` (18, five bodies).** Their `DATES.md` sections are green
+  and need no new research. **That is the whole writable backlog** — two states.
 - 🔴 **REFUSED, and each one is waiting on the world rather than on us:** `GA` 10 (all ten, the
   only state where nothing could be dated) · `AR` 7 (five refused with a cited window, two still
   open) · `NV` 6 (terms begin at qualification) · `UT` 6 (Board of Education, no commencement in
@@ -84,12 +84,15 @@ three completely different things. **Split them before planning anything:**
   — the writing is an afternoon once a date is sourced, and the sourcing is what has taken a day
   per state all pass.
 
-🟢 **NINE STATES ARE COMPLETELY DONE** and have nothing in the table at all: `WI`, `MA`, `ME`,
-`WA`, `CA`, `AL`, `ID`, `NM`, `NE`. Eight more are **partly** done with only a refused remainder
-(`MD`, `AZ`, `NV`, `UT`, `OR`, `HI`, and `SD`/`AR` where part is refused and part open).
+🟢 **TEN STATES ARE COMPLETELY DONE** and have nothing in the table at all: `WI`, `MA`, `ME`,
+`WA`, `CA`, `AL`, `ID`, `NM`, `NE`, `CT`. Eight more are **partly** done with only a refused
+remainder (`MD`, `AZ`, `NV`, `UT`, `OR`, `HI`, and `SD`/`AR` where part is refused and part open).
+⚠ **"Done" means every seat we hold a RESULT for.** Connecticut is in that list and still owes the
+**Secretary of the State** a race and its whole **General Assembly** an office row — neither of
+which any count in this file can see.
 
 ⚠ **AND THE STATE TIER IS NOT THE PROGRAMME.** Wave 4 is 1,326 races: **1,076 `term_recorded` +
-61 `in_office`**, 153 `called` (the table above) and 36 never looked at. **Waves 1 and 2 (the
+61 `in_office`**, 148 `called` (the table above) and 36 never looked at. **Waves 1 and 2 (the
 federal tier) are complete.** Wave 3 is 328 with **268 not looked at** and wave 5 is 179 with
 **162 not looked at** — those are the December and remaining LOCAL waves, a different programme,
 and they are far larger than anything left here. 🔴 **"The seating pass is nearly done" is true of
@@ -128,9 +131,9 @@ Both are committed and rehearsed; **neither is applied, and each refuses to run 
 
 ---
 
-## 🔴 NEXT: THERE IS NO LARGE BODY LEFT. THE QUEUE IS 39 SMALL ONES, AND MOST ARE UNDATED.
+## 🔴 NEXT: THERE IS NO LARGE BODY LEFT. THE QUEUE IS 38 SMALL ONES, AND MOST ARE UNDATED.
 
-**153 offices across 39 bodies, and only ONE carries a cited start date** (`HI STATE_EXEC`, the
+**148 offices across 38 bodies, and only ONE carries a cited start date** (`HI STATE_EXEC`, the
 OHA At-large block, which Ruling A refuses — see below). Every other body in the table needs step 2
 of the recipe before anything else. The three biggest are:
 
@@ -141,60 +144,81 @@ of the recipe before anything else. The three biggest are:
 | 3 | `TX STATE_BOARD_EDUCATION` + `TX STATE_EXEC` | 7 + 7 | ✅ sourced — two bodies in one state, like New Mexico. |
 
 ▶ **The register sorts dated bodies first and sinks undated ones below them, largest first.** With
-one dated body left that ordering has stopped doing useful work: read the table as "39 bodies, pick
-a state whose `DATES.md` section is already green". **`CT`, `TX` and `CO` are sourced and
-unwritten** — those are the next waves, and none of them needs new research.
+one dated body left that ordering has stopped doing useful work: read the table as "38 bodies, pick
+a state whose `DATES.md` section is already green". **`TX` and `CO` are sourced and unwritten** —
+those are the next two waves, and neither needs new research.
 
-### ▶▶ CONNECTICUT IS THE NEXT ONE UP, AND IT IS READY — MEASURED 2026-11-24
+### ▶▶ TEXAS IS THE NEXT ONE UP, AND IT IS READY — MEASURED 2026-11-24
 
-**5 offices, one chamber each, all on 2027-01-06** — `CT STATE_EXEC`. `DATES.md` § CT is green and
-needs no new research.
+**14 offices across two bodies and TWO dates** — `TX STATE_EXEC` (7) and
+`TX STATE_BOARD_EDUCATION` (7). `DATES.md` § TX is green and needs no new research.
 
-`derive-seating-wave.mjs --state ct --type STATE_EXEC`, run 2026-11-24: **5 winners · 5 offices ·
-5 re-elections · 0 handovers · 5 called**, digest `b7a9627439a50a18740bf79de2a3735d`, and the
-**only blocker is `no_date` ×5** — so step 2 is done and the wave starts at step 3.
+`derive-seating-wave.mjs --state tx --type STATE_EXEC --type STATE_BOARD_EDUCATION`, run
+2026-11-24: **14 winners · 14 offices · 2 re-elections · 12 new holders · 14 called**, digest
+`5a9c75c20d44ce46ee9a52f5adb4cc96`, and the **only blocker is `no_date` ×14** — so step 2 is done
+and the wave starts at step 3.
 
-🔴🔴 **IT COMBINES THE TWO WORST SHAPES THE PASS HAS FOUND, AND BOTH ARE ON ONE DAY.**
+🟢🟢 **AFTER TWO STATES OF NOTHING-CHANGES-HANDS, THIS ONE MOVES 12 OF 14 SEATS.** Idaho and
+Connecticut were both 100% re-elections, which made step 9's probe readable only by the date and
+left two gates unreachable by construction. **Texas restores both**: there are real handovers, so
+`P6`'s handover arm is testable and the live probe can be read by the NAME again.
 
-- **IDAHO'S SHAPE: 5 of 5 ARE RE-ELECTIONS, so no Connecticut seat changes hands.** The
-  current-holder map is unchanged, the winner map is identical to it, and **a file that wrote
-  nothing at all would pass every "who holds this seat?" check.** ▶ Step 9's "probe a seat that
-  CHANGES HANDS" is **unsatisfiable** — read `incoming_on`, never `incoming_holder_name` — and
-  `P6`'s "a handover's predecessor is not the winner" arm is **unreachable by construction**.
-  Record that rather than counting it as tested.
-- **NEW MEXICO'S SHAPE, AND IT IS THE REAL ONE THIS TIME: THE ABSENT BODY'S DAY *IS* THE WAVE'S
-  OWN DAY.** Measured 2026-11-24: Connecticut holds **0 `STATE_UPPER` and 0 `STATE_LOWER` office
-  rows**, and `DATES.md` § CT already records that `art. III, § 10` commences **legislators'**
-  terms on the very same Wednesday — 2027-01-06. Nebraska escaped this (its unicameral sits one
-  day earlier); **Connecticut does not.** ▶ Gate on the absence in both files, and say in the
-  header that a seeding job must give those seats their own `rule_id` even though the day is
-  shared.
-- 🔴🔴 **AND IT WOULD BE THE THIRD STATE ON 2027-01-06, WHICH ALREADY CARRIES 200 ROWS AND 200
-  TERMS** — Massachusetts' 199 legislators under `ma-const-amend-64-s1-legislators` and the Maine
-  Governor under `me-const-art5-pt1-s2-first-wed-after-first-tue-january`. A gate reading the total
-  would see 205 and call it success. **Every count about the day is a delta that names BOTH.**
-  ⚠ **Maine's rule is the same sentence as Connecticut's** — *the Wednesday following the first
-  Monday* against *the first Wednesday after the first Tuesday* — which agree in every year
-  January 1st is not a Tuesday. Two states, one square, two unrelated clauses, nearly one
-  sentence.
-- ⚠ **THE SECRETARY OF THE STATE HAS NO WINNER AND THE OFFICE EXISTS** — 6 `STATE_EXEC` office
-  rows, 5 pending. `DATES.md` records it; `art. IV, § 1` puts all six on the 2026 ballot as a
-  matter of law (2026 − 1974 = 52, divisible by four), so that seat is **certainly** a missing
-  result, not an off-cycle seat. 🔴 **But the dates file must still decide whether to date five or
-  six.** Maryland and Arizona date the ASSIGNED offices; here there is no Ruling A, so dating the
-  five that can be seated is right — and the sixth needs its refusal pinned, not left silent.
-- 🔴 **READ `DATES.md` § CT's OWN TRAP BEFORE OPENING THE PDF.** The document contains ARTICLE
-  FOURTH **twice** and the superseded 1965 version comes first, naming five officers and no
-  Attorney General. Stopping at the first heading manufactures exactly the shape of South Dakota's
-  *real* missing-office finding. **Search for the LAST occurrence, or for the word CODIFIED.**
+🔴 **TWO DATES FROM ONE STATUTE'S OWN EXCLUSION LIST, SO THE DATES FILE IS A TWO-GROUP FILE.**
+`Tex. Gov't Code § 601.003(a)` puts eleven offices on **2027-01-01**, and **§ 601.003(c)** says in
+its own words that the section *"does not apply to the office of governor, lieutenant governor,
+state senator, or state representative"* — which is what sends the Governor and Lieutenant
+Governor to **2027-01-19** under `Tex. Const. Art. IV § 4` + `Gov't Code § 301.001`. ▶ **Compute
+the second date from the first group's anchor where you can, and give each group its own
+`rule_id`** — Massachusetts is the worked example of one clause naming several days.
 
-After Connecticut: **`TX`** (two bodies, 14 offices, sourced) and **`CO`** (four bodies, 18
-offices, sourced). Neither needs new research.
+⚠ **THE SQUARES, MEASURED 2026-11-24.** `2027-01-01` already carries **61 rows and 61 terms**
+(Utah 50, New Mexico 11), so the eleven are a **delta that must name both**. `2027-01-19` carries
+**0 of either** — ▶ **a gate on an empty day discriminates nothing**, so say so in the file rather
+than letting "no strangers on 2027-01-19" read as a measurement.
+
+🔴🔴 **AND § 601.003(c) NAMES A BODY WE HOLD AND HAVE NO RESULTS FOR — IDAHO'S SHAPE AGAIN.** Texas
+holds **31 `STATE_UPPER` and 150 `STATE_LOWER` office rows and ZERO 2026 legislative races.** The
+exclusion list is the statute telling you, in advance, that **those 181 seats do not take
+2027-01-01** — so the gap and its rule are both already named by the instrument this wave is dated
+on. ▶ Gate on the absence, and do not let the eleven's day leak onto them.
+
+After Texas: **`CO`** (five bodies, 18 offices, two dates, sourced). Then the queue is all step 2.
 
 ### ▶▶ AND THE ONE THING TO DO DIFFERENTLY
 
+🔴🔴 **LIST WHAT ELSE AGREES WITH YOUR IN-DATA CONTROL, THEN GO AND KILL IT WITH A SECOND CYCLE
+FROM A DOCUMENT.** This is Nebraska's lesson, and Connecticut is the state where following it
+changed what the file could claim. Connecticut holds **one** dated state term, and of six rival
+rules run beside the clause, **one reproduced it exactly** — *the second Wednesday in January*,
+which gives **2027-01-13, the Maryland General Assembly's live day, 178 rows.** A file written
+from the in-data control alone would have had no way to refuse it.
+
+- ▶ **The tie-break was the Journal of the Senate for Wednesday, January 4, 2023** — a legislative
+  journal, which the recipe already names as the instrument that settles a disagreement. It also
+  records the Oath of Office administered that day to **Lieutenant Governor Susan Bysiewicz**, one
+  of the six officers the clause covers.
+- 🔴 **NEITHER CYCLE SEPARATED THE CLAUSE ALONE.** 2019 left one rival standing; 2023 left **two**
+  (the first Wednesday, and MAINE's rule, both right in 2027 for the wrong reason). **The
+  intersection is empty**, and `CC_0509`'s 3d asserts all three counts — 1, 2 and 0 — rather than
+  describing them.
+- 🟢🟢 **AND THE THREE COUNTS ARE COUPLED, WHICH IS WHY THE LAST ONE NEEDED A PURPOSE-BUILT
+  TAMPER.** Any rival entering the intersection also moves one of the first two, so every obvious
+  tamper fires on an earlier arm. Control **C7** swaps two rival expressions **in the 2023 column
+  only**, leaving both earlier counts correct, and the intersection gate fires for the first time.
+  ▶ `CLAUDE.md`'s *a gate no control reaches is a gate nobody has tested* — and this is what
+  reaching one costs.
+- ⚠ **THE FIRST CONTROL RUN THEN FOUND A REAL DEFECT IN THE FILE**, which is the other reason to
+  run them: C5, C6 and C7 each printed *"1 … expected exactly 1"*, because the condition and the
+  message each held their own copy of the expectation. **Verbatim Oregon.** The three expectations
+  now live in one variable each. ▶ **A control is the only thing that ever makes those copies
+  disagree.**
+
 🔴🔴 **READ THE STATE'S `DATES.md` SECTION FOR ITS OWN ADMISSIONS BEFORE TRUSTING IT — AND WHEN ITS
-ANSWER IS RIGHT, CHECK ITS *REASONS* SEPARATELY.** New Mexico's section flagged its own weakest
+ANSWER IS RIGHT, CHECK ITS *REASONS* SEPARATELY.** Connecticut's section was **right and
+incomplete in four places** — it never said the clause has no escape hatch at all (the strongest
+fact available), its cycle check cannot tell the codified article from the superseded one, it did
+not notice the surviving rival, and it did not mention that the legislature is absent from our
+data. 🟢 Nothing in it was wrong. New Mexico's section flagged its own weakest
 claim and sweeping it found a third instrument. **Nebraska's did the same and the sweep found
 something different and more useful: the answer was right and three of the reasons were wrong.**
 
@@ -228,19 +252,28 @@ after Idaho that a check kept in order to pass has needed one.
 - ⚠ **Maryland's Attorney General and Comptroller remain refused**, and so do **Arizona's
   Corporation Commission and State Mine Inspector**. Each needs a `published` qualification date,
   recorded when it happens — not an estimate.
-- 🟢 **FIVE STATES NOW PROVE THE PEOPLE FILE IS NOT AUTOMATIC** — Arizona, Alabama, Idaho, New
-  Mexico and **Nebraska** needed none at all; Maryland needed 60 links and 25 creations where the
-  column said 85 creations. ▶ **Sweep `politicians` before writing one, and size it from the
+- 🟢 **SIX STATES NOW PROVE THE PEOPLE FILE IS NOT AUTOMATIC** — Arizona, Alabama, Idaho, New
+  Mexico, Nebraska and **Connecticut** needed none at all; Maryland needed 60 links and 25
+  creations where the column said 85 creations. ▶ **Sweep `politicians` before writing one, and size it from the
   sweep**, checking each winner on **both** (full_name) and (first_name, last_name). Nebraska had
   exactly one collision — two active `Mike Foley` rows, colliding on **both keys at once**, so the
   database's own duplicate-name trigger could not have told them apart either. 🟢 The wave pointed
   at the sourced row and `CC_0508`'s `P4` pins both halves. ⚠ **The orphan is still there** and is
   a separate cleanup.
-- 🔴 **THE CROWDED SQUARES, RE-MEASURED 2026-11-24 AFTER NEBRASKA.** `2027-01-04` **241 rows / 229
-  terms** (Wisconsin, Arizona, California, Idaho — still the most crowded) · `2027-01-06` **200 /
-  200** (Massachusetts 199, Maine 1 — **and Connecticut would be the third, on its own day**) ·
-  `2027-01-07` **15 / 15** (Massachusetts 2, Nebraska 13) · `2027-01-01` **61 / 61** (Utah 50,
-  New Mexico 11). Every count about any of them is a delta that must name the other states' rules.
+- 🔴 **THE CROWDED SQUARES, RE-MEASURED 2026-11-24 AFTER CONNECTICUT.** `2027-01-04` **241 rows /
+  229 terms** (Wisconsin, Arizona, California, Idaho — still the most crowded) · `2027-01-06`
+  **205 / 205** (Massachusetts 199, **Connecticut 5**, Maine 1) · `2027-01-07` **15 / 15**
+  (Massachusetts 2, Nebraska 13) · `2027-01-01` **61 / 61** (Utah 50, New Mexico 11 — **and Texas
+  would put eleven more here**) · `2027-01-13` **178 / 178** (the Maryland General Assembly) ·
+  `2027-01-19` **0 / 0** (Texas's Governor and Lieutenant Governor would be the first).
+  Every count about any of them is a delta that must name the other states' rules.
+  - 🔴🔴 **AND 2027-01-06 IS THE SQUARE WHERE TWO CLAUSES ARE NEARLY ONE SENTENCE.** Maine's
+    `me-const-art5-pt1-s2-first-wed-after-first-tue-january` and Connecticut's
+    `ct-const-art4-s2-wed-following-first-monday-january` **agree in every year January 1st is not
+    a Tuesday**; they part in 2019, which is the only reason Connecticut's single in-data row can
+    tell them apart. ▶ **Do not let a later reader merge them.**
+  - ⚠ **A GATE ON AN EMPTY DAY DISCRIMINATES NOTHING.** `2027-01-19` has no rows at all, so
+    Texas's file must say that rather than let "no strangers there" read as a measurement.
 
 ---
 
@@ -271,6 +304,32 @@ separately, each reads as a one-state oddity.**
 
 **On dates**
 
+- 🔴🔴 **A WRONG RULE CAN ALSO BE RIGHT IN THE CYCLE YOUR *CONTROL* SITS IN, WHICH IS THE SAME
+  TRAP FROM THE OTHER END.** Connecticut holds **one** dated state term, 2019-01-09, and of six
+  rivals run beside `art. IV § 2` exactly **one reproduces it** — *the second Wednesday in
+  January*, which gives **2027-01-13**, the Maryland General Assembly's live day. 2019 alone
+  leaves that one standing; the Senate Journal of **2023-01-04** kills it and leaves **two**
+  others (the first Wednesday, and Maine's rule, both right in 2027 for the wrong reason);
+  **together the two cycles leave nothing standing.** ▶ **Assert the survivor COUNTS, not the
+  agreement** — `CC_0509`'s 3d asserts 1, 2 and 0, and controls C5, C6 and C7 are one per arm.
+  🔴 The three counts are coupled, so the intersection arm needed a tamper built to leave both
+  earlier counts correct (C7).
+- 🟢🟢 **A CLAUSE WITH NO ESCAPE HATCH ANSWERS "HOW FAR DID YOU LOOK?" BY ITSELF.** Conn. Const.
+  `art. IV § 2` carries **no residual at all** — the first in this pass — so **no statute can
+  displace it and no statute sweep was owed.** Nebraska's yields to "this Constitution or … law"
+  and New Mexico's to the constitution alone; both needed sweeps that this one did not. ▶ The
+  *constitution* still needs sweeping, because another constitutional provision can displace it:
+  bounded by the document's own 14 articles and 88 section headings, **four instruments name a
+  term or a sitting and all four land on the same day.**
+- 🔴🔴 **A DOCUMENT CAN CONTAIN TWO VERSIONS OF ONE ARTICLE, AND THE CHECK YOU WOULD RUN IS BLIND
+  TO WHICH ONE YOU HAVE.** Connecticut's constitution prints ARTICLE FOURTH **twice** and the
+  superseded 1965 copy comes **first**, naming five officers and **no Attorney General** — the
+  exact shape of South Dakota's *real* missing-office finding two states earlier. 🔴 **And the
+  cycle arithmetic passes on both copies**: the 1965 § 1 anchors on **1966** and the codified one
+  on **1974**, and 2026 is divisible-by-four from each. **Only the officer LIST discriminates.**
+  ▶ **Search for the LAST occurrence of an article heading, or for the word CODIFIED** — and
+  assert the membership, not the cycle. 🟢 § 2 was then hashed in both copies and is
+  byte-identical, which proves the term clause was never amended.
 - 🔴🔴 **A WRONG RULE CAN BE RIGHT IN THE CYCLE YOU ARE WRITING, AND THEN NOTHING IN YOUR OWN DATA
   CAN REFUSE IT — ONLY A DOCUMENT CAN.** Nebraska's Art. XVII-5 says *the first Thursday AFTER the
   first Tuesday*; the obvious shorthand is *the first Thursday in January*, and in 2027 **both give
@@ -326,6 +385,17 @@ separately, each reads as a one-state oddity.**
   would be **absorbed into the day the wave itself created**. ▶ **Count the state's office rows by
   `district_type` AND work out which day the absent body would take.** A seeding job must give it
   its own `rule_id` even when the day is shared.
+- 🔴🔴 **A HOST CAN SERVE A VALID CERTIFICATE WITH A MISSING INTERMEDIATE, AND IT IS NOT A WAF —
+  A NEW RUNG ON THE ESCALATION LADDER.** `www.cga.ct.gov` makes `curl` exit **60**, *"unable to
+  get local issuer certificate"*: the leaf is `CN=*.cga.ct.gov` issued by `Go Daddy Secure
+  Certificate Authority - G2`, and **the server never sends that issuer**. Browsers repair it
+  silently by fetching the issuer the certificate names; `curl` does not. 🔴 **Sending the whole
+  browser header set does nothing, and Playwright is the wrong answer** — the failure has nothing
+  to do with request shape. ▶ **Fetch the named intermediate
+  (`http://certs.godaddy.com/repository/gdig2.crt` — follow the redirect, it is DER), convert it,
+  append it to the system bundle and pass `--cacert`.** 🟢 **And run the UNPATCHED bundle first
+  and watch it fail**: that is what separates "my fix worked" from "the server recovered". Re-run
+  with its control 2026-11-24 — exit 60, then HTTP 200 and 572,979 bytes.
 - 🔴🔴 **A HOST'S REFUSAL CAN TURN FROM A 403 INTO A 200 SHELL IN TWO DAYS, AND THE 200 IS WORSE.**
   `nmonesource.com` was on file as 403-with-239-bytes against a complete browser header set; two
   days later it served **HTTP 200, 13,604 bytes, the right `<title>` and zero section text**. A
@@ -629,9 +699,11 @@ separately, each reads as a one-state oddity.**
 
 ## Housekeeping
 
-- 🟢 **NEBRASKA SHIPPED ON `feat/state-seating-ne`** (`CC_0507`, `CC_0508`, the control suite and
-  these three documents), applied to production 2026-11-24 and committed with an explicit
-  pathspec. Open its PR, or continue from master once it has merged.
+- 🟢 **CONNECTICUT SHIPPED ON `feat/state-seating-ct`** (`CC_0509`, `CC_0510`,
+  `ct-2026.controls.mjs` and these three documents), applied to production 2026-11-24 and
+  committed with an explicit pathspec. Open its PR, or continue from master once it has merged.
+  🟢 Nebraska's `feat/state-seating-ne` merged as PR #1602 (`c05b7b078`) before this branch
+  started.
 - 🔴 **THE `(unparsed)` GREEN RED CAME BACK, AND THE FILE THAT WALKED INTO IT WARNED ABOUT IT.**
   Nebraska's control C16 inserted a second term on a held office and died on the
   `office_terms_no_overlap` EXCLUSION constraint — a term with `term_start IS NULL` has an
@@ -684,6 +756,15 @@ separately, each reads as a one-state oddity.**
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
   CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
   file against them).
+  - 🔴 **DO NOT COMMIT THE THREE REGENERATED CSVs FROM A SEATING BRANCH.** `seats.csv`,
+    `waves.csv` and `handovers.csv` are build outputs of one command, **and all three are already
+    the named conflicting files on `chore/transition-tracker-refresh`** (122 behind master, 3
+    conflicts, in `C:/ev-accounts-tracker`). Committing them here adds a fourth writer to a
+    three-way conflict for rows a single command rebuilds. ▶ **Build them, upload them, then
+    `git restore` them.** Done that way on 2026-11-24 after Connecticut. ⚠ `assignments.csv` is
+    the exception — it is **hand-kept and not computed**, so it is never rebuilt and never
+    restored; it was re-read from the served blob and is still byte-identical
+    (`84adb2fc…5a42a2` on both sides).
   - 🟢🟢 **THE TRACKER ASKS THE SEATING QUESTION OVER THE OFFICES A RACE CAN FILL**, not over the
     single office the race hangs on. A row is a RACE and a seating is an OFFICE; a multi-seat
     contest seats its winners across the **sibling** offices of the same district, chamber and
