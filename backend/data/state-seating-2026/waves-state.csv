@@ -34,11 +34,11 @@ rank,state,district_type,offices,winners,reelections,winners_without_record,mult
 33,co,STATE_UPPER,3,3,2,0,0,0,3,,queued
 34,de,STATE_EXEC,3,3,2,0,0,0,3,,queued
 35,in,STATE_EXEC,3,3,1,0,0,0,3,,queued
-36,md,STATE_EXEC,3,3,3,0,0,0,3,,queued
-37,ny,STATE_EXEC,3,3,3,0,0,0,3,,queued
-38,az,STATE_EXEC,2,3,0,0,1,0,1,,queued
-39,co,STATE_BOARD_EDUCATION,2,2,2,0,0,0,2,,queued
-40,la,STATE_BOARD,2,2,0,0,0,0,2,,queued
+36,ny,STATE_EXEC,3,3,3,0,0,0,3,,queued
+37,az,STATE_EXEC,2,3,0,0,1,0,1,,queued
+38,co,STATE_BOARD_EDUCATION,2,2,2,0,0,0,2,,queued
+39,la,STATE_BOARD,2,2,0,0,0,0,2,,queued
+40,md,STATE_EXEC,2,2,2,0,0,0,2,,queued
 41,oh,STATE_EXEC,2,2,0,0,0,0,2,,queued
 42,pa,STATE_EXEC,2,2,2,0,0,0,2,,queued
 43,ks,STATE_EXEC,1,1,1,0,0,0,1,,queued

@@ -1,15 +1,14 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-24, after California, Massachusetts, Washington, Utah, Oregon and **Maryland —
-the first Ruling A wave**. **Read `REGISTER.md` first** (the queue, the recipe, the **seventeen**
-template corrections, Rulings A and B), then this. `SOURCING.md` is the handbook and the host
-table; `DATES.md` is the per-state ledger.
+Rewritten 2026-11-24, after **Arizona** (the second Ruling A wave) and **the Maryland Governor**.
+**Read `REGISTER.md` first** (the queue, the recipe, the template corrections, Rulings A and B),
+then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
 ---
 
 ## Where the pass stands
 
-**49 bodies · 262 offices still to do.** Nothing is overdue. Eleven states are fully written:
+**47 bodies · 197 offices still to do.** Nothing is overdue. Thirteen states are written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -23,14 +22,16 @@ table; `DATES.md` is the per-state ledger.
 | WA | `CC_0487` (118) | — none needed | `CC_0488` (118, **2027-01-11**) |
 | UT | `CC_0489` (50) | — none needed | `CC_0490` (50, **2027-01-01**) · ⚠ 6 Board of Education seats REFUSED, still undated |
 | OR | `CC_0491` (75) | `CC_0492` (13 created, 2 linked) | `CC_0493` (75, **2027-01-11**) · ⚠ the Governor REFUSED — ORS 176.010 names an event |
-| **MD** | `CC_0494` (**178**, not 114) | `CC_0495` (**60 linked**, 25 created) | `CC_0496` (178, **2027-01-13**) · ⚠ the Governor is owed a SEPARATE wave; the AG and Comptroller REFUSED |
+| MD | `CC_0494` (**178**, not 114) | `CC_0495` (**60 linked**, 25 created) | `CC_0496` (178, **2027-01-13**) |
+| **MD — Governor** | `CC_0499` (1) | — | `CC_0500` (1, **2027-01-20**) · ⚠ the AG and Comptroller REMAIN REFUSED |
+| **AZ** | `CC_0497` (**94**, not 65) | — **none needed, the first state** | `CC_0498` (93, **2027-01-04**) · ⚠ the Corporation Commission and the State Mine Inspector REFUSED |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0496`.** Always ask the allocator
+**Next slot to reserve: after `CC_0500`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
 ---
@@ -66,90 +67,59 @@ Both are committed and rehearsed; **neither is applied, and each refuses to run 
 
 ---
 
-## 🔴🔴 READ THIS BEFORE PINNING ANY SELECTION: THE DIGEST CAN COVER FEWER ROWS THAN IT CLAIMS
+## 🔴 NEXT: THERE IS NO LARGE BODY LEFT. THE QUEUE IS 47 SMALL ONES, AND MOST ARE UNDATED.
 
-Two states have now paid for this, and **the second one showed it can appear late.**
+**197 offices across 47 bodies, and only ONE carries a cited start date** (`HI STATE_EXEC`, the
+OHA At-large block, which Ruling A refuses — see below). Every other body in the table needs step 2
+of the recipe before anything else. The three biggest are:
 
-`is_reelection` as `scripts/lib/seating-wave.mjs` publishes it is **NULL**, not false, on a seat
-with no current holder — `och` is LEFT JOINed and `true AND NULL` is NULL. Then `'…' || NULL` is
-NULL and **`string_agg` skips it**, so the in-SQL digest covers only the rows that had a holder,
-while every count still reads the full number.
+| # | body | offices | what `DATES.md` already says |
+|---|---|---|---|
+| 1 | `GA STATE_EXEC` | 10 | 🔴 **ALL TEN REFUSED, 2026-11-22** — the first state in the pass where no office could be dated. Re-read the section before spending a day on it. |
+| 2 | `AL STATE_EXEC` | 9 | ✅ sourced — one date, three provisions, and the statute writes it out in words. **Ready to write.** |
+| 3 | `AR STATE_EXEC` | 7 | 🔴 five refused with a cited window, two still open. |
 
-    California, 92 seats    as published 8f11f4f3… (90 rows)   fixed 3c5becfe… (92 rows)
-    Massachusetts, 199      as published 2169c36f… (197 rows)  fixed ae5a2429… (199 rows)
+▶ **The register sorts dated bodies first and sinks undated ones below them, largest first.** With
+one dated body left that ordering has stopped doing useful work: read the table as "47 bodies, pick
+a state whose `DATES.md` section is already green". **`AL`, `ID`, `NM`, `NE`, `CT`, `TX` and `CO`
+are sourced and unwritten** — those are the next waves, and none of them needs new research.
 
-🔴🔴 **IN MASSACHUSETTS THE DEFECT DID NOT EXIST UNTIL THE PEOPLE FILE RAN.** Both flagged seats
-were won by people `CC_0482` creates. Before that file the WINNER id is NULL too, the first
-conjunct is FALSE, and `false AND NULL` is **FALSE** — no NULL. After it, `true AND NULL` is NULL.
-▶ **A digest captured before the people file would have been right and would have silently become
-wrong.** Capture the pin by rehearsing `dates + people + a probe that prints the digest` in one
-rolled-back transaction, and pin what the probe prints.
-
-⚠ `derive-seating-wave.mjs` prints the FIXED digest, because its JS renders a NULL boolean as
-'false'. **The script and the migration disagree for exactly this row shape** — that disagreement
-is how California found it.
-
-▶ **Copy `CC_0483` or `CC_0488`, not `CC_0475`.** Both carry the fixed selection and a P1 gate
-that counts how many rows the digest expression actually evaluated.
-
-🔴🔴 **AND KEEP THAT GATE EVEN WHERE THE DEFECT CANNOT OCCUR.** Washington has no holderless seat
-and no winner without a person record, so both digests are the same string over the same 118 rows
-— and `CC_0488` carries the gate anyway, because "it cannot happen here" expires the moment a seat
-falls vacant. A control proved **the two gates are complementary, not redundant**: making one seat
-holderless and running the file twice,
-
-    with the fix     is_reelection true -> FALSE  → the digest changes  → the DIGEST gate catches it
-    without the fix  is_reelection true -> NULL   → the row vanishes    → only the COVERAGE gate does
-
-Neither gate can see the other's fault. The coverage gate is unreachable *because* of the fix, and
-a gate added only where the defect is already known is the gate that will be missing the first
-time it matters.
-
----
-
-## 🔴 NEXT: ARIZONA — 66 offices, 65 already dated, and the SECOND Ruling A wave
-
-`DATES.md` § AZ has the write-up, sourced 2026-11-22. **Do not re-source it.** Maryland has now
-worked Ruling A end to end, so Arizona is the same shape at half the size.
-
-| body | offices | winners | start date | authority |
-|---|---|---|---|---|
-| Senate | 30 | 30 | dated 2026-11-22 | see `DATES.md` § AZ |
-| House | 29 | **58** | dated | — **every pending House office carries 2 winners** |
-| State executives | 7 | 8 | 6 dated, 1 refused | the Corporation Commission is **REFUSED** |
-
-- 🔴 **29 of 29 pending House offices are multi-winner** — a higher proportion than Maryland's 38
-  of 67, and the same fix: build the selection on the **ASSIGNED** office, and date the assigned
-  offices rather than the race-carrying ones. ▶ **Copy `CC_0494` / `CC_0495` / `CC_0496`.**
-- 🟢 **ARIZONA APPEARS TO NEED NO PEOPLE FILE AT ALL** — the register's `no record` column reads
-  `—` for all three Arizona bodies. ⚠ **That column counts race rows, and Maryland proved it cuts
-  the other way too** (it said 85 and sixty of them existed). A zero there means every winner row
-  is already linked, which is the easy direction — but **still sweep before assuming**, and
-  measure the ANCHOR count: a winner who is linked but does **not** hold an eligible office is a
-  chamber switch, and Ruling A's assignment turns on exactly that.
-- ▶ **The dates are already written** (`DATES.md` § AZ, 65 of 66), so the first file may be a
-  seating file alone — in which case **capture the pin by rehearsing `seating + a probe`**, and
-  re-read the Massachusetts note above before deciding the people file is unnecessary.
-- 🔴🔴 **THE ARIZONA CORPORATION COMMISSION IS THE BODY RULING A REFUSES** — 5 eligible offices,
-  2 winners, neither of whom holds any of the five. It is the worked counter-example in Ruling A
-  and the reason the equality clause is not "at least". It must stay refused.
-- ▶ **The Ruling A gate goes ABOVE the pin** (`CC_0496`'s `P2`). A Maryland control could not go
-  red until it did.
+- 🟢 **ARIZONA AND MARYLAND BOTH PROVE THE PEOPLE FILE IS NOT AUTOMATIC.** Arizona needed none at
+  all (the first state in the pass); Maryland needed 60 links and 25 creations where the column
+  said 85 creations. ▶ **Sweep `politicians` before writing one, and size it from the sweep.**
+- 🔴 **`HI STATE_EXEC`'s one dated office is the OHA At-large block and Ruling A REFUSES it** — 3
+  winners, 4 eligible offices, one of whom (Ikaika Anderson) holds none of them. It sorts to the
+  top of the queue because it has a date, and it is not writable. Do not start there.
 
 ### Also outstanding, and small
 
-- 🟢 **THE MARYLAND GOVERNOR — one office, one date, already sourced.** `2027-01-20`, Md. Const.
-  Art. II § 1, *"whose term of office shall commence on the third Wednesday of January next
-  ensuing his election"*. It is a **separate wave** because it is a different clause naming a
-  different day, and because `CC_0494` deliberately refuses every Maryland state executive.
-  🟢 **The corroboration is already in our data**: Wes Moore's term starts **2023-01-18**,
-  backfilled from `msa.maryland.gov` and never derived from this clause — and the third Wednesday
-  of January 2023 was the 18th. ⚠ The Attorney General and the Comptroller **stay refused**: no
-  clause names a day, and Art. XVII § 4's residual rule commences their terms at the election,
-  which overlaps the predecessor and `office_terms` forbids. Each needs a `published`
-  qualification date, recorded when it happens.
 - ⚠ **Utah's 6 Board of Education seats and Oregon's Governor remain refused**, as recorded.
+- ⚠ **Maryland's Attorney General and Comptroller remain refused**, and so do **Arizona's
+  Corporation Commission and State Mine Inspector**. Each needs a `published` qualification date,
+  recorded when it happens — not an estimate.
 
+---
+
+## 🔴🔴 TWO LIEUTENANT GOVERNORS ARE MISSING IN OPPOSITE DIRECTIONS, AND NEITHER IS SEATING'S JOB
+
+This pass found the same hole twice in one day, from two different sides. **Hold them together —
+separately, each reads as a one-state oddity.**
+
+| state | what exists | what is missing | takes office |
+|---|---|---|---|
+| **AZ** | a winner, on the Governor's ticket | **the OFFICE ROW** — Arizona holds eleven `STATE_EXEC` rows and no Lieutenant Governor, and no candidate row either | 2027-01-04 |
+| **MD** | the office row, held by Aruna Miller | **the ELECTION** — no pending winner and NO 2026 race row at all | 2027-01-20 |
+
+- Both are constitutional joint-ticket offices: Ariz. Const. Art. V § 1(C) and Md. Const. Art. II
+  § 1B, which says the election of a Governor *"shall constitute the election **for the same
+  term**"* of the Lieutenant Governor.
+- 🔴 **Both are invisible to every occupancy count.** Arizona's is `CLAUDE.md`'s *an office with no
+  term is invisible and nothing errors*, reached from the seeding side; Maryland's is Utah's
+  **"no race row at all"** third class, which looks identical to an unrecorded result from the seat.
+- 🔴 **CREATING ARIZONA'S OFFICE IS AN OCCUPANCY ACT** — it must be created **and seated** in one
+  file, or the unflagged drift baseline rises — and we hold nobody to seat. ▶ Neither file invented
+  a row. `CC_0497` assertion 3e pins Arizona's absence; `CC_0499` P5 and `CC_0500` P7 pin
+  Maryland's. **Both belong to the results and seeding programme.**
 
 ---
 
@@ -157,239 +127,197 @@ worked Ruling A end to end, so Arizona is the same shape at half the size.
 
 **On dates**
 
+- 🔴🔴 **AN ANCHOR-YEAR RULE IS STILL A CITATION, AND IT IS THE SHAPE MOST LIKELY TO BE MISREAD AS
+  "NO RULE".** All three Arizona provisions name a **specific past date** plus a term length and
+  leave the recurrence implied — *"shall hold office until the first Monday in January, 1913"*,
+  *"beginning on the first Monday of January, 1971"*, *"initial two-year terms beginning on the
+  first Monday in January, 2003"*. ⚠ And the legislative one is **titled "Term limits of members
+  of state legislature"**, so a search for a term-START clause never reaches it. Read the title
+  last.
 - 🔴🔴 **THE DATE EVERY SOURCE PUBLISHES IS OFTEN THE CONVENING, NOT THE TERM START.** Maine's
   term begins 2026-12-01 and the Legislature convenes 2026-12-02. One day, 183 seats. ⚠ **AND THE
-  OPPOSITE IS ALSO TRUE** — California convenes at noon on the same Monday the terms begin
-  (art. IV, § 3(a) and § 2(a)(3)), so "the convening date is wrong" is not a rule either. Read
-  what the source's date is a date OF. The seating file must **read** the date from
-  `office_swearing_in`; a literal agrees with itself however wrong it is.
+  OPPOSITE IS ALSO TRUE** — California convenes at noon on the same Monday the terms begin — so
+  "the convening date is wrong" is not a rule either. Read what the source's date is a date OF.
+  The seating file must **read** the date from `office_swearing_in`; a literal agrees with itself
+  however wrong it is.
 - 🔴 **A TERM CAN BEGIN ON ELECTION DAY** (`HRS § 13D-5`) or the day after (`Nev. Const. art. 4
   §§ 3, 4`; `Ind. Const. art. 4 § 3`). "The date is in the future" is an assumption.
 - 🔴 **READ THE PREPOSITION.** Nevada and Indiana count forward — *"the day next **after** their
   election"*. Maine counts back — *"the day next **preceding** the first Wednesday in December"*.
 - 🔴🔴 **LOOK FOR THE CONSTITUTION'S GENERAL TERM-COMMENCEMENT CLAUSE BEFORE CONCLUDING AN OFFICE
   HAS NONE.** California's `art. II, § 20` dates all seven of its statewide offices and lives in
-  the **voting** article — reading articles IV, V and XIII in order never reaches it, and
-  art. XIII, § 17 names no commencement at all. Without it the Board of Equalization would have
-  been refused the way Maryland's Comptroller was.
-- 🔴 **A FORMULA THAT AGREES THIS CYCLE CAN DIFFER NEXT.** "The Monday after January 1" ≠ "the
-  first Monday of January" whenever 1 January is a Monday (2024: the 8th against the 1st). They
-  agree for 2027. Evaluate the clause **as written**, in SQL, for a year the file does not write,
-  and check it against a term already in the database from an unrelated source.
-  ⚠ `chambers.inauguration_rules` carries the WRONG one of those two for three California
-  executives, uncited, and agrees this cycle. **A rule row earns its way in by its own citation.**
+  the **voting** article — reading articles IV, V and XIII in order never reaches it.
+- 🔴🔴 **THE NEAR MISS IS USUALLY A LIVE DATE SOMEWHERE, AND SOMETIMES IN THE SAME STATE ON THE
+  SAME PAGE.** Maryland's Governor is one week past its General Assembly — **178 live rows** —
+  and Arizona's second Monday is both its own SESSION convening day *and* the term start of 118
+  Washington and 75 Oregon seats. Reaching one week too far produces another office's correct
+  answer, never an absurd one. ▶ **Compute the wrong rule beside the right one and assert it
+  carries NOTHING.**
+- 🔴🔴 **AND RUN THE RULES OVER A CYCLE THE FILE DOES NOT WRITE.** Arizona's three cycles in our
+  own data read **80 terms on a first Monday and ZERO on either wrong rule** (`CC_0497` 3d);
+  Washington's seven biennia agree with the second Monday 5/6/7/12/16/23/25 times and with the
+  first Monday **zero times in all seven** (`CC_0487` 3). ⚠ **A control that only asks "does the
+  computed day carry the recorded cluster?" is satisfied by any rule that lands there.**
+  ▶ `CC_0497` 3d also **refuses to report if a cycle has no rows at all** — a control that has
+  lost its fixture proves nothing.
 - 🔴 **WHERE THE LAW SAYS QUALIFICATION, THE TERM START IS THE OATH** and there may be no date at
   all — Nevada's six executives are refused with a sourced `window_end_date` of 2027-01-04.
 - 🔴🔴 **READ A TERM CLAUSE TO ITS FULL STOP — THE ESCAPE HATCH IS USUALLY AT THE END.** Oregon's
   Art. IV § 4(1) ends *"unless a different commencing day for such terms shall have been appointed
-  by law"*, and this ledger quoted it one clause short. Those words turn a fixed rule into a
-  **default a statute may displace**. ▶ Then go and check, and **write down how far you looked** —
-  five ORS chapters, not all of ORS. ⚠ "Nothing found" across several documents is a uniform
-  answer until something makes it go non-zero; the scan's control was its own pattern firing twice
-  in the chapter that does answer.
-- 🔴🔴 **TWO STATES CAN SHARE ONE CALENDAR DAY UNDER UNRELATED RULES.** 118 Washington seats and
-  75 Oregon seats both begin **2027-01-11** — Washington by statute (RCW 44.04.021), Oregon by
-  constitution — and Idaho's Ada County is scheduled for it too. ▶ **Every count about a shared
-  day is a DELTA and must NAME the other state's `rule_id`**, or a gate reads 193 and calls it
-  success.
-- 🔴 **THE NEAR MISS CAN BE THE STATE'S OWN SUPERSEDED RULE.** Oregon used the **first** Monday
-  until 1961, and Art. IV § 4(3) is the transition clause itself. ⚠ **And its session convenes
-  EIGHT DAYS after the terms begin** (ORS 171.010(1), the Tuesday after the MLK holiday) — so
-  four candidate days sit in that one month and three of them are wrong.
-- 🔴 **A DATE THAT AGREES IS NOT A RULE THAT AGREES.** Oregon's only state-level `term_start` is
-  Tina Kotek's 2023-01-09, which *is* a second Monday — and its own `source` line calls it "first
-  day in office", belongs to the one office Oregon refuses, and is governed by a different rule
-  (ORS 176.010's publication of the returns). ▶ **Read what a corroborating row says it is a date
-  OF before leaning on it.**
-- 🔴🔴 **THE ANSWER CAN BE IN A STATUTE WHILE THE CONSTITUTION NAMES THE SAME DAY FOR SOMEBODY
-  ELSE — AND NOTHING MECHANICAL CAN TELL THEM APART.** Washington's Art. II fixes only a
-  legislative term's *length*; `RCW 44.04.021` is the answer; Art. III § 4 gives **the state
-  executives** the same second Monday in January, and `RCW 44.04.010` convenes the session on it
-  too. Three citations, one date, one correct. 🔴 A wrong citation here is right about every
-  number and wrong only in prose, so it surfaces when a person reads it, which may be never.
-  ▶ **Name the other body in a gate** — both Washington files refuse to date or seat a state
-  executive, which is the only trace the distinction leaves in the data.
-- 🔴🔴 **RUN THE WRONG RULE BESIDE THE RIGHT ONE, OR THE CONTROL PASSES FOR BOTH.** Every
-  near-miss in this pass is one small offset away: *first* Monday for second, *second* Wednesday
-  for third, *the Thursday* for the Wednesday. Washington's seven biennia agree with the second
-  Monday 5/6/7/12/16/23/25 times **and with the first Monday zero times in all seven** — that is
-  what makes a control discriminate rather than merely agree. `CC_0487` assertion 3.
+  by law"*. ⚠ **And a tail is not always an escape hatch**: Maryland's Art. II § 1 ends in a
+  **term-limit** provision, which is why `CC_0499` says so out loud rather than leaving the reader
+  to re-read it.
+- 🔴🔴 **THE SAME DAY CAN NAME THE TERM AND THE QUALIFICATION, AND NO COUNT CAN TELL THEM APART.**
+  Md. Art. II § 1 is the term; § 3 names the **same day** for the qualification and then lets it
+  slip — *"or as soon thereafter as may be practicable"*. Washington is the three-citation version
+  of this. ▶ **A gate must read the `authority` TEXT**, or the defect surfaces only when a person
+  does, which may be never.
+- 🔴🔴 **A STATE CAN BE THE THIRD ON A CALENDAR DAY, AND A RIVAL'S rule_id MAY EVEN SHARE ITS
+  WORDS.** 140 rows were on 2027-01-04 before Arizona — Wisconsin 123 under
+  `wi-legislature-first-monday`, California 17 — so a gate asking "how many start on the first
+  Monday?" reads 234 and calls it success. ▶ **Pin the before-image, assert the delta, and require
+  every row on the day to belong to a NAMED rule.**
 - ⚠ **A DATE ROUNDED TO JANUARY 1 LOOKS EXACTLY LIKE A TERM THAT BEGAN ON JANUARY 1.** 27 of
-  Washington's existing legislative rows read `01-01` because the Ballotpedia half of their source
-  knew only the year — and `DATES.md` had filed all the off-dates as "appointments". **Two fall in
-  EVEN years, where no regular term can begin**, which is what proved them imprecise. 🔴 And the
-  converse is live: **Utah's real date IS January 1st** — a Friday and a public holiday, and the
-  clause names a day of the calendar, not a sitting day. Neither reading is safe by default.
+  Washington's rows read `01-01` because the Ballotpedia half of their source knew only the year.
+  🔴 And the converse is live: **Utah's real date IS January 1st**.
 - 🔴🔴 **TWO ELECTED BODIES IN ONE STATE NEED NOT SHARE A BOUNDARY, AND THE REFUSED BODY'S OWN
   STATUTE MAY BE THE ONLY EVIDENCE.** Utah's legislature begins on the first **day** of January;
-  its Board of Education has no commencement in law, and the two dates `20A-14-103` does name —
-  a term that "ends January 6, 2025", an incumbent serving until "January 2, 2023" — are both
-  first **Mondays**. ▶ **Refuse the body and PIN the evidence**: `CC_0489` computes both Mondays
-  and fails if they stop agreeing, so the refusal is a measurement, not an argument. ⚠ The near
-  miss is then live in that state, so compute it and refuse it too.
+  its Board of Education has no commencement in law. ▶ **Refuse the body and PIN the evidence.**
 - 🔴🔴 **A "THE SECTION NUMBER IS PRESENT" GUARD PASSES ON A JAVASCRIPT SHELL.** `le.utah.gov`
-  answers `curl` with HTTP 200, ~26.6 KB of navigation, no section text — and the section number
-  **in the page title and in a JS variable**. ⚠ Two different sections at an *identical byte
-  count* is the tell. ▶ Assert on a phrase from the section BODY. 🟢 **And look for the
-  non-browser route before reaching for Playwright twice** — that site's own Download Options
-  link gives XML plain `curl` fetches (565 bytes against 26,677), though its name is **not**
-  derivable from the page URL.
+  answers `curl` with HTTP 200, ~26.6 KB of navigation, no section text. ⚠ Two different sections
+  at an *identical byte count* is the tell. 🟢 **And look for the non-browser route before reaching
+  for Playwright twice.** ⚠ Arizona's `azleg.gov` is the opposite and worth knowing: it serves real
+  section text to plain `curl` at 973–13,810 bytes, and **does NOT soft-404** — five wrong
+  spellings of a section URL return a true 404 at 79,330 bytes.
 
 **On people**
 
 - 🔴🔴 **`winner_no_record` MEANS "NO RECORD IN THIS RACE", NEVER "NO RECORD ANYWHERE".** Nevada:
-  1 of 13. Maine: **18 of 77**. **Maryland: 60 of 85** — 55 of them the sitting holder of the very
-  seat they had just won, because the AP import never linked their winner row. Creating all 85
-  would have made a **second row for sixty sitting legislators**. ▶ **Sweep the whole
-  `politicians` table before creating anybody, and size the people file from the sweep, never
-  from the "no record" column.**
+  1 of 13. Maine: 18 of 77. **Maryland: 60 of 85** — 55 of them the sitting holder of the very
+  seat they had just won. 🟢 **And Arizona needed NO people file at all**, which was swept for
+  rather than read off the column. ▶ **Sweep the whole `politicians` table before creating
+  anybody, and size the people file from the sweep.**
 - 🟢 **ANCHOR A LINK ON A SEAT, NOT ON A NAME — IT NARROWS THE CANDIDATES TO THREE.** The person
-  must be the current holder of an office inside **that race's own eligible set**. A Maryland
-  control pointed District 3's Karen Simpson at David Moon, a real and active Maryland Delegate:
-  every "is this an officeholder?" test passes and the seat test fails at once. ⚠ One district can
-  hold two members of a surname — 34A has Andre V. Johnson, Jr. **and** Steven C. Johnson.
-- 🔴 **`essentials.politicians` HAS ITS OWN DUPLICATE-NAME TRIGGER AND IT IS RIGHT BY DEFAULT**
-  (*"A sitting officeholder running for a different seat is the normal case, not a different
-  person"*). Take `essentials.allow_duplicate_name` **for one row, in a statement of its own**, so
-  the guard stays armed for every other name in the file, and record the collision in that row's
-  own `source`.
+  must be the current holder of an office inside **that race's own eligible set**.
+- 🔴 **`essentials.politicians` HAS ITS OWN DUPLICATE-NAME TRIGGER AND IT IS RIGHT BY DEFAULT.**
+  Take `essentials.allow_duplicate_name` **for one row, in a statement of its own**.
 - 🔴🔴 **A NAME THAT MATCHES IS NOT A PERSON THAT MATCHES — PRINT THE FIELD THAT DISCRIMINATES.**
-  Two active "Chad Perkins" rows; one holds **Missouri** House District 40, one holds **Maine**
-  House District 31.
-- 🔴 **ASK WHAT A DOCUMENT IS FOR BEFORE LETTING IT OVERRULE A NAME.** Nevada's published member
-  page outranked AP on `Dávila`. Maine's *orientation agenda* did not — it misspelt four names the
-  Secretary of State's filing record gets right.
-- ⚠ **PEOPLE MOVE BETWEEN SEATS, AND ONE PERSON CAN BE BOTH A WINNER AND A PREDECESSOR IN THE
-  SAME FILE.** California: Soria and Connolly move Assembly → Senate; Ma and Kounalakis **exchange**
-  Treasurer and Lieutenant Governor. The incumbency guard's scope must be a UNION of winners and
-  predecessors, and an exchange needs an assertion measured **from the people's side** — one term
-  closing, one opening, two distinct offices — because no per-office count can see somebody left
-  holding two seats.
+  Two active "Chad Perkins" rows; one holds **Missouri** House District 40, one **Maine** House 31.
+- ⚠ **PEOPLE MOVE BETWEEN SEATS, AND TWO CAN SIMPLY SWAP.** Arizona's Districts 19 and 20 are
+  straight **exchanges** (Gowan↔Griffin, Gonzales↔Hernandez); California's Ma and Kounalakis
+  exchange Treasurer and Lieutenant Governor. The incumbency guard's scope must be a UNION of
+  winners and predecessors, because **no per-office count can see somebody left holding two seats**.
 - ⚠ **A GAP BETWEEN TWO OFFICES IS NOT A DEFECT.** Mike Gipson's Assembly term closes 2026-12-06
-  and his Board of Equalization term opens 2027-01-04. Two clauses, two days, 28 days out of
-  office. Do not "fix" it by moving either date.
-- ✅ **`party` IS NOT A GAP TO FILL.** Ruling, 2026-11-23: *"Parties are not something we celebrate
-  anywhere on our platform."* A NULL party is finished work.
+  and his Board of Equalization term opens 2027-01-04. Two clauses, two days, 28 days out.
+- ✅ **`party` IS NOT A GAP TO FILL.** *"Parties are not something we celebrate anywhere on our
+  platform."* A NULL party is finished work.
 
 **On vacancies**
 
-- 🔴🔴 **A CORRECT `is_vacant` FLAG IS NOT A BLOCKER, AND CLEARING IT EARLY IS THE MISTAKE.**
-  `derive-seating-wave.mjs` reports it as one and `CC_0475`'s P6 refuses any flag at all — the
-  right default and the wrong rule for a seat that really is empty. Name the expected flags in P6,
-  refuse a third, seat the winner future-dated, and clear the flag **on the handover day** in its
-  own file with a data interlock (`CC_0480`).
+- 🔴🔴 **A CORRECT `is_vacant` FLAG IS NOT A BLOCKER, AND CLEARING IT EARLY IS THE MISTAKE.** Name
+  the expected flags in the pre-check, seat the winner future-dated, and clear the flag **on the
+  handover day** in its own file with a data interlock (`CC_0480`).
 - 🔴 **THE REASON IS A MASTER-ONLY GATE.** One office in its district, flag cleared while empty,
-  and the district reads `offices > 0 AND active_holders = 0 AND vacant_offices = 0` —
-  `DEAD_GEOGRAPHY`, failing on the next innocent pull request.
-- 🟢 **A vacancy renders correctly meanwhile.** Measured through the deployed API 2026-11-23:
-  Assembly District 3 answers `seat_status=vacant, incoming=Dom Belza, on=2026-12-07`.
+  and the district reads `DEAD_GEOGRAPHY`, failing on the next innocent pull request.
+- 🟢 **A vacancy renders correctly meanwhile.** Assembly District 3 answers
+  `seat_status=vacant, incoming=Dom Belza, on=2026-12-07`.
 
 **On the register's blind spots**
 
 - 🔴🔴 **AN OFFICE WITH A RACE AND NO RECORDED RESULT IS EXACTLY AS INVISIBLE AS AN OFFICE WITH NO
-  RACE.** `office_pending_winner` cannot tell them apart and the seat count looks complete either
-  way. Found so far: NV Assembly District 22; ME State House 86, 96 and State Senate 18; **CA's
-  five un-raced Assembly districts, Superintendent of Public Instruction and Commissioner of
-  Insurance**. 🔴 Those last two would NOT take California's statewide date if they were added —
-  the Superintendent has its own clause and the Insurance Commissioner is **statutory**, so
-  "provided for by this Constitution" does not reach it. **These belong to the results programme.**
-  - 🔴🔴 **AND "UNRECORDED" LOOKS EXACTLY LIKE "UNDECIDED" FROM THE SEAT.** Four Washington seats
-    sit in this class — House LD 12 (Pos. 1), LD 23 (Pos. 1), LD 25 (Pos. 2) and **Senate LD 35**
-    — and every candidate on all four carries `result = 'advanced'`, which is the **August
-    top-two primary** result, not a November one still being counted. The other 114 seats in
-    those chambers do carry a `won` row, so the feed ran. 🔴 **Read `result` and `result_source`
-    before calling a seat undecided**, and never infer a winner from `advanced`, from incumbency
-    or from the primary margin — two of those four had primaries inside 600 votes.
-  - ⚠ **A STAGGERED CHAMBER CAN HIDE ONE OF THESE BEHIND A CONSTITUTIONAL RULE.** `DATES.md`
-    filed all 26 non-pending Washington Senate seats as mid-term. 25 are; Senate LD 35 was on the
-    ballot. ▶ **Count the seats with a 2026 race separately from the seats that are pending** —
-    the difference is the results gap, and "the chamber is staggered" explains only the rest.
-  - 🔴🔴 **AND "NO RACE ROW AT ALL" IS A THIRD, BIGGER CLASS.** Utah: 2 House seats carry a race
-    with a blank result and **31 carry no race row**. 🔴 Art. VI Sec. 3(1) elects the **whole**
-    75-seat House biennially, so all 75 were on the ballot as a matter of law and those 31 are
-    *certainly* missing data. ▶ **Read the body's own term clause to learn how many should have
-    been up** — the constitution often turns "probably missing" into "certainly missing", which
-    is what makes a gap actionable. ⚠ Utah's Senate is the opposite: Sec. 4(3) leaves **which**
-    half is up to statute, so 9 of 29 cannot be sized from the constitution alone.
-  - 🔴 **A MISSING RESULT CAN LEAVE ONE PERSON HOLDING TWO SEATS, AND TIDYING IT IS THE MISTAKE.**
-    Doug Fiefia holds Utah House District 48 — a blank-result seat — and wins Senate District 18,
-    so from 2027-01-01 our data shows both. `seat_officeholder` closes the predecessor on the
-    seat it SEATS and nothing else. ▶ Closing his House term would mean inventing a successor or
-    applying a clause that ends **all 75** House terms to one seat and not the other 74. **The
-    fix is the result, not an edit in the seating file.**
+  RACE — AND "NO RACE ROW AT ALL" IS A THIRD CLASS AGAIN.** All three look identical from the seat.
+  Found so far: NV Assembly 22; ME House 86, 96 and Senate 18; CA's five un-raced Assembly
+  districts, Superintendent and Insurance Commissioner; WA's four `advanced`-only seats; UT's 2
+  blank-result and **31 no-race-row** seats; MD's ten Delegate seats and its **Lieutenant
+  Governor**; **AZ's State House District 27** and its **missing Lieutenant Governor office**.
+- 🔴 **READ `result` AND `result_source` BEFORE CALLING A SEAT UNDECIDED.** Washington's four and
+  Arizona's District 27 all carry `result = 'advanced'`, which is the **August top-two primary**
+  result, not a November one still being counted. ⚠ Arizona's two sitting members, Lisa Fink and
+  Tony Rivero, are themselves two of the three candidates.
+- 🔴 **READ THE BODY'S OWN TERM CLAUSE TO LEARN HOW MANY SHOULD HAVE BEEN UP.** Ariz. Art. IV,
+  Pt. 2 § 21 gives every member two years and § 1(1) elects two Representatives from each of thirty
+  districts, so all 60 were on the ballot **as a matter of law** and District 27's two are
+  *certainly* missing. The constitution turns "probably missing" into "certainly missing", which is
+  what makes a gap actionable.
+- 🔴 **A MISSING RESULT CAN LEAVE ONE PERSON HOLDING TWO SEATS, AND TIDYING IT IS THE MISTAKE.**
+  Maryland's Nicholaus Kipke and Utah's Doug Fiefia. `seat_officeholder` closes the predecessor on
+  the seat it SEATS and nothing else. **The fix is the result.**
 - 🔴 **A CHAMBER CAN HOLD SEATS ITS CONSTITUTION'S MEMBERSHIP NUMBER DOES NOT COUNT.** Maine: 154
   House offices against a constitutional 151, because three are tribal seats filled by their
-  nations. Read as a defect that is Connecticut's *fabricated* missing-office finding; the
-  identical reading in South Dakota was a *real* one.
+  nations.
 - 🔴 **AN INNER JOIN TO `essentials.chambers` DROPS A `STATE_BOARD` SEAT**, whose `chamber_id` is
-  NULL. California read as 98 offices instead of 99 that way. Join chambers LEFT, or not at all.
+  NULL. Join chambers LEFT, or not at all.
 
 **On Ruling A — a multi-member seat**
 
-- 🔴🔴 **THE SELECTION IS BUILT ON THE *ASSIGNED* OFFICE, AND SO IS THE DATES FILE.** The seating
-  file reads `office_swearing_in` on the office it SEATS. Maryland dated **178** offices although
-  only **114** carry a race; dating the 114 would have aborted the seating file at its P4 for 64
-  seats, **after** the first terms were written.
-- 🔴🔴 **RULING A'S GATE GOES ABOVE THE PIN.** Below it, every realistic tamper is caught two
-  gates earlier by the digest, so the clause carrying the real-world cost — *a named sitting
-  official unseated* — has no control of its own. Ruling A asks whether the body is assignable at
-  all; the pin asks whether the answer is the one recorded. The first question comes first.
-- 🔴 **THE PIN MUST BE CAPTURED AFTER THE PEOPLE FILE, BECAUSE THE ASSIGNMENT ITSELF MOVES.** A
-  winner anchors to the seat they already hold — and 55 Maryland winners could not anchor until
-  `CC_0495` linked them. Before the people file the same selection anchors 93 and fills 85; after
-  it, 148 and 30, and the seat each of those 85 lands in can differ.
-- 🟢 **CHECK THE BODY'S SIZE AGAINST ITS CONSTITUTION, NOT AGAINST ITSELF.** Art. III § 3 gives
-  every Maryland district one Senator and three Delegates however it is subdivided; all 47 hold
-  exactly that, 141 + 47 = 188, which is § 2's own arithmetic. A district holding four Delegate
-  rows would let a fill claim a seat nobody elected.
+- 🔴🔴 **THE SELECTION IS BUILT ON THE *ASSIGNED* OFFICE, AND SO IS THE DATES FILE.** Maryland
+  dated **178** offices although only 114 carry a race; Arizona dated **94** against 65. Dating the
+  race-carrying ones alone aborts the seating file at its P4 **after** the first terms are written.
+- 🔴🔴 **THE EQUALITY CLAUSE IS THE WHOLE OF THE GATE, AND ARIZONA IS WHERE IT EARNED ITS KEEP.**
+  The **Corporation Commission** passes every interchangeability clause — five identical office
+  rows — and carries 2 winners against 5 eligible seats with **neither winner holding any of
+  them**. Under "at least", nothing anchors and the fall-through picks two of five outright.
+  🔴 Control C13b measured the cost of the weaker wording: the staggered body walks through `P2a`
+  and the only gate that notices is the **bijection count**, reporting *"the assignment produced
+  92 rows for 93 winners"* — which sends the operator looking for a lost winner.
+- 🔴🔴 **RULING A'S GATE GOES ABOVE THE PIN.** Below it, every realistic tamper is caught two gates
+  earlier by the digest, so the clause carrying the real-world cost has no control of its own.
+- 🔴 **THE PIN MUST BE CAPTURED AFTER THE PEOPLE FILE, BECAUSE THE ASSIGNMENT ITSELF MOVES.**
+  ⚠ Arizona has no people file and still captured the pin by rehearsing `dates + a probe`: the
+  dates file must exist before P4 can read a date.
+- ⚠ **"RULING A" BELONGS IN THE `source` OF A *FILL*, NOT OF EVERY HANDOVER.** A fill is a
+  non-anchored winner of a **multi-seat** race. Maryland wrote it on all 30 non-anchored seats;
+  Arizona writes it on 24 of 39 and gates in both directions.
+- 🟢 **CHECK THE BODY'S SIZE AGAINST ITS CONSTITUTION, NOT AGAINST ITSELF.** Md. Art. III § 3 gives
+  every district one Senator and three Delegates (141 + 47 = 188); Ariz. Art. IV, Pt. 2 § 1(1)
+  gives thirty districts one Senator and two Representatives (30 + 60 = 90). A district holding one
+  too many would let a fill claim a seat nobody elected.
 
 **On the tooling**
 
-- 🔴🔴 **THE DIGEST CAN COVER FEWER ROWS THAN THE COUNTS CLAIM** — see the section above. Count
-  what went into `string_agg`, not just what came out.
+- 🔴🔴 **THE DIGEST CAN COVER FEWER ROWS THAN THE COUNTS CLAIM.** `is_reelection` is **NULL** on a
+  seat with no current holder, `'…' || NULL` is NULL, and `string_agg` **skips** it. Add
+  `AND och.politician_id IS NOT NULL` and a gate counting `count(<the expression>)`. ⚠ With a
+  one-row selection it empties the digest entirely. 🔴 **KEEP THE COVERAGE GATE EVEN WHERE THE
+  DEFECT CANNOT OCCUR** — a control proved the two gates are complementary, not redundant.
+- 🔴🔴 **A ONE-OFFICE WAVE IS WHERE A GATE PASSES VACUOUSLY.** Every count is 1 or 0, and a count
+  of 1 is true of whoever is in the selection. ▶ **The controls that matter keep the size and
+  change WHICH** — which office, which person, which day, which clause. `CC_0500`'s suite is the
+  worked example.
+- 🔴🔴 **A ZERO NEEDS A POSITIVE CONTROL.** Arizona's "nobody holds two seats" is zero, so `P9`
+  counts the six chamber switchers and asserts each one's seat is **inside** the wave, and control
+  C20 plants the Kipke shape and watches `P8` go red.
+- 🟢 **`scripts/run-migration-controls.mjs` IS THE DRIVER.** It refuses a non-unique needle,
+  re-reads each file to prove the replacement landed, **runs the untampered chain FIRST as a
+  negative control**, and records the gate each tamper ACTUALLY fired on. `--check` validates a
+  spec without a database; `--self-test` proves the tool itself goes red on a planted fault.
+  🔴 **ONE TAMPER PER STEP — A STEP IS A FILE, NOT AN EDIT.** Two `{tamper: X}` steps run file X
+  **twice**; Arizona's C13b did that and died on the seating file's own "applied before" gate.
+  Put the second change in the DATA.
+- 🔴🔴 **READ THE MESSAGE, NOT THE COLOUR.** Three controls in two days went red for the wrong
+  reason: two Maryland tampers died on a **database CHECK constraint**, and Arizona's C5 died on
+  `column "id" does not exist` and printed a green RED with the gate shown as **`(unparsed)`**.
+  ⚠ **And a tamper that did not APPLY looks exactly like a pass** — Arizona's C18 looked for a
+  `result IS NULL` row that does not exist, and the chain simply passed. The harness reported
+  **DID NOT FIRE**, which is the whole reason it re-reads what it built.
 - 🟢 **`scripts/rehearse-migration-chain.mjs`** runs several migrations in ONE transaction against
   prod and always rolls back. 🔴 **Rehearsing a chain file-by-file proves nothing and fails in the
-  direction that reads as success** — a seating file alone aborts at `P4` for want of the dates
-  file.
-- ⚠ It drops temp tables between files to stand in for the COMMIT that would have. Faithful only
-  because every temp table in these migrations is `ON COMMIT DROP`, which Postgres records nowhere
-  a query can read — so it prints what it dropped.
-- 🔴 **A FILE THAT PINS ITS SELECTION BY DIGEST MAKES ITS LATER NAMED GATES UNREACHABLE BY ANY
-  REALISTIC TAMPER.** Every selection tamper is caught by the digest, two gates before the one it
-  was aimed at. `CC_0471`'s assertion 4, `CC_0473`'s 4–6, `CC_0474`'s P5 and **`CC_0479`'s P8 and
-  assertion 6** are recorded as **backstops, not tested gates**. Do not count green controls as
-  tested assertions.
-- 🔴 **A TAMPER CAN BE STOPPED BY AN EARLIER FILE, NOT JUST AN EARLIER GATE.** Changing
-  `CC_0477`'s date to reach `CC_0478`'s P4 was stopped by `CC_0477`'s own clause check. To reach a
-  later file's gate, tamper the later file.
-- ⚠ **Put `P2` (already applied?) ABOVE the row-count checks.** On a second run the seats have
+  direction that reads as success.** `--verify <query.sql>` is how a pin is captured.
+- ⚠ **Put `P1`/`P2` (already applied?) ABOVE the row-count checks.** On a second run the seats have
   left `office_pending_winner`, so a count check fires first and blames the data.
 - ⚠ **Capture the predecessor pre-image, and expect it to be SMALLER than the seat count when a
-  seat is vacant.** California: 92 seats, **90** predecessors. `seat_officeholder` closes each
-  predecessor with an unguarded `UPDATE … SET term_end = p_term_start - 1` and records nothing.
-- ⚠ **A STATE-WIDE COUNT OF CLOSURES CAN PICK UP ANOTHER PROGRAMME'S ROW.** California's
-  2027-01-03 closures read 8, not 7; the eighth was a Santa Cruz County supervisor closed by
-  `CC_0405`. The migration's own assertion counted its pre-image and was right. **Measure what the
-  file touched, not what the day holds.**
-- 🔴🔴 **A CONTROL WHOSE FIXTURE THE PROGRAMME WILL MOVE PAST HAS A SHELF LIFE, AND NOBODY IS
-  WATCHING IT.** `control-election-transition-status.mjs` opened by asserting *"35 senate seats
-  examined, all at state 1"* — true when written, **false from 2026-11-18**, when the federal tier
-  was seated. Six assertions then failed at once, including a rollback check that reported
-  *"rollback did not revert: 35 seats still moved"* when the rollback had worked perfectly. It is
-  not in CI, so it had been **red for six days** and was only found by running it. ▶ **A control
-  locates its fixture by MEASUREMENT, compares a histogram rather than a literal, and refuses to
-  report when it has no fixture left.** ⚠ Note which assertions survived: the three that **planted**
-  their own state passed throughout; the three that **assumed** one did not.
-- 🔴🔴 **A TAMPER CAN DIE ON A DATABASE CHECK CONSTRAINT BEFORE IT REACHES A MIGRATION, AND THE
-  HARNESS REPORTS IT AS RED.** Two Maryland tampers did: `result` without `result_source`, and
-  `result_certainty` without `result`. The control proved nothing and did not even look like a
-  pass. ▶ **Read the message, not the colour.**
-- 🔴🔴 **AND A TAMPER THAT APPLIES CLEANLY CAN STILL CREATE NO FAULT.** Maryland's first C15
-  widened Ruling A's eligible set by dropping `title` and `chamber_id` — which changes nothing,
-  because a `STATE_LOWER` district row and a `STATE_UPPER` district row are **separate rows**,
-  each holding only its own chamber's offices. The tamper was present and faultless, and the
-  chain passed. ▶ **A control that cannot trip the comparison tests nothing — and the fix was to
-  move the gate, not to retune the tamper.**
+  seat is vacant.** ⚠ **And expect it to be DATED in some states**: 89 of Arizona's 93 predecessors
+  carry a real `term_start`, against 1 of Maryland's 178 — and Arizona's are the very rows its date
+  control reads, so the file asserts not one of them moved.
+- 🔴 **A FILE THAT PINS ITS SELECTION BY DIGEST MAKES ITS LATER NAMED GATES UNREACHABLE BY ANY
+  REALISTIC TAMPER.** Recorded as **backstops, not tested gates**: `CC_0471` assertion 4,
+  `CC_0473` 4–6, `CC_0474` P5, `CC_0479` P8 and assertion 6, and `CC_0500` assertion 3c — whose
+  discriminating arm reads the **same single row** as the corroboration arm, so no tamper can
+  separate them.
+- 🔴🔴 **A CONTROL WHOSE FIXTURE THE PROGRAMME WILL MOVE PAST HAS A SHELF LIFE.**
+  `control-election-transition-status.mjs` was **red for six days** because it asserted a literal
+  the pass had moved past. ▶ **A control locates its fixture by MEASUREMENT and refuses to report
+  when it has none left.**
 
 ---
 
@@ -399,33 +327,24 @@ worked Ruling A end to end, so Arizona is the same shape at half the size.
   explicit pathspec.
 - **Env:** the worktree has no `.env`. Prefix commands with
   `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
-- **Steward:** jurisdiction leases are 24h and expire on their own; `state:md` was held for this
-  work and lapses on 2026-11-25. **Claim `state:az` before starting Arizona.**
+- **Steward:** jurisdiction leases are 24h and expire on their own. `state:az` was taken for this
+  work and lapses 2026-11-25. **Claim the next state before starting it.**
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
   CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
-  file against them). ✅ **Refreshed for Maryland, 2026-11-24.** After the fix below, wave 3 reads
-  `called` **0** / `term_recorded` **60** and wave 4 `called` **262** / `term_recorded` **967**.
-  - 🟢🟢 **THE TRACKER NOW ASKS THE SEATING QUESTION OVER THE OFFICES A RACE CAN FILL**, not over
-    the single office the race hangs on. A row is a RACE and a seating is an OFFICE; a multi-seat
+  file against them).
+  - 🟢🟢 **THE TRACKER ASKS THE SEATING QUESTION OVER THE OFFICES A RACE CAN FILL**, not over the
+    single office the race hangs on. A row is a RACE and a seating is an OFFICE; a multi-seat
     contest seats its winners across the **sibling** offices of the same district, chamber and
-    title, so the old question found at most one of them and reported a **fully seated body as
-    `called`** with `partlySeated` set. Measured old against new over all 2,303 races: **43 move,
-    none loses a winner** — 38 Maryland Delegate races and the 5 California at-large bodies whose
-    17 seatings had read `called` since 2026-11-18. ⚠ **The cancelled-election blindness stays and
-    must**: 102 seats with no winner to read is a fact about the race, not the office.
+    title. ⚠ **The cancelled-election blindness stays and must**: 102 seats with no winner to read
+    is a fact about the race, not the office.
   - 🔴 **RE-READ THE HAND-KEPT `assignments` FILE FROM THE ARTIFACT, NOT FROM THE REPO.** On
-    2026-11-24 the repo copy was three refreshes stale — wave 3 `Not started`, waves 4 and 5
-    `Blocked` — the exact words the operator had corrected **on the artifact** on 2026-11-16.
-    Refreshing from the repo would have re-uploaded them and painted two healthy waves red. The
-    repo copy is now the uploaded one; check the file the page actually serves.
-  🟢 **THE "waves 4 and 5 SAY Blocked" WARNING IS STALE AND IS RETIRED HERE.** It was true on
-  2026-11-16 and fixed before the 11-19 refresh. Re-read 2026-11-23: the five status words are
-  `In progress` ×4 and `Barely started`, none matches the page's `/block/i` regex, and `blocked`
-  is 0 in every wave. ⚠ **Re-read it anyway at every refresh** — it is the only dataset the
-  builder does not compute, so it goes stale on its own, and the status word is the operator's
-  to change. ⚠ Wave 4's `next_action` text still predates California.
+    2026-11-24 the repo copy was three refreshes stale, and refreshing from it would have
+    re-uploaded words the operator had already corrected on the page. **Check the file the page
+    actually serves.** It is the only dataset the builder does not compute, so it goes stale on
+    its own, and the status word is the operator's to change.
 - **Step 9 is not done until a real address goes through `api.empowered.vote`.** Reasoning about a
   read path is not measuring it. Pick an address in a seat that CHANGES HANDS, and one in a seat
   that is vacant if the state has one — a re-election renders the same whether the file worked or
-  not.
+  not. 🔴 **The probe must refuse to report if it finds NO incoming holder anywhere**: the fields
+  are `incoming_holder_name` / `incoming_on`, and a uniform "no incoming" is a broken detector.

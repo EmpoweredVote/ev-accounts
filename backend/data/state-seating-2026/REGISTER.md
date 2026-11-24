@@ -22,7 +22,7 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**47 bodies still to do · 198 offices · 1 of the 47 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**47 bodies still to do · 197 offices · 1 of the 47 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -61,11 +61,11 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 | 33 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
 | 34 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
 | 35 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 36 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 37 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 38 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 39 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 40 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 36 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 37 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 38 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 39 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 40 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
 | 41 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
 | 42 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
 | 43 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
@@ -408,6 +408,114 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — the Maryland Governor, 1 office, and a near miss made of live rows
+
+The wave `CC_0494` deliberately left open. That file dated 178 General Assembly seats to the
+**second** Wednesday under Art. III § 6 and refused every state executive, because the Governor is
+a different clause naming a different day. `MD STATE_EXEC` stays in the queue at **2** offices.
+
+| file | what it did |
+|---|---|
+| `CC_0499` | dated the Governor to **2027-01-20**, Md. Const. Art. II § 1 |
+| `CC_0500` | seated **Wes Moore**, a re-election; his own 2023-01-18 term closed at 2027-01-19 |
+
+### 🔴🔴 A ONE-OFFICE WAVE IS WHERE A GATE PASSES VACUOUSLY, AND THE CONTROLS ARE THE ARGUMENT
+
+Every count in these two files is 1 or 0, and **a count of 1 is true of whoever happens to be in
+the selection**. So the gates that carry the weight are the ones that keep the size the same and
+change *which*:
+
+| control | what it changes | what catches it |
+|---|---|---|
+| C7 — the selection pointed at the Attorney General | the **office** | assertion 5 — "no Maryland executive other than the Governor was dated" |
+| C10 — the recorded winner replaced with the Comptroller's | the **person** | the P3 **digest**; every count still reads 1 |
+| C1 — the Governor dated 2027-01-13 | the **day** | assertion 1 |
+| C8 — the row cites Art. II § 3 instead of § 1 | the **law**, and nothing else | assertion 7, which reads the `authority` text |
+
+🔴 **C8 IS THE ONE NO NUMBER CAN SEE.** Art. II § 3 names the **same day** for the
+**qualification** — *"shall qualify … on the third Wednesday of January next ensuing his election,
+**or as soon thereafter as may be practicable**"* — and § 1 is the **term**. Swapping one for the
+other changes no count anywhere in the database. Washington's CC_0487 met the same shape with
+three citations and one date.
+
+### 🔴🔴 THE NEAR MISS IS NOT A HYPOTHETICAL — IT IS 178 LIVE ROWS IN THIS STATE
+
+2027-01-13 is the second Wednesday and it is the **whole General Assembly's real commencement**,
+written by `CC_0494` on this same day. Reaching one week short here does not produce an absurd
+date; it produces the legislature's correct one on an office it does not govern. ▶ `CC_0499`'s P3
+asserts those 178 rows are still on their own day before writing, and `CC_0500`'s assertion 9b
+asserts the two days stayed a week apart afterwards.
+
+### 🟢🟢 THE CORROBORATION IS ONE ROW, AND IT WAS NEVER DERIVED FROM THIS CLAUSE
+
+`essentials.office_terms` carries Wes Moore's open Governor term starting **2023-01-18**,
+backfilled by migration 1459 from `msa.maryland.gov`. The third Wednesday of January 2023 **is**
+the 18th, and **the second Wednesday of that month carries ZERO Maryland terms** — one row against
+zero is what separates the two rules rather than merely agreeing with one.
+
+⚠ **THAT SINGLE ROW IS THE WHOLE AVAILABLE CORPUS.** `CC_0494`'s assertion 3e measured that exactly
+one Maryland *legislative* term carries a `term_start` — Alexander M. Harlan's 2026-08-03
+appointment — and the other 187 are NULL, so the legislature cannot corroborate anything. 🔴 And
+because Moore is a **re-election**, this wave's own predecessor row **is** that evidence:
+`CC_0500`'s post-verify 6b asserts the start did not move while the term was closed.
+
+### 🔴🔴 THE LIEUTENANT GOVERNOR'S TERM IS THE SAME DAY AND WE HOLD NO ELECTION FOR IT
+
+Art. II § 1B could not be plainer: *"a vote cast for the candidate for Governor shall also be cast
+for Lieutenant Governor jointly listed on the ballot with him, and the election of Governor … also
+shall constitute the election **for the same term** … of the Lieutenant Governor."* So the office
+was on the 2026 ballot as a matter of law and its term begins 2027-01-20.
+
+**Measured 2026-11-24: the office row exists, is held by Aruna Miller, and carries no pending
+winner and NO 2026 RACE ROW AT ALL.** That is Utah's **third class** — "no race row" — not an
+unrecorded result, and the two look identical from the seat.
+
+🔴 **IT IS ALSO THE MIRROR OF ARIZONA'S MISSING LIEUTENANT GOVERNOR, AND THE PAIR IS WORTH
+HOLDING TOGETHER.** Arizona has a winner nobody can reach because **the office does not exist**;
+Maryland has an office nobody can fill because **the election was never recorded**. Both are
+invisible to every occupancy count, both take office on a day this pass has now written for their
+Governor, and both belong to the results and seeding programme. ▶ Neither file invented a row:
+`CC_0497` assertion 3e pins Arizona's absence, `CC_0499` P5 and `CC_0500` P7 pin Maryland's.
+
+### 🔴 MARYLAND IS THE SECOND STATE ON 2027-01-20
+
+Three Massachusetts constitutional officers were already there under
+`ma-const-amend-64-s1-constitutional-officers` (`CC_0481` / `CC_0485`) — an unrelated rule in an
+unrelated state landing on the same calendar square. Both files pin the before-image and name that
+rule, so a third state is caught rather than absorbed.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+**100 State Cir, Annapolis** through `api.empowered.vote`, which puts the whole wave on one page:
+
+- **Governor Wes Moore, incoming Wes Moore on 2027-01-20** — the re-election, rendering as a
+  dated handover rather than as nothing happening.
+- **Senate 30 and Subdistrict 30A show incoming on 2027-01-13** — `CC_0496`'s wave, a week
+  earlier, undisturbed. The two days sit beside each other on one voter's page, which is the whole
+  reason the citation mattered.
+- ⚠ **The Attorney General, the Comptroller and the Lieutenant Governor all show NO incoming** —
+  the two refusals and the results gap, visible to a voter. (The State Treasurer shows none
+  either; Maryland's is chosen by the General Assembly and carries no race.)
+
+### Controls, each watched going red (step 7)
+
+`backend/data/state-seating-2026/controls/md-governor-2026.controls.mjs` — **17 of 17 red; the
+negative control passed.** Four fired on an earlier gate than they were aimed at:
+
+| control | aimed at | fired on |
+|---|---|---|
+| C1 — write the General Assembly's second Wednesday | assertion 2b | assertion 1 |
+| C4 — Moore's 2023 term moved onto the second Wednesday | assertion 3c | assertion 3b |
+| C7 — the selection pointed at the Attorney General | assertion 7 | assertion 5 |
+| C17 — a General Assembly term moved off 2027-01-13 | assertion 9b | P9 |
+
+⚠ **C4 CANNOT BE SEPARATED FROM 3b BY ANY TAMPER, AND THAT IS A PROPERTY OF THE CORPUS.** The
+discriminating arm (3c, "the second Wednesday of 2023 carries zero Maryland terms") and the
+corroboration arm (3b, "the open Governor term starts 2023-01-18") read **the same single row**,
+because it is the only Maryland term with a start date that this clause governs. Moving it breaks
+both, and 3b comes first. ▶ 3c is defence in depth, not a gate this wave has tested — the same
+shape as `CC_0479`'s P8.
 
 ## ✅✅ APPLIED 2026-11-24 — Arizona, 93 offices, THE SECOND RULING A WAVE
 

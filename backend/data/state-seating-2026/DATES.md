@@ -698,7 +698,21 @@ rounded dates for corroboration.
 
 ---
 
-## MD — Maryland · 117 offices · ⚠️ 115 sourced, **2 REFUSED**, 2026-11-22 — ✅✅ **THE 178 GENERAL ASSEMBLY SEATS DATED AND SEATED 2026-11-24** (`CC_0494`, `CC_0495`, `CC_0496`); the Governor is still owed a wave, the AG and the Comptroller REMAIN REFUSED
+## MD — Maryland · 117 offices · ⚠️ 115 sourced, **2 REFUSED**, 2026-11-22 — ✅✅ **THE 178 GENERAL ASSEMBLY SEATS DATED AND SEATED 2026-11-24** (`CC_0494`, `CC_0495`, `CC_0496`) — ✅✅ **AND THE GOVERNOR, 2026-11-24** (`CC_0499`, `CC_0500`); the AG and the Comptroller REMAIN REFUSED
+
+> ✅✅ **THE GOVERNOR IS DONE, 2026-11-24.** `CC_0499` dated the one office to **2027-01-20**,
+> Md. Const. Art. II § 1, cited from the TERM clause and not § 3's identical QUALIFICATION day;
+> `CC_0500` seated **Wes Moore**, a re-election, closing his own 2023-01-18 term at 2027-01-19.
+> 🔴 **The near miss was not hypothetical: 2027-01-13 is the whole General Assembly's real day and
+> was already live on 178 rows.** The write-up, the 17 controls and the Annapolis API probe are in
+> [`REGISTER.md`](./REGISTER.md) § the Maryland Governor.
+> 🔴🔴 **AND ONE THING THIS SECTION DID NOT KNOW: THE LIEUTENANT GOVERNOR'S TERM IS THE SAME DAY.**
+> Art. II § 1B makes the election of a Governor *"the election for the same term"* of the
+> Lieutenant Governor, so the office was on the 2026 ballot as a matter of law — and we hold **no
+> winner and NO 2026 RACE ROW AT ALL** for it. The office row exists and is held by Aruna Miller.
+> That is Utah's "no race row" class, not an unrecorded result, and it is the mirror of Arizona's
+> missing Lieutenant Governor OFFICE. Both belong to the results and seeding programme; both files
+> gate on the gap staying as described rather than inventing a row.
 
 ### 🔴🔴 THREE CORRECTIONS TO THIS SECTION, MADE WHEN THE WAVE WAS BUILT
 
