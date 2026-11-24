@@ -390,6 +390,17 @@ in January 2027.
   entirely — two states in a row, each found only by reading that state's own sources. ▶ **Worth
   measuring across the whole pass in one query rather than noticing it a state at a time**, and
   worth knowing before anyone reads "41 states, 1,162 offices" as coverage.
+  - 🔴🔴 **AND A MISSING BODY WHOSE DAY IS THE WAVE'S OWN DAY CANNOT BE NOTICED BY ANY DELTA.**
+    Measured 2026-11-24: New Mexico's absent House takes **2027-01-01** — Art. IV § 4 gives
+    representatives two years and names no commencement, so Art. XX § 3(A)'s general clause
+    governs, and that is **the day `CC_0505` and `CC_0506` wrote**. Alabama's 140 missing seats sat
+    on a day already past and Idaho's 105 on a different article's different day, so in both the
+    gap would have stood out. Here it would be **absorbed into the day the wave itself created**,
+    with no count moving that the wave's own rule could not explain. ▶ **A seeding job must give
+    such a body its own `rule_id` even though the day is shared**, and the wave must gate on the
+    body's continued absence — `CC_0505` P5 / 3f and `CC_0506` P10 do.
+    ⚠ **The 2026 gap is 70, not 112**: a four-year Senate last filled in 2024 was not up, which
+    AP's own ballot corroborates (70 House districts plus one Senate **unexpired term**).
   - 🔴🔴 **AND THERE ARE THREE DIFFERENT REASONS A STATE LOOKS SMALL, WHICH ARE INDISTINGUISHABLE
     FROM THE QUEUE.** Measured across three consecutive states: Nebraska and New Mexico are missing
     the **offices** (49 and 112 legislative seats that do not exist in our data); **Georgia is
@@ -430,6 +441,14 @@ in January 2027.
     AD22 (a race with a NULL result) because there is nothing to notice. ⚠ **AP cannot catch this
     class**: AP's New Mexico ballot carries no Public Education Commission contest whatsoever, so
     a wave derived from it would never learn the body exists. The Secretary of State had it.
+    - 🟢🟢 **AND THE SENTENCE HAS A SECOND HALF THAT TURNS "FOUR OF FIVE" INTO A CLOSED ANSWER.**
+      § 3(D) puts the other five districts — one, four, eight, nine and ten — in the
+      2024-and-subsequent group. (2026 − 2022) % 4 = 0 and (2026 − 2024) % 4 = 2, so five were up
+      and five were not, and **5 + 5 = 10 is Art. XII § 6(B)'s own membership number**. ▶ Because
+      the partition is **exhaustive**, the shortfall is *exactly one seat* and nothing hides behind
+      it — the other five are genuinely staggered and District 7 is certainly a missing result.
+      **Read BOTH halves of a staggering clause and check they partition the body**, or "we hold
+      four of five" stays a suspicion instead of becoming a measurement. Gated in `CC_0505` 3a.
 - ⚠ **A legislative journal settles a disagreement between aggregators.**
 - 🔴 **`statutes.capitol.texas.gov` RETURNS THE SAME 250,874-BYTE NAVIGATION PAGE FOR EVERY
   `Docs/.../*.htm` URL** under `curl` — whatever article is asked for, with 1,356 characters of
@@ -469,7 +488,7 @@ in January 2027.
 | 11 | TX | BOARD_EDUCATION+EXEC | 14 | 1010 | |
 | 12 | AL | EXEC+BOARD_EDUCATION | 13 | 1023 | ✅ done — the rule row **verified**; all 13 on 2027-01-18 |
 | 13 | NE | EXEC+**2 BOARDS**+BOARD_EDUCATION | 13 | 1036 | ✅ done — all 13 on **2027-01-07**; the rule rows **verified**. 🔴 FOUR bodies, not three: `STATE_BOARD` holds the Regents AND the PSC |
-| 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ✅ done — all 11 on **2027-01-01**; the PEC rule row **verified**. 🔴 **PEC District 7 was on the ballot and we hold NO race for it** |
+| 14 | NM | EXEC+BOARD_EDUCATION | 11 | 1047 | ✅✅ **SEATED 2026-11-24** (`CC_0505`/`CC_0506`) — all 11 on **2027-01-01**; the PEC rule row **verified**. 🔴🔴 A **THIRD** instrument found on re-reading: `Art. XX § 3(A)` dates *every* state, county or district officer and discharges `Art. V § 1`'s carve-out. 🔴 **PEC District 7 was on the ballot and we hold NO race for it**; 70 House seats are absent and take **this same day** |
 | 15 | GA | EXEC | 10 | 1057 | 🔴 **ALL TEN REFUSED** — the inauguration day is appointed by joint resolution inside a statutory week. `window_end_date` **2027-01-16** is sourced |
 | 16 | AR | EXEC | 7 | 1064 | 🔴 **5 REFUSED with a window (2027-01-11 → 2027-01-17), 2 OPEN.** `Art. 6 §3` read in full: the Speaker publishes the returns **during the first week of the session** and the winner is "declared duly elected". 🔴 `Schedule §20` is **TRANSITIONAL** and cannot date anyone. Lt. Governor + Commissioner of State Lands still open |
 | 17 | ID | EXEC | 7 | 1071 | ✅ **all 7 on 2027-01-04.** `Idaho Const. Art. IV § 1` names the seven and fixes the day: four years "beginning on the first Monday in January next after his election". 🟢 A **formula**, not a choice, so the two agreeing `office_terms` rows count |
@@ -769,7 +788,7 @@ to mistake for outstanding work. **The queue is the only list of what is left.**
 | TX | ✅ [`DATES.md`](./DATES.md) — all 14: **2027-01-01** for 12 (`Gov't Code § 601.003`), **2027-01-19** for Governor + Lt. Governor, whom § 601.003(c) excludes by name | ⏳ | | |
 | AL | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-18**, three provisions with one formula. 🟢 Its SBOE rule row **verified correct**. 🔴 PSC expands 3 → 7 seats from that same day | ⏳ | | |
 | NE | ✅ [`DATES.md`](./DATES.md) — all 13 on **2027-01-07**, one residual clause (`Art. XVII-5`) proved undisplaced against 4 constitutional provisions and 5 statutes. 🔴 The same clause is **one day wrong for the Legislature** (2025-01-08 in the SoS book) — we hold none of its 49 seats | ⏳ | | |
-| NM | ✅ [`DATES.md`](./DATES.md) — all 11 on **2027-01-01**: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands** | ⏳ | | |
+| NM | ✅✅ **SEATED** [`DATES.md`](./DATES.md) — all 11 on **2027-01-01** from THREE instruments: `Art. V § 1` names the seven executives one by one, HB 9 § 3(B) (NMSA § 22-3B-3) dates the PEC in nearly the same words, and 🔴🔴 `Art. XX § 3(A)` — found by a 270-section sweep on 2026-11-24 — commences *"every state, county or district officer"* on the same day and so **discharges `Art. V § 1`'s carve-out by measurement**. Its `§ 3(C)` hatch is shut for statewide offices and open for the districted PEC, which is the authority HB 9 exercises. 🔴 **PEC District 7 was on the ballot, we hold no race for it, and the seat changed hands**; **70 House seats are absent and take THIS SAME DAY** | **2027-01-01** | `CC_0505` / `CC_0506` | ✅ 28/28 controls red |
 | GA | 🔴 [`DATES.md`](./DATES.md) — **0 of 10 dated.** `O.C.G.A. § 45-12-2` puts the inauguration in the first week of the session **on a day a joint resolution appoints**, with a noon-Saturday fallback — so `window_end_date` **2027-01-16** is sourced and `swearing_in_date` is not. The 2 PSC seats are governed by a remedial statute (`§ 46-2-1.1`) that could not be read in full | ⏳ | | |
 | HI | ✅ [`DATES.md`](./DATES.md) — 🔴🔴 **TWO DATES, BOTH URGENT.** OHA trustees' terms begin **on election day** (`HRS § 13D-5`); Governor and Lt. Governor at **noon on the first Monday in December** (`art. V §§ 1, 2`) | **2026-11-03** (OHA) / **2026-12-07** (Gov) | — | 🔴 one date is **past**, the other is **14 days out**; At-large is Ruling A |
 | CT | ✅ [`DATES.md`](./DATES.md) — **all on one clause.** `art. IV § 2` (codified) covers all six executives, and `art. III §§ 2, 10` give the session and the legislature the **same day**. 🔴 The PDF prints `ARTICLE FOURTH` **twice** and the superseded copy comes first | **2027-01-06** | — | 🔴 the **Secretary of the State** has no race row, ever |

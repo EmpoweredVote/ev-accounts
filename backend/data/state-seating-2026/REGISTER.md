@@ -22,54 +22,52 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**44 bodies still to do · 177 offices · 1 of the 44 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**42 bodies still to do · 166 offices · 1 of the 42 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
 | 3 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 4 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 5 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 6 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 7 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 8 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 9 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 10 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 11 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 12 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 13 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 14 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 15 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 16 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 17 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 18 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 19 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 20 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 21 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 22 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 23 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 24 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 25 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 26 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 27 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 28 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 29 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 30 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 31 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 32 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 33 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 34 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 35 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 36 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 37 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 38 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 39 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 40 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 41 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 42 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 43 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 44 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 4 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 5 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 6 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 7 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 8 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 9 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 10 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 11 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 12 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 13 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 14 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 15 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 16 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 17 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 18 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 19 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 20 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 21 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 22 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 23 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 24 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 25 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 26 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 27 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 28 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 29 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 30 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 31 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 32 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 33 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 34 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 35 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 36 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 37 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 38 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 39 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 40 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 41 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 42 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -405,6 +403,136 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — New Mexico, 11 offices across BOTH its bodies, and a third instrument the ledger did not have
+
+Two files, no people file and no Ruling A. `CC_0505` dated 11 offices to **2027-01-01** and
+`CC_0506` seated all 11. Both `NM STATE_EXEC` (7) and `NM STATE_BOARD_EDUCATION` (4) left the queue.
+
+| file | what it did |
+|---|---|
+| `CC_0505` | dated 11 offices to **2027-01-01** from two instruments under a third — N.M. Const. Art. V § 1 (7 executives) and Laws 2021 (2nd S.S.) ch. 3 (HB 9) § 3(B) = NMSA 1978 § 22-3B-3 (4 Public Education Commissioners), both standing on Art. XX § 3(A) |
+| `CC_0506` | seated 11 winners — **6 re-elections and 5 handovers**, all `called` |
+
+**Verified after the apply:** `office_pending_winner` 0 for New Mexico · `office_next_term` 11 on
+2027-01-01 · `office_swearing_in` 2,015 → 2,026 and rows on the day 50 → 61 · `office_terms`
+13,141 → 13,152 and terms on the day 50 → 61 · the first Monday unmoved at 241 rows / 229 terms ·
+11 predecessors closed at 2026-12-31 · **drift baseline 238 unmoved**, `offices_missing_terms` 280
+unmoved, flagged-vacant 66 unmoved, `politicians` and `offices` unmoved.
+
+**What this state taught, in six lines**
+
+- 🔴🔴 **A LEDGER THAT FLAGS ITS OWN REASONING AS UNTESTED IS TELLING YOU WHERE THE FINDING IS.**
+  `DATES.md` § NM discharged Art. V § 1's *"unless otherwise provided in the constitution of New
+  Mexico"* by argument and said so in terms: *"🔴 This is reasoning, not a sweep … recorded so the
+  next reader can test it rather than inherit it."* Sweeping it — **24 articles, 270 section
+  titles** — found **Art. XX § 3(A)**, a general clause commencing *"every state, county or
+  district officer"* on the first day of January. ▶ **It agrees, it reaches BOTH bodies at once,
+  and it is precisely the kind of provision the carve-out yields to**, so the discharge is now a
+  measurement. A sweep that confirms the existing answer is not a wasted sweep: it converted the
+  weakest claim in the state's file into its strongest.
+- 🔴🔴 **AN ESCAPE HATCH CAN CLOSE ITSELF FOR ONE BODY AND STAY OPEN FOR THE OTHER, IN ONE
+  SENTENCE.** Art. XX § 3(C) lets a law adjust a term to stagger elections — Oregon's Art. IV
+  § 4(1) shape, the thing `REGISTER.md` says to read to the full stop — and it ends **"No statewide
+  elective office may be adjusted pursuant to this subsection."** So for the seven statewide
+  executives the hatch is bolted shut; for the **districted** Commission it is open, **and HB 9 is
+  the law that walks through it and keeps January 1 anyway.** Art. XII § 6(B) delegates ("ten
+  members … **as provided by law**"), the statute exercises the delegation, and all three land on
+  the same day. ▶ **Reading one clause to its full stop answered both bodies in opposite
+  directions.**
+- 🔴🔴 **A HOST'S REFUSAL CAN CHANGE FROM A 403 TO A 200 SHELL IN TWO DAYS, AND THE 200 IS WORSE.**
+  `DATES.md` had `nmonesource.com` on file as the first host in this pass that a complete browser
+  header set does not open — **HTTP 403, 239 bytes**. Measured 2026-11-24 it answers plain `curl`
+  with **HTTP 200 and 13,604 bytes**, the correct `<title>` *"Constitution of New Mexico"*, and
+  **zero section text**. 🔴 A 403 announces itself; a 200 shell does not, and a "the title is
+  right" guard clears it — verbatim the `le.utah.gov` trap `CC_0489` paid for. **The conclusion
+  was unchanged and only the evidence for it moved**, which is the thing a later reader would get
+  backwards. ⚠ `law.justia.com` 403s the full header set, so no independent second host was
+  available and that is recorded rather than left as a silent gap.
+- 🟢🟢 **THE "NOBODY HOLDS TWO SEATS" ZERO HAD A REAL FIXTURE HERE, AND THREE CONTROLS WERE NEEDED
+  TO USE IT.** **Stephanie Garcia Richard** is the sitting Commissioner of Public Lands and this
+  wave's winner of the **Lieutenant Governorship**, and both legs are inside the wave on one day:
+  her old term closes **only** because Juan Sanchez III is seated into the seat she leaves. That is
+  Oregon's Helfrich, and the contrast is Utah's Fiefia, where the vacated seat's own result was
+  missing — **the difference is a result, not a rule.** Idaho had nobody at all and its `P8` rested
+  on a planted term. ▶ **C19 plants a second term on a DIFFERENT winner** (so the gate is not keyed
+  to her by accident), **C20 moves her vacated seat OUTSIDE the wave** (every count stays identical;
+  only the inside-the-wave arm can tell Helfrich from Fiefia), and **C21 removes the fixture
+  entirely** so `P9` reports a vacuous zero. 🔴 **C21 is the control-of-a-control**: `P9` exists to
+  assert the fixture is there, and without C21 the fixture could quietly vanish and leave assertion
+  9's zero meaning nothing, with every number in both files still green.
+- 🔴🔴 **THREE CONTROLS FIRED ON AN EARLIER GATE AND ALL THREE WERE THE ONES THAT MATTERED — READ
+  THE MESSAGE, NOT THE COLOUR.** The first run was 28 of 28 red and the summary looked like a
+  triumph. ⚠ **C19** planted its second term on **Debra Haaland, who holds no seat at all**, so she
+  ended with exactly one and `P8` passed *honestly*; it was `P9` that fired. **P8 asks whether a
+  winner holds more than one office — only somebody with a seat already can answer yes**, so the
+  fixture moved to Raul Torrez, a re-elected incumbent. ⚠ **C20** died on
+  `office_terms_no_overlap` and printed an **(unparsed)** green RED: a term with `term_start NULL`
+  has an **unbounded** daterange and overlaps any other term on the same office, so the seat had to
+  be **deleted** rather than closed. ⚠ **C21** deleted her Public Lands term and left that office
+  with no predecessor, so `P6`'s "one per seat" fired two gates early; **reassigning** the term to
+  somebody outside the wave removed only the thing `P9` looks for. ▶ **Every one of those three was
+  a real gate doing real work, and none of them tested the gate aimed at.**
+- 🔴🔴 **A MISSING BODY WHOSE DAY IS *THIS WAVE'S* DAY IS A NEW SHAPE, AND IT IS THE WORST OF THE
+  THREE SO FAR.** New Mexico holds **zero** `STATE_UPPER` and `STATE_LOWER` office rows. Art. IV
+  § 4 gives representatives two years and **names no commencement**, because Art. XX § 3(A) already
+  covers them — so all **70** House seats belong on **2027-01-01, the day this wave wrote**.
+  Alabama's 140 missing seats sat on a day already past and Idaho's 105 on a different article's
+  different day; **New Mexico's would be absorbed into the day the wave itself created**, and no
+  delta would move that this wave's own rule could not explain. ▶ `CC_0505` P5 / assertion 3f and
+  `CC_0506` P10 all refuse if one appears, and a seeding job must give them their own `rule_id`.
+  ⚠ **And the gap is 70, not 112**: a four-year Senate last filled in 2024 was not up, which AP's
+  own ballot corroborates (70 House districts plus one Senate **unexpired term**).
+
+### 🟢🟢 THE RESULTS GAP WAS SETTLED BY THE ACT'S OWN ARITHMETIC, NOT BY A JUDGEMENT
+
+`PICKUP.md` asked whether "4 of 10 PEC seats were up" could be trusted, since some of the other six
+might be staggered and at least one a missing result — *different facts*. HB 9 answers it
+completely, because the document that dates the body also says which half of it was up:
+
+| clause | districts | cycle | up in 2026? |
+|---|---|---|---|
+| § 3(C) | 2, 3, 5, 6, **7** | "the 2022 and subsequent general elections" | (2026 − 2022) % 4 = 0 → **yes, five** |
+| § 3(D) | 1, 4, 8, 9, 10 | "the 2024 and subsequent general elections" | (2026 − 2024) % 4 = 2 → **no** |
+
+5 + 5 = 10, which is Art. XII § 6(B)'s own membership number — **an exhaustive partition**, so the
+shortfall is **exactly one seat** and nothing hides behind it. **District 7 is a missing RESULT**;
+the other five are genuinely staggered. Both arms are gated in `CC_0505`'s assertion 3a, so the
+partition is a measurement rather than a note. 🔴 Patricia Gipson therefore keeps a seat she lost
+until the result arrives — the Kipke and Fiefia shape — and **both files pin it rather than tidying
+it.** ⚠ **AP cannot catch this class**: AP's New Mexico ballot carries no Commission contest at all.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+Three real addresses through `api.empowered.vote`:
+
+- **Santa Fe** and **Albuquerque** → all seven executives carry an incoming holder on 2027-01-01,
+  and 🟢🟢 **both halves of Stephanie Garcia Richard's move render on ONE page**: *Commissioner of
+  Public Lands — incoming Juan Sanchez III* beside *Lieutenant Governor — incoming Stephanie Garcia
+  Richard*, the seat she leaves and the seat she takes, side by side for one voter.
+- **Albuquerque** adds *Public Education Commissioner, District 3 — incoming Jacob Trujillo*, a
+  re-election rendering as a dated handover.
+- 🔴 **Las Cruces shows the RESULTS GAP to a voter**: *Public Education Commissioner, District 7 —
+  **no incoming***, on a page where every statewide office has one. That is the missing race, visible.
+- ⚠ **Santa Fe's Commission seat is District 10, which was not up**, so it correctly shows nothing.
+  A probe that had used only Santa Fe would have read "the Commission does not render" and been
+  wrong — the district has to be one the wave actually touched.
+- The probe refuses to report if it finds no incoming holder anywhere: 92 office rows scanned
+  across the last two addresses, 19 carrying one.
+
+### Controls, each watched going red (step 7)
+
+`backend/data/state-seating-2026/controls/nm-2026.controls.mjs` — **28 of 28 red, each on the gate
+it was aimed at, negative control green, no backstops.** Three (C19, C20, C21) were rebuilt after
+firing on an earlier gate; the reasons are in the file beside each fixture and in the fifth line
+above. 🔴 **C15 is the one no number can see**: dropping Art. XX § 3(A) from the authority text
+leaves every row, date, delta and digest in both files byte-for-byte identical, and only assertion
+7b reads the text. That is Maryland's C8 (§ 1 against § 3, the same day) one state later.
+
+Recorded as **backstops, not tested gates**: `CC_0506`'s `P3` re-election and handover counts and
+its 11-name check (all below the pinned digest, which C18 showed catches a realistic tamper two
+gates earlier), `CC_0505`'s `P2` selection-completeness arm (dropping a body changes the TOTAL, so
+`P1` fires first), and `CC_0506`'s assertion 10b.
 
 ## ✅✅ APPLIED 2026-11-24 — Idaho, 7 offices, a whole department returned, and a legislature due in SEVEN DAYS
 

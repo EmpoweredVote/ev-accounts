@@ -2384,16 +2384,59 @@ dated it from the other's clause.
 
 ---
 
-## NM — New Mexico · 11 offices · ✅ sourced 2026-11-22 — **two instruments, nearly the same words, one day**
+## NM — New Mexico · 11 offices · ✅✅ APPLIED 2026-11-24 (`CC_0505` / `CC_0506`) — **THREE instruments, one day**
 
 | body | offices | start date | authority |
 |---|---|---|---|
 | Governor · Lieutenant Governor · Secretary of State · State Auditor · Treasurer · Attorney General · Commissioner of Public Lands | 7 | **2027-01-01** (Fri) | N.M. Const. Art. V, § 1 |
 | Public Education Commissioner, Districts 2, 3, 5, 6 | 4 | **2027-01-01** (Fri) | Laws 2021 (2nd S.S.), ch. 3 (HB 9), § 3(B), codified NMSA 1978 § 22-3B-3 |
+| **both of the above** | **11** | **2027-01-01** | 🔴🔴 **N.M. Const. Art. XX, § 3(A)** — the general clause, found 2026-11-24 |
 
 🟢 **The constitution and the statute were written sixty years apart and say the same thing in
 nearly the same words** — "beginning on the first day of January next after their election" and
 "for terms commencing on January 1 next succeeding their election". Both give **2027-01-01**.
+
+### 🔴🔴 CORRECTION, 2026-11-24 — THERE IS A THIRD INSTRUMENT, AND IT IS THE ONE THAT CLOSES ART. V § 1
+
+Everything above was sourced 2026-11-22 and is right. It is also **incomplete**, and the missing
+piece is the one the section below asked the next reader to go and find.
+
+**N.M. Const. Art. XX, § 3** — *[Date terms of office begin.]*, as amended November 3, 2020:
+
+> **A.** The term of office of **every state, county or district officer**, except those elected to
+> fill vacancies, **shall commence on the first day of January next after the officer's election.**
+> **B.** A state, county or district officer elected to fill a vacancy in office shall take office
+> on the first day of January next after the officer's election to serve the remainder of the
+> unexpired term for that office.
+> **C.** The term of a state, county or district officer **may be adjusted by law** to align or
+> stagger the election of officers … The term of any officer affected by such adjustment shall not
+> be shortened or extended by more than two years … **No statewide elective office may be adjusted
+> pursuant to this subsection.**
+
+🟢🟢 **It reaches all eleven offices at once** — executives and commissioners alike — and it names
+the same day the other two do. It is also **exactly the kind of provision Art. V § 1's carve-out
+yields to**, so the carve-out is now discharged by a measurement rather than by an argument.
+
+🔴 **§ 3(C) is an escape hatch that closes itself in one direction only.** *"May be adjusted by
+law"* is Oregon's Art. IV § 4(1) shape. Read to the full stop it ends **"no statewide elective
+office may be adjusted"**, so the seven executives are immovable. 🟢🟢 **For the Public Education
+Commission the hatch is open and HB 9 is the law that walks through it — and keeps January 1
+anyway**: a commissioner is a *district* officer, HB 9 is titled "ELECTION FOR STAGGERED TERMS",
+and Art. XII § 6(B) delegates the whole thing ("ten members … shall be elected for staggered terms
+of four years **as provided by law**"). The constitution delegates, the statute exercises the
+delegation, and all three land on the same day. **There is no gap left between them.**
+
+⚠ **Art. V § 1 also has a TERM-LIMIT paragraph, which is not an escape hatch** — *"Such officers
+shall, after having served two terms in a state office, be ineligible to hold that state office
+until one full term has intervened."* Maryland's Art. II § 1 shape. 🟢🟢 **And it is live: it
+explains Michelle Lujan Grisham's departure from the Governorship and Stephanie Garcia Richard's
+move from Commissioner of Public Lands to the Lieutenant Governorship** — two of this wave's five
+handovers predicted by the law rather than merely observed in the data.
+
+⚠ **And Art. V § 1 states its own cycle**, which the first reading did not record: *"the terms
+provided for in this section shall apply to those officers elected at the general election in
+**1990** and all state executive officers elected thereafter"*. 2026 − 1990 = 36, divisible by
+four, so the instrument that dates the body also confirms all seven were up.
 
 ### The authority — the seven executives
 
@@ -2458,6 +2501,14 @@ nmonesource serves section bodies only on a further click and the page state pro
 calls. ▶ **The wording above is the enrolled bill's; the section's continued existence is the
 codification's.** If a date ever turns on a word in `22-3B-3`, read the codified text.
 
+🟢 **Added 2026-11-24: the same act says the day a second time, from the other end of the
+calendar.** **§ 16(B)** makes an appointment to fill a vacancy run *"for a term **ending on
+December 31** after the next general election, at which election a person shall be elected to fill
+any remainder of the unexpired term"* — so the elected term begins January 1. Two different
+sentences in one document, and the second is independent of the first. It is also the day
+`CC_0506` closes all eleven predecessor terms on, so that closure is the day the instruments name
+rather than an arithmetic by-product of `term_start - 1`.
+
 ### The control
 
 🟢 **Our own data, written by a pass that never read Art. V § 1.** `essentials.office_terms` holds
@@ -2469,6 +2520,23 @@ exactly.**
 Nebraska, and reported the same way. New Mexico holds no other dated term at these tiers.
 ⚠ **And there is no canvass-book control here.** New Mexico's Secretary of State publishes results,
 not the per-office "Term Start" metadata block Nebraska's canvass book carries.
+
+🟢🟢 **MEASURED 2026-11-24: ONE ROW AGAINST TWO ZEROS, which is what separates the rules rather
+than merely agreeing with one.** For the 2018 cycle:
+
+| rule | the day it gives | New Mexico terms on it |
+|---|---|---|
+| Art. XX § 3(A) / Art. V § 1 — the first day of January | 2019-01-01 | **1** |
+| the first Monday — the dangerous near miss | 2019-01-07 | **0** |
+| the third Tuesday — New Mexico's own session convening day | 2019-01-15 | **0** |
+
+⚠ **AND THE ROW DATES A DIFFERENT KIND OF EVENT FROM THE CLAUSE.** Its source is the Governor's
+own office press release *"Governor Lujan Grisham Sworn In"*, published 2019/01/01 — a **ceremony**,
+where Art. XX § 3(A) dates a **term**. They coincide on that day, which is what makes the agreement
+worth something; but nobody should read this row as evidence that New Mexico dates terms from the
+oath. The instruments settle that and they say the term (see "Term start or oath?" below).
+⚠ The other nine dated New Mexico terms are all **federal**, under `us-const-amend-xx-1`. 🔴 Note
+the near-collision of names: **Amendment XX is not Article XX.**
 
 ### 🔴🔴 PUBLIC EDUCATION COMMISSION DISTRICT 7 WAS ON THE 2026 BALLOT AND WE HAVE NO RECORD OF IT
 
@@ -2491,6 +2559,19 @@ for vacancy appointments. So **five** PEC seats were due in 2026. **We hold four
 Gipson, and no 2026 race for it at all** — not a race with a null result, as Nevada's Assembly
 District 22 has, but no race row whatsoever. The seat changes hands and nothing in our data says so.
 
+🟢🟢 **AND THE ACT'S OWN ARITHMETIC CLOSES THE QUESTION, MEASURED 2026-11-24.** The shortfall is
+**exactly one seat** and there is nothing else hiding behind it, because §§ 3(C) and 3(D) are an
+**exhaustive partition** of Art. XII § 6(B)'s ten members:
+
+| clause | districts | cycle | up in 2026? |
+|---|---|---|---|
+| § 3(C) | 2, 3, 5, 6, **7** | "the 2022 and subsequent general elections" | (2026 − 2022) % 4 = 0 → **yes, five** |
+| § 3(D) | 1, 4, 8, 9, 10 | "the 2024 and subsequent general elections" | (2026 − 2024) % 4 = 2 → **no** |
+
+5 + 5 = 10. ▶ **So the other five are genuinely staggered and District 7 is the only missing
+result** — `PICKUP.md` asked whether "4 of 10 were up" could be trusted, and this is the answer.
+Both arms are asserted in `CC_0505`'s assertion 3a, so the partition is a gate rather than a note.
+
 ▶ **This is the Nevada AD22 rule firing again, one state later and in its harsher form.** There the
 race existed with `result` NULL; here the race is absent entirely. Both are invisible to
 `office_pending_winner`, and both make a chamber's pending count look like ordinary staggering.
@@ -2501,11 +2582,40 @@ were up. **Read that sentence and count against it.**
 contest at all (checked: 89 distinct office/seat pairs, none of them PEC), so a wave derived from
 AP would never know the body exists. The Secretary of State is the only source that has it.
 
-### ⚠ New Mexico's whole legislature is absent too — 112 seats
+### 🔴🔴 New Mexico's whole legislature is absent too — and its day is THIS WAVE'S OWN DAY
 
 Measured 2026-11-22: New Mexico has **no `STATE_UPPER` and no `STATE_LOWER` offices**. AP's own 2026
 ballot for the state lists **70 State House districts** and a **State Senate District 33 unexpired
 term**; the Senate is 42 seats. None of them exist in our data.
+
+🔴🔴 **ADDED 2026-11-24, AND IT IS THE PART THAT MAKES THIS URGENT RATHER THAN MERELY MISSING.**
+**N.M. Const. Art. IV § 4** gives senators four years and *"members of the house of representatives
+… a term of two years"*, and **names no commencement day of its own** — because Art. XX § 3(A)
+already covers them ("every state, county or district officer"). Its own vacancy sentence agrees,
+running a legislative appointment *"for a term ending on Decemb[er 31]"*.
+
+▶ **So those seats take 2027-01-01 — the very day `CC_0505` and `CC_0506` wrote.** That is a new
+shape, and worse than the two states before it:
+
+| state | the missing body | its day |
+|---|---|---|
+| **AL** | 140 offices that **do not exist** | 2026-11-04 — **already passed** |
+| **ID** | 105 offices that **do exist**, held and dated | 2026-12-01 — a *different* article, a *different* day |
+| **NM** | **70 House offices that do not exist** | 🔴🔴 **2027-01-01 — THE SAME DAY AS THIS WAVE** |
+
+🔴 **Dated now, they would be ABSORBED into this day's count and stand out from nothing**: no delta
+would move that this wave's own rule could not explain. ▶ **A seeding job must give them their own
+`rule_id`**, even though the day is shared. `CC_0505`'s P5 and assertion 3f and `CC_0506`'s P10 all
+refuse to run if a New Mexico legislative office appears.
+
+⚠ **AND THE SENATE WAS NOT UP IN 2026, SO THE GAP IS 70 AND NOT 112.** A four-year Senate term last
+filled in 2024 puts the next election in 2028; a two-year House term puts all 70 House seats on the
+2026 ballot **as a matter of law**. AP's ballot matches exactly — 70 House districts plus one
+Senate District 33 **unexpired term**, which is a vacancy, not the cycle.
+
+⚠ New Mexico holds **no county and no local office rows** either. Art. XX § 3(A) reaches those too
+("state, county **or district** officer"), and § 3(C)'s adjustment power is live for them — so a
+future county wave must look for an adjusting statute before borrowing this day.
 
 🔴 **That is the second state in a row with its entire legislature missing** — Nebraska's 49-seat
 unicameral is absent in exactly the same way. ▶ **Worth measuring across the whole pass rather than
@@ -2548,6 +2658,53 @@ header rule is for: it told us to stop escalating by guesswork.** `SOURCING.md` 
 the answer to a TLS-fingerprint or JS challenge and not to a thin request — **this is the
 TLS-fingerprint case, and Playwright opened it immediately.**
 
+### 🔴🔴 AND ON 2026-11-24 THE REFUSAL CHANGED SHAPE — TO THE MORE DANGEROUS OF THE TWO
+
+Re-measured two days later, plain `curl` on the same URL answers **HTTP 200 with 13,604 bytes**,
+carrying the correct `<title>` *"Constitution of New Mexico"* and **zero section text**:
+`grep -c "first day of January"` and `grep -c "executive department"` both return **0**.
+
+🔴 **A 403 announces itself. A 200 shell does not** — and a "the page title is right" guard clears
+it, which is verbatim the `le.utah.gov` trap `CC_0489` paid for. ▶ **The conclusion is unchanged —
+plain `curl` cannot read this document and Playwright can. Only the evidence for it moved**, so a
+later reader who finds a 200 here must not conclude the host has opened up.
+
+⚠ **`law.justia.com` was tried as an independent second host** for Art. V § 1 and answers **HTTP
+403** to the full browser header set, so the cross-check was unavailable and NMOneSource is the
+single source for the constitutional text. Recorded rather than left as a silent gap.
+
+### 🟢 The 270-section sweep that discharged Art. V § 1's carve-out — and the control that saved it
+
+The section above says the carve-out was reasoned about, not swept. On 2026-11-24 it was swept:
+**24 articles, 270 distinct section titles**, the way `CC_0503` listed Idaho's 227.
+
+⚠ **THE SCANNER WENT BLIND TWICE AND A PRE-SET CONTROL CAUGHT IT BOTH TIMES.** The publisher's tree
+re-renders on every expand — the failure this file already records — so a DOM scan returned **zero
+section links** right after a scan that had worked. The control was set in advance: **Art. V § 1's
+own title, "[Composition of department; terms of office of members; …]", must appear in the
+output**, because it had already been read by hand. It failed twice, and the scan was rebuilt on
+`textContent` rather than believed. 🔴 **A clean "no competing provision found" is exactly what a
+blind scanner returns**, and on this clause that answer was the whole deliverable.
+
+**Four candidates. Three dead, one agrees:**
+
+| section | what it says | verdict |
+|---|---|---|
+| `Art. XX § 1` *Oath of officer* | an oath "**before entering upon his duties**" | a condition on **acting**, not on the term |
+| `Art. XX § 2` *Tenure of office* | "every officer, unless removed, shall hold his office **until his successor has duly qualified**" | a **holdover** clause — governs occupancy *after* a term ends |
+| `Art. XXII § 22` *Terms of first officers* | 🔴 "shall commence **on the date of their qualification**" | **the opposite rule, and dead** |
+| `Art. XX § 3` *Date terms of office begin* | "shall commence on the first day of January" | 🟢🟢 **agrees** |
+
+🔴🔴 **Art. XXII § 22 is the trap, and it is the Arkansas/Idaho Schedule shape firing a third
+time.** A reader who found that clause and not its context would conclude New Mexico is a
+qualification state and refuse the date entirely. **It is dead three ways**: "the election
+aforesaid" is § 17's **1911** first state election; it expires by reference to **1912**; and the
+Compiler's note under it reads *"This section is the end of the constitution as originally
+adopted"*, closing *"Done in open convention at the City of Santa Fe, in the Territory of New
+Mexico"*. All three were found by reading the sections **around** it rather than the section alone.
+⚠ **New Mexico's Schedule is Article XXII, not XXI** — Article XXI is the Compact with the United
+States. A reader carrying Idaho's article number across would check the wrong one.
+
 ⚠ **And then NMOneSource is a JS tree that needs clicking.** The constitution is at
 `/nmos/c/en/item/5916/index.do`, articles expand one at a time, and a section's text loads only
 after its own click. 🔴 **Its page state does not survive**: a DOM scan that had just read
@@ -2568,10 +2725,20 @@ constitution; it links out to NMOneSource for "New Mexico Law (Statutes)".
 
 ### Term start or oath? — **term start**
 
-Both instruments date the **term** and neither mentions an oath: `Art. V § 1` says the officers are
-"elected for terms of four years **beginning on** the first day of January next after their
-election", and HB 9 § 3(B) says "for terms **commencing on** January 1 next succeeding their
-election". ⚠ New Mexico's oath requirement lives elsewhere and does not move either date.
+All three instruments date the **term**: `Art. XX § 3(A)` says the term of office "shall
+**commence on** the first day of January", `Art. V § 1` says the officers are "elected for terms of
+four years **beginning on** the first day of January next after their election", and HB 9 § 3(B)
+says "for terms **commencing on** January 1 next succeeding their election".
+
+🔴 **Corrected 2026-11-24 — the oath was read rather than assumed absent.** The first reading said
+only that "New Mexico's oath requirement lives elsewhere". It is **Art. XX § 1**, and it binds the
+oath to *"**before entering upon his duties**"* — a condition on **acting**, not on the term. And
+**Art. XX § 2**'s holdover — *"every officer, unless removed, shall hold his office until his
+successor has duly qualified"* — governs **occupancy**, so a successor who is slow to qualify does
+not move the day their term began. ▶ **This is Idaho's shape, not Nevada's**, where Art. 5 § 2 runs
+the term "from the time of his installation" and NRS 282.010(4) makes installation mean
+qualification. ⚠ Art. XX § 2 is the clause a later reader will find and worry about; it is written
+down here with the reason it does not move the date.
 
 ⚠ **2027-01-01 is a Friday and a public holiday.** The term begins on it regardless — the provisions
 name a calendar date, not a working day, and neither carries a "next business day" clause. Any
@@ -2586,6 +2753,32 @@ inauguration ceremony is a separate event and is not what either instrument date
 | `window_end_date` | NULL |
 | `basis` | `statute` |
 | `rule_id` | `nm-const-art5-1-first-day-of-january` (executives) · `nm-22-3b-3-january-1-next-succeeding` (PEC) |
+
+⚠ **TWO `rule_id`s for ONE day, deliberately.** The two bodies are dated by two different
+instruments under two different authorities, with Art. XX § 3(A) standing behind both. `CC_0505`'s
+assertion 7 counts each group separately, because a single shared `rule_id` would make the
+Commission's statutory basis unreadable from the data — and a seat carrying the *other* body's
+`rule_id` would still have the right date, so no date check anywhere could see it (control C14).
+
+### 🔴 The near misses, measured 2026-11-24 before the wave
+
+| day | what it is | rows already on it |
+|---|---|---|
+| 2026-12-31 | the day these terms **END** (Art. XX § 3(B), HB 9 § 16(B)) | 0 |
+| **2027-01-01** | **this wave** — and **UTAH's** day, `ut-const-art6-first-day-january` | **50** |
+| 2027-01-04 | 🔴🔴 **the FIRST MONDAY** — AZ 94, WI 123, CA 17, ID 7 | **241** (229 terms) |
+| 2027-01-19 | the third Tuesday — **New Mexico's own session convening day**, Art. IV § 5(A) | 0 |
+
+🔴 **2027-01-01 is a Friday and a public holiday, which is what makes the first Monday the likely
+misreading** — "the office is shut, so it must be the next working day" lands on a square four
+states already occupy, two of which call their rule a first Monday in its own name. Neither
+instrument carries a "next business day" clause.
+⚠ **Only one of the three near misses is populated.** The other two are empty repo-wide, so
+refusing them discriminates only on the New Mexico side — unlike Idaho, where both were live
+elsewhere. Stated rather than counted as three equal checks.
+🔴 **New Mexico is the SECOND state on its own day**, so every count is a delta naming Utah's rule.
+⚠ The two rules have never been near each other in law — Utah's is its legislature's commencement,
+New Mexico's is a general clause for every state, county and district officer.
 
 ---
 
