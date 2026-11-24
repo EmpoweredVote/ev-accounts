@@ -2178,7 +2178,7 @@ tested `P9`.
 
 ---
 
-## NE — Nebraska · 13 offices · ✅ sourced 2026-11-22 — **one residual clause, and the job was proving nothing displaced it**
+## NE — Nebraska · 13 offices · ✅✅ APPLIED 2026-11-24 (`CC_0507` / `CC_0508`) — **one residual clause, FOUR bodies, and three corrections to this section**
 
 | body | offices | start date | authority |
 |---|---|---|---|
@@ -2189,6 +2189,52 @@ tested `P9`.
 
 **All thirteen on one day, from one clause.** First Tuesday in January 2027 = 2027-01-05; the first
 Thursday after it = **2027-01-07**.
+
+> ### 🔴🔴 THREE CORRECTIONS, MADE 2026-11-24 WHEN THE INSTRUMENTS WERE RE-READ FOR `CC_0507`
+>
+> This section's answer was right. Three of its *reasons* were not, and one of them changes what a
+> later reader would do.
+>
+> 1. **"Proved undisplaced against 4 constitutional provisions and 5 statutes" was a SAMPLE, not a
+>    sweep.** Those are the provisions that **govern these four bodies** — the right check for "does
+>    this body have its own rule", and not a check for a general overriding provision elsewhere.
+>    Art. XVII-5's hatch is the wider *"or by law"* form, so the wider sweep was owed and has now
+>    been done: **234 constitutional sections and all 488 of Chapter 32**, listed by title from the
+>    publisher's own indexes, each with a positive control set before the scan ran. **Eight further
+>    candidates exist and all eight are dead or confirming** — `Art. XV-1` (the oath binds *"before
+>    they enter upon their official duties"*), `Art. XVII-4` (a holdover clause, sitting
+>    *immediately before* Art. XVII-5 and never read), `Art. XVII-1` (definitions), `Art. IV-11`
+>    (vacancy appointments), `Art. III-7` and `Art. III-10` (the Legislature), `§ 32-112` (*"oath
+>    shall include affirmation"*) and `§ 32-122`.
+>
+> 2. **🔴 The reason given below for the Legislature's carve-out is WRONG, and the right one moves
+>    its day.** This section says the unicameral *"has its own constitutional commencement"* citing
+>    `Art. III-10`, `Art. III-8` and `Art. III-9`. **III-8 is qualifications and III-9
+>    disqualifications — neither names a day — and `Art. III-7` gives four-year terms and names no
+>    day either.** Nor does **`§ 32-508`, which the statute table below SKIPS**, sitting between the
+>    § 32-507 and § 32-509 it does list. What actually carves them out is **`§ 32-122` read with
+>    `Art. III-10`**: a legislator's term boundary is *"the day of the meeting of the Legislature at
+>    which members are regularly sworn in to office"*, and Art. III-10 convenes that meeting *"at
+>    10 a.m. on the first Wednesday after the first Monday in January"*. **A statute walking through
+>    the "or by law" half of the hatch** — which is the half this section's check was not aimed at.
+>    ▶ **The consequence:** Art. III-10 for 2027 computes **2027-01-06**, so the 49 absent unicameral
+>    seats are **NOT** on this wave's day. They are not New Mexico's absorbed shape; they would land
+>    on a day already carrying **200 Massachusetts and Maine rows**. The trap is dormant, not absent.
+>
+> 3. **🔴 `§ 32-510` does not put Regent District 4 on the 2026 ballot, and this section never
+>    noticed.** It partitions the Board of Regents **2 + 2 + 4** across the 1996, 1992 and 1994
+>    cycles; (2026 − 1996) mod 6 = 0 elects **Districts 1 and 2 only**, and (2026 − 1994) mod 6 = 2
+>    leaves District 4 off. **We hold three pending Regent seats.** The third is a **`§ 32-573(2)(a)`
+>    VACANCY election** for the unexpired remainder of **Elizabeth O'Connor's** 2024 term — she
+>    resigned and Joel Makovicka was appointed on 2026-02-03 — and `CC_0375` had already recorded
+>    exactly that in the seat's own `source`, naming **2027-01-07**, from the university's roster.
+>    ▶ This section cites § 32-573 for the right body and the **wrong reason** (as a restatement of
+>    the formula). It is also the only thing that makes the Regents' count add up, and the only
+>    record that the new term is an **unexpired remainder ending around 2031, not a fresh six years**.
+>
+> **And one thing this section did not know it had.** The canvass-book control below is not a
+> corroboration — it is **the only evidence that separates this clause from its shorthand.** See
+> "the near miss that is not a near miss" immediately after the controls.
 
 ### 🔴🔴 THE CLAUSE IS A RESIDUAL, SO READING IT IS THE EASY HALF — THE WORK IS PROVING NOTHING OVERRODE IT
 
@@ -2218,6 +2264,7 @@ found; the chapter's own index was read rather than a keyword guessed:
 |---|---|---|
 | `§ 32-506` Governor and Lieutenant Governor | "elected at the statewide general election in 1994 and each four years thereafter … terms of four years or until their successors are elected and qualified" | no |
 | `§ 32-507` Treasurer, Auditor, Secretary of State, Attorney General | same shape, same words | no |
+| 🔴 `§ 32-508` Members of the Legislature | **ADDED 2026-11-24 — this table originally skipped it.** Four-year terms, even-numbered districts from 1994 and odd from 1996 | **no** — which is why the Legislature's day comes from `§ 32-122`, not from here |
 | `§ 32-509` Public service commissioners | "elected for a term of six years", plus which district is up in which year | no |
 | `§ 32-510` Board of Regents | "shall serve for terms of six years or until their successors are elected and qualified" | no |
 | `§ 32-511` State Board of Education | "shall serve for terms of four years or until their successors are elected and qualified" | no |
@@ -2240,8 +2287,20 @@ Regents — so all thirteen are inside it.
 
 The Secretary of State's own canvass book dates **Member of the Legislature** to **January 8,
 2025** — *not* the January 9 it gives every other state body in the same document — and cites
-`Neb. Const. Art. III-10`, `Art. III-8` and `Art. III-9` for it. Nebraska's unicameral has its own
-constitutional commencement, and `Art. XVII-5` steps aside for it exactly as its first clause says.
+`Neb. Const. Art. III-10`, `Art. III-8` and `Art. III-9` for it. Nebraska's unicameral is carved
+out of `Art. XVII-5` exactly as its first clause allows.
+
+> 🔴 **CORRECTED 2026-11-24 — IT IS CARVED OUT "BY LAW", NOT BY THE CONSTITUTION.** The paragraph
+> above originally said the unicameral *"has its own constitutional commencement"*. It does not:
+> `Art. III-8` is qualifications, `Art. III-9` disqualifications, and `Art. III-7` gives four-year
+> terms and **names no day** — nor does `§ 32-508`. The clause that fixes the boundary is
+> **`§ 32-122`**, *"the second half of a term of office for a member of the Legislature starts on
+> the day of the meeting of the Legislature at which members are regularly sworn in to office"*,
+> with `Art. III-10` convening that meeting *"at 10 a.m. on the first Wednesday after the first
+> Monday in January"*. A **statute**, which is the *"or by law"* half of the hatch. The canvass
+> book cites III-8 and III-9 as the body's governing provisions, not as the date's authority.
+> ▶ **For 2027 that computes 2027-01-06** — one day before `CC_0507`'s day, and a square already
+> carrying 200 Massachusetts and Maine rows.
 
 🔴 **So "Nebraska takes office on the first Thursday after the first Tuesday" is FALSE as a
 statement about Nebraska**, and true only of the bodies checked above. It is one day wrong for the
@@ -2299,6 +2358,66 @@ strongest possible answer to "did a law provide otherwise".
 ⚠ **The usual control for this pass — a biennial cluster of prior `term_start`s — is NOT available
 for Nebraska.** One dated row is a point, not a cluster. It is reported as a point.
 
+### 🔴🔴 THE NEAR MISS THAT IS NOT A NEAR MISS — AND IT IS WHY CONTROL 1 IS LOAD-BEARING
+
+Added 2026-11-24. **The dangerous wrong rule here is not a week away. It is a shorthand that gives
+the right answer in this cycle.**
+
+*"The first Thursday in January"* is the obvious paraphrase of Art. XVII-5, and for 2027 it gives
+**2027-01-07 — this wave's own day.** A file written from the shorthand would produce the correct
+date and pass every count it contains. 🔴 **And our one dated Nebraska term cannot tell them apart
+either**: Jim Pillen's 2023-01-05 is *both* the first Thursday after the first Tuesday **and** the
+first Thursday of January 2023.
+
+| rule | 2023 (our one row) | 2025 (the canvass book) | 2027 (this wave) |
+|---|---|---|---|
+| **Art. XVII-5 — Thursday AFTER the Tuesday** | **01-05** ✅ | **01-09** ✅ *(12 blocks)* | **01-07** |
+| 🔴 the shorthand — first Thursday OF January | **01-05 — agrees** | **01-02** ❌ | **01-07 — agrees** |
+| first Wednesday after the first Monday *(the NE Legislature)* | 01-04 — 0 | 01-08 — 0 | 01-06 |
+| first Wednesday after the first Tuesday *(**Maine's rule**)* | 01-04 — 0 | 01-08 — 0 | 01-06 |
+| the first Monday | 01-02 — 0 | 01-06 — 0 | 01-04 |
+| the first Tuesday | 01-03 — 0 | 01-07 — 0 | 01-05 |
+
+🟢🟢 **SO THE TWO CONTROLS ARE COMPLEMENTARY, NOT REDUNDANT, AND THE DOCUMENT IS THE ONE THAT
+MATTERS.** Our own data separates the clause from **four** rivals and is **blind to the fifth**;
+the **canvass book separates it from all five**, by seven days, twelve blocks to none.
+▶ `CC_0507`'s assertion 3d therefore **asserts that the shorthand MATCHES** — the arm is in the
+file to be watched passing, because that is the only way the blindness gets recorded — and control
+**C5 breaks its expectation**, so it cannot quietly stop demonstrating the trap. ⚠ *A control kept
+in order to pass needs a control of its own* (`CC_0503`'s rule, firing a second time).
+
+⚠ **AND MAINE'S `rule_id` IS THIS CLAUSE'S SENTENCE WITH ONE WORD CHANGED** —
+`me-const-art5-pt1-s2-first-wed-after-first-tue-january` — landing one calendar day earlier on
+**200 live rows** beside 199 Massachusetts legislators. 🔴 **2027-01-04, the first Monday, carries
+241.** Nebraska is also the **second state on 2027-01-07**, where Massachusetts' Governor and
+Lieutenant Governor already sat.
+
+### 🟢🟢 WHICH SEATS WERE UP — ARITHMETIC IN ALL FOUR BODIES, AND ONE THAT ONLY CLOSES ON A VACANCY
+
+Added 2026-11-24. Each statute partitions its body exhaustively and names the cycle, which is New
+Mexico's HB 9 arithmetic four times over.
+
+| statute | body | partition | up in 2026 | we hold |
+|---|---|---|---|---|
+| `§ 32-509` | Public Service Commission, 5 seats, 6 yrs | D1+D3 (1994), D4+D5 (1992), **D2 (1996)** = 5 | **1** — District 2 | **1** ✅ |
+| `§ 32-511` | State Board of Education, 8 seats, 4 yrs | D1–D4 (1996), **D5–D8 (1994)** = 8 | **4** — Districts 5–8 | **4** ✅ |
+| `§§ 32-506`/`32-507` | the executives, 4 yrs from 1994 | — | all | **5** + the LG on the ticket ✅ |
+| 🔴 `§ 32-510` | Board of Regents, 8 seats, 6 yrs | **D1+D2 (1996)**, D6+D7 (1992), D3+D4+D5+D8 (1994) = 8 | **2** — Districts 1 and 2 | **3** ⚠ |
+
+🔴 **The Regents do not close on their own statute, and the third seat is District 4.** It is a
+`§ 32-573(2)(a)` **vacancy election** for the unexpired remainder of **Elizabeth O'Connor's** 2024
+term: she resigned, Joel Makovicka was appointed 2026-02-03, and the statute makes the appointee
+serve *"until the first Thursday following the first Tuesday in January following such general
+election and at such general election a member of the Board of Regents shall be elected to serve
+**the unexpired term** if any."* 2 + 1 = 3 and the body closes.
+
+🟢 **`CC_0375` had already written the whole answer into that seat's `source`** — from the
+university's own roster, months before this pass, naming **2027-01-07**. ▶ That makes it a
+**second, independent in-data corroboration of the date**, written by a pass that never opened
+Art. XVII-5. 🔴 **And it is the only record that Justin Solomon's new term ends around 2031 rather
+than 2033**, because `seat_officeholder` writes no `term_end`. `CC_0508` carries it in that one
+row's `source` and asserts it is on that seat and no other (assertion 10c).
+
 ### The source
 
 - `https://nebraskalegislature.gov/laws/articles.php?article=XVII-5` — and `IV-1`, `IV-20`, `VII-3`,
@@ -2306,9 +2425,17 @@ for Nebraska.** One dated row is a point, not a cluster. It is reported as a poi
 - `https://nebraskalegislature.gov/laws/statutes.php?statute=32-506` — and `32-507`, `32-509`,
   `32-510`, `32-511`, `32-572`, `32-573`, read 2026-11-22.
 - `https://sos.nebraska.gov/sites/default/files/doc/elections/2024/2024%20General%20Canvass%20Book.pdf`
-  — Secretary of State, 2024 General Canvass Book (3,223,182 bytes), read 2026-11-22.
+  — Secretary of State, 2024 General Canvass Book (3,223,182 bytes), read 2026-11-22, and
+  **re-read 2026-11-24 at HTTP 200 and 3,223,182 bytes — byte-for-byte identical, which is its own
+  identity control.**
 
-🟢 **All of these answer plain `curl` with a browser User-Agent.** Nebraska is on the easy list.
+🟢 **All of these answer plain `curl` with a browser User-Agent.** Nebraska is on the easy list,
+and remained so on re-reading: no 403, no header escalation, no Playwright.
+
+⚠ **A BAD SECTION NUMBER RETURNS HTTP 200 ON THIS HOST, NOT A 404** (measured 2026-11-24):
+`article=XVII-99` answers *"Unable to find XML copy of …, aborting"* at **56 bytes**, against
+21–24 KB for a real section. 🟢 It says the fault in words, which is better than most — but the
+**size gap is the discriminator**, so no "the page loaded" guard was used.
 
 ⚠ **The constitution is NOT at `articles.php?article=XVII`** — the article and section are joined
 with a hyphen, `article=XVII-5`, and the bare article number returns `Invalid statute number
@@ -2369,6 +2496,14 @@ state where one of the two had its own commencement, reading the queue row as on
 dated it from the other's clause.
 
 ### ⚠ Two Nebraska gaps this block records and does not touch
+
+> 🟢 **BOTH ARE NOW PINNED IN THE MIGRATIONS (2026-11-24), NOT JUST RECORDED HERE.** `CC_0507`'s
+> `P3` asserts the six `STATE_EXEC` office rows and `P1` the five pending ones, so the Lieutenant
+> Governor's winnerless seat cannot silently gain or lose a race; `CC_0508`'s `P9` asserts both
+> halves directly. `CC_0507`'s `P5` and `CC_0508`'s `P10` refuse if a legislative office row
+> appears. 🔴 **And the Lieutenant Governor is ARIZONA'S MISSING LIEUTENANT GOVERNOR FROM THE
+> OPPOSITE SIDE** — Arizona has a winner and no office row, Nebraska an office row and no winner.
+> Hold them together; separately each reads as a one-state oddity.
 
 - **LIEUTENANT GOVERNOR — the office exists and carries no winner.** `Art. IV-1`: *"Each candidate
   for Governor shall select a person to be the candidate for Lieutenant Governor on the general
