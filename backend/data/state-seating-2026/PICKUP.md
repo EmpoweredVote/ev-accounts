@@ -756,6 +756,15 @@ separately, each reads as a one-state oddity.**
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three
   CSVs, update the three `datasets/*` docs **in place**, and re-read the hand-kept `assignments`
   file against them).
+  - 🔴 **DO NOT COMMIT THE THREE REGENERATED CSVs FROM A SEATING BRANCH.** `seats.csv`,
+    `waves.csv` and `handovers.csv` are build outputs of one command, **and all three are already
+    the named conflicting files on `chore/transition-tracker-refresh`** (122 behind master, 3
+    conflicts, in `C:/ev-accounts-tracker`). Committing them here adds a fourth writer to a
+    three-way conflict for rows a single command rebuilds. ▶ **Build them, upload them, then
+    `git restore` them.** Done that way on 2026-11-24 after Connecticut. ⚠ `assignments.csv` is
+    the exception — it is **hand-kept and not computed**, so it is never rebuilt and never
+    restored; it was re-read from the served blob and is still byte-identical
+    (`84adb2fc…5a42a2` on both sides).
   - 🟢🟢 **THE TRACKER ASKS THE SEATING QUESTION OVER THE OFFICES A RACE CAN FILL**, not over the
     single office the race hangs on. A row is a RACE and a seating is an OFFICE; a multi-seat
     contest seats its winners across the **sibling** offices of the same district, chamber and
