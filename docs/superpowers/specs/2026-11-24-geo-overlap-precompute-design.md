@@ -1,0 +1,215 @@
+# Geo-overlap pairs: a durable, version-invalidated store
+
+**Date:** 2026-11-24
+**Status:** design, awaiting approval
+**Origin:** Civic Spaces report *"Geo-overlap cache expires hourly on static geometry"*
+**Step 1 (merged):** PR #1605, squashed `371e79c895` — branch 1's missing MTFCC filter.
+
+---
+
+## Intent, and the why
+
+`resolveOverlappingGeoPairs` (`backend/src/lib/essentialsBrowseService.ts`) answers "which
+district polygons overlap this area". Its answer is a **pure function of
+`essentials.geofence_boundaries` geometry**, which changes a handful of times a year when a
+migration ingests boundaries. It is cached in Redis under `overlap:v2:${seeds…}` with
+`OVERLAP_CACHE_TTL_SECONDS = 3600`.
+
+Nothing warms that key and nothing invalidates it. **The one-hour expiry is therefore the only
+thing that ever refreshes it**, which means the TTL is doing two jobs at once — cache lifetime
+*and* correctness — and the cache throws away, every hour, an answer that can only ever be
+recomputed to the same value.
+
+At current traffic a one-hour TTL almost never helps a real person. In a 39-hour window of
+production logs, only 9 of the 100 most recent calls to this path came from a real browser; the
+rest were CI and diagnostics keeping keys warm for themselves. **Real arrivals are sparse and
+land on cold keys.** A Civic Spaces member's app boot measured **7,199 ms** on this one call.
+
+This matters to Civic Spaces specifically because it asks for **state** areas by design: the
+State tab asks directly, and `electionAreaFor` falls back to the member's state for the Federal,
+Unified and Volunteer tabs. There is no client-side mitigation — the expensive shape is the one
+the product needs.
+
+## Goals
+
+1. An area is computed **once per boundary version**, not once an hour.
+2. Invalidation becomes an **event**, not a timer — so the TTL stops carrying correctness.
+3. The 7-second case (state seeds) is warm before a member ever asks.
+4. The answer does not change. Not by a row, for any seed.
+
+## Non-goals
+
+- Precomputing all ~30,000 possible seeds. Nothing measured says the 29,947 non-state seeds need
+  it; counties run 0.5–1.4 s and cities about 0.5 s.
+- Making branch 3 itself cheaper. Simplifying or subdividing the geometry changes what the
+  predicate means, and the original report is explicit that this query was already tuned once
+  and deserves a profile rather than a guess.
+- Touching the address (point-in-polygon) path. That is `ST_Covers` and is unaffected.
+
+## Anti-goals — what would make this a failure even if it worked
+
+- 🔴 **A stale answer that nobody can see.** Today's failure is slow. The failure this design
+  risks is *wrong*: a boundary ingest lands, the stored pairs do not refresh, and a voter is
+  shown a district that no longer contains them. **Silent staleness is worse than the 7 seconds
+  we are fixing**, so invalidation must not depend on anyone remembering to do it.
+- 🔴 **Two mechanisms that must be kept in sync by hand.** That was the report's own objection
+  to its fix 2, and it stands.
+- A deploy that stampedes the cold path it exists to shrink.
+
+## Constraints
+
+- **`essentials` RLS is the only belt.** `ALTER DEFAULT PRIVILEGES` there already grants `anon`
+  and `authenticated` SELECT and `ev_api` `arwd` on every new table *before any migration says a
+  word*. A new table is readable by `anon` from the moment it exists unless the same file enables
+  RLS and adds policies, and nothing errors if it does not (CLAUDE.md; measured on prod by
+  `CC_0457`).
+- Production authenticates as **`ev_api`**, which is not the table owner, so policies must admit
+  it for both read and write.
+- `ev_api` cannot run DDL. The table, trigger and policies go through the owner connection
+  (the Supabase MCP), as `CC_0472` did.
+- Redis is Upstash over HTTP (`@upstash/redis`), reached through `backend/src/lib/cache.ts`.
+- One migration per file; the slot is **allocated** by the steward, never counted.
+
+## Approaches considered
+
+| | What it is | Trade-off |
+|---|---|---|
+| **A — materialize every seed** | The report's fix 1. A row per (seed, pair) for all ~30,000 seeds. | Tidiest end state: reads are an index lookup and the cold path disappears everywhere. But the build is ~30,000 runs of a 0.5–7 s query — about eight hours — and it re-runs on **every** boundary ingest, to precompute millions of pairs for areas nobody browses. |
+| **B — materialize the 53 states only** | Keep Redis for everything else. | Three minutes to build and it covers the measured pain. But two mechanisms stay in play and the TTL keeps carrying correctness for 29,947 other seeds. |
+| **C — durable store, version-invalidated** ⬅ **chosen** | Same shape as today's cache, but the answer survives and invalidation is a geometry version rather than a clock. Warm the 53 states so first-ask is never the 7-second case. | Fixes the actual defect — a timer standing in for invalidation — with no multi-hour build. The cold path still exists the first time an area is asked for at a new boundary version, which the state warm-up covers where it hurts. |
+| D — attack branch 3's geometry | Subdivide the state outlines so `ST_Intersects` stops testing a 12,103-vertex polygon. | Dropped: changes what the predicate means, on a query already tuned once. |
+
+**Chosen: C**, picked by the operator 2026-11-24.
+
+## What step 1 already measured, and what it leaves for this
+
+Per branch, against production, with state seeds:
+
+| branch | California | Texas |
+|---|---|---|
+| 1 — point-in-area *(fixed in #1605)* | 2,595 ms | 3,433 ms |
+| 2 — containing districts | 10 ms | — |
+| 3 — interior overlap, `ST_Intersection` | **2,930 ms** | 1,001 ms |
+
+🔴 **The number that shapes this design: California stays ≈3.3 s even fully warm, under both the
+old and the new shape.** Its branch 3 runs `ST_Intersection` against a **12,103-vertex** state
+outline and is **CPU-bound**; step 1's filter cannot reach it. Smaller states fall to ≈0.6 s warm.
+So the residual cost is branch 3 on large-perimeter states — exactly the 53 seeds this design
+warms.
+
+⚠ **Cold cost does not track seed vertex count.** Texas has fewer vertices than Maryland (1,826
+against 2,848) and takes twice as long, because it has 254 counties. It tracks the **candidate
+population inside the state**. That is why the warm set is "all 53 states" rather than "the
+geometrically complex ones".
+
+## The design
+
+### 1. The store
+
+```
+essentials.geo_overlap_pairs
+  seed_geo_id        text        not null
+  seed_mtfcc         text        not null
+  geofence_version   bigint      not null
+  pairs              jsonb       not null   -- [{geo_id, mtfcc}, …], the resolver's own shape
+  pair_count         int         not null   -- denormalised for cheap assertions and gates
+  computed_at        timestamptz not null default now()
+  primary key (seed_geo_id, seed_mtfcc, geofence_version)
+```
+
+**Keyed on a single seed, deliberately.** The resolver unnests its seeds and unions per seed, so
+a multi-seed result is exactly the union of the single-seed results. A per-seed row therefore
+composes for the multi-seed caller (`getOverlappingGeoIdsForGovernments`) and gives far better
+reuse than today's key, which is the **sorted seed set** and so misses whenever the set differs
+by one member.
+
+🔴 **That composition property is read off the SQL, not yet tested. It is the first thing the
+plan must pin**, with a test comparing a two-seed call against the union of its two single-seed
+calls.
+
+`pairs` is `jsonb` rather than a row per pair: the resolver's consumers want the whole list at
+once, the lists are small (852–4,918 for a state), and one row per seed makes the version
+predicate a primary-key lookup instead of a filtered scan.
+
+### 2. The version, maintained by the database
+
+```
+essentials.geofence_version  — one row, one bigint
+```
+
+bumped by a **statement-level `AFTER INSERT OR UPDATE OR DELETE` trigger** on
+`essentials.geofence_boundaries`.
+
+🔴 **A trigger rather than a convention is the whole point.** The report's fix 2 was rejected
+because "two things must stay in sync, and a missed bust is a silent correctness bug rather than
+a slow page". A trigger removes the thing that could be missed: a migration cannot ingest
+boundaries *and* forget to invalidate, because the database does it. Statement-level, not
+row-level, so a bulk ingest of 70,000 polygons bumps once.
+
+⚠ `imported_at` was considered as the version and rejected: **389 rows carry NULL** and it has
+1,580 distinct values, so it is a per-row ingest stamp, not a global one — and `max(imported_at)`
+cannot see a DELETE at all.
+
+A read is `WHERE seed_geo_id = $1 AND seed_mtfcc = $2 AND geofence_version = (SELECT v FROM
+essentials.geofence_version)` — a primary-key lookup plus a one-row scan. Rows at superseded
+versions are dead weight, swept by the warming job (below).
+
+### 3. The read path
+
+`resolveOverlappingGeoPairs` becomes:
+
+1. Read the store for each seed at the current version. Hit → use it.
+2. Miss → run the existing UNION for the missing seeds only, and upsert each seed's result.
+3. Return the union.
+
+**Redis stays, in front, unchanged.** It is still the right thing for an in-flight burst, and
+removing it would make every request pay a database round trip. The TTL stops being
+load-bearing: behind it now sits a durable answer rather than nothing.
+
+🔴 **The cache key is NOT versioned up.** Step 1 established the result is unchanged; bumping
+`overlap:v2` would invalidate every warm key at deploy and stampede the cold path this work
+exists to shrink. The same reasoning applies here.
+
+### 4. Warming the 53
+
+A job that, for every `G4000` polygon, computes and stores the pairs at the current version, then
+deletes rows at superseded versions. Runs after a boundary ingest and on a schedule as a backstop.
+
+⚠ **Render cron jobs are configured in `ev-infra`'s `render.yaml`, not in this repo** — a schedule
+added here would never run, and a setting changed in the Render dashboard is undone on the next
+sync. The job ships here; its schedule is a PR to `EmpoweredVote/ev-infra`.
+
+### 5. The migration
+
+One file, through the owner connection. It must, in the same file: create both tables in
+`essentials`, create the trigger, **`ENABLE ROW LEVEL SECURITY` on both**, and add policies —
+SELECT for `anon` and `authenticated` (this is derived public geography and the browse endpoints
+are unauthenticated), and read/write for `ev_api`. 🔴 Without the RLS lines the tables are
+readable by `anon` the moment they exist and **nothing errors**.
+
+## How it will be verified
+
+- **The answer does not change.** For a sample spanning all five seedable layers, the set of
+  `essentials.districts` rows surviving `MTFCC_DISTRICT_TYPE_GUARD` must be byte-identical
+  store-backed versus computed. Step 1's harness does exactly this and is reusable.
+- 🔴 **With a positive control that is watched failing first.** Step 1's control took three
+  attempts: dropping `G4020` changed nothing because branch 3 backfills it, and `G4040` changed
+  nothing because California's county subdivisions match no district. **A control aimed at a
+  value another path also supplies tests nothing.** Here the control is to corrupt one stored
+  `pairs` row and watch the comparison go red.
+- **The trigger fires.** Insert, update and delete a geofence row in a rolled-back transaction
+  and assert the version moves each time — then assert a *bulk* statement bumps it **once**.
+- **Staleness is unreachable.** Bump the version and assert the next read recomputes rather than
+  serving the old row. This is the anti-goal, so it gets its own test.
+- **Measured, not asserted.** Re-time a state seed end-to-end after the warm-up, and re-run the
+  two endpoints the report names. ⚠ **At equal cache warmth** — step 1's first reading was 33×
+  and wrong, because it compared a trimmed warm run against an untrimmed cold one.
+
+## Open, and left to the builder
+
+- Whether ZIP (`G6350`) browse reaches this resolver. It changes the seed universe but not this
+  design, because C stores on demand.
+- Sweep policy for superseded rows: the warming job deletes them, but a seed that is never asked
+  again keeps one dead row per version. At 30,000 seeds and a few ingests a year this is
+  negligible; revisit if it is not.
+- The exact warming schedule, which is an `ev-infra` PR and not a decision here.
