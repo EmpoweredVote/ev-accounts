@@ -8,9 +8,18 @@ own reasoning was wrong in three places while its answer was right).
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
 🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0508` is
-applied and verified; `CC_0507` and `CC_0508` are committed on `feat/state-seating-ne` and the
-working tree is clean apart from the untracked `backend/_q.mjs` scratch query runner, which
-predates this work. ▶ **Take a fresh branch off master, claim the state, and start at step 1.**
+**applied to production and verified**; the working tree is clean apart from the untracked
+`backend/_q.mjs` scratch query runner, which predates this work.
+
+🔴 **BUT NEBRASKA'S PR IS OPEN, NOT MERGED — [#1602](https://github.com/EmpoweredVote/ev-accounts/pull/1602),
+branch `feat/state-seating-ne`, four commits, CI green on its head `9c90cd50d` (checked against the
+run's own `headSha`, nine checks, zero failures).** ⚠ **So master does NOT yet contain `CC_0507` or
+`CC_0508`, although production does.** That is the ordinary state of this pass between waves and
+nothing is wrong — but **read it before you are confused by a master checkout that has neither
+file while the database has both.** ▶ **Branch off master anyway** (migrations are independent
+files and the allocator already knows `CC_0508`); merge #1602 when you get to it.
+
+▶ **Take a fresh branch off master, claim the state, and start at step 1.**
 
 ---
 
@@ -45,6 +54,48 @@ table office_swearing_in"*.
 
 **Next slot to reserve: after `CC_0508`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
+
+### 🔴🔴 HOW MUCH IS ACTUALLY LEFT — THE REGISTER'S "39 BODIES" IS NOT 39 BODIES OF WORK
+
+Measured 2026-11-24. The generated table counts every body with an unscheduled seat, which mixes
+three completely different things. **Split them before planning anything:**
+
+| | states | bodies | offices | what it needs |
+|---|---|---|---|---|
+| 🟢 **SOURCED AND READY TO WRITE** | **3** | 8 | **37** | nothing — start at step 3 |
+| 🔴 **REFUSED** | 10 | 12 | **47** | an external event, not effort |
+| ⚠ **NOT SOURCED AT ALL** | **20** | 19 | **69** | step 2, from scratch |
+| | **33** | **39** | **153** | |
+
+- 🟢 **READY: `CT` (5), `TX` (14, two bodies), `CO` (18, five bodies).** Their `DATES.md` sections
+  are green and need no new research. **That is the whole writable backlog** — three states.
+- 🔴 **REFUSED, and each one is waiting on the world rather than on us:** `GA` 10 (all ten, the
+  only state where nothing could be dated) · `AR` 7 (five refused with a cited window, two still
+  open) · `NV` 6 (terms begin at qualification) · `UT` 6 (Board of Education, no commencement in
+  law) · `SD` 6 (five refused with a window) · `NH` 6 (all six, and the **only refusal in the pass
+  with no upper bound in law**) · `MD` 2 (AG and Comptroller) · `AZ` 2 (Corporation Commission and
+  State Mine Inspector) · `OR` 1 (the Governor — ORS 176.010 names an **event**) · `HI` 1 (the OHA
+  At-large block, which **Ruling A** refuses). ▶ **None of these is a day's work; each needs a
+  `published` qualification date recorded when it happens, or a sourced per-seat term table.**
+  🔴 **Do not estimate them as if they were ordinary states, and do not let the register's sort
+  order put `HI` or `GA` at the top of your queue** — `HI`'s is the one dated body left, so it
+  sorts first and is **not writable**.
+- ⚠ **UNSOURCED — 20 states and 69 offices, and this is where the real remaining time is.** Every
+  one is small (1–5 offices: `VT` `SC` `RI` `OK` `ND` `MI` `IL` 5 each · `WY` `MN` `IA` `FL` 4 ·
+  `NY` `IN` `DE` 3 · `PA` `OH` `LA` 2 · `TN` `MO` `KS` 1). **The cost is step 2, not the seating**
+  — the writing is an afternoon once a date is sourced, and the sourcing is what has taken a day
+  per state all pass.
+
+🟢 **NINE STATES ARE COMPLETELY DONE** and have nothing in the table at all: `WI`, `MA`, `ME`,
+`WA`, `CA`, `AL`, `ID`, `NM`, `NE`. Eight more are **partly** done with only a refused remainder
+(`MD`, `AZ`, `NV`, `UT`, `OR`, `HI`, and `SD`/`AR` where part is refused and part open).
+
+⚠ **AND THE STATE TIER IS NOT THE PROGRAMME.** Wave 4 is 1,326 races: **1,076 `term_recorded` +
+61 `in_office`**, 153 `called` (the table above) and 36 never looked at. **Waves 1 and 2 (the
+federal tier) are complete.** Wave 3 is 328 with **268 not looked at** and wave 5 is 179 with
+**162 not looked at** — those are the December and remaining LOCAL waves, a different programme,
+and they are far larger than anything left here. 🔴 **"The seating pass is nearly done" is true of
+the STATE tier and false of the transition.**
 
 ---
 
