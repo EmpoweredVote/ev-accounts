@@ -22,61 +22,59 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**51 bodies still to do · 376 offices · 1 of the 51 carry a cited start date.** Measured 2026-11-23. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**49 bodies still to do · 262 offices · 1 of the 49 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
-| 2 | MD | STATE_LOWER | 67 | 131 | 54 | 77 | 38 | — | 67 | — |
-| 3 | MD | STATE_UPPER | 47 | 47 | 39 | 8 | — | — | 47 | — |
-| 4 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
-| 5 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
-| 6 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 7 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 8 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 9 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 10 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 11 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 12 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 13 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 14 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 15 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 16 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 17 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 18 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 19 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 20 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 21 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 22 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 23 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 24 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 25 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 26 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 27 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 28 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 29 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 30 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 31 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 32 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 33 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 34 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 35 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 36 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 37 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 38 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 39 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 40 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 41 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 42 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 43 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 44 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 45 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 46 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 47 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 48 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 49 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 50 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 51 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 2 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
+| 3 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
+| 4 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 5 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 6 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 7 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
+| 8 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 9 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 10 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 11 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 12 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 13 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 14 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 15 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 16 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 17 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 18 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 19 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 20 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 21 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 22 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 23 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 24 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 25 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 26 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 27 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 28 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 29 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 30 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 31 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 32 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 33 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 34 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 35 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 36 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 37 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 38 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 39 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 40 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 41 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 42 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 43 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 44 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 45 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 46 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 47 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 48 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 49 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -104,11 +102,27 @@ Every one of these was done once already, by the waves that shipped with this re
    `office_swearing_in` already CHECKs that `authority` and `source` are non-empty and that `basis`
    is one of `statute` / `published` / `estimated`. 🔴 **`estimated` may not seat anybody** — the
    seating migration's P4 refuses it.
-4. **Create any missing `politicians` rows**, following `CC_0352`. 211 winner rows across the pass
-   have none, concentrated in Maryland (85) and Maine (77).
+4. **LINK or create the missing `politicians` rows**, following `CC_0495` (60 links, 25
+   creations) or `CC_0352`.
+   - 🔴🔴 **THE "no record" COLUMN COUNTS RACE ROWS, NOT PEOPLE, AND IN MARYLAND 60 OF ITS 85
+     ALREADY EXISTED.** 55 were the sitting holder of the very seat they had just won and 5 were
+     Delegates moving to the Senate; creating all 85 would have made a **second row for sixty
+     sitting legislators**, each then seated into the seat their own row already holds. Nevada
+     paid 1 of 13 for this, Maine 18 of 77. ▶ **Sweep the whole table before creating anybody,
+     and size the people file from the sweep, never from the column.**
    - 🔴 **Check the person against the BODY'S OWN ROSTER, never a name search.** A full-name match
      is not an identity: this repository has shipped Mark Harris as NC-8, and a 2026-11-02 audit
      found the portrait on Bell CA's *Ali Saleh* was the late President of Yemen.
+   - 🟢 **ANCHOR EACH LINK ON A SEAT, WHICH NARROWS THE CANDIDATES TO THREE.** The person must be
+     the current holder of an office inside **that race's own eligible set**. Maryland's District
+     3 winner "Karen Simpson" pointed at David Moon — a real, active Maryland Delegate — passes
+     every "is this an officeholder?" test and fails the seat test at once (`CC_0495` P5, control
+     C9). ⚠ A district can hold two members of one surname: 34A has Andre V. Johnson, Jr. **and**
+     Steven C. Johnson.
+   - 🔴 **THE DATABASE'S OWN DUPLICATE-NAME TRIGGER IS A GATE, AND IT IS RIGHT BY DEFAULT.** Take
+     `essentials.allow_duplicate_name` **for one row, in a statement of its own**, so the guard
+     stays armed for every other name in the file, and record the collision in that row's own
+     `source`. Worked in `CC_0495` for the Maryland Kevin Ford against the Mississippi one.
 5. **Derive the pin.** `node scripts/derive-seating-wave.mjs --state <usps> --type <TYPE> [--type …]`.
    It prints the four pinned values and every blocker. 🔴 **A non-empty blocker list is read, not
    routed around.**
@@ -116,8 +130,23 @@ Every one of these was done once already, by the waves that shipped with this re
    `CC_0464` (a term that has already started). Reserve the slot first:
    `npm run steward --prefix backend -- slot CC --purpose "..."`. 🔴 **One migration per file.**
 
-   🔴 **Fifteen corrections to those two templates. The applied files still carry the old shapes —
-   migrations here run once and are never edited — so the fixes live in your copy, not in theirs.**
+   🔴 **Seventeen corrections to those two templates. The applied files still carry the old
+   shapes — migrations here run once and are never edited — so the fixes live in your copy, not in
+   theirs.**
+
+   - 🔴🔴 **A RULING A WAVE PUTS RULING A'S GATE ABOVE THE PIN, AND A CONTROL IS WHAT PROVED IT.**
+     Written below the pin, every tamper aimed at the equality clause is caught two gates earlier
+     by the digest or the row counts — so the clause that carries the real-world cost has **no
+     control of its own**, in a suite that otherwise reads as a triumph. Ruling A asks whether the
+     body is *assignable at all*, which is a fact about the world; the pin asks whether the answer
+     is *the one that was recorded*, which is a fact about the file. ▶ The first question comes
+     first, and the operator then gets *"Ruling A's equality clause fails for: District 20 (2
+     winners, 3 eligible)"* instead of *"the digest moved"*. Worked in `CC_0496` as `P2`.
+   - 🔴🔴 **THE DATES FILE OF A RULING A WAVE DATES THE ASSIGNED OFFICES, NOT THE RACE-CARRYING
+     ONES.** The seating file reads `office_swearing_in` on the office it SEATS. Maryland dated
+     **178** offices although only **114** carry a race; dating the 114 would have aborted the
+     seating file at its P4 for 64 seats, **after** the first terms were written. Worked in
+     `CC_0494`.
 
    - 🔴🔴 **CLOSE THE NULL IN `is_reelection` BEFORE YOU PIN ANYTHING.** The library's expression
      is NULL — not false — on a seat with no current holder, because `och` is LEFT JOINed and
@@ -341,6 +370,16 @@ clause, which is the right answer for it.
 | **admit** — eligible offices = winners | **67** | AZ House (2 winners, 2 eligible) · MD Delegate (2/2) · MD Delegate (3/3) |
 | **refuse** — staggered, not assignable from our data | **4** | AZ Corporation Commission (2 winners, 5 eligible) · HI OHA At-large Trustee (3/4) · MSU Trustee (2/8) · MI State Board of Education (2/8) |
 
+✅ **MEASURED IN PRODUCTION, 2026-11-24, ON MARYLAND'S 67 DELEGATE CONTESTS: 67 of 67 pass the
+equality clause**, 148 winners anchored to a seat they already held and 30 filled. The
+interchangeability clauses are still the ones that have never fired — `seats`, `description` and
+`representation_note` are NULL on all 141 Delegate office rows and `voting_powers` has one value.
+🟢 **The structure was checked against the constitution rather than against itself**: Art. III § 3
+gives every district one Senator and three Delegates however it is subdivided, and all 47 hold
+exactly that — 141 + 47 = 188, which is § 2's own arithmetic. A district holding four Delegate
+rows would let a fill claim a seat nobody elected, so that count is part of the gate (`CC_0496`
+P2f).
+
 🔴 **All four of the refused bodies were ADMITTED by the "at least" clause.** The defect was not one
 state's edge case; it was every staggered body in the pass. Arizona is the one where it would have
 shown first, because neither of its winners holds an eligible office, so nothing would have
@@ -362,6 +401,215 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — Maryland, 178 offices, THE FIRST RULING A WAVE
+
+**114 pending offices left the queue** (376 → 262) and both Maryland legislative bodies left the
+table. `MD STATE_EXEC` **stays in it on purpose** — the Governor is a separate wave on a different
+clause, and the Attorney General and the Comptroller are refused.
+
+| file | what it did |
+|---|---|
+| `CC_0494` | dated **178** offices to **2027-01-13**, Md. Const. Art. III § 6 |
+| `CC_0495` | **linked 60** winners to the person this database already held, **created 25** |
+| `CC_0496` | seated **178** (148 re-elections, 30 handovers), 178 predecessors closed at 2027-01-12 |
+
+### 🔴🔴 THE LEDGER SAID "85 WINNERS HAVE NO `politicians` ROW". SIXTY OF THEM DID.
+
+`DATES.md` § MD and this register both carried Maryland as *"85 winners have no `politicians` row
+— the second-largest seeding job after Maine's 77"*. That number is the count of `won` rows whose
+`politician_id` is NULL. It is **correct about the race rows and wrong about the people**:
+
+- **55** are the sitting holder of the **very seat they just won** — David Moon, Jared Solomon,
+  Kathy Szeliga, Dana Stein, Terri Hill, Marvin E. Holmes Jr. and 49 more. The AP import never
+  linked their winner row.
+- **5** are a sitting Delegate who won a **Senate** seat (Alston 24, Wilson 28, Kipke 31,
+  Chang 32, Ruff 41).
+- **25** are new to this database.
+
+🔴 **CREATING ALL 85 WOULD HAVE MADE A SECOND ROW FOR SIXTY SITTING MARYLAND LEGISLATORS**, each
+then seated into the seat their own existing row already holds. ▶ `winner_no_record` means "no
+record in THIS RACE" — Nevada paid 1 of 13 for this, Maine 18 of 77, **Maryland 60 of 85**. The
+proportion is what is new: it is no longer an edge case, it is the common case, and a people file
+sized from that column is sized wrong.
+
+⚠ **AND THE FIX IS NOT A BIGGER NAME SEARCH.** Each link is anchored on a **seat**: the person
+must be the current holder of an office inside that race's own eligible set, which is at most
+three candidates rather than 92,001 rows. `CC_0495`'s P5 asserts it for all 55.
+
+### 🟢🟢 THE STATE ARCHIVES' OWN ROSTER NAMES THE DAY THIS WAVE WRITES
+
+Both Maryland Manual roster pages open with one sentence:
+
+> "Legislators elected in the 2022 General Election **took office on January 11, 2023, and serve
+> until January 13, 2027**."
+
+Two independent things fall out of it, and `CC_0494`'s assertion 3d pins the first:
+
+- 2023-01-11 **is** the second Wednesday of January 2023, so § 6 evaluated for a cycle this file
+  does not write lands on the day the Archives says those terms began;
+- the Archives names **2027-01-13** outright, from a publication that is not the constitution.
+
+This is the strongest corroboration any state in this pass has had — Oregon and Utah had none at
+all. ⚠ **"Serve until January 13, 2027" is not in conflict with our `term_end` of 2027-01-12**:
+`seat_officeholder` closes a predecessor at `term_start - 1` throughout this programme, so one
+handover is written as two adjacent days.
+
+🔴 **THE ONE MARYLAND LEGISLATIVE TERM CARRYING A START DATE IS NOT CORROBORATION** — Alexander M.
+Harlan, Subdistrict 42A, 2026-08-03, an **appointment** after a resignation. It reads like
+evidence about § 6 and is evidence about a vacancy clause. Assertion 3e pins it so the next reader
+cannot mistake it.
+
+### 🔴 THE NEAR MISS IS A LIVE DATE IN THE SAME STATE, AS UTAH'S WAS
+
+2027-01-06 is the first Wednesday and nothing in Maryland law names it. **2027-01-20 is the third
+Wednesday — the GOVERNOR's real commencement** under Art. II § 1, which a later wave will write
+for a different office. Reaching one week too far here does not produce an absurd day; it produces
+another office's correct one. ⚠ And Art. III § 14 puts the General Assembly's own **meeting** on
+the same second Wednesday as the term, so the citation — not the date — is where this could have
+gone wrong invisibly.
+
+### 🔴🔴 TEN DELEGATE SEATS ARE UNRECORDED HERE AND COUNTED BY THE STATE
+
+Art. III § 2 fixes the House at 141 and § 7 elects the whole General Assembly every fourth year
+from 1958, so **all 188 seats were on this ballot as a matter of law**. We hold 131 Delegate seats
+with a winner. The other ten sit in four contests carrying a 2026 race, candidates and no `won`
+row — and the Maryland State Board of Elections has published a count for every one:
+
+| contest | seats | the state's own top finishers | margin to the next candidate |
+|---|---|---|---|
+| District 4 | 3 | Donald · Duck · Pippy | **127** |
+| District 6 | 3 | Long · Metzgar · Grammer | 1,767 |
+| District 31 | 3 | Chisholm · Jacobs · Caldwell-Nkongolo | **265** |
+| Subdistrict 34B | 1 | Jake Taylor | **225** |
+
+▶ **Unrecorded here, not undecided there.** Three of the four are inside half a percent, which is
+why a caller may still be holding them; District 6's is not close at all. This belongs to the
+**results programme**. `CC_0494`'s P3 gates on those ten seats staying unrecorded.
+
+⚠ **AND ONE OF THEM LEAVES A PERSON HOLDING TWO SEATS, WHICH IS CORRECT.** Nicholaus R. Kipke
+holds Delegate District 31 and wins Senate District 31. Nobody is seated in his old seat, so
+`seat_officeholder` closes nothing, and from 2027-01-13 our data shows him in both. **The fix is
+the result** — closing his House term would mean inventing a successor. (Utah's Doug Fiefia,
+`CC_0490`, is the same case.) The other four switchers resolve themselves, as Oregon's Jeff
+Helfrich did.
+
+### 🔴🔴 ONE NAME WAS DELIBERATELY *NOT* LINKED, AND THE DATABASE'S OWN GUARD FIRED FIRST
+
+The Senate District 42 winner is **Kevin Ford**. This table holds exactly one Kevin Ford — a
+sitting member of the **Mississippi** House of Representatives, District 54, with an open term,
+and absent from both chambers of the Maryland Manual's roster.
+
+🟢 **`essentials.politicians` CARRIES A TRIGGER THAT REFUSED THE SECOND ROW**, with the right
+default in its message: *"A sitting officeholder running for a different seat is the normal case,
+not a different person."* Here it is not. ▶ The override was taken **for one row in a statement of
+its own**, so the guard stayed armed for the other 24 names, and the collision is recorded in that
+row's own `source`. `CC_0495` assertion 6 refuses unless it is. **A duplicate nobody wrote down is
+a duplicate nobody will merge.**
+
+### 🔴🔴 RULING A, WORKED FOR THE FIRST TIME — AND THE SELECTION IS THE WHOLE OF IT
+
+38 of the 67 Delegate contests carry more than one winner (131 winners across 67 office rows).
+Every race passed the equality clause exactly: **67 of 67, eligible offices = winners**. 148
+winners anchored to the seat they already hold; 30 filled.
+
+🔴 **`WAVE_SELECTION_SQL` KEYS EVERY WINNER ON THE RACE-CARRYING OFFICE AND IS WRONG FOR THIS
+WAVE.** The selection is built on the **assigned** office instead — in `CC_0494` as well, which is
+why that file dates **178** offices and not 114. ▶ A date written only on the race-carrying
+offices would abort the seating file at its P4 for 64 seats, **after** the first terms were
+written.
+
+⚠ **What makes an arbitrary fill honest here, measured:** across all 141 Delegate office rows,
+`seats` non-null **0**, `description` non-null **0**, `representation_note` non-null **0**, one
+distinct `voting_powers`, one distinct `title`. Only `title` and `chamber_id` discriminate
+anything; the other three clauses are insurance against a future row.
+
+🟢 **AND THE STRUCTURE WAS CHECKED AGAINST THE CONSTITUTION, NOT AGAINST ITSELF.** Art. III § 3
+gives every legislative district one Senator and three Delegates however it is subdivided. All 47
+districts hold exactly 3 Delegate offices and 1 Senate office: 141 + 47 = 188, which is § 2's own
+arithmetic. A district holding four would let a fill claim a seat nobody elected.
+
+### 🔴🔴 A CONTROL THAT COULD NOT GO RED MOVED A GATE — AND THE REORDER IS THE FINDING
+
+The first draft put Ruling A's gate **below** the pin. Every tamper aimed at the equality clause
+was caught two gates earlier by the digest or the row counts, so **the clause carrying the
+real-world cost — a named sitting official unseated in favour of somebody who did not win their
+seat — had no control of its own**, in a suite where 20 of 21 went red.
+
+▶ **Ruling A now runs as `P2`, above the pin.** It asks whether the body is *assignable at all*,
+which is a fact about the world; the pin asks whether the answer is *the one recorded on
+2026-11-23*, which is a fact about this file. The first question comes first, and the operator
+gets `P2a: Ruling A's equality clause fails for: State Legislative District 20 (2 winners, 3
+eligible)` instead of "the digest moved".
+
+🔴 **TWO TAMPERS FAILED ON A DATABASE CHECK CONSTRAINT BEFORE REACHING A MIGRATION, AND THE
+HARNESS REPORTED BOTH AS RED.** `result` without `result_source`; `result_certainty` without
+`result`. A tamper that did not apply proves nothing — and here it did not even look like a pass.
+▶ **Read the message, not the colour.**
+
+⚠ **AND THE FIRST C15 APPLIED CLEANLY AND WAS STILL USELESS.** It widened the eligible set by
+dropping `title` and `chamber_id`, which changes nothing in Maryland: a `STATE_LOWER` district row
+and a `STATE_UPPER` district row are **separate rows**, each holding only its own chamber's
+offices. The tamper was real, present and faultless. ▶ **A tamper that does not create the fault
+is a control that proved nothing.**
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+| check | result |
+|---|---|
+| Maryland legislative seats still pending | **0** |
+| Maryland state executives still pending | **3, as intended** |
+| terms citing `CC_0496` | **178** |
+| of those, naming RULING A in their own source | **30** |
+| predecessors closed at 2027-01-12 | **178** |
+| offices answering `office_next_term` | **178** |
+| terms starting 2027-01-13, repo-wide | **178** — Maryland alone on that day |
+| `office_swearing_in` rows on 2027-01-13, repo-wide | **178**, the same set |
+| Maryland state-executive terms on that day | **0** |
+| politicians | 92,001 → **92,026** (+25) |
+| flagged-vacant offices, repo-wide | **66**, unmoved |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+| Kipke's open Maryland legislative terms from 2027-01-13 | **2**, as the missing result requires |
+| undated Maryland Delegate offices | **10**, the results gap |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API.** Five real addresses through `api.empowered.vote`:
+
+- **Baltimore, District 45** → the handover renders beside two re-elections on one page: *held
+  Stephanie Smith, **incoming Chanel A. Branch on 2027-01-13***, with Jackie Addison and Caylin
+  Young returning.
+- **Glen Burnie, District 32** → **both halves of a chamber switch on one page**: Senate 32 shows
+  Pamela Beidle held, **incoming Mark S. Chang**; Delegate 32 shows Mark S. Chang held, **incoming
+  Spencer F. Dixon**.
+- **Pasadena, District 31** → the results gap, visible to a voter: Senate 31 shows **incoming
+  Nicholaus R. Kipke**, and **all three Delegate 31 seats show no incoming at all** — including
+  Kipke's own, which he keeps.
+- **Silver Spring, District 20** → a three-member district renders **three separate Delegate rows,
+  three people, three incoming lines**. That is Ruling A through the read path.
+- **Timonium, Subdistrict 11B** → a two-member subdistrict renders both.
+- ⚠ **The Governor, the Attorney General and the Comptroller show NO incoming at every address** —
+  the refusals, visible to a voter.
+
+🔴 The probe refuses to report at all if it finds no incoming holder anywhere, because the Oregon
+pass learned that the fields are `incoming_holder_name` / `incoming_on` and a uniform "no
+incoming" is a broken detector rather than a finding.
+
+### Controls, each watched going red (step 7)
+
+`backend/data/state-seating-2026/controls/md-2026.controls.mjs` — **21 of 21 red; the negative
+control passed.** Three fired on an earlier gate than they were aimed at and are recorded as
+backstops, not as tested gates:
+
+| control | aimed at | fired on |
+|---|---|---|
+| C1 — write the GOVERNOR's third Wednesday | assertion 3b | assertion 1 |
+| C10 — Kevin Ford linked to the Mississippi row | P7 | P2 |
+| C16 — the incumbent anchor inverted | P3h | P2d |
+
+🟢 **The two that matter most are tested:** `P2a` — Ruling A's equality clause — by **C15**, and
+**assertion 1**, the Ruling A post-verify, by **C12**, which rebuilds it the published way
+(joining `office_terms` back on the race-carrying office) and watches it find 114 of 178 **after**
+the write.
+
 
 ## ✅✅ APPLIED 2026-11-23 — Oregon, 75 offices, a shared calendar day and a clean results set
 

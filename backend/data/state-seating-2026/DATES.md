@@ -698,7 +698,21 @@ rounded dates for corroboration.
 
 ---
 
-## MD — Maryland · 117 offices · ⚠️ 115 sourced, **2 REFUSED**, 2026-11-22
+## MD — Maryland · 117 offices · ⚠️ 115 sourced, **2 REFUSED**, 2026-11-22 — ✅✅ **THE 178 GENERAL ASSEMBLY SEATS DATED AND SEATED 2026-11-24** (`CC_0494`, `CC_0495`, `CC_0496`); the Governor is still owed a wave, the AG and the Comptroller REMAIN REFUSED
+
+### 🔴🔴 THREE CORRECTIONS TO THIS SECTION, MADE WHEN THE WAVE WAS BUILT
+
+1. **"85 winners have no `politicians` row" was true of the RACE ROWS and wrong about the
+   PEOPLE. 60 of the 85 already existed** — 55 are the sitting holder of the very seat they won
+   and 5 are Delegates moving to the Senate. The people file is **60 links and 25 creations**,
+   not 85 creations. Creating all 85 would have made a second row for sixty sitting Maryland
+   legislators.
+2. **The wave is 178 offices, not 114.** Ruling A seats 64 winners into sibling Delegate offices,
+   and the seating file reads `office_swearing_in` on the office it SEATS — so the dates file
+   dates **178**, of which only 114 carry a race.
+3. **Ten Delegate seats could not be dated at all**, because we hold no recorded result for
+   Districts 4, 6 and 31 (three seats each) and Subdistrict 34B (one). The Maryland State Board
+   of Elections has counted all four; see the new section below.
 
 🔴🔴 **MARYLAND'S DEFAULT RULE IS THAT A TERM BEGINS ON ELECTION DAY, AND TWO OF ITS THREE
 EXECUTIVES FALL UNDER IT.** Art. XVII, § 4 — which Art. XVII, § 9 makes override every other
@@ -849,6 +863,57 @@ operative event, which is why those two are refused above rather than guessed.
 - ⚠ **The Lieutenant Governor and the State Treasurer are correctly NOT pending.** The Lieutenant
   Governor runs on the Governor's ticket, and the Treasurer is chosen "on joint ballot by the two
   Houses of the Legislature" (Art. VI, § 1) rather than by voters. Neither is a gap.
+
+### 🔴🔴 THE RESULTS GAP — TEN DELEGATE SEATS THE STATE HAS COUNTED AND WE HAVE NOT RECORDED
+
+Art. III § 2 fixes the House of Delegates at 141 and § 7 elects the whole General Assembly every
+fourth year from 1958 (1958 + 17×4 = 2026), so **all 141 Delegates and all 47 Senators were on
+this ballot as a matter of law**. We hold 131 Delegate seats with a winner. The other ten sit in
+four contests that carry a 2026 race, candidates, and **no `won` row at all**:
+
+| contest | seats | the state's own top finishers | margin to the next candidate |
+|---|---|---|---|
+| District 4 | 3 | Jerry Donald 29,901 · Andrew Duck 29,106 · Jesse T. Pippy 28,015 | **127** |
+| District 6 | 3 | Bob Long 17,041 · Ric Metzgar 16,217 · Robin L. Grammer 16,014 | 1,767 |
+| District 31 | 3 | Brian A. Chisholm 27,474 · Mike Jacobs 26,354 · LaToya Marie Caldwell-Nkongolo 24,927 | **265** |
+| Subdistrict 34B | 1 | Jake Taylor 9,828 | **225** |
+
+Source: Maryland State Board of Elections, "Unofficial 2026 Gubernatorial General Election
+Results", `…/elections/2026/general_results/gen_results_2026_6.html`, last refreshed
+2026-11-20 06:47:33 PM, read 2026-11-23. The same page carries all 71 Delegate contests and all
+141 seats; `…_5.html` carries all 47 Senate contests.
+
+🔴 **UNRECORDED HERE, NOT UNDECIDED THERE.** Three of the four are inside half a percent, which is
+why a caller may still be holding them; District 6's margin is 1,767 and is not close at all.
+▶ **This belongs to the results programme, not to seating.** `CC_0494`'s P3 gates on the ten seats
+staying unrecorded — if one gains a winner, the wave is larger than 178 and the pin is stale.
+
+⚠ **AND IT LEAVES ONE PERSON HOLDING TWO SEATS FROM 2027-01-13.** Nicholaus R. Kipke holds
+Delegate District 31 and wins Senate District 31; nobody is seated in his old seat, so nothing
+closes it. **The fix is the result.**
+
+### 🟢🟢 THE CORROBORATION THIS SECTION DID NOT HAVE WHEN IT WAS WRITTEN
+
+Both Maryland Manual roster pages — `…/06hse/html/hsedist.html` (19,161 B) and
+`…/05sen/html/sendist.html` (10,492 B), HTTP 200, read 2026-11-23 — open with one sentence:
+
+> "Legislators elected in the 2022 General Election **took office on January 11, 2023, and serve
+> until January 13, 2027**."
+
+2023-01-11 **is** the second Wednesday of January 2023, so Art. III § 6 evaluated for a cycle this
+wave does not write lands where the State Archives says those terms began; and the Archives names
+**2027-01-13** outright. ⚠ "Serve until January 13, 2027" is not in conflict with our `term_end`
+of 2027-01-12 — `seat_officeholder` closes a predecessor at `term_start - 1` throughout this
+programme.
+
+🔴 **The rosters are also the identity check for all 178 winners**, and the one in this ledger that
+mattered: 177 of our 178 sitting holders appear in the Manual under the district we hold them in,
+and the 178th is Subdistrict 34A's "Steve Johnson", whom the Manual writes "Steven C. Johnson" —
+in the one district that holds **two** Johnsons.
+
+⚠ **The Manual's own HTML is malformed in one place**: District 28's second delegate is written
+`<a href="…">Edith J. Patterson (D)<br>` with no closing tag, which made a first parse return 140
+delegates instead of 141. **The number the constitution names is what exposed it.**
 
 ---
 
