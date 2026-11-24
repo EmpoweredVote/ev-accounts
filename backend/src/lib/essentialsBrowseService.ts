@@ -322,7 +322,15 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
   }
 
   // 4. What is already stored at this exact version and this exact fingerprint.
-  const stored = await readStoredPairs(seeds, version, OVERLAP_QUERY_FINGERPRINT);
+  //
+  // 🔴 THE STORE IS AN OPTIMISATION, AND NOTHING IN IT MAY FAIL A REQUEST. The
+  //    version read degrades by design; these three must too, or a half-applied
+  //    migration — geofence_version present, geo_overlap_pairs absent — 500s
+  //    /by-area, which is the precise case the design says must not.
+  const stored = await readStoredPairs(seeds, version, OVERLAP_QUERY_FINGERPRINT).catch((err) => {
+    warnStoreDegraded('read', err);
+    return new Map<string, GeoPair[]>();
+  });
 
   // 5. ONE COMPUTE PER MISSING SEED, so each stored row holds that seed's OWN
   //    pairs. The design's measurement is that single-seed results compose by
@@ -339,11 +347,19 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
   //    unreadable: the safe direction. Writing the CURRENT version would publish
   //    an answer computed against half-ingested geometry at a version readers
   //    trust, which is the anti-goal of the whole design.
+  //
+  // ⚠ The write is the worst place of all to throw: the caller is ALREADY
+  //   holding the right answer by the time it runs, and a 500 here would throw
+  //   that answer away to report a failure of the cache behind it.
   if (missing.length > 0) {
-    const present = await filterSeedsPresent(missing);
-    const entries = present.map((s) => ({ seed: s, pairs: computedBySeed.get(seedKey(s)) ?? [] }));
-    if (entries.length > 0) {
-      await writeStoredPairs(entries, version, OVERLAP_QUERY_FINGERPRINT);
+    try {
+      const present = await filterSeedsPresent(missing);
+      const entries = present.map((s) => ({ seed: s, pairs: computedBySeed.get(seedKey(s)) ?? [] }));
+      if (entries.length > 0) {
+        await writeStoredPairs(entries, version, OVERLAP_QUERY_FINGERPRINT);
+      }
+    } catch (err) {
+      warnStoreDegraded('write', err);
     }
   }
 
@@ -355,6 +371,25 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
 
   await cache.set(cacheKey, result, OVERLAP_CACHE_TTL_SECONDS);
   return result;
+}
+
+/**
+ * Say so once per process when the store stops working, and then be quiet.
+ *
+ * The degrade itself is correct — the answer is still computed and still right.
+ * What is not correct is doing it silently: a store that has quietly stopped
+ * working looks exactly like a store that was never helping, and the only
+ * symptom is that every browse is slow again.
+ */
+const warnedStore = { read: false, write: false };
+function warnStoreDegraded(which: 'read' | 'write', err: unknown): void {
+  if (warnedStore[which]) return;
+  warnedStore[which] = true;
+  console.warn(
+    `[overlap] the durable store's ${which} failed — answering from a fresh compute instead. ` +
+      `Correctness is unaffected; latency is not. This warns once per process:`,
+    err instanceof Error ? err.message : err
+  );
 }
 
 /**

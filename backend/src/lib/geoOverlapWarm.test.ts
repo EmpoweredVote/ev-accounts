@@ -52,7 +52,9 @@ describe('warmGeoOverlapPairs', () => {
       .mockResolvedValueOnce({
         rows: SEEDS.map((s) => ({ seed_geo_id: s.geo_id, seed_mtfcc: s.mtfcc, pairs: [] })),
       } as never)
-      .mockResolvedValueOnce({ rows: [], rowCount: 4 } as never); // the sweep
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never) // the sweep re-reads the version
+      .mockResolvedValueOnce({ rows: [], rowCount: 4 } as never) // the sweep
+      .mockResolvedValue({ rows: [] } as never); // RESET statement_timeout
 
     const got = await warmGeoOverlapPairs();
 
@@ -79,7 +81,9 @@ describe('warmGeoOverlapPairs', () => {
       .mockResolvedValueOnce({ rows: [] } as never) // nothing stored yet
       .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never) // compute
       .mockResolvedValueOnce({ rows: [], rowCount: 1 } as never) // the upsert
-      .mockResolvedValueOnce({ rows: [], rowCount: 9 } as never); // the sweep
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never) // the sweep re-reads the version
+      .mockResolvedValueOnce({ rows: [], rowCount: 9 } as never) // the sweep
+      .mockResolvedValue({ rows: [] } as never); // RESET statement_timeout
 
     const got = await warmGeoOverlapPairs();
 
@@ -104,7 +108,9 @@ describe('warmGeoOverlapPairs', () => {
     expect(got.computed).toBe(0);
     expect(got.alreadyCurrent).toBe(0);
     expect(got.swept).toBe(0);
-    expect(q()).toHaveBeenCalledTimes(2); // the timeout SET, then the version read
+    // the timeout SET, the version read, and the RESET the finally always runs
+    expect(q()).toHaveBeenCalledTimes(3);
+    expect(everySql()[2]).toContain('RESET statement_timeout');
   });
 
   it('warms G4000 by default', async () => {
@@ -211,7 +217,9 @@ describe('warmGeoOverlapPairs — surviving the 30-second wall', () => {
       .mockRejectedValueOnce(new Error('canceling statement due to statement timeout'))
       .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never)
       .mockResolvedValueOnce({ rows: [], rowCount: 1 } as never) // the upsert
-      .mockResolvedValueOnce({ rows: [], rowCount: 0 } as never); // the sweep
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never) // the sweep re-reads the version
+      .mockResolvedValueOnce({ rows: [], rowCount: 0 } as never) // the sweep
+      .mockResolvedValue({ rows: [] } as never); // RESET statement_timeout
 
     const got = await warmGeoOverlapPairs();
 
@@ -233,5 +241,87 @@ describe('warmGeoOverlapPairs — surviving the 30-second wall', () => {
 
     await expect(warmGeoOverlapPairs()).rejects.toThrow('connection lost');
     expect(vi.mocked((pool as unknown as { release: () => void }).release)).toHaveBeenCalled();
+  });
+});
+
+describe('warmGeoOverlapPairs — fixes from the whole-branch review', () => {
+  beforeEach(() => {
+    q().mockReset();
+    vi.spyOn(console, 'log').mockImplementation(() => {});
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+  });
+
+  it('resets statement_timeout before giving the connection back to the pool', async () => {
+    // 🔴 `SET statement_timeout` outside a transaction is a SESSION setting, and
+    // release() returns the connection to the idle pool carrying it. With
+    // GEO_OVERLAP_WARM_ON_BOOT set, one connection per boot would then serve
+    // ordinary requests with no 30-second guard at all — silently, and the repo
+    // relies on that guard to stop a runaway query pinning a connection.
+    q()
+      .mockResolvedValueOnce({ rows: [] } as never) // SET
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [] } as never) // seed listing
+      .mockResolvedValueOnce({ rows: [], rowCount: 0 } as never) // sweep: version re-read
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [], rowCount: 0 } as never)
+      .mockResolvedValue({ rows: [] } as never);
+
+    await warmGeoOverlapPairs();
+
+    expect(everySql().some((s) => s.includes('RESET statement_timeout'))).toBe(true);
+    const reset = everySql().findIndex((s) => s.includes('RESET statement_timeout'));
+    expect(reset).toBe(everySql().length - 1); // the very last thing it does
+  });
+
+  it('resets statement_timeout even when the run throws', async () => {
+    q()
+      .mockResolvedValueOnce({ rows: [] } as never) // SET
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockRejectedValueOnce(new Error('connection lost'))
+      .mockResolvedValue({ rows: [] } as never);
+
+    await expect(warmGeoOverlapPairs()).rejects.toThrow('connection lost');
+    expect(everySql().some((s) => s.includes('RESET statement_timeout'))).toBe(true);
+  });
+
+  it('skips the sweep when the version moved during the run', async () => {
+    // The warm reads the version once and may sweep 124 seconds later. If an
+    // ingest bumps the version in between, live requests are writing CORRECT
+    // rows at V+1 — and a sweep holding V would delete every one of them, while
+    // this run's own rows at V are already unreadable. An empty store and a cold
+    // window for every state, caused by the job that exists to prevent exactly
+    // that.
+    q()
+      .mockResolvedValueOnce({ rows: [] } as never) // SET
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [SEEDS[0]] } as never)
+      .mockResolvedValueOnce({ rows: [] } as never) // nothing stored
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never) // compute
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 } as never) // the upsert
+      .mockResolvedValueOnce({ rows: [{ version: '9' }] } as never) // the version MOVED
+      .mockResolvedValue({ rows: [] } as never);
+
+    const got = await warmGeoOverlapPairs();
+
+    expect(got.computed).toBe(1);
+    expect(got.swept).toBe(0);
+    expect(everySql().some((s) => s.includes('DELETE'))).toBe(false);
+  });
+
+  it('sweeps when the version held still', async () => {
+    q()
+      .mockResolvedValueOnce({ rows: [] } as never) // SET
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [SEEDS[0]] } as never)
+      .mockResolvedValueOnce({ rows: [] } as never)
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never)
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 } as never)
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never) // unchanged
+      .mockResolvedValueOnce({ rows: [], rowCount: 11 } as never) // the sweep
+      .mockResolvedValue({ rows: [] } as never);
+
+    const got = await warmGeoOverlapPairs();
+
+    expect(got.swept).toBe(11);
   });
 });

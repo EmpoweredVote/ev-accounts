@@ -146,8 +146,11 @@ const envSchema = z.object({
   // 'false' and resolveOverlappingGeoPairs goes straight back to computing, with
   // Redis still in front. It exists because the design's named failure mode is a
   // WRONG ANSWER NOBODY CAN SEE: if a stored answer is ever suspected, the
-  // operator needs to stop reading it without a migration and without taking the
-  // service down. Turning it off costs latency, never correctness.
+  // operator needs to stop reading it without applying or reverting a migration.
+  // Turning it off costs latency, never correctness.
+  // ⚠ IT IS READ ONCE AT MODULE LOAD, SO CHANGING IT NEEDS A RESTART — on Render,
+  // that means a redeploy. It is not a live switch; it is a switch that does not
+  // need a database change.
   GEO_OVERLAP_STORE_ENABLED: z.string().optional(),
   // GEO_OVERLAP_WARM_ON_BOOT: ABSENT = OFF. Set to '1' or 'true' and the API
   // warms the 53 state seeds once, after it is already listening, failures

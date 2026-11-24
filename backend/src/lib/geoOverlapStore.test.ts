@@ -73,8 +73,10 @@ describe('readGeofenceVersion', () => {
   });
 
   it('returns null when the query throws', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
     q().mockRejectedValueOnce(new Error('relation "essentials.geofence_version" does not exist'));
     expect(await readGeofenceVersion()).toBeNull();
+    warn.mockRestore();
   });
 
   it('returns null when the table is there but holds no row', async () => {
@@ -232,5 +234,29 @@ describe('OVERLAP_STORE_ENABLED', () => {
     expect(await load(undefined)).toBe(true);
     expect(await load('1')).toBe(true);
     expect(await load('true')).toBe(true);
+  });
+});
+
+describe('readGeofenceVersion says something the first time it fails', () => {
+  beforeEach(() => q().mockReset());
+
+  it('warns once, not on every request', async () => {
+    // A silent catch turns "the store became unreachable" into "every page is
+    // 3.3 seconds and nothing anywhere says why". One warning makes an invisible
+    // regression visible; warning on every request would make it noise nobody
+    // reads, which is the same thing.
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const boom = () => new Error('relation "essentials.geofence_version" does not exist');
+    q().mockRejectedValueOnce(boom()).mockRejectedValueOnce(boom());
+    // A fresh module, so the once-only flag has not been spent by an earlier test.
+    vi.resetModules();
+    const fresh = await import('./geoOverlapStore.js');
+
+    expect(await fresh.readGeofenceVersion()).toBeNull();
+    expect(await fresh.readGeofenceVersion()).toBeNull();
+
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(String(warn.mock.calls[0]![0])).toContain('geofence version');
+    warn.mockRestore();
   });
 });

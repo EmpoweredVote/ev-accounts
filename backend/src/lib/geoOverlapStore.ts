@@ -61,8 +61,11 @@ export function seedKey(p: GeoPair): string {
 /**
  * The kill switch. The design's named failure mode is a WRONG ANSWER NOBODY CAN
  * SEE, so the operator needs a way to stop reading the store without a migration
- * and without taking the service down. Absent means ON: the store is the normal
- * path, and turning it off is the exception someone chose.
+ * without applying or reverting a migration. Absent means ON: the store is the
+ * normal path, and turning it off is the exception someone chose.
+ *
+ * ⚠ Read once, here, at module load — so changing it takes a restart. It is not
+ * a live switch; it is a switch that needs no database change.
  *
  * ⚠ READ FROM process.env, NOT FROM ./env.js, AND THAT IS DELIBERATE. env.ts calls
  * process.exit(1) on an incomplete environment at module scope. This module is
@@ -89,13 +92,28 @@ export const OVERLAP_STORE_ENABLED = !(storeFlag === '0' || storeFlag === 'false
  * — a deploy that lands before the migration is applied, or a half-applied one.
  * The caller's job is to fall back to computing, not to 500.
  */
+let warnedAboutVersionRead = false;
+
 export async function readGeofenceVersion(db: Queryable = pool): Promise<string | null> {
   try {
     const { rows } = await db.query(
       `SELECT version::text AS version FROM essentials.geofence_version LIMIT 1`
     );
     return (rows[0]?.version as string | undefined) ?? null;
-  } catch {
+  } catch (err) {
+    // ⚠ ONCE, NOT EVERY TIME. A silent catch turns "the store became
+    // unreachable" into "every browse is 3.3 seconds and nothing anywhere says
+    // why" — the degrade is correct and the silence is not. Warning on every
+    // request instead would be noise nobody reads, which is the same thing by
+    // another route.
+    if (!warnedAboutVersionRead) {
+      warnedAboutVersionRead = true;
+      console.warn(
+        '[geoOverlapStore] cannot read the geofence version — every overlap request will ' +
+          'recompute from geometry until this is fixed. This warns once per process:',
+        err instanceof Error ? err.message : err
+      );
+    }
     return null;
   }
 }

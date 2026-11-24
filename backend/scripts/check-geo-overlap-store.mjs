@@ -355,8 +355,15 @@ async function runSelftest(client, version, fingerprint) {
 
   await client.query('BEGIN');
   try {
-    // Remove element 0 and leave pair_count alone: one changed thing, so a red
-    // names one guard.
+    // Remove element 0 and leave pair_count alone. ONE EDIT, BUT IT TRIPS THREE
+    // GUARDS — the pair set, the derived district set and the pair_count
+    // agreement — and that is a property of the data, not a looseness in the
+    // control: the district set is DERIVED from the pairs, so no tamper on a
+    // stored row can move one without the other. Which is why each guard prints
+    // its own reason: the red stays readable even though three fired at once.
+    // ⚠ The district gate therefore has no tamper of its own. What proves it was
+    //   not vacuous is the row count printed below — if it examined 0 rows the
+    //   selftest exits 2, however red the comparison went.
     await client.query(
       `UPDATE essentials.geo_overlap_pairs
           SET pairs = pairs - 0

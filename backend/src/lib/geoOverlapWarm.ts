@@ -159,7 +159,27 @@ export async function warmGeoOverlapPairs(
     }
 
     // 5. The sweep, LAST. See the header.
-    const swept = dryRun ? 0 : await sweepSupersededPairs(version, fingerprint, db);
+    //
+    // 🔴 AND ONLY IF THE VERSION HELD STILL. Step 1 read it up to 124 seconds
+    //    ago. If an ingest bumped it since, live requests have been writing
+    //    CORRECT rows at the new version — and a sweep holding the OLD one
+    //    deletes every one of them, while this run's own rows are already
+    //    unreadable. That is an empty store and a cold window for every state,
+    //    caused by the job whose whole purpose is to prevent exactly that. The
+    //    next run sweeps; nothing is lost but one cycle.
+    let swept = 0;
+    if (!dryRun) {
+      const versionNow = await readGeofenceVersion(db);
+      if (versionNow === version) {
+        swept = await sweepSupersededPairs(version, fingerprint, db);
+      } else {
+        console.warn(
+          `[geo-overlap-warm] the geofence version moved ${version} -> ${versionNow} during this ` +
+            `run — SWEEP SKIPPED, because sweeping at ${version} would delete the rows written at ` +
+            `${versionNow}. The next run sweeps.`
+        );
+      }
+    }
 
     const result: WarmResult = {
       version,
@@ -182,6 +202,24 @@ export async function warmGeoOverlapPairs(
 
     return result;
   } finally {
-    db.release();
+    // 🔴 THE RAISED TIMEOUT MUST NOT LEAVE WITH THE CONNECTION. A bare
+    //    `SET statement_timeout` outside a transaction is a SESSION setting, and
+    //    release() hands the connection back to the idle pool still carrying it.
+    //    With GEO_OVERLAP_WARM_ON_BOOT set, one connection per boot would then
+    //    serve ordinary requests with no 30-second guard — silently, and that
+    //    guard is what stops a runaway query pinning a connection.
+    //
+    //    The house precedent (contributionTotals.ts:34) scopes the raise with
+    //    BEGIN / SET LOCAL / COMMIT. That shape is wrong HERE, because this run
+    //    takes up to 124 seconds and a transaction open that long holds a
+    //    snapshot against a table other sessions are loading. So: reset
+    //    explicitly, and if the reset itself cannot run, DESTROY the connection
+    //    rather than return a tainted one to the pool.
+    try {
+      await db.query('RESET statement_timeout');
+      db.release();
+    } catch {
+      db.release(true);
+    }
   }
 }

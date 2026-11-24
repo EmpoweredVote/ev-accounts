@@ -426,3 +426,69 @@ describe('resolveOverlappingGeoPairs — the kill switch', () => {
     }
   });
 });
+
+describe('resolveOverlappingGeoPairs — the store can never fail a request', () => {
+  beforeEach(() => {
+    vi.mocked(pool.query).mockReset();
+    vi.mocked(cache.get).mockReset().mockResolvedValue(null);
+    vi.mocked(cache.set).mockReset().mockResolvedValue(undefined);
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
+  });
+
+  it('answers anyway when the store READ throws', async () => {
+    // Review Focus 1 names "a half-applied migration" explicitly. If
+    // geofence_version exists and geo_overlap_pairs does not, this is the shape
+    // it takes — and the endpoint must not 500.
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockRejectedValueOnce(new Error('relation "essentials.geo_overlap_pairs" does not exist'))
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never)
+      .mockResolvedValueOnce({ rows: [{ geo_id: '06', mtfcc: 'G4000' }] } as never)
+      .mockResolvedValueOnce({ rows: [], rowCount: 1 } as never);
+
+    const got = await resolveOverlappingGeoPairs([{ geo_id: '06', mtfcc: 'G4000' }]);
+
+    expect(got).toEqual([{ geo_id: '0601', mtfcc: 'G5200' }]);
+  });
+
+  it('answers anyway when the store WRITE throws', async () => {
+    // The worst shape of all: the caller already HOLDS the right answer when the
+    // upsert fails, and a 500 would throw it away.
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [] } as never)
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never)
+      .mockResolvedValueOnce({ rows: [{ geo_id: '06', mtfcc: 'G4000' }] } as never)
+      .mockRejectedValueOnce(new Error('canceling statement due to lock timeout'));
+
+    const got = await resolveOverlappingGeoPairs([{ geo_id: '06', mtfcc: 'G4000' }]);
+
+    expect(got).toEqual([{ geo_id: '0601', mtfcc: 'G5200' }]);
+  });
+
+  it('answers anyway when the seed-presence check throws', async () => {
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [] } as never)
+      .mockResolvedValueOnce({ rows: [{ geo_id: '0601', mtfcc: 'G5200' }] } as never)
+      .mockRejectedValueOnce(new Error('permission denied for table geofence_boundaries'));
+
+    const got = await resolveOverlappingGeoPairs([{ geo_id: '06', mtfcc: 'G4000' }]);
+
+    expect(got).toEqual([{ geo_id: '0601', mtfcc: 'G5200' }]);
+  });
+
+  it('still propagates a failure of the COMPUTE itself — that one has no answer to give', async () => {
+    // The degrade is "the store cannot fail a request". It is not "swallow
+    // everything": a compute that fails has produced no answer, and returning []
+    // would be a confident wrong answer rather than an error.
+    vi.mocked(pool.query)
+      .mockResolvedValueOnce({ rows: [{ version: '7' }] } as never)
+      .mockResolvedValueOnce({ rows: [] } as never)
+      .mockRejectedValueOnce(new Error('canceling statement due to statement timeout'));
+
+    await expect(resolveOverlappingGeoPairs([{ geo_id: '06', mtfcc: 'G4000' }])).rejects.toThrow(
+      'statement timeout'
+    );
+  });
+});
