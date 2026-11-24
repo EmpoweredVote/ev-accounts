@@ -16,15 +16,33 @@ import {
   UNRESOLVABLE_PAIR_MTFCC_SQL_LIST,
   type GeoPair,
 } from './geoIdGuard.js';
-import { fingerprintOf } from './geoOverlapStore.js';
+import {
+  fingerprintOf,
+  seedKey,
+  readGeofenceVersion,
+  readStoredPairs,
+  writeStoredPairs,
+  filterSeedsPresent,
+  OVERLAP_STORE_ENABLED,
+} from './geoOverlapStore.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
 // Overlap resolution is pure geometry — it only changes when geofence boundaries
 // are (re)loaded, which happens during seeding, not at request time. Caching the
 // result keyed by the seed set makes repeat browses of the same area near-instant.
-// TTL is kept modest (1h) so a freshly-seeded city surfaces its new overlaps
-// within the hour without a manual cache bust.
+//
+// 🔴 SINCE CC_0511 THIS TTL IS A MEMORY BOUND AND NOTHING MORE. It used to be
+// the correctness mechanism: one hour was how long a stale overlap could be
+// served after a seed, so the number was a guess at how late an answer was
+// allowed to be. Correctness has moved into the KEY — `overlap:v3:` carries the
+// geofence version and the resolver's fingerprint, so a changed boundary or a
+// changed constant makes every older entry unreachable the instant it happens,
+// at any TTL. The value stays at 3600 only to stop Redis filling with seed sets
+// nobody browses twice.
+//
+// ⚠ Do not re-derive the old reasoning from the old number. Shortening this no
+// longer makes anything fresher, and lengthening it no longer risks staleness.
 const OVERLAP_CACHE_TTL_SECONDS = 3600;
 
 // Minimum interior-overlap fraction for a Branch-3 district (county / school /
@@ -249,21 +267,101 @@ export const OVERLAP_QUERY_FINGERPRINT = fingerprintOf(OVERLAP_QUERY_SQL);
  */
 export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
   if (seeds.length === 0) return [];
-  const seedGeoIds = seeds.map((s) => s.geo_id);
-  const seedMtfccs = seeds.map((s) => s.mtfcc);
 
-  // Cache keyed by the canonical (order-independent) seed set.
-  const cacheKey = `overlap:v2:${seeds
-    .map((s) => `${s.geo_id}::${s.mtfcc}`)
+  // 1. THE VERSION IS READ FIRST, AND THE ORDER IS LOAD-BEARING. Everything
+  //    below is tagged with this value: the Redis key, the store lookup, and the
+  //    row that gets written. Reading it later would let an ingest land between
+  //    the compute and the write.
+  const version = await readGeofenceVersion();
+
+  // 2. Redis, in front of everything, keyed on BOTH halves of the answer's
+  //    identity. The v2 keys are deliberately abandoned: when the version or the
+  //    fingerprint moves the answer genuinely is different, which is the
+  //    opposite of step 1's case, where the result was provably identical and
+  //    bumping would have thrown warm entries away for nothing.
+  const cacheKey = `overlap:v3:${version ?? 'none'}:${OVERLAP_QUERY_FINGERPRINT}:${seeds
+    .map(seedKey)
     .sort()
     .join(',')}`;
-  const cached = await cache.get<GeoPair[]>(cacheKey);
-  if (cached !== null) return cached;
+  // 🔴 cache.get is typed <T> and validates NOTHING. A v2-era entry, a truncated
+  //    value or anything else of the wrong shape must read as a miss rather than
+  //    reach a caller as pairs. An empty ARRAY is a real answer and is honoured.
+  const cached = await cache.get<unknown>(cacheKey);
+  if (isGeoPairArray(cached)) return cached;
 
-  const { rows } = await pool.query(OVERLAP_QUERY_SQL, [seedGeoIds, seedMtfccs]);
-  const result = rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+  const compute = async (forSeeds: GeoPair[]): Promise<GeoPair[]> => {
+    const { rows } = await pool.query(OVERLAP_QUERY_SQL, [
+      forSeeds.map((s) => s.geo_id),
+      forSeeds.map((s) => s.mtfcc),
+    ]);
+    return rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+  };
+
+  // 3. No version, or the store switched off: compute and return, exactly as
+  //    this function did before CC_0511. A deploy that lands ahead of the
+  //    migration degrades in latency, never in correctness, and never 500s.
+  if (version === null || !OVERLAP_STORE_ENABLED) {
+    const computed = await compute(seeds);
+    await cache.set(cacheKey, computed, OVERLAP_CACHE_TTL_SECONDS);
+    return computed;
+  }
+
+  // 4. What is already stored at this exact version and this exact fingerprint.
+  const stored = await readStoredPairs(seeds, version, OVERLAP_QUERY_FINGERPRINT);
+
+  // 5. ONE COMPUTE PER MISSING SEED, so each stored row holds that seed's OWN
+  //    pairs. The design's measurement is that single-seed results compose by
+  //    union — it is NOT that a multi-seed result can be split apart afterwards.
+  const missing = seeds.filter((s) => !stored.has(seedKey(s)));
+  const computedBySeed = new Map<string, GeoPair[]>();
+  for (const s of missing) {
+    computedBySeed.set(seedKey(s), await compute([s]));
+  }
+
+  // 6. Store only seeds that really exist, and store them at the version read in
+  //    STEP 1 — never a freshly read one. If an ingest landed mid-compute the
+  //    version has already moved, so this row is born superseded, which is
+  //    unreadable: the safe direction. Writing the CURRENT version would publish
+  //    an answer computed against half-ingested geometry at a version readers
+  //    trust, which is the anti-goal of the whole design.
+  if (missing.length > 0) {
+    const present = await filterSeedsPresent(missing);
+    const entries = present.map((s) => ({ seed: s, pairs: computedBySeed.get(seedKey(s)) ?? [] }));
+    if (entries.length > 0) {
+      await writeStoredPairs(entries, version, OVERLAP_QUERY_FINGERPRINT);
+    }
+  }
+
+  // 7. The deduplicated union of what was stored and what was just computed.
+  const union = new Map<string, GeoPair>();
+  for (const pairs of stored.values()) for (const p of pairs) union.set(seedKey(p), p);
+  for (const pairs of computedBySeed.values()) for (const p of pairs) union.set(seedKey(p), p);
+  const result = [...union.values()];
+
   await cache.set(cacheKey, result, OVERLAP_CACHE_TTL_SECONDS);
   return result;
+}
+
+/**
+ * Is this value really an array of (geo_id, mtfcc) pairs?
+ *
+ * The cache is an untyped store behind a typed accessor: `cache.get<GeoPair[]>`
+ * asserts a shape it never checks. An entry written under an older answer shape,
+ * or a value truncated in transit, would otherwise be handed to callers as pairs
+ * and reach the browse page as districts. An EMPTY array passes, because "this
+ * area overlaps nothing" is a real answer.
+ */
+function isGeoPairArray(v: unknown): v is GeoPair[] {
+  return (
+    Array.isArray(v) &&
+    v.every(
+      (x) =>
+        typeof x === 'object' &&
+        x !== null &&
+        typeof (x as GeoPair).geo_id === 'string' &&
+        typeof (x as GeoPair).mtfcc === 'string'
+    )
+  );
 }
 
 /**
