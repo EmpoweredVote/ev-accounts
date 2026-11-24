@@ -605,11 +605,21 @@ separately, each reads as a one-state oddity.**
   **none of the six seating files had one**. All six already carried the real gate, so what was
   missing was the *declaration*, not the measurement. ▶ **`gh pr checks` can hand you a run for an
   older SHA — check the run's `headSha` against your own HEAD before believing it.** ▶ And **add
-  that line to every new seating file**; the six existing ones are the worked examples.
-- 🟢 **`control-election-transition-status.mjs` RE-RUN AFTER NEW MEXICO AND GREEN** (2026-11-24):
-  2,303 races examined, states `{1:473, 2:183, 4:1586, 5:61}`, fixture located by measurement,
-  both rollbacks reverted. **It is not in CI**, so it runs only when somebody runs it; run it
-  after any wave that moves a lot of rows.
+  that line to every new seating file**; the six existing ones are the worked examples. 🟢 Green
+  on Nebraska's `CC_0507`/`CC_0508` with the line present, checked against the run's own `headSha`.
+  - 🔴🔴 **`gh pr checks --json` RETURNS AN EMPTY ARRAY HERE AND EXITS 0, WHILE THE PLAIN FORM
+    WORKS.** Measured 2026-11-24 on PR #1602: `gh pr checks 1602` printed 24 rows and
+    `gh pr checks 1602 --json name,bucket` printed **nothing**, exit code 0. A watcher built on
+    the JSON form therefore saw "no checks yet" forever and **sat silent for thirty minutes while
+    CI had already finished green** — a detector whose "nothing found" path is indistinguishable
+    from "still waiting", which is this file's own uniform-answer rule wearing a different hat.
+    ▶ **Poll the PLAIN form and parse its columns**, and make any CI watcher emit something on an
+    *empty* result rather than looping on it.
+- 🟢 **`control-election-transition-status.mjs` RE-RUN AFTER NEBRASKA AND GREEN** (2026-11-24):
+  2,303 races examined, states `{1:473, 2:170, 4:1599, 5:61}`, fixture located by measurement,
+  both rollbacks reverted. 🟢 **Its histogram is an independent corroboration of the wave** —
+  state 2 → 4 moved by exactly 13 against New Mexico's `{1:473, 2:183, 4:1586, 5:61}`. **It is not
+  in CI**, so it runs only when somebody runs it; run it after any wave that moves a lot of rows.
 - **Env:** the worktree has no `.env`. Prefix commands with
   `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
 - **Steward:** jurisdiction leases are 24h and expire on their own. `state:nm` was taken for this
