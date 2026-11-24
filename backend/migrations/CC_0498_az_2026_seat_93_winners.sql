@@ -781,6 +781,12 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 93 Arizona terms on 2027-01-04 and closes each
+--   seat's predecessor at 2027-01-03, so it restates who held those seats on every election day
+--   the closed terms no longer cover. The gate below is scoped to the UNION of the winners and
+--   their predecessors. ⚠ Six members change chamber and two pairs simply SWAP, so a winner here
+--   is frequently also somebody else's predecessor — which is exactly why the scope is a union
+--   and not the winner set.
 CREATE TEMP TABLE cc0498_guarded ON COMMIT DROP AS
 SELECT politician_id FROM cc0498_sel WHERE politician_id IS NOT NULL
 UNION

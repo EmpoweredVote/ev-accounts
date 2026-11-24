@@ -332,6 +332,11 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens ONE Maryland Governor term on 2027-01-20 and
+--   closes Wes Moore's own 2023-01-18 term at 2027-01-19, so it restates who held that seat on
+--   every election day the closed term no longer covers. ⚠ It is a RE-ELECTION, so the winner
+--   and the predecessor are the same person and the union below is one person — the gate is
+--   thinner here than its name suggests, and it is kept because the next wave copies this file.
 CREATE TEMP TABLE cc0500_guarded ON COMMIT DROP AS
 SELECT politician_id FROM cc0500_sel WHERE politician_id IS NOT NULL
 UNION

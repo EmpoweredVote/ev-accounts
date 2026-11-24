@@ -519,6 +519,11 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 13 Alabama terms on 2027-01-18 and closes each
+--   seat's predecessor at 2027-01-17, so it restates who held those seats on every election day
+--   the closed terms no longer cover. The gate below is scoped to the UNION of the 13 winners
+--   and their predecessors. ⚠ Tommy Tuberville is a sitting U.S. SENATOR winning the
+--   Governorship, so the union reaches across tiers and his Senate race rows are in scope.
 -- 🔴 THE INCUMBENCY GUARD'S SCOPE IS A UNION OF WINNERS AND PREDECESSORS. A per-office count
 --    cannot see somebody left holding two seats, and a handover changes the incumbency answer for
 --    BOTH people in it.

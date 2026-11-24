@@ -586,6 +586,13 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 178 Maryland General Assembly terms on
+--   2027-01-13 and seat_officeholder() closes each seat's predecessor at 2027-01-12, so it
+--   restates who held those 178 seats on every election day the closed terms no longer cover.
+--   The gate below is scoped to the UNION of the 178 winners and their predecessors, which is
+--   the set whose office_terms rows this migration writes; 30 of the winners are seated into a
+--   SIBLING office under Ruling A, so the union is built from the assigned office and not from
+--   the race-carrying one.
 CREATE TEMP TABLE cc0496_guarded ON COMMIT DROP AS
 SELECT politician_id FROM cc0496_sel WHERE politician_id IS NOT NULL
 UNION

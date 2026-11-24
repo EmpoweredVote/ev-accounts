@@ -423,6 +423,11 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 7 Idaho terms on 2027-01-04 and closes each
+--   holder's own term at 2027-01-03, so it restates who held those seats on every election day
+--   the closed terms no longer cover. ⚠ ALL SEVEN ARE RE-ELECTIONS, so the winners and the
+--   predecessors are the SAME seven people and the union below is seven, not fourteen — the
+--   gate is thinner here than its name suggests, which the comment below states outright.
 -- 🔴 THE INCUMBENCY GUARD'S SCOPE IS A UNION OF WINNERS AND PREDECESSORS. ⚠ In Idaho those two
 --    sets are IDENTICAL, because every seat is a re-election — so the union is seven people, and
 --    the gate is thinner here than its name suggests. Stated rather than left to be noticed.

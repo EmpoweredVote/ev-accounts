@@ -523,6 +523,11 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 11 New Mexico terms on 2027-01-01 and closes
+--   each seat's predecessor at 2026-12-31, so it restates who held those seats on every election
+--   day the closed terms no longer cover. The gate below is scoped to the UNION of the 11
+--   winners and their predecessors, which measured 15 people: six re-elections overlap, five
+--   handovers do not, and Stephanie Garcia Richard is in BOTH halves for two different offices.
 -- 🔴 THE INCUMBENCY GUARD'S SCOPE IS A UNION OF WINNERS AND PREDECESSORS. ⚠ In New Mexico the two
 --    sets genuinely differ — six re-elections overlap, five handovers do not, and Stephanie Garcia
 --    Richard is in BOTH halves for two different offices — so the union is larger than either
