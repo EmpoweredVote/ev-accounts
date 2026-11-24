@@ -9,9 +9,9 @@ the two zeros that have no fixture.
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
 🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0506`
-is applied, verified and committed; the working tree is clean apart from the untracked
-`backend/_q.mjs` scratch query runner, which predates this work. ▶ **Pick a state and start at
-step 1 of the recipe.**
+is applied, verified and **merged to master** (PR #1578, squashed as `b0fde547c`, master CI green);
+the working tree is clean apart from the untracked `backend/_q.mjs` scratch query runner, which
+predates this work. ▶ **Take a fresh branch off master, claim the state, and start at step 1.**
 
 ---
 
@@ -538,10 +538,20 @@ separately, each reads as a one-state oddity.**
 
 ## Housekeeping
 
-- **Worktree:** `/c/ev-accounts-seating`, branch `feat/state-seating`, PR #1578. Commit with an
-  explicit pathspec. 🟢 **Pushed and in sync as of 2026-11-24**; the PR title and body cover the
-  full `CC_0461`-`CC_0502` scope, so **a new wave must extend them rather than assume they still
-  describe four migrations**.
+- 🟢🟢 **PR #1578 IS MERGED (2026-11-24, squashed as `b0fde547c`) AND `feat/state-seating` IS DONE.**
+  It carried `CC_0461`-`CC_0506` — sixteen states. **Master CI is green on the merge commit**,
+  including the prod-reading gates that run only on push, so the applied migrations and master's
+  code agree. ▶ **START THE NEXT WAVE ON A FRESH BRANCH FROM MASTER**, in its own worktree:
+  `git worktree add -b feat/<topic> /c/ev-accounts-<topic> origin/master`. Commit with an explicit
+  pathspec. **Do not add to `feat/state-seating`** — it is merged and its PR is closed.
+- 🔴🔴 **CI WAS RED FOR FIVE WAVES AND NOBODY LOOKED — INCLUDING ME, WHO READ A STALE RUN AND
+  REPORTED IT GREEN.** `static guards` had failed since `CC_0496` because
+  `check-office-terms-incumbency-guards.mjs` wants every branch-added migration that writes
+  `essentials.office_terms` to carry a `-- @incumbency-decision: <gated|no-effect> — why` line, and
+  **none of the six seating files had one**. All six already carried the real gate, so what was
+  missing was the *declaration*, not the measurement. ▶ **`gh pr checks` can hand you a run for an
+  older SHA — check the run's `headSha` against your own HEAD before believing it.** ▶ And **add
+  that line to every new seating file**; the six existing ones are the worked examples.
 - 🟢 **`control-election-transition-status.mjs` RE-RUN AFTER NEW MEXICO AND GREEN** (2026-11-24):
   2,303 races examined, states `{1:473, 2:183, 4:1586, 5:61}`, fixture located by measurement,
   both rollbacks reverted. **It is not in CI**, so it runs only when somebody runs it; run it
