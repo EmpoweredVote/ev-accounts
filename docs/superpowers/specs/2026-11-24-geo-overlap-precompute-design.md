@@ -123,9 +123,26 @@ composes for the multi-seed caller (`getOverlappingGeoIdsForGovernments`) and gi
 reuse than today's key, which is the **sorted seed set** and so misses whenever the set differs
 by one member.
 
-🔴 **That composition property is read off the SQL, not yet tested. It is the first thing the
-plan must pin**, with a test comparing a two-seed call against the union of its two single-seed
-calls.
+✅ **MEASURED AGAINST PRODUCTION 2026-11-24, after this document was first written.** It was
+recorded here as read-off-the-SQL-but-untested and is now tested, in both shapes that could break
+it:
+
+| seeds | single-seed results | two-seed call | verdict |
+|---|---|---|---|
+| CT `09`/G4000 + RI `44`/G4000 — **disjoint neighbours** | 14 + 7 | 21 | 🟢 equal |
+| CT `09`/G4000 + `09190`/G4020 — **one seed NESTED in the other's own result set** | 14 + 2 | 14 | 🟢 equal |
+
+The nested pair is the one that matters: `09190` is a member of `09`'s result, so if a seed's
+presence in another seed's output changed anything, it would change here. It does not.
+⚠ **The first run of this test reported 🔴 DOES NOT COMPOSE and that was my own pipeline** — the
+id files had no trailing newline, so `cat` welded two entries into `09190|G402044001|G4020`. The
+re-run carries a positive control (a union with one row removed must read as different), which
+passed before the verdict was believed. ▶ *Before reporting a mismatch between two readings, ask
+what your own pipeline does to the field.*
+
+⚠ Still untested: a seed set of more than two, and seeds drawn from different layers at scale.
+Neither is likely to behave differently given the UNION's structure, but the plan should assert
+composition once more over the real `getOverlappingGeoIdsForGovernments` input.
 
 `pairs` is `jsonb` rather than a row per pair: the resolver's consumers want the whole list at
 once, the lists are small (852–4,918 for a state), and one row per seed makes the version
@@ -137,14 +154,37 @@ predicate a primary-key lookup instead of a filtered scan.
 essentials.geofence_version  — one row, one bigint
 ```
 
-bumped by a **statement-level `AFTER INSERT OR UPDATE OR DELETE` trigger** on
-`essentials.geofence_boundaries`.
+bumped by an `AFTER INSERT OR UPDATE OR DELETE … FOR EACH STATEMENT` trigger on
+`essentials.geofence_boundaries`, **with transition tables and a once-per-transaction guard**.
 
 🔴 **A trigger rather than a convention is the whole point.** The report's fix 2 was rejected
 because "two things must stay in sync, and a missed bust is a silent correctness bug rather than
 a slow page". A trigger removes the thing that could be missed: a migration cannot ingest
-boundaries *and* forget to invalidate, because the database does it. Statement-level, not
-row-level, so a bulk ingest of 70,000 polygons bumps once.
+boundaries *and* forget to invalidate, because the database does it.
+
+🔴🔴 **CORRECTED AFTER THE BUILDER CHECK — "statement-level, so a bulk ingest bumps once" WAS
+FALSE, AND IT WAS FALSE IN THE DIRECTION THAT HURTS.** Verified in this repo:
+`backend/scripts/load-state-tiger-boundaries.ts` inserts **one row per statement** — a single
+`INSERT … VALUES ($1…)` per polygon, with `ON CONFLICT (geo_id, mtfcc) DO NOTHING`. So a naive
+statement-level trigger would:
+
+- fire **70,000 times** for one ingest, each taking the same row lock on a one-row table —
+  serialising the load and bloating that table; and
+- fire on statements that changed **zero** rows, because a Postgres statement trigger fires
+  regardless. **Re-running a loader that conflicts on everything — a no-op — would discard every
+  stored answer, the 53 warm states included, for no geometry change at all.**
+
+▶ **The trigger therefore bumps only on real change, and at most once per transaction:**
+
+- `REFERENCING NEW TABLE AS changed` (and `OLD TABLE` on delete), and the function returns early
+  unless the transition table has a row. That kills the zero-row case.
+- The version row carries `last_bump_txid bigint`; the function returns early when it already
+  equals `txid_current()`. A 70,000-statement transaction bumps **once**.
+
+⚠ This makes the trigger's correctness depend on ingests running **inside a transaction**. If a
+loader autocommits per row, the txid guard cannot coalesce and the version moves 70,000 times —
+still *correct*, just slow and bloaty. The plan must check the loader's transaction shape, not
+assume it.
 
 ⚠ `imported_at` was considered as the version and rejected: **389 rows carry NULL** and it has
 1,580 distinct values, so it is a per-row ingest stamp, not a global one — and `max(imported_at)`
@@ -162,13 +202,43 @@ versions are dead weight, swept by the warming job (below).
 2. Miss → run the existing UNION for the missing seeds only, and upsert each seed's result.
 3. Return the union.
 
-**Redis stays, in front, unchanged.** It is still the right thing for an in-flight burst, and
-removing it would make every request pay a database round trip. The TTL stops being
-load-bearing: behind it now sits a durable answer rather than nothing.
+**Redis stays in front.** It is still the right thing for an in-flight burst, and removing it
+would make every request pay a database round trip.
 
-🔴 **The cache key is NOT versioned up.** Step 1 established the result is unchanged; bumping
-`overlap:v2` would invalidate every warm key at deploy and stampede the cold path this work
-exists to shrink. The same reasoning applies here.
+🔴🔴 **CORRECTED AFTER THE BUILDER CHECK — TWO THINGS THE ORIGINAL §3 GOT WRONG, BOTH ADMITTING
+THE ANTI-GOAL.**
+
+**(a) The answer is NOT a pure function of geometry. It depends on code too.** Four things that
+live in TypeScript and change at deploy, not at ingest, change the result: `UNRESOLVABLE_PAIR_MTFCCS`
+(which `geoIdGuard.test.ts` *forces* to change whenever the guard gains a type), branch 3's
+`('G5200','G5210','G5220','G4020','G5400','G5410','G5420')`, branch 2's `('G4110','G4120')`
+exclusion, and `MIN_OVERLAP_FRACTION = 0.03`. **Today the one-hour TTL quietly heals this** —
+change a filter, ship, and within an hour everything is recomputed. A store keyed on geometry
+alone **never heals**, which is the stated anti-goal arriving through a door this design did not
+check.
+
+▶ **The key gains a `query_fingerprint`:** a hash of the resolver's SQL text together with those
+four constants, computed at startup. A read requires the fingerprint to match as well as the
+version.
+
+**(b) Redis was not version-aware, so up to an hour of staleness survived an ingest anyway** —
+a warm `overlap:v2` entry keeps serving the pre-ingest answer until its TTL expires, so goal 2
+was met only below the cache. ▶ **The Redis key now carries the version and the fingerprint
+too.**
+
+🔴 **This reverses the original §3 prohibition, and the reason it was wrong is worth keeping.**
+That rule came from step 1, where the result was *provably identical*, so bumping the key would
+have thrown away warm entries for nothing. Here the opposite holds: when the fingerprint moves,
+**the answer genuinely is different**, so recomputing is correct rather than waste. A rule
+carried across from a case where the results matched, into one where they do not, is how the
+anti-goal gets in.
+
+⚠ **The cost of this, stated plainly: when the fingerprint changes, every stored answer goes
+cold at once.** That is rare — only a real change to the query or its constants — and the 53
+state seeds are covered by the warming job, which must therefore run on deploy as well as on
+ingest. The remaining seeds are the cheap ones (counties 0.5–1.4 s, cities ≈0.5 s). **This is the
+trade the design accepts: a rare, bounded, correct stampede over a permanent, silent, invisible
+wrong answer.**
 
 ### 4. Warming the 53
 
@@ -204,6 +274,37 @@ readable by `anon` the moment they exist and **nothing errors**.
 - **Measured, not asserted.** Re-time a state seed end-to-end after the warm-up, and re-run the
   two endpoints the report names. ⚠ **At equal cache warmth** — step 1's first reading was 33×
   and wrong, because it compared a trimmed warm run against an untrimmed cold one.
+
+## What the builder check changed — the remaining five calls
+
+A reviewer read this document cold and returned seven questions. Two are folded into §2 and §3
+above and are the substantive changes. The other five are settled here; **all of these are my
+calls, not the operator's**, and each is cheap to reverse.
+
+1. **An unknown seed is not stored.** `/by-area` and `/elections-by-area` take `geo_id` and
+   `mtfcc` straight from an unauthenticated body, validated only as non-empty strings
+   (`essentialsBrowse.ts:84-92`). Under the original design a miss *writes a row*, which makes
+   the primary key of a permanent `essentials` table **caller-controlled free text that anyone
+   can add to at will**. ▶ The read path checks the seed exists in `geofence_boundaries` before
+   upserting. A seed that does not exist yields zero pairs anyway, so storing it buys nothing.
+2. **The warming job ships as a callable module, not only a cron entrypoint.** Neither a
+   migration nor a loader script can invoke a Render cron job, so "runs after a boundary ingest"
+   had no mechanism behind it and the 53 states would have been cold for up to a whole schedule
+   interval — *precisely the 7-second case this work exists to remove*. ▶ It is importable and
+   called from the loader and from a migration's post-verify; the cron is the backstop. It also
+   runs on deploy, because of the fingerprint in §3.
+3. **The verification sample is named explicitly: `G4000`, `G4020`, `G4110`, `G4040`, `G5200`,
+   `X0001`.** "All five seedable layers" was ambiguous and the nearest constant,
+   `AREA_SEED_MTFCCS` (`essentialsBrowseService.ts:139`), contains **neither `G4000`** — the
+   state seeds this design warms — **nor `G5200`**, which `getPoliticiansByArea` passes on the
+   split-district path. A sample taken from that constant would have missed both seeds the work
+   is about. ▶ Step 1's lesson, repeating: a control aimed at the wrong type tests nothing.
+4. **There is an env flag to stop reading from the store** while leaving the service up, planned
+   in rather than retrofitted. The named failure mode is a wrong answer nobody can see; the
+   operator needs a way to turn it off without a migration. Its name goes into the `ev-infra`
+   record with `sync: false`.
+5. **The composition property is confirmed, not open.** The reviewer reached the same conclusion
+   independently by reading the SQL, and §1 now carries the measurement.
 
 ## Open, and left to the builder
 
