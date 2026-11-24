@@ -134,11 +134,11 @@
   "slug": "greenwood-in",
   "name": "Greenwood",
   "geoid": "1829898",
-  "url": "https://greenwoodgis.greenwood.in.gov/arcgis/rest/services/Council/CommonCouncilGreenwood/MapServer/0",
-  "where": "CouncilDistrict LIKE 'District %'",
-  "district_field": "CouncilDistrict",
+  "url": "https://services2.arcgis.com/6DdnNWEqLRF18ltQ/arcgis/rest/services/Greenwood_Common_Council/FeatureServer/0",
+  "where": "CityCommonCouncil > 0",
+  "district_field": "CityCommonCouncil",
   "expected": 6,
-  "source_note": "City of Greenwood Council/CommonCouncilGreenwood MapServer 0; 3 At-Large rows excluded; its Member field is STALE (D3) and is not a roster source"
+  "source_note": "City of Greenwood hosted layer Greenwood_Common_Council FeatureServer 0 (owner GreenwoodGIS, last edited 2026-10-06); 3 at-large rows (CityCommonCouncil = 0, 100 m squares) excluded. Replaces the city MapServer, which serves no geometry. Its Official field is not a roster source."
  },
  {
   "slug": "evansville-in",
@@ -173,6 +173,39 @@
    "South Central": 5,
    "West": 6
   },
-  "source_note": "City of Carmel CouncilDistricts FeatureServer 0. \ud83d\udd34 The layer's Id numbers are NOT the city's district numbers (Id 3 = Northwest, Id 4 = Southeast); keyed by area name per the city council page (Northwest = District 4, North Central 1, Northeast 2, South Central 5, West 6; Southeast = 3 by elimination)"
+  "source_note": "City of Carmel CouncilDistricts FeatureServer 0. 🔴 The layer's Id numbers are NOT the city's district numbers (Id 3 = Northwest, Id 4 = Southeast); keyed by area name per the city council page (Northwest = District 4, North Central 1, Northeast 2, South Central 5, West 6; Southeast = 3 by elimination)"
+ },
+ {
+  "slug": "hammond-in",
+  "name": "Hammond",
+  "geoid": "1831000",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0",
+  "where": "county='089' AND (p26 LIKE 'H1 %' OR p26 LIKE 'H2 %' OR p26 LIKE 'H3 %' OR p26 LIKE 'H4 %' OR p26 LIKE 'H5 %' OR p26 LIKE 'H6 %')",
+  "district_field": "p26",
+  "key_regex": "^H([1-6]) \\d+$",
+  "expected": 6,
+  "source_note": "Indiana 2026 voting district (precinct) boundaries: Lake County names Hammond precincts H<district> <precinct>; precincts H1..H6 dissolved by that district"
+ },
+ {
+  "slug": "kokomo-in",
+  "name": "Kokomo",
+  "geoid": "1840392",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0",
+  "where": "county='067' AND p26 >= '1' AND p26 < '7'",
+  "district_field": "p26",
+  "key_regex": "^([1-6])(?:\\d\\d| [A-Z]+ \\d+)$",
+  "expected": 6,
+  "source_note": "Indiana 2026 voting district (precinct) boundaries: Howard County precincts whose name begins with the council district (101..607, and city precincts in a township such as 5 HARRISON 1) dissolved by that digit"
+ },
+ {
+  "slug": "anderson-in",
+  "name": "Anderson",
+  "geoid": "1801468",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0",
+  "where": "county='095' AND p26 LIKE 'ANDERSON _-%'",
+  "district_field": "p26",
+  "key_regex": "^ANDERSON ([1-6])-\\d+$",
+  "expected": 6,
+  "source_note": "Indiana 2026 voting district (precinct) boundaries: Madison County precincts ANDERSON <district>-<precinct> dissolved by district"
  }
 ]

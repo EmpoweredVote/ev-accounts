@@ -141,5 +141,38 @@
   "clerk_title": "Clerk-Treasurer",
   "council_name": "Goshen Common Council",
   "structure_source": "https://goshen.in.gov/?p=5557"
+ },
+ {
+  "slug": "hammond-in",
+  "name": "Hammond",
+  "geoid": "1831000",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Hammond Common Council",
+  "structure_source": "https://www.gohammond.com/city-council/"
+ },
+ {
+  "slug": "kokomo-in",
+  "name": "Kokomo",
+  "geoid": "1840392",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Kokomo Common Council",
+  "structure_source": "https://cityofkokomo.org/departments/common_council/index.php"
+ },
+ {
+  "slug": "greenwood-in",
+  "name": "Greenwood",
+  "geoid": "1829898",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Greenwood Common Council",
+  "structure_source": "https://www.greenwood.in.gov/officials"
  }
 ]

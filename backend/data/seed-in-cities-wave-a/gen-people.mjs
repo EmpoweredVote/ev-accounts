@@ -10,8 +10,11 @@
 // SKIP lists holders on a city page who no longer hold the seat (the office is flagged vacant instead).
 import fs from 'node:fs'; import path from 'node:path';
 const DIR = path.dirname(new URL(import.meta.url).pathname);
-const SLOT = 'CA_0417';
-const BAND_TOP = -18417001; // band runs down from here; the migration asserts it is empty first.
+// Usage: node gen-people.mjs <SLOT> <BAND_TOP> <slug,slug,...>
+//   BAND_TOP: external_id band runs DOWN from here; the migration asserts it is empty first.
+const [SLOT, BAND_ARG, WHICH] = process.argv.slice(2);
+if (!SLOT || !BAND_ARG || !WHICH) { console.error('usage: gen-people.mjs <SLOT> <BAND_TOP> <slugs>'); process.exit(2); }
+const BAND_TOP = Number(BAND_ARG);
 
 const REUSE = {
   'Mary Allen':      { id: '97243dc4-1b2c-4e37-b480-264f47b3f1bd', why: "same person: the at-large Evansville councilor ran for Indiana's 8th Congressional District in 2026 (row holds that candidacy)" },
@@ -19,8 +22,13 @@ const REUSE = {
   'Dale Basham':     { id: '245d3807-f6ee-44be-a321-bd597d0aab7a', why: 'inactive indiana_discovery stub, deactivated by CC_0101; no other row' },
   'Aaron Mishler':   { id: 'c2cfdf00-d537-4c57-92a8-27dadf7a0274', why: 'inactive indiana_discovery stub, deactivated by CC_0101; no other row' },
   'Scott Hawkins':   { id: '856009a9-d2f9-4984-bbe9-76c261c72f94', why: 'inactive indiana_discovery stub, deactivated by CC_0101; no other row' },
+  'Ray Collins':     { id: 'f0e871d5-01a2-4fa3-81f7-479855896f16', why: 'inactive indiana_discovery stub, deactivated by CC_0101; no other row, no race' },
 };
 const SKIP = { 'muncie-in|Council Member, District 4': 'Sara Gullion' };
+// Former names, kept in alternate_names. Each one is evidenced on the city's own page.
+const ALT = { 'Erin Kasch': { names: ['Erin Betron'], why: "Greenwood's officials page lists 'Erin Kasch, At-Large' with the email betrone@greenwood.in.gov; she was caucused in and elected as Erin Betron" } };
+// Same name as an existing row, but a different person (the duplicate-name guard stops on these).
+const DUP_OK = { 'Mike Moore': "existing row c554cb1f (source sos_excel) is a 2026 Republican primary candidate for Indiana House District 60 (Morgan/Monroe counties); this one is the sitting Mayor of Jeffersonville, Clark County" };
 
 function parseName(raw) {
   let s = raw.trim(), preferred = null, suffix = null, alt = [];
@@ -28,7 +36,7 @@ function parseName(raw) {
   if (q) { preferred = q[1]; s = s.replace(q[0], ' ').replace(/\s+/g, ' ').trim(); }
   const par = s.match(/\s*\(([^)]+)\)\s*/);
   if (par) { s = s.replace(par[0], ' ').replace(/\s+/g, ' ').trim(); }
-  const sx = s.match(/\s+(Jr\.?|Sr\.?|II|III|IV)$/);
+  const sx = s.match(/,?\s+(Jr\.?|Sr\.?|II|III|IV)$/);
   if (sx) suffix = sx[1];
   const core = (sx ? s.slice(0, sx.index) : s).split(' ');
   const first = core[0], last = core[core.length - 1];
@@ -38,7 +46,7 @@ function parseName(raw) {
 const q = (v) => v == null ? 'NULL' : `'${String(v).replace(/'/g, "''")}'`;
 const arr = (a) => `'{${a.map((x) => '"' + x.replace(/"/g, '\\"') + '"').join(',')}}'`;
 
-const S = JSON.parse(fs.readFileSync(path.join(DIR, 'structure.json'), 'utf8'));
+const S = JSON.parse(fs.readFileSync(path.join(DIR, 'structure.json'), 'utf8')).filter((s) => WHICH.split(',').includes(s.slug));
 const people = [], terms = [], vacants = [];
 let ext = BAND_TOP;
 for (const s of S) {
@@ -53,6 +61,7 @@ for (const s of S) {
     else geo = s.geoid;
     if (SKIP[`${s.slug}|${h.office}`] === h.name) { vacants.push({ gov, geo, title, name: h.name }); continue; }
     const n = parseName(h.name);
+    if (ALT[h.name]) n.alt.push(...ALT[h.name].names);
     const reuse = REUSE[h.name];
     const key = reuse ? `id:${reuse.id}` : `ext:${ext}`;
     if (!reuse) people.push({ ext: ext--, ...n, slug: s.slug, src: h.source_url });
@@ -63,81 +72,70 @@ const extLow = ext + 1;
 const nTerms = terms.length, nNew = people.length, nReuse = terms.filter((t) => t.reuse).length;
 const totalOffices = S.reduce((a, s) => a + s.council_size + 2, 0);
 const govs = S.map((s) => `'City of ${s.name}, Indiana, US'`).join(', ');
+const usedReuse = Object.entries(REUSE).filter(([n]) => terms.some((t) => t.reuse && t.reuse === REUSE[n]));
+const usedDup = Object.entries(DUP_OK).filter(([n]) => people.some((p) => p.full === n));
+const usedAlt = Object.entries(ALT).filter(([n]) => people.some((p) => p.full === n) || usedReuse.some(([m]) => m === n));
+const reuseIds = usedReuse.map(([, r]) => q(r.id)).join(', ');
+// Per-migration prose (city-specific caveats) lives in people-notes/<SLOT>.txt, one comment line per line.
+const notesFile = path.join(DIR, 'people-notes', `${SLOT}.txt`);
+const notes = fs.existsSync(notesFile) ? fs.readFileSync(notesFile, 'utf8').trimEnd().split('\n').map((l) => `-- ${l}`.trimEnd()).join('\n') + '\n--\n' : '';
 
 let sql = `-- ${SLOT}_indiana_cities_wave_a_people.sql
--- Indiana cities Wave A, occupancy half. Slot RESERVED from the allocator. Follows CA_0416, which
--- created the 13 governments and ${totalOffices} offices with no holder.
+-- Indiana cities Wave A, occupancy half, for ${S.map((s) => s.name).join(', ')}. Slot RESERVED from the
+-- allocator. Follows the structure migration that created these ${S.length} governments and ${totalOffices} offices.
 --
--- 🔴 WHY THIS HAS TO FOLLOW CA_0416 PROMPTLY: an office with a polygon and no holder that is not
--- flagged vacant is DEAD_GEOGRAPHY to check:reachability. CA_0416 alone took in|LOCAL from 12 to 101
--- (the 89 new districts). This migration seats ${nTerms} offices and flags 1 vacant, so every one of
--- the 89 districts resolves someone or says it is vacant.
+-- 🔴 APPLY IT THE SAME DAY AS THE STRUCTURE MIGRATION: an office with a polygon and no holder that is not
+-- flagged vacant is DEAD_GEOGRAPHY to check:reachability. The post-verify below gates that at zero.
 --
 -- Seats ${nTerms} of ${totalOffices} offices: ${nNew} new people (external_id ${BAND_TOP} .. ${extLow},
--- asserted empty below) and ${nReuse} existing rows reused. 1 office flagged vacant.
+-- asserted empty below) and ${nReuse} existing rows reused. ${vacants.length} office(s) flagged vacant.
 --
 -- 🟢 EVERY NAME WAS CHECKED AGAINST A SAVED COPY OF ITS SOURCE PAGE (verify-collect.mjs in
 -- backend/data/seed-in-cities-wave-a/, which runs an absent-name and a planted-name control first).
--- The city's own page is the source for every holder except Westfield, whose site refuses this
--- machine: Westfield's names come from the city's own GIS "Elected Officials" layer and agree with the
--- 2023 general election results.
 --
--- 🔴 TERM START IS 'unknown', NOT GUESSED. Most of these people began on 2024-01-01 after the 2023
--- election, but some are re-elected incumbents (occupancy began earlier; re-election does not end
--- an occupancy) and some were seated mid-term by caucus (Evansville Districts 2 and 4, South Bend
--- District 4, likely Lafayette District 2), with no date on the page. Writing 2024-01-01 for all of
--- them would put a sourced-looking but false date on real people. term_start is NULL with
--- start_precision 'unknown' -- the shape migration 1459's backfill used.
+-- 🔴 TERM START IS 'unknown', NOT GUESSED. Most holders began on 2024-01-01 after the 2023 election, but
+-- re-elected incumbents began earlier (re-election does not end an occupancy) and caucus appointees began
+-- mid-term on dates the pages do not give. term_start is NULL with start_precision 'unknown' -- the
+-- shape migration 1459's backfill used -- rather than a sourced-looking date that is false for some.
 --
--- 🔴 NO term_end IS WRITTEN. These terms run to 2027-12-31; a future term_end would vacate every
--- seat on that date with no successor.
+-- 🔴 NO term_end IS WRITTEN. These terms run to 2027-12-31; a future term_end would vacate every seat on
+-- that date with no successor.
 --
--- 🔴 ONE OFFICE IS FLAGGED VACANT, NOT SEATED: Muncie Council District 4. The city page still lists
--- Sara Gullion, but she won Indiana House District 34 on 2026-11-03 and "winning the House seat
--- meant resigning from the Council"; the Delaware County Democratic Party holds a caucus on
--- 2026-11-30 to fill it (Muncie Voice, saved raw/muncie-in/voice-surveillance.html). She already
--- holds HD-34 in production (CA_0396). The resignation DAY is not published, so vacant_since stays
--- NULL rather than a guessed date. ▶ Seat the caucus winner after 2026-11-30.
---
--- REUSED PEOPLE (each matched by surname + first name, then checked by hand; Sharon Tucker was the
--- positive control and matched):
-${Object.entries(REUSE).map(([n, r]) => `--   ${n.padEnd(16)} ${r.id}  ${r.why}`).join('\n')}
---   The four indiana_discovery stubs are re-activated (is_active = true): an inactive person in a
---   seat is hidden by the reps feed, which check:reachability counts as REPS_FILTER_HIDDEN.
--- SAME NAME, DIFFERENT PERSON (new rows made, existing ones untouched):
---   Mike Moore     existing row is a 2026 candidate for State House District 60 (Monroe County);
---                  this one is the Mayor of Jeffersonville (Clark County)
---   Steve Webb     existing 'Steven E. Webb' is a Clear Creek Township (Monroe County) candidate
---   Dave Wood      existing row is a Colorado congressional candidate
---
+${notes}${usedReuse.length ? `-- REUSED PEOPLE (matched by surname + first name in match-people.mjs, whose positive control is
+-- Sharon Tucker, then checked by hand):
+${usedReuse.map(([n, r]) => `--   ${n.padEnd(16)} ${r.id}  ${r.why}`).join('\n')}
+--   Each is set is_active = true: an inactive person in a seat is hidden by the reps feed, which
+--   check:reachability counts as REPS_FILTER_HIDDEN.
+` : `-- NO EXISTING PERSON IS REUSED: match-people.mjs found no same-name row for any holder here (its positive
+-- control, Sharon Tucker, matched).
+`}${usedDup.length ? `-- SAME NAME, DIFFERENT PERSON (new row made, existing one untouched):
+${usedDup.map(([n, w]) => `--   ${n}: ${w}`).join('\n')}
+` : ''}${usedAlt.length ? `-- FORMER NAMES kept in alternate_names:
+${usedAlt.map(([n, a]) => `--   ${n} (${a.names.join(', ')}): ${a.why}`).join('\n')}
+` : ''}--
 -- 🔴 PARTY IS NOT WRITTEN (it lives on races.primary_party). alternate_names is never NULL.
--- 🔴 The at-large seats share one title, so they are matched on the internal ordinal CA_0416 wrote
--- into description. Which person gets which ordinal is arbitrary and means nothing.
+-- 🔴 The at-large seats share one title, so they are matched on the internal ordinal the structure
+-- migration wrote into description. Which person gets which ordinal is arbitrary and means nothing.
 --
 -- Idempotent: people NOT EXISTS-guarded on external_id, terms on (office_id, politician_id).
 
 BEGIN;
-
--- The duplicate-name guard stops on exactly one row, Mike Moore, and he is a different person: the
--- existing row (c554cb1f, source sos_excel) is a 2026 Republican primary candidate for Indiana House
--- District 60 (Morgan/Monroe counties, against Peggy Mayfield); this one is the sitting Mayor of
--- Jeffersonville, Clark County. Dry-run without this line names Mike Moore and nobody else.
+${usedDup.length ? `
+-- The duplicate-name guard stops on ${usedDup.map(([n]) => n).join(', ')}, a different person (see the header).
 SET LOCAL essentials.allow_duplicate_name = 'on';
-
+` : ''}
 -- ─── 0. Pre-flight ───────────────────────────────────────────────────────────
 DO $$
 DECLARE v int;
 BEGIN
   SELECT count(*) INTO v FROM essentials.politicians WHERE external_id BETWEEN ${extLow} AND ${BAND_TOP};
   IF v NOT IN (0, ${nNew}) THEN RAISE EXCEPTION '${SLOT} pre-flight: external_id band holds % rows, expected 0 (or ${nNew} on a re-run)', v; END IF;
-  SELECT count(*) INTO v FROM essentials.politicians WHERE id IN (${Object.values(REUSE).map((r) => q(r.id)).join(', ')});
-  IF v <> ${Object.keys(REUSE).length} THEN RAISE EXCEPTION '${SLOT} pre-flight: % of ${Object.keys(REUSE).length} reused people exist', v; END IF;
-${Object.entries(REUSE).map(([n, r]) => `  IF NOT EXISTS (SELECT 1 FROM essentials.politicians WHERE id = ${q(r.id)} AND full_name = ${q(n)}) THEN
-    RAISE EXCEPTION '${SLOT} pre-flight: reused row ${r.id} is no longer named ${n.replace(/'/g, "''")}'; END IF;`).join('\n')}
+${usedReuse.map(([n, r]) => `  IF NOT EXISTS (SELECT 1 FROM essentials.politicians WHERE id = ${q(r.id)} AND full_name = ${q(n)}) THEN
+    RAISE EXCEPTION '${SLOT} pre-flight: reused row ${r.id} is missing or no longer named ${n.replace(/'/g, "''")}'; END IF;`).join('\n')}
   SELECT count(*) INTO v FROM essentials.offices o
     JOIN essentials.chambers c ON c.id = o.chamber_id JOIN essentials.governments g ON g.id = c.government_id
    WHERE g.name IN (${govs});
-  IF v <> ${totalOffices} THEN RAISE EXCEPTION '${SLOT} pre-flight: % offices in the 13 cities, expected ${totalOffices} (is CA_0416 applied?)', v; END IF;
+  IF v <> ${totalOffices} THEN RAISE EXCEPTION '${SLOT} pre-flight: % offices in these cities, expected ${totalOffices} (is the structure migration applied?)', v; END IF;
 END $$;
 
 -- ─── 1. ${nNew} new people ─────────────────────────────────────────────────────
@@ -148,9 +146,9 @@ ${people.map((p) => `  (${p.ext}, ${q(p.full)}, ${q(p.first)}, ${q(p.last)}, ${q
 ) AS n(external_id, full_name, first_name, last_name, preferred_name, name_suffix, source, alternate_names)
 WHERE NOT EXISTS (SELECT 1 FROM essentials.politicians p WHERE p.external_id = n.external_id);
 
--- ─── 2. Re-activate the reused discovery stubs ───────────────────────────────
+${usedReuse.length ? `-- ─── 2. Re-activate reused people ────────────────────────────────────────────
 UPDATE essentials.politicians SET is_active = true
- WHERE id IN (${Object.values(REUSE).map((r) => q(r.id)).join(', ')}) AND is_active IS DISTINCT FROM true;
+ WHERE id IN (${reuseIds}) AND is_active IS DISTINCT FROM true;` : '-- ─── 2. (no reused people) ───────────────────────────────────────────────────'}
 
 -- ─── 3. ${nTerms} terms ──────────────────────────────────────────────────────────
 CREATE TEMP TABLE w_terms(ext bigint, pid uuid, gov text, geo_id text, title text, ordinal int, of_n int, src text) ON COMMIT DROP;

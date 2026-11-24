@@ -60,6 +60,9 @@ const sql = `-- ${name}.sql
 --
 -- Creates ${cities.length} city governments, ${cities.length * 3} chambers, ${totalDistricts} districts and ${totalOffices} offices.
 -- Creates NO people and NO terms -- the people migration does that.
+-- 🔴 APPLY THE PEOPLE MIGRATION THE SAME DAY. Until it runs, every new district is an office with a polygon,
+-- no holder and no vacancy flag, which check:reachability counts as DEAD_GEOGRAPHY (CA_0416 alone took
+-- in|LOCAL from 12 to 101 and held the gate red until CA_0417 landed).
 --
 -- Structure per city, from IC 36-4-6-3 / 36-4-6-4 / 36-4-10-2 and confirmed on each city's own site
 -- (data/seed-in-cities-wave-a/cities/<slug>.json, checked by verify-collect.mjs):

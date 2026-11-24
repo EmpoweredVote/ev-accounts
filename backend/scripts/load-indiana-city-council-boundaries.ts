@@ -22,6 +22,9 @@
  *     max_uncovered_pct?, max_outside_pct?, bound_reason? }
  *   url          the ArcGIS layer (…/FeatureServer/N or …/MapServer/N). outSR=4326 is forced.
  *   key_map      optional { "<raw field value>": <district number> } when the field is not a plain number.
+ *   key_regex    optional regex whose group 1 is the district number, for PRECINCT layers whose precinct
+ *                name carries the council district (Hammond 'H3 07', Kokomo '305', Anderson 'ANDERSON 2-4').
+ *                Every feature must match it or GATE 1 fails; precincts are dissolved by the key.
  *
  * GATES, per city, all printed for every row (not only failures):
  *   1  feature count == expected, and keys are exactly 1..expected, one feature per key (multi-part
@@ -69,7 +72,7 @@ if (COMMIT && TAMPER) { console.error('refusing --commit with --tamper'); proces
 
 interface CityMap {
   slug: string; name: string; geoid: string; url: string; where?: string; layers?: { url: string; key: number }[];
-  district_field: string; expected: number; key_map?: Record<string, number>;
+  district_field: string; expected: number; key_map?: Record<string, number>; key_regex?: string;
   source_note: string; max_uncovered_pct?: number; max_outside_pct?: number; bound_reason?: string;
 }
 
@@ -110,6 +113,7 @@ function keyOf(c: CityMap, props: Record<string, unknown>): number | null {
   if (raw == null) return null;
   const s = String(raw).trim();
   if (c.key_map) return c.key_map[s] ?? null;
+  if (c.key_regex) { const m = s.match(new RegExp(c.key_regex)); return m ? Number(m[1]) : null; }
   const m = s.match(/(\d+)\s*$/);
   return m ? Number(m[1]) : null;
 }
