@@ -22,7 +22,7 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**42 bodies still to do · 166 offices · 1 of the 42 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**39 bodies still to do · 153 offices · 1 of the 39 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -39,35 +39,32 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 | 11 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
 | 12 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
 | 13 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 14 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 15 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 16 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 17 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 18 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 19 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 20 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 21 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 22 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 23 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 24 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 25 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 26 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 27 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 28 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 29 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 30 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 31 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 32 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 33 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 34 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 35 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 36 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 37 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 38 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 39 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 40 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 41 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 42 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 14 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 15 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 16 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 17 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 18 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 19 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 20 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 21 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 22 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 23 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 24 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 25 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 26 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 27 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 28 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 29 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 30 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 31 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 32 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 33 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 34 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 35 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 36 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 37 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 38 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 39 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -403,6 +400,167 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — Nebraska, 13 offices across FOUR bodies, and a ledger corrected three times
+
+Two files, no people file and no Ruling A. `CC_0507` dated 13 offices to **2027-01-07** and
+`CC_0508` seated all 13. `NE STATE_EXEC` (5), `NE STATE_BOARD` (4) and `NE STATE_BOARD_EDUCATION`
+(4) all left the queue, which is **three register rows from one state in one wave** — the most so
+far.
+
+| file | what it did |
+|---|---|
+| `CC_0507` | dated 13 offices to **2027-01-07** from ONE residual clause — Neb. Const. Art. XVII-5 — reaching four bodies across three `district_type`s and **eight chambers** |
+| `CC_0508` | seated 13 winners — **6 re-elections and 7 handovers**, all `called` |
+
+**Verified after the apply:** `office_pending_winner` 0 for Nebraska · `office_next_term` 13 on
+2027-01-07 · `office_swearing_in` 2,026 → 2,039 and rows on the day 2 → 15 · `office_terms`
+13,152 → 13,165 and terms on the day 2 → 15 · **both populated near misses unmoved** (2027-01-06
+at 200 rows / 200 terms, 2027-01-04 at 241 / 229) · 13 predecessors closed at 2027-01-06 ·
+**drift baseline 238 unmoved**, `offices_missing_terms` 280 unmoved, flagged-vacant 66 unmoved,
+`politicians` and `offices` unmoved.
+
+**What this state taught, in five lines**
+
+- 🔴🔴 **THE DANGEROUS WRONG RULE CAN BE A SHORTHAND THAT IS *RIGHT THIS CYCLE*, AND THEN NO
+  TAMPER AND NO IN-DATA CONTROL CAN REFUSE IT.** Art. XVII-5 says *"the first Thursday AFTER the
+  first Tuesday in January"*; the obvious shorthand is *"the first Thursday in January"*, and in
+  2027 **both give 2027-01-07**. A file written from the shorthand produces the right date and
+  passes every count. Worse, Nebraska's **single** dated term — Jim Pillen's 2023-01-05 — lands on
+  the same day under **both** rules, so the in-data control separates the clause from four rivals
+  (first Monday, first Tuesday, and two Wednesday rules, all zero) and is **blind to the fifth**.
+  ⚠ This is Alabama's ordinal-weekday trap with the uniformity sitting in the **calendar** rather
+  than in the rows: no amount of Nebraska term data from this cycle or the last can discriminate.
+  ▶ `CC_0507`'s assertion 3d therefore **asserts that the shorthand MATCHES**, rather than
+  asserting it does not — the arm is in the file to be watched passing — and **C5 is the
+  control-of-a-control** that breaks its expectation. That is Idaho's C4 one state later, and the
+  second time in the pass a check kept in order to pass has needed its own control.
+- 🟢🟢 **AND THE ONLY THING THAT BREAKS THE TIE IS A DOCUMENT, NOT A ROW.** The Secretary of
+  State's 2024 General Canvass Book prints a per-contest metadata block; **sixteen carry a `Term
+  Start` and TWELVE say January 9, 2025**, three of this wave's four bodies among them by name.
+  The clause gives 2025-01-09 and matches all twelve; the **shorthand gives 2025-01-02 and matches
+  none**; the Wednesday rules give 01-08, the first Monday 01-06 and the first Tuesday 01-07, and
+  none of those matches any of the twelve. **A five-way discrimination on one document.**
+  ⚠ **The label-to-contest pairing was measured, not assumed, because a PDF has no rows**: each
+  `Term Start:` line was paired with the heading above it by walking back past the known metadata
+  labels, with **two positive controls set before the scan ran** — *Member of the Legislature* had
+  to come back **January 8** and *Public Service Commissioner* **January 9**, both read by hand
+  first. Both passed. 🟢 And the four blocks that are **not** January 9 are all explained, which is
+  what makes the agreement meaningful rather than uniform — including the Metropolitan Utilities
+  District of Omaha's January 7, which is the **first Tuesday of 2025**, so a reader using that
+  rule would find exactly one block agreeing with them.
+- 🔴🔴 **THE LEDGER FLAGGED ITS OWN BOUND AND THE SWEEP FOUND THAT IT WAS WRONG ABOUT *WHY*, NOT
+  ABOUT *WHAT*.** `DATES.md` recorded Art. XVII-5 as *"proved undisplaced against 4 constitutional
+  provisions and 5 statutes"* — which is a check of the clauses that **govern these bodies**, not
+  a sweep for an overriding provision elsewhere, and Art. XVII-5's hatch is the wider *"or by law"*
+  form a statute can walk through. Both instruments were swept by section title with a positive
+  control set first — **234 constitutional sections and all 488 of Chapter 32** — and eight further
+  candidates turned up, all dead or confirming. 🔴 **But the sweep's real finding was about the
+  Legislature.** The ledger says the unicameral *"has its own constitutional commencement"* under
+  Art. III-10, III-8 and III-9. **III-8 is qualifications, III-9 disqualifications, III-7 gives
+  four-year terms and names no day — and neither does `§ 32-508`, the section the ledger's own
+  statute table skipped**, sitting between the two it does list. What actually carves them out is
+  **`§ 32-122` read with Art. III-10**: a legislator's term boundary is *"the day of the meeting of
+  the Legislature at which members are regularly sworn in"*, and Art. III-10 convenes that meeting
+  on the first Wednesday after the first Monday. ▶ **A statute, not the constitution** — which is
+  the half of the hatch the ledger's check was not aimed at.
+  - 🟢🟢 **AND THE CORRECTION MOVES THE ABSENT BODY OFF THIS WAVE'S DAY, WHICH IS THE WHOLE REASON
+    IT MATTERS.** Art. III-10 for 2027 computes **2027-01-06**, the day *before* this wave. So
+    Nebraska's 49 absent unicameral seats are **not** New Mexico's absorbed shape — they would land
+    on a day already carrying **200 Massachusetts and Maine rows** and would stand out. ⚠ The trap
+    is **dormant, not absent**, and it arms itself the day those seats are seeded.
+- 🔴🔴 **A BODY'S OWN STATUTE CAN PARTITION IT EXHAUSTIVELY AND STILL NOT ACCOUNT FOR EVERY SEAT
+  WE HOLD — AND THE MISSING REASON WAS ALREADY IN OUR OWN DATA.** This is New Mexico's HB 9
+  arithmetic four times over. `§ 32-509` partitions the Public Service Commission 2+2+1 (one seat
+  up, and we hold that one); `§ 32-511` the Board of Education 4+4 (four up, and we hold those
+  four); `§§ 32-506`/`32-507` put all the executives on a 1994 four-year cycle. 🔴 **`§ 32-510`
+  partitions the Board of Regents 2+2+4 and puts only Districts 1 and 2 on the 2026 ballot — and
+  we hold THREE.** District 4 is on the 1994 six-year cycle, which 2026 is not on.
+  🟢🟢 **It is a `§ 32-573(2)(a)` vacancy election**, and `CC_0375` had already written the answer
+  into that seat's `source` months ago, from the university's own roster: *"Joel Makovicka was
+  APPOINTED by Governor Jim Pillen on 2026-02-03 to fill the vacancy left when Elizabeth O'Connor,
+  elected to this seat in 2024, resigned … He serves through 2027-01-07, and the 2026 contest for
+  this district was for the unexpired remainder of O'Connor's term."* 2 + 1 = 3 and the body closes.
+  ▶ **That line is load-bearing twice**: it is a second, independent in-data corroboration of this
+  wave's day, written by a pass that never opened Art. XVII-5 — and it is the only record that
+  Justin Solomon's term is an **unexpired remainder ending around 2031, not a fresh six years**.
+  `seat_officeholder` writes no `term_end`, so `CC_0508` puts it in that one row's `source` and
+  **assertion 10c asserts it is there AND that it is on that seat and no other** — a note that
+  leaked onto all thirteen would make the whole wave look like a vacancy wave.
+  ⚠ **The ledger cited § 32-573 for the right body and the wrong reason**, as a restatement of the
+  formula. It is also the only thing that makes the Regents' count add up.
+- 🔴 **THE NEAR MISS WAS A RIVAL'S RULE WITH ONE WORD CHANGED, AND IT WAS 200 LIVE ROWS.** Maine's
+  `me-const-art5-pt1-s2-first-wed-after-first-tue-january` is **this clause's own sentence with
+  Wednesday in place of Thursday**, and it lands on 2027-01-06 beside 199 Massachusetts
+  legislators — the same square Nebraska's own Legislature takes. That is Arizona's *"a rival's
+  rule_id may even share its words"*, one notch sharper, because here the rival's words are nearly
+  the whole sentence. ⚠ And Nebraska is the **second state on 2027-01-07**, where Massachusetts'
+  Governor and Lieutenant Governor already sat, which the ledger did not say — so every count
+  about the day is a delta that names Massachusetts' rule.
+
+### 🔴 Two gaps pinned rather than tidied, and they are opposite shapes
+
+- **LIEUTENANT GOVERNOR — the office row exists, is held, and has no winner, correctly.**
+  `Art. IV-1` casts *"one vote … jointly for the candidates for Governor and Lieutenant
+  Governor"*, so the winner is recorded against the Governor's race and no wave reaches the seat.
+  🔴 **It is Arizona's missing Lieutenant Governor from the opposite side** — Arizona has a winner
+  and no office row, Nebraska an office row and no winner. Hold the two together; separately each
+  reads as a one-state oddity. `CC_0508`'s `P9` pins both halves.
+- **THE LEGISLATURE — 49 seats, absent entirely**, on 2027-01-06 rather than this wave's day.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+Three real addresses through `api.empowered.vote`, 141 office rows scanned and 25 carrying an
+incoming holder (the probe refuses to report on a uniform "no incoming"):
+
+- **Lincoln** → all five executives on 2027-01-07, plus *University of Nebraska Regent, District 1
+  — incoming Brent Comstock*, a handover rendering by name.
+- **Omaha** → *Regent District 4 — incoming Justin Solomon*, **the unexpired-remainder seat**, and
+  *Public Service Commissioner, District 2 — incoming Wendy DeBoer*.
+- **Scottsbluff** → *State Board of Education Member, District 7 — incoming Elizabeth Tegtmeier*,
+  a re-election rendering as a dated handover.
+- 🟢 **Scott Petersen appears on all three** as the incoming Secretary of State — a statewide seat
+  that genuinely changes hands, so unlike Idaho the probe discriminates on the NAME and not only
+  on the date.
+- ⚠ The federal rows (Mike Flood, Denise Powell, Adrian Smith, Pete Ricketts) correctly read
+  2027-01-03 under `us-const-amend-xx-1` and were untouched.
+
+### Controls, each watched going red (step 7)
+
+`backend/data/state-seating-2026/controls/ne-2026.controls.mjs` — **25 of 25 red, each on the gate
+it was aimed at, negative control green, no backstops.**
+
+- 🔴 **C5 is the one this state exists for**: it breaks the shorthand arm of assertion 3d, which is
+  in the file **to be watched passing**. Without it the day the two rules stop coinciding, the file
+  would quietly start discriminating and nobody would notice the argument had changed.
+- 🔴 **C14 is the one no number can see**: dropping Art. XVII-5's first six words from the
+  `authority` text leaves every row, date, delta and count byte-for-byte identical, and hands the
+  next reader a rule they would apply to the Legislature — which is one day wrong. Only assertion
+  7b reads the text. Maryland's C8 and New Mexico's C15 a third time.
+- ⚠ **C16 FIRED `(unparsed)` ON THE FIRST RUN AND HAD TO BE REBUILT** — it inserted a second term
+  and died on the `office_terms_no_overlap` EXCLUSION constraint, because every held Nebraska
+  office outside the wave carries a term with `term_start IS NULL` and therefore an **unbounded**
+  daterange. That is verbatim New Mexico's C20, which this suite's own header warns about and
+  walked into anyway. ▶ **Reassigning an existing term instead** leaves the digest, the predecessor
+  pre-image and `offices_missing_terms` all untouched and changes only what `P4` looks for.
+- ⚠ **C11 fired on `P4` rather than its post-write restatement 3e, and that is the right order** —
+  the pre-check refuses before anything is written. `CC_0507`'s 3e is therefore a **backstop**.
+- 🔴 **C18 plants the two-seat fixture Nebraska has no natural example of**, on **Mike Hilgers, a
+  re-elected incumbent**, because `P8` asks whether a winner holds *more than one* office and
+  somebody who holds nothing ends with exactly one and passes it honestly — New Mexico's C19 on
+  Debra Haaland. **A planted fixture proves the gate FIRES; it does not prove the gate reads the
+  rows a real double-holder would occupy**, and `P8b` asserts the absence itself so the next reader
+  inherits a measurement.
+- 🟢 **C17 measures what C16 cannot**: re-pointing the Auditor's winner at the orphan `Mike Foley`
+  row is the *realistic* version of the duplicate defect, and it is caught by the **digest** two
+  gates before `P4`. "The duplicate is caught" and "the gate written for the duplicate is tested"
+  are different claims, and the two controls separate them.
+
+Recorded as **backstops, not tested gates**: `CC_0508`'s `P3` re-election and handover counts, its
+13-name check, `P6`'s predecessor-identity arms and `P4`'s first arm (all below the pinned digest,
+which C17 showed catches a realistic tamper two gates earlier); `CC_0507`'s `P2`
+selection-completeness arm (dropping a body changes the TOTAL, so `P1` fires first) and its
+assertion 3e (C11 showed `P4` refuses first).
 
 ## ✅✅ APPLIED 2026-11-24 — New Mexico, 11 offices across BOTH its bodies, and a third instrument the ledger did not have
 
