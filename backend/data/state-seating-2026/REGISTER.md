@@ -22,59 +22,57 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**49 bodies still to do · 262 offices · 1 of the 49 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**47 bodies still to do · 198 offices · 1 of the 47 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
-| 2 | AZ | STATE_UPPER | 30 | 30 | 17 | — | — | — | 30 | — |
-| 3 | AZ | STATE_LOWER | 29 | 58 | 19 | — | 29 | — | 29 | — |
-| 4 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
-| 5 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
-| 6 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 7 | AZ | STATE_EXEC | 7 | 8 | 3 | — | 1 | — | 7 | — |
-| 8 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 9 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 10 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 11 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 12 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 13 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 14 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 15 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 16 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 17 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 18 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 19 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 20 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 21 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 22 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 23 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 24 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 25 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 26 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 27 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 28 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 29 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 30 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 31 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 32 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 33 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 34 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 35 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 36 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 37 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 38 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 39 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 40 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 41 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 42 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 43 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 44 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 45 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 46 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 47 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 48 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 49 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 2 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
+| 3 | AL | STATE_EXEC | 9 | 9 | 2 | — | — | — | 9 | — |
+| 4 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
+| 5 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
+| 6 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 7 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 8 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 9 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 10 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 11 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 12 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 13 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 14 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 15 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 16 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 17 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 18 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 19 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 20 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 21 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 22 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 23 | AL | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 24 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 25 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 26 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 27 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 28 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 29 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 30 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 31 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 32 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 33 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 34 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 35 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 36 | MD | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 37 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 38 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 39 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 40 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 41 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 42 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 43 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 44 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 45 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 46 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 47 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -370,8 +368,17 @@ clause, which is the right answer for it.
 | **admit** — eligible offices = winners | **67** | AZ House (2 winners, 2 eligible) · MD Delegate (2/2) · MD Delegate (3/3) |
 | **refuse** — staggered, not assignable from our data | **4** | AZ Corporation Commission (2 winners, 5 eligible) · HI OHA At-large Trustee (3/4) · MSU Trustee (2/8) · MI State Board of Education (2/8) |
 
-✅ **MEASURED IN PRODUCTION, 2026-11-24, ON MARYLAND'S 67 DELEGATE CONTESTS: 67 of 67 pass the
-equality clause**, 148 winners anchored to a seat they already held and 30 filled. The
+✅✅ **MEASURED IN PRODUCTION AND NOW APPLIED IN BOTH RULING A STATES.** Maryland, 2026-11-24:
+**67 of 67 Delegate contests pass the equality clause**, 148 winners anchored and 30 filled.
+Arizona, 2026-11-24: **29 of 29 House contests pass** — every pending House office is
+multi-winner, a higher proportion than Maryland's 38 of 67 — 34 winners anchored and 24 filled;
+and its **Corporation Commission is refused**, exactly as the counter-example above predicts.
+🔴 **ARIZONA IS WHERE THE EQUALITY CLAUSE EARNED ITS KEEP**, and control C13b measured the cost of
+the superseded wording: with "at least", the staggered body walks through the gate and the only
+thing that notices is a bijection count reporting *"the assignment produced 92 rows for 93
+winners"* — an arithmetic complaint, not a diagnosis.
+
+On Maryland's 67 contests: 148 winners anchored to a seat they already held and 30 filled. The
 interchangeability clauses are still the ones that have never fired — `seats`, `description` and
 `representation_note` are NULL on all 141 Delegate office rows and `voting_powers` has one value.
 🟢 **The structure was checked against the constitution rather than against itself**: Art. III § 3
@@ -401,6 +408,223 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — Arizona, 93 offices, THE SECOND RULING A WAVE
+
+**59 pending offices left the queue** (262 → 198) and both Arizona legislative bodies left the
+table. `AZ STATE_EXEC` **stays in it on purpose**, down to 2 offices: the Corporation Commission
+and the State Mine Inspector, refused for two opposite reasons.
+
+| file | what it did |
+|---|---|
+| `CC_0497` | dated **94** offices to **2027-01-04**, from **three** constitutional provisions |
+| `CC_0498` | seated **93** (54 re-elections, 39 handovers, 24 of them Ruling A fills), 93 predecessors closed at 2027-01-03 |
+
+🟢 **NO PEOPLE FILE — THE FIRST STATE IN THIS PASS THAT NEEDED NONE.** All 96 Arizona winner rows
+already carried a `politician_id`. That was **swept for**, not read off the register's `no record`
+column: Maryland proved the column cuts both ways (it said 85 and sixty of them existed).
+
+### 🔴 ARIZONA STATES ITS RULE AS AN ANCHOR YEAR, AND THAT IS THE SHAPE MISREAD AS "NO RULE"
+
+None of the three provisions says "the first Monday in January following the election". Each names
+a **specific past date** and a term length, and the recurrence is implied:
+
+| body | clause | anchor | arithmetic |
+|---|---|---|---|
+| legislature, 88 seats | Art. IV, Pt. 2, § 21 | "until the first Monday in January, **1913**" | 1913 + 57×2 = 2027 |
+| 5 executives | Art. V, § 1(A) | "beginning on the first Monday of January, **1971**" | 1971 + 14×4 = 2027 |
+| Corporation Commission | Art. XV, § 1(B) | "initial two-year terms beginning on the first Monday in January, **2003**" | 2003 + 6×4 = 2027 |
+
+⚠ **§ 21 IS TITLED *Term limits of members of state legislature***, so a search for a term-START
+clause does not find it. ▶ An anchor-plus-length rule is still a citation. Read the title last.
+
+### 🔴🔴 BOTH NEAR MISSES ARE LIVE DAYS, AND ONE OF THEM IS 193 OTHER SEATS' TERM START
+
+- **2027-01-01**, the first *day* of January — **Utah's** rule, 50 live rows in our data.
+- **2027-01-04**, the first *Monday* — all three Arizona clauses, this wave.
+- **2027-01-11**, the second Monday — 🔴 **Arizona's own SESSION convening day** (Art. IV, Pt. 2,
+  § 3) **and** the term start of 118 Washington and 75 Oregon seats.
+
+Reaching one week too far here does not produce an absurd day; it produces this state's convening
+date, which 193 seats elsewhere already use as a *term* start. Arizona is the second state in this
+pass where the term and the convening differ (Oregon is the other, by eight days).
+
+🟢 **THE CONTROL DISCRIMINATES RATHER THAN AGREES.** `CC_0497`'s assertion 3d runs all three rules
+over three Arizona cycles in our own data: **80 terms on a first Monday (1 + 53 + 26), and ZERO on
+either wrong rule in every cycle.** It also refuses to report if a cycle's first Monday has no
+rows at all — a control that has lost its fixture proves nothing.
+
+### 🔴🔴 ARIZONA IS THE THIRD STATE ON 2027-01-04, AND WISCONSIN'S RULE IS *ALSO* A FIRST MONDAY
+
+140 `office_swearing_in` rows and 129 `office_terms` rows were already on that day — Wisconsin
+under `wi-legislature-first-monday` and `wi-state-exec-first-monday`, California under
+`ca-const-art2-s20-monday-after-january-1`. 🔴 **A gate asking "how many seats start on the first
+Monday of January 2027?" would have read 234 and called it success.** Both files pin the
+before-image and assert the delta, and every row on the day must belong to a **named** rule_id, so
+a fourth state is caught rather than absorbed. Washington and Oregon paid for this on 2027-01-11.
+
+### 🔴🔴 THE BODY RULING A REFUSES IS IN THIS STATE, AND IT IS THE RULING'S OWN COUNTER-EXAMPLE
+
+The **Corporation Commission** has five office rows, one district, all titled `Commissioner`,
+`seats` / `description` / `representation_note` NULL on every one and one distinct
+`voting_powers` — **every interchangeability clause passes**. The 2026 race carries two winners,
+Clara Pratte and Jonathon Hill, **neither of whom holds any of the five**. Under the superseded
+"at least" clause, 5 ≥ 2 passed, nothing anchored, and the fall-through filled "the remaining
+eligible offices" where all five were remaining. **Ten ways to choose two of five, one of them
+right.** Two sitting commissioners with years left would have been closed out on our pages while
+the two actually leaving stayed.
+
+🔴 **A DATE AND A SEAT ARE SEPARATE QUESTIONS, AND ARIZONA'S TWO REFUSALS SPLIT THEM IN OPPOSITE
+DIRECTIONS.**
+
+| office | date | seating | why |
+|---|---|---|---|
+| Corporation Commission | ✅ `CC_0497`, Art. XV § 1(B) | 🔴 refused | 2 winners, 5 eligible offices — staggered |
+| State Mine Inspector | 🔴 refused | ✅ would be seatable | Art. XIX is published in **two conflicting 1992 versions** and neither names a day |
+
+⚠ **THE COMMISSION IS DATED ON ONE OFFICE ROW, NOT FIVE.** Dating all five would claim five seats
+were on the 2026 ballot. Two were.
+
+🟢🟢 **AND BOTH REFUSALS ARE RECOMPUTED IN THE MIGRATION, NOT NAMED IN A COMMENT.** `CC_0498`'s
+`P2g` reads each excluded race's eligible count, winner count and date count back out of the data
+and aborts if either reason has stopped being true. **A refusal that is only a comment is a
+refusal nobody can check** — and both of these are claims about real people's seats.
+
+### ⚠ TWO CORRECTIONS TO `CC_0496`'s TEMPLATE, BOTH CARRIED HERE
+
+- 🔴 **"RULING A" BELONGS IN THE `source` OF A *FILL*, NOT OF EVERY HANDOVER.** Maryland wrote the
+  paragraph into all 30 non-anchored seats, which included single-seat Senate successions no
+  ruling touched. A **fill** is a non-anchored winner of a **multi-seat** race: here 24 of the 39
+  handovers. Post-verify 15 counts exactly 24 and fails in both directions — a fill that does not
+  say so cannot be audited, and a single-seat succession that **claims** a ruling decided it is
+  the same defect pointing the other way.
+- 🔴 **A ZERO NEEDS A POSITIVE CONTROL.** Maryland's "one person holds two seats" check found
+  Kipke; Utah's found Fiefia; Arizona's finds nothing. ▶ `P8` no longer stands alone: `P9` counts
+  the **six** chamber switchers and asserts each one's currently-held seat **is inside this wave**,
+  so the zero is read as a finding rather than as an absence of evidence. Control C20 plants the
+  Kipke shape and watches P8 go red.
+
+### 🟢 SIX MEMBERS CHANGE CHAMBER, AND TWO PAIRS SIMPLY SWAP
+
+| | |
+|---|---|
+| David Gowan Senate 19 → House 19 | Gail Griffin House 19 → Senate 19 |
+| Sally Ann Gonzales Senate 20 → House 20 | Alma Hernandez House 20 → Senate 20 |
+| Patty Contreras House 12 → Senate 12 | Leo Biasiucci House 30 → Senate 30 |
+
+Districts 19 and 20 are straight **exchanges**, which is California's Ma/Kounalakis shape. Every
+seat the six vacate is inside this wave and is filled by somebody else, so each old term closes at
+2027-01-03 and nobody is left holding two.
+
+### 🔴 TWO HOUSE SEATS ARE UNRECORDED, AND THEIR SITTING MEMBERS ARE TWO OF THE THREE CANDIDATES
+
+State House District 27 carries a 2026 race for two seats, three candidates — **Deborah Howard,
+Lisa Fink, Tony Rivero** — and no `won` row. All three carry `result = 'advanced'`, which is the
+**August top-two primary** result seeded by `CA_0282` from the Secretary of State's own primary
+canvass, **not** a November one still being counted. ⚠ **Lisa Fink and Tony Rivero are the sitting
+members of those two seats**, so the page shows them held with no incoming — which is exactly
+right. Art. IV, Pt. 2, § 21 gives every member a two-year term and § 1(1) elects two
+Representatives from each of the thirty districts, so all 60 were on this ballot as a matter of
+law and these two are **certainly** missing data. ▶ The results programme.
+
+### 🔴🔴 ARIZONA ELECTED A LIEUTENANT GOVERNOR AND WE HOLD NO OFFICE AND NO CANDIDATE FOR IT
+
+Art. V, § 1(A) — the clause this wave cites for the other five executives — names the lieutenant
+governor, and § 1(C) makes it a joint-ticket office: *"a single vote for a nominee for governor
+shall constitute a vote for that nominee's ticket, including the nominee for lieutenant
+governor."* Arizona's first takes office on **2027-01-04**, the day this wave writes.
+
+**Measured: Arizona's eleven `STATE_EXEC` office rows hold no Lieutenant Governor, and no
+Lieutenant Governor candidate row exists anywhere in our Arizona data.** `CC_0497`'s assertion 3e
+pins both absences so the next reader finds the paragraph rather than re-deriving it. ▶ Creating
+the office is an **occupancy act** — it must be created and seated in one file, or the unflagged
+drift baseline rises — and we hold nobody to seat. It belongs to the results and seeding
+programme, and the winner's name is on the Governor's ticket.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+| check | result |
+|---|---|
+| Arizona legislative seats still pending | **0** |
+| Arizona state executives still pending | **2, as intended** |
+| terms citing `CC_0498` | **93** |
+| of those, naming RULING A in their own source | **24** |
+| predecessors closed at 2027-01-03 | **93** |
+| offices answering `office_next_term` | **93** |
+| terms starting 2027-01-04, repo-wide | **222** — 129 before + 93, Wisconsin and California unmoved |
+| `office_swearing_in` rows on 2027-01-04, Arizona | **94** |
+| undated Arizona House offices | **2**, the results gap |
+| Arizona winners holding two open terms from 2027-01-04 | **0** |
+| politicians | **92,026**, unmoved — no people file |
+| flagged-vacant offices, repo-wide | **66**, unmoved |
+| unflagged `offices_missing_terms` | **238**, unmoved |
+
+🟢🟢 **AND THROUGH THE DEPLOYED API.** Five real addresses through `api.empowered.vote`
+(70 state-tier rows read, 38 carrying an incoming holder):
+
+- **2300 E Fry Blvd, Sierra Vista (LD 19)** → **the exchange on one page**: House 19 shows *Gail
+  Griffin held, **incoming David Gowan***, and Senate 19 shows *David Gowan held, **incoming Gail
+  Griffin***. That is Ruling A placing Gowan in the sibling seat Griffin vacates, through the read
+  path.
+- **255 W Alameda St, Tucson (LD 20)** → the same shape again: Senate 20 *Gonzales held, incoming
+  Alma Hernandez*; House 20 *Hernandez held, incoming Sally Ann Gonzales*.
+- **2330 McCulloch Blvd N, Lake Havasu City (LD 30)** → **two Ruling A fills side by side**: House
+  30 shows *Leo Biasiucci held, incoming David Rose* and *John Gillette held, incoming Mike
+  Gannuscio*, while Senate 30 shows *Hildy Angius held, **incoming Leo Biasiucci***.
+- **8401 W Monroe St, Peoria (LD 27)** → **the results gap, visible to a voter**: Senate 27 shows
+  *incoming Kyle Clayton*, and **both House 27 seats show no incoming at all** — held by Lisa Fink
+  and Tony Rivero, who are two of the three candidates in the contest nobody has called for us.
+- **1700 W Washington St, Phoenix (the Capitol)** → the statewide handovers: *Treasurer Kimberly
+  Yee, incoming Nick Mansour* and *Superintendent Tom Horne, incoming Teresa Ruiz*, beside three
+  re-elections. ⚠ **All five Commissioners and the State Mine Inspector show NO incoming at every
+  address** — the refusals, visible to a voter.
+
+🔴 The probe refuses to report at all if it finds no incoming holder anywhere, because the Oregon
+pass learned that the fields are `incoming_holder_name` / `incoming_on` and a uniform "no incoming"
+is a broken detector rather than a finding.
+
+### Controls, each watched going red (step 7)
+
+`backend/data/state-seating-2026/controls/az-2026.controls.mjs` — **25 of 25 red; the negative
+control passed.** Four fired on an earlier gate than they were aimed at and are recorded as
+backstops, not as tested gates:
+
+| control | aimed at | fired on |
+|---|---|---|
+| C1 — write the second Monday, the SESSION day | assertion 3b | assertion 1 |
+| C8 — District 27 gains a recorded winner | P3 | P1 |
+| C13b — the equality clause weakened to "at least" | P2a | P2d |
+| C15 — the incumbent anchor inverted | P3h | P2d |
+
+🟢🟢 **C13 IS THE ONE MARYLAND COULD NOT DO.** Maryland had to manufacture a staggered body by
+deleting a winner, because all 67 of its contests passed equality exactly. Arizona ships with the
+real one: stop excluding the Corporation Commission and `P2a` names it and refuses.
+
+🔴🔴 **AND C13b IS THE FINDING.** With **"at least"** in place of equality the staggered district
+walks straight through `P2a`, and the only gate that notices is `P2d`, the bijection check — which
+can say no more than *"the assignment produced 92 rows for 93 winners"*. An operator reading that
+goes looking for a lost winner. ▶ **That is why the equality clause has to be its own gate instead
+of something a later count happens to catch**, and it is the Maryland reorder argument restated as
+a measurement.
+
+⚠ **TWO CONTROLS WENT RED FOR THE WRONG REASON AND HAD TO BE REPAIRED. BOTH REPAIRS ARE WRITTEN
+INTO THE SPEC BESIDE THEM.**
+
+- **C18 never applied, and the chain PASSED.** It looked for a Commission candidate with
+  `result IS NULL`; there is none — the seven rows read won / won / lost / lost / lost /
+  not_nominated / not_nominated. The harness reported **DID NOT FIRE** rather than a pass, which
+  is the whole reason it re-reads what it built.
+- **C5 died on a syntax error and printed a green RED.** It said `WHERE id = (…)`;
+  `essentials.office_swearing_in` has no `id` — its key is `(office_id, election_date)`. The
+  harness could not parse a gate out of the failure and the summary showed **`(unparsed)`**.
+  ▶ **Read the message, not the colour.** Maryland's C11 and C15 died on a database CHECK
+  constraint the same way.
+
+🔴 **AND ONE CONTROL WAS NOT EXPRESSIBLE AS WRITTEN, WHICH IS A FACT ABOUT THE HARNESS WORTH
+KNOWING.** C13b first used **two `{tamper: 'seating'}` steps**. A step is a **FILE**, not an edit,
+so the chain ran the seating migration **twice** and died on its own `P1` — *"93 office_terms
+row(s) already cite CC_0498. Applied before."* It went red, on a gate with nothing to do with the
+question. ▶ **One tamper per step; put the second change in the DATA.**
 
 ## ✅✅ APPLIED 2026-11-24 — Maryland, 178 offices, THE FIRST RULING A WAVE
 

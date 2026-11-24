@@ -1223,7 +1223,19 @@ the general election"*, because Art. V § 4 sends those returns to the **Speaker
 
 ---
 
-## AZ — Arizona · 66 offices · ⚠️ 65 dated, **1 REFUSED**, 2026-11-22 — and 1 of the 65 is not seatable
+## AZ — Arizona · 66 offices · ⚠️ 65 dated, **1 REFUSED**, 2026-11-22 — ✅✅ **94 OFFICES DATED AND 93 SEATED 2026-11-24** (`CC_0497`, `CC_0498`); the Corporation Commission has a date and no seating, the State Mine Inspector a seating and no date, and both REMAIN REFUSED
+
+> ✅✅ **APPLIED 2026-11-24 — the second Ruling A wave.** `CC_0497` dated **94** offices (not 65:
+> Ruling A dates the ASSIGNED offices, and 29 of Arizona's House seats carry no race of their
+> own); `CC_0498` seated **93** — 54 re-elections, 39 handovers, 24 of them Ruling A fills — and
+> closed 93 predecessors at 2027-01-03. 🟢 **NO PEOPLE FILE WAS NEEDED**, the first state in this
+> pass: all 96 winner rows already carried a `politician_id`, swept for rather than read off the
+> register's `no record` column. The full write-up, the two corrections to `CC_0496`'s template,
+> the 25 controls and the five live API addresses are in [`REGISTER.md`](./REGISTER.md) § Arizona.
+> ⚠ **Two things below were measured differently by the wave and the wave is right:** the
+> Corporation Commission is dated on **one** office row (not all five — the body is staggered and
+> two seats were up), and the "1 of the 65 is not seatable" line undercounts, because the **State
+> Mine Inspector is the opposite case** — seatable in principle, refused for want of a date.
 
 **One day, 2027-01-04, reached by three separate provisions that each anchor on a past cycle.**
 
