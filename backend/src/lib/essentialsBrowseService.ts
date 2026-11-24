@@ -11,7 +11,11 @@
 import { pool } from './db.js';
 import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
-import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
+import {
+  MTFCC_DISTRICT_TYPE_GUARD,
+  UNRESOLVABLE_PAIR_MTFCC_SQL_LIST,
+  type GeoPair,
+} from './geoIdGuard.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
@@ -188,7 +192,17 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
       JOIN essentials.geofence_boundaries gb2
         ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
        AND gb1.geometry && gb2.geometry
-      WHERE ST_Contains(gb1.geometry, ST_PointOnSurface(gb2.geometry))
+      -- 🔴 THE ONLY TYPE FILTER BRANCH 1 HAS, AND IT WAS THE WHOLE BUG. Branches
+      -- 2 and 3 narrow by MTFCC before touching geometry; this one did not, so it
+      -- detoasted and point-tested EVERY polygon whose bbox met the seed — ~5,000
+      -- for a state — and then handed downstream thousands of pairs the district
+      -- guard can never match. Reported from Civic Spaces as a 7,199 ms app-boot
+      -- call; measured at 2,595 ms (CA) and 3,433 ms (TX) cold for this branch
+      -- alone, against branch 3's 2,930 / 1,001. See UNRESOLVABLE_PAIR_MTFCCS in
+      -- geoIdGuard.ts for the measurements, the correctness gate and the three
+      -- attempts its positive control needed.
+      WHERE gb2.mtfcc NOT IN (${UNRESOLVABLE_PAIR_MTFCC_SQL_LIST})
+        AND ST_Contains(gb1.geometry, ST_PointOnSurface(gb2.geometry))
 
       UNION ALL
 
@@ -200,7 +214,11 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
       JOIN essentials.geofence_boundaries gb2
         ON NOT (gb2.geo_id = gb1.geo_id AND gb2.mtfcc = gb1.mtfcc)
        AND gb2.geometry && gb1.geometry
+      -- ⚠ Branch 2 costs 10 ms, so this adds no speed — it is here so the
+      -- FUNCTION'S CONTRACT is "no pair that cannot resolve", rather than branch
+      -- 1 being clean while branch 2 quietly reintroduces a dead G4000 or ZCTA.
       WHERE gb2.mtfcc NOT IN ('G4110', 'G4120')
+        AND gb2.mtfcc NOT IN (${UNRESOLVABLE_PAIR_MTFCC_SQL_LIST})
         AND ST_Contains(gb2.geometry, ST_PointOnSurface(gb1.geometry))
 
       UNION ALL

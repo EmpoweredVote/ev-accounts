@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
+  UNRESOLVABLE_PAIR_MTFCCS,
   FALLBACK_EXCLUDED_MTFCCS,
   FALLBACK_EXCLUDED_MTFCC_SQL_LIST,
   MTFCC_DISTRICT_TYPE_GUARD,
@@ -197,5 +198,89 @@ describe('X-ST-BOARD — elected state boards that are not boards of education',
     // the only thing that caught it was `value too long for type character varying(10)` at
     // INSERT time, after every other gate had passed.
     expect('X-ST-BOARD'.length).toBeLessThanOrEqual(10);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// UNRESOLVABLE_PAIR_MTFCCS — the list resolveOverlappingGeoPairs skips.
+//
+// 🔴 THE DANGEROUS DIRECTION IS "A TYPE GAINS A CLAUSE AND STAYS IN THE LIST".
+// Then the overlap resolver stops producing those pairs, the districts they
+// would have matched quietly disappear from browse-by-area, and nothing errors —
+// a silent correctness bug rather than a slow page. So these tests RECOMPUTE the
+// list from the guard text instead of restating it, and the two must agree.
+// ---------------------------------------------------------------------------
+describe('UNRESOLVABLE_PAIR_MTFCCS stays in step with the guard', () => {
+  /** Every MTFCC the guard names in a POSITIVE clause — `= 'X'` or `IN ('X',…)`. */
+  const positivelyNamed = (): Set<string> => {
+    const g = MTFCC_DISTRICT_TYPE_GUARD;
+    const named = new Set<string>();
+    // `gp.mtfcc = 'G5210'`
+    for (const m of g.matchAll(/gp\.mtfcc\s*=\s*'([^']+)'/g)) named.add(m[1]);
+    // `gp.mtfcc IN ('G5400','G5410','G5420')` — but NOT the two NOT IN lists,
+    // which are exclusions and must not count as admissions.
+    for (const m of g.matchAll(/gp\.mtfcc\s+(NOT\s+)?IN\s*\(([^)]*)\)/g)) {
+      if (m[1]) continue;
+      for (const q of m[2].matchAll(/'([^']+)'/g)) named.add(q[1]);
+    }
+    return named;
+  };
+
+  it('names no listed MTFCC in a positive clause', () => {
+    const named = positivelyNamed();
+    const wrong = UNRESOLVABLE_PAIR_MTFCCS.filter((m) => named.has(m));
+    // If this fires, the guard learned to resolve one of these and the resolver
+    // must start producing it again — remove it from the list in the SAME change.
+    expect(wrong).toEqual([]);
+  });
+
+  it('has a positive clause for every type it DOES resolve, so the list is not over-broad', () => {
+    // The inverse direction: a type with a clause must never be in the list.
+    // Spot-checked against the clauses that exist today.
+    for (const m of ['G5210', 'G5220', 'G5200', 'G4020', 'G4040', 'G4110', 'G4120',
+                     'G5400', 'G5410', 'G5420', 'X0001', 'X0002', 'X0003', 'X0029',
+                     'X-CA-SBOE', 'X-ST-BOARD']) {
+      expect(UNRESOLVABLE_PAIR_MTFCCS).not.toContain(m);
+    }
+  });
+
+  it('blocks every listed non-X MTFCC from the catch-all as well as from a clause', () => {
+    // A type with no clause still resolves if the catch-all admits it:
+    // `gp.mtfcc NOT IN (<FALLBACK_EXCLUDED>) AND gp.mtfcc NOT LIKE 'X%'`.
+    for (const m of UNRESOLVABLE_PAIR_MTFCCS.filter((x) => !x.startsWith('X'))) {
+      expect(FALLBACK_EXCLUDED_MTFCCS).toContain(m);
+    }
+  });
+
+  it("blocks every listed X MTFCC from the X%-catch-all by name", () => {
+    // The X catch-all is `LIKE 'X%' AND gp.mtfcc NOT IN ('X0001'…)`. An X type
+    // with no clause of its own is admitted UNLESS it appears in that NOT IN.
+    const xCatchAll = MTFCC_DISTRICT_TYPE_GUARD.match(
+      /gp\.mtfcc LIKE 'X%' AND gp\.mtfcc NOT IN \(([^)]*)\)/,
+    );
+    expect(xCatchAll).not.toBeNull();
+    const excludedFromXCatchAll = [...xCatchAll![1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
+    for (const m of UNRESOLVABLE_PAIR_MTFCCS.filter((x) => x.startsWith('X'))) {
+      expect(excludedFromXCatchAll).toContain(m);
+    }
+  });
+
+  it('is the filter branches 1 and 2 of the overlap resolver actually apply', () => {
+    // Source-pattern guard, same idiom as the rest of this file: the behaviour is
+    // PostGIS-against-the-DB, so this locks in that the constant is USED and not
+    // merely exported. Two occurrences — branch 1 (where the cost was) and
+    // branch 2 (contract, not speed). Branch 3 already restricts to 7 types.
+    const svc = read('./essentialsBrowseService.ts');
+    const uses = svc.match(/UNRESOLVABLE_PAIR_MTFCC_SQL_LIST/g) ?? [];
+    expect(uses.length).toBeGreaterThanOrEqual(3); // 1 import + branch 1 + branch 2
+  });
+
+  it('does not list G4040, which is dead in California but live elsewhere', () => {
+    // 🔴 The per-state measurement that nearly became a rule: G4040 matched ZERO
+    // California districts, because its county subdivisions are census-defined
+    // rather than governmental. That is a fact about California, not about the
+    // guard — G4040 has a LOCAL/LOCAL_EXEC clause and resolves in other states.
+    // Only types dead BY CONSTRUCTION belong in this list.
+    expect(UNRESOLVABLE_PAIR_MTFCCS).not.toContain('G4040');
   });
 });

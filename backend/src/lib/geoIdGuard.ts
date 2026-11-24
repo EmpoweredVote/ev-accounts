@@ -57,6 +57,79 @@ export const FALLBACK_EXCLUDED_MTFCCS: readonly string[] = [
 export const FALLBACK_EXCLUDED_MTFCC_SQL_LIST: string =
   FALLBACK_EXCLUDED_MTFCCS.map((m) => `'${m}'`).join(',');
 
+/**
+ * MTFCCs whose (geo_id, mtfcc) PAIR can never match a district under
+ * MTFCC_DISTRICT_TYPE_GUARD — no clause names them AND no catch-all admits them.
+ * Resolving them is work whose every row is discarded downstream.
+ *
+ * 🔴 THIS LIST IS DERIVED FROM THE GUARD BELOW, NOT CHOSEN. It is exactly the
+ * members of FALLBACK_EXCLUDED_MTFCCS that have no explicit clause of their own,
+ * plus X0004, which the `X%` catch-all excludes by name and no clause restores.
+ * `geoIdGuard.test.ts` recomputes it from the guard text and fails if the two
+ * drift — because a type added to the guard and left in this list would become a
+ * SILENT correctness bug (the pairs would stop being produced and the districts
+ * would quietly disappear), not a slow page.
+ *
+ * ── WHY IT EXISTS: measured against prod 2026-11-24 ────────────────────────────
+ * resolveOverlappingGeoPairs' branch 1 had no type filter at all, while branches
+ * 2 and 3 do, so it detoasted and point-tested every polygon whose bounding box
+ * met the seed — ~5,000 for a state seed. Reported from Civic Spaces as the
+ * slowest call in a member's app boot (7,199 ms on a real browser). Per-branch
+ * EXPLAIN (ANALYZE, BUFFERS), state seeds:
+ *
+ *                       California        Texas
+ *   branch 1 cold        2,595 ms       3,433 ms     ← no filter; 17,001 / 19,969 reads
+ *   branch 2                10 ms             —
+ *   branch 3 cold        2,930 ms       1,001 ms     ← ST_Intersection, already type-filtered
+ *
+ * ⚠ The original report named branch 3 alone. It IS expensive, but branch 1 costs
+ * as much in California and MORE THAN THREE TIMES as much in Texas — so a fix
+ * aimed only at branch 3 would have left most of the Texas cost in place.
+ *
+ * With this filter, measured at EQUAL cache warmth (the first trimmed-vs-cold
+ * comparison read 33× and was wrong — it was the measurer's own warm buffer
+ * cache; re-running both warm is what separated the two effects):
+ *
+ *   branch 1 warm, untrimmed   CA 1,065 ms   TX 255 ms
+ *   branch 1 warm, trimmed     CA   126 ms   TX  88 ms
+ *
+ * Pairs carried downstream fall from 4,606 to 2,751 for California — exactly the
+ * 1,803 G6350 + 52 G5200V26 the per-type breakdown predicted — and 3,746 to 1,727
+ * for Texas.
+ *
+ * 🟢 CORRECTNESS GATE, RUN BEFORE SHIPPING: the set of essentials.districts rows
+ * surviving MTFCC_DISTRICT_TYPE_GUARD is IDENTICAL with and without the filter —
+ * 1,606 for California, 540 for Texas — with the guard extracted verbatim from
+ * this file rather than retyped.
+ * 🔴 AND THE POSITIVE CONTROL TOOK THREE ATTEMPTS, WHICH IS THE PART WORTH
+ * KEEPING. Dropping G4020 lost nothing because BRANCH 3 BACKFILLS IT; dropping
+ * G4040 lost nothing because county subdivisions match no California district at
+ * all. Only dropping G4110 went red — losing exactly the 215 districts the
+ * per-type breakdown predicted, which is what proves the comparison reads the
+ * right rows rather than merely being able to fail. ▶ A control aimed at a type
+ * another branch also supplies tests nothing.
+ *
+ * ⚠ NOT A CACHE-KEY CHANGE. The result is provably identical, so `overlap:v2`
+ * keys stay valid and are NOT versioned up — bumping would invalidate every warm
+ * key at deploy and stampede the very cold path this change exists to shrink.
+ *
+ * ⚠ G4040 is NOT in this list although it matched 0 California districts: that is
+ * a fact about California's county subdivisions, not about the guard, and the
+ * guard does admit G4040 as LOCAL/LOCAL_EXEC elsewhere. Only types dead BY
+ * CONSTRUCTION belong here.
+ */
+export const UNRESOLVABLE_PAIR_MTFCCS: readonly string[] = [
+  'G6350',     // ZCTAs — no districts of their own; resolve by area overlap, never by geo_id
+  'G4000',     // state outlines — statewide seats come from buildStatewideQuery + stateAbbrev
+  'G5200V26',  // 2026 congressional vintage — the elections COORDINATE path resolves it from
+               // d.geo_id (electionService.ts), never from an incoming pair
+  'X0004',     // named in the X%-catch-all's exclusion list and restored by no clause
+];
+
+/** The same list rendered for a SQL `NOT IN (...)` clause. */
+export const UNRESOLVABLE_PAIR_MTFCC_SQL_LIST: string =
+  UNRESOLVABLE_PAIR_MTFCCS.map((m) => `'${m}'`).join(',');
+
 export const MTFCC_DISTRICT_TYPE_GUARD = `(
     (gp.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
     OR (gp.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
