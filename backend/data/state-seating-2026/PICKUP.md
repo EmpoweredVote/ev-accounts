@@ -1,10 +1,10 @@
 # PICKUP — start here after a context clear
 
-Rewritten 2026-11-24, after **Alabama** (13 offices across both its bodies).
+Rewritten 2026-11-24, after **Idaho** (7 offices, a whole department returned).
 **Read `REGISTER.md` first** (the queue, the recipe, the template corrections, Rulings A and B),
 then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the per-state ledger.
 
-🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0502`
+🟢 **NOTHING IS HALF-DONE. THE LAST SESSION CLOSED CLEANLY.** Every migration through `CC_0504`
 is applied, verified and committed; the live tracker is refreshed; the working tree is clean
 apart from the untracked `backend/_q.mjs` scratch query runner, which predates this work. ▶ **Pick
 a state and start at step 1 of the recipe.**
@@ -13,7 +13,7 @@ a state and start at step 1 of the recipe.**
 
 ## Where the pass stands
 
-**45 bodies · 184 offices still to do.** Nothing is overdue. Fourteen states are written:
+**44 bodies · 177 offices still to do.** Nothing is overdue. Fifteen states are written:
 
 | state | dated | people | seated |
 |---|---|---|---|
@@ -31,13 +31,14 @@ a state and start at step 1 of the recipe.**
 | **MD — Governor** | `CC_0499` (1) | — | `CC_0500` (1, **2027-01-20**) · ⚠ the AG and Comptroller REMAIN REFUSED |
 | **AZ** | `CC_0497` (**94**, not 65) | — **none needed, the first state** | `CC_0498` (93, **2027-01-04**) · ⚠ the Corporation Commission and the State Mine Inspector REFUSED |
 | **AL** | `CC_0501` (13, **both bodies**) | — **none needed, the second state** | `CC_0502` (13, **2027-01-18**) · 🟢 nothing refused — the state is COMPLETE |
+| **ID** | `CC_0503` (7) | — **none needed, the third state** | `CC_0504` (7, **2027-01-04**) · 🔴 **7 of 7 are RE-ELECTIONS — no seat in the state changes hands** |
 
 Plus `CC_0472`, a one-off that widened `office_swearing_in_after_election` from `>` to `>=`.
 🔴 **That file is DDL and `ev_api` cannot run it** — DDL goes through the owner connection (the
 Supabase MCP), and both the apply tool and the chain rehearser fail it with *"must be owner of
 table office_swearing_in"*.
 
-**Next slot to reserve: after `CC_0502`.** Always ask the allocator
+**Next slot to reserve: after `CC_0504`.** Always ask the allocator
 (`npm run steward --prefix backend -- slot CC --purpose "..."`), never count.
 
 ---
@@ -73,9 +74,9 @@ Both are committed and rehearsed; **neither is applied, and each refuses to run 
 
 ---
 
-## 🔴 NEXT: THERE IS NO LARGE BODY LEFT. THE QUEUE IS 45 SMALL ONES, AND MOST ARE UNDATED.
+## 🔴 NEXT: THERE IS NO LARGE BODY LEFT. THE QUEUE IS 44 SMALL ONES, AND MOST ARE UNDATED.
 
-**184 offices across 45 bodies, and only ONE carries a cited start date** (`HI STATE_EXEC`, the
+**177 offices across 44 bodies, and only ONE carries a cited start date** (`HI STATE_EXEC`, the
 OHA At-large block, which Ruling A refuses — see below). Every other body in the table needs step 2
 of the recipe before anything else. The three biggest are:
 
@@ -83,11 +84,11 @@ of the recipe before anything else. The three biggest are:
 |---|---|---|---|
 | 1 | `GA STATE_EXEC` | 10 | 🔴 **ALL TEN REFUSED, 2026-11-22** — the first state in the pass where no office could be dated. Re-read the section before spending a day on it. |
 | 2 | `AR STATE_EXEC` | 7 | 🔴 five refused with a cited window, two still open. |
-| 3 | `ID STATE_EXEC` | 7 | ✅ sourced — one provision says it outright; the work was proving nothing displaced it. **Ready to write.** |
+| 3 | `NM STATE_EXEC` | 7 | ✅ sourced. **Ready to write.** |
 
 ▶ **The register sorts dated bodies first and sinks undated ones below them, largest first.** With
-one dated body left that ordering has stopped doing useful work: read the table as "45 bodies, pick
-a state whose `DATES.md` section is already green". **`ID`, `NM`, `NE`, `CT`, `TX` and `CO`
+one dated body left that ordering has stopped doing useful work: read the table as "44 bodies, pick
+a state whose `DATES.md` section is already green". **`NM`, `NE`, `CT`, `TX` and `CO`
 are sourced and unwritten** — those are the next waves, and none of them needs new research.
 
 - 🟢 **THREE STATES NOW PROVE THE PEOPLE FILE IS NOT AUTOMATIC.** Arizona needed none at all and
@@ -156,6 +157,26 @@ separately, each reads as a one-state oddity.**
   shorthand's 2019-01-21). ▶ **Compute the rule from the thing it counts FROM, and compute the
   look-alike beside it in a year where they DISAGREE.** A control run only in the cycle being
   written is satisfied by any rule that lands there.
+- 🔴🔴 **THE MISSING-LEGISLATURE SHAPE COMES IN TWO OPPOSITE FORMS, AND THE SECOND IS THE URGENT
+  ONE.** Alabama's 140 legislative offices **do not exist**, on a day that had **already passed**.
+  Idaho holds **all 105 of its own — 35 Senate, 70 House, every one held and dated — with ZERO 2026
+  races**, and Art. III § 3 gives them two years *"from and after the first day of December next
+  following the general election"*: **2026-12-01, seven days out**, with the rule already
+  corroborated in our data across five cycles. ▶ **Count a state's office rows by `district_type`
+  AND its 2026 race rows separately.** "No pending seat" is a statement about the seats we hold a
+  RESULT for, and a seeded, dated, unraced chamber is invisible to it.
+  - 🔴 **AND READ THE PREPOSITION BEFORE WRITING THAT DAY.** *"From and after the first day of
+    December"* is not plainly "on December 1st". Our 72 seeded Idaho rows carry December 1 from
+    **Ballotpedia's "assumed office"**, not from the clause — so the seeded day may be one day
+    early and nothing in our data would show it. Maine's trap in the opposite direction.
+- 🔴🔴 **A STATE CAN RETURN ITS ENTIRE DEPARTMENT, AND THEN NOTHING ABOUT THE PAGE CHANGES.** All
+  seven Idaho executives were re-elected, so **no seat in the state changes hands**: the
+  current-holder map is unchanged, the winner map is identical to it, and **a file that wrote
+  nothing at all would pass every "who holds this seat?" check.** The day's term delta is the only
+  thing that separates them. ▶ **Step 9's "probe a seat that CHANGES HANDS" can be unsatisfiable —
+  then read `incoming_on`, never `incoming_holder_name`**, and say in the file which of the two
+  carries the information. ⚠ It also makes a gate unreachable by construction (a handover's
+  predecessor is not the winner); record that rather than counting it as tested.
 - 🔴🔴 **A STATE CAN HAVE A FOURTH RULE WHOSE DAY IS ALREADY PAST, FOR A BODY WE DO NOT HOLD.**
   Ala. Const. § 46(a) commences every senator's and representative's term *"on the day after the
   general election"* — 2026-11-04 — and elects all of them every fourth year from 1906, so 35 + 105
@@ -316,6 +337,28 @@ separately, each reads as a one-state oddity.**
   names both dates, **C12 reopens the term and C13 removes the fixture outright**, so the zero
   cannot go vacuous unnoticed. ⚠ The fifteen days in which he holds nothing are correct — **a gap
   between two offices is not a defect.**
+- 🟢🟢 **A CONTROL KEPT IN ORDER TO *PASS* NEEDS A CONTROL OF ITS OWN.** Idaho's three dated
+  executive terms are 2019-01-07, 2023-01-02 and **2012-10-15 — all three Mondays** — and the third
+  is a mid-term **appointment in October**, so a check shaped "are these Mondays?" admits all three
+  and counts an appointment as evidence for an elected-term formula. **The discriminating field is
+  the MONTH.** `CC_0503`'s assertion 3d therefore runs BOTH tests and requires the weak one to pass
+  on 3 while the strong one passes on 2 — and **control C4 breaks the WEAK test's expectation**,
+  because if it ever stopped admitting all three the control would quietly stop demonstrating the
+  trap it exists to record, with every number in the file still green. ▶ **When you keep a weak
+  check in order to show what it lets through, assert what it lets through.**
+- 🟢 **TWO GATES OVER ONE VALUE CAN BE COMPLEMENTARY, AND ONLY A TAMPER THAT LEAVES THE *SHAPE*
+  INTACT SEPARATES THEM.** Moving Brad Little's 2019-01-07 fired the **dates** file's 3d, not the
+  seating file's `P6` — the right order, since that row is the corroboration 3d reads. Moving
+  Woolf's appointment to **another October Monday** left all three of 3d's counts unchanged and
+  reached `P6`, which asserts the value is one of three KNOWN DATES rather than one of the right
+  shape. ▶ **Ask which of your two gates reads the value and which reads its shape**, then aim a
+  tamper at each.
+- 🔴🔴 **A ZERO CAN HAVE NO NATURAL FIXTURE AT ALL, AND A PLANTED ONE PROVES LESS.** Arizona's
+  "nobody holds two seats" had six real chamber switchers and Alabama's had Tommy Tuberville;
+  **Idaho has nobody — not one winner holds an office outside the wave.** So the gate was tested
+  with a **planted** second term (C12). ▶ **A planted fixture proves the gate FIRES; it does not
+  prove the gate reads the rows a real double-holder would occupy.** Say which you have, and assert
+  the absence itself (`P8b`) so the next reader inherits a measurement rather than an assumption.
 - 🔴🔴 **A STATE CAN HAVE NO IN-DATA DATE CONTROL AT ALL, AND THAT IS A FINDING.** Arizona had 80
   terms across three cycles and Washington seven biennia; **Alabama has 17 of 18 state terms with
   `term_start IS NULL`**, and its one dated term is Kay Ivey's 2017-04-10 **accession** on a
@@ -376,7 +419,7 @@ separately, each reads as a one-state oddity.**
   regardless.
 - **Env:** the worktree has no `.env`. Prefix commands with
   `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
-- **Steward:** jurisdiction leases are 24h and expire on their own. `state:al` was taken for this
+- **Steward:** jurisdiction leases are 24h and expire on their own. `state:id` was taken for this
   work and lapses 2026-11-25. **Claim the next state before starting it.**
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as
   part of finishing each state (`node scripts/build-transition-dataset.mjs`, upload the three

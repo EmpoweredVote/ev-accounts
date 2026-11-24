@@ -2967,7 +2967,51 @@ why the overlap control with the official publisher was run before any of it was
 
 ---
 
-## ID — Idaho · 7 offices · ✅ sourced 2026-11-23 — **one provision says it outright, and the work was proving nothing displaced it**
+## ID — Idaho · 7 offices · ✅ sourced 2026-11-23 — ✅✅ **ALL 7 DATED AND SEATED 2026-11-24** (`CC_0503`, `CC_0504`) — one provision says it outright, and the work was proving nothing displaced it
+
+### 🔴🔴 TWO ADDITIONS TO THIS SECTION, MADE WHEN THE WAVE WAS BUILT (2026-11-24)
+
+Art. IV § 1 was re-read in full before the files were written — HTTP 200, 81,059 bytes, with a
+positive control on the phrase itself — and the quotation, the date and the cycle all held. Two
+things this section did not say, and the first of them is the most urgent finding of the pass.
+
+1. 🔴🔴 **IDAHO'S LEGISLATURE EXISTS, IS SEEDED AND DATED, HAS NO 2026 RESULTS AT ALL, AND ITS OWN
+   DAY IS 2026-12-01 — SEVEN DAYS AFTER THIS WAVE.** **Idaho Const. Art. III § 3** — *Term of
+   office*, one sentence:
+   > "The senators and representatives shall be elected for the term of two years, **from and after
+   > the first day of December** next following the general election."
+
+   Measured 2026-11-24: Idaho holds **35 `STATE_UPPER` and 70 `STATE_LOWER` office rows, every one
+   held and every one carrying a dated term — and ZERO 2026 race rows between them.** A two-year
+   term puts all 105 on the ballot as a matter of law, so all 105 are *certainly* missing data —
+   Utah's "no race row at all" class, at 105 seats.
+   ⚠ **This is the OPPOSITE shape to Alabama's.** `CC_0501` found 140 Alabama legislative offices
+   that **do not exist**, on a day that had **already passed**. Idaho's **exist** and their day has
+   **not** passed. And the rule is already corroborated in our own data across five cycles —
+   2012-12-01, 2014-12-01, 2018-12-01, 2020-12-01, **2022-12-01 (51 rows)** and **2024-12-01 (21
+   rows)** — so **the results are the only thing missing.** ▶ Results programme, with a dated
+   deadline. `CC_0503` P4 and `CC_0504` P5 refuse to run if a legislative race appears.
+   - 🔴 **AND THE PREPOSITION IS NOT SETTLED.** *"From and after the first day of December"* is not
+     plainly "on December 1st" — "after the first day" reads as the 2nd. Our 72 seeded rows say
+     December 1 and they come from **Ballotpedia's "assumed office"**, not from the clause;
+     `CC_0310`'s own source note calls 2024-12-01 *"the constitutional term start (Idaho Const.
+     Art. III sec. 3)"*, which is an inference it did not cite. **So the seeded day may be one day
+     early and nothing in our data would show it.** This is Maine's preposition trap in the
+     opposite direction. ▶ **Settle it from a second document before dating those 105 seats**, and
+     do not take this section's 2027-01-04 for any of them.
+2. 🔴 **THE NEAR MISS IS NAMED BY IDAHO'S OWN CONSTITUTION, ONE ARTICLE AWAY, AND IT IS A LIVE DAY
+   FOR 193 OTHER SEATS.** **Art. III § 8** — *Sessions of legislature*: the regular sessions
+   "commenc[e] on the **second Monday of January** of each year", and the organizational sessions
+   "on the first Thursday of December after the general election". So 2027-01-11 is Idaho's own
+   convening day **and** the term start of 118 Washington seats (RCW 44.04.021) and 75 Oregon seats
+   — and 2026-12-03 is Idaho's organizational session. ▶ **Idaho is the third state in this pass
+   where the term start and the convening differ, and the second where the near miss IS the
+   convening** (Arizona's Art. IV, Pt. 2 § 3 is the other, also a second Monday). `CC_0503`
+   assertion 3b computes all four candidate days and refuses the three it is not about.
+   ⚠ **And `REGISTER.md` records an expectation that Ada County is scheduled for 2027-01-11.**
+   Measured here: Idaho holds **no `office_swearing_in` row and no `office_terms` row on that day
+   at all**, so that expectation is not yet backed by a single Idaho row. Recorded so a later gate
+   is not written against it.
 
 **All seven start 2027-01-04**, the first Monday in January 2027.
 
@@ -3085,6 +3129,35 @@ own citation — an absent row is cleaner than a bad one.
 `authority = 'Idaho Const. Art. IV, § 1'`.
 `source = 'https://legislature.idaho.gov/statutesrules/idconst/ArtIV/Sect1/ (read 2026-11-23)'`.
 `window_end_date` is **NULL** — the day is fixed, so there is no window.
+
+### ✅✅ IDAHO'S EXECUTIVES ARE COMPLETE — DATED AND SEATED 2026-11-24, FORTY-ONE DAYS AHEAD
+
+`CC_0503` dated 7 offices and `CC_0504` seated all 7 for **2027-01-04**. **No people file** — all
+seven winners already had an active `politicians` row with no duplicate-name collision — and **no
+Ruling A**: every race is single-seat with one winner, measured rather than assumed.
+
+🔴🔴 **ALL SEVEN ARE RE-ELECTIONS, AND THAT IS THE FACT THE VERIFICATION TURNS ON.** Idaho returned
+its entire executive department, so **not one seat in the state changes hands**. `PICKUP.md` step 9
+says to probe a seat that changes hands, because a re-election renders the same either way — **in
+Idaho there is no such seat**. The probe still discriminates, but only on the DATE: a Boise address
+returned all seven with `incoming_on = 2027-01-04` where before the wave they carried no incoming
+holder at all. ▶ **Read `incoming_on`, never `incoming_holder_name`.** Two further consequences:
+`CC_0504`'s `P6` handover arm is **unreachable by construction**, and the current-holder map is
+unchanged — so a file that wrote nothing would pass every "who holds this seat?" check, and **the
+day's delta (222 → 229 terms) is the only thing that separates them.**
+
+⚠ **AND THE "NOBODY HOLDS TWO SEATS" ZERO HAS NO NATURAL FIXTURE HERE.** Not one winner holds an
+office outside the wave, so unlike Arizona (six switchers) and Alabama (Tuberville, Senate →
+Governor) nothing real can show the gate would notice. Control C12 **plants** one. A planted fixture
+proves the gate fires; it does not prove it reads the rows a real double-holder would occupy, and
+`P8b` asserts the absence itself so the next reader inherits a measurement.
+
+Verified after the apply: Idaho's `office_pending_winner` is **0**, `office_next_term` answers for
+all 7 on 2027-01-04, 7 predecessors closed at 2027-01-03 with **all three dated starts kept**, and
+the **238 unflagged drift baseline unmoved**. Controls: `controls/id-2026.controls.mjs`, **20 of 20
+red on their aimed-at gate**, negative control green — including **C4, which breaks the WEAK
+weekday test on purpose**, because that test is in the file to be watched *passing* on a mid-term
+appointment and would otherwise stop demonstrating its trap in silence.
 
 ---
 

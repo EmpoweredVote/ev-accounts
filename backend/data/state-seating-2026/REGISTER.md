@@ -22,55 +22,54 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**45 bodies still to do · 184 offices · 1 of the 45 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**44 bodies still to do · 177 offices · 1 of the 44 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
 | 3 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 4 | ID | STATE_EXEC | 7 | 7 | 7 | — | — | — | 7 | — |
-| 5 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
-| 6 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 7 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 8 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 9 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 10 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 11 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 12 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 13 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 14 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 15 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 16 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 17 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 18 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 19 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 20 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 21 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 22 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 23 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 24 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 25 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 26 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
-| 27 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
-| 28 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
-| 29 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 30 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 31 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 32 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 33 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 34 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 35 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 36 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 37 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 38 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 39 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 40 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 41 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 42 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 43 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 44 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 45 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 4 | NM | STATE_EXEC | 7 | 7 | 3 | — | — | — | 7 | — |
+| 5 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
+| 6 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
+| 7 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 8 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 9 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 10 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 11 | CT | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 12 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 13 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 14 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 15 | NE | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 16 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 17 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 18 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 19 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 20 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 21 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 22 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 23 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 24 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 25 | NE | STATE_BOARD | 4 | 4 | 0 | — | — | — | 4 | — |
+| 26 | NE | STATE_BOARD_EDUCATION | 4 | 4 | 2 | — | — | — | 4 | — |
+| 27 | NM | STATE_BOARD_EDUCATION | 4 | 4 | 3 | — | — | — | 4 | — |
+| 28 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 29 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 30 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 31 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 32 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 33 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 34 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 35 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 36 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 37 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 38 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 39 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 40 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 41 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 42 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 43 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 44 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -406,6 +405,89 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-24 — Idaho, 7 offices, a whole department returned, and a legislature due in SEVEN DAYS
+
+Two files, no people file and no Ruling A — the shortest state in the pass. `CC_0503` dated 7
+offices and `CC_0504` seated all 7 for **2027-01-04**. `ID STATE_EXEC` left the queue.
+
+| file | what it did |
+|---|---|
+| `CC_0503` | dated 7 offices to **2027-01-04** from ONE provision — Idaho Const. Art. IV § 1 |
+| `CC_0504` | seated 7 winners — **7 re-elections and 0 handovers**, all `called` |
+
+**Verified after the apply:** `office_pending_winner` 0 for Idaho · `office_next_term` 7 on
+2027-01-04 · `office_swearing_in` 2,008 → 2,015 and rows on the day 234 → 241 · `office_terms`
+13,134 → 13,141 and terms on the day 222 → 229 · 7 predecessors closed at 2027-01-03 with all
+three dated starts kept · **drift baseline 238 unmoved**, `offices_missing_terms` 280 unmoved,
+flagged-vacant 66 unmoved, `politicians` and `offices` unmoved. A Boise address through
+`api.empowered.vote` returns all seven with `incoming_on = 2027-01-04`.
+
+**What this state taught, in five lines**
+
+- 🔴🔴 **A STATE CAN RETURN ITS ENTIRE DEPARTMENT, AND THAT CHANGES WHAT CAN BE VERIFIED AT ALL.**
+  All seven Idaho executives were re-elected — Little, Bedke, McGrane, Woolf, Ellsworth, Labrador,
+  Critchfield — so **not one seat in the state changes hands**. Step 9 says to probe a seat that
+  changes hands, because a re-election renders the same either way; **here there is no such seat**.
+  The probe still discriminates, but only on the DATE: before the wave an Idaho address returns
+  seven offices with no incoming holder, after it the same seven return the sitting holder with
+  `incoming_on = 2027-01-04`. ▶ **Read `incoming_on`, never `incoming_holder_name`.** Two further
+  consequences are recorded rather than discovered later: `P6`'s "a handover's predecessor is not
+  the winner" arm is **unreachable by construction**, and the holder map is unchanged, so a file
+  that wrote *nothing at all* would pass every "who holds this seat?" check — **the day's delta is
+  the only thing that separates them.**
+- 🔴🔴 **A ZERO CAN HAVE NO NATURAL FIXTURE, AND SAYING SO IS PART OF THE WORK.** Not one Idaho
+  winner holds an office outside the wave — no chamber switcher, no cross-tier move — so `P8`'s
+  "nobody holds two seats" is true and **nothing in Idaho's data can show the gate would notice if
+  it were false.** Arizona had six switchers and Alabama had Tommy Tuberville; Idaho has nobody.
+  Control C12 **plants** one. ▶ **A planted fixture proves the gate FIRES; it does not prove the
+  gate reads the rows a real double-holder would occupy.** `P8b` asserts the absence itself, so the
+  next reader inherits a measurement rather than an assumption.
+- 🟢🟢 **A CONTROL KEPT IN ORDER TO *PASS* NEEDS A CONTROL OF ITS OWN.** Idaho's three dated
+  executive terms are 2019-01-07, 2023-01-02 and **2012-10-15 — all three Mondays**, and the third
+  is a mid-term **appointment in October**. So a check shaped "are these Mondays?" admits all three
+  and silently counts an appointment as evidence for an elected-term formula; **the discriminating
+  field is the MONTH.** Assertion 3d therefore runs both tests and requires the weak one to pass on
+  3 while the strong one passes on exactly 2 — and **C4 breaks the WEAK test's expectation**,
+  because if it ever stopped admitting all three the control would quietly stop demonstrating the
+  trap it exists to record, with every number still green.
+- 🟢 **TWO GATES OVER ONE VALUE CAN BE COMPLEMENTARY RATHER THAN REDUNDANT, AND ONLY THE RIGHT
+  TAMPER SEPARATES THEM.** C14 moved Brad Little's 2019-01-07 and fired on the **dates** file's
+  assertion 3d, not on the seating file's `P6` — the right order, since that date is the
+  corroboration 3d reads, and the chain refuses before anything is written. C20 then moved Woolf's
+  appointment to **another October Monday**, which leaves all three of 3d's counts unchanged, and
+  reached `P6`. ▶ **A gate that reads a VALUE and a gate that reads its SHAPE are complementary;
+  the tamper that separates them is the one that leaves the shape intact.**
+- 🔴🔴 **IDAHO'S LEGISLATURE IS THE MOST URGENT GAP THE PASS HAS FOUND, AND IT IS THE OPPOSITE
+  SHAPE TO ALABAMA'S.** Art. III § 3: *"The senators and representatives shall be elected for the
+  term of two years, **from and after the first day of December** next following the general
+  election."* We hold **all 105 office rows — 35 Senate, 70 House — every one held and every one
+  carrying a dated term — and ZERO 2026 races.** A two-year term puts all 105 on the ballot as a
+  matter of law, so all 105 are *certainly* missing data: Utah's "no race row at all" class at 105
+  seats. ⚠ **Alabama's 140 do not exist and their day had passed; Idaho's exist and their day is
+  2026-12-01, seven days out.** Our own data corroborates the rule across five cycles (72 rows on
+  2022-12-01 and 2024-12-01 alone), so **the results are the only thing missing.**
+  - 🔴 **AND THE PREPOSITION IS NOT SETTLED.** *"From and after the first day of December"* is not
+    plainly "on December 1st"; our 72 seeded rows carry December 1 from **Ballotpedia's "assumed
+    office"**, not from the clause, and `CC_0310`'s own note calls it "the constitutional term
+    start" — an inference it did not cite. **So the seeded day may be one day early and nothing in
+    our data would show it.** This is Maine's preposition trap in the opposite direction.
+    ▶ Settle it from a second document before dating those 105 seats.
+
+⚠ **AND TWO OF IDAHO'S THREE NEAR MISSES ARE NAMED BY ITS OWN CONSTITUTION.** Art. III § 8 convenes
+the regular session on the **second Monday** of January — 2027-01-11, where 118 Washington and 75
+Oregon seats begin — and the organizational session on the first Thursday of December, 2026-12-03;
+Art. III § 3 names 2026-12-01. **Idaho is the third state in the pass where the term and the
+convening differ, and the second where the near miss IS the convening** (Arizona is the other).
+⚠ Idaho is also the **fourth state on 2027-01-04**, where 234 rows already sat, and two of the other
+three call their rule a first Monday too. ⚠ `REGISTER.md` records an expectation that **Ada County
+is scheduled for 2027-01-11**; measured here, Idaho holds **no row of any kind on that day**, so
+that expectation is not yet backed by a single Idaho row.
+
+**Controls:** `backend/data/state-seating-2026/controls/id-2026.controls.mjs`, 20 controls, **20 of
+20 red, each on the gate it was aimed at, negative control green.** Recorded as **backstops, not
+tested gates**: `CC_0504`'s `P3` re-election count and name check and `P6`'s predecessor-identity
+arms (the digest catches every realistic tamper two gates earlier), and `CC_0503`'s `P2`.
 
 ## ✅✅ APPLIED 2026-11-24 — Alabama, 13 offices across BOTH its bodies, and a fourth rule already past
 
