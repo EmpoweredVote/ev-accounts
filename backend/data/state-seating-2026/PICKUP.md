@@ -11,13 +11,11 @@ then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the p
 **applied to production and verified**; the working tree is clean apart from the untracked
 `backend/_q.mjs` scratch query runner, which predates this work.
 
-🔴 **BUT NEBRASKA'S PR IS OPEN, NOT MERGED — [#1602](https://github.com/EmpoweredVote/ev-accounts/pull/1602),
-branch `feat/state-seating-ne`, four commits, CI green on its head `9c90cd50d` (checked against the
-run's own `headSha`, nine checks, zero failures).** ⚠ **So master does NOT yet contain `CC_0507` or
-`CC_0508`, although production does.** That is the ordinary state of this pass between waves and
-nothing is wrong — but **read it before you are confused by a master checkout that has neither
-file while the database has both.** ▶ **Branch off master anyway** (migrations are independent
-files and the allocator already knows `CC_0508`); merge #1602 when you get to it.
+🟢🟢 **PR [#1602](https://github.com/EmpoweredVote/ev-accounts/pull/1602) IS MERGED** (2026-11-24,
+squashed as `c05b7b078`) and `feat/state-seating-ne` is done. It carried `CC_0507`, `CC_0508`, the
+control suite and these three documents, with CI green on its head before the merge (nine checks,
+zero failures, checked against the run's own `headSha`). **Master and production now agree.**
+🔴 **Do not add to `feat/state-seating-ne`** — it is merged and its PR is closed.
 
 ▶ **Take a fresh branch off master, claim the state, and start at step 1.**
 
@@ -658,14 +656,21 @@ separately, each reads as a one-state oddity.**
   older SHA — check the run's `headSha` against your own HEAD before believing it.** ▶ And **add
   that line to every new seating file**; the six existing ones are the worked examples. 🟢 Green
   on Nebraska's `CC_0507`/`CC_0508` with the line present, checked against the run's own `headSha`.
-  - 🔴🔴 **`gh pr checks --json` RETURNS AN EMPTY ARRAY HERE AND EXITS 0, WHILE THE PLAIN FORM
-    WORKS.** Measured 2026-11-24 on PR #1602: `gh pr checks 1602` printed 24 rows and
-    `gh pr checks 1602 --json name,bucket` printed **nothing**, exit code 0. A watcher built on
-    the JSON form therefore saw "no checks yet" forever and **sat silent for thirty minutes while
-    CI had already finished green** — a detector whose "nothing found" path is indistinguishable
-    from "still waiting", which is this file's own uniform-answer rule wearing a different hat.
-    ▶ **Poll the PLAIN form and parse its columns**, and make any CI watcher emit something on an
-    *empty* result rather than looping on it.
+  - 🔴🔴 **`jq` IS NOT INSTALLED IN THIS SHELL, AND `gh … --json … | jq` THEREFORE PRINTS NOTHING
+    AND LOOKS LIKE "NO RESULTS YET".** Measured 2026-11-24: a CI watcher built on
+    `gh pr checks 1602 --json name,bucket | jq …` **sat silent for thirty minutes while CI had
+    already finished green**, because every poll produced an empty string and the watcher's
+    "nothing yet" branch swallowed it. ▶ **Use `gh`'s own `--jq` flag**, which embeds jq and works
+    — `gh pr checks 1602 --json name,bucket --jq '.[] | select(.bucket!="skipping")'` — or parse
+    the plain tab-separated form. ⚠ **`command -v jq` is the one-line check**; `gh run list --jq`
+    and `gh pr view --jq` all work for the same reason.
+    - 🔴🔴 **AND THE FIRST DIAGNOSIS OF THIS WAS WRONG, IN THIS FILE, FOR AN HOUR.** It said
+      *"`gh pr checks --json` returns an empty array and exits 0 while the plain form works"* —
+      blaming the remote tool for a missing local one. `gh pr checks --json` returns perfectly
+      good JSON; the pipe ate it. ▶ **That is `CLAUDE.md`'s own rule — *before reporting a
+      mismatch between two readings, ask what your own pipeline does to the field* — and the
+      pipeline here was three characters long.** A silent `command not found` on a pipe's far
+      side is indistinguishable from an upstream that returned nothing.
 - 🟢 **`control-election-transition-status.mjs` RE-RUN AFTER NEBRASKA AND GREEN** (2026-11-24):
   2,303 races examined, states `{1:473, 2:170, 4:1599, 5:61}`, fixture located by measurement,
   both rollbacks reverted. 🟢 **Its histogram is an independent corroboration of the wave** —
