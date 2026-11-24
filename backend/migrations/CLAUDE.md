@@ -625,3 +625,23 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
   `release` or `extend` your laptop's lease without `--force`.
 - Unreachable steward ⇒ **warns and continues** for every claim command. The exception is
   `claim --if-held fail`, whose whole purpose is not to guess.
+
+## A migration that INGESTS GEOFENCE BOUNDARIES owes a warm-up (CC_0511, 2026-11-24)
+
+Since `CC_0511`, every INSERT, UPDATE, DELETE or TRUNCATE on `essentials.geofence_boundaries`
+bumps `essentials.geofence_version` through a statement trigger, and every bump makes every stored
+overlap answer in `essentials.geo_overlap_pairs` superseded — correctly, but it means the next
+visitor to any state pays the cold recompute. California is **3.3 seconds** cold, because branch 3
+runs `ST_Intersection` against a 12,103-vertex outline.
+
+🔴 **So a migration that writes boundary rows must warm the store in its own post-verify, the way
+`load-state-tiger-boundaries.ts` does at the end of its run.** Neither a migration nor a loader can
+invoke a Render cron job, so there is nothing else that will do it until the schedule next fires.
+
+```ts
+const { warmGeoOverlapPairs } = await import('../src/lib/geoOverlapWarm.js');
+await warmGeoOverlapPairs();          // 53 G4000 seeds; a near no-op when nothing moved
+```
+
+⚠ **A migration that only READS boundaries owes nothing**, and neither does one that writes a
+different table. The obligation follows the trigger, not the schema.

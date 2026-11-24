@@ -91,6 +91,7 @@ import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
 import { startReapStaleRunsCron } from './cron/reapStaleRuns.js';
 import { reapStaleIngestionRuns } from './lib/reapStaleIngestionRuns.js';
+import { warmGeoOverlapPairs } from './lib/geoOverlapWarm.js';
 import { startDiscoverySweepCron } from './cron/discoverySweep.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
@@ -351,6 +352,18 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
         console.info(`[server] listening on port ${port}`);
         console.info(`[server] environment: ${env.NODE_ENV}`);
       });
+
+      // Warm the state overlap store, OUTSIDE the role branch so both roles get it.
+      // Off unless GEO_OVERLAP_WARM_ON_BOOT is set: a boot that waits on PostGIS is a
+      // boot that can fail to come up, and four deploys have already gone out green
+      // and failed to start. So this is fire-and-forget, after the listener is up, and
+      // non-fatal — exactly like the stale-run reap below. A near no-op once warm
+      // (three queries, no geometry), which is what makes it safe on every instance.
+      if (/^(1|true)$/i.test(env.GEO_OVERLAP_WARM_ON_BOOT ?? '')) {
+        void warmGeoOverlapPairs().catch((e) =>
+          console.warn('[startup] geo-overlap warm failed — continuing anyway:', e)
+        );
+      }
 
       if (role === 'api') {
         // Requests only. The always-on jobs run from their own entry points now

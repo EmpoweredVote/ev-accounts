@@ -5406,6 +5406,37 @@ async function main(): Promise<void> {
   if (grandTotals.inserted_boundary > 0) {
     const outcome = await refreshChildCountyMapping();
     for (const line of refreshNotice(outcome, grandTotals.inserted_boundary)) console.log(line);
+
+    // Every inserted boundary bumped essentials.geofence_version (CC_0511), so every
+    // stored overlap answer is now superseded — correctly, but that means the next
+    // visitor to ANY state pays the cold recompute, 3.3 s for California, until
+    // something warms it again.
+    //
+    // 🔴 THIS IS THE ONLY MECHANISM THAT CAN RUN HERE. Neither a loader script nor a
+    // migration can invoke a Render cron job, so without this call the 53 states sit
+    // cold for up to a whole schedule interval after exactly the event that cooled
+    // them. The warm job is importable precisely so this line can exist.
+    //
+    // Non-fatal: a load that succeeded must not report failure because the warm-up
+    // did. The dry-run path never reaches here (`inserted_boundary` stays 0).
+    try {
+      const { warmGeoOverlapPairs } = await import('../src/lib/geoOverlapWarm.js');
+      const warm = await warmGeoOverlapPairs();
+      console.log(
+        `[load-state-tiger] geo-overlap warm: version=${warm.version} computed=${warm.computed} ` +
+          `alreadyCurrent=${warm.alreadyCurrent} swept=${warm.swept}`,
+      );
+    } catch (err) {
+      console.warn('[load-state-tiger] geo-overlap warm failed — the load itself is fine:', err);
+    } finally {
+      // That import opened the shared pool. Close it, or this script never exits.
+      try {
+        const { pool } = await import('../src/lib/db.js');
+        await pool.end();
+      } catch {
+        /* nothing to close */
+      }
+    }
   }
 }
 

@@ -246,6 +246,25 @@ export const OVERLAP_QUERY_SQL = `
 export const OVERLAP_QUERY_FINGERPRINT = fingerprintOf(OVERLAP_QUERY_SQL);
 
 /**
+ * The raw overlap computation: run OVERLAP_QUERY_SQL for these seeds and return
+ * the pairs. No cache, no store, no version — just the geometry.
+ *
+ * 🔴 EXPORTED SO THERE IS EXACTLY ONE COMPUTE IN THE CODEBASE. The warming job
+ * needs to compute a seed WITHOUT the read path's own store write (it batches
+ * its writes, and its dry run must not write at all). If it re-implemented this
+ * query instead, the store and the live answer would be two mechanisms kept in
+ * sync by hand — the thing the design exists to avoid.
+ */
+export async function computeOverlapPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
+  if (seeds.length === 0) return [];
+  const { rows } = await pool.query(OVERLAP_QUERY_SQL, [
+    seeds.map((s) => s.geo_id),
+    seeds.map((s) => s.mtfcc),
+  ]);
+  return rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+}
+
+/**
  * Resolve every geofence boundary that overlaps a set of seed area geofences,
  * using the bidirectional PostGIS logic that mirrors the address path's
  * ST_Covers stack — but for an AREA (all overlapping districts) rather than a
@@ -289,19 +308,11 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
   const cached = await cache.get<unknown>(cacheKey);
   if (isGeoPairArray(cached)) return cached;
 
-  const compute = async (forSeeds: GeoPair[]): Promise<GeoPair[]> => {
-    const { rows } = await pool.query(OVERLAP_QUERY_SQL, [
-      forSeeds.map((s) => s.geo_id),
-      forSeeds.map((s) => s.mtfcc),
-    ]);
-    return rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
-  };
-
   // 3. No version, or the store switched off: compute and return, exactly as
   //    this function did before CC_0511. A deploy that lands ahead of the
   //    migration degrades in latency, never in correctness, and never 500s.
   if (version === null || !OVERLAP_STORE_ENABLED) {
-    const computed = await compute(seeds);
+    const computed = await computeOverlapPairs(seeds);
     await cache.set(cacheKey, computed, OVERLAP_CACHE_TTL_SECONDS);
     return computed;
   }
@@ -315,7 +326,7 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
   const missing = seeds.filter((s) => !stored.has(seedKey(s)));
   const computedBySeed = new Map<string, GeoPair[]>();
   for (const s of missing) {
-    computedBySeed.set(seedKey(s), await compute([s]));
+    computedBySeed.set(seedKey(s), await computeOverlapPairs([s]));
   }
 
   // 6. Store only seeds that really exist, and store them at the version read in

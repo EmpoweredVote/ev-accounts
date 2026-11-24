@@ -33,6 +33,7 @@ import { refreshContributionTotals } from '../lib/contributionTotals.js';
 import { runNetfileIngestWithSummaries, runLocalFinanceSummaries } from '../lib/localFinanceSummary.js';
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
 import { reapStaleIngestionRuns } from '../lib/reapStaleIngestionRuns.js';
+import { warmGeoOverlapPairs } from '../lib/geoOverlapWarm.js';
 import { runConsensusPass } from '../vq/jobs/consensusBatchJob.js';
 import { runRotationPass } from '../vq/services/questRotation.js';
 import { runExpirationSweep } from '../trivia/cron/expirationSweep.js';
@@ -116,6 +117,16 @@ export const JOBS: Record<string, JobFn> = {
   'indiana': () => runAdapterForAll('indiana'),
   'district-staleness': () => runDistrictStalenessCheck(),
   'reap-stale-ingestion-runs': () => reapStaleIngestionRuns(),
+  // Stores every state's overlap answer before a member asks for it, then deletes the
+  // rows that answer a superseded question (CC_0511). It exists because the durable
+  // store removes the hourly recompute but not the COLD one, and a cold state costs
+  // 3.3 s even warm — Civic Spaces reported 7,199 ms at app boot. 53 seeds a run.
+  // Proof of run is one log line carrying all five numbers:
+  //   [geo-overlap-warm] mtfcc=G4000 version=… fingerprint=… seeds=53 computed=…
+  //   alreadyCurrent=… swept=… in …ms
+  // computed=0 with alreadyCurrent=53 is a HEALTHY run, not a no-op: it means nothing
+  // moved. computed=53 means the geofence version or the resolver's SQL changed.
+  'geo-overlap-warm': () => warmGeoOverlapPairs(),
   // Validation Quests (folded in) — no Lambda handler existed, so these are new entries.
   'vq-consensus': () => runConsensusPass(),
   'vq-rotation': () => runRotationPass(),
