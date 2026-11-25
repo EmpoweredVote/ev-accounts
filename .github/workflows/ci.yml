@@ -390,6 +390,33 @@ jobs:
       # downstream. That is the master-only-gate rule in CLAUDE.md, and this is the half that can run
       # on a PR: it reads TEXT, needs no database, and asks whether the author measured — not what the
       # measurement says. Dependency-free and carries the same `if:` as its four siblings.
+      # --- nightly freshness -----------------------------------------------------------------------
+      # 🔴 THE ONLY CHECK HERE THAT WATCHES THIS WORKFLOW RATHER THAN THE CODE, AND IT HAS TO LIVE ON
+      # THIS TRIGGER. Every live-DB tripwire in this file — lens durability, duplicate people,
+      # coverage honesty, rls coverage and the rest — runs ONLY on the schedule. If the schedule
+      # stops, not one of them goes red: they stop running, and a tripwire that is not running reads
+      # exactly like a tripwire with nothing to report. A freshness check placed on the schedule
+      # would die with the thing it watches, so it rides push + PR instead, where the schedule
+      # cannot take it down. Measured 2026-11-25: 60 pushes to master in six days, median gap 1.0h,
+      # worst 18.9h.
+      #
+      # 💰 ZERO ADDED MINUTES, which is the only reason it is allowed to run this often. This job
+      # already runs on every push and PR and finishes inside the one-minute minimum it already
+      # pays. Its own job would have cost ~300 billed minutes a month — the trade the lens-durability
+      # comment already refuses. It qualifies for this job on the stated terms: dependency-free
+      # (`fetch`, no `npm ci`) and carrying the same `if:`.
+      #
+      # ⚠ Gated behind `needs.changes` with the rest of this job, so docs-only pushes pause the
+      # heartbeat; harmless against a 40h threshold. Degrades GREEN if the API is unreachable, per
+      # `migration reservations`' precedent for forks, and says so loudly rather than silently.
+      # Threshold and measurements: scripts/check-nightly-freshness.mjs.
+      - name: nightly freshness
+        if: ${{ !cancelled() }}
+        working-directory: backend
+        run: node scripts/check-nightly-freshness.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: office-terms incumbency guards
         if: ${{ !cancelled() }}
         run: node backend/scripts/check-office-terms-incumbency-guards.mjs
