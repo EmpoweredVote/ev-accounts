@@ -844,8 +844,65 @@ the most complete. **Hold them together — separately, each reads as a one-stat
   both rollbacks reverted. 🟢 **Its histogram is an independent corroboration of the wave** —
   state 2 → 4 moved by exactly 13 against New Mexico's `{1:473, 2:183, 4:1586, 5:61}`. **It is not
   in CI**, so it runs only when somebody runs it; run it after any wave that moves a lot of rows.
-- **Env:** the worktree has no `.env`. Prefix commands with
-  `set -a && . /c/EV-Accounts/backend/.env >/dev/null 2>&1; set +a`.
+- 🔴🔴 **SET YOUR WORKTREE UP TO STAND ALONE, AND DO NOT RUN THIS PASS'S TOOLING OUT OF
+  `C:\EV-Accounts`.** That checkout belongs to whoever is working in it, and **it is not on master**
+  — measured 2026-11-25 it was on `chore/nightly-freshness-tripwire` at session start and on a
+  **detached HEAD** by the end of the same session, moved by somebody else while this wave was
+  running. Whether it even *contains* `scripts/derive-seating-wave.mjs`,
+  `run-migration-controls.mjs` or `scripts/lib/seating-wave.mjs` is a property of a branch you do
+  not control. ▶ **Two commands, once per worktree:**
+
+      cd /c/ev-accounts-<topic>/backend && npm ci
+      cp /c/EV-Accounts/backend/.env . && cmp /c/EV-Accounts/backend/.env .env   # byte-compare it
+
+  🔴 **AND RUN THE DERIVE AND APPLY TOOLS FROM `backend/` ITSELF, BECAUSE THEY READ `.env` FROM THE
+  CWD** — not from the script's own directory. Running them from the repository root finds no
+  `DATABASE_URL` and the failure does not say why.
+  ⚠ **Byte-compare the `.env` rather than assuming the copy worked**, for the reason `CLAUDE.md`
+  gives in the opposite direction: an unverified `.env` is a credential that may exist nowhere
+  else, so `check:deletable` counts it as unique until somebody has compared it.
+  - 🔴🔴 **THE COLORADO WAVE RAN ITS WHOLE TOOLCHAIN OUT OF THE MAIN CHECKOUT AND GOT AWAY WITH IT,
+    WHICH IS THE WORST WAY TO LEARN THIS.** `chore/nightly-freshness-tripwire` turned out to hold
+    **no commits and no file differences from `origin/master`**, and all eight scripts were
+    afterwards **byte-compared against this branch's copies and found identical** — so the pin, the
+    digest and the controls were computed by the code they were supposed to be. ▶ **That was luck.**
+    A branch mid-rebase, or one predating `seating-wave.mjs`, would have computed the selection
+    digest with somebody else's library and nothing in the migration would have disagreed, because
+    the migration compares against the digest that library produced. ⚠ `CLAUDE.md` says never to
+    *move HEAD* in a worktree you did not create; **the mirror of that rule is never to READ CODE
+    from one**, and it had not been written down.
+  - ⚠ **The old advice this replaces** — *"the worktree has no `.env`, prefix commands with
+    `set -a && . /c/EV-Accounts/backend/.env …`"* — still works for a one-off read, and that is why
+    it survived nine states. It quietly assumes you are standing in the main checkout, which is the
+    assumption that is wrong.
+- ⚠ **`python` IS NOT INSTALLED ON THIS MACHINE**, which the `jq` note below does not imply. A
+  `| python -c` one-liner to format a query result fails with *"Python was not found; run without
+  arguments to install from the Microsoft Store"*. Use `node -e` — and note that a `node -e` script
+  needs a **Windows-style** path (`C:/…`) for `require`, since `/c/…` is a shell convention Node
+  does not share.
+- ⚠ **A LONG HEREDOC FAILS IN THIS SHELL WITH `ENAMETOOLONG: name too long, uv_spawn`.** A migration
+  header, a controls spec or a PR body written as `cat > file <<'EOF' … EOF` dies on the command
+  length rather than on anything in the content, and the error names neither. ▶ **Write a long file
+  with the Write tool**, and keep heredocs for short SQL. ⚠ A single quote inside a `node -e`
+  script also breaks the outer shell quoting; put the script in a file instead.
+- ⚠ **TWO COLUMNS THIS PASS'S OWN PROSE IMPLIES AND THE SCHEMA DOES NOT HAVE.**
+  `essentials.office_current_holder` has **no `term_id`** — it carries `office_id`, `politician_id`,
+  `term_start`, `term_end`, `how_started`, `from_office_terms` and `start_precision`, so a
+  predecessor pre-image takes its `term_id` from `office_terms.id` and not from the view. And
+  **`essentials.races` has no `election_date`**: it joins `essentials.elections` for one, which
+  every "does this office carry a 2026 race?" subquery in a seating file has to do.
+- 🟢 **`◇ injected env (N) from .env` IS THE TELL FOR WHICH `.env` A TOOL ACTUALLY FOUND, AND IT WAS
+  ON SCREEN ALL PASS.** Run from a worktree with its own file it prints **`(39)`**; run with the
+  env already sourced into the shell it prints **`(0)`**, because there is nothing left to inject.
+  ▶ A `(0)` is not a failure, but it means the credentials came from your shell rather than from a
+  file the tool located — so it is also what you would see from a directory holding no `.env` at
+  all, one step before the failure.
+- 🔴🔴 **AND `derive-seating-wave.mjs` REPORTS AN EMPTY SELECTION AS *"blockers none — this body is
+  ready to seat."*** Re-run against Colorado after the wave landed, it prints **0 winners, 0
+  offices, digest `d41d8cd9…` (the md5 of the empty string) and a green verdict.** Every blocker
+  check passes vacuously because there is nothing in the selection to block. ▶ **Read the winner
+  count before the verdict** — a session that ran this against an already-seated body, or against a
+  mistyped `--state`, would be told it was ready to go.
 - **Steward:** jurisdiction leases are 24h and expire on their own. `state:nm` was taken for this
   work and lapses 2026-11-25. **Claim the next state's scope before starting it.**
 - **Live tracker artifact:** `https://claude.ai/artifact/68XRWM6MpNd2W6Phit4QNo` — refresh it as

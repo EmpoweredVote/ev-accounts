@@ -99,6 +99,21 @@ a jurisdiction; `steward who` runs on session start and shows every claim.
     running session is the failure — `C:\EV-Accounts` changed branch three times under one
     session that day, and again the same evening. If you need another branch, make another
     worktree.
+  - 🔴🔴 **AND THE MIRROR OF THAT RULE: NEVER *RUN CODE* OUT OF A WORKTREE YOU DID NOT CREATE.**
+    Whether `C:\EV-Accounts` even contains the script you are about to run is a property of a
+    branch somebody else controls, and so is its contents. Measured 2026-11-25: it was on
+    `chore/nightly-freshness-tripwire` at session start and on a **detached HEAD** by the end of
+    the same session. ▶ **Make your worktree stand alone** — `npm ci` in `backend/` and a copy of
+    `backend/.env`, **byte-compared** — and run everything from there. ⚠ **Many tools read `.env`
+    from the CWD rather than from their own directory**, so run them from `backend/` itself; from
+    the repository root they find no `DATABASE_URL` and the failure does not say why.
+    🔴 **THE FAILURE MODE IS SILENT, NOT LOUD.** The 2026-11-25 Colorado wave ran its whole
+    toolchain out of the main checkout and got away with it: that branch happened to hold no
+    difference from `origin/master`, and all eight scripts were afterwards byte-compared against
+    the working branch and found identical. **A branch mid-rebase, or one predating
+    `scripts/lib/seating-wave.mjs`, would have computed a migration's pinned selection digest with
+    somebody else's library — and the migration would have agreed with it, because the migration
+    compares against the digest that library produced.**
   - 🟢 **THE BOARD NOW WATCHES THIS RULE.** The SessionStart hook runs `steward worktree`,
     which records the directory and branch and then tells you what moved:
     **`🔴 HEAD MOVED in <path> — it was on X …, and is now on Y`**, or **`⚠ another session was
