@@ -207,3 +207,102 @@ describe('loadFecBulkCycle run rows and --new-only', () => {
     expect(newOnlyQuery![1]).toEqual(['2026']);
   });
 });
+
+// ---------------------------------------------------------------------------
+// --insert-only, --sources, and what a cut-short load may claim (2026-11-25, watchlist #102)
+// ---------------------------------------------------------------------------
+
+describe('loadFecBulkCycle --insert-only / --sources / early stop', () => {
+  const zipOf = (lines: string[]): Buffer => {
+    const z = new AdmZip();
+    z.addFile('data.txt', Buffer.from(lines.join('\n') + '\n'));
+    return z.toBuffer();
+  };
+  const ccl = zipOf(['H6OLD0001|2026|2026|C00000001|H|P|1', 'H6NEW0002|2026|2026|C00000002|H|P|2']);
+  const indiv = zipOf([
+    indivRow({ cmteId: 'C00000001', subId: '111' }).join('|'),
+    indivRow({ cmteId: 'C00000001', subId: '112' }).join('|'),
+    indivRow({ cmteId: 'C00000002', subId: '222' }).join('|'),
+  ]);
+  const stubFetch = () =>
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input);
+      const headers = new Headers(url.includes('/indiv') ? { 'last-modified': 'Sun, 22 Nov 2026 17:00:21 GMT' } : {});
+      return new Response(new Uint8Array(url.includes('/ccl') ? ccl : indiv), { status: 200, headers });
+    });
+  const calls = (re: RegExp) => poolQueryMock.mock.calls.filter(([sql]) => re.test(String(sql)));
+  const insertedSubIds = () =>
+    calls(/INSERT INTO transparent_motivations\.contributions/).flatMap(([, p]) =>
+      (p as unknown[]).filter((v) => typeof v === 'string' && /^\d{3}$/.test(v)));
+
+  beforeEach(() => {
+    poolQueryMock.mockReset();
+    vi.mocked(campaignFinanceService.getConfirmedFecSources).mockResolvedValue([
+      { id: 'src-old', external_id: 'H6OLD0001' },
+      { id: 'src-new', external_id: 'H6NEW0002' },
+    ] as never);
+    poolQueryMock.mockImplementation(async (sql: string) => {
+      // The existence check: SUB_ID 111 is already stored.
+      if (/SELECT source_transaction_id/.test(sql)) return { rows: [{ source_transaction_id: '111' }] };
+      if (/INSERT INTO transparent_motivations\.contributions/.test(sql)) return { rows: [], rowCount: 1 };
+      if (/count\(\*\) n/.test(sql)) return { rows: [{ n: '1' }] };
+      if (/regexp_match/.test(sql)) return { rows: [{ exp: null }] };
+      return { rows: [], rowCount: 0 };
+    });
+  });
+
+  it('--insert-only never writes a row that is already stored', async () => {
+    const f = stubFetch();
+    await loadFecBulkCycle('2026', { insertOnly: true });
+    f.mockRestore();
+    expect(insertedSubIds().sort()).toEqual(['112', '222']);
+    // The check reads the dedup key only, so it can be answered from the unique index.
+    const [checkSql] = calls(/SELECT source_transaction_id/)[0]!;
+    expect(String(checkSql)).toMatch(/data_source = 'fec'/);
+    expect(String(checkSql)).toMatch(/source_transaction_id = ANY/);
+  });
+
+  it('without --insert-only every matched row is sent (existing behaviour)', async () => {
+    const f = stubFetch();
+    await loadFecBulkCycle('2026');
+    f.mockRestore();
+    expect(insertedSubIds().sort()).toEqual(['111', '112', '222']);
+    expect(calls(/SELECT source_transaction_id/)).toHaveLength(0);
+  });
+
+  it('--sources restricts the load to those sources', async () => {
+    const f = stubFetch();
+    await loadFecBulkCycle('2026', { sources: ['src-new'] });
+    f.mockRestore();
+    expect(insertedSubIds()).toEqual(['222']);
+    expect(calls(/INSERT INTO transparent_motivations\.ingestion_runs/).map(([, p]) => (p as unknown[])[0])).toEqual(['src-new']);
+  });
+
+  it('a load cut short by --limit writes NO run rows and clears no checkpoints', async () => {
+    // 🔴 A run row moves the API cursor to the file date: claimed after a partial load, it
+    // skips every row the load never reached.
+    const f = stubFetch();
+    await loadFecBulkCycle('2026', { limit: 1 });
+    f.mockRestore();
+    expect(calls(/INSERT INTO transparent_motivations\.ingestion_runs/)).toHaveLength(0);
+    expect(calls(/DELETE FROM transparent_motivations\.fec_fetch_checkpoints/)).toHaveLength(0);
+  });
+
+  it('a complete load clears each finished source\'s saved API catch-up place', async () => {
+    // The run row makes the file date the cursor; an old catch-up chain would otherwise keep
+    // re-reading what the file just loaded.
+    const f = stubFetch();
+    await loadFecBulkCycle('2026', { insertOnly: true });
+    f.mockRestore();
+    const cleared = calls(/DELETE FROM transparent_motivations\.fec_fetch_checkpoints/).map(([, p]) => (p as unknown[])[0]);
+    expect(cleared.sort()).toEqual(['src-new', 'src-old']);
+  });
+
+  it('the stored-row count can be answered from the (source, cycle) index — no data_source filter', async () => {
+    const f = stubFetch();
+    await loadFecBulkCycle('2026', { insertOnly: true });
+    f.mockRestore();
+    const [countSql] = calls(/count\(\*\) n/)[0]!;
+    expect(String(countSql)).not.toMatch(/data_source/);
+  });
+});
