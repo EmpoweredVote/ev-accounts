@@ -1,0 +1,89 @@
+{
+ "slug": "greensburg-in",
+ "geoid": "1829718",
+ "name": "Greensburg",
+ "structure": {
+  "council_size": 7,
+  "district_seats": 4,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk-Treasurer",
+  "city_court_judge": "no",
+  "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+  "source_file": "raw/greensburg-in/council.html",
+  "council_name": "Greensburg City Council"
+ },
+ "holders": [
+  {
+   "office": "Mayor",
+   "name": "Joshua Marsh",
+   "source_url": "https://www.cityofgreensburg.com/government/office-of-the-mayor/",
+   "source_file": "raw/greensburg-in/mayor.html",
+   "note": null
+  },
+  {
+   "office": "Clerk-Treasurer",
+   "name": "Amy Borns",
+   "source_url": "https://www.cityofgreensburg.com/government/clerk-treasurer/",
+   "source_file": "raw/greensburg-in/clerk.html",
+   "note": "City page title 'City Clerk-Treasurer'; stored as the statutory office Clerk-Treasurer."
+  },
+  {
+   "office": "Council Member, District 1",
+   "name": "Kevin Fleetwood",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 2",
+   "name": "Rodney King",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 3",
+   "name": "Jamie Cain",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": "Page text says 'Jamie Cain, President'; the photo alt text says 'Jaime Cain'. Text spelling used."
+  },
+  {
+   "office": "Council Member, District 4",
+   "name": "Darrell Poling",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Mark Carman",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Vietta McKenzie",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Daryl Tressler",
+   "source_url": "https://www.cityofgreensburg.com/government/city-council/",
+   "source_file": "raw/greensburg-in/council.html",
+   "note": null
+  }
+ ],
+ "council_map": {
+  "kind": "arcgis",
+  "url": "https://services5.arcgis.com/JyUjaMA8RG5613cC/arcgis/rest/services/Voting_District_{1,2,3,4}_view/FeatureServer/0",
+  "feature_count": 4,
+  "district_field": "district",
+  "vintage": "Current (2020 census). Four separate single-feature layers, one per district; the at-large layers cover the whole city. District populations 3064+3086+2851+3342 = 12343, which equals the 'POP 12343' on the at-large layers (2020 census count of Greensburg). Layers last edited 2026-01-08 (editingInfo.lastEditDate 1767893865884..1767894659803).",
+  "notes": "Found through the city council page link 'City Council districts can be found here' (saved in raw/greensburg-in/council.html) -> ArcGIS instant app item dc5c2e7b39f648dd9b0d46933a43bbe3 'Greensburg City Council Map' (raw/greensburg-in/lookup-item.json) -> web map a3ed8b97eda2499d8b4b531706dcae3e (raw/greensburg-in/webmap-data.json). Each layer returns count 1 (raw/greensburg-in/query-d1..d4.json; layer meta layer-d1..d4.json). Fields: district ('Greensburg District 1'..4), districtid, repname1, population. Layer repname1 values match the council page names (Fleetwood, King, Cain, Poling); at-large layers query-al1..3.json name Tressler, Carman, McKenzie. Layer name in the service is 'Electoral Districts'. Layers are _view layers of a Greensburg org (owner jffsteele); geometry not downloaded."
+ },
+ "notes": "Council went from 5 to 7 seats in 2024 (two at-large added; from a search result, not a saved page). Council page terms for all seven read 2024-2027. Mayor page: second term, sworn in Jan 1 2020 (text of 2019 election); a search summary listed clerk-treasurer Amy Borns caucused June 2021, not verified from a saved page. No city court judge found on the state court directory (raw/peru-in/court-directory.pdf, all-state list) for Greensburg. The brief's 'structure' check: 4 district + 3 at-large = 7 shown on the council page."
+}

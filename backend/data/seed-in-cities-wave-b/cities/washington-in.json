@@ -1,0 +1,89 @@
+{
+  "slug": "washington-in",
+  "geoid": "1880504",
+  "name": "Washington",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.washingtonin.us/department/index.php",
+    "source_file": "raw/washington-in/dept.html",
+    "council_name": "Washington Common Council (City Council)"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "David Rhoads",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Beth McGookey",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Darin Lunsford",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Allen Brown",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Charles Selby",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Doug Campton",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Randy Emmons",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Kenny Showalter",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "David Dahl",
+      "source_url": "https://www.washingtonin.us/department/index.php",
+      "source_file": "raw/washington-in/dept.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "none",
+    "url": null,
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Not obtained.",
+    "notes": "City code on amlegal has an ordinance amending the description of the 5 council districts (https://codelibrary.amlegal.com/codes/washingtonin/latest/washington_in/0-0-0-12422), date and precinct list not read: amlegal is behind a Cloudflare challenge. A local news item (search snippet only) says precincts had to be moved to match the council districts. No ArcGIS layer or PDF found. Next step: read the amlegal ordinance in a browser or ask the clerk."
+  },
+  "notes": "Page layout: name with party, then district, then email/phone, so district follows the name. One page holds the whole roster; the page is undated. The page also lists party letters (not recorded). Judge status not found. This is Washington in Daviess County (page says \"scenic rural Daviess County\")."
+}

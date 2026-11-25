@@ -1,0 +1,75 @@
+{
+  "slug": "kendallville-in",
+  "geoid": "1839402",
+  "name": "Kendallville",
+  "structure": {
+    "council_size": 5,
+    "district_seats": 4,
+    "at_large_seats": 1,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.kendallvillein.gov/departments/staff_directory/Council/",
+    "source_file": "raw/kendallville-in/council-staff.html",
+    "council_name": "Kendallville Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Lance L. Waters",
+      "source_url": "https://www.kendallvillein.gov/directory/Mayor",
+      "source_file": "raw/kendallville-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Katie Ritchie",
+      "source_url": "https://www.kendallvillein.gov/directory/ClerkTreasurer",
+      "source_file": "raw/kendallville-in/clerk.html",
+      "note": "Page header reads 'Katie Ritchie - Clerk Treasurer'. Search lead (not saved): June 2026 minutes use the full name Kathren R. Ritchie."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Christopher McCreery",
+      "source_url": "https://www.kendallvillein.gov/departments/staff_directory/Council/",
+      "source_file": "raw/kendallville-in/council-staff.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Shari Targgart",
+      "source_url": "https://www.kendallvillein.gov/departments/staff_directory/Council/",
+      "source_file": "raw/kendallville-in/council-staff.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Amy Ballard",
+      "source_url": "https://www.kendallvillein.gov/departments/staff_directory/Council/",
+      "source_file": "raw/kendallville-in/council-staff.html",
+      "note": "Council president at the 2026-06-16 meeting (raw/kendallville-in/minutes-june2026.pdf)."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Corey Boese",
+      "source_url": "https://www.kendallvillein.gov/departments/staff_directory/Council/",
+      "source_file": "raw/kendallville-in/council-staff.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tara Streb",
+      "source_url": "https://www.kendallvillein.gov/departments/staff_directory/Council/",
+      "source_file": "raw/kendallville-in/council-staff.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.kendallvillein.gov/media/Common%20Council/Council%20Districts.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "City PDF created 2024-01-15 (pdfinfo CreationDate); image-only map, no text layer, no adoption date or ordinance number. Legend names the current members (District 1 Christopher McCreery, 2 Shari Targgart, 3 Amy Ballard, 4 Corey Boese, At Large Tara Streb), consistent with the post-2024 term. Not proven to be the 2022 redraw.",
+    "notes": "No ArcGIS layer found (Noble County uses a Schneider Beacon viewer, a known dead end). No precinct list or ordinance found online. Page: https://www.kendallvillein.gov/DistrictMap (raw/kendallville-in/districtmap.html). I viewed the PDF image: 4 colored districts plus At Large."
+  },
+  "notes": "Council terms 1/1/2024-12/31/2027 per council page (raw/kendallville-in/council.html). Pages rendered names only in the staff directory view. Class and city court not stated on pages read."
+}

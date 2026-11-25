@@ -1,0 +1,89 @@
+{
+  "slug": "shelbyville-in",
+  "geoid": "1869318",
+  "name": "Shelbyville",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://shelbyville.in.gov/296/Common-Council",
+    "source_file": "raw/shelbyville-in/council.html",
+    "council_name": "Shelbyville Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Scott Furgeson",
+      "source_url": "https://shelbyville.in.gov/162/Mayors-Office",
+      "source_file": "raw/shelbyville-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Scott Asher",
+      "source_url": "https://shelbyville.in.gov/167/Clerk---Treasurer",
+      "source_file": "raw/shelbyville-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Kassy Wilson",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": "Council page title: Reader"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Betsy Means-Davis",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Mike Johnson",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": "President"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Linda Sanders",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": "Vice-President"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Thurman Adams",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Denny Harrold",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Chuck Reed",
+      "source_url": "https://shelbyville.in.gov/296/Common-Council",
+      "source_file": "raw/shelbyville-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://shelbyville.in.gov/DocumentCenter/View/334/1st-Ward-PDF",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "City council page: \"These maps were developed and adopted in 2022.\" Five per-ward PDFs created 2022-12-16.",
+    "notes": "One PDF per ward (1st..5th), saved raw/shelbyville-in/ward1..5.pdf (DocumentCenter ids 334, 335, 331, 332, 333). No text layer (pdftotext empty) so precinct lists not extracted; no ArcGIS layer found (county uses Think GIS viewer, not queried). Ordinance on amlegal is Cloudflare-blocked."
+  },
+  "notes": "Council page says members serve 4-year terms ending 2027-12-31; clerk-treasurer term also ends end of 2027. Page undated. Names match 2023 election winners reported in search results (not used as source)."
+}

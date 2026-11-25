@@ -1,0 +1,89 @@
+{
+  "slug": "lake-station-in",
+  "geoid": "1841535",
+  "name": "Lake Station",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://www.lakestation-in.gov/citycouncil",
+    "source_file": "raw/lake-station-in/citycouncil.html",
+    "council_name": "Lake Station City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Bill Carroll",
+      "source_url": "https://www.lakestation-in.gov/government",
+      "source_file": "raw/lake-station-in/government.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Brenda Samuels",
+      "source_url": "https://www.lakestation-in.gov/government",
+      "source_file": "raw/lake-station-in/government.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Carlos Luna",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Lisa Krebs",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Kelli Williams",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Erika Castillo",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": "The elected-officials page (raw/lake-station-in/government.html) spells it \"Ericka Castillo\"; the council page spells it \"Erika\""
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Rick Long",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": "Elected-officials page labels Rick Long \"Council At-Large\" but the council page says 5th District; the council page and the 5-district county map agree on 5 districts"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jason Pedroza",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Rebecca Sanders",
+      "source_url": "https://www.lakestation-in.gov/citycouncil",
+      "source_file": "raw/lake-station-in/citycouncil.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://lakecountyin.gov/departments/voters/maps-gis/CITY-COUNCIL-DISTRICT-MAPS/LAKE%20STATION%20CITY%20COUNCIL%20DISTRICTS%203X5.pdf",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "Lake County Board of Elections & Registration map, \"for reference only\"; PDF made in ArcMap 10.8.1, created 2024-03-01, modified 2025-03-25. Shows 5 districts labelled by precinct (LS 01-LS 15). No adoption date or ordinance found; vintage after 2020 but not tied to a named ordinance.",
+    "notes": "Saved as raw/lake-station-in/council-districts-3x5.pdf (image map, rendered and read: 1st=LS 01/02/03 east side, 2nd=LS 13/14NV and LS 06, 3rd=LS 05/07/04, 4th=LS 08/09, 5th=LS 11/12NV/15NV). Per-district 13x19 maps also exist at the same folder (district1 saved as raw/lake-station-in/district1-13x19.pdf). lakecounty.in.gov does not resolve from here; lakecountyin.gov serves the same files. Precinct labels were read by eye from the picture, not extracted as text. Search snippet quoted city code 3-2 saying 5 district + 2 at-large."
+  },
+  "notes": "City Judge Josh Matejczyk is listed on the elected-officials page (raw/lake-station-in/government.html) and the city has a City Court page (raw/lake-station-in/citycourt.html). Mayor/Clerk page and council page are undated."
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "seymour-in",
+  "geoid": "1868832",
+  "name": "Seymour",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://seymourin.org/index.php/residents/elected-officials",
+    "source_file": "raw/seymour-in/officials.html",
+    "council_name": "Seymour City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Matthew Nicholson",
+      "source_url": "https://seymourin.org/index.php/residents/elected-officials",
+      "source_file": "raw/seymour-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Darrin Boas",
+      "source_url": "https://seymourin.org/index.php/residents/elected-officials",
+      "source_file": "raw/seymour-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Mark Maxie",
+      "source_url": "https://seymourin.org/index.php/calendar/city-council/08-10-26",
+      "source_file": "raw/seymour-in/agenda.html",
+      "note": "Agenda gives term start 10/9/2025 (appointed/caucus mid-term; the agenda does not say how)."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Chad Hubbard",
+      "source_url": "https://seymourin.org/index.php/residents/elected-officials",
+      "source_file": "raw/seymour-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Seth Davidson",
+      "source_url": "https://seymourin.org/index.php/residents/elected-officials",
+      "source_file": "raw/seymour-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Brad Lucas",
+      "source_url": "https://seymourin.org/index.php/residents/elected-officials",
+      "source_file": "raw/seymour-in/officials.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Denny Frey",
+      "source_url": "https://seymourin.org/index.php/calendar/city-council/08-10-26",
+      "source_file": "raw/seymour-in/agenda.html",
+      "note": "Agenda: \"At Large County Caucus\", term 1/1/2025-12/31/2027."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Danielle Long",
+      "source_url": "https://seymourin.org/index.php/calendar/city-council/08-10-26",
+      "source_file": "raw/seymour-in/agenda.html",
+      "note": "Agenda: \"At Large County Caucus\", term 5/15/2025-12/31/2027."
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://seymourin.org/images/2023/pdf/Seymour-Council-Districts-2023-Large.pdf",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "City-hosted image PDF titled \"Seymour Council District Map\" (FPBH Inc.), file name says 2023, PDF created 2022-12-19. Post-2020 redraw; ordinance number not obtained.",
+    "notes": "No ArcGIS layer found. PDF is a flat picture of 5 coloured districts (no precinct labels). The city code (amlegal, Cloudflare-blocked) lists precincts per district. Saved at raw/seymour-in/districts-2023.pdf."
+  },
+  "notes": "District 2 seat is VACANT on the city council page and on the 2026-08-10 agenda (term 1/1/2024-12/31/2027). The city page spells Clerk-Treasurer as \"Darrin Boas\". A search result listed other names (Wheeler, Hackney, Terrell) from older/other pages; not used. Council page and agenda checked: current as of the saved copies (agenda dated 08-10-26)."
+}

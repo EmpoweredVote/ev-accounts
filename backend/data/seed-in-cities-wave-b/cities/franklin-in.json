@@ -1,0 +1,89 @@
+{
+  "slug": "franklin-in",
+  "geoid": "1825450",
+  "name": "Franklin",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.franklin.in.gov/council",
+    "source_file": "raw/franklin-in/council.html",
+    "council_name": "Franklin Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Steve Barnett",
+      "source_url": "https://www.franklin.in.gov/mayor",
+      "source_file": "raw/franklin-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Jan Jones",
+      "source_url": "https://www.franklin.in.gov/clerktreasurer",
+      "source_file": "raw/franklin-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Josh Prine",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Anne McGuinness",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Jennifer Price",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Kenneth Austin",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Irene Nalley",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Shawn Taylor",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Todd Shuck",
+      "source_url": "https://www.franklin.in.gov/council",
+      "source_file": "raw/franklin-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.franklin.in.gov/egov/apps/document/center.egov?view=item&id=3658",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "City PDF map titled 'City of Franklin, Indiana Council Districts 2022'; city redistricting page (raw/franklin-in/redistricting-item-8073.html) links Notice of Intent, Plan Summary, Proposed Ordinance and Proposed District Map uploaded ~2022-08 (file timestamps 1661459053-1661526571).",
+    "notes": "Saved raw/franklin-in/council-districts-map-3658.pdf, plus raw/franklin-in/proposed-redistricting-ordinance.pdf and redistricting-plan-summary.pdf (scanned images, no text layer; unread, precinct lists probably inside). Per-district PDFs doc-1635438745.pdf and doc-1635438773.pdf are Oct 2021 uploads (Districts 4 and 5), possibly superseded. Final adopted ordinance not seen: the saved ordinance is the PROPOSED one. No ArcGIS layer found."
+  },
+  "notes": "Council page does not say at-large seats numbering; the seven members are 5 district + 2 'At Large'. Mayor name comes from the mayor page header 'Steve Barnett , Mayor'."
+}

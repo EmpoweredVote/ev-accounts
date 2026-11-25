@@ -1,0 +1,89 @@
+{
+  "slug": "madison-in",
+  "geoid": "1845990",
+  "name": "Madison",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk Treasurer",
+    "city_court_judge": "no",
+    "source_url": "https://www.madison-in.gov/165/City-Council",
+    "source_file": "raw/madison-in/council165.html",
+    "council_name": "Madison City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Bob Courtney",
+      "source_url": "https://www.madison-in.gov/228/Mayors-Office",
+      "source_file": "raw/madison-in/mayor228.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Tabatha Eblen",
+      "source_url": "https://www.madison-in.gov/167/Clerk-Treasurer",
+      "source_file": "raw/madison-in/clerk167.html",
+      "note": "The 2023 candidates for Madison Clerk-Treasurer were Sue Patterson (D) and Katie Rampy (R) (raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf). The city page now names Tabatha Eblen; a mid-term change is likely but no page says when."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Patrick Thevenow",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Carla Krebs",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": "State 2023 candidate list: Carla Eades Krebs."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Lucy Dattilo",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Joshua Schafer",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Joel Storm",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jim Bartlett",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": "Council President per the page."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Joshua Wilber",
+      "source_url": "https://www.madison-in.gov/165/City-Council",
+      "source_file": "raw/madison-in/council165.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.madison-in.gov/DocumentCenter/View/482/Council-District-Map-PDF",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "UNKNOWN, probably the pre-2022 map. The PDF's metadata says created 2013-04-04 (Author 'twoodward', Title 'Think GIS'). The council page also embeds a PNG 'Council District Map' (raw/madison-in/council-district-map.png, 909x653, undated) that looks like the same five-colour layout. No precinct list, ordinance or GIS layer found.",
+    "notes": "Jefferson County search found no council-district ArcGIS layer. A 2013 PDF cannot be the post-2020 redraw if the city redrew; Madison's population is about 12,000 so redistricting was due in 2022, but no ordinance was found. Confirm with the city clerk."
+  },
+  "notes": "Council page text: seven members, five by district and two at large, terms Jan 1 2024 to Dec 31 2027. No Madison city court on the state directory (raw/peru-in/court-directory.pdf lists Jefferson County Circuit and Superior only). Earlier search summaries named Shirley Rynearson as clerk-treasurer (2024) and a 2021 county list; the city page now shows a different name."
+}

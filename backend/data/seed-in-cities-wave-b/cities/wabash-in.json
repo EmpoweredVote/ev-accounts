@@ -1,0 +1,89 @@
+{
+  "slug": "wabash-in",
+  "geoid": "1879370",
+  "name": "Wabash",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://www.cityofwabash.com/council/",
+    "source_file": "raw/wabash-in/council.html",
+    "council_name": "Wabash City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Scott Long",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Melanie Givens Penn",
+      "source_url": "https://cityofwabash.com:443/egov/apps/staff/directory.egov",
+      "source_file": "raw/wabash-in/staff.html",
+      "note": "Staff directory entry reads 'Givens Penn, Melanie' / Clerk-Treasurer; page is undated. Written first name first; the surname 'Givens Penn' is as the directory shows it."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Bill Barrows",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Eric Schoening",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Terry Brewer",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Charlie Coyne",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Mitzi Pilgrim",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "John Burnsworth",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Bryan Dillon",
+      "source_url": "https://www.cityofwabash.com/council/",
+      "source_file": "raw/wabash-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "none",
+    "url": null,
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "unknown",
+    "notes": "No council district map, ordinance, or ArcGIS layer found on the city site or by search (3 searches). Search leads about Wade Weaver as District 1 were an older snapshot; the saved page shows Bill Barrows."
+  },
+  "notes": "City site staff directory lists a 'City Court' department (raw/wabash-in/staff.html), so city court = yes; judge not named. Council page lists party letters (R) for some members; ignored. Page is undated; Wabash held elections in 2023, so terms run to 12/31/2027 presumably (not stated)."
+}

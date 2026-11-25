@@ -1,0 +1,89 @@
+{
+  "slug": "plymouth-in",
+  "geoid": "1860822",
+  "name": "Plymouth",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 4,
+    "at_large_seats": 3,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "no",
+    "source_url": "https://www.plymouthin.com/common-council",
+    "source_file": "raw/plymouth-in/common-council.html",
+    "council_name": "Plymouth Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Robert Listenberger",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": "Also shown as 'Mayor Robert Listenberger' on the council page; mayor page raw/plymouth-in/mayor.html names him only by photo caption."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Lynn Gorski",
+      "source_url": "https://www.plymouthin.com/clerk-treasurer",
+      "source_file": "raw/plymouth-in/clerk-treasurer.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Duane Culp",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Don Ecker Jr",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Shiloh Carothers Milner",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Randy Longanecker",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Linda Starr",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Kayla Krathwohl",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dave Morrow",
+      "source_url": "https://www.plymouthin.com/common-council",
+      "source_file": "raw/plymouth-in/common-council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.plymouthin.com/sites/default/files/uploads/forms/election-district-{1,2,3,4}.pdf",
+    "feature_count": 4,
+    "district_field": null,
+    "vintage": "Probably the current map: the four election-district PDFs were created Feb 2 2023 and the at-large PDF (election-district-1-4.pdf) Feb 17 2023, after the 2022 redistricting cycle. Not confirmed by an ordinance. The older precinct-1..4.pdf maps carry a Dec 2020 creation date.",
+    "notes": "Per-district map PDFs are linked from each council member's row on the council page (saved: raw/plymouth-in/election-district-1.pdf .. -4.pdf, election-district-1-4.pdf for at-large, precinct-1..4.pdf). Map pages carry the title 'City of Plymouth Election District Divisions'; district 1 PDF titled '1st District - Duane Culp'. These are raster/vector maps with street labels, no precinct list in the text. City code Chapter 31 has an appendix 'Map of Plymouth Councilmanic Districts' per a search result, but codepublishing.com is behind a JS challenge (not saved). No ArcGIS layer found."
+  },
+  "notes": "Council page: seven members, four by district, three at large. A search result says Marshall County merged Plymouth West precinct into West 1 in late 2021 (not a saved page). No city court on the state directory for Plymouth (Marshall County Superior Courts only)."
+}

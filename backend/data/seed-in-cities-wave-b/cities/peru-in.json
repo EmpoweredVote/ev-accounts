@@ -1,0 +1,89 @@
+{
+  "slug": "peru-in",
+  "geoid": "1859328",
+  "name": "Peru",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://cityofperu.in.gov/city-council-members/",
+    "source_file": "raw/peru-in/members.html",
+    "council_name": "Peru Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Don Sturch",
+      "source_url": "https://cityofperu.in.gov/departments/mayors-office/",
+      "source_file": "raw/peru-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Andrea Newnum",
+      "source_url": "https://cityofperu.in.gov/departments/finance/",
+      "source_file": "raw/peru-in/finance.html",
+      "note": "Indiana State Board of Accounts audit (raw/peru-in/sboa-81609A.pdf) lists Andrea Newnum as Clerk-Treasurer 03-18-24 onward, after Kurt Krauskopf 01-07-23 to 03-17-24 (Krauskopf was the 2023 Republican nominee) - so a mid-term replacement in March 2024."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Aricka Ulery",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Tim Fisher",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": "President Pro Tempore per the member page."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Peter Sahaidachny",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Drew Stevenson",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Bob Huber",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": "State candidate list spells it Robert (Bobby) Huber."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Brandi Murphy",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Steve Anderson",
+      "source_url": "https://cityofperu.in.gov/city-council-members/",
+      "source_file": "raw/peru-in/members.html",
+      "note": "The 2023 state candidate list (raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf) shows a Steve Anderson as the Democratic at-large candidate, alongside Republicans Stacy Mize and Brandi S Murphy."
+    }
+  ],
+  "council_map": {
+    "kind": "none",
+    "url": null,
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Cannot tell. No ordinance, PDF or GIS layer found.",
+    "notes": "Each council member's bio on the city page names the precincts of the district: D1 'Peru Precinct 02'; D2 'Peru Precincts 06, 07, and 09'; D3 'Peru Precinct 05'; D4 'Peru Precinct 03'; D5 'Washington Precinct 01' (raw/peru-in/members.html). Peru precincts 01, 04 and 08 are not named in any district and may be merged or renamed; a build from the state precinct layer needs the county precinct order to settle that. Searches found no ArcGIS layer (Miami County GIS is not public in results) and no redistricting ordinance; the city code is on amlegal (JS-gated, raw/peru-in/amlegal-ordlist.html is a challenge page)."
+  },
+  "notes": "City website moved to cityofperu.in.gov; the older cityofperu.org copy lists the same mayor's office. A search summary pointed at perune.gov (Peru, Nebraska) - ignore. City court: state court directory (raw/peru-in/court-directory.pdf) lists a Peru City Court with a judge, 35 South Broadway; 2023 candidate list has a Peru City Judge candidate. Judge out of scope."
+}

@@ -1,0 +1,86 @@
+[
+ {
+  "slug": "michigan-city-in",
+  "name": "Michigan City",
+  "geoid": "1848798",
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "council_name": "Michigan City Common Council",
+  "structure_source": "https://michigancityin.gov/government/boards-commissions/city-council/"
+ },
+ {
+  "slug": "greensburg-in",
+  "name": "Greensburg",
+  "geoid": "1829718",
+  "council_size": 7,
+  "district_seats": 4,
+  "at_large_seats": 3,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Greensburg City Council",
+  "structure_source": "https://www.cityofgreensburg.com/government/city-council/"
+ },
+ {
+  "slug": "jasper-in",
+  "name": "Jasper",
+  "geoid": "1837782",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Jasper Common Council",
+  "structure_source": "https://www.jasperindiana.gov/council",
+  "district_numbers": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ {
+  "slug": "new-haven-in",
+  "name": "New Haven",
+  "geoid": "1852992",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "New Haven City Council",
+  "structure_source": "https://www.newhaven.in.gov/574/Meet-the-Council"
+ },
+ {
+  "slug": "warsaw-in",
+  "name": "Warsaw",
+  "geoid": "1880306",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Warsaw Common Council",
+  "structure_source": "https://www.warsaw.in.gov/78/City-Elected-Officials"
+ },
+ {
+  "slug": "bluffton-in",
+  "name": "Bluffton",
+  "geoid": "1806220",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Bluffton Common Council",
+  "structure_source": "https://www.blufftonindiana.net/197/Common-Council"
+ },
+ {
+  "slug": "beech-grove-in",
+  "name": "Beech Grove",
+  "geoid": "1804204",
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "council_name": "Beech Grove Common Council",
+  "structure_source": "https://www.beechgrove.com/common-council"
+ }
+]

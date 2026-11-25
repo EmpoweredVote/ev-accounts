@@ -1,0 +1,89 @@
+{
+  "slug": "logansport-in",
+  "geoid": "1844658",
+  "name": "Logansport",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+    "source_file": "raw/logansport-in/council.html",
+    "council_name": "Logansport Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Jacob Pomasl",
+      "source_url": "https://www.in.gov/cities/logansport/city-services/staff-directory",
+      "source_file": "raw/logansport-in/staff.html",
+      "note": "Listed as Mayor by the city. Mayor Chris Martin (elected 2023) resigned effective 2026-03-30; his statement said Deputy Mayor Pomasl assumes the duties until a Cass County Republican caucus fills the seat (raw/logansport-in/martin-resign.html). Whether he was formally caucused/sworn in is not confirmed."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Mike Stajduhar",
+      "source_url": "https://www.in.gov/cities/logansport/city-services/staff-directory",
+      "source_file": "raw/logansport-in/staff.html",
+      "note": "Tyler Pearson won the 2023 race (results2023.pdf); the city directory now lists Stajduhar, so a mid-term change happened. How and when is not documented in a saved page."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Cameron Austin",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "BJ Cox",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Chris Howard",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Hayley Zinsmaster",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": "Matches 2023 results (raw/logansport-in/results2023.pdf). Staff directory email for Ward 4 reads peattieward4, a stale label."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Scott Peattie",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": "Council page prints \"Scott Peattie\"; 2023 results print \"Scott G Peattie\"."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dave Morris",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": "President"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Suzy Wamsley",
+      "source_url": "https://www.in.gov/cities/logansport/departments/city-council",
+      "source_file": "raw/logansport-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "ordinance",
+    "url": "https://www.in.gov/dA/4c324f3ff7/ORDINANCE-2022-39-ESTABLISHING-NEW-LOGANSPORT-MUNICIPAL-CITY-COUNCIL-WARDS.pdf?language_id=1",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "Ordinance 2022-39, \"Establishing New Logansport Municipal City Council Wards\" (post-2020 census, 2020 populations per ward 3673/3730/3678/3513/3632).",
+    "notes": "Scanned image PDF; read by OCR (tesseract) of page 1, saved raw/logansport-in/ord2022-39.pdf. Ward 1 = Clay City, Noble City, Logansport 1; Ward 2 = Logansport 2, Washington City; Ward 3 = Logansport 3, Logansport 4; Ward 4 = Logansport 5 minus census blocks 18001709515001001 and 18001709515001005; Ward 5 = Logansport 6, Logansport 7 plus those two blocks. These precinct names are the pre-2022 names? The ordinance says Cass County precincts approved Dec 2021 effective 2022-01-02. Pages 2-5 (maps) not OCR-read. No ArcGIS layer found."
+  },
+  "notes": "The 2023 county results (Wards 1-5, At-Large vote for two) match the council page for all 7 seats. Mayor and Clerk-Treasurer changed mid-term (see holder notes)."
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "bedford-in",
+  "geoid": "1804114",
+  "name": "Bedford",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://bedford.in.gov/city-council/",
+    "source_file": "raw/bedford-in/city-council.html",
+    "council_name": "Bedford City Council (Common Council)"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Sam Craig",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": "The mayor page (raw/bedford-in/mayor2.html) spells it \"Samuel J. Craig\""
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Billie Tumey",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Heath Hawkins",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Craig Turpen",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Ryan Griffith",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": "Listed as President"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Larry Hardman",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Brad Bough",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Judy Carlisle",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Kathy Blackburn",
+      "source_url": "https://bedford.in.gov/city-council/",
+      "source_file": "raw/bedford-in/city-council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "none",
+    "url": null,
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Not obtained. Council minutes of 2022-11-21 (search result only; city PDF now 404) say Ordinance 20-2022 \"Re-establishing Councilmanic Districts\" passed on third reading, so a 2022 map exists. The amlegal city code page (https://codelibrary.amlegal.com/codes/bedfordin/latest/bedford_in/0-0-0-30149) lists Shawswick Township precincts per district from a 1958 ordinance and may be superseded.",
+    "notes": "amlegal is behind a Cloudflare challenge (403, tried full browser headers); old minutes URLs on bedford.in.gov/bedford.in.us return 404 or do not resolve; Wayback has no snapshot. No ArcGIS layer found for city or Lawrence County. Next step: ask the clerk for Ordinance 20-2022 text, or read it in a browser."
+  },
+  "notes": "Council page is undated (page layout: name, then seat label; \"Council at Large\" label follows each at-large name, DISTRICT n follows each district name). Layout confirmed against the HTML (h6 sequence). Judge status not found."
+}

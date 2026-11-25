@@ -1,0 +1,89 @@
+{
+  "slug": "martinsville-in",
+  "geoid": "1847448",
+  "name": "Martinsville",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+    "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+    "council_name": "Martinsville Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Kenneth W. Costin",
+      "source_url": "https://www.in.gov/sboa/WebReports/83636A.pdf",
+      "source_file": "raw/martinsville-in/sboa-83636A.pdf",
+      "note": "State Board of Accounts audit lists him as Mayor 01-01-23 to 12-31-24. Elected Nov 2023 (sole candidate, 2023 candidate list). Not confirmed from a 2026 page."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Ben Merida",
+      "source_url": "https://www.in.gov/sboa/WebReports/83636A.pdf",
+      "source_file": "raw/martinsville-in/sboa-83636A.pdf",
+      "note": "Audit lists Ben Merida as Clerk-Treasurer from 01-01-24 (Rebecca J. Tumey in 2023). Not confirmed from a 2026 page."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Phil R. Deckard, Sr.",
+      "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+      "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+      "note": "Source is the Indiana Secretary of State 2023 municipal candidate list (post-primary, 9/1/23): the only candidate for this seat, a Republican, on the general ballot; WFYI primary results agree (raw/martinsville-in/wfyi-2023.html). Not confirmed as the 2026 holder: no 2024-2026 page found."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Benjamin Mahan",
+      "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+      "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+      "note": "Source is the Indiana Secretary of State 2023 municipal candidate list (post-primary, 9/1/23): the only candidate for this seat, a Republican, on the general ballot; WFYI primary results agree (raw/martinsville-in/wfyi-2023.html). Not confirmed as the 2026 holder: no 2024-2026 page found."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Joshua Ferran",
+      "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+      "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+      "note": "Source is the Indiana Secretary of State 2023 municipal candidate list (post-primary, 9/1/23): the only candidate for this seat, a Republican, on the general ballot; WFYI primary results agree (raw/martinsville-in/wfyi-2023.html). Not confirmed as the 2026 holder: no 2024-2026 page found."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Suzie Lipps",
+      "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+      "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+      "note": "Source is the Indiana Secretary of State 2023 municipal candidate list (post-primary, 9/1/23): the only candidate for this seat, a Republican, on the general ballot; WFYI primary results agree (raw/martinsville-in/wfyi-2023.html). Not confirmed as the 2026 holder: no 2024-2026 page found."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Phil R. Deckard II",
+      "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+      "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+      "note": "Source is the Indiana Secretary of State 2023 municipal candidate list (post-primary, 9/1/23): the only candidate for this seat, a Republican, on the general ballot; WFYI primary results agree (raw/martinsville-in/wfyi-2023.html). Not confirmed as the 2026 holder: no 2024-2026 page found. The audit also names Phil R. Deckard II as President Pro Tempore of the Common Council 2023-2024."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "John W. Badger - XIV",
+      "source_url": "https://wfyi.org/news/articles/morgan-county-2023-election-results",
+      "source_file": "raw/martinsville-in/wfyi-2023.html",
+      "note": "WFYI unofficial May 2023 Republican primary results (Badger 274 votes, Miller 212, at-large); the state 2023 candidate list shows both as the only at-large nominees. Not confirmed as the 2026 holder. State list spells it 'John W. Badger- XIV'."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Ann Miller",
+      "source_url": "https://in.gov/sos/elections/files/2023-Municipal-Election-Candidate-List-9.1.23.pdf",
+      "source_file": "raw/martinsville-in/sos-2023-municipal-candidates-9-1-23.pdf",
+      "note": "Source is the Indiana Secretary of State 2023 municipal candidate list (post-primary, 9/1/23): the only candidate for this seat, a Republican, on the general ballot; WFYI primary results agree (raw/martinsville-in/wfyi-2023.html). Not confirmed as the 2026 holder: no 2024-2026 page found."
+    }
+  ],
+  "council_map": {
+    "kind": "none",
+    "url": null,
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Unknown. A search result says the city code (amlegal, section on councilmanic districts) cites Ord. 2002-1496 passed 10-7-2002; that page is behind a Cloudflare challenge and was not saved. No current map found.",
+    "notes": "The city website www.martinsville.in.gov, the amlegal code and ecode360 all answered scripted requests with a Cloudflare block (403); I did not try to get around it. Morgan County pages that could list the map returned 404."
+  },
+  "notes": "The city's own site could not be read (Cloudflare block), so every name comes from state records: the SBOA audit (mayor, clerk) and the Secretary of State 2023 candidate list (council, five district seats and two at-large candidates). Council size 7 (5 district + 2 at large) is inferred from five district nominees and two at-large nominees, plus a search-result summary from a chamber page that said 'five members elected by district and two at-large' (page not saved; its URL 404s now). Treat all council rows as NEEDING a 2026 check (resignations and caucus replacements would not appear). City court: Martinsville City Court, judge E. Grace Terrell per the state directory (raw/peru-in/court-directory.pdf); 2023 nominee for city judge was Mark Peden - the two differ, so the judge is unclear; out of scope."
+}

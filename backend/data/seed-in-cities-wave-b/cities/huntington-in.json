@@ -1,0 +1,89 @@
+{
+  "slug": "huntington-in",
+  "geoid": "1835302",
+  "name": "Huntington",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://huntington.in.us/city/council",
+    "source_file": "raw/huntington-in/council.html",
+    "council_name": "Huntington City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Richard Strick",
+      "source_url": "https://www.huntington.in.us/city/department/?fDD=4-0",
+      "source_file": "raw/huntington-in/mayor.html",
+      "note": "Second term, re-elected 2023"
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Christi McElhaney",
+      "source_url": "https://www.huntington.in.us/city/department/index.php?structureid=324",
+      "source_file": "raw/huntington-in/dept324.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Charles Chapman",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Elected 2023, term ends 2027"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Dewayne Goings",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Appointed 2026 (month not stated), term ends 2027"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Todd Johnson",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Elected 2023"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Dave Funk",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Elected 2023"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Dwight Brautigam",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Appointed 2024 (month not stated), term ends 2027"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Andrew Rensberger",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Elected 2023"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "P.J. Felton",
+      "source_url": "https://huntington.in.us/city/council",
+      "source_file": "raw/huntington-in/council.html",
+      "note": "Elected 2023"
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.huntington.in.us/egov/images/1657724855_97206_o.png",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "2022. Image is titled 'Council District Map, Adopted July 12, 2022' on the city council page (alt text and in-image text). Current map.",
+    "notes": "Kind is a PNG image (1650x1275), not a PDF; saved at raw/huntington-in/council_district_map_2022.png. It shows districts over a basemap, no precinct labels. No ArcGIS layer found (one search). City code (amlegal) lists districts by township precinct, but the page is script-rendered and its date is unknown, so it may be the pre-2022 version; not saved. Precinct-level list still needed: the 2023 general election precinct summary pages at huntington.in.us/election_results/2023General/ list precincts but were not checked for ward labels."
+  },
+  "notes": "City court: none seen on the city site; left unknown. Council page and mayor/clerk pages are the city's own. Meetings on 2026-11-24 are at Huntington North High School (temporary city offices at 217 W State St)."
+}
