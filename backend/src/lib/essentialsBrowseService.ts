@@ -16,14 +16,34 @@ import {
   UNRESOLVABLE_PAIR_MTFCC_SQL_LIST,
   type GeoPair,
 } from './geoIdGuard.js';
+import {
+  fingerprintOf,
+  seedKey,
+  readGeofenceVersion,
+  readStoredPairs,
+  writeStoredPairs,
+  filterSeedsPresent,
+  OVERLAP_STORE_ENABLED,
+  type Queryable,
+} from './geoOverlapStore.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
 // Overlap resolution is pure geometry — it only changes when geofence boundaries
 // are (re)loaded, which happens during seeding, not at request time. Caching the
 // result keyed by the seed set makes repeat browses of the same area near-instant.
-// TTL is kept modest (1h) so a freshly-seeded city surfaces its new overlaps
-// within the hour without a manual cache bust.
+//
+// 🔴 SINCE CC_0511 THIS TTL IS A MEMORY BOUND AND NOTHING MORE. It used to be
+// the correctness mechanism: one hour was how long a stale overlap could be
+// served after a seed, so the number was a guess at how late an answer was
+// allowed to be. Correctness has moved into the KEY — `overlap:v3:` carries the
+// geofence version and the resolver's fingerprint, so a changed boundary or a
+// changed constant makes every older entry unreachable the instant it happens,
+// at any TTL. The value stays at 3600 only to stop Redis filling with seed sets
+// nobody browses twice.
+//
+// ⚠ Do not re-derive the old reasoning from the old number. Shortening this no
+// longer makes anything fresher, and lengthening it no longer risks staleness.
 const OVERLAP_CACHE_TTL_SECONDS = 3600;
 
 // Minimum interior-overlap fraction for a Branch-3 district (county / school /
@@ -138,50 +158,17 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
 // (G52xx) are never seeds — they are RESULTS of resolution, not browse areas.
 const AREA_SEED_MTFCCS = ['G4020', 'G4040', 'G4110', 'G4120', 'X0001'];
 
-/**
- * Resolve every geofence boundary that overlaps a set of seed area geofences,
- * using the bidirectional PostGIS logic that mirrors the address path's
- * ST_Covers stack — but for an AREA (all overlapping districts) rather than a
- * single point:
- *   1. Sub-districts whose representative point falls WITHIN a seed
- *   2. Larger non-city districts that CONTAIN a seed's center point
- *   3. County / school / legislative districts whose interiors GENUINELY overlap
- *      a seed (ST_Intersects but NOT a zero-area boundary touch)
- *
- * Branch 3 is the key to completeness: county (G4020) and school (G54xx) used to
- * be captured by center-containment only (branches 1–2), so an area straddling
- * two counties or two school districts missed the ones not centered on it. They
- * are now matched by real interior overlap, exactly like legislative districts.
- *
- * Returns the matched (geo_id, mtfcc) pairs (seeds excluded — callers prepend
- * their own seeds). Each pair carries the MTFCC of the geofence it came from so
- * downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD and avoid the
- * 5-digit GEOID collision (e.g. State House 35 vs Salt Lake County, both 49035).
- */
-export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
-  if (seeds.length === 0) return [];
-  const seedGeoIds = seeds.map((s) => s.geo_id);
-  const seedMtfccs = seeds.map((s) => s.mtfcc);
-
-  // Cache keyed by the canonical (order-independent) seed set.
-  const cacheKey = `overlap:v2:${seeds
-    .map((s) => `${s.geo_id}::${s.mtfcc}`)
-    .sort()
-    .join(',')}`;
-  const cached = await cache.get<GeoPair[]>(cacheKey);
-  if (cached !== null) return cached;
-
-  // Split what used to be a single OR of three spatial predicates into a UNION
-  // ALL of three branches, each with an explicit bounding-box pre-filter
-  // (`&&`). Postgres cannot drive a GIST index through an OR of mixed-direction
-  // spatial predicates, so the old query did a full sequential scan of every
-  // geofence polygon (~4s for a single area). With one predicate structure per
-  // branch and a `&&` pre-filter, the planner uses the GIST index on
-  // geofence_boundaries.geometry to reduce each branch to an index-driven
-  // nested-loop join. Result semantics are identical — `&&` is a necessary
-  // condition for every branch's exact predicate, and the outer DISTINCT
-  // reproduces the original SELECT DISTINCT over the OR.
-  const intersectionQuery = `
+// Split what used to be a single OR of three spatial predicates into a UNION
+// ALL of three branches, each with an explicit bounding-box pre-filter
+// (`&&`). Postgres cannot drive a GIST index through an OR of mixed-direction
+// spatial predicates, so the old query did a full sequential scan of every
+// geofence polygon (~4s for a single area). With one predicate structure per
+// branch and a `&&` pre-filter, the planner uses the GIST index on
+// geofence_boundaries.geometry to reduce each branch to an index-driven
+// nested-loop join. Result semantics are identical — `&&` is a necessary
+// condition for every branch's exact predicate, and the outer DISTINCT
+// reproduces the original SELECT DISTINCT over the OR.
+export const OVERLAP_QUERY_SQL = `
     SELECT DISTINCT t.geo_id, t.mtfcc
     FROM (
       -- Branch 1: sub-districts whose representative point falls WITHIN the area
@@ -247,10 +234,184 @@ export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoP
     ) t
   `;
 
-  const { rows } = await pool.query(intersectionQuery, [seedGeoIds, seedMtfccs]);
-  const result = rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+/**
+ * The identity of this resolver's answer, as stored rows and cache keys see it.
+ *
+ * 🔴 It is a hash of OVERLAP_QUERY_SQL itself, so every TypeScript constant that
+ * changes the answer is covered the moment it is interpolated into that string:
+ * UNRESOLVABLE_PAIR_MTFCC_SQL_LIST (branches 1 and 2), branch 2's
+ * ('G4110','G4120') exclusion, branch 3's seven-MTFCC list and
+ * MIN_OVERLAP_FRACTION. Change any of them and every stored row and cache entry
+ * computed under the old rule becomes unreadable rather than wrong.
+ */
+export const OVERLAP_QUERY_FINGERPRINT = fingerprintOf(OVERLAP_QUERY_SQL);
+
+/**
+ * The raw overlap computation: run OVERLAP_QUERY_SQL for these seeds and return
+ * the pairs. No cache, no store, no version — just the geometry.
+ *
+ * 🔴 EXPORTED SO THERE IS EXACTLY ONE COMPUTE IN THE CODEBASE. The warming job
+ * needs to compute a seed WITHOUT the read path's own store write (it batches
+ * its writes, and its dry run must not write at all). If it re-implemented this
+ * query instead, the store and the live answer would be two mechanisms kept in
+ * sync by hand — the thing the design exists to avoid.
+ */
+export async function computeOverlapPairs(
+  seeds: GeoPair[],
+  db: Queryable = pool
+): Promise<GeoPair[]> {
+  if (seeds.length === 0) return [];
+  const { rows } = await db.query(OVERLAP_QUERY_SQL, [
+    seeds.map((s) => s.geo_id),
+    seeds.map((s) => s.mtfcc),
+  ]);
+  return rows.map((r) => ({ geo_id: r.geo_id as string, mtfcc: r.mtfcc as string }));
+}
+
+/**
+ * Resolve every geofence boundary that overlaps a set of seed area geofences,
+ * using the bidirectional PostGIS logic that mirrors the address path's
+ * ST_Covers stack — but for an AREA (all overlapping districts) rather than a
+ * single point:
+ *   1. Sub-districts whose representative point falls WITHIN a seed
+ *   2. Larger non-city districts that CONTAIN a seed's center point
+ *   3. County / school / legislative districts whose interiors GENUINELY overlap
+ *      a seed (ST_Intersects but NOT a zero-area boundary touch)
+ *
+ * Branch 3 is the key to completeness: county (G4020) and school (G54xx) used to
+ * be captured by center-containment only (branches 1–2), so an area straddling
+ * two counties or two school districts missed the ones not centered on it. They
+ * are now matched by real interior overlap, exactly like legislative districts.
+ *
+ * Returns the matched (geo_id, mtfcc) pairs (seeds excluded — callers prepend
+ * their own seeds). Each pair carries the MTFCC of the geofence it came from so
+ * downstream district matching can apply MTFCC_DISTRICT_TYPE_GUARD and avoid the
+ * 5-digit GEOID collision (e.g. State House 35 vs Salt Lake County, both 49035).
+ */
+export async function resolveOverlappingGeoPairs(seeds: GeoPair[]): Promise<GeoPair[]> {
+  if (seeds.length === 0) return [];
+
+  // 1. THE VERSION IS READ FIRST, AND THE ORDER IS LOAD-BEARING. Everything
+  //    below is tagged with this value: the Redis key, the store lookup, and the
+  //    row that gets written. Reading it later would let an ingest land between
+  //    the compute and the write.
+  const version = await readGeofenceVersion();
+
+  // 2. Redis, in front of everything, keyed on BOTH halves of the answer's
+  //    identity. The v2 keys are deliberately abandoned: when the version or the
+  //    fingerprint moves the answer genuinely is different, which is the
+  //    opposite of step 1's case, where the result was provably identical and
+  //    bumping would have thrown warm entries away for nothing.
+  const cacheKey = `overlap:v3:${version ?? 'none'}:${OVERLAP_QUERY_FINGERPRINT}:${seeds
+    .map(seedKey)
+    .sort()
+    .join(',')}`;
+  // 🔴 cache.get is typed <T> and validates NOTHING. A v2-era entry, a truncated
+  //    value or anything else of the wrong shape must read as a miss rather than
+  //    reach a caller as pairs. An empty ARRAY is a real answer and is honoured.
+  const cached = await cache.get<unknown>(cacheKey);
+  if (isGeoPairArray(cached)) return cached;
+
+  // 3. No version, or the store switched off: compute and return, exactly as
+  //    this function did before CC_0511. A deploy that lands ahead of the
+  //    migration degrades in latency, never in correctness, and never 500s.
+  if (version === null || !OVERLAP_STORE_ENABLED) {
+    const computed = await computeOverlapPairs(seeds);
+    await cache.set(cacheKey, computed, OVERLAP_CACHE_TTL_SECONDS);
+    return computed;
+  }
+
+  // 4. What is already stored at this exact version and this exact fingerprint.
+  //
+  // 🔴 THE STORE IS AN OPTIMISATION, AND NOTHING IN IT MAY FAIL A REQUEST. The
+  //    version read degrades by design; these three must too, or a half-applied
+  //    migration — geofence_version present, geo_overlap_pairs absent — 500s
+  //    /by-area, which is the precise case the design says must not.
+  const stored = await readStoredPairs(seeds, version, OVERLAP_QUERY_FINGERPRINT).catch((err) => {
+    warnStoreDegraded('read', err);
+    return new Map<string, GeoPair[]>();
+  });
+
+  // 5. ONE COMPUTE PER MISSING SEED, so each stored row holds that seed's OWN
+  //    pairs. The design's measurement is that single-seed results compose by
+  //    union — it is NOT that a multi-seed result can be split apart afterwards.
+  const missing = seeds.filter((s) => !stored.has(seedKey(s)));
+  const computedBySeed = new Map<string, GeoPair[]>();
+  for (const s of missing) {
+    computedBySeed.set(seedKey(s), await computeOverlapPairs([s]));
+  }
+
+  // 6. Store only seeds that really exist, and store them at the version read in
+  //    STEP 1 — never a freshly read one. If an ingest landed mid-compute the
+  //    version has already moved, so this row is born superseded, which is
+  //    unreadable: the safe direction. Writing the CURRENT version would publish
+  //    an answer computed against half-ingested geometry at a version readers
+  //    trust, which is the anti-goal of the whole design.
+  //
+  // ⚠ The write is the worst place of all to throw: the caller is ALREADY
+  //   holding the right answer by the time it runs, and a 500 here would throw
+  //   that answer away to report a failure of the cache behind it.
+  if (missing.length > 0) {
+    try {
+      const present = await filterSeedsPresent(missing);
+      const entries = present.map((s) => ({ seed: s, pairs: computedBySeed.get(seedKey(s)) ?? [] }));
+      if (entries.length > 0) {
+        await writeStoredPairs(entries, version, OVERLAP_QUERY_FINGERPRINT);
+      }
+    } catch (err) {
+      warnStoreDegraded('write', err);
+    }
+  }
+
+  // 7. The deduplicated union of what was stored and what was just computed.
+  const union = new Map<string, GeoPair>();
+  for (const pairs of stored.values()) for (const p of pairs) union.set(seedKey(p), p);
+  for (const pairs of computedBySeed.values()) for (const p of pairs) union.set(seedKey(p), p);
+  const result = [...union.values()];
+
   await cache.set(cacheKey, result, OVERLAP_CACHE_TTL_SECONDS);
   return result;
+}
+
+/**
+ * Say so once per process when the store stops working, and then be quiet.
+ *
+ * The degrade itself is correct — the answer is still computed and still right.
+ * What is not correct is doing it silently: a store that has quietly stopped
+ * working looks exactly like a store that was never helping, and the only
+ * symptom is that every browse is slow again.
+ */
+const warnedStore = { read: false, write: false };
+function warnStoreDegraded(which: 'read' | 'write', err: unknown): void {
+  if (warnedStore[which]) return;
+  warnedStore[which] = true;
+  console.warn(
+    `[overlap] the durable store's ${which} failed — answering from a fresh compute instead. ` +
+      `Correctness is unaffected; latency is not. This warns once per process:`,
+    err instanceof Error ? err.message : err
+  );
+}
+
+/**
+ * Is this value really an array of (geo_id, mtfcc) pairs?
+ *
+ * The cache is an untyped store behind a typed accessor: `cache.get<GeoPair[]>`
+ * asserts a shape it never checks. An entry written under an older answer shape,
+ * or a value truncated in transit, would otherwise be handed to callers as pairs
+ * and reach the browse page as districts. An EMPTY array passes, because "this
+ * area overlaps nothing" is a real answer.
+ */
+function isGeoPairArray(v: unknown): v is GeoPair[] {
+  return (
+    Array.isArray(v) &&
+    v.every(
+      (x) =>
+        typeof x === 'object' &&
+        x !== null &&
+        typeof (x as GeoPair).geo_id === 'string' &&
+        typeof (x as GeoPair).mtfcc === 'string'
+    )
+  );
 }
 
 /**
