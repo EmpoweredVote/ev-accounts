@@ -257,10 +257,19 @@ sync. The job ships here; its schedule is a PR to `EmpoweredVote/ev-infra`.
 ### 5. The migration
 
 One file, through the owner connection. It must, in the same file: create both tables in
-`essentials`, create the trigger, **`ENABLE ROW LEVEL SECURITY` on both**, and add policies —
-SELECT for `anon` and `authenticated` (this is derived public geography and the browse endpoints
-are unauthenticated), and read/write for `ev_api`. 🔴 Without the RLS lines the tables are
-readable by `anon` the moment they exist and **nothing errors**.
+`essentials`, create the trigger, and **`ENABLE ROW LEVEL SECURITY` on both**. 🔴 Without the RLS
+lines the tables are readable by `anon` the moment they exist and **nothing errors**.
+
+**No policies — ruled by the operator, 2026-11-24.** This section first asked for SELECT policies
+for `anon` and `authenticated`, on the grounds that the store holds derived public geography and
+the browse endpoints that produce it are unauthenticated. `CC_0511` was applied with those two
+policies and they were dropped the same day. The house precedent (`CC_0468`, and every
+`inform.compass_*` table) is **RLS on with no policies**, and it is the right posture here for a
+reason the first draft under-weighted: every reader of these tables is backend code on the `ev_api`
+pool, and `ev_api` carries `rolbypassrls = true`. RLS therefore never governs a read this product
+makes, and a policy admitting `anon` would only widen what PostgREST could serve to a caller
+nobody has. Dropping them changed no application code and no answer. The dropped definitions are
+recorded in `CC_0511`'s header, and its post-verify now **fails on any policy at all**.
 
 ## How it will be verified
 

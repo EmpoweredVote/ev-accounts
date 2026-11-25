@@ -134,8 +134,22 @@ BEGIN;
 --
 -- APPLIED to prod (kxsdzaojfaibhuzmclfq) 2026-11-24 through the owner connection,
 -- after the identical statements were run inside BEGIN ... ROLLBACK and seen to
--- create 4 triggers, RLS on 2 tables, version seeded at 1, ev_api arwd true and
--- anon SELECT true — then seen to leave nothing behind.
+-- create 4 triggers, RLS on 2 tables, version seeded at 1 and ev_api arwd true —
+-- then seen to leave nothing behind.
+--
+-- 🔴 WHAT THAT FIRST APPLY CREATED AND THIS FILE NO LONGER DOES. It also created
+-- two SELECT policies, which the operator then ruled against in favour of the
+-- house precedent (RLS on, no policies). Recorded here because a dropped policy
+-- exists nowhere afterwards, and this file is the only record either way:
+--
+--   CREATE POLICY geofence_version_read  ON essentials.geofence_version
+--     FOR SELECT TO anon, authenticated USING (true);
+--   CREATE POLICY geo_overlap_pairs_read ON essentials.geo_overlap_pairs
+--     FOR SELECT TO anon, authenticated USING (true);
+--
+-- Both were dropped from prod on 2026-11-24 through the owner connection, by the
+-- two DROP statements in section 3 below. No application code changed: every
+-- reader of these tables is backend code on the ev_api pool, which bypasses RLS.
 -- =============================================================================
 
 
@@ -184,7 +198,7 @@ CREATE TABLE IF NOT EXISTS essentials.geo_overlap_pairs (
 
 
 -- -----------------------------------------------------------------------------
--- 3. RLS on both tables. No GRANTs.
+-- 3. RLS on both tables. No policies. No GRANTs.
 -- -----------------------------------------------------------------------------
 -- 🔴 ON `essentials`, RLS IS NOT BELT-AND-BRACES — IT IS THE ONLY BELT. ALTER
 -- DEFAULT PRIVILEGES in this schema already grants `anon` and `authenticated`
@@ -199,31 +213,29 @@ CREATE TABLE IF NOT EXISTS essentials.geo_overlap_pairs (
 -- would know why. The verification block at the bottom checks the default fired
 -- instead.
 --
--- ⚠ ONE DEVIATION IS AVAILABLE AND IS NOT TAKEN HERE. The house precedent
---   (CC_0468, and every inform.compass_* table) is RLS ON WITH NO POLICIES,
---   because the backend reads through its service pool as `ev_api`, which
---   carries rolbypassrls = true — so an anon SELECT policy admits a read this
---   product never performs. The design chose instead to admit anon and
---   authenticated explicitly, on the grounds that this is derived PUBLIC
---   GEOGRAPHY and the browse endpoints that produce it are unauthenticated.
---   This file does what the design says. If a reviewer prefers the house
---   precedent it is two DROP POLICY statements, and no application code changes.
+-- 🔴 NO POLICIES, WHICH IS THE HOUSE PRECEDENT — RLS ON, DEFAULT DENY. CC_0468
+--   and every inform.compass_* table do the same. The backend reads these two
+--   tables through its service pool as `ev_api`, which carries
+--   rolbypassrls = true, so RLS never governs the only reads this product makes;
+--   an anon SELECT policy would admit a read nothing performs. Measured
+--   2026-11-24: the only code that names either table is backend/src
+--   (essentialsBrowseService.ts, geoOverlapStore.ts, geoOverlapWarm.ts) and two
+--   backend scripts, all on that pool. No front end, and no PostgREST call.
+--
+-- 🔴 THE TWO DROP STATEMENTS BELOW ARE LOAD-BEARING, NOT DECORATION. The first
+--   apply of this file created the two policies the design asked for; the
+--   operator ruled for the house precedent on 2026-11-24, and these are what
+--   remove them from a database that already has them. They ran against prod the
+--   same day. The dropped definitions are in this file's header, because a
+--   dropped policy exists nowhere else. Re-adding one is a decision about
+--   PostgREST exposure, not a formality — check (f2) below will fail until the
+--   decision is written down here.
 
 ALTER TABLE essentials.geofence_version   ENABLE ROW LEVEL SECURITY;
 ALTER TABLE essentials.geo_overlap_pairs  ENABLE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS geofence_version_read  ON essentials.geofence_version;
 DROP POLICY IF EXISTS geo_overlap_pairs_read ON essentials.geo_overlap_pairs;
-
-CREATE POLICY geofence_version_read
-  ON essentials.geofence_version
-  FOR SELECT TO anon, authenticated
-  USING (true);
-
-CREATE POLICY geo_overlap_pairs_read
-  ON essentials.geo_overlap_pairs
-  FOR SELECT TO anon, authenticated
-  USING (true);
 
 
 -- -----------------------------------------------------------------------------
@@ -314,6 +326,7 @@ DECLARE
   v_triggers int;
   v_rows     int;
   v_rls      int;
+  v_pol      int;
 BEGIN
   -- (a) Exactly one version row, and it is readable.
   SELECT count(*) INTO v_rows FROM essentials.geofence_version;
@@ -383,6 +396,22 @@ BEGIN
     RAISE EXCEPTION
       'CC_0511: row-level security is enabled on only % of the 2 new tables — the other is '
       'anon-readable with no policy governing it', v_rls;
+  END IF;
+
+  -- (f2) And NO policies on either table — default deny, the house precedent.
+  --      RLS with a permissive policy and RLS with none are opposite postures and
+  --      look identical in relrowsecurity, so (f) alone cannot see this. The
+  --      message names every policy found, because "1 policy" does not say which.
+  SELECT count(*), string_agg(p.schemaname || '.' || p.tablename || '.' || p.policyname, ', ')
+    INTO v_pol, v_bad
+    FROM pg_policies p
+   WHERE p.schemaname = 'essentials'
+     AND p.tablename IN ('geofence_version', 'geo_overlap_pairs');
+  IF v_pol <> 0 THEN
+    RAISE EXCEPTION
+      'CC_0511: expected 0 policies on the 2 new tables and found % (%). RLS here is default '
+      'deny: ev_api bypasses RLS and is the only reader, so a policy admits a read this product '
+      'never makes. If one is wanted, record the decision in this file''s header first', v_pol, v_bad;
   END IF;
 
   -- (g) ev_api reached both tables through ALTER DEFAULT PRIVILEGES, with no GRANT
