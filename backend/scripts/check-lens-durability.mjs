@@ -42,7 +42,8 @@
  *   1. MULTI-DELETE. One owner removed MORE THAN ONE DISTINCT lens inside the
  *      window. One person deleting one lens is somebody tidying up. One person
  *      losing two is the 2026-11-22 shape, and that is the shape the whole
- *      incident had.
+ *      incident had. THE CI ACCOUNT IS EXCLUDED FROM THIS ONE ONLY — see
+ *      CI_OWNER_ID for why, and for the hole it opens.
  *
  *   2. ORPHAN HARD DELETE. A row left inform.compass_user_lenses outright while
  *      its owner's account still exists. The ONLY sanctioned hard delete is the
@@ -125,6 +126,43 @@ const ACK = argv.includes('--ack');
 const ALERT_WINDOW_DAYS = 7;
 
 /**
+ * The CI account, whose multi-lens deletions are the test suite doing its job.
+ *
+ * 🔴 WHY AN EXCLUSION EXISTS AT ALL, GIVEN THIS FILE REFUSES BASELINES.
+ * CompassV2's smoke suite runs `clearServerLenses` against PRODUCTION on every
+ * PR run, deleting each lens it created by name. That is several distinct lenses
+ * removed by one owner inside the window — condition 1's exact shape, produced on
+ * purpose, several times a week. MEASURED 2026-11-25: of all removal events in
+ * the window, 9 rows across 4 distinct keys, EVERY ONE of them this account's,
+ * and no other owner had removed anything at all.
+ *
+ * A baseline is a record of what we expected reality to look like, and this file
+ * rejects one because the thing being watched for is reality diverging from it.
+ * This is a different object: the identity of a robot that generates sanctioned
+ * deletions as its purpose. It does not say "we expect N removals"; it says
+ * "these removals were commanded by our own test suite".
+ *
+ * ⚠ THE HOLE THIS OPENS, STATED PLAINLY. Destruction confined to this account is
+ * now invisible to condition 1. That is accepted: the account holds no real
+ * lenses, it is already documented as the throwaway that gets destroyed on
+ * purpose, and the alternative — acking its rows by hand every few days — is how
+ * a tripwire becomes something nobody reads. Condition 2 still covers it (below).
+ *
+ * ⚠ IT FAILS OPEN. If the account is recreated the id changes, nothing matches,
+ * and the nightly goes RED with this account named — noisy, not silent. The
+ * correct repair is to update this constant, which is also the only way a reader
+ * finds out the account moved.
+ *
+ * ⚠ WHY THE ID AND NOT THE EMAIL OR THE DISPLAY NAME. The nightly's role cannot
+ * read the `auth` schema at all — measured: `permission denied for schema auth` —
+ * so the email is unavailable at runtime. `public.users.display_name` is readable
+ * and was rejected: it is editable, so any account could take the name and quietly
+ * leave condition 1's reach. A tripwire that can be stepped around by renaming
+ * yourself is not one.
+ */
+const CI_OWNER_ID = '1f73d209-e6c3-47ea-9187-cb10f5c9c6e7'; // compass-smoke@empowered.vote
+
+/**
  * EVERY removal event in the window, acknowledged or not, each carrying whether
  * it has been acknowledged.
  *
@@ -151,6 +189,7 @@ const ALERT_WINDOW_DAYS = 7;
 const REMOVALS_SQL = `
   SELECT h.id::text, h.owner_id::text, h.lens_key, h.op, h.created_at,
          (u.id IS NOT NULL) AS owner_exists,
+         (h.owner_id = $2::uuid) AS owner_is_ci,
          (a.history_id IS NOT NULL) AS acked
     FROM inform.compass_user_lens_history h
     LEFT JOIN public.users u ON u.id = h.owner_id
@@ -214,6 +253,12 @@ export function findMultiDeleteOwners(rows) {
   const byOwner = new Map();
   for (const r of rows) {
     if (!r.owner_exists) continue;
+    // 🔴 THE CI ACCOUNT NEVER FORMS A GROUP. Its deletions are commanded by the
+    // smoke suite on every PR run — see CI_OWNER_ID. Dropping these rows is safe
+    // in a way that dropping ACKED rows was not: grouping is per owner_id, so
+    // these can only ever have grouped with each other, never with a real
+    // owner's. Nothing a person lost is hidden by this line.
+    if (r.owner_is_ci) continue;
     let g = byOwner.get(r.owner_id);
     if (!g) {
       g = {
@@ -248,6 +293,15 @@ export function findMultiDeleteOwners(rows) {
  * ⚠ Unlike condition 1, an acked row is simply gone from this one, and that is
  * correct rather than inconsistent: there is no GROUP here, so there is no
  * context to preserve. One row, one judgement, and a human has made it.
+ *
+ * 🔴 THE CI ACCOUNT IS NOT EXCLUDED HERE, AND THAT IS THE WHOLE POINT OF SPLITTING
+ * THE EXCLUSION. The smoke suite deletes through the API, which SOFT deletes. A
+ * hard delete under that account is therefore not the suite: it is something
+ * reaching the table by a path the application does not use, which is exactly
+ * what this condition exists to catch, whoever the row belongs to. MEASURED
+ * 2026-11-25: zero hard_delete rows in the window, so keeping it in scope costs
+ * no noise today and keeps the signal that mattered during the CC_0468 deploy
+ * window. Excluding the account wholesale would have thrown that away.
  */
 export function findOrphanHardDeletes(rows) {
   return rows.filter((r) => r.op === 'hard_delete' && r.owner_exists && !r.acked);
@@ -262,7 +316,7 @@ export function findOrphanHardDeletes(rows) {
  * One conversion, here, where the rows enter.
  */
 async function readRemovals(client) {
-  const { rows } = await client.query(REMOVALS_SQL, [String(ALERT_WINDOW_DAYS)]);
+  const { rows } = await client.query(REMOVALS_SQL, [String(ALERT_WINDOW_DAYS), CI_OWNER_ID]);
   return rows.map((r) => ({
     id: r.id,
     owner_id: r.owner_id,
@@ -270,6 +324,7 @@ async function readRemovals(client) {
     op: r.op,
     created_at: r.created_at instanceof Date ? r.created_at.toISOString() : String(r.created_at),
     owner_exists: r.owner_exists === true,
+    owner_is_ci: r.owner_is_ci === true,
     acked: r.acked === true,
   }));
 }
@@ -286,7 +341,10 @@ async function evaluate(client) {
   const unacked = rows.filter((r) => !r.acked);
   const multi = findMultiDeleteOwners(rows);
   const orphans = findOrphanHardDeletes(rows);
-  return { rows, unacked, multi, orphans, red: multi.length > 0 || orphans.length > 0 };
+  // Counted and printed rather than dropped quietly: an exclusion nobody can see
+  // in the output is one nobody re-examines when it stops being appropriate.
+  const ciRows = rows.filter((r) => r.owner_is_ci);
+  return { rows, unacked, ciRows, multi, orphans, red: multi.length > 0 || orphans.length > 0 };
 }
 
 /**
@@ -314,12 +372,19 @@ function ackLine(ids) {
  * their own query first is how a day gets lost.
  */
 function report(found) {
-  const { rows, unacked, multi, orphans } = found;
+  const { rows, unacked, ciRows, multi, orphans } = found;
 
   console.log(
     'lens durability — ' + rows.length + ' removal event(s) in the last ' + ALERT_WINDOW_DAYS +
       ' days, ' + unacked.length + ' unacknowledged',
   );
+
+  if (ciRows.length) {
+    console.log(
+      '   ' + ciRows.length + ' of those are the CI account (' + shortId(CI_OWNER_ID) +
+        '), excluded from the multi-delete condition but NOT from the hard-delete one',
+    );
+  }
 
   if (multi.length) {
     console.error('\n🔴 FAIL ' + multi.length + ' owner(s) lost MORE THAN ONE lens inside the window:');

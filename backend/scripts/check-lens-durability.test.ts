@@ -50,7 +50,13 @@ const row = (
   created_at: string,
   owner_exists: boolean,
   acked = false,
-) => ({ id, owner_id, lens_key, op, created_at, owner_exists, acked });
+  /**
+   * 🔴 EIGHTH AND DEFAULTING TO FALSE, so every case written before the CI
+   * exclusion existed still reads as a case about a REAL owner. The script
+   * tests this field for truthiness, so an omitted one is a real owner.
+   */
+  owner_is_ci = false,
+) => ({ id, owner_id, lens_key, op, created_at, owner_exists, acked, owner_is_ci });
 
 describe('findMultiDeleteOwners', () => {
   it('is silent when an owner removed exactly one lens', () => {
@@ -135,7 +141,47 @@ describe('findMultiDeleteOwners', () => {
     expect(findMultiDeleteOwners(rows)).toEqual([]);
   });
 
-  it('does not group two different owners together', () => {
+  /**
+   * 🔴 THE CASE THE EXCLUSION EXISTS FOR. CompassV2's smoke suite clears the
+   * lenses it created against PRODUCTION on every PR run, which is several
+   * distinct lenses removed by one owner inside the window — condition 1's exact
+   * shape, several times a week, on purpose. MEASURED 2026-11-25: 9 removal rows
+   * across 4 distinct keys in the window, every one of them this account's.
+   *
+   * Without this, the nightly is red whenever CI has run, and the only way to
+   * keep it green is to ack robot traffic by hand every few days. A check
+   * maintained that way is a check that gets muted.
+   */
+  it('is silent when the CI account removed several lenses', () => {
+    expect(
+      findMultiDeleteOwners([
+        row('1', 'ci', 'u_smoke1', 'soft_delete', '2026-11-25T01:00:00Z', true, false, true),
+        row('2', 'ci', 'u_smoke2', 'soft_delete', '2026-11-25T01:00:05Z', true, false, true),
+        row('3', 'ci', 'u_smoke3', 'soft_delete', '2026-11-25T01:00:09Z', true, false, true),
+      ]),
+    ).toEqual([]);
+  });
+
+  /**
+   * ⚠ THE EXCLUSION MUST NOT REACH PAST ITS OWNER. Grouping is per owner_id, so
+   * the CI rows could only ever have grouped with each other — but that is a
+   * property of the implementation, and this pins it. A real person losing two
+   * lenses on a night CI also ran is still reported, and is reported ALONE.
+   */
+  it('still reports a real owner who lost two, on a night the CI account also deleted', () => {
+    const found = findMultiDeleteOwners([
+      row('1', 'ci', 'u_smoke1', 'soft_delete', '2026-11-25T01:00:00Z', true, false, true),
+      row('2', 'ci', 'u_smoke2', 'soft_delete', '2026-11-25T01:00:05Z', true, false, true),
+      row('3', 'real', 'u_aaa001', 'soft_delete', '2026-11-25T02:00:00Z', true),
+      row('4', 'real', 'u_bbb002', 'soft_delete', '2026-11-25T02:00:01Z', true),
+    ]);
+    expect(found).toHaveLength(1);
+    expect(found[0].ownerId).toBe('real');
+    expect(found[0].keys).toEqual(['u_aaa001', 'u_bbb002']);
+    expect(found[0].ids).toEqual(['3', '4']);
+  });
+
+    it('does not group two different owners together', () => {
     // One removal each. Two people each tidying up one lens on the same evening
     // is ordinary use; if that fired, the check would be red most weeks.
     const rows = [
@@ -169,7 +215,24 @@ describe('findOrphanHardDeletes', () => {
     expect(findOrphanHardDeletes(rows)).toEqual([]);
   });
 
-  it('is silent on a hard_delete that has been acknowledged', () => {
+  /**
+   * 🔴 THE CI ACCOUNT IS STILL IN SCOPE HERE, AND THIS IS WHY THE EXCLUSION IS
+   * SPLIT ACROSS THE TWO CONDITIONS RATHER THAN APPLIED TO THE ROWS. The smoke
+   * suite deletes through the API, which SOFT deletes. A HARD delete under that
+   * account is therefore not the suite — it is something reaching the table by a
+   * path the application does not use, which is the entire subject of this check
+   * no matter whose row it is. Excluding the account wholesale would have made
+   * this case green, and it is the one worth keeping.
+   */
+  it('fires on a hard_delete under the CI account, which the suite never produces', () => {
+    const found = findOrphanHardDeletes([
+      row('1', 'ci', 'u_smoke1', 'hard_delete', '2026-11-25T01:00:00Z', true, false, true),
+    ]);
+    expect(found).toHaveLength(1);
+    expect(found[0].id).toBe('1');
+  });
+
+    it('is silent on a hard_delete that has been acknowledged', () => {
     // Unlike condition 1, there is no group here and so no context to preserve:
     // one row, one judgement, and a human has made it.
     const rows = [row('h1', 'owner-a', 'lens-one', 'hard_delete', '2026-11-20T10:00:00Z', true, true)];
