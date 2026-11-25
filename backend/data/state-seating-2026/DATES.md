@@ -1725,7 +1725,100 @@ convenes on the third Tuesday in January, well after, so the two events are plai
 
 ---
 
-## CO — Colorado · 18 offices · ✅ sourced 2026-11-22 (5 bodies, 2 dates)
+## CO — Colorado · 19 offices · ✅✅ APPLIED 2026-11-25 (`CC_0516` / `CC_0517` / `CC_0518`) — **two dates, four instruments, and five corrections to this section**
+
+### 🔴🔴 FIVE CORRECTIONS TO THIS SECTION, MADE WHEN THE WAVE WAS BUILT (2026-11-25)
+
+Every one of them was found by **reading the instruments this section cites**, and the first three
+are invisible to every count, digest and view in the database.
+
+1. 🔴🔴 **NINETEEN OFFICES, NOT EIGHTEEN, AND THE NINETEENTH IS THE LIEUTENANT GOVERNOR.** This
+   section said *"⚠ Only four executives are pending and that is correct — Colorado's Lieutenant
+   Governor runs on the Governor's ticket (Art. IV, § 3), so it is the ticket case, not a gap."*
+   **The ticket fact is right and the conclusion is wrong.** We hold a `Colorado Lieutenant
+   Governor` office row, a 2026-11-03 race row on it, and **seven candidates, every one of whom
+   carries `result IS NULL`** — not `advanced`, blank. The pending set is four because a RESULT is
+   missing, not because the office has no contest. ▶ Art. IV § 1(1) names the Lieutenant Governor
+   **in the same sentence** as the other four and gives it the same commencement, so `CC_0516`
+   **dates** it and `CC_0518` does not seat it — Arizona's Corporation Commission shape.
+   ⚠ And the ticket pairing is not in our data either: both races hold seven candidates and
+   `external_id` is NULL on all fourteen, so **equal counts are not a pairing**. Art. IV § 3 makes
+   the winner knowable in law and our schema cannot express it.
+   🔴 **This is the FOURTH form of the Lieutenant-Governor hole in this pass and the most
+   complete** — Arizona has a winner and no office row, Maryland an office row and no race at all,
+   Colorado the office, the race, the candidates and no result.
+2. 🔴🔴 **THE STATE BOARD OF EDUCATION'S TERMS ARE IN C.R.S. § 22-2-105(1), NOT § 22-2-104(1).**
+   § 22-2-104 is *"Offices and positions - nature"* — which departmental positions are exempt from
+   the state personnel system — and contains **no date of any kind**. Every word quoted below is in
+   § 22-2-105(1), verbatim, including all five anchors. 🔴 The quote was right and the section
+   number was not, and **the day it produces is unaffected**, so nothing mechanical could see it.
+   Third state running to supply an instance, after Nebraska and Texas.
+3. 🔴🔴 **THE 2026 BOARD OF EDUCATION COHORT IS THREE SEATS AND WE HOLD TWO. DISTRICT 3 WAS ON THE
+   BALLOT AND HAS NO RACE ROW OF ANY YEAR.** Proved three independent ways: § 22-2-105(1)'s own
+   arithmetic (the 1984 election set Districts 1 **and 3** on six-year terms commencing the second
+   Tuesday in January 1985, and 1985 + 6n reaches 2027); **Colo. Const. Art. XII § 11** ("The term
+   of office of any officer **elected to fill a vacancy** shall terminate at the **expiration of
+   the term during which the vacancy occurred**" — Sherri Wright won the November 2024 election
+   for the remainder of Stephen Varela's term); and the **Colorado Department of Education's own
+   news release of 8 January 2025**, which states that her *"term of office runs through January
+   2027"* while giving the other three new members "through January 2031". ▶ So Sherri Wright will
+   be left holding District 3 on our pages past the expiry of her own term — New Mexico's Public
+   Education Commission District 7 shape. **The fix is the result, not a closure.**
+4. 🔴 **THE CLOSURE ARGUMENT FOR § 2-2-303.5 IS RIGHT FOR A REASON THIS SECTION DOES NOT GIVE.**
+   It said *"subsection (3) requires action during a regular session"*. **(3) says no such thing** —
+   it names no time limit at all. It is **(4)**'s opening words, *"in the event the general assembly
+   does not act **during the regular session** pursuant to subsection (3)"*, that confine it; and
+   (4) was never reachable in this cycle because the assembly **did** act under (3).
+   🟢🟢 **And there is a stronger fact than either closure argument, because it bounds the error
+   instead of arguing about it: (3) and (4) both confine any designated day to "on or after January
+   1 but prior to" the second Wednesday** — for 2027, **[2027-01-01 .. 2027-01-12]**. No lawful
+   designation, past or future, can put this term outside a twelve-day window. `CC_0516`'s
+   assertion 3a is that gate, and control **C4** is the only thing that reaches it.
+5. 🔴 **"Idaho's Ada County is scheduled for [2027-01-11] too" IS FALSE** (the claim is in
+   `PICKUP.md`'s handoff and in this file's neighbours). Measured 2026-11-25: that square carries
+   **193 `office_swearing_in` rows from exactly two states**, Oregon and Washington. Idaho's only
+   forward-dated rows are its seven state executives on 2027-01-04 and three federal seats on
+   2027-01-03; **no Idaho office carries any row on 2027-01-11**. The conclusion (the square is
+   crowded) is right and one of its three reasons is not.
+
+### 🟢🟢 AND FOUR THINGS THIS SECTION DID NOT HAVE
+
+- **The resolution carries its own positive control, and this section used one cell of it.** The
+  attached Joint Rule 22B deadline schedule prints **28 (ordinal day, weekday, calendar date)
+  triples**. Computed from a 1st day of Monday 2027-01-11, **all 28 agree**; computed from the
+  statutory default of Wednesday 2027-01-13, **0 of 28 agree**. A transcription error in the
+  convening date would need twenty-eight consistent companions. The control is **entirely inside
+  the document**, which is what makes it worth having for a `published` basis.
+- **The designation mechanism was confirmed in two more cycles, from documents of the same kind.**
+  **HJR18-1021** designates *"FRIDAY, JANUARY 4, 2019"* and our `office_terms` carries 6 terms on
+  2019-01-04; **HJR22-1025** designates *"MONDAY, JANUARY 9, 2023"* and we carry 37 on 2023-01-09.
+  🟢🟢 **2019 is the cycle that does the work, because it is a FRIDAY** — no ordinal-weekday rule
+  in the Monday/Tuesday/Wednesday family can produce one, so 2019 alone refutes every weekday
+  rival at once. See the rival scoreboard in `REGISTER.md` § CO.
+- **A fourth document explains *why* the day moves in a gubernatorial year**, which this section
+  asserted without a source: **HJR23-1001** sets a Joint Session for *"Monday, January 9, 2023 …
+  upon completion of organizational procedures, for the purpose of canvassing the votes for certain
+  officials"* — Art. IV § 3's canvass, on the convening day itself. ▶ Hence the legislature convenes
+  **before** the executives take office, in all three gubernatorial cycles (4 days apart in 2019,
+  1 in 2023, 1 in 2027).
+- 🟢🟢 **§ 23-20-103 POINTS AT C.R.S. § 24-12-101, AND THAT SETTLES THE OATH QUESTION FOR THE WHOLE
+  STATE IN ONE INSTRUMENT** — a pointer this section never followed. § 24-12-101 requires an oath
+  *"BEFORE the person enters upon the discharge"* of the office and filed *"before the person
+  enters upon the public office or position"*; **Colo. Const. Art. XII § 8** says the same
+  constitutionally. ▶ **The oath is a precondition to the term, not its start** — and because both
+  are general, they answer the question for the one body (the Regents) whose own statute names no
+  commencement at all. ⚠ Art. XII § 10 ("refusal to qualify - vacancy") is the clause most likely
+  to be misread as a qualification-start rule: it makes the office vacant, it does not date a term.
+- 🔴 **The Regents' flagged weakness was SWEPT and the sweep came back EMPTY, which is itself the
+  finding.** New Mexico's equivalent was repaired by a general constitutional commencement clause;
+  **Colorado has none.** All 29 articles were scanned and the constitution holds exactly **two**
+  term-commencement provisions — Art. IV § 1(1) and Art. V § 7. So the Regents' day rests on the
+  1973 transitional provision alone. 🟢 But § 23-20-102(2)'s three cohorts **reconcile with the
+  body's own roster on all nine seats**, so that body has **no results gap**: 2002 + 6n reaches
+  2020, Districts 2, 6 and 7 ran 2021–2027, and those are exactly the three we hold.
+- 🟢 **The constitution prints each article exactly once** — 29 headings, 29 distinct numerals.
+  Connecticut's document carried ARTICLE FOURTH twice with the superseded copy first and the cycle
+  arithmetic passed on both, so the check is cheap and its absence is invisible.
 
 🔴🔴 **COLORADO'S LEGISLATURE IS THE FIRST BODY IN THIS PASS WHOSE DATE COMES FROM A `published`
 SOURCE RATHER THAN A STATUTE — AND THE STATUTORY DEFAULT WOULD HAVE BEEN TWO DAYS WRONG.**
@@ -1735,7 +1828,8 @@ SOURCE RATHER THAN A STATUTE — AND THE STATUTORY DEFAULT WOULD HAVE BEEN TWO D
 | House of Representatives | 6 | **2027-01-11** (Mon) | Art. V, § 7 + **HJR26-1031** | `published` |
 | Senate | 3 | **2027-01-11** (Mon) | Art. V, § 7 + **HJR26-1031** | `published` |
 | Governor · Secretary of State · Treasurer · Attorney General | 4 | **2027-01-12** (Tue) | Art. IV, § 1(1) | `statute` |
-| State Board of Education | 2 | **2027-01-12** (Tue) | C.R.S. § 22-2-104(1) | `statute` |
+| **Lieutenant Governor** — DATED, NOT SEATED | 1 | **2027-01-12** (Tue) | Art. IV, § 1(1) — the same sentence | `statute` |
+| State Board of Education | 2 | **2027-01-12** (Tue) | C.R.S. **§ 22-2-105(1)** (NOT § 22-2-104) | `statute` |
 | Board of Regents, University of Colorado | 3 | **2027-01-12** (Tue) | C.R.S. § 23-20-105(2) — ⚠ weaker, see below | `statute` |
 
 ### 🔴 The legislature: the term begins on CONVENING, and the convening date is designated
@@ -1802,13 +1896,22 @@ Anchor-plus-cycle, the Arizona shape: 1967 + 4n reaches 2027. Second Tuesday of 
 **2027-01-12**. 🟢 **Control:** our one dated Colorado executive row starts **2019-01-08**, the
 second Tuesday of January 2019.
 
-⚠ **Only four executives are pending and that is correct** — Colorado's Lieutenant Governor runs
-on the Governor's ticket (Art. IV, § 3), so it is the ticket case, not a gap.
+🔴🔴 ~~**Only four executives are pending and that is correct** — Colorado's Lieutenant Governor
+runs on the Governor's ticket (Art. IV, § 3), so it is the ticket case, not a gap.~~
+**CORRECTED 2026-11-25 — see correction 1 at the top of this section.** The ticket fact is right
+and the conclusion is wrong: we hold a Lieutenant Governor office row, a 2026 race row on it and
+**seven candidates with no recorded result**, so the pending set is four because a RESULT is
+missing. **Art. IV § 1(1) names the Lieutenant Governor in the same sentence as the other four**
+and gives it the same commencement, so `CC_0516` dates it and nothing seats it.
+⚠ Art. IV § 3's own words make the answer knowable in law and not in our data: the Governor and
+Lieutenant Governor are *"chosen jointly by the casting by each voter of a **single vote applicable
+to both offices**"*, so the winner is determined entirely by the Governor's result — but **no column
+records the ticket pairing**, and equal candidate counts are not one.
 
 ### The two boards
 
 **State Board of Education** — Art. IX, § 1 leaves the terms to be "by law prescribed", and
-**C.R.S. § 22-2-104(1)** prescribes them, anchoring every cohort on the same day:
+**C.R.S. § 22-2-105(1)** prescribes them, anchoring every cohort on the same day — 🔴 **this section first cited § 22-2-104(1), which is "Offices and positions - nature" and holds no date; see correction 2 above**:
 
 > … all such terms **commencing on the second Tuesday in January 1983** … **the second Tuesday in
 > January 1985** … **the second Tuesday in January 1987** … a six-year term **commencing on the
@@ -1859,13 +1962,46 @@ while the question "is it an oath?" still answers no.
 
 ### Carried into the row
 
-| field | legislature | executives + both boards |
-|---|---|---|
-| `election_date` | 2026-11-03 | 2026-11-03 |
-| `swearing_in_date` | **2027-01-11** | **2027-01-12** |
-| `window_end_date` | NULL (the date is fixed, not a window) | NULL |
-| `basis` | **`published`** | `statute` |
-| `rule_id` | `co-hjr26-1031-convening` | `co-second-tuesday-january` |
+⚠ **FOUR `rule_id`s, NOT THE TWO THIS SECTION FIRST PLANNED.** The five Art. IV § 1(1) officers
+share one, because the clause names all five in one sentence. The two boards reach the same day by
+**different statutes** and are kept apart, which is Connecticut's warning against a later reader
+merging clauses that merely agree — and it matters most for the Regents, whose instrument is a
+1973 transitional provision and is the weakest citation in the state.
+
+| field | legislature (9) | executives + Lt Gov (5) | Board of Education (2) | Regents (3) |
+|---|---|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2027-01-11** | **2027-01-12** | **2027-01-12** | **2027-01-12** |
+| `window_end_date` | NULL (the date is fixed, not a window) | NULL | NULL | NULL |
+| `basis` | **`published`** | `statute` | `statute` | `statute` |
+| `rule_id` | `co-hjr26-1031-convening` | `co-const-art4-s1-second-tuesday-january` | `co-crs-22-2-105-second-tuesday-january` | `co-crs-23-20-105-second-tuesday-january` |
+
+### ✅✅ APPLIED 2026-11-25 — and what the live read path shows
+
+`CC_0516` dated **19** offices, `CC_0517` seated **9** on 2027-01-11 and `CC_0518` seated **9** on
+2027-01-12. Verified after the apply: `office_pending_winner` **0** for Colorado's state tier ·
+`office_next_term` **9 + 9** · the unflagged drift baseline **still 238** · each seating file
+recovers its own 9 by slot · Jared Polis's 2019-01-08 survived its own closure · **four live
+addresses through `api.empowered.vote`** (237 office rows scanned, 30 with an incoming holder).
+
+🟢🟢 **THE THREE-LINK CHAIN RENDERS ON ONE PAGE, BY NAME.** At 200 E Colfax Ave, Denver: the
+Governor shows **Jared Polis → Phil Weiser on 2027-01-12**, the Attorney General **Phil Weiser →
+Jena Griswold**, and the Secretary of State **Jena Griswold → Amanda Gonzalez**. Weiser appears as
+the incoming Governor *and* the sitting Attorney General on the same page, which is what makes the
+chain visible to a voter.
+
+🟢 **The two dates render distinctly** — 107 N Nevada Ave, Colorado Springs shows State Senate
+District 11 and State House District 18 on **2027-01-11** beside the executives on **2027-01-12**.
+
+🟢🟢 **BOTH BOARDS' STAGGER RENDERS BY ITS NEGATIVES, WHICH IS THE MOST VALUABLE PART OF THE PROBE.**
+Boulder (CD 2) shows **Callie Rennison → Edie Hooton** while Boulder's own Board of Education
+District 2 shows **no incoming**; Lakewood (CD 7) shows **Nolbert Chavez → Nolbert Chavez** and
+**Karla Esser → Karla Esser**; Colorado Springs (CD 5) shows **Ken Montera → no incoming**; and the
+**At-Large Regent and At-Large Board member show no incoming at all four addresses**. A sibling
+expansion would have put an incoming holder on every seat.
+
+🔴 **And the Lieutenant Governor shows `Dianne Primavera → NO INCOMING` at all four addresses** —
+dated and unseated, confirmed on the live read path rather than only in the database.
 
 ---
 

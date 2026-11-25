@@ -22,46 +22,41 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**36 bodies still to do · 134 offices · 1 of the 36 carry a cited start date.** Measured 2026-11-25. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**31 bodies still to do · 116 offices · 1 of the 31 carry a cited start date.** Measured 2026-11-25. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
 | 3 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 4 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 5 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 6 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 7 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 8 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 9 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 10 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 11 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 12 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 13 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 14 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 15 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 16 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 17 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 18 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 19 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 20 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 21 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 22 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 23 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 24 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 25 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 26 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 27 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 28 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 29 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 30 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 31 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 32 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 33 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 34 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 35 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 36 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 4 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 5 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 6 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 7 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 8 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 9 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 10 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 11 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 12 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 13 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 14 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 15 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 16 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 17 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 18 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 19 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 20 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 21 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 22 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 23 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 24 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 25 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 26 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 27 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 28 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 29 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 30 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 31 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -278,6 +273,59 @@ Every one of these was done once already, by the waves that shipped with this re
      correct and the recovery key was poisoned.** ▶ **A cross-reference belongs in the header,
      never in a column a recovery query matches on** — and add a gate asserting this file's rows
      carry no other slot.
+   - 🔴🔴 **`lower(d.state) = '<st>'` SELECTS THE FEDERAL TIER TOO, AND THE OTHER TIER MAY SHARE THE
+     ELECTION DATE.** Colorado already carried **nine** `office_swearing_in` rows for 2026-11-03
+     before its dates file ran — the eight U.S. House seats and the U.S. Senate seat, on 2027-01-03
+     under Amend. XX § 1 — because a U.S. Representative's district carries its state. The gate
+     reported *"Colorado rows for 2026-11-03 went 9 -> 28, expected 19"*. ⚠ **Texas's equivalent
+     said "the rows that exist belong to other elections AND other tiers" and so never met this
+     case**: when only `district_type` separates the two tiers, the state filter is not a scope.
+     ▶ Make it a **delta**, and assert the other tier's rows untouched **by their own tier** rather
+     than by subtraction. 🔴 The same slip one level down: a *state-tier* claim scoped to the whole
+     state. Colorado's "exactly one flagged-vacant office" read **2**, because Boulder's citywide
+     Council Member is also flagged — a LOCAL seat with nothing to do with the wave.
+   - 🔴🔴🔴 **INTERLEAVING IS WORSE THAN SHARING, AND EACH DAY CAN BE BUSY IN THE COLUMN NOBODY
+     CHECKS.** Texas taught that the shared-square rule reaches `term_end`. Colorado's two groups
+     interleave with Oregon's, Washington's and Maryland's clusters so that **all four of its
+     relevant days are occupied in exactly one column and empty in the other**: 2027-01-10 holds
+     **193 ends and 0 starts**, 2027-01-11 **193 starts and 0 ends**, 2027-01-12 **178 ends and 0
+     starts**, 2027-01-13 **178 starts and 0 ends**. ▶ **A `term_start` gate on the second group's
+     own start day reads 0 and discriminates nothing, while a `term_end` gate on the same day reads
+     178 and looks like an invasion — and the two mistakes are one column apart.** Pin the
+     before-image of **both columns on every day the wave touches**, and make every count **name its
+     column**. 🔴 In a two-date state the second group's closure day is the first group's START day.
+   - 🔴🔴 **A `published` BASIS IS THE CLAIM THAT NO FORMULA FITS, SO ITS EVIDENCE IS THAT EVERY
+     FORMULA FAILS — AND THE SURVIVING RIVAL MAY SIT ON YOUR OWN SQUARE.** Colorado's legislative
+     day is designated by a joint resolution; nine rules run over five cycles reproduced at most
+     **two of five** each, which is what makes "designated" a measurement. But *the second Monday*
+     reproduces 2023 **and gives the right 2027 day**, and that square already carried 193 rows under
+     two `rule_id`s containing the words **`second-monday-january`**. ▶ **Only a document from
+     another cycle refuses it** — and Colorado's refusing document names a **FRIDAY** (2019-01-04),
+     which no ordinal-weekday rule can produce. 🟢 **Look inside the designating document for its own
+     control**: the resolution's deadline schedule prints 28 (day, weekday, date) triples, all 28
+     agreeing with the designated day and 0 with the default. 🟢 **And look for a clause that BOUNDS
+     the day** — C.R.S. § 2-2-303.5(3)/(4) confine any lawful designation to a twelve-day window, so
+     the error is bounded whatever happened, which is stronger than arguing a window is closed.
+   - 🔴🔴 **A DUAL HOLDER DOES NOT IMPLY A MISSING RESULT, AND THE TWO ARE IDENTICAL FROM THE SEAT.**
+     Texas's five dual holders were all results gaps. Colorado has **two, one of each kind**: Jeff
+     Bridges keeps a Senate seat that is **genuinely not up until 2028**, so its lack of a successor
+     is correct, while Amanda Gonzalez keeps a county clerkship whose 2026 race we simply do not
+     hold. ▶ **Read the body's own term length before calling a kept seat a gap**, and pin the pair
+     **by name** — a count keeps passing while the wrong seat is named.
+   - 🟢🟢 **A CHAIN OF HANDOVERS MAKES THE DUAL-SEAT ZERO MEAN SOMETHING, AND NO COUNT CAN EXPRESS A
+     CHAIN.** Colorado's Governor, Attorney General and Secretary of State change hands in sequence
+     on one day with all three seats in one file, so `seat_officeholder` closes each leaver's term
+     **only because the next link is seated into it**. ▶ **Assert the chain by NAME before any
+     write** — this office's predecessor is that office's winner — because the zero is produced by
+     the chain and drops to a real double-holder if any one seating is missing. ⚠ And it needs a
+     purpose-built control: reassigning a predecessor leaves the digest, every count, the
+     re-election split and the name list all correct, so every obvious tamper fires earlier.
+   - ⚠ **A GATE COUPLED TO THE SELECTION SIZE CANNOT BE TESTED BY FILLING A GAP, AND THAT IS
+     STRUCTURAL.** Colorado's "this race still has no winner" gates are unreachable by a tamper that
+     records a winner, because a winner puts the office into `office_pending_winner` and the size
+     gate refuses it two gates earlier. **There is no tamper that gives a race a winner without
+     growing the wave.** ▶ Record it as a backstop and aim a control at the part that *is* reachable
+     — the candidate count, or the pinned gap number itself.
    - 🟢🟢 **A CONTROL SUITE NEEDS A CONTROL.** "Eighteen of eighteen went red" is a uniform answer,
      and a harness that fails everything — a bad path, a dead connection, a stray argument —
      produces exactly that. ▶ **Run the UNTAMPERED chain through the same driver and require it to
@@ -427,6 +475,383 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-25 — Colorado, 19 offices across FIVE bodies, the first `published` basis in the pass, and five corrections to the ledger
+
+| file | what it did |
+|---|---|
+| `CC_0516` | dated 19 offices in **four groups under four `rule_id`s** — 9 on **2027-01-11** (`published`), 10 on **2027-01-12** (`statute`), one of which is the **Lieutenant Governor, dated and unseated** |
+| `CC_0517` | seated 9 legislative winners on 2027-01-11 — **7 re-elections and 2 handovers**, all `called` |
+| `CC_0518` | seated 9 executive and board winners on 2027-01-12 — **4 re-elections and 5 handovers**, three of them a **chain**, all `called` |
+
+**Verified after the apply:** `office_pending_winner` **0** for Colorado's state tier ·
+`office_next_term` **9 on 2027-01-11 and 9 on 2027-01-12** · the unflagged drift baseline **still
+238** · `CC_0517` recovers **9** terms by slot and `CC_0518` recovers **9** · Jared Polis's
+`2019-01-08` survived its own closure · **four real addresses through `api.empowered.vote`**, 237
+office rows scanned and 30 carrying an incoming holder. 🟢🟢 **FIVE register rows left the queue at once, the most of any state in this pass** (Nebraska’s
+three was the previous record) — **36 bodies to 31, 134 offices to 116.**
+
+### 🔴🔴🔴 THE FIRST `published` BASIS IN THE PASS — AND THE RIVAL IT CANNOT REFUSE IS SITTING ON ITS OWN SQUARE, UNDER A `rule_id` THAT SAYS SO IN WORDS
+
+Colorado's legislative term begins **on the convening of the session** (Colo. Const. Art. V § 7),
+and the convening day is **designated by a joint resolution**, not computed: `HOUSE JOINT RESOLUTION
+26-1031` names *"MONDAY, JANUARY 11, 2027"*. The statutory default — C.R.S. § 2-2-303.5(2)'s second
+Wednesday — gives **2027-01-13**, which is the **Maryland General Assembly's live start date, 178
+rows**. A file written from the statute would have landed inside another state's cluster.
+
+🔴🔴 **AND THE EVIDENCE FOR A `published` BASIS IS THAT EVERY FORMULA FAILS, WHICH IS A DIFFERENT
+KIND OF CLAIM FROM A DATE.** Nine rules were computed from what each counts FROM, over five cycles
+of our own `office_terms`:
+
+| rule | 2019 | 2021 | 2023 | 2025 | 2027 | agrees |
+|---|---|---|---|---|---|---|
+| **observed** (our rows / the resolutions) | **01-04** (Fri) | **01-13** (Wed) | **01-09** (Mon) | **01-08** (Wed) | **01-11** (Mon) | — |
+| second Wednesday (the **statutory default**) | 01-09 | ✅ 01-13 | 01-11 | ✅ 01-08 | 01-13 | **2 / 5** |
+| **second Monday** | 01-14 | 01-11 | ✅ 01-09 | 01-13 | ✅ **01-11** | **2 / 5** |
+| first Wednesday · first Monday · second Tuesday · first Tuesday · third Monday · Alabama's "first Monday after the second Tuesday" · Utah's January 1st | — | — | — | — | — | **0 / 5** each |
+
+**No rule reproduces more than two of the five cycles, and that is itself the evidence that the day
+is designated rather than computed.** But "the second Monday" is right in **2023 and 2027**, so in
+the cycle this wave writes it is indistinguishable from the truth. 🔴 **And 2027-01-11 already
+carried 193 rows under two `rule_id`s that literally contain the words `second-monday-january`** —
+`or-const-art4-s4-second-monday-january` (75) and `wa-rcw-44-04-021-second-monday-january` (118).
+Arizona's warning was that *a rival's `rule_id` may even share its words*; this one shares the
+words, the day **and** the year.
+
+🟢🟢 **WHAT REFUSES IT IS A FRIDAY.** `HJR18-1021` designates *"FRIDAY, JANUARY 4, 2019"* and our
+rows carry 6 terms there; `HJR22-1025` designates *"MONDAY, JANUARY 9, 2023"* and we carry 37.
+**No ordinal-weekday rule in the Monday/Tuesday/Wednesday family can produce a Friday**, so 2019
+alone refutes every weekday rival at once; 2023 refutes the statutory default; and 2021 and 2025
+show the default being *used* when no resolution displaced it. Three resolutions, three cycles, and
+the only rule that fits all five is "whatever the General Assembly designated".
+▶ Control **C20** is the only thing in the suite that can see the rival at all: it re-dates
+Colorado's nine under **Washington's** `rule_id`, leaving the DAY untouched, so every date gate in
+all three files passes and only `CC_0517`'s P4 notices.
+
+### 🟢🟢 THE RESOLUTION CARRIES ITS OWN POSITIVE CONTROL, AND THE LEDGER USED ONE CELL OF IT
+
+`DATES.md § CO` quotes a single line of the attached Joint Rule 22B deadline schedule
+(*"1ST DAY (MONDAY 01/11/27)"*). The schedule prints **28 (ordinal day, weekday, calendar date)
+triples**, from *"5 DAYS PRIOR TO 1ST DAY (WEDNESDAY 01/06/27)"* through *"120TH DAY (MONDAY
+05/10/27)"*. Computed from a 1st day of Monday 2027-01-11 **all 28 agree**; computed from the
+statutory default of Wednesday 2027-01-13, **0 of 28 agree**. ▶ A transcription error in the
+convening date would need twenty-eight consistent companions, and **this control lives entirely
+inside the document** — which is what a `published` basis most needs, because the document is the
+authority.
+
+🟢🟢 **AND § 2-2-303.5 BOUNDS THE ERROR WITHOUT ARGUING ABOUT IT.** Subsections (3) and (4) both
+confine any designated day to *"on or after January 1 but prior to"* the second Wednesday — for
+2027, **[2027-01-01 .. 2027-01-12]**. So no lawful designation, past or future, can put this term
+outside a twelve-day window, and the only day any rival produces outside it is the default.
+▶ **That is a stronger fact than either closure argument**, and `CC_0516`'s assertion 3a is the gate;
+control **C4** is the only thing that reaches it, and it had to narrow the **window** rather than
+move the day, because moving the day fires on assertion 1 two gates earlier.
+
+### 🔴🔴🔴 THE FINDING OF THIS STATE: EVERY ONE OF ITS FOUR CALENDAR CELLS IS BUSY IN THE COLUMN NOBODY CHECKS AND EMPTY IN THE COLUMN EVERYBODY CHECKS
+
+Measured in production 2026-11-25, before the wave:
+
+| day | `term_start` | `term_end` |
+|---|---|---|
+| **2027-01-10** — Group A's closure day | 0 | **193** (Oregon 75, Washington 118) |
+| **2027-01-11** — Group A's start day, **and Group B's closure day** | **193** (Oregon 75, Washington 118) | 0 |
+| **2027-01-12** — Group B's start day | 0 | **178** (Maryland) |
+| **2027-01-13** — the statutory default | **178** (Maryland) | 0 |
+
+Texas's lesson was that **the shared-square rule reaches `term_end`, a column nobody thinks of as a
+date**, and its gate fired on 68 innocent rows. Colorado's interleave is the sharper version:
+**each day is occupied in exactly one column and empty in the other, and the two mistakes are one
+column apart.** A `term_start` gate on 2027-01-12 reads **0** and discriminates nothing; a
+`term_end` gate on the same day reads **178** and looks like an invasion. A `term_end` gate on
+2027-01-11 reads **0**; a `term_start` gate reads **202**.
+▶ Every count in all three files **names its column** and is a delta, and the before-images pin
+**all four cells**. Controls **C16** (6c reverted to a total, firing on 193), **C27** (the 178
+Maryland ends pinned as zero) and **C28** (the 202 starts pinned as 193) are one per cell that
+matters.
+🔴 **And Group B's closure day is Group A's own start day**, so the two files in this wave share a
+square with each other as well as with three other states.
+
+### 🔴🔴 NINETEEN OFFICES, NOT THE LEDGER'S EIGHTEEN — THE FOURTH FORM OF THE LIEUTENANT-GOVERNOR HOLE, AND THE MOST COMPLETE
+
+`DATES.md § CO` said *"Only four executives are pending and that is correct — Colorado's Lieutenant
+Governor runs on the Governor's ticket (Art. IV, § 3), so it is the ticket case, not a gap."*
+**The ticket fact is right and the conclusion is wrong.** We hold the office row, a 2026-11-03 race
+row on it, and **seven candidates, every one with `result IS NULL`** — not `advanced`, blank. The
+pending set is four because a **result** is missing.
+
+▶ **Art. IV § 1(1) names the Lieutenant Governor in the same sentence as the other four**, so
+`CC_0516` dates it under the same clause and `CC_0518` does not seat it — Arizona's Corporation
+Commission shape, and the row is a **queue entry rather than an acceptance**.
+
+🔴 **Hold the four forms together; separately each reads as a one-state oddity:**
+
+| state | office row | race row | candidates | result |
+|---|---|---|---|---|
+| **AZ** | ✗ missing | ✗ | ✗ | a winner exists on the Governor's ticket |
+| **MD** | ✓ | ✗ none of any year | ✗ | ✗ |
+| **CO** | ✓ | ✓ | ✓ **seven** | ✗ |
+
+⚠ **AND THE PAIRING IS NOT IN OUR DATA EITHER, WHICH IS WHY AN INFERRED SEATING IS REFUSED.**
+Art. IV § 3 makes the Governor and Lieutenant Governor *"chosen jointly by the casting by each voter
+of a **single vote applicable to both offices**"*, so the winner is determined **entirely by the
+Governor's result**. But no column links a Lieutenant Governor candidate to a Governor candidate:
+both races hold **seven** candidates and `external_id` is NULL on all fourteen. ▶ **Equal counts are
+not a pairing** — Texas's *a count is not a name*, in the one place where the law supplies the
+answer and the schema cannot express it.
+🟢 The live probe confirms it on the read path: **`Dianne Primavera → NO INCOMING`** at all four
+addresses.
+
+### 🔴🔴 A CITATION WRONG BY ONE SECTION, AND NOTHING MECHANICAL COULD SEE IT
+
+`DATES.md § CO` attributes the State Board of Education's five *"second Tuesday in January"* anchors
+to **C.R.S. § 22-2-104(1)**. That section is *"Offices and positions - nature"* — which departmental
+positions are exempt from the state personnel system — and contains **no date of any kind**. Every
+quoted word is in **§ 22-2-105(1)**, verbatim.
+
+🔴 **The quote was right and the section number was not, and the DAY it produces is unaffected** —
+so no count, digest or view can tell the correct citation from the wrong one. This is the third
+state running to supply an instance, after Nebraska's and Texas's. ▶ Control **C7** is the only
+mechanical trace, and it had to be checked **by position**: the `authority` field names § 22-2-104
+in its own body, because it records the correction, so a `LIKE '%§ 22-2-105(1)%'` test would be
+satisfied by the sentence that exists to document the defect. **Verbatim Texas's C7.**
+
+### 🔴🔴 A THREE-LINK CHAIN, AND IT IS WHY ASSERTION 9's ZERO MEANS SOMETHING
+
+| | takes | leaves | the seat they leave is taken by |
+|---|---|---|---|
+| **Phil Weiser** | Governor | Attorney General | Jena Griswold |
+| **Jena Griswold** | Attorney General | Secretary of State | Amanda Gonzalez |
+| **Amanda Gonzalez** | Secretary of State | — | — |
+
+**Three links, one day, all three seats inside `CC_0518`** — New Mexico's Stephanie Garcia Richard
+case two links deeper, and the longest in this pass.
+
+🔴🔴 **SO THE DUAL-SEAT ZERO IS PRODUCED BY THE CHAIN CLOSING ON ITSELF RATHER THAN BY NOBODY
+MOVING, WHICH NO PREVIOUS STATE'S ZERO WAS.** In Idaho it meant "nobody moved" and had to be tested
+with a planted fixture; in Arizona and Alabama it had an outside fixture. Here `seat_officeholder`
+closes only the predecessor of the seat it fills, so **Weiser's Attorney General term is closed only
+because Griswold is seated into it**, and Griswold's Secretary of State term only because Gonzalez
+is seated into hers. ▶ **Drop any one of the three seatings and somebody holds two offices from
+2027-01-12.** `P7` therefore asserts the chain **by name** before any write — the Attorney General's
+predecessor must be the Governor's winner, and the Secretary of State's predecessor the Attorney
+General's winner — because **no count can express a chain**, and 9b re-asserts it afterwards.
+▶ Control **C23** is purpose-built to reach it: reassigning the Secretary of State's predecessor
+term to somebody else leaves **the digest, every count, the 4/5 split, the name list and the
+handover-identity check all correct**, and `P7` is the first gate that notices. Connecticut's C7
+discipline — every obvious tamper fires two gates earlier.
+
+🟢 **And the live probe reads the chain by name**: at 200 E Colfax Ave, Denver, Weiser appears as
+the **incoming Governor** and the **sitting Attorney General** on one page.
+
+### ⚠ TWO WINNERS WILL HOLD TWO SEATS, AND ONLY ONE OF THEM IS A RESULTS GAP — WHICH IS NEW
+
+| winner | takes | still holds | is it a gap? |
+|---|---|---|---|
+| **Jeff Bridges** | Colorado Treasurer | State Senate District 26 | 🟢 **No.** Senators serve four years (Art. V § 3(1)) and that seat was last elected in 2024, so it is genuinely **not up in 2026** and correctly has no successor. |
+| **Amanda Gonzalez** | Colorado Secretary of State | Jefferson County Clerk and Recorder | 🔴 **Yes** — a county-tier results gap; we hold no 2026 race for it at all. |
+
+🔴🔴 **TEXAS'S FIVE DUAL HOLDERS WERE ALL RESULTS GAPS OF ONE KIND. COLORADO HAS ONE OF EACH, AND
+THEY ARE INDISTINGUISHABLE FROM THE SEAT.** So **"a dual holder implies a missing result" is
+false**, and the only way to tell them apart is to read the body's own term length. ▶ `P8b` pins the
+pair **by name** rather than by count (control **C25** keeps the count at two and changes a name),
+and assertion 9d asserts both kept terms are still **open**. Neither is tidied: Colo. Const.
+Art. V § 8 bears on Bridges's position, but the office he takes is **elective rather than
+appointive**, we hold no resignation and no effective date for one, and **a `term_end` is a legal
+fact**.
+
+### 🔴🔴 ONE CERTAIN RESULTS GAP, EVIDENCED THREE TIMES — AND ONE BODY WITH NONE AT ALL
+
+**State Board of Education District 3 was on the 2026 ballot and we hold no race row of any year** —
+the third and worst class of gap. Three independent instruments say so, which is the Utah/Arizona
+standard for turning "probably missing" into "certainly missing", met three times over:
+
+1. **§ 22-2-105(1)'s own arithmetic** — the 1984 election set Districts 1 **and 3** on six-year
+   terms commencing the second Tuesday in January 1985, and 1985 + 6n reaches **2027**.
+2. **Colo. Const. Art. XII § 11** — *"The term of office of any officer **elected to fill a
+   vacancy** shall terminate at the **expiration of the term during which the vacancy occurred**."*
+   Sherri Wright won the November 2024 election for the remainder of Stephen Varela's term.
+3. **The body's own publication** — the Colorado Department of Education's news release of
+   8 January 2025 states that her *"term of office runs through January 2027"*, while giving the
+   other three new members *"through January 2031"*. **The release corroborates four of the nine
+   seats, not just this one.**
+
+▶ **So the Board's 2026 cohort is THREE and this wave seats TWO, and Sherri Wright will be left
+holding District 3 on our pages past the expiry of her own term** — New Mexico's Public Education
+Commission District 7 shape. **The fix is the result, not a closure.** Both `CC_0516`'s P7 and
+`CC_0518`'s P5 gate on that seat **by name**; control **C10** plants a race row and watches it fire.
+
+🟢🟢 **THE BOARD OF REGENTS, BY CONTRAST, HAS NO GAP AND THE PROOF IS COMPLETE.** § 23-20-102(2)
+partitions the nine seats into three cohorts of three — (a)(II) 2022 + 6n for CDs 1, 4 and 8;
+(b) 1976 + 6n for CDs 3, 5 and at-large; (c)(II) 2002 + 6n for CDs 2, 6 and 7 — and 2002 + 6n
+reaches **2020**, so that cohort ran 2021–2027 and was up in 2026. The body's own roster
+(`regents.cu.edu/meet-the-regents`) prints a "Current Term" range against every member and **all
+nine agree with the statute**: Rennison (CD 2), Dubin Spiegel (CD 6) and Chavez (CD 7) read
+**2021-27**; James, McNulty and VanDriel read 2023-29; Scott, Montera and Hood read 2025-31.
+**Three of nine are up, they are exactly our three, and nine of nine reconcile.**
+
+🔴 **The legislature is the large gap and the constitution makes most of it certain.** Art. V § 3(1)
+gives every representative a **two-year** term, so **all 65 House seats were on the 2026 ballot as a
+matter of law** and 59 are unaccounted for; Art. V § 5 puts 17 or 18 of the 35 Senate seats on each
+biennial ballot and 32 have no winner. ⚠ **And the gap comes in two shapes identical from the seat**:
+Districts 15, 21 and 22 carry a 2026 race whose candidates all have `result IS NULL`, while 56 House
+and 32 Senate seats carry **no race row of any year**. 🟢 All twelve races we hold come from one
+source — the Secretary of State's 2026 candidate list — and cover House 14–22 and 56 and Senate 9,
+11 and 35, which is **El Paso County plus three**: a **partial load of a statewide publication**
+rather than a sparse source, which is the more hopeful diagnosis and tells the results programme
+where to look.
+
+### 🟢 THREE MORE THINGS THE LEDGER DID NOT HAVE
+
+- 🔴🔴 **THE ESCAPE HATCH IN ART. V § 7 BELONGS TO A DIFFERENT SENTENCE, WHICH IS A NEW TRAP.**
+  *"Unless otherwise provided by the general assembly"* governs the expiry of **committees**, not
+  the term of **members**; the term sentence carries no residual at all. ▶ Oregon's lesson was
+  *read the clause to its full stop, the hatch is at the end*; Colorado is the inverse — **there is
+  a hatch three words from the term clause and it is not the term clause's hatch.** A reader
+  grepping the section for "unless" finds one and attaches it to the wrong subject. Fourth clause
+  in the pass with no hatch on the term itself; Art. IV § 1(1) is the fifth, and **its tail is a
+  TERM LIMIT**, which is verbatim Maryland's Art. II § 1 shape.
+- 🟢🟢 **§ 23-20-103 POINTS AT C.R.S. § 24-12-101, AND THAT ANSWERS THE OATH QUESTION FOR THE WHOLE
+  STATE IN ONE INSTRUMENT** — a pointer the ledger never followed. § 24-12-101 requires the oath
+  *"BEFORE the person enters upon the discharge"* of the office and filed *"before the person enters
+  upon the public office or position"*; **Art. XII § 8** says the same constitutionally. ▶ **The
+  oath is a precondition to the term, not its start**, and because both are general they answer the
+  question for the one body — the Regents — whose own statute names no commencement at all.
+  ⚠ Art. XII § 10 ("refusal to qualify - vacancy") makes an office **vacant**; it does not date a
+  term, and it is the clause most likely to be misread as if it did.
+- 🔴 **THE SWEEP THAT WOULD HAVE REPAIRED THE REGENTS' WEAK CITATION CAME BACK EMPTY, AND THAT IS
+  ITSELF THE FINDING.** New Mexico's flagged weakness was repaired by a general constitutional
+  commencement clause (Art. XX § 3(A)); **Colorado has none.** All 29 articles were scanned and the
+  constitution holds exactly **two** term-commencement provisions, Art. IV § 1(1) and Art. V § 7 —
+  the two this wave is built on. So the Regents' day rests on **§ 23-20-105(2), a 1973 transitional
+  provision**, and nothing else. ⚠ Transitional text is exactly what made Utah's Board of Education
+  a **refusal**; the difference, stated so the inconsistency is not silent, is that Utah's
+  transitional dates pointed at a boundary **different** from the legislature's while Colorado's
+  point at the **same** boundary as a current constitutional clause and a current statute with five
+  anchors. **A sweep that fails to repair a weak claim is still a measurement.**
+- 🟢 **The constitution prints each article exactly once** — 29 headings, 29 distinct numerals.
+  Connecticut's carried ARTICLE FOURTH twice with the superseded copy first and the cycle arithmetic
+  passed on both, so the check is cheap and its absence invisible.
+
+### 🔴 TWO DEFECTS THE DRY RUN FOUND, NEITHER OF THEM A DATE
+
+Both were in gates written from a template, and both are now in the file's own header.
+
+- **`lower(d.state) = 'co'` SELECTS THE FEDERAL TIER TOO, AND COLORADO ALREADY CARRIED NINE ROWS FOR
+  THIS VERY ELECTION.** `CC_0516`'s assertion 6 was first written as a total and reported *"Colorado
+  rows for 2026-11-03 went 9 -> 28, expected 19"*. The nine are the **eight U.S. House seats and the
+  U.S. Senate seat**, on 2027-01-03 under Amend. XX § 1, because a U.S. Representative's district
+  carries its state. ▶ **Texas's equivalent gate said "the 39 Texas rows that exist belong to other
+  elections AND other tiers" and so never met this case**: here the other tier shares the **election
+  date**, and only `district_type` separates them. Now a delta, with the nine asserted untouched by
+  their own tier.
+- **A STATE-TIER CLAIM SCOPED TO THE WHOLE STATE.** P7's "exactly one flagged-vacant office" read
+  **2** and failed, because Boulder's citywide Council Member row is also flagged — a **LOCAL** seat
+  with nothing to do with this wave. The claim is about the bodies this file dates, so its scope had
+  to be those bodies.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+**Four real addresses through `api.empowered.vote/api/essentials/address-search`**, 237 office rows
+scanned and 30 carrying an incoming holder (the probe refuses to report on a uniform "no incoming",
+and prints every row it scanned rather than only its hits):
+
+- **200 E Colfax Ave, Denver** puts **the whole chain on one page**: the Governor shows **Jared
+  Polis → Phil Weiser on 2027-01-12**, the Attorney General **Phil Weiser → Jena Griswold**, and the
+  Secretary of State **Jena Griswold → Amanda Gonzalez**. 🟢🟢 Weiser appears as the **incoming
+  Governor** and the **sitting Attorney General** at once, which is what makes a chain visible to a
+  voter. The Treasurer shows **Dave Young → Jeff Bridges** and Board of Education District 1
+  **→ Lisa Escárcega**.
+- **107 N Nevada Ave, Colorado Springs** shows **the two dates distinctly**: State Senate District 11
+  and State House District 18 on **2027-01-11**, beside the executives on **2027-01-12**.
+- 🟢🟢 **BOTH BOARDS' STAGGER RENDERS BY ITS NEGATIVES, WHICH IS THE MOST VALUABLE PART OF THE
+  PROBE.** Boulder (CD 2) shows **Callie Rennison → Edie Hooton** while Boulder's own Board of
+  Education District 2 shows **no incoming**; Lakewood (CD 7) shows **Nolbert Chavez → Nolbert
+  Chavez** and **Karla Esser → Karla Esser**; Colorado Springs (CD 5) shows **Ken Montera → no
+  incoming**; and the **At-Large Regent and At-Large Board member show no incoming at all four
+  addresses**. A sibling expansion would have put an incoming holder on all nine seats of each body.
+- 🔴 **The Lieutenant Governor shows `Dianne Primavera → NO INCOMING` at every address** — dated and
+  unseated, confirmed on the live read path and not only in the database.
+- ⚠ **And the legislative gap renders correctly as "no incoming"** — Denver's House District 6 and
+  Senate District 31, Boulder's House District 10 and Senate District 18, Lakewood's House District
+  30 and Senate District 22 all show the sitting member with no successor, which is what a missing
+  result should look like.
+
+### Controls, each watched going red (step 7)
+
+🔴 Recorded by the gate each one FIRED ON, not the gate it was aimed at. **32 of 32 went red**, and
+**28 fired on the gate they were aimed at**. Spec:
+[`controls/co-2026.controls.mjs`](./controls/co-2026.controls.mjs).
+
+🟢🟢 **A NEGATIVE CONTROL RAN FIRST, THROUGH THE SAME CODE PATH**, and the untampered chain passed —
+"thirty-two of thirty-two went red" is a uniform answer, and a harness failing everything produces
+exactly that.
+
+| gate | controls that fired on it |
+|---|---|
+| `CC_0516` assertion 1 | C1 (the statutory default, Maryland's 178 live rows) · ⚠ C2 (backstop) · ⚠ C3 (backstop) |
+| `CC_0516` assertion 3a | **C4** — the designation window, which nothing else reaches |
+| `CC_0516` assertion 3b | C12 (the second Tuesday computed as the first) |
+| `CC_0516` assertion 3d | **C5** — the surviving second-Monday rival, kept green on purpose · C6 (the default arm) |
+| `CC_0516` assertion 3e | **C22** — Polis's 2019-01-08 moved, the only in-data control in Group B |
+| `CC_0516` assertion 7 | **C7** — the ledger's own § 22-2-104, checked by POSITION · C8 (two clauses merged) · C13 (`published` → `statute`) |
+| `CC_0516` P1 | **C9** (the Lieutenant Governor dropped — back to the ledger's eighteen) · ⚠ C11 (backstop) |
+| `CC_0516` P5 | **C31** — a Lieutenant Governor candidate removed, the office still unpending |
+| `CC_0516` P7 | **C10** — a race row planted on Board of Education District 3 |
+| `CC_0517` P3 | C14 (the digest) |
+| `CC_0517` P4 | **C20** — re-dated under WASHINGTON's `second-monday-january` rule_id, the day identical |
+| `CC_0517` P5 | **C32** — the House gap's 59 pinned as 58 · ⚠ C19 fires on P2 (backstop) |
+| `CC_0517` P6 | C15 (a predecessor's term_start blanked) |
+| `CC_0517` assertion 6b | **C17** — the pre-image captured one day late |
+| `CC_0517` assertion 6c | **C16** — reverted to a TOTAL, firing on 193 innocent Oregon and Washington closures |
+| `CC_0517` assertion 7b | C18 (the sibling slot put into `source`) |
+| `CC_0518` P2 | **C21** — `CC_0518` run WITHOUT `CC_0517`, **with no tamper at all** |
+| `CC_0518` P2b | **C26** (the Lieutenant Governor swept in) · **C29** (the Regent selection expanded to all nine) |
+| `CC_0518` P7 | **C23** — the chain broken with every count intact |
+| `CC_0518` P8 | **C27** (the 178 Maryland `term_end`s pinned as zero) · **C28** (the 202 starts pinned as 193) |
+| `CC_0518` P8b | C24 (Bridges's kept term closed) · **C25** (the pair named wrong, the count still two) |
+| `CC_0518` assertion 10 | C30 (the drift baseline) |
+
+🔴🔴 **THE FIRST RUN FOUND THREE DEFECTS IN THE SUITE AND NONE IN THE MIGRATIONS**, which is the
+other reason to run controls rather than review them:
+
+- **C11 AND C19 CAME BACK AS `(unparsed)` GREEN REDS.** Both set `race_candidates.result` and
+  neither set `result_source`, so the CHECK constraint `race_candidates_result_needs_source`
+  rejected the UPDATE and **the tamper never applied**. The harness reported red for a fault that
+  was its own. Verbatim the Maryland, Arizona and Alabama cases: **read the message, not the
+  colour**, and a fixture built out of live rows needs as much reading as the gate does.
+- **C4 FIRED TWO GATES EARLY** — moving `grp_a_day` to Monday 2027-01-18 (Alabama's day) left the
+  INSERT saying 2027-01-11, so assertion 1 caught the disagreement before 3a could ask whether the
+  day was lawfully designable. Narrowing the **window** instead reaches it.
+- **C17 FIRED ON P6** — capturing a NULL `term_start` moves P6's "all nine predecessors are dated"
+  count to zero. Capturing each start **one day late** keeps that count at nine and leaves 6b as the
+  first gate that can see it.
+
+⚠ **Recorded as backstops, not tested gates:** `CC_0516`'s **assertion 3c** (the order gate — it
+reads only the two date constants, and assertions 1 and 2 compare every written row against those
+same constants, so C3 fires on 1); `CC_0516`'s **assertion 2** per-group arm (C2 fires on the
+stronger assertion 1); `CC_0516`'s **P5 no-winner arm** and `CC_0517`'s **P5 named-seat arm** —
+🔴🔴 **both are COUPLED TO THE SELECTION SIZE and that is structural, not a weak tamper**: recording
+a winner on any race puts the office into `office_pending_winner`, so P1 and P2 refuse it two gates
+earlier, and **there is no tamper that gives a race a winner without growing the wave** (C31 and C32
+reach the parts that are reachable); and `CC_0517`'s **6b**, which C17 proves FIRES but does not
+prove would catch a real move, because the gate compares the live rows against the pre-image this
+file itself captured. ⚠ `CC_0516`'s **assertion 5** cannot discriminate at all — 2027-01-12 carried
+0 rows, so Colorado is first there, said in the file rather than offered as a measurement.
+
+### What this state taught, in five lines
+
+1. **A `published` basis is the claim that no formula fits, so the evidence for it is that every
+   formula FAILS** — and when the surviving rival gives the right answer in the cycle you are
+   writing, only a document from another cycle refuses it. Colorado's refusing document is a
+   **Friday**.
+2. **Interleaving beats sharing.** Texas showed a shared closure day; Colorado shows four days each
+   busy in one column and empty in the other, with the two mistakes one column apart.
+3. **A dual holder does not imply a missing result.** Two of them here, one of each kind, and only
+   the body's term length tells them apart.
+4. **A chain makes a zero mean something.** Three links closing on themselves is why nobody holds
+   two seats — so the chain is asserted by name, because no count can express one.
+5. **A sweep that fails to repair a weak citation is still a measurement**, and so is a check that
+   cannot discriminate. Both are recorded beside the ones that passed.
 
 ## ✅✅ APPLIED 2026-11-25 — Texas, 14 offices across two bodies, TWO dates from one statute's own exclusion list, and four corrections to the ledger
 
