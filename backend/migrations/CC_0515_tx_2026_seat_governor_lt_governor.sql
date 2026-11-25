@@ -524,6 +524,12 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 2 Texas terms on 2027-01-19 and closes Greg
+--   Abbott's and Dan Patrick's own terms at 2027-01-18, so it restates who held those two seats on
+--   every election day the closed terms no longer cover. 🔴 BOTH ARE HANDOVERS AND NEITHER WINNER
+--   IS A SITTING HOLDER, so this is the live case rather than the thin one: Abbott's term carries a
+--   real 2015-01-20 start and closing it is the write most likely to move an incumbency answer in
+--   the whole Texas wave.
 -- 🔴 THE INCUMBENCY GUARD'S SCOPE IS A UNION OF WINNERS AND PREDECESSORS. ⚠ Here the two sets are
 --    DISJOINT — both seats change hands — so the union is four people: Hinojosa, Goodwin, Abbott
 --    and Patrick. Stated rather than left to be noticed.

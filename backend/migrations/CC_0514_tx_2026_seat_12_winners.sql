@@ -506,9 +506,17 @@ BEGIN
   END IF;
 END $$;
 
+-- @incumbency-decision: gated — this file opens 12 Texas terms on 2027-01-01 and closes each
+--   predecessor's own term at 2026-12-31, so it restates who held those seats on every election
+--   day the closed terms no longer cover. 🔴 TEN OF THE TWELVE ARE HANDOVERS, which is the arm
+--   that actually matters here and the one Idaho and Connecticut could not reach: a newcomer whose
+--   race row still says `is_incumbent = true` is exactly the contradiction `check:incumbency` would
+--   report on the NEXT merge, under somebody else's name.
 -- 🔴 THE INCUMBENCY GUARD'S SCOPE IS A UNION OF WINNERS AND PREDECESSORS. ⚠ Here those two sets
 --    are almost disjoint — only the two re-elected Board members are in both — so the union is 22
---    people, not 12. Stated rather than left to be noticed.
+--    people, not 12. Stated rather than left to be noticed. ⚠ And the union is the point: 12 of the
+--    22 are OUTGOING officials whose closed terms stop covering the 2026 election day, so a guard
+--    scoped to winners alone would miss exactly the side this wave moves most.
 CREATE TEMP TABLE cc0514_guarded ON COMMIT DROP AS
 SELECT politician_id FROM cc0514_sel WHERE politician_id IS NOT NULL
 UNION
