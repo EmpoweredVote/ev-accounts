@@ -11,9 +11,12 @@ then this. `SOURCING.md` is the handbook and the host table; `DATES.md` is the p
 **applied to production and verified**; the working tree is clean apart from the untracked
 `backend/_q.mjs` scratch query runner, which predates this work.
 
-🔴 **TEXAS SHIPPED ON `feat/state-seating-tx`** — `CC_0513`, `CC_0514`, `CC_0515`,
-`tx-2026.controls.mjs` and these documents. Check whether its PR has merged before branching, and
-**do not add to that branch**.
+🟢🟢 **PR [#1617](https://github.com/EmpoweredVote/ev-accounts/pull/1617) IS MERGED** (2026-11-25,
+squashed as `aed92d26c`) and `feat/state-seating-tx` is done. It carried `CC_0513`, `CC_0514`,
+`CC_0515`, `tx-2026.controls.mjs`, these three documents and three new rules in the root
+`CLAUDE.md`, with CI green on its head before the merge (nine checks, zero failures, checked
+against the run's own `headSha`). **Master and production now agree.** 🔴 **Do not add to
+`feat/state-seating-tx`** — it is merged and its PR is closed.
 
 ▶ **Take a fresh branch off master, claim the state, and start at step 1.**
 
