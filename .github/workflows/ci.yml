@@ -71,10 +71,38 @@ on:
   # `readrank-question-unit`) also
   # run on a schedule: their
   # data drifts on its own — terms start and end, boundary loads land, research passes write rows —
-  # with no commit to trigger anything. 13:00 UTC = ~06:00 US/Pacific, after the 06:00 UTC FEC ingest
-  # window.
+  # with no commit to trigger anything. 13:00 UTC is chosen to sit after the 06:00 UTC FEC ingest
+  # window and before the 16:00 UTC cal-access ingest, so the checks read a settled day.
+  #
+  # 🔴 :37 AND NOT :00 — GITHUB FIRES SCHEDULED RUNS LATE, AND THE TOP OF THE HOUR IS THE WORST SLOT.
+  # Scheduled workflows are best-effort: GitHub's own guidance is to avoid the start of an hour,
+  # because that is when every cron in the world fires at once. MEASURED 2026-11-25 over the 117
+  # scheduled runs since 2026-07-31, lateness against the 13:00 due time:
+  #
+  #     2026-08   n=31   mean +2.2h   best +0.6h
+  #     2026-09   n=30   mean +4.4h   best +2.9h
+  #     2026-10   n=31   mean +5.3h   best +3.3h
+  #     2026-11   n=24   mean +7.7h   best +5.0h   ← not one run within an hour of due
+  #
+  # ⚠ READ THE TIME IN THIS CRON AS "WHICH DAY", NOT "WHICH HOUR". At the November figures a run due
+  # 13:00 lands between 18:00 and 01:00 UTC — roughly 10:00–17:00 US/Pacific, NOT the ~06:00 the
+  # previous version of this comment implied. Anyone reasoning about ordering against the Render
+  # crons from the number above alone will be wrong by most of a working day.
+  #
+  # WHAT WAS RULED OUT, so nobody re-derives it: the cron expression has not changed since
+  # 2026-07-30; `createdAt == startedAt` on every run, so GitHub is CREATING the run late rather
+  # than queueing it, which excludes concurrency limits and spending caps (those delay a job's
+  # START); the `concurrency` group below is keyed on `github.event_name`, so a push cannot cancel
+  # a scheduled run. It is load-sensitive — across the same 117 runs, weekends average +3.6h
+  # against weekdays' +5.1h.
+  #
+  # ⚠ CADENCE IS NOT THE PROBLEM AND IS NOT WHAT THIS CHANGES: 117 scheduled days since
+  # 2026-07-31, 117 covered, none missed and none doubled. Moving off the hour cannot make
+  # scheduled runs punctual — they are best-effort by contract — it only stops us standing in the
+  # most contended minute of the day. If the monthly figures above keep climbing ~1.5h, runs slip
+  # past 24h and `check:lens-durability`'s 7-day window is the first thing to re-examine.
   schedule:
-    - cron: '0 13 * * *'
+    - cron: '37 13 * * *'
   workflow_dispatch:
 
 # One run per event per ref; a newer push cancels the run it supersedes.
