@@ -51,6 +51,33 @@ December is almost entirely two states: **California 63 and Maine 61**.
 ⚠ **`website_url` is empty on all 316**, so there is no recorded sourcing lead for anybody —
 every one is a search from scratch. Do not read the blank column as "no site exists".
 
+### 🔴🔴 THE OFFICIAL-ROSTER ROUTE IS LARGELY SHUT FOR THIS QUEUE, AND IT IS A PROPERTY OF THE COHORT
+
+Measured 2026-11-25, before sourcing anything. **245 of the 316 are new to the seat**, and a body
+publishes a member's official portrait *after* they are sworn in and it re-organises. So the
+cheapest route — harvest one roster, get a whole chamber — mostly does not exist yet:
+
+| body | portraits published | our queue found on it |
+| --- | --- | --- |
+| Maine House + Senate (sitting 132nd) | 156 | **10 of 61**, and a surname match is not a person match |
+| Maine House *apparent winners* (the incoming 133rd) | **0** | — |
+| Nevada Assembly, 84th/2027 roster | 29 of 42 seats | **1 of 12** (Daniel Andrews) |
+| Hawaii OHA trustees | — | **HTTP 403**, not yet retried with a fuller header set |
+
+⚠ **Maine looked like the best batch on paper and is not**: 61 people, one legislature, one
+licence call, six days to their swearing-in — and the portraits do not exist until after
+2026-12-02. ▶ **Check that a roster carries THESE people before choosing a cohort for its size.**
+
+⚠ **`is_new_to_seat` IS BLIND ONCE A WINNER IS SEATED.** It compares the winner to
+`current_holder`, so the moment a seating file runs, the winner *is* the holder and the row reads
+`re-elected`. All 17 of the already-in-office rows read that way, and Nevada's 12 are new members.
+Do not use that column to judge whether a sitting roster will have somebody.
+
+▶ **So this queue is a per-person search, not a roster harvest** — campaign sites, press kits,
+news press images, Ballotpedia, Commons, under the licence rules named above. Price it that way.
+The exception worth re-testing after each swearing-in date is the roster route: Maine's 133rd
+convenes **2026-12-02**, and its portraits should appear then.
+
 ### 🔴 THE SCALAR/IMAGE-ROW DISAGREEMENT IS NOW THREE, NOT TWO
 
 **Mark Teixeira**, **Vanessa Kritzer** and now **Jessica Forsythe** each carry
