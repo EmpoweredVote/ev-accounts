@@ -40,7 +40,6 @@ vi.mock('../lib/supabase.js', () => ({
 vi.mock('../lib/compassService.js', () => ({
   getCompassCompleteness: vi.fn(),
   getCompassTopics: vi.fn(),
-  getTopicAnswerStats: vi.fn(),
   getCompassCategories: vi.fn(),
   getCompassLenses: vi.fn(),
   getCompassPoliticians: vi.fn(),
