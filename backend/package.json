@@ -33,6 +33,7 @@
     "check:answer-delete-guards": "node scripts/check-answer-delete-guards.mjs",
     "check:answer-delete-guards:list": "node scripts/check-answer-delete-guards.mjs --list",
     "check:lens-freshness": "node scripts/check-lens-freshness.mjs",
+    "check:nightly-freshness": "node scripts/check-nightly-freshness.mjs",
     "check:lens-durability": "node scripts/check-lens-durability.mjs",
     "check:lens-durability:selftest": "node scripts/check-lens-durability.mjs --selftest",
     "check:lens-durability:ack": "node scripts/check-lens-durability.mjs --ack",
