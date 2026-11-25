@@ -22,48 +22,46 @@ JS, `null < '2027-01-01'` is true, so this is the default behaviour and it is wr
 
 <!-- BEGIN GENERATED TABLE -->
 
-**38 bodies still to do · 148 offices · 1 of the 38 carry a cited start date.** Measured 2026-11-24. A body leaves this table when every seat in it is scheduled; see "What is already done".
+**36 bodies still to do · 134 offices · 1 of the 36 carry a cited start date.** Measured 2026-11-25. A body leaves this table when every seat in it is scheduled; see "What is already done".
 
 | # | state | body | offices | winners | re-elected | no record | multi-seat | vacant | no date | start date |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | HI | STATE_EXEC | 1 | 3 | 1 | — | 1 | — | — | 2026-11-03 |
 | 2 | GA | STATE_EXEC | 10 | 10 | 1 | — | — | — | 10 | — |
 | 3 | AR | STATE_EXEC | 7 | 7 | 5 | — | — | — | 7 | — |
-| 4 | TX | STATE_BOARD_EDUCATION | 7 | 7 | 2 | — | — | — | 7 | — |
-| 5 | TX | STATE_EXEC | 7 | 7 | 0 | — | — | — | 7 | — |
-| 6 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
-| 7 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
-| 8 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
-| 9 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
-| 10 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 11 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
-| 12 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
-| 13 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
-| 14 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
-| 15 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 16 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
-| 17 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
-| 18 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
-| 19 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 20 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
-| 21 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 22 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
-| 23 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
-| 24 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
-| 25 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
-| 26 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
-| 27 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
-| 28 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
-| 29 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
-| 30 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
-| 31 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 32 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
-| 33 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
-| 34 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 35 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 36 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 37 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
-| 38 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
+| 4 | CO | STATE_LOWER | 6 | 6 | 5 | — | — | — | 6 | — |
+| 5 | NV | STATE_EXEC | 6 | 6 | 1 | — | — | — | 6 | — |
+| 6 | SD | STATE_EXEC | 6 | 6 | 2 | — | — | — | 6 | — |
+| 7 | UT | STATE_BOARD_EDUCATION | 6 | 6 | 3 | — | — | — | 6 | — |
+| 8 | IL | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 9 | MI | STATE_EXEC | 5 | 7 | 2 | — | 2 | — | 5 | — |
+| 10 | ND | STATE_EXEC | 5 | 5 | 5 | — | — | — | 5 | — |
+| 11 | NH | STATE_BOARD | 5 | 5 | 1 | — | — | — | 5 | — |
+| 12 | OK | STATE_EXEC | 5 | 5 | 0 | — | — | — | 5 | — |
+| 13 | RI | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 14 | SC | STATE_EXEC | 5 | 5 | 3 | — | — | — | 5 | — |
+| 15 | VT | STATE_EXEC | 5 | 5 | 4 | — | — | — | 5 | — |
+| 16 | CO | STATE_EXEC | 4 | 4 | 0 | — | — | — | 4 | — |
+| 17 | FL | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 18 | IA | STATE_EXEC | 4 | 4 | 3 | — | — | — | 4 | — |
+| 19 | MN | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 20 | WY | STATE_EXEC | 4 | 4 | 2 | — | — | — | 4 | — |
+| 21 | CO | STATE_BOARD | 3 | 3 | 2 | — | — | — | 3 | — |
+| 22 | CO | STATE_UPPER | 3 | 3 | 2 | — | — | — | 3 | — |
+| 23 | DE | STATE_EXEC | 3 | 3 | 2 | — | — | — | 3 | — |
+| 24 | IN | STATE_EXEC | 3 | 3 | 1 | — | — | — | 3 | — |
+| 25 | NY | STATE_EXEC | 3 | 3 | 3 | — | — | — | 3 | — |
+| 26 | AZ | STATE_EXEC | 2 | 3 | 0 | — | 1 | — | 1 | — |
+| 27 | CO | STATE_BOARD_EDUCATION | 2 | 2 | 2 | — | — | — | 2 | — |
+| 28 | LA | STATE_BOARD | 2 | 2 | 0 | — | — | — | 2 | — |
+| 29 | MD | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 30 | OH | STATE_EXEC | 2 | 2 | 0 | — | — | — | 2 | — |
+| 31 | PA | STATE_EXEC | 2 | 2 | 2 | — | — | — | 2 | — |
+| 32 | KS | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 33 | MO | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 34 | NH | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 35 | OR | STATE_EXEC | 1 | 1 | 1 | — | — | — | 1 | — |
+| 36 | TN | STATE_EXEC | 1 | 1 | 0 | — | — | — | 1 | — |
 
 <!-- END GENERATED TABLE -->
 
@@ -250,6 +248,36 @@ Every one of these was done once already, by the waves that shipped with this re
      their own copy of the expectation. In the shipped file the copies agree, so the defect is
      invisible until something makes them disagree. ▶ **Read the expectation into one variable and
      let the condition and the message share it.**
+   - 🔴🔴 **A SUBSTRING TEST ON A NARRATIVE FIELD TESTS NOTHING, BECAUSE THE NARRATIVE DISCUSSES
+     THE RULE AND SO CONTAINS ITS NAME.** Texas's assertion 7 asked whether the Lieutenant
+     Governor's `authority` contained `'§ 16(a)'` **anywhere**. It does — twice — because the text
+     goes on to explain *that § 4 names only the Governor*. So the control that swapped the
+     **opening** citation to § 4 left the gate green, **satisfied by the sentence explaining the
+     distinction the gate exists to enforce**. ▶ **A citation is the instrument a row is dated
+     UNDER: a claim about the FRONT of the field.** Check it with `LIKE 'prefix%'`, never with
+     `LIKE '%needle%'`. ⚠ This matters most where nothing else can see the defect — the Washington
+     shape, where the DATE is right under either citation.
+   - 🔴🔴 **A COUNT IS NOT A NAME, AND A STAGGERED BODY IS WHERE THE DIFFERENCE BITES.** Texas
+     holds **three identical `Texas Railroad Commissioner` rows** and only one is up. The gate
+     asserting "exactly one of the three is in the selection" **passed while the wrong commissioner
+     was dated**: a control that SWAPPED the selected sibling left every count in the file
+     correct — 14 rows, 12 in the group, 7 Board seats, one of three selected. ▶ **Assert that the
+     selected row CARRIES THE RACE**, which is the only thing that distinguishes identical rows.
+     `CLAUDE.md`'s *a predicate reads the shape of a value, never what the value is*, reached
+     through a count. ⚠ And note the sibling **expansion** tamper fires on the total two gates
+     earlier, so it tests nothing about this arm — only the swap reaches it.
+   - 🔴🔴 **THE SHARED-SQUARE RULE REACHES `term_end`, A COLUMN NOBODY THINKS OF AS A DATE.** The
+     day BEFORE a shared term start is itself a shared day: Texas's "no term outside the pre-image
+     ends on 2026-12-31" asked as a TOTAL and **fired on 68 innocent rows**, because Utah's 50 and
+     New Mexico's 11 closed their own predecessors there. ▶ **Pin the before-image of the closure
+     day too, assert the delta, and scope the identity check to your own state.**
+   - 🔴🔴 **A MIGRATION'S `source` NARRATIVE MUST NOT NAME ANOTHER SLOT, BECAUSE RULING B RECOVERS
+     A WAVE WITH `source LIKE '%<slot>%'`.** Texas's first seating file explained what its sibling
+     does and named it, so all **12** of its rows answered to the sibling's own `P1` and the chain
+     aborted with *"12 office_terms row(s) already cite CC_0515. Applied before."* **The prose was
+     correct and the recovery key was poisoned.** ▶ **A cross-reference belongs in the header,
+     never in a column a recovery query matches on** — and add a gate asserting this file's rows
+     carry no other slot.
    - 🟢🟢 **A CONTROL SUITE NEEDS A CONTROL.** "Eighteen of eighteen went red" is a uniform answer,
      and a harness that fails everything — a bad path, a dead connection, a stray argument —
      produces exactly that. ▶ **Run the UNTAMPERED chain through the same driver and require it to
@@ -399,6 +427,332 @@ with `source LIKE '%CC_XXXX%'` rather than from memory.
 
 **What it costs if wrong:** a term written for somebody a recount unseats. Recoverable, because the
 rows are findable by slot. Invisible if the certainty is not recorded — which is why it is.
+
+## ✅✅ APPLIED 2026-11-25 — Texas, 14 offices across two bodies, TWO dates from one statute's own exclusion list, and four corrections to the ledger
+
+| file | what it did |
+|---|---|
+| `CC_0513` | dated 14 offices in **three groups under three `rule_id`s** — 12 on **2027-01-01**, the Governor and the Lieutenant Governor on **2027-01-19** |
+| `CC_0514` | seated 12 winners on 2027-01-01 — **2 re-elections and 10 handovers**, all `called` |
+| `CC_0515` | seated the **Governor and Lieutenant Governor** on 2027-01-19 — both handovers, both `called` |
+
+**Verified after the apply:** `office_pending_winner` **0** for Texas · `office_next_term` **12 on
+2027-01-01 and 2 on 2027-01-19** · the unflagged drift baseline **still 238** · `CC_0514` recovers
+**12** terms by slot and `CC_0515` recovers **2** · Greg Abbott's `2015-01-20` survived its closure
+intact · all **five** dual-seat legislative terms still open · **three real addresses through
+`api.empowered.vote`** (below). **Both register rows left the queue together** — 38 bodies to 36,
+148 offices to 134.
+
+### 🔴🔴 ONE STATUTE NAMED TWO DAYS, AND ITS OWN SUBSECTION (c) IS THE SPLIT
+
+`Tex. Gov't Code § 601.003(a)` begins the regular term of every elective state office "on January 1
+of the year following the general election", and **(c) says in its own words that the section "does
+not apply to the office of governor, lieutenant governor, state senator, or state representative"**.
+So the exclusion list is not something a reader has to discover — it is the instrument telling you
+where the other group goes, and which absent body is not on this day either.
+
+🟢🟢 **A STATUTE THAT NAMES ITS OWN EXCEPTIONS IS EVIDENCE IT GOVERNS THE REST**, and the same
+four-office carve-out recurs verbatim in § 601.005, so it is a settled pattern in the chapter and
+not a one-off. 🟢 **And § 601.003 has no escape hatch — measured over all ten sections of ch. 601.**
+The only "unless / except as / otherwise provided / notwithstanding" phrases anywhere in the
+chapter are in § 601.008 (payment of a claim) and § 601.009 (the registered-voter requirement), and
+neither touches a commencement. ▶ **The scan's positive control is that its pattern fired TWICE**
+while returning nothing about commencement, so "no escape hatch" is a real negative rather than a
+dead regex. Second clause in the pass with no hatch at all, after Connecticut's.
+
+### 🔴🔴 ART. IV § 4 DOES NOT DATE THE LIEUTENANT GOVERNOR, AND THE DATE IS RIGHT EITHER WAY
+
+`DATES.md § TX` put both offices on *"Art. IV § 4 + Gov't Code § 301.001"*. **§ 4's heading is
+literally "INSTALLATION OF GOVERNOR; TERM; ELIGIBILITY"** and its sentence names only "The Governor
+elected at the general election in 1974, and thereafter". The Lieutenant Governor appears nowhere
+in it — and **§ 601.003(c) excludes that office too**, so the statute does not reach it either.
+
+**Art. IV § 16(a)** is what carries it: the Lieutenant Governor is "chosen at every election for
+Governor by the same voters, in the same manner, **continue in office for the same time**".
+
+🟢 **"The same time" is the same TERM, and two things show it rather than argue it.** First, the
+narrow reading has a checkable and absurd consequence: if § 16(a) fixed only duration, the office
+would have **no commencement provision anywhere in Texas law** — § 601.003(c) excludes it, § 4 names
+only the Governor, and § 23 is length-only and limited to the Comptroller, Land Commissioner,
+Attorney General and statutory at-large officers — so it would be undateable, which is Oregon's
+Governor and Georgia's shape and Texas is plainly not in it. Second, **Art. IV § 3a presupposes the
+two offices turn over together**: it speaks of the moment "the Legislature shall canvass the
+election returns for the offices of Governor and Lieutenant Governor", and has a
+Lieutenant-Governor-elect who succeeds to the Governorship "**forfeit** the office of Lieutenant
+Governor" — possible only if that office is his at that same moment.
+
+🔴🔴 **NOTHING MECHANICAL COULD HAVE CAUGHT THIS. The day is 2027-01-19 under either citation**, so
+no count, digest, view or delta can tell a correct authority from a wrong one — the Washington
+defect, in a second state. ▶ The only trace is a gate that **reads the `authority` text and the
+`rule_id`**, which is why the two offices now carry different `rule_id`s
+(`tx-const-art4-s4-installation` and `tx-const-art4-s16a-same-time-as-governor`) and why
+`CC_0513`'s assertion 7 and `CC_0515`'s P4 exist at all.
+
+### 🔴🔴 A SUBSTRING GATE WAS SATISFIED BY THE SENTENCE THAT EXPLAINS THE DEFECT IT GUARDS AGAINST
+
+**Control C7 came back GREEN on the first run**, and that is the most useful thing in this suite.
+`CC_0513`'s assertion 7 asked whether the Lieutenant Governor's `authority` contained `'§ 16(a)'`
+**anywhere**. It does — twice — because the text goes on to explain *that § 4 names only the
+Governor*. So a tamper that swapped the **opening** citation to § 4 left the gate satisfied **by
+the explanation of the distinction the gate exists to enforce**.
+
+▶ **A citation is the instrument a row is dated UNDER: a claim about the front of the field, not
+about whether a string occurs in it.** Assertion 7 now checks all three groups by
+`LIKE 'prefix%'`, and C7 trips it. ⚠ The general form is worth carrying: **a narrative field that
+discusses the rule will contain the rule's name, so a substring test on it tests nothing.**
+
+### 🔴🔴 THREE IDENTICAL RAILROAD COMMISSIONER ROWS, ONE UP — AND A COUNT COULD NOT TELL THEM APART
+
+Texas holds **three** `Texas Railroad Commissioner` office rows in one district, all with the same
+title, all held: Wayne Christian, Christi Craddick and **Jim Wright**. Only Wright's carries the
+2026 race, and Jon Rosenthal won it. This is structurally the **Arizona Corporation Commission** —
+a staggered body whose rows pass every interchangeability clause — reached from the **dating** side.
+
+🟢 **Ruling A's rule is not needed**, because the race is single-seat and already attached to the
+seat of the member actually leaving, which is the remedy Ruling A prescribes. **But the dating risk
+is the mirror of Maryland's**: Maryland's lesson is to date the *assigned* offices rather than the
+race-carrying ones; here a selection that expanded to the sibling **titles** would date two
+commissioners whose terms run on.
+
+🔴🔴 **AND THE FIRST VERSION OF THAT GATE COUNTED TO ONE, WHICH IS A DIFFERENT CLAIM FROM NAMING
+THE RIGHT SEAT.** Control **C22** swaps the selected commissioner for a sibling instead of adding
+one, and **every count in the file stays correct** — 14 rows, 12 in Group A, 7 Board seats, exactly
+one of three commissioners selected — while a commissioner who is not leaving gets a term start.
+`P5` now also asserts the selected row **carries the 2026 race**, which is the only thing that
+distinguishes three identical rows. ▶ `CLAUDE.md`'s *a predicate reads the SHAPE of a value, never
+what the value is* — reached **through a count**.
+
+⚠ **C8, the sibling EXPANSION, fires on `P1` instead** — adding rows moves the total, so the
+expansion arm is covered two gates earlier and is recorded as a backstop rather than a tested gate.
+**Two gates catching one fault is what hides it**, and C22 is what reaching the real one cost.
+
+### 🔴🔴 THE LEDGER SAID ELEVEN. IT WAS TWELVE, AND THE SLIP WOULD HAVE COST A SEAT MID-FILE
+
+`DATES.md § TX`'s prose and `PICKUP.md`'s handoff both say **eleven** offices take 2027-01-01. The
+table in the same section says **5 + 7**, and production says **12**. ▶ A file written from the
+prose would have dated eleven and `CC_0514`'s `P4` would have refused the twelfth seat **after
+writing the other eleven's terms**. 🔴 This is `CLAUDE.md`'s *a gate that restates its own
+expectation as a second literal* caught one layer earlier — **in the prose a gate gets copied
+from**. Control **C6** plants the ledger's number and watches `P1` go red, so the gate that
+corrected two documents has a control of its own.
+
+### 🟢🟢 A 7–0 STATEWIDE SWEEP IS ALSO THE SHAPE OF A BROKEN WINNER FLAG, SO IT WAS RE-READ FIRST
+
+Seating this wave unseats **seven named, sitting Texas officials** on our pages, including a
+three-term Governor and a three-term Lieutenant Governor. Every 2026 Texas statewide winner is a
+Democrat **and every one of them is a sitting Texas legislator we already held a `politicians` row
+for** — which is precisely the shape of a winner flag landing on whichever candidate a pipeline
+could **match** rather than on the candidate who won.
+
+**AP's own feed was re-fetched on 2026-11-25, before anything was written** (645 races, 43 Texas),
+and four things separate the two readings:
+
+1. **AP reproduces the calls.** Governor `20261103TX45901`: **Gina Hinojosa (Dem) 5,232,690 /
+   52.82%**, called 2026-11-04T04:17:30Z, over Greg Abbott 4,525,990 / 45.69%. Lieutenant Governor:
+   **Vikki Goodwin 51.73%** over Dan Patrick 45.64%. Attorney General: **Nathan Johnson 52.38%**.
+   Railroad Commissioner: **Jon Rosenthal 52.52%**.
+2. **AP's winner `candidateID` differs from AP's own `incumbents[]` entry and the surnames differ**
+   (152027 vs 41404 for Governor), so the TX-22 Nehls-twins detector returns nothing.
+3. **The feed is not uniformly one party.** Texas's 36 U.S. House races came back **mixed** — mostly
+   Republican holds, with Democratic gains — and the four statewide margins cluster tightly at
+   51.7–52.8% to 45.6–45.9%, the signature of a real uniform swing rather than of mispaired rows.
+4. **Our own database is mixed too**: across every 2026 `STATE_EXEC` winner nationally the split is
+   **64 Democratic / 34 Republican / 81 with no party recorded**.
+
+🟢 AP also explains why the Attorney General's seat was open: **Ken Paxton**, our current holder of
+that office, ran for the U.S. Senate and lost to **James Talarico (55.09%)**.
+
+▶ **The correlation was a prompt to look, not a verdict**, and it is written down because the next
+state with a sweep will produce it again. ⚠ The mundane cause is candidate recruitment: Texas
+Democrats ran sitting legislators, which is why we already held them.
+
+### 🔴🔴 FIVE WINNERS WILL HOLD TWO SEATS — THE MOST OF ANY STATE IN THIS PASS
+
+| winner | takes | still holds | wave |
+|---|---|---|---|
+| Nathan Johnson | Texas Attorney General | TX Senate District 16 | `CC_0514` |
+| Sarah Eckhardt | Texas Comptroller | TX Senate District 14 | `CC_0514` |
+| Jon Rosenthal | Texas Railroad Commissioner | TX House District 135 | `CC_0514` |
+| Gina Hinojosa | Texas Governor | TX House District 49 | `CC_0515` |
+| Vikki Goodwin | Texas Lieutenant Governor | TX House District 47 | `CC_0515` |
+
+⚠ **A visible consequence of a results gap, not a defect these files introduce, and NOT tidied.**
+Texas holds **31 `STATE_UPPER` and 150 `STATE_LOWER` office rows and zero legislative races of any
+year** — the largest result gap anywhere in this pass — so the seats these five leave get **no
+successor in any wave**, and `seat_officeholder` closes only the predecessor of the seat it fills.
+All five kept terms carry `term_start NULL`, so there is not even a tenure to reason from.
+
+🔴 **Utah is the precedent and Oregon is the contrast**: Doug Fiefia kept Utah House District 48
+because that seat's own result is missing; Oregon's equivalent resolved itself because Oregon has
+no results gap and the vacated seat got a successor in the same wave. ▶ **The difference is a
+result, not a rule.** Both files gate on the exact count **by name** (`P8b`) and assert every kept
+term is still **open** afterwards (assertion 9b). **The fix is the Texas legislative results.**
+
+⚠ Art. III § 19 and Art. IV § 16(b) bear on a legislator taking another state office, and § 17(b)
+expressly contemplates "a member of the Legislature" serving as Lieutenant Governor. **These files
+take no view**: we hold no resignation and no effective date for one, and a `term_end` is a legal
+fact. **An unsourced closure is what this pass refuses.**
+
+### 🔴 THE CONTROLS SIT ON THE OPPOSITE GROUP FROM THE ONE THE LEDGER FLAGS AS WEAK
+
+**Texas holds exactly ONE dated state term in the whole database** — the Governor's **2015-01-20**
+— measured across all four state tiers. Everything else is NULL.
+
+- 🟢🟢 **It controls GROUP B, and it is exact and discriminating.** The 84th Legislature convened
+  2015-01-13 (the second Tuesday under § 301.001) and the first Tuesday after that is 2015-01-20.
+  All four separable rivals **miss** it: the convening day 2015-01-13, the first Monday 2015-01-05,
+  the third Monday 2015-01-19, the first Tuesday 2015-01-06. **One row, four rivals, zero
+  survivors** — a better result than Connecticut got from its one row.
+- 🔴 **And GROUP A has no in-data control at all.** This inverts the ledger's framing: the group it
+  presents as simple ("dated by one sentence") is the one our data cannot check, and the group it
+  flags as derived-from-two-documents is the one with an exact control. `CC_0513`'s assertion 3e
+  **asserts the absence**, in Utah's shape. Group A rests on documentary and structural evidence
+  only — the (c) exclusion list, the chapter-wide hatch sweep, and § 7.104(a)'s arithmetic.
+- 🟢🟢 **AND THE ROW THIS WAVE CLOSES IS THE ROW THAT JUSTIFIES THE DAY IT CLOSES IT ON.** `CC_0515`
+  re-derives the clause against the 2015 cycle at `P9b` **before any write**, and assertions 6b/6c
+  prove the `2015-01-20` survived its own closure — `seat_officeholder` writes nothing to a closed
+  row's `source`, so a moved `term_start` would be unrecoverable.
+
+### 🟢🟢 THE SECOND CYCLE CAME FROM A LEGISLATIVE JOURNAL, AND IT ANSWERED THE LIEUTENANT GOVERNOR TOO
+
+**Journal of the House, 88th Legislature, Regular Session, FOURTH DAY — TUESDAY, JANUARY 17, 2023**
+(Texas Legislative Reference Library, `lrl.texas.gov/scanned/Housejournals/88/01172023_4_191.PDF`,
+260,659 bytes, read 2026-11-25):
+
+- The 88th convened Tuesday **2023-01-10** and the journal numbers 2023-01-17 as its **4th Day** —
+  so the installation is one week after the organization **by the book's own day count**.
+- *"**INAUGURATION OF THE GOVERNOR AND LIEUTENANT GOVERNOR** (The House of Representatives and the
+  Senate in Joint Session) … joined by the senate in a joint session for the purpose of
+  inaugurating the governor-elect, the Honorable Greg Abbott, and the lieutenant governor-elect,
+  the Honorable Dan Patrick."* **One day, one joint session, both officers** — § 16(a)'s "same
+  time" as a recorded fact rather than a reading.
+- 🟢 And the joint session's own record distinguishes the two groups' **kinds** of rule: on the
+  floor that morning, *"the inauguration is always on a Tuesday, **not a day of the month but a day
+  of the week**."* ⚠ A remark in a benediction, so it corroborates and does not authorise — but it
+  is on the record of the installation itself.
+
+### ⚠ WHAT LOOKS LIKE CORROBORATION AND IS NOT
+
+Press accounts carry 2027-01-19 — FOX 7 Austin, read in a browser: *"Hinojosa will officially take
+office at noon on Tuesday, Jan. 19, 2027 … the state's governor is installed on the third Tuesday
+in January."* 🔴 **That page names its own source as "the Texas Constitution and previous
+reporting"** — the same clause re-read by somebody else, so it is **not independent evidence**.
+An inaugural committee was announced 2026-11-24 and **no official date publication was found**, so
+`basis` stays `statute` for all 14.
+
+🔴🔴 **AND "THE THIRD TUESDAY IN JANUARY" IS NOT A REFUTED RIVAL — IT IS THE SAME RULE RESTATED.**
+The second Tuesday always falls on the 8th–14th, so the first Tuesday after it always falls on the
+15th–21st, which is always the third Tuesday. **Proved identical across all 39 odd years
+1975–2051.** Press accounts state the rule both ways and both are right. ▶ **A file that listed the
+third Tuesday among the rules its data refuses would be claiming a test it never ran**: the identity
+cannot be separated by any year, so no control, cycle or in-data row can bear on it. Assertion 3c
+asserts the identity, and **C5 is the only thing that would ever move it** — a control on a gate
+kept green on purpose, after Idaho's C4 and Connecticut's C5.
+
+### 🔴 THE SQUARES, AND TWO LIVE NEAR MISSES
+
+- **2027-01-01** carried **61** terms before this wave (Utah 50, New Mexico 11, under three
+  `rule_id`s) and **73** after. Every count about it is a delta, and `CC_0514`'s assertion 3 asserts
+  every row on the day belongs to Texas, Utah or New Mexico so a fourth state is caught.
+- **2027-01-19** carried **0**. ⚠ **A gate on an empty day discriminates nothing**, and both files
+  say so rather than letting "no strangers there" read as a measurement.
+- 🔴 **The near misses are where the discrimination actually is**: the first Monday **2027-01-04**
+  carries **241 swearing-in rows / 229 terms** (Wisconsin, Arizona, California, Idaho — the most
+  crowded square in the pass) and the third Monday **2027-01-18** carries **13** (**Alabama**). A
+  Monday misreading of either group lands Texas inside another state's cluster rather than
+  producing an absurd date. The convening day (2027-01-12) and the first Tuesday (2027-01-05) carry
+  none.
+
+### 🔴🔴 TWO DEFECTS THE FIRST REHEARSAL FOUND, NEITHER OF THEM A DATE
+
+Both are now controls (**C16**, **C17**), because both would recur.
+
+- **THE CLOSURE DAY IS SHARED TOO, AND THAT IS NOT OBVIOUS.** `CC_0514`'s assertion 6c asked, as a
+  **total**, that no term outside its pre-image ends on 2026-12-31 — and **68 already did**, because
+  that is the day *before* 2027-01-01 and Utah's and New Mexico's seatings closed their own
+  predecessors there. The gate reported real, correct rows as a fault. ▶ **The shared-square rule
+  reaches `term_end`, a column nobody thinks of as a date.** 6c is now a delta plus a Texas scope.
+- **A MIGRATION'S `source` NARRATIVE NAMED ITS SIBLING'S SLOT, AND RULING B RECOVERS A WAVE WITH
+  `source LIKE '%<slot>%'`.** `CC_0514`'s prose explained what `CC_0515` does and named it, so all
+  **12** of its rows answered to `CC_0515`'s own `P1` — the chain aborted with *"12 office_terms
+  row(s) already cite CC_0515. Applied before."* **The prose was correct and the recovery key was
+  poisoned.** ▶ **A cross-reference belongs in the header, never in a column a recovery query
+  matches on.** Both seating files now carry a `7b` gate for it, and production confirms the fix:
+  `CC_0514` recovers 12 rows and `CC_0515` recovers **2**, not 14.
+
+### 🟢 Step 9 — verified AFTER the apply, from outside the migrations
+
+**Three real addresses through `api.empowered.vote/api/essentials/address-search`**, 161 office rows
+scanned and 28 carrying an incoming holder (the probe refuses to report on a uniform "no incoming"):
+
+- **1100 Congress Ave, Austin** puts the **whole wave on one page**: the Governor shows **Greg
+  Abbott, `seat_status: held`, incoming Gina Hinojosa on 2027-01-19**; the Lieutenant Governor shows
+  **Dan Patrick → Vikki Goodwin on 2027-01-19**; and the Attorney General, Comptroller, Land
+  Commissioner, Agriculture Commissioner and Railroad Commissioner all show **2027-01-01**, as does
+  **State Board of Education District 5 → Allison Bush**. 🟢 **The two dates render distinctly**, so
+  the statutory split is visible to a voter.
+- 🟢🟢 **THE STAGGER RENDERS CORRECTLY, WHICH IS THE MOST VALUABLE THING IN THIS PROBE.** At
+  **901 Bagby St, Houston** and **509 SE 7th Ave, Amarillo** all three Railroad Commissioner rows
+  appear and only one carries a handover: **Jim Wright → Jon Rosenthal on 2027-01-01**, while
+  **Wayne Christian** and **Christi Craddick** show **no incoming**. A sibling expansion would have
+  put an incoming holder on all three, so `P5`'s claim is confirmed on the live read path and not
+  only in the database.
+- ⚠ **And the Board seats NOT up show no incoming** — District 4 (Tammie Nielsen) at Houston and
+  District 15 (Aaron Kinsey) at Amarillo. Those are the eight on the other half of § 7.104(a)'s
+  stagger, so the probe discriminates by **name**, by **date** and by the **negative** cases.
+- ⚠ Houston is Board District **4**, not the 6 assumed when the address was chosen. The probe prints
+  the district it actually read, which is the only reason that was noticed.
+
+### Controls, each watched going red (step 7)
+
+🔴 Recorded by the gate each one FIRED ON, not the gate it was aimed at. **22 of 22 went red**, and
+**21 fired on the gate they were aimed at**. Spec:
+[`controls/tx-2026.controls.mjs`](./controls/tx-2026.controls.mjs).
+
+🟢🟢 **A NEGATIVE CONTROL RAN FIRST, THROUGH THE SAME CODE PATH**, and the untampered chain passed —
+"twenty-two of twenty-two went red" is a uniform answer, and a harness failing everything produces
+exactly that.
+
+| gate | controls that fired on it |
+|---|---|
+| `CC_0513` assertion 1 | C1 (Group A written to the first Monday, 241 live rows) · C2 (the Governor written to the third MONDAY, Alabama's day) |
+| `CC_0513` assertion 3b | C3 (the walk started ON the convening day) · C4 (§ 301.001's second Tuesday read as the first) |
+| `CC_0513` assertion 3c | **C5** — the tautology gate, kept green on purpose |
+| `CC_0513` assertion 3d | C11 (the third-Monday near miss mis-derived) |
+| `CC_0513` assertion 3f | C9 (the Board cohort expected as EIGHT) |
+| `CC_0513` assertion 7 | **C7** — the § 16(a) citation, **after the gate was rewritten to check by POSITION** |
+| `CC_0513` P1 | **C6** (Group A expected as ELEVEN — the ledger's own number) · ⚠ C8 (backstop) |
+| `CC_0513` P5 | **C22** — the selected commissioner SWAPPED, every count intact |
+| `CC_0513` P6 | C10 (a Texas House seat given a 2026 race) |
+| `CC_0514` P3 | C12 (two Board winners swapped — fires on the digest, so the name list is a backstop) |
+| `CC_0514` P6 | C14 (a predecessor given a `term_start`) · C15 (a seat flagged `is_vacant`) |
+| `CC_0514` P8b | **C13** — the dual-seat count, kept green on purpose |
+| `CC_0514` assertion 6c | **C16** — reverted to a TOTAL, the form that fired on 68 innocent rows |
+| `CC_0514` assertion 7b | **C17** — the sibling slot put back into `source` |
+| `CC_0515` P2 | **C21** — `CC_0515` run WITHOUT `CC_0514`, **with no tamper at all** |
+| `CC_0515` P4 | **C18** — the Lieutenant Governor given the Governor's `rule_id` |
+| `CC_0515` P6 | **C19** — Abbott's 2015-01-20 moved, so the only in-data control stops reproducing |
+| `CC_0515` P9b | C20 (the 2015 re-derivation walked from the wrong Tuesday) |
+
+⚠ **Recorded as backstops, not tested gates:** `CC_0513`'s P5 sibling-**expansion** arm (C8 fires on
+P1 two gates earlier — covered, not tested); `CC_0514`'s P3 name list and P6 predecessor-identity
+arms (below the pinned digest, so any realistic tamper moves the digest first — **measured**, via
+C12); and `CC_0515`'s "no other state on 2027-01-19" arm, which **cannot be made to discriminate**
+because the day carried 0 rows.
+
+### What this state taught, in five lines
+
+1. **A substring test on a narrative field tests nothing**, because a field that discusses the rule
+   contains the rule's name. Check a citation **by position**.
+2. **A count is not a name.** Three identical rows and "exactly one selected" is a different claim
+   from "the right one selected"; only the race row told them apart.
+3. **The shared-square rule reaches `term_end`.** The day before a shared term start is itself a
+   shared day, and a total there fires on other states' correct rows.
+4. **A cross-reference in `source` poisons Ruling B's recovery key.** Describe a sibling file in the
+   header, never in the data.
+5. **When a ledger's answer is right, its reasons can still be wrong** — four were here, and the one
+   that mattered (Art. IV § 4 for the Lieutenant Governor) is invisible to every mechanical check,
+   because the date is right either way.
 
 ## ✅✅ APPLIED 2026-11-24 — Connecticut, 5 offices, a clause with NO escape hatch, and a rival rule only a document could refuse
 

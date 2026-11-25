@@ -1869,16 +1869,58 @@ while the question "is it an oath?" still answers no.
 
 ---
 
-## TX — Texas · 14 offices · ✅ sourced 2026-11-22 (2 dates, and the split is statutory)
+## TX — Texas · 14 offices · ✅✅ APPLIED 2026-11-25 (`CC_0513` / `CC_0514` / `CC_0515`) — **two dates, THREE instruments, and four corrections to this section**
 
 🔴 **Texas has a single statute that dates almost every elected state officer — and it names, in
 its own words, the four it does not reach.** That exclusion list is the whole of Texas's
 complexity.
 
+> ### 🔴🔴 FOUR CORRECTIONS, MADE 2026-11-25 WHEN THIS SECTION WAS RE-READ BEFORE WRITING
+>
+> **The answer — two dates, 2027-01-01 and 2027-01-19 — was right. Four of the reasons were not,
+> and the reasons are what gets reused.** This is PICKUP's standing instruction ("when its answer
+> is right, check its *reasons* separately") paying for itself a fourth time, after New Mexico,
+> Nebraska and Connecticut.
+>
+> 1. 🔴🔴 **"Eleven" was TWELVE.** The prose below said eleven offices take 2027-01-01; the table
+>    above it says 5 + 7, and production says **12**. A file written from the prose would have
+>    dated eleven and `CC_0514`'s P4 would have refused the twelfth seat **after** writing eleven
+>    terms. Control **C6** plants the wrong number and watches `CC_0513`'s P1 go red.
+> 2. 🔴🔴 **Art. IV § 4 does NOT date the Lieutenant Governor, and this section cited it for
+>    both.** Its heading is *INSTALLATION OF GOVERNOR* and its sentence names only "The Governor
+>    elected at the general election in 1974, and thereafter" — the Lieutenant Governor appears
+>    nowhere in it, and § 601.003(c) excludes that office too. **Art. IV § 16(a)** — *"continue in
+>    office for the same time"* — is the only instrument, corroborated by **Art. IV § 3a** (a
+>    Lieutenant-Governor-elect who succeeds to the Governorship "forfeits the office of Lieutenant
+>    Governor" at the canvass, which is only possible if it is his then) and settled by the 2023
+>    House Journal, which inaugurated both officers at **one joint session**. 🔴 **The date is
+>    right either way, so no count, digest or view could ever see this** — the Washington defect.
+>    The two offices now carry different `rule_id`s.
+> 3. 🔴 **The Board of Education citation was § 7.103, which is ELIGIBILITY FOR MEMBERSHIP and
+>    names no date.** The quoted sentence is **§ 7.104(a) (TERMS)**. The quote was accurate and
+>    the section number was not.
+> 4. ⚠ **"The identical byte count is the tell" is not reliable on this host.** Re-measured
+>    2026-11-25: four of five chapter URLs came back **byte-identical (md5
+>    `efea928e141b80aab41ab6d59381c80a`)** while `curl` reported **two different sizes** for them —
+>    gzip, not content. ▶ **The md5 of the decompressed body is the tell.** The shell is now
+>    ~28 KB rather than the 250,874 bytes recorded here, and **every path returns it with HTTP
+>    200**, including invented ones like `/Docs/GV/word/GV.601.doc` — a soft 404 on everything, so
+>    URL probing cannot distinguish a real document from a wrong guess. Sending the full browser
+>    header set changed nothing: the content is rendered client-side, not gated, so this is the
+>    case Playwright is actually for.
+>
+> 🟢 **And two things this section did not claim, both of which strengthen it:** § 601.003 carries
+> **no escape hatch**, and neither does any of the ten sections of ch. 601 — the only
+> "unless / except as / otherwise provided" phrases in the chapter are in § 601.008 and § 601.009
+> and neither touches a commencement (the scan's pattern fired **twice**, so that is a real
+> negative). And **§ 7.104(a) closes an arithmetic no date source could**: the board holds 15
+> seats, the statute puts **seven** on this odd year's boundary, and exactly 7 of our 15 Board
+> rows were pending.
+
 | body | offices | start date | authority |
 |---|---|---|---|
 | Attorney General · Comptroller · Land Commissioner · Agriculture Commissioner · Railroad Commissioner | 5 | **2027-01-01** (Fri) | Tex. Gov't Code § 601.003(a) |
-| State Board of Education (Districts 2, 5, 6, 7, 9, 13, 14) | 7 | **2027-01-01** (Fri) | § 601.003(a), corroborated by Tex. Educ. Code § 7.103 |
+| State Board of Education (Districts 2, 5, 6, 7, 9, 13, 14) | 7 | **2027-01-01** (Fri) | § 601.003(a), corroborated by Tex. Educ. Code **§ 7.104(a)** |
 | **Governor · Lieutenant Governor** | 2 | **2027-01-19** (Tue) | Tex. Const. Art. IV, § 4 + Gov't Code § 301.001 |
 
 ### The general rule, and the exclusion that creates the second date
@@ -1892,7 +1934,7 @@ complexity.
 > **(c) This section does not apply to the office of governor, lieutenant governor, state senator,
 > or state representative.**
 
-So eleven of Texas's fourteen pending offices are dated **2027-01-01** by one sentence, and the
+So **twelve** of Texas's fourteen pending offices are dated **2027-01-01** by one sentence, and the
 exclusion in (c) is exactly what sends the Governor and Lieutenant Governor somewhere else.
 
 ⚠ **Tex. Const. Art. IV, § 23 is the clause a per-office search finds, and it does not answer the
@@ -1902,7 +1944,8 @@ large … shall each hold office for the term of four years."* Length, not comme
 supplies the day.
 
 🟢 **The State Board of Education's own statute uses the same boundary**, which is why it is dated
-with the five executives rather than separately: **Tex. Educ. Code § 7.103** — *"members of the
+with the five executives rather than separately: **Tex. Educ. Code § 7.104(a)** (⚠ **not § 7.103**,
+which is *Eligibility for Membership* and names no date — corrected 2026-11-25) — *"members of the
 board serve staggered terms of four years with the terms of eight members **expiring on January 1**
 of one odd-numbered year and the terms of seven members expiring on January 1 of the next
 odd-numbered year."* ⚠ That is an *expiry*, so it corroborates § 601.003 rather than replacing it.
@@ -1935,6 +1978,33 @@ needed in the cycles checked. If the 2027 installation slips, the published inau
 supersedes this and `basis` becomes `published`. ▶ **Re-check the two against the inauguration
 before seating them**; the other twelve need no such check.
 
+> 🟢 **DONE 2026-11-25, AND THE ANSWER IS THAT NOTHING PUBLISHED IS INDEPENDENT YET.** Press
+> accounts carry 2027-01-19 — FOX 7 Austin, read in a browser: *"Hinojosa will officially take
+> office at noon on Tuesday, Jan. 19, 2027 … the state's governor is installed on the third Tuesday
+> in January"* — but that page **names its own source as "the Texas Constitution and previous
+> reporting"**. It is the same clause re-read by somebody else, restated through the tautology
+> below, so it is **not corroboration**; counting it would be CLAUDE.md's *the one Oregon date in
+> our own data looks like corroboration and is not*, one step further out. An **inaugural committee
+> was announced 2026-11-24** and no official date publication was found. ▶ `basis` stays `statute`
+> for all 14, and the corroboration remains the two completed cycles: **2015-01-20 in our own
+> `office_terms`** and **2023-01-17 in the House Journal**.
+>
+> 🔴🔴 **AND "THE THIRD TUESDAY IN JANUARY" IS NOT A RIVAL READING — IT IS THIS CLAUSE RESTATED.**
+> The second Tuesday always falls on the 8th–14th, so the first Tuesday after it always falls on
+> the 15th–21st, which is always the third Tuesday. **Proved identical across all 39 odd years
+> 1975–2051.** Press accounts state the rule both ways and both are right. ▶ **A file must not list
+> the third Tuesday among the rules its data refuses** — the identity cannot be separated by any
+> year, so no control, cycle or in-data row can bear on it. `CC_0513`'s assertion 3c asserts the
+> identity instead, and control **C5** is the only thing that would ever move it.
+>
+> **The four rivals that ARE separable, and where they die:** the convening day itself
+> (2027-01-12), the first Monday (**2027-01-04 — 241 live rows**: Wisconsin, Arizona, California,
+> Idaho), the third Monday (**2027-01-18 — 13 live rows: ALABAMA**) and the first Tuesday
+> (2027-01-05). **All four miss Greg Abbott's 2015-01-20**, which is Texas's only dated state
+> term — one row, four rivals, zero survivors, a better result than Connecticut got from its one
+> row. 🔴 Two of the four are live days in other states, so a Monday misreading puts the Texas
+> Governor inside Alabama's cluster rather than producing an absurd date.
+
 ### The source
 
 `https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm` and `…/CN.3.htm` for the constitution,
@@ -1966,13 +2036,19 @@ Oregon's Governor is not.**
 
 ### Carried into the row
 
-| field | the twelve | Governor + Lt. Governor |
-|---|---|---|
-| `election_date` | 2026-11-03 | 2026-11-03 |
-| `swearing_in_date` | **2027-01-01** | **2027-01-19** |
-| `window_end_date` | NULL | NULL |
-| `basis` | `statute` | `statute` |
-| `rule_id` | `tx-govt-code-601-003-january-1` | `tx-const-art4-s4-installation` |
+| field | the twelve | Governor | Lieutenant Governor |
+|---|---|---|---|
+| `election_date` | 2026-11-03 | 2026-11-03 | 2026-11-03 |
+| `swearing_in_date` | **2027-01-01** | **2027-01-19** | **2027-01-19** |
+| `window_end_date` | NULL | NULL | NULL |
+| `basis` | `statute` | `statute` | `statute` |
+| `rule_id` | `tx-govt-code-601-003-january-1` | `tx-const-art4-s4-installation` | `tx-const-art4-s16a-same-time-as-governor` |
+
+🔴 **THREE `rule_id`s, not two** (corrected 2026-11-25 — correction 2 above). The Governor and the
+Lieutenant Governor share a calendar day and reach it by **different instruments**, so they are
+kept apart: a `rule_id` is what a later delta gate groups by, and Connecticut's warning is that two
+clauses which agree must not be merged by a later reader. ▶ **A delta gate on 2027-01-19 must name
+BOTH Texas rules.**
 
 ### 🔴🔴 Texas elected its entire House and half its Senate and we hold no result for any of it
 
