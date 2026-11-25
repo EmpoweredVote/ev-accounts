@@ -1,4 +1,5 @@
 -- CA_0419_indiana_cities_wave_a_people.sql
+-- @incumbency-decision: no-effect — every office this writes a term on is BRAND NEW (created by CA_0418) and carries no race. Measured on prod 2026-11-24 after apply: the 16 Wave A city governments hold 48 chambers and 172 offices, with 0 races on those offices and 0 on their chambers; the same join finds 15 races on the State of Indiana, so it can see a race. Comment added after apply; the SQL is unchanged.
 -- Indiana cities Wave A, occupancy half, for Hammond, Kokomo, Greenwood. Slot RESERVED from the
 -- allocator. Follows the structure migration that created these 3 governments and 33 offices.
 --

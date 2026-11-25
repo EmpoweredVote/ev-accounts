@@ -1,4 +1,5 @@
 -- CA_0417_indiana_cities_wave_a_people.sql
+-- @incumbency-decision: no-effect — every office this writes a term on is BRAND NEW (created by CA_0416) and carries no race. Measured on prod 2026-11-24 after apply: the 16 Wave A city governments hold 48 chambers and 172 offices, with 0 races on those offices and 0 on their chambers; the same join finds 15 races on the State of Indiana, so it can see a race. Comment added after apply; the SQL is unchanged.
 -- Indiana cities Wave A, occupancy half. Slot RESERVED from the allocator. Follows CA_0416, which
 -- created the 13 governments and 139 offices with no holder.
 --
