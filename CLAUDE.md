@@ -336,6 +336,29 @@ each was first learned.
   on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
   of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
   clean permutation of a real one, so "this looks malformed" is a hypothesis, not a finding.
+  - 🔴🔴 **AND A COUNT OF MATCHING ROWS IS NOT A CLAIM ABOUT *WHICH* ROW.** Texas holds **three
+    identical `Texas Railroad Commissioner` office rows** in one district and only one was up; a
+    gate asserting "exactly one of the three is in the selection" **passed while the wrong
+    commissioner was dated**, because a tamper that SWAPS the selected sibling leaves every count
+    in the file correct. ▶ **Assert the discriminating FIELD** — here, that the selected row carries
+    the election's race — not the cardinality. ⚠ A sibling-**expansion** tamper does not test this:
+    adding rows moves a total, so an earlier count fires and the arm that matters is never reached.
+- 🔴🔴 **A SUBSTRING TEST ON A NARRATIVE FIELD TESTS NOTHING, BECAUSE THE NARRATIVE DISCUSSES THE
+  RULE AND SO CONTAINS ITS NAME.** A gate asked whether the Texas Lieutenant Governor's
+  `office_swearing_in.authority` contained `'§ 16(a)'` **anywhere**. It does — twice — because the
+  text goes on to explain *that Art. IV § 4 names only the Governor*. So the control that swapped
+  the **opening** citation to § 4 came back **green**: the gate was satisfied by the sentence
+  explaining the distinction it exists to enforce. ▶ **A citation is the instrument a row is
+  governed UNDER — a claim about the FRONT of the field.** Use `LIKE 'prefix%'`, never
+  `LIKE '%needle%'`. ⚠ It matters most where nothing else can see the defect: both Texas offices
+  start 2027-01-19, so the date is right under either citation and the `authority` text and
+  `rule_id` are the only mechanical trace (the Washington shape, `CC_0487`).
+- 🔴🔴 **A RECOVERY KEY THAT IS A `LIKE` ON A PROSE COLUMN IS POISONED BY A CROSS-REFERENCE.** A
+  wave is recovered with `source LIKE '%<slot>%'`, and `CC_0514`'s `seat_officeholder` narrative
+  explained what `CC_0515` does — and named it — so all **12** of its rows answered to `CC_0515`'s
+  own "have I already run?" gate and the chain aborted. **The prose was correct and the key was
+  poisoned.** ▶ **Describe a sibling file in the HEADER, never in a column a recovery query matches
+  on**, and gate on this file's rows carrying no other slot.
 - 🔴🔴 **GREEN CI IS NOT "THE SERVER BOOTS".** Four deploys have gone out green and failed to
   start. Boot the built artifact against a **dead** `DATABASE_URL` and watch it come up; and note
   that `npm install` passing is not `npm ci` passing — the lockfile is what the deploy resolves.
