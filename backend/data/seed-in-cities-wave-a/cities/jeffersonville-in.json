@@ -1,0 +1,103 @@
+{
+  "slug": "jeffersonville-in",
+  "geoid": "1838358",
+  "name": "Jeffersonville",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://cityofjeff.net/city-council/",
+    "source_file": "raw/jeffersonville-in/council.html",
+    "council_name": "Jeffersonville City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Mike Moore",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": "Read from page footer 'Mayor Mike Moore'; mayor page saved at raw/jeffersonville-in/mayor.html"
+    },
+    {
+      "office": "City Clerk",
+      "name": "Lisa Gill",
+      "source_url": "https://cityofjeff.net/city-clerk/",
+      "source_file": "raw/jeffersonville-in/clerk.html",
+      "note": "Page says 'Jeffersonville City Clerk Lisa Gill'; 2023 county candidate list (not saved) shows the office as Clerk-Treasurer"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Dustin White",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Bill Burns",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Amy Semones",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Scott Anderson",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Donna Reed",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Steve Webb",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Scott Hawkins",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jacky Snelling",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Evan Stoner",
+      "source_url": "https://cityofjeff.net/city-council/",
+      "source_file": "raw/jeffersonville-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "http://cityofjeff.net/wp-content/uploads/2023/02/Council-District-1.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "files uploaded 2023/02 (one PDF per district, Council-District-1 .. Council-District-6)",
+    "notes": "Six single-district PDF maps linked from the council page; I saved districts 1 and 6 (raw/jeffersonville-in/Council-District-1.pdf, -6.pdf); the others use the same URL pattern. No ArcGIS layer found by search (city or Clark County). Maps are images; no precinct list obtained."
+  },
+  "notes": "Council page lists 6 district and 3 at-large members. Older pages on the same site still show previous holders (Paris, Maples, Croft) in district links; the table is current. Clerk title: city page says 'City Clerk'; a 2023 filing (not saved) says Clerk-Treasurer. City court judge not checked."
+}

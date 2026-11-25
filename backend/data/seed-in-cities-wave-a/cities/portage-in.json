@@ -1,0 +1,89 @@
+{
+  "slug": "portage-in",
+  "geoid": "1861092",
+  "name": "Portage",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+    "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+    "council_name": "Portage City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Austin Bonta",
+      "source_url": "https://portagein.gov/Directory.aspx?DID=21",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID21.html",
+      "note": "Directory entry 'Bonta, Austin - Mayor'; archived copy 2026 (wayback /web/2026/)."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Elizabeth Modesto",
+      "source_url": "https://portagein.gov/Directory.aspx?did=20",
+      "source_file": "raw/portage-in/wayback-Directoryaspxdid20.html",
+      "note": "Directory entry 'Modesto, Elizabeth - Clerk Treasurer'."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Gina Giese-Hurst",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: District 1 City Council Member"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Bob Parnell",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: Council District 2"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Victoria Vasquez",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: Council President, District 3"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Penny Ambler",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: Council District 4"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Collin Czilli",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: District 5"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Ferdinand Alvarez",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: At Large City Council Member"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Melissa Weidenbach",
+      "source_url": "https://web.archive.org/web/20260106113203/https://portagein.gov/Directory.aspx?DID=22",
+      "source_file": "raw/portage-in/wayback-DirectoryaspxDID22.html",
+      "note": "Directory title: Vice President, Council At Large"
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://services5.arcgis.com/Qp5vz8Fz7vawwcWD/arcgis/rest/services/Council_Reps/FeatureServer/0",
+    "feature_count": 37,
+    "district_field": "DISTRICT_N",
+    "vintage": "item created 2025-02 (epoch 1738782609000); city kept districts after 2020 census per Lakeshore Public Media lead (not read)",
+    "notes": "Service description 'City Council Representatives, Districts in Portage Indiana' (owner smcdaniel21; city quick-links page links the 'City Council Districts Map' to the city's ArcGIS Online). returnCountOnly -> {\"count\":37}: 37 are PRECINCT polygons (field PRECINCT_N), each tagged DISTRICT_N and COUNCIL_RE (member name). Precinct counts: D1 5, D2 5, D3 7, D4 5, D5 6; the two at-large members (Alvarez, Weidenbach) each have one feature with DISTRICT_N null. The layer's member names match the directory. Saved raw/portage-in/councilreps-layer0.json and councilreps-service.json. Only layer 0 exists."
+  },
+  "notes": "portagein.gov resets the TLS connection from this machine (curl, http, www). All city pages are Wayback copies; DID=22/DID=21/did=20 pages fetched from /web/2026/ and the council copy resolves to 2026-01-06. Council has 7 seats (5 district + 2 at-large) so third-class structure. City court: unknown."
+}

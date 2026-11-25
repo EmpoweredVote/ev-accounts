@@ -1,0 +1,103 @@
+{
+  "slug": "west-lafayette-in",
+  "geoid": "1882862",
+  "name": "West Lafayette",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+    "source_file": "raw/west-lafayette-in/wayback-council.html",
+    "council_name": "West Lafayette City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Erin Easter",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/office-of-the-mayor",
+      "source_file": "raw/west-lafayette-in/wayback-mayor.html",
+      "note": "Bio text: 'Mayor Erin Easter graduated from Lafayette Jefferson High School...'. Archived copy dated 2026-10-19."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Sana G. Booker",
+      "source_url": "https://web.archive.org/web/20260706234325/https://www.westlafayette.in.gov/government/office-of-the-clerk",
+      "source_file": "raw/west-lafayette-in/wayback-clerk.html",
+      "note": "Page: 'Sana G. Booker was elected the first City Clerk of West Lafayette in November 2015.' Archived copy dated 2026-07-06; bio does not state current term."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Nick Schenkel",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 07/07/25-12/31/27 Party Caucus; appointed by party caucus mid-term"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Rabita Rajkarnikar",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 09/02/25-12/31/27 Party Caucus; appointed by party caucus mid-term"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Colin Lee",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Larry Leverenz",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Kathy Parker",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Stacey Burr",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Iris Bellisario",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "James Blanco",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "David Sanders",
+      "source_url": "https://web.archive.org/web/20261019082717/https://www.westlafayette.in.gov/government/boards-and-commissions/city-council",
+      "source_file": "raw/west-lafayette-in/wayback-council.html",
+      "note": "Term per city table: 01/01/24-12/31/27 Elected"
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.westlafayette.in.gov/home/showpublisheddocument/140/638339086251070000",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "unknown; document id timestamp 638339086251070000 suggests Nov 2023",
+    "notes": "City council page links a 'District Map' PDF (saved via Wayback as raw/west-lafayette-in/district-map.pdf) and an 'Interactive District Map' on Tippecanoe County Beacon (Schneider) portal, AppID 578 LayerID 11435 - not an ArcGIS REST layer. ArcGIS Online search found no public WL layer (a Tippecanoe County Council Districts 2021 web map exists but is county districts)."
+  },
+  "notes": "The live westlafayette.in.gov returns Akamai Access Denied to curl even with full browser headers; all WL pages are Wayback Machine copies (council+mayor 2026-10-19, clerk 2026-07-06). Council table lists terms explicitly. Search lead (not read from a page): Lori Sabol is West Lafayette city judge, so city court likely yes; left unknown."
+}

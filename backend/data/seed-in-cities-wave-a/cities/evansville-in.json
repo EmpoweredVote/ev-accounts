@@ -1,0 +1,103 @@
+{
+  "slug": "evansville-in",
+  "geoid": "1822000",
+  "name": "Evansville",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+    "source_file": "raw/evansville-in/council-members.html",
+    "council_name": "Evansville City Council (also styled Common Council)"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Stephanie Terry",
+      "source_url": "https://www.evansvillegov.org/department/index.php?structureid=8",
+      "source_file": "raw/evansville-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "City Clerk",
+      "name": "Laura Windhorst",
+      "source_url": "https://www.evansvillegov.org/department/index.php?structureid=15",
+      "source_file": "raw/evansville-in/clerk.html",
+      "note": "Also named on the 2026 council contact sheet (raw/evansville-in/doc-1774036819.pdf)."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Ben Trockman",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Rita Taylor",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": "2024 contact sheet lists Missy Mosby in Ward 2; 2026 sheet and city page list Rita Taylor (mid-term change; date not stated on the pages)."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Zac Heronemus",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Kendra Hatfield",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": "2024 contact sheet lists Alex Burton in Ward 4; 2026 sheet and city page list Kendra Hatfield (mid-term change; date not stated)."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Angela Koehler Lindsey",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Jim Brinkmeyer",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Mary Allen",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Paul Green",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Courtney Johnson",
+      "source_url": "https://www.evansvillegov.org/city/topic/index.php?topicid=749&structureid=16",
+      "source_file": "raw/evansville-in/council-members.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://maps.evansvillegis.com/arcgis_server/rest/services/POLITICAL/CITY_COUNCIL_WARDS/MapServer/0",
+    "feature_count": 6,
+    "district_field": "DISPNAME",
+    "vintage": "POP_2020 field present; ward PDF link 1667496404_08415.pdf (late 2022); WNIN reports council adopted new ward maps Oct 2022. Open-data item modified 2024-04-24.",
+    "notes": "count query returned {\"count\":6}. DISPNAME values are 'Ward 1'..'Ward 6' (district number = digit in DISPNAME). Other fields: POP_2020, Sq_Acres, PDF_Link. Saved: raw/evansville-in/arcgis-count.json, arcgis-attrs.json. Layer found via the city/county open-data hub feed raw/evansville-in/apc-hub.json."
+  },
+  "notes": "Council members per city page raw/evansville-in/council-members.html; confirmed against the 2026 council contact sheet (raw/evansville-in/doc-1774036819.pdf, which also names Laura Windhorst as City Clerk). Mayor page names Stephanie Terry. City court judge: could not confirm either way (code page was 403 to curl); left unknown. Clerk title City Clerk indicates second class city."
+}

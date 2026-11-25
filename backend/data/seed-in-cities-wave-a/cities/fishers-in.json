@@ -1,0 +1,103 @@
+{
+  "slug": "fishers-in",
+  "geoid": "1823278",
+  "name": "Fishers",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+    "source_file": "raw/fishers-in/council-archive.html",
+    "council_name": "Fishers City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Scott Fadness",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Named in the footer of the council page (Wayback 2026-11-17: 'Mayor Scott Fadness'). fishersin.gov mayor page was 403/blocked; no separate mayor page saved."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Jennifer Kehl",
+      "source_url": "https://web.archive.org/web/20260714190313/https://fishersin.gov/government/administrative/city-clerk/",
+      "source_file": "raw/fishers-in/clerk-archive.html",
+      "note": "Wayback snapshot of the City Clerk page; page says first elected 2014, took office 2015. Wayback snapshot 2026-07-14."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Pete Peterson",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. South East District (1); term Jan. 2024 - Dec 2027."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Selina Stoller",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. North West District (2)."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "John P. DeLucia",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. North Central District (3); President."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "John Weingardt",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. South Central District (4)."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Bill Stuart",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. South West District (5)."
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Brad DeReamer",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. North East District (6)."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Cecilia Coble",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. "
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tiffanie Ditlevson",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. Vice President."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Todd Zimmerman",
+      "source_url": "https://web.archive.org/web/20261117171425/https://fishersin.gov/government/mayors-office/city-council/",
+      "source_file": "raw/fishers-in/council-archive.html",
+      "note": "Wayback snapshot 2026-11-17 of the city's own page. "
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://gis1.hamiltoncounty.in.gov/arcgis/rest/services/HamCoPolitical/FeatureServer/7",
+    "feature_count": null,
+    "district_field": "DIST",
+    "vintage": "Council redrawn Oct 2022 for 2023 election (per larryinfishers.com, search lead, not saved). AGOL item f745f5a7f0134678ac9dcec7618317ad 'Fishers Council Districts' modified 2026-06-08.",
+    "notes": "NOT VERIFIED BY QUERY: gis1.hamiltoncounty.in.gov resets TLS connections from this machine (curl and python), so the count and field list could not be fetched. Evidence saved: raw/fishers-in/agol-item.json (item says 'Fishers Council Districts (filtered from county service)', url above) and raw/fishers-in/agol-webmap.json (web map d3fcc369ac1b4532814c621edf2c6fdc: layer MapServer/7 with definitionExpression \"MUNI = 'Fishers'\", label field DIST, MAPNAME classes '1 - Fishers Southeast','2 - Fishers Northwest','3 - Fishers North Central','4 - Fishers South Central','5 - Fishers Southwest','6 - Fishers Northeast', which match the city's district numbering). Layer is county-wide (Hamilton County), so filter MUNI='Fishers'. City's own map app: tofgis.maps.arcgis.com/apps/Panels/index.html?appid=cce8d13da6554de2a5cda85d8a5718f6. Retry the count query from another network."
+  },
+  "notes": "fishersin.gov blocks curl (bot challenge, 403); council and clerk pages were read from Wayback snapshots of the city's own site. City court: city site menu lists 'City Court' and the clerk page says the clerk serves as clerk of the city court (judge name not collected). Council page says nine members: six district, three at-large; elections Jan 2024 - Dec 2027 terms."
+}

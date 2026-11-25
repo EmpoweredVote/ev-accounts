@@ -1,0 +1,103 @@
+{
+  "slug": "lawrence-in",
+  "geoid": "1842426",
+  "name": "Lawrence",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://cityoflawrence.org/node/163?year=2023",
+    "source_file": "raw/lawrence-in/node163.html",
+    "council_name": "Lawrence Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Deborah Whitfield",
+      "source_url": "https://cityoflawrence.org/mayor",
+      "source_file": "raw/lawrence-in/mayor.html",
+      "note": "Page headings 'Mayor Deborah Whitfield'. Search leads say sworn in Jan 1, 2024 (not read from a saved page)."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Leatrice Adkisson",
+      "source_url": "https://cityoflawrence.org/clerk",
+      "source_file": "raw/lawrence-in/clerk.html",
+      "note": "Page: 'Leatrice Adkisson is the elected city clerk of the City of Lawrence.'"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Tyrrell Giles",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Rick Wells",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Sherron Freeman",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Carlos Jennings",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Zach Cramer",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Kristie Krone",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tracy Boyd",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "David Roberts",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Betty Robinson",
+      "source_url": "https://cityoflawrence.org/node/163?year=2023",
+      "source_file": "raw/lawrence-in/node163.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://cityoflawrence.org/sites/default/files/documents/Council%20Districts_1_2020.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "filename 'Council Districts_1_2020.pdf' (2020); not confirmed to reflect any later redistricting",
+    "notes": "Saved raw/lawrence-in/council-districts-2020.pdf (1-page street map, pdftotext shows only street names). City's interactive map (cityoflawrence.org/maps) has a Common Council districts layer per search lead, but no public ArcGIS REST layer found; ArcGIS Online search found none for Lawrence IN. Lawrence is an excluded city in Marion County (separate from Indianapolis council)."
+  },
+  "notes": "Council page url carries ?year=2023 but page footer on sibling pages reads 2026; the page body lists nine members with no dates, so list may predate Nov 2026 changes; no appointment info on page. node8.html (saved) shows the same council list. City court: unknown. Not checked: whether council members' terms changed after the 2023 election (names read as of 2026-11-24 fetch)."
+}

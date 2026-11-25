@@ -1,0 +1,89 @@
+{
+ "slug": "goshen-in",
+ "geoid": "1828386",
+ "name": "Goshen",
+ "structure": {
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "city_court_judge": "yes",
+  "source_url": "https://goshen.in.gov/?p=5557",
+  "source_file": "raw/goshen-in/elected.html",
+  "council_name": "Goshen Common Council (city site also says City Council)"
+ },
+ "holders": [
+  {
+   "office": "Mayor",
+   "name": "Gina Leichty",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": null
+  },
+  {
+   "office": "Clerk-Treasurer",
+   "name": "Richard R. Aguirre",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Brett Weddell",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": "Council President per council page"
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Linda Gerber",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 1",
+   "name": "Don Riegsecker",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": "Council page spells Donald Riegsecker; layer CurrentRep spells Don Riegsecker"
+  },
+  {
+   "office": "Council Member, District 2",
+   "name": "Doug Nisley",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": "ArcGIS layer CurrentRep says Douglas Nisley"
+  },
+  {
+   "office": "Council Member, District 3",
+   "name": "Matt Schrock",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": "ArcGIS layer CurrentRep says Matthew Schrock"
+  },
+  {
+   "office": "Council Member, District 4",
+   "name": "Megan Peel",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 5",
+   "name": "Phil Lederach",
+   "source_url": "https://goshen.in.gov/?p=5557",
+   "source_file": "raw/goshen-in/elected.html",
+   "note": null
+  }
+ ],
+ "council_map": {
+  "kind": "arcgis",
+  "url": "https://services8.arcgis.com/trHxDV6stlqDdGWV/arcgis/rest/services/CouncilDistricts2023/FeatureServer/0",
+  "feature_count": 5,
+  "district_field": "Label",
+  "vintage": "layer named 2023 Council Districts; PDF 2023-Council_Districts_final.pdf; redistricting Ordinance 5131 (2022); elected page cites Ordinance 4719 per district",
+  "notes": "count query returned {\"count\":5}. Attribute fields: CouncilDistricts ('Goshen City Council District 2'), CurrentRep, Label ('1'..'5'). Found via city council page instant app d943433b... -> webmap 8ca3e5b1... (saved raw/goshen-in/webmap.json). Counts saved raw/goshen-in/layer-count.json, layer-attrs.json. District PDF: https://goshen.in.gov/wp-content/uploads/2024/12/13340_2023-Council_Districts_final.pdf (not downloaded)."
+ },
+ "notes": "Class: city shows 7 council seats (5 district + 2 at-large) and a Clerk-Treasurer, i.e. third-class structure, despite pop 34,458. Council page (raw/goshen-in/council.html) says 'next Goshen municipal election will take place in November 2027' and lists a Nov 23 2026 meeting, so roster is current. City Court Judge: Richard Mehl (elected, out of scope). Page does not state appointments. Mayor title page also lists Youth Adviser (non-voting, ignored)."
+}

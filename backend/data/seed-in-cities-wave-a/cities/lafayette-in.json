@@ -1,0 +1,103 @@
+{
+  "slug": "lafayette-in",
+  "geoid": "1840788",
+  "name": "Lafayette",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+    "source_file": "raw/lafayette-in/council-wayback.html",
+    "council_name": "Lafayette Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Tony Roswarski",
+      "source_url": "https://web.archive.org/web/20260822112159/https://www.lafayette.in.gov/657/Mayors-Office",
+      "source_file": "raw/lafayette-in/mayoroffice-wayback.html",
+      "note": "Page text: 'Mayor Tony Roswarski's State of the City Address'. Snapshot 2026-08-22."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Cindy Murray",
+      "source_url": "https://web.archive.org/web/20260105172504/http://lafayette.in.gov/153/City-Clerk",
+      "source_file": "raw/lafayette-in/clerk-wayback.html",
+      "note": "Snapshot 2026-01-05, quote attributed 'Cindy Murray, City Clerk'."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Jerry Reynolds",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Eileen Hession Weiss",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19. Page markup shows the District 2 line was edited (older names in an HTML comment); the visible text is 'Eileen Hession Weiss - District 2'. Possible recent replacement for the earlier District 2 member."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Perry E. Brown",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Lauren Ahlersmeyer",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Melissa Weast-Williamson",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19."
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Bob Downing",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Kevin Klinker",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Nancy Nargi",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19. Pro-Tem."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Steve Snyder",
+      "source_url": "https://web.archive.org/web/20261019082636/https://www.lafayette.in.gov/646/City-Council",
+      "source_file": "raw/lafayette-in/council-wayback.html",
+      "note": "Snapshot 2026-10-19. Page says Snyder is current Council President."
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://maps.tippecanoe.in.gov/server/rest/services/Voting/MapServer/210",
+    "feature_count": 6,
+    "district_field": "District",
+    "vintage": "not stated; layer has POPTotal near 12,000 per district, so likely the post-2020 map; confirm",
+    "notes": "Tippecanoe County GIS layer 'Lafayette City Council Districts'. returnCountOnly -> {\"count\":6}. Fields: OBJECTID, LafCtyCoun (1-6), District (string '01'..'06'), POPTotal, GlobalID. District sample: {OBJECTID 1, LafCtyCoun 1, District '01', POPTotal 11243}. Saved raw/lafayette-in/arcgis-count.json and arcgis-attrs.json."
+  },
+  "notes": "lafayette.in.gov refuses TLS connections from this machine (connection reset, curl and node), so all city pages are Wayback copies of the city site, dated in the source URLs. Council page snapshot is 2026-10-19. Also see Lafayette Directory pages in search results (not saved). Court: no saved page shows a Lafayette city court; unknown."
+}

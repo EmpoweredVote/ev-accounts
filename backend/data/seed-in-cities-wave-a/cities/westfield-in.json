@@ -1,0 +1,89 @@
+{
+  "slug": "westfield-in",
+  "geoid": "1882700",
+  "name": "Westfield",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+    "source_file": "raw/westfield-in/layer0-attrs.json",
+    "council_name": "Westfield City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Scott Willis",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "Also WFYI 2023 results: Republican Scott Willis 5441 votes, 100%."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Marla Ailor",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "Also WFYI 2023 results: Marla Ailor 4926 votes, 100%."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Jon Dartt",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results (raw/westfield-in/wfyi-2023.html) list the same winner; the 2023 list spells the District 4 winner 'Patrick T. Tamm'."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Victor McCarty",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results (raw/westfield-in/wfyi-2023.html) list the same winner; the 2023 list spells the District 4 winner 'Patrick T. Tamm'."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Joe Duepner",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results (raw/westfield-in/wfyi-2023.html) list the same winner; the 2023 list spells the District 4 winner 'Patrick T. Tamm'."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Patrick Tamm",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results (raw/westfield-in/wfyi-2023.html) list the same winner; the 2023 list spells the District 4 winner 'Patrick T. Tamm'."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Noah Herron",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results (raw/westfield-in/wfyi-2023.html) list the same winner; the 2023 list spells the District 4 winner 'Patrick T. Tamm'."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Chad Huff",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results list 'Chad Huff' and 'Kurt J. Wanninger' as at-large winners (4260 and 4171 votes)."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Kurt Wanninger",
+      "source_url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/0",
+      "source_file": "raw/westfield-in/layer0-attrs.json",
+      "note": "WFYI 2023 results list 'Chad Huff' and 'Kurt J. Wanninger' as at-large winners (4260 and 4171 votes)."
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/1",
+    "feature_count": 5,
+    "district_field": "District",
+    "vintage": "Not stated on the layer. Not confirmed against an ordinance.",
+    "notes": "City-run ArcGIS server. Layer 1 'City Council Districts' returnCountOnly -> {\"count\":5}; field District holds '1'..'5' (strings), plus Name, Email, PhoneNum. Layer 0 'Elected Officials' (points) count 9: five districts, two 'District At Large', Mayor, Clerk-Treasurer. Saved: raw/westfield-in/layer0-attrs.json, layer1-attrs.json, layer0-count.json, layer1-count.json. A FeatureServer with the same name also exists (same path with FeatureServer)."
+  },
+  "notes": "westfieldin.gov resets every connection from curl and WebFetch (TLS reset), so the council page could not be saved. Structure and holders come from the city's own GIS server (Elected Officials layer, which carries Mayor and Clerk-Treasurer) and agree with the WFYI 2023 Hamilton County unofficial results (raw/westfield-in/wfyi-2023.html) and IBJ (raw/westfield-in/ibj-2023.html), which says all seven council members were new in Jan 2024. The Elected Officials layer has edit stamps from 2020, so the names are accepted only because the 2023 results match. Structure of 5 district + 2 at-large is the GIS layer plus 2023 results; a search summary says the city site says seven members and that the council rejected a move to second class in 2022 (not verified from a saved page). City court judge: none appears on the 2023 Westfield ballot list, but that is not proof; left unknown. No appointments known."
+}

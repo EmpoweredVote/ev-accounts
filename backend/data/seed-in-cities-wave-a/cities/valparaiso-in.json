@@ -1,0 +1,89 @@
+{
+ "slug": "valparaiso-in",
+ "geoid": "1878326",
+ "name": "Valparaiso",
+ "structure": {
+  "council_size": 7,
+  "district_seats": 5,
+  "at_large_seats": 2,
+  "clerk_title": "Clerk-Treasurer",
+  "city_court_judge": "unknown",
+  "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+  "source_file": "raw/valparaiso-in/wb-182.html",
+  "council_name": "Valparaiso City Council"
+ },
+ "holders": [
+  {
+   "office": "Mayor",
+   "name": "Jon Costas",
+   "source_url": "https://lakeshorepublicmedia.org/local-news/2023-11-07/costas-retakes-valparaiso-mayors-office-while-democrats-take-control-of-city-council",
+   "source_file": "raw/valparaiso-in/lsp-2023-election.html",
+   "note": "News (Lakeshore Public Media, Nov 7 2023), not city site. City site (Wayback wb-government.html) shows only 'Mayor Costas 2.0 Plan'. Wikipedia lists 'H. Jonathon Costas' (seen in search result only, not fetched)."
+  },
+  {
+   "office": "Clerk-Treasurer",
+   "name": "Holly Taylor",
+   "source_url": "https://web.archive.org/web/20260407180007/https://www.ci.valparaiso.in.us/190/ClerkTreasurer",
+   "source_file": "raw/valparaiso-in/wb-190.html",
+   "note": "Wayback copy of city page dated 2026-04-07 (title 'Clerk-Treasurer - Holly Taylor')"
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Ellen Kapitan",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Emilie Hunt",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 1",
+   "name": "Diana Reed",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 2",
+   "name": "Robert Cotton",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 3",
+   "name": "Barbara Domer",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 4",
+   "name": "Jack Pupillo",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 5",
+   "name": "Peter Anderson",
+   "source_url": "https://web.archive.org/web/20251113211053/https://www.ci.valparaiso.in.us/182/Member-Information-Districts",
+   "source_file": "raw/valparaiso-in/wb-182.html",
+   "note": null
+  }
+ ],
+ "council_map": {
+  "kind": "pdf",
+  "url": "https://www.ci.valparaiso.in.us/DocumentCenter/View/2724",
+  "feature_count": null,
+  "district_field": null,
+  "vintage": "council adopted a new district map Nov 2022 (Lakeshore Public Media 2022-11-15, saved raw/valparaiso-in/lsp-2022-districtmap.html); city page's 'View Larger Map' link is DocumentCenter/View/2724",
+  "notes": "Map file NOT retrieved: live city host unreachable and Wayback has no copy of the PDF (404). Not confirmed that View/2724 is the 2022 map. No ArcGIS layer found (arcgis.com searches for Valparaiso council districts returned nothing; Porter County GIS not checked)."
+ },
+ "notes": "LIVE CITY SITE INACCESSIBLE: www.ci.valparaiso.in.us / www.valpo.us resolve to 192.196.0.168 but every curl attempt ends with TLS connection reset (curl exit 35), even with full browser headers and HTTP/1.1. All city-page facts come from Internet Archive copies: council members page captured 2025-11-13, clerk page and government page captured 2026-04-07. So the council roster is as of Nov 2025, not confirmed for Nov 2026; any 2026 caucus appointment would be missed. Names also match Lakeshore Public Media Jan 2025 (Kapitan president, Hunt vice president; raw/valparaiso-in/president.html) and Nov 2023 results (Reed, Cotton, Pupillo, Anderson, Domer, Hunt, Kapitan elected; Holly Taylor re-elected unopposed). Structure inferred from 5 numbered districts + 2 at-large and Clerk-Treasurer title, third class despite pop 35,065. Two terms from 2023 election run to end 2027. City court: nothing found."
+}

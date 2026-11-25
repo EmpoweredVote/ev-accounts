@@ -1,0 +1,211 @@
+[
+ {
+  "slug": "elkhart-in",
+  "name": "Elkhart",
+  "geoid": "1820728",
+  "url": "https://services5.arcgis.com/RhRpaq8RpEQjlpir/arcgis/rest/services/City_Council_Districts/FeatureServer/1",
+  "where": "district LIKE 'District %' AND lifecyclestatus = 'Active'",
+  "district_field": "district",
+  "expected": 6,
+  "source_note": "City of Elkhart City_Council_Districts layer 1; 6 district polygons (3 citywide At-Large rows excluded by where); effectiveyears 2022/2024-"
+ },
+ {
+  "slug": "muncie-in",
+  "name": "Muncie",
+  "geoid": "1851876",
+  "url": "https://services.arcgis.com/VyRjdyMziYNF5Bwe/arcgis/rest/services/MuncieCityCouncil/FeatureServer/0",
+  "district_field": "CITY_COUNC",
+  "expected": 6,
+  "source_note": "MuncieCityCouncil FeatureServer 0 (Delaware County hosted); vintage not stated on the layer"
+ },
+ {
+  "slug": "westfield-in",
+  "name": "Westfield",
+  "geoid": "1882700",
+  "url": "https://maps.westfield.in.gov/arcgis/rest/services/Reference/CityCouncil/MapServer/1",
+  "district_field": "District",
+  "expected": 5,
+  "source_note": "City of Westfield GIS Reference/CityCouncil MapServer 1",
+  "max_outside_pct": 10,
+  "bound_reason": "Westfield annexes fast; TIGER's 2024 place lags it, and the state WAYEO layer is older still (it labels Westfield a town). No city-limits layer found on maps.westfield.in.gov. Clipped to TIGER so council seats match the citywide seats."
+ },
+ {
+  "slug": "mishawaka-in",
+  "name": "Mishawaka",
+  "geoid": "1849932",
+  "url": "https://maps.mishawaka.in.gov/arcgis/rest/services/Public/Council_Districts/MapServer/0",
+  "where": "DISTRICT <> 'At-Large'",
+  "district_field": "DISTRICT",
+  "expected": 6,
+  "source_note": "City of Mishawaka Public/Council_Districts MapServer 0; 3 At-Large rows excluded by where"
+ },
+ {
+  "slug": "portage-in",
+  "name": "Portage",
+  "geoid": "1861092",
+  "url": "https://services5.arcgis.com/Qp5vz8Fz7vawwcWD/arcgis/rest/services/Council_Reps/FeatureServer/0",
+  "district_field": "DISTRICT_N",
+  "expected": 5,
+  "source_note": "City of Portage Council_Reps FeatureServer 0: 37 precinct polygons dissolved by DISTRICT_N; 2 citywide at-large rows (DISTRICT_N null) excluded by where",
+  "where": "DISTRICT_N IS NOT NULL"
+ },
+ {
+  "slug": "terre-haute-in",
+  "name": "Terre Haute",
+  "geoid": "1875428",
+  "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer",
+  "layers": [
+   {
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer/0",
+    "key": 1
+   },
+   {
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer/1",
+    "key": 2
+   },
+   {
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer/2",
+    "key": 3
+   },
+   {
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer/3",
+    "key": 4
+   },
+   {
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer/4",
+    "key": 5
+   },
+   {
+    "url": "https://arcgis.terrehaute.in.gov/arcgis/rest/services/City_Council_Districts_2022/MapServer/5",
+    "key": 6
+   }
+  ],
+  "district_field": "__key",
+  "expected": 6,
+  "source_note": "City of Terre Haute City_Council_Districts_2022 MapServer, layers 0-5 = D1..D6 (layer names D<n>_2016_3_07262022)"
+ },
+ {
+  "slug": "lawrence-in",
+  "name": "Lawrence",
+  "geoid": "1842426",
+  "url": "https://gis.indy.gov/server/rest/services/sde_Voting/sde_Voting/MapServer/10",
+  "where": "CITYNAME = 'LAWRENCE'",
+  "district_field": "DISTRICT",
+  "expected": 6,
+  "source_note": "Indianapolis-Marion County GIS sde_Voting MapServer 10 (Town Council Districts), CITYNAME=LAWRENCE, keys L-1..L-6"
+ },
+ {
+  "slug": "jeffersonville-in",
+  "name": "Jeffersonville",
+  "geoid": "1838358",
+  "url": "https://services.arcgis.com/NuZplX0yD9b0Mx90/arcgis/rest/services/city_council_districts/FeatureServer/0",
+  "district_field": "district",
+  "expected": 6,
+  "source_note": "ArcGIS Online city_council_districts (owner jpbrashear), created 2023-02-06, same week as the city's per-district PDFs (cityofjeff.net/wp-content/uploads/2023/02); backs the 'Jeffersonville City Council Districts (Search Address)' app updated 2026-10-08"
+ },
+ {
+  "slug": "goshen-in",
+  "name": "Goshen",
+  "geoid": "1828386",
+  "url": "https://services8.arcgis.com/trHxDV6stlqDdGWV/arcgis/rest/services/CouncilDistricts2023/FeatureServer/0",
+  "district_field": "Label",
+  "expected": 5,
+  "source_note": "CouncilDistricts2023 FeatureServer 0 (Goshen); per-district Ordinance 4719 linked from the city's elected-officials page"
+ },
+ {
+  "slug": "new-albany-in",
+  "name": "New Albany",
+  "geoid": "1852326",
+  "url": "https://services5.arcgis.com/fhY0REQd0M65vDjz/arcgis/rest/services/New_Albany_2020_Census_Council_Districts/FeatureServer/0",
+  "district_field": "DISTRICT",
+  "expected": 6,
+  "source_note": "New_Albany_2020_Census_Council_Districts FeatureServer 0 (third-party host; post-2020 redistricting by name)"
+ },
+ {
+  "slug": "lafayette-in",
+  "name": "Lafayette",
+  "geoid": "1840788",
+  "url": "https://maps.tippecanoe.in.gov/server/rest/services/Voting/MapServer/210",
+  "district_field": "District",
+  "expected": 6,
+  "source_note": "Tippecanoe County GIS Voting MapServer 210 (Lafayette City Council), with POPTotal per district"
+ },
+ {
+  "slug": "greenwood-in",
+  "name": "Greenwood",
+  "geoid": "1829898",
+  "url": "https://services2.arcgis.com/6DdnNWEqLRF18ltQ/arcgis/rest/services/Greenwood_Common_Council/FeatureServer/0",
+  "where": "CityCommonCouncil > 0",
+  "district_field": "CityCommonCouncil",
+  "expected": 6,
+  "source_note": "City of Greenwood hosted layer Greenwood_Common_Council FeatureServer 0 (owner GreenwoodGIS, last edited 2026-10-06); 3 at-large rows (CityCommonCouncil = 0, 100 m squares) excluded. Replaces the city MapServer, which serves no geometry. Its Official field is not a roster source."
+ },
+ {
+  "slug": "evansville-in",
+  "name": "Evansville",
+  "geoid": "1822000",
+  "url": "https://maps.evansvillegis.com/arcgis_server/rest/services/POLITICAL/CITY_COUNCIL_WARDS/MapServer/0",
+  "district_field": "DISPNAME",
+  "expected": 6,
+  "source_note": "Evansville-Vanderburgh GIS POLITICAL/CITY_COUNCIL_WARDS MapServer 0, DISPNAME 'Ward N' (council districts are called wards in Evansville), POP_2020 field"
+ },
+ {
+  "slug": "south-bend-in",
+  "name": "South Bend",
+  "geoid": "1871000",
+  "url": "https://gis.southbendin.gov/arcgis/rest/services/LandRecords/Council_Districts/MapServer/0",
+  "district_field": "Num",
+  "expected": 6,
+  "source_note": "City of South Bend LandRecords/Council_Districts MapServer 0, Num 1..6"
+ },
+ {
+  "slug": "carmel-in",
+  "name": "Carmel",
+  "geoid": "1810342",
+  "url": "https://carmelgis.carmel.in.gov/arcserver/rest/services/CouncilDistricts/FeatureServer/0",
+  "district_field": "District",
+  "expected": 6,
+  "key_map": {
+   "North Central": 1,
+   "Northeast": 2,
+   "Southeast": 3,
+   "Northwest": 4,
+   "South Central": 5,
+   "West": 6
+  },
+  "source_note": "City of Carmel CouncilDistricts FeatureServer 0. 🔴 The layer's Id numbers are NOT the city's district numbers (Id 3 = Northwest, Id 4 = Southeast); keyed by area name per the city council page (Northwest = District 4, North Central 1, Northeast 2, South Central 5, West 6; Southeast = 3 by elimination)"
+ },
+ {
+  "slug": "hammond-in",
+  "name": "Hammond",
+  "geoid": "1831000",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0",
+  "where": "county='089' AND (p26 LIKE 'H1 %' OR p26 LIKE 'H2 %' OR p26 LIKE 'H3 %' OR p26 LIKE 'H4 %' OR p26 LIKE 'H5 %' OR p26 LIKE 'H6 %')",
+  "district_field": "p26",
+  "key_regex": "^H([1-6]) \\d+$",
+  "expected": 6,
+  "source_note": "Indiana 2026 voting district (precinct) boundaries: Lake County names Hammond precincts H<district> <precinct>; precincts H1..H6 dissolved by that district"
+ },
+ {
+  "slug": "kokomo-in",
+  "name": "Kokomo",
+  "geoid": "1840392",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0",
+  "where": "county='067' AND p26 >= '1' AND p26 < '7'",
+  "district_field": "p26",
+  "key_regex": "^([1-6])(?:\\d\\d| [A-Z]+ \\d+)$",
+  "expected": 6,
+  "source_note": "Indiana 2026 voting district (precinct) boundaries: Howard County precincts whose name begins with the council district (101..607, and city precincts in a township such as 5 HARRISON 1) dissolved by that digit"
+ },
+ {
+  "slug": "anderson-in",
+  "name": "Anderson",
+  "geoid": "1801468",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Voting_District_Boundaries_2026/FeatureServer/0",
+  "where": "county='095' AND p26 LIKE 'ANDERSON _-%'",
+  "district_field": "p26",
+  "key_regex": "^ANDERSON ([1-6])-\\d+$",
+  "expected": 6,
+  "source_note": "Indiana 2026 voting district (precinct) boundaries: Madison County precincts ANDERSON <district>-<precinct> dissolved by district"
+ }
+]

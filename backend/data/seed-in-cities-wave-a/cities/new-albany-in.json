@@ -1,0 +1,103 @@
+{
+ "slug": "new-albany-in",
+ "geoid": "1852326",
+ "name": "New Albany",
+ "structure": {
+  "council_size": 9,
+  "district_seats": 6,
+  "at_large_seats": 3,
+  "clerk_title": "City Clerk",
+  "city_court_judge": "unknown",
+  "source_url": "https://cityofnewalbany.com/city-council/",
+  "source_file": "raw/new-albany-in/council.html",
+  "council_name": "New Albany City Council (minutes: Common Council of the Civil City of New Albany)"
+ },
+ "holders": [
+  {
+   "office": "Mayor",
+   "name": "Jeff Gahan",
+   "source_url": "https://cityofnewalbany.com/wp-content/uploads/2026/01/100625-ccmin.pdf",
+   "source_file": "raw/new-albany-in/minutes-100625.pdf",
+   "note": "Name from Oct 6 2025 council minutes (signed letter 'Mayor Jeff Gahan'). City mayor page raw/new-albany-in/mayor.html says only 'A Message from Mayor Gahan'."
+  },
+  {
+   "office": "City Clerk",
+   "name": "Vicki Glotzbach",
+   "source_url": "https://cityofnewalbany.com/city-clerk/",
+   "source_file": "raw/new-albany-in/clerk.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Elaine Murphy",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": "Vice President; term 01/01/24-12/31/27"
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Don Unruh",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, At Large",
+   "name": "Stefanie Griffith",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 1",
+   "name": "Jennie Collier",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 2",
+   "name": "Adam Dickey",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": "Council President"
+  },
+  {
+   "office": "Council Member, District 3",
+   "name": "Greg Phipps",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 4",
+   "name": "Chris FitzGerald",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 5",
+   "name": "Louise Gohmann",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  },
+  {
+   "office": "Council Member, District 6",
+   "name": "Scott Blair",
+   "source_url": "https://cityofnewalbany.com/city-council/",
+   "source_file": "raw/new-albany-in/council.html",
+   "note": null
+  }
+ ],
+ "council_map": {
+  "kind": "arcgis",
+  "url": "https://services5.arcgis.com/fhY0REQd0M65vDjz/arcgis/rest/services/New_Albany_2020_Census_Council_Districts/FeatureServer/0",
+  "feature_count": 6,
+  "district_field": "DISTRICT",
+  "vintage": "2020 census districts; web map snippet 'council districts as of 2024'; city PDF precinct map dated 2023/10",
+  "notes": "NOT a city-run layer: published by ArcGIS user cmoore92 (web map 'New Albany City Council Map', tags Floyd County). Extent lat ~38.3, lon ~-85.8 (New Albany IN). services5 layer: count {\"count\":6}; DISTRICT values '1'..'6' (also DISTRICTN numeric, ID). A sibling layer https://services.arcgis.com/EAoy39bcmpweKJ4f/arcgis/rest/services/New_Albany_2020_Census_Council_Districts/FeatureServer/0 (the one the web map uses) returns {\"count\":9}: DISTRICT '1'-'5','6' and three '6-2024' rows (a 2024 change to district 6). Saved raw/new-albany-in/layer1-*.json (services.arcgis.com) and layer2 attrs/count (services5). City's own sources: precinct map PDF https://cityofnewalbany.com/wp-content/uploads/2023/10/councildistrict-precinctmap.pdf (saved) and per-district PDFs https://cityofnewalbany.com/wp-content/uploads/2023/07/2023-Districts-1.pdf ..-6.pdf (not downloaded). Verify against the city PDF before use."
+ },
+ "notes": "Roster page undated, but terms shown 01/01/24-12/31/27 and Oct 2025 minutes list Collier, Phipps, FitzGerald, Gohmann, Blair, Griffith, Murphy, Unruh present with President Dickey presiding, consistent with page. No 2026 vacancy found in one search (not exhaustive). City court judge: not found on city pages (unknown). Mayor Gahan name only from Oct 2025 minutes (13 months old); mayor term runs to end 2027 (election Nov 2023 per LPM coverage seen in search snippet only)."
+}

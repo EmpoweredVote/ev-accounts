@@ -1,0 +1,103 @@
+{
+  "slug": "muncie-in",
+  "geoid": "1851876",
+  "name": "Muncie",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://www.muncie.in.gov/council",
+    "source_file": "raw/muncie-in/council.html",
+    "council_name": "Muncie City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Dan Ridenour",
+      "source_url": "https://www.muncie.in.gov/department/index.php?structureid=14",
+      "source_file": "raw/muncie-in/mayor.html",
+      "note": "City page names him and is undated; not cross-checked against a 2023 result."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Belinda Munson",
+      "source_url": "https://www.muncie.in.gov/department/index.php?structureid=17",
+      "source_file": "raw/muncie-in/clerk.html",
+      "note": "Page title reads 'Belinda Munson - Muncie City Clerk'. Page is undated."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Jeff Green",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Nora Powell",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Brandon Garrett",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Sara Gullion",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Jerry D. Dishman",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Harold Mason Jr.",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dale Basham",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Ro Selvey",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "William McIntosh Sr.",
+      "source_url": "https://www.muncie.in.gov/council",
+      "source_file": "raw/muncie-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://services.arcgis.com/VyRjdyMziYNF5Bwe/arcgis/rest/services/MuncieCityCouncil/FeatureServer/0",
+    "feature_count": 6,
+    "district_field": "CITY_COUNC",
+    "vintage": "Item modified in 2022 per ArcGIS item metadata (not stated on the layer); the city's own PDF map is https://www.muncie.in.gov/egov/documents/1747397468_84129.pdf (image-only, no text layer)",
+    "notes": "returnCountOnly -> {\"count\":6}. Fields: OBJECTID, CITY_COUNC, Name, Contact, TermExp. CITY_COUNC values '1'..'6' (strings). Names in layer match the city council page: Jeff Green, Nora Powell, Brandon Garrett, Sara Gullion, Jerry Dishman, Harold Mason Jr. Layer owner is an ArcGIS user 'kyleajohnson' in the same ArcGIS organisation as the Delaware County parcel service (VyRjdyMziYNF5Bwe), so it is county-hosted, not clearly city-run. Layer contact emails use the old cityofmuncie.com domain and TermExp is 2026, so it may be older than the 2022 redistricting vintage: confirm it matches the city's PDF map (the PDF lists precincts per district on the council page). A separate 'Muncie_City_Council_At_Large_District' feature service also exists. Precincts per district are printed on the council page (e.g. District 1: 9, 13, 22, 28, 29). Saved: raw/muncie-in/arcgis-layer0-attrs.json."
+  },
+  "notes": "City page text: 'The City Council consists of nine members ... Six members are elected by the voters in their district and three at-large members'. City Clerk also serves as Clerk of Muncie City Court (clerk page), so a city court exists; judge not looked up. No appointments or vacancies are shown on the council page. Pages are undated; holders were not cross-checked against the Nov 2023 election results. Page also lists Jerry D. Dishman with a non-city email (dishjd@netscape.net)."
+}

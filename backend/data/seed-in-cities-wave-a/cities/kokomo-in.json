@@ -1,0 +1,103 @@
+{
+  "slug": "kokomo-in",
+  "geoid": "1840392",
+  "name": "Kokomo",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+    "source_file": "raw/kokomo-in/council.html",
+    "council_name": "Kokomo Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Tyler O. Moore",
+      "source_url": "https://cityofkokomo.org/departments/mayor_s_office/index.php",
+      "source_file": "raw/kokomo-in/mayor.html",
+      "note": "Page says he became Mayor in 2020."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Diane Howard",
+      "source_url": "https://cityofkokomo.org/departments/city_clerk/index.php",
+      "source_file": "raw/kokomo-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Dave Capshaw",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": "Council members sub-page (raw/kokomo-in/council_members.html) spells District 1 'David Capshaw'."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Bob Stephenson",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Ray Collins",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Jeff Plough",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Greg Davis",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Crystal Sanburn",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tony Stewart",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Matt Grecu",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": "Council members sub-page spells 'Matthew Grecu'."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tom Miklik",
+      "source_url": "https://cityofkokomo.org/departments/common_council/index.php",
+      "source_file": "raw/kokomo-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://cityofkokomo.org/Common%20Council%20Map%202024.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "PDF is titled 'Common Council Districts 2023' (file name says 2024)",
+    "notes": "Saved as raw/kokomo-in/council-map-2024.pdf; it is a picture map with street labels, no precinct list in the text. No ArcGIS layer found: two searches, and the ArcGIS Online search for 'Kokomo council' returned nothing relevant. The city code (amlegal) is behind a Cloudflare challenge, so no ordinance was read."
+  },
+  "notes": "Council page: 'The Council consists of nine members. Three are elected across the city (at large), and six are elected specific to certain areas of the city (districts).' Page names Greg Davis as Council President; a search snippet showed 'President Collins' in July 2025 minutes (not saved), so the roster page may lag. Council page is undated. City court judge not checked. No appointments shown."
+}

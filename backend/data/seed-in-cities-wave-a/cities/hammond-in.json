@@ -1,0 +1,103 @@
+{
+  "slug": "hammond-in",
+  "geoid": "1831000",
+  "name": "Hammond",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.gohammond.com/city-council/",
+    "source_file": "raw/hammond-in/council.html",
+    "council_name": "Hammond Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Thomas M. McDermott Jr.",
+      "source_url": "https://www.gohammond.com/mayor/",
+      "source_file": "raw/hammond-in/mayor.html",
+      "note": "Name also in page header of council.html and clerk.html ('Thomas M. McDermott Jr., Mayor')."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Robert J. Golec",
+      "source_url": "https://www.gohammond.com/?p=319",
+      "source_file": "raw/hammond-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Katrina Alexander",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dan Spitale",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Janet Venecz",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": "Listed as Council President"
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Mark Kalwinski",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Alfonso Salinas III",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Barry Tyler, Jr.",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "William Emerson",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Dave Woerpel",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Scott Rakos",
+      "source_url": "https://www.gohammond.com/city-council/",
+      "source_file": "raw/hammond-in/council.html",
+      "note": "Listed as Council Vice-President"
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.lakecountyin.gov/departments/voters/maps-gis/CITY-COUNCIL-DISTRICT-MAPS/HAMMOND%20CITY%20COUNCIL%20DISTRICTS%2013X19.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "not shown in text; Lake County Board of Elections reference map (also per-district PDFs 1ST..6TH DIST on same folder)",
+    "notes": "Saved as raw/hammond-in/districts-map.pdf (not read as an image yet). City page https://www.gohammond.com/departments/city-council/hammond-council-districts/ (raw/hammond-in/districts.html) links six district maps (district 1-6) but the link text only. Two web searches found no ArcGIS layer for Hammond council districts. lakecounty.in.gov DNS fails from this machine; lakecountyin.gov works."
+  },
+  "notes": "Mayor page https://www.gohammond.com/mayor/ was fetched (raw/hammond-in/mayor.html) and contains McDermott. Council page lists 3 at-large + 6 district = 9. Clerk page says City Clerk elected every four years. Hammond has a City Court in practice but no saved page was checked, so city_court_judge is unknown. No mid-term appointments noted on the pages."
+}
