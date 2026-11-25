@@ -38,6 +38,7 @@ import { normalizeDonorName } from './normalizeDonorName.js';
 import { refreshSummaryAggForSource, getConfirmedFecSources } from '../campaignFinanceService.js';
 import { cache } from '../cache.js';
 import type { ContributionInsert } from './adapterInterface.js';
+import { clearFecCheckpoints } from './fecFetchCheckpoint.js';
 
 export interface BulkLoadOptions {
   /** Parse + filter + count only; write nothing to the DB. */
@@ -56,6 +57,18 @@ export interface BulkLoadOptions {
    * burst already keeps current alone: no rows, no agg refresh, no run row.
    */
   newOnly?: boolean;
+  /**
+   * Write only rows whose SUB_ID is not stored yet; never touch an existing row.
+   *
+   * WHY (2026-11-25, ev-cto watchlist #102). The shared upsert is ON CONFLICT DO UPDATE, so
+   * re-loading a cycle rewrites every row we already hold. For the 67 sources the burst could
+   * not catch up, the file held 5.9M rows of which ~4.6M were stored: an upsert would have
+   * rewritten 4.6M rows to add ~1.4M, on a database with a daily disk budget. The check reads
+   * only (data_source, source_transaction_id), so the unique dedup index answers it.
+   */
+  insertOnly?: boolean;
+  /** Restrict to these politician_source ids (each must still be a confirmed FEC source). */
+  sources?: string[];
 }
 
 const BULK_BASE = 'https://www.fec.gov/files/bulk-downloads';
@@ -207,6 +220,13 @@ async function buildCommitteeMap(cycle: string, yy: string, opts: BulkLoadOption
     sources = sources.filter((s) => fresh.has(s.id));
     console.log(`[bulk] --new-only: ${sources.length} source(s) with no successful ${cycle} FEC run`);
   }
+  if (opts.sources?.length) {
+    const wanted = new Set(opts.sources);
+    sources = sources.filter((s) => wanted.has(s.id));
+    const missing = opts.sources.filter((id) => !sources.some((s) => s.id === id));
+    console.log(`[bulk] --sources: ${sources.length} of ${opts.sources.length} are confirmed FEC sources` +
+      (missing.length ? ` (not confirmed / not FEC: ${missing.join(',')})` : ''));
+  }
   const candToSource = new Map<string, string>();
   for (const s of sources) if (s.external_id) candToSource.set(s.external_id, s.id);
 
@@ -267,9 +287,12 @@ export async function buildCandidateCommitteeMap(cycle: string): Promise<Map<str
  *  audit (getTruncatedPairs) reflects the new coverage. Expected = largest expected ever
  *  seen for the pair (from prior run notes); stored = current row count. */
 async function finalizePair(sourceId: string, cycle: string, watermark: Date): Promise<void> {
+  // No data_source filter: an FEC source's rows are all 'fec', and that filter forced a heap
+  // read of every row (a big campaign is ~500k rows) where idx_contrib_src_cycle can answer
+  // the count on its own.
   const storedRes = await pool.query<{ n: string }>(
     `SELECT count(*) n FROM transparent_motivations.contributions
-     WHERE data_source='fec' AND politician_source_id=$1 AND election_cycle=$2`,
+     WHERE politician_source_id=$1 AND election_cycle=$2`,
     [sourceId, cycle]
   );
   const stored = Number(storedRes.rows[0]?.n ?? 0);
@@ -290,6 +313,20 @@ async function finalizePair(sourceId: string, cycle: string, watermark: Date): P
      `fetched ${stored} of expected ${expected} (${pct}%) [bulk indiv as of ${watermark.toISOString().slice(0, 10)}]`,
      watermark]
   );
+  // The run row just made the file date this pair's API cursor. A catch-up chain the burst
+  // left (fec_fetch_checkpoints, CA_0410) would otherwise keep paging an older window the file
+  // has already loaded. Without it the next API run starts from the run-row history.
+  await clearFecCheckpoints(sourceId, cycle);
+}
+
+/** SUB_IDs in `ids` that are already stored (as data_source 'fec'). Index-only on the dedup key. */
+async function storedSubIds(ids: string[]): Promise<Set<string>> {
+  const r = await pool.query<{ source_transaction_id: string }>(
+    `SELECT source_transaction_id FROM transparent_motivations.contributions
+      WHERE data_source = 'fec' AND source_transaction_id = ANY($1::text[])`,
+    [ids]
+  );
+  return new Set(r.rows.map((row) => row.source_transaction_id));
 }
 
 /** Load one cycle's itemized individual contributions from FEC bulk data. */
@@ -307,12 +344,19 @@ export async function loadFecBulkCycle(cycle: string, opts: BulkLoadOptions = {}
   if (allow.size === 0) { console.error('[bulk] no committees to load — aborting'); return; }
 
   const touched = new Set<string>();
-  let scanned = 0, matched = 0, written = 0, skippedMemo = 0, sampled = 0;
+  let scanned = 0, matched = 0, written = 0, alreadyStored = 0, skippedMemo = 0, sampled = 0;
+  let stoppedEarly = false;
   let batch: ContributionInsert[] = [];
   const flush = async () => {
     if (!batch.length) return;
-    if (!opts.dry) {
-      const r = await upsertContributions({ contributions: batch, skipped: 0, totalParsed: batch.length });
+    let toWrite = batch;
+    if (opts.insertOnly) {
+      const have = await storedSubIds(batch.map((b) => b.source_transaction_id));
+      toWrite = batch.filter((b) => !have.has(b.source_transaction_id));
+      alreadyStored += batch.length - toWrite.length;
+    }
+    if (!opts.dry && toWrite.length) {
+      const r = await upsertContributions({ contributions: toWrite, skipped: 0, totalParsed: toWrite.length });
       written += r.inserted;
     }
     batch = [];
@@ -334,14 +378,24 @@ export async function loadFecBulkCycle(cycle: string, opts: BulkLoadOptions = {}
     touched.add(sourceId);
     batch.push(mapBulkRow(c, sourceId, cycle));
     if (batch.length >= 500) await flush();
-    if (opts.limit && matched >= opts.limit) { console.log(`[bulk] reached --limit ${opts.limit}`); break; }
+    if (opts.limit && matched >= opts.limit) {
+      console.log(`[bulk] reached --limit ${opts.limit}`);
+      stoppedEarly = true;
+      break;
+    }
   }
   await flush();
 
-  console.log(`[bulk] cycle ${cycle}: scanned=${scanned.toLocaleString()} matched=${matched.toLocaleString()} written=${written.toLocaleString()} memoSkipped=${skippedMemo} sources=${touched.size}`);
+  console.log(`[bulk] cycle ${cycle}: scanned=${scanned.toLocaleString()} matched=${matched.toLocaleString()} written=${written.toLocaleString()}` +
+    `${opts.insertOnly ? ` alreadyStored=${alreadyStored.toLocaleString()}` : ''} memoSkipped=${skippedMemo} sources=${touched.size}`);
 
   if (!opts.dry && touched.size > 0) {
-    if (!watermark) {
+    if (stoppedEarly) {
+      // 🔴 A run row moves the API cursor to the file date. After a partial load that would
+      // skip every row the load never reached, and nothing would error. Rows written stay
+      // (they are real); the pairs keep their old cursor, and a full re-run adds the rest.
+      console.warn('[bulk] stopped early (--limit) — writing NO run rows and clearing no checkpoints.');
+    } else if (!watermark) {
       console.warn(
         `[bulk] 🔴 indiv${yy}.zip has no usable Last-Modified — writing NO run rows. ` +
         `The API will re-read these pairs' whole window (SUB_ID dedup absorbs the overlap).`
@@ -350,9 +404,9 @@ export async function loadFecBulkCycle(cycle: string, opts: BulkLoadOptions = {}
     for (const sid of touched) {
       try {
         await refreshSummaryAggForSource(sid);
-        if (watermark) await finalizePair(sid, cycle, watermark);
+        if (watermark && !stoppedEarly) await finalizePair(sid, cycle, watermark);
       } catch (e) { console.warn(`[bulk] finalize failed for ${sid}: ${e instanceof Error ? e.message : String(e)}`); }
     }
-    console.log(`[bulk] refreshed agg for ${touched.size} source(s); run rows ${watermark ? `stamped ${watermark.toISOString()}` : 'NOT written'}.`);
+    console.log(`[bulk] refreshed agg for ${touched.size} source(s); run rows ${watermark && !stoppedEarly ? `stamped ${watermark.toISOString()}` : 'NOT written'}.`);
   }
 }
