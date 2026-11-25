@@ -1,6 +1,64 @@
 # Headshots for the 2026 transition — the sourcing queue
 
-`build-list.mjs` produces `headshot-queue-2026-11-08.{csv,json}`: every winner of the
+## 2026-11-25 — rebuilt, and the builder had been DEAD since CA_0378
+
+🔴🔴 **`build-list.mjs` threw `42703: column p.is_incumbent does not exist` on every run after
+CA_0378 dropped that column, so this queue had not been rebuilt since 2026-11-08 and nothing
+said so.** The column was *selected and never read* — the `cols` list does not carry it and no
+other line mentions it — so the fix was to delete it. "New to the seat" is computed from
+`current_holder`, which is the right question anyway; real incumbency is `isIncumbentSql()` in
+`backend/src/lib/incumbency.ts` (see CLAUDE.md).
+
+🔴 **The output filename was a literal, so a second run would have OVERWRITTEN the first queue
+in place.** It is now an argument (`node build-list.mjs <outDir> [YYYY-MM-DD]`, default today),
+and `headshot-queue-2026-11-08.{csv,json}` is kept. The queue only means something beside the
+one before it, because **recording winners RAISES this number** — a falling count is not
+progress on its own.
+
+| | 2026-11-08 | **2026-11-25** |
+| --- | --- | --- |
+| winners recorded | 1,134 | **1,923** |
+| a photo somewhere (the positive control) | 901 | **1,607** |
+| **no photo anywhere — the queue** | **233** | **316** |
+| of those, NEW to the seat | 169 | **245** |
+| already carrying a licence refusal | 1 | **1** |
+| holding an image row of some other type | — | **0** |
+
+**By tier:** STATE_LOWER 129 · STATE_EXEC 76 · SCHOOL 50 · STATE_BOARD_EDUCATION 22 ·
+STATE_UPPER 19 · STATE_BOARD 14 · LOCAL 6.
+
+**By state:** ca 63 · me 61 · md 25 · ma 18 · or 13 · nv 12 · al 11 · ne 10 · nm 9 · tx 9 ·
+wi 9 · ga 8, then a tail across 37 states. 🟢 The federal tier is **complete** — 0 of 463.
+
+🟢 **Measured twice, independently.** A hand-written query over the two scalar columns, then
+`politician_images` checked separately, returned the same 316 and the same tier split as this
+builder's three-place rule. **None of the 316 holds an image row of any type**, so this is 316
+people with no face anywhere, not a scalar/grid mismatch.
+
+### 🔴 WHO IS ALREADY FACELESS ON THE LIVE SITE, AND WHO IS ABOUT TO BE
+
+| takes office | people with no face |
+| --- | --- |
+| **already in office** (2026-11-03 Hawaii OHA, 11-04 Nevada) | **17** |
+| 2026-12-01 | **61** |
+| 2026-12-04 · 12-07 · 12-11 | 6 · 8 · **50** |
+| January 2027 | 103 |
+| no date yet | 71 |
+
+**142 take office in December**, and 125 of those within sixteen days of this measurement.
+December is almost entirely two states: **California 63 and Maine 61**.
+
+⚠ **`website_url` is empty on all 316**, so there is no recorded sourcing lead for anybody —
+every one is a search from scratch. Do not read the blank column as "no site exists".
+
+### 🔴 THE SCALAR/IMAGE-ROW DISAGREEMENT IS NOW THREE, NOT TWO
+
+**Mark Teixeira**, **Vanessa Kritzer** and now **Jessica Forsythe** each carry
+`photo_custom_url` with **no `default` image row**: they render on one surface and blank on the
+other, and no gate in this repo sees it. They are **not** in the queue — they have *a* photo —
+and they want a **repair**, not sourcing. ▶ Write both, always.
+
+`build-list.mjs` produces `headshot-queue-<date>.{csv,json}`: every winner of the
 2026-11-03 election who has **no headshot in any of the three places a photo can live**.
 
 **Measured 2026-11-08, against production:**

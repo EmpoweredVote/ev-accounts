@@ -21,6 +21,12 @@ const require = createRequire(process.env.RESOLVE_FROM || import.meta.url);
 const pg = require('pg');
 
 const outDir = process.argv[2] || '.';
+// 🔴 THE DATE IS AN ARGUMENT, NOT A LITERAL. It was hardcoded to 2026-11-08, so a second run
+// OVERWROTE the first queue in place and the earlier measurement existed nowhere afterwards.
+// Each run is a dated snapshot: the queue only means anything beside the one before it, because
+// recording more winners RAISES the gap and a falling count is not progress by itself.
+const stamp = process.argv[3] || new Date().toISOString().slice(0, 10);
+const base = `headshot-queue-${stamp}`;
 const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
 await client.connect();
 
@@ -41,7 +47,13 @@ const { rows } = await client.query(`
              ON s.office_id = o.id AND s.election_date = e.election_date
      WHERE e.election_date = DATE '2026-11-03' AND rc.result = 'won'
   )
-  SELECT w.*, p.full_name AS person_name, p.is_active, p.is_incumbent,
+  -- 🔴 p.is_incumbent IS GONE (CA_0378) AND THIS QUERY STILL ASKED FOR IT, so this builder
+  -- threw 42703 on every run after that migration and the queue has not been rebuilt since
+  -- 2026-11-08. It was selected and never read: the cols list does not carry it and nothing
+  -- else in this file mentions it. New to the seat is computed below from current_holder,
+  -- which is the right question anyway. Incumbency, where it IS wanted, is isIncumbentSql()
+  -- in backend/src/lib/incumbency.ts.
+  SELECT w.*, p.full_name AS person_name, p.is_active,
          p.photo_custom_url, p.photo_origin_url, p.photo_restriction_code,
          (SELECT count(*) FROM essentials.politician_images pi
            WHERE pi.politician_id = w.politician_id AND pi.type = 'default') AS default_images,
@@ -74,9 +86,9 @@ const line = (r) => cols.map((c) => csvEsc(c === 'is_new_to_seat'
   : r[c])).join(',');
 
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, 'headshot-queue-2026-11-08.csv'),
+fs.writeFileSync(path.join(outDir, `${base}.csv`),
   cols.join(',') + '\n' + missing.map(line).join('\n') + '\n');
-fs.writeFileSync(path.join(outDir, 'headshot-queue-2026-11-08.json'),
+fs.writeFileSync(path.join(outDir, `${base}.json`),
   JSON.stringify({ generated_at: new Date().toISOString(), winners: rows.length,
     missing: missing.length, scalar_vs_image_row_mismatch: mismatch.length,
     rows: missing, mismatches: mismatch.map((m) => ({ politician_id: m.politician_id, name: m.person_name,
@@ -95,4 +107,4 @@ console.log('');
 console.log('🔴 scalar/image-row disagreement (one written without the other): ' + mismatch.length);
 for (const m of mismatch) console.log('   ' + m.person_name + ' — photo_custom_url=' + (has(m.photo_custom_url) ? 'set' : 'EMPTY') + ', default image rows=' + m.default_images);
 console.log('');
-console.log('wrote ' + path.join(outDir, 'headshot-queue-2026-11-08.csv') + ' and .json');
+console.log('wrote ' + path.join(outDir, `${base}.csv`) + ' and .json');
