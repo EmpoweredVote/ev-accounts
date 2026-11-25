@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-11-11",
+  "_updated": "2026-11-25",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -19,6 +19,16 @@
       ],
       "split": false,
       "verdict": "unreviewed"
+    },
+    "04151fc7-25f1-4fe5-8cfe-4713d1125f8d|2d3df431-bf83-4a06-b837-ff350b34d16d": {
+      "names": "William Emerson ~ Bill Emerson Jr.",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-11-25 (CA_0417). 04151fc7 William Emerson is Hammond City Council District 4; Lake County 2023 municipal results list the winner as \"William J Emerson Sr.\" (lakecountyin.gov 2023MunicipalElectionResults Lake_PrecSumm_139-H4-07). 2d3df431 Bill Emerson Jr. is the Lake County Surveyor (\"Bill Emerson, Jr. P.E.\", lakecountyin.gov/departments/surveyor). Sr. and Jr., same county, two separate offices."
     },
     "04ff9d00-cf63-4d3b-875a-48c027a46a37|755f24a5-2330-4546-9679-d5f7fa94aaa9": {
       "names": "John Braun ~ John Braun",
@@ -46,6 +56,16 @@
       ],
       "split": false,
       "verdict": "unreviewed"
+    },
+    "0a377424-7b2a-4e2a-b28f-b872373ce5ec|bb04f55d-57f1-4efa-bb9a-47fe0d81f77b": {
+      "names": "Michael R Moore ~ Mike Moore",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-11-25 (CA_0417). 0a377424 Michael R Moore is the Brown County Coroner (browncounty-in.gov/164/Coroner). bb04f55d Mike Moore is the Mayor of Jeffersonville, Clark County (cityofjeff.net). Two different full-time county and city offices in different counties."
     },
     "0a377424-7b2a-4e2a-b28f-b872373ce5ec|c554cb1f-cfd4-40b0-b430-9535b31e347d": {
       "names": "Michael R Moore ~ Mike Moore",
@@ -229,6 +249,16 @@
       ],
       "split": false,
       "verdict": "unreviewed"
+    },
+    "4d5a9218-2d9d-4453-9f6b-bc4caafcabb7|dc24ba72-839a-4842-8c20-4f36b5be8338": {
+      "names": "Steve Webb ~ Steven E. Webb",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-11-25 (CA_0417). 4d5a9218 Steve Webb is a Jeffersonville City Council member, Clark County (cityofjeff.net/city-council/, read 2026-11-24). dc24ba72 Steven E. Webb is a Clear Creek Township Board candidate in Monroe County (CA_0128). Different counties, about 90 miles apart. The split flag is the empty-seated-row shape, not evidence they are one person."
     },
     "4f8e9b8f-87c7-4767-8902-6df646a6525d|954d9212-5c81-450e-8e37-1551f26f8fd7": {
       "names": "Luke S. Rankin ~ Luke A. Rankin",
@@ -431,6 +461,16 @@
       "split": false,
       "verdict": "unreviewed"
     },
+    "bb04f55d-57f1-4efa-bb9a-47fe0d81f77b|c554cb1f-cfd4-40b0-b430-9535b31e347d": {
+      "names": "Mike Moore ~ Mike Moore",
+      "state": "in",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": true,
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-11-25 (CA_0417). bb04f55d Mike Moore is the sitting Mayor of Jeffersonville, Clark County (cityofjeff.net, read 2026-11-24). c554cb1f Mike Moore is the 2026 Republican primary candidate for Indiana House District 60 from Martinsville, Morgan County (see the 0a377424|c554cb1f note). Different county, different office. CA_0417 made the mayor row on purpose with allow_duplicate_name."
+    },
     "bee3de29-d358-411c-ac5b-499335ddef42|e038ab5a-6f9b-5be9-957e-0635c7c761ed": {
       "names": "James Davidson ~ Jim Davidson",
       "state": "tx",
@@ -459,16 +499,6 @@
       "split": true,
       "verdict": "different_people",
       "note": "DIFFERENT PEOPLE, checked 2026-10-20 (CC_0269). Bill Brown is the elected Sheriff-Coroner of Santa Barbara County. William Brown Jr. is a candidate for California State Senate District 12 (Central Valley) created from the SOS certified general-election list. Geometry: Santa Barbara County against SD-12 returns ST_Intersects = TRUE but an area share of 0.0% -- they touch along a boundary line and share no territory; control SD-19 returns false/0.0%. A sheriff of a county that lies wholly outside the district is not that district's senate candidate, and the suffix on the candidate's name points the same way. NOTE THE TRAP: the boolean said yes, the area said no -- read the area share, never ST_Intersects alone."
-    },
-    "cb43b926-69a8-49c6-90b8-9a8714b3b7fb|f902aef2-ce79-47d8-83ac-5b3a95e7b510": {
-      "names": "Matthew Gene Johnson ~ Matthew Johnson",
-      "state": "sc",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "different_people",
-      "note": "DIFFERENT PEOPLE, checked 2026-11-09 against both bodies (CC_0387). Matthew Gene Johnson is a sitting Soil and Water Conservation District Commissioner in Horry County, SOUTH CAROLINA (external_id -2745440). Matthew Johnson won Reno NEVADA City Council Ward 2 at the 2026-11-03 general election and is sworn in 2026-11-13 (City of Reno City Clerk candidate filing \"Matthew Johnson\"). Two states, two seats, both current; the middle names also differ. The pair is keyed state \"sc\" because the Reno row has no CURRENT seat to take a state from - his term is future-dated."
     },
     "ce8aef29-b9da-4e25-b7ea-d7a746de317b|d71c4160-9380-4788-88f1-4627b4abcb62": {
       "names": "Lawrence Kyle Clark ~ Jason Clark",
