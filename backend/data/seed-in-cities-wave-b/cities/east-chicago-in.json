@@ -1,0 +1,103 @@
+{
+  "slug": "east-chicago-in",
+  "geoid": "1819486",
+  "name": "East Chicago",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://www.eastchicago.com/290/Common-Council",
+    "source_file": "raw/east-chicago-in/council.html",
+    "council_name": "East Chicago Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Anthony Copeland",
+      "source_url": "https://www.eastchicago.com/211/Mayors-Office",
+      "source_file": "raw/east-chicago-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "City Clerk",
+      "name": "Richard Medina",
+      "source_url": "https://www.eastchicago.com/165/City-Clerk",
+      "source_file": "raw/east-chicago-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Monica G. Gonzalez",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Lenny Franciski",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": "Council President"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Terence Hill",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Stacy Winfield",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Robert Garcia",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Gilda Orange",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Vanessa Hernandez Orange",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Kenneth Monroe",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dwayne Rancifer Jr.",
+      "source_url": "https://www.eastchicago.com/290/Common-Council",
+      "source_file": "raw/east-chicago-in/council.html",
+      "note": "Vice President"
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://lakecountyin.gov/departments/voters/maps-gis/CITY-COUNCIL-DISTRICT-MAPS/EAST%20CHICAGO%20CITY%20COUNCIL%2013X19.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Lake County Board of Elections PDF, created in ArcMap 10.8 on 2024-03-01 (modified 2025-03-25); labels precincts EC 02..EC 38 and six districts. Adoption year/ordinance of the redraw not confirmed.",
+    "notes": "No ArcGIS layer found. The map labels each precinct with its district (usable for a precinct-based build). The city code section on council districts (amlegal) lists precincts per district but amlegal is behind a Cloudflare challenge and could not be downloaded. Saved at raw/east-chicago-in/council-map.pdf."
+  },
+  "notes": "City site shows 6 district + 3 at-large council seats, City Clerk (clerk is also clerk of the City Court) and a City Court Judge page (court.html has no name). Page is undated; 2023 county results (Lake County) are consistent with Copeland, Franciski, Winfield on the ballot but were not saved. No mid-term appointments stated on the page."
+}

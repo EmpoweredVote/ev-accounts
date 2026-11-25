@@ -1,0 +1,89 @@
+{
+  "slug": "bluffton-in",
+  "geoid": "1806220",
+  "name": "Bluffton",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+    "source_file": "raw/bluffton-in/council.html",
+    "council_name": "Bluffton Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Scott Mentzer",
+      "source_url": "https://www.blufftonindiana.net/297/Mayor",
+      "source_file": "raw/bluffton-in/mayor2.html",
+      "note": "Page says he took office Aug 1, 2025 after serving as council president (finishing John Whicker's term)."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Bri Lautzenheiser",
+      "source_url": "https://www.blufftonindiana.net/m/directory/department?did=22",
+      "source_file": "raw/bluffton-in/dir-clerk.html",
+      "note": "City staff directory lists Bri Lautzenheiser as Clerk Treasurer. The Clerk-Treasurer department page text carries no name; search leads that named Tami Runyon (SBOA audit 2019-21 term, raw/bluffton-in/sboa-B57938.pdf) look stale. Appointed after Michelle Simon resigned in 2024 (search lead only, page not saved)."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Ron Neuenschwander",
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": null,
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": "City council page shows '(Vacant Seat)' for 2nd District; the GIS layer also says '(vacant seat)'."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Janella Stronczek",
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "David Teeple",
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": "Council page order: name then district label. Mentzer held District 4 before becoming mayor; Teeple replaced him by Republican caucus per a search lead (page not saved, date unconfirmed). The ArcGIS layer still lists Scott Mentzer for District 4 (stale attribute)."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Sarah Reed",
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Rick Elwell",
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Josh Hunt",
+      "source_url": "https://www.blufftonindiana.net/197/Common-Council",
+      "source_file": "raw/bluffton-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://services7.arcgis.com/QSBMiYcWqQVP5NZq/arcgis/rest/services/City_Council_Districts/FeatureServer/49",
+    "feature_count": 7,
+    "district_field": "District",
+    "vintage": "Likely the post-2020 map but not proven. Web map 'Bluffton City Council Districts' created 2/27/24 (item snippet); service description 'Last updated 11/19/26 kmm'; layer editingInfo.lastEditDate 1795096411427 = 2026-11-19. City gave public notice (search lead, not saved) of a redistricting into five single-member districts by Dec 31, 2022. No population field to sum.",
+    "notes": "returnCountOnly -> {\"count\":7}. The layer has 7 features: District 1-5, plus two features 'At-Large' (Rick Elwell, Josh Hunt), i.e. at-large polygons cover the whole city; District 2 CC_Person='(vacant seat)'. District field values: 'District 1'..'District 5','At-Large'. Other fields: CC_Person, Email. Saved: raw/bluffton-in/layer-count.json, layer-attrs.json, layer-meta.json, webmap-data.json, webmap-item.json. Web map on city page: https://bluffton.maps.arcgis.com/apps/mapviewer/index.html?webmap=00f7689b2b0442f1bdec7be0c40dd68c. Ordinance with precinct list not found online (search found only the notice)."
+  },
+  "notes": "Council page says redistricting done in 1982 and every 10 years thereafter. City court judge: staff directory lists Robert J. Bate as 'Judge, State of Indiana, County of Wells' under City Court (raw/bluffton-in/directory.html) - out of scope, noted. Class (second/third) not stated on the pages read. Wells County council district PDF found by search is the COUNTY council, not used."
+}

@@ -1,0 +1,6 @@
+Bluffton Council District 2 is flagged vacant: the city's Common Council page lists "(Vacant Seat)" for the
+2nd District, and the city's council-district map layer says the same (raw/bluffton-in/council.html, read
+2026-11-24). No vacancy date is published, so vacant_since stays NULL.
+Jasper numbers its five council districts 2 through 6 (council page); there is no District 1.
+Greensburg's page titles its clerk "City Clerk-Treasurer"; the office is stored as Clerk-Treasurer, the
+statutory third-class office.

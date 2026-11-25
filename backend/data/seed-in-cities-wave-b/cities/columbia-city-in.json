@@ -1,0 +1,75 @@
+{
+  "slug": "columbia-city-in",
+  "geoid": "1814716",
+  "name": "Columbia City",
+  "structure": {
+    "council_size": 5,
+    "district_seats": 4,
+    "at_large_seats": 1,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://columbiacity.net/government/city-council-members/",
+    "source_file": "raw/columbia-city-in/council.html",
+    "council_name": "Columbia City Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Ryan Daniel",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": "Term 01.01.2024 - 12.31.2027."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Leslee Robinson",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": "Term 05.03.2025 - 12.31.2027 (took office mid-term, May 2025)."
+    },
+    {
+      "office": "Council Member, Northeast District",
+      "name": "Brent Bockelman",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": "Term 05.03.2025 - 12.31.2027 (mid-term appointee)."
+    },
+    {
+      "office": "Council Member, Northwest District",
+      "name": "Tad Varga",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, Southeast District",
+      "name": "Ryan Adamson",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": "Term 12.01.2025 - 12.31.2027 (mid-term appointee; replaced a member listed in Nov 2025 minutes)."
+    },
+    {
+      "office": "Council Member, Southwest District",
+      "name": "Jennifer Romano",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dan Weigold",
+      "source_url": "https://columbiacity.net/government/city-council-members/",
+      "source_file": "raw/columbia-city-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://columbiacity.net/wp-content/uploads/2026/07/CouncilMap2026.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "City PDF 'City of Columbia City Council Districts', PDF CreationDate 2026-07-02; image-only; names four districts (Northeast, Northwest, Southeast, Southwest) with current officials listed. No ordinance number or adoption date found.",
+    "notes": "Districts are named by compass quadrant, not numbered. No ArcGIS layer found; no precinct list found. I viewed the PDF: four colored areas, legend lists Mayor, Clerk, NE/NW/SE/SW members and At Large Dan Weigold."
+  },
+  "notes": "Council page states four representatives from four sections of the city plus one at-large. Page links the map PDF. City court not mentioned on pages read."
+}

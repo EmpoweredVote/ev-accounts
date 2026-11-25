@@ -1,0 +1,103 @@
+{
+  "slug": "michigan-city-in",
+  "geoid": "1848798",
+  "name": "Michigan City",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "unknown",
+    "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+    "source_file": "raw/michigan-city-in/council-main.html",
+    "council_name": "Michigan City Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Angie Nelson Deuitch",
+      "source_url": "https://michigancityin.gov/city-departments/mayors-office/",
+      "source_file": "raw/michigan-city-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "City Clerk",
+      "name": "Gale Neulieb",
+      "source_url": "https://michigancityin.gov/city-departments/city-clerk/",
+      "source_file": "raw/michigan-city-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Gregory Coulter",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Daisy Lee",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Joseph Nelson",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Tim Bietry",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Tracie Tillman",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Nancy Moldenhauer",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Bryant Dabney",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Donald Przybylinski",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Vidya Kora",
+      "source_url": "https://michigancityin.gov/government/boards-commissions/city-council/",
+      "source_file": "raw/michigan-city-in/council-main.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer",
+    "feature_count": 6,
+    "district_field": "Name (values 'Ward 1'..'Ward 6')",
+    "vintage": "2023 map: service dataLastEditDate 1672778143100 = 2023-01-03; city PDF titled 'Michigan City Council Wards, 2023' saved at raw/michigan-city-in/wards-map-2023.pdf; web map item 44ce26f8de1b4290a6456bafb2a99d11 embedded on city council page (raw/michigan-city-in/council-main.html).",
+    "notes": "NOT one layer: the FeatureServer has SIX layers (0-5), each with count 1 and one polygon. Each layer's Name field is 'Ward N' (layer0='Ward 1' ... layer5='Ward 6'); COUNTY='091'. Layer 0 first-ward web-map title 'First Ward - Gregory Coulter' (old title in layer name was 'First Ward - Bryant Dabney', so layer titles carry former holders; ignore them). Count outputs: {\"count\":1} for each of layers 0-5. Layer 0 editingInfo lastEditDate 1704299361641 (2024-01-03), dataLastEditDate 1672778143100 (2023-01-03). spatialReference wkid 2245 (latest 2966)."
+  },
+  "notes": "Held-seat names come from the city council page raw/michigan-city-in/council-main.html (ward list), cross-checked with each per-ward page (represented by Council Member ...) for 5 of the wards. Population field not available so no census sum. City court judge not checked (page elected.html had no judge/court text)."
+}

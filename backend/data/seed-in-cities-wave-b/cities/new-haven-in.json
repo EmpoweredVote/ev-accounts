@@ -1,0 +1,89 @@
+{
+  "slug": "new-haven-in",
+  "geoid": "1852992",
+  "name": "New Haven",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+    "source_file": "raw/new-haven-in/meet.html",
+    "council_name": "New Haven City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Steve McMichael",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Angie Hamrick",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Matt Newbauer",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Jeff Turner",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Craig Dellinger",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Mike Mowery",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Amelia Gascoigne",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Bob Byrd",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Terry Werling",
+      "source_url": "https://www.newhaven.in.gov/574/Meet-the-Council",
+      "source_file": "raw/new-haven-in/meet.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://maps.newhaven.in.gov/server/rest/services/City_Council_Districts/MapServer/0",
+    "feature_count": 5,
+    "district_field": "DISTRICT",
+    "vintage": "Layer features created 2025-03-20 (created_date 1742484784000 etc.) by NHGIS; MEMBER field names match the current council page (Gascoigne D5, Newbauer D1, Turner D2, Dellinger D3, Mowery D4). Service item created 2025-07. Not stated whether it follows the 2022 redistricting, but it is the city's own current layer.",
+    "notes": "returnCountOnly -> {\"count\":5}. DISTRICT values '1'..'5', MEMBER, COUNCILURL fields. Saved raw/new-haven-in/layer0-attrs.json, layer0-count.json, layer-service.json. Council page links the city portal viewer maps.newhaven.in.gov."
+  },
+  "notes": "Council page: Mayor, Clerk-Treasurer and seven council members (2 at-large). The search-engine summary showed garbled mixes of names but the saved pages meet.html and council.html agree with each other and with the GIS layer. City court: no mention found in saved pages; New Haven may have one, unconfirmed. Clerk-Treasurer term ends Jan 2027 per search snippet only; next elections Nov 2027 are not relevant here."
+}

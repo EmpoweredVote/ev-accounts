@@ -1,0 +1,89 @@
+{
+  "slug": "frankfort-in",
+  "geoid": "1825324",
+  "name": "Frankfort",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://frankfort-in.gov/council",
+    "source_file": "raw/frankfort-in/council.html",
+    "council_name": "Frankfort Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Judy Sheets",
+      "source_url": "https://frankfort-in.gov/department/index.php?structureid=13",
+      "source_file": "raw/frankfort-in/mayor.html",
+      "note": "Named in the news headline 'Public Statement about Proposed Data Center From Mayor Judy Sheets' on the Office of the Mayor page."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Carol Bartley",
+      "source_url": "https://frankfort-in.gov/department/index.php?structureid=16",
+      "source_file": "raw/frankfort-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Clarence Warthan",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Robert (Joe) Stevens",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": "Page prints 'Robert (Joe) Stevens'."
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "John Large",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Steve Beardsley",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Isac Chavez",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Taylor Crenshaw",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Eric Woods",
+      "source_url": "https://frankfort-in.gov/council",
+      "source_file": "raw/frankfort-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://clintonco.com/downloads/surveyor/frankfortcouncildistricts.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Undated PDF from the Clinton County Surveyor ('Frankfort City Council Districts', labelled Dist. 1..5). Cannot tell its vintage; no adoption date or ordinance number on it.",
+    "notes": "Saved raw/frankfort-in/frankfortcouncildistricts.pdf and the county precinct map frankfortprecinctsc-size.pdf (same Surveyor folder; pair them to build districts from precincts). Listed on clintonco.com/forms (saved as clintonco-forms.html). No ArcGIS layer found. The city's code on amlegal (council + district descriptions) sits behind a Cloudflare bot check, so the ordinance text was not saved."
+  },
+  "notes": "Council page text: 'The seven-member City Council is made of two at-large members and five members who represent Council districts', terms began January 2024. Mayor Sheets succeeded McBarnes by caucus per search summary only (not verified from a saved page). City court: clerk-treasurer page lists 'City Court Clerk: Ticket Payments', and the county posts a 'frankfortcitycourtidp.pdf' form, so a city court exists; judge name not collected (out of scope)."
+}

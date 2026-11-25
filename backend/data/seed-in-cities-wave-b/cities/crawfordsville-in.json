@@ -1,0 +1,89 @@
+{
+  "slug": "crawfordsville-in",
+  "geoid": "1815742",
+  "name": "Crawfordsville",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+    "source_file": "raw/crawfordsville-in/council.html",
+    "council_name": "Crawfordsville City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Todd Barton",
+      "source_url": "https://www.crawfordsville.in.gov/255/Mayors-Office",
+      "source_file": "raw/crawfordsville-in/mayor.html",
+      "note": "Page says in his fourth term, mayor since Jan 1, 2012"
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Karyn Douglas",
+      "source_url": "https://www.crawfordsville.in.gov/228/Clerk-Treasurer",
+      "source_file": "raw/crawfordsville-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Jeff Lucas",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": "Ward 1; term expires Jan 1, 2028"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Ethan Hollander",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": "Ward 2"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Kent Priebe",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": "Ward 3"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Jennifer L. Lowe",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": "Ward 4"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Stan Hamilton",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": "Ward 5"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Andrew P. Biddle",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Mike Reidy",
+      "source_url": "https://www.crawfordsville.in.gov/220/City-Council",
+      "source_file": "raw/crawfordsville-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.crawfordsville.in.gov/DocumentCenter/View/286/Ward-Map-PDF",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Post-census. Title on the map: 'CITY VOTING WARDS 2020'; PDF metadata: made in Esri ArcMap 10.8, created 2022-10-04; the file-path footer reads 'CITY WARDS 2022'. No ordinance number found.",
+    "notes": "Saved raw/crawfordsville-in/ward_map.pdf (street-labelled, no precinct labels, no extractable ward text) and the city page raw/crawfordsville-in/wardmap.html. A second copy of a ward PDF from Montgomery County is on the UF Election Lab site (raw/crawfordsville-in/ufl_wards.pdf, 2020 vintage per its listing; not viewed). The city code (amlegal, section 30.05) lists ward boundaries but is script-rendered and not saved. No ArcGIS layer found (one search)."
+  },
+  "notes": "Council page: 5 wards + 2 at-large; terms expire Jan 1, 2028. City court: nothing seen on the city site; left unknown."
+}

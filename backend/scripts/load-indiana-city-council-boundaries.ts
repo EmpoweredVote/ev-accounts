@@ -22,6 +22,7 @@
  *     max_uncovered_pct?, max_outside_pct?, bound_reason? }
  *   url          the ArcGIS layer (…/FeatureServer/N or …/MapServer/N). outSR=4326 is forced.
  *   key_map      optional { "<raw field value>": <district number> } when the field is not a plain number.
+ *   keys         optional list of district numbers when a city does not number 1..N (Jasper: 2-6).
  *   key_regex    optional regex whose group 1 is the district number, for PRECINCT layers whose precinct
  *                name carries the council district (Hammond 'H3 07', Kokomo '305', Anderson 'ANDERSON 2-4').
  *                Every feature must match it or GATE 1 fails; precincts are dissolved by the key.
@@ -48,6 +49,7 @@
  * Usage:
  *   npx tsx scripts/load-indiana-city-council-boundaries.ts [--only slug,slug] [--tamper=drop|shift]   # dry run
  *   npx tsx scripts/load-indiana-city-council-boundaries.ts --commit [--only slug,slug]
+ *   --config=data/seed-in-cities-wave-b/council-maps.json   use another wave's config
  */
 import 'dotenv/config';
 import fs from 'node:fs';
@@ -56,7 +58,9 @@ import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CONFIG = path.resolve(__dirname, '../data/seed-in-cities-wave-a/council-maps.json');
+const CONFIG_ARG = process.argv.slice(2).find((a) => a.startsWith('--config='))?.split('=')[1];
+// Each wave keeps its own config; --config=<path relative to backend/> picks one (default: Wave A's).
+const CONFIG = CONFIG_ARG ? path.resolve(__dirname, '..', CONFIG_ARG) : path.resolve(__dirname, '../data/seed-in-cities-wave-a/council-maps.json');
 const MTFCC = 'X0091';
 const STATE_CODE = 'in';
 const SQM_PER_SQMI = 2589988.110336;
@@ -72,7 +76,7 @@ if (COMMIT && TAMPER) { console.error('refusing --commit with --tamper'); proces
 
 interface CityMap {
   slug: string; name: string; geoid: string; url: string; where?: string; layers?: { url: string; key: number }[];
-  district_field: string; expected: number; key_map?: Record<string, number>; key_regex?: string;
+  district_field: string; expected: number; key_map?: Record<string, number>; key_regex?: string; keys?: number[];
   source_note: string; max_uncovered_pct?: number; max_outside_pct?: number; bound_reason?: string;
 }
 
@@ -154,10 +158,11 @@ async function main() {
         byKey.set(k, [...(byKey.get(k) ?? []), f.geometry]);
       }
       const keys = [...byKey.keys()].sort((a, b) => a - b);
-      const want = Array.from({ length: c.expected }, (_, i) => i + 1);
+      const want = c.keys ?? Array.from({ length: c.expected }, (_, i) => i + 1);
+      if (want.length !== c.expected) fail(`GATE 1: config keys ${JSON.stringify(c.keys)} do not number ${c.expected}`);
       if (JSON.stringify(keys) !== JSON.stringify(want)) fail(`GATE 1: keys ${JSON.stringify(keys)}, expected ${JSON.stringify(want)}`);
       for (const [k, g] of byKey) if (g.length > 1) console.log(`    D${k}: ${g.length} parts dissolved into one`);
-      console.log(`  ✓ GATE 1  ${feats.length} feature(s), keys 1..${c.expected}`);
+      console.log(`  ✓ GATE 1  ${feats.length} feature(s), keys ${JSON.stringify(want)}`);
 
       await q('DROP TABLE IF EXISTS ccb_load; DROP TABLE IF EXISTS ccb_geom');
       await q('CREATE TEMP TABLE ccb_load(district int, gj text)');

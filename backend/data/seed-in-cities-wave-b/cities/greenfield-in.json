@@ -1,0 +1,89 @@
+{
+  "slug": "greenfield-in",
+  "geoid": "1829520",
+  "name": "Greenfield",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.greenfieldin.gov/165/City-Council",
+    "source_file": "raw/greenfield-in/council.html",
+    "council_name": "Greenfield City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Guy Titus",
+      "source_url": "https://www.greenfieldin.gov/169/Mayor",
+      "source_file": "raw/greenfield-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Lori Elmore",
+      "source_url": "https://www.greenfieldin.gov/179/Clerk-Treasurer",
+      "source_file": "raw/greenfield-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Anthony Scott",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Amy Kirkpatrick",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Joyce Plisinski",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Jeffery Lowder",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Thomas Moore",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": "City council page lists him as 'Council President' with NO district; District 5 comes from the city's council-district map PDF (Jan 2024), which lists 'Thomas Moore District 5' in image text."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Kerry Grass",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": "Current page lists him at-large; the Jan 2024 map PDF listed John Jester and Dan Riley at-large, so he replaced one of them at an unknown date (page silent on appointment)."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "David Spencer",
+      "source_url": "https://www.greenfieldin.gov/165/City-Council",
+      "source_file": "raw/greenfield-in/council.html",
+      "note": "Current page lists him at-large; the Jan 2024 map PDF listed John Jester and Dan Riley at-large, so he replaced one of them at an unknown date (page silent on appointment)."
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://www.greenfieldin.gov/DocumentCenter/View/715/City-Council-District-Map-PDF",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "City PDF 'City of Greenfield Councilmatic Districts', 'Date Saved: 1/8/2024' in the map footer (image text), lists the then council; post-2020 era. Search summary also mentioned a 1/5/2023 map (not saved).",
+    "notes": "Saved raw/greenfield-in/council-district-map.pdf (image-only). City code says districts follow Hancock County precinct numbers; county GIS is Schneider Beacon (dead end). No ArcGIS layer found. Old host greenfield.in.gov now redirects to greenfieldin.gov."
+  },
+  "notes": "Clerk-Treasurer Lori Elmore confirmed on current city page. Old-host search results listed Jester and Riley (2024-25 minutes); current page shows Grass and Spencer instead."
+}

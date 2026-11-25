@@ -1,0 +1,89 @@
+{
+  "slug": "auburn-in",
+  "geoid": "1802674",
+  "name": "Auburn",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+    "source_file": "raw/auburn-in/council.html",
+    "council_name": "Auburn Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Dave Clark",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Lorrie Pontius",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Natalie DeWitt",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": "Listed as Council President"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jim Finchum",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Dan Braun",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Kevin Webb",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Rod Williams",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Dave Bundy",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Emily Prosser",
+      "source_url": "https://www.auburnessentialservices.net/248/Common-Council-Representatives",
+      "source_file": "raw/auburn-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://documents.ci.auburn.in.us/docushare/dsweb/Get/Document-580779/",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "PDF titled \"2022 Council Districts\" (text in the PDF); made with ArcGIS Pro, file creation date 2022-11-22, modified 2022-12-21. This is the current post-2020 map. No ArcGIS REST layer found.",
+    "notes": "Saved as raw/auburn-in/districts-map.pdf. Linked from the council page (\"View the Council Districts (PDF)\"). Image map; no precinct list in the PDF. No ordinance found online; searches for an ArcGIS layer (city, DeKalb County IN) found nothing. City code ch.31.17 (raw/auburn-in/code31.pdf) says each voter votes for 2 at-large and 1 district candidate, which fits 5 + 2."
+  },
+  "notes": "City court: not found on the city pages read; left unknown. No mid-term appointments noted on the page. Council page is undated; mayor page (raw/auburn-in/mayor.html) also names Dave Clark."
+}

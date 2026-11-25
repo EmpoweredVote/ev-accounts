@@ -1,0 +1,75 @@
+{
+  "slug": "decatur-in",
+  "geoid": "1817074",
+  "name": "Decatur",
+  "structure": {
+    "council_size": 5,
+    "district_seats": 4,
+    "at_large_seats": 1,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.cityofdecatur.in.gov/officials/city-council/13",
+    "source_file": "raw/decatur-in/council.html",
+    "council_name": "Decatur Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Dan Rickord",
+      "source_url": "https://www.cityofdecatur.in.gov/officials/mayor/1",
+      "source_file": "raw/decatur-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Eran Hackman",
+      "source_url": "https://cityofdecatur.in.gov/officials/clerk-treasurer/9",
+      "source_file": "raw/decatur-in/clerk.html",
+      "note": "Page header 'Eran Hackman, Clerk-Treasurer'. Term start 4/30/25 is a search lead only (agenda), not saved."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Jenny Bowers-Shultz",
+      "source_url": "https://www.cityofdecatur.in.gov/officials/city-council/13",
+      "source_file": "raw/decatur-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Tyler Fullenkamp",
+      "source_url": "https://www.cityofdecatur.in.gov/officials/city-council/13",
+      "source_file": "raw/decatur-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Abby Wilder",
+      "source_url": "https://www.cityofdecatur.in.gov/officials/city-council/13",
+      "source_file": "raw/decatur-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Scott Murray",
+      "source_url": "https://www.cityofdecatur.in.gov/officials/city-council/13",
+      "source_file": "raw/decatur-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Matthew J. Dyer",
+      "source_url": "https://www.cityofdecatur.in.gov/officials/city-council/13",
+      "source_file": "raw/decatur-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "ordinance",
+    "url": "https://codelibrary.amlegal.com/codes/decatur/latest/decatur_in/0-0-0-115",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Per search result only: Decatur code lists Ordinance 2022-24 passed 12-27-2022, districts apply to elections after Jan 1, 2023, map as Exhibit A-3. NOT verified by me.",
+    "notes": "INACCESSIBLE: amlegal code library answers curl and WebFetch with a Cloudflare challenge / 403, so no boundary text or precinct list was saved. Next step: get the ordinance via city clerk or Adams County election board, or a browser. No ArcGIS layer found."
+  },
+  "notes": "This is Decatur in Adams County (geoid 1817074). Council page lists party for each member; ignored. Mid-term changes on council not shown."
+}

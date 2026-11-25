@@ -1,0 +1,89 @@
+{
+  "slug": "lebanon-in",
+  "geoid": "1842624",
+  "name": "Lebanon",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://lebanon.in.gov/city-council/",
+    "source_file": "raw/lebanon-in/council.html",
+    "council_name": "Lebanon Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Matthew Gentry",
+      "source_url": "https://lebanon.in.gov/mayors-office/",
+      "source_file": "raw/lebanon-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Tonya Thayer",
+      "source_url": "https://lebanon.in.gov/clerk-treasurers-office/",
+      "source_file": "raw/lebanon-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Mike Kincaid",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": "Listed as City Council President"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Keith Campbell",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Sandra Jasionowski",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Dick Robertson",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "John Copeland",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Sierra Messenger",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Robert Hawkins",
+      "source_url": "https://lebanon.in.gov/city-council/",
+      "source_file": "raw/lebanon-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://lebanon.in.gov/wp-content/uploads/2023/01/2023-District-1-EDIT-1.jpg",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "2022 redistricting. Five per-district JPG maps posted Jan 2023, each drawn over 'Precincts 2022' (Caliper) with precinct labels such as CENTER 06. Lebanon Reporter (published 2022-12-01) says the redistricting ordinance had a first reading and a vote was expected Dec. 12 (2022).",
+    "notes": "Kind is an image set (no PDF, no ArcGIS layer found; one search for a Boone County/Lebanon layer found none). Saved raw/lebanon-in/district1.jpg to district5.jpg (only district1 was viewed by me; the other four have the same size and file pattern) and raw/lebanon-in/yahoo-realign.html. The ordinance text with the precinct list was not found online. Maps label precincts, so districts can be rebuilt from the state precinct layer."
+  },
+  "notes": "City court: Lebanon abolished its city court in 2014; the council voted unanimously (Dec 2022, Lebanon Reporter) to re-establish it, operational Jan 2024 after a judge election. Judge not collected. Council page gives no appointment dates."
+}

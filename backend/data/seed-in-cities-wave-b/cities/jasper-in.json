@@ -1,0 +1,89 @@
+{
+  "slug": "jasper-in",
+  "geoid": "1837782",
+  "name": "Jasper",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.jasperindiana.gov/council",
+    "source_file": "raw/jasper-in/council.html",
+    "council_name": "Jasper Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Ryan Craig",
+      "source_url": "https://www.jasperindiana.gov/department/index.php?structureid=16",
+      "source_file": "raw/jasper-in/dept16.html",
+      "note": "Page gives term 4/1/2026 - 12/31/2027. Chosen by Republican precinct caucus in Jan 2026 to finish Dean Vonderheide's term; took office April 1, 2026 (raw/jasper-in/craig-article.html)."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Kiersten Knies",
+      "source_url": "https://www.jasperindiana.gov/department/index.php?structureid=11",
+      "source_file": "raw/jasper-in/dept11.html",
+      "note": "Term 1/1/2024-12/31/2027"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "John Schroeder",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": "Council page numbers districts 2 to 6; there is no District 1 (see notes)"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Chad Lueken",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Vince Helming",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": "Page says 'Council Member 2024'"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Paul Lorey",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "Kevin Manley",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Phil Mundy",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": "Also President Pro-Tempore. He applied for the mayor caucus and lost to Craig; the GIS layer was edited for the At Large rows in July 2026 (see map notes)."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Nancy Eckerle",
+      "source_url": "https://www.jasperindiana.gov/council",
+      "source_file": "raw/jasper-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://gis.jasperindiana.gov/server/rest/services/Boundaries/Boundaries/FeatureServer/12",
+    "feature_count": 15,
+    "district_field": "district",
+    "vintage": "Probably post-2022 redraw: district rows carry last-edit dates of 2023-01-27 (and later edits: 2023-10-20, 2024-05-13, 2025-01-08); layer has no description or year in its name. Not compared with a PDF map or ordinance.",
+    "notes": "returnCountOnly gave {\"count\":15}. These are 15 polygon rows: district '2' x3 (MJS, 2W, 2E), '3' x3 (3E, 3W, MJN), '4' x2, '5' x2, '6' x3, and 'At Large' x2 (one row per council member, citywide). returnDistinctValues on district: 2,3,4,5,6,At Large. Fields: district (string), representa, label (precinct code), phone, email. Layer name is City_Council_Disctricts (sic). Sibling layer 9 Voting_Precincts has a precinct field. Saved: raw/jasper-in/council-count.json, council-attrs.json, council-layer.json, boundaries-service.json."
+  },
+  "notes": "The city has FIVE districts numbered 2 through 6 (council page, and the layer): there is no District 1, so the structure check 'District 1..5' will not match. Seven members: 5 district + 2 at large. Mayor caucus: saved news article raw/jasper-in/craig-article.html. City court: none seen; left unknown."
+}

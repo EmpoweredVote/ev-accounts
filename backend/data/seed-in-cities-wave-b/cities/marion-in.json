@@ -1,0 +1,103 @@
+{
+  "slug": "marion-in",
+  "geoid": "1846908",
+  "name": "Marion",
+  "structure": {
+    "council_size": 9,
+    "district_seats": 6,
+    "at_large_seats": 3,
+    "clerk_title": "City Clerk",
+    "city_court_judge": "yes",
+    "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+    "source_file": "raw/marion-in/council-clean.html",
+    "council_name": "Marion Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Ronald Morrell, Jr.",
+      "source_url": "https://cityofmarion.in.gov/government/departments/mayor-2/past-mayors",
+      "source_file": "raw/marion-in/past-mayors.html",
+      "note": "Listed as 'Ronald Morrell, Jr., Republican (2024 -present)' on the city Past Mayors page."
+    },
+    {
+      "office": "City Clerk",
+      "name": "Debra Goodman",
+      "source_url": "https://cityofmarion.in.gov/government/departments/city-clerk-court",
+      "source_file": "raw/marion-in/clerk.html",
+      "note": "Clerk page shows 'Debra Goodman City Clerk' under Contact Us; city directory (raw/marion-in/directory.html) agrees."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Gary Fordyce, Sr.",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": "Council page calls these 'Ward One..Six'."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Mike Cline",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Erika E. Devine",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Eric Marshall",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Andy Whitton",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 6",
+      "name": "David Cain",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jim Brunner",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Brian Cowgill",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": "Council page: Brian Cowgill is President."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jeffrey Reyes",
+      "source_url": "https://cityofmarion.in.gov/government/boards/common-council",
+      "source_file": "raw/marion-in/council-clean.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://s3.us-east-2.amazonaws.com/marion-prod/downloads/attachments/common-council/Ward-Map.f1613406482.pdf",
+    "feature_count": 6,
+    "district_field": null,
+    "vintage": "CANNOT TELL / possibly OLD. File name timestamp 1613406482 = 2021-02-15, before any post-2020 redistricting; the map itself carries no date.",
+    "notes": "Saved raw/marion-in/ward-map.pdf (street-index ward map, six wards). Linked from the city council page as the Ward Map. No ArcGIS layer found (searches returned other Marions; do not trust). No ordinance or precinct list found. raw/marion-in/*.html copies had soft-hyphen characters (U+00AD) removed by me (council-clean.html, clerk.html, directory.html, past-mayors.html) because the city site hyphenates words with them and a matcher would not find names otherwise."
+  },
+  "notes": "City Court exists (clerk page: 'Presiding Judge: Josh Howell'); not recorded whether elected. Earlier clerk Kathi Kiley retired per a Dec 2023 press release (search snippet only, not saved). A news article about 'Marion redistricting' found by search was Marion, OHIO and was discarded."
+}

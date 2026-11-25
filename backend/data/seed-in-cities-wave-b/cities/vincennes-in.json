@@ -1,0 +1,89 @@
+{
+  "slug": "vincennes-in",
+  "geoid": "1879208",
+  "name": "Vincennes",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://vincennes.org/government/city-council-members",
+    "source_file": "raw/vincennes-in/council.html",
+    "council_name": "Vincennes City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Joe Yochum",
+      "source_url": "https://vincennes.org/department/mayors-office",
+      "source_file": "raw/vincennes-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Catherine M. M. Lane",
+      "source_url": "https://vincennes.org/government/clerk-treasurer",
+      "source_file": "raw/vincennes-in/clerk-treasurer.html",
+      "note": "Page also prints 'Catherine M.M. Lane' in the heading."
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Brian Grove",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Ed Gornall",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "John Stangle",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Regina Blinn",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Ryan Lough",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Richard Ashby",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Marc McNeece",
+      "source_url": "https://vincennes.org/government/city-council-members",
+      "source_file": "raw/vincennes-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://cdn.prod.website-files.com/688a74bfc95cdf6a79c04fd7/691a8fd6ca84667f1baeeec3_2021-City-Council-District-Map.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Linked from the city council page as '2021 City Council District Map'. File name says 2021, i.e. drawn in 2021 (before the 2022 redistricting window); the PDF is an image with no text layer and no stated adoption date. Cannot tell from the file whether it is the post-2020-census map.",
+    "notes": "Saved raw/vincennes-in/district-map-2021.pdf (image only, pdftotext returns nothing). No ArcGIS layer or redistricting ordinance found (one search; Knox County precinct summary pages exist but no GIS). The page title on vincennes.org/dev/?p=175 also names it '2021 City Council District Map'."
+  },
+  "notes": "Structure inferred from the council page: 5 numbered districts + 2 'At Large' = 7, and a Clerk-Treasurer page (third-class pattern). The page does not state the class or council size in words. Mayor/Clerk term dates not on pages. City court: nothing found either way. Council page lists 7 members; no mid-term appointments noted."
+}

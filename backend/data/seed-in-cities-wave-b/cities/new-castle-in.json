@@ -1,0 +1,89 @@
+{
+  "slug": "new-castle-in",
+  "geoid": "1852740",
+  "name": "New Castle",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://cityofnewcastle.net/city-council/",
+    "source_file": "raw/new-castle-in/city-council.html",
+    "council_name": "New Castle Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Greg York",
+      "source_url": "https://www.cityofnewcastle.net/mayor",
+      "source_file": "raw/new-castle-in/mayor.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Ashley Huffman",
+      "source_url": "https://www.cityofnewcastle.net/clerk-treasurer",
+      "source_file": "raw/new-castle-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Mike Guffey",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": "City page calls the districts Wards; Ward 1"
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Jeff Hancock",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": "Ward 2"
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Jerry Walden",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": "Ward 3"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Aaron Dicken",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": "Ward 4"
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Mark Koger",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": "Ward 5"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Rex Peckinpaugh",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Lynn Perdue",
+      "source_url": "https://cityofnewcastle.net/city-council/",
+      "source_file": "raw/new-castle-in/city-council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://cityofnewcastle.net/wp-content/uploads/2026/09/new_castle_indiana_city_ward_map-1.pdf",
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "UNCLEAR, possibly OLD. The PDF (posted to the site in Sept 2026) carries the footer 'COMPILED USING 2010 CENSUS DATA'. It labels 16 precincts, grouped into 5 wards. I could not tell if a post-2020 redraw exists.",
+    "notes": "Map labels precincts (ward 1 = precincts 8, 11, 12; ward 2 = 1, 4, 9, 13 (green); ward 3 = 2, 3, 7 (yellow); ward 4 = 14, 15, 16; ward 5 = 5, 6, 10 by my reading of the picture and the legend colours). The search summary said city code section 30.15 lists precincts per ward, but amlegal pages are script-rendered, so the code text was not saved (raw/new-castle-in/code30.html is an empty shell). No ArcGIS layer found (the city lists a GIS/Maps department; Henry County GIS office exists; not opened). The ward map is a vector PDF with no extractable text."
+  },
+  "notes": "The council page does NOT say who was appointed mid-term. The city site was redesigned: the www host serves some old pages and a 'redesigned' notice on others; all facts are from cityofnewcastle.net pages saved in raw/new-castle-in/. The Government page lists a 'City Court' (raw/new-castle-in/government.html); judge not collected. Council page states: 5 Ward Representatives and 2 At-Large; meetings 1st and 3rd Monday 6:30 PM."
+}

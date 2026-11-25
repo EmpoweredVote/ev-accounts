@@ -1,0 +1,124 @@
+[
+ {
+  "slug": "michigan-city-in",
+  "name": "Michigan City",
+  "geoid": "1848798",
+  "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer",
+  "layers": [
+   {
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer/0",
+    "key": 1
+   },
+   {
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer/1",
+    "key": 2
+   },
+   {
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer/2",
+    "key": 3
+   },
+   {
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer/3",
+    "key": 4
+   },
+   {
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer/4",
+    "key": 5
+   },
+   {
+    "url": "https://services8.arcgis.com/01oq2N3cUfdKDUBU/arcgis/rest/services/MichiganCityWards/FeatureServer/5",
+    "key": 6
+   }
+  ],
+  "district_field": "Name",
+  "expected": 6,
+  "source_note": "City of Michigan City MichiganCityWards FeatureServer, one layer per ward (layers 0-5, Name 'Ward 1'..'Ward 6'); data last edited 2023-01-03, matching the city's 'Wards, 2023' PDF. The city calls its districts wards."
+ },
+ {
+  "slug": "greensburg-in",
+  "name": "Greensburg",
+  "geoid": "1829718",
+  "url": "https://services5.arcgis.com/JyUjaMA8RG5613cC/arcgis/rest/services/Voting_District_1_view/FeatureServer/0",
+  "layers": [
+   {
+    "url": "https://services5.arcgis.com/JyUjaMA8RG5613cC/arcgis/rest/services/Voting_District_1_view/FeatureServer/0",
+    "key": 1
+   },
+   {
+    "url": "https://services5.arcgis.com/JyUjaMA8RG5613cC/arcgis/rest/services/Voting_District_2_view/FeatureServer/0",
+    "key": 2
+   },
+   {
+    "url": "https://services5.arcgis.com/JyUjaMA8RG5613cC/arcgis/rest/services/Voting_District_3_view/FeatureServer/0",
+    "key": 3
+   },
+   {
+    "url": "https://services5.arcgis.com/JyUjaMA8RG5613cC/arcgis/rest/services/Voting_District_4_view/FeatureServer/0",
+    "key": 4
+   }
+  ],
+  "district_field": "district",
+  "expected": 4,
+  "source_note": "City of Greensburg 'Greensburg City Council Map' (ArcGIS web map a3ed8b97eda2499d8b4b531706dcae3e), one view layer per district (Voting_District_1..4_view); district populations sum to 12,343 against the 2020 census; edited Jan 2026.",
+  "max_outside_pct": 8,
+  "bound_reason": "Greensburg's district polygons reach 7.17% beyond TIGER's 2024 place polygon: the city's own limits run ahead of TIGER (annexations). Clipped to TIGER so the council seats match the citywide seats; the district populations still sum to the 2020 census count."
+ },
+ {
+  "slug": "jasper-in",
+  "name": "Jasper",
+  "geoid": "1837782",
+  "url": "https://gis.jasperindiana.gov/server/rest/services/Boundaries/Boundaries/FeatureServer/12",
+  "where": "district <> 'At Large'",
+  "district_field": "district",
+  "expected": 5,
+  "keys": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "source_note": "City of Jasper Boundaries FeatureServer layer 12 City_Council_Disctricts: precinct-level rows dissolved by district; Jasper numbers its five districts 2-6 (council page). Rows first edited Jan 2023, after the 2022 redraw."
+ },
+ {
+  "slug": "new-haven-in",
+  "name": "New Haven",
+  "geoid": "1852992",
+  "url": "https://maps.newhaven.in.gov/server/rest/services/City_Council_Districts/MapServer/0",
+  "district_field": "DISTRICT",
+  "expected": 5,
+  "source_note": "City of New Haven City_Council_Districts MapServer 0 (5 features, DISTRICT 1-5); features created 2025-03-20 by the city's GIS; MEMBER names match the council page."
+ },
+ {
+  "slug": "warsaw-in",
+  "name": "Warsaw",
+  "geoid": "1880306",
+  "url": "https://maps.warsaw.in.gov/arcgis/rest/services/Council_2022/MapServer/1",
+  "district_field": "District",
+  "expected": 5,
+  "source_note": "City of Warsaw Council_2022 MapServer 1 (cityofwarsaw_sde.DBO.Council_2022_PostRedistricting): 2020 census blocks tagged with their council district, dissolved here by District.",
+  "where": "District > 0",
+  "max_uncovered_pct": 8,
+  "bound_reason": "Warsaw's districts are 2020 census blocks (district populations 3,065-3,269, total 15,829 against the 2020 census count of 15,804, so this is the post-2020 map). 7.25% of TIGER's 2024 place has no district: land annexed since the blocks were tagged, whose District field is 0. Residents there see the citywide seats only until the city assigns the land to a district."
+ },
+ {
+  "slug": "bluffton-in",
+  "name": "Bluffton",
+  "geoid": "1806220",
+  "url": "https://services7.arcgis.com/QSBMiYcWqQVP5NZq/arcgis/rest/services/City_Council_Districts/FeatureServer/49",
+  "where": "District LIKE 'District %'",
+  "district_field": "District",
+  "expected": 5,
+  "source_note": "City of Bluffton City_Council_Districts FeatureServer 49 (web map created 2024-02-27, edited 2026-11-19); the city noticed a 2022 redistricting into five single-member districts for the 2023 election."
+ },
+ {
+  "slug": "beech-grove-in",
+  "name": "Beech Grove",
+  "geoid": "1804204",
+  "url": "https://gis.indy.gov/server/rest/services/sde_Voting/sde_Voting/MapServer/10",
+  "where": "CITYNAME LIKE '%BEECH%'",
+  "district_field": "DISTRICT",
+  "expected": 5,
+  "source_note": "Indianapolis/Marion County sde_Voting MapServer 10 'Town Council Districts', Beech Grove rows (BG-1..BG-5). Undated; it is the election-administration layer of the county that runs Beech Grove's elections (the same layer's Lawrence rows were checked as the post-2020 map on 2026-11-24)."
+ }
+]

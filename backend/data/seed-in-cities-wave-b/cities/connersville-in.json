@@ -1,0 +1,89 @@
+{
+  "slug": "connersville-in",
+  "geoid": "1814932",
+  "name": "Connersville",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://connersvillein.gov/city-council/",
+    "source_file": "raw/connersville-in/city-council.html",
+    "council_name": "Connersville City Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Chad Frank",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Rosemary Brown",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Sharon McQueen",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Jenny Barrett",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Brian Robb",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": "Listed as Council Vice President"
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Bill Gray",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Jabin Collins",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Diana Phillips",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": "Listed as Council President"
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tommy Lee Williams Jr",
+      "source_url": "https://connersvillein.gov/city-council/",
+      "source_file": "raw/connersville-in/city-council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "none",
+    "url": null,
+    "feature_count": null,
+    "district_field": null,
+    "vintage": "Not found.",
+    "notes": "No ArcGIS layer, PDF map or redistricting ordinance found for the city or Fayette County. Connersville code on amlegal only cross-references IC 36-4-6-4 per search snippet (page behind Cloudflare, not saved). A 2013 ordinance snippet in search results said 4 district + 1 at-large, which conflicts with the 7-member page; not verified. Next step: ask the clerk or the Fayette County election office for the council district ordinance/precinct list."
+  },
+  "notes": "On the council page each person block reads name, address, phone, then the seat heading (heading FOLLOWS the person); confirmed by McQueen=District 1 and the last heading \"Council at Large\" following Tommy Lee Williams Jr. Page modified 2026-10-22 per its JSON-LD dateModified. Page text also shows member street addresses (not recorded). Judge status not found. Wikipedia-sourced search snippet is not used."
+}

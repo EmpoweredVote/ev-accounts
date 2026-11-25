@@ -1,0 +1,89 @@
+{
+  "slug": "beech-grove-in",
+  "geoid": "1804204",
+  "name": "Beech Grove",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "yes",
+    "source_url": "https://www.beechgrove.com/common-council",
+    "source_file": "raw/beech-grove-in/council.html",
+    "council_name": "Beech Grove Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "James W. Coffman",
+      "source_url": "https://beechgrove.com/mayors-office",
+      "source_file": "raw/beech-grove-in/mayor.html",
+      "note": "Page title: 'Mayor James W. Coffman'."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Samantha S. Stratton",
+      "source_url": "https://www.beechgrove.com/clerk-treasurers-office",
+      "source_file": "raw/beech-grove-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Elizabeth Lamping",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Ryan Matkins",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Michael Hemmelgarn",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": "Page prints the surname with a stray capital N ('HemmelgarN'); normalised."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Avis Frieson",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": "Page prints the name in capitals."
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Mike Earnest",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dan McMillan",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": "Page prints 'Dan Mcmillan'."
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Chris Duffer",
+      "source_url": "https://www.beechgrove.com/common-council",
+      "source_file": "raw/beech-grove-in/council.html",
+      "note": "Page prints 'Chris duffer'; also President Pro Tempore."
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://gis.indy.gov/server/rest/services/sde_Voting/sde_Voting/MapServer/10",
+    "feature_count": 5,
+    "district_field": "DISTRICT",
+    "vintage": "Cannot tell. Layer 10 'Town Council Districts' has no description, copyright, edit date or population field; it carries 34 features across 17 towns. Beech Grove rows are OBJECTID 370-374. No Beech Grove redistricting ordinance found.",
+    "notes": "Filter CITYNAME LIKE '%BEECH%' -> {\"count\":5}; attributes TOWN 'Beech Grove', DISTRICT '1'..'5', TOWNCNCL 'BG-1'..'BG-5', DESCRIPTION 'Beech Grove 00n'. Saved raw/beech-grove-in/layer10-beech.json. Layer 21 'City Council' holds only 25 Indianapolis districts (no Beech Grove), saved layer21-all.json. Service URL is sde_Voting/sde_Voting (not sde_Voting alone)."
+  },
+  "notes": "Council page: seven members, two at-large, five by district. Government page lists elected officials as Mayor, Clerk-Treasurer, Common Council and City Judge (city court exists; judge not collected). Coffman took office Jan 1 2024 and Stratton has served since 2024 per the city clerk page."
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "warsaw-in",
+  "geoid": "1880306",
+  "name": "Warsaw",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.warsaw.in.gov/78/City-Elected-Officials",
+    "source_file": "raw/warsaw-in/elected.html",
+    "council_name": "Warsaw Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Jeff R. Grose",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Lynne Christiansen",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Juergen Voss",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": "Directory title: 'Common Council - District 1'."
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Josh Finch",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Michael Klondaris",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": "Directory title spells 'Council Disrict 3'."
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "William G. \"Jerry\" Frush",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Diane L. Quance",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Cindy A. Dobbins",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Jack Wilhite",
+      "source_url": "https://www.warsaw.in.gov/Directory.aspx",
+      "source_file": "raw/warsaw-in/directory.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "arcgis",
+    "url": "https://maps.warsaw.in.gov/arcgis/rest/services/Council_2022/MapServer/1",
+    "feature_count": 3374,
+    "district_field": "District",
+    "vintage": "Service name 'Council_2022'; layer name 'cityofwarsaw_sde.DBO.Council_2022_PostRedistricting'. Feature = census BLOCK (3,374 of them, county-wide): District 0 (1,659 blocks, outside city) and 1-5 (50, 90, 39, 93, 69 blocks). Must be dissolved by District. The 'pop' field sums to 48,432 over all blocks, 10,707 over districts 1-5 (looks like a voting-age or 2020 block count, not total population; unverified).",
+    "notes": "returnCountOnly -> {\"count\":3374}. Fields: BASENAME (block no.), P0020073, District, pop, SCENARIO_3, MemberName (null). The city's 'Find your Council Representative' link is webmap 9cb0a54b35744c89869747db8cfef3dc on warsaw.maps.arcgis.com (saved raw/warsaw-in/webmap.json), which uses this layer. Also layer 0 'Council Member Addresses'. Saved layer1-attrs.json and layer1-count.json."
+  },
+  "notes": "Council from the city directory page (saved, all 7 names and district labels present). Form of government text (7 members: 2 at-large, 5 district) from elected.html. Grose was elected Nov 2023. City court: Warsaw has no mention in saved pages; unknown."
+}

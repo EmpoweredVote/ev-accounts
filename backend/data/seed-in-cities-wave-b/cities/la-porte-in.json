@@ -1,0 +1,89 @@
+{
+  "slug": "la-porte-in",
+  "geoid": "1842246",
+  "name": "La Porte",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+    "source_file": "raw/la-porte-in/council.html",
+    "council_name": "La Porte Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Tom Dermody",
+      "source_url": "https://www.cityoflaporte.com/departments/mayors-office/",
+      "source_file": "raw/la-porte-in/mayor.html",
+      "note": "Minutes list him as \"Thomas P. Dermody, Mayor\"."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Courtney Parthun",
+      "source_url": "https://www.cityoflaporte.com/departments/clerk-treasurer/",
+      "source_file": "raw/la-porte-in/clerk.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Julie West",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Karyl Machek-Feikes",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Drew Buchanan",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Roger Galloway",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "Laura Konieczny",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Lauren Huffman",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Tim Franke",
+      "source_url": "https://www.cityoflaporte.com/departments/government/city-council/",
+      "source_file": "raw/la-porte-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "ordinance",
+    "url": "https://www.cityoflaporte.com/uploads/Redistricting%20Coordinator%20Submittal.pdf",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "2025 redistricting: Ordinance 3-2025 \"for the Purpose of Establishing Councilmanic Districts\" adopted unanimously 2025-06-16 (minutes). Plan text = Councilor Tim Franke submittal (May 2025): wards 1-5 identical to the prior map except splits of La Porte 27 and La Porte 44.",
+    "notes": "The ordinance text itself was not found online. Council minutes of 2025-06-02 say the city attorney recommended adopting Franke's plan, but the minutes do not say the ordinance as adopted equals that plan, so confirm with the clerk. Franke plan precincts: W1 = LP25, LP26, LP28, LP27 except a block south of Talley St/east of Lawrence St/north of Niles St/west of Philadelphia St; W2 = LP29, LP30, LP31 + part of LP44 west of F St; W3 = LP32-LP36; W4 = that part of LP27 + LP37-LP40; W5 = LP41, LP42, LP43 + part of LP44 east of F St. City ward map PDF (raw/la-porte-in/wardmap.pdf, titled \"Proposed Ward Boundaries 2025\") is the same plan. Common Cause alternative plan saved too (raw/la-porte-in/commoncause.pdf) but was NOT the recommended one. Minutes saved: min-2025-06-02.docx, min-2025-06-16.docx. No ArcGIS layer found (one search)."
+  },
+  "notes": "City council page is undated; names match the 2023 candidate filings and Dec 2024 roll call. Redistricting in 2025 may mean the 2027 election uses new wards while current members were elected under the old ones."
+}

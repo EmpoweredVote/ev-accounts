@@ -1,0 +1,89 @@
+{
+  "slug": "hobart-in",
+  "geoid": "1834114",
+  "name": "Hobart",
+  "structure": {
+    "council_size": 7,
+    "district_seats": 5,
+    "at_large_seats": 2,
+    "clerk_title": "Clerk-Treasurer",
+    "city_court_judge": "unknown",
+    "source_url": "https://cityofhobart.org/250/City-Council",
+    "source_file": "raw/hobart-in/council.html",
+    "council_name": "Hobart Common Council"
+  },
+  "holders": [
+    {
+      "office": "Mayor",
+      "name": "Josh Huddlestun",
+      "source_url": "https://cityofhobart.org/213/Board-of-Public-Works-Safety",
+      "source_file": "raw/hobart-in/bpws.html",
+      "note": "Source is the Board of Public Works & Safety page: 'Mayor Josh Huddlestun: Appointed by virtue of position held: 1/1/2024-12/31/2027'. City news page also names him."
+    },
+    {
+      "office": "Clerk-Treasurer",
+      "name": "Deborah A. Longer",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 1",
+      "name": "Mark Kopil",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 2",
+      "name": "Mark Kara",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 3",
+      "name": "Michael Rodriguez",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 4",
+      "name": "Lisa Winstead",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, District 5",
+      "name": "John Brezik",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Dan Waldrop",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    },
+    {
+      "office": "Council Member, At Large",
+      "name": "Matthew Claussen",
+      "source_url": "https://cityofhobart.org/250/City-Council",
+      "source_file": "raw/hobart-in/council.html",
+      "note": null
+    }
+  ],
+  "council_map": {
+    "kind": "pdf",
+    "url": "https://cityofhobart.org/DocumentCenter/View/3149/PRECINCT-AND-COUNCIL-DISTRICT-MAP-2021",
+    "feature_count": 5,
+    "district_field": null,
+    "vintage": "Map titled 'Hobart Indiana Precinct & Council District Map 2021'; no adoption ordinance seen. Likely post-2020-census but not proven.",
+    "notes": "Saved at raw/hobart-in/district-map-2021.pdf. Image-only map labels precinct numbers inside each of Districts 1-5 (D1: 6,25,29,2? ; D2: 4,5,10,21; D3: 3,11,15,27; D4: 7,16,22; D5: 12,19,23 as read by eye) so a precinct-built map is possible; not machine-readable, verify before use. City site Maps page (raw/hobart-in/maps.html) lists no GIS council layer. Lake County (Beacon-style) viewers not tried."
+  },
+  "notes": "Term for all council 1/1/2024-12/31/2027 per city page. No ArcGIS layer found. Search mentions a 2018 federal case document; not used."
+}
