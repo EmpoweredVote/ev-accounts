@@ -207,7 +207,7 @@ function readParen(body: string): Paren | null {
 
 const PAREN = String.raw`(?:\s*\(([^()]*)\))?`;
 const TALLY = new RegExp(
-  String.raw`^Ayes:\s*(\d+)${PAREN},\s*Nays:\s*(\d+)${PAREN},\s*Abstain:\s*(\d+)${PAREN}\s*(?:\.\s*)?(FAILED|PASSED)?\s*\.?$`,
+  String.raw`^Ayes:\s*(\d+)${PAREN}[,;]\s*Nays:\s*(\d+)${PAREN}[,;]\s*Abstain:\s*(\d+)${PAREN}\s*(?:\.\s*)?(FAILED|PASSED)?\s*\.?$`,
   'i',
 );
 
@@ -262,17 +262,23 @@ export const twoDigits = (n: string): string => String(Number(n)).padStart(2, '0
 
 const SUBJECTS: { re: RegExp; question: (m: RegExpExecArray) => string; item: (m: RegExpExecArray) => [string, string] }[] = [
   {
-    re: new RegExp(`^to adopt Amendment (\\d{1,3})(?: \\(as revised\\))? to ${ITEM}(?: as amended)?$`),
+    re: new RegExp(`^to adopt Amendment (\\d{1,3})(?: \\(as revised\\))?(?: as (?:twice )?amended)? to ${ITEM}(?: as amended)?$`),
     question: (m) => `Amendment ${twoDigits(m[1])}`,
     item: (m) => [m[2], m[3]],
   },
   {
-    re: new RegExp(`^to adopt ${RC} to ${ITEM}$`),
+    // "Sub-amendment A to Amendment 01 to Resolution 22-20", "Amendment 01 to Amendment 03 to Ordinance 2025-20".
+    re: new RegExp(`^to adopt (Sub-amendment ([A-Z])|Amendment (\\d{1,3}|[A-Z])) to Amendment (\\d{1,3})(?: as amended)? to ${ITEM}$`),
+    question: (m) => `${m[2] ? `Sub-amendment ${m[2]}` : `Amendment ${/\d/.test(m[3]) ? twoDigits(m[3]) : m[3]}`} to Amendment ${twoDigits(m[4])}`,
+    item: (m) => [m[5], m[6]],
+  },
+  {
+    re: new RegExp(`^to adopt (?:Reasonable Condition|RC) (\\d{1,3})(?: \\(revised\\))? to ${ITEM}$`),
     question: (m) => `Reasonable Condition ${twoDigits(m[1])}`,
     item: (m) => [m[2], m[3]],
   },
   {
-    re: new RegExp(`^to adopt ${ITEM}(?: as amended)?$`),
+    re: new RegExp(`^to (?:adopt|approve) ${ITEM}(?: as amended)?$`),
     question: () => 'Final passage',
     item: (m) => [m[1], m[2]],
   },
@@ -335,20 +341,35 @@ function subjectFromMargin(margin: string): { subject: Subject; heading: string 
   return { subject: { kind: 'vote', itemNumber: `${ITEM_PREFIX[m[3]]} ${m[4]}`, question }, heading: m[0] };
 }
 
+/** Where the tally starts; group 1 is set when the sentence prints the result in words ("was approved by"). */
+const TALLY_START = /(?:received a roll call vote(?: of|:)|was (approved|adopted) by a roll call vote of) /;
+
 /** A sentence right after a vote saying that it overrode the veto. */
 const OVERRODE = /\bthe vote overr?ode the (?:Mayor['’]s |mayoral )?veto\b/i;
 
-const MOVED = /^(?:[A-Z][\w.'’-]*\s){0,3}?[A-Z][\w'’-]* moved(?: and (?:it was|[A-Z][\w'’-]*(?: [A-Z][\w'’-]*)?) seconded)? (.+)$/;
-const VOTE = /^(The motion(?: to (.+?))?) received a roll call vote of (.+)$/;
+const MOVED = /^(?:[A-Z][\w.'’-]*\s){0,3}?[A-Z][\w'’-]* moved(?: and (?:it was|[A-Z][\w'’-]*(?: [A-Z][\w'’-]*)?) seconded| it was seconded by [A-Z][\w'’-]*(?: [A-Z][\w'’-]*)?)? (.+)$/;
+/**
+ * A roll-call sentence: "The motion [to …] received a roll call vote of …", "The motion that X be adopted received …",
+ * "The vote to adopt X received …", "… received a roll call vote: …", "The motion … was approved by a roll call vote
+ * of …", "Resolution X was adopted by a roll call vote of …". Groups: 1 "to" motion, 2 "that" item, 3 "vote to"
+ * motion, 4 adopted item.
+ */
+const VOTE = new RegExp(
+  `^(?:The motion(?: to (.+?)| that (.+?) be adopted)?|The vote to (.+?)|((?:Appropriation )?(?:Ordinance|Resolution) \\d{2,4}-\\d{1,3})(?= was adopted)) ${TALLY_START.source}`,
+);
 
 /**
  * Read one roll-call sentence's tally, names and inline notes. Returns null when the tally part does not match
  * exactly. The subject is not read here.
  */
 export function parseRollCallSentence(sentence: string, index: number): ParsedTally | null {
-  const at = sentence.indexOf('received a roll call vote of ');
-  if (at < 0) return null;
-  return readTally(sentence.slice(at + 'received a roll call vote of '.length), index);
+  const m = TALLY_START.exec(sentence);
+  if (!m) return null;
+  const p = readTally(sentence.slice(m.index + m[0].length), index);
+  if (!p || !m[1]) return p;
+  // "was approved" / "was adopted" prints the result in words: it must agree with the count.
+  if (p.printedResult === 'failed' || p.tally.yes <= p.tally.no) return null;
+  return { ...p, printedResult: 'passed' };
 }
 
 /** FAILED printed → failed; PASSED printed needs Ayes > Nays; a veto override needs a printed result; else Ayes > Nays. */
@@ -611,7 +632,10 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
       // the paragraph's line span. Anything else is not understood.
       let subject: Subject;
       let full = sentence;
-      if (v[2] !== undefined) subject = classifyMotion(`to ${v[2]}`);
+      if (v[1] !== undefined) subject = classifyMotion(`to ${v[1]}`);
+      else if (v[2] !== undefined) subject = classifyMotion(`that ${v[2]} be adopted`);
+      else if (v[3] !== undefined) subject = classifyMotion(`to ${v[3]}`);
+      else if (v[4] !== undefined) subject = classifyMotion(`to adopt ${v[4]}`);
       else {
         const prev = k > 0 ? MOVED.exec(sentences[k - 1]) : null;
         if (prev) {

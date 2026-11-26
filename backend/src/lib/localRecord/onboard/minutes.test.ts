@@ -754,3 +754,57 @@ describe('R4: page headers and agenda numbers are not part of a vote sentence', 
     expect(s).toEqual(['The motion to adopt Ordinance 2025-33 as amended received a roll call vote of Ayes: 9, Nays: 0, Abstain: 1.']);
   });
 });
+
+describe('R6/R7: other wordings and amendment shapes, as printed', () => {
+  const ATT = [
+    'Councilmembers present: Matt Flaherty, Isabel Piedmont-Smith, Dave Rollo, Kate Rosenbarger, Susan Sandberg,',
+    'Sue Sgambelluri, Jim Sims, Ron Smith, Stephen Volan',
+    'Councilmembers absent: none',
+    '',
+  ];
+  const one = (sentence: string, date = '2023-06-07') => {
+    const p = parseMinutes([...ATT, sentence, ''].join('\n'), date);
+    return { calls: p.rollCalls.map((r) => [r.itemNumber, r.question, r.outcome]), unparsed: p.unparsed };
+  };
+
+  it.each([
+    // [sentence as printed (date), item, question, outcome]
+    ['The motion that Resolution 23-09 be adopted received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.', 'Res 23-09', 'Final passage', 'passed'],
+    ['The motion that Resolution 23-11 be adopted received a roll call vote of Ayes: 0, Nays: 7, Abstain: 0. FAILED', 'Res 23-11', 'Final passage', 'failed'],
+    ['The vote to adopt Ordinance 23-21 received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.', 'Ord 23-21', 'Final passage', 'passed'],
+    ['The vote to adopt Amendment 01 as amended to Ordinance 23-14 received a roll call vote of Ayes: 8, Nays: 1 (Sims), Abstain: 0.', 'Ord 23-14', 'Amendment 01', 'passed'],
+    ['The motion to adopt Amendment 01 as amended to Resolution 22-20 received a roll call vote of Ayes: 8, Nays: 1 (Sandberg), Abstain: 0.', 'Res 22-20', 'Amendment 01', 'passed'],
+    ['The motion to adopt Sub-amendment A to Amendment 01 to Resolution 22-20 received a roll call vote of Ayes: 6, Nays: 3 (Smith, Sims, Sandberg), Abstain: 0.', 'Res 22-20', 'Sub-amendment A to Amendment 01', 'passed'],
+    ['The motion to adopt Amendment 01 to Amendment 03 to Ordinance 2025-20 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', 'Ord 2025-20', 'Amendment 01 to Amendment 03', 'passed'],
+    ['The motion to adopt Amendment 01 to Ordinance 23-25 received a roll call vote: Ayes: 9, Nays: 0, Abstain: 0.', 'Ord 23-25', 'Amendment 01', 'passed'],
+    ['The motion to adopt Amendment 01 to Ordinance 2025-03 was approved by a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', 'Ord 2025-03', 'Amendment 01', 'passed'],
+    ['Resolution 2026-06 was adopted by a roll call vote of Ayes: 7, Nays: 2 (Ruff, Stosberg), Abstain: 0.', 'Res 2026-06', 'Final passage', 'passed'],
+    ['The motion to adopt RC 14 to Ordinance 2026-06 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', 'Ord 2026-06', 'Reasonable Condition 14', 'passed'],
+    ['The motion to adopt Reasonable Condition 04 (revised) to Ordinance 2024-07 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', 'Ord 2024-07', 'Reasonable Condition 04', 'passed'],
+  ])('%s', (sentence, item, question, outcome) => {
+    const r = one(sentence);
+    expect(r.unparsed).toEqual([]);
+    expect(r.calls).toEqual([[item, question, outcome]]);
+  });
+
+  it('semicolons between the sides are read (2026-07-22): names still must match the counts', () => {
+    const p = parseRollCallSentence('The motion to adopt Ordinance 2026-12 received a roll call vote: Ayes: 4 (Asare, Daily, Flaherty, Rosenbarger); Nays: 4 (Stosberg, Piedmont-Smith, Rollo, Ruff); Abstain: 0. FAILED', 0);
+    expect(p?.tally).toEqual({ yes: 4, no: 4, abstain: 0 });
+    expect(p?.printedResult).toBe('failed');
+  });
+
+  it('"Moved it was seconded by" is a moved sentence (2023-10-04, file 12579)', () => {
+    const r = one('Rollo moved it was seconded by Piedmont-Smith to adopt Resolution 23-17. The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', '2023-10-04');
+    expect(r.calls).toEqual([['Res 23-17', 'Final passage', 'passed']]);
+  });
+
+  it('"was approved" with a losing count is not understood', () => {
+    const r = one('The motion to adopt Amendment 01 to Ordinance 2025-03 was approved by a roll call vote of Ayes: 3, Nays: 6, Abstain: 0.');
+    expect(r.calls).toEqual([]);
+    expect(r.unparsed).toHaveLength(1);
+  });
+
+  it('several conditions in one vote ("RCs 8, 9, 10, and 12") stay unparsed', () => {
+    expect(one('The motion to adopt RCs 8, 9, 10, and 12 to Ordinance 2026-06 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.').unparsed).toHaveLength(1);
+  });
+});
