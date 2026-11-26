@@ -150,6 +150,31 @@ describe('presentAt', () => {
     expect(on.present).toContain('Andy Ruff');
   });
 
+  it('a returned note for a member marked absent cannot be placed', () => {
+    const p = load('2026-10-07');
+    p.notes = [{ kind: 'returned', nameAsPrinted: 'Dave Rollo', at: 2 }];
+    expect(presentAt(p, p.rollCalls[2])).toMatchObject({ error: 'unplaced_note' });
+  });
+
+  it('a returned note for a member not yet arrived cannot be placed', () => {
+    const p = load('2022-05-04');
+    p.notes = [
+      { kind: 'returned', nameAsPrinted: 'Stephen Volan', at: 0 },
+      { kind: 'arrived', nameAsPrinted: 'Stephen Volan', at: 1 },
+    ];
+    expect(presentAt(p, p.rollCalls[0])).toMatchObject({ error: 'unplaced_note' });
+  });
+
+  it('a note in both the meeting notes and the roll call is applied once', () => {
+    const p = load('2026-10-07');
+    const out = { kind: 'out_of_room' as const, nameAsPrinted: 'Andy Ruff', at: 3 };
+    p.notes = [out, { kind: 'returned', nameAsPrinted: 'Andy Ruff', at: 3 }];
+    p.rollCalls[3].inlineNotes = [{ ...out }];
+    const r = presentAt(p, p.rollCalls[3]);
+    if ('error' in r) throw new Error(r.detail);
+    expect(r.present).toContain('Andy Ruff');
+  });
+
   it('an inline out-of-room note applies to that roll call only', () => {
     const p = load('2026-10-07');
     p.rollCalls[3].inlineNotes = [{ kind: 'out_of_room', nameAsPrinted: 'Andy Ruff', at: 3 }];
@@ -313,6 +338,29 @@ describe('checkRollCall', () => {
     const rc = rcOf(p, 'Res 21-09', 'Final passage');
     const feed = new Map([['Res 21-09', feedItem('Res 21-09', { date: '2021-05-19', outcome: 'failed', tally: { yes: 9, no: 0, abstain: 0 } })]]);
     expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: false, cause: 'outcome_conflict' });
+  });
+
+  it('a vetoed final action agrees with a passed vote', () => {
+    const p = load('2021-05-19');
+    const rc = rcOf(p, 'Res 21-09', 'Final passage');
+    const feed = new Map([['Res 21-09', feedItem('Res 21-09', { date: '2021-05-19', outcome: 'vetoed', tally: { yes: 9, no: 0, abstain: 0 } })]]);
+    expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: true, feedDisagreement: null });
+  });
+
+  it('a vetoed final action conflicts with a failed vote', () => {
+    const p = load('2022-05-04');
+    const rc = rcOf(p, 'Ord 22-07', 'Final passage');
+    const feed = new Map([['Ord 22-07', feedItem('Ord 22-07', { date: '2022-05-04', outcome: 'vetoed', tally: { yes: 0, no: 9, abstain: 0 } })]]);
+    expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: false, cause: 'outcome_conflict' });
+  });
+
+  it('a feed final from another meeting is not compared', () => {
+    const p = load('2021-05-19');
+    const rc = rcOf(p, 'Res 21-09', 'Final passage');
+    const conflict = new Map([['Res 21-09', feedItem('Res 21-09', { date: '2021-06-02', outcome: 'failed', tally: { yes: 3, no: 6, abstain: 0 } })]]);
+    expect(checkRollCall(rc, p, ctx(p, { feed: conflict }))).toMatchObject({ ok: true, feedDisagreement: null });
+    const counts = new Map([['Res 21-09', feedItem('Res 21-09', { date: '2021-06-02', outcome: 'passed', tally: { yes: 8, no: 0, abstain: 0 } })]]);
+    expect(checkRollCall(rc, p, ctx(p, { feed: counts }))).toMatchObject({ ok: true, feedDisagreement: null });
   });
 
   it('feed final agrees: no disagreement', () => {

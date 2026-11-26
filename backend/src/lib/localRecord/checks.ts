@@ -73,6 +73,10 @@ export function presentAt(parse: MinutesParse, rc: MinutesRollCall, same: SameMe
   const apply = (n: MeetingNote): string | null => {
     const f = find(n);
     if ('error' in f) return f.error;
+    // A return needs a member who was in the meeting; one marked absent or not yet arrived cannot return.
+    if (n.kind === 'returned' && (f.entry.out === 'absent' || f.entry.out === 'arrived')) {
+      return `returned note for "${n.nameAsPrinted}", who was ${f.entry.out === 'absent' ? 'absent' : 'not yet arrived'}`;
+    }
     if (n.kind === 'arrived' || n.kind === 'returned') f.entry.out = null;
     else f.entry.out = n.kind;
     return null;
@@ -87,6 +91,9 @@ export function presentAt(parse: MinutesParse, rc: MinutesRollCall, same: SameMe
     if (err) return { error: 'unplaced_note', detail: err };
   }
   for (const n of rc.inlineNotes) {
+    // A note already in the meeting notes for this roll call was applied above, in order; do not apply it twice.
+    const dup = parse.notes.some((m) => m.at === n.at && m.kind === n.kind && same(m.nameAsPrinted, n.nameAsPrinted));
+    if (dup) continue;
     const err = apply(n);
     if (err) return { error: 'unplaced_note', detail: err };
   }
@@ -215,8 +222,11 @@ export function checkRollCall(rc: MinutesRollCall, parse: MinutesParse, ctx: Che
   let feedDisagreement: string | null = null;
   if (rc.question === 'Final passage') {
     const final = ctx.feed.get(rc.itemNumber)?.final ?? null;
-    if (final) {
-      if (final.outcome !== rc.outcome) {
+    // A Final action from another meeting is not this vote: no comparison.
+    if (final && final.date === date) {
+      // A vetoed item passed the council; the veto came after.
+      const feedOutcome = final.outcome === 'vetoed' ? 'passed' : final.outcome;
+      if (feedOutcome !== rc.outcome) {
         return fail('outcome_conflict', `${label}: feed says ${final.outcome}, minutes say ${rc.outcome}`);
       }
       const t = final.tally;
