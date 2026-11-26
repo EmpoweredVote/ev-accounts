@@ -1049,10 +1049,20 @@ export async function getFederalContext(): Promise<FederalContext> {
 // nowhere, so it cannot drift or double-count — the Treasury loader already drops webhook
 // rows once an export absorbs them, so a surviving row is by construction not in the base.
 //
-// ⚠⚠ pending_gross is RAISED, never ON HAND. `balance`, `runway_months` and
-// `recon_variance` are bank-sourced and deliberately DO NOT move when a donation arrives:
-// the money sits with the platform until payout, minus fees. Do not add pending_gross to
-// balance anywhere downstream.
+// ⚠⚠ pending_gross is RAISED, never ON HAND. `balance` and `runway_months` are
+// bank-sourced and deliberately DO NOT move when a donation arrives: the money sits with
+// the platform until payout, minus fees. Do not add pending_gross to balance anywhere
+// downstream.
+//
+// ── recon_* removed (Treasury Tracker, 2026-11-25) ──────────────────────────
+// The columns `recon_variance`, `recon_explanation` and `recon_by_source` are still
+// written by the loader's own tooling but are NO LONGER SERVED. The reconciliation gap
+// between platform-reported donations and bank deposits is an operator diagnostic: it
+// moves for mundane reasons (a payout crossing a year boundary, a platform balance not
+// yet transferred) that a reader cannot evaluate, so publishing it undermines confidence
+// in figures that are themselves correct. Reconciliation now runs for the operator at the
+// console and stops there. `unmatched_deposits` is deliberately KEPT — a deposit nobody
+// can account for is an anomaly worth publishing; arithmetic about timing is not.
 //
 // The view is `security_invoker`, so the RLS of the underlying tables still applies to
 // whichever role this pool connects as — reading it is exactly as privileged as reading
@@ -1075,9 +1085,7 @@ export interface OrgFinancialSummary {
    */
   pending_gross: number;
   income_by_source: { source: string; gross: number; fee: number; net: number }[];
-  recon_variance: number | null;
-  recon_explanation: string | null;
-  recon_by_source: { source: string; platform_net: number; bank_deposits: number; variance: number }[];
+  /** An unexplained deposit IS publishable — see the recon_* note above. */
   unmatched_deposits: { date: string; amount: number; description: string }[];
   goal_amount: number | null; // NEW (Treasury Tracker Phase 76 migration; null until it lands)
   goal_label: string | null; //  NEW (Treasury Tracker Phase 76 migration; null until it lands)
@@ -1129,9 +1137,6 @@ export async function getOrgFinancialSummary(
     // absent column -> 0 pending, i.e. exactly the old behaviour.
     pending_gross: Number(r.pending_gross ?? 0),
     income_by_source: arr(r.income_by_source),
-    recon_variance: num(r.recon_variance),
-    recon_explanation: r.recon_explanation ?? null,
-    recon_by_source: arr(r.recon_by_source),
     unmatched_deposits: arr(r.unmatched_deposits),
     goal_amount: num(r.goal_amount), // undefined (column absent) -> null
     goal_label: r.goal_label ?? null,
