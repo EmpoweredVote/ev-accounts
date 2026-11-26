@@ -462,3 +462,24 @@ describe('R11: two passed Final passages of one item on different dates', () => 
     expect(out.exceptions).toHaveLength(1);
   });
 });
+
+describe('R10: inventory rows that are not votes on the item are skipped, not compared', () => {
+  const row = (id: string, record_type: string, notes: string): InventoryItem =>
+    ({ id, date: id.split(':')[2], item_no: id.split(':')[3], record_type, notes, members: [] } as InventoryItem);
+  const inv = [
+    row('place:1805860:2026-05-06:Ord 2026-08', 'OTHER', 'First reading; no vote on the item. Text read (legislation file 5956) against the Plan Commission table of changes.'),
+    row('place:1805860:2026-05-06:Ord 2026-07', 'ACTION_ITEM_NAMED', 'Motion to postpone; not a vote on the item. A motion to reconsider was withdrawn.'),
+    row('place:1805860:2026-02-18:Ord 2026-06', 'ACTION_ITEM_NAMED', 'FAILED. Procedural motion to introduce and read by title; not a vote on the rezoning itself.'),
+    row('place:1805860:2026-06-03:Res 2026-09', 'ACTION_ITEM_NAMED', 'FAILED. Motion to introduce; procedural. The council had received the plan the day before.'),
+    row('place:1805860:2026-09-02:Ord 2026-18', 'ACTION_ITEM_NAMED', 'Final passage as amended. The motion to introduce passed 8-1 (Piedmont-Smith).'),
+  ];
+
+  it('skips the first reading, the postponement and the two motions to introduce; compares the real vote', () => {
+    const cmp = compareWithInventory([], inv, roster, names());
+    expect(cmp.skipped.map((s) => s.id.split(':').slice(2).join(':'))).toEqual([
+      '2026-05-06:Ord 2026-08', '2026-05-06:Ord 2026-07', '2026-02-18:Ord 2026-06', '2026-06-03:Res 2026-09',
+    ]);
+    expect(cmp.skipped.every((s) => /not a vote on the item/.test(s.reason))).toBe(true);
+    expect(cmp.items.map((i) => [i.subject, i.status])).toEqual([['2026-09-02 Ord 2026-18 Final passage', 'inventory only']]);
+  });
+});

@@ -41,6 +41,9 @@ export interface InventoryItem {
   url_item?: string;
   url_minutes?: string;
   text_store_path?: string;
+  /** The inventory's record type; OTHER is a row with no vote on the item (a first reading, a withdrawal). */
+  record_type?: string;
+  notes?: string;
 }
 export interface InventoryRoster { members: { name: string; from: string; to: string | null }[] }
 
@@ -155,6 +158,18 @@ export function idForSurname(surname: string, date: string, roster: InventoryRos
   return member ? (member.politicianId as string) : { error: `"${people[0]}" has no politician id in the names file` };
 }
 
+/**
+ * Inventory rows filed under the bare item id that are not votes on the item: record type OTHER (a first reading, a
+ * withdrawal, "not introduced"), and procedural motions whose notes say so ("Motion to postpone; not a vote on the
+ * item", "Procedural motion to introduce …"). They would otherwise be compared as the item's Final passage.
+ */
+const PROCEDURAL_NOTE = /\bnot a vote on the\b|\bno vote on the item\b|^(?:FAILED\.\s*)?(?:Procedural motion|Motion to (?:postpone|introduce|continue|send|table|refer)\b)/i;
+export function notAVote(inv: InventoryItem): string | null {
+  if (inv.record_type === 'OTHER') return 'not a vote on the item (inventory record type OTHER)';
+  if (PROCEDURAL_NOTE.test(inv.notes ?? '')) return 'not a vote on the item (the inventory notes a procedural motion)';
+  return null;
+}
+
 const sideOf = (position: string): string =>
   position === 'yea' ? 'yes' : position === 'nay' ? 'no' : position === 'present' ? 'abstain' : 'absent';
 
@@ -169,6 +184,8 @@ export function compareWithInventory(
     const p = parseInventoryId(inv.id);
     if ('skip' in p) { out.skipped.push({ id: inv.id, reason: p.skip }); continue; }
     if (inv.instrument === 'motion') { out.skipped.push({ id: inv.id, reason: 'procedural motion' }); continue; }
+    const notVote = notAVote(inv);
+    if (notVote) { out.skipped.push({ id: inv.id, reason: notVote }); continue; }
     if (p.date < WINDOW_START) continue;
     const subject = subjectOf(p);
     const rc = confirmed.get(keyOf(p));
