@@ -1,4 +1,4 @@
--- Migration CA_PENDING_local_record_roll_calls: one row per council roll call
+-- Migration CA_0427_local_record_roll_calls: one row per council roll call
 --
 -- WHY: the voting record needs the vote itself (question, tally, outcome) separate from each member's vote, and it
 --   needs to say whether the city's vote document has confirmed it yet.
@@ -7,8 +7,8 @@
 --   feed_disagreement: text when the feed and the document differ on a count. Unique on (city_scope, external_vote_id),
 --   which is the key the writer upserts on.
 -- PUBLIC READ: anon/authenticated may SELECT (policy "public read"); only service role / API may write.
--- Needs CA_PENDING_local_record_source_documents.sql applied first (confirmed_from references it).
--- Slot: named CA_PENDING until a CA number is reserved. Not applied by this commit. Idempotent.
+-- Needs CA_0426_local_record_source_documents.sql applied first (confirmed_from references it).
+-- Slot: CA_0427, reserved 2026-11-26 through the steward allocator. Not applied by this commit. Idempotent.
 
 CREATE TABLE IF NOT EXISTS essentials.legislative_roll_calls (
   id                uuid PRIMARY KEY DEFAULT gen_random_uuid(),

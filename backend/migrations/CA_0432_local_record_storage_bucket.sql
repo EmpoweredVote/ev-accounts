@@ -1,4 +1,4 @@
--- Migration CA_PENDING_local_record_storage_bucket: the private bucket that keeps the council record's source copies
+-- Migration CA_0432_local_record_storage_bucket: the private bucket that keeps the council record's source copies
 --
 -- WHY: the weekly council-record run saves a copy of every vote document it reads (the clerk's Memorandum, the
 --   formal Minutes) and of item texts, then re-reads a saved copy for its control check (spec D6). It writes to the
@@ -10,7 +10,7 @@
 --   bucket, so only the service role (the weekly job) can read or write it. Never public: the public record links to
 --   the city's own document URL, not to this copy. Follows CA_0382 (legiscan-datasets).
 -- Creates only; overwrites no value. Idempotent (ON CONFLICT DO NOTHING; the gate re-checks an existing bucket).
--- Slot: named CA_PENDING until a CA number is reserved. Not applied by this commit.
+-- Slot: CA_0432, reserved 2026-11-26 through the steward allocator. Not applied by this commit.
 --
 -- ROLLBACK (empty the bucket first in the dashboard, or delete its storage.objects rows):
 --   delete from storage.buckets where id = 'local-record-sources';

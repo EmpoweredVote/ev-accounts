@@ -1,4 +1,4 @@
--- Migration CA_PENDING_bloomington_council_people_and_terms: Bloomington Common Council members 2020 to now, with dates
+-- Migration CA_0434_bloomington_council_people_and_terms: Bloomington Common Council members 2020 to now, with dates
 --
 -- WHY: the council voting record (Task 9 of the council-record plan) reads members' votes from minutes back to
 --   2020. It resolves each printed name to a person by meeting date, using essentials.office_terms rows on offices
@@ -17,7 +17,7 @@
 --     Sue Sgambelluri, Ron Smith, Stephen Volan. is_active = false. No photos (a later find-headshots pass).
 --   Shruti Rana is NOT created: she already exists (1802 / 1824 name her, external_id 450800) and is reused.
 --
--- 🔴 RUN CA_PENDING_bloomington_district5_office_merge.sql BEFORE THIS FILE. District 5 has two office rows
+-- 🔴 RUN CA_0433_bloomington_district5_office_merge.sql BEFORE THIS FILE. District 5 has two office rows
 --   (Rana's and Daily's), so the pre-flight below stops at "expected 9 offices" until the duplicate is merged.
 --
 -- COURTNEY DAILY'S START DATE (C-5, current term). The stored 2024-03-01 has start_precision 'month' and no real
@@ -48,7 +48,7 @@
 --     is guarded on term_start IS NULL OR start_precision <> 'day', so only those two kinds can be overwritten.
 --     Each row's source records "start was <old start or NULL>, precision '<old>'".
 --   - office_terms.start_precision on the same rows: the old value is written into that row's own `source`, which
---     is extended (never replaced): "<old source> | CA_PENDING bcc: dated ... (start was <old start or NULL>, precision '<old>')" on the 9 current terms (Rana's closed term keeps the older "start_precision was" text).
+--     is extended (never replaced): "<old source> | CA_0434 bcc: dated ... (start was <old start or NULL>, precision '<old>')" on the 9 current terms (Rana's closed term keeps the older "start_precision was" text).
 --
 -- NOT DONE HERE:
 --   - legislative_politician_id_map rows (id_type 'onboard'): the saved seat pages carry seat ids only, no OnBoard
@@ -62,11 +62,10 @@
 --   1464's header allows plain INSERTs into office_terms, so the closed terms are inserted directly, after the
 --   current terms are dated, and the exclusion constraint still refuses any overlap.
 --
--- 🔴 BEFORE APPLYING: reserve a CA slot, rename this file, and replace EVERY "CA_PENDING" below with that slot
---   IN ONE PASS (sed -i 's/CA_PENDING/CA_NNNN/g'). The text goes into office_terms.source and politicians.source, and
---   the idempotency guards match 'CA_PENDING bcc:%' — a partial replace makes a re-run create duplicate people.
---   check:office-terms-guards skips a file without a numbered slot, so it only checks this one after the rename.
--- Slot: named CA_PENDING until a CA number is reserved. Not applied by this commit. Idempotent.
+-- 🔴 The text "CA_0434 bcc:" goes into office_terms.source and politicians.source, and the idempotency guards
+--   match 'CA_0434 bcc:%'. Never change that prefix in one place only: a partial edit makes a re-run create
+--   duplicate people.
+-- Slot: CA_0434, reserved 2026-11-26 through the steward allocator. Not applied by this commit. Idempotent.
 
 BEGIN;
 
@@ -139,7 +138,7 @@ DECLARE v int; v_detail text;
 BEGIN
   SELECT count(*) INTO v FROM bcc_office;
   IF v <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: found % City Legislature offices under chamber slug bloomington-common-council, '
+    RAISE EXCEPTION 'CA_0434 pre-flight: found % City Legislature offices under chamber slug bloomington-common-council, '
       'expected 9 (one per seat). More than 9 most likely means a duplicate seat office, for example a second '
       'District V row. %', v, 'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
@@ -147,7 +146,7 @@ BEGIN
   SELECT count(*), string_agg(seat_code || ' ' || full_name, ', ' ORDER BY seat_code) INTO v, v_detail FROM bcc_anchor;
   IF v <> 9 OR (SELECT count(DISTINCT key) FROM bcc_anchor) <> 9 OR (SELECT count(DISTINCT office_id) FROM bcc_anchor) <> 9
      OR (SELECT count(DISTINCT politician_id) FROM bcc_anchor) <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: expected 9 seats, each held today by its one roster member on its own '
+    RAISE EXCEPTION 'CA_0434 pre-flight: expected 9 seats, each held today by its one roster member on its own '
       'office under this chamber slug; found % match(es): %. A missing member (for example Daily) most likely holds '
       'a duplicate seat office outside the slug. %', v, coalesce(v_detail, '(none)'),
       'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
@@ -166,7 +165,7 @@ BEGIN
    WHERE ot.term_start IS NOT NULL AND ot.term_start <> pl.term_start
      AND ot.start_precision = 'day';
   IF v <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: % current term(s) already carry a different start date, which this '
+    RAISE EXCEPTION 'CA_0434 pre-flight: % current term(s) already carry a different start date, which this '
       'migration will not overwrite (day-precision start): %', v, v_detail;
   END IF;
 
@@ -177,7 +176,7 @@ BEGIN
     JOIN essentials.office_terms ot ON ot.politician_id = p.id
    WHERE lower(p.full_name) = 'shruti rana' AND ot.office_id IN (SELECT office_id FROM bcc_office);
   IF v <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: found % people named Shruti Rana holding a term on a council office, '
+    RAISE EXCEPTION 'CA_0434 pre-flight: found % people named Shruti Rana holding a term on a council office, '
       'expected 1. Zero most likely means her term sits on an office outside this chamber slug (a duplicate '
       'District V row). %', v, 'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
@@ -192,7 +191,7 @@ BEGIN
     SELECT string_agg(format('office %s [%s..%s]', ot.office_id, ot.term_start, ot.term_end), '; ') INTO v_detail
       FROM essentials.politicians p JOIN essentials.office_terms ot ON ot.politician_id = p.id
      WHERE lower(p.full_name) = 'shruti rana';
-    RAISE EXCEPTION 'CA_PENDING pre-flight: Shruti Rana''s term is not on the office Courtney Daily holds today '
+    RAISE EXCEPTION 'CA_0434 pre-flight: Shruti Rana''s term is not on the office Courtney Daily holds today '
       '(office %), or it does not end 2024-02-07 with start NULL or 2024-01-02. Her terms found: %. If her term '
       'and Daily''s sit on two different District V office rows, those rows are duplicates. %',
       (SELECT office_id FROM bcc_anchor WHERE key = 'daily'), coalesce(v_detail, '(none)'),
@@ -209,9 +208,9 @@ BEGIN
    WHERE ot.office_id IN (SELECT office_id FROM bcc_office)
      AND NOT EXISTS (SELECT 1 FROM bcc_anchor a WHERE a.office_id = ot.office_id AND a.politician_id = ot.politician_id)
      AND NOT (lower(coalesce(p.full_name, '')) = 'shruti rana' AND ot.term_end = DATE '2024-02-07')
-     AND ot.source NOT LIKE 'CA_PENDING bcc:%';
+     AND ot.source NOT LIKE 'CA_0434 bcc:%';
   IF v <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: % unexpected term(s) on the council offices: %', v, v_detail;
+    RAISE EXCEPTION 'CA_0434 pre-flight: % unexpected term(s) on the council offices: %', v, v_detail;
   END IF;
 
   -- Namesakes. A person already tied to an office or a race in Bloomington's government, whose SURNAME matches a new
@@ -229,7 +228,7 @@ BEGIN
       OR lower(p.full_name) LIKE '% ' || lower(n.last_name)
       OR EXISTS (SELECT 1 FROM unnest(coalesce(p.alternate_names, '{}'::text[])) alt
                   WHERE lower(alt) LIKE '% ' || lower(n.last_name) OR lower(alt) = lower(n.last_name))
-   WHERE coalesce(p.source, '') NOT LIKE 'CA_PENDING bcc:%'
+   WHERE coalesce(p.source, '') NOT LIKE 'CA_0434 bcc:%'
      AND (EXISTS (SELECT 1 FROM essentials.office_terms ot
                     JOIN essentials.offices ofc ON ofc.id = ot.office_id
                     JOIN essentials.chambers ch ON ch.id = ofc.chamber_id
@@ -242,26 +241,26 @@ BEGIN
                    WHERE rc.politician_id = p.id
                      AND ch.government_id IN (SELECT government_id FROM bcc_office)));
   IF v <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: % existing person row(s) in Bloomington''s government share a surname '
+    RAISE EXCEPTION 'CA_0434 pre-flight: % existing person row(s) in Bloomington''s government share a surname '
       'with a person this migration would create. If one is the same person, reuse that row (take it out of '
       'bcc_new_person and add it to bcc_people by id); if not, note why here. Found: %', v, v_detail;
   END IF;
   SELECT count(*), string_agg(DISTINCT p.full_name, ', ') INTO v, v_detail
     FROM bcc_new_person n JOIN essentials.politicians p ON lower(p.full_name) = lower(n.full_name)
-   WHERE coalesce(p.source, '') NOT LIKE 'CA_PENDING bcc:%';
+   WHERE coalesce(p.source, '') NOT LIKE 'CA_0434 bcc:%';
   IF v <> 0 THEN
-    RAISE NOTICE 'CA_PENDING: % same-name row(s) elsewhere (not Bloomington), not reused: %', v, v_detail;
+    RAISE NOTICE 'CA_0434: % same-name row(s) elsewhere (not Bloomington), not reused: %', v, v_detail;
   END IF;
 END $$;
 
 -- ─── 1. Five new people ───────────────────────────────────────────────────────────────────────────────────────
 INSERT INTO essentials.politicians (full_name, first_name, last_name, alternate_names, is_active, source)
 SELECT n.full_name, n.first_name, n.last_name, n.alternate_names, false,
-       'CA_PENDING bcc: former Bloomington Common Council member, named on ' || n.seat_url
+       'CA_0434 bcc: former Bloomington Common Council member, named on ' || n.seat_url
          || ' (city OnBoard seat page, saved 2026-11-25)'
   FROM bcc_new_person n
  WHERE NOT EXISTS (SELECT 1 FROM essentials.politicians p
-                    WHERE p.full_name = n.full_name AND p.source LIKE 'CA_PENDING bcc:%');
+                    WHERE p.full_name = n.full_name AND p.source LIKE 'CA_0434 bcc:%');
 
 -- Everyone whose office_terms rows this migration writes: 9 current members, Rana, the 5 new people.
 CREATE TEMP TABLE bcc_people ON COMMIT DROP AS
@@ -273,12 +272,12 @@ SELECT 'rana', p.id FROM essentials.politicians p
                 WHERE ot.politician_id = p.id AND ot.office_id IN (SELECT office_id FROM bcc_office))
 UNION
 SELECT n.key, p.id FROM bcc_new_person n
-  JOIN essentials.politicians p ON p.full_name = n.full_name AND p.source LIKE 'CA_PENDING bcc:%';
+  JOIN essentials.politicians p ON p.full_name = n.full_name AND p.source LIKE 'CA_0434 bcc:%';
 
 DO $$ BEGIN
   IF (SELECT count(*) FROM bcc_people) <> 15 OR (SELECT count(DISTINCT key) FROM bcc_people) <> 15
      OR (SELECT count(DISTINCT politician_id) FROM bcc_people) <> 15 THEN
-    RAISE EXCEPTION 'CA_PENDING: expected 15 distinct people in scope, found % rows', (SELECT count(*) FROM bcc_people);
+    RAISE EXCEPTION 'CA_0434: expected 15 distinct people in scope, found % rows', (SELECT count(*) FROM bcc_people);
   END IF;
 END $$;
 
@@ -319,7 +318,7 @@ SELECT rc.id              AS race_candidate_id,
 UPDATE essentials.office_terms ot
    SET term_start      = pl.term_start,
        start_precision = 'day',
-       source          = ot.source || ' | CA_PENDING bcc: dated ' || pl.term_start || ' per ' || s.seat_url
+       source          = ot.source || ' | CA_0434 bcc: dated ' || pl.term_start || ' per ' || s.seat_url
                          || ' (city OnBoard seat page, saved 2026-11-25); start was '
                          || coalesce(ot.term_start::text, 'NULL') || ', precision ''' || ot.start_precision || ''''
   FROM bcc_plan pl
@@ -334,7 +333,7 @@ UPDATE essentials.office_terms ot
 UPDATE essentials.office_terms ot
    SET term_start      = pl.term_start,
        start_precision = 'day',
-       source          = ot.source || ' | CA_PENDING bcc: dated ' || pl.term_start || ' per ' || s.seat_url
+       source          = ot.source || ' | CA_0434 bcc: dated ' || pl.term_start || ' per ' || s.seat_url
                          || ' (city OnBoard seat page, saved 2026-11-25); start_precision was '''
                          || ot.start_precision || ''''
   FROM bcc_plan pl
@@ -351,7 +350,7 @@ UPDATE essentials.office_terms ot
 INSERT INTO essentials.office_terms
   (office_id, politician_id, term_start, term_end, start_precision, how_started, how_ended, source)
 SELECT a.office_id, pp.politician_id, pl.term_start, pl.term_end, 'day', 'elected', 'term_expired',
-       'CA_PENDING bcc: ' || pl.full_name || ', seat ' || pl.seat_code || ', ' || pl.term_start || ' to '
+       'CA_0434 bcc: ' || pl.full_name || ', seat ' || pl.seat_code || ', ' || pl.term_start || ' to '
          || pl.term_end || ' per ' || s.seat_url || ' (city OnBoard seat page, saved 2026-11-25)'
   FROM bcc_plan pl
   JOIN bcc_seat s    ON s.seat_code = pl.seat_code
@@ -452,7 +451,7 @@ BEGIN
            WHERE ot.office_id = a.office_id AND ot.politician_id = pp.politician_id
              AND ot.term_start = pl.term_start AND ot.term_end IS NOT DISTINCT FROM pl.term_end) = 1;
   IF v <> 17 THEN
-    RAISE EXCEPTION 'CA_PENDING: % of 17 roster spans are on the council offices as planned', v;
+    RAISE EXCEPTION 'CA_0434: % of 17 roster spans are on the council offices as planned', v;
   END IF;
 
   -- What the council-record reader loads (refresh.ts loadCouncilTerms): dated terms under the chamber slug.
@@ -463,12 +462,12 @@ BEGIN
    WHERE ch.slug = 'bloomington-common-council' AND ofc.normalized_position_name = 'City Legislature'
      AND ot.term_start IS NOT NULL;
   IF v <> 17 THEN
-    RAISE EXCEPTION 'CA_PENDING: the reader would load % dated council terms, expected 17', v;
+    RAISE EXCEPTION 'CA_0434: the reader would load % dated council terms, expected 17', v;
   END IF;
   SELECT count(*) INTO v FROM essentials.office_terms ot
    WHERE ot.office_id IN (SELECT office_id FROM bcc_office) AND ot.term_start IS NULL;
   IF v <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING: % undated term(s) remain on the council offices', v;
+    RAISE EXCEPTION 'CA_0434: % undated term(s) remain on the council offices', v;
   END IF;
 
   -- The same nine people hold the same nine seats today.
@@ -476,17 +475,17 @@ BEGIN
     FROM bcc_anchor a JOIN essentials.office_current_holder och
       ON och.office_id = a.office_id AND och.politician_id = a.politician_id;
   IF v <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING: % of 9 seats still show their current member', v;
+    RAISE EXCEPTION 'CA_0434: % of 9 seats still show their current member', v;
   END IF;
 
   -- New people are former members: inactive, and five of them.
   SELECT count(*), count(*) FILTER (WHERE p.is_active) INTO v, v_active
-    FROM essentials.politicians p WHERE p.source LIKE 'CA_PENDING bcc:%';
+    FROM essentials.politicians p WHERE p.source LIKE 'CA_0434 bcc:%';
   IF v <> 5 OR v_active <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING: % new people (want 5), % active (want 0)', v, v_active;
+    RAISE EXCEPTION 'CA_0434: % new people (want 5), % active (want 0)', v, v_active;
   END IF;
 
-  RAISE NOTICE 'CA_PENDING OK: 17 dated council terms (10 dated in place, 7 inserted), 5 new people, 9 seats unchanged';
+  RAISE NOTICE 'CA_0434 OK: 17 dated council terms (10 dated in place, 7 inserted), 5 new people, 9 seats unchanged';
 END $$;
 
 COMMIT;

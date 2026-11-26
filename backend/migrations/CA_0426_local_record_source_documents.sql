@@ -1,4 +1,4 @@
--- Migration CA_PENDING_local_record_source_documents: saved copies of the city's vote documents
+-- Migration CA_0426_local_record_source_documents: saved copies of the city's vote documents
 --
 -- WHY: the Bloomington Common Council voting record (design: docs/superpowers, "council record") confirms
 --   each vote from a document the city publishes. We keep the exact bytes we read, so a later reader can see what
@@ -9,7 +9,7 @@
 --   rechecked later), 'item_text' (the text of a legislation item).
 -- PRIVATE: service role / API only. No anon or authenticated grant and no policy for them. RLS is on. New tables in
 --   this schema get anon/authenticated SELECT by default privileges, so they are revoked here explicitly.
--- Slot: named CA_PENDING until a CA number is reserved; rename (and update the header) at reservation.
+-- Slot: CA_0426, reserved 2026-11-26 through the steward allocator.
 -- Create order: this file first, then roll_calls (it references this table), then exceptions, votes columns, index.
 -- Not applied by this commit. Idempotent: safe to re-run.
 

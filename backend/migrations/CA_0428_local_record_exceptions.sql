@@ -1,4 +1,4 @@
--- Migration CA_PENDING_local_record_exceptions: things a person must look at in the council record
+-- Migration CA_0428_local_record_exceptions: things a person must look at in the council record
 --
 -- WHY: when the weekly run cannot confirm a vote (unknown name, tally mismatch, a file that changed ...) it logs
 --   one row here instead of guessing. A person reads the report and resolves each row.
@@ -8,7 +8,7 @@
 --   test keeps them equal). 'minutes_disagree' = formal Minutes disagree with a vote already confirmed from the
 --   Memorandum (decision D14).
 -- PRIVATE: service role / API only. No anon or authenticated grant or policy. RLS is on.
--- Slot: named CA_PENDING until a CA number is reserved. Not applied by this commit. Idempotent.
+-- Slot: CA_0428, reserved 2026-11-26 through the steward allocator. Not applied by this commit. Idempotent.
 
 CREATE TABLE IF NOT EXISTS essentials.local_record_exceptions (
   id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),

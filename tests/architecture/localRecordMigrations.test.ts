@@ -20,13 +20,13 @@ function code(name: string): string {
   return read(name).split('\n').filter((l) => !/^\s*--/.test(l)).join('\n');
 }
 
-const DOCS = 'CA_PENDING_local_record_source_documents.sql';
-const ROLLS = 'CA_PENDING_local_record_roll_calls.sql';
-const EXC = 'CA_PENDING_local_record_exceptions.sql';
-const VOTES = 'CA_PENDING_local_record_votes_columns.sql';
-const IDX = 'CA_PENDING_local_record_votes_roll_call_index.sql';
-const VALIDATE = 'CA_PENDING_local_record_votes_validate_fks.sql';
-const BUCKET = 'CA_PENDING_local_record_storage_bucket.sql';
+const DOCS = 'CA_0426_local_record_source_documents.sql';
+const ROLLS = 'CA_0427_local_record_roll_calls.sql';
+const EXC = 'CA_0428_local_record_exceptions.sql';
+const VOTES = 'CA_0429_local_record_votes_columns.sql';
+const IDX = 'CA_0431_local_record_votes_roll_call_index.sql';
+const VALIDATE = 'CA_0430_local_record_votes_validate_fks.sql';
+const BUCKET = 'CA_0432_local_record_storage_bucket.sql';
 const ALL = [DOCS, ROLLS, EXC, VOTES, IDX, VALIDATE, BUCKET];
 
 describe('council-record migrations', () => {
@@ -144,8 +144,8 @@ describe('council-record migrations', () => {
   });
 });
 
-const PEOPLE = 'CA_PENDING_bloomington_council_people_and_terms.sql';
-const MERGE = 'CA_PENDING_bloomington_district5_office_merge.sql';
+const PEOPLE = 'CA_0434_bloomington_council_people_and_terms.sql';
+const MERGE = 'CA_0433_bloomington_district5_office_merge.sql';
 
 describe('Bloomington people-and-terms file', () => {
   it('selects council seats by chamber slug AND position name (the City Clerk is not a seat)', () => {

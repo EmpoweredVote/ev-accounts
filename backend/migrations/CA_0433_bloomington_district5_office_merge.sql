@@ -1,6 +1,6 @@
--- Migration CA_PENDING_bloomington_district5_office_merge: merge Bloomington's duplicate District 5 council office
+-- Migration CA_0433_bloomington_district5_office_merge: merge Bloomington's duplicate District 5 council office
 --
--- 🔴 RUN THIS BEFORE CA_PENDING_bloomington_council_people_and_terms.sql. That file finds the council's seats by
+-- 🔴 RUN THIS BEFORE CA_0434_bloomington_council_people_and_terms.sql. That file finds the council's seats by
 --   chamber slug plus position name and stops unless it finds exactly 9; with this duplicate present it finds 10.
 --
 -- WHY: Bloomington's District 5 council seat exists as TWO office rows in one district, so the term history is split:
@@ -33,8 +33,8 @@
 -- OVERWRITTEN VALUES: office_terms.office_id on Rana's term (48d59066-... -> c59ebfa0-...), and
 --   politicians.office_id on Rana's row (48d59066-... -> c59ebfa0-...). Nothing else is overwritten.
 --
--- Slot: named CA_PENDING until a CA number is reserved (ask the allocator: steward slot CA). When renaming, also
---   update the name in the header of CA_PENDING_bloomington_council_people_and_terms.sql. Not applied by this commit.
+-- Slot: CA_0433, reserved 2026-11-26 through the steward allocator. Apply it BEFORE
+--   CA_0434_bloomington_council_people_and_terms.sql. Not applied by this commit.
 --   Idempotent: if RETIRE is already gone, it checks that KEEP holds both terms and stops.
 
 BEGIN;
@@ -57,9 +57,9 @@ BEGIN
     SELECT count(*) INTO v_n FROM essentials.office_terms
      WHERE office_id = v_keep AND politician_id IN (v_rana, v_daily);
     IF v_n <> 2 THEN
-      RAISE EXCEPTION 'CA_PENDING d5 pre-flight: the retired office is gone but the kept office % holds % of the 2 terms (Rana, Daily) - the merge half-ran', v_keep, v_n;
+      RAISE EXCEPTION 'CA_0433 d5 pre-flight: the retired office is gone but the kept office % holds % of the 2 terms (Rana, Daily) - the merge half-ran', v_keep, v_n;
     END IF;
-    RAISE NOTICE 'CA_PENDING d5: already applied - nothing to do.';
+    RAISE NOTICE 'CA_0433 d5: already applied - nothing to do.';
     RETURN;
   END IF;
 
@@ -70,53 +70,53 @@ BEGIN
   IF v_txt IS DISTINCT FROM
        v_retire::text || ' | Bloomington City Common Council - District 5 | ' || v_district::text || ' ;; '
     || v_keep::text   || ' | City Common Council - District 5 | '             || v_district::text THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: the two District 5 rows are not the shape measured. Got: %', v_txt;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: the two District 5 rows are not the shape measured. Got: %', v_txt;
   END IF;
 
   -- RETIRE: exactly one term, Rana's, undated start, ending 2024-02-07.
   SELECT count(*) INTO v_n FROM essentials.office_terms WHERE office_id = v_retire;
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: expected exactly 1 term on the retired office, found %', v_n;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: expected exactly 1 term on the retired office, found %', v_n;
   END IF;
   SELECT count(*) INTO v_n FROM essentials.office_terms
    WHERE office_id = v_retire AND politician_id = v_rana
      AND term_start IS NULL AND term_end = DATE '2024-02-07';
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: the retired office''s one term is not Shruti Rana, start NULL, end 2024-02-07';
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: the retired office''s one term is not Shruti Rana, start NULL, end 2024-02-07';
   END IF;
 
   -- KEEP: exactly one term, Daily's, still open.
   SELECT count(*) INTO v_n FROM essentials.office_terms WHERE office_id = v_keep;
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: expected exactly 1 term on the kept office, found %', v_n;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: expected exactly 1 term on the kept office, found %', v_n;
   END IF;
   SELECT count(*) INTO v_n FROM essentials.office_terms
    WHERE office_id = v_keep AND politician_id = v_daily AND term_end IS NULL;
   IF v_n <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: the kept office''s one term is not an open term held by Courtney Daily';
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: the kept office''s one term is not an open term held by Courtney Daily';
   END IF;
 
   -- 🔴 Nothing may hang off RETIRE that the delete would drop or null. Two FKs SET NULL (silent), two CASCADE.
   SELECT count(*) INTO v_n FROM essentials.races WHERE office_id = v_retire;
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: the retired office carries % race(s) - deleting it would orphan an election', v_n;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: the retired office carries % race(s) - deleting it would orphan an election', v_n;
   END IF;
   SELECT count(*) INTO v_n FROM essentials.office_swearing_in WHERE office_id = v_retire;
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: % office_swearing_in row(s) on the retired office would cascade away', v_n;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: % office_swearing_in row(s) on the retired office would cascade away', v_n;
   END IF;
   SELECT (SELECT count(*) FROM inform.stance_coder_labels    WHERE office_id = v_retire)
        + (SELECT count(*) FROM inform.stance_gold_labels     WHERE office_id = v_retire)
        + (SELECT count(*) FROM inform.stance_research_review WHERE office_id = v_retire)
     INTO v_n;
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: % stance row(s) reference the retired office - repoint them first', v_n;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: % stance row(s) reference the retired office - repoint them first', v_n;
   END IF;
 
   -- The snapshot column has no FK: nothing but Rana may point at RETIRE.
   SELECT count(*) INTO v_n FROM essentials.politicians WHERE office_id = v_retire AND id <> v_rana;
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING d5 pre-flight: % politician(s) other than Rana have office_id on the retired office', v_n;
+    RAISE EXCEPTION 'CA_0433 d5 pre-flight: % politician(s) other than Rana have office_id on the retired office', v_n;
   END IF;
 END $$;
 
@@ -146,7 +146,7 @@ DECLARE
   v_n      int;
 BEGIN
   IF EXISTS (SELECT 1 FROM essentials.offices WHERE id = v_retire) THEN
-    RAISE EXCEPTION 'CA_PENDING d5: the duplicate office still exists';
+    RAISE EXCEPTION 'CA_0433 d5: the duplicate office still exists';
   END IF;
 
   -- Nothing still points at the deleted id (the snapshot column has no FK, so ask it directly).
@@ -155,18 +155,18 @@ BEGIN
        + (SELECT count(*) FROM essentials.politicians  WHERE office_id = v_retire)
     INTO v_n;
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING d5: % reference(s) still point at the deleted office', v_n;
+    RAISE EXCEPTION 'CA_0433 d5: % reference(s) still point at the deleted office', v_n;
   END IF;
 
   -- KEEP holds Rana's closed term and Daily's term, and those two do not overlap. NOT a total count: the
   -- people-and-terms file later adds more terms to this office, and a re-run of this file must still pass.
   IF NOT EXISTS (SELECT 1 FROM essentials.office_terms
                   WHERE office_id = v_keep AND politician_id = v_rana AND term_end = DATE '2024-02-07') THEN
-    RAISE EXCEPTION 'CA_PENDING d5: Rana''s closed term is not on the kept office';
+    RAISE EXCEPTION 'CA_0433 d5: Rana''s closed term is not on the kept office';
   END IF;
   IF NOT EXISTS (SELECT 1 FROM essentials.office_terms
                   WHERE office_id = v_keep AND politician_id = v_daily AND term_end IS NULL) THEN
-    RAISE EXCEPTION 'CA_PENDING d5: Daily''s open term is not on the kept office';
+    RAISE EXCEPTION 'CA_0433 d5: Daily''s open term is not on the kept office';
   END IF;
   SELECT count(*) INTO v_n
     FROM essentials.office_terms a JOIN essentials.office_terms b ON a.office_id = b.office_id AND a.id < b.id
@@ -174,12 +174,12 @@ BEGIN
      AND daterange(coalesce(a.term_start, '-infinity'), coalesce(a.term_end, 'infinity'), '[]')
       && daterange(coalesce(b.term_start, '-infinity'), coalesce(b.term_end, 'infinity'), '[]');
   IF v_n <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING d5: the two terms on the kept office overlap';
+    RAISE EXCEPTION 'CA_0433 d5: the two terms on the kept office overlap';
   END IF;
 
   -- The snapshot points at the surviving office.
   IF NOT EXISTS (SELECT 1 FROM essentials.politicians WHERE id = v_rana AND office_id = v_keep) THEN
-    RAISE EXCEPTION 'CA_PENDING d5: Rana''s politicians.office_id snapshot was not repointed to the kept office';
+    RAISE EXCEPTION 'CA_0433 d5: Rana''s politicians.office_id snapshot was not repointed to the kept office';
   END IF;
 
   -- 10 offices remain under the chamber slug: 9 council seats and the City Clerk.
@@ -187,16 +187,16 @@ BEGIN
     FROM essentials.offices o JOIN essentials.chambers ch ON ch.id = o.chamber_id
    WHERE ch.slug = 'bloomington-common-council';
   IF v_n <> 10 THEN
-    RAISE EXCEPTION 'CA_PENDING d5: expected 10 offices under chamber slug bloomington-common-council, found %', v_n;
+    RAISE EXCEPTION 'CA_0433 d5: expected 10 offices under chamber slug bloomington-common-council, found %', v_n;
   END IF;
   SELECT count(*) INTO v_n
     FROM essentials.offices o JOIN essentials.chambers ch ON ch.id = o.chamber_id
    WHERE ch.slug = 'bloomington-common-council' AND o.normalized_position_name = 'City Legislature';
   IF v_n <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING d5: expected 9 City Legislature offices under the slug, found %', v_n;
+    RAISE EXCEPTION 'CA_0433 d5: expected 9 City Legislature offices under the slug, found %', v_n;
   END IF;
 
-  RAISE NOTICE 'CA_PENDING d5 OK: District 5 merged onto %; 10 offices under the slug, 9 City Legislature', v_keep;
+  RAISE NOTICE 'CA_0433 d5 OK: District 5 merged onto %; 10 offices under the slug, 9 City Legislature', v_keep;
 END $$;
 
 COMMIT;
