@@ -9,6 +9,7 @@
     "start": "node dist/index.js",
     "test": "vitest run",
     "local-record:report": "tsx scripts/local-record/report.ts",
+    "local-record:first-load": "tsx scripts/local-record/first-load.ts",
     "topic:seat-rate": "tsx scripts/topic-seat-rate.ts",
     "topic:ladder-lint": "tsx scripts/topic-ladder-lint.ts",
     "topic:blindness-check": "tsx scripts/topic-blindness-check.ts",

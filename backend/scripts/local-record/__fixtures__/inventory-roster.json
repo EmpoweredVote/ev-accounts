@@ -1,0 +1,145 @@
+{
+ "city": {
+  "name": "Bloomington",
+  "state": "IN",
+  "scope": "place:1805860"
+ },
+ "members": [
+  {
+   "name": "Matt Flaherty",
+   "seat": "At-Large (seat C-7)",
+   "from": "2020-01-01",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/245",
+   "store_path": "jurisdictions/onboard-seat-245.txt"
+  },
+  {
+   "name": "Susan Sandberg",
+   "seat": "At-Large (seat C-8)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/246",
+   "store_path": "jurisdictions/onboard-seat-246.txt"
+  },
+  {
+   "name": "Isak Nti Asare",
+   "seat": "At-Large (seat C-8)",
+   "from": "2024-01-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/246",
+   "store_path": "jurisdictions/onboard-seat-246.txt"
+  },
+  {
+   "name": "Jim Sims",
+   "seat": "At-Large (seat C-9)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/247",
+   "store_path": "jurisdictions/onboard-seat-247.txt"
+  },
+  {
+   "name": "Andy Ruff",
+   "seat": "At-Large (seat C-9)",
+   "from": "2024-01-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/247",
+   "store_path": "jurisdictions/onboard-seat-247.txt"
+  },
+  {
+   "name": "Kate Rosenbarger",
+   "seat": "District I (seat C-1)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/249",
+   "store_path": "jurisdictions/onboard-seat-249.txt"
+  },
+  {
+   "name": "Isabel Piedmont-Smith",
+   "seat": "District I (seat C-1)",
+   "from": "2024-01-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/249",
+   "store_path": "jurisdictions/onboard-seat-249.txt"
+  },
+  {
+   "name": "Sue Sgambelluri",
+   "seat": "District II (seat C-2)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/250",
+   "store_path": "jurisdictions/onboard-seat-250.txt"
+  },
+  {
+   "name": "Kate Rosenbarger",
+   "seat": "District II (seat C-2)",
+   "from": "2024-01-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/250",
+   "store_path": "jurisdictions/onboard-seat-250.txt"
+  },
+  {
+   "name": "Ron Smith",
+   "seat": "District III (seat C-3)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/251",
+   "store_path": "jurisdictions/onboard-seat-251.txt"
+  },
+  {
+   "name": "Hopi Stosberg",
+   "seat": "District III (seat C-3)",
+   "from": "2024-01-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/251",
+   "store_path": "jurisdictions/onboard-seat-251.txt"
+  },
+  {
+   "name": "Dave Rollo",
+   "seat": "District IV (seat C-4)",
+   "from": "2020-01-01",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/252",
+   "store_path": "jurisdictions/onboard-seat-252.txt"
+  },
+  {
+   "name": "Isabel Piedmont-Smith",
+   "seat": "District V (seat C-5)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/253",
+   "store_path": "jurisdictions/onboard-seat-253.txt"
+  },
+  {
+   "name": "Shruti Rana",
+   "seat": "District V (seat C-5)",
+   "from": "2024-01-02",
+   "to": "2024-02-07",
+   "source_url": "https://bloomington.in.gov/onboard/seats/253",
+   "store_path": "jurisdictions/onboard-seat-253.txt"
+  },
+  {
+   "name": "Courtney Daily",
+   "seat": "District V (seat C-5)",
+   "from": "2024-03-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/253",
+   "store_path": "jurisdictions/onboard-seat-253.txt"
+  },
+  {
+   "name": "Stephen Volan",
+   "seat": "District VI (seat C-6)",
+   "from": "2020-01-01",
+   "to": "2023-12-31",
+   "source_url": "https://bloomington.in.gov/onboard/seats/254",
+   "store_path": "jurisdictions/onboard-seat-254.txt"
+  },
+  {
+   "name": "Sydney Zulich",
+   "seat": "District VI (seat C-6)",
+   "from": "2024-01-02",
+   "to": null,
+   "source_url": "https://bloomington.in.gov/onboard/seats/254",
+   "store_path": "jurisdictions/onboard-seat-254.txt"
+  }
+ ]
+}

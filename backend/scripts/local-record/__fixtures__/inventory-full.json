@@ -1,0 +1,803 @@
+{
+ "city": {
+  "name": "Bloomington",
+  "state": "IN",
+  "scope": "place:1805860"
+ },
+ "pass": "full",
+ "items": [
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-04",
+   "id": "place:1805860:2026-10-07:App Ord 2026-04",
+   "instrument": "budget",
+   "tally": null,
+   "members": [],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5980",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-03",
+   "id": "place:1805860:2026-10-07:App Ord 2026-03",
+   "instrument": "budget",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5977",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 1)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 1)",
+   "instrument": "budget",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/meetingFiles/17550/download",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download",
+   "text_store_path": "items/place_1805860_2026-10-07_App Ord 2026-02 (amendment 1).txt"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 3)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 3)",
+   "instrument": "budget",
+   "tally": "1-6",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes"
+    },
+    {
+     "name": "Stosberg",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "no",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 5)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 5)",
+   "instrument": "budget",
+   "tally": null,
+   "members": [],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 6)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 6)",
+   "instrument": "budget",
+   "tally": null,
+   "members": [],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 18)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 18)",
+   "instrument": "budget",
+   "tally": "5-2",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "no"
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "no"
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 10)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 10)",
+   "instrument": "budget",
+   "tally": "6-1",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "no"
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/meetingFiles/17550/download",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download",
+   "text_store_path": "items/place_1805860_2026-10-07_App Ord 2026-02 (amendment 10).txt"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 12)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 12)",
+   "instrument": "budget",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 14)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 14)",
+   "instrument": "budget",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 15)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 15)",
+   "instrument": "budget",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02 (amendment 16)",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02 (amendment 16)",
+   "instrument": "budget",
+   "tally": "2-5",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes"
+    },
+    {
+     "name": "Daily",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes"
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "no",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "no",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download",
+   "text_store_path": "items/place_1805860_2026-10-07_App Ord 2026-02 (amendment 16).txt"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "App Ord 2026-02",
+   "id": "place:1805860:2026-10-07:App Ord 2026-02",
+   "instrument": "budget",
+   "tally": "voice vote",
+   "members": [],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5979",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "Ord 2026-25 (amendment 1)",
+   "id": "place:1805860:2026-10-07:Ord 2026-25 (amendment 1)",
+   "instrument": "ordinance",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5982",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "Ord 2026-25",
+   "id": "place:1805860:2026-10-07:Ord 2026-25",
+   "instrument": "ordinance",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5982",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "Ord 2026-26 (amendment 1)",
+   "id": "place:1805860:2026-10-07:Ord 2026-26 (amendment 1)",
+   "instrument": "ordinance",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5983",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "Ord 2026-26",
+   "id": "place:1805860:2026-10-07:Ord 2026-26",
+   "instrument": "ordinance",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5983",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  },
+  {
+   "date": "2026-10-07",
+   "item_no": "Ord 2026-28",
+   "id": "place:1805860:2026-10-07:Ord 2026-28",
+   "instrument": "ordinance",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "absent"
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "absent"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5978",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/17565/download"
+  }
+ ]
+}

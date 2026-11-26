@@ -86,7 +86,7 @@ export function makeStorage(client: { storage: { from(bucket: string): any } }, 
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
-async function fetchBytes(url: string): Promise<Uint8Array> {
+export async function fetchBytes(url: string): Promise<Uint8Array> {
   const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Encoding': 'gzip' } });
   if (!res.ok) throw new Error(`GET ${url} failed: ${res.status}`);
   return new Uint8Array(await res.arrayBuffer());
@@ -186,7 +186,7 @@ function differences(
   return out;
 }
 
-function buildContext(names: NameFile, terms: TermSpan[], feedItems: FeedItem[], date: string): CheckContext {
+export function buildContext(names: NameFile, terms: TermSpan[], feedItems: FeedItem[], date: string): CheckContext {
   const seated = new Set(terms.filter((t) => t.start <= date && (t.end === null || date <= t.end)).map((t) => t.politicianId));
   return {
     names, terms, seatedCount: seated.size,
@@ -196,7 +196,7 @@ function buildContext(names: NameFile, terms: TermSpan[], feedItems: FeedItem[],
 }
 
 /** The document that governs a meeting: its Minutes if posted, else its Memorandum. */
-function governingDocuments(docs: VoteDocument[]): VoteDocument[] {
+export function governingDocuments(docs: VoteDocument[]): VoteDocument[] {
   const byMeeting = new Map<number, VoteDocument[]>();
   for (const d of docs) byMeeting.set(d.meetingId, [...(byMeeting.get(d.meetingId) ?? []), d]);
   const out: VoteDocument[] = [];
@@ -216,11 +216,14 @@ interface CityRun {
   controlFailed: { subject: string; detail: unknown } | null;
 }
 
-async function readFeeds(city: CityConfig, now: Date, deps: RefreshDeps) {
+/** The legislation and meetings feeds for this year and last, or for the given years (the first load reads them all). */
+export async function readFeeds(
+  city: CityConfig, now: Date, deps: Pick<RefreshDeps, 'fetchJson'>, years?: number[],
+) {
   const year = now.getUTCFullYear();
   const items = new Map<number, FeedItem>();
   const docs = new Map<number, VoteDocument>();
-  for (const y of [year, year - 1]) {
+  for (const y of years ?? [year, year - 1]) {
     const root = `${city.base}/onboard/committees/${city.committeeId}`;
     for (const it of parseLegislationFeed(await deps.fetchJson(`${root}/legislation?year=${y};format=json`), city.base)) {
       items.set(it.feedId, it);
