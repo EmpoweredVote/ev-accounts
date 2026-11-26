@@ -19,33 +19,51 @@ import type { AttendanceEntry, MeetingNote, MinutesParse, MinutesRollCall, Print
 const MARGIN_COL = 45;
 const FOOTER = /^\s*(?:p\.\s*\d+\s+)?Meeting Date:\s*\d{2}-\d{2}-\d{2}(?:\s+p\.\s*\d+)?\s*$/;
 
+type Row = { blank: true } | { blank: false; body: string; margin: string };
+
 /**
- * Remove the right margin column, margin-only lines and page footers. Lines that were blank stay blank (they
- * separate paragraphs); lines that held only margin text or a footer are removed, so they cannot split a sentence.
+ * Split every printed line into body text and margin text. Blank lines are kept (they separate paragraphs);
+ * footers are dropped; a line with only margin text (or a page number) has an empty body.
  */
-export function stripMargin(text: string): string {
-  const out: string[] = [];
+function layoutRows(text: string): Row[] {
+  const rows: Row[] = [];
   for (const raw of text.replace(/\u200b/g, '').replace(/\r\n?/g, '\n').split('\n')) {
     if (!raw.trim()) {
-      out.push('');
+      rows.push({ blank: true });
       continue;
     }
     if (FOOTER.test(raw)) continue;
     const lead = raw.length - raw.trimStart().length;
-    if (lead >= MARGIN_COL) continue; // margin-only line, or a page number
-    let line = raw;
+    if (lead >= MARGIN_COL) {
+      rows.push({ blank: false, body: '', margin: raw.trim() });
+      continue;
+    }
+    let body = raw;
+    let margin = '';
     const gap = /(\S)( {3,})(?=\S)/g;
     let m: RegExpExecArray | null;
     while ((m = gap.exec(raw))) {
       const rightStart = m.index + 1 + m[2].length;
       if (rightStart >= MARGIN_COL) {
-        line = raw.slice(0, m.index + 1);
+        body = raw.slice(0, m.index + 1);
+        margin = raw.slice(rightStart).trim();
         break;
       }
     }
-    out.push(line.replace(/\s+$/, ''));
+    rows.push({ blank: false, body: body.replace(/\s+$/, ''), margin });
   }
-  return out.join('\n');
+  return rows;
+}
+
+/**
+ * Remove the right margin column, margin-only lines and page footers. Lines that were blank stay blank (they
+ * separate paragraphs); lines that held only margin text or a footer are removed, so they cannot split a sentence.
+ */
+export function stripMargin(text: string): string {
+  return layoutRows(text)
+    .filter((r) => r.blank || r.body)
+    .map((r) => (r.blank ? '' : r.body))
+    .join('\n');
 }
 
 /** Join wrapped lines: a line ending in a hyphen after a letter or digit joins with no space ("Piedmont-" "Smith"). */
@@ -60,19 +78,33 @@ function joinLines(lines: string[]): string {
   return s.replace(/\s+/g, ' ').trim();
 }
 
-/** Paragraphs of the body text (margin removed), each joined into one line. */
-function paragraphs(text: string): string[] {
-  const paras: string[] = [];
-  let cur: string[] = [];
-  for (const line of stripMargin(text).split('\n')) {
-    if (line.trim()) cur.push(line);
-    else if (cur.length) {
-      paras.push(joinLines(cur));
-      cur = [];
+/**
+ * Paragraphs of the body text, each joined into one line, with the margin text printed between the same blank
+ * lines (the paragraph's line span), joined the same way.
+ */
+function paragraphsWithMargin(text: string): { text: string; margin: string }[] {
+  const out: { text: string; margin: string }[] = [];
+  let body: string[] = [];
+  let margin: string[] = [];
+  const flush = () => {
+    if (body.length) out.push({ text: joinLines(body), margin: joinLines(margin) });
+    body = [];
+    margin = [];
+  };
+  for (const r of layoutRows(text)) {
+    if (r.blank) flush();
+    else {
+      if (r.body.trim()) body.push(r.body);
+      if (r.margin) margin.push(r.margin);
     }
   }
-  if (cur.length) paras.push(joinLines(cur));
-  return paras;
+  flush();
+  return out;
+}
+
+/** Paragraphs of the body text (margin removed), each joined into one line. */
+function paragraphs(text: string): string[] {
+  return paragraphsWithMargin(text).map((p) => p.text);
 }
 
 const ABBREV = /(?:^|[\s(])(?:Cm|Mr|Ms|Mrs|Dr|St|Inc|No|Jr|Sr|Ave|Rd|vs|etc|[A-Z]|[a-z]\.[a-z])$/;
@@ -123,6 +155,12 @@ function noteKind(phrase: string): MeetingNote['kind'] {
   return 'returned';
 }
 
+/** Words that look like a surname token in a parenthetical but are not a member's name. */
+const NOT_NAMES = new Set([
+  'none', 'all', 'unanimous', 'recused', 'remote', 'absent', 'present', 'zoom', 'abstain', 'abstained',
+  'excused', 'vacant', 'online', 'offline',
+]);
+
 type Paren = { names: string[] } | { notes: { kind: MeetingNote['kind']; nameAsPrinted: string }[] };
 
 /**
@@ -133,6 +171,7 @@ type Paren = { names: string[] } | { notes: { kind: MeetingNote['kind']; nameAsP
 function readParen(body: string): Paren | null {
   const parts = body.split(',').map((p) => p.trim().replace(/^and /, ''));
   if (parts.some((p) => !p)) return null;
+  if (parts.some((p) => NOT_NAMES.has(p.toLowerCase()))) return null;
   if (parts.every((p) => SURNAME.test(p))) return { names: parts };
   const notes: { kind: MeetingNote['kind']; nameAsPrinted: string }[] = [];
   for (const p of parts) {
@@ -173,7 +212,11 @@ function readTally(tail: string, at: number): ParsedTally | null {
     if (body === undefined) continue;
     const p = readParen(body);
     if (!p) return null;
-    if ('names' in p) named.push({ side, names: p.names });
+    if ('names' in p) {
+      // The printed names must account for the whole side; a different count is not understood.
+      if (p.names.length !== tally[side]) return null;
+      named.push({ side, names: p.names });
+    }
     else for (const n of p.notes) inlineNotes.push({ ...n, at });
   }
   const printedResult = m[7] ? (m[7].toLowerCase() as 'failed' | 'passed') : null;
@@ -189,10 +232,17 @@ const ITEM_PREFIX: Record<string, string> = {
 
 type Subject = { kind: 'vote'; itemNumber: string; question: string } | { kind: 'ignore' } | { kind: 'unknown' };
 
+const RC = String.raw`Reasonable Condition (\d{1,3})`;
+
 const SUBJECTS: { re: RegExp; question: (m: RegExpExecArray) => string; item: (m: RegExpExecArray) => [string, string] }[] = [
   {
     re: new RegExp(`^to adopt Amendment (\\d{1,3})(?: \\(as revised\\))? to ${ITEM}(?: as amended)?$`),
     question: (m) => `Amendment ${m[1]}`,
+    item: (m) => [m[2], m[3]],
+  },
+  {
+    re: new RegExp(`^to adopt ${RC} to ${ITEM}$`),
+    question: (m) => `Reasonable Condition ${m[1]}`,
     item: (m) => [m[2], m[3]],
   },
   {
@@ -213,12 +263,19 @@ const SUBJECTS: { re: RegExp; question: (m: RegExpExecArray) => string; item: (m
 ];
 
 /**
- * Procedural motions are not part of the voting record. The brief's list (introduce, read by title, postpone,
- * table, call the question, agenda, withdraw, minutes) plus appointments to boards and commissions, which are
- * not legislation and have no item number.
+ * Procedural motions are not part of the voting record. Each form is anchored to the start of the motion, so a
+ * procedural word later in a motion never hides it: the brief's list (introduce, read by title, postpone, table,
+ * call the question, agenda, withdraw, minutes) plus appointments to boards and commissions, which are not
+ * legislation and have no item number.
  */
-const PROCEDURAL =
-  /\b(?:introduc\w*|read by title|postpon\w*|table|tabled|call the question|agenda|withdraw\w*|minutes|appoint\w*)\b/i;
+const PROCEDURAL: RegExp[] = [
+  /^to (?:introduce|postpone|table|call the question|withdraw|appoint|make the following appointments?)\b/i,
+  /^to (?:approve|amend|adopt) the (?:agenda|minutes)\b/i,
+  /^that .+ be (?:introduced|read by title)\b/i,
+];
+
+/** A motion that names adoption and an item number must parse fully; it is never ignored. */
+const ADOPT_WITH_ITEM = new RegExp(`\\badopt(?:ed)?\\b.*${ITEM}|${ITEM}.*\\badopt(?:ed)?\\b`);
 
 /** Classify a motion: "to adopt Ordinance 21-23", "that Ordinance 22-07 be adopted", "to override the veto of …". */
 function classifyMotion(motion: string): Subject {
@@ -230,7 +287,26 @@ function classifyMotion(motion: string): Subject {
       return { kind: 'vote', itemNumber: `${ITEM_PREFIX[type]} ${num}`, question: s.question(m) };
     }
   }
-  return PROCEDURAL.test(t) ? { kind: 'ignore' } : { kind: 'unknown' };
+  if (ADOPT_WITH_ITEM.test(t)) return { kind: 'unknown' };
+  return PROCEDURAL.some((re) => re.test(t)) ? { kind: 'ignore' } : { kind: 'unknown' };
+}
+
+/**
+ * Two-column minutes print a heading beside each vote: "Vote to adopt Amendment 01 to Ordinance 17-10 [10:23pm]".
+ * Used only for a bare "The motion received…" with no moved sentence before it, and only when exactly one such
+ * heading is printed within the paragraph's line span.
+ */
+const MARGIN_HEADING = new RegExp(
+  `Vote to adopt (?:(Amendment|Reasonable Condition) (\\d{1,3}) to )?${ITEM}(?: as amended)?`,
+  'g',
+);
+
+function subjectFromMargin(margin: string): { subject: Subject; heading: string } | null {
+  const found = [...margin.matchAll(MARGIN_HEADING)];
+  if (found.length !== 1) return null;
+  const m = found[0];
+  const question = m[1] ? `${m[1]} ${m[2]}` : 'Final passage';
+  return { subject: { kind: 'vote', itemNumber: `${ITEM_PREFIX[m[3]]} ${m[4]}`, question }, heading: m[0] };
 }
 
 const MOVED = /^(?:[A-Z][\w.'’-]*\s){0,3}?[A-Z][\w'’-]* moved(?: and (?:it was|[A-Z][\w'’-]*(?: [A-Z][\w'’-]*)?) seconded)? (.+)$/;
@@ -416,28 +492,54 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
     pending.length = 0;
   };
 
-  for (const para of paragraphs(text)) {
-    const sentences = splitSentences(para);
+  for (const para of paragraphsWithMargin(text)) {
+    const sentences = splitSentences(para.text);
+    // True once the paragraph has shown an ignored motion (procedural, or a voice vote) and no later motion.
+    let ignoredContext = false;
+    // "Out of the room" notes from the sentence just before; placed only on a roll call recorded next.
+    let awaiting: { note: MeetingNote; ignoredContext: boolean }[] = [];
+    const settle = (recordedAt: number | null, dropAll: boolean) => {
+      for (const w of awaiting) {
+        if (recordedAt !== null) notes.push({ ...w.note, at: recordedAt });
+        // A note attached to an ignored motion is dropped with it; one we cannot tie to a motion is unplaced.
+        else if (!dropAll && !w.ignoredContext) notes.push({ ...w.note, at: null });
+      }
+      awaiting = [];
+    };
+
     sentences.forEach((sentence, k) => {
       if (!/roll call vote/i.test(sentence)) {
+        settle(null, false);
+        const moved = MOVED.exec(sentence);
+        if (moved) ignoredContext = classifyMotion(moved[1]).kind === 'ignore';
+        if (/\bvoice vote\b/i.test(sentence)) ignoredContext = true;
         const n = readBodyNote(sentence);
-        if (n) pending.push({ ...n, at: null });
+        if (n?.kind === 'out_of_room') awaiting.push({ note: { ...n, at: null }, ignoredContext });
+        else if (n) pending.push({ ...n, at: null });
         return;
       }
       const v = VOTE.exec(sentence);
       if (!v) {
+        settle(null, false);
         unparsed.push(sentence);
         return;
       }
-      // Subject: from the sentence itself ("The motion to adopt …"), or, for a bare "The motion received …",
-      // from the motion sentence immediately before it in the same paragraph. Anything else is not understood.
+      // Subject: from the sentence itself ("The motion to adopt …"); for a bare "The motion received …", from the
+      // moved sentence immediately before it in the same paragraph; failing that, from the one margin heading in
+      // the paragraph's line span. Anything else is not understood.
       let subject: Subject;
       let full = sentence;
       if (v[2] !== undefined) subject = classifyMotion(`to ${v[2]}`);
       else {
         const prev = k > 0 ? MOVED.exec(sentences[k - 1]) : null;
-        subject = prev ? classifyMotion(prev[1]) : { kind: 'unknown' };
-        if (prev) full = `${sentences[k - 1]} ${sentence}`;
+        if (prev) {
+          subject = classifyMotion(prev[1]);
+          full = `${sentences[k - 1]} ${sentence}`;
+        } else {
+          const fromMargin = subjectFromMargin(para.margin);
+          subject = fromMargin ? fromMargin.subject : { kind: 'unknown' };
+          if (fromMargin) full = `${sentence} [margin: ${fromMargin.heading}]`;
+        }
       }
       const index = rollCalls.length;
       const parsed = parseRollCallSentence(sentence, index);
@@ -445,18 +547,24 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         // A procedural vote is not recorded. Arrivals and departures printed in it still matter for later votes;
         // "out of the room" applies to that vote only and is dropped with it.
         for (const n of parsed?.inlineNotes ?? []) if (n.kind !== 'out_of_room') pending.push({ ...n, at: null });
+        settle(null, true);
+        ignoredContext = true;
         return;
       }
+      ignoredContext = false;
       if (subject.kind === 'unknown' || !parsed) {
+        settle(null, false);
         unparsed.push(full);
         return;
       }
       const outcome = rollCallOutcome(parsed, subject.question);
       if (!outcome) {
+        settle(null, false);
         unparsed.push(full);
         return;
       }
       place();
+      settle(index, false);
       rollCalls.push({
         index,
         itemNumber: subject.itemNumber,
@@ -468,6 +576,7 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         sentence: full,
       });
     });
+    settle(null, false);
   }
   place(); // notes after the last roll call are placed at the end
   return { meetingDate, attendance, notes, rollCalls, unparsed };

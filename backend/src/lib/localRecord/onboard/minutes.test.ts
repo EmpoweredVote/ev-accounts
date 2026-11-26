@@ -100,20 +100,34 @@ describe('2021-04-07: (Volan out of the room) after the tally', () => {
     expect(t.inlineNotes).toEqual([{ kind: 'out_of_room', nameAsPrinted: 'Volan', at: 2 }]);
   });
 
-  it('sends a bare "The motion received" after discussion to unparsed (Reasonable Conditions)', () => {
+  it('unparsed holds only roll-call sentences; known items are read', () => {
     const p = parseMinutes(text, '2021-04-07');
-    expect(p.unparsed.length).toBeGreaterThan(0);
     expect(p.unparsed.every((s) => /roll call vote/.test(s))).toBe(true);
-    expect(p.rollCalls.every((r) => !/Reasonable Condition/.test(r.sentence))).toBe(true);
     expect(p.rollCalls.map((r) => `${r.itemNumber}|${r.question}`)).toEqual(
       expect.arrayContaining(['Res 21-07|Final passage', 'Ord 21-11|Amendment 01', 'Ord 21-12|Final passage']),
     );
   });
 
-  it('Reasonable Condition 08 (not a known question) goes to unparsed, not to a roll call', () => {
+  it('Reasonable Condition 08 to Ord 21-07 is a roll call with its own subject', () => {
     const p = parseMinutes(text, '2021-04-07');
-    expect(p.rollCalls.some((r) => r.sentence.includes('Reasonable Condition 08'))).toBe(false);
-    expect(p.unparsed.some((s) => s.includes('Reasonable Condition 08'))).toBe(true);
+    const [r] = rc(p, 'Ord 21-07', 'Reasonable Condition 08');
+    expect(r.tally).toEqual({ yes: 2, no: 7, abstain: 0 });
+    expect(r.named).toEqual([{ side: 'yes', names: ['Rosenbarger', 'Volan'] }]);
+    expect(r.outcome).toBe('failed');
+  });
+
+  it('reads a bare vote from the one margin heading "Vote to adopt Reasonable Condition 03 to Ordinance 21-07"', () => {
+    const p = parseMinutes(text, '2021-04-07');
+    const [r] = rc(p, 'Ord 21-07', 'Reasonable Condition 03');
+    expect(r.tally).toEqual({ yes: 9, no: 0, abstain: 0 });
+    expect(r.outcome).toBe('passed');
+    expect(r.sentence).toContain('Vote to adopt Reasonable Condition 03 to Ordinance 21-07');
+    expect(rc(p, 'Ord 21-07', 'Reasonable Condition 01')).toHaveLength(1);
+  });
+
+  it('a margin heading without a number ("Reasonable Condition as amended") leaves the vote unparsed', () => {
+    const p = parseMinutes(text, '2021-04-07');
+    expect(p.unparsed.length).toBeGreaterThan(0);
   });
 });
 
@@ -160,14 +174,12 @@ describe('departure before vote excludes member (2022-05-04 arrival and out-of-r
     expect(n!.at).toBe(p.rollCalls[0].index);
   });
 
-  it('places each "Flaherty was out of the room." before the next roll call', () => {
-    const flaherty = p.notes.filter((x) => x.kind === 'out_of_room' && x.nameAsPrinted === 'Flaherty');
-    expect(flaherty).toHaveLength(3);
+  it('drops "Flaherty was out of the room." notes that belong to read-by-title (voice) motions', () => {
+    expect(p.notes.filter((x) => x.kind === 'out_of_room')).toEqual([]);
     const ord2207 = rc(p, 'Ord 22-07', 'Final passage')[0];
     expect(ord2207.index).toBe(0);
     expect(ord2207.outcome).toBe('failed');
     expect(ord2207.tally).toEqual({ yes: 0, no: 9, abstain: 0 });
-    for (const n of flaherty) expect(n.at).toBe(ord2207.index);
   });
 
   it('ignores the postpone vote and sends the "change in motion" vote to unparsed', () => {
@@ -179,6 +191,17 @@ describe('departure before vote excludes member (2022-05-04 arrival and out-of-r
 
 describe('subject from the motion sentence just before a bare "The motion received"', () => {
   const p = parseMinutes(load('2021-05-19'), '2021-05-19');
+
+  it('reads Amendment 01 to Ord 17-10 from its single margin heading', () => {
+    const [r] = rc(p, 'Ord 17-10', 'Amendment 01');
+    expect(r.tally).toEqual({ yes: 9, no: 0, abstain: 0 });
+    expect(r.outcome).toBe('passed');
+    expect(r.sentence).toContain('Vote to adopt Amendment 01 to Ordinance 17-10');
+  });
+
+  it('does not read the abbreviated heading "Vote to adopt Am 01 to Ordinance 17-17"', () => {
+    expect(rc(p, 'Ord 17-17', 'Amendment 01')).toHaveLength(1);
+  });
 
   it('reads Res 21-16 from "Flaherty moved and it was seconded to adopt Resolution 21-16."', () => {
     const [r] = rc(p, 'Res 21-16', 'Final passage');
@@ -322,5 +345,81 @@ describe('attendance remarks', () => {
       { nameAsPrinted: 'Cy Person', absent: true },
     ]);
     expect(p.unparsed).toEqual(['Attendance: Bo Sample (offline at 8:19pm, online at 8:21pm)']);
+  });
+});
+
+const oneVote = (body: string) =>
+  `1. Roll Call [6:30pm]\n\nCouncil Members:\nAna Example\n\n2. Legislation\n\n${body}\n`;
+
+describe('procedural forms are anchored; adopt + item that does not fully parse is unparsed', () => {
+  it('"to adopt Ordinance 21-07 as introduced" goes to unparsed, not ignored', () => {
+    const p = parseMinutes(
+      oneVote('The motion to adopt Ordinance 21-07 as introduced received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.'),
+      '2021-01-01',
+    );
+    expect(p.rollCalls).toHaveLength(0);
+    expect(p.unparsed).toHaveLength(1);
+  });
+
+  it('the same in the moved-sentence form', () => {
+    const p = parseMinutes(
+      oneVote('Ana moved and Bo seconded to adopt Ordinance 21-07 as introduced. The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.'),
+      '2021-01-01',
+    );
+    expect(p.unparsed).toHaveLength(1);
+  });
+
+  it('a margin leak inside an adopt motion goes to unparsed', () => {
+    const p = parseMinutes(
+      oneVote('The motion to adopt Resolution 22-09 as amended Vote to postpone Resolution 22-09 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.'),
+      '2022-01-01',
+    );
+    expect(p.unparsed).toHaveLength(1);
+  });
+
+  it('a postpone motion with a margin leak is still ignored', () => {
+    const p = parseMinutes(
+      oneVote('The motion to postpone discussion on Resolution 22-09 as amended Vote to postpone Resolution 22-09 received a roll call vote of Ayes: 3 (Ana, Bo, Cy), Nays: 6, Abstain: 0. FAILED.'),
+      '2022-01-01',
+    );
+    expect(p.rollCalls).toHaveLength(0);
+    expect(p.unparsed).toHaveLength(0);
+  });
+
+  it('a procedural word later in an unknown motion does not hide it', () => {
+    const p = parseMinutes(
+      oneVote('Ana moved and Bo seconded to hold a Special Session on the agenda item. The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.'),
+      '2022-01-01',
+    );
+    expect(p.unparsed).toHaveLength(1);
+  });
+});
+
+describe('out-of-room notes in body text', () => {
+  it('a note right before a recorded roll call in the same paragraph is placed on it', () => {
+    const p = parseMinutes(
+      oneVote('Ana Example was out of the room. The motion to adopt Ordinance 24-01 received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.'),
+      '2024-01-01',
+    );
+    expect(p.notes).toEqual([{ kind: 'out_of_room', nameAsPrinted: 'Ana Example', at: 0 }]);
+  });
+
+  it('a note that cannot be tied to a motion has at = null', () => {
+    const p = parseMinutes(
+      oneVote('Ana Example was out of the room.\n\nThe motion to adopt Ordinance 24-01 received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.'),
+      '2024-01-01',
+    );
+    expect(p.notes).toEqual([{ kind: 'out_of_room', nameAsPrinted: 'Ana Example', at: null }]);
+  });
+});
+
+describe('parenthetical words that are not names, and name counts', () => {
+  const S = (tally: string) => `The motion to adopt Ordinance 24-01 received a roll call vote of ${tally}`;
+  it.each(['None', 'All', 'Unanimous', 'Recused', 'Remote'])('(%s) is not a voter name', (w) => {
+    expect(parseRollCallSentence(S(`Ayes: 9, Nays: 0 (${w}), Abstain: 0.`), 0)).toBeNull();
+  });
+
+  it('a side whose printed names do not match its count is not understood', () => {
+    expect(parseRollCallSentence(S('Ayes: 5, Nays: 4 (Ana, Bo, Cy), Abstain: 0.'), 0)).toBeNull();
   });
 });
