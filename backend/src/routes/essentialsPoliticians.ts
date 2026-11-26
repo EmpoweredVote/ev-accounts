@@ -8,6 +8,7 @@ import {
   getBillsByPolitician,
   getVotesByPolitician,
   getLeadershipByPolitician,
+  getCouncilRecordByPolitician,
 } from '../lib/essentialsLegislativeService.js';
 import {
   getEndorsementsByPolitician,
@@ -191,6 +192,33 @@ router.get('/:id/votes', optionalAuth, async (req: Request, res: Response): Prom
     res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/votes] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/council-record
+// Auth: optional — public data.
+// ?limit=N (1-200, default 50) &offset=N (default 0).
+// A city council member's roll-call record, grouped by legislation item.
+// Returns { total: 0, items: [] } for anyone with no city roll calls.
+// 422 for invalid UUID.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/council-record', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const rawLimit = typeof req.query.limit === 'string' ? parseInt(req.query.limit, 10) : NaN;
+    const limit = isNaN(rawLimit) ? 50 : Math.min(200, Math.max(1, rawLimit));
+    const rawOffset = typeof req.query.offset === 'string' ? parseInt(req.query.offset, 10) : NaN;
+    const offset = isNaN(rawOffset) ? 0 : Math.max(0, rawOffset);
+    res.status(200).json(await getCouncilRecordByPolitician(id, limit, offset));
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/council-record] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
