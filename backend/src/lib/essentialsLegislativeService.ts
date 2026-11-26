@@ -503,6 +503,8 @@ export interface CouncilRecord {
 export interface CouncilCity {
   scope: string;
   chamberSlug: string;
+  /** offices.normalized_position_name of the council's seats; the chamber slug also covers the City Clerk. */
+  seatPositionName: string;
 }
 
 interface CouncilTerm {
@@ -519,7 +521,7 @@ export function loadCouncilCities(): CouncilCity[] {
     const raw = JSON.parse(
       readFileSync(new URL('../../data/local-record/cities.json', import.meta.url), 'utf8'),
     ) as CouncilCity[];
-    councilCitiesCache = raw.map((c) => ({ scope: c.scope, chamberSlug: c.chamberSlug }));
+    councilCitiesCache = raw.map((c) => ({ scope: c.scope, chamberSlug: c.chamberSlug, seatPositionName: c.seatPositionName }));
   }
   return councilCitiesCache;
 }
@@ -559,19 +561,22 @@ export async function getCouncilRecordByPolitician(
 
   const termRows = (
     await pool.query(
-      `SELECT DISTINCT o.title AS title, ch.slug AS slug,
+      `SELECT DISTINCT o.title AS title, ch.slug AS slug, o.normalized_position_name AS position,
               to_char(ot.term_start, 'YYYY-MM-DD') AS start,
               to_char(ot.term_end, 'YYYY-MM-DD') AS "end"
        FROM essentials.office_terms ot
        JOIN essentials.offices o ON o.id = ot.office_id
        JOIN essentials.chambers ch ON ch.id = o.chamber_id
-       WHERE ot.politician_id = $1 AND ch.slug = ANY($2::text[]) AND ot.term_start IS NOT NULL`,
-      [politicianId, cities.map((c) => c.chamberSlug)],
+       WHERE ot.politician_id = $1 AND ot.term_start IS NOT NULL
+         AND (ch.slug, o.normalized_position_name) IN (SELECT * FROM unnest($2::text[], $3::text[]))`,
+      [politicianId, cities.map((c) => c.chamberSlug), cities.map((c) => c.seatPositionName)],
     )
   ).rows;
-  const terms: CouncilTerm[] = termRows.map((r) => ({
-    title: r.title ?? '', slug: r.slug, start: r.start, end: r.end ?? null,
-  }));
+  // The chamber slug also covers the City Clerk; only the council's own position name is a seat. The SQL says so,
+  // and this keeps the rule even if a row slips through.
+  const terms: CouncilTerm[] = termRows
+    .filter((r) => cities.some((c) => c.chamberSlug === r.slug && c.seatPositionName === r.position))
+    .map((r) => ({ title: r.title ?? '', slug: r.slug, start: r.start, end: r.end ?? null }));
 
   const ROLL_COLUMNS = `
       r.id AS roll_call_id, r.city_scope, r.question, r.question_order, r.outcome,

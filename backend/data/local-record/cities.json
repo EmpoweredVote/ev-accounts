@@ -5,6 +5,7 @@
     "reader": "onboard",
     "base": "https://bloomington.in.gov",
     "chamberSlug": "bloomington-common-council",
+    "seatPositionName": "City Legislature",
     "committeeId": 1,
     "trust": {
       "file": "TRUST.md",

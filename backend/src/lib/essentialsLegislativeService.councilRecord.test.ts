@@ -26,7 +26,7 @@ const app = express();
 app.use('/api/essentials/politicians', router);
 
 const PID = '11111111-1111-4111-8111-111111111111';
-const CITY = { scope: 'place:test', chamberSlug: 'test-council' };
+const CITY = { scope: 'place:test', chamberSlug: 'test-council', seatPositionName: 'City Legislature' };
 const TODAY = '2026-06-01';
 
 type Data = { terms?: any[]; voted?: any[]; pending?: any[]; confirmed?: any[] };
@@ -39,7 +39,9 @@ function answer(d: Data) {
     throw new Error('unexpected query: ' + sql.slice(0, 60));
   });
 }
-const term = (title: string, start: string, end: string | null, slug = 'test-council') => ({ title, slug, start, end });
+const term = (title: string, start: string, end: string | null, slug = 'test-council', position = 'City Legislature') => ({
+  title, slug, position, start, end,
+});
 const roll = (o: Record<string, unknown>) => ({
   roll_call_id: 'rc1', city_scope: 'place:test', question: 'Final passage', question_order: 0, outcome: 'passed',
   meeting_date: '2026-03-01', yes: 7, no: 1, abstain: 1, feed_disagreement: null,
@@ -93,6 +95,18 @@ describe('getCouncilRecordByPolitician', () => {
     expect(out.items[0].pending).toEqual({ meeting_date: '2025-06-01', outcome: 'passed', yes: 7, no: 1, abstain: 1 });
     expect(out.items[0].votes).toEqual([]);
     expect(JSON.stringify(out)).not.toMatch(/name_as_printed/);
+  });
+
+  it('ignores a term on another office under the same chamber slug (the City Clerk is not a seat)', async () => {
+    answer({
+      terms: [term('City Clerk', '2020-01-01', null, 'test-council', 'City Clerk//Ward Officer')],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'bP', number: 'P', meeting_date: '2025-06-01' })],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out).toEqual({ total: 0, items: [] });
+    expect(mockQuery.mock.calls.some((c) => String(c[0]).includes("'pending_minutes'"))).toBe(false);
+    const termCall = mockQuery.mock.calls.find((c) => String(c[0]).includes('office_terms'))!;
+    expect(termCall[0]).toMatch(/o\.normalized_position_name/);
   });
 
   it('returns the empty shape for someone with no council terms or roll calls, and skips the pending query', async () => {

@@ -2,18 +2,31 @@
 --
 -- WHY: the council voting record (Task 9 of the council-record plan) reads members' votes from minutes back to
 --   2020. It resolves each printed name to a person by meeting date, using essentials.office_terms rows on offices
---   whose chamber slug is 'bloomington-common-council' AND whose term_start is NOT NULL (refresh.ts,
---   loadCouncilTerms). Today the nine current members' terms are undated (the 1459 backfill shape), and the five
+--   whose chamber slug is 'bloomington-common-council' AND whose position name is 'City Legislature' AND whose
+--   term_start is NOT NULL (refresh.ts, loadCouncilTerms). The chamber slug is shared with the City Clerk office,
+--   which is no council seat, so every selection below also requires normalized_position_name = 'City Legislature'. Today the nine current members' terms are undated (the 1459 backfill shape), and the five
 --   people who left the council at the end of 2023 are not in the database at all. So no name resolves.
 --
 -- WHAT, 17 terms, one per row of the council-record inventory's roster.json (spans copied exactly):
---   - 9 current members: their EXISTING current term gets its term_start (NULL -> the roster date).
+--   - 9 current members: their EXISTING current term gets its term_start (NULL, or a start that is not day
+--     precision, -> the roster date).
 --   - Shruti Rana: her EXISTING District V term (term_end 2024-02-07, written by 1824) gets its term_start.
 --   - 7 closed terms are INSERTED: Sandberg, Sims, Sgambelluri, Smith, Volan (new people, below), and the earlier
 --     seats of two current members: Rosenbarger (District I 2020-2023) and Piedmont-Smith (District V 2020-2023).
 --   - 5 new politicians, full names as the city's OnBoard seat pages print them: Susan Sandberg, Jim Sims,
 --     Sue Sgambelluri, Ron Smith, Stephen Volan. is_active = false. No photos (a later find-headshots pass).
 --   Shruti Rana is NOT created: she already exists (1802 / 1824 name her, external_id 450800) and is reused.
+--
+-- 🔴 RUN CA_PENDING_bloomington_district5_office_merge.sql BEFORE THIS FILE. District 5 has two office rows
+--   (Rana's and Daily's), so the pre-flight below stops at "expected 9 offices" until the duplicate is merged.
+--
+-- COURTNEY DAILY'S START DATE (C-5, current term). The stored 2024-03-01 has start_precision 'month' and no real
+--   source: its own source text says it came from an old snapshot (CC_0394) and was never established. It is
+--   month-precision and unsourced, so this file REPLACES it with the roster's 2024-03-02 (day precision), and
+--   records the old value and precision in the term's source. The rule: a current term whose start is not day
+--   precision is treated like an undated one. A differing start with day precision still stops the file.
+--   🟡 A second source file gives 2024-03-27 for her. That conflict is UNRESOLVED and is the owner's to confirm;
+--   this file writes the roster's date and does not settle it.
 --
 -- SOURCES: every span is the roster.json row, which is read from the seat's OnBoard page,
 --   https://bloomington.in.gov/onboard/seats/<id> (C-7 245, C-8 246, C-9 247, C-1 249, C-2 250, C-3 251, C-4 252,
@@ -30,8 +43,10 @@
 --   council offices and 9 distinct anchors, so a duplicate office or a second same-surname holder stops it.
 --
 -- OVERWRITTEN VALUES (the rule: record what an UPDATE replaces):
---   - office_terms.term_start on 10 existing rows: the old value is NULL. The pre-flight refuses any other value,
---     and each UPDATE is guarded on term_start IS NULL, so NULL is the only value this can overwrite.
+--   - office_terms.term_start on 10 existing rows: the old value is NULL, except Daily's, which is 2024-03-01 at
+--     month precision (see above). The pre-flight refuses any other value that has day precision, and each UPDATE
+--     is guarded on term_start IS NULL OR start_precision <> 'day', so only those two kinds can be overwritten.
+--     Each row's source records "(was <old start> (<old precision> precision))".
 --   - office_terms.start_precision on the same rows: the old value is written into that row's own `source`, which
 --     is extended (never replaced): "<old source> | CA_PENDING bcc: dated ... (start_precision was '<old>')".
 --
@@ -108,7 +123,8 @@ CREATE TEMP TABLE bcc_office ON COMMIT DROP AS
 SELECT ofc.id AS office_id, ch.government_id
   FROM essentials.offices ofc
   JOIN essentials.chambers ch ON ch.id = ofc.chamber_id
- WHERE ch.slug = 'bloomington-common-council';
+ WHERE ch.slug = 'bloomington-common-council'
+   AND ofc.normalized_position_name = 'City Legislature';  -- the chamber slug also holds the City Clerk, who is no seat
 
 CREATE TEMP TABLE bcc_anchor ON COMMIT DROP AS
 SELECT s.seat_code, s.anchor_key AS key, och.office_id, och.politician_id, p.full_name
@@ -123,7 +139,7 @@ DECLARE v int; v_detail text;
 BEGIN
   SELECT count(*) INTO v FROM bcc_office;
   IF v <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: found % offices under chamber slug bloomington-common-council, '
+    RAISE EXCEPTION 'CA_PENDING pre-flight: found % City Legislature offices under chamber slug bloomington-common-council, '
       'expected 9 (one per seat). More than 9 most likely means a duplicate seat office, for example a second '
       'District V row. %', v, 'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
@@ -137,7 +153,9 @@ BEGIN
       'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
 
-  -- Each anchor's current term must be undated (the 1459 shape) or already carry the roster date (a re-run).
+  -- Each anchor's current term must be undated (the 1459 shape), carry a coarser-than-day start (replaceable: Daily's
+  -- unsourced month-precision 2024-03-01), or already carry the roster date (a re-run). Only a DAY-precision start
+  -- that differs from the roster is a conflict.
   SELECT count(*), string_agg(format('%s %s term_start=%s', a.seat_code, a.full_name, ot.term_start), '; ')
     INTO v, v_detail
     FROM bcc_anchor a
@@ -145,10 +163,11 @@ BEGIN
     JOIN essentials.office_terms ot ON ot.office_id = a.office_id AND ot.politician_id = a.politician_id
          AND (ot.term_start IS NULL OR ot.term_start <= CURRENT_DATE)
          AND (ot.term_end   IS NULL OR ot.term_end   >= CURRENT_DATE)
-   WHERE ot.term_start IS NOT NULL AND ot.term_start <> pl.term_start;
+   WHERE ot.term_start IS NOT NULL AND ot.term_start <> pl.term_start
+     AND ot.start_precision = 'day';
   IF v <> 0 THEN
     RAISE EXCEPTION 'CA_PENDING pre-flight: % current term(s) already carry a different start date, which this '
-      'migration will not overwrite: %', v, v_detail;
+      'migration will not overwrite (day-precision start): %', v, v_detail;
   END IF;
 
   -- Shruti Rana: exactly one row by that name holds a council term, it is on District V (Daily's office), and it
@@ -302,14 +321,15 @@ UPDATE essentials.office_terms ot
        start_precision = 'day',
        source          = ot.source || ' | CA_PENDING bcc: dated ' || pl.term_start || ' per ' || s.seat_url
                          || ' (city OnBoard seat page, saved 2026-11-25); start_precision was '''
-                         || ot.start_precision || ''''
+                         || ot.start_precision || ''' (was ' || coalesce(ot.term_start::text, 'NULL')
+                         || ' (' || ot.start_precision || ' precision))'
   FROM bcc_plan pl
   JOIN bcc_seat s    ON s.seat_code = pl.seat_code
   JOIN bcc_anchor a  ON a.seat_code = pl.seat_code AND a.key = pl.key
  WHERE pl.kind = 'date_current'
    AND ot.office_id = a.office_id
    AND ot.politician_id = a.politician_id
-   AND ot.term_start IS NULL
+   AND (ot.term_start IS NULL OR ot.start_precision <> 'day')
    AND (ot.term_end IS NULL OR ot.term_end >= CURRENT_DATE);
 
 UPDATE essentials.office_terms ot
@@ -441,7 +461,8 @@ BEGIN
     FROM essentials.office_terms ot
     JOIN essentials.offices ofc ON ofc.id = ot.office_id
     JOIN essentials.chambers ch ON ch.id = ofc.chamber_id
-   WHERE ch.slug = 'bloomington-common-council' AND ot.term_start IS NOT NULL;
+   WHERE ch.slug = 'bloomington-common-council' AND ofc.normalized_position_name = 'City Legislature'
+     AND ot.term_start IS NOT NULL;
   IF v <> 17 THEN
     RAISE EXCEPTION 'CA_PENDING: the reader would load % dated council terms, expected 17', v;
   END IF;

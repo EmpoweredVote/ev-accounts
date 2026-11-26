@@ -35,7 +35,7 @@ const terms: TermSpan[] = roster.map(([id]) => ({ politicianId: id, start: '2024
 
 const city = (over: Partial<CityConfig> = {}): CityConfig => ({
   scope: 'place:1805860', slug: 'bloomington-in', reader: 'onboard', base: 'https://bloomington.in.gov', committeeId: 1,
-  chamberSlug: 'bloomington-common-council',
+  chamberSlug: 'bloomington-common-council', seatPositionName: 'City Legislature',
   trust: { file: 'TRUST.md', sha256: 'x', date: '2026-11-25' }, enabled: true, ...over,
 });
 
@@ -322,8 +322,13 @@ describe('loadCouncilTerms', () => {
     expect(q.text).toMatch(/JOIN essentials\.chambers ch ON ch\.id = o\.chamber_id/);
     expect(q.text).toMatch(/ch\.slug = \$1/);
     expect(q.text).not.toMatch(/geo_id/);
-    expect(q.params).toEqual(['bloomington-common-council']);
+    expect(q.params).toEqual(['bloomington-common-council', 'City Legislature']);
     expect(out).toEqual([{ politicianId: 'p1', start: '2024-01-02', end: null }]);
+  });
+  it('keeps the City Clerk out: only offices with the council position name are seats', async () => {
+    const db = stubDb([[/office_terms/, () => []]]);
+    await loadCouncilTerms(db, city());
+    expect(db.calls[0].text).toMatch(/o\.normalized_position_name = \$2/);
   });
   it('never loads a vacancy span: only terms with a holder', async () => {
     const db = stubDb([[/office_terms/, () => []]]);

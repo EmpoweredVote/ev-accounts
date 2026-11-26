@@ -17,6 +17,8 @@ export interface CityConfig {
   base: string;
   /** chambers.slug of the council; its offices are read for terms. */
   chamberSlug: string;
+  /** offices.normalized_position_name of the council's seats. The chamber also holds the clerk, who is no seat. */
+  seatPositionName: string;
   committeeId: number;
   trust: { file: string; sha256: string; date: string };
   /** Flips to true only in the go-live PR. */
@@ -93,7 +95,7 @@ export async function fetchBytes(url: string): Promise<Uint8Array> {
 }
 
 /**
- * Council terms from office_terms, found by the council's chamber (the six district seats do not sit on the
+ * Council terms from office_terms, found by the council's chamber and its position name (the chamber also holds the City Clerk; the six district seats do not sit on the
  * place's own geo_id). Isolated here: the one query that reads who held a seat.
  */
 export async function loadCouncilTerms(db: Queryable, city: CityConfig): Promise<TermSpan[]> {
@@ -104,8 +106,9 @@ export async function loadCouncilTerms(db: Queryable, city: CityConfig): Promise
      FROM essentials.office_terms ot
      JOIN essentials.offices o ON o.id = ot.office_id
      JOIN essentials.chambers ch ON ch.id = o.chamber_id
-     WHERE ch.slug = $1 AND ot.term_start IS NOT NULL AND ot.politician_id IS NOT NULL`,
-    [city.chamberSlug],
+     WHERE ch.slug = $1 AND o.normalized_position_name = $2
+       AND ot.term_start IS NOT NULL AND ot.politician_id IS NOT NULL`,
+    [city.chamberSlug, city.seatPositionName],
   );
   return r.rows.map((x: any) => ({ politicianId: x.politician_id, start: x.start, end: x.end ?? null }));
 }

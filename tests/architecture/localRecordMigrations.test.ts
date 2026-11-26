@@ -143,3 +143,50 @@ describe('council-record migrations', () => {
     expect(src).toMatch(/const BUCKET = 'local-record-sources'/);
   });
 });
+
+const PEOPLE = 'CA_PENDING_bloomington_council_people_and_terms.sql';
+const MERGE = 'CA_PENDING_bloomington_district5_office_merge.sql';
+
+describe('Bloomington people-and-terms file', () => {
+  it('selects council seats by chamber slug AND position name (the City Clerk is not a seat)', () => {
+    const c = code(PEOPLE);
+    const sels = c.match(/ch\.slug = 'bloomington-common-council'[^;]*/g) ?? [];
+    expect(sels.length).toBeGreaterThanOrEqual(2);
+    for (const s of sels) expect(s).toMatch(/normalized_position_name = 'City Legislature'/);
+  });
+
+  it('only a day-precision start counts as a conflict; a coarser one may be replaced (Daily)', () => {
+    const c = code(PEOPLE);
+    expect(c).toMatch(/ot\.term_start <> pl\.term_start\s+AND ot\.start_precision = 'day'/);
+    expect(c).toMatch(/\(ot\.term_start IS NULL OR ot\.start_precision <> 'day'\)/);
+    expect(c).toMatch(/\(was ' \|\| coalesce\(ot\.term_start::text, 'NULL'\)/);
+  });
+});
+
+describe('Bloomington District 5 office merge', () => {
+  const c = () => code(MERGE);
+  it('exists, is one transaction, and runs before the people-and-terms file (it is named so)', () => {
+    expect(fs.existsSync(path.join(MIG, MERGE))).toBe(true);
+    expect(c()).toMatch(/^\s*BEGIN;/m);
+    expect(c()).toMatch(/^\s*COMMIT;/m);
+    expect(read(MERGE)).toMatch(/BEFORE .*people_and_terms|before .*people_and_terms/);
+  });
+  it('moves the term and repoints the snapshot before deleting the retired office', () => {
+    const s = c();
+    const move = s.search(/UPDATE essentials\.office_terms/i);
+    const repoint = s.search(/UPDATE essentials\.politicians/i);
+    const del = s.search(/DELETE FROM essentials\.offices/i);
+    expect(move).toBeGreaterThan(-1);
+    expect(repoint).toBeGreaterThan(move);
+    expect(del).toBeGreaterThan(repoint);
+  });
+  it('names both offices and the district exactly, and never sets is_vacant', () => {
+    const s = c();
+    for (const id of ['48d59066-51aa-4fca-9e92-edecfaeb4388', 'c59ebfa0-e6a2-4e9c-ba1c-db97f79c58d1', 'cd647e3c-e2d6-40a0-b8db-b9dfbe6f597d'])
+      expect(s).toContain(id);
+    expect(s).not.toMatch(/SET[^;]*is_vacant/i);
+  });
+  it('creates no table or view, so it owes no RLS or grants', () => {
+    expect(c()).not.toMatch(/create\s+(table|view)/i);
+  });
+});

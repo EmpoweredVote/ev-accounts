@@ -37,7 +37,7 @@ const names = (nullId?: string): NameFile => ({
 });
 const city: CityConfig = {
   scope: SCOPE, slug: 'bloomington-in', reader: 'onboard', base: 'https://bloomington.in.gov', committeeId: 1,
-  chamberSlug: 'bloomington-common-council', trust: { file: 'TRUST.md', sha256: 'x', date: '2026-11-25' }, enabled: false,
+  chamberSlug: 'bloomington-common-council', seatPositionName: 'City Legislature', trust: { file: 'TRUST.md', sha256: 'x', date: '2026-11-25' }, enabled: false,
 };
 
 describe('parseInventoryId: suffix mapping', () => {
