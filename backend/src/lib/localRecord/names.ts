@@ -19,9 +19,10 @@ const TITLES = /\b(?:councilmember|council member|council president|vice preside
 export function normaliseName(s: string): string {
   return s
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '') // no unaccent on prod: fold in code
+    .replace(/\p{Diacritic}/gu, '') // no unaccent on prod: fold in code
     .toLowerCase()
     .replace(TITLES, ' ')
+    .replace(/\s*[-\u2010-\u2015]\s*/g, '-') // en/em dash and spaced hyphen -> plain hyphen
     .replace(/[^a-z0-9\s-]/g, '') // drops '*' and other punctuation, keeps hyphen
     .replace(/\s+/g, ' ')
     .trim();
@@ -34,6 +35,9 @@ export function resolveName(
   terms: TermSpan[],
 ): { politicianId: string } | { error: 'unknown_name' | 'not_seated' | 'ambiguous'; detail: string } {
   const key = normaliseName(printed);
+  if (key === '') {
+    return { error: 'unknown_name', detail: `"${printed}" has no name after normalising` };
+  }
   const matched = names.members.filter((m) => m.variants.some((v) => normaliseName(v) === key));
   if (matched.length === 0) {
     return { error: 'unknown_name', detail: `no listed variant matches "${printed}"` };

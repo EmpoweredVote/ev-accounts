@@ -28,6 +28,11 @@ describe('normaliseName', () => {
     expect(normaliseName('Council President Isabel Piedmont-Smith')).toBe('isabel piedmont-smith');
     expect(normaliseName('Vice President Sue Sgambelluri')).toBe('sue sgambelluri');
   });
+  it('normalises dashes and spaced hyphens', () => {
+    expect(normaliseName('Piedmont - Smith')).toBe('piedmont-smith');
+    expect(normaliseName('Piedmont\u2013Smith')).toBe('piedmont-smith');
+    expect(normaliseName('Piedmont\u2014Smith')).toBe('piedmont-smith');
+  });
   it('folds accents and collapses spaces and punctuation', () => {
     expect(normaliseName('  José   O’Brien, ')).toBe('jose obrien');
   });
@@ -49,6 +54,16 @@ describe('resolveName', () => {
   });
   it('resolves a shared variant when only one person is seated', () => {
     expect(resolveName('Smith', '2024-05-01', names, terms)).toEqual({ politicianId: 'p-2' });
+  });
+  it('is unknown_name when the printed name is empty after normalising', () => {
+    expect(resolveName('*', '2024-05-01', names, terms)).toMatchObject({ error: 'unknown_name' });
+  });
+  it('does not match a bare surname to a hyphenated variant', () => {
+    const only: NameFile = {
+      city: 'place:1805860',
+      members: [{ politicianId: 'p-2', onboardId: null, variants: ['Piedmont-Smith'] }],
+    };
+    expect(resolveName('Smith', '2024-05-01', only, terms)).toMatchObject({ error: 'unknown_name' });
   });
   it('treats term end as inclusive', () => {
     expect(resolveName('Ron Smith', '2023-12-31', names, terms)).toEqual({ politicianId: 'p-1' });
