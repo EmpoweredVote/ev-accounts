@@ -101,3 +101,17 @@ describe('names.json (Bloomington)', () => {
     }
   });
 });
+
+describe('R2: name variants printed in the minutes', () => {
+  const file: NameFile = { city: names.city, members: names.members.map((m) => ({ politicianId: m.politicianId, onboardId: m.onboardId, variants: m.variants })) };
+  const all: TermSpan[] = names.members.filter((m) => m.politicianId).map((m) => ({ politicianId: m.politicianId!, start: '2020-01-01', end: null }));
+  const ruff = names.members.find((m) => m.key === 'ruff')!.politicianId;
+  const sims = names.members.find((m) => m.key === 'sims')!.politicianId;
+  it.each([
+    ['Andrew (Andy) Ruff', '2024-01-17', ruff],
+    ['Andrew “Andy” Ruff', '2024-12-04', ruff],
+    ['Jims Sims', '2023-10-18', sims],
+  ])('"%s" (%s) resolves', (printed, date, id) => {
+    expect(resolveName(printed, date, file, all)).toMatchObject({ politicianId: id });
+  });
+});

@@ -584,3 +584,117 @@ describe('R1: two-column layout keeps the margin column apart by the physical ga
     expect(line).toBe('The motion received a roll call');
   });
 });
+
+describe('R2: attendance', () => {
+  const names = (p: ReturnType<typeof parseMinutes>) => p.attendance.map((a) => a.nameAsPrinted);
+
+  it('ends at the "absent" line: "City staff…" after it is not a member (2023-01-25 memorandum 11346)', () => {
+    const text = [
+      'Councilmembers present:    Matt Flaherty, Isabel Piedmont-Smith, Dave Rollo, Kate Rosenbarger, Susan',
+      'Sandberg, Sue Sgambelluri, Ron Smith, Stephen Volan (arrived at 6:33pm)',
+      'Councilmembers present via Zoom:     Jim Sims',
+      'Councilmembers absent:    none',
+      'City staff, officials, and guests present: Stephen Lucas, Jackie Scanlan, Chris Cockerham, Beth Cate,',
+      'Larry Allen, Mike Diekhoff, Jason Moore, Deb Kunce, Jeff Underwood, Bradley Bingham, Deputy Mayor',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2023-01-25');
+    expect(names(p)).toEqual(['Matt Flaherty', 'Isabel Piedmont-Smith', 'Dave Rollo', 'Kate Rosenbarger', 'Susan Sandberg',
+      'Sue Sgambelluri', 'Ron Smith', 'Stephen Volan', 'Jim Sims']);
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('ends at the "absent" line: a "Clerk’s Note" after it is not a member (2024-02-28 minutes)', () => {
+    const text = [
+      'Councilmembers present: Isak Nti Asare, Isabel Piedmont-Smith,       ROLL CALL [6:30pm]',
+      'Dave Rollo, Kate Rosenbarger, Andy Ruff (arrived at 6:32pm), Hopi',
+      'Stosberg, Sydney Zulich',
+      'Councilmembers present via Zoom: Matt Flaherty (arrived 6:31pm)',
+      'Councilmembers absent: none',
+      'Clerk’s Note: There was a vacancy in District 5.',
+      '',
+    ].join('\n');
+    expect(names(parseMinutes(text, '2024-02-28'))).toEqual(['Isak Nti Asare', 'Isabel Piedmont-Smith', 'Dave Rollo',
+      'Kate Rosenbarger', 'Andy Ruff', 'Hopi Stosberg', 'Sydney Zulich', 'Matt Flaherty']);
+  });
+
+  it('a wide gap right after "present via teleconference:" is not the margin (2021-04-21, file 8761)', () => {
+    const text = [
+      'Councilmembers present via teleconference:    Matt Flaherty, Isabel Piedmont-Smith, Dave Rollo, Kate',
+      'Rosenbarger, Susan Sandberg, Sue Sgambelluri, Jim Sims, Ron Smith, Stephen Volan',
+      'Councilmembers absent:    none',
+      'City staff and officials present: Alex Crowley, Devta Kidd, Eric Greulich, Heather Lacy, Jane Kupersmith,',
+      '',
+    ].join('\n');
+    expect(names(parseMinutes(text, '2021-04-21'))).toHaveLength(9);
+  });
+
+  it('a nickname between first and last name is part of the name, not a remark (2024-01-17 minutes 13006)', () => {
+    const text = [
+      'Councilmembers present: Isak Nti Asare, Matt Flaherty, Isabel        ROLL CALL [6:30pm]',
+      'Piedmont-Smith, Shruti Rana, Dave Rollo, Kate Rosenbarger,',
+      'Andrew (Andy) Ruff, Hopi Stosberg, Sydney Zulich',
+      'Councilmembers present via Zoom: none',
+      'Councilmembers absent: none',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2024-01-17');
+    expect(names(p)).toContain('Andrew (Andy) Ruff');
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('merges a member who left Zoom and arrived in person (2023-11-15 minutes 13374)', () => {
+    const text = [
+      'Councilmembers present: Matt Flaherty (arrived in person at 6:44pm),        ROLL CALL [6:37pm]',
+      'Isabel Piedmont-Smith, Dave Rollo, Susan Sandberg, Sue Sgambelluri, Ron',
+      'Smith, Stephen Volan',
+      'Councilmembers present via Zoom: Matt Flaherty (left Zoom at 6:39pm),',
+      'Jim Sims',
+      'Councilmembers absent: Kate Rosenbarger',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2023-11-15');
+    expect(names(p).filter((n) => n === 'Matt Flaherty')).toHaveLength(1);
+    expect(p.notes).toContainEqual({ kind: 'arrived', nameAsPrinted: 'Matt Flaherty', at: 0 });
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('a member listed in person and on Zoom with no remarks stays listed twice (2024-09-04): the check holds it', () => {
+    const text = [
+      '           Councilmembers present: Isak Nti Asare, Courtney Daily, Matt          ROLL CALL [6:30pm]',
+      '           Flaherty, Isabel Piedmont-Smith, Dave Rollo, Hopi Stosberg, Sydney',
+      '           Zulich',
+      '           Councilmembers present via Zoom: Matt Flaherty, Kate Rosenbarger',
+      '           Councilmembers absent: Andrew (Andy) Ruff',
+      '',
+    ].join('\n');
+    expect(names(parseMinutes(text, '2024-09-04')).filter((n) => n === 'Matt Flaherty')).toHaveLength(2);
+  });
+});
+
+describe('R2: memoranda label each line "MOTION:" / "ACTION:" (2021-04-21, file 8761)', () => {
+  const text = [
+    'Councilmembers present via teleconference:    Matt Flaherty, Isabel Piedmont-Smith, Dave Rollo, Kate',
+    'Rosenbarger, Susan Sandberg, Sue Sgambelluri, Jim Sims, Ron Smith, Stephen Volan',
+    'Councilmembers absent:    none',
+    '',
+    'Resolution 21-08  – Accepting the City of Bloomington Climate Action Plan',
+    'MOTION: Flaherty moved and it was seconded that Resolution 21-08 be read by title and synopsis only.',
+    'ACTION:  The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.',
+    'MOTION: Flaherty moved and it was seconded to adopt Resolution 21-08.',
+    'ACTION: The motion to adopt Resolution 21-08 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.',
+    'Ordinance 21-15   - To Amend Title 20 (Unified Development Ordinance) of the Bloomington Municipal',
+    'Code – Re: Technical Corrections Set Forth in BMC 20.02, 20.04, 20.06, 20.07',
+    'MOTION: Flaherty moved and it was seconded that Ordinance 21-15 be read by title and synopsis only.',
+    'ACTION:  The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.',
+    'MOTION: Flaherty moved and it was seconded to adopt Ordinance 21-15.',
+    'ACTION: The motion to adopt Ordinance 21-15 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.',
+    '',
+  ].join('\n');
+
+  it('reads each labelled line as its own sentence: two votes, the read-by-title motions ignored', () => {
+    const p = parseMinutes(text, '2021-04-21');
+    expect(p.rollCalls.map((r) => [r.itemNumber, r.question])).toEqual([['Res 21-08', 'Final passage'], ['Ord 21-15', 'Final passage']]);
+    expect(p.unparsed).toEqual([]);
+  });
+});

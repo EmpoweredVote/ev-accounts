@@ -19,6 +19,8 @@ import type { AttendanceEntry, MeetingNote, MinutesParse, MinutesRollCall, Print
 const MARGIN_COL = 45;
 const FOOTER = /^\s*(?:p\.\s*\d+\s+)?Meeting Date:\s*\d{2}-\d{2}-\d{2}(?:\s+p\.\s*\d+)?\s*$/;
 
+const ATTENDANCE_LABEL = /^\s*Council ?members (?:present|absent)[^:]*:$/i;
+
 type Row = { blank: true } | { blank: false; body: string; margin: string };
 
 /**
@@ -44,6 +46,8 @@ function layoutRows(text: string): Row[] {
     let m: RegExpExecArray | null;
     while ((m = gap.exec(raw))) {
       const rightStart = m.index + 1 + m[2].length;
+      // Memoranda align attendance names after a wide gap: "Councilmembers present via teleconference:    Matt …".
+      if (ATTENDANCE_LABEL.test(raw.slice(0, m.index + 1))) continue;
       if (rightStart >= MARGIN_COL) {
         body = raw.slice(0, m.index + 1);
         margin = raw.slice(rightStart).trim();
@@ -111,6 +115,12 @@ const ABBREV = /(?:^|[\s(])(?:Cm|Mr|Ms|Mrs|Dr|St|Inc|No|Jr|Sr|Ave|Rd|vs|etc|[A-Z
 
 /** Split one paragraph into sentences. A lone "FAILED" / "PASSED" after a tally stays with its sentence. */
 function splitSentences(para: string): string[] {
+  // Memoranda label each line "MOTION:" or "ACTION:"; a label starts a sentence and is not part of it.
+  const pieces = para.split(/\s+(?=(?:MOTION|ACTION):\s)/).map((x) => x.replace(/^(?:MOTION|ACTION):\s+/, ''));
+  return pieces.length > 1 ? pieces.flatMap(splitSentences) : splitPlain(pieces[0]);
+}
+
+function splitPlain(para: string): string[] {
   const out: string[] = [];
   let start = 0;
   const re = /[.!?]["”’)]?(?=\s+[A-Z(“"])/g;
@@ -370,6 +380,9 @@ function splitTopLevel(s: string): string[] {
   return out;
 }
 
+/** "(Andy)" or "“Andy”" between a first and a last name. */
+const NICKNAME = /(?<=^[A-Z][\w'’.-]* )[(“"][A-Z][a-z]+[)”"](?= [A-Z])/;
+
 /**
  * One attendance entry: "Dave Rollo (absent)", "Stephen Volan (arrived 6:31pm)", "Matt Flaherty*". The remark in
  * parentheses must be "absent" or "arrived|left [the meeting] [at] <time>" parts; anything else sends the entry to
@@ -380,7 +393,7 @@ function readAttendee(raw: string, absent: boolean, out: Attendance): void {
   if (!s || /^none$/i.test(s)) return;
   let isAbsent = absent;
   const notes: { kind: 'arrived' | 'left' }[] = [];
-  const paren = /\s*\(([^()]*)\)\s*$/.exec(s);
+  const paren = /\s*\(([^()]*)\)\s*$/.exec(s.replace(NICKNAME, (x) => ' '.repeat(x.length)));
   if (paren) {
     s = s.slice(0, paren.index).trim();
     for (const part of paren[1].split(',').map((p) => p.trim())) {
@@ -398,7 +411,9 @@ function readAttendee(raw: string, absent: boolean, out: Attendance): void {
     }
   }
   s = s.replace(/\s*\*$/, '').trim();
-  if (!s || /[()]/.test(s)) {
+  // A nickname between first and last name ("Andrew (Andy) Ruff", "Andrew “Andy” Ruff") is part of the name.
+  const bare = s.replace(NICKNAME, ' ');
+  if (!s || /[()]/.test(bare)) {
     out.unclear.push(raw.trim());
     return;
   }
@@ -443,16 +458,53 @@ function readAttendance(text: string): Attendance {
     }
   }
 
-  // Two-column minutes (2020–2022): "Councilmembers present: A, B, …" / "Councilmembers absent: none".
-  const para = paragraphs(text).find((p) => /^Council ?members present/i.test(p));
-  if (!para) return out;
+  // Two-column minutes and memoranda: "Councilmembers present: A, B, …" / "Councilmembers absent: none". The block
+  // ends at the end of the "absent" line (unless that line ends in a comma): what follows ("City staff …",
+  // "Clerk's Note: …") is not attendance.
+  const start = lines.findIndex((l) => /^\s*Council ?members present/i.test(l));
+  if (start < 0) return out;
+  const block: string[] = [];
+  for (let i = start; i < lines.length && lines[i].trim(); i++) {
+    block.push(lines[i]);
+    if (/^\s*Council ?members absent/i.test(lines[i]) && !/,\s*$/.test(lines[i])) break;
+  }
+  const para = joinLines(block);
   const fields = [...para.matchAll(ATT_FIELD)];
+  const parts: { raw: string; absent: boolean; zoom: boolean }[] = [];
   fields.forEach((f, k) => {
     const end = k + 1 < fields.length ? fields[k + 1].index : para.length;
     const value = para.slice(f.index + f[0].length, end);
-    for (const part of splitTopLevel(value)) readAttendee(part, f[1].toLowerCase() === 'absent', out);
+    for (const raw of splitTopLevel(value)) parts.push({ raw, absent: f[1].toLowerCase() === 'absent', zoom: /via/i.test(f[0]) });
   });
+  for (const p of mergeZoomToInPerson(parts)) readAttendee(p.raw, p.absent, out);
   return out;
+}
+
+const minutesOf = (t: string): number => {
+  const m = /^(\d{1,2}):(\d{2})\s?([ap])/i.exec(t) as RegExpExecArray;
+  return ((Number(m[1]) % 12) + (m[3].toLowerCase() === 'p' ? 12 : 0)) * 60 + Number(m[2]);
+};
+
+/**
+ * One exact pattern lists a member twice: "Matt Flaherty (arrived in person at 6:44pm)" among those present and
+ * "Matt Flaherty (left Zoom at 6:39pm)" among those on Zoom, the departure before the arrival. That is one member who
+ * arrived in person: the Zoom entry is dropped and the in-person one reads as "arrived at 6:44pm". Any other repeat
+ * stays, and the checks hold it.
+ */
+function mergeZoomToInPerson<T extends { raw: string; zoom: boolean }>(parts: T[]): T[] {
+  const IN = new RegExp(`^\\s*(.+?) \\(arrived in person at (${TIME})\\)\\s*$`);
+  const OUT = new RegExp(`^\\s*(.+?) \\(left Zoom at (${TIME})\\)\\s*$`);
+  const drop = new Set<T>();
+  const out = parts.map((p) => {
+    const a = IN.exec(p.raw);
+    if (!a || p.zoom) return p;
+    const z = parts.find((q) => q.zoom && OUT.exec(q.raw)?.[1] === a[1]);
+    const left = z ? OUT.exec(z.raw) : null;
+    if (!z || !left || minutesOf(left[2]) > minutesOf(a[2])) return p;
+    drop.add(z);
+    return { ...p, raw: `${a[1]} (arrived at ${a[2]})` };
+  });
+  return out.filter((p) => !drop.has(p));
 }
 
 // ---------------------------------------------------------------------------------------------------------------
