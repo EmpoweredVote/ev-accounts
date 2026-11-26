@@ -17,7 +17,16 @@ import type { AttendanceEntry, MeetingNote, MinutesParse, MinutesRollCall, Print
  * column 60 or later. Single-column minutes only reach this column with staff titles and page numbers.
  */
 const MARGIN_COL = 45;
-const FOOTER = /^\s*(?:p\.\s*\d+\s+)?Meeting Date:\s*\d{2}-\d{2}-\d{2}(?:\s+p\.\s*\d+)?\s*$/;
+const MONTH_NAME = '(?:January|February|March|April|May|June|July|August|September|October|November|December)';
+/**
+ * Page headers and footers: "Meeting Date: 06-10-26 p. 3", "p. 4 Meeting Date: 02-28-2024", "Meeting Date: June 10,
+ * 2026", a bare "February 04, 2026", and "Docusign Envelope ID: …".
+ */
+const FOOTER = new RegExp(
+  String.raw`^\s*(?:(?:p\.\s*\d+\s+)?Meeting Date:\s*(?:\d{2}-\d{2}-\d{2}(?:\d{2})?|${MONTH_NAME} \d{1,2}, \d{4})(?:\s+p\.\s*\d+)?|${MONTH_NAME} \d{1,2}, \d{4}|Docusign Envelope ID:.*)\s*$`,
+);
+/** A numbered agenda heading: "8.2. Resolution 2025-02", "7.4 Resolution 2026-18", or a lone "8.". */
+const AGENDA_HEADING = /^\s*[1-9]\d?(?:\.\d+)*(?:\.?\s+[A-Z]|\.\s*$)/;
 
 const ATTENDANCE_LABEL = /^\s*Council ?members (?:present|absent)[^:]*:$/i;
 
@@ -35,6 +44,10 @@ function layoutRows(text: string): Row[] {
       continue;
     }
     if (FOOTER.test(raw)) continue;
+    // A numbered agenda heading right after a finished sentence starts a new paragraph, so it is not read as the end
+    // of the vote sentence before it ("… Abstain: 0. 8.2. Resolution 2025-02").
+    const prev = [...rows].reverse().find((r) => r.blank || r.body);
+    if (AGENDA_HEADING.test(raw) && prev && !prev.blank && /[.!?)\]"”]$/.test(prev.body.trim())) rows.push({ blank: true });
     const lead = raw.length - raw.trimStart().length;
     if (lead >= MARGIN_COL) {
       rows.push({ blank: false, body: '', margin: raw.trim() });

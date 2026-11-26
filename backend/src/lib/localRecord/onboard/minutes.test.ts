@@ -698,3 +698,59 @@ describe('R2: memoranda label each line "MOTION:" / "ACTION:" (2021-04-21, file 
     expect(p.unparsed).toEqual([]);
   });
 });
+
+describe('R4: page headers and agenda numbers are not part of a vote sentence', () => {
+  const ATT = [
+    'Councilmembers present: Isak Nti Asare, Courtney Daily, Matt Flaherty, Isabel Piedmont-Smith, Dave Rollo,',
+    'Kate Rosenbarger, Andy Ruff, Hopi Stosberg, Sydney Zulich',
+    'Councilmembers absent: none',
+    '',
+  ];
+  const votes = (lines: string[], date: string) => parseMinutes([...ATT, ...lines].join('\n'), date);
+
+  it('drops "Docusign Envelope ID" and "Meeting Date: June 10, 2026" headers (2026-06-10 minutes 17745)', () => {
+    const p = votes([
+      '                                                                                                      3',
+      'Docusign Envelope ID: DAC49021-2E00-81DA-8338-981C6CA14F5D',
+      '',
+      '    Meeting Date: June 10, 2026',
+      '    The motion to adopt Amendment 01 to Ordinance 2026-12 received a roll call vote of Ayes: 9, Nays: 0,',
+      '    Abstain: 0.',
+      '',
+    ], '2026-06-10');
+    expect(p.rollCalls.map((r) => [r.itemNumber, r.question])).toEqual([['Ord 2026-12', 'Amendment 01']]);
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('drops a bare "February 04, 2026" page header (2026-02-04)', () => {
+    const p = votes([
+      ' Stosberg thanked her colleagues for their collaboration.',
+      '                                                                                                   4',
+      ' February 04, 2026',
+      ' The motion to adopt Resolution 2026-03 received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.',
+      '',
+    ], '2026-02-04');
+    expect(p.rollCalls.map((r) => r.itemNumber)).toEqual(['Res 2026-03']);
+  });
+
+  it('drops a "p. 4 Meeting Date: 02-28-2024" footer with a four-digit year', () => {
+    const lines = minutesSentences(['The motions received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.', 'p. 4 Meeting Date: 02-28-2024', ''].join('\n'));
+    expect(lines).toEqual(['The motions received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.']);
+  });
+
+  it('a numbered agenda heading on the next line starts a new paragraph (2025-02-19 minutes 15637)', () => {
+    const p = votes([
+      'The motion to adopt Ordinance 2025-05 as amended received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.',
+      '8.2. Resolution 2025-02',
+      'To Update the Established Interview Standing Committees',
+      '',
+    ], '2025-02-19');
+    expect(p.rollCalls.map((r) => r.itemNumber)).toEqual(['Ord 2025-05']);
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('a wrapped count after "Abstain:" is not a heading', () => {
+    const s = minutesSentences(['The motion to adopt Ordinance 2025-33 as amended received a roll call vote of Ayes: 9, Nays: 0, Abstain:', '1.', ''].join('\n'));
+    expect(s).toEqual(['The motion to adopt Ordinance 2025-33 as amended received a roll call vote of Ayes: 9, Nays: 0, Abstain: 1.']);
+  });
+});
