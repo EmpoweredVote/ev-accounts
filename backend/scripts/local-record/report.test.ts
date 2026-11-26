@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { formatReport } from './report.js';
+import { formatReport, WEEKS_SQL } from './report.js';
+
+describe('WEEKS_SQL', () => {
+  it('dates exceptions by opened_at, not created_at', () => {
+    expect(WEEKS_SQL).toMatch(/opened_at/);
+    expect(WEEKS_SQL).not.toMatch(/created_at/);
+  });
+});
 
 describe('formatReport', () => {
   it('prints every one of the last 8 ISO weeks, zero weeks included', () => {

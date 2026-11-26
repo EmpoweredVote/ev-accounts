@@ -171,6 +171,17 @@ describe('recordException', () => {
     expect(c.params).toEqual(['place:1', 'run1', 'minutes_disagree', 'subj', '{"a":1}']);
   });
 
+  it('dates an exception by opened_at: set on insert, reset only when a resolved row is reopened', async () => {
+    const db = recordingDb();
+    await recordException(db, 'place:1', 'run1', 'unknown_name', 'subj', { a: 1 });
+    const t = db.calls[0].text;
+    expect(t).toMatch(/\(id, city_scope, run_id, cause, subject, detail, opened_at\)/);
+    expect(t).toMatch(/\$5::jsonb, now\(\)\)/);
+    // Reopening a resolved row restarts its age; a still-open row keeps its date.
+    expect(t).toMatch(/opened_at = CASE WHEN e\.detail IS DISTINCT FROM EXCLUDED\.detail AND e\.status = 'resolved'\s+THEN now\(\) ELSE e\.opened_at END/);
+    expect(t).toMatch(/updated_at = now\(\)/);
+  });
+
   it('accepts every known cause and rejects others', async () => {
     const db = recordingDb();
     for (const cause of EXCEPTION_CAUSES) await recordException(db, 'place:1', 'r', cause, 's', 'd');

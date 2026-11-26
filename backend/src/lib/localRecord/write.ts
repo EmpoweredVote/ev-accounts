@@ -165,7 +165,7 @@ export async function writeConfirmed(
 
 /**
  * Log something a person must look at. One row per (city, cause, subject). A resolved row stays resolved when the
- * detail is unchanged; if the detail changed, it is reopened and the old resolution is cleared.
+ * detail is unchanged; if the detail changed, it is reopened (opened_at restarts) and the old resolution is cleared.
  */
 export async function recordException(
   db: Queryable,
@@ -177,10 +177,13 @@ export async function recordException(
 ): Promise<void> {
   if (!(EXCEPTION_CAUSES as readonly string[]).includes(cause)) throw new Error(`Unknown exception cause "${cause}"`);
   await db.query(
-    `INSERT INTO essentials.local_record_exceptions AS e (id, city_scope, run_id, cause, subject, detail)
-     VALUES (gen_random_uuid(), $1, $2, $3, $4, $5::jsonb)
+    `INSERT INTO essentials.local_record_exceptions AS e (id, city_scope, run_id, cause, subject, detail, opened_at)
+     VALUES (gen_random_uuid(), $1, $2, $3, $4, $5::jsonb, now())
      ON CONFLICT (city_scope, cause, subject) DO UPDATE SET
        run_id = EXCLUDED.run_id,
+       opened_at = CASE WHEN e.detail IS DISTINCT FROM EXCLUDED.detail AND e.status = 'resolved'
+                        THEN now() ELSE e.opened_at END,
+       updated_at = now(),
        status = CASE WHEN e.detail IS DISTINCT FROM EXCLUDED.detail THEN 'open' ELSE e.status END,
        resolved_by = CASE WHEN e.detail IS DISTINCT FROM EXCLUDED.detail THEN NULL ELSE e.resolved_by END,
        resolution = CASE WHEN e.detail IS DISTINCT FROM EXCLUDED.detail THEN NULL ELSE e.resolution END,

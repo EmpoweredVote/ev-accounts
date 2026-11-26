@@ -45,15 +45,16 @@ export function formatReport(weeks: WeekRow[], open: OpenRow[], now: Date = new 
   return lines.join('\n');
 }
 
+/** Open exceptions per city, cause and ISO week. Dated by opened_at, which restarts when a resolved row reopens. */
+export const WEEKS_SQL = `SELECT city_scope, cause, to_char(opened_at, 'IYYY-"W"IW') AS week, count(*)::int AS n
+       FROM essentials.local_record_exceptions
+       WHERE status = 'open' AND opened_at >= date_trunc('week', now()) - interval '7 weeks'
+       GROUP BY 1, 2, 3 ORDER BY 1, 3, 2`;
+
 async function main(): Promise<void> {
   const { pool } = await import('../../src/lib/db.js');
   try {
-    const weeks = await pool.query(
-      `SELECT city_scope, cause, to_char(created_at, 'IYYY-"W"IW') AS week, count(*)::int AS n
-       FROM essentials.local_record_exceptions
-       WHERE status = 'open' AND created_at >= date_trunc('week', now()) - interval '7 weeks' -- created_at: the table has no reopened-at column
-       GROUP BY 1, 2, 3 ORDER BY 1, 3, 2`,
-    );
+    const weeks = await pool.query(WEEKS_SQL);
     const open = await pool.query(
       `SELECT city_scope, cause, subject, run_id, detail FROM essentials.local_record_exceptions
        WHERE status = 'open' ORDER BY city_scope, cause, subject`,
