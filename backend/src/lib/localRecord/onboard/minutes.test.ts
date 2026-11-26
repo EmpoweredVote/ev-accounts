@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   layoutLines,
+  minutesTextFromPdf,
   minutesSentences,
   parseMinutes,
   parseRollCallSentence,
@@ -471,5 +472,14 @@ describe('fix round 2', () => {
       '2024-01-01',
     );
     expect(p.notes).toEqual([]);
+  });
+});
+
+describe('real PDF round trip (2026-10-07 Memorandum)', () => {
+  it('parses the PDF to the same result as the saved layout text', async () => {
+    const bytes = new Uint8Array(readFileSync(new URL('./__fixtures__/minutes/2026-10-07.pdf', import.meta.url)));
+    const fromPdf = parseMinutes(await minutesTextFromPdf(bytes), '2026-10-07');
+    const fromTxt = parseMinutes(load('2026-10-07'), '2026-10-07');
+    expect(fromPdf).toEqual(fromTxt);
   });
 });

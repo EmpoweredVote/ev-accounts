@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { listMinutesFiles, parseFeedTally, parseLegislationFeed } from './feed.js';
+import { listVoteDocuments, parseFeedTally, parseLegislationFeed } from './feed.js';
+import { EXCEPTION_CAUSES } from '../types.js';
 
 const load = (name: string): unknown =>
   JSON.parse(readFileSync(new URL(`./__fixtures__/${name}`, import.meta.url), 'utf8'));
@@ -75,10 +76,10 @@ describe('parseLegislationFeed edge cases', () => {
   });
 });
 
-describe('listMinutesFiles', () => {
-  const files = listMinutesFiles(load('meetings-2026.json'));
+describe('listVoteDocuments', () => {
+  const files = listVoteDocuments(load('meetings-2026.json'));
 
-  it('returns only Minutes files with https download urls', () => {
+  it('returns Minutes and Memorandum files with https download urls', () => {
     expect(files.length).toBeGreaterThan(0);
     for (const f of files) {
       expect(f.url.startsWith('https://')).toBe(true);
@@ -87,19 +88,38 @@ describe('listMinutesFiles', () => {
     expect(files.find((f) => f.fileId === 17742)).toMatchObject({
       meetingId: 11960,
       meetingDate: '2026-08-05',
+      kind: 'minutes',
     });
+    expect(files.find((f) => f.fileId === 17565)).toMatchObject({
+      meetingId: 11969,
+      meetingDate: '2026-10-07',
+      kind: 'memorandum',
+    });
+    expect(new Set(files.map((f) => f.kind))).toEqual(new Set(['minutes', 'memorandum']));
+  });
+
+  it('skips Memorandum files of meetings that are not council sessions (interview committees)', () => {
+    expect(files.find((f) => f.fileId === 17753)).toBeUndefined();
   });
 
   it('skips meetings that are not Common Council sessions', () => {
-    const out = listMinutesFiles({
+    const out = listVoteDocuments({
       '2026-01-01': {
         '18:00:00': [
           { id: 1, title: 'Plan Commission', files: { Minutes: [{ id: 9, type: 'Minutes', url: 'https://x/9', updated: 'u' }] } },
+          { id: 4, title: 'Plan Commission', files: { Memorandum: [{ id: 7, type: 'Memorandum', url: 'https://x/7', updated: 'u' }] } },
           { id: 2, title: 'Common Council Regular Session', files: [] },
           { id: 3, title: 'Common Council Regular Session', files: { Agenda: [{ id: 8, type: 'Agenda', url: 'https://x/8', updated: 'u' }] } },
         ],
       },
     });
     expect(out).toEqual([]);
+  });
+});
+
+describe('EXCEPTION_CAUSES', () => {
+  it('has 13 causes including minutes_disagree', () => {
+    expect(EXCEPTION_CAUSES).toHaveLength(13);
+    expect(EXCEPTION_CAUSES).toContain('minutes_disagree');
   });
 });

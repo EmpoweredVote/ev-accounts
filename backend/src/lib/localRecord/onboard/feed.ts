@@ -61,10 +61,26 @@ export function parseLegislationFeed(json: unknown, base: string): FeedItem[] {
   return items;
 }
 
-export function listMinutesFiles(
-  json: unknown,
-): { meetingId: number; meetingDate: string; fileId: number; url: string; updated: string }[] {
-  const out: { meetingId: number; meetingDate: string; fileId: number; url: string; updated: string }[] = [];
+/** A council session's vote record: the clerk's Memorandum (posted within days) or the formal Minutes (months later). */
+export type VoteDocumentKind = 'memorandum' | 'minutes';
+
+export interface VoteDocument {
+  meetingId: number;
+  meetingDate: string;
+  fileId: number;
+  url: string;
+  updated: string;
+  kind: VoteDocumentKind;
+}
+
+const DOCUMENT_TYPES: Record<string, VoteDocumentKind> = { Memorandum: 'memorandum', Minutes: 'minutes' };
+
+/**
+ * Memorandum and Minutes files of Common Council Session meetings. The Memorandum confirms votes first; the Minutes
+ * are read again when they appear, and they govern.
+ */
+export function listVoteDocuments(json: unknown): VoteDocument[] {
+  const out: VoteDocument[] = [];
   if (!isObj(json)) return out;
   for (const [meetingDate, times] of Object.entries(json)) {
     if (!isObj(times)) continue;
@@ -74,17 +90,21 @@ export function listMinutesFiles(
         if (!isObj(meeting)) continue;
         const title = String(meeting.title ?? '');
         if (!title.includes('Common Council') || !title.includes('Session')) continue;
-        const minutes = isObj(meeting.files) ? meeting.files.Minutes : undefined;
-        if (!Array.isArray(minutes)) continue;
-        for (const f of minutes) {
-          if (!isObj(f) || f.type !== 'Minutes') continue;
-          out.push({
-            meetingId: Number(meeting.id),
-            meetingDate,
-            fileId: Number(f.id),
-            url: String(f.url),
-            updated: String(f.updated),
-          });
+        if (!isObj(meeting.files)) continue;
+        for (const [type, kind] of Object.entries(DOCUMENT_TYPES)) {
+          const files = meeting.files[type];
+          if (!Array.isArray(files)) continue;
+          for (const f of files) {
+            if (!isObj(f) || f.type !== type) continue;
+            out.push({
+              meetingId: Number(meeting.id),
+              meetingDate,
+              fileId: Number(f.id),
+              url: String(f.url),
+              updated: String(f.updated),
+              kind,
+            });
+          }
         }
       }
     }

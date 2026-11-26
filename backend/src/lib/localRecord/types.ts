@@ -105,6 +105,8 @@ export const EXCEPTION_CAUSES = [
   'unparsed_roll_call',
   'inventory_disagrees',
   'spot_check_failed',
+  // Formal Minutes disagree with a vote already confirmed from the Memorandum.
+  'minutes_disagree',
 ] as const;
 
 export type ExceptionCause = (typeof EXCEPTION_CAUSES)[number];
