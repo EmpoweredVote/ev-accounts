@@ -6,7 +6,11 @@ import type { VoteDocumentKind } from './onboard/feed.js';
 
 export type Queryable = Pick<PoolClient, 'query'>;
 
-/** Production: `supabaseAdmin.storage.from('local-record-sources')` (a private bucket). Tests: an in-memory stub. */
+/**
+ * Production: `supabaseAdmin.storage.from('local-record-sources')` (a private bucket), wrapped so that upload passes
+ * `{ upsert: true }`. Paths are content-addressed, so the same bytes can be uploaded twice (a second URL, or a retry
+ * after a failed insert): `upload` MUST tolerate overwriting an existing object. Tests: an in-memory stub.
+ */
 export interface StorageLike {
   upload(path: string, bytes: Uint8Array, contentType: string): Promise<void>;
 }
@@ -41,13 +45,24 @@ export async function saveDocument(
   doc: { city: CityScope; kind: SavedDocumentKind; url: string; cityFileId: string | null; bytes: Uint8Array },
 ): Promise<{ id: string; sha256: string; isNew: boolean }> {
   const sha256 = sha256Hex(doc.bytes);
-  const FIND = `SELECT id FROM essentials.local_record_source_documents WHERE source_url = $1 AND sha256 = $2`;
+  const FIND = `SELECT id, superseded_by FROM essentials.local_record_source_documents WHERE source_url = $1 AND sha256 = $2`;
+  // One statement on every path: $1 becomes the only current row of this URL, every other row points at it.
+  // This also repairs a URL left with two current rows by an interrupted run.
+  const MAKE_CURRENT = `UPDATE essentials.local_record_source_documents
+     SET superseded_by = CASE WHEN id = $1::uuid THEN NULL ELSE $1::uuid END
+     WHERE source_url = $2 AND superseded_by IS DISTINCT FROM (CASE WHEN id = $1::uuid THEN NULL ELSE $1::uuid END)`;
 
   const found = await db.query(FIND, [doc.url, sha256]);
-  if (found.rows.length) return { id: found.rows[0].id, sha256, isNew: false };
+  if (found.rows.length) {
+    const id: string = found.rows[0].id;
+    // Not current means the file went back to an older copy: that is a change the caller must read.
+    const wasCurrent = found.rows[0].superseded_by == null;
+    await db.query(MAKE_CURRENT, [id, doc.url]);
+    return { id, sha256, isNew: !wasCurrent };
+  }
 
   const { ext, contentType } = TYPES[doc.kind];
-  const storagePath = `${doc.city}/${doc.kind}/${sha256}.${ext}`;
+  const storagePath = `${doc.city.replace(/[^A-Za-z0-9._-]+/g, '-')}/${doc.kind}/${sha256}.${ext}`;
   await storage.upload(storagePath, doc.bytes, contentType);
 
   const ins = await db.query(
@@ -58,16 +73,16 @@ export async function saveDocument(
      RETURNING id`,
     [doc.city, doc.kind, doc.url, doc.cityFileId, sha256, storagePath],
   );
-  if (!ins.rows.length) {
+  let id: string;
+  let isNew = true;
+  if (ins.rows.length) {
+    id = ins.rows[0].id;
+  } else {
     // Another run saved the same copy first.
     const again = await db.query(FIND, [doc.url, sha256]);
-    return { id: again.rows[0].id, sha256, isNew: false };
+    id = again.rows[0].id;
+    isNew = again.rows[0].superseded_by != null;
   }
-  const id: string = ins.rows[0].id;
-  await db.query(
-    `UPDATE essentials.local_record_source_documents SET superseded_by = $1
-     WHERE source_url = $2 AND id <> $1 AND superseded_by IS NULL`,
-    [id, doc.url],
-  );
-  return { id, sha256, isNew: true };
+  await db.query(MAKE_CURRENT, [id, doc.url]);
+  return { id, sha256, isNew };
 }

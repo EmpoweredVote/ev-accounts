@@ -12,7 +12,7 @@ function fakeDb() {
       sql.push(text);
       if (/^\s*SELECT id/i.test(text)) {
         const r = rows.find((x) => x.source_url === params[0] && x.sha256 === params[1]);
-        return { rows: r ? [{ id: r.id }] : [] };
+        return { rows: r ? [{ id: r.id, superseded_by: r.superseded_by }] : [] };
       }
       if (/^\s*INSERT INTO essentials.local_record_source_documents/i.test(text)) {
         const [, , url, , sha] = params as string[];
@@ -22,8 +22,9 @@ function fakeDb() {
         return { rows: [{ id }] };
       }
       if (/^\s*UPDATE essentials.local_record_source_documents/i.test(text)) {
-        const [newId, url] = params as string[];
-        for (const r of rows) if (r.source_url === url && r.id !== newId && !r.superseded_by) r.superseded_by = newId;
+        // Makes $1 the one current row of $2 and points every other row of that URL at it.
+        const [id, url] = params as string[];
+        for (const r of rows) if (r.source_url === url) r.superseded_by = r.id === id ? null : id;
         return { rows: [] };
       }
       throw new Error(`unexpected SQL: ${text}`);
@@ -33,12 +34,14 @@ function fakeDb() {
 
 function fakeStorage() {
   const files = new Map<string, Uint8Array>();
+  const uploads: string[] = [];
   const storage: StorageLike = {
     async upload(path, bytes) {
+      uploads.push(path);
       files.set(path, bytes);
     },
   };
-  return { files, storage };
+  return { files, storage, uploads };
 }
 
 const enc = (s: string) => new TextEncoder().encode(s);
@@ -69,7 +72,7 @@ describe('saveDocument', () => {
     expect(b.isNew).toBe(false);
     expect(b.id).toBe(a.id);
     expect(db.rows).toHaveLength(1);
-    expect([...files.keys()]).toEqual([`place:1/minutes/${a.sha256}.pdf`]);
+    expect([...files.keys()]).toEqual([`place-1/minutes/${a.sha256}.pdf`]);
   });
 
   it('supersedes the old row when the same URL has new bytes', async () => {
@@ -88,6 +91,56 @@ describe('saveDocument', () => {
     const { storage, files } = fakeStorage();
     const m = await saveDocument(db, storage, { ...base, kind: 'memorandum', url: 'https://x/2', bytes: enc('m') });
     const t = await saveDocument(db, storage, { ...base, kind: 'item_text', url: 'https://x/3', bytes: enc('t') });
-    expect([...files.keys()]).toEqual([`place:1/memorandum/${m.sha256}.pdf`, `place:1/item_text/${t.sha256}.txt`]);
+    expect([...files.keys()]).toEqual([`place-1/memorandum/${m.sha256}.pdf`, `place-1/item_text/${t.sha256}.txt`]);
+  });
+
+  const current = (db: any, url: string) => db.rows.filter((r: any) => r.source_url === url && !r.superseded_by);
+
+  it('saves identical bytes found at two URLs', async () => {
+    const db = fakeDb();
+    const { storage, uploads } = fakeStorage();
+    const a = await saveDocument(db, storage, { ...base, bytes: enc('same') });
+    const b = await saveDocument(db, storage, { ...base, url: 'https://x/other', bytes: enc('same') });
+    expect(a.isNew).toBe(true);
+    expect(b.isNew).toBe(true);
+    expect(b.id).not.toBe(a.id);
+    expect(uploads).toHaveLength(2); // the same object is written again, so storage must tolerate overwrite
+    expect(uploads[0]).toBe(uploads[1]);
+  });
+
+  it('A then B then A makes A current again and B superseded', async () => {
+    const db = fakeDb();
+    const { storage } = fakeStorage();
+    const a = await saveDocument(db, storage, { ...base, bytes: enc('A') });
+    const b = await saveDocument(db, storage, { ...base, bytes: enc('B') });
+    const a2 = await saveDocument(db, storage, { ...base, bytes: enc('A') });
+    expect(a2.id).toBe(a.id);
+    expect(a2.isNew).toBe(true); // the file changed back, so the caller must read it again
+    expect(current(db, base.url).map((r: any) => r.id)).toEqual([a.id]);
+    expect(db.rows.find((r: any) => r.id === b.id).superseded_by).toBe(a.id);
+  });
+
+  it('A then B then C leaves only C current', async () => {
+    const db = fakeDb();
+    const { storage } = fakeStorage();
+    await saveDocument(db, storage, { ...base, bytes: enc('A') });
+    await saveDocument(db, storage, { ...base, bytes: enc('B') });
+    const c = await saveDocument(db, storage, { ...base, bytes: enc('C') });
+    expect(current(db, base.url).map((r: any) => r.id)).toEqual([c.id]);
+    expect(db.rows.filter((r: any) => r.superseded_by === c.id)).toHaveLength(2);
+  });
+
+  it('repairs a URL left with two current rows when the same bytes arrive again', async () => {
+    const db = fakeDb();
+    const { storage } = fakeStorage();
+    const a = await saveDocument(db, storage, { ...base, bytes: enc('A') });
+    await saveDocument(db, storage, { ...base, bytes: enc('B') });
+    // Simulate a crash between insert and supersede: both rows current.
+    for (const r of db.rows) r.superseded_by = null;
+    const again = await saveDocument(db, storage, { ...base, bytes: enc('B') });
+    expect(again.isNew).toBe(false);
+    expect(current(db, base.url)).toHaveLength(1);
+    expect(current(db, base.url)[0].id).toBe(again.id);
+    expect(a.id).not.toBe(again.id);
   });
 });

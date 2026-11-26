@@ -52,7 +52,7 @@ export async function writeFeed(
          passed_at = EXCLUDED.passed_at, url = EXCLUDED.url
        RETURNING id`,
       [
-        sessionId, `onboard-${item.feedId}`, city, item.itemNumber, item.title, item.synopsis, item.status,
+        sessionId, `onboard-${item.feedId}`, city, item.itemNumber, item.title, item.synopsis ?? '', item.status,
         item.final?.outcome === 'passed' ? item.final.date : null, item.pageUrl,
       ],
     );
@@ -69,7 +69,10 @@ export async function writeFeed(
          ON CONFLICT (city_scope, external_vote_id) DO UPDATE SET
            outcome = EXCLUDED.outcome, yes_count = EXCLUDED.yes_count, no_count = EXCLUDED.no_count,
            abstain_count = EXCLUDED.abstain_count, meeting_date = EXCLUDED.meeting_date, updated_at = now()
-         WHERE r.state = 'pending_minutes'`,
+         WHERE r.state = 'pending_minutes'
+           AND (r.outcome, r.yes_count, r.no_count, r.abstain_count, r.meeting_date)
+               IS DISTINCT FROM (EXCLUDED.outcome, EXCLUDED.yes_count, EXCLUDED.no_count, EXCLUDED.abstain_count,
+                                 EXCLUDED.meeting_date)`,
         [
           city, bill.rows[0].id, externalVoteId(city, item.final.date, item.itemNumber, question),
           item.final.date, question, item.final.outcome, t?.yes ?? null, t?.no ?? null, t?.abstain ?? null,
@@ -96,19 +99,31 @@ export async function writeConfirmed(
   voteDocId: string,
 ): Promise<void> {
   const xid = externalVoteId(city, meetingDate, rc.itemNumber, rc.question);
+  // The upsert returns nothing when the row is already identical (no updated_at bump), so read the id back.
   const roll = await db.query(
-    `INSERT INTO essentials.legislative_roll_calls AS r
-       (id, city_scope, bill_id, external_vote_id, meeting_date, question, question_order, outcome,
-        yes_count, no_count, abstain_count, not_present_count, state, confirmed_from, feed_disagreement)
-     VALUES (gen_random_uuid(), $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, 'confirmed', $12, $13)
-     ON CONFLICT (city_scope, external_vote_id) DO UPDATE SET
-       bill_id = EXCLUDED.bill_id, meeting_date = EXCLUDED.meeting_date, question = EXCLUDED.question,
-       question_order = EXCLUDED.question_order, outcome = EXCLUDED.outcome, yes_count = EXCLUDED.yes_count,
-       no_count = EXCLUDED.no_count, abstain_count = EXCLUDED.abstain_count,
-       not_present_count = EXCLUDED.not_present_count, state = 'confirmed',
-       confirmed_from = EXCLUDED.confirmed_from, feed_disagreement = EXCLUDED.feed_disagreement,
-       updated_at = now()
-     RETURNING id`,
+    `WITH up AS (
+       INSERT INTO essentials.legislative_roll_calls AS r
+         (id, city_scope, bill_id, external_vote_id, meeting_date, question, question_order, outcome,
+          yes_count, no_count, abstain_count, not_present_count, state, confirmed_from, feed_disagreement)
+       VALUES (gen_random_uuid(), $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, 'confirmed', $12, $13)
+       ON CONFLICT (city_scope, external_vote_id) DO UPDATE SET
+         bill_id = EXCLUDED.bill_id, meeting_date = EXCLUDED.meeting_date, question = EXCLUDED.question,
+         question_order = EXCLUDED.question_order, outcome = EXCLUDED.outcome, yes_count = EXCLUDED.yes_count,
+         no_count = EXCLUDED.no_count, abstain_count = EXCLUDED.abstain_count,
+         not_present_count = EXCLUDED.not_present_count, state = 'confirmed',
+         confirmed_from = EXCLUDED.confirmed_from, feed_disagreement = EXCLUDED.feed_disagreement,
+         updated_at = now()
+       WHERE (r.bill_id, r.meeting_date, r.question, r.question_order, r.outcome, r.yes_count, r.no_count,
+              r.abstain_count, r.not_present_count, r.state, r.confirmed_from, r.feed_disagreement)
+             IS DISTINCT FROM
+             (EXCLUDED.bill_id, EXCLUDED.meeting_date, EXCLUDED.question, EXCLUDED.question_order,
+              EXCLUDED.outcome, EXCLUDED.yes_count, EXCLUDED.no_count, EXCLUDED.abstain_count,
+              EXCLUDED.not_present_count, EXCLUDED.state, EXCLUDED.confirmed_from, EXCLUDED.feed_disagreement)
+       RETURNING id)
+     SELECT id FROM up
+     UNION ALL
+     SELECT id FROM essentials.legislative_roll_calls WHERE city_scope = $1 AND external_vote_id = $3
+     LIMIT 1`,
     [
       city, billId, xid, meetingDate, rc.question, rc.index, rc.outcome, rc.tally.yes, rc.tally.no,
       rc.tally.abstain, result.votes.filter((v) => v.position === 'absent').length, voteDocId,
@@ -120,8 +135,7 @@ export async function writeConfirmed(
   const rows = result.votes.map((v) => ({
     politicianId: v.politicianId, position: v.position, nameAsPrinted: v.nameAsPrinted, workedOut: v.workedOut,
   }));
-  if (!rows.length) return;
-  await db.query(
+  if (rows.length) await db.query(
     `INSERT INTO essentials.legislative_votes
        (id, politician_id, bill_id, session_id, external_vote_id, vote_question, position, vote_date, result,
         yea_count, nay_count, source, roll_call_id, name_as_printed, worked_out, confirmed_from)
@@ -140,6 +154,12 @@ export async function writeConfirmed(
       billId, xid, rc.question, meetingDate, rc.outcome, rc.tally.yes, rc.tally.no, rollCallId, voteDocId,
       JSON.stringify(rows),
     ],
+  );
+
+  // The latest vote document governs: drop votes of this roll call that it no longer contains.
+  await db.query(
+    `DELETE FROM essentials.legislative_votes WHERE roll_call_id = $1::uuid AND politician_id <> ALL($2::uuid[])`,
+    [rollCallId, rows.map((r) => r.politicianId)],
   );
 }
 
@@ -165,6 +185,6 @@ export async function recordException(
        resolved_by = CASE WHEN e.detail IS DISTINCT FROM EXCLUDED.detail THEN NULL ELSE e.resolved_by END,
        resolution = CASE WHEN e.detail IS DISTINCT FROM EXCLUDED.detail THEN NULL ELSE e.resolution END,
        detail = EXCLUDED.detail`,
-    [city, runId, cause, subject, JSON.stringify(detail)],
+    [city, runId, cause, subject, JSON.stringify(detail ?? {})],
   );
 }
