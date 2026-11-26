@@ -12,17 +12,29 @@ export interface OpenRow { city_scope: string; cause: string; subject: string; r
 
 const pad = (s: string, w: number) => s.padEnd(w);
 
-export function formatReport(weeks: WeekRow[], open: OpenRow[]): string {
+/** ISO week label ('2026-W48') of a date. */
+export function isoWeek(d: Date): string {
+  const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  t.setUTCDate(t.getUTCDate() + 4 - (t.getUTCDay() || 7));
+  const year = t.getUTCFullYear();
+  const week = Math.ceil(((t.getTime() - Date.UTC(year, 0, 1)) / 86_400_000 + 1) / 7);
+  return `${year}-W${String(week).padStart(2, '0')}`;
+}
+
+/** The last 8 ISO weeks ending with the week of `now`, oldest first. */
+export const lastWeeks = (now: Date): string[] =>
+  Array.from({ length: 8 }, (_, i) => isoWeek(new Date(now.getTime() - (7 - i) * 7 * 86_400_000)));
+
+export function formatReport(weeks: WeekRow[], open: OpenRow[], now: Date = new Date()): string {
   const cities = [...new Set([...weeks.map((r) => r.city_scope), ...open.map((r) => r.city_scope)])].sort();
   if (!cities.length) return 'No open exceptions.\n';
   const lines: string[] = [];
   for (const city of cities) {
     lines.push(`${city}`, '', 'Open exceptions by cause and ISO week (last 8 weeks):');
     const mine = weeks.filter((r) => r.city_scope === city);
-    if (!mine.length) lines.push('  none');
-    for (const week of [...new Set(mine.map((r) => r.week))].sort()) {
+    for (const week of lastWeeks(now)) {
       const parts = mine.filter((r) => r.week === week).sort((a, b) => (a.cause < b.cause ? -1 : 1)).map((r) => `${r.cause} ${r.n}`);
-      lines.push(`  ${pad(week, 9)} ${parts.join(', ')}`);
+      lines.push(`  ${pad(week, 9)} ${parts.length ? parts.join(', ') : 'none'}`);
     }
     lines.push('', 'Open list:');
     const list = open.filter((r) => r.city_scope === city);
@@ -39,7 +51,7 @@ async function main(): Promise<void> {
     const weeks = await pool.query(
       `SELECT city_scope, cause, to_char(created_at, 'IYYY-"W"IW') AS week, count(*)::int AS n
        FROM essentials.local_record_exceptions
-       WHERE status = 'open' AND created_at >= date_trunc('week', now()) - interval '7 weeks'
+       WHERE status = 'open' AND created_at >= date_trunc('week', now()) - interval '7 weeks' -- created_at: the table has no reopened-at column
        GROUP BY 1, 2, 3 ORDER BY 1, 3, 2`,
     );
     const open = await pool.query(

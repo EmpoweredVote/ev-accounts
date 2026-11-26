@@ -4,7 +4,7 @@ import { checkRollCall } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
 import { parseLegislationFeed } from './onboard/feed.js';
 import { parseMinutes } from './onboard/minutes.js';
-import { makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
+import { loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
 import { externalVoteId } from './store.js';
 
 const fx = (f: string) => new URL(`./onboard/__fixtures__/${f}`, import.meta.url);
@@ -34,6 +34,7 @@ const terms: TermSpan[] = roster.map(([id]) => ({ politicianId: id, start: '2024
 
 const city = (over: Partial<CityConfig> = {}): CityConfig => ({
   scope: 'place:1805860', slug: 'bloomington-in', reader: 'onboard', base: 'https://bloomington.in.gov', committeeId: 1,
+  chamberSlug: 'bloomington-common-council',
   trust: { file: 'TRUST.md', sha256: 'x', date: '2026-11-25' }, enabled: true, ...over,
 });
 
@@ -58,6 +59,7 @@ function stubDb(handlers: Handler[] = []) {
     [/SELECT DISTINCT source_url/, () => []],
     [/FROM essentials\.legislative_roll_calls r\s+LEFT JOIN/, () => []],
     [/SELECT detail FROM essentials\.local_record_exceptions/, () => []],
+    [/SELECT subject FROM essentials\.local_record_exceptions/, () => []],
     [/SELECT id FROM essentials\.legislative_bills/, () => [{ id: 'bill1' }]],
     [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => []],
     [/INSERT INTO essentials\.local_record_source_documents/, () => [{ id: 'doc-new' }]],
@@ -302,5 +304,82 @@ describe('makeStorage (production adapter)', () => {
   it('throws when the upload reports an error', async () => {
     const client = { storage: { from: () => ({ upload: async () => ({ error: { message: 'nope' } }) }) } };
     await expect(makeStorage(client).upload('p', new Uint8Array(), 'application/pdf')).rejects.toThrow(/nope/);
+  });
+});
+
+describe('loadCouncilTerms', () => {
+  it('selects council offices by chamber slug, with the configured slug as a parameter', async () => {
+    const db = stubDb([[/office_terms/, () => [{ politician_id: 'p1', start: '2024-01-02', end: null }]]]);
+    const out = await loadCouncilTerms(db, city());
+    const q = db.calls[0];
+    expect(q.text).toMatch(/JOIN essentials\.chambers ch ON ch\.id = o\.chamber_id/);
+    expect(q.text).toMatch(/ch\.slug = \$1/);
+    expect(q.text).not.toMatch(/geo_id/);
+    expect(q.params).toEqual(['bloomington-common-council']);
+    expect(out).toEqual([{ politicianId: 'p1', start: '2024-01-02', end: null }]);
+  });
+});
+
+describe('fix round 1', () => {
+  const known = (): Handler[] => [
+    [/SELECT DISTINCT source_url/, () => [{ source_url: MEMO_URL }]],
+    [/SELECT DISTINCT to_char\(meeting_date/, () => [{ d: DATE, state: 'pending_minutes' }]],
+    [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => [{ id: 'doc-memo', superseded_by: null }]],
+  ];
+
+  it('a meeting with an open file_changed exception stays blocked on later runs: nothing fetched or written', async () => {
+    const db = stubDb([
+      [/SELECT subject FROM essentials\.local_record_exceptions/, () => [{ subject: `${DATE} ${MEMO_URL}` }]],
+      ...known(),
+    ]);
+    let fetched = 0;
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, { fetchBytes: async () => { fetched++; return memoPdf; } }));
+    expect(fetched).toBe(0);
+    expect(summary.cities[0].rollCallsConfirmed).toBe(0);
+    expect(sql(db, /INTO essentials\.legislative_votes/)).toHaveLength(0);
+    expect(sql(db, /INTO essentials\.local_record_exceptions/)).toHaveLength(0);
+  });
+
+  const controlRows = (): Handler[] => [
+    [/SELECT DISTINCT to_char\(r\.meeting_date.*local_record_source_documents d/s, () => [{ meeting_date: DATE, doc_id: 'doc-memo', storage_path: 'p.pdf' }]],
+    [/FROM essentials\.legislative_roll_calls r\s+LEFT JOIN/, () => [storedRow('Ord 2026-28')]],
+  ];
+  const controlFailure = async (over: Partial<RefreshDeps>, expectIn: string) => {
+    const db = stubDb(controlRows());
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, over));
+    expect(summary.cities[0].exceptions.control_failed).toBe(1);
+    expect(verbs(db)).toEqual(['BEGIN', 'ROLLBACK', 'BEGIN', 'COMMIT']);
+    const exc = sql(db, /INTO essentials\.local_record_exceptions/)[0];
+    expect(exc.params[2]).toBe('control_failed');
+    expect(String(exc.params[4])).toContain(expectIn);
+    expect(sql(db, /INTO essentials\.legislative_bills/)).toHaveLength(0);
+  };
+  it('a failed download of the saved copy is a control_failed, not a city error', async () => {
+    const storage = { ...stubStorage(), async download(): Promise<Uint8Array> { throw new Error('bucket unreachable'); } };
+    await controlFailure({ storage }, 'bucket unreachable');
+  });
+  it('a parser error in the control is a control_failed, not a city error', async () => {
+    await controlFailure({ pdfText: async () => { throw new Error('parser exploded'); } }, 'parser exploded');
+  });
+
+  it('a failed connection fails that city alone; the others still run', async () => {
+    const calm = stubDb();
+    let n = 0;
+    const d = deps(calm, {
+      loadCities: () => [city(), city({ scope: 'place:2', slug: 'second-city' })],
+      connect: async () => { if (n++ === 0) throw new Error('pool down'); return calm; },
+    });
+    await expect(runLocalRecordRefresh({ dryRun: false, now: NOW }, d)).rejects.toThrow(/place:1805860: pool down/);
+    expect(verbs(calm)).toEqual(['BEGIN', 'COMMIT']);
+  });
+
+  it('a dry run saves nothing to storage; a real run does', async () => {
+    const run = async (dryRun: boolean) => {
+      const storage = stubStorage();
+      await runLocalRecordRefresh({ dryRun, now: NOW }, deps(stubDb(), { storage }));
+      return storage.uploads.length;
+    };
+    expect(await run(true)).toBe(0);
+    expect(await run(false)).toBeGreaterThan(0);
   });
 });

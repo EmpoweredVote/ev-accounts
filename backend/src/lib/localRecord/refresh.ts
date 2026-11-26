@@ -15,6 +15,8 @@ export interface CityConfig {
   slug: string;
   reader: string;
   base: string;
+  /** chambers.slug of the council; its offices are read for terms. */
+  chamberSlug: string;
   committeeId: number;
   trust: { file: string; sha256: string; date: string };
   /** Flips to true only in the go-live PR. */
@@ -90,18 +92,20 @@ async function fetchBytes(url: string): Promise<Uint8Array> {
   return new Uint8Array(await res.arrayBuffer());
 }
 
-/** Terms of the people in the names file, from office_terms. Isolated here: the one query that reads who held a seat. */
-async function loadCouncilTerms(db: Queryable, city: CityConfig): Promise<TermSpan[]> {
-  const geoId = city.scope.replace(/^place:/, '');
+/**
+ * Council terms from office_terms, found by the council's chamber (the six district seats do not sit on the
+ * place's own geo_id). Isolated here: the one query that reads who held a seat.
+ */
+export async function loadCouncilTerms(db: Queryable, city: CityConfig): Promise<TermSpan[]> {
   const r = await db.query(
     `SELECT ot.politician_id,
             to_char(ot.term_start, 'YYYY-MM-DD') AS start,
             to_char(ot.term_end, 'YYYY-MM-DD') AS "end"
      FROM essentials.office_terms ot
      JOIN essentials.offices o ON o.id = ot.office_id
-     JOIN essentials.districts d ON d.id = o.district_id
-     WHERE d.geo_id = $1 AND ot.term_start IS NOT NULL`,
-    [geoId],
+     JOIN essentials.chambers ch ON ch.id = o.chamber_id
+     WHERE ch.slug = $1 AND ot.term_start IS NOT NULL`,
+    [city.chamberSlug],
   );
   return r.rows.map((x: any) => ({ politicianId: x.politician_id, start: x.start, end: x.end ?? null }));
 }
@@ -243,7 +247,13 @@ async function control(
   const date: string = pick.meeting_date;
   const subject = `control ${date} ${pick.doc_id}`;
   const stored = await storedRollCalls(db, `r.confirmed_from = $2::uuid AND r.state = 'confirmed'`, [city.scope, pick.doc_id]);
-  const parse = parseMinutes(await deps.pdfText(await deps.storage.download(pick.storage_path)), date);
+  let parse: MinutesParse;
+  try {
+    parse = parseMinutes(await deps.pdfText(await deps.storage.download(pick.storage_path)), date);
+  } catch (e) {
+    // A saved copy that cannot be read or parsed is a failed control, not a failed run.
+    return { subject, detail: { document: pick.doc_id, error: (e as Error).message } };
+  }
   const ctx = buildContext(names, terms, items, date);
   const problems: string[] = [];
   for (const s of stored.values()) {
@@ -303,10 +313,20 @@ async function runCity(
       .rows.map((r: any) => r.source_url),
   );
 
+  // A replaced file stays blocked until a person resolves its file_changed exception: the new copy is current
+  // after one run, so without this the next run would read and write it unreviewed.
+  const blocked = (
+    await db.query(
+      `SELECT subject FROM essentials.local_record_exceptions WHERE city_scope = $1 AND cause = 'file_changed' AND status = 'open'`,
+      [city.scope],
+    )
+  ).rows.map((r: any) => String(r.subject));
+
   const governing = governingDocuments(docs);
   const parsedByDate = new Map<string, MinutesParse[]>();
   for (const doc of governing) {
     const d = doc.meetingDate;
+    if (blocked.some((subj) => subj.startsWith(`${d} `))) continue;
     const isKnown = known.has(doc.url);
     // New files always; known files while the meeting still has pending votes (a fixed names file can now pass)
     // and for recent confirmed meetings (re-fetch to notice a replaced file).
@@ -348,10 +368,13 @@ async function runCity(
         await raise(res.cause, subject, { detail: res.detail, url: doc.url });
         continue;
       }
-      const bill = await db.query(
-        `SELECT id FROM essentials.legislative_bills WHERE external_id = $1 AND jurisdiction = $2`,
-        [`onboard-${items.find((i) => i.itemNumber === rc.itemNumber)?.feedId}`, city.scope],
-      );
+      const feedItem = items.find((i) => i.itemNumber === rc.itemNumber);
+      const bill = feedItem
+        ? await db.query(
+            `SELECT id FROM essentials.legislative_bills WHERE external_id = $1 AND jurisdiction = $2`,
+            [`onboard-${feedItem.feedId}`, city.scope],
+          )
+        : { rows: [] };
       if (!bill.rows.length) {
         await raise('unknown_item', subject, { detail: `${rc.itemNumber} has no bill row`, url: doc.url });
         continue;
@@ -388,7 +411,9 @@ export async function runLocalRecordRefresh(
   opts: { dryRun: boolean; now?: Date },
   deps?: RefreshDeps,
 ): Promise<RunSummary> {
-  const d = deps ?? (await productionDeps());
+  const real = deps ?? (await productionDeps());
+  // A dry run writes nothing anywhere, the private bucket included; downloads still work.
+  const d: RefreshDeps = opts.dryRun ? { ...real, storage: { ...real.storage, upload: async () => undefined, download: (p) => real.storage.download(p) } } : real;
   const now = opts.now ?? new Date();
   const runId = `local-record-${now.toISOString()}`;
   const summary: RunSummary = { runId, cities: [] };
@@ -397,12 +422,14 @@ export async function runLocalRecordRefresh(
   for (const city of d.loadCities()) {
     if (!city.enabled) continue;
     if (city.reader !== 'onboard') { failures.push(`${city.scope}: unknown reader "${city.reader}"`); continue; }
-    const conn = await d.connect();
+    let conn: Connection | undefined;
     try {
+      conn = await d.connect();
       await conn.query('BEGIN');
       const run = await runCity(conn, city, runId, now, d);
       if (run.controlFailed) {
         await conn.query('ROLLBACK');
+        // Always new: the rolled-back city wrote nothing, so a control failure must fail the job every time it happens.
         run.exceptions.control_failed++;
         if (!opts.dryRun) {
           // The exception must survive the rollback of the city's work.
@@ -418,10 +445,10 @@ export async function runLocalRecordRefresh(
         votesWritten: run.votesWritten, exceptions: run.exceptions,
       });
     } catch (e) {
-      await conn.query('ROLLBACK').catch(() => undefined);
+      await conn?.query('ROLLBACK').catch(() => undefined);
       failures.push(`${city.scope}: ${(e as Error).message}`);
     } finally {
-      conn.release();
+      conn?.release();
     }
   }
   if (failures.length) throw new Error(`local-record failed for ${failures.join('; ')}`);
