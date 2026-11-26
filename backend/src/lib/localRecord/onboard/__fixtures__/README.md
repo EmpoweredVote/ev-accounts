@@ -12,3 +12,6 @@ Fetched 2026-11-26.
   OnBoard meeting file 17565, https://bloomington.in.gov/onboard/meetingFiles/17565/download), verbatim, 101,711 bytes.
   It is a Memorandum, not formal Minutes; `2026-10-07.txt` is the layout text of the same document. The test
   checks that parsing the PDF gives the same result as parsing the text.
+- `minutes/2023-04-19-page3.runs.json`: the positioned text runs (`extractPdfItems`) of page 3 of the 2023-04-19 Regular
+  Session minutes (OnBoard meeting file 12969, https://bloomington.in.gov/onboard/meetingFiles/12969/download),
+  verbatim. The margin heading "Vote to adopt" starts 2.8 character widths after the body text ends.

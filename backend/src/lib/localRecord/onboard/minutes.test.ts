@@ -565,3 +565,22 @@ describe('R11: a vote the minutes say overrode the veto', () => {
     expect(p.rollCalls.map((r) => r.question)).toEqual(['Final passage']);
   });
 });
+
+describe('R1: two-column layout keeps the margin column apart by the physical gap', () => {
+  const runs = JSON.parse(readFileSync(new URL('./__fixtures__/minutes/2023-04-19-page3.runs.json', import.meta.url), 'utf8'));
+
+  it('the margin heading beside "Ayes: 9, Nays:" is margin, not part of the vote sentence (2023-04-19, file 12969)', () => {
+    const lines = layoutLines(runs);
+    const line = lines.find((l) => l.includes('Ordinance 23-05 received a roll call vote of Ayes: 9, Nays:'))!;
+    expect(line).toMatch(/Nays: {3,}Vote to adopt$/);
+    expect(stripMargin(lines.join('\n'))).not.toMatch(/Nays: Vote to adopt/);
+  });
+
+  it('runs a normal word space apart still join with one space', () => {
+    const line = layoutLines([
+      { page: 1, x: 50, y: 700, w: 100, str: 'The motion received', dir: 0 },
+      { page: 1, x: 152.5, y: 700, w: 60, str: 'a roll call', dir: 0 },
+    ])[0];
+    expect(line).toBe('The motion received a roll call');
+  });
+});

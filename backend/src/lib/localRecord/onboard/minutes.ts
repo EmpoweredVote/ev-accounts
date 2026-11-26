@@ -645,6 +645,7 @@ const median = (xs: number[]): number => {
 
 /**
  * Rebuild layout text (one printed line per line, columns kept apart by spaces) from positioned PDF text runs.
+ * A run more than two character widths after the previous run's end is a new column (three spaces or more).
  * Sideways runs are dropped. A vertical gap wider than 1.6 line spacings starts a new paragraph (blank line).
  */
 export function layoutLines(items: PdfTextItem[]): string[] {
@@ -668,9 +669,12 @@ export function layoutLines(items: PdfTextItem[]): string[] {
       let line = '';
       let end = -Infinity;
       for (const r of row.runs.sort((a, b) => a.x - b.x)) {
-        const touching = Math.abs(r.x - end) < 0.5;
+        const gap = r.x - end;
         const col = Math.round((r.x - minX) / cw);
-        if (touching) line += r.str;
+        if (Math.abs(gap) < 0.5) line += r.str;
+        // A gap of more than two character widths is a column gutter: at least three spaces, so the margin column
+        // is kept apart even when wide body text has run past its estimated column.
+        else if (line.length && gap > 2 * cw) line = line.padEnd(Math.max(col, line.length + 3)) + r.str;
         else line = line.padEnd(Math.max(col, line.length ? line.length + 1 : 0)) + r.str;
         end = r.x + r.w;
       }
