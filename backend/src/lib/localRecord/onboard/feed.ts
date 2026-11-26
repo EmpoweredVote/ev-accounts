@@ -32,12 +32,19 @@ export function parseLegislationFeed(json: unknown, base: string): FeedItem[] {
       : undefined;
     let final: FeedItem['final'] = null;
     if (finalAction) {
-      const tally = parseFeedTally(String(finalAction.vote ?? ''));
-      if (tally) {
-        const outcome =
-          status === 'Vetoed' ? 'vetoed' : finalAction.outcome === 'pass' ? 'passed' : 'failed';
-        final = { date: String(finalAction.date), outcome, tally };
-      }
+      let outcome: 'passed' | 'failed' | 'vetoed';
+      if (status === 'Vetoed') outcome = 'vetoed';
+      else if (finalAction.outcome === 'pass') outcome = 'passed';
+      else if (finalAction.outcome === 'fail') outcome = 'failed';
+      else
+        throw new Error(
+          `Unknown Final outcome "${String(finalAction.outcome)}" for legislation feed id ${raw.id}`,
+        );
+      final = {
+        date: String(finalAction.date),
+        outcome,
+        tally: parseFeedTally(String(finalAction.vote ?? '')),
+      };
     }
     items.push({
       feedId: Number(raw.id),

@@ -71,10 +71,11 @@ export interface FeedItem {
   title: string;
   synopsis: string | null;
   status: string;
+  /** null = the feed has no Final action; tally null = Final exists but its counts could not be read. */
   final: {
     date: string;
     outcome: 'passed' | 'failed' | 'vetoed';
-    tally: PrintedTally;
+    tally: PrintedTally | null;
   } | null;
   pageUrl: string;
 }

@@ -59,6 +59,22 @@ describe('parseLegislationFeed', () => {
   });
 });
 
+describe('parseLegislationFeed edge cases', () => {
+  const mk = (outcome: string, vote: string) => [
+    { id: 77, type: 'Ordinance', number: '2026-99', year: 2026, status: 'Adopted', title: 't', synopsis: null,
+      actions: [{ name: 'Final', date: '2026-02-02', outcome, vote }], files: [] },
+  ];
+
+  it('keeps date and outcome when the vote text cannot be read', () => {
+    const [item] = parseLegislationFeed(mk('pass', 'voice vote'), BASE);
+    expect(item.final).toEqual({ date: '2026-02-02', outcome: 'passed', tally: null });
+  });
+
+  it('throws on an unknown outcome, naming the feed id and value', () => {
+    expect(() => parseLegislationFeed(mk('tabled', '5-4'), BASE)).toThrow(/77.*tabled/);
+  });
+});
+
 describe('listMinutesFiles', () => {
   const files = listMinutesFiles(load('meetings-2026.json'));
 
