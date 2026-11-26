@@ -46,9 +46,9 @@
 --   - office_terms.term_start on 10 existing rows: the old value is NULL, except Daily's, which is 2024-03-01 at
 --     month precision (see above). The pre-flight refuses any other value that has day precision, and each UPDATE
 --     is guarded on term_start IS NULL OR start_precision <> 'day', so only those two kinds can be overwritten.
---     Each row's source records "(was <old start> (<old precision> precision))".
+--     Each row's source records "start was <old start or NULL>, precision '<old>'".
 --   - office_terms.start_precision on the same rows: the old value is written into that row's own `source`, which
---     is extended (never replaced): "<old source> | CA_PENDING bcc: dated ... (start_precision was '<old>')".
+--     is extended (never replaced): "<old source> | CA_PENDING bcc: dated ... (start was <old start or NULL>, precision '<old>')" on the 10 current terms.
 --
 -- NOT DONE HERE:
 --   - legislative_politician_id_map rows (id_type 'onboard'): the saved seat pages carry seat ids only, no OnBoard
@@ -284,7 +284,7 @@ END $$;
 
 -- ▼▼ BLOCK A — PASTE BEFORE YOUR FIRST WRITE TO essentials.office_terms ▼▼
 
--- @incumbency-decision: gated — dates the 9 current members' undated terms and Rana's, and inserts 7 closed 2020-2023 terms on the 9 council seats; the gate checks every race row these 15 people have
+-- @incumbency-decision: gated — dates the 9 current members' undated terms (and replaces Daily's month-precision start) and Rana's, and inserts 7 closed 2020-2023 terms on the 9 council seats; the gate checks every race row these 15 people have
 
 -- Snapshot what the cached column says, and what office_terms says, for every race row belonging to
 -- a person this migration touches. `expected` is reconcile-incumbency.mjs's own SQL.
@@ -320,9 +320,8 @@ UPDATE essentials.office_terms ot
    SET term_start      = pl.term_start,
        start_precision = 'day',
        source          = ot.source || ' | CA_PENDING bcc: dated ' || pl.term_start || ' per ' || s.seat_url
-                         || ' (city OnBoard seat page, saved 2026-11-25); start_precision was '''
-                         || ot.start_precision || ''' (was ' || coalesce(ot.term_start::text, 'NULL')
-                         || ' (' || ot.start_precision || ' precision))'
+                         || ' (city OnBoard seat page, saved 2026-11-25); start was '
+                         || coalesce(ot.term_start::text, 'NULL') || ', precision ''' || ot.start_precision || ''''
   FROM bcc_plan pl
   JOIN bcc_seat s    ON s.seat_code = pl.seat_code
   JOIN bcc_anchor a  ON a.seat_code = pl.seat_code AND a.key = pl.key

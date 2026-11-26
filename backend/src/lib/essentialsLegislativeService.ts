@@ -516,12 +516,21 @@ interface CouncilTerm {
 
 /** The cities that have a council record, from the same file the weekly job reads. */
 let councilCitiesCache: CouncilCity[] | null = null;
+/** A city without seatPositionName would match no office (NULL), so it fails loudly instead. */
+export function parseCouncilCities(raw: unknown): CouncilCity[] {
+  return (raw as CouncilCity[]).map((c) => {
+    if (typeof c.seatPositionName !== 'string' || c.seatPositionName === '') {
+      throw new Error(`cities.json: city ${c.scope} has no seatPositionName`);
+    }
+    return { scope: c.scope, chamberSlug: c.chamberSlug, seatPositionName: c.seatPositionName };
+  });
+}
+
 export function loadCouncilCities(): CouncilCity[] {
   if (!councilCitiesCache) {
-    const raw = JSON.parse(
-      readFileSync(new URL('../../data/local-record/cities.json', import.meta.url), 'utf8'),
-    ) as CouncilCity[];
-    councilCitiesCache = raw.map((c) => ({ scope: c.scope, chamberSlug: c.chamberSlug, seatPositionName: c.seatPositionName }));
+    councilCitiesCache = parseCouncilCities(
+      JSON.parse(readFileSync(new URL('../../data/local-record/cities.json', import.meta.url), 'utf8')),
+    );
   }
   return councilCitiesCache;
 }

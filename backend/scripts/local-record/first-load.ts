@@ -17,7 +17,7 @@ import { normaliseName, type NameFile, type TermSpan } from '../../src/lib/local
 import { parseMinutes, minutesTextFromPdf, twoDigits } from '../../src/lib/localRecord/onboard/minutes.js';
 import { fetchJson, type VoteDocument } from '../../src/lib/localRecord/onboard/feed.js';
 import {
-  buildContext, fetchBytes, governingDocuments, makeStorage, readFeeds, type CityConfig, type Connection,
+  buildContext, fetchBytes, governingDocuments, makeStorage, parseCityConfigs, readFeeds, type CityConfig, type Connection,
   type RefreshDeps,
 } from '../../src/lib/localRecord/refresh.js';
 import { externalVoteId, saveDocument, sha256Hex, type StorageLike } from '../../src/lib/localRecord/store.js';
@@ -511,7 +511,7 @@ async function productionDeps(apply: boolean): Promise<FirstLoadDeps> {
   const data = (p: string) => new URL(`../../data/local-record/${p}`, import.meta.url);
   const deps: FirstLoadDeps = {
     fetchJson, fetchBytes, pdfText: minutesTextFromPdf,
-    loadCities: () => JSON.parse(readFileSync(data('cities.json'), 'utf8')),
+    loadCities: () => parseCityConfigs(JSON.parse(readFileSync(data('cities.json'), 'utf8'))),
     loadNames: (c) => JSON.parse(readFileSync(data(`${c.slug}/names.json`), 'utf8')),
   };
   if (!apply) return deps; // a dry run never imports the database or storage modules

@@ -158,19 +158,19 @@ BEGIN
     RAISE EXCEPTION 'CA_PENDING d5: % reference(s) still point at the deleted office', v_n;
   END IF;
 
-  -- KEEP holds exactly the two terms, Rana's closed one and Daily's open one, and they do not overlap.
-  SELECT count(*) INTO v_n FROM essentials.office_terms WHERE office_id = v_keep;
-  IF v_n <> 2 THEN
-    RAISE EXCEPTION 'CA_PENDING d5: expected exactly 2 terms on the kept office, found %', v_n;
+  -- KEEP holds Rana's closed term and Daily's term, and those two do not overlap. NOT a total count: the
+  -- people-and-terms file later adds more terms to this office, and a re-run of this file must still pass.
+  IF NOT EXISTS (SELECT 1 FROM essentials.office_terms
+                  WHERE office_id = v_keep AND politician_id = v_rana AND term_end = DATE '2024-02-07') THEN
+    RAISE EXCEPTION 'CA_PENDING d5: Rana''s closed term is not on the kept office';
   END IF;
-  SELECT count(*) INTO v_n FROM essentials.office_terms
-   WHERE office_id = v_keep AND politician_id IN (v_rana, v_daily);
-  IF v_n <> 2 THEN
-    RAISE EXCEPTION 'CA_PENDING d5: the kept office''s two terms are not Rana''s and Daily''s';
+  IF NOT EXISTS (SELECT 1 FROM essentials.office_terms
+                  WHERE office_id = v_keep AND politician_id = v_daily AND term_end IS NULL) THEN
+    RAISE EXCEPTION 'CA_PENDING d5: Daily''s open term is not on the kept office';
   END IF;
   SELECT count(*) INTO v_n
     FROM essentials.office_terms a JOIN essentials.office_terms b ON a.office_id = b.office_id AND a.id < b.id
-   WHERE a.office_id = v_keep
+   WHERE a.office_id = v_keep AND a.politician_id IN (v_rana, v_daily) AND b.politician_id IN (v_rana, v_daily)
      AND daterange(coalesce(a.term_start, '-infinity'), coalesce(a.term_end, 'infinity'), '[]')
       && daterange(coalesce(b.term_start, '-infinity'), coalesce(b.term_end, 'infinity'), '[]');
   IF v_n <> 0 THEN

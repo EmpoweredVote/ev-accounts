@@ -20,7 +20,7 @@ vi.mock('../middleware/auth.js', () => ({
 }));
 
 import router from '../routes/essentialsPoliticians.js';
-import { getCouncilRecordByPolitician } from './essentialsLegislativeService.js';
+import { getCouncilRecordByPolitician, parseCouncilCities } from './essentialsLegislativeService.js';
 
 const app = express();
 app.use('/api/essentials/politicians', router);
@@ -51,6 +51,15 @@ const roll = (o: Record<string, unknown>) => ({
 
 beforeEach(() => {
   mockQuery.mockReset();
+});
+
+describe('parseCouncilCities', () => {
+  it('keeps scope, chamberSlug and seatPositionName', () => {
+    expect(parseCouncilCities([{ ...CITY, enabled: false }])).toEqual([CITY]);
+  });
+  it('throws a clear error when a city lacks seatPositionName', () => {
+    expect(() => parseCouncilCities([{ scope: 'place:x', chamberSlug: 'x-council' }])).toThrow(/place:x.*seatPositionName/);
+  });
 });
 
 describe('getCouncilRecordByPolitician', () => {

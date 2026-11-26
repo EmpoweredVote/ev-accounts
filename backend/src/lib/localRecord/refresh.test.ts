@@ -4,7 +4,7 @@ import { checkRollCall } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
 import { parseLegislationFeed } from './onboard/feed.js';
 import { parseMinutes } from './onboard/minutes.js';
-import { loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
+import { parseCityConfigs, loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
 import { externalVoteId } from './store.js';
 
 const fx = (f: string) => new URL(`./onboard/__fixtures__/${f}`, import.meta.url);
@@ -311,6 +311,16 @@ describe('makeStorage (production adapter)', () => {
   it('throws when the upload reports an error', async () => {
     const client = { storage: { from: () => ({ upload: async () => ({ error: { message: 'nope' } }) }) } };
     await expect(makeStorage(client).upload('p', new Uint8Array(), 'application/pdf')).rejects.toThrow(/nope/);
+  });
+});
+
+describe('parseCityConfigs', () => {
+  it('returns entries that carry seatPositionName', () => {
+    expect(parseCityConfigs([city()])).toEqual([city()]);
+  });
+  it('throws a clear error when a city lacks seatPositionName', () => {
+    const { seatPositionName: _s, ...bad } = city();
+    expect(() => parseCityConfigs([bad])).toThrow(/bloomington-in.*seatPositionName/);
   });
 });
 

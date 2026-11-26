@@ -25,6 +25,17 @@ export interface CityConfig {
   enabled: boolean;
 }
 
+/** The cities file, checked: a city without seatPositionName would match no office (NULL), so it fails loudly. */
+export function parseCityConfigs(raw: unknown): CityConfig[] {
+  const list = raw as CityConfig[];
+  for (const c of list) {
+    if (typeof c.seatPositionName !== 'string' || c.seatPositionName === '') {
+      throw new Error(`cities.json: city ${c.slug ?? c.scope} has no seatPositionName`);
+    }
+  }
+  return list;
+}
+
 export interface RunSummary {
   runId: string;
   cities: {
@@ -127,7 +138,7 @@ export async function productionDeps(): Promise<RefreshDeps> {
     fetchBytes,
     pdfText: minutesTextFromPdf,
     loadCities: () =>
-      JSON.parse(readFileSync(new URL('../../../data/local-record/cities.json', import.meta.url), 'utf8')),
+      parseCityConfigs(JSON.parse(readFileSync(new URL('../../../data/local-record/cities.json', import.meta.url), 'utf8'))),
     loadNames: (city) =>
       JSON.parse(readFileSync(new URL(`../../../data/local-record/${city.slug}/names.json`, import.meta.url), 'utf8')),
     loadTerms: loadCouncilTerms,

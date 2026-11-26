@@ -159,7 +159,9 @@ describe('Bloomington people-and-terms file', () => {
     const c = code(PEOPLE);
     expect(c).toMatch(/ot\.term_start <> pl\.term_start\s+AND ot\.start_precision = 'day'/);
     expect(c).toMatch(/\(ot\.term_start IS NULL OR ot\.start_precision <> 'day'\)/);
-    expect(c).toMatch(/\(was ' \|\| coalesce\(ot\.term_start::text, 'NULL'\)/);
+    expect(c).toMatch(/start was '\s*\|\| coalesce\(ot\.term_start::text, 'NULL'\) \|\| ', precision ''' \|\| ot\.start_precision/);
+    // The old precision is stated once in that source text, not twice.
+    expect(c).not.toMatch(/start_precision was '''\s*\|\|\s*ot\.start_precision \|\| ''' \(was/);
   });
 });
 
@@ -185,6 +187,13 @@ describe('Bloomington District 5 office merge', () => {
     for (const id of ['48d59066-51aa-4fca-9e92-edecfaeb4388', 'c59ebfa0-e6a2-4e9c-ba1c-db97f79c58d1', 'cd647e3c-e2d6-40a0-b8db-b9dfbe6f597d'])
       expect(s).toContain(id);
     expect(s).not.toMatch(/SET[^;]*is_vacant/i);
+  });
+  it('post-verify never gates a total term count on KEEP (the people file later adds a third term there)', () => {
+    const post = c().slice(c().lastIndexOf('DO $$'));
+    expect(post).not.toMatch(/count\(\*\) INTO v_n FROM essentials\.office_terms WHERE office_id = v_keep;/);
+    expect(post).not.toMatch(/expected exactly 2 terms/);
+    expect(post).toMatch(/office_id = v_keep AND politician_id = v_rana/);
+    expect(post).toMatch(/office_id = v_keep AND politician_id = v_daily/);
   });
   it('creates no table or view, so it owes no RLS or grants', () => {
     expect(c()).not.toMatch(/create\s+(table|view)/i);
