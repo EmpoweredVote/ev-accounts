@@ -29,11 +29,12 @@ const PID = '11111111-1111-4111-8111-111111111111';
 const CITY = { scope: 'place:test', chamberSlug: 'test-council' };
 const TODAY = '2026-06-01';
 
-type Data = { terms?: any[]; voted?: any[]; pending?: any[] };
+type Data = { terms?: any[]; voted?: any[]; pending?: any[]; confirmed?: any[] };
 function answer(d: Data) {
   mockQuery.mockImplementation(async (sql: string) => {
     if (sql.includes('office_terms')) return { rows: d.terms ?? [] };
     if (sql.includes('legislative_votes')) return { rows: d.voted ?? [] };
+    if (sql.includes("state = 'confirmed'") && !sql.includes('legislative_votes')) return { rows: d.confirmed ?? [] };
     if (sql.includes("'pending_minutes'")) return { rows: d.pending ?? [] };
     throw new Error('unexpected query: ' + sql.slice(0, 60));
   });
@@ -184,12 +185,44 @@ describe('GET /api/essentials/politicians/:id/council-record', () => {
   });
 });
 
+describe('fix round 2', () => {
+  it('hides pending when a confirmed roll call exists for that bill and date even with no vote row for the member', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      confirmed: [{ city_scope: 'place:test', bill_id: 'b1', meeting_date: '2026-03-01' }],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out).toEqual({ total: 0, items: [] });
+  });
+
+  it('a confirmed roll call in another city scope does not hide the pending one', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      confirmed: [{ city_scope: 'place:other', bill_id: 'b1', meeting_date: '2026-03-01' }],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items).toHaveLength(1);
+  });
+
+  it('negative offset starts at the first item', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      voted: [1, 2, 3].map((n) => roll({ roll_call_id: `r${n}`, bill_id: `b${n}`, number: `Ord ${n}`, meeting_date: `2026-0${n}-01` })),
+    });
+    const res = await request(app).get(`/api/essentials/politicians/${PID}/council-record?offset=-1&limit=2`);
+    expect(res.body.items.map((i: any) => i.number)).toEqual(['Ord 3', 'Ord 2']);
+  });
+});
+
 describe('fix round 1', () => {
   it('drops a pending roll call when a confirmed one exists for the same bill and meeting date', async () => {
     answer({
       terms: [term('Seat A', '2024-01-01', null)],
       voted: [roll({ roll_call_id: 'r1', bill_id: 'b1', meeting_date: '2026-03-01' })],
       pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      confirmed: [{ city_scope: 'place:test', bill_id: 'b1', meeting_date: '2026-03-01' }],
     });
     const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
     expect(out.items[0].pending).toBeNull();

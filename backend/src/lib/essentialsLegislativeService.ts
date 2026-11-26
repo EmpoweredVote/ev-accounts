@@ -609,6 +609,20 @@ export async function getCouncilRecordByPolitician(
       ).rows
     : [];
 
+  // Confirmed roll calls in the member's city scopes, whether or not this member has a vote row on them.
+  const confirmedKeys = new Set<string>(
+    pendingRows.length
+      ? (
+          await pool.query(
+            `SELECT DISTINCT r.city_scope, r.bill_id, to_char(r.meeting_date, 'YYYY-MM-DD') AS meeting_date
+             FROM essentials.legislative_roll_calls r
+             WHERE r.state = 'confirmed' AND r.city_scope = ANY($1::text[]) AND r.bill_id = ANY($2::uuid[])`,
+            [scopes, [...new Set(pendingRows.map((r: any) => r.bill_id))]],
+          )
+        ).rows.map((r: any) => `${r.city_scope}|${r.bill_id}|${r.meeting_date}`)
+      : [],
+  );
+
   const items = new Map<string, CouncilRecordItem & { latest: string }>();
   const itemFor = (row: any) => {
     let it = items.get(row.bill_id);
@@ -624,11 +638,9 @@ export async function getCouncilRecordByPolitician(
   };
 
   const currentSeat = seatOn(terms, today);
-  const confirmedOn = new Set<string>();
   for (const row of voted) {
     // A vote must name the document it was confirmed from (Memorandum or Minutes); never guess a source.
     if ((row.source_kind !== 'memorandum' && row.source_kind !== 'minutes') || !row.minutes_url) continue;
-    confirmedOn.add(`${row.bill_id}|${row.meeting_date}`);
     const seat = seatOn(terms, row.meeting_date);
     itemFor(row).votes.push({
       roll_call_id: row.roll_call_id,
@@ -654,7 +666,7 @@ export async function getCouncilRecordByPolitician(
     // inside the member's term regardless of attendance.
     if (!slug || !inAnyTerm(terms, row.meeting_date, slug)) continue;
     // A confirmed roll call for the same bill and meeting supersedes the pending one.
-    if (confirmedOn.has(`${row.bill_id}|${row.meeting_date}`)) continue;
+    if (confirmedKeys.has(`${row.city_scope}|${row.bill_id}|${row.meeting_date}`)) continue;
     const it = itemFor(row);
     if (!it.pending || row.meeting_date > it.pending.meeting_date) {
       it.pending = {
