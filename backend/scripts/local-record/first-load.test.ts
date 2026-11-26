@@ -5,8 +5,8 @@ import { describe, expect, it } from 'vitest';
 import type { NameFile } from '../../src/lib/localRecord/names.js';
 import type { CityConfig } from '../../src/lib/localRecord/refresh.js';
 import {
-  compareWithInventory, drawSpotCheck, flagDuplicates, idForSurname, parseInventoryId, runFirstLoad, type FirstLoadDeps, type InventoryItem,
-  type ReaderRollCall,
+  compareWithInventory, drawSpotCheck, flagDuplicates, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
+  type InventoryItem, type ReaderRollCall,
 } from './first-load.js';
 
 const fx = (f: string) => new URL(`./__fixtures__/${f}`, import.meta.url);
@@ -252,6 +252,19 @@ describe('runFirstLoad: dry run', () => {
     expect(readFileSync(path.join(s.out, 'summary.md'), 'utf8')).toMatch(/inventory_disagrees: 4/);
   });
 
+  it('writes every exception it found to exceptions.json, matching the summary counts', async () => {
+    const s = setup({ inventory: invFull });
+    await runFirstLoad(base(s, { seed: 7 }), deps());
+    const ex = JSON.parse(readFileSync(path.join(s.out, 'exceptions.json'), 'utf8'));
+    expect(Array.isArray(ex.exceptions)).toBe(true);
+    for (const e of ex.exceptions) expect(Object.keys(e).sort()).toEqual(['cause', 'detail', 'subject']);
+    const summary = readFileSync(path.join(s.out, 'summary.md'), 'utf8');
+    const counts: Record<string, number> = {};
+    for (const e of ex.exceptions) counts[e.cause] = (counts[e.cause] ?? 0) + 1;
+    for (const [cause, n] of Object.entries(counts)) expect(summary).toContain(`- ${cause}: ${n}`);
+    expect(counts.inventory_disagrees).toBe(4);
+  });
+
   it('keeps filled-in verdicts when the same draw is made again', async () => {
     const s = setup({ inventory: { items: [] } });
     await runFirstLoad(base(s, { seed: 7 }), deps());
@@ -263,6 +276,38 @@ describe('runFirstLoad: dry run', () => {
     const again = JSON.parse(readFileSync(p, 'utf8'));
     expect(again.seed).toBe(7);
     expect(again.picks[0].verdict).toBe('match');
+  });
+});
+
+describe('withDownloadCache', () => {
+  it('downloads each URL once and reuses the saved copy on the next run', async () => {
+    const dir = path.join(mkdtempSync(path.join(tmpdir(), 'first-load-cache-')), 'cache');
+    let bytesCalls = 0;
+    let jsonCalls = 0;
+    const raw = deps({
+      fetchBytes: async (u) => { bytesCalls++; return new TextEncoder().encode(`pdf of ${u}`); },
+      fetchJson: async (u) => { jsonCalls++; return { u }; },
+    });
+    const a = withDownloadCache(raw, dir);
+    expect(new TextDecoder().decode(await a.fetchBytes('https://x/a.pdf'))).toBe('pdf of https://x/a.pdf');
+    expect(await a.fetchJson('https://x/m?year=2021;format=json')).toEqual({ u: 'https://x/m?year=2021;format=json' });
+    // A second wrapper over the same folder (a re-run) reads from disk.
+    const b = withDownloadCache(raw, dir);
+    expect(new TextDecoder().decode(await b.fetchBytes('https://x/a.pdf'))).toBe('pdf of https://x/a.pdf');
+    expect(await b.fetchJson('https://x/m?year=2021;format=json')).toEqual({ u: 'https://x/m?year=2021;format=json' });
+    await b.fetchBytes('https://x/b.pdf');
+    expect(bytesCalls).toBe(2);
+    expect(jsonCalls).toBe(1);
+  });
+
+  it('does not save a failed download', async () => {
+    const dir = mkdtempSync(path.join(tmpdir(), 'first-load-cache-'));
+    let n = 0;
+    const raw = deps({ fetchBytes: async () => { n++; if (n === 1) throw new Error('GET failed: 503'); return new Uint8Array([1]); } });
+    const c = withDownloadCache(raw, dir);
+    await expect(c.fetchBytes('https://x/a.pdf')).rejects.toThrow(/503/);
+    expect(await c.fetchBytes('https://x/a.pdf')).toEqual(new Uint8Array([1]));
+    expect(n).toBe(2);
   });
 });
 

@@ -2,13 +2,14 @@
  * first-load.ts — read every vote document of a city since 2020-12-01, compare with the hand-built inventory, draw
  * spot checks, and (only with --apply) write to the database and storage.
  *
- *   npm run local-record:first-load --prefix backend -- --city place:1805860 --inventory <abs dir> --out <abs dir> [--seed N] [--apply]
+ *   npm run local-record:first-load --prefix backend -- --city place:1805860 --inventory <abs dir> --out <abs dir> [--seed N] [--cache <abs dir>] [--apply]
  *
- * A dry run reads the city's public site and writes four files to --out. It never opens a database or storage call.
- * Exceptions found in a dry run live in the --out files only; --apply is the one path that writes anything.
+ * A dry run reads the city's public site and writes five files to --out (exceptions.json lists every exception with
+ * its detail). It never opens a database or storage call. Exceptions found in a dry run live in the --out files only;
+ * --apply is the one path that writes anything. --cache keeps each download on disk, keyed by URL, and reuses it.
  */
 import 'dotenv/config';
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -229,6 +230,38 @@ const pickOf = (city: string, r: ReaderRollCall, verdict = ''): SpotCheckFile['p
   votesHash: votesHash(r), quote: r.sentence, documentUrl: r.documentUrl, verdict,
 });
 
+// ---- download cache ------------------------------------------------------------------------------------------------
+
+/**
+ * Wrap the two download functions with a folder cache keyed by the URL's hash: a URL already saved is read from disk,
+ * so a re-run downloads nothing it has. A failed download is not saved.
+ */
+export function withDownloadCache<D extends Pick<FirstLoadDeps, 'fetchJson' | 'fetchBytes'>>(deps: D, dir: string): D {
+  mkdirSync(dir, { recursive: true });
+  const file = (url: string, ext: string) => path.join(dir, `${sha256Hex(new TextEncoder().encode(url))}.${ext}`);
+  const index = path.join(dir, 'index.tsv');
+  const note = (url: string, f: string) => appendFileSync(index, `${path.basename(f)}\t${url}\n`);
+  return {
+    ...deps,
+    fetchBytes: async (url: string) => {
+      const f = file(url, 'bin');
+      if (existsSync(f)) return new Uint8Array(readFileSync(f));
+      const bytes = await deps.fetchBytes(url);
+      writeFileSync(f, bytes);
+      note(url, f);
+      return bytes;
+    },
+    fetchJson: async (url: string) => {
+      const f = file(url, 'json');
+      if (existsSync(f)) return JSON.parse(readFileSync(f, 'utf8'));
+      const json = await deps.fetchJson(url);
+      writeFileSync(f, JSON.stringify(json));
+      note(url, f);
+      return json;
+    },
+  };
+}
+
 // ---- reading the city --------------------------------------------------------------------------------------------
 
 export interface FirstLoadDeps {
@@ -421,6 +454,10 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
     writeFileSync(path.join(opts.out, 'reader-output.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, rollCalls: read.reader }, null, 1));
     writeFileSync(path.join(opts.out, 'compare.md'), compareMd(cmp));
     writeFileSync(spotPath, JSON.stringify(spot, null, 1));
+    writeFileSync(path.join(opts.out, 'exceptions.json'), JSON.stringify({
+      city: city.scope, from: WINDOW_START,
+      exceptions: all.map((e) => ({ cause: e.cause, subject: e.subject, detail: e.detail })),
+    }, null, 1));
     const summaryPath = path.join(opts.out, 'summary.md');
     writeFileSync(summaryPath, summaryMd(read, cmp, spot, all, pending));
     return { summaryPath };
@@ -531,14 +568,17 @@ async function main(): Promise<void> {
   const { values } = parseArgs({
     options: {
       city: { type: 'string' }, inventory: { type: 'string' }, out: { type: 'string' },
-      seed: { type: 'string' }, apply: { type: 'boolean', default: false },
+      seed: { type: 'string' }, cache: { type: 'string' }, apply: { type: 'boolean', default: false },
     },
   });
   if (!values.city || !values.inventory || !values.out) throw new Error('Needs --city, --inventory <abs dir> and --out <abs dir>');
-  for (const p of [values.inventory, values.out]) if (!path.isAbsolute(p)) throw new Error(`${p} must be an absolute path`);
+  for (const p of [values.inventory, values.out, ...(values.cache ? [values.cache] : [])]) {
+    if (!path.isAbsolute(p)) throw new Error(`${p} must be an absolute path`);
+  }
+  const deps = await productionDeps(!!values.apply);
   const result = await runFirstLoad(
     { city: values.city, inventory: values.inventory, out: values.out, apply: !!values.apply, seed: values.seed ? Number(values.seed) : undefined },
-    await productionDeps(!!values.apply),
+    values.cache ? withDownloadCache(deps, values.cache) : deps,
   );
   if (result.refused) {
     console.error(`Refused:\n${result.refused.map((r) => `- ${r}`).join('\n')}`);
