@@ -540,3 +540,28 @@ describe('R8: the meeting date printed in the document header', () => {
     expect(printedMeetingDate('MEMORANDUM\nCommon Council\n')).toBeNull();
   });
 });
+
+describe('R11: a vote the minutes say overrode the veto', () => {
+  // 2024-04-17 minutes (file 13902), the two-column layout with the margin column kept apart.
+  const text = [
+    'Councilmembers present: Isak Nti Asare, Courtney Daily, Matt Flaherty,',
+    'Isabel Piedmont-Smith, Dave Rollo, Kate Rosenbarger, Andy Ruff, Hopi Stosberg',
+    'Councilmembers absent: Sydney Zulich',
+    '',
+    'The motion to adopt Resolution 2024-04 received a roll call vote of     Vote to adopt Resolution 2024-04',
+    'Ayes: 7, Nays: 0, Abstain: 1 (Rosenbarger). Piedmont-Smith noted         [7:31pm]',
+    'that the vote overrode the veto from Mayor Thomson.',
+    '',
+  ].join('\n');
+
+  it('is a passed Veto override, not a second Final passage', () => {
+    const p = parseMinutes(text, '2024-04-17');
+    expect(p.rollCalls.map((r) => [r.itemNumber, r.question, r.outcome])).toEqual([['Res 2024-04', 'Veto override', 'passed']]);
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('without that sentence it stays an "adopt" (Final passage), for the cross-meeting check to judge', () => {
+    const p = parseMinutes(text.replace(' Piedmont-Smith noted', '').replace('that the vote overrode the veto from Mayor Thomson.', ''), '2024-04-17');
+    expect(p.rollCalls.map((r) => r.question)).toEqual(['Final passage']);
+  });
+});

@@ -222,6 +222,11 @@ export function checkRollCall(rc: MinutesRollCall, parse: MinutesParse, ctx: Che
   let feedDisagreement: string | null = null;
   if (rc.question === 'Final passage') {
     const final = ctx.feed.get(rc.itemNumber)?.final ?? null;
+    // An item that passed at an earlier meeting is not passed again: a later "adopt" is a veto override or a
+    // re-vote the minutes do not name. It is held for a person, never stored as a second Final passage.
+    if (final && final.date < date && final.outcome !== 'failed') {
+      return fail('outcome_conflict', `${label}: ${rc.itemNumber} already passed on ${final.date}; a later "adopt" is not a second Final passage`);
+    }
     // A Final action from another meeting is not this vote: no comparison.
     if (final && final.date === date) {
       // A vetoed item passed the council; the veto came after.

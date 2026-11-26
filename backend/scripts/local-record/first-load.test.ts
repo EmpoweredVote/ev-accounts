@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { NameFile } from '../../src/lib/localRecord/names.js';
 import type { CityConfig } from '../../src/lib/localRecord/refresh.js';
 import {
-  compareWithInventory, drawSpotCheck, flagDuplicates, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
+  compareWithInventory, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
   type InventoryItem, type ReaderRollCall,
 } from './first-load.js';
 
@@ -447,5 +447,18 @@ describe('R8: a document with no text (the scanned 2020-12-16 minutes, file 9806
       cause: 'unparsed_roll_call', subject: `${DATE} document 17565`,
       detail: expect.objectContaining({ kind: 'the document has no text (a scanned image)' }),
     }));
+  });
+});
+
+describe('R11: two passed Final passages of one item on different dates', () => {
+  it('the later one is held as an exception', () => {
+    const mk = (date: string): ReaderRollCall => ({
+      index: 0, date, itemNumber: 'Res 2024-04', question: 'Final passage', status: 'confirmed', outcome: 'passed',
+      tally: { yes: 7, no: 0, abstain: 1 }, sentence: 's', documentUrl: 'u', votes: [],
+    });
+    const out = flagRepeatedFinals([mk('2024-03-27'), mk('2024-04-17')]);
+    expect(out.reader.map((r) => r.status)).toEqual(['confirmed', 'failed']);
+    expect(out.reader[1]).toMatchObject({ cause: 'outcome_conflict' });
+    expect(out.exceptions).toHaveLength(1);
   });
 });

@@ -387,3 +387,33 @@ describe('checkRollCall', () => {
     expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: true, feedDisagreement: null });
   });
 });
+
+describe('R11: an "adopt" of an item that already passed at an earlier meeting', () => {
+  // 2024-05-01 minutes: Res 2024-08 passed on 2024-04-03 (the feed's Final), was vetoed, and came back.
+  const text = [
+    'Councilmembers present: Isak Nti Asare, Courtney Daily, Isabel',
+    'Piedmont-Smith, Dave Rollo, Kate Rosenbarger, Andy Ruff, Hopi',
+    'Stosberg, Sydney Zulich',
+    'Councilmembers present via Zoom: Matt Flaherty',
+    'Councilmembers absent: none',
+    '',
+    'The motion to adopt Resolution 2024-08 received a roll call vote of     Vote to adopt Resolution 2024-08',
+    'Ayes: 9, Nays: 0, Abstain: 0.                                            [7:50pm]',
+  ].join('\n');
+
+  it('is held, not stored as a second Final passage', () => {
+    const p = parseMinutes(text, '2024-05-01');
+    const rc = rcOf(p, 'Res 2024-08', 'Final passage');
+    const feed = new Map([['Res 2024-08', feedItem('Res 2024-08', { date: '2024-04-03', outcome: 'passed', tally: { yes: 9, no: 0, abstain: 0 } })]]);
+    const res = checkRollCall(rc, p, ctx(p, { feed }));
+    expect(res).toMatchObject({ ok: false, cause: 'outcome_conflict' });
+    expect(res.ok ? '' : res.detail).toMatch(/already passed on 2024-04-03/);
+  });
+
+  it('a Final passage on the feed\'s own Final date is still read', () => {
+    const p = parseMinutes(text, '2024-05-01');
+    const rc = rcOf(p, 'Res 2024-08', 'Final passage');
+    const feed = new Map([['Res 2024-08', feedItem('Res 2024-08', { date: '2024-05-01', outcome: 'passed', tally: { yes: 9, no: 0, abstain: 0 } })]]);
+    expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: true });
+  });
+});

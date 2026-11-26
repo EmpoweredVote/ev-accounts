@@ -312,6 +312,9 @@ function subjectFromMargin(margin: string): { subject: Subject; heading: string 
   return { subject: { kind: 'vote', itemNumber: `${ITEM_PREFIX[m[3]]} ${m[4]}`, question }, heading: m[0] };
 }
 
+/** A sentence right after a vote saying that it overrode the veto. */
+const OVERRODE = /\bthe vote overr?ode the (?:Mayor['’]s |mayoral )?veto\b/i;
+
 const MOVED = /^(?:[A-Z][\w.'’-]*\s){0,3}?[A-Z][\w'’-]* moved(?: and (?:it was|[A-Z][\w'’-]*(?: [A-Z][\w'’-]*)?) seconded)? (.+)$/;
 const VOTE = /^(The motion(?: to (.+?))?) received a roll call vote of (.+)$/;
 
@@ -570,6 +573,12 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         settle(null, 'context');
         unparsed.push(full);
         return;
+      }
+      // "The motion to adopt X received … . <Name> noted that the vote overrode the veto …": the minutes say this
+      // "adopt" was a veto override, and that it succeeded.
+      if (subject.question === 'Final passage' && OVERRODE.test(sentences[k + 1] ?? '')) {
+        subject = { ...subject, question: 'Veto override' };
+        if (parsed.printedResult === null && parsed.tally.yes > parsed.tally.no) parsed.printedResult = 'passed';
       }
       const outcome = rollCallOutcome(parsed, subject.question);
       if (!outcome) {

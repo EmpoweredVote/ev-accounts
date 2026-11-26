@@ -106,6 +106,28 @@ export function flagDuplicates(reader: ReaderRollCall[]): { reader: ReaderRollCa
   return { reader: out, exceptions };
 }
 
+/**
+ * An item passes once. When the reader confirms two passed Final passages of one item on different dates, the later
+ * one (a veto override or re-vote the minutes word as "adopt") is held as an exception.
+ */
+export function flagRepeatedFinals(reader: ReaderRollCall[]): { reader: ReaderRollCall[]; exceptions: FoundException[] } {
+  const first = new Map<string, string>();
+  for (const r of reader) {
+    if (r.status !== 'confirmed' || r.question !== 'Final passage' || r.outcome !== 'passed') continue;
+    const d = first.get(r.itemNumber);
+    if (!d || r.date < d) first.set(r.itemNumber, r.date);
+  }
+  const exceptions: FoundException[] = [];
+  const out = reader.map((r) => {
+    const d = first.get(r.itemNumber);
+    if (r.status !== 'confirmed' || r.question !== 'Final passage' || r.outcome !== 'passed' || !d || r.date === d) return r;
+    const detail = `${r.itemNumber} already passed on ${d}; a later "adopt" is not a second Final passage`;
+    exceptions.push({ cause: 'outcome_conflict', subject: subjectOf(r), detail: { detail, url: r.documentUrl } });
+    return { ...r, status: 'failed' as const, cause: 'outcome_conflict' as const, detail };
+  });
+  return { reader: out, exceptions };
+}
+
 // ---- comparison --------------------------------------------------------------------------------------------------
 
 export interface ItemRow { subject: string; status: 'agree' | 'differs' | 'inventory only' | 'no members to compare'; detail?: string }
@@ -354,6 +376,9 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
   read.reader = dup.reader;
   // A duplicate's own check exceptions stay; the duplicate exception is added once per key.
   read.exceptions.push(...dup.exceptions);
+  const again = flagRepeatedFinals(read.reader);
+  read.reader = again.reader;
+  read.exceptions.push(...again.exceptions);
   return read;
 }
 
