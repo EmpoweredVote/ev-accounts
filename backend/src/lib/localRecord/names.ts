@@ -4,7 +4,8 @@ import type { CityScope } from './types.js';
 
 export interface NameFile {
   city: CityScope;
-  members: { politicianId: string; onboardId: string | null; variants: string[] }[];
+  /** politicianId is null until the person's row is looked up; a null entry never resolves to anyone. */
+  members: { politicianId: string | null; onboardId: string | null; variants: string[] }[];
 }
 
 /** A span of office from `office_terms`. Dates are ISO (YYYY-MM-DD); end null = still serving. */
@@ -38,7 +39,11 @@ export function resolveName(
   if (key === '') {
     return { error: 'unknown_name', detail: `"${printed}" has no name after normalising` };
   }
-  const matched = names.members.filter((m) => m.variants.some((v) => normaliseName(v) === key));
+  // An entry without a politician id cannot name a person, so it is not a match.
+  const matched = names.members.filter(
+    (m): m is { politicianId: string; onboardId: string | null; variants: string[] } =>
+      m.politicianId !== null && m.variants.some((v) => normaliseName(v) === key),
+  );
   if (matched.length === 0) {
     return { error: 'unknown_name', detail: `no listed variant matches "${printed}"` };
   }

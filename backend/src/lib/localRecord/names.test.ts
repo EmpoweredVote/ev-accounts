@@ -55,6 +55,14 @@ describe('resolveName', () => {
   it('resolves a shared variant when only one person is seated', () => {
     expect(resolveName('Smith', '2024-05-01', names, terms)).toEqual({ politicianId: 'p-2' });
   });
+  it('is unknown_name when the only matching entry has no politician id yet, even beside a vacancy span', () => {
+    const pending: NameFile = {
+      city: 'place:1805860',
+      members: [{ politicianId: null, onboardId: null, variants: ['Pat Pending'] }],
+    };
+    const vacancy = [{ politicianId: null as unknown as string, start: '2024-01-01', end: null }];
+    expect(resolveName('Pat Pending', '2024-05-01', pending, vacancy)).toMatchObject({ error: 'unknown_name' });
+  });
   it('is unknown_name when the printed name is empty after normalising', () => {
     expect(resolveName('*', '2024-05-01', names, terms)).toMatchObject({ error: 'unknown_name' });
   });

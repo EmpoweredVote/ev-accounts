@@ -318,6 +318,11 @@ describe('loadCouncilTerms', () => {
     expect(q.params).toEqual(['bloomington-common-council']);
     expect(out).toEqual([{ politicianId: 'p1', start: '2024-01-02', end: null }]);
   });
+  it('never loads a vacancy span: only terms with a holder', async () => {
+    const db = stubDb([[/office_terms/, () => []]]);
+    await loadCouncilTerms(db, city());
+    expect(db.calls[0].text).toMatch(/ot\.politician_id IS NOT NULL/);
+  });
 });
 
 describe('fix round 1', () => {

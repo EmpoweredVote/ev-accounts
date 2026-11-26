@@ -104,7 +104,7 @@ export async function loadCouncilTerms(db: Queryable, city: CityConfig): Promise
      FROM essentials.office_terms ot
      JOIN essentials.offices o ON o.id = ot.office_id
      JOIN essentials.chambers ch ON ch.id = o.chamber_id
-     WHERE ch.slug = $1 AND ot.term_start IS NOT NULL`,
+     WHERE ch.slug = $1 AND ot.term_start IS NOT NULL AND ot.politician_id IS NOT NULL`,
     [city.chamberSlug],
   );
   return r.rows.map((x: any) => ({ politicianId: x.politician_id, start: x.start, end: x.end ?? null }));

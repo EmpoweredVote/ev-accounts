@@ -41,9 +41,16 @@
 --   - The 2024-02-08 to 2024-03-01 District V gap (Rana resigned, Daily seated 2024-03-02) is NOT written as a
 --     vacancy span. The roster gives no row for it, and an unwritten span reads as "no holder", which is true.
 --
+-- WHY NOT essentials.seat_officeholder: it finds the term covering the new start date and closes it the day before.
+--   The current members' terms are undated (open on both ends), so seating any 2020-2023 predecessor through it would
+--   close the CURRENT holder's term in 2019. It also cannot write an end date, and every new term here is closed.
+--   1464's header allows plain INSERTs into office_terms, so the closed terms are inserted directly, after the
+--   current terms are dated, and the exclusion constraint still refuses any overlap.
+--
 -- 🔴 BEFORE APPLYING: reserve a CA slot, rename this file, and replace EVERY "CA_PENDING" below with that slot
---   (the text goes into office_terms.source and politicians.source). check:office-terms-guards skips a file
---   without a numbered slot, so it only checks this one after the rename.
+--   IN ONE PASS (sed -i 's/CA_PENDING/CA_NNNN/g'). The text goes into office_terms.source and politicians.source, and
+--   the idempotency guards match 'CA_PENDING bcc:%' — a partial replace makes a re-run create duplicate people.
+--   check:office-terms-guards skips a file without a numbered slot, so it only checks this one after the rename.
 -- Slot: named CA_PENDING until a CA number is reserved. Not applied by this commit. Idempotent.
 
 BEGIN;
@@ -116,15 +123,18 @@ DECLARE v int; v_detail text;
 BEGIN
   SELECT count(*) INTO v FROM bcc_office;
   IF v <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: % offices under chamber slug bloomington-common-council, expected 9 '
-      '(a duplicate seat office, or the slug moved)', v;
+    RAISE EXCEPTION 'CA_PENDING pre-flight: found % offices under chamber slug bloomington-common-council, '
+      'expected 9 (one per seat). More than 9 most likely means a duplicate seat office, for example a second '
+      'District V row. %', v, 'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
 
   SELECT count(*), string_agg(seat_code || ' ' || full_name, ', ' ORDER BY seat_code) INTO v, v_detail FROM bcc_anchor;
   IF v <> 9 OR (SELECT count(DISTINCT key) FROM bcc_anchor) <> 9 OR (SELECT count(DISTINCT office_id) FROM bcc_anchor) <> 9
      OR (SELECT count(DISTINCT politician_id) FROM bcc_anchor) <> 9 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: expected 9 seats each held today by its one roster member on its own '
-      'office; found % match(es): %', v, coalesce(v_detail, '(none)');
+    RAISE EXCEPTION 'CA_PENDING pre-flight: expected 9 seats, each held today by its one roster member on its own '
+      'office under this chamber slug; found % match(es): %. A missing member (for example Daily) most likely holds '
+      'a duplicate seat office outside the slug. %', v, coalesce(v_detail, '(none)'),
+      'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
 
   -- Each anchor's current term must be undated (the 1459 shape) or already carry the roster date (a re-run).
@@ -148,7 +158,9 @@ BEGIN
     JOIN essentials.office_terms ot ON ot.politician_id = p.id
    WHERE lower(p.full_name) = 'shruti rana' AND ot.office_id IN (SELECT office_id FROM bcc_office);
   IF v <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: % people named Shruti Rana hold a council term, expected 1', v;
+    RAISE EXCEPTION 'CA_PENDING pre-flight: found % people named Shruti Rana holding a term on a council office, '
+      'expected 1. Zero most likely means her term sits on an office outside this chamber slug (a duplicate '
+      'District V row). %', v, 'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
   SELECT count(*) INTO v
     FROM essentials.politicians p
@@ -158,8 +170,14 @@ BEGIN
      AND ot.term_end = DATE '2024-02-07'
      AND (ot.term_start IS NULL OR ot.term_start = DATE '2024-01-02');
   IF v <> 1 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: Shruti Rana''s council term is not the expected one (District V, '
-      'Daily''s office, ending 2024-02-07, start NULL or 2024-01-02); found % matching row(s)', v;
+    SELECT string_agg(format('office %s [%s..%s]', ot.office_id, ot.term_start, ot.term_end), '; ') INTO v_detail
+      FROM essentials.politicians p JOIN essentials.office_terms ot ON ot.politician_id = p.id
+     WHERE lower(p.full_name) = 'shruti rana';
+    RAISE EXCEPTION 'CA_PENDING pre-flight: Shruti Rana''s term is not on the office Courtney Daily holds today '
+      '(office %), or it does not end 2024-02-07 with start NULL or 2024-01-02. Her terms found: %. If her term '
+      'and Daily''s sit on two different District V office rows, those rows are duplicates. %',
+      (SELECT office_id FROM bcc_anchor WHERE key = 'daily'), coalesce(v_detail, '(none)'),
+      'See backend/migrations/CLAUDE.md, "MERGING TWO OFFICE ROWS IS NOT DELETING ONE" (move the term, then delete the duplicate), before re-running.';
   END IF;
 
   -- No term on these 9 offices that this migration does not know about. An undated one would collide with every
@@ -177,12 +195,21 @@ BEGIN
     RAISE EXCEPTION 'CA_PENDING pre-flight: % unexpected term(s) on the council offices: %', v, v_detail;
   END IF;
 
-  -- Namesakes: a same-name person already tied to an office or race in Bloomington's government must be reused,
-  -- not duplicated. Stop and decide.
-  SELECT count(*), string_agg(DISTINCT n.full_name || ' (' || p.id || ')', ', ')
+  -- Namesakes. A person already tied to an office or a race in Bloomington's government, whose SURNAME matches a new
+  -- person (in last_name, at the end of full_name, or in any alternate_names entry), must be reused, not duplicated.
+  -- Surname, not full name, so a shortened first name ("Jim"/"James", "Sue"/"Susan", "Steve"/"Stephen") is still
+  -- caught. lower() on the stored columns only: there is no unaccent on prod, and these five surnames carry no accents.
+  -- Rana is not in bcc_new_person; she is reused by the Rana gates above.
+  SELECT count(DISTINCT p.id),
+         string_agg(DISTINCT format('%s -> existing %s "%s" (last_name %s, alternate_names %s)',
+                                    n.full_name, p.id, p.full_name, p.last_name, p.alternate_names), '; ')
     INTO v, v_detail
     FROM bcc_new_person n
-    JOIN essentials.politicians p ON lower(p.full_name) = lower(n.full_name)
+    JOIN essentials.politicians p
+      ON lower(coalesce(p.last_name, '')) = lower(n.last_name)
+      OR lower(p.full_name) LIKE '% ' || lower(n.last_name)
+      OR EXISTS (SELECT 1 FROM unnest(coalesce(p.alternate_names, '{}'::text[])) alt
+                  WHERE lower(alt) LIKE '% ' || lower(n.last_name) OR lower(alt) = lower(n.last_name))
    WHERE coalesce(p.source, '') NOT LIKE 'CA_PENDING bcc:%'
      AND (EXISTS (SELECT 1 FROM essentials.office_terms ot
                     JOIN essentials.offices ofc ON ofc.id = ot.office_id
@@ -196,8 +223,9 @@ BEGIN
                    WHERE rc.politician_id = p.id
                      AND ch.government_id IN (SELECT government_id FROM bcc_office)));
   IF v <> 0 THEN
-    RAISE EXCEPTION 'CA_PENDING pre-flight: a person with the same name already sits or ran in Bloomington''s '
-      'government; reuse that row instead of creating one: %', v_detail;
+    RAISE EXCEPTION 'CA_PENDING pre-flight: % existing person row(s) in Bloomington''s government share a surname '
+      'with a person this migration would create. If one is the same person, reuse that row (take it out of '
+      'bcc_new_person and add it to bcc_people by id); if not, note why here. Found: %', v, v_detail;
   END IF;
   SELECT count(*), string_agg(DISTINCT p.full_name, ', ') INTO v, v_detail
     FROM bcc_new_person n JOIN essentials.politicians p ON lower(p.full_name) = lower(n.full_name)
