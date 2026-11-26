@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS essentials.local_record_source_documents (
 
 ALTER TABLE essentials.local_record_source_documents ENABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON essentials.local_record_source_documents FROM anon, authenticated;
+REVOKE ALL ON essentials.local_record_source_documents FROM PUBLIC, anon, authenticated;
 GRANT ALL ON essentials.local_record_source_documents TO service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON essentials.local_record_source_documents TO ev_api;
 

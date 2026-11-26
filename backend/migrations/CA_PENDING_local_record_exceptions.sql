@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS essentials.local_record_exceptions (
 
 ALTER TABLE essentials.local_record_exceptions ENABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON essentials.local_record_exceptions FROM anon, authenticated;
+REVOKE ALL ON essentials.local_record_exceptions FROM PUBLIC, anon, authenticated;
 GRANT ALL ON essentials.local_record_exceptions TO service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON essentials.local_record_exceptions TO ev_api;
 

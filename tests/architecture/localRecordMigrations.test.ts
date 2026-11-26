@@ -25,10 +25,11 @@ const ROLLS = 'CA_PENDING_local_record_roll_calls.sql';
 const EXC = 'CA_PENDING_local_record_exceptions.sql';
 const VOTES = 'CA_PENDING_local_record_votes_columns.sql';
 const IDX = 'CA_PENDING_local_record_votes_roll_call_index.sql';
-const ALL = [DOCS, ROLLS, EXC, VOTES, IDX];
+const VALIDATE = 'CA_PENDING_local_record_votes_validate_fks.sql';
+const ALL = [DOCS, ROLLS, EXC, VOTES, IDX, VALIDATE];
 
 describe('council-record migrations', () => {
-  it('all five files exist', () => {
+  it('all six files exist', () => {
     for (const f of ALL) expect(fs.existsSync(path.join(MIG, f)), f).toBe(true);
   });
 
@@ -54,7 +55,7 @@ describe('council-record migrations', () => {
     const c = code(f);
     expect(c).not.toMatch(/grant[^;]*\bto\b[^;]*\b(anon|authenticated)\b/i);
     expect(c).not.toMatch(/create policy[^;]*\bto\b[^;]*\b(anon|authenticated)\b/i);
-    expect(c).toMatch(new RegExp(`revoke all on essentials\\.${table} from anon, authenticated`, 'i'));
+    expect(c).toMatch(new RegExp(`revoke all on essentials\\.${table} from public, anon, authenticated`, 'i'));
   });
 
   it('roll calls are public read only', () => {
@@ -101,8 +102,20 @@ describe('council-record migrations', () => {
     }
     expect(c).not.toMatch(/\bdefault\b/i);
     expect(c).not.toMatch(/not null/i);
-    expect(c).toMatch(/references essentials\.legislative_roll_calls\(id\)/i);
-    expect(c).toMatch(/references essentials\.local_record_source_documents\(id\)/i);
+    // No FK validation scan under ACCESS EXCLUSIVE: every REFERENCES is a NOT VALID constraint add.
+    const withRef = c.split(';').filter((st) => /\breferences\b/i.test(st));
+    expect(withRef.length).toBe(2);
+    for (const st of withRef) {
+      expect(st).toMatch(/add constraint/i);
+      expect(st).toMatch(/not valid/i);
+    }
+    expect(c).toMatch(/pg_constraint/i); // guarded, so the file is idempotent
+  });
+
+  it('validate file validates both FKs, outside the columns file', () => {
+    const c = code(VALIDATE);
+    expect((c.match(/validate constraint/gi) ?? []).length).toBe(2);
+    expect(c).not.toMatch(/add column|add constraint/i);
   });
 
   it('roll_call_id index is concurrent, idempotent and outside any transaction', () => {
