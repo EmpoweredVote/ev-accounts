@@ -35,6 +35,8 @@ const TYPES: Record<SavedDocumentKind, { ext: string; contentType: string }> = {
   item_text: { ext: 'txt', contentType: 'text/plain' },
 };
 
+const EXT_BY_TYPE: Record<string, string> = { 'text/plain': 'txt', 'application/pdf': 'pdf' };
+
 /**
  * Keep a copy of a source document. Same URL and same bytes: nothing changes. Same URL, new bytes: a new row,
  * and the old row points at it through `superseded_by`.
@@ -42,7 +44,9 @@ const TYPES: Record<SavedDocumentKind, { ext: string; contentType: string }> = {
 export async function saveDocument(
   db: Queryable,
   storage: StorageLike,
-  doc: { city: CityScope; kind: SavedDocumentKind; url: string; cityFileId: string | null; bytes: Uint8Array },
+  doc: { city: CityScope; kind: SavedDocumentKind; url: string; cityFileId: string | null; bytes: Uint8Array;
+    /** Overrides the kind's default type (e.g. 'text/plain' for a text copy of a minutes file); the extension follows. */
+    contentType?: string },
 ): Promise<{ id: string; sha256: string; isNew: boolean }> {
   const sha256 = sha256Hex(doc.bytes);
   const FIND = `SELECT id, superseded_by FROM essentials.local_record_source_documents WHERE source_url = $1 AND sha256 = $2`;
@@ -61,7 +65,8 @@ export async function saveDocument(
     return { id, sha256, isNew: !wasCurrent };
   }
 
-  const { ext, contentType } = TYPES[doc.kind];
+  const contentType = doc.contentType ?? TYPES[doc.kind].contentType;
+  const ext = doc.contentType ? (EXT_BY_TYPE[doc.contentType] ?? 'bin') : TYPES[doc.kind].ext;
   const storagePath = `${doc.city.replace(/[^A-Za-z0-9._-]+/g, '-')}/${doc.kind}/${sha256}.${ext}`;
   await storage.upload(storagePath, doc.bytes, contentType);
 

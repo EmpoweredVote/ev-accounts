@@ -20,7 +20,7 @@ import {
   buildContext, fetchBytes, governingDocuments, makeStorage, readFeeds, type CityConfig, type Connection,
   type RefreshDeps,
 } from '../../src/lib/localRecord/refresh.js';
-import { externalVoteId, saveDocument, type StorageLike } from '../../src/lib/localRecord/store.js';
+import { externalVoteId, saveDocument, sha256Hex, type StorageLike } from '../../src/lib/localRecord/store.js';
 import { recordException, writeConfirmed, writeFeed } from '../../src/lib/localRecord/write.js';
 import type { ExceptionCause, FeedItem, MinutesParse, MinutesRollCall, PrintedTally, ResolvedVote } from '../../src/lib/localRecord/types.js';
 
@@ -84,9 +84,30 @@ export interface FoundException { cause: ExceptionCause; subject: string; detail
 const keyOf = (x: { date: string; itemNumber: string; question: string }) => `${x.date}|${x.itemNumber}|${x.question}`;
 const subjectOf = (x: { date: string; itemNumber: string; question: string }) => `${x.date} ${x.itemNumber} ${x.question}`;
 
+/**
+ * Two roll calls with the same (date, item, question) cannot both be written. Both stay in the output as failed, with
+ * one exception per key, so nothing is merged or dropped silently.
+ */
+export function flagDuplicates(reader: ReaderRollCall[]): { reader: ReaderRollCall[]; exceptions: FoundException[] } {
+  const count = new Map<string, number>();
+  for (const r of reader) count.set(keyOf(r), (count.get(keyOf(r)) ?? 0) + 1);
+  const exceptions: FoundException[] = [];
+  const out = reader.map((r) => {
+    if ((count.get(keyOf(r)) ?? 0) < 2) return r;
+    const detail = `${count.get(keyOf(r))} roll calls in the vote document share this date, item and question`;
+    return { ...r, status: 'failed' as const, cause: 'unparsed_roll_call' as const, detail };
+  });
+  for (const [k, n] of count) {
+    if (n < 2) continue;
+    const r = reader.find((x) => keyOf(x) === k) as ReaderRollCall;
+    exceptions.push({ cause: 'unparsed_roll_call', subject: subjectOf(r), detail: { kind: 'duplicate roll call', count: n, sentences: reader.filter((x) => keyOf(x) === k).map((x) => x.sentence) } });
+  }
+  return { reader: out, exceptions };
+}
+
 // ---- comparison --------------------------------------------------------------------------------------------------
 
-export interface ItemRow { subject: string; status: 'agree' | 'differs' | 'inventory only'; detail?: string }
+export interface ItemRow { subject: string; status: 'agree' | 'differs' | 'inventory only' | 'no members to compare'; detail?: string }
 export interface MemberRow { subject: string; member: string; inventory: string; reader: string; status: 'agree' | 'differs' }
 export interface Comparison {
   items: ItemRow[];
@@ -99,11 +120,11 @@ export interface Comparison {
 const lastToken = (s: string) => normaliseName(s).split(' ').pop() ?? '';
 
 /** The politician an inventory surname means on a date: via the inventory roster, then the names file. */
-function idForSurname(surname: string, date: string, roster: InventoryRoster, names: NameFile): string | { error: string } {
+export function idForSurname(surname: string, date: string, roster: InventoryRoster, names: NameFile): string | { error: string } {
   const sn = normaliseName(surname);
   const inTerm = (r: InventoryRoster['members'][number]) => r.from <= date && (r.to === null || date <= r.to);
-  let hits = roster.members.filter((r) => lastToken(r.name) === sn && inTerm(r));
-  if (!hits.length) hits = roster.members.filter((r) => new RegExp(`(^|[\\s-])${sn}$`).test(normaliseName(r.name)) && inTerm(r));
+  // The last word of the roster name must equal the surname: a bare "Smith" never means "Piedmont-Smith".
+  const hits = roster.members.filter((r) => lastToken(r.name) === sn && inTerm(r));
   const people = [...new Set(hits.map((h) => h.name))];
   if (people.length !== 1) return { error: `"${surname}" matches ${people.length} roster members on ${date}` };
   const full = normaliseName(people[0]);
@@ -151,8 +172,10 @@ export function compareWithInventory(
       if (!ok) problems.push(`${m.name}: inventory ${m.vote}, reader ${theirs}`);
     }
     // A member the reader names and the inventory does not: only a recorded position counts.
-    for (const [id, side] of byId) if (!seen.has(id) && inv.members?.length) problems.push(`${id}: reader ${side}, not in the inventory`);
-    if (problems.length) {
+    for (const [id, side] of byId) if (!seen.has(id) && side !== 'absent') problems.push(`${id}: reader ${side}, not in the inventory`);
+    if (!inv.members?.length) {
+      out.items.push({ subject, status: 'no members to compare', detail: `the reader found ${byId.size} member position(s)` });
+    } else if (problems.length) {
       out.items.push({ subject, status: 'differs', detail: problems.join('; ') });
       out.exceptions.push({ cause: 'inventory_disagrees', subject, detail: { kind: 'differs', inventoryId: inv.id, problems } });
     } else {
@@ -191,14 +214,19 @@ export function drawSpotCheck(pool: ReaderRollCall[], seed: number, n = SPOT_COU
 interface SpotCheckFile {
   seed: number;
   picks: { id: string; date: string; itemNumber: string; question: string; outcome: string; tally: PrintedTally;
-    votes: { name: string; position: string }[]; quote: string; documentUrl: string; verdict: string }[];
+    votes: { name: string; position: string }[]; /** Hash of what was checked: outcome, tally and every member's position. */ votesHash: string; quote: string; documentUrl: string; verdict: string }[];
 }
+
+const votesHash = (r: ReaderRollCall): string =>
+  sha256Hex(new TextEncoder().encode(JSON.stringify([
+    r.outcome, r.tally, (r.votes ?? []).map((v) => [v.politicianId, v.position]).sort(),
+  ])));
 
 const pickOf = (city: string, r: ReaderRollCall, verdict = ''): SpotCheckFile['picks'][number] => ({
   id: externalVoteId(city, r.date, r.itemNumber, r.question), date: r.date, itemNumber: r.itemNumber,
   question: r.question, outcome: r.outcome, tally: r.tally,
   votes: (r.votes ?? []).map((v) => ({ name: v.nameAsPrinted, position: v.position })),
-  quote: r.sentence, documentUrl: r.documentUrl, verdict,
+  votesHash: votesHash(r), quote: r.sentence, documentUrl: r.documentUrl, verdict,
 });
 
 // ---- reading the city --------------------------------------------------------------------------------------------
@@ -274,6 +302,10 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
       }
     }
   }
+  const dup = flagDuplicates(read.reader);
+  read.reader = dup.reader;
+  // A duplicate's own check exceptions stay; the duplicate exception is added once per key.
+  read.exceptions.push(...dup.exceptions);
   return read;
 }
 
@@ -305,7 +337,7 @@ function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundE
     `- Pending outcomes (a feed Final with no confirmed roll call): ${pending}`,
     `- Roll calls that failed a check: ${read.reader.length - conf.length}`,
     `- Spot checks drawn: ${spot.picks.length} (seed ${spot.seed}); filled in: ${spot.picks.filter((p) => p.verdict).length}`,
-    `- Inventory rows: agree ${cmp.items.filter((i) => i.status === 'agree').length}, differs ${cmp.items.filter((i) => i.status === 'differs').length}, inventory only ${cmp.items.filter((i) => i.status === 'inventory only').length}, reader only ${cmp.readerOnly.length}, skipped ${cmp.skipped.length}`,
+    `- Inventory rows: no members to compare ${cmp.items.filter((i) => i.status === 'no members to compare').length}, agree ${cmp.items.filter((i) => i.status === 'agree').length}, differs ${cmp.items.filter((i) => i.status === 'differs').length}, inventory only ${cmp.items.filter((i) => i.status === 'inventory only').length}, reader only ${cmp.readerOnly.length}, skipped ${cmp.skipped.length}`,
     '', '## Exceptions by cause', '',
     ...(Object.keys(by).length ? Object.entries(by).sort().map(([c, n]) => `- ${c}: ${n}`) : ['- none']),
     ...(read.warnings.length ? ['', '## Warnings', '', ...read.warnings.map((w) => `- ${w}`)] : []),
@@ -319,7 +351,8 @@ function compareMd(cmp: Comparison): string {
   return [
     '# Reader compared with the inventory', '',
     `Items: ${cmp.items.length} compared. Members: ${cmp.members.filter((m) => m.status === 'agree').length} agree, ${cmp.members.filter((m) => m.status === 'differs').length} differ.`, '',
-    '## Differs / inventory only', '',
+    `No members to compare (inventory item lists no member votes): ${cmp.items.filter((i) => i.status === 'no members to compare').length}`, '',
+    '## Differs / inventory only / no members to compare', '',
     ...(bad.length ? bad.map((i) => `- ${i.subject}: ${i.status}${i.detail ? ` (${i.detail})` : ''}`) : ['- none']),
     '', '## Reader only (no inventory row)', '',
     ...(cmp.readerOnly.length ? cmp.readerOnly.map((r) => `- ${subjectOf(r)}`) : ['- none']),
@@ -336,6 +369,8 @@ function blockers(spot: SpotCheckFile | null, fresh: SpotCheckFile, found: Found
   if (spot.seed !== fresh.seed || draw(spot) !== draw(fresh)) {
     out.push('spotcheck.json does not match a fresh draw from its seed (the reader output changed): run a dry run again.');
   }
+  const changed = spot.picks.filter((p) => fresh.picks.find((f) => f.id === p.id)?.votesHash !== p.votesHash).length;
+  if (changed) out.push(`${changed} picked vote(s) changed since they were checked (votes changed): run a dry run again and re-check them.`);
   const blank = spot.picks.filter((p) => !p.verdict.trim()).length;
   if (blank) out.push(`${blank} spot-check verdict(s) are blank.`);
   const bad = spot.picks.filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match').length;
@@ -368,8 +403,12 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   const cmp = compareWithInventory(read.reader, inventory, roster, names);
   const seed = opts.apply ? (prior as SpotCheckFile).seed : opts.seed ?? prior?.seed ?? Math.floor(Math.random() * 2 ** 31);
   const fresh: SpotCheckFile = { seed, picks: drawSpotCheck(cmp.readerOnly, seed).map((r) => pickOf(city.scope, r)) };
-  const keep = new Map((prior?.seed === seed ? prior.picks : []).map((p) => [p.id, p.verdict]));
-  const spot: SpotCheckFile = { seed, picks: fresh.picks.map((p) => ({ ...p, verdict: keep.get(p.id) ?? '' })) };
+  // A verdict stays only while the pick's votes are what was checked.
+  const keep = new Map((prior?.seed === seed ? prior.picks : []).map((p) => [p.id, p]));
+  const spot: SpotCheckFile = {
+    seed,
+    picks: fresh.picks.map((p) => ({ ...p, verdict: keep.get(p.id)?.votesHash === p.votesHash ? keep.get(p.id)?.verdict ?? '' : '' })),
+  };
   const failedChecks: FoundException[] = spot.picks
     .filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match')
     .map((p) => ({ cause: 'spot_check_failed', subject: `${p.date} ${p.itemNumber} ${p.question}`, detail: { verdict: p.verdict } }));
@@ -408,7 +447,8 @@ function stagedFiles(opts: FirstLoadOptions): { kind: 'item_text' | 'minutes'; u
   for (const f of dir('minutes')) {
     const date = f.replace(/\.txt$/, '');
     const it = items.find((i) => i.date === date && i.url_minutes);
-    if (it?.url_minutes) out.push({ kind: 'minutes', url: it.url_minutes, bytes: readFileSync(path.join(root, 'minutes', f)) });
+    // Its own chain: the same URL plus a fragment, so the text never supersedes the PDF saved from that URL.
+    if (it?.url_minutes) out.push({ kind: 'minutes', url: `${it.url_minutes}#inventory-text`, bytes: readFileSync(path.join(root, 'minutes', f)) });
   }
   return out;
 }
@@ -429,9 +469,9 @@ async function applyAll(
   const done = { rollCallsConfirmed: 0, votesWritten: 0, exceptions: 0, stagedItems: 0, stagedMinutes: 0 };
   try {
     await db.query('BEGIN');
-    // Saved texts first: a text can share a URL with a vote document, and the real PDF saved after it stays current.
+    // Saved texts have their own URL chain (see stagedFiles), so order does not matter.
     for (const s of staged) {
-      await saveDocument(db, storage, { city: city.scope, kind: s.kind, url: s.url, cityFileId: null, bytes: s.bytes });
+      await saveDocument(db, storage, { city: city.scope, kind: s.kind, url: s.url, cityFileId: null, bytes: s.bytes, contentType: 'text/plain' });
       if (s.kind === 'item_text') done.stagedItems++; else done.stagedMinutes++;
     }
     await writeFeed(db, city.scope, read.items);

@@ -144,3 +144,23 @@ describe('saveDocument', () => {
     expect(a.id).not.toBe(again.id);
   });
 });
+
+describe('saveDocument: text chain', () => {
+  it('a text saved beside a PDF has its own chain, a .txt path and text/plain, and never supersedes the PDF', async () => {
+    const db = fakeDb();
+    const types: string[] = [];
+    const paths: string[] = [];
+    const storage: StorageLike = { async upload(p, _b, ct) { paths.push(p); types.push(ct); } };
+    const url = 'https://example.test/meetingFiles/1/download';
+    const pdf = await saveDocument(db, storage, { city: 'place:1', kind: 'minutes', url, cityFileId: '1', bytes: new TextEncoder().encode('pdf') });
+    const txt = await saveDocument(db, storage, {
+      city: 'place:1', kind: 'minutes', url: `${url}#inventory-text`, cityFileId: null,
+      bytes: new TextEncoder().encode('text'), contentType: 'text/plain',
+    });
+    expect(types).toEqual(['application/pdf', 'text/plain']);
+    expect(paths[0].endsWith('.pdf')).toBe(true);
+    expect(paths[1].endsWith('.txt')).toBe(true);
+    expect(db.rows.find((r: any) => r.id === pdf.id).superseded_by).toBeNull();
+    expect(db.rows.find((r: any) => r.id === txt.id).superseded_by).toBeNull();
+  });
+});

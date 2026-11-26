@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { NameFile } from '../../src/lib/localRecord/names.js';
 import type { CityConfig } from '../../src/lib/localRecord/refresh.js';
 import {
-  compareWithInventory, drawSpotCheck, parseInventoryId, runFirstLoad, type FirstLoadDeps, type InventoryItem,
+  compareWithInventory, drawSpotCheck, flagDuplicates, idForSurname, parseInventoryId, runFirstLoad, type FirstLoadDeps, type InventoryItem,
   type ReaderRollCall,
 } from './first-load.js';
 
@@ -110,6 +110,52 @@ describe('compareWithInventory', () => {
     expect(r.items).toEqual([]);
     expect(r.skipped).toHaveLength(1);
     expect(r.exceptions).toEqual([]);
+  });
+});
+
+describe('fix round 1', () => {
+  const item = invFull.items.find((i) => i.id.endsWith('App Ord 2026-03'))!;
+  const cmp = (reader: ReaderRollCall[], items: InventoryItem[]) => compareWithInventory(reader, items, roster, names());
+
+  it('1: an absent reader-side member the inventory omits is not a disagreement', () => {
+    const lean = { ...item, members: item.members!.filter((m) => m.name !== 'Rollo') };
+    const r = cmp([rr()], [lean]);
+    expect(r.items[0].status).toBe('agree');
+    expect(r.exceptions).toEqual([]);
+  });
+
+  it('1: a recorded vote the inventory omits still counts', () => {
+    const lean = { ...item, members: item.members!.filter((m) => m.name !== 'Asare') };
+    expect(cmp([rr()], [lean]).items[0].status).toBe('differs');
+  });
+
+  it('2: an inventory item with no members is its own category, not agree', () => {
+    const r = cmp([rr()], [{ ...item, members: [] }]);
+    expect(r.items[0].status).toBe('no members to compare');
+    expect(r.exceptions).toEqual([]);
+  });
+
+  it('3: a bare Smith never means Piedmont-Smith', () => {
+    const withSmith: NameFile = {
+      city: SCOPE,
+      members: [...names().members, { politicianId: 'p-smith', onboardId: null, variants: ['Ron Smith', 'Smith'] }],
+    };
+    expect(idForSurname('Smith', '2021-03-03', roster, withSmith)).toBe('p-smith');
+    expect(idForSurname('Smith', '2025-03-03', roster, withSmith)).toHaveProperty('error');
+    expect(idForSurname('Smith', '2025-03-03', roster, names())).toHaveProperty('error');
+    expect(idForSurname('Piedmont-Smith', '2025-03-03', roster, names())).toBe('p-piedmont-smith');
+  });
+
+  it('4: duplicate keys stay visible, become failed, and raise an exception', () => {
+    const a = rr();
+    const b = rr({ index: 5, tally: { yes: 6, no: 1, abstain: 0 } });
+    const other = rr({ itemNumber: 'Ord 2026-99' });
+    const r = flagDuplicates([a, b, other]);
+    expect(r.reader).toHaveLength(3);
+    expect(r.reader.filter((x) => x.status === 'failed')).toHaveLength(2);
+    expect(r.reader.find((x) => x.itemNumber === 'Ord 2026-99')!.status).toBe('confirmed');
+    expect(r.exceptions).toHaveLength(1);
+    expect(r.exceptions[0].detail).toMatchObject({ kind: 'duplicate roll call' });
   });
 });
 
@@ -274,6 +320,29 @@ describe('runFirstLoad: --apply', () => {
     const r = await runFirstLoad(base(s, { apply: true }), deps());
     expect(r.refused?.join(' ')).toMatch(/spot_check_failed/);
     expect(calls).toEqual([]);
+  });
+
+  it('refuses when the reader now gives a picked vote different positions than the one that was checked', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    const spot = fill(s.out, 'match');
+    spot.picks[0].votesHash = 'something-else';
+    writeFileSync(path.join(s.out, 'spotcheck.json'), JSON.stringify(spot));
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused?.join(' ')).toMatch(/votes changed/);
+    expect(calls).toEqual([]);
+  });
+
+  it('a dry run drops a verdict whose votes changed', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    const spot = fill(s.out, 'match');
+    spot.picks[0].votesHash = 'stale';
+    writeFileSync(path.join(s.out, 'spotcheck.json'), JSON.stringify(spot));
+    await runFirstLoad(base(s), deps());
+    const again = JSON.parse(readFileSync(path.join(s.out, 'spotcheck.json'), 'utf8'));
+    expect(again.picks[0].verdict).toBe('');
+    expect(again.picks[1].verdict).toBe('match');
   });
 
   it('writes the roll calls, then uploads the saved texts, when every gate is clear', async () => {
