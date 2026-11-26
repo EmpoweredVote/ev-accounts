@@ -48,7 +48,7 @@
 --     is guarded on term_start IS NULL OR start_precision <> 'day', so only those two kinds can be overwritten.
 --     Each row's source records "start was <old start or NULL>, precision '<old>'".
 --   - office_terms.start_precision on the same rows: the old value is written into that row's own `source`, which
---     is extended (never replaced): "<old source> | CA_PENDING bcc: dated ... (start was <old start or NULL>, precision '<old>')" on the 10 current terms.
+--     is extended (never replaced): "<old source> | CA_PENDING bcc: dated ... (start was <old start or NULL>, precision '<old>')" on the 9 current terms (Rana's closed term keeps the older "start_precision was" text).
 --
 -- NOT DONE HERE:
 --   - legislative_politician_id_map rows (id_type 'onboard'): the saved seat pages carry seat ids only, no OnBoard
