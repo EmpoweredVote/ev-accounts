@@ -710,7 +710,8 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         if (moved) ignoredContext = movedIgnored;
         if (voice) ignoredContext = true;
         // Any vote result, a withdrawal or a motion with no second ends the search for an open motion.
-        if (moved) open.push(sentence);
+        // "It was moved and seconded …" and "X made a motion …" are open motions too: they make a pairing ambiguous.
+        if (moved || /\bmoved\b|\bmade a motion\b|\bmotion was made\b/i.test(sentence)) open.push(sentence);
         if (previous === 'result' || /\bwithdr[eo]w\b|\bno second\b|\black of a second\b/i.test(sentence)) open = [];
         const b = readBodyNote(sentence);
         if (!b) return;
@@ -755,7 +756,8 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
           // The one seconded motion still open in this numbered agenda item, when the heading names its item and
           // it is a Final passage. Never an amendment or condition; the checks also want the feed to agree.
           if (!fromMargin && agendaItems && openHere.length === 1) {
-            const s = classifyMotion(MOVED.exec(openHere[0])![1]);
+            const mv = MOVED.exec(openHere[0]);
+            const s: Subject = mv ? classifyMotion(mv[1]) : { kind: 'unknown' };
             if (s.kind === 'vote' && s.question === 'Final passage' && agendaItems.includes(s.itemNumber)) {
               subject = s;
               fromOpenMotion = true;
@@ -841,11 +843,15 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
   // votes ("Vote to adopt Ordinance 21-28 as amended [11:05pm]"), only when the recorded votes just before and just
   // after it both print a time and the departure falls strictly between them. Otherwise it stays unplaced.
   const voteTimes = printedVoteTimes(text, rollCalls);
+  // Times are compared as minutes of the day, so they are trusted only when the printed vote times never run
+  // backwards and nothing falls after midnight ("12:20am" is minute 20). Otherwise no departure is placed by time.
+  const known = voteTimes.filter((t): t is number => t !== undefined);
+  const timesUsable = known.every((t, i) => t >= 6 * 60 && (i === 0 || t >= known[i - 1]));
   for (let i = 0; i < kept.length; i++) {
     const n = kept[i];
     if (n.kind !== 'left' || n.at !== null || !att.unplaced.includes(n)) continue;
     const t = minutesOfDay(timeOf(n));
-    if (t === null) continue;
+    if (t === null || !timesUsable || t < 6 * 60) continue;
     const slots: number[] = [];
     for (let at = 0; at <= rollCalls.length; at++) {
       const before = at === 0 ? -1 : voteTimes[at - 1];
@@ -855,7 +861,9 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
     if (slots.length === 1) kept[i] = { ...n, at: slots[0] };
   }
   // Notes are applied in order: a departure placed above must come after the same member's earlier arrival.
-  kept.sort((a, b) => (a.at ?? -1) - (b.at ?? -1));
+  // On the same vote, an arrival comes before a departure ("arrived at 6:32pm, left at 9:33pm").
+  const rank = (n: MeetingNote) => (n.kind === 'arrived' ? 0 : 1);
+  kept.sort((a, b) => (a.at ?? -1) - (b.at ?? -1) || rank(a) - rank(b));
   // Times are used above only; they are not part of a note.
   const bare = <T extends object>(n: T): T => {
     const { time: _t, ...rest } = n as T & { time?: string };

@@ -1046,3 +1046,70 @@ describe('R5: a bare "The motion received" far from its motion (2025-02-19, file
     expect(p.rollCalls.find((r) => r.itemNumber === 'Res 2025-02')).toBeUndefined();
   });
 });
+
+describe('review fixes', () => {
+  const last = (x: string) => x.split(' ').pop();
+  const same = (a: string, b: string) => last(a) === last(b);
+
+  it('an arrival and a departure placed on the same vote: the arrival is applied first (17657, Ord 2026-07 as vote 0)', () => {
+    const text = [
+      '   1. Roll Call (*indicates participation via Zoom) [6:30pm]',
+      '',
+      '   Council Members:',
+      '    Matt Flaherty (arrived at 6:32pm,   At-Large',
+      '    left at 9:33pm)',
+      '    Dave Rollo                         District 4',
+      '',
+      '   The motion to adopt Ordinance 2026-07 received a roll call vote Ayes: 1, Nays: 0, Abstain: 0. (Flaherty left at 9:33 pm)',
+      '',
+      '   The motion to adopt Ordinance 2026-08 received a roll call vote of Ayes: 1, Nays: 0, Abstain: 0.',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2026-05-20');
+    expect(presentAt(p, p.rollCalls[0], same)).toMatchObject({ present: ['Dave Rollo'] });
+    expect(presentAt(p, p.rollCalls[1], same)).toMatchObject({ present: ['Dave Rollo'] });
+  });
+
+  const timed = (leftAt: string, times: [string, string]) => [
+    'Councilmembers present: Matt Flaherty, Dave Rollo (left at ' + leftAt + ')',
+    'Councilmembers absent: none',
+    '',
+    'The motion to adopt Ordinance 21-01 received a roll call vote of     Vote to adopt Ordinance 21-01',
+    `Ayes: 2, Nays: 0, Abstain: 0.                                        [${times[0]}]`,
+    '',
+    'The motion to adopt Ordinance 21-02 received a roll call vote of     Vote to adopt Ordinance 21-02',
+    `Ayes: 1, Nays: 0, Abstain: 0.                                        [${times[1]}]`,
+    '',
+  ].join('\n');
+  const unplaced = (text: string) => parseMinutes(text, '2021-06-16').notes.filter((n) => n.at === null);
+
+  it('vote times that cross midnight: a departure is not placed by time', () => {
+    expect(unplaced(timed('12:10am', ['11:50pm', '12:20am']))).toHaveLength(1);
+  });
+
+  it('vote times that run backwards: a departure is not placed by time', () => {
+    expect(unplaced(timed('9:10pm', ['9:50pm', '9:20pm']))).toHaveLength(1);
+  });
+
+  it('the same meeting before midnight is still placed', () => {
+    expect(unplaced(timed('9:10pm', ['9:00pm', '9:20pm']))).toHaveLength(0);
+  });
+
+  describe('R5: other motion wordings count as open motions (15637)', () => {
+    const text = (between: string) => [
+      '8.2. Resolution 2025-02',
+      '',
+      '   Daily moved and Piedmont-Smith seconded to adopt Resolution 2025-02.',
+      between,
+      '   There was no public comment.',
+      '   The motion received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.',
+    ].join('\n');
+    for (const between of ['   It was moved and seconded to suspend the rules.', '   Rollo made a motion to postpone Resolution 2025-02.']) {
+      it(between.trim(), () => {
+        const p = parseMinutes(text(between), '2025-02-19');
+        expect(p.rollCalls).toEqual([]);
+        expect(p.unparsed).toHaveLength(1);
+      });
+    }
+  });
+});
