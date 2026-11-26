@@ -40,7 +40,7 @@ export interface MinutesRollCall {
   index: number;
   /** Normalised item number, e.g. 'App Ord 2026-02', 'Ord 21-23', 'Res 2026-09'. */
   itemNumber: string;
-  /** 'Final passage' | 'Amendment 03' | 'Veto override' */
+  /** 'Final passage' | 'Amendment 03' | 'Reasonable Condition 04' | 'Veto override' (numbers two zero-padded digits) */
   question: string;
   tally: PrintedTally;
   /** Only the sides whose names the minutes print. */

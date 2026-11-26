@@ -26,10 +26,11 @@ const EXC = 'CA_PENDING_local_record_exceptions.sql';
 const VOTES = 'CA_PENDING_local_record_votes_columns.sql';
 const IDX = 'CA_PENDING_local_record_votes_roll_call_index.sql';
 const VALIDATE = 'CA_PENDING_local_record_votes_validate_fks.sql';
-const ALL = [DOCS, ROLLS, EXC, VOTES, IDX, VALIDATE];
+const BUCKET = 'CA_PENDING_local_record_storage_bucket.sql';
+const ALL = [DOCS, ROLLS, EXC, VOTES, IDX, VALIDATE, BUCKET];
 
 describe('council-record migrations', () => {
-  it('all six files exist', () => {
+  it('all seven files exist', () => {
     for (const f of ALL) expect(fs.existsSync(path.join(MIG, f)), f).toBe(true);
   });
 
@@ -61,7 +62,7 @@ describe('council-record migrations', () => {
   it('roll calls are public read only', () => {
     const c = code(ROLLS);
     expect(c).toMatch(/grant select on essentials\.legislative_roll_calls to anon, authenticated/i);
-    expect(c).toMatch(/revoke (insert, update, delete|all)[^;]*on essentials\.legislative_roll_calls from anon, authenticated/i);
+    expect(c).toMatch(/revoke (insert, update, delete|all)[^;]*on essentials\.legislative_roll_calls from public, anon, authenticated/i);
     expect(c).toMatch(/create policy "public read"\s+on essentials\.legislative_roll_calls\s+for select/i);
     expect(c).not.toMatch(/grant (?!select)[^;]*to[^;]*(anon|authenticated)/i);
   });
@@ -122,5 +123,23 @@ describe('council-record migrations', () => {
     const c = code(IDX);
     expect(c).toMatch(/create index concurrently if not exists \S+\s+on essentials\.legislative_votes \(roll_call_id\)/i);
     expect(c).not.toMatch(/^\s*(begin|commit|start transaction)\s*;/im); // the DO $$ BEGIN block is fine
+  });
+
+  it('the storage bucket local-record-sources is created private and idempotently, with a gate that it is not public', () => {
+    const c = code(BUCKET);
+    expect(c).toMatch(/insert into storage\.buckets \(id, name, public[^)]*\)\s*values \('local-record-sources', 'local-record-sources', false/i);
+    expect(c).toMatch(/on conflict \(id\) do nothing/i);
+    expect(c).toMatch(/if b\.public then raise exception/i);
+    expect(c).toMatch(/if not found then raise exception/i);
+    expect(c).not.toMatch(/create policy/i);
+    // Only the content types store.ts uploads.
+    expect(c).toMatch(/array\['application\/pdf', 'text\/plain'\]/);
+    expect(c).toMatch(/^begin;/im);
+    expect(c).toMatch(/^commit;/im);
+  });
+
+  it('the code writes to the bucket the migration creates', () => {
+    const src = fs.readFileSync(path.resolve(__dirname, '../../backend/src/lib/localRecord/refresh.ts'), 'utf8');
+    expect(src).toMatch(/const BUCKET = 'local-record-sources'/);
   });
 });

@@ -232,8 +232,9 @@ describe('fix round 1', () => {
   it('keeps a pending Final from a later meeting beside earlier confirmed votes', async () => {
     answer({
       terms: [term('Seat A', '2024-01-01', null)],
-      voted: [roll({ roll_call_id: 'r1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      voted: [roll({ roll_call_id: 'r1', bill_id: 'b1', meeting_date: '2026-03-01', question: 'Amendment 01' })],
       pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-04-01' })],
+      confirmed: [{ city_scope: 'place:test', bill_id: 'b1', meeting_date: '2026-03-01', question: 'Amendment 01' }],
     });
     const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
     expect(out.items[0].pending?.meeting_date).toBe('2026-04-01');
@@ -282,5 +283,49 @@ describe('existing routes are untouched', () => {
     await getVotesByPolitician(PID, 10);
     const sql = String(mockQuery.mock.calls[0][0]);
     expect(sql).not.toMatch(/roll_calls|source_documents/);
+  });
+});
+
+describe('final review: a stale pending Final passage', () => {
+  it('hides a pending Final passage when the bill has a confirmed Final passage on another date', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      voted: [roll({ roll_call_id: 'r1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-15' })],
+      confirmed: [{ city_scope: 'place:test', bill_id: 'b1', meeting_date: '2026-03-01', question: 'Final passage' }],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items[0].pending).toBeNull();
+    expect(out.items[0].votes).toHaveLength(1);
+  });
+
+  it('hides it even when the member has no vote row on the confirmed Final', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-15' })],
+      confirmed: [{ city_scope: 'place:test', bill_id: 'b1', meeting_date: '2026-03-01', question: 'Final passage' }],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out).toEqual({ total: 0, items: [] });
+  });
+
+  it('a confirmed Final passage in another city scope does not hide it', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-15' })],
+      confirmed: [{ city_scope: 'place:other', bill_id: 'b1', meeting_date: '2026-03-01', question: 'Final passage' }],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items[0].pending?.meeting_date).toBe('2026-03-15');
+  });
+
+  it('the confirmed query reads the question', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-15' })],
+    });
+    await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    const sql = mockQuery.mock.calls.map((c) => c[0] as string).find((s) => s.includes("state = 'confirmed'") && !s.includes('legislative_votes'))!;
+    expect(sql).toMatch(/r\.question/);
   });
 });

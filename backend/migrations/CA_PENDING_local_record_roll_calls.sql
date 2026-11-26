@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS essentials.legislative_roll_calls (
 
 ALTER TABLE essentials.legislative_roll_calls ENABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON essentials.legislative_roll_calls FROM anon, authenticated;
+REVOKE ALL ON essentials.legislative_roll_calls FROM PUBLIC, anon, authenticated;
 GRANT SELECT ON essentials.legislative_roll_calls TO anon, authenticated;
 GRANT ALL ON essentials.legislative_roll_calls TO service_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON essentials.legislative_roll_calls TO ev_api;

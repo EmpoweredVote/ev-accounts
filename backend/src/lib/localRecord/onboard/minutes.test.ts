@@ -483,3 +483,28 @@ describe('real PDF round trip (2026-10-07 Memorandum)', () => {
     expect(fromPdf).toEqual(fromTxt);
   });
 });
+
+describe('final review: amendment and condition numbers are two zero-padded digits', () => {
+  const q = (p: ReturnType<typeof parseMinutes>) => p.rollCalls.map((r) => `${r.itemNumber}|${r.question}`);
+  const tally = 'received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.';
+
+  it.each([
+    ['Amendment 3', 'Amendment 03'],
+    ['Amendment 003', 'Amendment 03'],
+    ['Amendment 12', 'Amendment 12'],
+    ['Reasonable Condition 4', 'Reasonable Condition 04'],
+  ])('a moved "%s" reads as "%s"', (printed, question) => {
+    const p = parseMinutes(oneVote(`The motion to adopt ${printed} to Ordinance 24-01 ${tally}`), '2024-01-01');
+    expect(q(p)).toEqual([`Ord 24-01|${question}`]);
+  });
+
+  it('a margin heading "Amendment 1" reads as "Amendment 01"', () => {
+    const margin = (body: string, heading: string) => `${body.padEnd(72)}${heading}`;
+    const text = [
+      margin('There was no council discussion.', 'Vote to adopt Amendment 1 to'),
+      margin(`The motion ${tally}`, 'Ordinance 17-10 [10:23pm]'),
+      '',
+    ].join('\n');
+    expect(q(parseMinutes(text, '2021-01-01'))).toEqual(['Ord 17-10|Amendment 01']);
+  });
+});

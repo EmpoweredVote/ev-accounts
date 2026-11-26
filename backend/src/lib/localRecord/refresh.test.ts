@@ -14,6 +14,7 @@ const memoPdf = new Uint8Array(readFileSync(fx('minutes/2026-10-07.pdf')));
 const memoText = readFileSync(fx('minutes/2026-10-07.txt'), 'utf8');
 
 const DATE = '2026-10-07';
+const billNumbers = parseLegislationFeed(legislation, 'https://bloomington.in.gov').map((i) => i.itemNumber);
 const MEMO_URL = 'https://bloomington.in.gov/onboard/meetingFiles/17565/download';
 const MINUTES_URL = 'https://bloomington.in.gov/onboard/meetingFiles/99001/download';
 const NOW = new Date('2026-11-26T12:00:00Z');
@@ -63,6 +64,12 @@ function stubDb(handlers: Handler[] = []) {
     [/SELECT id FROM essentials\.legislative_bills/, () => [{ id: 'bill1' }]],
     [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => []],
     [/INSERT INTO essentials\.local_record_source_documents/, () => [{ id: 'doc-new' }]],
+    // Item numbers of the city's bills (earlier runs wrote one per feed item).
+    [/SELECT DISTINCT number FROM essentials\.legislative_bills/, () => billNumbers.map((number) => ({ number }))],
+    // Confirmed roll calls still pointing at a Memorandum after the Minutes were read (D14).
+    [/d\.kind = 'memorandum'/, () => []],
+    // Bills with a pending Final passage and a confirmed Final passage on another date.
+    [/p\.state = 'pending_minutes'/, () => []],
   ];
   const all = [...handlers, ...base];
   const db = {
@@ -386,5 +393,97 @@ describe('fix round 1', () => {
     };
     expect(await run(true)).toBe(0);
     expect(await run(false)).toBeGreaterThan(0);
+  });
+});
+
+describe('final review fixes', () => {
+  const exceptions = (db: ReturnType<typeof stubDb>, cause: string) =>
+    sql(db, /INTO essentials\.local_record_exceptions/).filter((c) => c.params[2] === cause);
+
+  it('F1: the control knows an item from the city\'s bills even when it is outside the two feed years', async () => {
+    // The control meeting is confirmed; the feed (this year and last) no longer lists its items.
+    const db = stubDb([
+      [/SELECT DISTINCT to_char\(r\.meeting_date.*local_record_source_documents d/s, () => [{ meeting_date: DATE, doc_id: 'doc-memo', storage_path: 'p.pdf' }]],
+      [/FROM essentials\.legislative_roll_calls r\s+LEFT JOIN/, () => [storedRow('Ord 2026-28')]],
+    ]);
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, { feed: [], meetings: {} }));
+    expect(summary.cities[0].exceptions.control_failed).toBe(0);
+    expect(verbs(db)).toEqual(['BEGIN', 'COMMIT']);
+    const q = sql(db, /SELECT DISTINCT number FROM essentials\.legislative_bills/);
+    expect(q).toHaveLength(1);
+    expect(q[0].params).toEqual(['place:1805860']);
+  });
+
+  it('F1: an item the city has no bill for still fails the control', async () => {
+    const db = stubDb([
+      [/SELECT DISTINCT to_char\(r\.meeting_date.*local_record_source_documents d/s, () => [{ meeting_date: DATE, doc_id: 'doc-memo', storage_path: 'p.pdf' }]],
+      [/FROM essentials\.legislative_roll_calls r\s+LEFT JOIN/, () => [storedRow('Ord 2026-28')]],
+      [/SELECT DISTINCT number FROM essentials\.legislative_bills/, () => []],
+    ]);
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db));
+    expect(summary.cities[0].exceptions.control_failed).toBe(1);
+    expect(String(sql(db, /INTO essentials\.local_record_exceptions/)[0].params[4])).toContain('unknown_item');
+  });
+
+  // The Minutes are the saved fixture text with the Ord 2026-28 roll call taken out.
+  const ORD28 = 'Daily moved and Zulich seconded to adopt Ordinance 2026-28. The motion to adopt\nOrdinance 2026-28 as amended received a roll call vote of Ayes: 7, Nays: 0, Abstain: 0.\n';
+  const withoutOrd28 = memoText.replace(ORD28, '');
+  const stillOnMemo = () => {
+    const { xid } = resolved('Ord 2026-28');
+    return [{ external_vote_id: xid, item_number: 'Ord 2026-28', question: 'Final passage', confirmed_from: 'doc-memo' }];
+  };
+  const minutesHandlers = (left: any[]): Handler[] => [
+    [/SELECT DISTINCT source_url/, () => [{ source_url: MEMO_URL }]],
+    [/SELECT DISTINCT to_char\(meeting_date/, () => [{ d: DATE, state: 'confirmed' }]],
+    [/FROM essentials\.legislative_roll_calls r\s+LEFT JOIN/, () => [storedRow('Ord 2026-28')]],
+    [/INSERT INTO essentials\.local_record_source_documents/, () => [{ id: 'doc-minutes' }]],
+    [/d\.kind = 'memorandum'/, () => left],
+  ];
+
+  it('F2a: a Memorandum-confirmed roll call the Minutes do not contain raises minutes_disagree', async () => {
+    expect(withoutOrd28).not.toBe(memoText);
+    const db = stubDb(minutesHandlers(stillOnMemo()));
+    const summary = await runLocalRecordRefresh(
+      { dryRun: false, now: NOW }, deps(db, { meetings: meetingsFeed(true), pdfText: async () => withoutOrd28 }),
+    );
+    const exc = exceptions(db, 'minutes_disagree');
+    expect(exc).toHaveLength(1);
+    expect(exc[0].params[3]).toBe(`${DATE} Ord 2026-28 Final passage`);
+    expect(String(exc[0].params[4])).toContain('missing from the Minutes');
+    expect(summary.cities[0].exceptions.minutes_disagree).toBe(1);
+    const q = sql(db, /d\.kind = 'memorandum'/)[0];
+    expect(q.params).toEqual(['place:1805860', DATE]);
+  });
+
+  it('F2a: a roll call the Minutes contain is not reported missing (even when its check failed)', async () => {
+    const db = stubDb(minutesHandlers(stillOnMemo()));
+    await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, { meetings: meetingsFeed(true) }));
+    expect(exceptions(db, 'minutes_disagree')).toHaveLength(0);
+  });
+
+  it('F2a: a date still governed by a Memorandum is not checked for missing roll calls', async () => {
+    const db = stubDb([
+      [/d\.kind = 'memorandum'/, () => stillOnMemo()],
+    ]);
+    await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, { pdfText: async () => withoutOrd28 }));
+    expect(exceptions(db, 'minutes_disagree')).toHaveLength(0);
+  });
+
+  it('F3: a pending Final passage beside a confirmed Final passage on another date raises feed_missing_final', async () => {
+    const db = stubDb([
+      [/p\.state = 'pending_minutes'/, () => [{ number: 'Ord 2026-28', pending_date: '2026-10-21', confirmed_date: DATE }]],
+    ]);
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db));
+    const exc = exceptions(db, 'feed_missing_final');
+    expect(exc).toHaveLength(1);
+    expect(exc[0].params[3]).toBe('Ord 2026-28 Final passage 2026-10-21');
+    expect(String(exc[0].params[4])).toContain('2026-10-21');
+    expect(String(exc[0].params[4])).toContain(DATE);
+    expect(summary.cities[0].exceptions.feed_missing_final).toBe(1);
+    const q = sql(db, /p\.state = 'pending_minutes'/)[0];
+    expect(q.text).toMatch(/c\.state = 'confirmed'/);
+    expect(q.text).toMatch(/c\.meeting_date <> p\.meeting_date/);
+    expect(q.text).toMatch(/question = 'Final passage'/);
+    expect(q.params).toEqual(['place:1805860']);
   });
 });

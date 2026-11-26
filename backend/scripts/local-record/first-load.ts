@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { checkRollCall } from '../../src/lib/localRecord/checks.js';
 import { normaliseName, type NameFile, type TermSpan } from '../../src/lib/localRecord/names.js';
-import { parseMinutes, minutesTextFromPdf } from '../../src/lib/localRecord/onboard/minutes.js';
+import { parseMinutes, minutesTextFromPdf, twoDigits } from '../../src/lib/localRecord/onboard/minutes.js';
 import { fetchJson, type VoteDocument } from '../../src/lib/localRecord/onboard/feed.js';
 import {
   buildContext, fetchBytes, governingDocuments, makeStorage, readFeeds, type CityConfig, type Connection,
@@ -45,7 +45,7 @@ export interface InventoryRoster { members: { name: string; from: string; to: st
 
 /**
  * `place:1805860:<date>:<item_no>[ (<suffix>)]` -> the minutes' own key, or why the item is not compared.
- * No suffix = Final passage; `amendment N` = `Amendment 0N`; `veto override` = `Veto override`.
+ * No suffix = Final passage; `amendment N` = `Amendment NN` (two zero-padded digits, as the parser prints it); `veto override` = `Veto override`.
  */
 export function parseInventoryId(id: string): { date: string; itemNumber: string; question: string } | { skip: string } {
   const m = /^place:\d+:(\d{4}-\d{2}-\d{2}):([^()]*?)(?: \((.*)\))?$/.exec(id);
@@ -55,7 +55,7 @@ export function parseInventoryId(id: string): { date: string; itemNumber: string
   if (suffix === undefined) return { date, itemNumber, question: 'Final passage' };
   if (/^motion\b/i.test(suffix)) return { skip: 'procedural motion' };
   const am = /^amendment (\d+)$/i.exec(suffix);
-  if (am) return { date, itemNumber, question: `Amendment ${am[1].padStart(2, '0')}` };
+  if (am) return { date, itemNumber, question: `Amendment ${twoDigits(am[1])}` };
   if (suffix.toLowerCase() === 'veto override') return { date, itemNumber, question: 'Veto override' };
   return { skip: `suffix "${suffix}" has no roll call in the minutes` };
 }

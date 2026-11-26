@@ -610,17 +610,21 @@ export async function getCouncilRecordByPolitician(
     : [];
 
   // Confirmed roll calls in the member's city scopes, whether or not this member has a vote row on them.
-  const confirmedKeys = new Set<string>(
-    pendingRows.length
-      ? (
-          await pool.query(
-            `SELECT DISTINCT r.city_scope, r.bill_id, to_char(r.meeting_date, 'YYYY-MM-DD') AS meeting_date
-             FROM essentials.legislative_roll_calls r
-             WHERE r.state = 'confirmed' AND r.city_scope = ANY($1::text[]) AND r.bill_id = ANY($2::uuid[])`,
-            [scopes, [...new Set(pendingRows.map((r: any) => r.bill_id))]],
-          )
-        ).rows.map((r: any) => `${r.city_scope}|${r.bill_id}|${r.meeting_date}`)
-      : [],
+  const confirmedRows: any[] = pendingRows.length
+    ? (
+        await pool.query(
+          `SELECT DISTINCT r.city_scope, r.bill_id, to_char(r.meeting_date, 'YYYY-MM-DD') AS meeting_date, r.question
+           FROM essentials.legislative_roll_calls r
+           WHERE r.state = 'confirmed' AND r.city_scope = ANY($1::text[]) AND r.bill_id = ANY($2::uuid[])`,
+          [scopes, [...new Set(pendingRows.map((r: any) => r.bill_id))]],
+        )
+      ).rows
+    : [];
+  const confirmedKeys = new Set<string>(confirmedRows.map((r) => `${r.city_scope}|${r.bill_id}|${r.meeting_date}`));
+  // Bills with a confirmed Final passage on any date: a pending Final passage beside one is stale (the feed's Final
+  // date differs from the vote document's) and is never shown; the weekly job logs it as feed_missing_final.
+  const confirmedFinal = new Set<string>(
+    confirmedRows.filter((r) => r.question === 'Final passage').map((r) => `${r.city_scope}|${r.bill_id}`),
   );
 
   const items = new Map<string, CouncilRecordItem & { latest: string }>();
@@ -667,6 +671,7 @@ export async function getCouncilRecordByPolitician(
     if (!slug || !inAnyTerm(terms, row.meeting_date, slug)) continue;
     // A confirmed roll call for the same bill and meeting supersedes the pending one.
     if (confirmedKeys.has(`${row.city_scope}|${row.bill_id}|${row.meeting_date}`)) continue;
+    if (row.question === 'Final passage' && confirmedFinal.has(`${row.city_scope}|${row.bill_id}`)) continue;
     const it = itemFor(row);
     if (!it.pending || row.meeting_date > it.pending.meeting_date) {
       it.pending = {

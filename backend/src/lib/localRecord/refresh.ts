@@ -257,7 +257,13 @@ async function control(
     // A saved copy that cannot be read or parsed is a failed control, not a failed run.
     return { subject, detail: { document: pick.doc_id, error: (e as Error).message } };
   }
-  const ctx = buildContext(names, terms, items, date);
+  // Known items come from the city's bills, not the feed: the feed is read for two years only, and a confirmed
+  // meeting can be older than that (the first load confirms back to 2020).
+  const bills = await db.query(
+    `SELECT DISTINCT number FROM essentials.legislative_bills WHERE jurisdiction = $1 AND number IS NOT NULL`,
+    [city.scope],
+  );
+  const ctx = { ...buildContext(names, terms, items, date), knownItems: new Set<string>(bills.rows.map((b: any) => String(b.number))) };
   const problems: string[] = [];
   for (const s of stored.values()) {
     const rc = parse.rollCalls.find((r) => externalVoteId(city.scope, date, r.itemNumber, r.question) === s.xid);
@@ -327,6 +333,8 @@ async function runCity(
 
   const governing = governingDocuments(docs);
   const parsedByDate = new Map<string, MinutesParse[]>();
+  /** Dates whose read documents were all formal Minutes (D14 recheck). */
+  const minutesDates = new Map<string, string>();
   for (const doc of governing) {
     const d = doc.meetingDate;
     if (blocked.some((subj) => subj.startsWith(`${d} `))) continue;
@@ -353,6 +361,7 @@ async function runCity(
       continue;
     }
     parsedByDate.set(d, [...(parsedByDate.get(d) ?? []), parse]);
+    if (doc.kind === 'minutes') minutesDates.set(d, saved.id);
     for (const s of parse.unparsed) {
       await raise('unparsed_roll_call', `${d} ${sha256Hex(new TextEncoder().encode(s)).slice(0, 12)}`, { sentence: s });
     }
@@ -406,6 +415,51 @@ async function runCity(
         await raise('feed_missing_final', `${d} ${it.itemNumber}`, { detail: `the feed has a Final on ${d}; the vote document has no roll call for it` });
       }
     }
+  }
+
+  // D14: once the Minutes of a date are read, a roll call on that date still confirmed from a Memorandum is one the
+  // Minutes do not contain. Judged only when every governing document of the date is Minutes and all were read.
+  for (const [d, parses] of parsedByDate) {
+    const governingThatDate = governing.filter((g) => g.meetingDate === d);
+    if (parses.length !== governingThatDate.length || !governingThatDate.every((g) => g.kind === 'minutes')) continue;
+    const inMinutes = new Set(parses.flatMap((p) => p.rollCalls.map((r) => externalVoteId(city.scope, d, r.itemNumber, r.question))));
+    const left = await db.query(
+      `SELECT r.external_vote_id, r.question, b.number AS item_number, r.confirmed_from
+       FROM essentials.legislative_roll_calls r
+       JOIN essentials.legislative_bills b ON b.id = r.bill_id
+       JOIN essentials.local_record_source_documents d ON d.id = r.confirmed_from
+       WHERE r.city_scope = $1 AND r.meeting_date = $2::date AND r.state = 'confirmed' AND d.kind = 'memorandum'`,
+      [city.scope, d],
+    );
+    for (const r of left.rows as any[]) {
+      // One the Minutes do contain stays on the Memorandum only because its check failed; that cause is logged.
+      if (inMinutes.has(r.external_vote_id)) continue;
+      await raise('minutes_disagree', `${d} ${r.item_number} ${r.question}`, {
+        differences: ['missing from the Minutes'], storedFrom: r.confirmed_from, newDocument: minutesDates.get(d) ?? null,
+      });
+    }
+  }
+
+  // A pending Final passage whose date differs from the confirmed Final passage of the same bill: the feed's Final
+  // date and the vote document disagree, so the pending row is never promoted. A person must look.
+  const stale = await db.query(
+    `SELECT b.number, to_char(p.meeting_date, 'YYYY-MM-DD') AS pending_date,
+            string_agg(DISTINCT to_char(c.meeting_date, 'YYYY-MM-DD'), ', ') AS confirmed_date
+     FROM essentials.legislative_roll_calls p
+     JOIN essentials.legislative_roll_calls c
+       ON c.city_scope = p.city_scope AND c.bill_id = p.bill_id AND c.question = 'Final passage'
+      AND c.state = 'confirmed' AND c.meeting_date <> p.meeting_date
+     JOIN essentials.legislative_bills b ON b.id = p.bill_id
+     WHERE p.city_scope = $1 AND p.state = 'pending_minutes' AND p.question = 'Final passage'
+     GROUP BY b.number, p.meeting_date
+     ORDER BY 1, 2`,
+    [city.scope],
+  );
+  for (const r of stale.rows as any[]) {
+    await raise('feed_missing_final', `${r.number} Final passage ${r.pending_date}`, {
+      detail: `the feed has a Final on ${r.pending_date}; the confirmed Final passage is on ${r.confirmed_date}`,
+      feedDate: r.pending_date, confirmedDate: r.confirmed_date,
+    });
   }
   return run;
 }

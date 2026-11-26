@@ -234,15 +234,18 @@ type Subject = { kind: 'vote'; itemNumber: string; question: string } | { kind: 
 
 const RC = String.raw`Reasonable Condition (\d{1,3})`;
 
+/** Amendment and condition numbers as two zero-padded digits ("1", "01" and "001" are all "01"), so ids match. */
+export const twoDigits = (n: string): string => String(Number(n)).padStart(2, '0');
+
 const SUBJECTS: { re: RegExp; question: (m: RegExpExecArray) => string; item: (m: RegExpExecArray) => [string, string] }[] = [
   {
     re: new RegExp(`^to adopt Amendment (\\d{1,3})(?: \\(as revised\\))? to ${ITEM}(?: as amended)?$`),
-    question: (m) => `Amendment ${m[1]}`,
+    question: (m) => `Amendment ${twoDigits(m[1])}`,
     item: (m) => [m[2], m[3]],
   },
   {
     re: new RegExp(`^to adopt ${RC} to ${ITEM}$`),
-    question: (m) => `Reasonable Condition ${m[1]}`,
+    question: (m) => `Reasonable Condition ${twoDigits(m[1])}`,
     item: (m) => [m[2], m[3]],
   },
   {
@@ -305,7 +308,7 @@ function subjectFromMargin(margin: string): { subject: Subject; heading: string 
   const found = [...margin.matchAll(MARGIN_HEADING)];
   if (found.length !== 1) return null;
   const m = found[0];
-  const question = m[1] ? `${m[1]} ${m[2]}` : 'Final passage';
+  const question = m[1] ? `${m[1]} ${twoDigits(m[2])}` : 'Final passage';
   return { subject: { kind: 'vote', itemNumber: `${ITEM_PREFIX[m[3]]} ${m[4]}`, question }, heading: m[0] };
 }
 

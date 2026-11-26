@@ -47,6 +47,7 @@ describe('parseInventoryId: suffix mapping', () => {
     ['Ord 2026-25 (amendment 1)', 'Amendment 01'],
     ['Ord 2026-25 (amendment 01)', 'Amendment 01'],
     ['Ord 2026-25 (amendment 12)', 'Amendment 12'],
+    ['Ord 2026-25 (amendment 001)', 'Amendment 01'],
     ['Res 2026-04 (veto override)', 'Veto override'],
   ])('%s -> %s', (raw, question) => {
     expect(parseInventoryId(id(raw))).toEqual({ date: DATE, itemNumber: raw.replace(/ \(.*/, ''), question });
