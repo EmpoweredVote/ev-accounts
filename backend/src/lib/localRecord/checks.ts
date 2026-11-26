@@ -222,6 +222,19 @@ export function checkRollCall(rc: MinutesRollCall, parse: MinutesParse, ctx: Che
   let feedDisagreement: string | null = null;
   if (rc.question === 'Final passage') {
     const final = ctx.feed.get(rc.itemNumber)?.final ?? null;
+    // A bare "The motion received …" paired with the one open motion of its agenda item is an inference: it is
+    // read only when the feed's Final action has this meeting's date and the same tally. Otherwise it is held.
+    if (rc.subjectFromOpenMotion) {
+      const t = final?.tally;
+      const agrees = !!final && final.date === date && !!t &&
+        t.yes === rc.tally.yes && t.no === rc.tally.no && t.abstain === rc.tally.abstain;
+      if (!agrees) {
+        return fail(
+          'unparsed_roll_call',
+          `${label}: the subject comes from the open motion earlier in the agenda item, and the feed's Final action ${final ? `(${final.date}${t ? `, ${fmt(t)}` : ''})` : '(none)'} does not confirm this date and tally`,
+        );
+      }
+    }
     // An item that passed at an earlier meeting is not passed again: a later "adopt" is a veto override or a
     // re-vote the minutes do not name. It is held for a person, never stored as a second Final passage.
     if (final && final.date < date && final.outcome !== 'failed') {

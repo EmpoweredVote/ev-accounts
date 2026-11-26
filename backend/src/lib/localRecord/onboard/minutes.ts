@@ -629,8 +629,20 @@ function printedVoteTimes(text: string, rollCalls: MinutesRollCall[]): (number |
   return times.map((t, i) => (seen[i] === 1 ? t : undefined));
 }
 
+/** The items a numbered agenda heading names: "8.2. Resolution 2025-02", "6.4. Ordinance 2026-08, Ordinance 2026-09". */
+function headingItems(para: string): string[] {
+  const ITEM = String.raw`(?:Appropriation )?(?:Ordinance|Resolution) \d{2,4}-\d{1,3}`;
+  const m = new RegExp(String.raw`^\s*\d+(?:\.\d+)*\.?\s+(${ITEM}(?:(?:,\s*|,? and )${ITEM})*)`).exec(para);
+  if (!m) return [];
+  return [...m[1].matchAll(new RegExp(ITEM, 'g'))].flatMap((x) => {
+    const s = classifyMotion(`to adopt ${x[0]}`);
+    return s.kind === 'vote' ? [s.itemNumber] : [];
+  });
+}
+
 /** A sentence that reports the result of a vote. */
-const VOTE_RESULT = /\b(?:voice vote|roll call|was (?:approved|adopted|defeated|passed)|FAILED|PASSED)\b/i;
+// "FAILED" / "PASSED" in capitals only: "Stosberg passed the gavel" is not a result.
+const VOTE_RESULT = /\b(?:[Vv]oice vote|[Rr]oll call|was (?:approved|adopted|defeated|passed)|FAILED|PASSED)\b/;
 
 /** Read one set of approved minutes (layout text). */
 export function parseMinutes(text: string, meetingDate: string): MinutesParse {
@@ -654,8 +666,16 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
     (p?.inlineNotes ?? []).filter((n) => n.kind !== 'out_of_room' && !(n as TimedNote).zoom);
   // What the sentence before reported: a roll call recorded here, another vote result, or neither.
   let previous: 'recorded' | 'result' | 'other' = 'other';
+  // The numbered agenda item being read (the items its heading names; null outside one) and the seconded motions
+  // still open in it. A bare "The motion received …" far from its motion is paired only with the one open motion.
+  let agendaItems: string[] | null = null;
+  let open: string[] = [];
 
   for (const para of paragraphsWithMargin(text)) {
+    if (AGENDA_HEADING.test(para.text)) {
+      agendaItems = headingItems(para.text);
+      open = [];
+    }
     const sentences = splitSentences(para.text);
     // A margin heading can name the subject of a bare vote only when the paragraph holds one roll-call sentence.
     const rollCallSentences = sentences.filter((x) => /roll call vote/i.test(x)).length;
@@ -689,6 +709,9 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         else settle(null, 'context');
         if (moved) ignoredContext = movedIgnored;
         if (voice) ignoredContext = true;
+        // Any vote result, a withdrawal or a motion with no second ends the search for an open motion.
+        if (moved) open.push(sentence);
+        if (previous === 'result' || /\bwithdr[eo]w\b|\bno second\b|\black of a second\b/i.test(sentence)) open = [];
         const b = readBodyNote(sentence);
         if (!b) return;
         const { parenthesized, ...n } = b;
@@ -713,6 +736,9 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
       // the paragraph's line span. Anything else is not understood.
       let subject: Subject;
       let full = sentence;
+      let fromOpenMotion = false;
+      const openHere = open;
+      open = []; // a roll call closes every open motion, whatever it turns out to be
       if (v[1] !== undefined) subject = classifyMotion(`to ${v[1]}`);
       else if (v[2] !== undefined) subject = classifyMotion(`that ${v[2]} be adopted`);
       else if (v[3] !== undefined) subject = classifyMotion(`to ${v[3]}`);
@@ -726,6 +752,16 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
           const fromMargin = rollCallSentences === 1 ? subjectFromMargin(para.margin) : null;
           subject = fromMargin ? fromMargin.subject : { kind: 'unknown' };
           if (fromMargin) full = `${sentence} [margin: ${fromMargin.heading}]`;
+          // The one seconded motion still open in this numbered agenda item, when the heading names its item and
+          // it is a Final passage. Never an amendment or condition; the checks also want the feed to agree.
+          if (!fromMargin && agendaItems && openHere.length === 1) {
+            const s = classifyMotion(MOVED.exec(openHere[0])![1]);
+            if (s.kind === 'vote' && s.question === 'Final passage' && agendaItems.includes(s.itemNumber)) {
+              subject = s;
+              fromOpenMotion = true;
+              full = `${openHere[0]} … ${sentence}`;
+            }
+          }
         }
       }
       const index = rollCalls.length;
@@ -771,6 +807,7 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         inlineNotes: parsed.inlineNotes,
         outcome,
         sentence: full,
+        ...(fromOpenMotion ? { subjectFromOpenMotion: true as const } : {}),
       });
     });
     settle(null, 'context');

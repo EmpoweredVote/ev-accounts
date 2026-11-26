@@ -417,3 +417,36 @@ describe('R11: an "adopt" of an item that already passed at an earlier meeting',
     expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: true });
   });
 });
+
+describe('R5: a vote whose subject came from the open motion', () => {
+  const text = [
+    'Councilmembers present: Isak Nti Asare, Courtney Daily, Isabel',
+    'Piedmont-Smith, Dave Rollo, Kate Rosenbarger, Andy Ruff, Hopi',
+    'Stosberg, Sydney Zulich',
+    'Councilmembers absent: Matt Flaherty',
+    '',
+    '8.2. Resolution 2025-02',
+    '',
+    'Daily moved and Piedmont-Smith seconded to adopt Resolution 2025-02.',
+    '',
+    'There was no public comment.',
+    '',
+    'The motion received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.',
+  ].join('\n');
+  const final = (date: string, yes: number) =>
+    new Map([['Res 2025-02', feedItem('Res 2025-02', { date, outcome: 'passed', tally: { yes, no: 0, abstain: 0 } })]]);
+
+  it('is read when the feed\'s Final action has this date and tally', () => {
+    const p = parseMinutes(text, '2025-02-19');
+    const rc = rcOf(p, 'Res 2025-02', 'Final passage');
+    expect(checkRollCall(rc, p, ctx(p, { feed: final('2025-02-19', 8) }))).toMatchObject({ ok: true, feedDisagreement: null });
+  });
+
+  it('is held when the feed\'s Final action has another tally, another date, or none', () => {
+    const p = parseMinutes(text, '2025-02-19');
+    const rc = rcOf(p, 'Res 2025-02', 'Final passage');
+    for (const feed of [final('2025-02-19', 7), final('2025-03-05', 8), new Map([['Res 2025-02', feedItem('Res 2025-02', null)]])]) {
+      expect(checkRollCall(rc, p, ctx(p, { feed }))).toMatchObject({ ok: false, cause: 'unparsed_roll_call' });
+    }
+  });
+});

@@ -50,6 +50,11 @@ export interface MinutesRollCall {
   outcome: 'passed' | 'failed';
   /** Verbatim sentence, kept for exceptions and audit. */
   sentence: string;
+  /**
+   * True when a bare "The motion received …" took its subject from the one open motion earlier in the agenda
+   * item, not from the sentence before it. The checks hold it unless the feed's Final action has this date and tally.
+   */
+  subjectFromOpenMotion?: true;
 }
 
 /** The result of reading one set of minutes. */

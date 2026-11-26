@@ -989,3 +989,60 @@ describe('R3: departure and out-of-room notes', () => {
     expect(unplacedOf(parseMinutes(text, '2025-09-30'))).toHaveLength(1);
   });
 });
+
+describe('R5: a bare "The motion received" far from its motion (2025-02-19, file 15637)', () => {
+  const att = [
+    '   2. ROLL CALL (*Indicates participation via Zoom) [6:32pm]',
+    '',
+    '   Councilmembers present:',
+    '   Isak Nti Asare                             At-Large',
+    '   Dave Rollo                                 District 4',
+    '',
+  ];
+  const item = (heading: string, motions: string[]) => [
+    ...att,
+    'The motion to adopt Ordinance 2025-05 as amended received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.',
+    heading,
+    'To Update the Established Interview Standing Committees',
+    '',
+    '   Daily moved and Piedmont-Smith seconded that Resolution 2025-02 be introduced and read by title and',
+    '   synopsis only. The motion was approved by voice vote. Bolden read the legislation by title and synopsis.',
+    ...motions,
+    '   Stosberg passed the gavel to Piedmont-Smith and then Stosberg summarized the legislation.',
+    '   There was no public comment.',
+    '   The motion received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.',
+    '   9. ADDITIONAL PUBLIC COMMENT [8:37pm]',
+    '   Christopher Emge commented on the Plan Commission, developments, and land use.',
+  ].join('\n');
+  const adopt = '   Daily moved and Piedmont-Smith seconded to adopt Resolution 2025-02.';
+
+  it('pairs with the one open motion in the agenda item, and says so', () => {
+    const p = parseMinutes(item('8.2. Resolution 2025-02', [adopt]), '2025-02-19');
+    const rc = p.rollCalls.find((r) => r.itemNumber === 'Res 2025-02');
+    expect(rc).toMatchObject({ question: 'Final passage', tally: { yes: 8, no: 0, abstain: 0 }, subjectFromOpenMotion: true });
+    expect(p.unparsed).toEqual([]);
+  });
+
+  it('two open motions: not paired', () => {
+    const p = parseMinutes(item('8.2. Resolution 2025-02', [adopt, '   Rollo moved and Daily seconded to postpone Resolution 2025-02.']), '2025-02-19');
+    expect(p.rollCalls.find((r) => r.itemNumber === 'Res 2025-02')).toBeUndefined();
+    expect(p.unparsed).toHaveLength(1);
+  });
+
+  it('a heading that names another item: not paired', () => {
+    const p = parseMinutes(item('8.2. Resolution 2025-03', [adopt]), '2025-02-19');
+    expect(p.rollCalls.find((r) => r.itemNumber === 'Res 2025-02')).toBeUndefined();
+    expect(p.unparsed).toHaveLength(1);
+  });
+
+  it('an open amendment: not paired', () => {
+    const p = parseMinutes(item('8.2. Resolution 2025-02', ['   Daily moved and Piedmont-Smith seconded to adopt Amendment 01 to Resolution 2025-02.']), '2025-02-19');
+    expect(p.rollCalls.find((r) => r.itemNumber === 'Res 2025-02')).toBeUndefined();
+    expect(p.unparsed).toHaveLength(1);
+  });
+
+  it('a vote result between the motion and the bare vote: not paired', () => {
+    const p = parseMinutes(item('8.2. Resolution 2025-02', [adopt, '   The motion to suspend the rules was approved by voice vote.']), '2025-02-19');
+    expect(p.rollCalls.find((r) => r.itemNumber === 'Res 2025-02')).toBeUndefined();
+  });
+});
