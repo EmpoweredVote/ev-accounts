@@ -71,7 +71,7 @@ describe('parseLegislationFeed edge cases', () => {
   });
 
   it('throws on an unknown outcome, naming the feed id and value', () => {
-    expect(() => parseLegislationFeed(mk('tabled', '5-4'), BASE)).toThrow(/77.*tabled/);
+    expect(() => parseLegislationFeed(mk('tabled', '5-4'), BASE)).toThrow(/tabled.*77/);
   });
 });
 
