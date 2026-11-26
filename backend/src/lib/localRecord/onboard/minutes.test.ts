@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { presentAt } from '../checks';
 import {
   layoutLines,
   minutesTextFromPdf,
@@ -806,5 +807,185 @@ describe('R6/R7: other wordings and amendment shapes, as printed', () => {
 
   it('several conditions in one vote ("RCs 8, 9, 10, and 12") stay unparsed', () => {
     expect(one('The motion to adopt RCs 8, 9, 10, and 12 to Ordinance 2026-06 received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.').unparsed).toHaveLength(1);
+  });
+});
+
+describe('R3: departure and out-of-room notes', () => {
+  const unplacedOf = (p: ReturnType<typeof parseMinutes>) => p.notes.filter((n) => n.at === null);
+
+  it('a note in parentheses after the tally belongs to that vote; the attendance copy is the same departure (2025-09-30, file 16314)', () => {
+    const text = [
+      '   1. ROLL CALL   (* indicates participation via Zoom) [6:31pm]',
+      '',
+      '   Members:',
+      '   Isak Nti Asare                              At-Large',
+      '   Courtney Daily                              District 5, Council Parliamentarian',
+      '   Matt Flaherty (absent)                      At-Large',
+      '   Isabel Piedmont-Smith                       District 1, Council Vice President',
+      '   Dave Rollo                                  District 4',
+      '   Kate Rosenbarger (left at 7:53pm)           District 2',
+      '   Andy Ruff (absent)                          At-Large',
+      '   Hopi Stosberg                               District 3, Council President',
+      '   Sydney Zulich                               District 6',
+      '',
+      '   The motion to postpone Resolution 2025-18 received a roll call vote of Ayes: 6, Nays: 0, Abstain: 0.',
+      '   (Rosenbarger left at 7:53pm)',
+      '',
+      'The motion to adopt Appropriation Ordinance 2025-09 received a roll call vote of Ayes: 6, Nays: 0, Abstain:',
+      '0.',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2025-09-30');
+    expect(p.rollCalls.map((r) => r.itemNumber)).toEqual(['App Ord 2025-09']);
+    expect(unplacedOf(p)).toEqual([]);
+    expect(p.notes).toContainEqual(expect.objectContaining({ kind: 'left', nameAsPrinted: 'Rosenbarger', at: 0 }));
+    expect(p.notes.filter((n) => n.kind === 'left')).toHaveLength(1);
+  });
+
+  it('reads "(Zulich left the meeting at 10:17pm)" after the period as that vote\'s inline note (2025-10-22, file 16388)', () => {
+    const r = parseRollCallSentence('The motion to adopt Amendment 01 to Ordinance 2025-32 received a roll call vote of Ayes: 5, Nays: 3 (Rollo, Rosenbarger, Asare), Abstain: 0. (Zulich left the meeting at 10:17pm)', 3);
+    expect(r?.inlineNotes).toEqual([{ kind: 'left', nameAsPrinted: 'Zulich', at: 3 }]);
+  });
+
+  it('keeps the departure printed in a vote whose subject is not understood (2026-09-02 memorandum 17403)', () => {
+    const text = [
+      ' 1.   Roll Call (*indicates participation via Zoom) [6:30pm]',
+      '',
+      '  Council Members:',
+      '  Isak Nti Asare                     At-Large, Council President',
+      '  Matt Flaherty* (left at 10:32pm)   At-Large',
+      '  Dave Rollo                         District 4',
+      '',
+      '  Piedmont-Smith moved and Asare seconded to adopt Amendment 01 to Amendment 01.',
+      '  The motion to adopt Amendment 01 to Amendment 01 received a roll call vote of Ayes: 8,',
+      '  Nays: 0, Abstain: 0 (Flaherty left at 10:32pm).',
+      '  The motion to adopt Ordinance 2026-18 as amended received a roll call vote of Ayes: 8,',
+      '  Nays: 0, Abstain: 0.',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2026-09-02');
+    expect(p.unparsed).toHaveLength(1);
+    expect(unplacedOf(p)).toEqual([]);
+    expect(p.notes).toContainEqual(expect.objectContaining({ kind: 'left', nameAsPrinted: 'Flaherty', at: 0 }));
+  });
+
+  it('"(Rollo left the meeting)." after a voice vote is a body note (2024-05-15, file 14566)', () => {
+    const text = [
+      '  Council members present: Isak Nti Asare, Courtney Daily, Matt        ROLL CALL [6:30pm]',
+      '  Flaherty, Isabel Piedmont-Smith, Kate Rosenbarger, Andy Ruff, Hopi',
+      '  Stosberg, Sydney Zulich',
+      '  Council members present via Zoom: Dave Rollo (left the meeting at',
+      '  11:48pm)',
+      '  Councilmembers absent: none',
+      '',
+      '     The motion to adopt Ordinance 2024-07 as amended received a roll     Vote to adopt Ordinance 2024-07',
+      '     call vote of Ayes: 7, Nays: 2 (Rollo, Ruff), Abstain: 0.             [11:46pm]',
+      '',
+      '     Stosberg moved and Ruff seconded that Ordinance 2024-13 be           Ordinance 2024-13-To Amend',
+      '     introduced and read by title and synopsis only. The motion was       Title 2 of the Bloomington',
+      '     approved by a voice vote. (Rollo left the meeting). Bolden read the   Municipal Code Entitled',
+      '     legislation by title and synopsis.                                   "Administration and Personnel"',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2024-05-15');
+    expect(unplacedOf(p)).toEqual([]);
+    expect(p.notes.filter((n) => n.kind === 'left')).toEqual([{ kind: 'left', nameAsPrinted: 'Rollo', at: 1 }]);
+  });
+
+  it('"received a roll call vote Ayes:" (no "of") with "(Flaherty left at 9:33 pm)" places the attendance departure (2026-05-20, file 17657)', () => {
+    const text = [
+      '   1. Roll Call (*indicates participation via Zoom) [6:30pm]',
+      '',
+      '   Council Members:',
+      '    Matt Flaherty (arrived at 6:32pm,   At-Large',
+      '    left at 9:33pm)',
+      '    Dave Rollo                         District 4',
+      '',
+      '   The motion to adopt Ordinance 2026-07 received a roll call vote Ayes: 7, Nays: 1 (Rosenbarger),',
+      '   Abstain: 0. (Flaherty left at 9:33 pm)',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2026-05-20');
+    expect(p.rollCalls.map((r) => r.itemNumber)).toEqual(['Ord 2026-07']);
+    expect(p.rollCalls[0].inlineNotes).toEqual([{ kind: 'left', nameAsPrinted: 'Flaherty', at: 0 }]);
+    expect(unplacedOf(p)).toEqual([]);
+    // The inline note covers that vote only; the attendance copy carries the departure to the votes after it.
+    expect(p.notes).toContainEqual({ kind: 'left', nameAsPrinted: 'Matt Flaherty', at: 0 });
+  });
+
+  it('a placed departure is applied after the same member\'s earlier arrival (2026-05-20, file 17657)', () => {
+    const text = [
+      '   1. Roll Call (*indicates participation via Zoom) [6:30pm]',
+      '',
+      '   Council Members:',
+      '    Matt Flaherty (arrived at 6:32pm,   At-Large',
+      '    left at 9:33pm)',
+      '    Dave Rollo                         District 4',
+      '',
+      '   The motion to adopt Resolution 2026-06 received a roll call vote of Ayes: 2, Nays: 0, Abstain: 0.',
+      '',
+      '   The motion to adopt Ordinance 2026-07 received a roll call vote Ayes: 1, Nays: 0, Abstain: 0. (Flaherty left at 9:33 pm)',
+      '',
+      '   The motion to adopt Ordinance 2026-08 received a roll call vote of Ayes: 1, Nays: 0, Abstain: 0.',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2026-05-20');
+    expect(p.rollCalls).toHaveLength(3);
+    // The real checks match "Flaherty" to "Matt Flaherty" through names.json; here, by surname.
+    const last = (x: string) => x.split(' ').pop();
+    const at = (i: number) => presentAt(p, p.rollCalls[i], (a, b) => last(a) === last(b));
+    expect(at(0)).toMatchObject({ present: ['Matt Flaherty', 'Dave Rollo'] });
+    expect(at(1)).toMatchObject({ present: ['Dave Rollo'] });
+    expect(at(2)).toMatchObject({ present: ['Dave Rollo'] });
+  });
+
+  describe('a timed departure in the attendance list is placed by the printed vote times (2021-06-16, file 11108)', () => {
+    const head = [
+      ' Councilmembers present via Zoom: Matt Flaherty, Isabel Piedmont-     ROLL CALL [6:32pm]',
+      ' Smith (arrived at 6:46pm, left at 11:01pm), Dave Rollo, Kate',
+      ' Rosenbarger, Susan Sandberg (arrived at 7:30pm), Sue Sgambelluri,',
+      'Jim Sims, Ron Smith',
+      ' Councilmembers absent: Stephen Volan',
+      '',
+    ];
+    const body = (amendmentMargin: string) => [
+      'The motion to adopt Ordinance 21-25 as amended received a roll       Vote to adopt Ordinance 21-25 as',
+      'call vote of Ayes: 8, Nays: 0, Abstain: 0.                           amended [10:54pm]',
+      'There were no council questions.                                     Council questions:',
+      'The motion to adopt Amendment 01 to Ordinance 21-28 received a       Vote to adopt Amendment   O 1 to',
+      `roll call vote of Ayes: 7, Nays: 0, Abstain: 0.                      ${amendmentMargin}`,
+      'There were no council comments.                                      Council comments:',
+      '',
+      '  The motion to adopt Ordinance 21-28 as amended received a roll       Vote to adopt Ordinance 21-28 as',
+      '  call vote of Ayes: 7, Nays: 0, Abstain: 0.                           amended [11:05pm]',
+      '',
+    ];
+    it('between the votes printed at 10:54pm and 11:03pm', () => {
+      const p = parseMinutes([...head, ...body('Ordinance 21-28 [11:03pm]')].join('\n'), '2021-06-16');
+      expect(p.rollCalls.map((r) => `${r.itemNumber} ${r.question}`)).toEqual([
+        'Ord 21-25 Final passage', 'Ord 21-28 Amendment 01', 'Ord 21-28 Final passage',
+      ]);
+      expect(unplacedOf(p)).toEqual([]);
+      expect(p.notes).toContainEqual({ kind: 'left', nameAsPrinted: 'Isabel Piedmont-Smith', at: 1 });
+    });
+    it('stays unplaced when the next vote prints no time', () => {
+      const p = parseMinutes([...head, ...body('Ordinance 21-28')].join('\n'), '2021-06-16');
+      expect(unplacedOf(p)).toEqual([{ kind: 'left', nameAsPrinted: 'Isabel Piedmont-Smith', at: null }]);
+    });
+  });
+
+  it('an attendance departure at another time than the body note stays unplaced', () => {
+    const text = [
+      '   1. ROLL CALL [6:31pm]',
+      '',
+      '   Members:',
+      '   Kate Rosenbarger (left at 7:53pm)           District 2',
+      '   Dave Rollo                                  District 4',
+      '',
+      '   The motion to adopt Resolution 2025-18 received a roll call vote of Ayes: 1, Nays: 0, Abstain: 0.',
+      '   (Rosenbarger left at 8:10pm)',
+      '',
+    ].join('\n');
+    expect(unplacedOf(parseMinutes(text, '2025-09-30'))).toHaveLength(1);
   });
 });

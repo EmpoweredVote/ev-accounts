@@ -149,7 +149,11 @@ function splitPlain(para: string): string[] {
   const merged: string[] = [];
   for (const s of out) {
     if (/^(?:FAILED|PASSED)\.?$/i.test(s) && merged.length) merged[merged.length - 1] += ' ' + s;
-    else merged.push(s);
+    // "… Abstain: 0. (Rosenbarger left at 7:53pm)": the parenthesis after a roll call is part of it.
+    else if (/^\([^()]*\)\.?$/.test(s) && merged.length && /roll call vote/i.test(merged[merged.length - 1]) &&
+      isNotesParen(s)) {
+      merged[merged.length - 1] += ' ' + s;
+    } else merged.push(s);
   }
   return merged;
 }
@@ -184,30 +188,41 @@ const NOT_NAMES = new Set([
   'excused', 'vacant', 'online', 'offline',
 ]);
 
-type Paren = { names: string[] } | { notes: { kind: MeetingNote['kind']; nameAsPrinted: string }[] };
+/** A note as read, with the time printed in it ("left at 7:53pm"); the time is used inside the parser only. */
+type TimedNote = { kind: MeetingNote['kind']; nameAsPrinted: string; time?: string; zoom?: true };
+const timeIn = (phrase: string): string | undefined =>
+  new RegExp(TIME).exec(phrase)?.[0].replace(/\s+/g, '').toLowerCase();
+
+type Paren = { names: string[] } | { notes: TimedNote[] };
 
 /**
  * A parenthetical is a name list only when every comma-separated part is one surname-like token; it is a list of
  * notes only when every part is "<Name> (out of the room|left …|arrived …|returned …)". Anything else is not
  * understood (null).
  */
+/** "(Rosenbarger left at 7:53pm)." reads as room notes (not names, not a remark such as "(Clerk … was present)"). */
+function isNotesParen(sentence: string): boolean {
+  const p = readParen(sentence.replace(/^\(|\)\.?$/g, ''));
+  return !!p && 'notes' in p;
+}
+
 function readParen(body: string): Paren | null {
   const parts = body.split(',').map((p) => p.trim().replace(/^and /, ''));
   if (parts.some((p) => !p)) return null;
   if (parts.some((p) => NOT_NAMES.has(p.toLowerCase()))) return null;
   if (parts.every((p) => SURNAME.test(p))) return { names: parts };
-  const notes: { kind: MeetingNote['kind']; nameAsPrinted: string }[] = [];
+  const notes: TimedNote[] = [];
   for (const p of parts) {
     const m = INLINE_NOTE.exec(p);
     if (!m) return null;
-    notes.push({ kind: noteKind(m[2]), nameAsPrinted: m[1] });
+    notes.push({ kind: noteKind(m[2]), nameAsPrinted: m[1], time: timeIn(m[2]), ...(/zoom/i.test(m[2]) ? { zoom: true as const } : {}) });
   }
   return { notes };
 }
 
 const PAREN = String.raw`(?:\s*\(([^()]*)\))?`;
 const TALLY = new RegExp(
-  String.raw`^Ayes:\s*(\d+)${PAREN}[,;]\s*Nays:\s*(\d+)${PAREN}[,;]\s*Abstain:\s*(\d+)${PAREN}\s*(?:\.\s*)?(FAILED|PASSED)?\s*\.?$`,
+  String.raw`^Ayes:\s*(\d+)${PAREN}[,;]\s*Nays:\s*(\d+)${PAREN}[,;]\s*Abstain:\s*(\d+)${PAREN}\s*(?:\.\s*)?(FAILED|PASSED)?\s*\.?(?:\s*\(([^()]*)\)\s*\.?)?$`,
   'i',
 );
 
@@ -241,6 +256,13 @@ function readTally(tail: string, at: number): ParsedTally | null {
       named.push({ side, names: p.names });
     }
     else for (const n of p.notes) inlineNotes.push({ ...n, at });
+  }
+  // A note in parentheses after the tally's period ("Abstain: 0. (Volan out of the room)") belongs to this vote; it
+  // must be notes only, never names.
+  if (m[8] !== undefined) {
+    const p = readParen(m[8]);
+    if (!p || 'names' in p) return null;
+    for (const n of p.notes) inlineNotes.push({ ...n, at });
   }
   const printedResult = m[7] ? (m[7].toLowerCase() as 'failed' | 'passed') : null;
   return { tally, named, inlineNotes, printedResult };
@@ -342,7 +364,7 @@ function subjectFromMargin(margin: string): { subject: Subject; heading: string 
 }
 
 /** Where the tally starts; group 1 is set when the sentence prints the result in words ("was approved by"). */
-const TALLY_START = /(?:received a roll call vote(?: of|:)|was (approved|adopted) by a roll call vote of) /;
+const TALLY_START = /(?:received a roll call vote(?: of|:|(?= Ayes))|was (approved|adopted) by a roll call vote of) /;
 
 /** A sentence right after a vote saying that it overrode the veto. */
 const OVERRODE = /\bthe vote overr?ode the (?:Mayor['’]s |mayoral )?veto\b/i;
@@ -363,6 +385,13 @@ const VOTE = new RegExp(
  * exactly. The subject is not read here.
  */
 export function parseRollCallSentence(sentence: string, index: number): ParsedTally | null {
+  const r = readRollCallSentence(sentence, index);
+  if (!r) return null;
+  return { ...r, inlineNotes: r.inlineNotes.map(({ time: _t, ...n }: MeetingNote & { time?: string }) => n) };
+}
+
+/** As parseRollCallSentence, with each inline note's printed time kept for the parser's own use. */
+function readRollCallSentence(sentence: string, index: number): ParsedTally | null {
   const m = TALLY_START.exec(sentence);
   if (!m) return null;
   const p = readTally(sentence.slice(m.index + m[0].length), index);
@@ -426,7 +455,7 @@ function readAttendee(raw: string, absent: boolean, out: Attendance): void {
   let s = raw.trim().replace(/^and /, '').replace(/\.$/, '').trim();
   if (!s || /^none$/i.test(s)) return;
   let isAbsent = absent;
-  const notes: { kind: 'arrived' | 'left' }[] = [];
+  const notes: { kind: 'arrived' | 'left'; time?: string }[] = [];
   const paren = /\s*\(([^()]*)\)\s*$/.exec(s.replace(NICKNAME, (x) => ' '.repeat(x.length)));
   if (paren) {
     s = s.slice(0, paren.index).trim();
@@ -440,7 +469,7 @@ function readAttendee(raw: string, absent: boolean, out: Attendance): void {
           notes.length = 0;
           break;
         }
-        notes.push({ kind: m[1].toLowerCase() as 'arrived' | 'left' });
+        notes.push({ kind: m[1].toLowerCase() as 'arrived' | 'left', time: timeIn(m[2]) });
       }
     }
   }
@@ -454,7 +483,7 @@ function readAttendee(raw: string, absent: boolean, out: Attendance): void {
   out.attendance.push({ nameAsPrinted: s, absent: isAbsent });
   for (const n of notes) {
     if (n.kind === 'arrived') out.arrivals.push({ kind: 'arrived', nameAsPrinted: s, at: null });
-    else out.unplaced.push({ kind: 'left', nameAsPrinted: s, at: null });
+    else out.unplaced.push({ kind: 'left', nameAsPrinted: s, at: null, time: n.time } as MeetingNote);
   }
 }
 
@@ -547,26 +576,61 @@ function mergeZoomToInPerson<T extends { raw: string; zoom: boolean }>(parts: T[
 
 const TITLE = String.raw`(?:(?:Council President|Council Vice President|Councilmember|Council Member|Cm\.) )?`;
 const BODY_NOTE = new RegExp(
-  `^${TITLE}(${NOTE_NAME}) (was out of the room|left the (?:meeting|room)(?: at ${TIME})?|returned(?: to the (?:meeting|room))?(?: at ${TIME})?|arrived(?: at)? ${TIME})(?: \\[${TIME}\\])?\\.?$`,
+  `^${TITLE}(${NOTE_NAME}) (was out of the room|left the (?:meeting|room)(?: at ${TIME})?|left at ${TIME}|returned(?: to the (?:meeting|room))?(?: at ${TIME})?|arrived(?: at)? ${TIME})(?: \\[${TIME}\\])?\\.?$`,
 );
+/** The same notes printed as a sentence in parentheses: "(Rollo left the meeting).", "(Flaherty out of the room)". */
+const PAREN_BODY_NOTE = new RegExp(`^\\((${NOTE_NAME}) (out of the room|left the (?:meeting|room)(?: at ${TIME})?|left at ${TIME}|arrived(?: at)? ${TIME}|returned(?: to the (?:meeting|room))?(?: at ${TIME})?)\\)\\.?$`);
 
-function readBodyNote(sentence: string): { kind: MeetingNote['kind']; nameAsPrinted: string } | null {
-  const m = BODY_NOTE.exec(sentence);
+function readBodyNote(sentence: string): (TimedNote & { parenthesized: boolean }) | null {
+  const m = BODY_NOTE.exec(sentence) ?? PAREN_BODY_NOTE.exec(sentence);
   if (!m) return null;
   const phrase = m[2];
-  const kind: MeetingNote['kind'] = phrase.startsWith('was out')
+  const kind: MeetingNote['kind'] = /^(?:was )?out/.test(phrase)
     ? 'out_of_room'
     : phrase.startsWith('left')
       ? 'left'
       : phrase.startsWith('arrived')
         ? 'arrived'
         : 'returned';
-  return { kind, nameAsPrinted: m[1] };
+  return { kind, nameAsPrinted: m[1], time: timeIn(phrase), parenthesized: sentence.startsWith('(') };
 }
 
 // ---------------------------------------------------------------------------------------------------------------
 // The parser
 // ---------------------------------------------------------------------------------------------------------------
+
+/** "11:01pm" → minutes after midnight; null without am/pm. */
+function minutesOfDay(time: string | undefined): number | null {
+  const m = /^(\d{1,2}):(\d{2})([ap])/.exec(time ?? '');
+  if (!m) return null;
+  return ((Number(m[1]) % 12) + (m[3] === 'p' ? 12 : 0)) * 60 + Number(m[2]);
+}
+
+/**
+ * The time printed in the margin beside each recorded roll call: "Vote to adopt Ordinance 21-28 as amended
+ * [11:05pm]". A margin entry counts only when its subject names exactly one recorded roll call (same item and
+ * question); a roll call with no such entry, or with two, has no time.
+ */
+function printedVoteTimes(text: string, rollCalls: MinutesRollCall[]): (number | undefined)[] {
+  const times: (number | undefined)[] = rollCalls.map(() => undefined);
+  const seen = rollCalls.map(() => 0);
+  const margin = paragraphsWithMargin(text).map((p) => p.margin).join(' ');
+  const re = new RegExp(`\\bVote to ([^:\\[\\]]+?)\\s*\\[(${TIME})\\]`, 'g');
+  for (const m of margin.matchAll(re)) {
+    // Scans print "Amendment 01" as "Amendment O 1".
+    const subject = classifyMotion(`to ${m[1].replace(/\bO\s*(\d)\b/g, '0$1').replace(/\s+/g, ' ').trim()}`);
+    if (subject.kind !== 'vote') continue;
+    const at = rollCalls.flatMap((r, i) =>
+      r.itemNumber === subject.itemNumber && r.question === subject.question ? [i] : []);
+    if (at.length !== 1) continue;
+    seen[at[0]]++;
+    times[at[0]] = minutesOfDay(timeIn(m[2])) ?? undefined;
+  }
+  return times.map((t, i) => (seen[i] === 1 ? t : undefined));
+}
+
+/** A sentence that reports the result of a vote. */
+const VOTE_RESULT = /\b(?:voice vote|roll call|was (?:approved|adopted|defeated|passed)|FAILED|PASSED)\b/i;
 
 /** Read one set of approved minutes (layout text). */
 export function parseMinutes(text: string, meetingDate: string): MinutesParse {
@@ -583,6 +647,13 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
     for (const n of pending) notes.push({ ...n, at: rollCalls.length });
     pending.length = 0;
   };
+
+  // Arrivals and departures printed in a vote that is held still apply to the votes after it. "Out of the room"
+  // applies to that vote only, and "left Zoom" may be a move into the room, so neither is carried.
+  const carried = (p: ParsedTally | null) =>
+    (p?.inlineNotes ?? []).filter((n) => n.kind !== 'out_of_room' && !(n as TimedNote).zoom);
+  // What the sentence before reported: a roll call recorded here, another vote result, or neither.
+  let previous: 'recorded' | 'result' | 'other' = 'other';
 
   for (const para of paragraphsWithMargin(text)) {
     const sentences = splitSentences(para.text);
@@ -604,6 +675,8 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
     };
 
     sentences.forEach((sentence, k) => {
+      const before = previous;
+      previous = VOTE_RESULT.test(sentence) ? 'result' : 'other';
       if (!/roll call vote/i.test(sentence)) {
         const moved = MOVED.exec(sentence);
         const movedIgnored = moved ? classifyMotion(moved[1]).kind === 'ignore' : false;
@@ -616,9 +689,17 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         else settle(null, 'context');
         if (moved) ignoredContext = movedIgnored;
         if (voice) ignoredContext = true;
-        const n = readBodyNote(sentence);
-        if (n?.kind === 'out_of_room') awaiting.push({ note: { ...n, at: null }, ignoredContext });
-        else if (n) pending.push({ ...n, at: null });
+        const b = readBodyNote(sentence);
+        if (!b) return;
+        const { parenthesized, ...n } = b;
+        // "(Flaherty out of the room)" printed after a motion is about that motion: dropped with an ignored one,
+        // otherwise unplaced (the meeting is held for a person). It is never moved onto a later vote.
+        if (n.kind === 'out_of_room' && parenthesized) {
+          // After a vote result that is not recorded here (a voice vote, a procedural or unread vote), it is about
+          // that vote and is dropped with it. Anywhere else (including after a recorded vote) it is unplaced.
+          if (before !== 'result' && !ignoredContext) notes.push({ ...n, at: null });
+        } else if (n.kind === 'out_of_room') awaiting.push({ note: { ...n, at: null }, ignoredContext });
+        else pending.push({ ...n, at: null });
         return;
       }
       const v = VOTE.exec(sentence);
@@ -648,7 +729,7 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         }
       }
       const index = rollCalls.length;
-      const parsed = parseRollCallSentence(sentence, index);
+      const parsed = readRollCallSentence(sentence, index);
       if (subject.kind === 'ignore') {
         // A procedural vote is not recorded. Arrivals and departures printed in it still matter for later votes;
         // "out of the room" applies to that vote only and is dropped with it.
@@ -659,6 +740,8 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
       }
       ignoredContext = false;
       if (subject.kind === 'unknown' || !parsed) {
+        // The vote is held, but an arrival or departure printed in it still matters for the votes after it.
+        for (const n of carried(parsed)) pending.push({ ...n, at: null });
         settle(null, 'context');
         unparsed.push(full);
         return;
@@ -671,12 +754,14 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
       }
       const outcome = rollCallOutcome(parsed, subject.question);
       if (!outcome) {
+        for (const n of carried(parsed)) pending.push({ ...n, at: null });
         settle(null, 'context');
         unparsed.push(full);
         return;
       }
       place();
       settle(index, 'context');
+      previous = 'recorded';
       rollCalls.push({
         index,
         itemNumber: subject.itemNumber,
@@ -691,7 +776,56 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
     settle(null, 'context');
   }
   place(); // notes after the last roll call are placed at the end
-  return { meetingDate, attendance, notes, rollCalls, unparsed };
+  // "Rosenbarger (left at 7:53pm)" in the attendance list and "(Rosenbarger left at 7:53pm)" in the body are one
+  // departure. The attendance copy (unplaced) is dropped only when the body note names the same member and the
+  // times agree or one side prints none; a different time keeps it unplaced.
+  const surname = (s: string) => s.trim().split(/\s+/).pop()!.toLowerCase();
+  const timeOf = (n: object) => (n as { time?: string }).time;
+  const sameDeparture = (b: MeetingNote, n: MeetingNote) => {
+    if (b.kind !== 'left' || surname(b.nameAsPrinted) !== surname(n.nameAsPrinted)) return false;
+    const t1 = timeOf(b);
+    const t2 = timeOf(n);
+    return !t1 || !t2 || t1 === t2;
+  };
+  const kept: MeetingNote[] = [];
+  for (const n of notes) {
+    if (n.kind !== 'left' || n.at !== null || !att.unplaced.includes(n)) {
+      kept.push(n);
+      continue;
+    }
+    // Printed in the body as its own note: that note already carries the departure to later votes.
+    if (notes.some((b) => b.at !== null && sameDeparture(b, n))) continue;
+    // Printed inside one vote ("Abstain: 0. (Flaherty left at 9:33 pm)"): an inline note covers that vote only,
+    // so the attendance copy is placed on that vote and carries the departure to the votes after it.
+    const inline = rollCalls.filter((r) => r.inlineNotes.some((b) => sameDeparture(b, n)));
+    kept.push(inline.length === 1 ? { ...n, at: inline[0].index } : n);
+  }
+  // A timed departure from the attendance list that no body note names: placed by the times printed beside the
+  // votes ("Vote to adopt Ordinance 21-28 as amended [11:05pm]"), only when the recorded votes just before and just
+  // after it both print a time and the departure falls strictly between them. Otherwise it stays unplaced.
+  const voteTimes = printedVoteTimes(text, rollCalls);
+  for (let i = 0; i < kept.length; i++) {
+    const n = kept[i];
+    if (n.kind !== 'left' || n.at !== null || !att.unplaced.includes(n)) continue;
+    const t = minutesOfDay(timeOf(n));
+    if (t === null) continue;
+    const slots: number[] = [];
+    for (let at = 0; at <= rollCalls.length; at++) {
+      const before = at === 0 ? -1 : voteTimes[at - 1];
+      const after = at === rollCalls.length ? 24 * 60 : voteTimes[at];
+      if (before !== undefined && after !== undefined && before < t && t < after) slots.push(at);
+    }
+    if (slots.length === 1) kept[i] = { ...n, at: slots[0] };
+  }
+  // Notes are applied in order: a departure placed above must come after the same member's earlier arrival.
+  kept.sort((a, b) => (a.at ?? -1) - (b.at ?? -1));
+  // Times are used above only; they are not part of a note.
+  const bare = <T extends object>(n: T): T => {
+    const { time: _t, ...rest } = n as T & { time?: string };
+    return rest as T;
+  };
+  for (const r of rollCalls) r.inlineNotes = r.inlineNotes.map(bare);
+  return { meetingDate, attendance, notes: kept.map(bare), rollCalls, unparsed };
 }
 
 // ---------------------------------------------------------------------------------------------------------------
