@@ -184,6 +184,64 @@ describe('GET /api/essentials/politicians/:id/council-record', () => {
   });
 });
 
+describe('fix round 1', () => {
+  it('drops a pending roll call when a confirmed one exists for the same bill and meeting date', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      voted: [roll({ roll_call_id: 'r1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items[0].pending).toBeNull();
+    expect(out.items[0].votes).toHaveLength(1);
+  });
+
+  it('keeps a pending Final from a later meeting beside earlier confirmed votes', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      voted: [roll({ roll_call_id: 'r1', bill_id: 'b1', meeting_date: '2026-03-01' })],
+      pending: [roll({ roll_call_id: 'p1', bill_id: 'b1', meeting_date: '2026-04-01' })],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items[0].pending?.meeting_date).toBe('2026-04-01');
+    expect(out.items[0].votes).toHaveLength(1);
+  });
+
+  it('skips votes whose confirming document is missing or is item text', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      voted: [
+        roll({ roll_call_id: 'r1', bill_id: 'b1', source_kind: null, minutes_url: null }),
+        roll({ roll_call_id: 'r2', bill_id: 'b2', number: 'Ord 2', source_kind: 'item_text', minutes_url: 'https://x/t' }),
+        roll({ roll_call_id: 'r3', bill_id: 'b3', number: 'Ord 3' }),
+      ],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items.map((i) => i.number)).toEqual(['Ord 3']);
+  });
+
+  it('treats a meeting on the term end date as inside the term', async () => {
+    answer({
+      terms: [term('Seat A', '2025-01-01', '2025-12-31')],
+      pending: [roll({ roll_call_id: 'p1', meeting_date: '2025-12-31' })],
+    });
+    const out = await getCouncilRecordByPolitician(PID, 50, 0, { cities: [CITY], today: TODAY });
+    expect(out.items).toHaveLength(1);
+  });
+
+  it('route clamps a negative offset to 0 and limit above 200 or below 1', async () => {
+    answer({
+      terms: [term('Seat A', '2024-01-01', null)],
+      voted: Array.from({ length: 3 }, (_, n) => roll({ roll_call_id: `r${n}`, bill_id: `b${n}`, number: `Ord ${n}`, meeting_date: `2026-01-0${n + 1}` })),
+    });
+    const neg = await request(app).get(`/api/essentials/politicians/${PID}/council-record?offset=-5`);
+    expect(neg.body.items).toHaveLength(3);
+    const lo = await request(app).get(`/api/essentials/politicians/${PID}/council-record?limit=-3&offset=1`);
+    expect(lo.body.items).toHaveLength(1);
+    expect(lo.body.items[0].number).toBe('Ord 1');
+  });
+});
+
 describe('existing routes are untouched', () => {
   it('/votes still reads only legislative_votes joined to bills, with no roll-call tables', async () => {
     const { getVotesByPolitician } = await import('./essentialsLegislativeService.js');

@@ -513,11 +513,15 @@ interface CouncilTerm {
 }
 
 /** The cities that have a council record, from the same file the weekly job reads. */
+let councilCitiesCache: CouncilCity[] | null = null;
 export function loadCouncilCities(): CouncilCity[] {
-  const raw = JSON.parse(
-    readFileSync(new URL('../../data/local-record/cities.json', import.meta.url), 'utf8'),
-  ) as CouncilCity[];
-  return raw.map((c) => ({ scope: c.scope, chamberSlug: c.chamberSlug }));
+  if (!councilCitiesCache) {
+    const raw = JSON.parse(
+      readFileSync(new URL('../../data/local-record/cities.json', import.meta.url), 'utf8'),
+    ) as CouncilCity[];
+    councilCitiesCache = raw.map((c) => ({ scope: c.scope, chamberSlug: c.chamberSlug }));
+  }
+  return councilCitiesCache;
 }
 
 /** The seat held on `date` (YYYY-MM-DD). Date containment, never `term_end IS NULL`. Latest start wins a tie. */
@@ -620,7 +624,11 @@ export async function getCouncilRecordByPolitician(
   };
 
   const currentSeat = seatOn(terms, today);
+  const confirmedOn = new Set<string>();
   for (const row of voted) {
+    // A vote must name the document it was confirmed from (Memorandum or Minutes); never guess a source.
+    if ((row.source_kind !== 'memorandum' && row.source_kind !== 'minutes') || !row.minutes_url) continue;
+    confirmedOn.add(`${row.bill_id}|${row.meeting_date}`);
     const seat = seatOn(terms, row.meeting_date);
     itemFor(row).votes.push({
       roll_call_id: row.roll_call_id,
@@ -633,8 +641,8 @@ export async function getCouncilRecordByPolitician(
       yes: Number(row.yes),
       no: Number(row.no),
       abstain: Number(row.abstain),
-      minutes_url: row.minutes_url ?? '',
-      source_kind: row.source_kind === 'minutes' ? 'minutes' : 'memorandum',
+      minutes_url: row.minutes_url,
+      source_kind: row.source_kind,
       feed_disagreement: row.feed_disagreement ?? null,
       seat_label: seat != null && currentSeat != null && seat !== currentSeat ? seat : null,
     });
@@ -642,7 +650,11 @@ export async function getCouncilRecordByPolitician(
 
   for (const row of pendingRows) {
     const slug = cities.find((c) => c.scope === row.city_scope)?.chamberSlug;
+    // Pending states the meeting's outcome and counts, never the member's vote, so it shows for any meeting
+    // inside the member's term regardless of attendance.
     if (!slug || !inAnyTerm(terms, row.meeting_date, slug)) continue;
+    // A confirmed roll call for the same bill and meeting supersedes the pending one.
+    if (confirmedOn.has(`${row.bill_id}|${row.meeting_date}`)) continue;
     const it = itemFor(row);
     if (!it.pending || row.meeting_date > it.pending.meeting_date) {
       it.pending = {
