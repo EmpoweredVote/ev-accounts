@@ -64,6 +64,62 @@ export function parseInventoryId(id: string): { date: string; itemNumber: string
   return { skip: `suffix "${suffix}" has no roll call in the minutes` };
 }
 
+// ---- inventory corrections ---------------------------------------------------------------------------------------
+
+/**
+ * `<inventory>/corrections.json`: owner-approved fixes to the frozen, hash-locked inventory files. They are applied in
+ * memory before the comparison; deep.json and full.json are never edited.
+ * - `date`: the row's vote is on another date; `corrected.date` replaces the date in the row and its id.
+ * - `duplicate_of`: the row is a second copy of `corrected.keep`, which stays; the row is dropped.
+ * - `member_vote`: the minutes govern; `corrected.member` (as the row prints it) gets `corrected.vote`.
+ */
+export interface InventoryCorrection {
+  row: string;
+  kind: 'date' | 'duplicate_of' | 'member_vote';
+  corrected: { date?: string; keep?: string; member?: string; vote?: string };
+  evidence: { url: string; quote: string };
+  added: string;
+  note?: string;
+}
+export interface CorrectionsFile { corrections: InventoryCorrection[] }
+
+/** Apply the corrections to a copy of the inventory. Throws on anything it cannot apply exactly. */
+export function applyCorrections(
+  inventory: InventoryItem[], file: CorrectionsFile,
+): { inventory: InventoryItem[]; applied: InventoryCorrection[] } {
+  let rows: InventoryItem[] = inventory.map((i) => ({ ...i, members: i.members?.map((m) => ({ ...m })) }));
+  const find = (id: string) => rows.find((r) => r.id === id);
+  for (const c of file.corrections) {
+    const fail = (why: string): never => { throw new Error(`corrections.json: ${why}`); };
+    if (!c.evidence?.url || !c.evidence?.quote) fail(`${c.row}: an entry needs evidence (url and quote)`);
+    const row = find(c.row) ?? fail(`${c.row} is not in the inventory`);
+    if (c.kind === 'date') {
+      const date = c.corrected.date ?? '';
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) fail(`${c.row}: corrected.date "${date}" is not a date`);
+      const id = c.row.replace(/^(place:\d+:)\d{4}-\d{2}-\d{2}:/, `$1${date}:`);
+      if (find(id)) fail(`${c.row}: moving it to ${date} collides with ${id}; use duplicate_of`);
+      row.id = id;
+      row.date = date;
+    } else if (c.kind === 'duplicate_of') {
+      const keep = c.corrected.keep ?? '';
+      if (keep === c.row || !find(keep)) fail(`${c.row}: the kept row ${keep} is not in the inventory`);
+      rows = rows.filter((r) => r !== row);
+    } else if (c.kind === 'member_vote') {
+      const hits = (row.members ?? []).filter((m) => m.name === c.corrected.member);
+      if (hits.length !== 1 || !c.corrected.vote) fail(`${c.row}: member "${c.corrected.member}" is not on the row once, or no vote given`);
+      hits[0].vote = c.corrected.vote!;
+    } else {
+      fail(`${c.row}: unknown kind "${(c as { kind: string }).kind}"`);
+    }
+  }
+  return { inventory: rows, applied: file.corrections };
+}
+
+const describeCorrection = (c: InventoryCorrection) =>
+  c.kind === 'date' ? `date → ${c.corrected.date}`
+    : c.kind === 'duplicate_of' ? `duplicate of ${c.corrected.keep} (dropped)`
+      : `member_vote ${c.corrected.member} → ${c.corrected.vote}`;
+
 // ---- what the reader found ---------------------------------------------------------------------------------------
 
 export interface ReaderRollCall {
@@ -436,10 +492,17 @@ function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundE
   return lines.join('\n');
 }
 
-function compareMd(cmp: Comparison): string {
+function compareMd(cmp: Comparison, applied: InventoryCorrection[] = []): string {
   const bad = cmp.items.filter((i) => i.status !== 'agree');
   return [
     '# Reader compared with the inventory', '',
+    ...(applied.length
+      ? [
+        `## Corrections applied from corrections.json (${applied.length})`, '',
+        ...applied.map((c) => `- ${c.row}: ${describeCorrection(c)}. Evidence: ${c.evidence.url} "${c.evidence.quote}" (added ${c.added})`),
+        '',
+      ]
+      : []),
     `Items: ${cmp.items.length} compared. Members: ${cmp.members.filter((m) => m.status === 'agree').length} agree, ${cmp.members.filter((m) => m.status === 'differs').length} differ.`, '',
     `No members to compare (inventory item lists no member votes): ${cmp.items.filter((i) => i.status === 'no members to compare').length}`, '',
     '## Differs / inventory only / no members to compare', '',
@@ -483,7 +546,11 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   }
 
   const inv = [path.join(opts.inventory, 'deep.json'), path.join(opts.inventory, 'full.json')];
-  const inventory: InventoryItem[] = inv.flatMap((f) => readJson(f).items as InventoryItem[]);
+  const frozen: InventoryItem[] = inv.flatMap((f) => readJson(f).items as InventoryItem[]);
+  const correctionsPath = path.join(opts.inventory, 'corrections.json');
+  const { inventory, applied } = existsSync(correctionsPath)
+    ? applyCorrections(frozen, readJson(correctionsPath) as CorrectionsFile)
+    : { inventory: frozen, applied: [] as InventoryCorrection[] };
   const roster: InventoryRoster = readJson(path.join(opts.inventory, 'roster.json'));
   const spotPath = path.join(opts.out, 'spotcheck.json');
   const prior: SpotCheckFile | null = existsSync(spotPath) ? readJson(spotPath) : null;
@@ -509,7 +576,7 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   if (!opts.apply) {
     mkdirSync(opts.out, { recursive: true });
     writeFileSync(path.join(opts.out, 'reader-output.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, rollCalls: read.reader }, null, 1));
-    writeFileSync(path.join(opts.out, 'compare.md'), compareMd(cmp));
+    writeFileSync(path.join(opts.out, 'compare.md'), compareMd(cmp, applied));
     writeFileSync(spotPath, JSON.stringify(spot, null, 1));
     writeFileSync(path.join(opts.out, 'exceptions.json'), JSON.stringify({
       city: city.scope, from: WINDOW_START,

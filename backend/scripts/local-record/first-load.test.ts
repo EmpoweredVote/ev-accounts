@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { NameFile } from '../../src/lib/localRecord/names.js';
 import type { CityConfig } from '../../src/lib/localRecord/refresh.js';
 import {
-  compareWithInventory, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
+  applyCorrections, compareWithInventory, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
   type InventoryItem, type ReaderRollCall,
 } from './first-load.js';
 
@@ -481,5 +481,82 @@ describe('R10: inventory rows that are not votes on the item are skipped, not co
     ]);
     expect(cmp.skipped.every((s) => /not a vote on the item/.test(s.reason))).toBe(true);
     expect(cmp.items.map((i) => [i.subject, i.status])).toEqual([['2026-09-02 Ord 2026-18 Final passage', 'inventory only']]);
+  });
+});
+
+describe('inventory corrections (corrections.json)', () => {
+  const ev = { url: 'https://bloomington.in.gov/onboard/meetingFiles/1/download', quote: 'received a roll call vote of Ayes: 8' };
+  const row = (id: string, date: string, members: { name: string; vote: string }[] = []): InventoryItem =>
+    ({ id, date, item_no: id.split(':')[3], members });
+  const inv = [
+    row('place:1805860:2023-04-10:App Ord 23-03', '2023-04-10'),
+    row('place:1805860:2024-01-17:Res 2024-01', '2024-01-17'),
+    row('place:1805860:2024-02-14:Res 2024-01', '2024-02-14'),
+    row('place:1805860:2024-04-10:Res 2024-10', '2024-04-10', [{ name: 'Flaherty', vote: 'abstain' }, { name: 'Asare', vote: 'yes' }]),
+  ];
+  const file = (corrections: object[]) => ({ corrections: corrections.map((c) => ({ evidence: ev, added: '2026-11-26', ...c })) });
+
+  it('moves a date, drops a duplicate and sets a member vote, without changing the input', () => {
+    const before = JSON.stringify(inv);
+    const r = applyCorrections(inv, file([
+      { row: 'place:1805860:2023-04-10:App Ord 23-03', kind: 'date', corrected: { date: '2023-04-04' } },
+      { row: 'place:1805860:2024-02-14:Res 2024-01', kind: 'duplicate_of', corrected: { keep: 'place:1805860:2024-01-17:Res 2024-01' } },
+      { row: 'place:1805860:2024-04-10:Res 2024-10', kind: 'member_vote', corrected: { member: 'Flaherty', vote: 'no' } },
+    ]));
+    expect(r.inventory.map((i) => i.id)).toEqual([
+      'place:1805860:2023-04-04:App Ord 23-03', 'place:1805860:2024-01-17:Res 2024-01', 'place:1805860:2024-04-10:Res 2024-10',
+    ]);
+    expect(r.inventory[0].date).toBe('2023-04-04');
+    expect(r.inventory[2].members).toEqual([{ name: 'Flaherty', vote: 'no' }, { name: 'Asare', vote: 'yes' }]);
+    expect(r.applied).toHaveLength(3);
+    expect(JSON.stringify(inv)).toBe(before);
+  });
+
+  it('rejects a row id that is not in the inventory', () => {
+    expect(() => applyCorrections(inv, file([{ row: 'place:1805860:2099-01-01:Res 99-01', kind: 'date', corrected: { date: '2099-01-02' } }])))
+      .toThrow(/place:1805860:2099-01-01:Res 99-01 is not in the inventory/);
+  });
+
+  it('rejects a kept row that is missing, a member not on the row, a moved date that collides, an unknown kind, or missing evidence', () => {
+    const bad: object[] = [
+      { row: 'place:1805860:2024-02-14:Res 2024-01', kind: 'duplicate_of', corrected: { keep: 'place:1805860:2024-01-18:Res 2024-01' } },
+      { row: 'place:1805860:2024-04-10:Res 2024-10', kind: 'member_vote', corrected: { member: 'Rollo', vote: 'no' } },
+      { row: 'place:1805860:2024-02-14:Res 2024-01', kind: 'date', corrected: { date: '2024-01-17' } },
+      { row: 'place:1805860:2024-02-14:Res 2024-01', kind: 'rename', corrected: {} },
+    ];
+    for (const c of bad) expect(() => applyCorrections(inv, file([c]))).toThrow();
+    expect(() => applyCorrections(inv, { corrections: [{ row: inv[0].id, kind: 'date', corrected: { date: '2023-04-04' }, added: '2026-11-26' }] }))
+      .toThrow(/evidence/);
+  });
+});
+
+describe('runFirstLoad: corrections.json', () => {
+  const correction = {
+    row: 'place:1805860:2026-10-07:Ord 2026-28', kind: 'member_vote', corrected: { member: 'Asare', vote: 'no' },
+    evidence: { url: 'https://bloomington.in.gov/onboard/meetingFiles/1/download', quote: 'Nays: 1 (Asare)' }, added: '2026-11-26',
+  };
+
+  it('applies the corrections before comparing and lists each one, with its evidence, in compare.md', async () => {
+    const s = setup({ inventory: invFull });
+    writeFileSync(path.join(s.inventory, 'corrections.json'), JSON.stringify({ corrections: [correction] }));
+    await runFirstLoad(base(s, { seed: 7 }), deps());
+    const compare = readFileSync(path.join(s.out, 'compare.md'), 'utf8');
+    expect(compare).toContain('## Corrections applied from corrections.json (1)');
+    expect(compare).toContain('place:1805860:2026-10-07:Ord 2026-28: member_vote Asare → no');
+    expect(compare).toContain('https://bloomington.in.gov/onboard/meetingFiles/1/download');
+    expect(compare).toContain('"Nays: 1 (Asare)"');
+    expect(compare).toMatch(/2026-10-07 Ord 2026-28 Final passage: differs \(Asare: inventory no, reader yes\)/);
+  });
+
+  it('stops with a clear error when a row id is not in the inventory', async () => {
+    const s = setup({ inventory: invFull });
+    writeFileSync(path.join(s.inventory, 'corrections.json'), JSON.stringify({ corrections: [{ ...correction, row: 'place:1805860:2099-01-01:Res 99-01' }] }));
+    await expect(runFirstLoad(base(s, { seed: 7 }), deps())).rejects.toThrow(/corrections\.json: place:1805860:2099-01-01:Res 99-01 is not in the inventory/);
+  });
+
+  it('without the file, compare.md has no corrections section', async () => {
+    const s = setup({ inventory: invFull });
+    await runFirstLoad(base(s, { seed: 7 }), deps());
+    expect(readFileSync(path.join(s.out, 'compare.md'), 'utf8')).not.toContain('Corrections applied');
   });
 });
