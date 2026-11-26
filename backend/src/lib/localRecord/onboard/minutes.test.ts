@@ -423,3 +423,53 @@ describe('parenthetical words that are not names, and name counts', () => {
     expect(parseRollCallSentence(S('Ayes: 5, Nays: 4 (Ana, Bo, Cy), Abstain: 0.'), 0)).toBeNull();
   });
 });
+
+describe('fix round 2', () => {
+  const margin = (body: string, heading: string) => `${body.padEnd(72)}${heading}`;
+
+  it('one margin heading is not shared by two bare votes in the same paragraph', () => {
+    const text = [
+      margin('There was no council discussion.', 'Vote to adopt Amendment 01 to'),
+      margin('The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', 'Ordinance 17-10 [10:23pm]'),
+      'The motion received a roll call vote of Ayes: 8, Nays: 1 (Ana), Abstain: 0.',
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2021-01-01');
+    expect(p.rollCalls).toHaveLength(0);
+    expect(p.unparsed).toHaveLength(2);
+  });
+
+  it('the same heading with one bare vote is read', () => {
+    const text = [
+      margin('There was no council discussion.', 'Vote to adopt Amendment 01 to'),
+      margin('The motion received a roll call vote of Ayes: 9, Nays: 0, Abstain: 0.', 'Ordinance 17-10 [10:23pm]'),
+      '',
+    ].join('\n');
+    const p = parseMinutes(text, '2021-01-01');
+    expect(p.rollCalls.map((r) => `${r.itemNumber}|${r.question}`)).toEqual(['Ord 17-10|Amendment 01']);
+  });
+
+  const notePara = (next: string) =>
+    oneVote(
+      `Ana moved and Bo seconded that Ordinance 24-01 be read by title and synopsis only. The motion was approved by voice vote. Ana Example was out of the room. ${next} The motion received a roll call vote of Ayes: 8, Nays: 0, Abstain: 0.`,
+    );
+
+  it('an out-of-room note after an ignored vote but before a new moved sentence is unplaced (at null)', () => {
+    const p = parseMinutes(notePara('Bo moved and Cy seconded to adopt Ordinance 24-01.'), '2024-01-01');
+    expect(p.rollCalls).toHaveLength(1);
+    expect(p.notes).toEqual([{ kind: 'out_of_room', nameAsPrinted: 'Ana Example', at: null }]);
+  });
+
+  it('an out-of-room note followed by an ignored moved sentence is dropped', () => {
+    const p = parseMinutes(notePara('Bo moved and Cy seconded to postpone Ordinance 24-01.'), '2024-01-01');
+    expect(p.notes).toEqual([]);
+  });
+
+  it('an out-of-room note followed by a voice-vote result is dropped', () => {
+    const p = parseMinutes(
+      oneVote('Bo moved and Cy seconded to adopt Ordinance 24-01. Ana Example was out of the room. The motion was approved by voice vote.'),
+      '2024-01-01',
+    );
+    expect(p.notes).toEqual([]);
+  });
+});

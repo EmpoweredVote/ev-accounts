@@ -494,25 +494,36 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
 
   for (const para of paragraphsWithMargin(text)) {
     const sentences = splitSentences(para.text);
+    // A margin heading can name the subject of a bare vote only when the paragraph holds one roll-call sentence.
+    const rollCallSentences = sentences.filter((x) => /roll call vote/i.test(x)).length;
     // True once the paragraph has shown an ignored motion (procedural, or a voice vote) and no later motion.
     let ignoredContext = false;
     // "Out of the room" notes from the sentence just before; placed only on a roll call recorded next.
     let awaiting: { note: MeetingNote; ignoredContext: boolean }[] = [];
-    const settle = (recordedAt: number | null, dropAll: boolean) => {
+    // recordedAt: placed on that roll call. 'drop': it belongs to an ignored motion. 'unplaced': it may belong to
+    // a motion that follows. 'context': it goes with the motion before it.
+    const settle = (recordedAt: number | null, how: 'drop' | 'unplaced' | 'context') => {
       for (const w of awaiting) {
         if (recordedAt !== null) notes.push({ ...w.note, at: recordedAt });
-        // A note attached to an ignored motion is dropped with it; one we cannot tie to a motion is unplaced.
-        else if (!dropAll && !w.ignoredContext) notes.push({ ...w.note, at: null });
+        else if (how === 'unplaced') notes.push({ ...w.note, at: null });
+        else if (how === 'context' && !w.ignoredContext) notes.push({ ...w.note, at: null });
       }
       awaiting = [];
     };
 
     sentences.forEach((sentence, k) => {
       if (!/roll call vote/i.test(sentence)) {
-        settle(null, false);
         const moved = MOVED.exec(sentence);
-        if (moved) ignoredContext = classifyMotion(moved[1]).kind === 'ignore';
-        if (/\bvoice vote\b/i.test(sentence)) ignoredContext = true;
+        const movedIgnored = moved ? classifyMotion(moved[1]).kind === 'ignore' : false;
+        const voice = /\bvoice vote\b/i.test(sentence);
+        // A note followed by an ignored motion or a voice-vote result belongs to that motion: dropped with it. A
+        // note followed by any other moved sentence may belong to that next motion: unplaced. Otherwise the note
+        // goes with the motion before it (dropped if that one was ignored, unplaced if not).
+        if (moved) settle(null, movedIgnored ? 'drop' : 'unplaced');
+        else if (voice) settle(null, 'drop');
+        else settle(null, 'context');
+        if (moved) ignoredContext = movedIgnored;
+        if (voice) ignoredContext = true;
         const n = readBodyNote(sentence);
         if (n?.kind === 'out_of_room') awaiting.push({ note: { ...n, at: null }, ignoredContext });
         else if (n) pending.push({ ...n, at: null });
@@ -520,7 +531,7 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
       }
       const v = VOTE.exec(sentence);
       if (!v) {
-        settle(null, false);
+        settle(null, 'context');
         unparsed.push(sentence);
         return;
       }
@@ -536,7 +547,7 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
           subject = classifyMotion(prev[1]);
           full = `${sentences[k - 1]} ${sentence}`;
         } else {
-          const fromMargin = subjectFromMargin(para.margin);
+          const fromMargin = rollCallSentences === 1 ? subjectFromMargin(para.margin) : null;
           subject = fromMargin ? fromMargin.subject : { kind: 'unknown' };
           if (fromMargin) full = `${sentence} [margin: ${fromMargin.heading}]`;
         }
@@ -547,24 +558,24 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         // A procedural vote is not recorded. Arrivals and departures printed in it still matter for later votes;
         // "out of the room" applies to that vote only and is dropped with it.
         for (const n of parsed?.inlineNotes ?? []) if (n.kind !== 'out_of_room') pending.push({ ...n, at: null });
-        settle(null, true);
+        settle(null, 'drop');
         ignoredContext = true;
         return;
       }
       ignoredContext = false;
       if (subject.kind === 'unknown' || !parsed) {
-        settle(null, false);
+        settle(null, 'context');
         unparsed.push(full);
         return;
       }
       const outcome = rollCallOutcome(parsed, subject.question);
       if (!outcome) {
-        settle(null, false);
+        settle(null, 'context');
         unparsed.push(full);
         return;
       }
       place();
-      settle(index, false);
+      settle(index, 'context');
       rollCalls.push({
         index,
         itemNumber: subject.itemNumber,
@@ -576,7 +587,7 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
         sentence: full,
       });
     });
-    settle(null, false);
+    settle(null, 'context');
   }
   place(); // notes after the last roll call are placed at the end
   return { meetingDate, attendance, notes, rollCalls, unparsed };
