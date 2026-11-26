@@ -18,7 +18,7 @@ import { normaliseName, type NameFile, type TermSpan } from '../../src/lib/local
 import { parseMinutes, minutesTextFromPdf, twoDigits } from '../../src/lib/localRecord/onboard/minutes.js';
 import { fetchJson, type VoteDocument } from '../../src/lib/localRecord/onboard/feed.js';
 import {
-  buildContext, fetchBytes, governingDocuments, makeStorage, parseCityConfigs, readFeeds, type CityConfig, type Connection,
+  buildContext, documentProblem, fallbackDocument, fetchBytes, governingDocuments, makeStorage, parseCityConfigs, readFeeds, type CityConfig, type Connection,
   type RefreshDeps,
 } from '../../src/lib/localRecord/refresh.js';
 import { externalVoteId, saveDocument, sha256Hex, type StorageLike } from '../../src/lib/localRecord/store.js';
@@ -308,15 +308,30 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
   const read: Read = { items, reader: [], documents: [], exceptions: [], warnings: [] };
   if (unmatched.length) read.warnings.push(`No politician id for roster members: ${[...new Set(unmatched)].join(', ')}.`);
 
-  for (const doc of docs) {
+  for (let di = 0; di < docs.length; di++) {
+    const doc = docs[di];
     const d = doc.meetingDate;
     let parse: MinutesParse;
     let bytes: Uint8Array;
+    let text: string;
     try {
       bytes = await deps.fetchBytes(doc.url);
-      parse = parseMinutes(await deps.pdfText(bytes), d);
+      text = await deps.pdfText(bytes);
+      parse = parseMinutes(text, d);
     } catch (e) {
       read.exceptions.push({ cause: 'unparsed_roll_call', subject: `${d} document ${doc.fileId}`, detail: { url: doc.url, error: (e as Error).message } });
+      continue;
+    }
+    // Minutes with no text, or that print another meeting's date, are not read for this meeting; its Memorandum is
+    // read instead.
+    const problem = documentProblem(text, d);
+    if (problem) {
+      read.exceptions.push({ cause: 'unparsed_roll_call', subject: `${d} document ${doc.fileId}`, detail: { ...problem, url: doc.url } });
+      const fb = fallbackDocument(doc, feed.docs);
+      if (fb) {
+        docs.splice(di, 1, fb);
+        di--;
+      }
       continue;
     }
     read.documents.push({ doc, bytes });

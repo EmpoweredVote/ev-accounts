@@ -410,3 +410,42 @@ describe('runFirstLoad: --apply', () => {
     expect(uploads.findIndex((u) => u.includes('/memorandum/'))).toBeGreaterThan(uploads.findIndex((u) => u.includes('/minutes/')));
   });
 });
+
+describe('R8: minutes that print another meeting date (2025-03-05 holds the 2025-05-07 minutes)', () => {
+  it('confirms nothing from them, logs an exception, and reads the meeting\'s memorandum instead', async () => {
+    const s = setup({ inventory: invFull });
+    const MINUTES_URL = 'https://bloomington.in.gov/onboard/meetingFiles/99001/download';
+    const wrong = new Uint8Array([9, 9, 9]);
+    const m = onlyMemo();
+    m.files.Minutes = [{ id: 99001, type: 'Minutes', url: MINUTES_URL, updated: 'u', filename: '2025.05.07.RS.mins.pv.revised.signed.pdf' }];
+    const d = deps({
+      fetchJson: async (url) => {
+        if (!/year=2026/.test(url)) return /legislation/.test(url) ? [] : {};
+        return /legislation/.test(url) ? legislation : { [DATE]: { '18:30:00': [m] } };
+      },
+      fetchBytes: async (url) => (url === MINUTES_URL ? wrong : memoPdf),
+      pdfText: async (b) => (b === wrong ? memoText.replace('Wednesday, October 07, 2026', 'Wednesday, May 07, 2025') : memoText),
+    });
+    await runFirstLoad(base(s, { seed: 7 }), d);
+    const reader = JSON.parse(readFileSync(path.join(s.out, 'reader-output.json'), 'utf8'));
+    expect(reader.rollCalls.length).toBeGreaterThan(0);
+    expect(reader.rollCalls.every((r: any) => r.documentUrl !== MINUTES_URL)).toBe(true);
+    const ex = JSON.parse(readFileSync(path.join(s.out, 'exceptions.json'), 'utf8')).exceptions;
+    expect(ex).toContainEqual(expect.objectContaining({
+      cause: 'unparsed_roll_call', subject: `${DATE} document 99001`,
+      detail: expect.objectContaining({ printedDate: '2025-05-07' }),
+    }));
+  });
+});
+
+describe('R8: a document with no text (the scanned 2020-12-16 minutes, file 9806)', () => {
+  it('is an exception, not a silent empty meeting', async () => {
+    const s = setup({ inventory: invFull });
+    await runFirstLoad(base(s, { seed: 7 }), deps({ pdfText: async () => '' }));
+    const ex = JSON.parse(readFileSync(path.join(s.out, 'exceptions.json'), 'utf8')).exceptions;
+    expect(ex).toContainEqual(expect.objectContaining({
+      cause: 'unparsed_roll_call', subject: `${DATE} document 17565`,
+      detail: expect.objectContaining({ kind: 'the document has no text (a scanned image)' }),
+    }));
+  });
+});

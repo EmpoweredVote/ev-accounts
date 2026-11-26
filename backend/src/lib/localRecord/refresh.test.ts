@@ -4,7 +4,7 @@ import { checkRollCall } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
 import { parseLegislationFeed } from './onboard/feed.js';
 import { parseMinutes } from './onboard/minutes.js';
-import { parseCityConfigs, loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
+import { fallbackDocument, governingDocuments, parseCityConfigs, loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
 import { externalVoteId } from './store.js';
 
 const fx = (f: string) => new URL(`./onboard/__fixtures__/${f}`, import.meta.url);
@@ -500,5 +500,74 @@ describe('final review fixes', () => {
     expect(q.text).toMatch(/c\.meeting_date <> p\.meeting_date/);
     expect(q.text).toMatch(/question = 'Final passage'/);
     expect(q.params).toEqual(['place:1805860']);
+  });
+});
+
+describe('R8: which document governs a meeting', () => {
+  const doc = (meetingId: number, meetingDate: string, fileId: number, kind: 'minutes' | 'memorandum', fileName: string, meetingTitle: string) => ({
+    meetingId, meetingDate, fileId, kind, fileName, meetingTitle,
+    url: `https://bloomington.in.gov/onboard/meetingFiles/${fileId}/download`, updated: 'u',
+  });
+
+  it('a "Regular Session and Special Session" meeting is governed per session (2021-05-05, meeting 4704)', () => {
+    const t = 'Common Council Regular Session and Special Session';
+    const got = governingDocuments([
+      doc(4704, '2021-05-05', 8769, 'memorandum', '2021.05.05.RS.Web_Memo.pdf', t),
+      doc(4704, '2021-05-05', 8770, 'minutes', '2021.05.05.SS.min.signed.pdf', t),
+    ]);
+    expect(got.map((d) => d.fileId).sort()).toEqual([8769, 8770]);
+  });
+
+  it('a one-session meeting with mislabelled files is still one document (2022-12-14, meeting 5707)', () => {
+    const t = 'Common Council Special Session';
+    const got = governingDocuments([
+      doc(5707, '2022-12-14', 11195, 'memorandum', '2022.12.14.SS_memo.pdf', t),
+      doc(5707, '2022-12-14', 13776, 'minutes', '2022.12.14.RS.mins.pv.signed.pdf', t),
+    ]);
+    expect(got.map((d) => d.fileId)).toEqual([13776]);
+  });
+
+  it('a Committee of the Whole memo never governs over the session memo (2026-09-23, meeting 11967)', () => {
+    const t = 'Common Council Special Session - Introduction of 2027 Budget Legislation';
+    const got = governingDocuments([
+      doc(11967, '2026-09-23', 17521, 'memorandum', '2026.09.23.SS.Memo.pdf', t),
+      doc(11967, '2026-09-23', 17522, 'memorandum', '2026.09.23.COW.Memo.pdf', t),
+    ]);
+    expect(got.map((d) => d.fileId)).toEqual([17521]);
+  });
+
+  it('the fallback for minutes that print another date is the meeting\'s memorandum (2025-03-05: 15758 -> 14709)', () => {
+    const t = 'Common Council Regular Session';
+    const all = [
+      doc(7095, '2025-03-05', 15758, 'minutes', '2025.05.07.RS.mins.pv.revised.signed.pdf', t),
+      doc(7095, '2025-03-05', 14709, 'memorandum', '2025.03.05.RS_memo.pdf', t),
+    ];
+    expect(fallbackDocument(all[0], all)?.fileId).toBe(14709);
+    expect(fallbackDocument(all[1], all)).toBeNull();
+  });
+});
+
+describe('R8: a document that prints another meeting date is not read for this meeting', () => {
+  it('raises an exception, confirms nothing from it, and reads the meeting\'s memorandum instead', async () => {
+    const db = stubDb([
+      [/INSERT INTO essentials\.local_record_source_documents/, (p) => [{ id: p[2] === MINUTES_URL ? 'doc-minutes' : 'doc-memo' }]],
+    ]);
+    const m = JSON.parse(JSON.stringify(meetings[DATE]['18:30:00'][0]));
+    m.files = {
+      Memorandum: m.files.Memorandum,
+      Minutes: [{ id: 99001, meeting_id: m.id, type: 'Minutes', url: MINUTES_URL, updated: '2026-11-20 10:00:00', filename: 'x.pdf' }],
+    };
+    const wrongMinutes = new Uint8Array([1, 2, 3]);
+    const d = deps(db, {
+      meetings: { [DATE]: { '18:30:00': [m] } },
+      fetchBytes: async (url: string) => (url === MINUTES_URL ? wrongMinutes : memoPdf),
+      pdfText: async (b: Uint8Array) => (b === wrongMinutes ? memoText.replace('Wednesday, October 07, 2026', 'Wednesday, May 07, 2025') : memoText),
+    });
+    await runLocalRecordRefresh({ dryRun: false, now: NOW }, d);
+    const ex = sql(db, /INSERT INTO essentials\.local_record_exceptions/).map((c) => c.params);
+    expect(ex.some((p) => p[2] === 'unparsed_roll_call' && String(p[3]).startsWith(`${DATE} document 99001`))).toBe(true);
+    const confirmed = sql(db, /'confirmed', \$12/).map((c) => c.params[11]);
+    expect(confirmed.length).toBeGreaterThan(0);
+    expect(new Set(confirmed)).toEqual(new Set(['doc-memo']));
   });
 });

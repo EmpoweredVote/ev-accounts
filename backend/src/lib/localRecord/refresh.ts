@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { checkRollCall, type CheckContext } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
 import { fetchJson, listVoteDocuments, parseLegislationFeed, type VoteDocument } from './onboard/feed.js';
-import { minutesTextFromPdf, parseMinutes } from './onboard/minutes.js';
+import { minutesTextFromPdf, parseMinutes, printedMeetingDate } from './onboard/minutes.js';
 import { externalVoteId, saveDocument, sha256Hex, type Queryable, type StorageLike } from './store.js';
 import { recordException, writeConfirmed, writeFeed } from './write.js';
 import { EXCEPTION_CAUSES } from './types.js';
@@ -209,16 +209,64 @@ export function buildContext(names: NameFile, terms: TermSpan[], feedItems: Feed
   };
 }
 
-/** The document that governs a meeting: its Minutes if posted, else its Memorandum. */
+/** The session or committee a file covers, from the tag in its file name ("2021.05.05.RS.Web_Memo.pdf" -> RS). */
+const sessionTag = (d: VoteDocument): string | null =>
+  /(?:^|[._\s-])(RS|SS|OM|DS|COW|LUC)(?=[._\s-]|$)/i.exec(d.fileName ?? '')?.[1].toUpperCase() ?? null;
+const COMMITTEE_TAGS = new Set(['COW', 'LUC']);
+const isCommittee = (d: VoteDocument) => COMMITTEE_TAGS.has(sessionTag(d) ?? '');
+
+/**
+ * A meeting titled with two sessions ("Regular Session and Special Session") whose files each name one of them:
+ * each session has its own vote document. File names are not trusted otherwise (they are often mislabelled).
+ */
+function splitsBySession(list: VoteDocument[]): boolean {
+  const title = list[0]?.meetingTitle ?? '';
+  return /Regular Session/i.test(title) && /Special Session/i.test(title)
+    && list.every((d) => ['RS', 'SS'].includes(sessionTag(d) ?? ''));
+}
+
+const newest = (pool: VoteDocument[]) => pool.reduce((a, b) => (b.fileId > a.fileId ? b : a));
+
+/**
+ * The documents that govern a meeting: its Minutes if posted, else its Memorandum (the newest file of that kind).
+ * A Committee of the Whole file never governs when the meeting has a session file. A meeting of two sessions is
+ * governed per session.
+ */
 export function governingDocuments(docs: VoteDocument[]): VoteDocument[] {
   const byMeeting = new Map<number, VoteDocument[]>();
   for (const d of docs) byMeeting.set(d.meetingId, [...(byMeeting.get(d.meetingId) ?? []), d]);
   const out: VoteDocument[] = [];
   for (const list of byMeeting.values()) {
-    const pool = list.some((d) => d.kind === 'minutes') ? list.filter((d) => d.kind === 'minutes') : list;
-    out.push(pool.reduce((a, b) => (b.fileId > a.fileId ? b : a)));
+    const council = list.filter((d) => !isCommittee(d));
+    const pool = council.length ? council : list;
+    const groups = splitsBySession(pool)
+      ? [...new Set(pool.map(sessionTag))].map((t) => pool.filter((d) => sessionTag(d) === t))
+      : [pool];
+    for (const g of groups) out.push(newest(g.some((d) => d.kind === 'minutes') ? g.filter((d) => d.kind === 'minutes') : g));
   }
   return out;
+}
+
+/**
+ * What to read instead of Minutes that print another meeting's date: the newest Memorandum of the same meeting (and
+ * session). Null for a Memorandum, or when the meeting has none.
+ */
+export function fallbackDocument(doc: VoteDocument, docs: VoteDocument[]): VoteDocument | null {
+  if (doc.kind !== 'minutes') return null;
+  const meeting = docs.filter((d) => d.meetingId === doc.meetingId);
+  const split = splitsBySession(meeting.filter((d) => !isCommittee(d)));
+  const pool = meeting.filter((d) => d.kind === 'memorandum' && !isCommittee(d) && (!split || sessionTag(d) === sessionTag(doc)));
+  return pool.length ? newest(pool) : null;
+}
+
+/**
+ * Why a document is not read for this meeting: it has no text (a scanned image), or it prints another meeting's
+ * date. Null when it may be read.
+ */
+export function documentProblem(text: string, meetingDate: string): { kind: string; printedDate?: string } | null {
+  if (!text.trim()) return { kind: 'the document has no text (a scanned image)' };
+  const printed = printedMeetingDate(text);
+  return printed && printed !== meetingDate ? { kind: 'the document prints another meeting date', printedDate: printed } : null;
 }
 
 interface CityRun {
@@ -349,7 +397,8 @@ async function runCity(
   const parsedByDate = new Map<string, MinutesParse[]>();
   /** Dates whose read documents were all formal Minutes (D14 recheck). */
   const minutesDates = new Map<string, string>();
-  for (const doc of governing) {
+  for (let gi = 0; gi < governing.length; gi++) {
+    const doc = governing[gi];
     const d = doc.meetingDate;
     if (blocked.some((subj) => subj.startsWith(`${d} `))) continue;
     const isKnown = known.has(doc.url);
@@ -368,10 +417,24 @@ async function runCity(
     if (isKnown && !pendingDates.has(d)) continue; // re-fetched, unchanged, nothing waiting
 
     let parse: MinutesParse;
+    let text: string;
     try {
-      parse = parseMinutes(await deps.pdfText(bytes), d);
+      text = await deps.pdfText(bytes);
+      parse = parseMinutes(text, d);
     } catch (e) {
       await raise('unparsed_roll_call', `${d} document ${doc.fileId}`, { url: doc.url, error: (e as Error).message });
+      continue;
+    }
+    // Minutes with no text, or that print another meeting's date, are not read for this date. The meeting's
+    // Memorandum is read in their place.
+    const problem = documentProblem(text, d);
+    if (problem) {
+      await raise('unparsed_roll_call', `${d} document ${doc.fileId}`, { ...problem, url: doc.url });
+      const fb = fallbackDocument(doc, docs);
+      if (fb) {
+        governing.splice(gi, 1, fb);
+        gi--;
+      }
       continue;
     }
     parsedByDate.set(d, [...(parsedByDate.get(d) ?? []), parse]);

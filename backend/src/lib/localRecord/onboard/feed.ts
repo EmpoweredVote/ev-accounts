@@ -71,13 +71,17 @@ export interface VoteDocument {
   url: string;
   updated: string;
   kind: VoteDocumentKind;
+  /** The file's name as posted ("2021.05.05.RS.Web_Memo.pdf"); it names the session or committee it covers. */
+  fileName?: string;
+  /** The meeting's title ("Common Council Regular Session and Special Session"). */
+  meetingTitle?: string;
 }
 
 const DOCUMENT_TYPES: Record<string, VoteDocumentKind> = { Memorandum: 'memorandum', Minutes: 'minutes' };
 
 /**
- * Memorandum and Minutes files of Common Council Session meetings. The Memorandum confirms votes first; the Minutes
- * are read again when they appear, and they govern.
+ * Memorandum and Minutes files of Common Council Session and Organizational meetings. The Memorandum confirms votes
+ * first; the Minutes are read again when they appear, and they govern.
  */
 export function listVoteDocuments(json: unknown): VoteDocument[] {
   const out: VoteDocument[] = [];
@@ -89,7 +93,8 @@ export function listVoteDocuments(json: unknown): VoteDocument[] {
       for (const meeting of meetings) {
         if (!isObj(meeting)) continue;
         const title = String(meeting.title ?? '');
-        if (!title.includes('Common Council') || !title.includes('Session')) continue;
+        // Organizational Meetings (each January) hold roll calls too, such as the resolution adopting the year's rules.
+        if (!title.includes('Common Council') || !(title.includes('Session') || title.includes('Organizational Meeting'))) continue;
         if (!isObj(meeting.files)) continue;
         for (const [type, kind] of Object.entries(DOCUMENT_TYPES)) {
           const files = meeting.files[type];
@@ -103,6 +108,8 @@ export function listVoteDocuments(json: unknown): VoteDocument[] {
               url: String(f.url),
               updated: String(f.updated),
               kind,
+              fileName: String(f.filename ?? ''),
+              meetingTitle: title,
             });
           }
         }

@@ -6,6 +6,7 @@ import {
   minutesSentences,
   parseMinutes,
   parseRollCallSentence,
+  printedMeetingDate,
   rollCallOutcome,
   stripMargin,
 } from './minutes.js';
@@ -506,5 +507,36 @@ describe('final review: amendment and condition numbers are two zero-padded digi
       '',
     ].join('\n');
     expect(q(parseMinutes(text, '2021-01-01'))).toEqual(['Ord 17-10|Amendment 01']);
+  });
+});
+
+describe('R8: the meeting date printed in the document header', () => {
+  it('reads "Wednesday, May 07, 2025" from the minutes attached to the 2025-03-05 meeting (file 15758)', () => {
+    const head = [
+      '                          Bloomington Common Council-Regular Session Minutes',
+      '           Bloomington Council Chambers, City Hall, 401 N. Morton Street, Bloomington, Indiana',
+      '                                     Wednesday, May 07, 2025, 6:30pm',
+      '',
+      '   CALL TO ORDER [6:31pm]',
+    ].join('\n');
+    expect(printedMeetingDate(head)).toBe('2025-05-07');
+  });
+
+  it('reads the first date of two-column minutes (2020-12-02, file 9378)', () => {
+    const head = [
+      'In Bloomington, Indiana on Wednesday, December 2, 2020 at         COMMON COUNCIL',
+      '6:30pm, Council President Stephen Volan presided over a Regular   REGULAR SESSION',
+      'Session of the Common Council. Per the Governor’s Executive       December 02, 2020',
+    ].join('\n');
+    expect(printedMeetingDate(head)).toBe('2020-12-02');
+  });
+
+  it('reads "Friday, 22 July, 2022" (memorandum 10620)', () => {
+    expect(printedMeetingDate('                                       Friday, 22 July, 2022\n')).toBe('2022-07-22');
+  });
+
+  it('is null when the header prints no date (a scanned PDF has no text)', () => {
+    expect(printedMeetingDate('')).toBeNull();
+    expect(printedMeetingDate('MEMORANDUM\nCommon Council\n')).toBeNull();
   });
 });

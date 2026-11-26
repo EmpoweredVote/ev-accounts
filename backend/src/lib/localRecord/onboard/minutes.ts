@@ -597,6 +597,34 @@ export function parseMinutes(text: string, meetingDate: string): MinutesParse {
 }
 
 // ---------------------------------------------------------------------------------------------------------------
+// Printed meeting date
+// ---------------------------------------------------------------------------------------------------------------
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+  'November', 'December'];
+const MONTH = `(${MONTHS.join('|')})`;
+const DATE_MDY = new RegExp(`\\b${MONTH}\\s+(\\d{1,2}),?\\s+(\\d{4})\\b`);
+const DATE_DMY = new RegExp(`\\b(\\d{1,2})\\s+${MONTH},?\\s+(\\d{4})\\b`);
+const HEADER_LINES = 20;
+
+/**
+ * The meeting date printed in the document's header (its first 20 lines), as YYYY-MM-DD; null when none is printed.
+ * The city has attached one meeting's minutes to another meeting (2025-03-05 holds the 2025-05-07 minutes), so a
+ * document is read for a meeting only when this date is that meeting's date or absent.
+ */
+export function printedMeetingDate(text: string): string | null {
+  const iso = (y: string, month: string, d: string) =>
+    `${y}-${String(MONTHS.indexOf(month) + 1).padStart(2, '0')}-${d.padStart(2, '0')}`;
+  for (const line of text.split('\n').slice(0, HEADER_LINES)) {
+    const a = DATE_MDY.exec(line);
+    const b = DATE_DMY.exec(line);
+    if (a && (!b || a.index <= b.index)) return iso(a[3], a[1], a[2]);
+    if (b) return iso(b[3], b[2], b[1]);
+  }
+  return null;
+}
+
+// ---------------------------------------------------------------------------------------------------------------
 // PDF to layout text
 // ---------------------------------------------------------------------------------------------------------------
 

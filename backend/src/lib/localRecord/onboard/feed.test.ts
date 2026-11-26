@@ -123,3 +123,21 @@ describe('EXCEPTION_CAUSES', () => {
     expect(EXCEPTION_CAUSES).toContain('minutes_disagree');
   });
 });
+
+describe('R8: Organizational Meetings are council sessions', () => {
+  it('lists the 2026-01-07 Organizational Meeting minutes (file 17231) and memorandum (16067), with file names', () => {
+    const files = listVoteDocuments(load('meetings-2026.json'));
+    expect(files.find((f) => f.fileId === 17231)).toMatchObject({
+      meetingId: 11878, meetingDate: '2026-01-07', kind: 'minutes', fileName: '2026.01.07.OM.mins.revised.signed.pdf',
+      meetingTitle: 'Common Council Organizational Meeting',
+    });
+    expect(files.find((f) => f.fileId === 16067)).toMatchObject({ kind: 'memorandum' });
+  });
+
+  it('still skips a committee\'s organizational meeting that is not the Common Council', () => {
+    const out = listVoteDocuments({
+      '2022-03-01': { '17:00:00': [{ id: 5201, title: 'Jack Hopkins - Organizational Meeting', files: { Minutes: [{ id: 1, type: 'Minutes', url: 'https://x/1', updated: 'u' }] } }] },
+    });
+    expect(out).toEqual([]);
+  });
+});
