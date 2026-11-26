@@ -243,6 +243,10 @@ router.get(
 //
 // Serves `pending_gross` (Treasury Tracker, 2026-09-22): donations arrived since the last
 // reconcile. It is RAISED, not ON HAND — never add it to `balance`.
+//
+// No longer serves `recon_variance` / `recon_explanation` / `recon_by_source` (2026-11-25):
+// the reconciliation gap is an operator diagnostic a donor cannot evaluate. See the note on
+// OrgFinancialSummary in treasuryService.ts. `unmatched_deposits` is still served.
 router.get(
   '/orgs/:id/financial-summary',
   optionalAuth,
