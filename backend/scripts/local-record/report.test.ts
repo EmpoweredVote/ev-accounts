@@ -8,11 +8,11 @@ describe('formatReport', () => {
       [],
       new Date('2026-11-26T12:00:00Z'),
     );
-    for (const w of ['2026-W40', '2026-W41', '2026-W42', '2026-W43', '2026-W44', '2026-W45', '2026-W46', '2026-W48']) {
+    for (const w of ['2026-W41', '2026-W42', '2026-W43', '2026-W44', '2026-W45', '2026-W46', '2026-W48']) {
       expect(out).toMatch(new RegExp(`${w}\\s+none`));
     }
     expect(out).toContain('2026-W47  unknown_name 2');
-    expect(out).not.toContain('2026-W39');
+    expect(out).not.toContain('2026-W40');
   });
 
   it('says so when nothing is open', () => {
