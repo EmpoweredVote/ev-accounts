@@ -1,0 +1,41 @@
+{
+  "findings": [
+    {
+      "full_name": "Dianne Jones",
+      "topic_key": "education-school-budget",
+      "check_id": "source-no-path",
+      "severity": "medium",
+      "what": "source URL has no path: https://diannejonesforeverystudent.com/"
+    },
+    {
+      "full_name": "Dianne Jones",
+      "topic_key": "education-school-budget",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Vivek Prasad",
+      "topic_key": "education-curriculum",
+      "check_id": "source-no-path",
+      "severity": "medium",
+      "what": "source URL has no path: https://www.vote4vp.com/"
+    },
+    {
+      "full_name": "Vivek Prasad",
+      "topic_key": "education-school-budget",
+      "check_id": "source-no-path",
+      "severity": "medium",
+      "what": "source URL has no path: https://www.vote4vp.com/"
+    }
+  ],
+  "summary": {
+    "rows": 40,
+    "high": 0,
+    "medium": 4,
+    "by_check": {
+      "source-no-path": 3,
+      "statement-needs-review": 1
+    }
+  }
+}
