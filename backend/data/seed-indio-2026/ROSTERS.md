@@ -50,8 +50,17 @@ Processed headshots are in `headshots/`.
 
 1. **After 2026-12-02** — read the minutes: confirm Felipe Ortiz's oath date, and retitle the D2/D3 offices
    ("Mayor", "Mayor Pro Tem") to whoever the rotation (Resolution No. 9507, item 14.1) names.
-2. **After 2026-12-11** — confirm DSUSD Areas 2 and 5 (Alvarez, Duran) and CVUSD Area 2 (Callimanis). None was on
-   the ballot; reported uncontested; the lone filers' names could not be read.
+2. **After 2026-12-15** — confirm DSUSD Areas 2 and 5 (Alvarez, Duran) at DSUSD's Annual Organizational Meeting
+   (2026-12-15). Neither was on the ballot: the Desert Sun (2026-08-14, "See who's running for school boards across
+   Coachella Valley") says "Neither candidate faces an opponent", but no reachable source names the two filers.
+   Searched 2026-11-28 and NOT found in: the ROV's final candidate list and its 2026-08-31 proof list (both print
+   on-ballot contests only); the county election calendar in Board of Supervisors item 2.15 of 2026-09-22 (lists the
+   seats, no names); the supervisors' proceedings Aug 25 – Nov 3 (no in-lieu appointment yet — Ed. Code 5326 puts it
+   just before December); DSUSD's old agenda portal (ends 2022). ▶ Next places: the supervisors' first December
+   agenda (rivcocob.org/2026-agendas-and-proceedings), and DSUSD's 2026-12-15 agenda on Simbli.
+   ✅ **CVUSD Area 2 is CONFIRMED**: the Desert Sun's election report (updated 2026-11-06, "Newcomers hold early leads
+   in Coachella Valley school board races") says Callimanis "ran unopposed" and "is set to serve her first full
+   four-year term representing Trustee Area 2". Nothing to change.
 3. **CVUSD trustee areas** — every CVUSD address currently sees all seven trustees. Get polygons (district GIS,
    or union the ROV's precinct-level statement of votes for "Mbr Gov Bd Coachella Valley USD, TA 1") and repoint
    to X0002 `0609070-ta-N`, as `CC_0519` did for Fremont.
