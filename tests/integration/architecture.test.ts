@@ -34,6 +34,10 @@ const ALLOWED = [
   // Background job (LegiScan dataset archive, CA_0382): uploads a zip to Storage. No
   // request, no caller, no user rows — a Storage write the user client cannot make.
   'lib/legiscan/archive.ts',
+  // Background job (weekly local-record refresh, CA_0432): saves city vote documents to the
+  // private local-record-sources bucket. No request, no caller, no user rows — the same
+  // Storage-write class as lib/legiscan/archive.ts.
+  'lib/localRecord/refresh.ts',
   // supabaseAdmin.auth.admin.createUser — an auth-admin operation the user client
   // cannot perform, same justification as lib/authService.ts. Its own header notes it
   // lives in lib/ *because* of this rule; the author read the routes-only test and not

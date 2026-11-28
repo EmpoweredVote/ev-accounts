@@ -7,7 +7,7 @@ import type { VoteDocumentKind } from './onboard/feed.js';
 export type Queryable = Pick<PoolClient, 'query'>;
 
 /**
- * Production: `supabaseAdmin.storage.from('local-record-sources')` (a private bucket), wrapped so that upload passes
+ * Production: the service-role client's `storage.from('local-record-sources')` (a private bucket), wrapped so that upload passes
  * `{ upsert: true }`. Paths are content-addressed, so the same bytes can be uploaded twice (a second URL, or a retry
  * after a failed insert): `upload` MUST tolerate overwriting an existing object. Tests: an in-memory stub.
  */
