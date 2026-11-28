@@ -117,7 +117,13 @@ describe('sponsor sentence finder: safety rules', () => {
       ),
     ).toEqual([]));
   it('stops at a period inside a list', () =>
-    expect(names('This amendment is sponsored by Councilmember Sims. and Rollo then spoke.')).toEqual(['Sims']));
+    expect(names('This amendment is sponsored by Councilmember Sims. and Rollo then spoke.')).toEqual([]));
+  it.each([
+    ['Dr.', 'This amendment is sponsored by Councilmember Sims and Dr. Volan to add a provision.'],
+    ['an initial', 'This amendment is sponsored by Councilmember Sims and J. Rollo to add a provision.'],
+    ['Sec.', 'This amendment is sponsored by Councilmember Sims and Sec. Rollo to add a provision.'],
+    ['Jr.', 'This amendment is sponsored by Councilmember Sims and Councilmember Rollo Jr. to add a provision.'],
+  ])('never reads %s as a name', (_k, text) => expect(names(text)).toEqual(['Sims']));
   it('reads heading variants: "#", "(revised)", lowercase synopsis', () => {
     const one = (t: string) => sponsorSentencesFromDocument(t)[0];
     expect(one('Reasonable Condition #1 Synopsis: This Reasonable Condition 01 is sponsored by Councilmember Stosberg. It requires')).toEqual(

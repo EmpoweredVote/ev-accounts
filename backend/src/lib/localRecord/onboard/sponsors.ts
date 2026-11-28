@@ -117,9 +117,13 @@ function readNames(segment: string): { names: string[]; placeholder: boolean } {
     }
     const bare = word.replace(/\.$/, '');
     if (!isNameWord(bare)) break;
-    // A trailing period on the last word is the end of the sentence; a period inside a list ends the list after this name.
+    // A trailing period on the last word is the end of the sentence; a period inside a list stops it without that word.
+    if (word.endsWith('.') && i < tokens.length - 1) {
+      // "Dr.", "J.", "Sec.", "Jr.": an abbreviation, not a name. Drop it and the name it may belong to, and stop.
+      current = [];
+      break;
+    }
     current.push(bare);
-    if (word.endsWith('.') && i < tokens.length - 1) break;
     if (separated) {
       flush();
       pending = 'comma';
