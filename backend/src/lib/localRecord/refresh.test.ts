@@ -4,7 +4,7 @@ import { checkRollCall } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
 import { parseLegislationFeed } from './onboard/feed.js';
 import { parseMinutes } from './onboard/minutes.js';
-import { fallbackDocument, governingDocuments, parseCityConfigs, loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
+import { documentSponsorFindings, fallbackDocument, governingDocuments, parseCityConfigs, loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
 import { externalVoteId, sha256Hex } from './store.js';
 
 const fx = (f: string) => new URL(`./onboard/__fixtures__/${f}`, import.meta.url);
@@ -670,5 +670,16 @@ describe('council sponsorships', () => {
     await runLocalRecordRefresh({ dryRun: false, now: NOW }, d);
     expect(storage.uploads.filter((u) => u.includes('legislation_feed')).every((u) => u.includes(sha256Hex(served)))).toBe(true);
     expect(storage.uploads.some((u) => u.includes('legislation_feed'))).toBe(true);
+  });
+});
+
+describe('documentSponsorFindings: unreadable headings', () => {
+  it('gives each no_item heading in one document its own subject', () => {
+    const text = ['Title A Council Sponsor - CM Daily', 'Title B Council Sponsor - CM Rollo'].join('\n');
+    const r = documentSponsorFindings(text, [], { kind: 'memorandum', url: 'https://x/1', fileId: 1 }, '2026-10-07', null);
+    expect(r.findings).toEqual([]);
+    expect(r.problems).toHaveLength(2);
+    expect(new Set(r.problems.map((p) => p.subject)).size).toBe(2);
+    expect(r.problems.every((p) => /^2026-10-07 document 1 \/ Council Sponsor [0-9a-f]{8}$/.test(p.subject))).toBe(true);
   });
 });

@@ -1150,3 +1150,11 @@ describe('runFirstLoad: sponsors', () => {
     expect(firstSponsor).toBeGreaterThan(lastVote);
   });
 });
+
+describe('sponsors: reader exception hint for a hashed no_item subject', () => {
+  it('shows the no_item cause on a missed row', () => {
+    const cmp = compareSponsors([], [{ cause: 'sponsor_unresolved', subject: '2026-10-14 document 17809 / Amendment 01 a0b1b240', detail: {} }],
+      [{ id: `${SCOPE}:2026-10-14:Ord 2026-21 (amendment 1)`, date: '2026-10-14', sponsors: ['Stosberg'] }], roster, names());
+    expect(cmp.diffs[0].cause).toMatch(/sponsor_unresolved/);
+  });
+});

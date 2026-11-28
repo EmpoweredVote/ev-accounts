@@ -741,7 +741,7 @@ export function compareSponsors(
   const noItem = (date: string, subject: string): string[] => {
     const label = subject.includes(' / ') ? subject.slice(subject.indexOf(' / ')) : null;
     if (!label) return [];
-    return problems.filter((p) => p.subject.startsWith(`${date} document `) && p.subject.endsWith(label)).map((p) => p.cause);
+    return problems.filter((p) => p.subject.startsWith(`${date} document `) && (p.subject.endsWith(label) || p.subject.endsWith(`${label} ${p.subject.slice(-8)}`) && /^[0-9a-f]{8}$/.test(p.subject.slice(-8)))).map((p) => p.cause);
   };
   const out: SponsorComparison = { rows: 0, agree: 0, agreeAfterNormalising: 0, diffs: [], skippedBeforeWindow: 0 };
   const seen = new Set<string>();

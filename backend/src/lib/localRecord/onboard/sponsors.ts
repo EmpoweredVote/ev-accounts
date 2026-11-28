@@ -41,7 +41,9 @@ function splitSentences(text: string): string[] {
   return out.map(collapse).filter(Boolean);
 }
 
-const MARKER = /\b(co-?sponsored|sponsored)\s+by\b/gi;
+const MARKER = /\b(co-?sponsored|sponsored|co-?authored|authored)\s+by\b/gi;
+/** "authored by Public Works" is not a council sponsor: an authored marker counts only with a council title in its names. */
+const COUNCIL_TITLE = /\b(?:Councilmembers?|Council\s+members?|Cms?\.?|CMs?\.?)\s/;
 const TITLE = /^(?:Councilmembers?|Councilwoman|Councilman|Councilor|CMs?\.?|Cms?\.?)$/;
 const NOT_A_NAME = new Set([
   'The', 'This', 'That', 'It', 'Its', 'These', 'Council', 'Mayor', 'Common', 'City', 'Ordinance', 'Resolution',
@@ -147,7 +149,11 @@ function readNames(segment: string, opts: { commaList?: boolean } = {}): { names
 }
 
 function parseSentence(sentence: string): { names: SponsorName[]; placeholder: boolean } | null {
-  const markers = [...sentence.matchAll(MARKER)];
+  const markers = [...sentence.matchAll(MARKER)].filter((m, k, all) => {
+    if (!/authored/i.test(m[1])) return true;
+    const to = k + 1 < all.length ? all[k + 1].index! : sentence.length;
+    return COUNCIL_TITLE.test(sentence.slice(m.index! + m[0].length, to));
+  });
   if (!markers.length) {
     return /\[[^\]]*sponsor[^\]]*\]/i.test(sentence) ? { names: [], placeholder: true } : null;
   }
@@ -328,7 +334,7 @@ export function sponsorSentencesWithItems(
 // lines) and, at the end of the title, "Council Sponsor: CM Rollo". The item is the one named on that same heading
 // block, never the nearest motion (a motion may name another item). A name may wrap onto the next line.
 
-const ITEM_HEADING = /^(?:\d+(?:\.\d+)*\.?\s*)?(Appropriation Ordinance|Ordinance|Resolution)\s+(\d{4}-\d{1,3})$/;
+const ITEM_HEADING = /^(?:\d+(?:\.\d+)*\.?\s*)?(Appropriation Ordinance|Ordinance|Resolution)\s+(\d{4}-\d{1,3})(?:\s*\([^)]*\))?$/;
 const SPONSOR_LINE = /Council\s+(Co-?\s*)?Sponsors?(?:\s*[:\-\u2013\u2014]\s*|\s+(?=N\/A\b))/i;
 /** How far above a Council Sponsor line its item heading may be (title lines in between). */
 const HEADING_REACH = 6;
@@ -358,6 +364,9 @@ export function councilSponsorHeadings(text: string): DocumentSponsorSentence[] 
     let itemNumber: string | null = null;
     for (let j = i - 1; j >= Math.max(0, i - HEADING_REACH); j--) {
       if (/\b(?:moved|seconded)\b/i.test(lines[j])) break;
+      // Stay inside this heading's own block: an earlier Council Sponsor line ends the one above. An item line that
+      // could not be read (margin text, another form) must not let the search reach the previous item.
+      if (SPONSOR_LINE.test(lines[j])) break;
       const h = ITEM_HEADING.exec(lines[j]);
       if (h) {
         itemNumber = itemNumberFor(h[1], h[2]);

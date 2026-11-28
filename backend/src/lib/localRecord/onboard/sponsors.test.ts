@@ -330,3 +330,36 @@ describe('"Council Sponsor:" line in the right margin column', () => {
     expect(r[0]).toMatchObject({ itemNumber: 'Res 2026-13', names: [{ printed: 'Zulich', role: 'sponsor' }] });
   });
 });
+
+describe('heading block stays inside its own block', () => {
+  const run = (second: string) => sponsorSentencesWithItems(
+    ['7.1. Ordinance 2026-20', 'Title A Council Sponsor - N/A', second, 'Title B Council Sponsor - CM Daily'].join('\n'),
+  ).map((s) => [s.itemNumber, s.names.map((n) => n.printed)]);
+
+  it('an unreadable own item line gives null, never the earlier item', () => {
+    expect(run('7.2. Ordinance 2026-21        Ayes: 9')).toEqual([[null, ['Daily']]]);
+    expect(run('7.2. Ordinance 26-21')).toEqual([[null, ['Daily']]]);
+  });
+  it('a trailing parenthetical is accepted and still ties to its own item', () => {
+    expect(run('7.2. Ordinance 2026-21 (Second Reading)')).toEqual([['Ord 2026-21', ['Daily']]]);
+  });
+  it('a readable own item still ties correctly', () => {
+    expect(run('7.2. Ordinance 2026-21')).toEqual([['Ord 2026-21', ['Daily']]]);
+  });
+});
+
+describe('"authored by" as a sponsor marker', () => {
+  it('reads a feed synopsis "This Resolution 2026-07, authored by Councilmembers Sydney Zulich and Courtney Daily, supports ..."', () => {
+    const r = itemSponsorSentencesFromSynopsis("This Resolution 2026-07, authored by Councilmembers Sydney Zulich and Courtney Daily, supports the Monroe County Council's decision.");
+    expect(r).toHaveLength(1);
+    expect(r[0].names).toEqual([{ printed: 'Sydney Zulich', role: 'sponsor' }, { printed: 'Courtney Daily', role: 'sponsor' }]);
+  });
+  it('reads "co-authored by" as cosponsor, and ignores a non-council author', () => {
+    expect(sponsorSentencesFromSynopsis('This ordinance, co-authored by Councilmember Rollo, amends Title 2.')[0].names).toEqual([{ printed: 'Rollo', role: 'cosponsor' }]);
+    expect(itemSponsorSentencesFromSynopsis('This ordinance, authored by Public Works, updates the sanitation division.')).toEqual([]);
+  });
+  it('reads it in a document amendment synopsis', () => {
+    const r = sponsorSentencesFromDocument('Amendment 01 Synopsis: This amendment, authored by Cm. Piedmont-Smith, would delay the date.');
+    expect(r[0].names).toEqual([{ printed: 'Piedmont-Smith', role: 'sponsor' }]);
+  });
+});
