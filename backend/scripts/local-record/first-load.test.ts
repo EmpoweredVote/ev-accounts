@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import type { NameFile } from '../../src/lib/localRecord/names.js';
 import type { CityConfig } from '../../src/lib/localRecord/refresh.js';
 import {
-  applyCorrections, applyOwnerChecks, compareWithInventory, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
+  applyCorrections, applyOwnerChecks, applySponsorOwnerChecks, compareSponsors, compareWithInventory, drawSponsorSpotCheck, inventorySponsorSubjects, normaliseItemNumber, sponsorBlockers, type SponsorRowOut, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
   type InventoryItem, type OwnerCheck, type ReaderRollCall, validateOwnerChecks,
 } from './first-load.js';
 import type { FeedItem } from '../../src/lib/localRecord/types.js';
@@ -19,6 +19,15 @@ const legislation = JSON.parse(readFileSync(ofx('legislation-2026.json'), 'utf8'
 const meetings = JSON.parse(readFileSync(ofx('meetings-2026.json'), 'utf8'));
 const memoPdf = new Uint8Array(readFileSync(ofx('minutes/2026-10-07.pdf')));
 const memoText = readFileSync(ofx('minutes/2026-10-07.txt'), 'utf8');
+
+/** Fill every sponsor spot-check verdict (the picks are checked by eye in a real run). */
+const fillSponsorSpot = (out: string, verdict = 'match') => {
+  const p = path.join(out, 'sponsor-spotcheck.json');
+  const spot = JSON.parse(readFileSync(p, 'utf8'));
+  spot.picks.forEach((x: any) => (x.verdict = verdict));
+  writeFileSync(p, JSON.stringify(spot));
+  return spot;
+};
 
 const SCOPE = 'place:1805860';
 const DATE = '2026-10-07';
@@ -318,6 +327,7 @@ describe('runFirstLoad: --apply', () => {
     const spot = JSON.parse(readFileSync(p, 'utf8'));
     spot.picks.forEach((x: any) => (x.verdict = verdict));
     writeFileSync(p, JSON.stringify(spot));
+    fillSponsorSpot(out);
     return spot;
   };
 
@@ -783,6 +793,7 @@ describe('runFirstLoad: owner-checks.json', () => {
     const spot = JSON.parse(readFileSync(p, 'utf8'));
     spot.picks.forEach((x: any) => (x.verdict = 'match'));
     writeFileSync(p, JSON.stringify(spot));
+    fillSponsorSpot(out);
   };
 
   it('without the file: no owner-checked.json and no owner lines', async () => {
@@ -895,5 +906,171 @@ describe('runFirstLoad: owner-checks.json', () => {
     fillAll(s2.out);
     const r2 = await runFirstLoad(base(s2, { apply: true }), none);
     expect(r2.applied?.exceptions).toBeGreaterThan(0);
+  });
+});
+
+
+// ---- sponsorships ----------------------------------------------------------------------------------------------------
+describe('sponsors: inventory control', () => {
+  const spons = (itemNumber: string, id: string, printed = 'Asare') => ({
+    itemNumber, label: null, politicianId: id, role: 'sponsor' as const, nameAsPrinted: printed, sentence: 's', sourceKind: 'legislation_feed' as const,
+    sourceDocumentId: null, sourceUrl: 'https://x/feed',
+  });
+  const nf = names();
+  const inv = (id: string, sponsors: string[], date = '2026-10-07') => ({ id: `${SCOPE}:${date}:${id}`, date, sponsors });
+
+  it('lists an inventory sponsor the reader missed as a blocker', () => {
+    const cmp = compareSponsors([], [{ cause: 'sponsor_unresolved', subject: 'Ord 2026-25', detail: {} }], [inv('Ord 2026-25', ['Stosberg'])], roster, nf);
+    expect(cmp.diffs).toHaveLength(1);
+    expect(cmp.diffs[0]).toMatchObject({ group: 'missed', subject: 'Ord 2026-25', inventory: ['Stosberg'], reader: null, cause: 'sponsor_unresolved' });
+    const blockers = sponsorBlockers(cmp);
+    expect(blockers).toHaveLength(1);
+    expect(blockers[0].cause).toBe('inventory_disagrees');
+  });
+
+  it('lists different members, and a reader-only subject without blocking', () => {
+    const cmp = compareSponsors(
+      [spons('Ord 2026-25', 'p-asare'), spons('Ord 2026-99', 'p-rollo', 'Rollo')], [], [inv('Ord 2026-25', ['Stosberg'])], roster, nf,
+    );
+    expect(cmp.diffs.map((d) => d.group).sort()).toEqual(['different', 'extra']);
+    expect(sponsorBlockers(cmp)).toHaveLength(1);
+  });
+
+  it('brings "21-03" and "2021-03" to one form and counts the rows that agree only after that', () => {
+    expect(normaliseItemNumber('Ord 21-03')).toBe('Ord 2021-03');
+    expect(normaliseItemNumber('App Ord 22-01')).toBe('App Ord 2022-01');
+    expect(normaliseItemNumber('Ord 2021-03')).toBe('Ord 2021-03');
+    const cmp = compareSponsors([spons('Ord 2021-03', 'p-asare')], [], [inv('Ord 21-03', ['Asare'], '2026-02-17')], roster, nf);
+    expect(cmp.diffs).toEqual([]);
+    expect(cmp.agree).toBe(1);
+    expect(cmp.agreeAfterNormalising).toBe(1);
+    // A real difference stays a difference under either form.
+    const real = compareSponsors([spons('Ord 2021-03', 'p-rollo', 'Rollo')], [], [inv('Ord 21-03', ['Asare'], '2026-02-17')], roster, nf);
+    expect(real.diffs).toHaveLength(1);
+    expect(real.diffs[0]).toMatchObject({ group: 'different', formDiffers: true });
+    // Before the window: not compared.
+    const early = compareSponsors([], [], [inv('Ord 20-30', ['Volan'], '2020-11-01')], roster, nf);
+    expect(early.skippedBeforeWindow).toBe(1);
+  });
+
+  it('maps inventory ids to subjects, and says why a row has none', () => {
+    expect(inventorySponsorSubjects(`${SCOPE}:2026-10-07:Ord 2026-25 (amendment 1)`)).toEqual({ subjects: ['Ord 2026-25 / Amendment 01'] });
+    expect(inventorySponsorSubjects(`${SCOPE}:2026-04-22:Ord 2026-06 (reasonable conditions 8, 9, 10 and 12)`)).toEqual({
+      subjects: ['Reasonable Condition 8', '9', '10', '12'].map((n) => `Ord 2026-06 / ${n.startsWith('R') ? n : `Reasonable Condition ${n}`}`),
+    });
+    expect(inventorySponsorSubjects(`${SCOPE}:2026-09-16:Ord 2026-20 (amendment 4, paragraph 4)`)).toHaveProperty('unmappable');
+  });
+
+  it('an owner sponsor check lets one difference through, and never touches vote checks', () => {
+    const cmp = compareSponsors([], [], [inv('Ord 2026-25', ['Stosberg'])], roster, nf);
+    const checks = [{
+      about: 'sponsors' as const, inventoryId: `${SCOPE}:2026-10-07:Ord 2026-25`, date: '2026-10-07', item: 'Ord 2026-25', tally: '', cause: '',
+      ownerAnswer: 'yes' as const, ownerNote: 'checked by eye', answeredAt: '2026-11-27T00:00:00Z', documents: [], verdict: 'confirmed' as const,
+    }];
+    const r = applySponsorOwnerChecks(sponsorBlockers(cmp), checks);
+    expect(r.passed).toBe(1);
+    expect((r.exceptions[0].detail as any).ownerHeld).toBe(true);
+  });
+
+  it('draws the same 30 spot-check picks for the same seed', () => {
+    const pool: SponsorRowOut[] = Array.from({ length: 80 }, (_, i) => ({
+      subject: `Ord 2026-${String(i).padStart(2, '0')}`, itemNumber: `Ord 2026-${i}`, label: null, politicianId: 'p-asare', role: 'sponsor', nameAsPrinted: 'Asare',
+      sentence: `s${i}`, sourceKind: 'legislation_feed', documentUrl: 'https://x/feed',
+    }));
+    const a = drawSponsorSpotCheck(pool, 20261127);
+    const b = drawSponsorSpotCheck([...pool].reverse(), 20261127);
+    expect(a).toHaveLength(30);
+    expect(b).toEqual(a);
+    expect(drawSponsorSpotCheck(pool, 1)).not.toEqual(a);
+  });
+});
+
+describe('runFirstLoad: sponsors', () => {
+  const sp = (out: string, f: string) => JSON.parse(readFileSync(path.join(out, f), 'utf8'));
+
+  it('a dry run writes the three sponsor files, picks carry a document URL, and the summary has the sponsor line', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3, sponsorSeed: 11 }), deps());
+    const rows = sp(s.out, 'sponsorships.json');
+    expect(rows.hash).toMatch(/^[0-9a-f]{64}$/);
+    expect(rows.sponsorships.length).toBeGreaterThan(0);
+    const spot = sp(s.out, 'sponsor-spotcheck.json');
+    expect(spot.seed).toBe(11);
+    expect(spot.picks.length).toBeGreaterThan(0);
+    for (const p of spot.picks) {
+      expect(Object.keys(p).sort()).toEqual(['documentUrl', 'member', 'role', 'sentence', 'subject', 'verdict']);
+      expect(p.documentUrl).toMatch(/^https:/);
+      expect(p.verdict).toBe('');
+    }
+    expect(existsSync(path.join(s.out, 'sponsor-compare.md'))).toBe(true);
+    expect(readFileSync(path.join(s.out, 'summary.md'), 'utf8')).toMatch(/Sponsorships: \d+ written .*held .*inventory differences/);
+  });
+
+  it('refuses --apply while a sponsor spot-check verdict is blank', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    const fillAll = (out: string) => {
+      const p = path.join(out, 'spotcheck.json');
+      const spot = JSON.parse(readFileSync(p, 'utf8'));
+      spot.picks.forEach((x: any) => (x.verdict = 'match'));
+      writeFileSync(p, JSON.stringify(spot));
+    };
+    fillAll(s.out);
+    const spot = fillSponsorSpot(s.out);
+    spot.picks[0].verdict = '';
+    writeFileSync(path.join(s.out, 'sponsor-spotcheck.json'), JSON.stringify(spot));
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused?.join(' ')).toMatch(/sponsor spot-check verdict\(s\) are blank/);
+    expect(calls).toEqual([]);
+  });
+
+  it('refuses --apply when sponsorships.json changed after the dry run', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    const p = path.join(s.out, 'spotcheck.json');
+    const spot = JSON.parse(readFileSync(p, 'utf8'));
+    spot.picks.forEach((x: any) => (x.verdict = 'match'));
+    writeFileSync(p, JSON.stringify(spot));
+    fillSponsorSpot(s.out);
+    const f = path.join(s.out, 'sponsorships.json');
+    const j = JSON.parse(readFileSync(f, 'utf8'));
+    j.hash = '0'.repeat(64);
+    writeFileSync(f, JSON.stringify(j));
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused?.join(' ')).toMatch(/sponsorships\.json changed since the dry run/);
+    expect(calls).toEqual([]);
+  });
+
+  it('lists an inventory sponsor the reader missed in sponsor-compare.md and refuses --apply', async () => {
+    const s = setup();
+    const full = JSON.parse(readFileSync(path.join(s.inventory, 'full.json'), 'utf8'));
+    full.items.push({ id: `${SCOPE}:${DATE}:Ord 2026-777`, date: DATE, item_no: 'Ord 2026-777', sponsors: ['Zulich'] });
+    writeFileSync(path.join(s.inventory, 'full.json'), JSON.stringify(full));
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    expect(readFileSync(path.join(s.out, 'sponsor-compare.md'), 'utf8')).toMatch(/Missed by the reader \(1\)[\s\S]*Ord 2026-777.*inventory Zulich; reader not read/);
+    const p = path.join(s.out, 'spotcheck.json');
+    const spot = JSON.parse(readFileSync(p, 'utf8'));
+    spot.picks.forEach((x: any) => (x.verdict = 'match'));
+    writeFileSync(p, JSON.stringify(spot));
+    fillSponsorSpot(s.out);
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused?.join(' ')).toMatch(/inventory_disagrees/);
+  });
+
+  it('writes the sponsorships after the votes when every gate is clear', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    const p = path.join(s.out, 'spotcheck.json');
+    const spot = JSON.parse(readFileSync(p, 'utf8'));
+    spot.picks.forEach((x: any) => (x.verdict = 'match'));
+    writeFileSync(p, JSON.stringify(spot));
+    fillSponsorSpot(s.out);
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused).toBeUndefined();
+    const sql = calls.map((c) => c.text);
+    const lastVote = sql.map((t, i) => (/INTO essentials\.legislative_votes/.test(t) ? i : -1)).filter((i) => i >= 0).pop() ?? -1;
+    const firstSponsor = sql.findIndex((t) => /legislative_bills WHERE jurisdiction = \$1 AND number = \$2/.test(t));
+    expect(lastVote).toBeGreaterThan(-1);
+    expect(firstSponsor).toBeGreaterThan(lastVote);
   });
 });

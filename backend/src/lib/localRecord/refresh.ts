@@ -285,6 +285,51 @@ interface CityRun {
   controlFailed: { subject: string; detail: unknown } | null;
 }
 
+/** A sponsor sentence that cannot be tied to an item or a date: raised as sponsor_unresolved, never written. */
+export interface SponsorReadProblem { cause: 'sponsor_unresolved'; subject: string; detail: unknown }
+
+/**
+ * Sponsors named in one document's amendment and condition synopses, each tied to the item it was moved on.
+ * A sentence with no provable item becomes a no_item problem. Shared by the weekly job and the first load.
+ */
+export function documentSponsorFindings(
+  text: string, rollCalls: MinutesParse['rollCalls'], doc: Pick<VoteDocument, 'kind' | 'url' | 'fileId'>, date: string, savedId: string | null,
+): { findings: SponsorFinding[]; problems: SponsorReadProblem[] } {
+  const findings: SponsorFinding[] = [];
+  const problems: SponsorReadProblem[] = [];
+  for (const s of sponsorSentencesWithItems(stripMargin(text), rollCalls)) {
+    if (!s.itemNumber) {
+      problems.push({ cause: 'sponsor_unresolved', subject: `${date} document ${doc.fileId} / ${s.label}`, detail: { reason: 'no_item', sentence: s.sentence, url: doc.url } });
+      continue;
+    }
+    findings.push({ itemNumber: s.itemNumber, label: s.label, date, sourceKind: doc.kind, sourceDocumentId: savedId, sourceUrl: doc.url, found: s });
+  }
+  return { findings, problems };
+}
+
+/** Sponsors named in the feed's item synopses, seated on the item's first action date. A synopsis with no date is a no_date problem. */
+export function feedSponsorFindings(
+  items: FeedItem[], itemYear: Map<number, number>, feedDocumentId: Map<number, string>, feedUrl: Map<number, string> = new Map(),
+): { findings: SponsorFinding[]; problems: SponsorReadProblem[] } {
+  const findings: SponsorFinding[] = [];
+  const problems: SponsorReadProblem[] = [];
+  for (const it of items) {
+    if (!it.synopsis) continue;
+    const year = itemYear.get(it.feedId) ?? -1;
+    for (const found of itemSponsorSentencesFromSynopsis(it.synopsis)) {
+      if (!it.firstActionDate) {
+        problems.push({ cause: 'sponsor_unresolved', subject: sponsorSubject(it.itemNumber, null), detail: { reason: 'no_date', sentence: found.sentence } });
+        continue;
+      }
+      findings.push({
+        itemNumber: it.itemNumber, label: null, date: it.firstActionDate, sourceKind: 'legislation_feed',
+        sourceDocumentId: feedDocumentId.get(year) ?? null, sourceUrl: feedUrl.get(year) ?? null, found,
+      });
+    }
+  }
+  return { findings, problems };
+}
+
 /** The legislation and meetings feeds for this year and last, or for the given years (the first load reads them all). */
 export async function readFeeds(
   city: CityConfig, now: Date, deps: Pick<RefreshDeps, 'fetchJson' | 'fetchFeed'>, years?: number[],
@@ -471,13 +516,9 @@ async function runCity(
     }
 
     // Sponsors named in this document's amendment and condition synopses, each tied to the item it was moved on.
-    for (const s of sponsorSentencesWithItems(stripMargin(text), parse.rollCalls)) {
-      if (!s.itemNumber) {
-        await raise('sponsor_unresolved', `${d} document ${doc.fileId} / ${s.label}`, { reason: 'no_item', sentence: s.sentence, url: doc.url });
-        continue;
-      }
-      findings.push({ itemNumber: s.itemNumber, label: s.label, date: d, sourceKind: doc.kind, sourceDocumentId: saved.id, found: s });
-    }
+    const docSponsors = documentSponsorFindings(text, parse.rollCalls, doc, d, saved.id);
+    for (const p of docSponsors.problems) await raise(p.cause, p.subject, p.detail);
+    findings.push(...docSponsors.findings);
 
     const ctx = buildContext(names, terms, items, d);
     const stored = await storedRollCalls(db, `r.meeting_date = $2::date`, [city.scope, d]);
@@ -576,19 +617,9 @@ async function runCity(
   }
 
   // Sponsors named in the feed's item synopses, seated on the item's first action date.
-  for (const it of items) {
-    if (!it.synopsis) continue;
-    for (const found of itemSponsorSentencesFromSynopsis(it.synopsis)) {
-      if (!it.firstActionDate) {
-        await raise('sponsor_unresolved', sponsorSubject(it.itemNumber, null), { reason: 'no_date', sentence: found.sentence });
-        continue;
-      }
-      findings.push({
-        itemNumber: it.itemNumber, label: null, date: it.firstActionDate, sourceKind: 'legislation_feed',
-        sourceDocumentId: feedDocumentId.get(itemYear.get(it.feedId) ?? -1) ?? null, found,
-      });
-    }
-  }
+  const feedSponsors = feedSponsorFindings(items, itemYear, feedDocumentId);
+  for (const p of feedSponsors.problems) await raise(p.cause, p.subject, p.detail);
+  findings.push(...feedSponsors.findings);
 
   const { sponsorships, problems } = resolveSponsorships(findings, names, terms);
   for (const p of problems) await raise(p.cause, p.subject, p.detail);

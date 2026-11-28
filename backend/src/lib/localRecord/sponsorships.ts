@@ -15,6 +15,8 @@ export interface SponsorFinding {
   sourceKind: 'legislation_feed' | 'memorandum' | 'minutes';
   /** Set by the caller once the document is saved. */
   sourceDocumentId: string | null;
+  /** Where the source can be opened (the document, or the feed URL). For checks that run before documents are saved. */
+  sourceUrl?: string | null;
   found: SponsorSentence;
 }
 
@@ -27,6 +29,7 @@ export interface Sponsorship {
   sentence: string;
   sourceKind: SponsorFinding['sourceKind'];
   sourceDocumentId: string | null;
+  sourceUrl?: string | null;
 }
 
 export interface SponsorProblem {
@@ -140,6 +143,7 @@ export function resolveSponsorships(
         sentence: governing.finding.found.sentence,
         sourceKind: governing.finding.sourceKind,
         sourceDocumentId: governing.finding.sourceDocumentId,
+        sourceUrl: governing.finding.sourceUrl,
       });
     }
   }
