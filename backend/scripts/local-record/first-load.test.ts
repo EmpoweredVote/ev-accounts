@@ -654,7 +654,6 @@ describe('owner checks', () => {
   it.each([
     ['printed tally disagrees with the counted votes', { tally: '8-0' }, /tally/],
     ['a member does not resolve to an id', { members: mem({ ...SEVEN_YES, Nobody: 'yes' }) }, /Nobody/],
-    ['there are no members', { members: [] }, /no members/],
     ['the inventory prints no tally', { tally: null }, /tally/],
   ])('not confirmed (blocking exception with the reason) when %s', (_why, over, re) => {
     const { res } = run([invRow('Ord 2026-90', over as any)], [chk('Ord 2026-90')]);
@@ -681,6 +680,16 @@ describe('owner checks', () => {
     // a feed Final on another date does not decide this vote; the tally rule does
     const other = run([invRow('Ord 2026-90')], [chk('Ord 2026-90')], [], [feedItem('Ord 2026-90', 'failed', '2026-10-21')]).res;
     expect(other.ownerChecked[0].outcome).toBe('passed');
+  });
+
+  it('a tie is failed, and a row with no members is held, not failed', () => {
+    const tie = invRow('Ord 2026-90', { tally: '4-4', members: mem({ Asare: 'yes', Daily: 'yes', Flaherty: 'yes', 'Piedmont-Smith': 'yes', Ruff: 'no', Stosberg: 'no', Zulich: 'no', Rollo: 'no', Rosenbarger: 'absent' }) });
+    expect(run([tie], [chk('Ord 2026-90', { tally: '4-4' })]).res.ownerChecked[0].outcome).toBe('failed');
+    const { res } = run([invRow('Ord 2026-91', { members: [] })], [chk('Ord 2026-91')]);
+    expect(res.ownerChecked).toEqual([]);
+    expect(res.failed).toEqual([]);
+    expect(res.held).toHaveLength(1);
+    expect(res.exceptions[0].detail).toMatchObject({ ownerHeld: true, reason: 'the inventory lists no member votes, so there is nothing to load' });
   });
 
   it('an amendment uses the tally rule only', () => {

@@ -191,9 +191,9 @@ const POSITION_OF: Record<string, ResolvedVote['position']> = { yes: 'yea', no: 
 function buildOwnerChecked(
   inv: InventoryItem, check: OwnerCheck, p: { date: string; itemNumber: string; question: string },
   roster: InventoryRoster, names: NameFile, items: FeedItem[],
-): OwnerCheckedRollCall | { reason: string } {
+): OwnerCheckedRollCall | { reason: string; hold?: boolean } {
   const members = inv.members ?? [];
-  if (!members.length) return { reason: 'the inventory row has no members' };
+  if (!members.length) return { reason: 'the inventory lists no member votes, so there is nothing to load', hold: true };
   const documentUrl = check.documents?.[0];
   if (!documentUrl) return { reason: 'the owner check names no document' };
   const votes: ResolvedVote[] = [];
@@ -219,11 +219,11 @@ function buildOwnerChecked(
   if (feed && feed.date === p.date) {
     if (feed.outcome === 'vetoed') return { reason: 'the feed lists this Final action as vetoed; the outcome is not decided here' };
     outcome = feed.outcome;
-    if ((outcome === 'passed' && tally.yes <= tally.no) || (outcome === 'failed' && tally.yes >= tally.no)) {
+    if ((outcome === 'passed' && tally.yes <= tally.no) || (outcome === 'failed' && tally.yes > tally.no)) {
       return { reason: `the feed outcome (${outcome}) conflicts with the counted votes ${tally.yes}-${tally.no}` };
     }
   } else if (tally.yes >= 5 && tally.yes > tally.no) outcome = 'passed';
-  else if (tally.yes < tally.no) outcome = 'failed';
+  else if (tally.yes <= tally.no) outcome = 'failed'; // a tie never passes a motion
   else return { reason: `the outcome cannot be told from the tally ${tally.yes}-${tally.no} and the feed has no Final action on ${p.date}` };
   const sentence = check.followUp?.quote?.trim() || `Checked by the owner on ${check.answeredAt.slice(0, 10)} against ${documentUrl}`;
   return { inventoryId: inv.id, date: p.date, itemNumber: p.itemNumber, question: p.question, outcome, tally, sentence, documentUrl, votes };
@@ -257,6 +257,10 @@ export function applyOwnerChecks(
     const inv = invById.get(check.inventoryId) as InventoryItem;
     const p = parseInventoryId(inv.id);
     const built = 'skip' in p ? { reason: p.skip } : buildOwnerChecked(inv, check, p, roster, names, items);
+    if ('reason' in built && built.hold) {
+      res.held.push({ subject: e.subject, reason: built.reason });
+      return [{ ...e, detail: { ...d, ownerHeld: true, reason: built.reason } }];
+    }
     if ('reason' in built) {
       res.failed.push({ subject: e.subject, reason: built.reason });
       return [{ ...e, detail: { ...d, ownerCheckFailed: built.reason } }];
