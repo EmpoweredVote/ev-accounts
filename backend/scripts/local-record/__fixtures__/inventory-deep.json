@@ -1,0 +1,678 @@
+{
+ "city": {
+  "name": "Bloomington",
+  "state": "IN",
+  "scope": "place:1805860"
+ },
+ "pass": "deep",
+ "items": [
+  {
+   "date": "2023-10-18",
+   "item_no": "Ord 23-23 (Vetoed)",
+   "id": "place:1805860:2023-10-18:Ord 23-23 (Vetoed)",
+   "instrument": "ordinance",
+   "tally": "5-4",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "no"
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "no"
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "no"
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "no"
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5781",
+   "url_minutes": "https://bloomington.in.gov/onboard/committees/1/legislation/6226"
+  },
+  {
+   "date": "2024-04-17",
+   "item_no": "Res 2024-04 (veto override)",
+   "id": "place:1805860:2024-04-17:Res 2024-04 (veto override)",
+   "instrument": "resolution",
+   "tally": "7-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "absent"
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "abstain"
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5802",
+   "url_minutes": "https://bloomington.in.gov/onboard/committees/1/legislation/6248",
+   "text_store_path": "items/place_1805860_2024-04-17_Res 2024-04 (veto override).txt"
+  },
+  {
+   "date": "2024-05-01",
+   "item_no": "Res 2024-08 (veto override)",
+   "id": "place:1805860:2024-05-01:Res 2024-08 (veto override)",
+   "instrument": "resolution",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5803",
+   "url_minutes": "https://bloomington.in.gov/onboard/committees/1/legislation/6249"
+  },
+  {
+   "date": "2020-12-16",
+   "item_no": "Ord 20-30 (amendment 01)",
+   "id": "place:1805860:2020-12-16:Ord 20-30 (amendment 01)",
+   "instrument": "ordinance",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/9806/download"
+  },
+  {
+   "date": "2021-02-17",
+   "item_no": "Ord 21-02 (amendment 01)",
+   "id": "place:1805860:2021-02-17:Ord 21-02 (amendment 01)",
+   "instrument": "ordinance",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/9712/download"
+  },
+  {
+   "date": "2021-04-07",
+   "item_no": "Ord 21-07 (reasonable condition 01)",
+   "id": "place:1805860:2021-04-07:Ord 21-07 (reasonable condition 01)",
+   "instrument": "ordinance",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/8665/download"
+  },
+  {
+   "date": "2021-04-07",
+   "item_no": "Ord 21-07 (reasonable condition 03)",
+   "id": "place:1805860:2021-04-07:Ord 21-07 (reasonable condition 03)",
+   "instrument": "ordinance",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/8665/download"
+  },
+  {
+   "date": "2021-04-07",
+   "item_no": "Ord 21-07 (reasonable condition 04)",
+   "id": "place:1805860:2021-04-07:Ord 21-07 (reasonable condition 04)",
+   "instrument": "ordinance",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/8665/download"
+  },
+  {
+   "date": "2020-12-16",
+   "item_no": "Ord 20-30 (amendment to amendment 05)",
+   "id": "place:1805860:2020-12-16:Ord 20-30 (amendment to amendment 05)",
+   "instrument": "ordinance",
+   "tally": "8-1",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "no"
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/9806/download"
+  },
+  {
+   "date": "2024-03-27",
+   "item_no": "Res 2024-04 (amendment to amendment 01)",
+   "id": "place:1805860:2024-03-27:Res 2024-04 (amendment to amendment 01)",
+   "instrument": "resolution",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Asare",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Ruff",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Stosberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Daily",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Zulich",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": null,
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/14078/download"
+  },
+  {
+   "date": "2020-12-16",
+   "item_no": "Ord 20-28 (motion to read by title)",
+   "id": "place:1805860:2020-12-16:Ord 20-28 (motion to read by title)",
+   "instrument": "motion",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5568",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/9806/download",
+   "text_store_path": "items/place_1805860_2020-12-16_Ord 20-28 (motion to read by title).txt"
+  },
+  {
+   "date": "2020-12-16",
+   "item_no": "Ord 20-30 (motion to read by title)",
+   "id": "place:1805860:2020-12-16:Ord 20-30 (motion to read by title)",
+   "instrument": "motion",
+   "tally": "9-0",
+   "members": [
+    {
+     "name": "Flaherty",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sandberg",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sims",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rosenbarger",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Sgambelluri",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Rollo",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Piedmont-Smith",
+     "vote": "yes",
+     "derived": true
+    },
+    {
+     "name": "Volan",
+     "vote": "yes",
+     "derived": true
+    }
+   ],
+   "url_item": "https://bloomington.in.gov/onboard/legislationFiles/5569",
+   "url_minutes": "https://bloomington.in.gov/onboard/meetingFiles/9806/download",
+   "text_store_path": "items/place_1805860_2020-12-16_Ord 20-30 (motion to read by title).txt"
+  }
+ ]
+}

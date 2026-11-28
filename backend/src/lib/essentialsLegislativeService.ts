@@ -36,6 +36,7 @@
  * getLegislativeByPolitician queries sessions reachable from a politician's bills.
  */
 
+import { readFileSync } from 'node:fs';
 import { pool } from './db.js';
 
 /**
@@ -450,4 +451,258 @@ export async function getLeadershipByPolitician(
     start_date: row.start_date ? (row.start_date as Date).toISOString().split('T')[0] : null,
     end_date: row.end_date ? (row.end_date as Date).toISOString().split('T')[0] : null,
   }));
+}
+
+// ---------------------------------------------------------------------------
+// getCouncilRecordByPolitician — a city council member's roll-call record
+// ---------------------------------------------------------------------------
+
+export type CouncilPosition = 'yea' | 'nay' | 'present' | 'absent' | 'not_voting';
+
+export interface CouncilRecordVote {
+  roll_call_id: string;
+  question: string;
+  question_order: number;
+  meeting_date: string;
+  position: CouncilPosition;
+  worked_out: boolean;
+  outcome: string;
+  yes: number;
+  no: number;
+  abstain: number;
+  /** Public source_url of the confirming document (the clerk's Memorandum or the formal Minutes), no #fragment. */
+  minutes_url: string;
+  source_kind: 'memorandum' | 'minutes';
+  feed_disagreement: string | null;
+  seat_label: string | null;
+}
+
+export interface CouncilRecordPending {
+  meeting_date: string;
+  outcome: 'passed' | 'failed' | 'vetoed';
+  yes: number;
+  no: number;
+  abstain: number;
+}
+
+export interface CouncilRecordItem {
+  bill_id: string;
+  number: string;
+  title: string;
+  url: string;
+  status_label: string;
+  pending: CouncilRecordPending | null;
+  votes: CouncilRecordVote[];
+}
+
+export interface CouncilRecord {
+  total: number;
+  items: CouncilRecordItem[];
+}
+
+export interface CouncilCity {
+  scope: string;
+  chamberSlug: string;
+  /** offices.normalized_position_name of the council's seats; the chamber slug also covers the City Clerk. */
+  seatPositionName: string;
+}
+
+interface CouncilTerm {
+  title: string;
+  slug: string;
+  start: string;
+  end: string | null;
+}
+
+/** The cities that have a council record, from the same file the weekly job reads. */
+let councilCitiesCache: CouncilCity[] | null = null;
+/** A city without seatPositionName would match no office (NULL), so it fails loudly instead. */
+export function parseCouncilCities(raw: unknown): CouncilCity[] {
+  return (raw as CouncilCity[]).map((c) => {
+    if (typeof c.seatPositionName !== 'string' || c.seatPositionName === '') {
+      throw new Error(`cities.json: city ${c.scope} has no seatPositionName`);
+    }
+    return { scope: c.scope, chamberSlug: c.chamberSlug, seatPositionName: c.seatPositionName };
+  });
+}
+
+export function loadCouncilCities(): CouncilCity[] {
+  if (!councilCitiesCache) {
+    councilCitiesCache = parseCouncilCities(
+      JSON.parse(readFileSync(new URL('../../data/local-record/cities.json', import.meta.url), 'utf8')),
+    );
+  }
+  return councilCitiesCache;
+}
+
+/** The seat held on `date` (YYYY-MM-DD). Date containment, never `term_end IS NULL`. Latest start wins a tie. */
+function seatOn(terms: CouncilTerm[], date: string): string | null {
+  const held = terms
+    .filter((t) => t.start <= date && (t.end == null || date <= t.end))
+    .sort((a, b) => (a.start < b.start ? 1 : a.start > b.start ? -1 : a.title.localeCompare(b.title)));
+  return held.length ? held[0].title : null;
+}
+
+function inAnyTerm(terms: CouncilTerm[], date: string, slug: string): boolean {
+  return terms.some((t) => t.slug === slug && t.start <= date && (t.end == null || date <= t.end));
+}
+
+/**
+ * Roll-call record for one council member, grouped by legislation item.
+ *
+ * Three queries, none fanning out: (1) the member's council terms, DISTINCT (a member may hold two offices, and
+ * office_terms cannot see that); (2) the roll calls the member voted in, one row per roll call; (3) pending roll
+ * calls (seen in the city feed, not yet confirmed) for the member's city. Pending items are filtered here by
+ * date containment against the member's terms, and carry counts only, never names. The private
+ * local_record_source_documents table is read through the backend's own pool and only its kind and public
+ * source_url leave this function.
+ */
+export async function getCouncilRecordByPolitician(
+  politicianId: string,
+  limit = 50,
+  offset = 0,
+  deps: { cities?: CouncilCity[]; today?: string } = {},
+): Promise<CouncilRecord> {
+  const clampedLimit = Math.min(200, Math.max(1, Math.floor(limit) || 50));
+  const clampedOffset = Math.max(0, Math.floor(offset) || 0);
+  const cities = deps.cities ?? loadCouncilCities();
+  const today = deps.today ?? new Date().toISOString().slice(0, 10);
+
+  const termRows = (
+    await pool.query(
+      `SELECT DISTINCT o.title AS title, ch.slug AS slug, o.normalized_position_name AS position,
+              to_char(ot.term_start, 'YYYY-MM-DD') AS start,
+              to_char(ot.term_end, 'YYYY-MM-DD') AS "end"
+       FROM essentials.office_terms ot
+       JOIN essentials.offices o ON o.id = ot.office_id
+       JOIN essentials.chambers ch ON ch.id = o.chamber_id
+       WHERE ot.politician_id = $1 AND ot.term_start IS NOT NULL
+         AND (ch.slug, o.normalized_position_name) IN (SELECT * FROM unnest($2::text[], $3::text[]))`,
+      [politicianId, cities.map((c) => c.chamberSlug), cities.map((c) => c.seatPositionName)],
+    )
+  ).rows;
+  // The chamber slug also covers the City Clerk; only the council's own position name is a seat. The SQL says so,
+  // and this keeps the rule even if a row slips through.
+  const terms: CouncilTerm[] = termRows
+    .filter((r) => cities.some((c) => c.chamberSlug === r.slug && c.seatPositionName === r.position))
+    .map((r) => ({ title: r.title ?? '', slug: r.slug, start: r.start, end: r.end ?? null }));
+
+  const ROLL_COLUMNS = `
+      r.id AS roll_call_id, r.city_scope, r.question, r.question_order, r.outcome,
+      to_char(r.meeting_date, 'YYYY-MM-DD') AS meeting_date,
+      COALESCE(r.yes_count, 0) AS yes, COALESCE(r.no_count, 0) AS no, COALESCE(r.abstain_count, 0) AS abstain,
+      r.feed_disagreement,
+      b.id AS bill_id, COALESCE(b.number, '') AS number, COALESCE(b.title, '') AS title,
+      COALESCE(b.url, '') AS url, COALESCE(b.status_label, '') AS status_label`;
+
+  const voted = (
+    await pool.query(
+      `SELECT DISTINCT ON (r.id) ${ROLL_COLUMNS},
+              v.position, COALESCE(v.worked_out, false) AS worked_out,
+              sd.kind AS source_kind, split_part(sd.source_url, '#', 1) AS minutes_url
+       FROM essentials.legislative_votes v
+       JOIN essentials.legislative_roll_calls r ON r.id = v.roll_call_id
+       JOIN essentials.legislative_bills b ON b.id = r.bill_id
+       LEFT JOIN essentials.local_record_source_documents sd ON sd.id = r.confirmed_from
+       WHERE v.politician_id = $1 AND r.state = 'confirmed'
+       ORDER BY r.id`,
+      [politicianId],
+    )
+  ).rows;
+
+  const scopes = cities.filter((c) => terms.some((t) => t.slug === c.chamberSlug)).map((c) => c.scope);
+  const pendingRows = scopes.length
+    ? (
+        await pool.query(
+          `SELECT ${ROLL_COLUMNS}
+           FROM essentials.legislative_roll_calls r
+           JOIN essentials.legislative_bills b ON b.id = r.bill_id
+           WHERE r.state = 'pending_minutes' AND r.city_scope = ANY($1::text[])`,
+          [scopes],
+        )
+      ).rows
+    : [];
+
+  // Confirmed roll calls in the member's city scopes, whether or not this member has a vote row on them.
+  const confirmedRows: any[] = pendingRows.length
+    ? (
+        await pool.query(
+          `SELECT DISTINCT r.city_scope, r.bill_id, to_char(r.meeting_date, 'YYYY-MM-DD') AS meeting_date, r.question
+           FROM essentials.legislative_roll_calls r
+           WHERE r.state = 'confirmed' AND r.city_scope = ANY($1::text[]) AND r.bill_id = ANY($2::uuid[])`,
+          [scopes, [...new Set(pendingRows.map((r: any) => r.bill_id))]],
+        )
+      ).rows
+    : [];
+  const confirmedKeys = new Set<string>(confirmedRows.map((r) => `${r.city_scope}|${r.bill_id}|${r.meeting_date}`));
+  // Bills with a confirmed Final passage on any date: a pending Final passage beside one is stale (the feed's Final
+  // date differs from the vote document's) and is never shown; the weekly job logs it as feed_missing_final.
+  const confirmedFinal = new Set<string>(
+    confirmedRows.filter((r) => r.question === 'Final passage').map((r) => `${r.city_scope}|${r.bill_id}`),
+  );
+
+  const items = new Map<string, CouncilRecordItem & { latest: string }>();
+  const itemFor = (row: any) => {
+    let it = items.get(row.bill_id);
+    if (!it) {
+      it = {
+        bill_id: row.bill_id, number: row.number, title: row.title, url: row.url,
+        status_label: row.status_label, pending: null, votes: [], latest: '',
+      };
+      items.set(row.bill_id, it);
+    }
+    if (row.meeting_date > it.latest) it.latest = row.meeting_date;
+    return it;
+  };
+
+  const currentSeat = seatOn(terms, today);
+  for (const row of voted) {
+    // A vote must name the document it was confirmed from (Memorandum or Minutes); never guess a source.
+    if ((row.source_kind !== 'memorandum' && row.source_kind !== 'minutes') || !row.minutes_url) continue;
+    const seat = seatOn(terms, row.meeting_date);
+    itemFor(row).votes.push({
+      roll_call_id: row.roll_call_id,
+      question: row.question,
+      question_order: Number(row.question_order),
+      meeting_date: row.meeting_date,
+      position: row.position,
+      worked_out: row.worked_out === true,
+      outcome: row.outcome,
+      yes: Number(row.yes),
+      no: Number(row.no),
+      abstain: Number(row.abstain),
+      minutes_url: row.minutes_url,
+      source_kind: row.source_kind,
+      feed_disagreement: row.feed_disagreement ?? null,
+      seat_label: seat != null && currentSeat != null && seat !== currentSeat ? seat : null,
+    });
+  }
+
+  for (const row of pendingRows) {
+    const slug = cities.find((c) => c.scope === row.city_scope)?.chamberSlug;
+    // Pending states the meeting's outcome and counts, never the member's vote, so it shows for any meeting
+    // inside the member's term regardless of attendance.
+    if (!slug || !inAnyTerm(terms, row.meeting_date, slug)) continue;
+    // A confirmed roll call for the same bill and meeting supersedes the pending one.
+    if (confirmedKeys.has(`${row.city_scope}|${row.bill_id}|${row.meeting_date}`)) continue;
+    if (row.question === 'Final passage' && confirmedFinal.has(`${row.city_scope}|${row.bill_id}`)) continue;
+    const it = itemFor(row);
+    if (!it.pending || row.meeting_date > it.pending.meeting_date) {
+      it.pending = {
+        meeting_date: row.meeting_date, outcome: row.outcome,
+        yes: Number(row.yes), no: Number(row.no), abstain: Number(row.abstain),
+      };
+    }
+  }
+
+  const all = [...items.values()].sort((a, b) =>
+    a.latest < b.latest ? 1 : a.latest > b.latest ? -1 : a.bill_id.localeCompare(b.bill_id),
+  );
+  const page = all.slice(clampedOffset, clampedOffset + clampedLimit).map(({ latest: _latest, ...it }) => ({
+    ...it,
+    votes: it.votes.sort((a, b) =>
+      a.meeting_date < b.meeting_date ? -1 : a.meeting_date > b.meeting_date ? 1 : a.question_order - b.question_order,
+    ),
+  }));
+  return { total: all.length, items: page };
 }

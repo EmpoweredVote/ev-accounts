@@ -34,6 +34,7 @@ import { runNetfileIngestWithSummaries, runLocalFinanceSummaries } from '../lib/
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
 import { reapStaleIngestionRuns } from '../lib/reapStaleIngestionRuns.js';
 import { warmGeoOverlapPairs } from '../lib/geoOverlapWarm.js';
+import { runLocalRecordJob } from '../lib/localRecord/refresh.js';
 import { runConsensusPass } from '../vq/jobs/consensusBatchJob.js';
 import { runRotationPass } from '../vq/services/questRotation.js';
 import { runExpirationSweep } from '../trivia/cron/expirationSweep.js';
@@ -109,6 +110,10 @@ export const JOBS: Record<string, JobFn> = {
   // (member, roll call) pairs not stored yet, for members we hold a bioguide id for. Needs LEGISCAN_API_KEY.
   // About 3 queries a run, none when the dataset is unchanged. FEDERAL_VOTES_DRY_RUN=1 writes nothing.
   'federal-votes': () => runFederalVotesRefresh(),
+  // Weekly Bloomington Common Council votes, read from the city's Memorandum and Minutes files and checked four ways
+  // before anything is confirmed. A city runs only when `enabled` in data/local-record/cities.json. Fails (non-zero
+  // exit) when a NEW exception is logged, so job health shows it. LOCAL_RECORD_DRY_RUN=1 rolls every city back.
+  'local-record': () => runLocalRecordJob(),
   // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.
   // Heavy (1.58 GB ZIP held in memory while it is parsed), so it runs as its own process.
   'cal-access': () => runAdapterForAll('cal_access'),
