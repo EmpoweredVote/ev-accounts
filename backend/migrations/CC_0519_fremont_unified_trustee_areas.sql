@@ -57,6 +57,11 @@
 --
 -- @incumbency-decision: no-effect -- writes no essentials.office_terms row; only offices.district_id moves.
 --
+-- ⚠ POST-VERIFY EDITED AFTER APPLY (2026-11-28). The copy applied to prod on 2026-11-27 measured 4b with ::geography
+-- casts (overlap > 1 m²; coverage 0.90128). check-postgis-spatial-ref-guard refuses ::geography in migrations
+-- (ev-cto decision 0006: it reads public.spatial_ref_sys, which anon can write), so 4b now uses planar SRID-4326
+-- area: overlap > 1e-10 deg² (~1 m²), coverage ratio measured 0.90130 against prod on 2026-11-28, same 0.900-0.903
+-- band. Re-run as a dry run against prod after the edit: every insert/update is a no-op and all gates pass.
 -- AFTER APPLYING: this writes geofence_boundaries, so it bumps geofence_version (CC_0511) and every stored overlap
 -- answer goes stale. Warm the store straight after, from backend/:
 --   npx tsx -e "const {warmGeoOverlapPairs}=await import('./src/lib/geoOverlapWarm.ts'); console.log(await warmGeoOverlapPairs())"
@@ -141,10 +146,10 @@ BEGIN
   SELECT count(*) INTO n FROM essentials.geofence_boundaries a JOIN essentials.geofence_boundaries b
       ON a.geo_id < b.geo_id AND a.mtfcc = 'X0002' AND b.mtfcc = 'X0002'
    WHERE a.geo_id LIKE '0614400-ta-_' AND b.geo_id LIKE '0614400-ta-_'
-     AND public.ST_Area(public.ST_Intersection(a.geometry, b.geometry)::geography) > 1;
+     AND public.ST_Area(public.ST_Intersection(a.geometry, b.geometry)) > 1e-10;   -- deg², ~1 m² at 37.5°N
   IF n <> 0 THEN RAISE EXCEPTION 'CC_0519: % overlapping trustee-area pairs', n; END IF;
   PERFORM 1 FROM (
-    SELECT public.ST_Area(public.ST_Intersection(u.g, f.geometry)::geography) / public.ST_Area(f.geometry::geography) AS r
+    SELECT public.ST_Area(public.ST_Intersection(u.g, f.geometry)) / public.ST_Area(f.geometry) AS r   -- planar ratio, measured 0.90130
       FROM (SELECT public.ST_Union(geometry) g FROM essentials.geofence_boundaries
              WHERE geo_id LIKE '0614400-ta-_' AND mtfcc = 'X0002') u,
            essentials.geofence_boundaries f
