@@ -297,9 +297,9 @@ export function documentSponsorFindings(
 ): { findings: SponsorFinding[]; problems: SponsorReadProblem[] } {
   const findings: SponsorFinding[] = [];
   const problems: SponsorReadProblem[] = [];
-  for (const s of sponsorSentencesWithItems(stripMargin(text), rollCalls)) {
+  for (const s of sponsorSentencesWithItems(stripMargin(text), rollCalls, text)) {
     if (!s.itemNumber) {
-      problems.push({ cause: 'sponsor_unresolved', subject: `${date} document ${doc.fileId} / ${s.label}`, detail: { reason: 'no_item', sentence: s.sentence, url: doc.url } });
+      problems.push({ cause: 'sponsor_unresolved', subject: `${date} document ${doc.fileId} / ${s.label ?? 'Council Sponsor'}`, detail: { reason: 'no_item', sentence: s.sentence, url: doc.url } });
       continue;
     }
     findings.push({ itemNumber: s.itemNumber, label: s.label, date, sourceKind: doc.kind, sourceDocumentId: savedId, sourceUrl: doc.url, found: s });

@@ -42,7 +42,7 @@ function splitSentences(text: string): string[] {
 }
 
 const MARKER = /\b(co-?sponsored|sponsored)\s+by\b/gi;
-const TITLE = /^(?:Councilmembers?|Councilwoman|Councilman|Councilor|Cms?\.?|CM\.?)$/;
+const TITLE = /^(?:Councilmembers?|Councilwoman|Councilman|Councilor|CMs?\.?|Cms?\.?)$/;
 const NOT_A_NAME = new Set([
   'The', 'This', 'That', 'It', 'Its', 'These', 'Council', 'Mayor', 'Common', 'City', 'Ordinance', 'Resolution',
   'Amendment', 'Section', 'Title', 'Reasonable', 'Condition', 'RC', 'Bloomington', 'Indiana', 'In', 'If', 'As',
@@ -61,7 +61,7 @@ function headingLength(tokens: string[], i: number): number {
 const isNameWord = (w: string): boolean => /^[A-Z][A-Za-z'’\-]*$/.test(w) && !NOT_A_NAME.has(w) && !TITLE.test(w);
 
 /** Read the names at the start of `segment` (the text right after "sponsored by"). */
-function readNames(segment: string): { names: string[]; placeholder: boolean } {
+function readNames(segment: string, opts: { commaList?: boolean } = {}): { names: string[]; placeholder: boolean } {
   const tokens = segment
     .replace(/Council\s+members?/gi, 'Councilmember')
     .replace(/([A-Za-z])- (?=[A-Z])/g, '$1-') // a name wrapped at its hyphen: "Piedmont- Smith"
@@ -136,7 +136,8 @@ function readNames(segment: string): { names: string[]; placeholder: boolean } {
   const accepted: string[] = [];
   for (let k = 0; k < found.length; k++) {
     const { text, sep } = found[k];
-    if (k > 0 && sep !== 'and' && !(sep === 'comma' && found.slice(k + 1).some((f) => f.sep === 'and'))) break;
+    // A heading line holds nothing but the names, so a plain comma list is complete there (opts.commaList).
+    if (k > 0 && sep !== 'and' && !(sep === 'comma' && (opts.commaList || found.slice(k + 1).some((f) => f.sep === 'and')))) break;
     accepted.push(text);
   }
   let names = accepted;
@@ -310,6 +311,81 @@ const labelKey = (q: string): string | null => {
  * tied item (and not claimed by another synopsis of the document), the tie is dropped. An amendment with no roll call at all still ties through its motion.
  */
 export function sponsorSentencesWithItems(
+  text: string,
+  rollCalls: { itemNumber: string; question: string }[] = [],
+  /**
+   * The text before the right margin column was dropped. A "Council Sponsor:" line can sit in that column (Res 2026-13
+   * in meeting file 17744), so headings are read from this text when given.
+   */
+  unmarginedText?: string,
+): DocumentSponsorSentence[] {
+  return [...synopsisSentencesWithItems(text, rollCalls), ...councilSponsorHeadings(unmarginedText ?? text)];
+}
+
+// ---- "Council Sponsor:" agenda headings --------------------------------------------------------------------------
+//
+// A memorandum prints each item as a heading block: the item line ("Resolution 2026-15"), the title (one to three
+// lines) and, at the end of the title, "Council Sponsor: CM Rollo". The item is the one named on that same heading
+// block, never the nearest motion (a motion may name another item). A name may wrap onto the next line.
+
+const ITEM_HEADING = /^(?:\d+(?:\.\d+)*\.?\s*)?(Appropriation Ordinance|Ordinance|Resolution)\s+(\d{4}-\d{1,3})$/;
+const SPONSOR_LINE = /Council\s+(Co-?\s*)?Sponsors?(?:\s*[:\-\u2013\u2014]\s*|\s+(?=N\/A\b))/i;
+/** How far above a Council Sponsor line its item heading may be (title lines in between). */
+const HEADING_REACH = 6;
+
+/** A short line that is only name words ("Flaherty", "Piedmont-Smith"): the rest of a name that wrapped. */
+const isNameOnly = (line: string): boolean => {
+  const words = line.replace(/([A-Za-z])- (?=[A-Z])/g, '$1-').split(/\s+/).filter(Boolean);
+  return words.length >= 1 && words.length <= 3 && words.every((w) => isNameWord(w.replace(/[,;]+$/, '')) || /^(?:and|&)$/i.test(w));
+};
+
+export function councilSponsorHeadings(text: string): DocumentSponsorSentence[] {
+  const lines: string[] = [];
+  for (const l of text.replace(/[\u200b\u00ad]/g, '').split('\n').map(collapse).filter(Boolean)) {
+    // The marker itself can wrap: "... Council" / "Sponsor: CM Stosberg" (Ord 2026-23, meeting file 17809).
+    if (lines.length && /\bCouncil$/.test(lines[lines.length - 1]) && /^(?:Co-?\s*)?Sponsors?\s*[:\-\u2013\u2014]/i.test(l)) lines[lines.length - 1] += ` ${l}`;
+    else lines.push(l);
+  }
+  const out: DocumentSponsorSentence[] = [];
+  lines.forEach((line, i) => {
+    const m = SPONSOR_LINE.exec(line);
+    if (!m) return;
+    let rest = line.slice(m.index + m[0].length).trim();
+    const sentence0 = line.slice(m.index);
+    // "N/A", "None" or nothing: the city says there is no council sponsor.
+    if (!rest || /^(?:N\/A|none)\b/i.test(rest)) return;
+    // The item: the nearest heading above, with no motion or other text that names an item between.
+    let itemNumber: string | null = null;
+    for (let j = i - 1; j >= Math.max(0, i - HEADING_REACH); j--) {
+      if (/\b(?:moved|seconded)\b/i.test(lines[j])) break;
+      const h = ITEM_HEADING.exec(lines[j]);
+      if (h) {
+        itemNumber = itemNumberFor(h[1], h[2]);
+        break;
+      }
+    }
+    // The name wraps only when this line ends in a bare title (or "and"/a comma) and the next line is only a name.
+    let sentence = sentence0;
+    const dangling = /(?:^|\s)(?:CMs?\.?|Cms?\.?|Councilmembers?|and|&)$|,$/.test(rest);
+    let held = false;
+    if (dangling) {
+      const next = lines[i + 1];
+      if (next !== undefined && isNameOnly(next)) {
+        rest = `${rest} ${next}`;
+        sentence = `${sentence0} ${next}`;
+      } else held = true;
+    }
+    const role: 'sponsor' | 'cosponsor' = m[1] ? 'cosponsor' : 'sponsor';
+    const read = held ? { names: [] as string[], placeholder: false } : readNames(rest, { commaList: true });
+    out.push({
+      label: null, sentence: collapse(sentence), placeholder: read.placeholder,
+      names: read.names.map((printed) => ({ printed, role })), itemNumber,
+    });
+  });
+  return out;
+}
+
+function synopsisSentencesWithItems(
   text: string,
   rollCalls: { itemNumber: string; question: string }[] = [],
 ): DocumentSponsorSentence[] {

@@ -1003,7 +1003,7 @@ describe('runFirstLoad: sponsors', () => {
       expect(p.verdict).toBe('');
     }
     expect(existsSync(path.join(s.out, 'sponsor-compare.md'))).toBe(true);
-    expect(readFileSync(path.join(s.out, 'summary.md'), 'utf8')).toMatch(/Sponsorships: \d+ written .*held .*inventory differences/);
+    expect(readFileSync(path.join(s.out, 'summary.md'), 'utf8')).toMatch(/Sponsorships: \d+ would be written .*held .*inventory differences/);
   });
 
   it('refuses --apply while a sponsor spot-check verdict is blank', async () => {
@@ -1055,6 +1055,82 @@ describe('runFirstLoad: sponsors', () => {
     fillSponsorSpot(s.out);
     const r = await runFirstLoad(base(s, { apply: true }), deps());
     expect(r.refused?.join(' ')).toMatch(/inventory_disagrees/);
+  });
+
+  /** A db stub that keeps every parameter list, to look at what the sponsor writes carry. */
+  const capturingDeps = (inserts: any[][], exceptions: any[][]) => {
+    const d = deps();
+    const db = {
+      async query(text: string, params?: any[]) {
+        calls.push({ text });
+        if (/INTO essentials\.legislative_sponsorships/.test(text)) inserts.push(params as any[]);
+        if (/local_record_exceptions/.test(text) && /INSERT/.test(text)) exceptions.push(params as any[]);
+        const rows = /SELECT id FROM essentials\.legislative_bills/.test(text) ? [{ id: 'bill1' }]
+          : /SELECT id, superseded_by/.test(text) ? [] : /legislative_sponsorships/.test(text) ? [] : [{ id: 'row1' }];
+        return { rows, rowCount: rows.length };
+      },
+      release() {},
+    };
+    return { ...d, connect: async () => db as any };
+  };
+  const clearGates = (out: string) => {
+    const p = path.join(out, 'spotcheck.json');
+    const spot = JSON.parse(readFileSync(p, 'utf8'));
+    spot.picks.forEach((x: any) => (x.verdict = 'match'));
+    writeFileSync(p, JSON.stringify(spot));
+    fillSponsorSpot(out);
+  };
+
+  it('--apply ties every feed-read and document-read sponsor to a saved document (none written without one)', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    clearGates(s.out);
+    const inserts: any[][] = []; const exceptions: any[][] = [];
+    const r = await runFirstLoad(base(s, { apply: true }), capturingDeps(inserts, exceptions));
+    expect(r.refused).toBeUndefined();
+    const resolved = sp(s.out, 'sponsorships.json').sponsorships;
+    expect(resolved.some((x: any) => x.sourceKind === 'legislation_feed')).toBe(true);
+    expect(inserts.length).toBe(resolved.length);
+    expect(inserts.some((p) => p[7] === 'legislation_feed')).toBe(true);
+    expect(inserts.every((p) => typeof p[8] === 'string' && p[8].length > 0)).toBe(true);
+    expect(exceptions.some((p) => JSON.stringify(p).includes('no_document'))).toBe(false);
+    expect(r.applied?.sponsorshipsWritten).toBe(resolved.length);
+  });
+
+  it('--apply with one about:"sponsors" owner check on the only difference: not refused, rows written equal the resolved rows', async () => {
+    const s = setup();
+    const full = JSON.parse(readFileSync(path.join(s.inventory, 'full.json'), 'utf8'));
+    const id = `${SCOPE}:${DATE}:Ord 2026-777`;
+    full.items.push({ id, date: DATE, item_no: 'Ord 2026-777', instrument: 'motion', sponsors: ['Zulich'] });
+    writeFileSync(path.join(s.inventory, 'full.json'), JSON.stringify(full));
+    writeFileSync(path.join(s.inventory, 'owner-checks.json'), JSON.stringify({ checks: [{
+      about: 'sponsors', inventoryId: id, date: DATE, item: 'Ord 2026-777', tally: '', cause: 'inventory_disagrees', ownerAnswer: 'no',
+      ownerNote: 'looked: no sponsor printed', answeredAt: '2026-11-27T00:00:00Z', documents: [],
+    }] }));
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    const ex = sp(s.out, 'exceptions.json').exceptions.filter((e: any) => e.cause === 'inventory_disagrees');
+    expect(ex.filter((e: any) => !/^sponsors/.test(e.detail.kind))).toEqual([]);
+    expect(ex).toHaveLength(1);
+    expect(ex[0].detail).toMatchObject({ ownerHeld: true, ownerAnswer: 'no', ownerNote: 'looked: no sponsor printed' });
+    expect(ex[0].detail.reason).toContain('answer "no"');
+    clearGates(s.out);
+    const inserts: any[][] = []; const exceptions: any[][] = [];
+    const r = await runFirstLoad(base(s, { apply: true }), capturingDeps(inserts, exceptions));
+    expect(r.refused).toBeUndefined();
+    expect(inserts.length).toBe(sp(s.out, 'sponsorships.json').sponsorships.length);
+    expect(r.applied?.sponsorshipsWritten).toBe(inserts.length);
+  });
+
+  it('refuses (instead of throwing) when a sponsor spot-check verdict key was deleted', async () => {
+    const s = setup();
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    clearGates(s.out);
+    const f = path.join(s.out, 'sponsor-spotcheck.json');
+    const spot = JSON.parse(readFileSync(f, 'utf8'));
+    delete spot.picks[0].verdict;
+    writeFileSync(f, JSON.stringify(spot));
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused?.join(' ')).toMatch(/blank/);
   });
 
   it('writes the sponsorships after the votes when every gate is clear', async () => {

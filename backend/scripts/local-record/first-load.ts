@@ -666,7 +666,7 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
 
 // ---- sponsorships --------------------------------------------------------------------------------------------------
 
-/** Older documents print "Ord 21-03"; the feed prints "Ord 2021-03". Both sides are brought to the four-digit form to compare. */
+/** Older documents and some feed years print "Ord 21-03" (the cached 2021 feed has "21-09"); newer ones print "Ord 2021-03". Both sides are brought to the four-digit form to compare. */
 export const normaliseItemNumber = (s: string): string =>
   s.replace(/^(Ord|Res|App Ord) (\d{2})-(\d+)$/, (_m, t: string, y: string, n: string) => `${t} 20${y}-${n}`);
 const normaliseSubject = (subject: string): string => {
@@ -810,7 +810,13 @@ export function applySponsorOwnerChecks(excs: FoundException[], checks: CheckedO
     const c = d.inventoryId ? byId.get(d.inventoryId) : undefined;
     if (!c) return e;
     passed++;
-    return { ...e, detail: { ...(e.detail as object), ownerHeld: true, reason: c.ownerNote || `owner answered "${c.ownerAnswer}"` } };
+    return {
+      ...e,
+      detail: {
+        ...(e.detail as object), ownerHeld: true, ownerAnswer: c.ownerAnswer, ownerNote: c.ownerNote || null,
+        reason: `let through by the owner's sponsor check (answer "${c.ownerAnswer}")${c.ownerNote ? `: ${c.ownerNote}` : ''}`,
+      },
+    };
   });
   return { exceptions, passed };
 }
@@ -862,9 +868,9 @@ function sponsorGateBlockers(
   else if (savedHash !== hash) out.push('sponsorships.json changed since the dry run (the resolved sponsors are not the ones reviewed): run a dry run again.');
   const draw = (f: SponsorSpotCheckFile) => f.picks.map(sponsorPickKey).join('\n');
   if (prior.seed !== fresh.seed || draw(prior) !== draw(fresh)) out.push('sponsor-spotcheck.json does not match a fresh draw from its seed: run a dry run again.');
-  const blank = prior.picks.filter((p) => !p.verdict.trim()).length;
+  const blank = prior.picks.filter((p) => !(p.verdict ?? '').trim()).length;
   if (blank) out.push(`${blank} sponsor spot-check verdict(s) are blank.`);
-  const bad = prior.picks.filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match').length;
+  const bad = prior.picks.filter((p) => (p.verdict ?? '').trim() && (p.verdict ?? '').trim() !== 'match').length;
   if (bad) out.push(`sponsor spot check: ${bad} verdict(s) are not "match".`);
   return out;
 }
@@ -931,7 +937,7 @@ function summaryMd(
       `- Owner checks that failed the tally, name or outcome check (still blocking): ${owner.failed.length}`,
     ] : []),
     ...(sp ? [
-      `- Sponsorships: ${sp.rows} written (${sp.subjects} subjects; rows a real run would write), ${Object.values(sp.held).reduce((a, b) => a + b, 0)} held (${Object.keys(sp.held).length ? Object.entries(sp.held).sort().map(([c, n]) => `${c} ${n}`).join(', ') : 'none'}), ${sp.differences} inventory differences (${sp.agreeAfterNormalising} agree only after item numbers were normalised)`,
+      `- Sponsorships: ${sp.rows} would be written (${sp.subjects} subjects), ${Object.values(sp.held).reduce((a, b) => a + b, 0)} held (${Object.keys(sp.held).length ? Object.entries(sp.held).sort().map(([c, n]) => `${c} ${n}`).join(', ') : 'none'}), ${sp.differences} inventory differences (${sp.agreeAfterNormalising} agree only after item numbers were normalised)`,
       `- Sponsor spot checks drawn: ${sp.spotDrawn} (seed ${sp.seed}); filled in: ${sp.spotFilled}`,
     ] : []),
     '', '## Exceptions by cause', '',
@@ -990,9 +996,9 @@ function blockers(spot: SpotCheckFile | null, fresh: SpotCheckFile, found: Found
   }
   const changed = spot.picks.filter((p) => fresh.picks.find((f) => f.id === p.id)?.votesHash !== p.votesHash).length;
   if (changed) out.push(`${changed} picked vote(s) changed since they were checked (votes changed): run a dry run again and re-check them.`);
-  const blank = spot.picks.filter((p) => !p.verdict.trim()).length;
+  const blank = spot.picks.filter((p) => !(p.verdict ?? '').trim()).length;
   if (blank) out.push(`${blank} spot-check verdict(s) are blank.`);
-  const bad = spot.picks.filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match').length;
+  const bad = spot.picks.filter((p) => (p.verdict ?? '').trim() && (p.verdict ?? '').trim() !== 'match').length;
   if (bad) out.push(`spot_check_failed: ${bad} verdict(s) are not "match".`);
   for (const c of BLOCKING_CAUSES) {
     const n = found.filter((f) => f.cause === c && !isOwnerHeld(f)).length;
@@ -1043,7 +1049,7 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
     picks: fresh.picks.map((p) => ({ ...p, verdict: keep.get(p.id)?.votesHash === p.votesHash ? keep.get(p.id)?.verdict ?? '' : '' })),
   };
   const failedChecks: FoundException[] = spot.picks
-    .filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match')
+    .filter((p) => (p.verdict ?? '').trim() && (p.verdict ?? '').trim() !== 'match')
     .map((p) => ({ cause: 'spot_check_failed', subject: `${p.date} ${p.itemNumber} ${p.question}`, detail: { verdict: p.verdict } }));
   const owner = ownerChecks ? applyOwnerChecks(cmp, ownerChecks, roster, names, read.items, inventory, read.reader) : null;
   // An owner-checked row is saved with a vote document: it must be one the feed lists.

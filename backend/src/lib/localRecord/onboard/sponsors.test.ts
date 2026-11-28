@@ -255,3 +255,78 @@ describe('feed synopsis allow-list', () => {
     expect(names('The amendment, sponsored by Councilmember Ruff, added a date.')).toEqual([]);
   });
 });
+
+describe('"Council Sponsor:" agenda headings', () => {
+  const heads = (t: string) => sponsorSentencesWithItems(t).filter((s) => s.label === null);
+
+  it('reads one name, tied to the heading block item (not the motion)', () => {
+    const r = heads([
+      'Resolution 2026-15', '',
+      'Approval of Collective Bargaining Agreement with Don Owens Memorial Lodge 88, Fraternal',
+      'Order of Police Council Sponsor: CM Rollo',
+      'Daily moved and Asare seconded that Resolution 2026-15 be introduced.',
+    ].join('\n'));
+    expect(r).toHaveLength(1);
+    expect(r[0]).toMatchObject({ itemNumber: 'Res 2026-15', label: null, sentence: 'Council Sponsor: CM Rollo', names: [{ printed: 'Rollo', role: 'sponsor' }] });
+  });
+
+  it('keeps the heading item when the motion below names another item', () => {
+    const r = heads(['Resolution 2026-22', 'To Approve an Update to the ADA Transition Plan Council Sponsor - CM Daily', 'Daily moved and Piedmont-Smith seconded that Ordinance 2026-22 be introduced.'].join('\n'));
+    expect(r[0].itemNumber).toBe('Res 2026-22');
+  });
+
+  it('reads two and three names, with the zero-width space and the numbered heading of real files', () => {
+    const r = heads(['6.2.​ Ordinance 2026-22', 'Prohibiting Use of ALPR Technology Council Sponsor - CMs Zulich, Piedmont-Smith, Asare', 'x'].join('\n'));
+    expect(r[0].itemNumber).toBe('Ord 2026-22');
+    expect(r[0].names.map((n) => n.printed)).toEqual(['Zulich', 'Piedmont-Smith', 'Asare']);
+    const two = heads(['7.3.​ Ordinance 2026-12', 'To Provide a Carless Kirkwood Council Sponsor - CM Daily and Rosenbarger'].join('\n'));
+    expect(two[0].names.map((n) => n.printed)).toEqual(['Daily', 'Rosenbarger']);
+  });
+
+  it('reads "N/A", "None" and a blank as no sponsor: no row and no exception', () => {
+    expect(heads(['Appropriation Ordinance 2026-01', 'Approval of Additional Appropriation Council Sponsor N/A (B.M.C. 2.04.070)'].join('\n'))).toEqual([]);
+    expect(heads(['Resolution 2026-20', 'Budget for the Board Council Sponsor: N/A - Budget-related per B.M.C.', '2.04.270'].join('\n'))).toEqual([]);
+    expect(heads(['Resolution 2026-21', 'Something Council Sponsor: None'].join('\n'))).toEqual([]);
+    expect(heads(['Resolution 2026-21', 'Something Council Sponsor:'].join('\n'))).toEqual([]);
+  });
+
+  it('joins a wrapped name only when the next line is only a name', () => {
+    const wrapped = heads(['Ordinance 2026-20', 'Amending Title 20 pursuant to Council Resolution 2026-05 Council Sponsor - CM', 'Flaherty', 'Daily moved and Zulich seconded that Ordinance 2026-20 be introduced'].join('\n'));
+    expect(wrapped[0].names).toEqual([{ printed: 'Flaherty', role: 'sponsor' }]);
+    expect(wrapped[0].sentence).toBe('Council Sponsor - CM Flaherty');
+    const notAName = heads(['Ordinance 2026-20', 'Amending Title 20 Council Sponsor - CM', 'Daily moved and Zulich seconded that it be introduced'].join('\n'));
+    expect(notAName[0].names).toEqual([]);
+    expect(notAName[0].placeholder).toBe(false);
+  });
+
+  it('gives item null when the heading item cannot be read', () => {
+    const r = heads(['Amending Title 20 of the Code Council Sponsor - CM Rollo', 'Daily moved and Zulich seconded that Ordinance 2026-20 be introduced'].join('\n'));
+    expect(r[0].itemNumber).toBeNull();
+    expect(r[0].names).toEqual([{ printed: 'Rollo', role: 'sponsor' }]);
+    // A motion between the heading and the sponsor line also breaks the tie.
+    const motion = heads(['Ordinance 2026-20', 'Daily moved and Zulich seconded that it be adopted.', 'Council Sponsor - CM Rollo'].join('\n'));
+    expect(motion[0].itemNumber).toBeNull();
+  });
+
+  it('joins a marker that wraps between "Council" and "Sponsor:"', () => {
+    const r = sponsorSentencesWithItems(['Ordinance 2026-23', 'UDO Amendments Related to Limited Compliance and Change in Use Standards Council', 'Sponsor: CM Stosberg', 'Daily moved and Zulich seconded that Ordinance 2026-23 be introduced'].join('\n'));
+    expect(r).toHaveLength(1);
+    expect(r[0]).toMatchObject({ itemNumber: 'Ord 2026-23', sentence: 'Council Sponsor: CM Stosberg', names: [{ printed: 'Stosberg', role: 'sponsor' }] });
+  });
+
+  it('a co-sponsor line gives the cosponsor role', () => {
+    const r = heads(['Ordinance 2026-30', 'Title Council Co-Sponsor: CM Rollo'].join('\n'));
+    expect(r[0].names).toEqual([{ printed: 'Rollo', role: 'cosponsor' }]);
+  });
+});
+
+describe('"Council Sponsor:" line in the right margin column', () => {
+  it('is read from the unmargined text when given', () => {
+    const raw = ['7.2. Resolution 2026-13', '', 'Authorizing Issuance of Bonds   Council Sponsor - CM Zulich', 'Daily moved'].join('\n');
+    const stripped = ['7.2. Resolution 2026-13', '', 'Authorizing Issuance of Bonds', 'Daily moved'].join('\n');
+    expect(sponsorSentencesWithItems(stripped)).toEqual([]);
+    const r = sponsorSentencesWithItems(stripped, [], raw);
+    expect(r).toHaveLength(1);
+    expect(r[0]).toMatchObject({ itemNumber: 'Res 2026-13', names: [{ printed: 'Zulich', role: 'sponsor' }] });
+  });
+});
