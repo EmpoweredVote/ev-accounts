@@ -3,7 +3,7 @@
 // Pure text parsing: finds the sentences that say who sponsored an item (an ordinance, a resolution, an amendment or
 // a reasonable condition) and pulls out the names exactly as printed. A later step resolves names to people. An
 // unclear sentence never produces a guessed name: fewer names is better than a wrong one.
-import { twoDigits } from './minutes.js';
+import { itemNumberFor, twoDigits } from './minutes.js';
 
 export interface SponsorName {
   printed: string;
@@ -179,13 +179,25 @@ export function sponsorSentencesFromSynopsis(synopsis: string): SponsorSentence[
 
 const OTHER_ITEM = /^(?:Ordinance|Resolution|Appropriation Ordinance|Amendment|Reasonable Condition|RC)\s+(?:No\.\s*)?\d/i;
 const ABOUT_THIS_ITEM = /^(?:This|The)\s+(?:amendment|reasonable condition|RC)\b/i;
+
+/**
+ * The sponsor sentences of a feed synopsis that name the item's own sponsors. A sentence about an amendment or a
+ * condition ("The amendment, sponsored by Councilmember X, added ...") names that amendment's sponsor, not the
+ * item's, so it is left out.
+ */
+export function itemSponsorSentencesFromSynopsis(synopsis: string): SponsorSentence[] {
+  return sponsorSentencesFromSynopsis(synopsis).filter((s) => !ABOUT_THIS_ITEM.test(s.sentence) && !OTHER_ITEM.test(s.sentence));
+}
 const HEADING = /\b(Amendment|Reasonable Condition|RC)\s+#?([0-9Oo]+)(?:\s+\(?revised\)?)?\s+Synopsis\s*:/gi;
 
-/** Sponsor sentences in a memorandum or minutes, each labelled by its preceding "<Label> Synopsis:" heading. */
-export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
-  const flat = collapse(text);
+interface LocatedSentence extends SponsorSentence {
+  /** Where the label's heading starts in the collapsed text. */
+  at: number;
+}
+
+function documentSentences(flat: string): LocatedSentence[] {
   const headings = [...flat.matchAll(HEADING)];
-  const out: SponsorSentence[] = [];
+  const out: LocatedSentence[] = [];
   headings.forEach((h, k) => {
     const number = h[2].replace(/[Oo]/g, '0');
     const label = /^amendment$/i.test(h[1]) ? `Amendment ${twoDigits(number)}` : `Reasonable Condition ${Number(number)}`;
@@ -197,9 +209,69 @@ export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
       if (OTHER_ITEM.test(sentence)) break;
       const parsed = parseSentence(sentence);
       if (!parsed) continue;
-      if (ABOUT_THIS_ITEM.test(sentence)) out.push({ label, sentence, names: parsed.names, placeholder: parsed.placeholder });
+      if (ABOUT_THIS_ITEM.test(sentence)) {
+        out.push({ label, sentence, names: parsed.names, placeholder: parsed.placeholder, at: h.index! });
+      }
       break;
     }
   });
   return out;
+}
+
+/** Sponsor sentences in a memorandum or minutes, each labelled by its preceding "<Label> Synopsis:" heading. */
+export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
+  return documentSentences(collapse(text)).map(({ at: _at, ...s }) => s);
+}
+
+// Which item a document sentence belongs to. A synopsis heading ("Amendment 01 Synopsis:") never names its item, so
+// the item is the nearest one the document introduced before it. Only two shapes count, both seen in the Bloomington
+// minutes and memorandums (checked on 263 cached files). A bare "Ordinance 21-03" anywhere in the prose does not:
+// a synopsis or a note often cites another item ("Passed as Ordinance 2026-02 on January 14").
+//   1. The motion for this very label: "... moved ... to adopt Amendment 01 to Ordinance 22-13." or
+//      "... that Amendment 04 to Ordinance 2025-19 be adopted." The label must match the sentence's label.
+//   2. The motion that opens an item: "... moved ... that Ordinance 2026-06 be adopted / read / introduced" or
+//      "... moved ... to adopt / introduce Ordinance 24-05".
+// The nearest of the two before the heading wins. None before it means no item: the caller raises an exception.
+const ITEM_RE = String.raw`(Appropriation Ordinance|Ordinance|Resolution)\s+-?(\d{2,4}-\s*\d{1,3})`;
+const OPENS_ITEM = new RegExp(
+  String.raw`\b(?:moved|seconded)\b[^.]{0,120}?(?:\bthat\s+${ITEM_RE}\s+be\s+(?:read|adopted|introduced)\b|\bto\s+(?:adopt|introduce)\s+${ITEM_RE})`,
+  'gi',
+);
+
+function labelMotion(label: string): RegExp {
+  const m = /^(Amendment|Reasonable Condition) (\d+)$/.exec(label)!;
+  const n = Number(m[2]);
+  const words = m[1] === 'Amendment' ? 'Amendment|Am' : 'Reasonable Conditions?|RCs?';
+  return new RegExp(String.raw`(?<![0-9A-Za-z])(?:${words})\s+#?[0Oo]*${n}(?![0-9])[^.]{0,40}?\bto\s+${ITEM_RE}`, 'gi');
+}
+
+/** The item a label's synopsis belongs to, or null when the document did not introduce one before the heading. */
+function itemBefore(flat: string, at: number, label: string): string | null {
+  const before = flat.slice(0, at);
+  const best = { end: -1, item: null as string | null };
+  for (const re of [labelMotion(label), OPENS_ITEM]) {
+    for (const m of before.matchAll(re)) {
+      // Each shape holds one or two (type, number) pairs; the opening shape has one in each branch.
+      for (let g = 1; g + 1 < m.length; g += 2) {
+        if (m[g] === undefined) continue;
+        const end = m.index! + m[0].length;
+        if (end > best.end) {
+          best.end = end;
+          best.item = itemNumberFor(m[g], m[g + 1]);
+        }
+      }
+    }
+  }
+  return best.item;
+}
+
+export interface DocumentSponsorSentence extends SponsorSentence {
+  /** "Ord 21-03" form; null when no item was introduced before the sentence's heading. */
+  itemNumber: string | null;
+}
+
+/** Like sponsorSentencesFromDocument, with each sentence tied to its item (see above). */
+export function sponsorSentencesWithItems(text: string): DocumentSponsorSentence[] {
+  const flat = collapse(text);
+  return documentSentences(flat).map(({ at, ...s }) => ({ ...s, itemNumber: itemBefore(flat, at, s.label!) }));
 }

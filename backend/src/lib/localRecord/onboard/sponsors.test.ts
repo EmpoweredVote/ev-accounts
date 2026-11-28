@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { sponsorSentencesFromDocument, sponsorSentencesFromSynopsis } from './sponsors.js';
+import { sponsorSentencesFromDocument, itemSponsorSentencesFromSynopsis, sponsorSentencesFromSynopsis, sponsorSentencesWithItems } from './sponsors.js';
 
 describe('sponsor sentence finder', () => {
   it('reads "sponsored by Councilmember X"', () =>
@@ -136,4 +136,84 @@ describe('sponsor sentence finder: safety rules', () => {
       { printed: 'Stosberg', role: 'sponsor' },
     ]);
   });
+});
+
+describe('feed synopsis', () => {
+  it('leaves out a sentence about an amendment: it names the amendment\'s sponsor, not the item\'s', () =>
+    expect(
+      itemSponsorSentencesFromSynopsis(
+        'This Resolution sponsored by Councilmember Asare requires a briefing. Note: At the Regular Session, the Council adopted ' +
+          'Amendment 01 to this resolution. The amendment, sponsored by Councilmember Piedmont-Smith, added a timeline.',
+      ).map((s) => s.names.map((n) => n.printed)),
+    ).toEqual([['Asare']]));
+});
+
+describe('tying a document sentence to its item', () => {
+  const items = (t: string) => sponsorSentencesWithItems(t).map((s) => [s.label, s.itemNumber]);
+
+  it('ties an amendment synopsis to the item its motion names', () =>
+    expect(
+      items(
+        'Piedmont-Smith moved and it was seconded to adopt Amendment 01 to Ordinance 22-13.\n\n' +
+          'Amendment 01 Synopsis: This amendment is sponsored by Cm. Piedmont-Smith. It delays the date.',
+      ),
+    ).toEqual([['Amendment 01', 'Ord 22-13']]));
+  it('reads an item number wrapped at the hyphen', () =>
+    expect(
+      items(
+        'Volan moved and it was seconded to adopt Amendment 01 to Resolution 23- 04. He spoke.\n' +
+          'Amendment 01 Synopsis: This amendment is sponsored by Cm. Volan. It changes the text.',
+      ),
+    ).toEqual([['Amendment 01', 'Res 23-04']]));
+  it('ties two items in one document to their own motions', () =>
+    expect(
+      items(
+        'Daily moved and it was seconded to adopt Amendment 01 to Ordinance 2025-16. ' +
+          'Amendment 01 Synopsis: This amendment is sponsored by Cm. Daily. It fixes a date. ' +
+          'Stosberg moved and Rollo seconded that Amendment 01 be adopted to Resolution 2025-18. ' +
+          'Amendment 01 Synopsis: This amendment is sponsored by Cm. Stosberg. It replaces Exhibit A.',
+      ),
+    ).toEqual([
+      ['Amendment 01', 'Ord 2025-16'],
+      ['Amendment 01', 'Res 2025-18'],
+    ]));
+  it('uses the motion that opens the item when the label is not named near it', () =>
+    expect(
+      items(
+        'Daily moved and Zulich seconded that Ordinance 2026-06 be adopted. The mayor spoke. ' +
+          'Stosberg presented Reasonable Condition 4. Reasonable Condition 4 Synopsis: This reasonable condition is ' +
+          'sponsored by Cm. Stosberg. It removes a use.',
+      ),
+    ).toEqual([['Reasonable Condition 4', 'Ord 2026-06']]));
+  it('does not take a cross-reference in prose for the item', () =>
+    expect(
+      items(
+        'Daily moved and Zulich seconded that Ordinance 2026-06 be adopted. Condition text: passed as Ordinance 2026-02 on ' +
+          'January 14, 2026. Reasonable Condition 11 Synopsis: This reasonable condition is sponsored by Cm. Flaherty. It lowers rents.',
+      ),
+    ).toEqual([['Reasonable Condition 11', 'Ord 2026-06']]));
+  it('does not take a mention in a synopsis ("amends Ordinance 21-03") for a heading', () =>
+    expect(
+      items(
+        'Volan moved and it was seconded to adopt Amendment 02 to Ordinance 22-14. ' +
+          'Amendment 02 Synopsis: This amendment is sponsored by Cm. Volan. It amends Ordinance 21-03 by deleting a clause. ' +
+          'Amendment 03 Synopsis: This amendment is sponsored by Cm. Rollo. It adds a clause.',
+      ),
+    ).toEqual([
+      ['Amendment 02', 'Ord 22-14'],
+      ['Amendment 03', null], // no motion introduced it: the citation inside Amendment 02's synopsis is not one
+    ]));
+  it('ties an appropriation ordinance', () =>
+    expect(
+      items(
+        'Ruff moved and it was seconded to adopt Amendment 03 to Appropriation Ordinance 2026-02. ' +
+          'Amendment 03 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds.',
+      ),
+    ).toEqual([['Amendment 03', 'App Ord 2026-02']]));
+  it('gives no item to a sentence before any heading, and never guesses', () =>
+    expect(
+      items(
+        'The clerk noted that Ordinance 21-03 was postponed. Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds.',
+      ),
+    ).toEqual([['Amendment 01', null]]));
 });

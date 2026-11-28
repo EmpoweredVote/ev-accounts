@@ -62,6 +62,8 @@ function stubDb(handlers: Handler[] = []) {
     [/SELECT detail FROM essentials\.local_record_exceptions/, () => []],
     [/SELECT subject FROM essentials\.local_record_exceptions/, () => []],
     [/SELECT id FROM essentials\.legislative_bills/, () => [{ id: 'bill1' }]],
+    // Sponsors already stored for an item or amendment.
+    [/SELECT politician_id FROM essentials\.legislative_sponsorships/, () => []],
     [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => []],
     [/INSERT INTO essentials\.local_record_source_documents/, () => [{ id: 'doc-new' }]],
     // Item numbers of the city's bills (earlier runs wrote one per feed item).
@@ -150,7 +152,7 @@ describe('runLocalRecordRefresh', () => {
     expect(summary.cities[0].votesWritten).toBeGreaterThan(0);
     expect(summary.cities[0].exceptions.control_failed).toBe(0);
     expect(verbs(db)).toEqual(['BEGIN', 'COMMIT']);
-    expect(sql(db, /INTO essentials\.local_record_source_documents/)[0].params).toContain('memorandum');
+    expect(sql(db, /INTO essentials\.local_record_source_documents/).some((c) => c.params.includes('memorandum'))).toBe(true);
   });
 
   it('skips a disabled city', async () => {
@@ -569,5 +571,81 @@ describe('R8: a document that prints another meeting date is not read for this m
     const confirmed = sql(db, /'confirmed', \$12/).map((c) => c.params[11]);
     expect(confirmed.length).toBeGreaterThan(0);
     expect(new Set(confirmed)).toEqual(new Set(['doc-memo']));
+  });
+});
+
+describe('council sponsorships', () => {
+  const MOTION = 'Piedmont-Smith moved and it was seconded to adopt Amendment 01 to Ordinance 2026-28.';
+  const withSynopsis = (sentence: string, motion = MOTION) =>
+    `${memoText}\n\n${motion}\n\nAmendment 01 Synopsis: ${sentence}\n`;
+  const memoWith = (text: string) => ({ pdfText: async () => text });
+  const sponsorInserts = (db: ReturnType<typeof stubDb>) => sql(db, /INTO essentials\.legislative_sponsorships/);
+  const exceptions = (db: ReturnType<typeof stubDb>) => sql(db, /INSERT INTO essentials\.local_record_exceptions/).map((c) => c.params);
+  const GOOD = 'This amendment is sponsored by Cm. Piedmont-Smith. It moves a date.';
+
+  it('saves each feed year as a legislation_feed document', async () => {
+    const db = stubDb();
+    await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db));
+    const feedRows = sql(db, /INTO essentials\.local_record_source_documents/).filter((c) => c.params.includes('legislation_feed'));
+    expect(feedRows.map((c) => c.params[2]).sort()).toEqual([
+      'https://bloomington.in.gov/onboard/committees/1/legislation?year=2025;format=json',
+      'https://bloomington.in.gov/onboard/committees/1/legislation?year=2026;format=json',
+    ]);
+  });
+
+  it('writes sponsorships found in a new memorandum, proved from the saved document', async () => {
+    const db = stubDb();
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(withSynopsis(GOOD))));
+    const row = sponsorInserts(db).find((c) => c.params.includes('Amendment 01'));
+    expect(row).toBeDefined();
+    expect(row!.params).toEqual(expect.arrayContaining(['p-piedmont-smith', 'sponsor', 'memorandum', 'doc-new']));
+    expect(summary.cities[0].sponsorshipsWritten).toBeGreaterThan(0);
+    expect(summary.cities[0].exceptions.sponsor_unresolved).toBe(0);
+  });
+
+  it('exits non-zero when a new sponsor exception opens', async () => {
+    const db = stubDb();
+    await expect(
+      runLocalRecordJob(deps(db, memoWith(withSynopsis('This amendment is sponsored by Cm. Nobodyknown. It moves a date.')))),
+    ).rejects.toThrow(/sponsor_unresolved/);
+    expect(exceptions(db).some((p) => p[2] === 'sponsor_unresolved' && p[3] === 'Ord 2026-28 / Amendment 01')).toBe(true);
+  });
+
+  it('raises sponsor_unresolved (no_item) for a synopsis no motion introduced, and writes nothing for it', async () => {
+    const db = stubDb();
+    const text = `Amendment 01 Synopsis: ${GOOD}\n\n${memoText}`;
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(text)));
+    const ex = exceptions(db).find((p) => p[2] === 'sponsor_unresolved');
+    expect(ex?.[3]).toContain('/ Amendment 01');
+    expect(String(ex?.[4])).toContain('no_item');
+    expect(sponsorInserts(db).some((c) => c.params.includes('Amendment 01'))).toBe(false);
+    expect(summary.cities[0].exceptions.sponsor_unresolved).toBe(1);
+  });
+
+  it('counts a sponsor exception the write records itself (a stored sponsor the source no longer names)', async () => {
+    // The open sponsor exceptions: none before the write, the one it recorded after.
+    let reads = 0;
+    const db = stubDb([
+      [/SELECT politician_id FROM essentials\.legislative_sponsorships/, () => [{ politician_id: 'p-ruff' }]],
+      [/SELECT cause, subject, detail FROM essentials\.local_record_exceptions/, () =>
+        ++reads === 1 ? [] : [{ cause: 'sponsor_disagrees', subject: 'Ord 2026-28 / Amendment 01', detail: { stored: ['p-ruff'] } }]],
+    ]);
+    const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(withSynopsis(GOOD))));
+    expect(exceptions(db).some((p) => p[2] === 'sponsor_disagrees' && p[3] === 'Ord 2026-28 / Amendment 01')).toBe(true);
+    expect(summary.cities[0].exceptions.sponsor_disagrees).toBeGreaterThan(0);
+  });
+
+  it('LOCAL_RECORD_DRY_RUN rolls sponsorships back too', async () => {
+    const db = stubDb();
+    const before = process.env.LOCAL_RECORD_DRY_RUN;
+    process.env.LOCAL_RECORD_DRY_RUN = '1';
+    try {
+      await runLocalRecordJob(deps(db, memoWith(withSynopsis(GOOD))));
+    } finally {
+      if (before === undefined) delete process.env.LOCAL_RECORD_DRY_RUN;
+      else process.env.LOCAL_RECORD_DRY_RUN = before;
+    }
+    expect(sponsorInserts(db).length).toBeGreaterThan(0);
+    expect(verbs(db)).toEqual(['BEGIN', 'ROLLBACK']);
   });
 });

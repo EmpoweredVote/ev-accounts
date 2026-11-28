@@ -4,9 +4,11 @@ import { readFileSync } from 'node:fs';
 import { checkRollCall, type CheckContext } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
 import { fetchJson, listVoteDocuments, parseLegislationFeed, type VoteDocument } from './onboard/feed.js';
-import { minutesTextFromPdf, parseMinutes, printedMeetingDate } from './onboard/minutes.js';
+import { minutesTextFromPdf, parseMinutes, printedMeetingDate, stripMargin } from './onboard/minutes.js';
+import { itemSponsorSentencesFromSynopsis, sponsorSentencesWithItems } from './onboard/sponsors.js';
+import { resolveSponsorships, sponsorSubject, type SponsorFinding } from './sponsorships.js';
 import { externalVoteId, saveDocument, sha256Hex, type Queryable, type StorageLike } from './store.js';
-import { recordException, writeConfirmed, writeFeed } from './write.js';
+import { recordException, writeConfirmed, writeFeed, writeSponsorships } from './write.js';
 import { EXCEPTION_CAUSES } from './types.js';
 import type { CheckResult, CityScope, ExceptionCause, FeedItem, MinutesParse, ResolvedVote } from './types.js';
 
@@ -43,6 +45,7 @@ export interface RunSummary {
     pendingAdded: number;
     rollCallsConfirmed: number;
     votesWritten: number;
+    sponsorshipsWritten: number;
     /** New exceptions recorded this run (one already logged with the same detail is not new). */
     exceptions: Record<ExceptionCause, number>;
   }[];
@@ -273,6 +276,7 @@ interface CityRun {
   pendingAdded: number;
   rollCallsConfirmed: number;
   votesWritten: number;
+  sponsorshipsWritten: number;
   exceptions: Record<ExceptionCause, number>;
   /** Set when the control re-parse disagreed: the city is rolled back and nothing else ran. */
   controlFailed: { subject: string; detail: unknown } | null;
@@ -285,14 +289,21 @@ export async function readFeeds(
   const year = now.getUTCFullYear();
   const items = new Map<number, FeedItem>();
   const docs = new Map<number, VoteDocument>();
+  const feeds: { year: number; url: string; json: unknown }[] = [];
+  /** The feed year each item was read from (the later year read wins when an item is in two). */
+  const itemYear = new Map<number, number>();
   for (const y of years ?? [year, year - 1]) {
     const root = `${city.base}/onboard/committees/${city.committeeId}`;
-    for (const it of parseLegislationFeed(await deps.fetchJson(`${root}/legislation?year=${y};format=json`), city.base)) {
+    const url = `${root}/legislation?year=${y};format=json`;
+    const json = await deps.fetchJson(url);
+    feeds.push({ year: y, url, json });
+    for (const it of parseLegislationFeed(json, city.base)) {
       items.set(it.feedId, it);
+      itemYear.set(it.feedId, y);
     }
     for (const d of listVoteDocuments(await deps.fetchJson(`${root}/meetings?year=${y};format=json`))) docs.set(d.fileId, d);
   }
-  return { items: [...items.values()], docs: [...docs.values()] };
+  return { items: [...items.values()], docs: [...docs.values()], feeds, itemYear };
 }
 
 /** Re-parse one confirmed meeting from its saved copy and compare with the stored votes. */
@@ -341,7 +352,7 @@ async function runCity(
   db: Queryable, city: CityConfig, runId: string, now: Date, deps: RefreshDeps,
 ): Promise<CityRun> {
   const run: CityRun = {
-    pendingAdded: 0, rollCallsConfirmed: 0, votesWritten: 0, exceptions: zeroCounts(), controlFailed: null,
+    pendingAdded: 0, rollCallsConfirmed: 0, votesWritten: 0, sponsorshipsWritten: 0, exceptions: zeroCounts(), controlFailed: null,
   };
   /** Record an exception; count it only when it is new (not logged before with the same detail). */
   const raise = async (cause: ExceptionCause, subject: string, detail: unknown) => {
@@ -354,13 +365,25 @@ async function runCity(
     if (!known) run.exceptions[cause]++;
   };
 
-  const { items, docs } = await readFeeds(city, now, deps);
+  const { items, docs, feeds, itemYear } = await readFeeds(city, now, deps);
   const names = deps.loadNames(city);
   const terms = await deps.loadTerms(db, city);
 
   // Control first: a bad control means the reader or the names changed under us, so write nothing.
   run.controlFailed = await control(db, city, runId, deps, names, terms, items);
   if (run.controlFailed) return run;
+
+  // Each feed year's raw JSON is kept as a source document: it is what a feed-read sponsor is proved from.
+  const feedDocumentId = new Map<number, string>();
+  for (const f of feeds) {
+    const saved = await saveDocument(db, deps.storage, {
+      city: city.scope, kind: 'legislation_feed', url: f.url, cityFileId: null,
+      bytes: new TextEncoder().encode(JSON.stringify(f.json)),
+    });
+    feedDocumentId.set(f.year, saved.id);
+  }
+  /** Sponsor sentences read this run, from the feed and from every document read. */
+  const findings: SponsorFinding[] = [];
 
   const count = async () =>
     Number((await db.query(
@@ -441,6 +464,15 @@ async function runCity(
     if (doc.kind === 'minutes') minutesDates.set(d, saved.id);
     for (const s of parse.unparsed) {
       await raise('unparsed_roll_call', `${d} ${sha256Hex(new TextEncoder().encode(s)).slice(0, 12)}`, { sentence: s });
+    }
+
+    // Sponsors named in this document's amendment and condition synopses, each tied to the item it was moved on.
+    for (const s of sponsorSentencesWithItems(stripMargin(text))) {
+      if (!s.itemNumber) {
+        await raise('sponsor_unresolved', `${d} document ${doc.fileId} / ${s.label}`, { reason: 'no_item', sentence: s.sentence, url: doc.url });
+        continue;
+      }
+      findings.push({ itemNumber: s.itemNumber, label: s.label, date: d, sourceKind: doc.kind, sourceDocumentId: saved.id, found: s });
     }
 
     const ctx = buildContext(names, terms, items, d);
@@ -538,6 +570,43 @@ async function runCity(
       feedDate: r.pending_date, confirmedDate: r.confirmed_date,
     });
   }
+
+  // Sponsors named in the feed's item synopses, seated on the item's first action date.
+  for (const it of items) {
+    if (!it.synopsis) continue;
+    for (const found of itemSponsorSentencesFromSynopsis(it.synopsis)) {
+      if (!it.firstActionDate) {
+        await raise('sponsor_unresolved', sponsorSubject(it.itemNumber, null), { reason: 'no_date', sentence: found.sentence });
+        continue;
+      }
+      findings.push({
+        itemNumber: it.itemNumber, label: null, date: it.firstActionDate, sourceKind: 'legislation_feed',
+        sourceDocumentId: feedDocumentId.get(itemYear.get(it.feedId) ?? -1) ?? null, found,
+      });
+    }
+  }
+
+  const { sponsorships, problems } = resolveSponsorships(findings, names, terms);
+  for (const p of problems) await raise(p.cause, p.subject, p.detail);
+  // A stored sponsor is flagged missing only for a subject read now, and not for one already raised above (its read is unknown).
+  const raised = new Set(problems.map((p) => p.subject));
+  const subjectsRead = new Set(findings.map((f) => sponsorSubject(f.itemNumber, f.label)).filter((x) => !raised.has(x)));
+  // writeSponsorships records its own exceptions; count the ones that are new, as raise() does.
+  const SPONSOR_CAUSES = ['sponsor_unresolved', 'sponsor_disagrees', 'unknown_item'];
+  const openNow = async () => {
+    const r = await db.query(
+      `SELECT cause, subject, detail FROM essentials.local_record_exceptions WHERE city_scope = $1 AND cause = ANY($2::text[])`,
+      [city.scope, SPONSOR_CAUSES],
+    );
+    return new Map<string, string>(
+      (r.rows as any[]).filter((x) => typeof x.cause === 'string').map((x) => [`${x.cause}\u0000${x.subject}`, canon(x.detail)]),
+    );
+  };
+  const beforeWrite = await openNow();
+  run.sponsorshipsWritten = (await writeSponsorships(db, city.scope, runId, sponsorships, { subjectsRead })).written;
+  for (const [key, detail] of await openNow()) {
+    if (beforeWrite.get(key) !== detail) run.exceptions[key.split('\u0000')[0] as ExceptionCause]++;
+  }
   return run;
 }
 
@@ -576,7 +645,7 @@ export async function runLocalRecordRefresh(
       }
       summary.cities.push({
         scope: city.scope, pendingAdded: run.pendingAdded, rollCallsConfirmed: run.rollCallsConfirmed,
-        votesWritten: run.votesWritten, exceptions: run.exceptions,
+        votesWritten: run.votesWritten, sponsorshipsWritten: run.sponsorshipsWritten, exceptions: run.exceptions,
       });
     } catch (e) {
       await conn?.query('ROLLBACK').catch(() => undefined);

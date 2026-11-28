@@ -275,6 +275,13 @@ const ITEM_PREFIX: Record<string, string> = {
   Resolution: 'Res',
 };
 
+/** The record's item number for a printed item: ("Ordinance", "21-03") -> "Ord 21-03". Null for an unknown type. */
+export function itemNumberFor(type: string, num: string): string | null {
+  const key = Object.keys(ITEM_PREFIX).find((k) => k.toLowerCase() === type.toLowerCase());
+  const prefix = key ? ITEM_PREFIX[key] : undefined;
+  return prefix ? `${prefix} ${num.replace(/\s+/g, '')}` : null;
+}
+
 type Subject = { kind: 'vote'; itemNumber: string; question: string } | { kind: 'ignore' } | { kind: 'unknown' };
 
 const RC = String.raw`Reasonable Condition (\d{1,3})`;
