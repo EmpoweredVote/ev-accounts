@@ -63,7 +63,7 @@ function stubDb(handlers: Handler[] = []) {
     [/SELECT subject FROM essentials\.local_record_exceptions/, () => []],
     [/SELECT id FROM essentials\.legislative_bills/, () => [{ id: 'bill1' }]],
     // Sponsors already stored for an item or amendment.
-    [/SELECT politician_id FROM essentials\.legislative_sponsorships/, () => []],
+    [/SELECT politician_id, role FROM essentials\.legislative_sponsorships/, () => []],
     // Open sponsor exceptions (read before and after the sponsorship write).
     [/SELECT cause, subject, detail FROM essentials\.local_record_exceptions/, () => []],
     [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => []],
@@ -628,13 +628,28 @@ describe('council sponsorships', () => {
     // The open sponsor exceptions: none before the write, the one it recorded after.
     let reads = 0;
     const db = stubDb([
-      [/SELECT politician_id FROM essentials\.legislative_sponsorships/, () => [{ politician_id: 'p-ruff' }]],
+      [/SELECT politician_id, role FROM essentials\.legislative_sponsorships/, () => [{ politician_id: 'p-ruff', role: 'sponsor' }]],
       [/SELECT cause, subject, detail FROM essentials\.local_record_exceptions/, () =>
         ++reads === 1 ? [] : [{ cause: 'sponsor_disagrees', subject: 'Ord 2026-28 / Amendment 77', detail: { stored: ['p-ruff'] } }]],
     ]);
     const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(withSynopsis(GOOD))));
     expect(exceptions(db).some((p) => p[2] === 'sponsor_disagrees' && p[3] === 'Ord 2026-28 / Amendment 77')).toBe(true);
     expect(summary.cities[0].exceptions.sponsor_disagrees).toBeGreaterThan(0);
+  });
+
+  it('a subject the first load held as sponsor_disagrees is not written by a weekly run that re-reads only the feed', async () => {
+    // The fixture feed says "This Ordinance, sponsored by Councilmember Stosberg, ..." for Ord 2026-37. The first load
+    // saw a document naming someone else and held the subject; the weekly run reads the feed again and no document.
+    const run = async (held: string[]) => {
+      const db = stubDb([
+        [/SELECT subject FROM essentials\.local_record_exceptions.*sponsor_disagrees/s, () => held.map((subject) => ({ subject }))],
+        [/SELECT id FROM essentials\.legislative_bills/, (p) => [{ id: `bill-${p[1]}` }]],
+      ]);
+      await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, { meetings: {} }));
+      return sponsorInserts(db).filter((c) => c.params[1] === 'bill-Ord 2026-37');
+    };
+    expect(await run([])).toHaveLength(1); // control: without the hold the feed row is written
+    expect(await run(['Ord 2026-37'])).toHaveLength(0);
   });
 
   it('LOCAL_RECORD_DRY_RUN rolls sponsorships back too', async () => {

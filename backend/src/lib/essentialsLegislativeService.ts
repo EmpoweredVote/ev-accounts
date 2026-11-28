@@ -804,7 +804,7 @@ const FEED_STATUSES: Record<string, string> = { withdrawn: 'Withdrawn', pending:
  * What a member sponsored or co-sponsored, newest first by the item's latest meeting date. Reads only
  * legislative_sponsorships (never the old sponsor_id or cosponsor tables). Status, first match wins: the
  * amendment's own roll-call outcome; the item's Final passage outcome; the feed status Withdrawn or Pending; else
- * "No recorded vote". Outcomes are the stored words ("passed", "failed", "vetoed"), as the council record returns
+ * "No recorded vote". Only confirmed roll calls give an outcome; one still waiting for the Minutes gives "Pending". Outcomes are the stored words ("passed", "failed", "vetoed"), as the council record returns
  * them. Three queries: the member's rows, the roll calls of those bills, and the other sponsors on the page's rows.
  * document_url is the city's public URL; the private storage path is never selected.
  */
@@ -850,14 +850,15 @@ export async function getCouncilSponsorshipsByPolitician(
   const latest = new Map<string, string>();
   for (const r of rolls) if (r.meeting_date > (latest.get(r.bill_id) ?? '')) latest.set(r.bill_id, r.meeting_date);
 
+  // Only a confirmed roll call gives an outcome (the latest one). A question whose only roll calls are still waiting
+  // for the Minutes is "Pending": its outcome is not confirmed yet.
   const outcomeFor = (billId: string, question: (q: string) => boolean): string | null => {
-    const hits = rolls
-      .filter((r) => r.bill_id === billId && question(r.question))
-      // A confirmed roll call outranks a pending one; then the latest meeting.
-      .sort((a, b) =>
-        a.state !== b.state ? (a.state === 'confirmed' ? -1 : 1) : a.meeting_date < b.meeting_date ? 1 : a.meeting_date > b.meeting_date ? -1 : 0,
-      );
-    return hits.length ? (hits[0].outcome as string) : null;
+    const hits = rolls.filter((r) => r.bill_id === billId && question(r.question));
+    const confirmed = hits
+      .filter((r) => r.state === 'confirmed')
+      .sort((a, b) => (a.meeting_date < b.meeting_date ? 1 : a.meeting_date > b.meeting_date ? -1 : 0));
+    if (confirmed.length) return confirmed[0].outcome as string;
+    return hits.length ? 'Pending' : null;
   };
 
   const sorted = [...own].sort((a, b) => {

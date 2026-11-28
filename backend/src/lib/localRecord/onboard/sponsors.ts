@@ -197,19 +197,25 @@ const ABOUT_THE_ITEM = /^(?:This|The)\s+(?:Appropriation\s+)?(?:Ordinance|Resolu
 export function itemSponsorSentencesFromSynopsis(synopsis: string): SponsorSentence[] {
   return sponsorSentencesFromSynopsis(synopsis).filter((s) => ABOUT_THE_ITEM.test(s.sentence));
 }
-const HEADING = /\b(Amendment|Reasonable Condition|RC)\s+#?([0-9Oo]+)(?:\s+\(?revised\)?)?\s+Synopsis\s*:/gi;
+// Group 1 is set for a sub-amendment heading ("Amendment A to Amendment 01 Synopsis:"). Its sponsors are not
+// Amendment 01's, and the record has no label for a sub-amendment, so it never ties to an item (see `nested`).
+const HEADING = /\b((?:Sub-?amendment|Amendment|Reasonable Condition|RC)\s+#?[0-9A-Za-z]+\s+to\s+)?(Amendment|Reasonable Condition|RC)\s+#?([0-9Oo]+)(?:\s+\(?revised\)?)?\s+Synopsis\s*:/gi;
 
 interface LocatedSentence extends SponsorSentence {
   /** Where the label's heading starts in the collapsed text. */
   at: number;
+  /** A sub-amendment's heading: its sentence never ties to an item, so names in it give an exception, never a row. */
+  nested: boolean;
 }
 
 function documentSentences(flat: string): LocatedSentence[] {
   const headings = [...flat.matchAll(HEADING)];
   const out: LocatedSentence[] = [];
   headings.forEach((h, k) => {
-    const number = h[2].replace(/[Oo]/g, '0');
-    const label = /^amendment$/i.test(h[1]) ? `Amendment ${twoDigits(number)}` : `Reasonable Condition ${Number(number)}`;
+    const nested = h[1] !== undefined;
+    const number = h[3].replace(/[Oo]/g, '0');
+    const own = /^amendment$/i.test(h[2]) ? `Amendment ${twoDigits(number)}` : `Reasonable Condition ${Number(number)}`;
+    const label = nested ? collapse(`${h[1]}${own}`) : own;
     const from = h.index! + h[0].length;
     const to = k + 1 < headings.length ? headings[k + 1].index! : flat.length;
     // Only the synopsis itself counts: the first sponsor sentence, reached before any sentence that opens with another
@@ -219,7 +225,7 @@ function documentSentences(flat: string): LocatedSentence[] {
       const parsed = parseSentence(sentence);
       if (!parsed) continue;
       if (ABOUT_THIS_ITEM.test(sentence)) {
-        out.push({ label, sentence, names: parsed.names, placeholder: parsed.placeholder, at: h.index! });
+        out.push({ label, sentence, names: parsed.names, placeholder: parsed.placeholder, at: h.index!, nested });
       }
       break;
     }
@@ -229,7 +235,7 @@ function documentSentences(flat: string): LocatedSentence[] {
 
 /** Sponsor sentences in a memorandum or minutes, each labelled by its preceding "<Label> Synopsis:" heading. */
 export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
-  return documentSentences(collapse(text)).map(({ at: _at, ...s }) => s);
+  return documentSentences(collapse(text)).filter((s) => !s.nested).map(({ at: _at, nested: _n, ...s }) => s);
 }
 
 // Which item a document sentence belongs to. A synopsis heading ("Amendment 01 Synopsis:") never names its item, so
@@ -242,7 +248,10 @@ export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
 //      approved" or "... to adopt / introduce / approve Ordinance 24-05".
 // The nearest of the two before the heading wins, unless:
 //   - another item number appears between that motion and the heading (the text moved on), or
-//   - the chosen motion is of kind 2 and the same label's motion naming a different item is printed after the heading.
+//   - the chosen motion is of kind 2 and the same label's motion naming a different item is printed after the heading,
+//     anywhere up to the next synopsis heading or the next item-opening motion, whichever is later (the end of the
+//     document when there is neither). A run of synopsis headings is often printed before the motions that take them
+//     up, so the search does not stop at the next heading.
 // The caller may add a last check against the document's own roll calls (see `rollCalls`).
 //
 // ITEM_RE: "No." is optional ("Ordinance No. 2026-06"). The "-?" before the number is for a stray hyphen the real
@@ -276,7 +285,7 @@ function itemsOf(m: RegExpMatchArray): string[] {
 }
 
 /** The item a label's synopsis belongs to, or null when the document did not introduce one with strong evidence. */
-function itemBefore(flat: string, at: number, label: string, to: number): string | null {
+function itemBefore(flat: string, at: number, label: string, nextHeading: number): string | null {
   const before = flat.slice(0, at);
   const best = { end: -1, item: null as string | null, kind: 0 };
   [labelMotion(label), OPENS_ITEM].forEach((re, kind) => {
@@ -291,8 +300,12 @@ function itemBefore(flat: string, at: number, label: string, to: number): string
   for (const m of flat.slice(best.end, at).matchAll(ANY_ITEM)) {
     if (itemsOf(m)[0] !== best.item) return null;
   }
-  // The label's own motion printed after the heading, naming another item.
+  // The label's own motion printed after the heading, naming another item, before the next item is opened.
   if (best.kind === 1) {
+    const opens = new RegExp(OPENS_ITEM.source, 'gi');
+    opens.lastIndex = at;
+    const next = opens.exec(flat);
+    const to = nextHeading >= flat.length || !next ? flat.length : Math.max(nextHeading, next.index);
     for (const m of flat.slice(at, to).matchAll(labelMotion(label))) {
       const other = itemsOf(m)[0];
       if (other && other !== best.item) return null;
@@ -400,18 +413,25 @@ function synopsisSentencesWithItems(
 ): DocumentSponsorSentence[] {
   const flat = collapse(text);
   const located = documentSentences(flat);
-  const tied = located.map(({ at }, k) =>
-    itemBefore(flat, at, located[k].label!, k + 1 < located.length ? located[k + 1].at : flat.length),
+  const tied = located.map(({ at, nested, label }, k) =>
+    nested ? null : itemBefore(flat, at, label!, k + 1 < located.length ? located[k + 1].at : flat.length),
   );
-  return located.map(({ at: _at, ...s }, k) => {
+  return located.map(({ at: _at, nested: _n, ...s }, k) => {
     let itemNumber = tied[k];
     if (itemNumber) {
-      // A roll call with this label on an item that no other synopsis of this document claims, and none on the tied
-      // item, contradicts the tie. (Roll calls on items other synopses are tied to are just those items' votes: one
-      // document can hold "Amendment 01" on several items.)
-      const claimed = new Set(located.flatMap((l, j) => (j !== k && labelKey(l.label!) === labelKey(s.label!) && tied[j] ? [tied[j]!] : [])));
-      const mine = rollCalls.filter((r) => labelKey(r.question) === labelKey(s.label!));
+      const key = labelKey(s.label!);
+      const same = located.flatMap((l, j) => (labelKey(l.label!) === key ? [j] : []));
+      const mine = rollCalls.filter((r) => labelKey(r.question) === key);
+      // Items some synopsis of this label is tied to; roll calls on them are just those items' votes (one document can
+      // hold "Amendment 01" on several items).
+      const claimedByAny = new Set(same.flatMap((j) => (tied[j] ? [tied[j]!] : [])));
+      const unclaimed = mine.some((r) => !claimedByAny.has(r.itemNumber));
+      // A roll call with this label on an item no other synopsis claims, and none on the tied item, contradicts the tie.
+      const claimed = new Set(same.flatMap((j) => (j !== k && tied[j] ? [tied[j]!] : [])));
       if (mine.length > 0 && !mine.some((r) => r.itemNumber === itemNumber) && mine.some((r) => !claimed.has(r.itemNumber))) itemNumber = null;
+      // Two or more synopses of this label tied to the same item, while a roll call of this label sits on an item no
+      // synopsis claims: one of them belongs to that other item, and the text does not say which. Drop all of them.
+      else if (unclaimed && same.filter((j) => tied[j] === itemNumber).length > 1) itemNumber = null;
     }
     return { ...s, itemNumber };
   });

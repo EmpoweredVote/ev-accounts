@@ -223,10 +223,12 @@ describe('writeSponsorships', () => {
   });
 
   /** Routes by statement: bill lookup, stored-sponsor read, everything else answers with one row. */
-  function sponsorDb(opts: { bills?: Record<string, string>; stored?: Record<string, string[]>; dupes?: string[] } = {}) {
+  /** `stored` entries are "p1" (role sponsor) or "p1:cosponsor"; `held` are subjects with an open sponsor_disagrees. */
+  function sponsorDb(opts: { bills?: Record<string, string>; stored?: Record<string, string[]>; dupes?: string[]; held?: string[] } = {}) {
     const bills = opts.bills ?? { 'Ord 2025-41': 'bill1' };
     const dupes = opts.dupes ?? [];
     const stored = opts.stored ?? {};
+    const held = opts.held ?? [];
     const calls: { text: string; params: unknown[] }[] = [];
     return {
       calls,
@@ -238,8 +240,14 @@ describe('writeSponsorships', () => {
           return { rows: id ? [{ id }] : [], rowCount: id ? 1 : 0 };
         }
         if (/FROM essentials.legislative_sponsorships/.test(text)) {
-          const rows = (stored[params[0] as string] ?? []).map((politician_id) => ({ politician_id }));
+          const rows = (stored[params[0] as string] ?? []).map((x) => {
+            const [politician_id, role = 'sponsor'] = x.split(':');
+            return { politician_id, role };
+          });
           return { rows, rowCount: rows.length };
+        }
+        if (/SELECT subject FROM essentials.local_record_exceptions/.test(text)) {
+          return { rows: held.map((subject) => ({ subject })), rowCount: held.length };
         }
         return { rows: [{ id: 'row1' }], rowCount: 1 };
       },
@@ -247,7 +255,7 @@ describe('writeSponsorships', () => {
   }
   const upserts = (db: any) => db.calls.filter((c: any) => /INSERT INTO essentials.legislative_sponsorships/.test(c.text));
   const exceptions = (db: any) =>
-    db.calls.filter((c: any) => /local_record_exceptions/.test(c.text)).map((c: any) => ({ cause: c.params[2], subject: c.params[3], detail: JSON.parse(c.params[4]) }));
+    db.calls.filter((c: any) => /INSERT INTO essentials.local_record_exceptions/.test(c.text)).map((c: any) => ({ cause: c.params[2], subject: c.params[3], detail: JSON.parse(c.params[4]) }));
 
   it('inserts one row per member and amendment', async () => {
     const db = sponsorDb();
@@ -284,18 +292,69 @@ describe('writeSponsorships', () => {
     expect(exceptions(db)).toEqual([expect.objectContaining({ cause: 'unknown_item', subject: 'Ord 2025-41' })]);
   });
 
-  it('keeps a stored sponsor the source stops naming and raises sponsor_disagrees', async () => {
-    const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
-    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
-    expect(exceptions(db)).toEqual([
-      { cause: 'sponsor_disagrees', subject: 'Ord 2025-41', detail: { stored: ['p9'], read: ['p1'] } },
-    ]);
+  const disagrees = (stored: string[], read: string[]) => ({
+    cause: 'sponsor_disagrees', subject: 'Ord 2025-41', detail: expect.objectContaining({ reason: 'stored_differs', stored, read }),
   });
 
-  it('does not compare a subject that was not read', async () => {
+  it('a member missing from what was read: raises sponsor_disagrees with both sets and writes nothing', async () => {
     const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
-    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(r).toEqual({ written: 0, unknownItems: 0, dropped: 1 });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p1:sponsor', 'p9:sponsor'], ['p1:sponsor'])]);
+  });
+
+  it('a member added by what was read: raises sponsor_disagrees and never adds them beside the stored one', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p9'] } });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(r.written).toBe(0);
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p9:sponsor'], ['p1:sponsor'])]);
+  });
+
+  it('a role changed (sponsor stored, cosponsor read): raises sponsor_disagrees and keeps the stored role', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1'] } });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp({ role: 'cosponsor' })], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(r.written).toBe(0);
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p1:sponsor'], ['p1:cosponsor'])]);
+  });
+
+  it('the same members in the same roles: upserts (refreshes sentence and document) and raises nothing', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p2:cosponsor'] } });
+    const r = await writeSponsorships(
+      db, 'place:1', 'run1', [sp(), sp({ politicianId: 'p2', role: 'cosponsor', nameAsPrinted: 'Jones' })],
+      { subjectsRead: new Set(['Ord 2025-41']) },
+    );
+    expect(r).toEqual({ written: 2, unknownItems: 0, dropped: 0 });
     expect(exceptions(db)).toEqual([]);
+  });
+
+  it('compares stored rows even for a subject not in subjectsRead when it has rows to write', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p9:sponsor'], ['p1:sponsor'])]);
+  });
+
+  it('does not compare a stored subject that was neither read nor written', async () => {
+    const db = sponsorDb({ bills: { 'Ord 2025-41': 'bill1', 'Ord 2025-42': 'bill2' }, stored: { bill2: ['p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(exceptions(db)).toEqual([]);
+    expect(db.calls.some((c: any) => /legislative_sponsorships/.test(c.text) && c.params[0] === 'bill2')).toBe(false);
+  });
+
+  it('never writes a subject with an open sponsor_disagrees exception', async () => {
+    const db = sponsorDb({ held: ['Ord 2025-41'] });
+    const r = await writeSponsorships(
+      db, 'place:1', 'run1', [sp(), sp({ label: 'Amendment 01', politicianId: 'p2' })],
+      { subjectsRead: new Set(['Ord 2025-41', 'Ord 2025-41 / Amendment 01']) },
+    );
+    expect(r).toEqual({ written: 1, unknownItems: 0, dropped: 1 });
+    expect(upserts(db).map((c: any) => c.params[2])).toEqual(['Amendment 01']);
+    expect(exceptions(db)).toEqual([]);
+    const q = db.calls.find((c: any) => /SELECT subject FROM essentials.local_record_exceptions/.test(c.text));
+    expect(q.text).toMatch(/cause = 'sponsor_disagrees' AND status = 'open'/);
   });
 
   it('never issues a DELETE', async () => {

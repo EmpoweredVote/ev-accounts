@@ -246,6 +246,77 @@ describe('tying a document sentence to its item', () => {
   });
 });
 
+describe('final review fixes: wrong-tie paths', () => {
+  const OPEN = 'Daily moved and Zulich seconded that Ordinance 2026-02 be adopted. ';
+
+  it('N1: two same-label synopses tied to one item, with a roll call of that label on an unclaimed item, both give no item', () => {
+    // The first synopsis belongs to Ord 2026-09 and is a placeholder; the second is Ord 2026-02's. Both tie to 2026-02.
+    const text =
+      `${OPEN}Amendment 01 Synopsis: This amendment is sponsored by [CM sponsor needed]. It moves funds. ` +
+      'Amendment 01 Synopsis: This amendment is sponsored by Cm. Rollo. It moves dates.';
+    const rolls = [
+      { itemNumber: 'Ord 2026-02', question: 'Amendment 01' },
+      { itemNumber: 'Ord 2026-09', question: 'Amendment 01' },
+    ];
+    expect(sponsorSentencesWithItems(text, rolls).map((s) => s.itemNumber)).toEqual([null, null]);
+    // Without the unclaimed roll call there is nothing to say one belongs elsewhere: they stay tied (and the resolver
+    // compares them).
+    expect(sponsorSentencesWithItems(text, rolls.slice(0, 1)).map((s) => s.itemNumber)).toEqual(['Ord 2026-02', 'Ord 2026-02']);
+  });
+
+  it('N2: the label\'s motion on another item counts when printed after a run of synopsis headings (no roll call)', () => {
+    const text =
+      `${OPEN}Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds. ` +
+      'Amendment 02 Synopsis: This amendment is sponsored by Cm. Rollo. It moves dates. ' +
+      'Volan moved and it was seconded to adopt Amendment 01 to Ordinance 2026-09. The motion passed by voice vote.';
+    expect(sponsorSentencesWithItems(text).map((s) => [s.label, s.itemNumber])).toEqual([
+      ['Amendment 01', null],
+      ['Amendment 02', 'Ord 2026-02'],
+    ]);
+  });
+
+  it('N2: past the next heading, the search stops at the next item-opening motion', () => {
+    const text =
+      `${OPEN}Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds. ` +
+      'Amendment 02 Synopsis: This amendment is sponsored by Cm. Rollo. It moves dates. ' +
+      'Daily moved and Zulich seconded that Ordinance 2026-09 be adopted. ' +
+      'Volan moved and it was seconded to adopt Amendment 01 to Ordinance 2026-09. ' +
+      'Amendment 01 Synopsis: This amendment is sponsored by Cm. Volan. It adds a clause.';
+    expect(sponsorSentencesWithItems(text).map((s) => [s.label, s.itemNumber])).toEqual([
+      ['Amendment 01', 'Ord 2026-02'],
+      ['Amendment 02', 'Ord 2026-02'],
+      ['Amendment 01', 'Ord 2026-09'],
+    ]);
+  });
+
+  it('N2: the last synopsis still searches to the end of the document (never narrower than before)', () => {
+    const text =
+      `${OPEN}Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds. ` +
+      'Daily moved and Zulich seconded that Ordinance 2026-09 be adopted. ' +
+      'Volan moved and it was seconded to adopt Amendment 01 to Ordinance 2026-09.';
+    expect(sponsorSentencesWithItems(text).map((s) => s.itemNumber)).toEqual([null]);
+  });
+
+  it('a sub-amendment heading ("Amendment A to Amendment 01 Synopsis:") is never read as Amendment 01', () => {
+    const text =
+      'Piedmont-Smith moved and it was seconded to adopt Amendment 01 to Ordinance 2026-02. ' +
+      'Amendment A to Amendment 01 Synopsis: This amendment is sponsored by Cm. Rollo. It changes a date.';
+    const out = sponsorSentencesWithItems(text);
+    // Its names come back with no item, so the caller raises sponsor_unresolved (no_item) and writes no row.
+    expect(out).toEqual([expect.objectContaining({ label: 'Amendment A to Amendment 01', itemNumber: null, names: [{ printed: 'Rollo', role: 'sponsor' }] })]);
+    expect(sponsorSentencesFromDocument(text)).toEqual([]);
+    expect(sponsorSentencesWithItems(text.replace('Amendment A to', 'Sub-amendment A to')).map((s) => s.itemNumber)).toEqual([null]);
+  });
+
+  it('a sub-amendment heading ends the parent synopsis: its sentence is never taken as the parent\'s sponsor', () => {
+    const text =
+      'Piedmont-Smith moved and it was seconded to adopt Amendment 01 to Ordinance 2026-02. ' +
+      'Amendment 01 Synopsis: It delays the date. ' +
+      'Amendment A to Amendment 01 Synopsis: This amendment is sponsored by Cm. Rollo. It changes a date.';
+    expect(sponsorSentencesWithItems(text).map((s) => [s.label, s.itemNumber])).toEqual([['Amendment A to Amendment 01', null]]);
+  });
+});
+
 describe('feed synopsis allow-list', () => {
   it('keeps only sentences that open "This Ordinance/Resolution"', () => {
     const names = (t: string) => itemSponsorSentencesFromSynopsis(t).map((s) => s.names.map((n) => n.printed));

@@ -187,6 +187,21 @@ describe('getCouncilSponsorshipsByPolitician', () => {
     expect(st['Amendment 03']).toBe('vetoed');
   });
 
+  it('uses only confirmed roll calls: a question whose only roll call is pending_minutes is "Pending"', async () => {
+    sponsorshipsData({
+      own: [own({ amendment_label: 'Amendment 01' }), own({ bill_id: 'b2', amendment_label: null, status_label: 'Passed' })],
+      rolls: [
+        rc({ question: 'Amendment 01', outcome: 'passed', state: 'pending_minutes', meeting_date: '2026-04-01' }),
+        rc({ question: 'Amendment 01', outcome: 'failed', state: 'confirmed', meeting_date: '2026-03-01' }),
+        rc({ bill_id: 'b2', question: 'Final passage', outcome: 'passed', state: 'pending_minutes' }),
+      ],
+    });
+    const out = await getCouncilSponsorshipsByPolitician(PID);
+    const st = Object.fromEntries(out.items.map((i) => [i.bill_id, i.status]));
+    expect(st.b1).toBe('failed'); // the confirmed one, not the newer pending one
+    expect(st.b2).toBe('Pending');
+  });
+
   it('uses the feed status only when there is no roll call at all', async () => {
     sponsorshipsData({ own: [own({ status_label: 'Pending' })] });
     expect((await getCouncilSponsorshipsByPolitician(PID)).items[0].status).toBe('Pending');

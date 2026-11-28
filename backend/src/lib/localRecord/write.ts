@@ -197,8 +197,13 @@ export async function recordException(
 
 /**
  * Write who sponsored and co-sponsored each item and amendment. Every row is an upsert on (bill, amendment, member).
- * Nothing is ever deleted: a stored member the source no longer names stays, and is raised as sponsor_disagrees.
- * Only subjects in `subjectsRead` are compared with what is stored.
+ * Nothing is ever deleted. The writer is a guard as well as a writer, because the weekly job reads sources at
+ * different times (the feed every week, a document only when it is new):
+ *   - A subject with an open sponsor_disagrees exception is never written: a person must settle it first.
+ *   - A subject that already has stored rows is written only when what was read names exactly the same members in
+ *     the same roles. Any difference (a member added, a member missing, a role changed) raises sponsor_disagrees with
+ *     both sets and writes nothing for that subject.
+ * Stored rows are compared for every subject that has rows to write, and for every subject in `subjectsRead`.
  */
 export async function writeSponsorships(
   db: Queryable,
@@ -229,7 +234,18 @@ export async function writeSponsorships(
     });
   }
 
+  // Subjects held for a person: an open disagreement (from this run, the first load or an earlier week).
+  const heldRows = await db.query(
+    `SELECT subject FROM essentials.local_record_exceptions WHERE city_scope = $1 AND cause = 'sponsor_disagrees' AND status = 'open'`,
+    [city],
+  );
+  const held = new Set((heldRows.rows as { subject: string }[]).map((x) => x.subject));
+
   for (const [subject, group] of bySubject) {
+    if (held.has(subject)) {
+      dropped += group.rows.length;
+      continue;
+    }
     const bill = await db.query(
       `SELECT id FROM essentials.legislative_bills WHERE jurisdiction = $1 AND number = $2 AND source = 'onboard' LIMIT 2`,
       [city, group.itemNumber],
@@ -247,6 +263,28 @@ export async function writeSponsorships(
       dropped += group.rows.length;
       await recordException(db, city, runId, 'unknown_item', subject, { itemNumber: group.itemNumber, reason: 'no_bill' });
       continue;
+    }
+
+    // What is stored for this subject, compared with what was read, as "member:role" pairs.
+    const pair = (id: string, role: string) => `${id}:${role}`;
+    const readSet = [...new Set(group.rows.map((r) => pair(r.politicianId, r.role)))].sort();
+    if (group.rows.length > 0 || opts.subjectsRead.has(subject)) {
+      const stored = await db.query(
+        `SELECT politician_id, role FROM essentials.legislative_sponsorships
+         WHERE bill_id = $1 AND coalesce(amendment_label, '') = coalesce($2, '')`,
+        [billId, group.label],
+      );
+      const storedSet = [...new Set((stored.rows as { politician_id: string; role: string }[]).map((x) => pair(x.politician_id, x.role)))].sort();
+      if (storedSet.length > 0 && storedSet.join('|') !== readSet.join('|')) {
+        dropped += group.rows.length;
+        await recordException(db, city, runId, 'sponsor_disagrees', subject, {
+          reason: 'stored_differs',
+          stored: storedSet,
+          read: readSet,
+          sentences: [...new Set(group.rows.map((r) => r.sentence))],
+        });
+        continue;
+      }
     }
 
     const count = new Map<string, number>();
@@ -281,30 +319,17 @@ export async function writeSponsorships(
       written++;
     }
 
-    // One sponsor_disagrees row per subject (its key is city, cause, subject), so both findings share one detail.
-    let disagree: Record<string, unknown> | null = null;
     const twice = [...count].filter(([, n]) => n > 1).map(([id]) => id);
     if (twice.length > 0) {
       dropped += group.rows.filter((r) => twice.includes(r.politicianId)).length;
-      disagree = {
+      await recordException(db, city, runId, 'sponsor_disagrees', subject, {
         reason: 'same_person_twice',
         people: twice.map((id) => {
           const mine = group.rows.filter((r) => r.politicianId === id);
           return { politicianId: id, roles: mine.map((r) => r.role), sentences: mine.map((r) => r.sentence) };
         }),
-      };
+      });
     }
-
-    if (opts.subjectsRead.has(subject)) {
-      const stored = await db.query(
-        `SELECT politician_id FROM essentials.legislative_sponsorships
-         WHERE bill_id = $1 AND coalesce(amendment_label, '') = coalesce($2, '')`,
-        [billId, group.label],
-      );
-      const missing = (stored.rows as { politician_id: string }[]).map((x) => x.politician_id).filter((id) => !count.has(id));
-      if (missing.length > 0) disagree = { ...disagree, stored: missing, read: [...count.keys()] };
-    }
-    if (disagree) await recordException(db, city, runId, 'sponsor_disagrees', subject, disagree);
   }
   return { written, unknownItems, dropped };
 }

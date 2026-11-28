@@ -119,6 +119,33 @@ describe('resolveSponsorships', () => {
     expect(problems.map((p) => p.cause)).toEqual(['sponsor_disagrees']);
   });
 
+  it('per sentence: an unresolved Minutes sentence is raised, and the clean feed sentence for the same subject is still written', () => {
+    const { sponsorships, problems } = resolveSponsorships(
+      [
+        finding({ sourceKind: 'minutes', names: [['Nobodyknown', 'sponsor']], found: { label: null, sentence: 'Minutes: sponsored by Cm. Nobodyknown.', names: [{ printed: 'Nobodyknown', role: 'sponsor' }], placeholder: false } }),
+        finding({ sourceKind: 'legislation_feed', sourceDocumentId: 'doc-feed', found: { label: null, sentence: 'This Ordinance, sponsored by Councilmember Rollo, amends a code.', names: [{ printed: 'Rollo', role: 'sponsor' }], placeholder: false } }),
+      ],
+      names,
+      terms,
+    );
+    expect(problems).toEqual([
+      expect.objectContaining({ cause: 'sponsor_unresolved', subject: 'Ord 2023-11', detail: expect.objectContaining({ reason: 'name', sentence: 'Minutes: sponsored by Cm. Nobodyknown.' }) }),
+    ]);
+    expect(sponsorships).toEqual([
+      expect.objectContaining({ politicianId: 'p-volan', role: 'sponsor', sourceKind: 'legislation_feed', sourceDocumentId: 'doc-feed' }),
+    ]);
+  });
+
+  it('the same person in different roles across two sources disagrees', () => {
+    const { sponsorships, problems } = resolveSponsorships(
+      [finding({ sourceKind: 'minutes' }), finding({ sourceKind: 'memorandum', names: [['Rollo', 'cosponsor']] })],
+      names,
+      terms,
+    );
+    expect(sponsorships).toEqual([]);
+    expect(problems.map((p) => p.cause)).toEqual(['sponsor_disagrees']);
+  });
+
   it('raises sponsor_unresolved for a placeholder', () => {
     const f = finding({});
     f.found = { label: null, sentence: 'Sponsored by [CM sponsor needed].', names: [], placeholder: true };
