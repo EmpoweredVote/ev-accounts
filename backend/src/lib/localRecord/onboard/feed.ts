@@ -46,6 +46,12 @@ export function parseLegislationFeed(json: unknown, base: string): FeedItem[] {
         tally: parseFeedTally(String(finalAction.vote ?? '')),
       };
     }
+    const actionDates = Array.isArray(raw.actions)
+      ? raw.actions
+          .map((a: any) => (isObj(a) && typeof a.date === 'string' && a.date !== '' ? a.date : null))
+          .filter((d: string | null): d is string => d !== null)
+          .sort()
+      : [];
     items.push({
       feedId: Number(raw.id),
       type,
@@ -55,6 +61,7 @@ export function parseLegislationFeed(json: unknown, base: string): FeedItem[] {
       synopsis: raw.synopsis == null ? null : String(raw.synopsis),
       status,
       final,
+      firstActionDate: actionDates[0] ?? null,
       pageUrl: `${base}/council/legislation/${encodeURIComponent(type)}/${raw.year}/${number}`,
     });
   }

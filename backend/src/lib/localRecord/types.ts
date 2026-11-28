@@ -82,6 +82,8 @@ export interface FeedItem {
     outcome: 'passed' | 'failed' | 'vetoed';
     tally: PrintedTally | null;
   } | null;
+  /** Earliest action date in the feed, or null when it lists no actions. Seats a sponsor named in the feed. */
+  firstActionDate: string | null;
   pageUrl: string;
 }
 

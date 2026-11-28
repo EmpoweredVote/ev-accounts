@@ -28,6 +28,28 @@ describe('parseLegislationFeed', () => {
     expect(items).toHaveLength(54);
   });
 
+  it('sets firstActionDate to the earliest action date', () => {
+    const [item] = parseLegislationFeed(
+      [
+        {
+          id: 1, type: 'Ordinance', number: '2026-01', year: 2026, status: 'Adopted', title: 't',
+          actions: [
+            { name: 'Final', date: '2026-03-04', outcome: 'pass', vote: '9-0' },
+            { name: 'Introduced', date: '2026-02-04' },
+          ],
+        },
+        { id: 2, type: 'Ordinance', number: '2026-02', year: 2026, status: 'Introduced', title: 't', actions: [] },
+      ],
+      BASE,
+    );
+    expect(item.firstActionDate).toBe('2026-02-04');
+    const none = parseLegislationFeed(
+      [{ id: 2, type: 'Ordinance', number: '2026-02', year: 2026, status: 'Introduced', title: 't', actions: [] }],
+      BASE,
+    );
+    expect(none[0].firstActionDate).toBeNull();
+  });
+
   it('reads Ord 2026-37', () => {
     const item = items.find((i) => i.feedId === 6435)!;
     expect(item.itemNumber).toBe('Ord 2026-37');
