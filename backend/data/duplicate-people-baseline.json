@@ -1,7 +1,17 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-11-25",
+  "_updated": "2026-11-28",
   "pairs": {
+    "00482c08-b86e-4a7c-b5b8-27c9038f8fb5|f4f88028-b420-4279-be23-47de511ef541": {
+      "names": "Cynthia Hernandez ~ Cynthia Hernandez",
+      "state": "ca",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "Different people, 2026-11-28 (CC_0523). 00482c08 is an Antelope Valley Joint Union High School District trustee, Trustee Area 3, LA County (CA_0158, avdistrict.org board roster). f4f88028 is the elected City Clerk of Indio, Riverside County, since 2004 (indio.org Other Elected Officials page). Different bodies, counties and roles."
+    },
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
       "state": "in",
