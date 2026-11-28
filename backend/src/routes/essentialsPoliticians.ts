@@ -9,6 +9,7 @@ import {
   getVotesByPolitician,
   getLeadershipByPolitician,
   getCouncilRecordByPolitician,
+  getCouncilSponsorshipsByPolitician,
 } from '../lib/essentialsLegislativeService.js';
 import {
   getEndorsementsByPolitician,
@@ -219,6 +220,32 @@ router.get('/:id/council-record', optionalAuth, async (req: Request, res: Respon
     res.status(200).json(await getCouncilRecordByPolitician(id, limit, offset));
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/council-record] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/council-sponsorships
+// Auth: optional — public data.
+// ?limit=N (1-200, default 50) &offset=N (default 0).
+// What a city council member sponsored or co-sponsored, newest first, with proof.
+// Returns { total: 0, items: [] } for anyone with none. 422 for invalid UUID.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/council-sponsorships', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const rawLimit = typeof req.query.limit === 'string' ? parseInt(req.query.limit, 10) : NaN;
+    const limit = isNaN(rawLimit) ? 50 : Math.min(200, Math.max(1, rawLimit));
+    const rawOffset = typeof req.query.offset === 'string' ? parseInt(req.query.offset, 10) : NaN;
+    const offset = isNaN(rawOffset) ? 0 : Math.max(0, rawOffset);
+    res.status(200).json(await getCouncilSponsorshipsByPolitician(id, limit, offset));
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/council-sponsorships] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

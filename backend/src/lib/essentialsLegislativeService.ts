@@ -475,6 +475,7 @@ export interface CouncilRecordVote {
   source_kind: 'memorandum' | 'minutes';
   feed_disagreement: string | null;
   seat_label: string | null;
+  sponsors: CouncilSponsor[];
 }
 
 export interface CouncilRecordPending {
@@ -485,8 +486,15 @@ export interface CouncilRecordPending {
   abstain: number;
 }
 
+export interface CouncilSponsor {
+  politician_id: string;
+  name: string;
+  role: 'sponsor' | 'cosponsor';
+}
+
 export interface CouncilRecordItem {
   bill_id: string;
+  sponsors: CouncilSponsor[];
   number: string;
   title: string;
   url: string;
@@ -545,6 +553,55 @@ function seatOn(terms: CouncilTerm[], date: string): string | null {
 
 function inAnyTerm(terms: CouncilTerm[], date: string, slug: string): boolean {
   return terms.some((t) => t.slug === slug && t.start <= date && (t.end == null || date <= t.end));
+}
+
+/** Postgres undefined_table: the sponsorships table is not there yet (code deployed before its migration). */
+function isUndefinedTable(err: unknown): boolean {
+  return typeof err === 'object' && err !== null && (err as { code?: string }).code === '42P01';
+}
+
+/**
+ * Amendment key shared by sponsorships and roll-call questions. Sponsorship labels read "Amendment 01" or
+ * "Reasonable Condition 2"; roll-call questions are stored "Amendment 01" and "Reasonable Condition 04". Both are
+ * mapped to type + number, so zero padding never decides a match. Other questions ("Final passage") have no key.
+ */
+export function amendmentKey(label: string | null | undefined): string | null {
+  const m = /^(Amendment|Reasonable Condition) (\d+)$/.exec(label ?? '');
+  return m ? `${m[1]} ${Number(m[2])}` : null;
+}
+
+/** Council sponsorships for these bills, in one query. A missing table (42P01) reads as no sponsorships. */
+async function loadSponsorships(
+  billIds: string[],
+): Promise<Map<string, { label: string | null; sponsor: CouncilSponsor }[]>> {
+  const out = new Map<string, { label: string | null; sponsor: CouncilSponsor }[]>();
+  if (!billIds.length) return out;
+  let rows: any[];
+  try {
+    rows = (
+      await pool.query(
+        `SELECT s.bill_id, s.amendment_label, s.politician_id, s.role,
+                COALESCE(NULLIF(p.full_name, ''), btrim(COALESCE(p.first_name, '') || ' ' || COALESCE(p.last_name, ''))) AS name
+         FROM essentials.legislative_sponsorships s
+         JOIN essentials.politicians p ON p.id = s.politician_id
+         WHERE s.bill_id = ANY($1::uuid[])
+         ORDER BY s.bill_id, (s.role = 'sponsor') DESC, name, s.politician_id`,
+        [billIds],
+      )
+    ).rows;
+  } catch (err) {
+    if (isUndefinedTable(err)) return out;
+    throw err;
+  }
+  for (const r of rows) {
+    const list = out.get(r.bill_id) ?? [];
+    list.push({
+      label: r.amendment_label ?? null,
+      sponsor: { politician_id: r.politician_id, name: r.name, role: r.role },
+    });
+    out.set(r.bill_id, list);
+  }
+  return out;
 }
 
 /**
@@ -646,7 +703,7 @@ export async function getCouncilRecordByPolitician(
     let it = items.get(row.bill_id);
     if (!it) {
       it = {
-        bill_id: row.bill_id, number: row.number, title: row.title, url: row.url,
+        bill_id: row.bill_id, sponsors: [], number: row.number, title: row.title, url: row.url,
         status_label: row.status_label, pending: null, votes: [], latest: '',
       };
       items.set(row.bill_id, it);
@@ -675,6 +732,7 @@ export async function getCouncilRecordByPolitician(
       source_kind: row.source_kind,
       feed_disagreement: row.feed_disagreement ?? null,
       seat_label: seat != null && currentSeat != null && seat !== currentSeat ? seat : null,
+      sponsors: [],
     });
   }
 
@@ -698,11 +756,143 @@ export async function getCouncilRecordByPolitician(
   const all = [...items.values()].sort((a, b) =>
     a.latest < b.latest ? 1 : a.latest > b.latest ? -1 : a.bill_id.localeCompare(b.bill_id),
   );
-  const page = all.slice(clampedOffset, clampedOffset + clampedLimit).map(({ latest: _latest, ...it }) => ({
-    ...it,
-    votes: it.votes.sort((a, b) =>
-      a.meeting_date < b.meeting_date ? -1 : a.meeting_date > b.meeting_date ? 1 : a.question_order - b.question_order,
-    ),
-  }));
+  const pageItems = all.slice(clampedOffset, clampedOffset + clampedLimit);
+  const sponsorships = await loadSponsorships(pageItems.map((it) => it.bill_id));
+  const page = pageItems.map(({ latest: _latest, ...it }) => {
+    const rows = sponsorships.get(it.bill_id) ?? [];
+    return {
+      ...it,
+      sponsors: rows.filter((r) => r.label === null).map((r) => r.sponsor),
+      votes: it.votes
+        .map((v) => {
+          const key = amendmentKey(v.question);
+          return {
+            ...v,
+            sponsors: key === null ? [] : rows.filter((r) => amendmentKey(r.label) === key).map((r) => r.sponsor),
+          };
+        })
+        .sort((a, b) =>
+          a.meeting_date < b.meeting_date ? -1 : a.meeting_date > b.meeting_date ? 1 : a.question_order - b.question_order,
+        ),
+    };
+  });
   return { total: all.length, items: page };
+}
+
+export interface CouncilSponsorshipItem {
+  bill_id: string;
+  number: string;
+  title: string;
+  url: string;
+  amendment_label: string | null;
+  role: 'sponsor' | 'cosponsor';
+  co_sponsors: CouncilSponsor[];
+  sentence: string;
+  document_url: string;
+  status: string;
+}
+
+export interface CouncilSponsorships {
+  total: number;
+  items: CouncilSponsorshipItem[];
+}
+
+/** Feed statuses that stand in for a vote. Anything else (Passed, Introduced) is not proof of a vote. */
+const FEED_STATUSES: Record<string, string> = { withdrawn: 'Withdrawn', pending: 'Pending' };
+
+/**
+ * What a member sponsored or co-sponsored, newest first by the item's latest meeting date. Reads only
+ * legislative_sponsorships (never the old sponsor_id or cosponsor tables). Status, first match wins: the
+ * amendment's own roll-call outcome; the item's Final passage outcome; the feed status Withdrawn or Pending; else
+ * "No recorded vote". Outcomes are the stored words ("passed", "failed", "vetoed"), as the council record returns
+ * them. Three queries: the member's rows, the roll calls of those bills, and the other sponsors on the page's rows.
+ * document_url is the city's public URL; the private storage path is never selected.
+ */
+export async function getCouncilSponsorshipsByPolitician(
+  politicianId: string,
+  limit = 50,
+  offset = 0,
+): Promise<CouncilSponsorships> {
+  const clampedLimit = Math.min(200, Math.max(1, Math.floor(limit) || 50));
+  const clampedOffset = Math.max(0, Math.floor(offset) || 0);
+
+  let own: any[];
+  try {
+    own = (
+      await pool.query(
+        `SELECT s.bill_id, s.amendment_label, s.role, s.sentence,
+                split_part(sd.source_url, '#', 1) AS document_url,
+                COALESCE(b.number, '') AS number, COALESCE(b.title, '') AS title,
+                COALESCE(b.url, '') AS url, COALESCE(b.status_label, '') AS status_label
+         FROM essentials.legislative_sponsorships s
+         JOIN essentials.legislative_bills b ON b.id = s.bill_id
+         JOIN essentials.local_record_source_documents sd ON sd.id = s.source_document_id
+         WHERE s.politician_id = $1`,
+        [politicianId],
+      )
+    ).rows;
+  } catch (err) {
+    if (isUndefinedTable(err)) return { total: 0, items: [] };
+    throw err;
+  }
+  if (!own.length) return { total: 0, items: [] };
+
+  const billIds = [...new Set(own.map((r) => r.bill_id as string))];
+  const rolls: any[] = (
+    await pool.query(
+      `SELECT r.bill_id, r.question, r.outcome, r.state, to_char(r.meeting_date, 'YYYY-MM-DD') AS meeting_date
+       FROM essentials.legislative_roll_calls r
+       WHERE r.bill_id = ANY($1::uuid[]) AND r.state IN ('confirmed', 'pending_minutes')`,
+      [billIds],
+    )
+  ).rows;
+
+  const latest = new Map<string, string>();
+  for (const r of rolls) if (r.meeting_date > (latest.get(r.bill_id) ?? '')) latest.set(r.bill_id, r.meeting_date);
+
+  const outcomeFor = (billId: string, question: (q: string) => boolean): string | null => {
+    const hits = rolls
+      .filter((r) => r.bill_id === billId && question(r.question))
+      // A confirmed roll call outranks a pending one; then the latest meeting.
+      .sort((a, b) =>
+        a.state !== b.state ? (a.state === 'confirmed' ? -1 : 1) : a.meeting_date < b.meeting_date ? 1 : a.meeting_date > b.meeting_date ? -1 : 0,
+      );
+    return hits.length ? (hits[0].outcome as string) : null;
+  };
+
+  const sorted = [...own].sort((a, b) => {
+    const la = latest.get(a.bill_id) ?? '';
+    const lb = latest.get(b.bill_id) ?? '';
+    if (la !== lb) return la < lb ? 1 : -1;
+    return (
+      String(a.bill_id).localeCompare(String(b.bill_id)) ||
+      String(a.amendment_label ?? '').localeCompare(String(b.amendment_label ?? ''))
+    );
+  });
+  const pageRows = sorted.slice(clampedOffset, clampedOffset + clampedLimit);
+  const others = await loadSponsorships([...new Set(pageRows.map((r) => r.bill_id as string))]);
+
+  const items = pageRows.map((r): CouncilSponsorshipItem => {
+    const label: string | null = r.amendment_label ?? null;
+    const key = amendmentKey(label);
+    const own_ = key === null ? null : outcomeFor(r.bill_id, (q) => amendmentKey(q) === key);
+    const final = outcomeFor(r.bill_id, (q) => q === 'Final passage');
+    const feed = FEED_STATUSES[String(r.status_label).trim().toLowerCase()] ?? null;
+    return {
+      bill_id: r.bill_id,
+      number: r.number,
+      title: r.title,
+      url: r.url,
+      amendment_label: label,
+      role: r.role,
+      co_sponsors: (others.get(r.bill_id) ?? [])
+        .filter((o) => o.label === label || (key !== null && amendmentKey(o.label) === key))
+        .map((o) => o.sponsor)
+        .filter((sp) => sp.politician_id !== politicianId),
+      sentence: r.sentence,
+      document_url: r.document_url,
+      status: own_ ?? final ?? feed ?? 'No recorded vote',
+    };
+  });
+  return { total: sorted.length, items };
 }
