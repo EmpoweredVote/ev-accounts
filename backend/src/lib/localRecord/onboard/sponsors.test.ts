@@ -434,3 +434,99 @@ describe('"authored by" as a sponsor marker', () => {
     expect(r[0].names).toEqual([{ printed: 'Piedmont-Smith', role: 'sponsor' }]);
   });
 });
+
+// A synopsis that ends without a full stop (a numbered list, a code section) is not split from the next line, so the
+// stored sentence ran on into the next motion. Live case: Ord 2026-22 Amendment 03, meeting file 17809.
+describe('a sponsor sentence stops before the next motion or heading', () => {
+  const MEETING_17809 = [
+    'Daily moved and Zulich seconded that Ordinance 2026-22 be adopted.',
+    '',
+    'Piedmont-Smith moved and Zulich seconded Amendment 03 to Ordinance 2026-22. The',
+    'motion to adopt Amendment 03 received a roll call vote of Ayes: 7, Nays: 0, Abstain: 0.',
+    '',
+    'Amendment 03 Synopsis: This amendment, sponsored by Cm. Piedmont-Smith, does the',
+    'following:',
+    '1) Aligns prohibited uses with the expanded definition of surveillance camera proposed by',
+    'Am. 02 and allows limited technical access to internal systems for repairs - 2.87.035',
+    '2) Clarifies that acquisition of ALPR systems, as well as their use, is banned - 2.87.030(a)',
+    '4) Adds a requirement for surveillance cameras that ARE allowed under this ordinance to',
+    'not by used for facial recognition, biometric identification, or automated tracking of',
+    'persons without prior city council authorization - 2.87.040',
+    '',
+    'Piedmont-Smith moved and Zulich seconded Amendment 05 to Ordinance 2026-22. The',
+    'motion to adopt Amendment 05 received a roll call vote of Ayes: 5, Nays: 2 (Zulich, Asare),',
+    'Abstain: 0.',
+  ].join('\n');
+
+  it('live case: Ord 2026-22 Amendment 03 ends at its own last line, not at the Amendment 05 motion', () => {
+    const [s] = sponsorSentencesWithItems(MEETING_17809);
+    expect(s.label).toBe('Amendment 03');
+    expect(s.itemNumber).toBe('Ord 2026-22');
+    expect(s.names).toEqual([{ printed: 'Piedmont-Smith', role: 'sponsor' }]);
+    expect(s.sentence.endsWith('without prior city council authorization - 2.87.040')).toBe(true);
+    expect(s.sentence).not.toMatch(/moved|seconded|Amendment 05/);
+  });
+
+  const cases: [string, string, string][] = [
+    ['"<Name> moved and <Name> seconded" after a code section',
+      'Amendment 02 Synopsis: This amendment, sponsored by Cm. Rollo, changes the fee - 15.48.030 Rollo moved and Sims seconded to adopt Amendment 02.',
+      'This amendment, sponsored by Cm. Rollo, changes the fee - 15.48.030'],
+    ['"Cm. <Name> moved" after a numbered list',
+      'Amendment 04 Synopsis: This amendment is sponsored by Councilmember Stosberg and does the following: 1) sets hours 2) sets fees Cm. Volan moved and Cm. Sims seconded Amendment 06 to Ordinance 2025-11.',
+      'This amendment is sponsored by Councilmember Stosberg and does the following: 1) sets hours 2) sets fees'],
+    ['"Councilmember <Name> moved"',
+      'Amendment 01 Synopsis: This amendment, sponsored by Councilmember Flaherty, corrects the map - Exhibit A Councilmember Flaherty moved to adopt Amendment 01.',
+      'This amendment, sponsored by Councilmember Flaherty, corrects the map - Exhibit A'],
+    ['"It was moved and seconded"',
+      'Amendment 01 Synopsis: This amendment, sponsored by Cm. Zulich, fixes a typo in Section 3 It was moved and seconded to adopt Amendment 01.',
+      'This amendment, sponsored by Cm. Zulich, fixes a typo in Section 3'],
+    ['"The motion to adopt" line',
+      'Amendment 02 Synopsis: This amendment, sponsored by Cm. Asare, adds a whereas clause The motion to adopt Amendment 02 received a roll call vote of Ayes: 9.',
+      'This amendment, sponsored by Cm. Asare, adds a whereas clause'],
+    ['a numbered item heading',
+      'Amendment 05 Synopsis: This amendment, sponsored by Cm. Daily, changes the date - 2.87.050 7.2. Appropriation Ordinance 2026-02 An Ordinance for Appropriations.',
+      'This amendment, sponsored by Cm. Daily, changes the date - 2.87.050'],
+    ['a Roman-numeral agenda heading',
+      'Amendment 03 Synopsis: This amendment, sponsored by Cm. Stosberg, removes Section 4 VIII. LEGISLATION FOR FIRST READING Ordinance 2025-30.',
+      'This amendment, sponsored by Cm. Stosberg, removes Section 4'],
+  ];
+  it.each(cases)('cuts at %s', (_shape, text, want) => {
+    const [s] = sponsorSentencesFromDocument(text);
+    expect(s.sentence).toBe(want);
+  });
+
+  it('keeps every sponsor name when the cut follows a two-name list', () => {
+    const [s] = sponsorSentencesFromDocument(
+      'Amendment 01 Synopsis: This amendment, sponsored by Councilmembers Flaherty and Volan, changes Table 2 - 20.04.020 Flaherty moved and Volan seconded Amendment 01 to Ordinance 2024-10.',
+    );
+    expect(s.names.map((n) => n.printed)).toEqual(['Flaherty', 'Volan']);
+    expect(s.sentence).toBe('This amendment, sponsored by Councilmembers Flaherty and Volan, changes Table 2 - 20.04.020');
+  });
+
+  it('a motion right after the names no longer glues onto the last name', () => {
+    const [s] = sponsorSentencesFromDocument(
+      'Amendment 01 Synopsis: This amendment is sponsored by Cm. Rollo\n\nRollo moved and Sims seconded Amendment 01 to Ordinance 2024-10.',
+    );
+    expect(s.names).toEqual([{ printed: 'Rollo', role: 'sponsor' }]);
+    expect(s.sentence).toBe('This amendment is sponsored by Cm. Rollo');
+  });
+
+  it('never cuts when the cut would drop a name the whole sentence reads', () => {
+    const text = 'Amendment 01 Synopsis: This amendment is sponsored by Cm. Sims and Cm. Volan moved and Rollo seconded it.';
+    const [s] = sponsorSentencesFromDocument(text);
+    expect(s.names.map((n) => n.printed)).toEqual(['Sims', 'Volan']);
+    expect(s.sentence).toBe(text.replace('Amendment 01 Synopsis: ', ''));
+  });
+
+  it('does not cut synopsis prose that only mentions a move or another amendment', () => {
+    const text =
+      'Amendment 02 Synopsis: This amendment, sponsored by Cm. Piedmont-Smith, moves the text regarding the surcharge to 15.52.060 and aligns it with the definition proposed by Amendment 01 to Ordinance 2026-22 and the motion to table.';
+    const [s] = sponsorSentencesFromDocument(text);
+    expect(s.sentence).toBe(text.replace('Amendment 02 Synopsis: ', ''));
+  });
+
+  it('leaves a feed synopsis that is one clean sentence alone', () => {
+    const text = 'This ordinance, sponsored by Councilmember Piedmont-Smith, moves Title 2 provisions into a single chapter.';
+    expect(sponsorSentencesFromSynopsis(text)[0].sentence).toBe(text);
+  });
+});
