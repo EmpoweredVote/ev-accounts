@@ -64,3 +64,70 @@ describe('sponsor sentence finder', () => {
   it('finds nothing in a synopsis with no sponsor', () =>
     expect(sponsorSentencesFromSynopsis('This ordinance amends Title 2.')).toEqual([]));
 });
+
+describe('sponsor sentence finder: safety rules', () => {
+  const names = (t: string) => sponsorSentencesFromSynopsis(t)[0].names.map((n) => n.printed);
+  const docNames = (t: string) => sponsorSentencesFromDocument(t).flatMap((s) => s.names.map((n) => n.printed));
+
+  it('does not give a later sentence about another item to the amendment', () =>
+    expect(
+      sponsorSentencesFromDocument(
+        'Amendment 01 Synopsis: This amendment changes the date. Ordinance 25-09 was sponsored by Councilmember Volan.',
+      ),
+    ).toEqual([]));
+  it('does not read narrative minutes after a heading as the sponsor', () =>
+    expect(
+      sponsorSentencesFromDocument(
+        'Amendment 01 Synopsis: Lehner stated that the amendment was brought forth by the City Clerk, and was sponsored by a councilmember.',
+      ),
+    ).toEqual([]));
+  it('skips a sponsor sentence not worded as about this item', () =>
+    expect(docNames('Amendment 01 Synopsis: This amendment would add a clause. It is sponsored by Councilmember Volan.')).toEqual([]));
+  it('reads only the first sponsor sentence under a heading', () =>
+    expect(
+      docNames(
+        'Amendment 01 Synopsis: This amendment is sponsored by Councilmember Volan. This amendment is also sponsored by Councilmember Sims.',
+      ),
+    ).toEqual(['Volan']));
+  it('stops after a comma with no closing "and"', () =>
+    expect(names('This amendment is sponsored by Cm. Sims, Cm. Volan moved to table it.')).toEqual(['Sims']));
+  it('stops after a semicolon', () => expect(names('This amendment is sponsored by Councilmember Sims; Volan voted no.')).toEqual(['Sims']));
+  it('reads a comma list closed by "and"', () =>
+    expect(names('This resolution is sponsored by Councilmembers Rollo, Sandberg, and Smith.')).toEqual(['Rollo', 'Sandberg', 'Smith']));
+  it('does not end a sentence at "Cm."', () =>
+    expect(sponsorSentencesFromSynopsis('This is sponsored by Cm. Volan. It amends Title 2.')[0].sentence).toBe(
+      'This is sponsored by Cm. Volan.',
+    ));
+  it('rejoins a name wrapped at its hyphen', () =>
+    expect(names('This amendment is sponsored by Councilmember Piedmont- Smith and would add.')).toEqual(['Piedmont-Smith']));
+  it('keeps a first name and surname as one printed name', () =>
+    expect(names('This resolution, sponsored by Councilmembers Dave Rollo and Andy Ruff, would endorse it.')).toEqual(['Dave Rollo', 'Andy Ruff']));
+  it('drops wrapped heading text before the first title', () =>
+    expect(
+      names('This amendment is sponsored by Dwelling, Triplex, and Dwelling, Councilmembers Piedmont-Smith and Sims.'),
+    ).toEqual(['Piedmont-Smith', 'Sims']));
+  it('reads nothing when names come before a title that follows (real wrapped strings)', () => {
+    expect(names('This Amendment is sponsored by Fourplex Set Forth in BMC 20.03 Councilmember Sandberg and Councilmember Rollo.')).toEqual([]);
+    expect(names('This Amendment is sponsored by Related to Dwelling, Duplex; Councilmembers Rollo and Sandberg.')).toEqual([]);
+  });
+  it('reads nothing from a heading wrapped into the sentence (real string)', () =>
+    expect(
+      names(
+        "This amendment is sponsored by Amendment 01 to Resolution 22- Councilmember Flaherty and removes provisions that would 02 abolish the Council's Administration Committee.",
+      ),
+    ).toEqual([]));
+  it('stops at a period inside a list', () =>
+    expect(names('This amendment is sponsored by Councilmember Sims. Volan and Rollo then spoke.')).toEqual(['Sims']));
+  it('reads heading variants: "#", "(revised)", lowercase synopsis', () => {
+    const one = (t: string) => sponsorSentencesFromDocument(t)[0];
+    expect(one('Reasonable Condition #1 Synopsis: This Reasonable Condition 01 is sponsored by Councilmember Stosberg. It requires')).toEqual(
+      expect.objectContaining({ label: 'Reasonable Condition 1', names: [{ printed: 'Stosberg', role: 'sponsor' }] }),
+    );
+    expect(one('Reasonable Condition 04 (revised) Synopsis: This Reasonable Condition (04) is sponsored by Cm. Piedmont-Smith and was recommended by it.').names).toEqual([
+      { printed: 'Piedmont-Smith', role: 'sponsor' },
+    ]);
+    expect(one('Reasonable Condition 07 synopsis: This Reasonable Condition (07) is sponsored by Cm. Stosberg and clarifies that').names).toEqual([
+      { printed: 'Stosberg', role: 'sponsor' },
+    ]);
+  });
+});

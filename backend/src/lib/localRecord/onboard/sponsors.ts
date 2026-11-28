@@ -67,12 +67,16 @@ function readNames(segment: string): { names: string[]; placeholder: boolean } {
     .replace(/([A-Za-z])- (?=[A-Z])/g, '$1-') // a name wrapped at its hyphen: "Piedmont- Smith"
     .split(/\s+/)
     .filter(Boolean);
-  let names: string[] = [];
+  // Each name remembers what came before it: "and", a comma/semicolon, or nothing.
+  type Sep = 'none' | 'and' | 'comma';
+  let found: { text: string; sep: Sep }[] = [];
+  let pending: Sep = 'none';
   let sawTitle = false;
   let placeholder = false;
   let current: string[] = [];
   const flush = () => {
-    if (current.length) names.push(current.join(' '));
+    if (current.length) found.push({ text: current.join(' '), sep: pending });
+    if (current.length) pending = 'none';
     current = [];
   };
   let i = 0;
@@ -95,6 +99,7 @@ function readNames(segment: string): { names: string[]; placeholder: boolean } {
     const separated = word !== raw;
     if (/^(?:and|&)$/i.test(word)) {
       flush();
+      pending = 'and';
       i++;
       continue;
     }
@@ -102,7 +107,8 @@ function readNames(segment: string): { names: string[]; placeholder: boolean } {
       // Words before the first title ("Dwelling, Triplex, and Dwelling, Councilmembers X") are wrapped heading text.
       if (!sawTitle) {
         current = [];
-        names = [];
+        found = [];
+        pending = 'none';
       }
       sawTitle = true;
       flush();
@@ -114,10 +120,22 @@ function readNames(segment: string): { names: string[]; placeholder: boolean } {
     // A trailing period on the last word is the end of the sentence; a period inside a list means we are unsure.
     if (word.endsWith('.') && i < tokens.length - 1) break;
     current.push(bare);
-    if (separated) flush();
+    if (separated) {
+      flush();
+      pending = 'comma';
+    }
     i++;
   }
   flush();
+  // After the first name, another counts only after "and", or in a comma list that a later "and" closes.
+  // "Cm. Sims, Cm. Volan moved to table it" names one person, not two.
+  const accepted: string[] = [];
+  for (let k = 0; k < found.length; k++) {
+    const { text, sep } = found[k];
+    if (k > 0 && sep !== 'and' && !(sep === 'comma' && found.slice(k + 1).some((f) => f.sep === 'and'))) break;
+    accepted.push(text);
+  }
+  let names = accepted;
   // Names read without any title, while a title still follows, mean the sentence is not what it seems: read nothing.
   if (!sawTitle && tokens.slice(i).some((t) => TITLE.test(t.replace(/[,;.]+$/, '')))) names = [];
   return { names, placeholder };
@@ -155,7 +173,9 @@ export function sponsorSentencesFromSynopsis(synopsis: string): SponsorSentence[
   return sentencesWithSponsors(synopsis, null);
 }
 
-const HEADING = /\b(Amendment|Reasonable Condition|RC)\s+([0-9Oo]+)\s+Synopsis:/g;
+const OTHER_ITEM = /^(?:Ordinance|Resolution|Appropriation Ordinance|Amendment|Reasonable Condition|RC)\s+(?:No\.\s*)?\d/i;
+const ABOUT_THIS_ITEM = /^(?:This|The)\s+(?:amendment|reasonable condition|RC)\b/i;
+const HEADING = /\b(Amendment|Reasonable Condition|RC)\s+#?([0-9Oo]+)(?:\s+\(?revised\)?)?\s+Synopsis\s*:/gi;
 
 /** Sponsor sentences in a memorandum or minutes, each labelled by its preceding "<Label> Synopsis:" heading. */
 export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
@@ -164,10 +184,18 @@ export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
   const out: SponsorSentence[] = [];
   headings.forEach((h, k) => {
     const number = h[2].replace(/[Oo]/g, '0');
-    const label = h[1] === 'Amendment' ? `Amendment ${twoDigits(number)}` : `Reasonable Condition ${Number(number)}`;
+    const label = /^amendment$/i.test(h[1]) ? `Amendment ${twoDigits(number)}` : `Reasonable Condition ${Number(number)}`;
     const from = h.index! + h[0].length;
     const to = k + 1 < headings.length ? headings[k + 1].index! : flat.length;
-    out.push(...sentencesWithSponsors(flat.slice(from, to), label));
+    // Only the synopsis itself counts: the first sponsor sentence, reached before any sentence that opens with another
+    // item ("Ordinance 25-09 was sponsored by ..."), and worded as being about this item ("This amendment ...").
+    for (const sentence of splitSentences(flat.slice(from, to))) {
+      if (OTHER_ITEM.test(sentence)) break;
+      const parsed = parseSentence(sentence);
+      if (!parsed) continue;
+      if (ABOUT_THIS_ITEM.test(sentence)) out.push({ label, sentence, names: parsed.names, placeholder: parsed.placeholder });
+      break;
+    }
   });
   return out;
 }
