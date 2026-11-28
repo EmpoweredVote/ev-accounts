@@ -25,6 +25,9 @@ const collapse = (s: string): string => s.replace(/\s+/g, ' ').trim();
 /** Words that end in a period without ending the sentence. */
 const ABBREVIATION = /(?:^|\s)(?:Cm|Cms|CM|Mr|Ms|Mrs|Dr|No|Sec|St|[A-Z])$/;
 
+/** What follows an agenda heading's number: an item ("Ordinance 2026-02") or an all-capitals title. */
+const HEADING_AFTER_NUMBER = /^(?:(?:Appropriation\s+)?(?:Ordinance|Resolution)\s+(?:No\.?\s*)?\d|[A-Z]{2,}(?:\s+[A-Z]{2,})+\b)/;
+
 /** Split text into sentences. A period after "Cm." or a single initial does not end a sentence. */
 function splitSentences(text: string): string[] {
   const out: string[] = [];
@@ -34,6 +37,15 @@ function splitSentences(text: string): string[] {
   while ((m = end.exec(text))) {
     const before = text.slice(start, m.index);
     if (m[0][0] === '.' && ABBREVIATION.test(before)) continue;
+    // An agenda heading's number ("7.2." before "Appropriation Ordinance 2026-02", "VIII." before "LEGISLATION FOR")
+    // starts the next piece: left on this one, it glues the heading onto the sentence before it.
+    const number = /\s((?:\d{1,2}\.)+\d{0,2}|[IVX]{1,5})$/.exec(before);
+    const next = text.slice(m.index + m[0].length);
+    if (number && m[0][0] === '.' && HEADING_AFTER_NUMBER.test(next)) {
+      out.push(text.slice(start, number.index));
+      start = number.index + 1;
+      continue;
+    }
     out.push(text.slice(start, m.index + 1));
     start = m.index + m[0].length;
   }
@@ -148,6 +160,57 @@ function readNames(segment: string, opts: { commaList?: boolean } = {}): { names
   return { names, placeholder };
 }
 
+// ---- where a sponsor sentence ends -------------------------------------------------------------------------------
+//
+// A synopsis that ends without a full stop (a numbered list, a code section like "- 2.87.040") is not split from what
+// follows, so the sentence ran on into the next motion: Ord 2026-22 Amendment 03 (meeting file 17809) ended with
+// "... 2.87.040 Piedmont-Smith moved and Zulich seconded Amendment 05 to Ordinance 2026-22." The stored sentence is
+// quoted to voters as proof, so it stops where the minutes move on. Each form needs a capital letter where a clause
+// starts, so synopsis prose ("moves the text", "proposed by Amendment 01 to Ordinance ...") is not cut.
+const RUN_ON = new RegExp(
+  [
+    // "Piedmont-Smith moved", "Cm. Volan moved", "Councilmember Flaherty moved", "Piedmont- Smith moved".
+    String.raw`(?:\b(?:Councilmembers?|Council\s+(?:Vice\s+)?President|Cms?\.|CMs?\.?)\s+)?\b[A-Z][A-Za-z'’]+(?:-\s?[A-Z][A-Za-z'’]+)?\s+moved\b`,
+    String.raw`\bIt\s+was\s+moved\b`,
+    String.raw`\bThe\s+motion\s+(?:to|was)\s+(?:adopt|approve|introduce|amend|table|postpone|suspend|received|approved|adopted)\b`,
+    // A numbered agenda heading: "7.2. Appropriation Ordinance 2026-02". Not "2.87.040 Ordinance": the lookbehind
+    // keeps a code section from passing as "87.040".
+    String.raw`(?<![\d.])\d{1,2}\.\d{1,2}\.?\s+(?:Appropriation\s+)?(?:Ordinance|Resolution)\s+(?:No\.?\s*)?\d`,
+    // A Roman-numeral agenda heading: "VIII. LEGISLATION FOR FIRST READING".
+    String.raw`\b[IVX]{1,5}\.\s+[A-Z]{2,}(?:\s+[A-Z]{2,})+\b`,
+  ].join('|'),
+  'g',
+);
+
+/**
+ * The sentence cut before a motion or heading that ran into it. The cut is made only after the first sponsor marker's
+ * own text, and only when every name read from the whole sentence that is not part of the cut-off text is still read
+ * from the cut sentence: a sponsor name is never lost to a cut.
+ */
+function cutRunOn(sentence: string): string {
+  const marker = new RegExp(MARKER.source, 'i').exec(sentence);
+  const after = marker ? marker.index + marker[0].length : 0;
+  for (const m of sentence.matchAll(RUN_ON)) {
+    // Skip the title or name that belongs to the marker itself ("sponsored by Cm. Rollo moved ..."): at least one word
+    // must sit between the marker and the cut.
+    if (m.index! <= after) continue;
+    const cut = sentence.slice(0, m.index).replace(/[\s,;:–—-]+$/, '');
+    if (cut.length <= after) continue;
+    const kept = parseSentence(cut);
+    const whole = parseSentence(sentence);
+    if (!kept || !whole) return sentence;
+    // Every name the whole sentence reads must still be read from the cut one. The one exception is a name the motion
+    // glued onto the last sponsor ("Cm. Rollo" + "Rollo moved" reads "Rollo Rollo"): that is the run-on itself.
+    const keptNames = kept.names.map((n) => `${n.printed}|${n.role}`);
+    const lost = whole.names.filter(
+      (n) => !keptNames.includes(`${n.printed}|${n.role}`) && !kept.names.some((k) => k.role === n.role && n.printed.startsWith(`${k.printed} `)),
+    );
+    if (lost.length) return sentence;
+    return cut;
+  }
+  return sentence;
+}
+
 function parseSentence(sentence: string): { names: SponsorName[]; placeholder: boolean } | null {
   const markers = [...sentence.matchAll(MARKER)].filter((m, k, all) => {
     if (!/authored/i.test(m[1])) return true;
@@ -172,7 +235,7 @@ function parseSentence(sentence: string): { names: SponsorName[]; placeholder: b
 
 function sentencesWithSponsors(text: string, label: string | null): SponsorSentence[] {
   const out: SponsorSentence[] = [];
-  for (const sentence of splitSentences(text)) {
+  for (const sentence of splitSentences(text).map(cutRunOn)) {
     const parsed = parseSentence(sentence);
     if (parsed) out.push({ label, sentence, names: parsed.names, placeholder: parsed.placeholder });
   }
@@ -220,7 +283,7 @@ function documentSentences(flat: string): LocatedSentence[] {
     const to = k + 1 < headings.length ? headings[k + 1].index! : flat.length;
     // Only the synopsis itself counts: the first sponsor sentence, reached before any sentence that opens with another
     // item ("Ordinance 25-09 was sponsored by ..."), and worded as being about this item ("This amendment ...").
-    for (const sentence of splitSentences(flat.slice(from, to))) {
+    for (const sentence of splitSentences(flat.slice(from, to)).map(cutRunOn)) {
       if (OTHER_ITEM.test(sentence)) break;
       const parsed = parseSentence(sentence);
       if (!parsed) continue;
