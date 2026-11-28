@@ -97,6 +97,8 @@ export async function writeConfirmed(
   billId: string,
   meetingDate: string,
   voteDocId: string,
+  /** What the vote rows record as their source. Only the owner-checked path passes anything else. */
+  source: 'onboard-minutes' | 'owner-check' = 'onboard-minutes',
 ): Promise<void> {
   const xid = externalVoteId(city, meetingDate, rc.itemNumber, rc.question);
   // The upsert returns nothing when the row is already identical (no updated_at bump), so read the id back.
@@ -140,7 +142,7 @@ export async function writeConfirmed(
        (id, politician_id, bill_id, session_id, external_vote_id, vote_question, position, vote_date, result,
         yea_count, nay_count, source, roll_call_id, name_as_printed, worked_out, confirmed_from)
      SELECT gen_random_uuid(), v."politicianId", b.id, b.session_id, $2, $3, v.position, $4::date, $5,
-            $6::int, $7::int, 'onboard-minutes', $8::uuid, v."nameAsPrinted", v."workedOut", $9::uuid
+            $6::int, $7::int, $11::text, $8::uuid, v."nameAsPrinted", v."workedOut", $9::uuid
      FROM jsonb_to_recordset($10::jsonb)
             AS v("politicianId" uuid, position text, "nameAsPrinted" text, "workedOut" boolean)
      CROSS JOIN essentials.legislative_bills b
@@ -152,7 +154,7 @@ export async function writeConfirmed(
        worked_out = EXCLUDED.worked_out, confirmed_from = EXCLUDED.confirmed_from`,
     [
       billId, xid, rc.question, meetingDate, rc.outcome, rc.tally.yes, rc.tally.no, rollCallId, voteDocId,
-      JSON.stringify(rows),
+      JSON.stringify(rows), source,
     ],
   );
 

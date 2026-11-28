@@ -37,7 +37,9 @@ export interface InventoryItem {
   date: string;
   item_no: string;
   instrument?: string;
-  members?: { name: string; vote: string }[];
+  /** Printed tally, "8-1" (yes-no); null when none. */
+  tally?: string | null;
+  members?: { name: string; vote: string; derived?: boolean }[];
   url_item?: string;
   url_minutes?: string;
   text_store_path?: string;
@@ -119,6 +121,151 @@ const describeCorrection = (c: InventoryCorrection) =>
   c.kind === 'date' ? `date → ${c.corrected.date}`
     : c.kind === 'duplicate_of' ? `duplicate of ${c.corrected.keep} (dropped)`
       : `member_vote ${c.corrected.member} → ${c.corrected.vote}`;
+
+// ---- owner checks --------------------------------------------------------------------------------------------------
+
+/**
+ * `<inventory>/owner-checks.json`: the owner's own check, by eye against the city's documents, of inventory votes the
+ * reader could not confirm. A confirmed check turns an `inventory only` row into an owner-checked roll call (written
+ * with source `owner-check`). A held check keeps its exception, which stops blocking --apply but stays open.
+ * Nothing here touches the reader's roll calls, the spot-check pool or reader-output.json.
+ */
+export interface OwnerCheck {
+  inventoryId: string;
+  date: string;
+  item: string;
+  tally: string;
+  cause: string;
+  ownerAnswer: 'yes' | 'no' | 'unsure';
+  ownerNote: string;
+  answeredAt: string;
+  documents: string[];
+  followUp?: { result: 'matches' | 'feed_only'; evidence?: string; quote?: string; why: string };
+}
+export interface OwnerChecksFile { checks: OwnerCheck[] }
+export type CheckedOwnerCheck = OwnerCheck & { verdict: 'confirmed' | 'held' };
+
+/** Confirmed when a follow-up matches, or the owner said yes and nothing contradicts it; held otherwise. */
+export const ownerVerdict = (c: OwnerCheck): 'confirmed' | 'held' =>
+  c.followUp ? (c.followUp.result === 'matches' ? 'confirmed' : 'held') : c.ownerAnswer === 'yes' ? 'confirmed' : 'held';
+
+export function validateOwnerChecks(inventory: InventoryItem[], file: OwnerChecksFile): CheckedOwnerCheck[] {
+  const fail = (why: string): never => { throw new Error(`owner-checks.json: ${why}`); };
+  const known = new Set(inventory.map((i) => i.id));
+  const seen = new Set<string>();
+  return file.checks.map((c) => {
+    if (!known.has(c.inventoryId)) fail(`${c.inventoryId} is not in the inventory`);
+    if (!['yes', 'no', 'unsure'].includes(c.ownerAnswer)) fail(`${c.inventoryId}: answer "${c.ownerAnswer}" is not yes, no or unsure`);
+    if (seen.has(c.inventoryId)) fail(`${c.inventoryId} appears twice`);
+    seen.add(c.inventoryId);
+    return { ...c, verdict: ownerVerdict(c) };
+  });
+}
+
+export interface OwnerCheckedRollCall {
+  inventoryId: string;
+  date: string;
+  itemNumber: string;
+  question: string;
+  outcome: 'passed' | 'failed';
+  tally: PrintedTally;
+  /** The owner's own words from the follow-up, or a line saying who checked it, when, and against what. */
+  sentence: string;
+  documentUrl: string;
+  votes: ResolvedVote[];
+}
+export interface OwnerResult {
+  ownerChecked: OwnerCheckedRollCall[];
+  held: { subject: string; reason: string }[];
+  /** Confirmed by the owner, but failed the tally, name or outcome check: still a blocking exception. */
+  failed: { subject: string; reason: string }[];
+  /** Checks on rows the reader already covers (confirmed, differs) or that are not compared at all. */
+  notNeeded: string[];
+  /** cmp.exceptions with the owner's checks applied. */
+  exceptions: FoundException[];
+}
+
+const POSITION_OF: Record<string, ResolvedVote['position']> = { yes: 'yea', no: 'nay', abstain: 'present', absent: 'absent' };
+
+/** One confirmed check -> a roll call, or the reason it cannot be one. */
+function buildOwnerChecked(
+  inv: InventoryItem, check: OwnerCheck, p: { date: string; itemNumber: string; question: string },
+  roster: InventoryRoster, names: NameFile, items: FeedItem[],
+): OwnerCheckedRollCall | { reason: string } {
+  const members = inv.members ?? [];
+  if (!members.length) return { reason: 'the inventory row has no members' };
+  const documentUrl = check.documents?.[0];
+  if (!documentUrl) return { reason: 'the owner check names no document' };
+  const votes: ResolvedVote[] = [];
+  const bad: string[] = [];
+  for (const m of members) {
+    const id = idForSurname(m.name, p.date, roster, names);
+    const position = POSITION_OF[m.vote];
+    if (typeof id !== 'string') { bad.push(id.error); continue; }
+    if (!position) { bad.push(`"${m.name}" has vote "${m.vote}"`); continue; }
+    votes.push({ politicianId: id, nameAsPrinted: m.name, position, workedOut: m.derived === true });
+  }
+  if (bad.length) return { reason: `a member could not be resolved: ${bad.join('; ')}` };
+  if (new Set(votes.map((v) => v.politicianId)).size !== votes.length) return { reason: 'two inventory members resolve to the same person' };
+  const count = (pos: string) => votes.filter((v) => v.position === pos).length;
+  const tally: PrintedTally = { yes: count('yea'), no: count('nay'), abstain: count('present') };
+  const printed = /^(\d+)-(\d+)/.exec(inv.tally ?? '');
+  if (!printed) return { reason: `the inventory row prints no readable tally ("${inv.tally ?? ''}")` };
+  if (Number(printed[1]) !== tally.yes || Number(printed[2]) !== tally.no) {
+    return { reason: `the printed tally ${inv.tally} disagrees with the counted votes ${tally.yes}-${tally.no}` };
+  }
+  const feed = p.question === 'Final passage' ? items.find((i) => i.itemNumber === p.itemNumber)?.final : null;
+  let outcome: 'passed' | 'failed';
+  if (feed && feed.date === p.date) {
+    if (feed.outcome === 'vetoed') return { reason: 'the feed lists this Final action as vetoed; the outcome is not decided here' };
+    outcome = feed.outcome;
+    if ((outcome === 'passed' && tally.yes <= tally.no) || (outcome === 'failed' && tally.yes >= tally.no)) {
+      return { reason: `the feed outcome (${outcome}) conflicts with the counted votes ${tally.yes}-${tally.no}` };
+    }
+  } else if (tally.yes >= 5 && tally.yes > tally.no) outcome = 'passed';
+  else if (tally.yes < tally.no) outcome = 'failed';
+  else return { reason: `the outcome cannot be told from the tally ${tally.yes}-${tally.no} and the feed has no Final action on ${p.date}` };
+  const sentence = check.followUp?.quote?.trim() || `Checked by the owner on ${check.answeredAt.slice(0, 10)} against ${documentUrl}`;
+  return { inventoryId: inv.id, date: p.date, itemNumber: p.itemNumber, question: p.question, outcome, tally, sentence, documentUrl, votes };
+}
+
+/**
+ * Apply the owner's checks to the comparison. Only `inventory only` rows are touched: a confirmed check that passes
+ * the tally, name and outcome checks becomes an owner-checked roll call and its exception goes; a held one keeps its
+ * exception with `ownerHeld: true`; a confirmed one that fails a check keeps a blocking exception with the reason.
+ */
+export function applyOwnerChecks(
+  cmp: Comparison, checks: CheckedOwnerCheck[], roster: InventoryRoster, names: NameFile, items: FeedItem[], inventory: InventoryItem[],
+): OwnerResult {
+  const res: OwnerResult = { ownerChecked: [], held: [], failed: [], notNeeded: [], exceptions: [] };
+  const byId = new Map(checks.map((c) => [c.inventoryId, c]));
+  const invById = new Map(inventory.map((i) => [i.id, i]));
+  const open = new Set(cmp.exceptions
+    .filter((e) => e.cause === 'inventory_disagrees' && (e.detail as { kind?: string }).kind === 'inventory only')
+    .map((e) => (e.detail as { inventoryId: string }).inventoryId));
+  for (const c of checks) if (!open.has(c.inventoryId)) res.notNeeded.push(c.inventoryId);
+
+  res.exceptions = cmp.exceptions.flatMap((e): FoundException[] => {
+    const d = e.detail as { kind?: string; inventoryId?: string };
+    const check = e.cause === 'inventory_disagrees' && d.kind === 'inventory only' ? byId.get(d.inventoryId as string) : undefined;
+    if (!check) return [e];
+    if (check.verdict === 'held') {
+      const reason = check.followUp?.why || check.ownerNote || `owner answered "${check.ownerAnswer}"`;
+      res.held.push({ subject: e.subject, reason });
+      return [{ ...e, detail: { ...d, ownerHeld: true, reason } }];
+    }
+    const inv = invById.get(check.inventoryId) as InventoryItem;
+    const p = parseInventoryId(inv.id);
+    const built = 'skip' in p ? { reason: p.skip } : buildOwnerChecked(inv, check, p, roster, names, items);
+    if ('reason' in built) {
+      res.failed.push({ subject: e.subject, reason: built.reason });
+      return [{ ...e, detail: { ...d, ownerCheckFailed: built.reason } }];
+    }
+    res.ownerChecked.push(built);
+    return [];
+  });
+  return res;
+}
 
 // ---- what the reader found ---------------------------------------------------------------------------------------
 
@@ -372,6 +519,8 @@ export interface FirstLoadDeps {
 
 interface Read {
   items: FeedItem[];
+  /** Every vote document the feed lists (not only the ones read). */
+  feedDocs: VoteDocument[];
   reader: ReaderRollCall[];
   documents: { doc: VoteDocument; bytes: Uint8Array }[];
   exceptions: FoundException[];
@@ -400,7 +549,7 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
   const docs = governingDocuments(feed.docs.filter((d) => d.meetingDate >= WINDOW_START && d.meetingDate <= today))
     .sort((a, b) => (a.meetingDate < b.meetingDate ? -1 : 1));
   const { terms, unmatched } = termsFromRoster(roster, names);
-  const read: Read = { items, reader: [], documents: [], exceptions: [], warnings: [] };
+  const read: Read = { items, feedDocs: feed.docs, reader: [], documents: [], exceptions: [], warnings: [] };
   if (unmatched.length) read.warnings.push(`No politician id for roster members: ${[...new Set(unmatched)].join(', ')}.`);
 
   for (let di = 0; di < docs.length; di++) {
@@ -473,7 +622,7 @@ const countBy = (xs: FoundException[]) => {
   return c;
 };
 
-function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundException[], pending: number): string {
+function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundException[], pending: number, owner: OwnerResult | null = null): string {
   const conf = read.reader.filter((r) => r.status === 'confirmed');
   const votes = conf.reduce((n, r) => n + (r.votes?.length ?? 0), 0);
   const by = countBy(all);
@@ -484,6 +633,10 @@ function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundE
     `- Roll calls that failed a check: ${read.reader.length - conf.length}`,
     `- Spot checks drawn: ${spot.picks.length} (seed ${spot.seed}); filled in: ${spot.picks.filter((p) => p.verdict).length}`,
     `- Inventory rows: no members to compare ${cmp.items.filter((i) => i.status === 'no members to compare').length}, agree ${cmp.items.filter((i) => i.status === 'agree').length}, differs ${cmp.items.filter((i) => i.status === 'differs').length}, inventory only ${cmp.items.filter((i) => i.status === 'inventory only').length}, reader only ${cmp.readerOnly.length}, skipped ${cmp.skipped.length}`,
+    ...(owner ? [
+      `- Owner-checked: ${owner.ownerChecked.length} confirmed, ${owner.held.length} held, ${owner.notNeeded.length} not needed`,
+      `- Owner checks that failed the tally, name or outcome check (still blocking): ${owner.failed.length}`,
+    ] : []),
     '', '## Exceptions by cause', '',
     ...(Object.keys(by).length ? Object.entries(by).sort().map(([c, n]) => `- ${c}: ${n}`) : ['- none']),
     ...(read.warnings.length ? ['', '## Warnings', '', ...read.warnings.map((w) => `- ${w}`)] : []),
@@ -492,7 +645,7 @@ function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundE
   return lines.join('\n');
 }
 
-function compareMd(cmp: Comparison, applied: InventoryCorrection[] = []): string {
+function compareMd(cmp: Comparison, applied: InventoryCorrection[] = [], owner: OwnerResult | null = null, ownerSkipped: string[] = []): string {
   const bad = cmp.items.filter((i) => i.status !== 'agree');
   return [
     '# Reader compared with the inventory', '',
@@ -511,8 +664,24 @@ function compareMd(cmp: Comparison, applied: InventoryCorrection[] = []): string
     ...(cmp.readerOnly.length ? cmp.readerOnly.map((r) => `- ${subjectOf(r)}`) : ['- none']),
     '', '## Skipped inventory items', '',
     ...(cmp.skipped.length ? cmp.skipped.map((s) => `- ${s.id}: ${s.reason}`) : ['- none']), '',
+    ...(owner ? [
+      `## Owner-checked (${owner.ownerChecked.length}): confirmed by the owner against the city's documents, written with source owner-check`, '',
+      ...(owner.ownerChecked.length ? owner.ownerChecked.map((o) => `- ${subjectOf(o)}: ${o.tally.yes}-${o.tally.no}-${o.tally.abstain}, ${o.outcome}, ${o.documentUrl}`) : ['- none']),
+      '', `## Owner checks held (${owner.held.length}): stay open, do not block --apply`, '',
+      ...(owner.held.length ? owner.held.map((h) => `- ${h.subject}: ${h.reason}`) : ['- none']),
+      '', `## Owner checks that failed the tally, name or outcome check (${owner.failed.length}): still blocking`, '',
+      ...(owner.failed.length ? owner.failed.map((h) => `- ${h.subject}: ${h.reason}`) : ['- none']),
+      '', `## Owner check not needed (${owner.notNeeded.length}): the reader governs`, '',
+      ...(owner.notNeeded.length ? owner.notNeeded.map((id) => `- ${id}`) : ['- none']),
+      '', `## Owner-checked rows whose first document is not a vote document in the feed (${ownerSkipped.length}): --apply cannot save it`, '',
+      ...(ownerSkipped.length ? ownerSkipped.map((x) => `- ${x}`) : ['- none']), '',
+    ] : []),
   ].join('\n');
 }
+
+/** A held owner check: still an open exception, but it does not stop --apply. */
+const isOwnerHeld = (f: FoundException): boolean =>
+  f.cause === 'inventory_disagrees' && (f.detail as { ownerHeld?: unknown } | null)?.ownerHeld === true;
 
 /** Everything that stops --apply. Empty means clear. */
 function blockers(spot: SpotCheckFile | null, fresh: SpotCheckFile, found: FoundException[]): string[] {
@@ -529,7 +698,7 @@ function blockers(spot: SpotCheckFile | null, fresh: SpotCheckFile, found: Found
   const bad = spot.picks.filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match').length;
   if (bad) out.push(`spot_check_failed: ${bad} verdict(s) are not "match".`);
   for (const c of BLOCKING_CAUSES) {
-    const n = found.filter((f) => f.cause === c).length;
+    const n = found.filter((f) => f.cause === c && !isOwnerHeld(f)).length;
     if (n && c !== 'spot_check_failed') out.push(`${n} open exception(s) of cause ${c}.`);
   }
   return out;
@@ -552,6 +721,8 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
     ? applyCorrections(frozen, readJson(correctionsPath) as CorrectionsFile)
     : { inventory: frozen, applied: [] as InventoryCorrection[] };
   const roster: InventoryRoster = readJson(path.join(opts.inventory, 'roster.json'));
+  const ownerPath = path.join(opts.inventory, 'owner-checks.json');
+  const ownerChecks = existsSync(ownerPath) ? validateOwnerChecks(inventory, readJson(ownerPath) as OwnerChecksFile) : null;
   const spotPath = path.join(opts.out, 'spotcheck.json');
   const prior: SpotCheckFile | null = existsSync(spotPath) ? readJson(spotPath) : null;
   if (opts.apply && !prior) return { refused: ['spotcheck.json is missing: run a dry run and have the 30 picks checked first.'] };
@@ -569,28 +740,35 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   const failedChecks: FoundException[] = spot.picks
     .filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match')
     .map((p) => ({ cause: 'spot_check_failed', subject: `${p.date} ${p.itemNumber} ${p.question}`, detail: { verdict: p.verdict } }));
-  const all = [...read.exceptions, ...cmp.exceptions, ...failedChecks];
+  const owner = ownerChecks ? applyOwnerChecks(cmp, ownerChecks, roster, names, read.items, inventory) : null;
+  // An owner-checked row is saved with a vote document: it must be one the feed lists.
+  const feedUrls = new Set(read.feedDocs.map((d) => d.url));
+  const ownerSkipped = (owner?.ownerChecked ?? []).filter((o) => !feedUrls.has(o.documentUrl)).map((o) => `${subjectOf(o)}: ${o.documentUrl}`);
+  const all = [...read.exceptions, ...(owner ? owner.exceptions : cmp.exceptions), ...failedChecks];
   const confirmedKeys = new Set(read.reader.filter((r) => r.status === 'confirmed' && r.question === 'Final passage').map((r) => `${r.date}|${r.itemNumber}`));
   const pending = read.items.filter((i) => i.final && !confirmedKeys.has(`${i.final.date}|${i.itemNumber}`)).length;
 
   if (!opts.apply) {
     mkdirSync(opts.out, { recursive: true });
     writeFileSync(path.join(opts.out, 'reader-output.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, rollCalls: read.reader }, null, 1));
-    writeFileSync(path.join(opts.out, 'compare.md'), compareMd(cmp, applied));
+    writeFileSync(path.join(opts.out, 'compare.md'), compareMd(cmp, applied, owner, ownerSkipped));
+    if (owner) {
+      writeFileSync(path.join(opts.out, 'owner-checked.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, ownerChecked: owner.ownerChecked }, null, 1));
+    }
     writeFileSync(spotPath, JSON.stringify(spot, null, 1));
     writeFileSync(path.join(opts.out, 'exceptions.json'), JSON.stringify({
       city: city.scope, from: WINDOW_START,
       exceptions: all.map((e) => ({ cause: e.cause, subject: e.subject, detail: e.detail })),
     }, null, 1));
     const summaryPath = path.join(opts.out, 'summary.md');
-    writeFileSync(summaryPath, summaryMd(read, cmp, spot, all, pending));
+    writeFileSync(summaryPath, summaryMd(read, cmp, spot, all, pending, owner));
     return { summaryPath };
   }
 
   const refused = blockers(prior, fresh, all);
   if (refused.length) return { refused };
   if (!deps.connect || !deps.storage) throw new Error('--apply needs a database connection and storage');
-  return { applied: await applyAll(opts, city, read, all, deps.connect, deps.storage, now) };
+  return { applied: await applyAll(opts, city, read, owner?.ownerChecked ?? [], all, deps.connect, deps.storage, deps.fetchBytes, now) };
 }
 
 // ---- --apply ------------------------------------------------------------------------------------------------------
@@ -621,8 +799,8 @@ const rollCallOf = (r: ReaderRollCall): MinutesRollCall => ({
 });
 
 async function applyAll(
-  opts: FirstLoadOptions, city: CityConfig, read: Read, found: FoundException[],
-  connect: () => Promise<Connection>, storage: StorageLike, now: Date,
+  opts: FirstLoadOptions, city: CityConfig, read: Read, ownerChecked: OwnerCheckedRollCall[], found: FoundException[],
+  connect: () => Promise<Connection>, storage: StorageLike, fetchBytesFn: FirstLoadDeps['fetchBytes'], now: Date,
 ): Promise<NonNullable<FirstLoadResult['applied']>> {
   const runId = `local-record-first-load-${now.toISOString()}`;
   const staged = stagedFiles(opts);
@@ -641,18 +819,42 @@ async function applyAll(
       const saved = await saveDocument(db, storage, { city: city.scope, kind: doc.kind, url: doc.url, cityFileId: String(doc.fileId), bytes });
       docId.set(doc.url, saved.id);
     }
-    for (const r of read.reader.filter((x) => x.status === 'confirmed')) {
-      const item = read.items.find((i) => i.itemNumber === r.itemNumber);
+    const billFor = async (itemNumber: string) => {
+      const item = read.items.find((i) => i.itemNumber === itemNumber);
       const bill = item
         ? await db.query(`SELECT id FROM essentials.legislative_bills WHERE external_id = $1 AND jurisdiction = $2`, [`onboard-${item.feedId}`, city.scope])
         : { rows: [] as any[] };
-      if (!bill.rows.length) { found.push({ cause: 'unknown_item', subject: subjectOf(r), detail: { detail: `${r.itemNumber} has no bill row` } }); continue; }
+      return bill.rows.length ? (bill.rows[0].id as string) : null;
+    };
+    for (const r of read.reader.filter((x) => x.status === 'confirmed')) {
+      const billId = await billFor(r.itemNumber);
+      if (!billId) { found.push({ cause: 'unknown_item', subject: subjectOf(r), detail: { detail: `${r.itemNumber} has no bill row` } }); continue; }
       await writeConfirmed(
         db, city.scope, rollCallOf(r), { ok: true, votes: r.votes as ResolvedVote[], feedDisagreement: r.feedDisagreement ?? null },
-        bill.rows[0].id, r.date, docId.get(r.documentUrl) as string,
+        billId, r.date, docId.get(r.documentUrl) as string,
       );
       done.rollCallsConfirmed++;
       done.votesWritten += r.votes?.length ?? 0;
+    }
+    // Owner-checked roll calls go after the reader's. Their document may be one the reader skipped: save it first.
+    for (const o of ownerChecked) {
+      const billId = await billFor(o.itemNumber);
+      if (!billId) { found.push({ cause: 'unknown_item', subject: subjectOf(o), detail: { detail: `${o.itemNumber} has no bill row`, inventoryId: o.inventoryId } }); continue; }
+      let voteDoc = docId.get(o.documentUrl);
+      if (!voteDoc) {
+        const listed = read.feedDocs.find((d) => d.url === o.documentUrl);
+        if (!listed) { found.push({ cause: 'unknown_item', subject: subjectOf(o), detail: { detail: `${o.documentUrl} is not a vote document in the feed`, inventoryId: o.inventoryId } }); continue; }
+        const saved = await saveDocument(db, storage, { city: city.scope, kind: listed.kind, url: listed.url, cityFileId: String(listed.fileId), bytes: await fetchBytesFn(listed.url) });
+        voteDoc = saved.id;
+        docId.set(o.documentUrl, voteDoc);
+      }
+      await writeConfirmed(
+        db, city.scope,
+        { index: 0, itemNumber: o.itemNumber, question: o.question, tally: o.tally, named: [], inlineNotes: [], outcome: o.outcome, sentence: o.sentence },
+        { ok: true, votes: o.votes, feedDisagreement: null }, billId, o.date, voteDoc, 'owner-check',
+      );
+      done.rollCallsConfirmed++;
+      done.votesWritten += o.votes.length;
     }
     for (const e of found) { await recordException(db, city.scope, runId, e.cause, e.subject, e.detail); done.exceptions++; }
     await db.query('COMMIT');

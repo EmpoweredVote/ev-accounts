@@ -61,9 +61,19 @@ describe('writeConfirmed', () => {
     const db = recordingDb();
     await writeConfirmed(db, 'place:1', rc, ok, 'bill1', '2026-10-07', 'doc1');
     const votes = db.calls.find((c: any) => /INTO essentials.legislative_votes/.test(c.text));
-    expect(votes.text).toMatch(/onboard-minutes/);
+    expect(votes.params).toContain('onboard-minutes');
     expect(JSON.stringify(votes.params)).toContain('doc1');
     expect(voteSet(votes).map((v: any) => v.workedOut)).toEqual([false, true]);
+  });
+});
+
+describe('writeConfirmed: source', () => {
+  it('writes the given source on the vote rows; the default is onboard-minutes', async () => {
+    const db = recordingDb();
+    await writeConfirmed(db, 'place:1', rc, ok, 'bill1', '2026-10-07', 'doc1', 'owner-check');
+    const votes = db.calls.find((c: any) => /INTO essentials.legislative_votes/.test(c.text));
+    expect(votes.params).toContain('owner-check');
+    expect(votes.params).not.toContain('onboard-minutes');
   });
 });
 

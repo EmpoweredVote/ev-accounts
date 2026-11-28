@@ -5,9 +5,10 @@ import { describe, expect, it } from 'vitest';
 import type { NameFile } from '../../src/lib/localRecord/names.js';
 import type { CityConfig } from '../../src/lib/localRecord/refresh.js';
 import {
-  applyCorrections, compareWithInventory, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
-  type InventoryItem, type ReaderRollCall,
+  applyCorrections, applyOwnerChecks, compareWithInventory, drawSpotCheck, flagDuplicates, flagRepeatedFinals, idForSurname, parseInventoryId, runFirstLoad, withDownloadCache, type FirstLoadDeps,
+  type InventoryItem, type OwnerCheck, type ReaderRollCall, validateOwnerChecks,
 } from './first-load.js';
+import type { FeedItem } from '../../src/lib/localRecord/types.js';
 
 const fx = (f: string) => new URL(`./__fixtures__/${f}`, import.meta.url);
 const ofx = (f: string) => new URL(`../../src/lib/localRecord/onboard/__fixtures__/${f}`, import.meta.url);
@@ -558,5 +559,268 @@ describe('runFirstLoad: corrections.json', () => {
     const s = setup({ inventory: invFull });
     await runFirstLoad(base(s, { seed: 7 }), deps());
     expect(readFileSync(path.join(s.out, 'compare.md'), 'utf8')).not.toContain('Corrections applied');
+  });
+});
+
+// ---- owner checks (owner-checks.json) ------------------------------------------------------------------------------
+
+describe('owner checks', () => {
+  const OD = 'https://bloomington.in.gov/onboard/meetingFiles/9378/download';
+  const ids = {
+    Asare: 'p-asare', Daily: 'p-daily', Flaherty: 'p-flaherty', 'Piedmont-Smith': 'p-piedmont-smith', Rollo: 'p-rollo',
+    Rosenbarger: 'p-rosenbarger', Ruff: 'p-ruff', Stosberg: 'p-stosberg', Zulich: 'p-zulich',
+  };
+  const mem = (votes: Record<string, string>, derived = true) =>
+    Object.entries(votes).map(([name, vote]) => ({ name, vote, ...(derived ? { derived: true } : {}) }));
+  const SEVEN_YES = { Asare: 'yes', Daily: 'yes', Flaherty: 'yes', 'Piedmont-Smith': 'yes', Ruff: 'yes', Stosberg: 'yes', Zulich: 'yes', Rollo: 'absent', Rosenbarger: 'absent' };
+  const invRow = (item: string, over: Partial<InventoryItem> & { tally?: string | null } = {}): InventoryItem =>
+    ({ id: `${SCOPE}:${DATE}:${item}`, date: DATE, item_no: item, tally: '7-0', members: mem(SEVEN_YES), ...over } as InventoryItem);
+  const chk = (item: string, over: Partial<OwnerCheck> = {}): OwnerCheck => ({
+    inventoryId: `${SCOPE}:${DATE}:${item}`, date: DATE, item, tally: '7-0', cause: 'unparsed_roll_call', ownerAnswer: 'yes', ownerNote: '',
+    answeredAt: '2026-11-27T01:46:14.308Z', documents: [OD], ...over,
+  });
+  const feedItem = (itemNumber: string, outcome: 'passed' | 'failed' | 'vetoed' | null, date = DATE): FeedItem => ({
+    feedId: 1, type: 'Ordinance', number: '2026-90', itemNumber, title: 't', synopsis: null, status: 's', pageUrl: 'p',
+    final: outcome ? { date, outcome, tally: null } : null,
+  });
+  const run = (rows: InventoryItem[], checks: OwnerCheck[], reader: ReaderRollCall[] = [], items: FeedItem[] = []) => {
+    const cmp = compareWithInventory(reader, rows, roster, names());
+    return { cmp, res: applyOwnerChecks(cmp, validateOwnerChecks(rows, { checks }), roster, names(), items, rows) };
+  };
+
+  it('verdict: matches follow-up or a plain yes confirms; feed_only, no and unsure hold', () => {
+    const rows = ['Ord 2026-90', 'Ord 2026-91', 'Ord 2026-92', 'Ord 2026-93'].map((i) => invRow(i));
+    const checks = [
+      chk('Ord 2026-90'),
+      chk('Ord 2026-91', { ownerAnswer: 'no', followUp: { result: 'matches', why: 'w', quote: 'q' } }),
+      chk('Ord 2026-92', { followUp: { result: 'feed_only', why: 'w' } }),
+      chk('Ord 2026-93', { ownerAnswer: 'unsure' }),
+    ];
+    const v = validateOwnerChecks(rows, { checks });
+    expect(v.map((c) => c.verdict)).toEqual(['confirmed', 'confirmed', 'held', 'held']);
+  });
+
+  it('rejects an unknown inventory id, a bad answer, and a repeated id', () => {
+    const rows = [invRow('Ord 2026-90')];
+    expect(() => validateOwnerChecks(rows, { checks: [chk('Ord 2026-77')] })).toThrow(/owner-checks\.json: .*Ord 2026-77 is not in the inventory/);
+    expect(() => validateOwnerChecks(rows, { checks: [chk('Ord 2026-90', { ownerAnswer: 'maybe' as any })] })).toThrow(/owner-checks\.json: .*answer/);
+    expect(() => validateOwnerChecks(rows, { checks: [chk('Ord 2026-90'), chk('Ord 2026-90')] })).toThrow(/owner-checks\.json: .*twice/);
+  });
+
+  it('a confirmed check on an inventory-only row becomes an owner-checked roll call and its exception goes', () => {
+    const { cmp, res } = run([invRow('Ord 2026-90')], [chk('Ord 2026-90')]);
+    expect(cmp.exceptions).toHaveLength(1);
+    expect(res.exceptions).toEqual([]);
+    expect(res.ownerChecked).toHaveLength(1);
+    const o = res.ownerChecked[0];
+    expect(o).toMatchObject({
+      date: DATE, itemNumber: 'Ord 2026-90', question: 'Final passage', outcome: 'passed',
+      tally: { yes: 7, no: 0, abstain: 0 }, documentUrl: OD,
+      sentence: `Checked by the owner on 2026-11-27 against ${OD}`,
+    });
+    const asare = o.votes.find((v) => v.politicianId === 'p-asare')!;
+    expect(asare).toMatchObject({ position: 'yea', nameAsPrinted: 'Asare', workedOut: true });
+    expect(o.votes.find((v) => v.politicianId === 'p-rollo')).toMatchObject({ position: 'absent' });
+    expect(cmp.readerOnly).toEqual([]);
+  });
+
+  it('maps no, abstain and absent, and uses followUp.quote as the sentence; workedOut false when not derived', () => {
+    const row = invRow('Ord 2026-90', {
+      tally: '4-3', members: mem({ Asare: 'yes', Daily: 'yes', Flaherty: 'yes', 'Piedmont-Smith': 'yes', Ruff: 'no', Stosberg: 'no', Zulich: 'no', Rollo: 'abstain', Rosenbarger: 'absent' }, false),
+    });
+    const { res } = run([row], [chk('Ord 2026-90', { tally: '4-3', followUp: { result: 'matches', why: 'w', quote: 'Ayes: 4, Nays: 3' } })]);
+    // 4 yes is not >= 5 and not < 3 no: outcome cannot be decided without the feed
+    expect(res.ownerChecked).toEqual([]);
+    expect(res.exceptions[0].detail).toMatchObject({ inventoryId: row.id });
+    expect(JSON.stringify(res.exceptions[0].detail)).toMatch(/outcome/);
+    const six = invRow('Ord 2026-91', {
+      tally: '6-2', members: mem({ Asare: 'yes', Daily: 'yes', Flaherty: 'yes', 'Piedmont-Smith': 'yes', Ruff: 'yes', Stosberg: 'yes', Zulich: 'no', Rollo: 'no', Rosenbarger: 'absent' }, false),
+    });
+    const ok = run([six], [chk('Ord 2026-91', { tally: '6-2', followUp: { result: 'matches', why: 'w', quote: 'Ayes: 6, Nays: 2' } })]).res;
+    const o = ok.ownerChecked[0];
+    expect(o.sentence).toBe('Ayes: 6, Nays: 2');
+    expect(o.tally).toEqual({ yes: 6, no: 2, abstain: 0 });
+    expect(o.votes.every((v) => v.workedOut === false)).toBe(true);
+    expect(o.votes.find((v) => v.politicianId === 'p-zulich')!.position).toBe('nay');
+  });
+
+  it('counts abstain from present votes', () => {
+    const row = invRow('Ord 2026-90', { tally: '6-0', members: mem({ Asare: 'yes', Daily: 'yes', Flaherty: 'yes', 'Piedmont-Smith': 'yes', Ruff: 'yes', Stosberg: 'yes', Zulich: 'abstain', Rollo: 'absent', Rosenbarger: 'absent' }) });
+    const o = run([row], [chk('Ord 2026-90', { tally: '6-0' })]).res.ownerChecked[0];
+    expect(o.tally).toEqual({ yes: 6, no: 0, abstain: 1 });
+    expect(o.votes.find((v) => v.politicianId === 'p-zulich')!.position).toBe('present');
+  });
+
+  it.each([
+    ['printed tally disagrees with the counted votes', { tally: '8-0' }, /tally/],
+    ['a member does not resolve to an id', { members: mem({ ...SEVEN_YES, Nobody: 'yes' }) }, /Nobody/],
+    ['there are no members', { members: [] }, /no members/],
+    ['the inventory prints no tally', { tally: null }, /tally/],
+  ])('not confirmed (blocking exception with the reason) when %s', (_why, over, re) => {
+    const { res } = run([invRow('Ord 2026-90', over as any)], [chk('Ord 2026-90')]);
+    expect(res.ownerChecked).toEqual([]);
+    expect(res.exceptions).toHaveLength(1);
+    expect(res.exceptions[0].cause).toBe('inventory_disagrees');
+    const d = res.exceptions[0].detail as any;
+    expect(d.ownerHeld).toBeUndefined();
+    expect(String(d.ownerCheckFailed)).toMatch(re);
+    expect(res.failed).toHaveLength(1);
+  });
+
+  it('outcome: the feed Final outcome wins; no feed Final uses yes>=5 and yes>no, or yes<no; else not confirmed', () => {
+    const passedFeed = run([invRow('Ord 2026-90')], [chk('Ord 2026-90')], [], [feedItem('Ord 2026-90', 'passed')]).res;
+    expect(passedFeed.ownerChecked[0].outcome).toBe('passed');
+    const failTally = invRow('Ord 2026-91', { tally: '2-5', members: mem({ Asare: 'yes', Daily: 'yes', Flaherty: 'no', 'Piedmont-Smith': 'no', Ruff: 'no', Stosberg: 'no', Zulich: 'no', Rollo: 'absent', Rosenbarger: 'absent' }) });
+    const failed = run([failTally], [chk('Ord 2026-91', { tally: '2-5' })]).res;
+    expect(failed.ownerChecked[0].outcome).toBe('failed');
+    const vetoed = run([invRow('Ord 2026-90')], [chk('Ord 2026-90')], [], [feedItem('Ord 2026-90', 'vetoed')]).res;
+    expect(vetoed.ownerChecked).toEqual([]);
+    // feed says failed but the votes pass: conflict, not confirmed
+    const conflict = run([invRow('Ord 2026-90')], [chk('Ord 2026-90')], [], [feedItem('Ord 2026-90', 'failed')]).res;
+    expect(conflict.ownerChecked).toEqual([]);
+    // a feed Final on another date does not decide this vote; the tally rule does
+    const other = run([invRow('Ord 2026-90')], [chk('Ord 2026-90')], [], [feedItem('Ord 2026-90', 'failed', '2026-10-21')]).res;
+    expect(other.ownerChecked[0].outcome).toBe('passed');
+  });
+
+  it('an amendment uses the tally rule only', () => {
+    const row = invRow('Ord 2026-90 (amendment 1)');
+    const o = run([row], [chk('Ord 2026-90 (amendment 1)')], [], [feedItem('Ord 2026-90', 'failed')]).res.ownerChecked[0];
+    expect(o).toMatchObject({ question: 'Amendment 01', outcome: 'passed' });
+  });
+
+  it('held checks keep their exception, marked ownerHeld with the reason', () => {
+    const rows = [invRow('Ord 2026-90')];
+    const { res } = run(rows, [chk('Ord 2026-90', { followUp: { result: 'feed_only', why: 'No minutes posted yet' } })]);
+    expect(res.ownerChecked).toEqual([]);
+    expect(res.held).toHaveLength(1);
+    expect(res.exceptions).toHaveLength(1);
+    expect(res.exceptions[0].cause).toBe('inventory_disagrees');
+    expect(res.exceptions[0].detail).toMatchObject({ kind: 'inventory only', ownerHeld: true });
+    expect(JSON.stringify(res.exceptions[0].detail)).toContain('No minutes posted yet');
+  });
+
+  it('a check on a row the reader confirmed is ignored and listed as not needed', () => {
+    const row = invFull.items.find((i) => i.id.endsWith('App Ord 2026-03'))!;
+    const { res } = run([row], [chk('App Ord 2026-03', { inventoryId: row.id })], [rr()]);
+    expect(res.ownerChecked).toEqual([]);
+    expect(res.notNeeded).toEqual([row.id]);
+    expect(res.exceptions).toEqual([]);
+  });
+
+  it('only rows with an owner check change; other exceptions stay as they were', () => {
+    const rows = [invRow('Ord 2026-90'), invRow('Ord 2026-91')];
+    const { cmp, res } = run(rows, [chk('Ord 2026-90')]);
+    expect(res.exceptions).toEqual([cmp.exceptions[1]]);
+  });
+});
+
+describe('runFirstLoad: owner-checks.json', () => {
+  const MEMO_URL = 'https://bloomington.in.gov/onboard/meetingFiles/17565/download';
+  const row: InventoryItem = {
+    id: `${SCOPE}:${DATE}:Ord 2026-37`, date: DATE, item_no: 'Ord 2026-37', tally: '7-0',
+    members: ['Asare', 'Daily', 'Flaherty', 'Piedmont-Smith', 'Ruff', 'Stosberg', 'Zulich'].map((name) => ({ name, vote: 'yes', derived: true }))
+      .concat([{ name: 'Rollo', vote: 'absent', derived: true }, { name: 'Rosenbarger', vote: 'absent', derived: true }]),
+  } as InventoryItem;
+  const check = (over: object = {}) => ({
+    inventoryId: row.id, date: DATE, item: 'Ord 2026-37', tally: '7-0', cause: 'unparsed_roll_call', ownerAnswer: 'yes', ownerNote: '',
+    answeredAt: '2026-11-27T01:46:14.308Z', documents: [MEMO_URL], ...over,
+  });
+  const put = (s: { inventory: string }, checks: object[]) => writeFileSync(path.join(s.inventory, 'owner-checks.json'), JSON.stringify({ about: 'x', checked: 'y', checks }));
+  const fillAll = (out: string) => {
+    const p = path.join(out, 'spotcheck.json');
+    const spot = JSON.parse(readFileSync(p, 'utf8'));
+    spot.picks.forEach((x: any) => (x.verdict = 'match'));
+    writeFileSync(p, JSON.stringify(spot));
+  };
+
+  it('without the file: no owner-checked.json and no owner lines', async () => {
+    const s = setup({ inventory: { items: [row] } });
+    await runFirstLoad(base(s, { seed: 7 }), deps());
+    expect(existsSync(path.join(s.out, 'owner-checked.json'))).toBe(false);
+    expect(readFileSync(path.join(s.out, 'summary.md'), 'utf8')).not.toContain('Owner-checked');
+    expect(readFileSync(path.join(s.out, 'compare.md'), 'utf8')).not.toContain('Owner-checked');
+  });
+
+  it('stops with a clear error when a check id is not in the inventory', async () => {
+    const s = setup({ inventory: { items: [row] } });
+    put(s, [check({ inventoryId: `${SCOPE}:${DATE}:Ord 2026-77` })]);
+    await expect(runFirstLoad(base(s, { seed: 7 }), deps())).rejects.toThrow(/owner-checks\.json: .*Ord 2026-77 is not in the inventory/);
+  });
+
+  it('writes owner-checked.json, reports it, and leaves the spot check and reader output unchanged', async () => {
+    const s = setup({ inventory: { items: [row] } });
+    await runFirstLoad(base(s, { seed: 7 }), deps());
+    const spotBefore = readFileSync(path.join(s.out, 'spotcheck.json'), 'utf8');
+    const readerBefore = readFileSync(path.join(s.out, 'reader-output.json'), 'utf8');
+    put(s, [check()]);
+    await runFirstLoad(base(s, { seed: 7 }), deps());
+    expect(readFileSync(path.join(s.out, 'spotcheck.json'), 'utf8')).toBe(spotBefore);
+    expect(readFileSync(path.join(s.out, 'reader-output.json'), 'utf8')).toBe(readerBefore);
+    const oc = JSON.parse(readFileSync(path.join(s.out, 'owner-checked.json'), 'utf8'));
+    expect(oc.ownerChecked).toHaveLength(1);
+    expect(oc.ownerChecked[0]).toMatchObject({ itemNumber: 'Ord 2026-37', documentUrl: MEMO_URL });
+    expect(readFileSync(path.join(s.out, 'summary.md'), 'utf8')).toContain('Owner-checked: 1 confirmed, 0 held, 0 not needed');
+    const compare = readFileSync(path.join(s.out, 'compare.md'), 'utf8');
+    expect(compare).toContain('## Owner-checked');
+    expect(compare).toContain(`2026-10-07 Ord 2026-37 Final passage`);
+    expect(compare).toContain(MEMO_URL);
+    const ex = JSON.parse(readFileSync(path.join(s.out, 'exceptions.json'), 'utf8'));
+    expect(ex.exceptions.filter((e: any) => e.cause === 'inventory_disagrees')).toEqual([]);
+  });
+
+  it('a held check does not block --apply but is still recorded as an open exception', async () => {
+    const s = setup({ inventory: { items: [row] } });
+    put(s, [check({ followUp: { result: 'feed_only', why: 'No minutes posted yet' } })]);
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    fillAll(s.out);
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused).toBeUndefined();
+    const recorded = calls.filter((c) => /local_record_exceptions/.test(c.text));
+    expect(recorded.length).toBeGreaterThan(0);
+  });
+
+  it('a check that failed its tally check still blocks --apply', async () => {
+    const s = setup({ inventory: { items: [{ ...row, tally: '8-0' } as InventoryItem] } });
+    put(s, [check()]);
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    fillAll(s.out);
+    const r = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(r.refused?.join(' ')).toMatch(/inventory_disagrees/);
+  });
+
+  it('--apply writes the owner-checked roll call with source owner-check; no bill row is an unknown_item', async () => {
+    const s = setup({ inventory: { items: [row] } });
+    put(s, [check()]);
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    fillAll(s.out);
+    const sources: unknown[] = [];
+    const d = deps();
+    const origQuery = (await d.connect!()).query;
+    d.connect = async () => ({
+      query: async (text: string, params?: unknown[]) => {
+        if (/INTO essentials\.legislative_votes/.test(text)) sources.push(params?.[10]);
+        return origQuery(text, params);
+      },
+      release() {},
+    }) as any;
+    const r = await runFirstLoad(base(s, { apply: true }), d);
+    expect(r.refused).toBeUndefined();
+    expect(r.applied?.rollCallsConfirmed).toBeGreaterThanOrEqual(2); // the reader's roll calls + the owner-checked one
+    expect(sources).toContain('owner-check');
+    expect(sources).toContain('onboard-minutes');
+
+    const none = deps();
+    const q = none.connect!;
+    none.connect = async () => {
+      const c: any = await q();
+      return { ...c, query: async (text: string, p?: unknown[]) => (/SELECT id FROM essentials\.legislative_bills/.test(text) ? { rows: [], rowCount: 0 } : c.query(text, p)) };
+    };
+    const s2 = setup({ inventory: { items: [row] } });
+    put(s2, [check()]);
+    await runFirstLoad(base(s2, { seed: 3 }), deps());
+    fillAll(s2.out);
+    const r2 = await runFirstLoad(base(s2, { apply: true }), none);
+    expect(r2.applied?.exceptions).toBeGreaterThan(0);
   });
 });
