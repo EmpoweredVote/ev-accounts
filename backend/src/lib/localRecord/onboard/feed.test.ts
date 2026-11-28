@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { listVoteDocuments, parseFeedTally, parseLegislationFeed } from './feed.js';
@@ -26,6 +27,28 @@ describe('parseLegislationFeed', () => {
 
   it('returns every item', () => {
     expect(items).toHaveLength(54);
+  });
+
+  it('sets firstActionDate to the earliest action date', () => {
+    const [item] = parseLegislationFeed(
+      [
+        {
+          id: 1, type: 'Ordinance', number: '2026-01', year: 2026, status: 'Adopted', title: 't',
+          actions: [
+            { name: 'Final', date: '2026-03-04', outcome: 'pass', vote: '9-0' },
+            { name: 'Introduced', date: '2026-02-04' },
+          ],
+        },
+        { id: 2, type: 'Ordinance', number: '2026-02', year: 2026, status: 'Introduced', title: 't', actions: [] },
+      ],
+      BASE,
+    );
+    expect(item.firstActionDate).toBe('2026-02-04');
+    const none = parseLegislationFeed(
+      [{ id: 2, type: 'Ordinance', number: '2026-02', year: 2026, status: 'Introduced', title: 't', actions: [] }],
+      BASE,
+    );
+    expect(none[0].firstActionDate).toBeNull();
   });
 
   it('reads Ord 2026-37', () => {
@@ -118,9 +141,22 @@ describe('listVoteDocuments', () => {
 });
 
 describe('EXCEPTION_CAUSES', () => {
-  it('has 13 causes including minutes_disagree', () => {
-    expect(EXCEPTION_CAUSES).toHaveLength(13);
+  it('has 15 causes including minutes_disagree and the two sponsor causes', () => {
+    expect(EXCEPTION_CAUSES).toHaveLength(15);
     expect(EXCEPTION_CAUSES).toContain('minutes_disagree');
+    expect(EXCEPTION_CAUSES).toContain('sponsor_unresolved');
+    expect(EXCEPTION_CAUSES).toContain('sponsor_disagrees');
+  });
+
+  it('equals the cause CHECK list in CA_0436', () => {
+    const sql = readFileSync(
+      fileURLToPath(new URL('../../../../migrations/CA_0436_local_record_sponsor_causes.sql', import.meta.url)),
+      'utf8',
+    );
+    const m = sql.match(/ADD CONSTRAINT local_record_exceptions_cause_check CHECK \(cause IN \(([^)]*)\)\)/);
+    expect(m).not.toBeNull();
+    const listed = [...m![1].matchAll(/'([a-z_]+)'/g)].map((x) => x[1]);
+    expect([...listed].sort()).toEqual([...EXCEPTION_CAUSES].sort());
   });
 });
 

@@ -2,10 +2,10 @@
  * first-load.ts — read every vote document of a city since 2020-12-01, compare with the hand-built inventory, draw
  * spot checks, and (only with --apply) write to the database and storage.
  *
- *   npm run local-record:first-load --prefix backend -- --city place:1805860 --inventory <abs dir> --out <abs dir> [--seed N] [--cache <abs dir>] [--apply]
+ *   npm run local-record:first-load --prefix backend -- --city place:1805860 --inventory <abs dir> --out <abs dir> [--seed N] [--sponsor-seed N] [--cache <abs dir>] [--apply]
  *
- * A dry run reads the city's public site and writes five files to --out (exceptions.json lists every exception with
- * its detail). It never opens a database or storage call. Exceptions found in a dry run live in the --out files only;
+ * A dry run reads the city's public site and writes its files to --out (exceptions.json lists every exception with
+ * its detail; sponsorships.json, sponsor-compare.md and sponsor-spotcheck.json cover council sponsors). It never opens a database or storage call. Exceptions found in a dry run live in the --out files only;
  * --apply is the one path that writes anything. --cache keeps each download on disk, keyed by URL, and reuses it.
  */
 import 'dotenv/config';
@@ -18,15 +18,17 @@ import { normaliseName, type NameFile, type TermSpan } from '../../src/lib/local
 import { parseMinutes, minutesTextFromPdf, twoDigits } from '../../src/lib/localRecord/onboard/minutes.js';
 import { fetchJson, type VoteDocument } from '../../src/lib/localRecord/onboard/feed.js';
 import {
-  buildContext, documentProblem, fallbackDocument, fetchBytes, governingDocuments, makeStorage, parseCityConfigs, readFeeds, type CityConfig, type Connection,
-  type RefreshDeps,
+  buildContext, documentProblem, documentSponsorFindings, fallbackDocument, feedSponsorFindings, fetchBytes, governingDocuments, makeStorage, parseCityConfigs,
+  readFeeds, type CityConfig, type Connection, type RefreshDeps,
 } from '../../src/lib/localRecord/refresh.js';
+import { resolveSponsorships, sponsorSubject, type SponsorFinding, type Sponsorship } from '../../src/lib/localRecord/sponsorships.js';
 import { externalVoteId, saveDocument, sha256Hex, type StorageLike } from '../../src/lib/localRecord/store.js';
-import { recordException, writeConfirmed, writeFeed } from '../../src/lib/localRecord/write.js';
+import { recordException, writeConfirmed, writeFeed, writeSponsorships } from '../../src/lib/localRecord/write.js';
 import type { ExceptionCause, FeedItem, MinutesParse, MinutesRollCall, PrintedTally, ResolvedVote } from '../../src/lib/localRecord/types.js';
 
 export const WINDOW_START = '2020-12-01';
 const SPOT_COUNT = 30;
+const SPONSOR_SPOT_COUNT = 30;
 /** Causes that stop --apply. */
 export const BLOCKING_CAUSES: ExceptionCause[] = ['inventory_disagrees', 'control_failed', 'spot_check_failed'];
 
@@ -131,6 +133,11 @@ const describeCorrection = (c: InventoryCorrection) =>
  * Nothing here touches the reader's roll calls, the spot-check pool or reader-output.json.
  */
 export interface OwnerCheck {
+  /**
+   * What the check is about; absent or 'votes' = the inventory row's vote (the original meaning). 'sponsors' = the
+   * owner looked at the row's sponsors and lets the sponsor difference through. A sponsor check never writes a sponsorship.
+   */
+  about?: 'votes' | 'sponsors';
   inventoryId: string;
   date: string;
   item: string;
@@ -156,8 +163,9 @@ export function validateOwnerChecks(inventory: InventoryItem[], file: OwnerCheck
   return file.checks.map((c) => {
     if (!known.has(c.inventoryId)) fail(`${c.inventoryId} is not in the inventory`);
     if (!['yes', 'no', 'unsure'].includes(c.ownerAnswer)) fail(`${c.inventoryId}: answer "${c.ownerAnswer}" is not yes, no or unsure`);
-    if (seen.has(c.inventoryId)) fail(`${c.inventoryId} appears twice`);
-    seen.add(c.inventoryId);
+    const key = `${c.inventoryId}|${c.about ?? 'votes'}`;
+    if (seen.has(key)) fail(`${c.inventoryId} appears twice`);
+    seen.add(key);
     return { ...c, verdict: ownerVerdict(c) };
   });
 }
@@ -239,6 +247,7 @@ export function applyOwnerChecks(
   reader: ReaderRollCall[] = [],
 ): OwnerResult {
   const res: OwnerResult = { ownerChecked: [], held: [], failed: [], notNeeded: [], exceptions: [] };
+  checks = checks.filter((c) => (c.about ?? 'votes') === 'votes'); // sponsor checks are applied by applySponsorOwnerChecks
   const byId = new Map(checks.map((c) => [c.inventoryId, c]));
   const invById = new Map(inventory.map((i) => [i.id, i]));
   const open = new Set(cmp.exceptions
@@ -564,6 +573,12 @@ interface Read {
   documents: { doc: VoteDocument; bytes: Uint8Array }[];
   exceptions: FoundException[];
   warnings: string[];
+  /** Sponsor sentences from the feed and every document read, each carrying the URL it can be opened at. */
+  sponsorFindings: SponsorFinding[];
+  /** Sentences that could not be tied to an item or a date. */
+  sponsorProblems: FoundException[];
+  /** The raw legislation feed of each year, saved by --apply as the source of feed-read sponsors. */
+  feeds: { year: number; url: string; bytes: Uint8Array }[];
 }
 
 /** Council terms from the inventory roster, keyed to the names file's politician ids (no database in a dry run). */
@@ -588,7 +603,7 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
   const docs = governingDocuments(feed.docs.filter((d) => d.meetingDate >= WINDOW_START && d.meetingDate <= today))
     .sort((a, b) => (a.meetingDate < b.meetingDate ? -1 : 1));
   const { terms, unmatched } = termsFromRoster(roster, names);
-  const read: Read = { items, feedDocs: feed.docs, reader: [], documents: [], exceptions: [], warnings: [] };
+  const read: Read = { items, feedDocs: feed.docs, reader: [], documents: [], exceptions: [], warnings: [], sponsorFindings: [], sponsorProblems: [], feeds: feed.feeds };
   if (unmatched.length) read.warnings.push(`No politician id for roster members: ${[...new Set(unmatched)].join(', ')}.`);
 
   for (let di = 0; di < docs.length; di++) {
@@ -618,6 +633,9 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
       continue;
     }
     read.documents.push({ doc, bytes });
+    const docSponsors = documentSponsorFindings(text, parse.rollCalls, doc, d, null);
+    read.sponsorFindings.push(...docSponsors.findings);
+    read.sponsorProblems.push(...docSponsors.problems);
     for (const s of parse.unparsed) read.exceptions.push({ cause: 'unparsed_roll_call', subject: `${d} ${s.slice(0, 60)}`, detail: { sentence: s } });
     const ctx = buildContext(names, terms, items, d);
     for (const rc of parse.rollCalls) {
@@ -633,6 +651,9 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
       }
     }
   }
+  const fromFeed = feedSponsorFindings(items, feed.itemYear, new Map(), new Map(feed.feeds.map((f) => [f.year, f.url])));
+  read.sponsorFindings.push(...fromFeed.findings);
+  read.sponsorProblems.push(...fromFeed.problems);
   const dup = flagDuplicates(read.reader);
   read.reader = dup.reader;
   // A duplicate's own check exceptions stay; the duplicate exception is added once per key.
@@ -643,15 +664,247 @@ async function readCity(city: CityConfig, names: NameFile, roster: InventoryRost
   return read;
 }
 
+// ---- sponsorships --------------------------------------------------------------------------------------------------
+
+/** Older documents and some feed years print "Ord 21-03" (the cached 2021 feed has "21-09"); newer ones print "Ord 2021-03". Both sides are brought to the four-digit form to compare. */
+export const normaliseItemNumber = (s: string): string =>
+  s.replace(/^(Ord|Res|App Ord) (\d{2})-(\d+)$/, (_m, t: string, y: string, n: string) => `${t} 20${y}-${n}`);
+const normaliseSubject = (subject: string): string => {
+  const [item, ...rest] = subject.split(' / ');
+  return [normaliseItemNumber(item), ...rest].join(' / ');
+};
+
+/** One inventory row that names sponsors: its id, date and the surnames the hand reading recorded. */
+export interface InventorySponsorRow { id: string; date: string; sponsors: string[] }
+
+/**
+ * The subject(s) an inventory row's id means, in the record's own form (`<item>` or `<item> / <label>`), or why it has
+ * none. A row about a nested amendment, a paragraph, a withdrawal or a written commitment has no matching subject.
+ */
+export function inventorySponsorSubjects(id: string): { subjects: string[] } | { unmappable: string } {
+  const m = /^place:\d+:(\d{4}-\d{2}-\d{2}):([^()]*?)(?: \((.*)\))?$/.exec(id);
+  if (!m) return { unmappable: 'id not understood' };
+  const [, , item, suffix] = m;
+  if (suffix === undefined) return { subjects: [item] };
+  const am = /^amendment (\d+)$/i.exec(suffix);
+  if (am) return { subjects: [`${item} / Amendment ${twoDigits(am[1])}`] };
+  const rc = /^reasonable condition (\d+)$/i.exec(suffix);
+  if (rc) return { subjects: [`${item} / Reasonable Condition ${Number(rc[1])}`] };
+  const many = /^reasonable conditions ([\d, and]+)$/i.exec(suffix);
+  if (many) return { subjects: (many[1].match(/\d+/g) ?? []).map((n) => `${item} / Reasonable Condition ${Number(n)}`) };
+  return { unmappable: `"${suffix}" is not an amendment or reasonable condition of its own` };
+}
+
+export interface SponsorDiff {
+  group: 'missed' | 'different' | 'extra';
+  subject: string;
+  inventoryId: string | null;
+  /** Surnames as the inventory records them. */
+  inventory: string[];
+  /** Names as printed in the source; null = not read. */
+  reader: string[] | null;
+  /** The reader's exception cause for this subject, when one was raised. */
+  cause?: string;
+  note?: string;
+  /** The reader holds the subject under another item-number form than the inventory. */
+  formDiffers?: boolean;
+}
+export interface SponsorComparison {
+  rows: number;
+  agree: number;
+  /** Agreed only after the item numbers were brought to one form. */
+  agreeAfterNormalising: number;
+  diffs: SponsorDiff[];
+  skippedBeforeWindow: number;
+}
+
+/** The inventory's sponsor rows against what the reader resolved. Roles are not compared: the inventory records names only. */
+export function compareSponsors(
+  sponsorships: Sponsorship[], problems: FoundException[], rows: InventorySponsorRow[], roster: InventoryRoster, names: NameFile,
+): SponsorComparison {
+  const reader = new Map<string, { raw: Set<string>; ids: Set<string>; printed: string[] }>();
+  for (const sp of sponsorships) {
+    const raw = sponsorSubject(sp.itemNumber, sp.label);
+    const key = normaliseSubject(raw);
+    const e = reader.get(key) ?? { raw: new Set<string>(), ids: new Set<string>(), printed: [] };
+    e.raw.add(raw);
+    e.ids.add(sp.politicianId);
+    if (!e.printed.includes(sp.nameAsPrinted)) e.printed.push(sp.nameAsPrinted);
+    reader.set(key, e);
+  }
+  const problemCauses = new Map<string, Set<string>>();
+  for (const p of problems) {
+    const key = normaliseSubject(p.subject);
+    problemCauses.set(key, (problemCauses.get(key) ?? new Set()).add(p.cause));
+  }
+  /** Items whose document sentence had no provable item: tied to the meeting date and label only. */
+  const noItem = (date: string, subject: string): string[] => {
+    const label = subject.includes(' / ') ? subject.slice(subject.indexOf(' / ')) : null;
+    if (!label) return [];
+    return problems.filter((p) => p.subject.startsWith(`${date} document `) && (p.subject.endsWith(label) || p.subject.endsWith(`${label} ${p.subject.slice(-8)}`) && /^[0-9a-f]{8}$/.test(p.subject.slice(-8)))).map((p) => p.cause);
+  };
+  const out: SponsorComparison = { rows: 0, agree: 0, agreeAfterNormalising: 0, diffs: [], skippedBeforeWindow: 0 };
+  const seen = new Set<string>();
+  for (const row of rows) {
+    if (row.date < WINDOW_START) { out.skippedBeforeWindow++; continue; }
+    out.rows++;
+    const mapped = inventorySponsorSubjects(row.id);
+    if ('unmappable' in mapped) {
+      out.diffs.push({ group: 'missed', subject: row.id.replace(/^place:\d+:/, ''), inventoryId: row.id, inventory: row.sponsors, reader: null, note: `no matching subject form: ${mapped.unmappable}` });
+      continue;
+    }
+    const ids: string[] = [];
+    const unresolved: string[] = [];
+    for (const sn of row.sponsors) {
+      const id = idForSurname(sn, row.date, roster, names);
+      if (typeof id === 'string') ids.push(id); else unresolved.push(`${sn} (${id.error})`);
+    }
+    for (const subject of mapped.subjects) {
+      const key = normaliseSubject(subject);
+      seen.add(key);
+      const got = reader.get(key);
+      const cause = [...(problemCauses.get(key) ?? []), ...(got ? [] : noItem(row.date, subject).map((c) => `${c} (a document sentence for this label on ${row.date} had no provable item)`))].join(', ') || undefined;
+      if (!got) {
+        out.diffs.push({ group: 'missed', subject, inventoryId: row.id, inventory: row.sponsors, reader: null, cause, ...(unresolved.length ? { note: `inventory name not resolved: ${unresolved.join('; ')}` } : {}) });
+        continue;
+      }
+      const same = !unresolved.length && ids.length === got.ids.size && ids.every((i) => got.ids.has(i)) && new Set(ids).size === ids.length;
+      if (same) {
+        out.agree++;
+        if (!got.raw.has(subject)) out.agreeAfterNormalising++;
+      } else {
+        out.diffs.push({
+          group: 'different', subject, inventoryId: row.id, inventory: row.sponsors, reader: got.printed, cause,
+          ...(unresolved.length ? { note: `inventory name not resolved: ${unresolved.join('; ')}` } : {}),
+          ...(!got.raw.has(subject) ? { formDiffers: true } : {}),
+        });
+      }
+    }
+  }
+  for (const [key, got] of reader) {
+    if (seen.has(key)) continue;
+    out.diffs.push({ group: 'extra', subject: [...got.raw][0], inventoryId: null, inventory: [], reader: got.printed });
+  }
+  return out;
+}
+
+const sponsorDiffException = (d: SponsorDiff): FoundException => ({
+  cause: 'inventory_disagrees', subject: d.subject,
+  detail: { kind: `sponsors ${d.group === 'missed' ? 'missed by reader' : 'different members'}`, inventoryId: d.inventoryId, inventory: d.inventory, reader: d.reader, cause: d.cause ?? null, note: d.note ?? null },
+});
+
+/** Inventory differences that stop --apply: missed and different. A row only the reader has is listed, not blocking. */
+export function sponsorBlockers(cmp: SponsorComparison): FoundException[] {
+  return cmp.diffs.filter((d) => d.group !== 'extra').map(sponsorDiffException);
+}
+
+/**
+ * The owner's sponsor checks (`about: 'sponsors'` in owner-checks.json) let a difference through: it stays an open
+ * exception marked `ownerHeld`, as a held vote check does. They never write a sponsorship.
+ */
+export function applySponsorOwnerChecks(excs: FoundException[], checks: CheckedOwnerCheck[]): { exceptions: FoundException[]; passed: number } {
+  const byId = new Map(checks.filter((c) => c.about === 'sponsors').map((c) => [c.inventoryId, c]));
+  let passed = 0;
+  const exceptions = excs.map((e) => {
+    const d = e.detail as { inventoryId?: string | null };
+    const c = d.inventoryId ? byId.get(d.inventoryId) : undefined;
+    if (!c) return e;
+    passed++;
+    return {
+      ...e,
+      detail: {
+        ...(e.detail as object), ownerHeld: true, ownerAnswer: c.ownerAnswer, ownerNote: c.ownerNote || null,
+        reason: `let through by the owner's sponsor check (answer "${c.ownerAnswer}")${c.ownerNote ? `: ${c.ownerNote}` : ''}`,
+      },
+    };
+  });
+  return { exceptions, passed };
+}
+
+export interface SponsorRowOut {
+  subject: string; itemNumber: string; label: string | null; politicianId: string; role: string; nameAsPrinted: string;
+  sentence: string; sourceKind: string; documentUrl: string;
+}
+const sponsorRowOut = (sp: Sponsorship): SponsorRowOut => ({
+  subject: sponsorSubject(sp.itemNumber, sp.label), itemNumber: sp.itemNumber, label: sp.label, politicianId: sp.politicianId, role: sp.role,
+  nameAsPrinted: sp.nameAsPrinted, sentence: sp.sentence, sourceKind: sp.sourceKind, documentUrl: sp.sourceUrl ?? '',
+});
+const sponsorKey = (r: { subject: string; politicianId: string; role: string }) => `${r.subject}|${r.politicianId}|${r.role}`;
+export const sortedSponsorRows = (sps: Sponsorship[]): SponsorRowOut[] =>
+  sps.map(sponsorRowOut).sort((a, b) => (sponsorKey(a) < sponsorKey(b) ? -1 : sponsorKey(a) > sponsorKey(b) ? 1 : 0));
+/** A fingerprint of every resolved row, so --apply writes the rows that were reviewed in the dry run. */
+export const sponsorHash = (sps: Sponsorship[]): string =>
+  sha256Hex(new TextEncoder().encode(JSON.stringify(sortedSponsorRows(sps))));
+
+export interface SponsorSpotCheckFile {
+  seed: number;
+  picks: { subject: string; member: string; role: string; sentence: string; documentUrl: string; verdict: string }[];
+}
+
+/** Up to `n` resolved rows, chosen by the seed. Input order does not matter. */
+export function drawSponsorSpotCheck(pool: SponsorRowOut[], seed: number, n = SPONSOR_SPOT_COUNT): SponsorRowOut[] {
+  const sorted = [...pool].sort((a, b) => (sponsorKey(a) < sponsorKey(b) ? -1 : sponsorKey(a) > sponsorKey(b) ? 1 : 0));
+  const rand = prng(seed);
+  const take = Math.min(n, sorted.length);
+  for (let i = 0; i < take; i++) {
+    const j = i + Math.floor(rand() * (sorted.length - i));
+    [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
+  }
+  return sorted.slice(0, take).sort((a, b) => (sponsorKey(a) < sponsorKey(b) ? -1 : 1));
+}
+
+const sponsorPick = (r: SponsorRowOut, verdict = ''): SponsorSpotCheckFile['picks'][number] => ({
+  subject: r.subject, member: r.nameAsPrinted, role: r.role, sentence: r.sentence, documentUrl: r.documentUrl, verdict,
+});
+const sponsorPickKey = (p: SponsorSpotCheckFile['picks'][number]) => `${p.subject}|${p.member}|${p.role}|${p.sentence}|${p.documentUrl}`;
+
+/** Everything about sponsors that stops --apply, besides the open inventory differences (BLOCKING_CAUSES covers those). */
+function sponsorGateBlockers(
+  prior: SponsorSpotCheckFile | null, fresh: SponsorSpotCheckFile, savedHash: string | null, hash: string,
+): string[] {
+  const out: string[] = [];
+  if (!prior) return ['sponsor-spotcheck.json is missing: run a dry run and have the sponsor picks checked first.'];
+  if (savedHash === null) out.push('sponsorships.json is missing: run a dry run and review the sponsorships first.');
+  else if (savedHash !== hash) out.push('sponsorships.json changed since the dry run (the resolved sponsors are not the ones reviewed): run a dry run again.');
+  const draw = (f: SponsorSpotCheckFile) => f.picks.map(sponsorPickKey).join('\n');
+  if (prior.seed !== fresh.seed || draw(prior) !== draw(fresh)) out.push('sponsor-spotcheck.json does not match a fresh draw from its seed: run a dry run again.');
+  const blank = prior.picks.filter((p) => !(p.verdict ?? '').trim()).length;
+  if (blank) out.push(`${blank} sponsor spot-check verdict(s) are blank.`);
+  const bad = prior.picks.filter((p) => (p.verdict ?? '').trim() && (p.verdict ?? '').trim() !== 'match').length;
+  if (bad) out.push(`sponsor spot check: ${bad} verdict(s) are not "match".`);
+  return out;
+}
+
+function sponsorCompareMd(cmp: SponsorComparison, passed: number): string {
+  const line = (d: SponsorDiff) =>
+    `- ${d.subject}${d.inventoryId ? ` [${d.inventoryId}]` : ''}: inventory ${d.inventory.length ? d.inventory.join(', ') : '(none)'}; reader ${d.reader ? d.reader.join(', ') : 'not read'}`
+    + `${d.cause ? `; reader exception: ${d.cause}` : ''}${d.note ? `; ${d.note}` : ''}${d.formDiffers ? '; item-number form differs' : ''}`;
+  const group = (g: SponsorDiff['group'], title: string, why: string) => {
+    const xs = cmp.diffs.filter((d) => d.group === g);
+    return [`## ${title} (${xs.length})`, '', why, '', ...(xs.length ? xs.map(line) : ['- none']), ''];
+  };
+  return [
+    '# Sponsors: reader compared with the inventory', '',
+    `Inventory rows with sponsors (full.json, on or after ${WINDOW_START}): ${cmp.rows}. Agree: ${cmp.agree}. Agree only after item numbers were brought to one form ("21-03" and "2021-03"): ${cmp.agreeAfterNormalising}. `
+    + `Differences that block --apply: ${cmp.diffs.filter((d) => d.group !== 'extra').length}.`,
+    ...(passed ? ['', `Owner sponsor checks that let a difference through: ${passed}.`] : []),
+    '',
+    'The inventory records surnames only, so people are compared, not roles.', '',
+    ...group('missed', 'Missed by the reader', 'The inventory names sponsors; the reader produced none for this subject. Blocks --apply.'),
+    ...group('different', 'Different members', 'The reader resolved sponsors for this subject, but not the same people. Blocks --apply.'),
+    ...group('extra', 'Read but not in the inventory', 'The reader resolved sponsors the inventory has no row for. Listed for the owner; does not block.'),
+  ].join('\n');
+}
+
 // ---- the run ------------------------------------------------------------------------------------------------------
 
 export interface FirstLoadOptions {
-  city: string; inventory: string; out: string; apply: boolean; seed?: number; now?: Date;
+  city: string; inventory: string; out: string; apply: boolean; seed?: number; sponsorSeed?: number; now?: Date;
 }
 export interface FirstLoadResult {
   refused?: string[];
   summaryPath?: string;
-  applied?: { rollCallsConfirmed: number; votesWritten: number; exceptions: number; stagedItems: number; stagedMinutes: number };
+  applied?: { rollCallsConfirmed: number; votesWritten: number; sponsorshipsWritten: number; exceptions: number; stagedItems: number; stagedMinutes: number };
 }
 
 const readJson = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
@@ -661,7 +914,14 @@ const countBy = (xs: FoundException[]) => {
   return c;
 };
 
-function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundException[], pending: number, owner: OwnerResult | null = null): string {
+interface SponsorSummary {
+  rows: number; subjects: number; held: Record<string, number>; differences: number; agreeAfterNormalising: number;
+  spotDrawn: number; spotFilled: number; seed: number;
+}
+
+function summaryMd(
+  read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundException[], pending: number, owner: OwnerResult | null = null, sp: SponsorSummary | null = null,
+): string {
   const conf = read.reader.filter((r) => r.status === 'confirmed');
   const votes = conf.reduce((n, r) => n + (r.votes?.length ?? 0), 0);
   const by = countBy(all);
@@ -675,6 +935,10 @@ function summaryMd(read: Read, cmp: Comparison, spot: SpotCheckFile, all: FoundE
     ...(owner ? [
       `- Owner-checked: ${owner.ownerChecked.length} confirmed, ${owner.held.length} held, ${owner.notNeeded.length} not needed`,
       `- Owner checks that failed the tally, name or outcome check (still blocking): ${owner.failed.length}`,
+    ] : []),
+    ...(sp ? [
+      `- Sponsorships: ${sp.rows} would be written (${sp.subjects} subjects), ${Object.values(sp.held).reduce((a, b) => a + b, 0)} held (${Object.keys(sp.held).length ? Object.entries(sp.held).sort().map(([c, n]) => `${c} ${n}`).join(', ') : 'none'}), ${sp.differences} inventory differences (${sp.agreeAfterNormalising} agree only after item numbers were normalised)`,
+      `- Sponsor spot checks drawn: ${sp.spotDrawn} (seed ${sp.seed}); filled in: ${sp.spotFilled}`,
     ] : []),
     '', '## Exceptions by cause', '',
     ...(Object.keys(by).length ? Object.entries(by).sort().map(([c, n]) => `- ${c}: ${n}`) : ['- none']),
@@ -732,9 +996,9 @@ function blockers(spot: SpotCheckFile | null, fresh: SpotCheckFile, found: Found
   }
   const changed = spot.picks.filter((p) => fresh.picks.find((f) => f.id === p.id)?.votesHash !== p.votesHash).length;
   if (changed) out.push(`${changed} picked vote(s) changed since they were checked (votes changed): run a dry run again and re-check them.`);
-  const blank = spot.picks.filter((p) => !p.verdict.trim()).length;
+  const blank = spot.picks.filter((p) => !(p.verdict ?? '').trim()).length;
   if (blank) out.push(`${blank} spot-check verdict(s) are blank.`);
-  const bad = spot.picks.filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match').length;
+  const bad = spot.picks.filter((p) => (p.verdict ?? '').trim() && (p.verdict ?? '').trim() !== 'match').length;
   if (bad) out.push(`spot_check_failed: ${bad} verdict(s) are not "match".`);
   for (const c of BLOCKING_CAUSES) {
     const n = found.filter((f) => f.cause === c && !isOwnerHeld(f)).length;
@@ -765,6 +1029,14 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   const spotPath = path.join(opts.out, 'spotcheck.json');
   const prior: SpotCheckFile | null = existsSync(spotPath) ? readJson(spotPath) : null;
   if (opts.apply && !prior) return { refused: ['spotcheck.json is missing: run a dry run and have the 30 picks checked first.'] };
+  const sponsorSpotPath = path.join(opts.out, 'sponsor-spotcheck.json');
+  const sponsorsPath = path.join(opts.out, 'sponsorships.json');
+  const priorSponsorSpot: SponsorSpotCheckFile | null = existsSync(sponsorSpotPath) ? readJson(sponsorSpotPath) : null;
+  if (opts.apply && !priorSponsorSpot) return { refused: ['sponsor-spotcheck.json is missing: run a dry run and have the sponsor picks checked first.'] };
+  // The inventory's sponsors are the control: full.json items with a non-empty sponsors list.
+  const sponsorRows: InventorySponsorRow[] = (readJson(path.join(opts.inventory, 'full.json')).items as (InventoryItem & { sponsors?: string[] })[])
+    .filter((i) => Array.isArray(i.sponsors) && i.sponsors.length > 0)
+    .map((i) => ({ id: i.id, date: i.date, sponsors: i.sponsors as string[] }));
 
   const read = await readCity(city, names, roster, now, deps);
   const cmp = compareWithInventory(read.reader, inventory, roster, names);
@@ -777,13 +1049,37 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
     picks: fresh.picks.map((p) => ({ ...p, verdict: keep.get(p.id)?.votesHash === p.votesHash ? keep.get(p.id)?.verdict ?? '' : '' })),
   };
   const failedChecks: FoundException[] = spot.picks
-    .filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match')
+    .filter((p) => (p.verdict ?? '').trim() && (p.verdict ?? '').trim() !== 'match')
     .map((p) => ({ cause: 'spot_check_failed', subject: `${p.date} ${p.itemNumber} ${p.question}`, detail: { verdict: p.verdict } }));
   const owner = ownerChecks ? applyOwnerChecks(cmp, ownerChecks, roster, names, read.items, inventory, read.reader) : null;
   // An owner-checked row is saved with a vote document: it must be one the feed lists.
   const feedUrls = new Set(read.feedDocs.map((d) => d.url));
   const ownerSkipped = (owner?.ownerChecked ?? []).filter((o) => !feedUrls.has(o.documentUrl)).map((o) => `${subjectOf(o)}: ${o.documentUrl}`);
-  const all = [...read.exceptions, ...(owner ? owner.exceptions : cmp.exceptions), ...failedChecks];
+  // Sponsors: resolve, compare with the inventory, draw the spot check.
+  const { terms: sponsorTerms } = termsFromRoster(roster, names);
+  const resolvedSponsors = resolveSponsorships(read.sponsorFindings, names, sponsorTerms);
+  const sponsorProblems: FoundException[] = [
+    ...read.sponsorProblems,
+    ...resolvedSponsors.problems.map((p) => ({ cause: p.cause as ExceptionCause, subject: p.subject, detail: p.detail })),
+  ];
+  const sponsorCmp = compareSponsors(resolvedSponsors.sponsorships, sponsorProblems, sponsorRows, roster, names);
+  const sponsorOwner = applySponsorOwnerChecks(sponsorBlockers(sponsorCmp), ownerChecks ?? []);
+  const sponsorRowsOut = sortedSponsorRows(resolvedSponsors.sponsorships);
+  const sponsorHashNow = sponsorHash(resolvedSponsors.sponsorships);
+  const sponsorSeed = opts.apply ? (priorSponsorSpot as SponsorSpotCheckFile).seed : opts.sponsorSeed ?? priorSponsorSpot?.seed ?? Math.floor(Math.random() * 2 ** 31);
+  const freshSponsorSpot: SponsorSpotCheckFile = { seed: sponsorSeed, picks: drawSponsorSpotCheck(sponsorRowsOut, sponsorSeed).map((r) => sponsorPick(r)) };
+  const keepSponsor = new Map((priorSponsorSpot?.seed === sponsorSeed ? priorSponsorSpot.picks : []).map((p) => [sponsorPickKey(p), p.verdict]));
+  const sponsorSpot: SponsorSpotCheckFile = { seed: sponsorSeed, picks: freshSponsorSpot.picks.map((p) => ({ ...p, verdict: keepSponsor.get(sponsorPickKey(p)) ?? '' })) };
+  const sponsorHeld: Record<string, number> = {};
+  for (const e of sponsorProblems) sponsorHeld[e.cause] = (sponsorHeld[e.cause] ?? 0) + 1;
+  const sponsorSummary: SponsorSummary = {
+    rows: sponsorRowsOut.length, subjects: new Set(sponsorRowsOut.map((r) => r.subject)).size, held: sponsorHeld,
+    differences: sponsorCmp.diffs.filter((d) => d.group !== 'extra').length, agreeAfterNormalising: sponsorCmp.agreeAfterNormalising,
+    spotDrawn: sponsorSpot.picks.length, spotFilled: sponsorSpot.picks.filter((p) => p.verdict).length, seed: sponsorSeed,
+  };
+  const all = [
+    ...read.exceptions, ...(owner ? owner.exceptions : cmp.exceptions), ...failedChecks, ...sponsorProblems, ...sponsorOwner.exceptions,
+  ];
   const confirmedKeys = new Set(read.reader.filter((r) => r.status === 'confirmed' && r.question === 'Final passage').map((r) => `${r.date}|${r.itemNumber}`));
   const pending = read.items.filter((i) => i.final && !confirmedKeys.has(`${i.final.date}|${i.itemNumber}`)).length;
 
@@ -795,16 +1091,23 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
       writeFileSync(path.join(opts.out, 'owner-checked.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, hash: ownerHash(owner.ownerChecked), ownerChecked: owner.ownerChecked }, null, 1));
     }
     writeFileSync(spotPath, JSON.stringify(spot, null, 1));
+    writeFileSync(sponsorsPath, JSON.stringify({ city: city.scope, from: WINDOW_START, hash: sponsorHashNow, sponsorships: sponsorRowsOut }, null, 1));
+    writeFileSync(path.join(opts.out, 'sponsor-compare.md'), sponsorCompareMd(sponsorCmp, sponsorOwner.passed));
+    writeFileSync(sponsorSpotPath, JSON.stringify(sponsorSpot, null, 1));
     writeFileSync(path.join(opts.out, 'exceptions.json'), JSON.stringify({
       city: city.scope, from: WINDOW_START,
       exceptions: all.map((e) => ({ cause: e.cause, subject: e.subject, detail: e.detail })),
     }, null, 1));
     const summaryPath = path.join(opts.out, 'summary.md');
-    writeFileSync(summaryPath, summaryMd(read, cmp, spot, all, pending, owner));
+    writeFileSync(summaryPath, summaryMd(read, cmp, spot, all, pending, owner, sponsorSummary));
     return { summaryPath };
   }
 
   const refused = blockers(prior, fresh, all);
+  refused.push(...sponsorGateBlockers(
+    priorSponsorSpot, freshSponsorSpot,
+    existsSync(sponsorsPath) ? ((readJson(sponsorsPath) as { hash?: string }).hash ?? null) : null, sponsorHashNow,
+  ));
   if (owner) {
     const ocPath = path.join(opts.out, 'owner-checked.json');
     if (!existsSync(ocPath)) refused.push('owner-checked.json is missing: run a dry run again and review the owner-checked rows.');
@@ -814,7 +1117,14 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   }
   if (refused.length) return { refused };
   if (!deps.connect || !deps.storage) throw new Error('--apply needs a database connection and storage');
-  return { applied: await applyAll(opts, city, read, owner?.ownerChecked ?? [], all, deps.connect, deps.storage, deps.fetchBytes, now) };
+  const subjectsRead = new Set(read.sponsorFindings.map((f) => sponsorSubject(f.itemNumber, f.label)));
+  for (const p of sponsorProblems) subjectsRead.delete(p.subject);
+  return {
+    applied: await applyAll(
+      opts, city, read, owner?.ownerChecked ?? [], all, deps.connect, deps.storage, deps.fetchBytes, now,
+      { sponsorships: resolvedSponsors.sponsorships, problems: sponsorProblems, subjectsRead },
+    ),
+  };
 }
 
 // ---- --apply ------------------------------------------------------------------------------------------------------
@@ -847,11 +1157,12 @@ const rollCallOf = (r: ReaderRollCall): MinutesRollCall => ({
 async function applyAll(
   opts: FirstLoadOptions, city: CityConfig, read: Read, ownerChecked: OwnerCheckedRollCall[], found: FoundException[],
   connect: () => Promise<Connection>, storage: StorageLike, fetchBytesFn: FirstLoadDeps['fetchBytes'], now: Date,
+  sponsors: { sponsorships: Sponsorship[]; problems: FoundException[]; subjectsRead: Set<string> },
 ): Promise<NonNullable<FirstLoadResult['applied']>> {
   const runId = `local-record-first-load-${now.toISOString()}`;
   const staged = stagedFiles(opts);
   const db = await connect();
-  const done = { rollCallsConfirmed: 0, votesWritten: 0, exceptions: 0, stagedItems: 0, stagedMinutes: 0 };
+  const done = { rollCallsConfirmed: 0, votesWritten: 0, sponsorshipsWritten: 0, exceptions: 0, stagedItems: 0, stagedMinutes: 0 };
   try {
     await db.query('BEGIN');
     // Saved texts have their own URL chain (see stagedFiles), so order does not matter.
@@ -864,6 +1175,11 @@ async function applyAll(
     for (const { doc, bytes } of read.documents) {
       const saved = await saveDocument(db, storage, { city: city.scope, kind: doc.kind, url: doc.url, cityFileId: String(doc.fileId), bytes });
       docId.set(doc.url, saved.id);
+    }
+    // Each feed year's raw JSON is the saved source of a feed-read sponsor.
+    for (const f of read.feeds) {
+      const saved = await saveDocument(db, storage, { city: city.scope, kind: 'legislation_feed', url: f.url, cityFileId: null, bytes: f.bytes });
+      docId.set(f.url, saved.id);
     }
     const billFor = async (itemNumber: string) => {
       const item = read.items.find((i) => i.itemNumber === itemNumber);
@@ -902,6 +1218,9 @@ async function applyAll(
       done.rollCallsConfirmed++;
       done.votesWritten += o.votes.length;
     }
+    // Sponsorships go after the votes, tied to the saved document each sentence was read from.
+    const withDocs = sponsors.sponsorships.map((sp) => ({ ...sp, sourceDocumentId: sp.sourceUrl ? docId.get(sp.sourceUrl) ?? null : null }));
+    done.sponsorshipsWritten = (await writeSponsorships(db, city.scope, runId, withDocs, { subjectsRead: sponsors.subjectsRead })).written;
     for (const e of found) { await recordException(db, city.scope, runId, e.cause, e.subject, e.detail); done.exceptions++; }
     await db.query('COMMIT');
   } catch (e) {
@@ -940,7 +1259,7 @@ async function main(): Promise<void> {
   const { values } = parseArgs({
     options: {
       city: { type: 'string' }, inventory: { type: 'string' }, out: { type: 'string' },
-      seed: { type: 'string' }, cache: { type: 'string' }, apply: { type: 'boolean', default: false },
+      seed: { type: 'string' }, 'sponsor-seed': { type: 'string' }, cache: { type: 'string' }, apply: { type: 'boolean', default: false },
     },
   });
   if (!values.city || !values.inventory || !values.out) throw new Error('Needs --city, --inventory <abs dir> and --out <abs dir>');
@@ -949,7 +1268,8 @@ async function main(): Promise<void> {
   }
   const deps = await productionDeps(!!values.apply);
   const result = await runFirstLoad(
-    { city: values.city, inventory: values.inventory, out: values.out, apply: !!values.apply, seed: values.seed ? Number(values.seed) : undefined },
+    { city: values.city, inventory: values.inventory, out: values.out, apply: !!values.apply, seed: values.seed ? Number(values.seed) : undefined,
+      sponsorSeed: values['sponsor-seed'] ? Number(values['sponsor-seed']) : undefined },
     values.cache ? withDownloadCache(deps, values.cache) : deps,
   );
   if (result.refused) {

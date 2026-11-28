@@ -3,10 +3,12 @@
 import { readFileSync } from 'node:fs';
 import { checkRollCall, type CheckContext } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
-import { fetchJson, listVoteDocuments, parseLegislationFeed, type VoteDocument } from './onboard/feed.js';
-import { minutesTextFromPdf, parseMinutes, printedMeetingDate } from './onboard/minutes.js';
+import { fetchJson, fetchJsonWithBytes, listVoteDocuments, parseLegislationFeed, type VoteDocument } from './onboard/feed.js';
+import { minutesTextFromPdf, parseMinutes, printedMeetingDate, stripMargin } from './onboard/minutes.js';
+import { itemSponsorSentencesFromSynopsis, sponsorSentencesWithItems } from './onboard/sponsors.js';
+import { resolveSponsorships, sponsorSubject, type SponsorFinding } from './sponsorships.js';
 import { externalVoteId, saveDocument, sha256Hex, type Queryable, type StorageLike } from './store.js';
-import { recordException, writeConfirmed, writeFeed } from './write.js';
+import { recordException, writeConfirmed, writeFeed, writeSponsorships } from './write.js';
 import { EXCEPTION_CAUSES } from './types.js';
 import type { CheckResult, CityScope, ExceptionCause, FeedItem, MinutesParse, ResolvedVote } from './types.js';
 
@@ -43,6 +45,7 @@ export interface RunSummary {
     pendingAdded: number;
     rollCallsConfirmed: number;
     votesWritten: number;
+    sponsorshipsWritten: number;
     /** New exceptions recorded this run (one already logged with the same detail is not new). */
     exceptions: Record<ExceptionCause, number>;
   }[];
@@ -57,6 +60,8 @@ export interface RefreshDeps {
   connect(): Promise<Connection>;
   storage: StorageLike & { download(path: string): Promise<Uint8Array> };
   fetchJson(url: string): Promise<unknown>;
+  /** The legislation feed as served: parsed, and the exact bytes (saved as the source document). Optional; without it the parsed JSON is saved. */
+  fetchFeed?(url: string): Promise<{ json: unknown; bytes: Uint8Array }>;
   fetchBytes(url: string): Promise<Uint8Array>;
   /** Layout text of a vote document's PDF. */
   pdfText(bytes: Uint8Array): Promise<string>;
@@ -135,6 +140,7 @@ export async function productionDeps(): Promise<RefreshDeps> {
     },
     storage: makeStorage(supabaseAdmin),
     fetchJson,
+    fetchFeed: fetchJsonWithBytes,
     fetchBytes,
     pdfText: minutesTextFromPdf,
     loadCities: () =>
@@ -273,26 +279,80 @@ interface CityRun {
   pendingAdded: number;
   rollCallsConfirmed: number;
   votesWritten: number;
+  sponsorshipsWritten: number;
   exceptions: Record<ExceptionCause, number>;
   /** Set when the control re-parse disagreed: the city is rolled back and nothing else ran. */
   controlFailed: { subject: string; detail: unknown } | null;
 }
 
+/** A sponsor sentence that cannot be tied to an item or a date: raised as sponsor_unresolved, never written. */
+export interface SponsorReadProblem { cause: 'sponsor_unresolved'; subject: string; detail: unknown }
+
+/**
+ * Sponsors named in one document's amendment and condition synopses, each tied to the item it was moved on.
+ * A sentence with no provable item becomes a no_item problem. Shared by the weekly job and the first load.
+ */
+export function documentSponsorFindings(
+  text: string, rollCalls: MinutesParse['rollCalls'], doc: Pick<VoteDocument, 'kind' | 'url' | 'fileId'>, date: string, savedId: string | null,
+): { findings: SponsorFinding[]; problems: SponsorReadProblem[] } {
+  const findings: SponsorFinding[] = [];
+  const problems: SponsorReadProblem[] = [];
+  for (const s of sponsorSentencesWithItems(stripMargin(text), rollCalls, text)) {
+    if (!s.itemNumber) {
+      problems.push({ cause: 'sponsor_unresolved', subject: `${date} document ${doc.fileId} / ${s.label ?? 'Council Sponsor'} ${sha256Hex(new TextEncoder().encode(s.sentence)).slice(0, 8)}`, detail: { reason: 'no_item', sentence: s.sentence, url: doc.url } });
+      continue;
+    }
+    findings.push({ itemNumber: s.itemNumber, label: s.label, date, sourceKind: doc.kind, sourceDocumentId: savedId, sourceUrl: doc.url, found: s });
+  }
+  return { findings, problems };
+}
+
+/** Sponsors named in the feed's item synopses, seated on the item's first action date. A synopsis with no date is a no_date problem. */
+export function feedSponsorFindings(
+  items: FeedItem[], itemYear: Map<number, number>, feedDocumentId: Map<number, string>, feedUrl: Map<number, string> = new Map(),
+): { findings: SponsorFinding[]; problems: SponsorReadProblem[] } {
+  const findings: SponsorFinding[] = [];
+  const problems: SponsorReadProblem[] = [];
+  for (const it of items) {
+    if (!it.synopsis) continue;
+    const year = itemYear.get(it.feedId) ?? -1;
+    for (const found of itemSponsorSentencesFromSynopsis(it.synopsis)) {
+      if (!it.firstActionDate) {
+        problems.push({ cause: 'sponsor_unresolved', subject: sponsorSubject(it.itemNumber, null), detail: { reason: 'no_date', sentence: found.sentence } });
+        continue;
+      }
+      findings.push({
+        itemNumber: it.itemNumber, label: null, date: it.firstActionDate, sourceKind: 'legislation_feed',
+        sourceDocumentId: feedDocumentId.get(year) ?? null, sourceUrl: feedUrl.get(year) ?? null, found,
+      });
+    }
+  }
+  return { findings, problems };
+}
+
 /** The legislation and meetings feeds for this year and last, or for the given years (the first load reads them all). */
 export async function readFeeds(
-  city: CityConfig, now: Date, deps: Pick<RefreshDeps, 'fetchJson'>, years?: number[],
+  city: CityConfig, now: Date, deps: Pick<RefreshDeps, 'fetchJson' | 'fetchFeed'>, years?: number[],
 ) {
   const year = now.getUTCFullYear();
   const items = new Map<number, FeedItem>();
   const docs = new Map<number, VoteDocument>();
+  const feeds: { year: number; url: string; bytes: Uint8Array }[] = [];
+  /** The feed year each item was read from. The year read last wins when an item is in two (by default that is last year). */
+  const itemYear = new Map<number, number>();
   for (const y of years ?? [year, year - 1]) {
     const root = `${city.base}/onboard/committees/${city.committeeId}`;
-    for (const it of parseLegislationFeed(await deps.fetchJson(`${root}/legislation?year=${y};format=json`), city.base)) {
+    const url = `${root}/legislation?year=${y};format=json`;
+    const got = deps.fetchFeed ? await deps.fetchFeed(url) : null;
+    const json = got ? got.json : await deps.fetchJson(url);
+    feeds.push({ year: y, url, bytes: got ? got.bytes : new TextEncoder().encode(JSON.stringify(json)) });
+    for (const it of parseLegislationFeed(json, city.base)) {
       items.set(it.feedId, it);
+      itemYear.set(it.feedId, y);
     }
     for (const d of listVoteDocuments(await deps.fetchJson(`${root}/meetings?year=${y};format=json`))) docs.set(d.fileId, d);
   }
-  return { items: [...items.values()], docs: [...docs.values()] };
+  return { items: [...items.values()], docs: [...docs.values()], feeds, itemYear };
 }
 
 /** Re-parse one confirmed meeting from its saved copy and compare with the stored votes. */
@@ -341,7 +401,7 @@ async function runCity(
   db: Queryable, city: CityConfig, runId: string, now: Date, deps: RefreshDeps,
 ): Promise<CityRun> {
   const run: CityRun = {
-    pendingAdded: 0, rollCallsConfirmed: 0, votesWritten: 0, exceptions: zeroCounts(), controlFailed: null,
+    pendingAdded: 0, rollCallsConfirmed: 0, votesWritten: 0, sponsorshipsWritten: 0, exceptions: zeroCounts(), controlFailed: null,
   };
   /** Record an exception; count it only when it is new (not logged before with the same detail). */
   const raise = async (cause: ExceptionCause, subject: string, detail: unknown) => {
@@ -354,13 +414,25 @@ async function runCity(
     if (!known) run.exceptions[cause]++;
   };
 
-  const { items, docs } = await readFeeds(city, now, deps);
+  const { items, docs, feeds, itemYear } = await readFeeds(city, now, deps);
   const names = deps.loadNames(city);
   const terms = await deps.loadTerms(db, city);
 
   // Control first: a bad control means the reader or the names changed under us, so write nothing.
   run.controlFailed = await control(db, city, runId, deps, names, terms, items);
   if (run.controlFailed) return run;
+
+  // Each feed year's raw JSON is kept as a source document: it is what a feed-read sponsor is proved from.
+  const feedDocumentId = new Map<number, string>();
+  for (const f of feeds) {
+    const saved = await saveDocument(db, deps.storage, {
+      city: city.scope, kind: 'legislation_feed', url: f.url, cityFileId: null,
+      bytes: f.bytes,
+    });
+    feedDocumentId.set(f.year, saved.id);
+  }
+  /** Sponsor sentences read this run, from the feed and from every document read. */
+  const findings: SponsorFinding[] = [];
 
   const count = async () =>
     Number((await db.query(
@@ -442,6 +514,11 @@ async function runCity(
     for (const s of parse.unparsed) {
       await raise('unparsed_roll_call', `${d} ${sha256Hex(new TextEncoder().encode(s)).slice(0, 12)}`, { sentence: s });
     }
+
+    // Sponsors named in this document's amendment and condition synopses, each tied to the item it was moved on.
+    const docSponsors = documentSponsorFindings(text, parse.rollCalls, doc, d, saved.id);
+    for (const p of docSponsors.problems) await raise(p.cause, p.subject, p.detail);
+    findings.push(...docSponsors.findings);
 
     const ctx = buildContext(names, terms, items, d);
     const stored = await storedRollCalls(db, `r.meeting_date = $2::date`, [city.scope, d]);
@@ -538,6 +615,33 @@ async function runCity(
       feedDate: r.pending_date, confirmedDate: r.confirmed_date,
     });
   }
+
+  // Sponsors named in the feed's item synopses, seated on the item's first action date.
+  const feedSponsors = feedSponsorFindings(items, itemYear, feedDocumentId);
+  for (const p of feedSponsors.problems) await raise(p.cause, p.subject, p.detail);
+  findings.push(...feedSponsors.findings);
+
+  const { sponsorships, problems } = resolveSponsorships(findings, names, terms);
+  for (const p of problems) await raise(p.cause, p.subject, p.detail);
+  // A stored sponsor is flagged missing only for a subject read now, and not for one already raised above (its read is unknown).
+  const raised = new Set(problems.map((p) => p.subject));
+  const subjectsRead = new Set(findings.map((f) => sponsorSubject(f.itemNumber, f.label)).filter((x) => !raised.has(x)));
+  // writeSponsorships records its own exceptions; count the ones that are new, as raise() does.
+  const SPONSOR_CAUSES = ['sponsor_unresolved', 'sponsor_disagrees', 'unknown_item'];
+  const openNow = async () => {
+    const r = await db.query(
+      `SELECT cause, subject, detail FROM essentials.local_record_exceptions WHERE city_scope = $1 AND cause = ANY($2::text[])`,
+      [city.scope, SPONSOR_CAUSES],
+    );
+    return new Map<string, string>(
+      (r.rows as any[]).map((x) => [`${x.cause}\u0000${x.subject}`, canon(x.detail)]),
+    );
+  };
+  const beforeWrite = await openNow();
+  run.sponsorshipsWritten = (await writeSponsorships(db, city.scope, runId, sponsorships, { subjectsRead })).written;
+  for (const [key, detail] of await openNow()) {
+    if (beforeWrite.get(key) !== detail) run.exceptions[key.split('\u0000')[0] as ExceptionCause]++;
+  }
   return run;
 }
 
@@ -576,7 +680,7 @@ export async function runLocalRecordRefresh(
       }
       summary.cities.push({
         scope: city.scope, pendingAdded: run.pendingAdded, rollCallsConfirmed: run.rollCallsConfirmed,
-        votesWritten: run.votesWritten, exceptions: run.exceptions,
+        votesWritten: run.votesWritten, sponsorshipsWritten: run.sponsorshipsWritten, exceptions: run.exceptions,
       });
     } catch (e) {
       await conn?.query('ROLLBACK').catch(() => undefined);

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { recordException, writeConfirmed, writeFeed } from './write.js';
+import { recordException, writeConfirmed, writeFeed, writeSponsorships } from './write.js';
+import type { Sponsorship } from './sponsorships.js';
 import { EXCEPTION_CAUSES } from './types.js';
 import type { FeedItem, MinutesRollCall } from './types.js';
 
@@ -125,7 +126,7 @@ describe('writeConfirmed: replacing and promoting', () => {
   }
   const finalItem: FeedItem = {
     feedId: 7, type: 'Resolution', number: '2026-09', itemNumber: 'Res 2026-09', title: 't', synopsis: null,
-    status: 'Adopted', pageUrl: 'https://x/7',
+    status: 'Adopted', firstActionDate: null, pageUrl: 'https://x/7',
     final: { date: '2026-10-07', outcome: 'passed', tally: { yes: 2, no: 1, abstain: 0 } },
   };
 
@@ -153,7 +154,7 @@ describe('writeConfirmed: replacing and promoting', () => {
 describe('writeFeed', () => {
   const item = (over: Partial<FeedItem>): FeedItem => ({
     feedId: 7, type: 'Resolution', number: '2026-09', itemNumber: 'Res 2026-09', title: 't', synopsis: null,
-    status: 'Adopted', final: null, pageUrl: 'https://x/7', ...over,
+    status: 'Adopted', final: null, firstActionDate: null, pageUrl: 'https://x/7', ...over,
   });
 
   it('upserts sessions and bills, and a pending roll call only for finals', async () => {
@@ -205,5 +206,205 @@ describe('recordException', () => {
     const db = recordingDb();
     for (const cause of EXCEPTION_CAUSES) await recordException(db, 'place:1', 'r', cause, 's', 'd');
     await expect(recordException(db, 'place:1', 'r', 'nope' as any, 's', 'd')).rejects.toThrow();
+  });
+});
+
+describe('writeSponsorships', () => {
+  const sp = (over: Partial<Sponsorship> = {}): Sponsorship => ({
+    itemNumber: 'Ord 2025-41',
+    label: null,
+    politicianId: 'p1',
+    role: 'sponsor',
+    nameAsPrinted: 'Smith',
+    sentence: 'Sponsored by Smith.',
+    sourceKind: 'legislation_feed',
+    sourceDocumentId: 'doc1',
+    ...over,
+  });
+
+  /** Routes by statement: bill lookup, stored-sponsor read, everything else answers with one row. */
+  /** `stored` entries are "p1" (role sponsor) or "p1:cosponsor"; `held` are subjects with an open sponsor_disagrees. */
+  function sponsorDb(opts: { bills?: Record<string, string>; stored?: Record<string, string[]>; dupes?: string[]; held?: string[] } = {}) {
+    const bills = opts.bills ?? { 'Ord 2025-41': 'bill1' };
+    const dupes = opts.dupes ?? [];
+    const stored = opts.stored ?? {};
+    const held = opts.held ?? [];
+    const calls: { text: string; params: unknown[] }[] = [];
+    return {
+      calls,
+      async query(text: string, params: unknown[] = []) {
+        calls.push({ text, params });
+        if (/FROM essentials.legislative_bills/.test(text)) {
+          if (dupes.includes(params[1] as string)) return { rows: [{ id: 'a' }, { id: 'b' }], rowCount: 2 };
+          const id = bills[params[1] as string];
+          return { rows: id ? [{ id }] : [], rowCount: id ? 1 : 0 };
+        }
+        if (/FROM essentials.legislative_sponsorships/.test(text)) {
+          const rows = (stored[params[0] as string] ?? []).map((x) => {
+            const [politician_id, role = 'sponsor'] = x.split(':');
+            return { politician_id, role };
+          });
+          return { rows, rowCount: rows.length };
+        }
+        if (/SELECT subject FROM essentials.local_record_exceptions/.test(text)) {
+          return { rows: held.map((subject) => ({ subject })), rowCount: held.length };
+        }
+        return { rows: [{ id: 'row1' }], rowCount: 1 };
+      },
+    } as any;
+  }
+  const upserts = (db: any) => db.calls.filter((c: any) => /INSERT INTO essentials.legislative_sponsorships/.test(c.text));
+  const exceptions = (db: any) =>
+    db.calls.filter((c: any) => /INSERT INTO essentials.local_record_exceptions/.test(c.text)).map((c: any) => ({ cause: c.params[2], subject: c.params[3], detail: JSON.parse(c.params[4]) }));
+
+  it('inserts one row per member and amendment', async () => {
+    const db = sponsorDb();
+    const rows = [
+      sp(),
+      sp({ politicianId: 'p2', role: 'cosponsor', nameAsPrinted: 'Jones' }),
+      sp({ label: 'Amendment 01', politicianId: 'p2', role: 'sponsor' }),
+    ];
+    const r = await writeSponsorships(db, 'place:1', 'run1', rows, { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 3, unknownItems: 0, dropped: 0 });
+    expect(upserts(db)).toHaveLength(3);
+    expect(upserts(db).map((c: any) => c.params)).toContainEqual(
+      expect.arrayContaining(['place:1', 'bill1', 'Amendment 01', 'p2', 'sponsor', 'doc1']),
+    );
+  });
+
+  it('upserts the same row twice without a duplicate', async () => {
+    const db = sponsorDb();
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    const u = upserts(db);
+    expect(u).toHaveLength(2);
+    expect(u[0].text).toBe(u[1].text);
+    expect(u[0].text).toMatch(/ON CONFLICT \(bill_id, coalesce\(amendment_label, ''\), politician_id\) DO UPDATE/);
+    expect(u[0].text).toMatch(/updated_at = now\(\)/);
+    expect(u[0].text).toMatch(/sentence = EXCLUDED\.sentence/);
+  });
+
+  it('raises unknown_item when the bill is not stored', async () => {
+    const db = sponsorDb({ bills: {} });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp(), sp({ politicianId: 'p2' })], { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 0, unknownItems: 1, dropped: 2 });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([expect.objectContaining({ cause: 'unknown_item', subject: 'Ord 2025-41' })]);
+  });
+
+  const disagrees = (stored: string[], read: string[]) => ({
+    cause: 'sponsor_disagrees', subject: 'Ord 2025-41', detail: expect.objectContaining({ reason: 'stored_differs', stored, read }),
+  });
+
+  it('a member missing from what was read: raises sponsor_disagrees with both sets and writes nothing', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(r).toEqual({ written: 0, unknownItems: 0, dropped: 1 });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p1:sponsor', 'p9:sponsor'], ['p1:sponsor'])]);
+  });
+
+  it('a member added by what was read: raises sponsor_disagrees and never adds them beside the stored one', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p9'] } });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(r.written).toBe(0);
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p9:sponsor'], ['p1:sponsor'])]);
+  });
+
+  it('a role changed (sponsor stored, cosponsor read): raises sponsor_disagrees and keeps the stored role', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1'] } });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp({ role: 'cosponsor' })], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(r.written).toBe(0);
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p1:sponsor'], ['p1:cosponsor'])]);
+  });
+
+  it('the same members in the same roles: upserts (refreshes sentence and document) and raises nothing', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p2:cosponsor'] } });
+    const r = await writeSponsorships(
+      db, 'place:1', 'run1', [sp(), sp({ politicianId: 'p2', role: 'cosponsor', nameAsPrinted: 'Jones' })],
+      { subjectsRead: new Set(['Ord 2025-41']) },
+    );
+    expect(r).toEqual({ written: 2, unknownItems: 0, dropped: 0 });
+    expect(exceptions(db)).toEqual([]);
+  });
+
+  it('compares stored rows even for a subject not in subjectsRead when it has rows to write', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([disagrees(['p9:sponsor'], ['p1:sponsor'])]);
+  });
+
+  it('does not compare a stored subject that was neither read nor written', async () => {
+    const db = sponsorDb({ bills: { 'Ord 2025-41': 'bill1', 'Ord 2025-42': 'bill2' }, stored: { bill2: ['p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(exceptions(db)).toEqual([]);
+    expect(db.calls.some((c: any) => /legislative_sponsorships/.test(c.text) && c.params[0] === 'bill2')).toBe(false);
+  });
+
+  it('never writes a subject with an open sponsor_disagrees exception', async () => {
+    const db = sponsorDb({ held: ['Ord 2025-41'] });
+    const r = await writeSponsorships(
+      db, 'place:1', 'run1', [sp(), sp({ label: 'Amendment 01', politicianId: 'p2' })],
+      { subjectsRead: new Set(['Ord 2025-41', 'Ord 2025-41 / Amendment 01']) },
+    );
+    expect(r).toEqual({ written: 1, unknownItems: 0, dropped: 1 });
+    expect(upserts(db).map((c: any) => c.params[2])).toEqual(['Amendment 01']);
+    expect(exceptions(db)).toEqual([]);
+    const q = db.calls.find((c: any) => /SELECT subject FROM essentials.local_record_exceptions/.test(c.text));
+    expect(q.text).toMatch(/cause = 'sponsor_disagrees' AND status = 'open'/);
+  });
+
+  it('never issues a DELETE', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(db.calls.some((c: any) => /\bDELETE\b/i.test(c.text))).toBe(false);
+  });
+
+  it('writes no row without a saved document and raises sponsor_unresolved', async () => {
+    const db = sponsorDb();
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp({ sourceDocumentId: null })], { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 0, unknownItems: 0, dropped: 1 });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([
+      expect.objectContaining({ cause: 'sponsor_unresolved', subject: 'Ord 2025-41', detail: expect.objectContaining({ reason: 'no_document' }) }),
+    ]);
+  });
+
+  it('raises sponsor_disagrees and writes neither row when one person appears twice for a subject', async () => {
+    const db = sponsorDb();
+    const r = await writeSponsorships(
+      db, 'place:1', 'run1',
+      [sp(), sp({ role: 'cosponsor' }), sp({ politicianId: 'p2', nameAsPrinted: 'Jones' })],
+      { subjectsRead: new Set() },
+    );
+    expect(r).toEqual({ written: 1, unknownItems: 0, dropped: 2 });
+    expect(upserts(db)).toHaveLength(1);
+    expect(upserts(db)[0].params).toContain('p2');
+    expect(exceptions(db)).toEqual([expect.objectContaining({ cause: 'sponsor_disagrees', subject: 'Ord 2025-41' })]);
+    expect(exceptions(db)[0].detail.people).toEqual([
+      { politicianId: 'p1', roles: ['sponsor', 'cosponsor'], sentences: ['Sponsored by Smith.', 'Sponsored by Smith.'] },
+    ]);
+  });
+
+  it('looks the bill up by source and refuses when two bills share a number', async () => {
+    const db = sponsorDb({ dupes: ['Ord 2025-41'] });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp(), sp({ politicianId: 'p2' })], { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 0, unknownItems: 1, dropped: 2 });
+    expect(upserts(db)).toHaveLength(0);
+    const lookup = db.calls.find((c: any) => /FROM essentials.legislative_bills/.test(c.text));
+    expect(lookup.text).toMatch(/source = 'onboard'/);
+    expect(lookup.text).toMatch(/LIMIT 2/);
+    expect(exceptions(db)).toEqual([
+      { cause: 'unknown_item', subject: 'Ord 2025-41', detail: { reason: 'ambiguous_bill', number: 'Ord 2025-41' } },
+    ]);
+  });
+
+  it('uses the amendment subject form', async () => {
+    const db = sponsorDb({ bills: { 'Ord 2025-41': 'bill1' } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp({ label: 'Amendment 01', sourceDocumentId: null })], { subjectsRead: new Set() });
+    expect(exceptions(db)[0].subject).toBe('Ord 2025-41 / Amendment 01');
   });
 });

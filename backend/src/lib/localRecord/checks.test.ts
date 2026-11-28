@@ -75,6 +75,7 @@ function feedItem(itemNumber: string, final: FeedItem['final']): FeedItem {
     synopsis: null,
     status: 's',
     final,
+    firstActionDate: null,
     pageUrl: 'https://example.invalid/item',
   };
 }

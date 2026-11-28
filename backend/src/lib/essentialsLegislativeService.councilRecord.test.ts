@@ -32,6 +32,7 @@ const TODAY = '2026-06-01';
 type Data = { terms?: any[]; voted?: any[]; pending?: any[]; confirmed?: any[] };
 function answer(d: Data) {
   mockQuery.mockImplementation(async (sql: string) => {
+    if (sql.includes('legislative_sponsorships')) return { rows: [] };
     if (sql.includes('office_terms')) return { rows: d.terms ?? [] };
     if (sql.includes('legislative_votes')) return { rows: d.voted ?? [] };
     if (sql.includes("state = 'confirmed'") && !sql.includes('legislative_votes')) return { rows: d.confirmed ?? [] };
