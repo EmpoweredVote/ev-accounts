@@ -1,0 +1,113 @@
+{
+  "batch_id": "2026-11-27-fremont-unified-board",
+  "sources": [
+    {
+      "url": "https://diannejonesforeverystudent.com/",
+      "source_kind": "own-site",
+      "politician_id": "b1f99ff3-8232-4da8-b240-fa36206d37ad",
+      "office_id": "7a095172-5e28-4101-9787-4022f0b33631",
+      "topic_keys": [
+        "education-school-budget"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://diannejonesforeverystudent.com/diannes-accomplishments",
+      "source_kind": "own-site",
+      "politician_id": "b1f99ff3-8232-4da8-b240-fa36206d37ad",
+      "office_id": "7a095172-5e28-4101-9787-4022f0b33631",
+      "topic_keys": [
+        "education-school-budget",
+        "education-curriculum"
+      ],
+      "instruments": [
+        "Measure M"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://diannejonesforeverystudent.com/about",
+      "source_kind": "own-site",
+      "politician_id": "b1f99ff3-8232-4da8-b240-fa36206d37ad",
+      "office_id": "7a095172-5e28-4101-9787-4022f0b33631",
+      "topic_keys": [
+        "education-equity-programs"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://thesmokesignal.org/2021/02/18/fremont-community-backlash-sparks-reinstatement-of-sro-program/",
+      "source_kind": "news",
+      "politician_id": "b1f99ff3-8232-4da8-b240-fa36206d37ad",
+      "office_id": "7a095172-5e28-4101-9787-4022f0b33631",
+      "topic_keys": [
+        "education-school-police"
+      ],
+      "instruments": [],
+      "pointer_passages": [
+        "with only FUSD Board Vice President Dianne Jones voting against restoring the SRO program"
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://thesmokesignal.org/2021/02/18/fremont-community-backlash-sparks-reinstatement-of-sro-program/",
+      "source_kind": "news",
+      "politician_id": "b6b167d5-0762-4913-b61a-c45c61f303ad",
+      "office_id": "95a508ab-74a3-41e3-ba84-8d4f4b8db58d",
+      "topic_keys": [
+        "education-school-police"
+      ],
+      "instruments": [],
+      "pointer_passages": [
+        "Regarding a new member’s vote to reinstate the program, FUSD School Board Trustee Vivek Prasad said"
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.vote4vp.com/",
+      "source_kind": "own-site",
+      "politician_id": "b6b167d5-0762-4913-b61a-c45c61f303ad",
+      "office_id": "95a508ab-74a3-41e3-ba84-8d4f4b8db58d",
+      "topic_keys": [
+        "education-curriculum",
+        "education-school-budget"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.vote4vp.com/news",
+      "source_kind": "own-site",
+      "politician_id": "b6b167d5-0762-4913-b61a-c45c61f303ad",
+      "office_id": "95a508ab-74a3-41e3-ba84-8d4f4b8db58d",
+      "topic_keys": [
+        "education-school-police",
+        "education-equity-programs",
+        "education-school-budget"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://thesmokesignal.org/2024/10/29/fusd-board-candidates-offer-similar-perspectives/",
+      "source_kind": "news",
+      "politician_id": "c5bafda7-20a1-49c6-9b80-e66a8d5ab5e4",
+      "office_id": "4144cce9-5341-46d1-ae49-726ae27bfaf8",
+      "topic_keys": [
+        "education-school-police"
+      ],
+      "instruments": [],
+      "pointer_passages": [
+        "A key priority for Nair is supporting student wellness by adding campus facilities and expanding school resource officer programs"
+      ],
+      "candidate_quotes": []
+    }
+  ]
+}

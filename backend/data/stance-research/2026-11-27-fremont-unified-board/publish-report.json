@@ -1,0 +1,466 @@
+[
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-curriculum",
+    "value": 0,
+    "blank_reason": "compound-partial",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://diannejonesforeverystudent.com/diannes-accomplishments"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-equity-programs",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://diannejonesforeverystudent.com/about"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-school-police",
+    "value": 0,
+    "blank_reason": "adjacent-chairs",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thesmokesignal.org/2021/02/18/fremont-community-backlash-sparks-reinstatement-of-sro-program/"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-school-budget",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "gate-medium"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://diannejonesforeverystudent.com/",
+      "https://diannejonesforeverystudent.com/diannes-accomplishments"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-school-police",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thesmokesignal.org/2024/10/29/fusd-board-candidates-offer-similar-perspectives/"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-curriculum",
+    "value": 0,
+    "blank_reason": "compound-partial",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.vote4vp.com/"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-equity-programs",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.vote4vp.com/news"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-school-police",
+    "value": 0,
+    "blank_reason": "adjacent-chairs",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://thesmokesignal.org/2021/02/18/fremont-community-backlash-sparks-reinstatement-of-sro-program/",
+      "https://www.vote4vp.com/news"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-school-budget",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.vote4vp.com/",
+      "https://www.vote4vp.com/news"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-curriculum",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-library-books",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-gender-identity",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-equity-programs",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-school-police",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-charter-authorization",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-school-budget",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Sharon Coco",
+    "topic_key": "education-ai",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-curriculum",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-library-books",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-gender-identity",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-equity-programs",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-school-police",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-charter-authorization",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-school-budget",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Larry Sweeney",
+    "topic_key": "education-ai",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-library-books",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-gender-identity",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-charter-authorization",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Dianne Jones",
+    "topic_key": "education-ai",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-curriculum",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-library-books",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-gender-identity",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-equity-programs",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-charter-authorization",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-school-budget",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rinu Nair",
+    "topic_key": "education-ai",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-library-books",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-gender-identity",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-charter-authorization",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Vivek Prasad",
+    "topic_key": "education-ai",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": []
+  }
+]
