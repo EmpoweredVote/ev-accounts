@@ -1,5 +1,6 @@
 // The writer: every write is an upsert, so a run can be repeated safely.
 import { externalVoteId, type Queryable } from './store.js';
+import { sponsorSubject, type Sponsorship } from './sponsorships.js';
 import { EXCEPTION_CAUSES } from './types.js';
 import type { CheckResult, CityScope, ExceptionCause, FeedItem, MinutesRollCall } from './types.js';
 
@@ -192,4 +193,111 @@ export async function recordException(
        detail = EXCLUDED.detail`,
     [city, runId, cause, subject, JSON.stringify(detail ?? {})],
   );
+}
+
+/**
+ * Write who sponsored and co-sponsored each item and amendment. Every row is an upsert on (bill, amendment, member).
+ * Nothing is ever deleted: a stored member the source no longer names stays, and is raised as sponsor_disagrees.
+ * Only subjects in `subjectsRead` are compared with what is stored.
+ */
+export async function writeSponsorships(
+  db: Queryable,
+  city: CityScope,
+  runId: string,
+  rows: Sponsorship[],
+  opts: { subjectsRead: Set<string> },
+): Promise<{ written: number; unknownItems: number; dropped: number }> {
+  let written = 0;
+  let unknownItems = 0;
+  let dropped = 0;
+
+  const bySubject = new Map<string, { itemNumber: string; label: string | null; rows: Sponsorship[] }>();
+  for (const r of rows) {
+    const subject = sponsorSubject(r.itemNumber, r.label);
+    const g = bySubject.get(subject);
+    if (g) g.rows.push(r);
+    else bySubject.set(subject, { itemNumber: r.itemNumber, label: r.label, rows: [r] });
+  }
+  // A subject read from the source that produced no rows is still compared with what is stored.
+  for (const subject of opts.subjectsRead) {
+    if (bySubject.has(subject)) continue;
+    const at = subject.indexOf(' / ');
+    bySubject.set(subject, {
+      itemNumber: at < 0 ? subject : subject.slice(0, at),
+      label: at < 0 ? null : subject.slice(at + 3),
+      rows: [],
+    });
+  }
+
+  for (const [subject, group] of bySubject) {
+    const bill = await db.query(
+      `SELECT id FROM essentials.legislative_bills WHERE jurisdiction = $1 AND number = $2 LIMIT 1`,
+      [city, group.itemNumber],
+    );
+    const billId: string | undefined = bill.rows[0]?.id;
+    if (!billId) {
+      unknownItems++;
+      dropped += group.rows.length;
+      await recordException(db, city, runId, 'unknown_item', subject, { itemNumber: group.itemNumber, reason: 'no_bill' });
+      continue;
+    }
+
+    const count = new Map<string, number>();
+    for (const r of group.rows) count.set(r.politicianId, (count.get(r.politicianId) ?? 0) + 1);
+
+    for (const r of group.rows) {
+      if ((count.get(r.politicianId) ?? 0) > 1) continue; // raised once below, per person
+      if (!r.sourceDocumentId) {
+        dropped++;
+        await recordException(db, city, runId, 'sponsor_unresolved', subject, {
+          reason: 'no_document',
+          politicianId: r.politicianId,
+          nameAsPrinted: r.nameAsPrinted,
+          sourceKind: r.sourceKind,
+        });
+        continue;
+      }
+      await db.query(
+        `INSERT INTO essentials.legislative_sponsorships AS s
+           (id, city_scope, bill_id, amendment_label, politician_id, role, name_as_printed, sentence, source_kind,
+            source_document_id)
+         VALUES (gen_random_uuid(), $1, $2, $3, $4, $5, $6, $7, $8, $9)
+         ON CONFLICT (bill_id, coalesce(amendment_label, ''), politician_id) DO UPDATE SET
+           role = EXCLUDED.role,
+           name_as_printed = EXCLUDED.name_as_printed,
+           sentence = EXCLUDED.sentence,
+           source_kind = EXCLUDED.source_kind,
+           source_document_id = EXCLUDED.source_document_id,
+           updated_at = now()`,
+        [city, billId, r.label, r.politicianId, r.role, r.nameAsPrinted, r.sentence, r.sourceKind, r.sourceDocumentId],
+      );
+      written++;
+    }
+
+    // One sponsor_disagrees row per subject (its key is city, cause, subject), so both findings share one detail.
+    let disagree: Record<string, unknown> | null = null;
+    const twice = [...count].filter(([, n]) => n > 1).map(([id]) => id);
+    if (twice.length > 0) {
+      dropped += group.rows.filter((r) => twice.includes(r.politicianId)).length;
+      disagree = {
+        reason: 'same_person_twice',
+        people: twice.map((id) => {
+          const mine = group.rows.filter((r) => r.politicianId === id);
+          return { politicianId: id, roles: mine.map((r) => r.role), sentences: mine.map((r) => r.sentence) };
+        }),
+      };
+    }
+
+    if (opts.subjectsRead.has(subject)) {
+      const stored = await db.query(
+        `SELECT politician_id FROM essentials.legislative_sponsorships
+         WHERE bill_id = $1 AND coalesce(amendment_label, '') = coalesce($2, '')`,
+        [billId, group.label],
+      );
+      const missing = (stored.rows as { politician_id: string }[]).map((x) => x.politician_id).filter((id) => !count.has(id));
+      if (missing.length > 0) disagree = { ...disagree, stored: missing, read: [...count.keys()] };
+    }
+    if (disagree) await recordException(db, city, runId, 'sponsor_disagrees', subject, disagree);
+  }
+  return { written, unknownItems, dropped };
 }

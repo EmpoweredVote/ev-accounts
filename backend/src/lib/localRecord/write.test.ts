@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { recordException, writeConfirmed, writeFeed } from './write.js';
+import { recordException, writeConfirmed, writeFeed, writeSponsorships } from './write.js';
+import type { Sponsorship } from './sponsorships.js';
 import { EXCEPTION_CAUSES } from './types.js';
 import type { FeedItem, MinutesRollCall } from './types.js';
 
@@ -205,5 +206,128 @@ describe('recordException', () => {
     const db = recordingDb();
     for (const cause of EXCEPTION_CAUSES) await recordException(db, 'place:1', 'r', cause, 's', 'd');
     await expect(recordException(db, 'place:1', 'r', 'nope' as any, 's', 'd')).rejects.toThrow();
+  });
+});
+
+describe('writeSponsorships', () => {
+  const sp = (over: Partial<Sponsorship> = {}): Sponsorship => ({
+    itemNumber: 'Ord 2025-41',
+    label: null,
+    politicianId: 'p1',
+    role: 'sponsor',
+    nameAsPrinted: 'Smith',
+    sentence: 'Sponsored by Smith.',
+    sourceKind: 'legislation_feed',
+    sourceDocumentId: 'doc1',
+    ...over,
+  });
+
+  /** Routes by statement: bill lookup, stored-sponsor read, everything else answers with one row. */
+  function sponsorDb(opts: { bills?: Record<string, string>; stored?: Record<string, string[]> } = {}) {
+    const bills = opts.bills ?? { 'Ord 2025-41': 'bill1' };
+    const stored = opts.stored ?? {};
+    const calls: { text: string; params: unknown[] }[] = [];
+    return {
+      calls,
+      async query(text: string, params: unknown[] = []) {
+        calls.push({ text, params });
+        if (/FROM essentials.legislative_bills/.test(text)) {
+          const id = bills[params[1] as string];
+          return { rows: id ? [{ id }] : [], rowCount: id ? 1 : 0 };
+        }
+        if (/FROM essentials.legislative_sponsorships/.test(text)) {
+          const rows = (stored[params[0] as string] ?? []).map((politician_id) => ({ politician_id }));
+          return { rows, rowCount: rows.length };
+        }
+        return { rows: [{ id: 'row1' }], rowCount: 1 };
+      },
+    } as any;
+  }
+  const upserts = (db: any) => db.calls.filter((c: any) => /INSERT INTO essentials.legislative_sponsorships/.test(c.text));
+  const exceptions = (db: any) =>
+    db.calls.filter((c: any) => /local_record_exceptions/.test(c.text)).map((c: any) => ({ cause: c.params[2], subject: c.params[3], detail: JSON.parse(c.params[4]) }));
+
+  it('inserts one row per member and amendment', async () => {
+    const db = sponsorDb();
+    const rows = [
+      sp(),
+      sp({ politicianId: 'p2', role: 'cosponsor', nameAsPrinted: 'Jones' }),
+      sp({ label: 'Amendment 01', politicianId: 'p2', role: 'sponsor' }),
+    ];
+    const r = await writeSponsorships(db, 'place:1', 'run1', rows, { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 3, unknownItems: 0, dropped: 0 });
+    expect(upserts(db)).toHaveLength(3);
+    expect(upserts(db).map((c: any) => c.params)).toContainEqual(
+      expect.arrayContaining(['place:1', 'bill1', 'Amendment 01', 'p2', 'sponsor', 'doc1']),
+    );
+  });
+
+  it('upserts the same row twice without a duplicate', async () => {
+    const db = sponsorDb();
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    const u = upserts(db);
+    expect(u).toHaveLength(2);
+    expect(u[0].text).toBe(u[1].text);
+    expect(u[0].text).toMatch(/ON CONFLICT \(bill_id, coalesce\(amendment_label, ''\), politician_id\) DO UPDATE/);
+    expect(u[0].text).toMatch(/updated_at = now\(\)/);
+    expect(u[0].text).toMatch(/sentence = EXCLUDED\.sentence/);
+  });
+
+  it('raises unknown_item when the bill is not stored', async () => {
+    const db = sponsorDb({ bills: {} });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp(), sp({ politicianId: 'p2' })], { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 0, unknownItems: 1, dropped: 2 });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([expect.objectContaining({ cause: 'unknown_item', subject: 'Ord 2025-41' })]);
+  });
+
+  it('keeps a stored sponsor the source stops naming and raises sponsor_disagrees', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(exceptions(db)).toEqual([
+      { cause: 'sponsor_disagrees', subject: 'Ord 2025-41', detail: { stored: ['p9'], read: ['p1'] } },
+    ]);
+  });
+
+  it('does not compare a subject that was not read', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set() });
+    expect(exceptions(db)).toEqual([]);
+  });
+
+  it('never issues a DELETE', async () => {
+    const db = sponsorDb({ stored: { bill1: ['p1', 'p9'] } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp()], { subjectsRead: new Set(['Ord 2025-41']) });
+    expect(db.calls.some((c: any) => /\bDELETE\b/i.test(c.text))).toBe(false);
+  });
+
+  it('writes no row without a saved document and raises sponsor_unresolved', async () => {
+    const db = sponsorDb();
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp({ sourceDocumentId: null })], { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 0, unknownItems: 0, dropped: 1 });
+    expect(upserts(db)).toHaveLength(0);
+    expect(exceptions(db)).toEqual([
+      expect.objectContaining({ cause: 'sponsor_unresolved', subject: 'Ord 2025-41', detail: expect.objectContaining({ reason: 'no_document' }) }),
+    ]);
+  });
+
+  it('raises sponsor_disagrees and writes neither row when one person appears twice for a subject', async () => {
+    const db = sponsorDb();
+    const r = await writeSponsorships(
+      db, 'place:1', 'run1',
+      [sp(), sp({ role: 'cosponsor' }), sp({ politicianId: 'p2', nameAsPrinted: 'Jones' })],
+      { subjectsRead: new Set() },
+    );
+    expect(r).toEqual({ written: 1, unknownItems: 0, dropped: 2 });
+    expect(upserts(db)).toHaveLength(1);
+    expect(upserts(db)[0].params).toContain('p2');
+    expect(exceptions(db)).toEqual([expect.objectContaining({ cause: 'sponsor_disagrees', subject: 'Ord 2025-41' })]);
+  });
+
+  it('uses the amendment subject form', async () => {
+    const db = sponsorDb({ bills: { 'Ord 2025-41': 'bill1' } });
+    await writeSponsorships(db, 'place:1', 'run1', [sp({ label: 'Amendment 01', sourceDocumentId: null })], { subjectsRead: new Set() });
+    expect(exceptions(db)[0].subject).toBe('Ord 2025-41 / Amendment 01');
   });
 });
