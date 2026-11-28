@@ -125,7 +125,7 @@ describe('writeConfirmed: replacing and promoting', () => {
   }
   const finalItem: FeedItem = {
     feedId: 7, type: 'Resolution', number: '2026-09', itemNumber: 'Res 2026-09', title: 't', synopsis: null,
-    status: 'Adopted', pageUrl: 'https://x/7',
+    status: 'Adopted', firstActionDate: null, pageUrl: 'https://x/7',
     final: { date: '2026-10-07', outcome: 'passed', tally: { yes: 2, no: 1, abstain: 0 } },
   };
 
@@ -153,7 +153,7 @@ describe('writeConfirmed: replacing and promoting', () => {
 describe('writeFeed', () => {
   const item = (over: Partial<FeedItem>): FeedItem => ({
     feedId: 7, type: 'Resolution', number: '2026-09', itemNumber: 'Res 2026-09', title: 't', synopsis: null,
-    status: 'Adopted', final: null, pageUrl: 'https://x/7', ...over,
+    status: 'Adopted', final: null, firstActionDate: null, pageUrl: 'https://x/7', ...over,
   });
 
   it('upserts sessions and bills, and a pending roll call only for finals', async () => {
