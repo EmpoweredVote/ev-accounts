@@ -139,3 +139,18 @@ export async function fetchJson(url: string): Promise<unknown> {
   if (!res.ok) throw new Error(`GET ${url} failed: ${res.status}`);
   return res.json();
 }
+
+/** Like fetchJson, but also returns the exact bytes the city served (kept as the source document). */
+export async function fetchJsonWithBytes(url: string): Promise<{ json: unknown; bytes: Uint8Array }> {
+  const res = await fetch(url, {
+    headers: {
+      'User-Agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36',
+      'Accept-Encoding': 'gzip',
+      Accept: 'application/json',
+    },
+  });
+  if (!res.ok) throw new Error(`GET ${url} failed: ${res.status}`);
+  const bytes = new Uint8Array(await res.arrayBuffer());
+  return { json: JSON.parse(new TextDecoder().decode(bytes)), bytes };
+}

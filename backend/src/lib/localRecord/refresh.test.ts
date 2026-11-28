@@ -5,7 +5,7 @@ import type { NameFile, TermSpan } from './names.js';
 import { parseLegislationFeed } from './onboard/feed.js';
 import { parseMinutes } from './onboard/minutes.js';
 import { fallbackDocument, governingDocuments, parseCityConfigs, loadCouncilTerms, makeStorage, runLocalRecordJob, runLocalRecordRefresh, type CityConfig, type Connection, type RefreshDeps } from './refresh.js';
-import { externalVoteId } from './store.js';
+import { externalVoteId, sha256Hex } from './store.js';
 
 const fx = (f: string) => new URL(`./onboard/__fixtures__/${f}`, import.meta.url);
 const legislation: any[] = JSON.parse(readFileSync(fx('legislation-2026.json'), 'utf8'));
@@ -64,6 +64,8 @@ function stubDb(handlers: Handler[] = []) {
     [/SELECT id FROM essentials\.legislative_bills/, () => [{ id: 'bill1' }]],
     // Sponsors already stored for an item or amendment.
     [/SELECT politician_id FROM essentials\.legislative_sponsorships/, () => []],
+    // Open sponsor exceptions (read before and after the sponsorship write).
+    [/SELECT cause, subject, detail FROM essentials\.local_record_exceptions/, () => []],
     [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => []],
     [/INSERT INTO essentials\.local_record_source_documents/, () => [{ id: 'doc-new' }]],
     // Item numbers of the city's bills (earlier runs wrote one per feed item).
@@ -575,9 +577,9 @@ describe('R8: a document that prints another meeting date is not read for this m
 });
 
 describe('council sponsorships', () => {
-  const MOTION = 'Piedmont-Smith moved and it was seconded to adopt Amendment 01 to Ordinance 2026-28.';
+  const MOTION = 'Piedmont-Smith moved and it was seconded to adopt Amendment 77 to Ordinance 2026-28.';
   const withSynopsis = (sentence: string, motion = MOTION) =>
-    `${memoText}\n\n${motion}\n\nAmendment 01 Synopsis: ${sentence}\n`;
+    `${memoText}\n\n${motion}\n\nAmendment 77 Synopsis: ${sentence}\n`;
   const memoWith = (text: string) => ({ pdfText: async () => text });
   const sponsorInserts = (db: ReturnType<typeof stubDb>) => sql(db, /INTO essentials\.legislative_sponsorships/);
   const exceptions = (db: ReturnType<typeof stubDb>) => sql(db, /INSERT INTO essentials\.local_record_exceptions/).map((c) => c.params);
@@ -596,7 +598,7 @@ describe('council sponsorships', () => {
   it('writes sponsorships found in a new memorandum, proved from the saved document', async () => {
     const db = stubDb();
     const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(withSynopsis(GOOD))));
-    const row = sponsorInserts(db).find((c) => c.params.includes('Amendment 01'));
+    const row = sponsorInserts(db).find((c) => c.params.includes('Amendment 77'));
     expect(row).toBeDefined();
     expect(row!.params).toEqual(expect.arrayContaining(['p-piedmont-smith', 'sponsor', 'memorandum', 'doc-new']));
     expect(summary.cities[0].sponsorshipsWritten).toBeGreaterThan(0);
@@ -608,17 +610,17 @@ describe('council sponsorships', () => {
     await expect(
       runLocalRecordJob(deps(db, memoWith(withSynopsis('This amendment is sponsored by Cm. Nobodyknown. It moves a date.')))),
     ).rejects.toThrow(/sponsor_unresolved/);
-    expect(exceptions(db).some((p) => p[2] === 'sponsor_unresolved' && p[3] === 'Ord 2026-28 / Amendment 01')).toBe(true);
+    expect(exceptions(db).some((p) => p[2] === 'sponsor_unresolved' && p[3] === 'Ord 2026-28 / Amendment 77')).toBe(true);
   });
 
   it('raises sponsor_unresolved (no_item) for a synopsis no motion introduced, and writes nothing for it', async () => {
     const db = stubDb();
-    const text = `Amendment 01 Synopsis: ${GOOD}\n\n${memoText}`;
+    const text = `Amendment 77 Synopsis: ${GOOD}\n\n${memoText}`;
     const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(text)));
     const ex = exceptions(db).find((p) => p[2] === 'sponsor_unresolved');
-    expect(ex?.[3]).toContain('/ Amendment 01');
+    expect(ex?.[3]).toContain('/ Amendment 77');
     expect(String(ex?.[4])).toContain('no_item');
-    expect(sponsorInserts(db).some((c) => c.params.includes('Amendment 01'))).toBe(false);
+    expect(sponsorInserts(db).some((c) => c.params.includes('Amendment 77'))).toBe(false);
     expect(summary.cities[0].exceptions.sponsor_unresolved).toBe(1);
   });
 
@@ -628,10 +630,10 @@ describe('council sponsorships', () => {
     const db = stubDb([
       [/SELECT politician_id FROM essentials\.legislative_sponsorships/, () => [{ politician_id: 'p-ruff' }]],
       [/SELECT cause, subject, detail FROM essentials\.local_record_exceptions/, () =>
-        ++reads === 1 ? [] : [{ cause: 'sponsor_disagrees', subject: 'Ord 2026-28 / Amendment 01', detail: { stored: ['p-ruff'] } }]],
+        ++reads === 1 ? [] : [{ cause: 'sponsor_disagrees', subject: 'Ord 2026-28 / Amendment 77', detail: { stored: ['p-ruff'] } }]],
     ]);
     const summary = await runLocalRecordRefresh({ dryRun: false, now: NOW }, deps(db, memoWith(withSynopsis(GOOD))));
-    expect(exceptions(db).some((p) => p[2] === 'sponsor_disagrees' && p[3] === 'Ord 2026-28 / Amendment 01')).toBe(true);
+    expect(exceptions(db).some((p) => p[2] === 'sponsor_disagrees' && p[3] === 'Ord 2026-28 / Amendment 77')).toBe(true);
     expect(summary.cities[0].exceptions.sponsor_disagrees).toBeGreaterThan(0);
   });
 
@@ -647,5 +649,26 @@ describe('council sponsorships', () => {
     }
     expect(sponsorInserts(db).length).toBeGreaterThan(0);
     expect(verbs(db)).toEqual(['BEGIN', 'ROLLBACK']);
+  });
+
+  it('an unchanged feed is neither uploaded nor inserted again (same url and bytes are found)', async () => {
+    const db = stubDb([
+      [/SELECT id, superseded_by FROM essentials\.local_record_source_documents/, () => [{ id: 'doc-feed', superseded_by: null }]],
+    ]);
+    const d = deps(db);
+    const storage = d.storage as ReturnType<typeof stubStorage>;
+    await runLocalRecordRefresh({ dryRun: false, now: NOW }, d);
+    expect(sql(db, /INTO essentials\.local_record_source_documents/)).toHaveLength(0);
+    expect(storage.uploads).toHaveLength(0);
+  });
+
+  it('saves the bytes the city served for a feed year, not a re-encoded copy', async () => {
+    const db = stubDb();
+    const served = new TextEncoder().encode('[ ]'); // not what JSON.stringify([]) would give
+    const d = deps(db, { fetchFeed: async (url: string) => ({ json: /year=2025/.test(url) ? [] : legislation, bytes: served }) });
+    const storage = d.storage as ReturnType<typeof stubStorage>;
+    await runLocalRecordRefresh({ dryRun: false, now: NOW }, d);
+    expect(storage.uploads.filter((u) => u.includes('legislation_feed')).every((u) => u.includes(sha256Hex(served)))).toBe(true);
+    expect(storage.uploads.some((u) => u.includes('legislation_feed'))).toBe(true);
   });
 });

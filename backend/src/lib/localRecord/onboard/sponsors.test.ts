@@ -185,13 +185,13 @@ describe('tying a document sentence to its item', () => {
           'sponsored by Cm. Stosberg. It removes a use.',
       ),
     ).toEqual([['Reasonable Condition 4', 'Ord 2026-06']]));
-  it('does not take a cross-reference in prose for the item', () =>
+  it('gives no item when another item is cited between the motion and the heading', () =>
     expect(
       items(
         'Daily moved and Zulich seconded that Ordinance 2026-06 be adopted. Condition text: passed as Ordinance 2026-02 on ' +
           'January 14, 2026. Reasonable Condition 11 Synopsis: This reasonable condition is sponsored by Cm. Flaherty. It lowers rents.',
       ),
-    ).toEqual([['Reasonable Condition 11', 'Ord 2026-06']]));
+    ).toEqual([['Reasonable Condition 11', null]]));
   it('does not take a mention in a synopsis ("amends Ordinance 21-03") for a heading', () =>
     expect(
       items(
@@ -216,4 +216,42 @@ describe('tying a document sentence to its item', () => {
         'The clerk noted that Ordinance 21-03 was postponed. Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds.',
       ),
     ).toEqual([['Amendment 01', null]]));
+
+  const OPEN = 'Daily moved and Zulich seconded that Ordinance 2026-02 be adopted. ';
+  const SYN = 'Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds.';
+  it('A: a label mentioned in discussion (no moved/seconded) does not tie to that item', () =>
+    expect(
+      items(`${OPEN}Daily moved and Zulich seconded that Ordinance 2026-06 be adopted. Rollo said this resembled Amendment 01 to Ordinance 2025-16. ${SYN}`),
+    ).toEqual([['Amendment 01', null]]));
+  it('B: "as amended" in the opening motion still ties to that item', () =>
+    expect(items(`${OPEN}Daily moved and Zulich seconded that Ordinance 2026-06, as amended, be adopted. ${SYN}`)).toEqual([['Amendment 01', 'Ord 2026-06']]));
+  it('C: "Ordinance No. 2026-06" ties to that item', () =>
+    expect(items(`${OPEN}Daily moved and Zulich seconded that Ordinance No. 2026-06 be adopted. ${SYN}`)).toEqual([['Amendment 01', 'Ord 2026-06']]));
+  it('D: "to approve Resolution 2026-06" ties to that item', () =>
+    expect(items(`${OPEN}Daily moved and Zulich seconded to approve Resolution 2026-06. ${SYN}`)).toEqual([['Amendment 01', 'Res 2026-06']]));
+  it('E: the label\'s motion printed after the synopsis, on another item, gives no item', () =>
+    expect(items(`${OPEN}${SYN} Volan moved and it was seconded to adopt Amendment 01 to Ordinance 2026-06.`)).toEqual([['Amendment 01', null]]));
+
+  it('a roll call on another item is not a contradiction when another synopsis of the document is tied to that item', () => {
+    const text =
+      'Daily moved and Zulich seconded to adopt Amendment 01 to Ordinance 2026-02. Amendment 01 Synopsis: This amendment is sponsored by Cm. Ruff. It moves funds. ' +
+      'Daily moved and Zulich seconded to adopt Amendment 01 to Ordinance 2026-09. Amendment 01 Synopsis: This amendment is sponsored by Cm. Rollo. It moves dates.';
+    expect(sponsorSentencesWithItems(text, [{ itemNumber: 'Ord 2026-09', question: 'Amendment 01' }]).map((s) => s.itemNumber)).toEqual(['Ord 2026-02', 'Ord 2026-09']);
+  });
+  it('a roll call carrying the label on another item, and none on the tied item, gives no item', () => {
+    const text = `${OPEN}${SYN}`;
+    expect(sponsorSentencesWithItems(text, [{ itemNumber: 'Ord 2026-06', question: 'Amendment 01' }]).map((s) => s.itemNumber)).toEqual([null]);
+    expect(sponsorSentencesWithItems(text, [{ itemNumber: 'Ord 2026-02', question: 'Amendment 01' }]).map((s) => s.itemNumber)).toEqual(['Ord 2026-02']);
+    expect(sponsorSentencesWithItems(text, []).map((s) => s.itemNumber)).toEqual(['Ord 2026-02']);
+  });
+});
+
+describe('feed synopsis allow-list', () => {
+  it('keeps only sentences that open "This Ordinance/Resolution"', () => {
+    const names = (t: string) => itemSponsorSentencesFromSynopsis(t).map((s) => s.names.map((n) => n.printed));
+    expect(names('This Ordinance, sponsored by Councilmember Ruff, changes rents.')).toEqual([['Ruff']]);
+    expect(names('This Appropriation Ordinance, sponsored by Councilmember Ruff, moves funds.')).toEqual([['Ruff']]);
+    expect(names('Councilmember Daily, sponsored by Councilmember Ruff, spoke.')).toEqual([]);
+    expect(names('The amendment, sponsored by Councilmember Ruff, added a date.')).toEqual([]);
+  });
 });

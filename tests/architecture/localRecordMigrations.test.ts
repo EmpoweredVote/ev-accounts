@@ -27,6 +27,8 @@ const VOTES = 'CA_0429_local_record_votes_columns.sql';
 const IDX = 'CA_0431_local_record_votes_roll_call_index.sql';
 const VALIDATE = 'CA_0430_local_record_votes_validate_fks.sql';
 const BUCKET = 'CA_0432_local_record_storage_bucket.sql';
+/** The newest migration that sets the cause CHECK (it replaces the one in CA_0428). */
+const EXC_CAUSES = 'CA_0436_local_record_sponsor_causes.sql';
 const ALL = [DOCS, ROLLS, EXC, VOTES, IDX, VALIDATE, BUCKET];
 
 describe('council-record migrations', () => {
@@ -82,7 +84,7 @@ describe('council-record migrations', () => {
   });
 
   it('exceptions cause CHECK list equals EXCEPTION_CAUSES exactly', () => {
-    const m = code(EXC).match(/check \(cause in \(([^)]*)\)\)/i);
+    const m = code(EXC_CAUSES).match(/check \(cause in \(([^)]*)\)\)/i);
     expect(m, 'cause CHECK present').not.toBeNull();
     const listed = [...m![1].matchAll(/'([^']+)'/g)].map((x) => x[1]);
     expect([...listed].sort()).toEqual([...EXCEPTION_CAUSES].sort());

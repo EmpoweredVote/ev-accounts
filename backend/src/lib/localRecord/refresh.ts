@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { checkRollCall, type CheckContext } from './checks.js';
 import type { NameFile, TermSpan } from './names.js';
-import { fetchJson, listVoteDocuments, parseLegislationFeed, type VoteDocument } from './onboard/feed.js';
+import { fetchJson, fetchJsonWithBytes, listVoteDocuments, parseLegislationFeed, type VoteDocument } from './onboard/feed.js';
 import { minutesTextFromPdf, parseMinutes, printedMeetingDate, stripMargin } from './onboard/minutes.js';
 import { itemSponsorSentencesFromSynopsis, sponsorSentencesWithItems } from './onboard/sponsors.js';
 import { resolveSponsorships, sponsorSubject, type SponsorFinding } from './sponsorships.js';
@@ -60,6 +60,8 @@ export interface RefreshDeps {
   connect(): Promise<Connection>;
   storage: StorageLike & { download(path: string): Promise<Uint8Array> };
   fetchJson(url: string): Promise<unknown>;
+  /** The legislation feed as served: parsed, and the exact bytes (saved as the source document). Optional; without it the parsed JSON is saved. */
+  fetchFeed?(url: string): Promise<{ json: unknown; bytes: Uint8Array }>;
   fetchBytes(url: string): Promise<Uint8Array>;
   /** Layout text of a vote document's PDF. */
   pdfText(bytes: Uint8Array): Promise<string>;
@@ -138,6 +140,7 @@ export async function productionDeps(): Promise<RefreshDeps> {
     },
     storage: makeStorage(supabaseAdmin),
     fetchJson,
+    fetchFeed: fetchJsonWithBytes,
     fetchBytes,
     pdfText: minutesTextFromPdf,
     loadCities: () =>
@@ -284,19 +287,20 @@ interface CityRun {
 
 /** The legislation and meetings feeds for this year and last, or for the given years (the first load reads them all). */
 export async function readFeeds(
-  city: CityConfig, now: Date, deps: Pick<RefreshDeps, 'fetchJson'>, years?: number[],
+  city: CityConfig, now: Date, deps: Pick<RefreshDeps, 'fetchJson' | 'fetchFeed'>, years?: number[],
 ) {
   const year = now.getUTCFullYear();
   const items = new Map<number, FeedItem>();
   const docs = new Map<number, VoteDocument>();
-  const feeds: { year: number; url: string; json: unknown }[] = [];
-  /** The feed year each item was read from (the later year read wins when an item is in two). */
+  const feeds: { year: number; url: string; bytes: Uint8Array }[] = [];
+  /** The feed year each item was read from. The year read last wins when an item is in two (by default that is last year). */
   const itemYear = new Map<number, number>();
   for (const y of years ?? [year, year - 1]) {
     const root = `${city.base}/onboard/committees/${city.committeeId}`;
     const url = `${root}/legislation?year=${y};format=json`;
-    const json = await deps.fetchJson(url);
-    feeds.push({ year: y, url, json });
+    const got = deps.fetchFeed ? await deps.fetchFeed(url) : null;
+    const json = got ? got.json : await deps.fetchJson(url);
+    feeds.push({ year: y, url, bytes: got ? got.bytes : new TextEncoder().encode(JSON.stringify(json)) });
     for (const it of parseLegislationFeed(json, city.base)) {
       items.set(it.feedId, it);
       itemYear.set(it.feedId, y);
@@ -378,7 +382,7 @@ async function runCity(
   for (const f of feeds) {
     const saved = await saveDocument(db, deps.storage, {
       city: city.scope, kind: 'legislation_feed', url: f.url, cityFileId: null,
-      bytes: new TextEncoder().encode(JSON.stringify(f.json)),
+      bytes: f.bytes,
     });
     feedDocumentId.set(f.year, saved.id);
   }
@@ -467,7 +471,7 @@ async function runCity(
     }
 
     // Sponsors named in this document's amendment and condition synopses, each tied to the item it was moved on.
-    for (const s of sponsorSentencesWithItems(stripMargin(text))) {
+    for (const s of sponsorSentencesWithItems(stripMargin(text), parse.rollCalls)) {
       if (!s.itemNumber) {
         await raise('sponsor_unresolved', `${d} document ${doc.fileId} / ${s.label}`, { reason: 'no_item', sentence: s.sentence, url: doc.url });
         continue;
@@ -599,7 +603,7 @@ async function runCity(
       [city.scope, SPONSOR_CAUSES],
     );
     return new Map<string, string>(
-      (r.rows as any[]).filter((x) => typeof x.cause === 'string').map((x) => [`${x.cause}\u0000${x.subject}`, canon(x.detail)]),
+      (r.rows as any[]).map((x) => [`${x.cause}\u0000${x.subject}`, canon(x.detail)]),
     );
   };
   const beforeWrite = await openNow();

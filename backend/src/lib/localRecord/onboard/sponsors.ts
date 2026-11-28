@@ -179,14 +179,16 @@ export function sponsorSentencesFromSynopsis(synopsis: string): SponsorSentence[
 
 const OTHER_ITEM = /^(?:Ordinance|Resolution|Appropriation Ordinance|Amendment|Reasonable Condition|RC)\s+(?:No\.\s*)?\d/i;
 const ABOUT_THIS_ITEM = /^(?:This|The)\s+(?:amendment|reasonable condition|RC)\b/i;
+/** A sentence that opens "This Ordinance", "The Resolution", "This Appropriation Ordinance": about the item itself. */
+const ABOUT_THE_ITEM = /^(?:This|The)\s+(?:Appropriation\s+)?(?:Ordinance|Resolution)\b/i;
 
 /**
- * The sponsor sentences of a feed synopsis that name the item's own sponsors. A sentence about an amendment or a
- * condition ("The amendment, sponsored by Councilmember X, added ...") names that amendment's sponsor, not the
- * item's, so it is left out.
+ * The sponsor sentences of a feed synopsis that name the item's own sponsors. Allow-list: only a sentence that opens
+ * "This Ordinance ...", "This Resolution ..." (or "The ..."). A sentence about an amendment or a condition, or any
+ * other wording, is left out: fewer sponsors is better than a wrong one.
  */
 export function itemSponsorSentencesFromSynopsis(synopsis: string): SponsorSentence[] {
-  return sponsorSentencesFromSynopsis(synopsis).filter((s) => !ABOUT_THIS_ITEM.test(s.sentence) && !OTHER_ITEM.test(s.sentence));
+  return sponsorSentencesFromSynopsis(synopsis).filter((s) => ABOUT_THE_ITEM.test(s.sentence));
 }
 const HEADING = /\b(Amendment|Reasonable Condition|RC)\s+#?([0-9Oo]+)(?:\s+\(?revised\)?)?\s+Synopsis\s*:/gi;
 
@@ -224,17 +226,24 @@ export function sponsorSentencesFromDocument(text: string): SponsorSentence[] {
 }
 
 // Which item a document sentence belongs to. A synopsis heading ("Amendment 01 Synopsis:") never names its item, so
-// the item is the nearest one the document introduced before it. Only two shapes count, both seen in the Bloomington
-// minutes and memorandums (checked on 263 cached files). A bare "Ordinance 21-03" anywhere in the prose does not:
-// a synopsis or a note often cites another item ("Passed as Ordinance 2026-02 on January 14").
-//   1. The motion for this very label: "... moved ... to adopt Amendment 01 to Ordinance 22-13." or
-//      "... that Amendment 04 to Ordinance 2025-19 be adopted." The label must match the sentence's label.
-//   2. The motion that opens an item: "... moved ... that Ordinance 2026-06 be adopted / read / introduced" or
-//      "... moved ... to adopt / introduce Ordinance 24-05".
-// The nearest of the two before the heading wins. None before it means no item: the caller raises an exception.
-const ITEM_RE = String.raw`(Appropriation Ordinance|Ordinance|Resolution)\s+-?(\d{2,4}-\s*\d{1,3})`;
+// the item is the one a motion introduced just before it. Only strong evidence ties; anything else gives null and the
+// caller raises sponsor_unresolved (no_item). Checked on 263 cached Bloomington files. A bare "Ordinance 21-03" in
+// prose never counts: a synopsis or a note often cites another item ("Passed as Ordinance 2026-02 on January 14").
+//   1. Label motion: "... moved/seconded ... Amendment 01 to Ordinance 22-13" (must say moved or seconded, and the
+//      label must match the sentence's label).
+//   2. Item-opening motion: "... moved/seconded that Ordinance 2026-06 [as amended] be adopted / read / introduced /
+//      approved" or "... to adopt / introduce / approve Ordinance 24-05".
+// The nearest of the two before the heading wins, unless:
+//   - another item number appears between that motion and the heading (the text moved on), or
+//   - the chosen motion is of kind 2 and the same label's motion naming a different item is printed after the heading.
+// The caller may add a last check against the document's own roll calls (see `rollCalls`).
+//
+// ITEM_RE: "No." is optional ("Ordinance No. 2026-06"). The "-?" before the number is for a stray hyphen the real
+// minutes print ("Ordinance -21-06").
+const ITEM_RE = String.raw`(Appropriation Ordinance|Ordinance|Resolution)\s+(?:No\.?\s*)?-?(\d{2,4}-\s*\d{1,3})`;
+const ANY_ITEM = new RegExp(ITEM_RE, 'gi');
 const OPENS_ITEM = new RegExp(
-  String.raw`\b(?:moved|seconded)\b[^.]{0,120}?(?:\bthat\s+${ITEM_RE}\s+be\s+(?:read|adopted|introduced)\b|\bto\s+(?:adopt|introduce)\s+${ITEM_RE})`,
+  String.raw`\b(?:moved|seconded)\b[^.]{0,120}?(?:\bthat\s+${ITEM_RE}(?:,?\s+as\s+amended,?)?\s+be\s+(?:read|adopted|introduced|approved)\b|\bto\s+(?:adopt|introduce|approve)\s+${ITEM_RE})`,
   'gi',
 );
 
@@ -242,24 +251,44 @@ function labelMotion(label: string): RegExp {
   const m = /^(Amendment|Reasonable Condition) (\d+)$/.exec(label)!;
   const n = Number(m[2]);
   const words = m[1] === 'Amendment' ? 'Amendment|Am' : 'Reasonable Conditions?|RCs?';
-  return new RegExp(String.raw`(?<![0-9A-Za-z])(?:${words})\s+#?[0Oo]*${n}(?![0-9])[^.]{0,40}?\bto\s+${ITEM_RE}`, 'gi');
+  return new RegExp(
+    String.raw`\b(?:moved|seconded)\b[^.]{0,120}?(?<![0-9A-Za-z])(?:${words})\s+#?[0Oo]*${n}(?![0-9])[^.]{0,40}?\bto\s+${ITEM_RE}`,
+    'gi',
+  );
 }
 
-/** The item a label's synopsis belongs to, or null when the document did not introduce one before the heading. */
-function itemBefore(flat: string, at: number, label: string): string | null {
+/** Every item the match names, as record item numbers (null entries for an unknown type are dropped). */
+function itemsOf(m: RegExpMatchArray): string[] {
+  const out: string[] = [];
+  for (let g = 1; g + 1 < m.length; g += 2) {
+    if (m[g] === undefined) continue;
+    const item = itemNumberFor(m[g], m[g + 1]);
+    if (item) out.push(item);
+  }
+  return out;
+}
+
+/** The item a label's synopsis belongs to, or null when the document did not introduce one with strong evidence. */
+function itemBefore(flat: string, at: number, label: string, to: number): string | null {
   const before = flat.slice(0, at);
-  const best = { end: -1, item: null as string | null };
-  for (const re of [labelMotion(label), OPENS_ITEM]) {
+  const best = { end: -1, item: null as string | null, kind: 0 };
+  [labelMotion(label), OPENS_ITEM].forEach((re, kind) => {
     for (const m of before.matchAll(re)) {
-      // Each shape holds one or two (type, number) pairs; the opening shape has one in each branch.
-      for (let g = 1; g + 1 < m.length; g += 2) {
-        if (m[g] === undefined) continue;
-        const end = m.index! + m[0].length;
-        if (end > best.end) {
-          best.end = end;
-          best.item = itemNumberFor(m[g], m[g + 1]);
-        }
-      }
+      const end = m.index! + m[0].length;
+      const item = itemsOf(m)[0] ?? null;
+      if (item && end > best.end) Object.assign(best, { end, item, kind });
+    }
+  });
+  if (!best.item) return null;
+  // Another item named between the motion and the heading: the text moved on.
+  for (const m of flat.slice(best.end, at).matchAll(ANY_ITEM)) {
+    if (itemsOf(m)[0] !== best.item) return null;
+  }
+  // The label's own motion printed after the heading, naming another item.
+  if (best.kind === 1) {
+    for (const m of flat.slice(at, to).matchAll(labelMotion(label))) {
+      const other = itemsOf(m)[0];
+      if (other && other !== best.item) return null;
     }
   }
   return best.item;
@@ -270,8 +299,35 @@ export interface DocumentSponsorSentence extends SponsorSentence {
   itemNumber: string | null;
 }
 
-/** Like sponsorSentencesFromDocument, with each sentence tied to its item (see above). */
-export function sponsorSentencesWithItems(text: string): DocumentSponsorSentence[] {
+const labelKey = (q: string): string | null => {
+  const m = /^(Amendment|Reasonable Condition) (\d+)$/.exec(q);
+  return m ? `${m[1]} ${Number(m[2])}` : null;
+};
+
+/**
+ * Like sponsorSentencesFromDocument, with each sentence tied to its item (see above). `rollCalls` (the same
+ * document's parsed roll calls) is a last check: when roll calls carry this label on another item and none on the
+ * tied item (and not claimed by another synopsis of the document), the tie is dropped. An amendment with no roll call at all still ties through its motion.
+ */
+export function sponsorSentencesWithItems(
+  text: string,
+  rollCalls: { itemNumber: string; question: string }[] = [],
+): DocumentSponsorSentence[] {
   const flat = collapse(text);
-  return documentSentences(flat).map(({ at, ...s }) => ({ ...s, itemNumber: itemBefore(flat, at, s.label!) }));
+  const located = documentSentences(flat);
+  const tied = located.map(({ at }, k) =>
+    itemBefore(flat, at, located[k].label!, k + 1 < located.length ? located[k + 1].at : flat.length),
+  );
+  return located.map(({ at: _at, ...s }, k) => {
+    let itemNumber = tied[k];
+    if (itemNumber) {
+      // A roll call with this label on an item that no other synopsis of this document claims, and none on the tied
+      // item, contradicts the tie. (Roll calls on items other synopses are tied to are just those items' votes: one
+      // document can hold "Amendment 01" on several items.)
+      const claimed = new Set(located.flatMap((l, j) => (j !== k && labelKey(l.label!) === labelKey(s.label!) && tied[j] ? [tied[j]!] : [])));
+      const mine = rollCalls.filter((r) => labelKey(r.question) === labelKey(s.label!));
+      if (mine.length > 0 && !mine.some((r) => r.itemNumber === itemNumber) && mine.some((r) => !claimed.has(r.itemNumber))) itemNumber = null;
+    }
+    return { ...s, itemNumber };
+  });
 }
