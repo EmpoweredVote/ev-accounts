@@ -29,7 +29,7 @@ const ABBREVIATION = /(?:^|\s)(?:Cm|Cms|CM|Mr|Ms|Mrs|Dr|No|Sec|St|[A-Z])$/;
 function splitSentences(text: string): string[] {
   const out: string[] = [];
   let start = 0;
-  const end = /[.!?]\s+(?=[A-Z"“(\[])/g;
+  const end = /[.!?]\s+(?=[A-Z"“([])/g;
   let m: RegExpExecArray | null;
   while ((m = end.exec(text))) {
     const before = text.slice(start, m.index);
@@ -60,7 +60,7 @@ function headingLength(tokens: string[], i: number): number {
   return 0;
 }
 
-const isNameWord = (w: string): boolean => /^[A-Z][A-Za-z'’\-]*$/.test(w) && !NOT_A_NAME.has(w) && !TITLE.test(w);
+const isNameWord = (w: string): boolean => /^[A-Z][A-Za-z'’-]*$/.test(w) && !NOT_A_NAME.has(w) && !TITLE.test(w);
 
 /** Read the names at the start of `segment` (the text right after "sponsored by"). */
 function readNames(segment: string, opts: { commaList?: boolean } = {}): { names: string[]; placeholder: boolean } {
