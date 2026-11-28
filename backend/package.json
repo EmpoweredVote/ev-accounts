@@ -124,7 +124,7 @@
     "@anthropic-ai/sdk": "^1.11.0",
     "@aws-sdk/client-sqs": "^3.1173.0",
     "@mozilla/readability": "^0.6.0",
-    "@napi-rs/canvas": "^0.1.80",
+    "@napi-rs/canvas": "^1.1.1",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.119.2",
     "@types/compression": "^1.8.1",
