@@ -231,9 +231,16 @@ export async function writeSponsorships(
 
   for (const [subject, group] of bySubject) {
     const bill = await db.query(
-      `SELECT id FROM essentials.legislative_bills WHERE jurisdiction = $1 AND number = $2 LIMIT 1`,
+      `SELECT id FROM essentials.legislative_bills WHERE jurisdiction = $1 AND number = $2 AND source = 'onboard' LIMIT 2`,
       [city, group.itemNumber],
     );
+    if (bill.rows.length > 1) {
+      // (jurisdiction, number) is not unique: never guess which bill a sponsor belongs to.
+      unknownItems++;
+      dropped += group.rows.length;
+      await recordException(db, city, runId, 'unknown_item', subject, { reason: 'ambiguous_bill', number: group.itemNumber });
+      continue;
+    }
     const billId: string | undefined = bill.rows[0]?.id;
     if (!billId) {
       unknownItems++;

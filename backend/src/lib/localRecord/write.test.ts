@@ -223,8 +223,9 @@ describe('writeSponsorships', () => {
   });
 
   /** Routes by statement: bill lookup, stored-sponsor read, everything else answers with one row. */
-  function sponsorDb(opts: { bills?: Record<string, string>; stored?: Record<string, string[]> } = {}) {
+  function sponsorDb(opts: { bills?: Record<string, string>; stored?: Record<string, string[]>; dupes?: string[] } = {}) {
     const bills = opts.bills ?? { 'Ord 2025-41': 'bill1' };
+    const dupes = opts.dupes ?? [];
     const stored = opts.stored ?? {};
     const calls: { text: string; params: unknown[] }[] = [];
     return {
@@ -232,6 +233,7 @@ describe('writeSponsorships', () => {
       async query(text: string, params: unknown[] = []) {
         calls.push({ text, params });
         if (/FROM essentials.legislative_bills/.test(text)) {
+          if (dupes.includes(params[1] as string)) return { rows: [{ id: 'a' }, { id: 'b' }], rowCount: 2 };
           const id = bills[params[1] as string];
           return { rows: id ? [{ id }] : [], rowCount: id ? 1 : 0 };
         }
@@ -323,6 +325,22 @@ describe('writeSponsorships', () => {
     expect(upserts(db)).toHaveLength(1);
     expect(upserts(db)[0].params).toContain('p2');
     expect(exceptions(db)).toEqual([expect.objectContaining({ cause: 'sponsor_disagrees', subject: 'Ord 2025-41' })]);
+    expect(exceptions(db)[0].detail.people).toEqual([
+      { politicianId: 'p1', roles: ['sponsor', 'cosponsor'], sentences: ['Sponsored by Smith.', 'Sponsored by Smith.'] },
+    ]);
+  });
+
+  it('looks the bill up by source and refuses when two bills share a number', async () => {
+    const db = sponsorDb({ dupes: ['Ord 2025-41'] });
+    const r = await writeSponsorships(db, 'place:1', 'run1', [sp(), sp({ politicianId: 'p2' })], { subjectsRead: new Set() });
+    expect(r).toEqual({ written: 0, unknownItems: 1, dropped: 2 });
+    expect(upserts(db)).toHaveLength(0);
+    const lookup = db.calls.find((c: any) => /FROM essentials.legislative_bills/.test(c.text));
+    expect(lookup.text).toMatch(/source = 'onboard'/);
+    expect(lookup.text).toMatch(/LIMIT 2/);
+    expect(exceptions(db)).toEqual([
+      { cause: 'unknown_item', subject: 'Ord 2025-41', detail: { reason: 'ambiguous_bill', number: 'Ord 2025-41' } },
+    ]);
   });
 
   it('uses the amendment subject form', async () => {
