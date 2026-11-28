@@ -1,5 +1,5 @@
 -- CC_0521_fremont_d4_incoming_ying_min_li.sql
--- CC_0521: Fremont, CA City Council District 4 -- create Ying Min Li and seat her as the INCOMING holder from
+-- CC_0521: Fremont, CA City Council District 4 -- create Ying Min Li and seat Li as the INCOMING holder from
 -- 2026-12-08, so the seat shows Yang Shao now with Li as "Incoming on 2026-12-08" (office_next_term, CC_0341).
 --
 -- THE RESULT. Alameda County ROV, November 3, 2026 General Election, "Certified Final Results", last updated
@@ -18,7 +18,7 @@
 --   - 2026-12-08 is the second Tuesday of December. Fremont installed its last two classes on the second
 --     Tuesday too: 2022-12-13 (city bulletin) and 2024-12-10 (city roster start dates). A pattern, not a source.
 --   - Chosen as the LATER of the two candidates on purpose: if the oath is actually Dec 1, Shao is shown one
---     week too long; Li is never shown as holder before she takes office.
+--     week too long; Li is never shown as holder before taking office.
 --   - fremont.gov answers Akamai Access Denied to every automated read; its Granicus archive ends at
 --     2026-09-22 and the new CivicClerk portal (fremont.portal.civicclerk.com) is a JS app whose API could not
 --     be reached. ▶ FOLLOW-UP: when the agenda is readable, move the date with a new migration if it differs
