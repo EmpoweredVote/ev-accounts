@@ -150,7 +150,7 @@ export async function writeConfirmed(
      ON CONFLICT (politician_id, bill_id, session_id, external_vote_id) DO UPDATE SET
        position = EXCLUDED.position, vote_question = EXCLUDED.vote_question, result = EXCLUDED.result,
        vote_date = EXCLUDED.vote_date, yea_count = EXCLUDED.yea_count, nay_count = EXCLUDED.nay_count,
-       roll_call_id = EXCLUDED.roll_call_id, name_as_printed = EXCLUDED.name_as_printed,
+       roll_call_id = EXCLUDED.roll_call_id, source = EXCLUDED.source, name_as_printed = EXCLUDED.name_as_printed,
        worked_out = EXCLUDED.worked_out, confirmed_from = EXCLUDED.confirmed_from`,
     [
       billId, xid, rc.question, meetingDate, rc.outcome, rc.tally.yes, rc.tally.no, rollCallId, voteDocId,

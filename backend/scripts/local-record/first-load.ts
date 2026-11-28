@@ -236,6 +236,7 @@ function buildOwnerChecked(
  */
 export function applyOwnerChecks(
   cmp: Comparison, checks: CheckedOwnerCheck[], roster: InventoryRoster, names: NameFile, items: FeedItem[], inventory: InventoryItem[],
+  reader: ReaderRollCall[] = [],
 ): OwnerResult {
   const res: OwnerResult = { ownerChecked: [], held: [], failed: [], notNeeded: [], exceptions: [] };
   const byId = new Map(checks.map((c) => [c.inventoryId, c]));
@@ -245,31 +246,65 @@ export function applyOwnerChecks(
     .map((e) => (e.detail as { inventoryId: string }).inventoryId));
   for (const c of checks) if (!open.has(c.inventoryId)) res.notNeeded.push(c.inventoryId);
 
-  res.exceptions = cmp.exceptions.flatMap((e): FoundException[] => {
+  // Keys the reader failed ON PURPOSE (a repeated Final, a duplicate key): the owner's check does not override them.
+  const onPurpose = new Map<string, string>();
+  for (const r of reader) {
+    if (r.status !== 'failed' || !r.detail) continue;
+    if (/already passed on /.test(r.detail) || /^\d+ roll calls in the vote document share this date/.test(r.detail)) onPurpose.set(keyOf(r), r.detail);
+  }
+
+  type Entry = { e: FoundException; d: Record<string, unknown>; built?: OwnerCheckedRollCall; hold?: string; fail?: string };
+  const entries: (Entry | FoundException)[] = cmp.exceptions.map((e) => {
     const d = e.detail as { kind?: string; inventoryId?: string };
     const check = e.cause === 'inventory_disagrees' && d.kind === 'inventory only' ? byId.get(d.inventoryId as string) : undefined;
-    if (!check) return [e];
+    if (!check) return e;
+    const entry: Entry = { e, d: d as Record<string, unknown> };
     if (check.verdict === 'held') {
-      const reason = check.followUp?.why || check.ownerNote || `owner answered "${check.ownerAnswer}"`;
-      res.held.push({ subject: e.subject, reason });
-      return [{ ...e, detail: { ...d, ownerHeld: true, reason } }];
+      entry.hold = check.followUp?.why || check.ownerNote || `owner answered "${check.ownerAnswer}"`;
+      return entry;
     }
     const inv = invById.get(check.inventoryId) as InventoryItem;
     const p = parseInventoryId(inv.id);
-    const built = 'skip' in p ? { reason: p.skip } : buildOwnerChecked(inv, check, p, roster, names, items);
-    if ('reason' in built && built.hold) {
-      res.held.push({ subject: e.subject, reason: built.reason });
-      return [{ ...e, detail: { ...d, ownerHeld: true, reason: built.reason } }];
-    }
-    if ('reason' in built) {
-      res.failed.push({ subject: e.subject, reason: built.reason });
-      return [{ ...e, detail: { ...d, ownerCheckFailed: built.reason } }];
-    }
-    res.ownerChecked.push(built);
-    return [];
+    if ('skip' in p) { entry.fail = p.skip; return entry; }
+    const built = buildOwnerChecked(inv, check, p, roster, names, items);
+    if ('reason' in built) { if (built.hold) entry.hold = built.reason; else entry.fail = built.reason; return entry; }
+    const purpose = onPurpose.get(keyOf(p));
+    if (purpose) { entry.hold = purpose; return entry; }
+    entry.built = built;
+    return entry;
   });
+
+  // An item passes once: an owner Final passage that passed is held when another passed Final of the item is on a
+  // different date (a confirmed reader row, or an earlier owner row).
+  const passed = new Map<string, Set<string>>();
+  const note = (item: string, date: string) => passed.set(item, (passed.get(item) ?? new Set()).add(date));
+  for (const r of reader) if (r.status === 'confirmed' && r.question === 'Final passage' && r.outcome === 'passed') note(r.itemNumber, r.date);
+  const ownerFinals = entries.filter((x): x is Entry => 'e' in x && !!x.built && x.built.question === 'Final passage' && x.built.outcome === 'passed')
+    .sort((a, b) => ((a.built as OwnerCheckedRollCall).date < (b.built as OwnerCheckedRollCall).date ? -1 : 1));
+  for (const x of ownerFinals) {
+    const o = x.built as OwnerCheckedRollCall;
+    const other = [...(passed.get(o.itemNumber) ?? [])].filter((d) => d !== o.date).sort()[0];
+    if (other) { x.hold = `${o.itemNumber} already passed on ${other}; a later vote is not a second Final passage`; x.built = undefined; }
+    else note(o.itemNumber, o.date);
+  }
+
+  for (const x of entries) {
+    if (!('e' in x)) { res.exceptions.push(x); continue; }
+    const subject = x.e.subject;
+    if (x.hold) {
+      res.held.push({ subject, reason: x.hold });
+      res.exceptions.push({ ...x.e, detail: { ...x.d, ownerHeld: true, reason: x.hold } });
+    } else if (x.fail) {
+      res.failed.push({ subject, reason: x.fail });
+      res.exceptions.push({ ...x.e, detail: { ...x.d, ownerCheckFailed: x.fail } });
+    } else if (x.built) res.ownerChecked.push(x.built);
+  }
   return res;
 }
+
+/** A fingerprint of the owner-checked rows, so --apply writes the rows that were reviewed in the dry run. */
+export const ownerHash = (rows: OwnerCheckedRollCall[]): string =>
+  sha256Hex(new TextEncoder().encode(JSON.stringify([...rows].sort((a, b) => (a.inventoryId < b.inventoryId ? -1 : 1)))));
 
 // ---- what the reader found ---------------------------------------------------------------------------------------
 
@@ -744,7 +779,7 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   const failedChecks: FoundException[] = spot.picks
     .filter((p) => p.verdict.trim() && p.verdict.trim() !== 'match')
     .map((p) => ({ cause: 'spot_check_failed', subject: `${p.date} ${p.itemNumber} ${p.question}`, detail: { verdict: p.verdict } }));
-  const owner = ownerChecks ? applyOwnerChecks(cmp, ownerChecks, roster, names, read.items, inventory) : null;
+  const owner = ownerChecks ? applyOwnerChecks(cmp, ownerChecks, roster, names, read.items, inventory, read.reader) : null;
   // An owner-checked row is saved with a vote document: it must be one the feed lists.
   const feedUrls = new Set(read.feedDocs.map((d) => d.url));
   const ownerSkipped = (owner?.ownerChecked ?? []).filter((o) => !feedUrls.has(o.documentUrl)).map((o) => `${subjectOf(o)}: ${o.documentUrl}`);
@@ -757,7 +792,7 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
     writeFileSync(path.join(opts.out, 'reader-output.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, rollCalls: read.reader }, null, 1));
     writeFileSync(path.join(opts.out, 'compare.md'), compareMd(cmp, applied, owner, ownerSkipped));
     if (owner) {
-      writeFileSync(path.join(opts.out, 'owner-checked.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, ownerChecked: owner.ownerChecked }, null, 1));
+      writeFileSync(path.join(opts.out, 'owner-checked.json'), JSON.stringify({ city: city.scope, from: WINDOW_START, hash: ownerHash(owner.ownerChecked), ownerChecked: owner.ownerChecked }, null, 1));
     }
     writeFileSync(spotPath, JSON.stringify(spot, null, 1));
     writeFileSync(path.join(opts.out, 'exceptions.json'), JSON.stringify({
@@ -770,6 +805,13 @@ export async function runFirstLoad(opts: FirstLoadOptions, deps: FirstLoadDeps):
   }
 
   const refused = blockers(prior, fresh, all);
+  if (owner) {
+    const ocPath = path.join(opts.out, 'owner-checked.json');
+    if (!existsSync(ocPath)) refused.push('owner-checked.json is missing: run a dry run again and review the owner-checked rows.');
+    else if ((readJson(ocPath) as { hash?: string }).hash !== ownerHash(owner.ownerChecked)) {
+      refused.push('owner-checked rows changed since the dry run: run a dry run again.');
+    }
+  }
   if (refused.length) return { refused };
   if (!deps.connect || !deps.storage) throw new Error('--apply needs a database connection and storage');
   return { applied: await applyAll(opts, city, read, owner?.ownerChecked ?? [], all, deps.connect, deps.storage, deps.fetchBytes, now) };

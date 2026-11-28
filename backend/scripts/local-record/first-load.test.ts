@@ -1,4 +1,4 @@
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, unlinkSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -585,7 +585,7 @@ describe('owner checks', () => {
   });
   const run = (rows: InventoryItem[], checks: OwnerCheck[], reader: ReaderRollCall[] = [], items: FeedItem[] = []) => {
     const cmp = compareWithInventory(reader, rows, roster, names());
-    return { cmp, res: applyOwnerChecks(cmp, validateOwnerChecks(rows, { checks }), roster, names(), items, rows) };
+    return { cmp, res: applyOwnerChecks(cmp, validateOwnerChecks(rows, { checks }), roster, names(), items, rows, reader) };
   };
 
   it('verdict: matches follow-up or a plain yes confirms; feed_only, no and unsure hold', () => {
@@ -692,6 +692,48 @@ describe('owner checks', () => {
     expect(res.exceptions[0].detail).toMatchObject({ ownerHeld: true, reason: 'the inventory lists no member votes, so there is nothing to load' });
   });
 
+  describe('I1: keys the reader failed on purpose, and an item passes once', () => {
+    const failedRc = (over: Partial<ReaderRollCall>) => rr({ itemNumber: 'Ord 2026-90', status: 'failed', ...over });
+    const row = invRow('Ord 2026-90');
+    it('a repeated Final (outcome_conflict) is held with the reader\'s own detail', () => {
+      const detail = 'Ord 2026-90 already passed on 2026-09-01; a later "adopt" is not a second Final passage';
+      const { res } = run([row], [chk('Ord 2026-90')], [failedRc({ cause: 'outcome_conflict', detail })]);
+      expect(res.ownerChecked).toEqual([]);
+      expect(res.failed).toEqual([]);
+      expect(res.held).toEqual([{ subject: `${DATE} Ord 2026-90 Final passage`, reason: detail }]);
+      expect(res.exceptions[0].detail).toMatchObject({ ownerHeld: true, reason: detail });
+    });
+    it('a duplicate key is held with the reader\'s own detail', () => {
+      const detail = '2 roll calls in the vote document share this date, item and question';
+      const { res } = run([row], [chk('Ord 2026-90')], [failedRc({ cause: 'unparsed_roll_call', detail })]);
+      expect(res.ownerChecked).toEqual([]);
+      expect(res.held[0].reason).toBe(detail);
+    });
+    it('other reader-failed causes still take the owner check', () => {
+      const { res } = run([row], [chk('Ord 2026-90')], [failedRc({ cause: 'tally_mismatch', detail: 'x' })]);
+      expect(res.ownerChecked).toHaveLength(1);
+    });
+    it('an owner Final passed is held when the item already passed on another date (reader-confirmed)', () => {
+      const earlier = rr({ itemNumber: 'Ord 2026-90', date: '2026-09-01', outcome: 'passed' });
+      const { res } = run([row], [chk('Ord 2026-90')], [earlier]);
+      expect(res.ownerChecked).toEqual([]);
+      expect(res.held[0].reason).toMatch(/already passed on 2026-09-01/);
+    });
+    it('between two owner rows the later date is held, the earlier confirmed', () => {
+      const early = invRow('Ord 2026-90', { id: `${SCOPE}:2026-09-01:Ord 2026-90`, date: '2026-09-01' });
+      const { res } = run([early, row], [chk('Ord 2026-90', { inventoryId: early.id, date: '2026-09-01' }), chk('Ord 2026-90')]);
+      expect(res.ownerChecked.map((o) => o.date)).toEqual(['2026-09-01']);
+      expect(res.held).toHaveLength(1);
+      expect(res.held[0].reason).toMatch(/already passed on 2026-09-01/);
+      expect(res.exceptions).toHaveLength(1);
+    });
+    it('a failed owner Final or an amendment does not count as a second passage', () => {
+      const earlier = rr({ itemNumber: 'Ord 2026-90', date: '2026-09-01', outcome: 'passed' });
+      const am = invRow('Ord 2026-90 (amendment 1)');
+      expect(run([am], [chk('Ord 2026-90 (amendment 1)')], [earlier]).res.ownerChecked).toHaveLength(1);
+    });
+  });
+
   it('an amendment uses the tally rule only', () => {
     const row = invRow('Ord 2026-90 (amendment 1)');
     const o = run([row], [chk('Ord 2026-90 (amendment 1)')], [], [feedItem('Ord 2026-90', 'failed')]).res.ownerChecked[0];
@@ -776,6 +818,28 @@ describe('runFirstLoad: owner-checks.json', () => {
     expect(compare).toContain(MEMO_URL);
     const ex = JSON.parse(readFileSync(path.join(s.out, 'exceptions.json'), 'utf8'));
     expect(ex.exceptions.filter((e: any) => e.cause === 'inventory_disagrees')).toEqual([]);
+  });
+
+  it('--apply refuses when owner-checked.json is missing or the owner rows changed since the dry run', async () => {
+    const s = setup({ inventory: { items: [row] } });
+    put(s, [check()]);
+    await runFirstLoad(base(s, { seed: 3 }), deps());
+    fillAll(s.out);
+    const ocPath = path.join(s.out, 'owner-checked.json');
+    const saved = readFileSync(ocPath, 'utf8');
+    expect(JSON.parse(saved).hash).toMatch(/^[0-9a-f]{64}$/);
+    // an answer flips: the owner rows differ from the ones reviewed
+    put(s, [check({ ownerAnswer: 'unsure' })]);
+    const changed = await runFirstLoad(base(s, { apply: true }), deps());
+    expect(changed.refused?.join(' ')).toMatch(/owner-checked rows changed since the dry run: run a dry run again/);
+    expect(calls).toEqual([]);
+    put(s, [check()]);
+    writeFileSync(ocPath, '{}');
+    expect((await runFirstLoad(base(s, { apply: true }), deps())).refused?.join(' ')).toMatch(/owner-checked rows changed/);
+    unlinkSync(ocPath);
+    expect((await runFirstLoad(base(s, { apply: true }), deps())).refused?.join(' ')).toMatch(/owner-checked\.json is missing/);
+    writeFileSync(ocPath, saved);
+    expect((await runFirstLoad(base(s, { apply: true }), deps())).refused).toBeUndefined();
   });
 
   it('a held check does not block --apply but is still recorded as an open exception', async () => {

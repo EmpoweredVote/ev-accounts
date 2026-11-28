@@ -77,6 +77,15 @@ describe('writeConfirmed: source', () => {
   });
 });
 
+describe('writeConfirmed: source on conflict', () => {
+  it('a later confirmation replaces the source, so minutes take over from an owner check', async () => {
+    const db = recordingDb();
+    await writeConfirmed(db, 'place:1', rc, ok, 'bill1', '2026-10-07', 'doc1');
+    const votes = db.calls.find((c: any) => /INTO essentials.legislative_votes/.test(c.text));
+    expect(votes.text).toMatch(/DO UPDATE SET[\s\S]*source = EXCLUDED\.source/);
+  });
+});
+
 describe('writeConfirmed: replacing and promoting', () => {
   it('deletes votes on the roll call that are not in the new set', async () => {
     const db = recordingDb();
