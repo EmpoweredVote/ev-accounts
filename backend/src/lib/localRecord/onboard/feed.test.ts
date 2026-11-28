@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { listVoteDocuments, parseFeedTally, parseLegislationFeed } from './feed.js';
@@ -140,9 +141,22 @@ describe('listVoteDocuments', () => {
 });
 
 describe('EXCEPTION_CAUSES', () => {
-  it('has 13 causes including minutes_disagree', () => {
-    expect(EXCEPTION_CAUSES).toHaveLength(13);
+  it('has 15 causes including minutes_disagree and the two sponsor causes', () => {
+    expect(EXCEPTION_CAUSES).toHaveLength(15);
     expect(EXCEPTION_CAUSES).toContain('minutes_disagree');
+    expect(EXCEPTION_CAUSES).toContain('sponsor_unresolved');
+    expect(EXCEPTION_CAUSES).toContain('sponsor_disagrees');
+  });
+
+  it('equals the cause CHECK list in CA_0436', () => {
+    const sql = readFileSync(
+      fileURLToPath(new URL('../../../../migrations/CA_0436_local_record_sponsor_causes.sql', import.meta.url)),
+      'utf8',
+    );
+    const m = sql.match(/ADD CONSTRAINT local_record_exceptions_cause_check CHECK \(cause IN \(([^)]*)\)\)/);
+    expect(m).not.toBeNull();
+    const listed = [...m![1].matchAll(/'([a-z_]+)'/g)].map((x) => x[1]);
+    expect([...listed].sort()).toEqual([...EXCEPTION_CAUSES].sort());
   });
 });
 

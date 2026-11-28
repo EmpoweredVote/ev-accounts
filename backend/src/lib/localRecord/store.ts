@@ -15,7 +15,7 @@ export interface StorageLike {
   upload(path: string, bytes: Uint8Array, contentType: string): Promise<void>;
 }
 
-export type SavedDocumentKind = VoteDocumentKind | 'item_text';
+export type SavedDocumentKind = VoteDocumentKind | 'item_text' | 'legislation_feed';
 
 export function sha256Hex(bytes: Uint8Array): string {
   return createHash('sha256').update(bytes).digest('hex');
@@ -33,6 +33,7 @@ const TYPES: Record<SavedDocumentKind, { ext: string; contentType: string }> = {
   memorandum: { ext: 'pdf', contentType: 'application/pdf' },
   minutes: { ext: 'pdf', contentType: 'application/pdf' },
   item_text: { ext: 'txt', contentType: 'text/plain' },
+  legislation_feed: { ext: 'txt', contentType: 'text/plain' },
 };
 
 const EXT_BY_TYPE: Record<string, string> = { 'text/plain': 'txt', 'application/pdf': 'pdf' };

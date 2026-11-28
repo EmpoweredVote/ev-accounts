@@ -114,6 +114,9 @@ export const EXCEPTION_CAUSES = [
   'spot_check_failed',
   // Formal Minutes disagree with a vote already confirmed from the Memorandum.
   'minutes_disagree',
+  // Council sponsors: a sponsor name that does not resolve to one member, and two sources that name different sponsors.
+  'sponsor_unresolved',
+  'sponsor_disagrees',
 ] as const;
 
 export type ExceptionCause = (typeof EXCEPTION_CAUSES)[number];
